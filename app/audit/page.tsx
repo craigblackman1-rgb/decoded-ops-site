@@ -19,13 +19,13 @@ const tiers = [
     cta: 'Book Diagnose', highlight: false,
   },
   {
-    name: 'Advise', price: '£3,500', vat: '+ VAT',
+    name: 'Advise', price: '£3,800', vat: '+ VAT',
     description: 'Everything in Diagnose, plus independent tool evaluation and a full vendor shortlist — so you go to market on your terms.',
     includes: ['Everything in Diagnose', 'Independent tool evaluation', 'Vendor shortlist & briefs', 'Platform-agnostic recommendations'],
     cta: 'Book Advise', highlight: true,
   },
   {
-    name: 'Deliver', price: '£3,500 + £1,500/mo', vat: '+ VAT',
+    name: 'Deliver', price: '£3,800 + £1,500/mo', vat: '+ VAT',
     description: "Full implementation oversight. Minimum 3 months. I stay involved through delivery — holding vendors to the brief.",
     includes: ['Everything in Advise', 'Implementation oversight', 'Vendor management', '30 days notice after 3-month minimum'],
     cta: 'Book Deliver', highlight: false,
@@ -180,9 +180,14 @@ export default function AuditPage() {
               </div>
             ))}
           </div>
-          <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8 text-center">
+          <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8 text-center mb-6">
             <div className="text-2xl font-bold text-[#393D3F] mb-2">The 3× Clarity Guarantee</div>
             <p className="text-[#393D3F]/70 max-w-2xl mx-auto">If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.</p>
+          </div>
+          <div className="text-center">
+            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#62929E] hover:text-[#546A7B] transition-colors">
+              View full pricing — including Small Business offer <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>
