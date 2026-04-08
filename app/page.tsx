@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Phone, Star, Shield, Wrench, Brain, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { HeroGraphic } from '@/components/HeroGraphic';
+import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
 
@@ -127,21 +129,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right column — hero image */}
-            <div className="relative hidden lg:block">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                  alt="Operations consulting for print and embroidery businesses"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/40 to-transparent" />
-              </div>
-              {/* Guarantee badge */}
-              <div className="absolute -bottom-6 -left-6 bg-[#FDFDFF] rounded-xl shadow-lg p-4 border border-[#C6C5B9]/40 max-w-[220px]">
-                <div className="text-xs font-semibold text-[#546A7B] uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
-                <div className="text-xs text-[#393D3F]/60 leading-snug">If the report doesn&apos;t identify 3× the fee in recoverable value — full refund. No questions asked.</div>
-              </div>
+            {/* Right column — system diagram */}
+            <div className="hidden lg:flex items-center justify-center pb-6">
+              <HeroGraphic />
             </div>
 
           </div>
@@ -174,19 +164,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
 
-            {/* Left — image */}
-            <div className="relative order-2 lg:order-1">
-              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="Craig Blackman — Decoded Ops"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-[#62929E] flex flex-col items-center justify-center shadow-lg">
-                <span className="text-2xl font-bold text-[#FDFDFF]">25+</span>
-                <span className="text-xs text-[#FDFDFF]/80 text-center leading-tight px-1">years in the sector</span>
-              </div>
+            {/* Left — sector expertise graphic */}
+            <div className="order-2 lg:order-1">
+              <SectorExpertiseGraphic />
             </div>
 
             {/* Right — content */}
@@ -343,15 +323,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS — dark with background image ──────────────────────────────── */}
+      {/* ── STATS — dark with SVG dot-grid pattern ──────────────────────────── */}
       <section className="relative py-16 bg-[#393D3F] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1600&q=80"
-            alt=""
-            className="w-full h-full object-cover opacity-10"
-          />
-        </div>
+        {/* SVG dot grid */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.5" fill="#62929E" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+        </svg>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
