@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
+import { FractionalModelGraphic } from '@/components/graphics/FractionalModelGraphic';
 
 const whenItFits = [
   { icon: Wrench,     title: 'Post-audit implementation',   desc: "The audit found the issues. Now you need someone to drive the fixes. Fractional ops gives you the hands-on delivery without a full-time hire." },
@@ -60,15 +61,8 @@ export default function FractionalPage() {
                 </div>
               </div>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-                  alt="Fractional operations director"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/40 to-transparent" />
-              </div>
+            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#393D3F]/5 border border-[#C6C5B9]/30">
+              <FractionalModelGraphic />
             </div>
           </div>
         </div>

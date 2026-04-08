@@ -1,4 +1,5 @@
 import { ProblemPage } from '@/components/ProblemPage';
+import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
 export default function EcommerceNotConnectedPage() {
   return (
@@ -6,7 +7,7 @@ export default function EcommerceNotConnectedPage() {
       problem="eCommerce not connected to production"
       headline="Your online store is live. ||Your production system doesn't know it exists.||"
       intro="eCommerce disconnected from production is one of the most common and most costly problems in this sector. Orders taken online that have to be manually re-entered into the production system. Every order. Every day."
-      heroImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80"
+      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
       symptoms={[
         "Online orders are being manually re-entered into your ERP or MIS",
         "There's a delay between order placed and order in production",

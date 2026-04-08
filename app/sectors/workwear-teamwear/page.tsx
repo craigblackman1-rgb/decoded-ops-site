@@ -1,4 +1,19 @@
 import { SectorPage } from '@/components/SectorPage';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+const workflow = (
+  <WorkflowGraphic
+    title="Workwear managed account flow"
+    steps={[
+      { label: 'Account setup', sub: 'Spec & pricing' },
+      { label: 'Online shop', sub: 'Portal order in', alert: true },
+      { label: 'Approval check', sub: 'Budget / auth' },
+      { label: 'Production', sub: 'Spec to machine' },
+      { label: 'Quality check', sub: 'Spec vs output' },
+      { label: 'Despatch', sub: 'Named delivery' },
+    ]}
+  />
+);
 
 export default function WorkwearTeamwearPage() {
   return (
@@ -6,7 +21,7 @@ export default function WorkwearTeamwearPage() {
       sector="Workwear & teamwear"
       tagline="Managed accounts and repeat orders ||should be your most efficient business. Usually they're not.||"
       intro="Workwear and teamwear businesses have the best opportunity for systemised, scalable revenue — but only if the technology and processes can actually support it. Most can't."
-      heroImage="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=800&q=80"
+      heroGraphic={workflow}
       challenges={[
         { title: 'Managed account complexity', body: "Each managed account has its own pricing, its own approved products, its own approval hierarchy, and its own delivery rules. Managing that at scale requires systems specifically built for it — not workarounds in a generic platform." },
         { title: 'The uniform specification problem', body: "Keeping embroidery specifications, sizing matrices, and decoration requirements accurate across hundreds of SKUs per client is an enormous data management challenge. One wrong spec means a rerun." },

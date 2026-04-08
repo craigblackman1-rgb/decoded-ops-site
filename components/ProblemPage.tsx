@@ -1,17 +1,19 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { ReactNode } from 'react';
 
 interface ProblemPageProps {
   problem: string;
   headline: string;
   intro: string;
-  heroImage: string;
+  heroImage?: string;
+  heroGraphic?: ReactNode;
   symptoms: string[];
   causes: { title: string; body: string }[];
   howIHelp: string;
 }
 
-export function ProblemPage({ problem, headline, intro, heroImage, symptoms, causes, howIHelp }: ProblemPageProps) {
+export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, symptoms, causes, howIHelp }: ProblemPageProps) {
   const parts = headline.split('||');
   return (
     <>
@@ -40,11 +42,17 @@ export function ProblemPage({ problem, headline, intro, heroImage, symptoms, cau
                 </Link>
               </div>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img src={heroImage} alt={problem} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/50 to-transparent" />
-              </div>
+            <div className="hidden lg:flex items-center justify-center">
+              {heroGraphic ? (
+                <div className="w-full p-6 rounded-2xl bg-[#393D3F]/5 border border-[#C6C5B9]/30">
+                  {heroGraphic}
+                </div>
+              ) : heroImage ? (
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                  <img src={heroImage} alt={problem} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/50 to-transparent" />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

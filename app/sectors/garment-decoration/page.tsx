@@ -1,4 +1,19 @@
 import { SectorPage } from '@/components/SectorPage';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+const workflow = (
+  <WorkflowGraphic
+    title="Garment decoration order flow"
+    steps={[
+      { label: 'Order in', sub: 'eCommerce / B2B' },
+      { label: 'Artwork check', sub: 'Sign-off loop' },
+      { label: 'Blank sourcing', sub: 'Stock check' },
+      { label: 'Method assign', sub: 'Embr / DTG / SP', alert: true },
+      { label: 'Production', sub: 'Schedule slot' },
+      { label: 'QC & despatch', sub: 'Ship confirm' },
+    ]}
+  />
+);
 
 export default function GarmentDecorationPage() {
   return (
@@ -6,7 +21,7 @@ export default function GarmentDecorationPage() {
       sector="Garment decoration"
       tagline="The systems behind embroidery, DTG, screen print and heat transfer ||were never built for your business.||"
       intro="Every decoration method has its own production logic, its own constraints, and its own failure modes. Most ERP systems treat them all the same. That's where the cost lives."
-      heroImage="https://images.unsplash.com/photo-1558171813-c8a5550e4012?w=800&q=80"
+      heroGraphic={workflow}
       challenges={[
         { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures — all managed in systems that don't account for the difference." },
         { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere." },

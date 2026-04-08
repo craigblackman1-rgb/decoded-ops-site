@@ -1,4 +1,19 @@
 import { SectorPage } from '@/components/SectorPage';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+const workflow = (
+  <WorkflowGraphic
+    title="Print & promo order flow"
+    steps={[
+      { label: 'Quote request', sub: 'Multi-line order' },
+      { label: 'Supplier brief', sub: 'Price & lead time' },
+      { label: 'Sample & proof', sub: 'Approval loop', alert: true },
+      { label: 'PO raised', sub: 'Supplier confirm' },
+      { label: 'Goods in', sub: 'QC check' },
+      { label: 'Pack & ship', sub: 'Client delivery' },
+    ]}
+  />
+);
 
 export default function PrintPromotionalPage() {
   return (
@@ -6,7 +21,7 @@ export default function PrintPromotionalPage() {
       sector="Print & promotional"
       tagline="Printed merchandise has margins too thin to absorb ||the operational waste you can't see.||"
       intro="In promotional merchandise, margin compression is constant. The businesses that survive and grow are the ones whose systems are tight enough to protect margin at every step of the order process."
-      heroImage="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=800&q=80"
+      heroGraphic={workflow}
       challenges={[
         { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually — or in a system not built for it — is a permanent drag on margin." },
         { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L — but it's real." },

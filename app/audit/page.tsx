@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';
 
 const auditAreas = [
   { icon: Server,       num: '01', title: 'IT Infrastructure',     desc: 'Security posture, connectivity, identity management, and IT costs. Every risk identified, costed, and prioritised. Licensing waste surfaced and eliminated.' },
@@ -75,19 +76,8 @@ export default function AuditPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-                  alt="Operations audit in progress"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/40 to-transparent" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-[#FDFDFF] rounded-xl shadow-lg p-4 border border-[#C6C5B9]/40 max-w-[220px]">
-                <div className="text-xs font-semibold text-[#546A7B] uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
-                <div className="text-xs text-[#393D3F]/60 leading-snug">If the report doesn&apos;t identify 3× the fee in recoverable value — full refund.</div>
-              </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <AuditWheelGraphic />
             </div>
           </div>
         </div>
@@ -220,14 +210,35 @@ export default function AuditPage() {
                 </Link>
               </div>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=80"
-                  alt="Written audit report"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="hidden lg:flex items-center justify-center p-8 rounded-2xl bg-[#393D3F]">
+              <svg viewBox="0 0 280 220" className="w-full max-w-xs" aria-hidden="true">
+                {/* Report document */}
+                <rect x="40" y="20" width="200" height="160" rx="8" fill="#FDFDFF" />
+                <rect x="40" y="20" width="200" height="28" rx="8" fill="#62929E" />
+                <rect x="40" y="40" width="200" height="8" fill="#62929E" />
+                {/* Doc title */}
+                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#FDFDFF" fontFamily="system-ui">OPERATIONS AUDIT REPORT</text>
+                {/* Lines of text */}
+                {[60, 76, 92, 108, 124, 140, 156].map((y, i) => (
+                  <rect key={y} x="60" y={y} width={i % 3 === 2 ? 100 : 160} height="7" rx="3"
+                    fill="#C6C5B9" opacity={0.3 + (i * 0.05)} />
+                ))}
+                {/* Checkmarks */}
+                {[68, 84, 100, 116, 132, 148].map((y, i) => (
+                  <g key={y}>
+                    <circle cx="52" cy={y} r="5" fill="#62929E" opacity="0.7" />
+                    <text x="52" y={y + 3.5} textAnchor="middle" fontSize="7" fill="white" fontWeight="700">✓</text>
+                  </g>
+                ))}
+                {/* Bottom section — quantified */}
+                <rect x="56" y="164" width="168" height="1" fill="#C6C5B9" opacity="0.3" />
+                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#62929E" fontWeight="700" fontFamily="system-ui">TOTAL RECOVERABLE VALUE</text>
+                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#393D3F" fontWeight="800" fontFamily="system-ui">£47,200</text>
+                {/* Corner badge */}
+                <circle cx="220" cy="26" r="16" fill="#393D3F" />
+                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#62929E" fontWeight="700" fontFamily="system-ui">3×</text>
+                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#C6C5B9" fontFamily="system-ui">Clarity</text>
+              </svg>
             </div>
           </div>
         </div>

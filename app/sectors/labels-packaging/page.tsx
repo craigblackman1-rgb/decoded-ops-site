@@ -1,4 +1,19 @@
 import { SectorPage } from '@/components/SectorPage';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+const workflow = (
+  <WorkflowGraphic
+    title="Labels & packaging order flow"
+    steps={[
+      { label: 'Spec received', sub: 'Compliance req.' },
+      { label: 'Artwork prep', sub: 'Variable data', alert: true },
+      { label: 'Press proof', sub: 'Colour match' },
+      { label: 'Print run', sub: 'Plate / digital' },
+      { label: 'Compliance check', sub: 'Reg. sign-off' },
+      { label: 'Despatch', sub: 'Supply chain' },
+    ]}
+  />
+);
 
 export default function LabelsPackagingPage() {
   return (
@@ -6,7 +21,7 @@ export default function LabelsPackagingPage() {
       sector="Labels & packaging"
       tagline="Variable data printing and compliance labelling ||requires operational precision most systems can't deliver.||"
       intro="Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times."
-      heroImage="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&q=80"
+      heroGraphic={workflow}
       challenges={[
         { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs — and ensuring the right version is always in production — is a critical operational challenge." },
         { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Wrench, Brain } from 'lucide-react';
+import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
+import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';
 
 const values = [
   { icon: Shield, title: 'Independence',     desc: "No referral fees. No vendor relationships. No commission. Every recommendation is made on merit alone — and I'll tell you when the answer is to change nothing." },
@@ -51,19 +53,9 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            {/* Image with badge */}
-            <div className="relative order-first lg:order-last">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="Craig Blackman — Decoded Ops"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-[#62929E] flex flex-col items-center justify-center shadow-lg">
-                <span className="text-2xl font-bold text-[#FDFDFF]">25+</span>
-                <span className="text-xs text-[#FDFDFF]/80 text-center leading-tight px-1">years in the sector</span>
-              </div>
+            {/* Credentials graphic */}
+            <div className="hidden lg:flex items-center justify-center order-first lg:order-last">
+              <CredentialsGraphic />
             </div>
           </div>
         </div>
@@ -85,15 +77,8 @@ export default function AboutPage() {
                 <p>Decoded Ops was built on one principle: that business owners in this sector deserve honest, independent advice from someone who actually understands their world.</p>
               </div>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
-                  alt="Operations consulting"
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/60 to-transparent" />
-              </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <ExpertiseTimelineGraphic />
             </div>
           </div>
         </div>

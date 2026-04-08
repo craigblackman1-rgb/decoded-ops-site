@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { CostChartGraphic } from '@/components/graphics/CostChartGraphic';
 
 const timeline = [
   { month: 'Month 1–3',   cost: '£28,000',  label: 'eCommerce platform selected and contracted',              note: "Chosen without a vendor brief. No integration scoping done." },
@@ -39,19 +40,8 @@ export default function CaseStudyPage() {
                 Don&apos;t let this be your story <ArrowRight size={18} />
               </Link>
             </div>
-            <div className="relative hidden lg:block">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
-                  alt="Print and embroidery business operations"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/60 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="text-4xl font-bold text-white mb-1">£154,000</div>
-                  <div className="text-sm text-white/70">The cost of not having a £10k audit</div>
-                </div>
-              </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <CostChartGraphic />
             </div>
           </div>
         </div>

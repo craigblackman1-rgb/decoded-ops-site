@@ -1,4 +1,5 @@
 import { ProblemPage } from '@/components/ProblemPage';
+import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
 export default function WrongERPSoftwarePage() {
   return (
@@ -6,7 +7,7 @@ export default function WrongERPSoftwarePage() {
       problem="Wrong ERP software"
       headline="The system looked right in the demo. ||It doesn't fit your business.||"
       intro="Selecting the wrong ERP is one of the most expensive mistakes a business in this sector can make. The cost isn't just the software — it's the implementation, the disruption, the workarounds that accumulate, and the productivity you never recover."
-      heroImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
       symptoms={[
         "The system can't handle decoration method-specific workflows without heavy customisation",
         "You're maintaining manual processes alongside the system because it can't replace them",

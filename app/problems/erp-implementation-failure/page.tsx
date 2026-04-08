@@ -1,4 +1,5 @@
 import { ProblemPage } from '@/components/ProblemPage';
+import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
 export default function ERPImplementationFailurePage() {
   return (
@@ -6,7 +7,7 @@ export default function ERPImplementationFailurePage() {
       problem="ERP implementation failure"
       headline="Your ERP implementation has gone wrong. ||Here's what to do next.||"
       intro="ERP implementations fail in this sector more often than vendors will admit. Usually not because the software is bad — but because the implementation wasn't designed around how decoration and print businesses actually work."
-      heroImage="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
       symptoms={[
         "The system went live but the team are still using spreadsheets alongside it",
         "You went live late, over budget, or both",
