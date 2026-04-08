@@ -2,115 +2,168 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const timeline = [
-  { month: 'Month 1–3', label: 'eCommerce platform selected and contracted', cost: '£28,000', note: 'Chosen without a vendor brief. No integration scoping done.' },
-  { month: 'Month 4–6', label: 'Integration issues discovered. Development work begins', cost: '£19,000', note: 'ERP and eCommerce couldn\'t talk to each other. Manual workarounds introduced.' },
-  { month: 'Month 7–9', label: 'ERP customisation commissioned', cost: '£34,000', note: 'To fix what should have been caught in the original specification.' },
-  { month: 'Month 10–12', label: 'Go-live delayed. Additional resource hired to cover', cost: '£22,000', note: 'Two additional staff members for 6 months to manage manual process.' },
-  { month: 'Month 13–18', label: 'Ongoing fixes, rework, and a second integration attempt', cost: '£51,000', note: 'The original platform was eventually replaced entirely.' },
+  { month: 'Month 1–3',   cost: '£28,000',  label: 'eCommerce platform selected and contracted',              note: "Chosen without a vendor brief. No integration scoping done." },
+  { month: 'Month 4–6',   cost: '£19,000',  label: 'Integration issues discovered. Development work begins', note: "ERP and eCommerce couldn't talk to each other. Manual workarounds introduced." },
+  { month: 'Month 7–9',   cost: '£34,000',  label: 'ERP customisation commissioned',                         note: "To fix what should have been caught in the original specification." },
+  { month: 'Month 10–12', cost: '£22,000',  label: 'Go-live delayed. Additional resource hired to cover',    note: "Two additional staff members for 6 months to manage manual process." },
+  { month: 'Month 13–18', cost: '£51,000',  label: 'Ongoing fixes, rework, and a second integration attempt', note: "The original platform was eventually replaced entirely." },
+];
+
+const auditFindings = [
+  "The ERP's API capability was limited to a specific version that the chosen eCommerce platform didn't support",
+  "The existing ERP had an eCommerce module already — it had never been activated or explored",
+  "Two alternative platforms were better suited to the business model and had native ERP integration",
+  "The business's order data wasn't clean enough for any integration to work without significant preparation",
+  "Three manual processes could have been automated within the existing system at no additional cost",
 ];
 
 export default function CaseStudyPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-[#FDFDFF]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="inline-block px-4 py-2 bg-[#546A7B]/10 text-[#546A7B] rounded-full text-sm font-medium mb-8">
-            Case study
-          </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-[#393D3F] leading-tight mb-8 max-w-3xl">
-            What happens when<br />
-            <span className="text-[#62929E]">the audit doesn&apos;t come first.</span>
-          </h1>
-          <p className="text-xl font-light text-[#393D3F]/70 max-w-2xl leading-relaxed">
-            A print and embroidery business. £154,000. 18 months. And what the £10,000 audit would have prevented.
-          </p>
-        </div>
-      </section>
-
-      {/* CONTEXT */}
-      <section className="py-16 bg-[#393D3F]/5">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-4">The business</p>
-          <h2 className="text-2xl font-bold text-[#393D3F] mb-6">A growing business. A decision made too quickly.</h2>
-          <p className="text-[#393D3F]/70 leading-relaxed mb-4">
-            A £2.4m print and embroidery business with 18 staff. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.
-          </p>
-          <p className="text-[#393D3F]/70 leading-relaxed mb-4">
-            The platform was selected based on a sales demo and a recommendation from another business owner in a different sector. The ERP vendor was asked whether integration was possible. They said yes.
-          </p>
-          <p className="text-[#393D3F]/70 leading-relaxed">
-            No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed.
-          </p>
-        </div>
-      </section>
-
-      {/* TIMELINE */}
-      <section className="py-24 lg:py-32 bg-[#FDFDFF]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-4">What happened</p>
-          <h2 className="text-3xl font-bold text-[#393D3F] mb-12">18 months. £154,000.</h2>
-          <div className="space-y-4">
-            {timeline.map((item, i) => (
-              <div key={i} className="flex gap-6 p-6 rounded-2xl border border-[#C6C5B9]/30 bg-[#FDFDFF]">
-                <div className="flex-shrink-0 text-right w-28">
-                  <div className="text-xs font-medium text-[#546A7B]">{item.month}</div>
-                  <div className="text-xl font-bold text-[#393D3F] mt-1">{item.cost}</div>
-                </div>
-                <div className="border-l border-[#C6C5B9]/40 pl-6">
-                  <div className="font-semibold text-[#393D3F] mb-1">{item.label}</div>
-                  <div className="text-sm text-[#393D3F]/55">{item.note}</div>
-                </div>
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#FDFDFF]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-6">
+                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Case Study</span>
               </div>
-            ))}
-            <div className="flex gap-6 p-6 rounded-2xl border-2 border-[#393D3F] bg-[#393D3F] text-white">
-              <div className="flex-shrink-0 text-right w-28">
-                <div className="text-xs font-medium text-[#C6C5B9]">Total</div>
-                <div className="text-2xl font-bold mt-1">£154,000</div>
-              </div>
-              <div className="border-l border-white/20 pl-6 flex items-center">
-                <div className="font-semibold">In direct costs, additional headcount, and lost productivity over 18 months.</div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#393D3F] leading-tight mb-6">
+                What happens when<br />
+                <span className="text-[#62929E]">the audit doesn&apos;t come first.</span>
+              </h1>
+              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-8 max-w-xl">
+                A print and embroidery business. £154,000. 18 months. And what the £10,000 audit would have prevented.
+              </p>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                Don&apos;t let this be your story <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                <img
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+                  alt="Print and embroidery business operations"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="text-4xl font-bold text-white mb-1">£154,000</div>
+                  <div className="text-sm text-white/70">The cost of not having a £10k audit</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT THE AUDIT WOULD HAVE FOUND */}
-      <section className="py-24 lg:py-32 bg-[#393D3F]/5">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-4">The counterfactual</p>
-          <h2 className="text-3xl font-bold text-[#393D3F] mb-8">What a one-day audit would have found</h2>
-          <div className="space-y-4">
-            {[
-              'The ERP\'s API capability was limited to a specific version that the chosen eCommerce platform didn\'t support',
-              'The existing ERP had an eCommerce module already — it had never been activated or explored',
-              'Two alternative platforms were better suited to the business model and had native ERP integration',
-              'The business\'s order data wasn\'t clean enough for any integration to work without significant preparation',
-              'Three manual processes could have been automated within the existing system at no additional cost',
-            ].map((finding, i) => (
-              <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-[#FDFDFF] border border-[#C6C5B9]/30">
-                <div className="w-6 h-6 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-[#62929E]">{i + 1}</span>
-                </div>
-                <p className="text-sm text-[#393D3F]/70 leading-relaxed">{finding}</p>
+      {/* CONTEXT */}
+      <section className="py-20 bg-[#393D3F]/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
+                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The business</span>
               </div>
-            ))}
+              <h2 className="text-3xl font-bold text-[#393D3F] mb-6">A growing business. A decision made too quickly.</h2>
+              <div className="space-y-4 text-[#393D3F]/70 leading-relaxed">
+                <p>A £2.4m print and embroidery business with 18 staff. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.</p>
+                <p>The platform was selected based on a sales demo and a recommendation from another business owner in a different sector. The ERP vendor was asked whether integration was possible. They said yes.</p>
+                <p>No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed.</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { label: 'Business revenue', value: '£2.4m' },
+                { label: 'Staff at time', value: '18' },
+                { label: 'Years trading', value: '12' },
+                { label: 'Total losses', value: '£154k' },
+              ].map(s => (
+                <div key={s.label} className="p-6 rounded-2xl bg-[#FDFDFF] border border-[#C6C5B9]/40 text-center">
+                  <div className="text-3xl font-bold text-[#393D3F] mb-1">{s.value}</div>
+                  <div className="text-xs text-[#393D3F]/50">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <p className="text-sm text-[#393D3F]/55 mt-6 italic">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-[#62929E]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">Don&apos;t let this be your case study</h3>
-            <p className="text-white/80 max-w-xl">The audit exists to prevent exactly this. One day. Six areas. Everything it costs you in writing — before you commit to anything.</p>
+      {/* TIMELINE — dark */}
+      <section className="py-20 lg:py-28 bg-[#393D3F]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#62929E]/20 border border-[#62929E]/30 mb-4">
+              <span className="text-xs font-semibold text-[#C6C5B9] tracking-wider uppercase">— What happened</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#FDFDFF] mb-4">18 months. £154,000.</h2>
+            <p className="text-[#C6C5B9] text-lg">How the costs accumulated, month by month.</p>
           </div>
-          <Link href="/audit" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white text-[#62929E] text-sm font-semibold hover:bg-[#FDFDFF]/90 transition-colors">
-            Book the audit <ArrowRight size={16} />
-          </Link>
+          <div className="space-y-4 mb-8">
+            {timeline.map((item, i) => (
+              <div key={i} className="flex gap-6 p-6 rounded-2xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10">
+                <div className="flex-shrink-0 text-right w-28">
+                  <div className="text-xs font-medium text-[#62929E]">{item.month}</div>
+                  <div className="text-xl font-bold text-[#FDFDFF] mt-1">{item.cost}</div>
+                </div>
+                <div className="border-l border-[#FDFDFF]/10 pl-6">
+                  <div className="font-semibold text-[#FDFDFF] mb-1">{item.label}</div>
+                  <div className="text-sm text-[#C6C5B9]">{item.note}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex gap-6 p-6 rounded-2xl border-2 border-[#62929E] bg-[#62929E]/10">
+            <div className="flex-shrink-0 text-right w-28">
+              <div className="text-xs font-medium text-[#62929E]">Total</div>
+              <div className="text-2xl font-bold text-[#FDFDFF] mt-1">£154,000</div>
+            </div>
+            <div className="border-l border-[#62929E]/30 pl-6 flex items-center">
+              <div className="font-semibold text-[#FDFDFF]">In direct costs, additional headcount, and lost productivity over 18 months.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT THE AUDIT WOULD HAVE FOUND */}
+      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
+                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The counterfactual</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">What a one-day audit would have found</h2>
+              <p className="text-[#393D3F]/60 mb-8">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
+              <div className="space-y-4">
+                {auditFindings.map((finding, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-[#C6C5B9]/40">
+                    <div className="w-7 h-7 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-[#62929E]">{i + 1}</span>
+                    </div>
+                    <p className="text-sm text-[#393D3F]/70 leading-relaxed">{finding}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8">
+                <div className="text-2xl font-bold text-[#393D3F] mb-2">Don&apos;t let this be your case study</div>
+                <p className="text-[#393D3F]/70 mb-6 text-sm leading-relaxed">The audit exists to prevent exactly this. One day. Six areas. Everything it costs you in writing — before you commit to anything.</p>
+                <div className="space-y-3 mb-8">
+                  {['Written report within 5 days', 'Every issue quantified in £', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (
+                    <div key={item} className="flex items-center gap-2 text-sm text-[#393D3F]/70">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#62929E]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Link href="/audit" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                  Book the audit <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

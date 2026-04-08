@@ -1,54 +1,72 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
+interface Challenge { title: string; body: string }
+
 interface SectorPageProps {
   sector: string;
   tagline: string;
   intro: string;
-  challenges: { title: string; body: string }[];
+  heroImage: string;
+  challenges: Challenge[];
   whatIdo: string[];
   cta?: string;
 }
 
-export function SectorPage({ sector, tagline, intro, challenges, whatIdo, cta }: SectorPageProps) {
+export function SectorPage({ sector, tagline, intro, heroImage, challenges, whatIdo, cta }: SectorPageProps) {
+  const parts = tagline.split('||');
   return (
     <>
       {/* HERO */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-[#FDFDFF]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="inline-block px-4 py-2 bg-[#546A7B]/10 text-[#546A7B] rounded-full text-sm font-medium mb-8">
-            {sector}
-          </div>
-          <h1 className="text-5xl lg:text-6xl font-bold text-[#393D3F] leading-tight mb-8 max-w-3xl">
-            {tagline.split('||').map((part, i) =>
-              i % 2 === 0
-                ? <span key={i}>{part}</span>
-                : <span key={i} className="text-[#62929E]">{part}</span>
-            )}
-          </h1>
-          <p className="text-xl font-light text-[#393D3F]/70 max-w-2xl leading-relaxed mb-10">
-            {intro}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-[#62929E] text-white rounded-lg hover:bg-[#546A7B] transition-colors font-semibold">
-              Book a free call <ArrowRight size={18} />
-            </Link>
-            <Link href="/audit" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#C6C5B9] text-[#393D3F] rounded-lg hover:border-[#62929E] hover:text-[#62929E] transition-colors font-semibold">
-              See how the audit works
-            </Link>
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#FDFDFF]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-6">
+                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— {sector}</span>
+              </div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#393D3F] leading-tight mb-6">
+                {parts.map((part, i) =>
+                  i % 2 === 0
+                    ? <span key={i}>{part}</span>
+                    : <span key={i} className="text-[#62929E]">{part}</span>
+                )}
+              </h1>
+              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-8 max-w-xl">{intro}</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                  Book a free call <ArrowRight size={18} />
+                </Link>
+                <Link href="/audit" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#62929E] text-[#62929E] font-semibold hover:bg-[#62929E]/10 transition-colors">
+                  See how the audit works
+                </Link>
+              </div>
+            </div>
+            <div className="relative hidden lg:block">
+              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                <img src={heroImage} alt={sector} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#393D3F]/40 to-transparent" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CHALLENGES */}
-      <section className="py-24 lg:py-32 bg-[#393D3F]/5">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-4">Common challenges</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-12">Where the problems tend to live</h2>
+      <section className="py-20 lg:py-28 bg-[#393D3F]/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
+              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Common challenges</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">Where the problems tend to live</h2>
+            <p className="text-[#393D3F]/60 text-lg">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {challenges.map(c => (
-              <div key={c.title} className="group p-8 rounded-2xl border border-[#C6C5B9]/30 bg-[#FDFDFF] hover:border-[#62929E] hover:shadow-lg transition-all duration-300">
-                <h3 className="font-bold text-[#393D3F] mb-3">{c.title}</h3>
+            {challenges.map((c, i) => (
+              <div key={c.title} className="group p-6 rounded-2xl border border-[#C6C5B9]/40 bg-[#FDFDFF] hover:border-[#62929E]/40 hover:shadow-md transition-all duration-300">
+                <div className="text-3xl font-bold text-[#C6C5B9] mb-4">{String(i + 1).padStart(2, '0')}</div>
+                <h3 className="text-lg font-bold text-[#393D3F] mb-2">{c.title}</h3>
                 <p className="text-sm text-[#393D3F]/60 leading-relaxed">{c.body}</p>
               </div>
             ))}
@@ -56,34 +74,45 @@ export function SectorPage({ sector, tagline, intro, challenges, whatIdo, cta }:
         </div>
       </section>
 
-      {/* WHAT I DO */}
-      <section className="py-24 lg:py-32 bg-[#FDFDFF]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-4">How I help</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-12">What the work actually looks like</h2>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl">
-            {whatIdo.map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-xs font-bold text-[#62929E]">{String(i + 1).padStart(2, '0')}</span>
-                </div>
-                <span className="text-sm text-[#393D3F]/70 leading-relaxed">{item}</span>
+      {/* HOW I HELP — dark */}
+      <section className="py-20 lg:py-28 bg-[#393D3F]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#62929E]/20 border border-[#62929E]/30 mb-4">
+                <span className="text-xs font-semibold text-[#C6C5B9] tracking-wider uppercase">— How I help</span>
               </div>
-            ))}
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#FDFDFF] mb-4">What the work actually looks like</h2>
+              <p className="text-[#C6C5B9] text-lg mb-8">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+              <div className="space-y-4">
+                {whatIdo.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10">
+                    <div className="w-7 h-7 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-[#62929E]">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <p className="text-sm text-[#C6C5B9] leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lg:sticky lg:top-28">
+              <div className="p-8 rounded-2xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10">
+                <div className="text-2xl font-bold text-[#FDFDFF] mb-2">{cta || 'Ready to find out what it\'s costing you?'}</div>
+                <p className="text-[#C6C5B9] text-sm mb-6 leading-relaxed">The audit starts with a free 60-minute call. No obligation. Just a conversation about what&apos;s happening in your business.</p>
+                <div className="space-y-3 mb-8">
+                  {['One day on site', 'Written report in 5 days', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (
+                    <div key={item} className="flex items-center gap-2 text-sm text-[#C6C5B9]">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#62929E]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                  Book a free call <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* GUARANTEE */}
-      <section className="py-16 bg-[#62929E]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">{cta || 'Ready to find out what it\'s costing you?'}</h3>
-            <p className="text-white/80 max-w-xl">The audit starts with a free 60-minute call. No obligation. Just a conversation about what&apos;s happening in your business.</p>
-          </div>
-          <Link href="/contact" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-white text-[#62929E] text-sm font-semibold hover:bg-[#FDFDFF]/90 transition-colors">
-            Book a free call <ArrowRight size={16} />
-          </Link>
         </div>
       </section>
     </>
