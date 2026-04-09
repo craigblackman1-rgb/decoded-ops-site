@@ -46,11 +46,6 @@ export default function FractionalPage() {
               </div>
               <div className="flex flex-wrap gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-[#0F1923]">£1,500</div>
-                  <div className="text-sm text-[#0F1923]/60">Per month (after Advise tier)</div>
-                </div>
-                <div className="w-px bg-[#93A8C0]" />
-                <div>
                   <div className="text-2xl font-bold text-[#0F1923]">3 months</div>
                   <div className="text-sm text-[#0F1923]/60">Minimum engagement</div>
                 </div>
@@ -58,6 +53,11 @@ export default function FractionalPage() {
                 <div>
                   <div className="text-2xl font-bold text-[#0F1923]">30 days</div>
                   <div className="text-sm text-[#0F1923]/60">Notice after minimum</div>
+                </div>
+                <div className="w-px bg-[#93A8C0]" />
+                <div>
+                  <div className="text-2xl font-bold text-[#0F1923]">No lock-in</div>
+                  <div className="text-sm text-[#0F1923]/60">After the minimum term</div>
                 </div>
               </div>
             </div>
@@ -122,8 +122,8 @@ export default function FractionalPage() {
               <div className="text-xs font-semibold text-[#93A8C0] uppercase tracking-wider mb-6">How it&apos;s priced</div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-3xl font-bold text-[#F8F9FA] mb-1">£1,500<span className="text-lg font-normal text-[#93A8C0]">/mo + VAT</span></div>
-                  <div className="text-sm text-[#93A8C0]">After the Advise tier audit. Minimum 3 months.</div>
+                  <div className="text-xl font-bold text-[#F8F9FA] mb-1">Monthly retainer</div>
+                  <div className="text-sm text-[#93A8C0]">After the Advise tier audit. Minimum 3 months. Pricing on the full <Link href="/pricing" className="text-[#3A86FF] hover:underline">pricing page</Link>.</div>
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-sm text-[#93A8C0] leading-relaxed">
@@ -161,3 +161,4 @@ export default function FractionalPage() {
     </>
   );
 }
+                                                        

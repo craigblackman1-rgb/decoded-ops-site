@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles } from 'lucide-react';
 import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';
 
 const auditAreas = [
@@ -9,27 +9,6 @@ const auditAreas = [
   { icon: GitBranch,    num: '04', title: 'Processes & Operations', desc: 'Every process mapped from order in to invoice out. Stock, fulfilment, and despatch reviewed. Quick wins separated from bigger projects.' },
   { icon: TrendingUp,   num: '05', title: 'Growth & Opportunity',   desc: "Revenue lines with most potential identified. New channels and markets assessed. Technology roadmap built for where you're going, not where you've been." },
   { icon: Sparkles,     num: '06', title: 'AI Readiness',           desc: "Where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale." },
-];
-
-const tiers = [
-  {
-    name: 'Diagnose', price: '£2,500', vat: '+ VAT',
-    description: 'One day on site. Written report within 5 working days. Six audit areas. Every finding specific to your business.',
-    includes: ['Full day on-site audit', 'Written report in plain English', 'All 6 audit areas covered', '50% on booking, 50% on delivery'],
-    cta: 'Book Diagnose', highlight: false,
-  },
-  {
-    name: 'Advise', price: '£3,800', vat: '+ VAT',
-    description: 'Everything in Diagnose, plus independent tool evaluation and a full vendor shortlist — so you go to market on your terms.',
-    includes: ['Everything in Diagnose', 'Independent tool evaluation', 'Vendor shortlist & briefs', 'Platform-agnostic recommendations'],
-    cta: 'Book Advise', highlight: true,
-  },
-  {
-    name: 'Deliver', price: '£3,800 + £1,500/mo', vat: '+ VAT',
-    description: "Full implementation oversight. Minimum 3 months. I stay involved through delivery — holding vendors to the brief.",
-    includes: ['Everything in Advise', 'Implementation oversight', 'Vendor management', '30 days notice after 3-month minimum'],
-    cta: 'Book Deliver', highlight: false,
-  },
 ];
 
 const processSteps = [
@@ -143,50 +122,14 @@ export default function AuditPage() {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* PRICING CTA */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
-              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Pricing</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923]">Choose your engagement level</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {tiers.map(tier => (
-              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#0F1923] border-[#0F1923] shadow-xl' : 'bg-[#F8F9FA] border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md'}`}>
-                {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#3A86FF] text-[#F8F9FA] text-xs font-semibold">Most Popular</span>
-                  </div>
-                )}
-                <div className="mb-6">
-                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#1D3557]'}`}>{tier.name}</div>
-                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#F8F9FA]' : 'text-[#0F1923]'}`}>{tier.price}</div>
-                  <div className={`text-xs ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/50'}`}>{tier.vat}</div>
-                </div>
-                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/60'}`}>{tier.description}</p>
-                <ul className="space-y-2.5 mb-8">
-                  {tier.includes.map(item => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={16} className="text-[#3A86FF] flex-shrink-0 mt-0.5" />
-                      <span className={`text-sm ${tier.highlight ? 'text-[#F8F9FA]/80' : 'text-[#0F1923]/70'}`}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#3A86FF] text-[#F8F9FA] hover:bg-[#1D3557]' : 'border-2 border-[#3A86FF] text-[#3A86FF] hover:bg-[#3A86FF]/10'}`}>
-                  {tier.cta} <ArrowRight size={16} />
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-2xl bg-[#3A86FF]/10 border border-[#3A86FF]/25 p-8 text-center mb-6">
-            <div className="text-2xl font-bold text-[#0F1923] mb-2">The 3× Clarity Guarantee</div>
-            <p className="text-[#0F1923]/70 max-w-2xl mx-auto">If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.</p>
-          </div>
-          <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3A86FF] hover:text-[#1D3557] transition-colors">
-              View full pricing — including Small Business offer <ArrowRight size={15} />
+          <div className="rounded-2xl bg-[#0F1923] p-10 text-center">
+            <div className="text-2xl font-bold text-[#F8F9FA] mb-3">Not sure which engagement level is right?</div>
+            <p className="text-[#93A8C0] max-w-xl mx-auto mb-8">Answer four quick questions and we&apos;ll point you to the right fit — including our Small Business &amp; AI Readiness Check options.</p>
+            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
+              Find the right fit <ArrowRight size={18} />
             </Link>
           </div>
         </div>
@@ -194,60 +137,4 @@ export default function AuditPage() {
 
       {/* DELIVERABLES */}
       <section className="py-20 lg:py-28 bg-[#0F1923]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
-                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— What you get</span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-8">The deliverables</h2>
-              <div className="space-y-4">
-                {deliverables.map(item => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#3A86FF] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#0F1923]/70">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-10">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
-                  Book a free 60-minute call first <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-            <div className="hidden lg:flex items-center justify-center p-8 rounded-2xl bg-[#0F1923]">
-              <svg viewBox="0 0 280 220" className="w-full max-w-xs" aria-hidden="true">
-                {/* Report document */}
-                <rect x="40" y="20" width="200" height="160" rx="8" fill="#F8F9FA" />
-                <rect x="40" y="20" width="200" height="28" rx="8" fill="#3A86FF" />
-                <rect x="40" y="40" width="200" height="8" fill="#3A86FF" />
-                {/* Doc title */}
-                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="system-ui">OPERATIONS AUDIT REPORT</text>
-                {/* Lines of text */}
-                {[60, 76, 92, 108, 124, 140, 156].map((y, i) => (
-                  <rect key={y} x="60" y={y} width={i % 3 === 2 ? 100 : 160} height="7" rx="3"
-                    fill="#93A8C0" opacity={0.3 + (i * 0.05)} />
-                ))}
-                {/* Checkmarks */}
-                {[68, 84, 100, 116, 132, 148].map((y, i) => (
-                  <g key={y}>
-                    <circle cx="52" cy={y} r="5" fill="#3A86FF" opacity="0.7" />
-                    <text x="52" y={y + 3.5} textAnchor="middle" fontSize="7" fill="white" fontWeight="700">✓</text>
-                  </g>
-                ))}
-                {/* Bottom section — quantified */}
-                <rect x="56" y="164" width="168" height="1" fill="#93A8C0" opacity="0.3" />
-                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#3A86FF" fontWeight="700" fontFamily="system-ui">TOTAL RECOVERABLE VALUE</text>
-                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#0F1923" fontWeight="800" fontFamily="system-ui">£47,200</text>
-                {/* Corner badge */}
-                <circle cx="220" cy="26" r="16" fill="#0F1923" />
-                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#3A86FF" fontWeight="700" fontFamily="system-ui">3×</text>
-                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#93A8C0" fontFamily="system-ui">Clarity</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
+        <div className
