@@ -8,12 +8,12 @@ export function AuditWheelGraphic() {
   const gap = 0.04; // radians gap between segments
 
   const areas = [
-    { num: '01', label: 'IT\nInfrastructure',   color: '#62929E' },
-    { num: '02', label: 'Software\n& Systems',   color: '#546A7B' },
-    { num: '03', label: 'eCommerce\n& Digital',  color: '#62929E' },
-    { num: '04', label: 'Processes\n& Ops',       color: '#546A7B' },
-    { num: '05', label: 'Growth &\nOpportunity', color: '#62929E' },
-    { num: '06', label: 'AI\nReadiness',          color: '#546A7B' },
+    { num: '01', label: 'IT\nInfrastructure',   color: '#3A86FF' },
+    { num: '02', label: 'Software\n& Systems',   color: '#1D3557' },
+    { num: '03', label: 'eCommerce\n& Digital',  color: '#3A86FF' },
+    { num: '04', label: 'Processes\n& Ops',       color: '#1D3557' },
+    { num: '05', label: 'Growth &\nOpportunity', color: '#3A86FF' },
+    { num: '06', label: 'AI\nReadiness',          color: '#1D3557' },
   ];
 
   const sliceAngle = (2 * Math.PI) / segments;
@@ -35,8 +35,8 @@ export function AuditWheelGraphic() {
       <svg viewBox="0 0 400 400" className="w-full max-w-[420px]" aria-hidden="true">
         <defs>
           <radialGradient id="wheelBg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#62929E" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#62929E" stopOpacity="0" />
+            <stop offset="0%" stopColor="#3A86FF" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#3A86FF" stopOpacity="0" />
           </radialGradient>
         </defs>
 
@@ -85,9 +85,9 @@ export function AuditWheelGraphic() {
 
           return (
             <g key={`label-${i}`}>
-              <line x1={lineStart} y1={lineStartY} x2={lineEnd} y2={lineEndY} stroke="#C6C5B9" strokeWidth="1" />
+              <line x1={lineStart} y1={lineStartY} x2={lineEnd} y2={lineEndY} stroke="#93A8C0" strokeWidth="1" />
               {lines.map((line, li) => (
-                <text key={li} x={lx} y={ly + li * 13 - (lines.length - 1) * 6} textAnchor={anchor} fontSize="9.5" fontWeight="600" fill="#393D3F" fontFamily="system-ui, sans-serif">
+                <text key={li} x={lx} y={ly + li * 13 - (lines.length - 1) * 6} textAnchor={anchor} fontSize="9.5" fontWeight="600" fill="#0F1923" fontFamily="system-ui, sans-serif">
                   {line}
                 </text>
               ))}
@@ -96,13 +96,13 @@ export function AuditWheelGraphic() {
         })}
 
         {/* Inner ring */}
-        <circle cx={cx} cy={cy} r={innerR} fill="#FDFDFF" stroke="#C6C5B9" strokeWidth="1" />
-        <circle cx={cx} cy={cy} r={innerR - 10} fill="#393D3F" />
+        <circle cx={cx} cy={cy} r={innerR} fill="#F8F9FA" stroke="#93A8C0" strokeWidth="1" />
+        <circle cx={cx} cy={cy} r={innerR - 10} fill="#0F1923" />
 
         {/* Centre text */}
-        <text x={cx} y={cy - 10} textAnchor="middle" fontSize="10" fontWeight="700" fill="#FDFDFF" fontFamily="system-ui, sans-serif" letterSpacing="0.5">ONE</text>
-        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="10" fontWeight="700" fill="#62929E" fontFamily="system-ui, sans-serif" letterSpacing="0.5">DAY</text>
-        <text x={cx} y={cy + 17} textAnchor="middle" fontSize="8" fill="#C6C5B9" fontFamily="system-ui, sans-serif">6 areas</text>
+        <text x={cx} y={cy - 10} textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="system-ui, sans-serif" letterSpacing="0.5">ONE</text>
+        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="10" fontWeight="700" fill="#3A86FF" fontFamily="system-ui, sans-serif" letterSpacing="0.5">DAY</text>
+        <text x={cx} y={cy + 17} textAnchor="middle" fontSize="8" fill="#93A8C0" fontFamily="system-ui, sans-serif">6 areas</text>
       </svg>
     </div>
   );

@@ -22,21 +22,21 @@ export default function CaseStudyPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#FDFDFF]">
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-6">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Case Study</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-6">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Case Study</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#393D3F] leading-tight mb-6">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0F1923] leading-tight mb-6">
                 What happens when<br />
-                <span className="text-[#62929E]">the audit doesn&apos;t come first.</span>
+                <span className="text-[#3A86FF]">the audit doesn&apos;t come first.</span>
               </h1>
-              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg text-[#0F1923]/70 leading-relaxed mb-8 max-w-xl">
                 A print and embroidery business. £154,000. 18 months. And what the £10,000 audit would have prevented.
               </p>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                 Don&apos;t let this be your story <ArrowRight size={18} />
               </Link>
             </div>
@@ -48,15 +48,15 @@ export default function CaseStudyPage() {
       </section>
 
       {/* CONTEXT */}
-      <section className="py-20 bg-[#393D3F]/5">
+      <section className="py-20 bg-[#0F1923]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The business</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— The business</span>
               </div>
-              <h2 className="text-3xl font-bold text-[#393D3F] mb-6">A growing business. A decision made too quickly.</h2>
-              <div className="space-y-4 text-[#393D3F]/70 leading-relaxed">
+              <h2 className="text-3xl font-bold text-[#0F1923] mb-6">A growing business. A decision made too quickly.</h2>
+              <div className="space-y-4 text-[#0F1923]/70 leading-relaxed">
                 <p>A £2.4m print and embroidery business with 18 staff. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.</p>
                 <p>The platform was selected based on a sales demo and a recommendation from another business owner in a different sector. The ERP vendor was asked whether integration was possible. They said yes.</p>
                 <p>No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed.</p>
@@ -69,9 +69,9 @@ export default function CaseStudyPage() {
                 { label: 'Years trading', value: '12' },
                 { label: 'Total losses', value: '£154k' },
               ].map(s => (
-                <div key={s.label} className="p-6 rounded-2xl bg-[#FDFDFF] border border-[#C6C5B9]/40 text-center">
-                  <div className="text-3xl font-bold text-[#393D3F] mb-1">{s.value}</div>
-                  <div className="text-xs text-[#393D3F]/50">{s.label}</div>
+                <div key={s.label} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#93A8C0]/40 text-center">
+                  <div className="text-3xl font-bold text-[#0F1923] mb-1">{s.value}</div>
+                  <div className="text-xs text-[#0F1923]/50">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -80,75 +80,75 @@ export default function CaseStudyPage() {
       </section>
 
       {/* TIMELINE — dark */}
-      <section className="py-20 lg:py-28 bg-[#393D3F]">
+      <section className="py-20 lg:py-28 bg-[#0F1923]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#62929E]/20 border border-[#62929E]/30 mb-4">
-              <span className="text-xs font-semibold text-[#C6C5B9] tracking-wider uppercase">— What happened</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3A86FF]/20 border border-[#3A86FF]/30 mb-4">
+              <span className="text-xs font-semibold text-[#93A8C0] tracking-wider uppercase">— What happened</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#FDFDFF] mb-4">18 months. £154,000.</h2>
-            <p className="text-[#C6C5B9] text-lg">How the costs accumulated, month by month.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">18 months. £154,000.</h2>
+            <p className="text-[#93A8C0] text-lg">How the costs accumulated, month by month.</p>
           </div>
           <div className="space-y-4 mb-8">
             {timeline.map((item, i) => (
-              <div key={i} className="flex gap-6 p-6 rounded-2xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10">
+              <div key={i} className="flex gap-6 p-6 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
                 <div className="flex-shrink-0 text-right w-28">
-                  <div className="text-xs font-medium text-[#62929E]">{item.month}</div>
-                  <div className="text-xl font-bold text-[#FDFDFF] mt-1">{item.cost}</div>
+                  <div className="text-xs font-medium text-[#3A86FF]">{item.month}</div>
+                  <div className="text-xl font-bold text-[#F8F9FA] mt-1">{item.cost}</div>
                 </div>
-                <div className="border-l border-[#FDFDFF]/10 pl-6">
-                  <div className="font-semibold text-[#FDFDFF] mb-1">{item.label}</div>
-                  <div className="text-sm text-[#C6C5B9]">{item.note}</div>
+                <div className="border-l border-[#F8F9FA]/10 pl-6">
+                  <div className="font-semibold text-[#F8F9FA] mb-1">{item.label}</div>
+                  <div className="text-sm text-[#93A8C0]">{item.note}</div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex gap-6 p-6 rounded-2xl border-2 border-[#62929E] bg-[#62929E]/10">
+          <div className="flex gap-6 p-6 rounded-2xl border-2 border-[#3A86FF] bg-[#3A86FF]/10">
             <div className="flex-shrink-0 text-right w-28">
-              <div className="text-xs font-medium text-[#62929E]">Total</div>
-              <div className="text-2xl font-bold text-[#FDFDFF] mt-1">£154,000</div>
+              <div className="text-xs font-medium text-[#3A86FF]">Total</div>
+              <div className="text-2xl font-bold text-[#F8F9FA] mt-1">£154,000</div>
             </div>
-            <div className="border-l border-[#62929E]/30 pl-6 flex items-center">
-              <div className="font-semibold text-[#FDFDFF]">In direct costs, additional headcount, and lost productivity over 18 months.</div>
+            <div className="border-l border-[#3A86FF]/30 pl-6 flex items-center">
+              <div className="font-semibold text-[#F8F9FA]">In direct costs, additional headcount, and lost productivity over 18 months.</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* WHAT THE AUDIT WOULD HAVE FOUND */}
-      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The counterfactual</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— The counterfactual</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">What a one-day audit would have found</h2>
-              <p className="text-[#393D3F]/60 mb-8">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-4">What a one-day audit would have found</h2>
+              <p className="text-[#0F1923]/60 mb-8">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
               <div className="space-y-4">
                 {auditFindings.map((finding, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-[#C6C5B9]/40">
-                    <div className="w-7 h-7 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-[#62929E]">{i + 1}</span>
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-[#93A8C0]/40">
+                    <div className="w-7 h-7 rounded-full bg-[#3A86FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-[#3A86FF]">{i + 1}</span>
                     </div>
-                    <p className="text-sm text-[#393D3F]/70 leading-relaxed">{finding}</p>
+                    <p className="text-sm text-[#0F1923]/70 leading-relaxed">{finding}</p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8">
-                <div className="text-2xl font-bold text-[#393D3F] mb-2">Don&apos;t let this be your case study</div>
-                <p className="text-[#393D3F]/70 mb-6 text-sm leading-relaxed">The audit exists to prevent exactly this. One day. Six areas. Everything it costs you in writing — before you commit to anything.</p>
+              <div className="rounded-2xl bg-[#3A86FF]/10 border border-[#3A86FF]/25 p-8">
+                <div className="text-2xl font-bold text-[#0F1923] mb-2">Don&apos;t let this be your case study</div>
+                <p className="text-[#0F1923]/70 mb-6 text-sm leading-relaxed">The audit exists to prevent exactly this. One day. Six areas. Everything it costs you in writing — before you commit to anything.</p>
                 <div className="space-y-3 mb-8">
                   {['Written report within 5 days', 'Every issue quantified in £', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (
-                    <div key={item} className="flex items-center gap-2 text-sm text-[#393D3F]/70">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#62929E]" />
+                    <div key={item} className="flex items-center gap-2 text-sm text-[#0F1923]/70">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#3A86FF]" />
                       {item}
                     </div>
                   ))}
                 </div>
-                <Link href="/audit" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                <Link href="/audit" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                   Book the audit <ArrowRight size={18} />
                 </Link>
               </div>

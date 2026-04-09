@@ -52,25 +52,26 @@ export default function AuditPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#FDFDFF]">
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-6">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The Operations Audit</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-6">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— The Operations Audit</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#393D3F] leading-tight mb-6">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0F1923] leading-tight mb-6">
                 One day on site.<br />
-                <span className="text-[#62929E]">Everything it costs you</span> in writing within five days.
+                <span className="text-[#3A86FF]">Everything it costs you</span><br />
+                in writing within five days.
               </h1>
-              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg text-[#0F1923]/70 leading-relaxed mb-8 max-w-xl">
                 A structured, independent review of your operations, technology, and processes. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                   Book the audit <ArrowRight size={18} />
                 </Link>
-                <Link href="/case-study" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#62929E] text-[#62929E] font-semibold hover:bg-[#62929E]/10 transition-colors">
+                <Link href="/case-study" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#3A86FF] text-[#3A86FF] font-semibold hover:bg-[#3A86FF]/10 transition-colors">
                   See a real example
                 </Link>
               </div>
@@ -83,28 +84,28 @@ export default function AuditPage() {
       </section>
 
       {/* SIX AUDIT AREAS */}
-      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— What gets audited</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— What gets audited</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">Six areas. Every time.</h2>
-            <p className="text-[#393D3F]/60 text-lg">The same six areas are covered in every audit — because in this sector, the problems always live in the same places.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-4">Six areas. Every time.</h2>
+            <p className="text-[#0F1923]/60 text-lg">The same six areas are covered in every audit — because in this sector, the problems always live in the same places.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {auditAreas.map(area => {
               const Icon = area.icon;
               return (
-                <div key={area.num} className="group p-6 rounded-2xl border border-[#C6C5B9]/40 hover:border-[#62929E]/40 hover:shadow-md transition-all duration-300 bg-[#FDFDFF]">
+                <div key={area.num} className="group p-6 rounded-2xl border border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md transition-all duration-300 bg-[#F8F9FA]">
                   <div className="flex items-start gap-4 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#62929E]/10 flex items-center justify-center flex-shrink-0">
-                      <Icon size={20} className="text-[#62929E]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#3A86FF]/10 flex items-center justify-center flex-shrink-0">
+                      <Icon size={20} className="text-[#3A86FF]" />
                     </div>
-                    <span className="text-3xl font-bold text-[#C6C5B9]">{area.num}</span>
+                    <span className="text-3xl font-bold text-[#93A8C0]">{area.num}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#393D3F] mb-2">{area.title}</h3>
-                  <p className="text-sm text-[#393D3F]/60 leading-relaxed">{area.desc}</p>
+                  <h3 className="text-lg font-bold text-[#0F1923] mb-2">{area.title}</h3>
+                  <p className="text-sm text-[#0F1923]/60 leading-relaxed">{area.desc}</p>
                 </div>
               );
             })}
@@ -113,27 +114,27 @@ export default function AuditPage() {
       </section>
 
       {/* PROCESS — dark */}
-      <section className="py-20 lg:py-28 bg-[#393D3F]">
+      <section className="py-20 lg:py-28 bg-[#0F1923]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#62929E]/20 border border-[#62929E]/30 mb-4">
-              <span className="text-xs font-semibold text-[#C6C5B9] tracking-wider uppercase">— The process</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3A86FF]/20 border border-[#3A86FF]/30 mb-4">
+              <span className="text-xs font-semibold text-[#93A8C0] tracking-wider uppercase">— The process</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#FDFDFF] mb-4">What happens, step by step</h2>
-            <p className="text-[#C6C5B9] text-lg">From your first call through to the debrief — what to expect at every stage.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">What happens, step by step</h2>
+            <p className="text-[#93A8C0] text-lg">From your first call through to the debrief — what to expect at every stage.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
-              <div key={step.num} className="relative p-6 rounded-2xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10 hover:bg-white/[0.08] transition-colors">
-                <div className="text-5xl font-bold text-[#62929E]/30 mb-4">{step.num}</div>
-                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#62929E]/20 mb-3">
-                  <span className="text-xs text-[#62929E] font-medium">{step.detail}</span>
+              <div key={step.num} className="relative p-6 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10 hover:bg-white/[0.08] transition-colors">
+                <div className="text-5xl font-bold text-[#3A86FF]/30 mb-4">{step.num}</div>
+                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#3A86FF]/20 mb-3">
+                  <span className="text-xs text-[#3A86FF] font-medium">{step.detail}</span>
                 </div>
-                <h3 className="text-xl font-bold text-[#FDFDFF] mb-3">{step.title}</h3>
-                <p className="text-[#C6C5B9] text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-xl font-bold text-[#F8F9FA] mb-3">{step.title}</h3>
+                <p className="text-[#93A8C0] text-sm leading-relaxed">{step.desc}</p>
                 {i < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <div className="w-6 h-0.5 bg-[#62929E]/40" />
+                    <div className="w-6 h-0.5 bg-[#3A86FF]/40" />
                   </div>
                 )}
               </div>
@@ -143,48 +144,48 @@ export default function AuditPage() {
       </section>
 
       {/* PRICING */}
-      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Pricing</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Pricing</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F]">Choose your engagement level</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923]">Choose your engagement level</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {tiers.map(tier => (
-              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#393D3F] border-[#393D3F] shadow-xl' : 'bg-[#FDFDFF] border-[#C6C5B9]/40 hover:border-[#62929E]/40 hover:shadow-md'}`}>
+              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#0F1923] border-[#0F1923] shadow-xl' : 'bg-[#F8F9FA] border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md'}`}>
                 {tier.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#62929E] text-[#FDFDFF] text-xs font-semibold">Most Popular</span>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#3A86FF] text-[#F8F9FA] text-xs font-semibold">Most Popular</span>
                   </div>
                 )}
                 <div className="mb-6">
-                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#546A7B]'}`}>{tier.name}</div>
-                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#FDFDFF]' : 'text-[#393D3F]'}`}>{tier.price}</div>
-                  <div className={`text-xs ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#393D3F]/50'}`}>{tier.vat}</div>
+                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#1D3557]'}`}>{tier.name}</div>
+                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#F8F9FA]' : 'text-[#0F1923]'}`}>{tier.price}</div>
+                  <div className={`text-xs ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/50'}`}>{tier.vat}</div>
                 </div>
-                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#393D3F]/60'}`}>{tier.description}</p>
+                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/60'}`}>{tier.description}</p>
                 <ul className="space-y-2.5 mb-8">
                   {tier.includes.map(item => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={16} className="text-[#62929E] flex-shrink-0 mt-0.5" />
-                      <span className={`text-sm ${tier.highlight ? 'text-[#FDFDFF]/80' : 'text-[#393D3F]/70'}`}>{item}</span>
+                      <CheckCircle2 size={16} className="text-[#3A86FF] flex-shrink-0 mt-0.5" />
+                      <span className={`text-sm ${tier.highlight ? 'text-[#F8F9FA]/80' : 'text-[#0F1923]/70'}`}>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#62929E] text-[#FDFDFF] hover:bg-[#546A7B]' : 'border-2 border-[#62929E] text-[#62929E] hover:bg-[#62929E]/10'}`}>
+                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#3A86FF] text-[#F8F9FA] hover:bg-[#1D3557]' : 'border-2 border-[#3A86FF] text-[#3A86FF] hover:bg-[#3A86FF]/10'}`}>
                   {tier.cta} <ArrowRight size={16} />
                 </Link>
               </div>
             ))}
           </div>
-          <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8 text-center mb-6">
-            <div className="text-2xl font-bold text-[#393D3F] mb-2">The 3× Clarity Guarantee</div>
-            <p className="text-[#393D3F]/70 max-w-2xl mx-auto">If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.</p>
+          <div className="rounded-2xl bg-[#3A86FF]/10 border border-[#3A86FF]/25 p-8 text-center mb-6">
+            <div className="text-2xl font-bold text-[#0F1923] mb-2">The 3× Clarity Guarantee</div>
+            <p className="text-[#0F1923]/70 max-w-2xl mx-auto">If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.</p>
           </div>
           <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#62929E] hover:text-[#546A7B] transition-colors">
+            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3A86FF] hover:text-[#1D3557] transition-colors">
               View full pricing — including Small Business offer <ArrowRight size={15} />
             </Link>
           </div>
@@ -192,56 +193,56 @@ export default function AuditPage() {
       </section>
 
       {/* DELIVERABLES */}
-      <section className="py-20 lg:py-28 bg-[#393D3F]/5">
+      <section className="py-20 lg:py-28 bg-[#0F1923]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— What you get</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— What you get</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-8">The deliverables</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-8">The deliverables</h2>
               <div className="space-y-4">
                 {deliverables.map(item => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#62929E] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#393D3F]/70">{item}</span>
+                    <CheckCircle2 size={18} className="text-[#3A86FF] mt-0.5 flex-shrink-0" />
+                    <span className="text-[#0F1923]/70">{item}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-10">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                   Book a free 60-minute call first <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center p-8 rounded-2xl bg-[#393D3F]">
+            <div className="hidden lg:flex items-center justify-center p-8 rounded-2xl bg-[#0F1923]">
               <svg viewBox="0 0 280 220" className="w-full max-w-xs" aria-hidden="true">
                 {/* Report document */}
-                <rect x="40" y="20" width="200" height="160" rx="8" fill="#FDFDFF" />
-                <rect x="40" y="20" width="200" height="28" rx="8" fill="#62929E" />
-                <rect x="40" y="40" width="200" height="8" fill="#62929E" />
+                <rect x="40" y="20" width="200" height="160" rx="8" fill="#F8F9FA" />
+                <rect x="40" y="20" width="200" height="28" rx="8" fill="#3A86FF" />
+                <rect x="40" y="40" width="200" height="8" fill="#3A86FF" />
                 {/* Doc title */}
-                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#FDFDFF" fontFamily="system-ui">OPERATIONS AUDIT REPORT</text>
+                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="system-ui">OPERATIONS AUDIT REPORT</text>
                 {/* Lines of text */}
                 {[60, 76, 92, 108, 124, 140, 156].map((y, i) => (
                   <rect key={y} x="60" y={y} width={i % 3 === 2 ? 100 : 160} height="7" rx="3"
-                    fill="#C6C5B9" opacity={0.3 + (i * 0.05)} />
+                    fill="#93A8C0" opacity={0.3 + (i * 0.05)} />
                 ))}
                 {/* Checkmarks */}
                 {[68, 84, 100, 116, 132, 148].map((y, i) => (
                   <g key={y}>
-                    <circle cx="52" cy={y} r="5" fill="#62929E" opacity="0.7" />
+                    <circle cx="52" cy={y} r="5" fill="#3A86FF" opacity="0.7" />
                     <text x="52" y={y + 3.5} textAnchor="middle" fontSize="7" fill="white" fontWeight="700">✓</text>
                   </g>
                 ))}
                 {/* Bottom section — quantified */}
-                <rect x="56" y="164" width="168" height="1" fill="#C6C5B9" opacity="0.3" />
-                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#62929E" fontWeight="700" fontFamily="system-ui">TOTAL RECOVERABLE VALUE</text>
-                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#393D3F" fontWeight="800" fontFamily="system-ui">£47,200</text>
+                <rect x="56" y="164" width="168" height="1" fill="#93A8C0" opacity="0.3" />
+                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#3A86FF" fontWeight="700" fontFamily="system-ui">TOTAL RECOVERABLE VALUE</text>
+                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#0F1923" fontWeight="800" fontFamily="system-ui">£47,200</text>
                 {/* Corner badge */}
-                <circle cx="220" cy="26" r="16" fill="#393D3F" />
-                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#62929E" fontWeight="700" fontFamily="system-ui">3×</text>
-                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#C6C5B9" fontFamily="system-ui">Clarity</text>
+                <circle cx="220" cy="26" r="16" fill="#0F1923" />
+                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#3A86FF" fontWeight="700" fontFamily="system-ui">3×</text>
+                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#93A8C0" fontFamily="system-ui">Clarity</text>
               </svg>
             </div>
           </div>

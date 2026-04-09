@@ -78,34 +78,34 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#FDFDFF]">
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* Left column */}
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-6">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-6">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">
                   — Operations &amp; Technology Consultancy
                 </span>
               </div>
 
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#393D3F] leading-tight mb-6">
-                The penny drop<span className="text-[#62929E]"> moment.</span>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0F1923] leading-tight mb-6">
+                The penny drop<span className="text-[#3A86FF]"> moment.</span>
               </h1>
 
-              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-4 max-w-xl">
+              <p className="text-lg text-[#0F1923]/70 leading-relaxed mb-4 max-w-xl">
                 You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don&apos;t talk to each other.
               </p>
-              <p className="text-lg text-[#393D3F]/70 leading-relaxed mb-8 max-w-xl">
+              <p className="text-lg text-[#0F1923]/70 leading-relaxed mb-8 max-w-xl">
                 I help print, embroidery, workwear, and promotional merchandise businesses decode exactly what&apos;s happening in their operation — and build a clear plan to fix it. Plain English. No jargon. No vendor agenda.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link href="/audit" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+                <Link href="/audit" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                   See how it works <ArrowRight size={18} />
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#62929E] text-[#62929E] font-semibold hover:bg-[#62929E]/10 transition-colors">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#3A86FF] text-[#3A86FF] font-semibold hover:bg-[#3A86FF]/10 transition-colors">
                   <Phone size={18} /> Book a free 60-min call
                 </Link>
               </div>
@@ -113,18 +113,18 @@ export default function HomePage() {
               {/* Stats strip */}
               <div className="flex flex-wrap gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-[#393D3F]">25+</div>
-                  <div className="text-sm text-[#393D3F]/60">Years in the sector</div>
+                  <div className="text-2xl font-bold text-[#0F1923]">25+</div>
+                  <div className="text-sm text-[#0F1923]/60">Years in the sector</div>
                 </div>
-                <div className="w-px bg-[#C6C5B9]" />
+                <div className="w-px bg-[#93A8C0]" />
                 <div>
-                  <div className="text-2xl font-bold text-[#393D3F]">£150k+</div>
-                  <div className="text-sm text-[#393D3F]/60">Largest project delivered</div>
+                  <div className="text-2xl font-bold text-[#0F1923]">£150k+</div>
+                  <div className="text-sm text-[#0F1923]/60">Largest project delivered</div>
                 </div>
-                <div className="w-px bg-[#C6C5B9]" />
+                <div className="w-px bg-[#93A8C0]" />
                 <div>
-                  <div className="text-2xl font-bold text-[#393D3F]">3×</div>
-                  <div className="text-sm text-[#393D3F]/60">Clarity guarantee</div>
+                  <div className="text-2xl font-bold text-[#0F1923]">3×</div>
+                  <div className="text-sm text-[#0F1923]/60">Clarity guarantee</div>
                 </div>
               </div>
             </div>
@@ -139,11 +139,11 @@ export default function HomePage() {
       </section>
 
       {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
-      <div className="bg-[#393D3F] py-4 px-6">
+      <div className="bg-[#0F1923] py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-3 flex-wrap">
-          <span className="text-xs font-medium tracking-widest uppercase text-[#FDFDFF]/40 min-w-[70px]">I work with</span>
+          <span className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/40 min-w-[70px]">I work with</span>
           {sectors.map(s => (
-            <Link key={s.href} href={s.href} className="text-xs text-[#FDFDFF]/70 border border-[#FDFDFF]/15 px-3 py-1.5 rounded-full hover:bg-[#62929E] hover:border-[#62929E] hover:text-[#FDFDFF] transition-all">
+            <Link key={s.href} href={s.href} className="text-xs text-[#F8F9FA]/70 border border-[#F8F9FA]/15 px-3 py-1.5 rounded-full hover:bg-[#3A86FF] hover:border-[#3A86FF] hover:text-[#F8F9FA] transition-all">
               {s.name}
             </Link>
           ))}
@@ -151,16 +151,16 @@ export default function HomePage() {
       </div>
 
       {/* ── HOOK QUOTE ───────────────────────────────────────────────────────── */}
-      <div className="bg-[#393D3F] py-16 px-6 text-center border-t border-[#FDFDFF]/10">
-        <blockquote className="text-xl lg:text-2xl font-semibold text-[#FDFDFF] max-w-3xl mx-auto leading-relaxed mb-4">
+      <div className="bg-[#0F1923] py-16 px-6 text-center border-t border-[#F8F9FA]/10">
+        <blockquote className="text-xl lg:text-2xl font-semibold text-[#F8F9FA] max-w-3xl mx-auto leading-relaxed mb-4">
           &ldquo;If I spent a day in your business looking at your systems, your processes, and your technology — how{' '}
-          <span className="text-[#62929E]">confident</span> are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
+          <span className="text-[#3A86FF]">confident</span> are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
         </blockquote>
-        <p className="text-sm text-[#FDFDFF]/45">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
+        <p className="text-sm text-[#F8F9FA]/45">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
       </div>
 
       {/* ── ABOUT / WHY DECODED OPS ──────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#393D3F]/5">
+      <section className="py-20 lg:py-28 bg-[#0F1923]/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
 
@@ -171,19 +171,19 @@ export default function HomePage() {
 
             {/* Right — content */}
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-                <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— About Craig Blackman</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+                <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— About Craig Blackman</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-6">
                 Someone from the industry.<br />Not parachuting in.
               </h2>
-              <p className="text-[#393D3F]/70 text-lg leading-relaxed mb-4">
+              <p className="text-[#0F1923]/70 text-lg leading-relaxed mb-4">
                 I&apos;ve spent 25 years working inside the businesses I now advise — print, embroidery, workwear, promotional merchandise, and branded apparel. I&apos;ve been through what you&apos;re going through. I know where the money disappears and why the systems don&apos;t connect.
               </p>
-              <p className="text-[#393D3F]/70 leading-relaxed mb-8">
+              <p className="text-[#0F1923]/70 leading-relaxed mb-8">
                 Most technology advice fails businesses like yours because it comes from people who&apos;ve never processed a decorated order in their life. I built Decoded Ops because product-based businesses with a decoration service deserve someone who genuinely understands their operation from the inside.
               </p>
-              <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+              <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
                 Start with a free 60-min call
               </Link>
             </div>
@@ -195,12 +195,12 @@ export default function HomePage() {
             {differentiators.map(d => {
               const Icon = d.icon;
               return (
-                <div key={d.title} className="p-6 rounded-2xl bg-[#FDFDFF] border border-[#C6C5B9]/40">
-                  <div className="w-11 h-11 rounded-xl bg-[#62929E]/10 flex items-center justify-center mb-4">
-                    <Icon size={22} className="text-[#62929E]" />
+                <div key={d.title} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#93A8C0]/40">
+                  <div className="w-11 h-11 rounded-xl bg-[#3A86FF]/10 flex items-center justify-center mb-4">
+                    <Icon size={22} className="text-[#3A86FF]" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#393D3F] mb-2">{d.title}</h3>
-                  <p className="text-sm text-[#393D3F]/60 leading-relaxed">{d.desc}</p>
+                  <h3 className="text-lg font-bold text-[#0F1923] mb-2">{d.title}</h3>
+                  <p className="text-sm text-[#0F1923]/60 leading-relaxed">{d.desc}</p>
                 </div>
               );
             })}
@@ -209,14 +209,14 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES / AUDIT AREAS ───────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— The Operational Clarity Audit</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— The Operational Clarity Audit</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">One day. Six areas. Complete clarity.</h2>
-            <p className="text-[#393D3F]/60 text-lg">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-4">One day. Six areas. Complete clarity.</h2>
+            <p className="text-[#0F1923]/60 text-lg">
               I spend a day in your business and cover six areas that most technology consultants never go near. The result is a plain English report that tells you exactly what&apos;s happening, what it&apos;s costing you, and what to do about it.
             </p>
           </div>
@@ -225,15 +225,15 @@ export default function HomePage() {
             {auditAreas.map(area => {
               const Icon = area.icon;
               return (
-                <div key={area.num} className="group p-6 rounded-2xl border border-[#C6C5B9]/40 hover:border-[#62929E]/40 hover:shadow-md transition-all duration-300 bg-[#FDFDFF]">
+                <div key={area.num} className="group p-6 rounded-2xl border border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md transition-all duration-300 bg-[#F8F9FA]">
                   <div className="flex items-start gap-4 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#62929E]/10 flex items-center justify-center flex-shrink-0">
-                      <Icon size={20} className="text-[#62929E]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#3A86FF]/10 flex items-center justify-center flex-shrink-0">
+                      <Icon size={20} className="text-[#3A86FF]" />
                     </div>
-                    <span className="text-3xl font-bold text-[#C6C5B9]">{area.num}</span>
+                    <span className="text-3xl font-bold text-[#93A8C0]">{area.num}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-[#393D3F] mb-2">{area.title}</h3>
-                  <p className="text-sm text-[#393D3F]/60 leading-relaxed">{area.desc}</p>
+                  <h3 className="text-lg font-bold text-[#0F1923] mb-2">{area.title}</h3>
+                  <p className="text-sm text-[#0F1923]/60 leading-relaxed">{area.desc}</p>
                 </div>
               );
             })}
@@ -241,35 +241,35 @@ export default function HomePage() {
 
           {/* Pricing tiers */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Pricing</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Pricing</span>
             </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-[#393D3F]">Choose your engagement level</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold text-[#0F1923]">Choose your engagement level</h3>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {tiers.map(tier => (
-              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#393D3F] border-[#393D3F] shadow-xl' : 'bg-[#FDFDFF] border-[#C6C5B9]/40 hover:border-[#62929E]/40 hover:shadow-md'}`}>
+              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#0F1923] border-[#0F1923] shadow-xl' : 'bg-[#F8F9FA] border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md'}`}>
                 {tier.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#62929E] text-[#FDFDFF] text-xs font-semibold">Most Popular</span>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#3A86FF] text-[#F8F9FA] text-xs font-semibold">Most Popular</span>
                   </div>
                 )}
                 <div className="mb-6">
-                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#546A7B]'}`}>{tier.name}</div>
-                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#FDFDFF]' : 'text-[#393D3F]'}`}>{tier.price}</div>
-                  <div className={`text-xs ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#393D3F]/50'}`}>{tier.vat}</div>
+                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#1D3557]'}`}>{tier.name}</div>
+                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#F8F9FA]' : 'text-[#0F1923]'}`}>{tier.price}</div>
+                  <div className={`text-xs ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/50'}`}>{tier.vat}</div>
                 </div>
-                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#C6C5B9]' : 'text-[#393D3F]/60'}`}>{tier.description}</p>
+                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#93A8C0]' : 'text-[#0F1923]/60'}`}>{tier.description}</p>
                 <ul className="space-y-2.5 mb-8">
                   {tier.includes.map(item => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={16} className="text-[#62929E] flex-shrink-0 mt-0.5" />
-                      <span className={`text-sm ${tier.highlight ? 'text-[#FDFDFF]/80' : 'text-[#393D3F]/70'}`}>{item}</span>
+                      <CheckCircle2 size={16} className="text-[#3A86FF] flex-shrink-0 mt-0.5" />
+                      <span className={`text-sm ${tier.highlight ? 'text-[#F8F9FA]/80' : 'text-[#0F1923]/70'}`}>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#62929E] text-[#FDFDFF] hover:bg-[#546A7B]' : 'border-2 border-[#62929E] text-[#62929E] hover:bg-[#62929E]/10'}`}>
+                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#3A86FF] text-[#F8F9FA] hover:bg-[#1D3557]' : 'border-2 border-[#3A86FF] text-[#3A86FF] hover:bg-[#3A86FF]/10'}`}>
                   {tier.cta} <ArrowRight size={16} />
                 </Link>
               </div>
@@ -277,14 +277,14 @@ export default function HomePage() {
           </div>
 
           {/* Guarantee banner */}
-          <div className="rounded-2xl bg-[#62929E]/10 border border-[#62929E]/25 p-8 text-center mb-6">
-            <div className="text-2xl font-bold text-[#393D3F] mb-2">The 3× Clarity Guarantee</div>
-            <p className="text-[#393D3F]/70 max-w-2xl mx-auto">
+          <div className="rounded-2xl bg-[#3A86FF]/10 border border-[#3A86FF]/25 p-8 text-center mb-6">
+            <div className="text-2xl font-bold text-[#0F1923] mb-2">The 3× Clarity Guarantee</div>
+            <p className="text-[#0F1923]/70 max-w-2xl mx-auto">
               If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.
             </p>
           </div>
           <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#62929E] hover:text-[#546A7B] transition-colors">
+            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#3A86FF] hover:text-[#1D3557] transition-colors">
               View full pricing — including Small Business &amp; AI Readiness Check offer <ArrowRight size={15} />
             </Link>
           </div>
@@ -292,28 +292,28 @@ export default function HomePage() {
       </section>
 
       {/* ── PROCESS — dark background ────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#393D3F]">
+      <section className="py-20 lg:py-28 bg-[#0F1923]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#62929E]/20 border border-[#62929E]/30 mb-4">
-              <span className="text-xs font-semibold text-[#C6C5B9] tracking-wider uppercase">— How It Works</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3A86FF]/20 border border-[#3A86FF]/30 mb-4">
+              <span className="text-xs font-semibold text-[#93A8C0] tracking-wider uppercase">— How It Works</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#FDFDFF] mb-4">From conversation to clarity in four steps</h2>
-            <p className="text-[#C6C5B9] text-lg">No jargon. No vague frameworks. A clear, structured process that starts with listening and ends with a plan you can act on.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">From conversation to clarity in four steps</h2>
+            <p className="text-[#93A8C0] text-lg">No jargon. No vague frameworks. A clear, structured process that starts with listening and ends with a plan you can act on.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, i) => (
-              <div key={step.num} className="relative p-6 rounded-2xl bg-[#FDFDFF]/5 border border-[#FDFDFF]/10 hover:bg-white/[0.08] transition-colors">
-                <div className="text-5xl font-bold text-[#62929E]/30 mb-4">{step.num}</div>
-                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#62929E]/20 mb-3">
-                  <span className="text-xs text-[#62929E] font-medium">{step.detail}</span>
+              <div key={step.num} className="relative p-6 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10 hover:bg-white/[0.08] transition-colors">
+                <div className="text-5xl font-bold text-[#3A86FF]/30 mb-4">{step.num}</div>
+                <div className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#3A86FF]/20 mb-3">
+                  <span className="text-xs text-[#3A86FF] font-medium">{step.detail}</span>
                 </div>
-                <h3 className="text-xl font-bold text-[#FDFDFF] mb-3">{step.title}</h3>
-                <p className="text-[#C6C5B9] text-sm leading-relaxed">{step.desc}</p>
+                <h3 className="text-xl font-bold text-[#F8F9FA] mb-3">{step.title}</h3>
+                <p className="text-[#93A8C0] text-sm leading-relaxed">{step.desc}</p>
                 {i < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <div className="w-6 h-0.5 bg-[#62929E]/40" />
+                    <div className="w-6 h-0.5 bg-[#3A86FF]/40" />
                   </div>
                 )}
               </div>
@@ -321,7 +321,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Link href="/contact" className="inline-flex items-center px-8 py-4 rounded-full bg-[#62929E] text-[#FDFDFF] font-semibold hover:bg-[#546A7B] transition-colors">
+            <Link href="/contact" className="inline-flex items-center px-8 py-4 rounded-full bg-[#3A86FF] text-[#F8F9FA] font-semibold hover:bg-[#1D3557] transition-colors">
               Start with a free discovery call
             </Link>
           </div>
@@ -329,12 +329,12 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS — dark with SVG dot-grid pattern ──────────────────────────── */}
-      <section className="relative py-16 bg-[#393D3F] overflow-hidden">
+      <section className="relative py-16 bg-[#0F1923] overflow-hidden">
         {/* SVG dot grid */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#62929E" />
+              <circle cx="2" cy="2" r="1.5" fill="#3A86FF" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dots)" />
@@ -348,8 +348,8 @@ export default function HomePage() {
               { value: '1 day', label: 'To a complete written diagnosis' },
             ].map(stat => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#62929E] mb-2">{stat.value}</div>
-                <div className="text-sm text-[#C6C5B9]">{stat.label}</div>
+                <div className="text-3xl lg:text-4xl font-bold text-[#3A86FF] mb-2">{stat.value}</div>
+                <div className="text-sm text-[#93A8C0]">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -357,32 +357,32 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ─────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#FDFDFF]">
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#546A7B]/10 border border-[#546A7B]/20 mb-4">
-              <span className="text-xs font-semibold text-[#546A7B] tracking-wider uppercase">— Client Stories</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
+              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Client Stories</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#393D3F] mb-4">The penny drop, in their own words</h2>
-            <p className="text-[#393D3F]/60 text-lg">From workwear to promotional merchandise, here&apos;s what business owners say after working with Decoded Ops.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-4">The penny drop, in their own words</h2>
+            <p className="text-[#0F1923]/60 text-lg">From workwear to promotional merchandise, here&apos;s what business owners say after working with Decoded Ops.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map(t => (
-              <div key={t.name} className="p-8 rounded-2xl border border-[#C6C5B9]/40 bg-[#FDFDFF] hover:shadow-lg transition-shadow">
+              <div key={t.name} className="p-8 rounded-2xl border border-[#93A8C0]/40 bg-[#F8F9FA] hover:shadow-lg transition-shadow">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} size={16} className="text-[#62929E] fill-[#62929E]" />
+                    <Star key={i} size={16} className="text-[#3A86FF] fill-[#3A86FF]" />
                   ))}
                 </div>
-                <p className="text-[#393D3F]/70 leading-relaxed mb-6 italic">&ldquo;{t.content}&rdquo;</p>
+                <p className="text-[#0F1923]/70 leading-relaxed mb-6 italic">&ldquo;{t.content}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#62929E]/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-xs font-bold text-[#62929E]">{t.avatar}</span>
+                  <div className="w-10 h-10 rounded-full bg-[#3A86FF]/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-xs font-bold text-[#3A86FF]">{t.avatar}</span>
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-[#393D3F]">{t.name}</div>
-                    <div className="text-xs text-[#393D3F]/50">{t.role}</div>
+                    <div className="text-sm font-semibold text-[#0F1923]">{t.name}</div>
+                    <div className="text-xs text-[#0F1923]/50">{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -392,14 +392,14 @@ export default function HomePage() {
       </section>
 
       {/* ── CASE STUDY TEASER ────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#393D3F]/5 border-t border-[#C6C5B9]/30">
+      <section className="py-16 bg-[#0F1923]/5 border-t border-[#93A8C0]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#546A7B] mb-2">Case study</p>
-            <h3 className="text-xl font-bold text-[#393D3F] mb-2">What happens when the audit doesn&apos;t come first.</h3>
-            <p className="text-sm text-[#393D3F]/60">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#1D3557] mb-2">Case study</p>
+            <h3 className="text-xl font-bold text-[#0F1923] mb-2">What happens when the audit doesn&apos;t come first.</h3>
+            <p className="text-sm text-[#0F1923]/60">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
           </div>
-          <Link href="/case-study" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#393D3F] text-[#FDFDFF] text-sm font-semibold hover:bg-[#546A7B] transition-colors">
+          <Link href="/case-study" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#0F1923] text-[#F8F9FA] text-sm font-semibold hover:bg-[#1D3557] transition-colors">
             Read the case study <ArrowRight size={16} />
           </Link>
         </div>
