@@ -68,14 +68,14 @@ export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, cha
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Common challenges</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Where the problems tend to live</h2>
-            <p className="text-[#023047]/60 text-lg">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+            <p className="text-[#023047]/70 text-lg">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {challenges.map((c, i) => (
               <div key={c.title} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300">
                 <div className="text-3xl font-bold text-[#8ECAE6] mb-4">{String(i + 1).padStart(2, '0')}</div>
                 <h3 className="text-lg font-bold text-[#023047] mb-2">{c.title}</h3>
-                <p className="text-sm text-[#023047]/60 leading-relaxed">{c.body}</p>
+                <p className="text-sm text-[#023047]/70 leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>

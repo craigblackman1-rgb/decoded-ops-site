@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Phone, Star, Shield, Wrench, Brain, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Phone, Star, Shield, Wrench, Brain, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles } from 'lucide-react';
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 
@@ -14,35 +14,6 @@ const auditAreas = [
   { icon: Sparkles,     num: '06', title: 'AI Readiness',            desc: 'Where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale.' },
 ];
 
-const tiers = [
-  {
-    name: 'Diagnose',
-    price: '£2,500',
-    vat: '+ VAT',
-    description: 'One day on site. Written report within 5 working days. Six audit areas. Every finding specific to your business.',
-    includes: ['Full day on-site audit', 'Written report in plain English', 'All 6 audit areas covered', '50% on booking, 50% on delivery'],
-    cta: 'Book Diagnose',
-    highlight: false,
-  },
-  {
-    name: 'Advise',
-    price: '£3,800',
-    vat: '+ VAT',
-    description: 'Everything in Diagnose, plus independent tool evaluation and a full vendor shortlist — so you go to market on your terms.',
-    includes: ['Everything in Diagnose', 'Independent tool evaluation', 'Vendor shortlist & briefs', 'Platform-agnostic recommendations'],
-    cta: 'Book Advise',
-    highlight: true,
-  },
-  {
-    name: 'Deliver',
-    price: '£3,800 + £1,500/mo',
-    vat: '+ VAT',
-    description: 'Full implementation oversight. Minimum 3 months. I stay involved through delivery — holding vendors to the brief.',
-    includes: ['Everything in Advise', 'Implementation oversight', 'Vendor management', '30 days notice after 3-month minimum'],
-    cta: 'Book Deliver',
-    highlight: false,
-  },
-];
 
 const processSteps = [
   { num: '01', detail: 'Discovery call',    title: 'Understand',          desc: "A structured discovery conversation — your operation, your pain points, your ambitions. I listen more than I talk. No pitch. No assumptions. 60 minutes. Free." },
@@ -114,17 +85,17 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-8">
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">25+</div>
-                  <div className="text-sm text-[#023047]/60">Years in the sector</div>
+                  <div className="text-sm text-[#023047]/70">Years in the sector</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">£150k+</div>
-                  <div className="text-sm text-[#023047]/60">Largest project delivered</div>
+                  <div className="text-sm text-[#023047]/70">Largest project delivered</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">3×</div>
-                  <div className="text-sm text-[#023047]/60">Clarity guarantee</div>
+                  <div className="text-sm text-[#023047]/70">Clarity guarantee</div>
                 </div>
               </div>
             </div>
@@ -141,7 +112,7 @@ export default function HomePage() {
       {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
       <div className="bg-[#023047] py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-3 flex-wrap">
-          <span className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/40 min-w-[70px]">I work with</span>
+          <span className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/70 min-w-[70px]">I work with</span>
           {sectors.map(s => (
             <Link key={s.href} href={s.href} className="text-xs text-[#F8F9FA]/70 border border-[#F8F9FA]/15 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">
               {s.name}
@@ -156,7 +127,7 @@ export default function HomePage() {
           &ldquo;If I spent a day in your business looking at your systems, your processes, and your technology — how{' '}
           <span className="text-[#219EBC]">confident</span> are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
         </blockquote>
-        <p className="text-sm text-[#F8F9FA]/45">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
+        <p className="text-sm text-[#F8F9FA]/70">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
       </div>
 
       {/* ── ABOUT / WHY DECODED OPS ──────────────────────────────────────────── */}
@@ -200,7 +171,7 @@ export default function HomePage() {
                     <Icon size={22} className="text-[#219EBC]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{d.title}</h3>
-                  <p className="text-sm text-[#023047]/60 leading-relaxed">{d.desc}</p>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{d.desc}</p>
                 </div>
               );
             })}
@@ -216,7 +187,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The Operational Clarity Audit</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">One day. Six areas. Complete clarity.</h2>
-            <p className="text-[#023047]/60 text-lg">
+            <p className="text-[#023047]/70 text-lg">
               I spend a day in your business and cover six areas that most technology consultants never go near. The result is a plain English report that tells you exactly what&apos;s happening, what it&apos;s costing you, and what to do about it.
             </p>
           </div>
@@ -233,59 +204,16 @@ export default function HomePage() {
                     <span className="text-3xl font-bold text-[#8ECAE6]">{area.num}</span>
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{area.title}</h3>
-                  <p className="text-sm text-[#023047]/60 leading-relaxed">{area.desc}</p>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{area.desc}</p>
                 </div>
               );
             })}
           </div>
 
-          {/* Pricing tiers */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Pricing</span>
-            </div>
-            <h3 className="text-2xl lg:text-3xl font-bold text-[#023047]">Choose your engagement level</h3>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {tiers.map(tier => (
-              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#023047] border-[#023047] shadow-xl' : 'bg-[#F8F9FA] border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md'}`}>
-                {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FFB703] text-[#023047] text-xs font-semibold">Most Popular</span>
-                  </div>
-                )}
-                <div className="mb-6">
-                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]'}`}>{tier.name}</div>
-                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#F8F9FA]' : 'text-[#023047]'}`}>{tier.price}</div>
-                  <div className={`text-xs ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]/50'}`}>{tier.vat}</div>
-                </div>
-                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]/60'}`}>{tier.description}</p>
-                <ul className="space-y-2.5 mb-8">
-                  {tier.includes.map(item => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={16} className="text-[#219EBC] flex-shrink-0 mt-0.5" />
-                      <span className={`text-sm ${tier.highlight ? 'text-[#F8F9FA]/80' : 'text-[#023047]/70'}`}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]' : 'border-2 border-[#219EBC] text-[#219EBC] hover:bg-[#219EBC]/10'}`}>
-                  {tier.cta} <ArrowRight size={16} />
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          {/* Guarantee banner */}
-          <div className="rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 p-8 text-center mb-6">
-            <div className="text-2xl font-bold text-[#023047] mb-2">The 3× Clarity Guarantee</div>
-            <p className="text-[#023047]/70 max-w-2xl mx-auto">
-              If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.
-            </p>
-          </div>
-          <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
-              View full pricing — including Small Business &amp; AI Readiness Check offer <ArrowRight size={15} />
+          {/* Pricing CTA */}
+          <div className="text-center mt-4">
+            <Link href="/pricing" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+              See engagement options &amp; pricing <ArrowRight size={18} />
             </Link>
           </div>
         </div>
@@ -331,7 +259,7 @@ export default function HomePage() {
       {/* ── STATS — dark with SVG dot-grid pattern ──────────────────────────── */}
       <section className="relative py-16 bg-[#023047] overflow-hidden">
         {/* SVG dot grid */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
               <circle cx="2" cy="2" r="1.5" fill="#219EBC" />
@@ -364,7 +292,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Client Stories</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">The penny drop, in their own words</h2>
-            <p className="text-[#023047]/60 text-lg">From workwear to promotional merchandise, here&apos;s what business owners say after working with Decoded Ops.</p>
+            <p className="text-[#023047]/70 text-lg">From workwear to promotional merchandise, here&apos;s what business owners say after working with Decoded Ops.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -382,7 +310,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-[#023047]">{t.name}</div>
-                    <div className="text-xs text-[#023047]/50">{t.role}</div>
+                    <div className="text-xs text-[#023047]/70">{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -397,7 +325,7 @@ export default function HomePage() {
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">Case study</p>
             <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
-            <p className="text-sm text-[#023047]/60">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
+            <p className="text-sm text-[#023047]/70">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
           </div>
           <Link href="/case-study" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047] transition-colors">
             Read the case study <ArrowRight size={16} />

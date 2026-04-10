@@ -11,26 +11,6 @@ const auditAreas = [
   { icon: Sparkles,     num: '06', title: 'AI Readiness',           desc: "Where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale." },
 ];
 
-const tiers = [
-  {
-    name: 'Diagnose', price: '£2,500', vat: '+ VAT',
-    description: 'One day on site. Written report within 5 working days. Six audit areas. Every finding specific to your business.',
-    includes: ['Full day on-site audit', 'Written report in plain English', 'All 6 audit areas covered', '50% on booking, 50% on delivery'],
-    cta: 'Book Diagnose', highlight: false,
-  },
-  {
-    name: 'Advise', price: '£3,800', vat: '+ VAT',
-    description: 'Everything in Diagnose, plus independent tool evaluation and a full vendor shortlist — so you go to market on your terms.',
-    includes: ['Everything in Diagnose', 'Independent tool evaluation', 'Vendor shortlist & briefs', 'Platform-agnostic recommendations'],
-    cta: 'Book Advise', highlight: true,
-  },
-  {
-    name: 'Deliver', price: '£3,800 + £1,500/mo', vat: '+ VAT',
-    description: "Full implementation oversight. Minimum 3 months. I stay involved through delivery — holding vendors to the brief.",
-    includes: ['Everything in Advise', 'Implementation oversight', 'Vendor management', '30 days notice after 3-month minimum'],
-    cta: 'Book Deliver', highlight: false,
-  },
-];
 
 const processSteps = [
   { num: '01', detail: 'Pre-audit',      title: 'Discovery call',       desc: 'A 30-minute call before I arrive. I learn enough to make the day on site as useful as possible.' },
@@ -91,7 +71,7 @@ export default function AuditPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— What gets audited</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Six areas. Every time.</h2>
-            <p className="text-[#023047]/60 text-lg">The same six areas are covered in every audit — because in this sector, the problems always live in the same places.</p>
+            <p className="text-[#023047]/70 text-lg">The same six areas are covered in every audit — because in this sector, the problems always live in the same places.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {auditAreas.map(area => {
@@ -105,7 +85,7 @@ export default function AuditPage() {
                     <span className="text-3xl font-bold text-[#8ECAE6]">{area.num}</span>
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{area.title}</h3>
-                  <p className="text-sm text-[#023047]/60 leading-relaxed">{area.desc}</p>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{area.desc}</p>
                 </div>
               );
             })}
@@ -143,52 +123,14 @@ export default function AuditPage() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Pricing</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047]">Choose your engagement level</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {tiers.map(tier => (
-              <div key={tier.name} className={`relative rounded-2xl p-8 border transition-all duration-300 ${tier.highlight ? 'bg-[#023047] border-[#023047] shadow-xl' : 'bg-[#F8F9FA] border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md'}`}>
-                {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#FFB703] text-[#023047] text-xs font-semibold">Most Popular</span>
-                  </div>
-                )}
-                <div className="mb-6">
-                  <div className={`text-sm font-semibold uppercase tracking-wider mb-2 ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]'}`}>{tier.name}</div>
-                  <div className={`text-3xl font-bold mb-0.5 ${tier.highlight ? 'text-[#F8F9FA]' : 'text-[#023047]'}`}>{tier.price}</div>
-                  <div className={`text-xs ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]/50'}`}>{tier.vat}</div>
-                </div>
-                <p className={`text-sm leading-relaxed mb-6 ${tier.highlight ? 'text-[#8ECAE6]' : 'text-[#023047]/60'}`}>{tier.description}</p>
-                <ul className="space-y-2.5 mb-8">
-                  {tier.includes.map(item => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={16} className="text-[#219EBC] flex-shrink-0 mt-0.5" />
-                      <span className={`text-sm ${tier.highlight ? 'text-[#F8F9FA]/80' : 'text-[#023047]/70'}`}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${tier.highlight ? 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]' : 'border-2 border-[#219EBC] text-[#219EBC] hover:bg-[#219EBC]/10'}`}>
-                  {tier.cta} <ArrowRight size={16} />
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 p-8 text-center mb-6">
-            <div className="text-2xl font-bold text-[#023047] mb-2">The 3× Clarity Guarantee</div>
-            <p className="text-[#023047]/70 max-w-2xl mx-auto">If after reading the report you don&apos;t believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.</p>
-          </div>
-          <div className="text-center">
-            <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
-              View full pricing — including Small Business offer <ArrowRight size={15} />
-            </Link>
-          </div>
+      {/* PRICING CTA */}
+      <section className="py-16 bg-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-[#023047] mb-4">Ready to find the right engagement?</h2>
+          <p className="text-[#023047]/70 mb-8 max-w-xl mx-auto">Answer four quick questions and we&apos;ll point you to the most relevant option for your business.</p>
+          <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            See pricing options <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
 

@@ -25,7 +25,7 @@ export default function ContactPage() {
                     <Mail size={20} className="text-[#219EBC] group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#023047]/50 mb-0.5">Email</div>
+                    <div className="text-xs text-[#023047]/70 mb-0.5">Email</div>
                     <div className="font-semibold text-[#023047] group-hover:text-[#219EBC] transition-colors">craig@decodedops.co.uk</div>
                   </div>
                 </a>
@@ -34,7 +34,7 @@ export default function ContactPage() {
                     <Phone size={20} className="text-[#219EBC] group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#023047]/50 mb-0.5">Phone</div>
+                    <div className="text-xs text-[#023047]/70 mb-0.5">Phone</div>
                     <div className="font-semibold text-[#023047] group-hover:text-[#219EBC] transition-colors">07735 620 603</div>
                   </div>
                 </a>

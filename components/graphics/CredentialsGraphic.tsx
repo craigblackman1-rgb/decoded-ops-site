@@ -63,7 +63,7 @@ export function CredentialsGraphic() {
         </div>
         <div>
           <div className="text-sm font-semibold text-[#023047]">Fully independent</div>
-          <div className="text-xs text-[#023047]/60">No referral fees. No vendor commissions. Ever.</div>
+          <div className="text-xs text-[#023047]/70">No referral fees. No vendor commissions. Ever.</div>
         </div>
       </div>
     </div>

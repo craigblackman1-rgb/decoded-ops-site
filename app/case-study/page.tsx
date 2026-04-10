@@ -71,7 +71,7 @@ export default function CaseStudyPage() {
               ].map(s => (
                 <div key={s.label} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40 text-center">
                   <div className="text-3xl font-bold text-[#023047] mb-1">{s.value}</div>
-                  <div className="text-xs text-[#023047]/50">{s.label}</div>
+                  <div className="text-xs text-[#023047]/70">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default function CaseStudyPage() {
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The counterfactual</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">What a one-day audit would have found</h2>
-              <p className="text-[#023047]/60 mb-8">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
+              <p className="text-[#023047]/70 mb-8">Every one of these findings would have been visible in a single day on site. The audit costs £10,000. The total cost of not having it was £154,000.</p>
               <div className="space-y-4">
                 {auditFindings.map((finding, i) => (
                   <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-[#8ECAE6]/40">

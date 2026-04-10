@@ -46,18 +46,18 @@ export default function FractionalPage() {
               </div>
               <div className="flex flex-wrap gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-[#023047]">£1,500</div>
-                  <div className="text-sm text-[#023047]/60">Per month (after Advise tier)</div>
+                  <div className="text-2xl font-bold text-[#023047]">Fixed days</div>
+                  <div className="text-sm text-[#023047]/70">Agreed at the start</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">3 months</div>
-                  <div className="text-sm text-[#023047]/60">Minimum engagement</div>
+                  <div className="text-sm text-[#023047]/70">Minimum engagement</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">30 days</div>
-                  <div className="text-sm text-[#023047]/60">Notice after minimum</div>
+                  <div className="text-sm text-[#023047]/70">Notice after minimum</div>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function FractionalPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— When it fits</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Four situations where fractional ops makes sense</h2>
-            <p className="text-[#023047]/60 text-lg">Not every business needs a full-time ops director. But every business needs the thinking.</p>
+            <p className="text-[#023047]/70 text-lg">Not every business needs a full-time ops director. But every business needs the thinking.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {whenItFits.map(item => {
@@ -87,7 +87,7 @@ export default function FractionalPage() {
                     <Icon size={20} className="text-[#219EBC]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#023047]/60 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -119,20 +119,25 @@ export default function FractionalPage() {
               </div>
             </div>
             <div className="p-8 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-              <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-6">How it&apos;s priced</div>
+              <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-6">How it&apos;s structured</div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-3xl font-bold text-[#F8F9FA] mb-1">£1,500<span className="text-lg font-normal text-[#8ECAE6]">/mo + VAT</span></div>
-                  <div className="text-sm text-[#8ECAE6]">After the Advise tier audit. Minimum 3 months.</div>
+                  <div className="text-xl font-bold text-[#F8F9FA] mb-1">Fixed days per month</div>
+                  <div className="text-sm text-[#8ECAE6]">Agreed at the start of the engagement. Minimum 3 months.</div>
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-sm text-[#8ECAE6] leading-relaxed">
-                    The monthly rate covers a defined number of days agreed at the start of the engagement. Days can be used flexibly across meetings, project work, vendor oversight, and team support.
+                    Days are used flexibly across meetings, project work, vendor oversight, and team support — based on what your business needs that month.
                   </div>
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">No lock-in after minimum</div>
                   <div className="text-sm text-[#8ECAE6]">30 days notice either side after the 3-month minimum. No penalties. No conditions.</div>
+                </div>
+                <div className="border-t border-[#F8F9FA]/10 pt-6">
+                  <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#FFB703] hover:text-[#FB8500] transition-colors">
+                    See full pricing <ArrowRight size={15} />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -147,7 +152,7 @@ export default function FractionalPage() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Get started</span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Let&apos;s talk about what you need</h2>
-          <p className="text-[#023047]/60 text-lg max-w-xl mx-auto mb-8">Fractional engagements are structured around your specific situation. The first call is free and takes 60 minutes.</p>
+          <p className="text-[#023047]/70 text-lg max-w-xl mx-auto mb-8">Fractional engagements are structured around your specific situation. The first call is free and takes 60 minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
               Book a free call <ArrowRight size={18} />

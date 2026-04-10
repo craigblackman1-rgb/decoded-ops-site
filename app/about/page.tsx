@@ -39,17 +39,17 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-8">
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">25+</div>
-                  <div className="text-sm text-[#023047]/60">Years in print &amp; embroidery</div>
+                  <div className="text-sm text-[#023047]/70">Years in print &amp; embroidery</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">0</div>
-                  <div className="text-sm text-[#023047]/60">Vendor relationships</div>
+                  <div className="text-sm text-[#023047]/70">Vendor relationships</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">100%</div>
-                  <div className="text-sm text-[#023047]/60">Independent</div>
+                  <div className="text-sm text-[#023047]/70">Independent</div>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— How I work</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">The things I won&apos;t compromise on</h2>
-            <p className="text-[#023047]/60 text-lg">These aren&apos;t marketing principles. They&apos;re the reason I built Decoded Ops independently.</p>
+            <p className="text-[#023047]/70 text-lg">These aren&apos;t marketing principles. They&apos;re the reason I built Decoded Ops independently.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {values.map(v => {
@@ -103,7 +103,7 @@ export default function AboutPage() {
                     <Icon size={20} className="text-[#219EBC]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{v.title}</h3>
-                  <p className="text-sm text-[#023047]/60 leading-relaxed">{v.desc}</p>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{v.desc}</p>
                 </div>
               );
             })}
@@ -116,7 +116,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-bold text-[#023047] mb-1">Ready to have the honest conversation?</h3>
-            <p className="text-sm text-[#023047]/60">Start with a free 60-minute call. No sales pitch. Just a conversation about what&apos;s happening in your business.</p>
+            <p className="text-sm text-[#023047]/70">Start with a free 60-minute call. No sales pitch. Just a conversation about what&apos;s happening in your business.</p>
           </div>
           <Link href="/contact" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] text-sm font-semibold hover:bg-[#FB8500] transition-colors">
             Book a free call <ArrowRight size={16} />

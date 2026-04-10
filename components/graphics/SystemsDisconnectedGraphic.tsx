@@ -23,7 +23,7 @@ export function SystemsDisconnectedGraphic({ connected = false }: Props) {
   return (
     <div className="w-full">
       <div className="flex items-center justify-center gap-3 mb-3">
-        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${connected ? 'bg-[#219EBC]/15 text-[#219EBC]' : 'bg-[#023047]/10 text-[#023047]/60'}`}>
+        <span className={`text-xs font-semibold px-3 py-1 rounded-full ${connected ? 'bg-[#219EBC]/15 text-[#219EBC]' : 'bg-[#023047]/10 text-[#023047]/70'}`}>
           {connected ? '✓ Connected systems' : '✗ Disconnected systems'}
         </span>
       </div>

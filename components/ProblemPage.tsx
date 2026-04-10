@@ -83,14 +83,14 @@ export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, 
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Why it happens</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">The root causes</h2>
-            <p className="text-[#023047]/60 text-lg">Understanding why the problem exists is the first step to fixing it — and knowing whether you&apos;re looking at a system problem or a process problem changes everything.</p>
+            <p className="text-[#023047]/70 text-lg">Understanding why the problem exists is the first step to fixing it — and knowing whether you&apos;re looking at a system problem or a process problem changes everything.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {causes.map((c, i) => (
               <div key={c.title} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300">
                 <div className="text-3xl font-bold text-[#8ECAE6] mb-4">{String(i + 1).padStart(2, '0')}</div>
                 <h3 className="text-lg font-bold text-[#023047] mb-2">{c.title}</h3>
-                <p className="text-sm text-[#023047]/60 leading-relaxed">{c.body}</p>
+                <p className="text-sm text-[#023047]/70 leading-relaxed">{c.body}</p>
               </div>
             ))}
           </div>
@@ -110,7 +110,7 @@ export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, 
             </div>
             <div className="rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 p-8">
               <div className="text-xl font-bold text-[#023047] mb-2">Let&apos;s talk about what&apos;s happening</div>
-              <p className="text-[#023047]/60 text-sm mb-6 leading-relaxed">The first call is free. 60 minutes. No sales pitch — just a direct conversation about your situation.</p>
+              <p className="text-[#023047]/70 text-sm mb-6 leading-relaxed">The first call is free. 60 minutes. No sales pitch — just a direct conversation about your situation.</p>
               <div className="space-y-3 mb-8">
                 {['One day on site', 'Written report in 5 days', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (
                   <div key={item} className="flex items-center gap-2 text-sm text-[#023047]/70">

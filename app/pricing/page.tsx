@@ -231,8 +231,8 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
           tier.highlight ? 'text-white/70' : dark ? 'text-[#219EBC]' : 'text-[#023047]'
         }`}>{tier.name}</div>
         <div className={`text-3xl font-bold ${tier.highlight || dark ? 'text-white' : 'text-[#023047]'}`}>{tier.price}</div>
-        <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/50'}`}>{tier.vat}</div>
-        <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]/80' : 'text-[#023047]/60'}`}>{tier.tagline}</p>
+        <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'}`}>{tier.vat}</div>
+        <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]/80' : 'text-[#023047]/70'}`}>{tier.tagline}</p>
       </div>
 
       <div className="flex-1 space-y-3 mb-8">
@@ -247,7 +247,7 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
       </div>
 
       <div className={`text-xs leading-relaxed mb-6 pb-6 border-b ${
-        tier.highlight ? 'text-white/60 border-white/20' : dark ? 'text-[#8ECAE6]/60 border-white/10' : 'text-[#023047]/40 border-[#8ECAE6]/30'
+        tier.highlight ? 'text-white/60 border-white/20' : dark ? 'text-[#8ECAE6]/60 border-white/10' : 'text-[#023047]/70 border-[#8ECAE6]/30'
       }`}>{tier.payment}</div>
 
       {'guarantee' in tier && tier.guarantee && (
@@ -306,8 +306,8 @@ export default function PricingPage() {
           <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] mb-4">
             Find the right engagement
           </h1>
-          <p className="text-lg text-[#023047]/60 max-w-2xl mx-auto">
-            Answer four quick questions and we&apos;ll point you to the most relevant option — or scroll down to see all options.
+          <p className="text-lg text-[#023047]/70 max-w-2xl mx-auto">
+            Answer four quick questions and we&apos;ll point you to the most relevant option for your business.
           </p>
         </div>
       </section>
@@ -340,7 +340,7 @@ export default function PricingPage() {
                 ))}
               </div>
               {step > 0 && (
-                <button onClick={() => setStep(step - 1)} className="mt-6 text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                <button onClick={() => setStep(step - 1)} className="mt-6 text-sm text-[#8ECAE6] hover:text-white transition-colors" aria-label="Go back to previous question">
                   ← Back
                 </button>
               )}
@@ -356,7 +356,7 @@ export default function PricingPage() {
               <p className="text-[#8ECAE6] mb-6">
                 {isSegmentB ? 'From the Small Business offer.' : 'From the Core Offer.'} All options are shown below — yours is highlighted in green.
               </p>
-              <button onClick={reset} className="text-sm text-[#8ECAE6] hover:text-white underline transition-colors">
+              <button onClick={reset} className="text-sm text-[#8ECAE6] hover:text-white underline transition-colors" aria-label="Start the questionnaire again">
                 Start again
               </button>
             </div>
@@ -364,7 +364,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* SEGMENT A */}
+      {/* SEGMENT A — only shown after questionnaire complete */}
+      {complete && (
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
@@ -372,7 +373,7 @@ export default function PricingPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Segment A · For established businesses</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Core Offer</h2>
-            <p className="text-[#023047]/60 text-lg">On-site. Independent. Sector-specific. From audit through to full implementation oversight.</p>
+            <p className="text-[#023047]/70 text-lg">On-site. Independent. Sector-specific. From audit through to full implementation oversight.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {segmentATiers.map(tier => (
@@ -391,8 +392,10 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+      )}
 
-      {/* SEGMENT B */}
+      {/* SEGMENT B — only shown after questionnaire complete */}
+      {complete && (
       <section className="py-20 lg:py-28 bg-[#023047]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
@@ -409,6 +412,7 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">

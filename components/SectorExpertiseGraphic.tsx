@@ -5,7 +5,7 @@ const sectors = [
     path: 'M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-12-8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 3c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5z',
     // Simple thread/needle SVG path
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" strokeWidth="2" />
         <circle cx="20" cy="20" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 2" />
         <circle cx="20" cy="20" r="2.5" fill="currentColor" />
@@ -19,7 +19,7 @@ const sectors = [
   {
     label: 'Print &\nPromotional',
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <rect x="6" y="14" width="28" height="16" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
         <rect x="10" y="6" width="20" height="10" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <rect x="10" y="24" width="20" height="8" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -30,7 +30,7 @@ const sectors = [
   {
     label: 'Workwear &\nTeamwear',
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <path d="M14 6 L8 12 L8 24 L32 24 L32 12 L26 6 L22 10 L20 8 L18 10 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
         <path d="M20 8 L20 24" stroke="currentColor" strokeWidth="1.5" strokeDasharray="2 2" />
         <path d="M8 24 L8 34 L32 34 L32 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -40,7 +40,7 @@ const sectors = [
   {
     label: 'Signs &\nGraphics',
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <rect x="4" y="8" width="32" height="20" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
         <line x1="20" y1="28" x2="20" y2="36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         <line x1="14" y1="36" x2="26" y2="36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -54,7 +54,7 @@ const sectors = [
   {
     label: 'Awards &\nEngraving',
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <path d="M20 4 L23 13 L33 13 L25 19 L28 28 L20 22 L12 28 L15 19 L7 13 L17 13 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
         <line x1="15" y1="30" x2="25" y2="30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         <line x1="17" y1="34" x2="23" y2="34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -64,7 +64,7 @@ const sectors = [
   {
     label: 'Labels &\nPackaging',
     icon: (
-      <svg viewBox="0 0 40 40" className="w-8 h-8">
+      <svg viewBox="0 0 40 40" className="w-8 h-8" aria-hidden="true">
         <rect x="8" y="6" width="24" height="28" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
         <rect x="12" y="10" width="16" height="10" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
         <line x1="12" y1="24" x2="28" y2="24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
