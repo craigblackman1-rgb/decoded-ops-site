@@ -36,12 +36,12 @@ export function CostChartGraphic() {
       <svg viewBox="0 0 400 310" className="w-full" aria-hidden="true">
         <defs>
           <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#3A86FF" />
-            <stop offset="100%" stopColor="#1D3557" />
+            <stop offset="0%" stopColor="#219EBC" />
+            <stop offset="100%" stopColor="#023047" />
           </linearGradient>
           <linearGradient id="auditGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#93A8C0" />
-            <stop offset="100%" stopColor="#93A8C0" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#8ECAE6" />
+            <stop offset="100%" stopColor="#8ECAE6" stopOpacity="0.4" />
           </linearGradient>
         </defs>
 
@@ -51,8 +51,8 @@ export function CostChartGraphic() {
           const val = Math.round(frac * maxVal);
           return (
             <g key={i}>
-              <line x1={leftPad} y1={y} x2={leftPad + chartW} y2={y} stroke="#93A8C0" strokeWidth="0.5" strokeDasharray="3 4" opacity="0.5" />
-              <text x={leftPad - 4} y={y + 4} textAnchor="end" fontSize="8" fill="#0F1923" opacity="0.45" fontFamily="system-ui, sans-serif">£{val}k</text>
+              <line x1={leftPad} y1={y} x2={leftPad + chartW} y2={y} stroke="#8ECAE6" strokeWidth="0.5" strokeDasharray="3 4" opacity="0.5" />
+              <text x={leftPad - 4} y={y + 4} textAnchor="end" fontSize="8" fill="#023047" opacity="0.45" fontFamily="system-ui, sans-serif">£{val}k</text>
             </g>
           );
         })}
@@ -65,40 +65,40 @@ export function CostChartGraphic() {
           return (
             <g key={i}>
               <rect x={x} y={y} width={barW} height={barH} rx="4" fill="url(#barGrad)" opacity="0.85" />
-              <text x={x + barW / 2} y={y - 5} textAnchor="middle" fontSize="9" fontWeight="700" fill="#0F1923" fontFamily="system-ui, sans-serif">{bar.label}</text>
-              <text x={x + barW / 2} y={topPad + chartH + 14} textAnchor="middle" fontSize="7.5" fill="#0F1923" opacity="0.6" fontFamily="system-ui, sans-serif">{bar.period.replace('Month ', 'Mo ')}</text>
+              <text x={x + barW / 2} y={y - 5} textAnchor="middle" fontSize="9" fontWeight="700" fill="#023047" fontFamily="system-ui, sans-serif">{bar.label}</text>
+              <text x={x + barW / 2} y={topPad + chartH + 14} textAnchor="middle" fontSize="7.5" fill="#023047" opacity="0.6" fontFamily="system-ui, sans-serif">{bar.period.replace('Month ', 'Mo ')}</text>
             </g>
           );
         })}
 
         {/* Cumulative line */}
-        <path d={lineD} fill="none" stroke="#0F1923" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.5" />
+        <path d={lineD} fill="none" stroke="#023047" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.5" />
         {cumulativePoints.map((p, i) => (
-          <circle key={i} cx={p.x} cy={p.y} r="3" fill="#0F1923" opacity="0.5" />
+          <circle key={i} cx={p.x} cy={p.y} r="3" fill="#023047" opacity="0.5" />
         ))}
 
         {/* Total label at end of cumulative line */}
-        <text x={cumulativePoints[4].x + 8} y={cumulativePoints[4].y + 4} fontSize="9" fontWeight="700" fill="#0F1923" fontFamily="system-ui, sans-serif">£154k total</text>
+        <text x={cumulativePoints[4].x + 8} y={cumulativePoints[4].y + 4} fontSize="9" fontWeight="700" fill="#023047" fontFamily="system-ui, sans-serif">£154k total</text>
 
         {/* Divider */}
-        <line x1={leftPad} y1={topPad + chartH + 30} x2={leftPad + chartW} y2={topPad + chartH + 30} stroke="#93A8C0" strokeWidth="0.5" opacity="0.5" />
+        <line x1={leftPad} y1={topPad + chartH + 30} x2={leftPad + chartW} y2={topPad + chartH + 30} stroke="#8ECAE6" strokeWidth="0.5" opacity="0.5" />
 
         {/* Audit cost comparison */}
         <g transform={`translate(${leftPad}, ${topPad + chartH + 42})`}>
           {/* Audit bar */}
           <rect x="0" y="0" width={(auditCost / 154) * chartW * 0.9} height="16" rx="3" fill="url(#auditGrad)" />
-          <text x={(auditCost / 154) * chartW * 0.9 + 6} y="12" fontSize="9" fontWeight="700" fill="#0F1923" opacity="0.7" fontFamily="system-ui, sans-serif">£10k audit</text>
+          <text x={(auditCost / 154) * chartW * 0.9 + 6} y="12" fontSize="9" fontWeight="700" fill="#023047" opacity="0.7" fontFamily="system-ui, sans-serif">£10k audit</text>
 
           {/* Total bar */}
           <rect x="0" y="22" width={chartW * 0.9} height="16" rx="3" fill="url(#barGrad)" opacity="0.7" />
-          <text x={chartW * 0.9 + 6} y="34" fontSize="9" fontWeight="700" fill="#3A86FF" fontFamily="system-ui, sans-serif">£154k without</text>
+          <text x={chartW * 0.9 + 6} y="34" fontSize="9" fontWeight="700" fill="#219EBC" fontFamily="system-ui, sans-serif">£154k without</text>
         </g>
 
         {/* VS label */}
-        <text x={leftPad + (auditCost / 154) * chartW * 0.45} y={topPad + chartH + 67} textAnchor="middle" fontSize="8" fontWeight="700" fill="#1D3557" fontFamily="system-ui, sans-serif" opacity="0.8">vs</text>
+        <text x={leftPad + (auditCost / 154) * chartW * 0.45} y={topPad + chartH + 67} textAnchor="middle" fontSize="8" fontWeight="700" fill="#023047" fontFamily="system-ui, sans-serif" opacity="0.8">vs</text>
 
         {/* Caption */}
-        <text x={leftPad} y={topPad + chartH + 110} fontSize="8.5" fill="#0F1923" opacity="0.45" fontFamily="system-ui, sans-serif" fontStyle="italic">The audit costs £10,000. Not having it cost £154,000.</text>
+        <text x={leftPad} y={topPad + chartH + 110} fontSize="8.5" fill="#023047" opacity="0.45" fontFamily="system-ui, sans-serif" fontStyle="italic">The audit costs £10,000. Not having it cost £154,000.</text>
       </svg>
     </div>
   );

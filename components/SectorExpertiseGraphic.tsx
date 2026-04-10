@@ -86,9 +86,9 @@ export function SectorExpertiseGraphic() {
       {/* Sector grid */}
       <div className="grid grid-cols-3 gap-3 mb-6">
         {sectors.map((s, i) => (
-          <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-[#F8F9FA] border border-[#93A8C0]/40 text-center">
-            <div className="text-[#3A86FF]">{s.icon}</div>
-            <div className="text-[10px] font-semibold text-[#0F1923] leading-tight whitespace-pre-line">{s.label}</div>
+          <div key={i} className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40 text-center">
+            <div className="text-[#219EBC]">{s.icon}</div>
+            <div className="text-[10px] font-semibold text-[#023047] leading-tight whitespace-pre-line">{s.label}</div>
           </div>
         ))}
       </div>
@@ -96,7 +96,7 @@ export function SectorExpertiseGraphic() {
       {/* Experience bar */}
       <div className="grid grid-cols-3 gap-3">
         {experienceItems.map((item, i) => (
-          <div key={i} className={`p-4 rounded-2xl text-center ${i === 0 ? 'bg-[#3A86FF]' : i === 2 ? 'bg-[#0F1923]' : 'bg-[#1D3557]'}`}>
+          <div key={i} className={`p-4 rounded-2xl text-center ${i === 0 ? 'bg-[#219EBC]' : i === 2 ? 'bg-[#023047]' : 'bg-[#023047]'}`}>
             <div className="text-2xl font-bold text-white">{item.years}</div>
             <div className="text-[10px] text-white/70 leading-tight whitespace-pre-line mt-0.5">{item.label}</div>
           </div>

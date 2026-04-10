@@ -13,11 +13,11 @@ interface Props {
 export function WorkflowGraphic({ steps, title, variant = 'light' }: Props) {
   const isDark = variant === 'dark';
   const nodeColor = isDark ? '#F8F9FA' : '#F8F9FA';
-  const nodeBorder = isDark ? '#3A86FF' : '#3A86FF';
-  const textColor = isDark ? '#F8F9FA' : '#0F1923';
-  const subColor = isDark ? '#93A8C0' : '#0F1923';
-  const lineColor = isDark ? '#3A86FF' : '#3A86FF';
-  const bgColor = isDark ? '#F8F9FA' : '#0F1923';
+  const nodeBorder = isDark ? '#219EBC' : '#219EBC';
+  const textColor = isDark ? '#F8F9FA' : '#023047';
+  const subColor = isDark ? '#8ECAE6' : '#023047';
+  const lineColor = isDark ? '#219EBC' : '#219EBC';
+  const bgColor = isDark ? '#F8F9FA' : '#023047';
 
   const cols = Math.min(steps.length, 4);
   const rows = Math.ceil(steps.length / cols);
@@ -34,7 +34,7 @@ export function WorkflowGraphic({ steps, title, variant = 'light' }: Props) {
       <svg viewBox={`0 0 ${totalW} ${totalH}`} className="w-full" aria-hidden="true">
         {title && (
           <text x={totalW / 2} y="22" textAnchor="middle" fontSize="10" fontWeight="700"
-            fill={isDark ? '#93A8C0' : '#1D3557'} fontFamily="system-ui" letterSpacing="1" opacity="0.8">
+            fill={isDark ? '#8ECAE6' : '#023047'} fontFamily="system-ui" letterSpacing="1" opacity="0.8">
             {title.toUpperCase()}
           </text>
         )}
@@ -83,14 +83,14 @@ export function WorkflowGraphic({ steps, title, variant = 'light' }: Props) {
 
               {/* Node */}
               <rect x={x} y={y} width={nodeW} height={nodeH} rx="8"
-                fill={step.alert ? '#0F1923' : nodeColor}
-                stroke={step.alert ? '#3A86FF' : isDark ? '#3A86FF' : '#93A8C0'}
+                fill={step.alert ? '#023047' : nodeColor}
+                stroke={step.alert ? '#219EBC' : isDark ? '#219EBC' : '#8ECAE6'}
                 strokeWidth={step.alert ? '1.5' : '1.2'}
               />
 
               {/* Step number */}
               <text x={x + 10} y={y + 13} fontSize="8" fontWeight="700"
-                fill={step.alert ? '#3A86FF' : isDark ? '#3A86FF' : '#3A86FF'}
+                fill={step.alert ? '#219EBC' : isDark ? '#219EBC' : '#219EBC'}
                 fontFamily="system-ui" opacity="0.8">
                 {String(i + 1).padStart(2, '0')}
               </text>
@@ -98,7 +98,7 @@ export function WorkflowGraphic({ steps, title, variant = 'light' }: Props) {
               {/* Label */}
               <text x={cx} y={y + nodeH / 2 + (step.sub ? -3 : 5)} textAnchor="middle"
                 fontSize="9.5" fontWeight="600"
-                fill={step.alert ? '#F8F9FA' : isDark ? '#0F1923' : '#0F1923'}
+                fill={step.alert ? '#F8F9FA' : isDark ? '#023047' : '#023047'}
                 fontFamily="system-ui">
                 {step.label}
               </text>
@@ -106,7 +106,7 @@ export function WorkflowGraphic({ steps, title, variant = 'light' }: Props) {
               {step.sub && (
                 <text x={cx} y={y + nodeH / 2 + 10} textAnchor="middle"
                   fontSize="7.5"
-                  fill={step.alert ? '#93A8C0' : isDark ? '#0F1923' : '#0F1923'}
+                  fill={step.alert ? '#8ECAE6' : isDark ? '#023047' : '#023047'}
                   opacity="0.55" fontFamily="system-ui">
                   {step.sub}
                 </text>

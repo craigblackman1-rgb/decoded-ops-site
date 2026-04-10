@@ -15,17 +15,17 @@ export function ExpertiseTimelineGraphic() {
             <div className="flex flex-col items-center">
               <div
                 className="w-3 h-3 rounded-full flex-shrink-0 mt-1"
-                style={{ backgroundColor: m.highlight ? '#3A86FF' : '#1D3557', opacity: m.highlight ? 1 : 0.6 }}
+                style={{ backgroundColor: m.highlight ? '#219EBC' : '#023047', opacity: m.highlight ? 1 : 0.6 }}
               />
               {i < milestones.length - 1 && (
-                <div className="w-0.5 flex-1 mt-1" style={{ backgroundColor: '#93A8C0', opacity: 0.3, minHeight: '32px' }} />
+                <div className="w-0.5 flex-1 mt-1" style={{ backgroundColor: '#8ECAE6', opacity: 0.3, minHeight: '32px' }} />
               )}
             </div>
             {/* Content */}
             <div className={`pb-6 ${m.highlight ? '' : ''}`}>
               <div
                 className="text-xs font-semibold uppercase tracking-wider mb-0.5"
-                style={{ color: m.highlight ? '#3A86FF' : '#93A8C0', opacity: m.highlight ? 1 : 0.7 }}
+                style={{ color: m.highlight ? '#219EBC' : '#8ECAE6', opacity: m.highlight ? 1 : 0.7 }}
               >
                 {m.year}
               </div>
@@ -35,7 +35,7 @@ export function ExpertiseTimelineGraphic() {
               >
                 {m.label}
               </div>
-              <div className="text-xs leading-relaxed" style={{ color: '#93A8C0', opacity: 0.65 }}>
+              <div className="text-xs leading-relaxed" style={{ color: '#8ECAE6', opacity: 0.65 }}>
                 {m.detail}
               </div>
             </div>
@@ -44,11 +44,11 @@ export function ExpertiseTimelineGraphic() {
       </div>
 
       {/* Quote */}
-      <div className="mt-2 p-4 rounded-xl border border-[#3A86FF]/30 bg-[#3A86FF]/10">
-        <div className="text-xs text-[#93A8C0] leading-relaxed italic">
+      <div className="mt-2 p-4 rounded-xl border border-[#219EBC]/30 bg-[#219EBC]/10">
+        <div className="text-xs text-[#8ECAE6] leading-relaxed italic">
           &ldquo;25 years in the sector means I know what a hoop size means and why it affects your production schedule. That context is what makes the advice useful.&rdquo;
         </div>
-        <div className="mt-2 text-xs font-semibold text-[#3A86FF]">— Craig Blackman</div>
+        <div className="mt-2 text-xs font-semibold text-[#219EBC]">— Craig Blackman</div>
       </div>
     </div>
   );

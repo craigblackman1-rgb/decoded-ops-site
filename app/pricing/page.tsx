@@ -207,15 +207,15 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
   return (
     <div className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
       tier.highlight
-        ? 'bg-[#3A86FF] border-[#3A86FF] shadow-xl'
+        ? 'bg-[#219EBC] border-[#219EBC] shadow-xl'
         : dark
-        ? 'bg-white/5 border-white/10 hover:border-[#3A86FF]/40'
-        : 'bg-[#F8F9FA] border-[#93A8C0]/40 hover:border-[#3A86FF]/40 hover:shadow-md'
+        ? 'bg-white/5 border-white/10 hover:border-[#219EBC]/40'
+        : 'bg-[#F8F9FA] border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md'
     } ${suggested ? 'ring-2 ring-green-500' : ''}`}>
 
       {tier.badge && (
         <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
-          tier.highlight ? 'bg-[#F8F9FA] text-[#3A86FF]' : 'bg-[#3A86FF] text-[#F8F9FA]'
+          tier.highlight ? 'bg-[#FFB703] text-[#023047]' : 'bg-[#FFB703] text-[#023047]'
         }`}>
           {tier.badge}
         </div>
@@ -228,38 +228,38 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
 
       <div className="mb-6">
         <div className={`text-xs font-bold uppercase tracking-widest mb-2 ${
-          tier.highlight ? 'text-white/70' : dark ? 'text-[#3A86FF]' : 'text-[#1D3557]'
+          tier.highlight ? 'text-white/70' : dark ? 'text-[#219EBC]' : 'text-[#023047]'
         }`}>{tier.name}</div>
-        <div className={`text-3xl font-bold ${tier.highlight || dark ? 'text-white' : 'text-[#0F1923]'}`}>{tier.price}</div>
-        <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#93A8C0]' : 'text-[#0F1923]/50'}`}>{tier.vat}</div>
-        <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#93A8C0]/80' : 'text-[#0F1923]/60'}`}>{tier.tagline}</p>
+        <div className={`text-3xl font-bold ${tier.highlight || dark ? 'text-white' : 'text-[#023047]'}`}>{tier.price}</div>
+        <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/50'}`}>{tier.vat}</div>
+        <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]/80' : 'text-[#023047]/60'}`}>{tier.tagline}</p>
       </div>
 
       <div className="flex-1 space-y-3 mb-8">
         {tier.includes.map((item) => (
           <div key={item} className="flex items-start gap-2.5">
-            <CheckCircle2 size={15} className={`mt-0.5 flex-shrink-0 ${tier.highlight ? 'text-white/80' : 'text-[#3A86FF]'}`} />
+            <CheckCircle2 size={15} className={`mt-0.5 flex-shrink-0 ${tier.highlight ? 'text-white/80' : 'text-[#219EBC]'}`} />
             <span className={`text-sm leading-snug ${
-              tier.highlight ? 'text-white/85' : dark ? 'text-[#93A8C0]' : 'text-[#0F1923]/70'
+              tier.highlight ? 'text-white/85' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'
             }`}>{item}</span>
           </div>
         ))}
       </div>
 
       <div className={`text-xs leading-relaxed mb-6 pb-6 border-b ${
-        tier.highlight ? 'text-white/60 border-white/20' : dark ? 'text-[#93A8C0]/60 border-white/10' : 'text-[#0F1923]/40 border-[#93A8C0]/30'
+        tier.highlight ? 'text-white/60 border-white/20' : dark ? 'text-[#8ECAE6]/60 border-white/10' : 'text-[#023047]/40 border-[#8ECAE6]/30'
       }`}>{tier.payment}</div>
 
       {'guarantee' in tier && tier.guarantee && (
-        <div className={`flex items-center gap-2 text-xs font-semibold mb-4 ${tier.highlight ? 'text-white' : 'text-[#3A86FF]'}`}>
+        <div className={`flex items-center gap-2 text-xs font-semibold mb-4 ${tier.highlight ? 'text-white' : 'text-[#219EBC]'}`}>
           <Shield size={13} className="flex-shrink-0" /> 3× Clarity Guarantee applies
         </div>
       )}
 
       <Link href={tier.ctaHref} className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full font-semibold text-sm transition-colors ${
         tier.highlight
-          ? 'bg-white text-[#3A86FF] hover:bg-white/90'
-          : 'bg-[#3A86FF] text-white hover:bg-[#1D3557]'
+          ? 'bg-white text-[#219EBC] hover:bg-white/90'
+          : 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]'
       }`}>
         {tier.cta} <ArrowRight size={16} />
       </Link>
@@ -300,30 +300,30 @@ export default function PricingPage() {
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-4">
-            <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Pricing</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Pricing</span>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#0F1923] mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] mb-4">
             Find the right engagement
           </h1>
-          <p className="text-lg text-[#0F1923]/60 max-w-2xl mx-auto">
+          <p className="text-lg text-[#023047]/60 max-w-2xl mx-auto">
             Answer four quick questions and we&apos;ll point you to the most relevant option — or scroll down to see all options.
           </p>
         </div>
       </section>
 
       {/* QUESTIONNAIRE */}
-      <section className="py-16 bg-[#0F1923]">
+      <section className="py-16 bg-[#023047]">
         <div className="max-w-2xl mx-auto px-6">
           {!complete ? (
             <>
               {/* Progress bar */}
               <div className="flex items-center gap-2 mb-10">
                 {questions.map((_, i) => (
-                  <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors ${i <= step ? 'bg-[#3A86FF]' : 'bg-white/20'}`} />
+                  <div key={i} className={`h-1.5 flex-1 rounded-full transition-colors ${i <= step ? 'bg-[#219EBC]' : 'bg-white/20'}`} />
                 ))}
               </div>
-              <div className="text-xs font-semibold text-[#93A8C0] uppercase tracking-wider mb-3">
+              <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-3">
                 Question {step + 1} of {questions.length}
               </div>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-8">{currentQuestion.text}</h2>
@@ -332,15 +332,15 @@ export default function PricingPage() {
                   <button
                     key={opt.value}
                     onClick={() => handleAnswer(opt.value)}
-                    className="w-full text-left flex items-center justify-between gap-4 p-5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#3A86FF]/20 hover:border-[#3A86FF]/50 transition-all duration-200 group"
+                    className="w-full text-left flex items-center justify-between gap-4 p-5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#219EBC]/20 hover:border-[#219EBC]/50 transition-all duration-200 group"
                   >
                     <span className="text-white font-medium">{opt.label}</span>
-                    <ChevronRight size={18} className="text-[#93A8C0] group-hover:text-[#3A86FF] flex-shrink-0 transition-colors" />
+                    <ChevronRight size={18} className="text-[#8ECAE6] group-hover:text-[#219EBC] flex-shrink-0 transition-colors" />
                   </button>
                 ))}
               </div>
               {step > 0 && (
-                <button onClick={() => setStep(step - 1)} className="mt-6 text-sm text-[#93A8C0] hover:text-white transition-colors">
+                <button onClick={() => setStep(step - 1)} className="mt-6 text-sm text-[#8ECAE6] hover:text-white transition-colors">
                   ← Back
                 </button>
               )}
@@ -351,12 +351,12 @@ export default function PricingPage() {
                 <span className="text-xs font-semibold text-green-400 tracking-wider uppercase">— Results ready</span>
               </div>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                We suggest: <span className="text-[#3A86FF]">{suggestedTier?.name}</span>
+                We suggest: <span className="text-[#219EBC]">{suggestedTier?.name}</span>
               </h2>
-              <p className="text-[#93A8C0] mb-6">
+              <p className="text-[#8ECAE6] mb-6">
                 {isSegmentB ? 'From the Small Business offer.' : 'From the Core Offer.'} All options are shown below — yours is highlighted in green.
               </p>
-              <button onClick={reset} className="text-sm text-[#93A8C0] hover:text-white underline transition-colors">
+              <button onClick={reset} className="text-sm text-[#8ECAE6] hover:text-white underline transition-colors">
                 Start again
               </button>
             </div>
@@ -368,11 +368,11 @@ export default function PricingPage() {
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-3">
-              <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Segment A · For established businesses</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-3">
+              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Segment A · For established businesses</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#0F1923] mb-2">Core Offer</h2>
-            <p className="text-[#0F1923]/60 text-lg">On-site. Independent. Sector-specific. From audit through to full implementation oversight.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Core Offer</h2>
+            <p className="text-[#023047]/60 text-lg">On-site. Independent. Sector-specific. From audit through to full implementation oversight.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {segmentATiers.map(tier => (
@@ -380,27 +380,27 @@ export default function PricingPage() {
             ))}
           </div>
           {/* Guarantee */}
-          <div className="rounded-2xl bg-[#0F1923] p-8 lg:p-10 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3A86FF]/20 border border-[#3A86FF]/30 mb-4">
-              <span className="text-xs font-semibold text-[#93A8C0] tracking-wider uppercase">— The 3× Clarity Guarantee</span>
+          <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— The 3× Clarity Guarantee</span>
             </div>
             <blockquote className="text-xl font-medium text-white leading-relaxed mb-4">
               &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
             </blockquote>
-            <p className="text-sm text-[#93A8C0]">Applies to Diagnose and Advise tiers.</p>
+            <p className="text-sm text-[#8ECAE6]">Applies to Diagnose and Advise tiers.</p>
           </div>
         </div>
       </section>
 
       {/* SEGMENT B */}
-      <section className="py-20 lg:py-28 bg-[#0F1923]">
+      <section className="py-20 lg:py-28 bg-[#023047]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3A86FF]/20 border border-[#3A86FF]/30 mb-3">
-              <span className="text-xs font-semibold text-[#93A8C0] tracking-wider uppercase">— Segment B · Small Business</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-3">
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Segment B · Small Business</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">Small Business Offer</h2>
-            <p className="text-[#93A8C0] text-lg">Remote. Fixed scope. No travel costs. Built for owner-operators who need practical AI and technology guidance at an accessible price.</p>
+            <p className="text-[#8ECAE6] text-lg">Remote. Fixed scope. No travel costs. Built for owner-operators who need practical AI and technology guidance at an accessible price.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {segmentBTiers.map(tier => (
@@ -413,10 +413,10 @@ export default function PricingPage() {
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1D3557]/10 border border-[#1D3557]/20 mb-6">
-            <span className="text-xs font-semibold text-[#1D3557] tracking-wider uppercase">— Common questions</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Common questions</span>
           </div>
-          <h2 className="text-3xl font-bold text-[#0F1923] mb-10">Pricing questions answered</h2>
+          <h2 className="text-3xl font-bold text-[#023047] mb-10">Pricing questions answered</h2>
           <div className="space-y-8">
             {[
               { q: 'Can I just get the Diagnose report without committing to more?', a: "Yes. Diagnose is fully standalone. There's no obligation to proceed to Advise or Deliver. Many clients use the report as the basis for going to market themselves." },
@@ -425,9 +425,9 @@ export default function PricingPage() {
               { q: 'Is the AI Readiness Check only for small businesses?', a: "It's priced for smaller businesses, but any business can book one. It's a good standalone starting point if you want an honest view of where AI could genuinely help before committing to a larger engagement." },
               { q: 'Do you work outside the print and promotional sector?', a: "The core expertise is in print, decoration, workwear, and promotional products. That's where the fastest impact tends to be. But the operational and technology skills transfer — get in touch if you're unsure." },
             ].map(({ q, a }) => (
-              <div key={q} className="border-b border-[#93A8C0]/30 pb-8">
-                <div className="text-lg font-semibold text-[#0F1923] mb-3">{q}</div>
-                <div className="text-[#0F1923]/65 leading-relaxed">{a}</div>
+              <div key={q} className="border-b border-[#8ECAE6]/30 pb-8">
+                <div className="text-lg font-semibold text-[#023047] mb-3">{q}</div>
+                <div className="text-[#023047]/65 leading-relaxed">{a}</div>
               </div>
             ))}
           </div>
@@ -435,13 +435,13 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#0F1923]">
+      <section className="py-20 bg-[#023047]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Still not sure? Let&apos;s talk.</h2>
-          <p className="text-[#93A8C0] text-lg max-w-xl mx-auto mb-8">
+          <p className="text-[#8ECAE6] text-lg max-w-xl mx-auto mb-8">
             The discovery call is free and takes 60 minutes. No pitch. No obligation. Just an honest conversation about whether any of this makes sense for your situation.
           </p>
-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#3A86FF] text-white font-semibold hover:bg-[#1D3557] transition-colors">
+          <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
             Book a free discovery call <ArrowRight size={18} />
           </Link>
         </div>

@@ -1,8 +1,8 @@
 export function CredentialsGraphic() {
   const stats = [
-    { value: '25+', label: 'Years in sector', color: '#3A86FF' },
-    { value: '0', label: 'Vendor ties', color: '#1D3557' },
-    { value: '6', label: 'Sectors covered', color: '#0F1923' },
+    { value: '25+', label: 'Years in sector', color: '#219EBC' },
+    { value: '0', label: 'Vendor ties', color: '#023047' },
+    { value: '6', label: 'Sectors covered', color: '#023047' },
   ];
 
   const expertise = [
@@ -17,19 +17,19 @@ export function CredentialsGraphic() {
   return (
     <div className="w-full max-w-md mx-auto">
       {/* Profile card */}
-      <div className="rounded-2xl bg-[#0F1923] p-8 mb-4">
+      <div className="rounded-2xl bg-[#023047] p-8 mb-4">
         {/* Avatar placeholder */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 rounded-full bg-[#3A86FF]/30 border-2 border-[#3A86FF] flex items-center justify-center flex-shrink-0">
+          <div className="w-16 h-16 rounded-full bg-[#219EBC]/30 border-2 border-[#219EBC] flex items-center justify-center flex-shrink-0">
             <svg viewBox="0 0 40 40" width="32" height="32" aria-hidden="true">
-              <circle cx="20" cy="14" r="8" fill="#3A86FF" opacity="0.8" />
-              <path d="M4 36 Q4 28 20 28 Q36 28 36 36" fill="#3A86FF" opacity="0.6" />
+              <circle cx="20" cy="14" r="8" fill="#219EBC" opacity="0.8" />
+              <path d="M4 36 Q4 28 20 28 Q36 28 36 36" fill="#219EBC" opacity="0.6" />
             </svg>
           </div>
           <div>
             <div className="text-lg font-bold text-[#F8F9FA]">Craig Blackman</div>
-            <div className="text-sm text-[#3A86FF]">Founder, Decoded Ops</div>
-            <div className="text-xs text-[#93A8C0] mt-1">Independent Operations Consultant</div>
+            <div className="text-sm text-[#219EBC]">Founder, Decoded Ops</div>
+            <div className="text-xs text-[#8ECAE6] mt-1">Independent Operations Consultant</div>
           </div>
         </div>
 
@@ -37,8 +37,8 @@ export function CredentialsGraphic() {
         <div className="grid grid-cols-3 gap-3 mb-6">
           {stats.map(s => (
             <div key={s.label} className="text-center p-3 rounded-xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-              <div className="text-2xl font-bold" style={{ color: s.color === '#0F1923' ? '#93A8C0' : s.color }}>{s.value}</div>
-              <div className="text-xs text-[#93A8C0] mt-1 leading-tight">{s.label}</div>
+              <div className="text-2xl font-bold" style={{ color: s.color === '#023047' ? '#8ECAE6' : s.color }}>{s.value}</div>
+              <div className="text-xs text-[#8ECAE6] mt-1 leading-tight">{s.label}</div>
             </div>
           ))}
         </div>
@@ -47,23 +47,23 @@ export function CredentialsGraphic() {
         <div className="space-y-2">
           {expertise.map(item => (
             <div key={item} className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#3A86FF] flex-shrink-0" />
-              <span className="text-xs text-[#93A8C0]">{item}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#219EBC] flex-shrink-0" />
+              <span className="text-xs text-[#8ECAE6]">{item}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Independence badge */}
-      <div className="rounded-xl bg-[#3A86FF]/10 border border-[#3A86FF]/30 p-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-[#3A86FF] flex items-center justify-center flex-shrink-0">
+      <div className="rounded-xl bg-[#219EBC]/10 border border-[#219EBC]/30 p-4 flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-[#219EBC] flex items-center justify-center flex-shrink-0">
           <svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true">
             <path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" fill="white" opacity="0.9" />
           </svg>
         </div>
         <div>
-          <div className="text-sm font-semibold text-[#0F1923]">Fully independent</div>
-          <div className="text-xs text-[#0F1923]/60">No referral fees. No vendor commissions. Ever.</div>
+          <div className="text-sm font-semibold text-[#023047]">Fully independent</div>
+          <div className="text-xs text-[#023047]/60">No referral fees. No vendor commissions. Ever.</div>
         </div>
       </div>
     </div>
