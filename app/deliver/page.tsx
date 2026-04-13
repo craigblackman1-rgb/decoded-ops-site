@@ -30,8 +30,7 @@ export default function DeliverPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Deliver &middot; Project Delivery &amp; Vendor Management</span>
             </div>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-              The right vendor. The right outcome.<br />
-              <span className="text-[#219EBC]">On your terms.</span>
+              The right vendor. The right outcome. <span className="text-[#219EBC]">On your terms.</span>
             </h1>
             <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
               Solution architecture, vendor brief, procurement, and project oversight. I own the outcome without doing the build &mdash; so the vendor delivers what your business actually needs.

@@ -45,9 +45,7 @@ export default function ClarityPage() {
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Clarity &middot; Operational &amp; Technology Audit</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                One day on site.<br />
-                <span className="text-[#219EBC]">Everything it costs you</span><br />
-                in writing within five days.
+                One day on site. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five days.
               </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 A structured, independent review of your operations, technology, and processes. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.

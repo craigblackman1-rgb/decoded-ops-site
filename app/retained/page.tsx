@@ -38,8 +38,7 @@ export default function RetainedPage() {
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Retained &middot; Fractional CTO / Head of Operations</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                Senior operational thinking.<br />
-                <span className="text-[#219EBC]">Without the full-time cost.</span>
+                Senior operational thinking. <span className="text-[#219EBC]">Without the full-time cost.</span>
               </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. Ongoing.
