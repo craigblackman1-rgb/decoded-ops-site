@@ -92,7 +92,7 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA]/95 backdrop-blur-sm border-b border-[#8ECAE6]/30">
         <nav className="max-w-7xl mx-auto px-6 lg:px-8" aria-label="Main navigation">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="text-2xl font-semibold text-[#023047]" aria-label="Decoded Ops — home">
+            <Link href="/" className="text-2xl font-bold tracking-tight text-[#023047]" aria-label="Decoded Ops — home">
               Decoded<span className="text-[#219EBC]" aria-hidden="true">Ops</span>
             </Link>
 

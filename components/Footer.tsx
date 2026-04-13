@@ -36,7 +36,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="text-2xl font-semibold block mb-4" aria-label="Decoded Ops — home">
+            <Link href="/" className="text-2xl font-bold tracking-tight block mb-4" aria-label="Decoded Ops — home">
               Decoded<span className="text-[#FFB703]" aria-hidden="true">Ops</span>
             </Link>
             <p className="text-sm text-[#8ECAE6] leading-relaxed mb-6 max-w-xs">
@@ -67,7 +67,7 @@ export function Footer() {
 
           {/* Services & Company */}
           <nav aria-label="Services and company links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#8ECAE6] mb-4">Services</h2>
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Services</h2>
             <ul className="space-y-2.5">
               {services.map(link => (
                 <li key={link.href}>
@@ -78,7 +78,7 @@ export function Footer() {
               ))}
             </ul>
 
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#8ECAE6] mb-4 mt-8">Company</h2>
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4 mt-8">Company</h2>
             <ul className="space-y-2.5">
               {company.map(link => (
                 <li key={link.href}>
@@ -92,7 +92,7 @@ export function Footer() {
 
           {/* Sectors */}
           <nav aria-label="Sector links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#8ECAE6] mb-4">Sectors</h2>
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Sectors</h2>
             <ul className="space-y-2.5">
               {sectors.map(link => (
                 <li key={link.href}>
@@ -106,7 +106,7 @@ export function Footer() {
 
           {/* Problems */}
           <nav aria-label="Problems we solve links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#8ECAE6] mb-4">Problems we solve</h2>
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Problems we solve</h2>
             <ul className="space-y-2.5">
               {problems.map(link => (
                 <li key={link.href}>
