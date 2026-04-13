@@ -17,8 +17,10 @@ const problems = [
 ];
 
 const services = [
-  { label: 'The operations audit', href: '/audit' },
-  { label: 'Fractional ops director', href: '/fractional' },
+  { label: 'Clarity — Operational audit', href: '/clarity' },
+  { label: 'Deliver — Project delivery', href: '/deliver' },
+  { label: 'Transform — Digital transformation', href: '/transform' },
+  { label: 'Retained — Fractional CTO', href: '/retained' },
 ];
 
 const company = [
@@ -35,7 +37,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="text-2xl font-semibold block mb-4" aria-label="Decoded Ops — home">
-              Decoded<span className="text-[#219EBC]" aria-hidden="true">Ops</span>
+              Decoded<span className="text-[#FFB703]" aria-hidden="true">Ops</span>
             </Link>
             <p className="text-sm text-[#8ECAE6] leading-relaxed mb-6 max-w-xs">
               Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.
@@ -118,7 +120,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#F8F9FA]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#8ECAE6]">© {new Date().getFullYear()} Decoded Ops (CRB Consultancy). All rights reserved.</p>
+          <p className="text-xs text-[#8ECAE6]">© {new Date().getFullYear()} Decoded Ops. All rights reserved.</p>
           <p className="text-xs text-[#8ECAE6]">Built with precision and purpose.</p>
         </div>
       </div>

@@ -3,6 +3,13 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
+const services = [
+  { label: 'Clarity — Operational audit', href: '/clarity' },
+  { label: 'Deliver — Project delivery', href: '/deliver' },
+  { label: 'Transform — Digital transformation', href: '/transform' },
+  { label: 'Retained — Fractional CTO', href: '/retained' },
+];
+
 const sectors = [
   { label: 'Garment decoration', href: '/sectors/garment-decoration' },
   { label: 'Print & promotional', href: '/sectors/print-promotional' },
@@ -68,6 +75,7 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileSectorsOpen, setMobileSectorsOpen] = useState(false);
   const [mobileProblemsOpen, setMobileProblemsOpen] = useState(false);
 
@@ -90,11 +98,9 @@ export function Header() {
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center space-x-6">
-              <Link href="/audit" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">How it works</Link>
-              <Link href="/audit" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">The audit</Link>
+              <Dropdown label="Services" items={services} />
               <Dropdown label="Sectors" items={sectors} />
               <Dropdown label="Problems" items={problems} />
-              <Link href="/fractional" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Fractional</Link>
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
               <Link href="/case-study" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case study</Link>
@@ -121,9 +127,6 @@ export function Header() {
           {mobileOpen && (
             <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
               {[
-                { label: 'How it works', href: '/audit' },
-                { label: 'The audit', href: '/audit' },
-                { label: 'Fractional', href: '/fractional' },
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'About', href: '/about' },
                 { label: 'Case study', href: '/case-study' },
@@ -137,6 +140,27 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Mobile Services accordion */}
+              <div className="border-b border-[#8ECAE6]/20">
+                <button
+                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  aria-expanded={mobileServicesOpen}
+                >
+                  Services <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+                {mobileServicesOpen && (
+                  <div className="pl-4 pb-2 space-y-1">
+                    {services.map(link => (
+                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
+                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* Mobile Sectors accordion */}
               <div className="border-b border-[#8ECAE6]/20">

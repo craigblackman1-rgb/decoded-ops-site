@@ -148,7 +148,7 @@ export default function CaseStudyPage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/audit" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <Link href="/clarity" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Book the audit <ArrowRight size={18} />
                 </Link>
               </div>

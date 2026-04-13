@@ -4,25 +4,26 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowRight, CheckCircle2, Shield, ChevronRight } from 'lucide-react';
 
-/* ─── Segment A tiers ───────────────────────────────────────────────── */
-const segmentATiers = [
+/* ─── Core Services (4 standalone) ─────────────────────────────────── */
+const coreServices = [
   {
-    id: 'diagnose',
-    name: 'Diagnose',
+    id: 'clarity',
+    name: 'Clarity',
+    subtitle: 'Operational & technology audit',
     price: 'From £2,500',
     vat: '+ VAT',
-    tagline: 'Audit & written report. Standalone.',
-    badge: null as string | null,
+    tagline: 'The starting point. A full operational and technology audit — delivered in plain English with costed recommendations.',
+    badge: 'Start here' as string | null,
     includes: [
-      'One day on site',
+      'One day on site (1–3 days depending on complexity)',
       'Six audit areas covered in full',
       'Written findings report — plain English',
       'Issues & opportunities register',
       'End-to-end process maps',
-      'Costed, prioritised recommendations',
+      'Costed prioritised recommendations',
       'Independent vendor shortlist where relevant',
       'Quick wins identified',
-      'Follow-up session included',
+      'Debrief call + 30 days follow-up support',
     ],
     payment: '50% on signing, 50% on delivery',
     guarantee: true,
@@ -31,46 +32,73 @@ const segmentATiers = [
     highlight: false,
   },
   {
-    id: 'advise',
-    name: 'Advise',
-    price: 'From £3,800',
-    vat: '+ VAT',
-    tagline: 'Adds vendor briefs & procurement.',
-    badge: 'Most popular' as string | null,
+    id: 'deliver',
+    name: 'Deliver',
+    subtitle: 'Project delivery & vendor management',
+    price: 'From £5,000',
+    vat: '+ VAT (or from £1,200/mo)',
+    tagline: 'Independent vendor management and project delivery. One point of contact. No vendor loyalty — only yours.',
+    badge: 'Most common' as string | null,
     includes: [
-      'Everything in Diagnose',
-      '1–2 days on site',
-      'Detailed vendor briefs written',
-      'Vendors approached on your behalf',
-      'Competitive, like-for-like quotes secured',
+      'Independent vendor brief written on your terms',
+      'Vendors approached and managed on your behalf',
+      'Competitive like-for-like quotes secured',
       'Vendor comparison & recommendation',
-      'No commitment until all options reviewed',
+      'Single point of contact across all vendors',
+      'Structured progress reviews + written summaries',
+      'Milestone sign-off before payments released',
+      'Final handover review & acceptance',
     ],
-    payment: '50% on signing, 50% on delivery',
-    guarantee: true,
+    payment: 'Fixed fee or monthly retainer. Structure agreed at discovery.',
+    guarantee: false,
     cta: 'Book a free discovery call',
     ctaHref: '/contact',
     highlight: true,
   },
   {
-    id: 'deliver',
-    name: 'Deliver',
-    price: 'From £3,800',
-    vat: '+ £1,500/mo + VAT',
-    tagline: 'Adds implementation oversight.',
+    id: 'transform',
+    name: 'Transform',
+    subtitle: 'Digital transformation programme',
+    price: 'From £8,000',
+    vat: '+ VAT (or from £1,200/mo)',
+    tagline: 'Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first.',
     badge: null as string | null,
     includes: [
-      'Everything in Advise',
-      '2–3 days on site',
-      'Single point of contact across vendors',
-      'Vendors held to brief — changes challenged',
-      'Structured progress reviews + written summaries',
-      'Milestone sign-off before payments released',
-      'Final handover review & acceptance',
+      'Full discovery phase before scoping',
+      'Multi-workstream programme (ERP + eCommerce + process redesign)',
+      'Process-led people-first approach',
+      'Change management and employee buy-in built in',
+      'Vendor selection and management across workstreams',
+      'Structured milestone governance',
+      'Regular written progress reporting',
+      'Roadmap ownership through to completion',
     ],
-    payment: 'Fixed element: 50/50. Retainer: monthly in advance. Min. 3 months.',
+    payment: 'Fixed fee or monthly retainer. Discovery required before scoping.',
     guarantee: false,
     cta: 'Request a proposal',
+    ctaHref: '/contact',
+    highlight: false,
+  },
+  {
+    id: 'retained',
+    name: 'Retained',
+    subtitle: 'Fractional CTO / Head of Operations',
+    price: 'From £750',
+    vat: '/month + VAT',
+    tagline: 'A direct line to Craig — no junior handoff. Defined days per month, agreed in advance.',
+    badge: null as string | null,
+    includes: [
+      'Defined days per month — agreed in advance',
+      'Attendance at leadership and operations meetings',
+      'Ownership of specific projects or workstreams',
+      'Vendor management and technology procurement',
+      'Team coaching and process documentation',
+      'Technology roadmap ownership',
+      'A direct line to Craig — no junior handoff',
+    ],
+    payment: 'Monthly in advance. Min. 3 months. 30 days notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
     ctaHref: '/contact',
     highlight: false,
   },
@@ -81,6 +109,7 @@ const segmentBTiers = [
   {
     id: 'ai-check',
     name: 'AI Readiness Check',
+    subtitle: 'Remote. Fixed scope. Fast turnaround.',
     price: '£395',
     vat: '+ VAT',
     tagline: 'Remote. Fixed scope. Fast turnaround.',
@@ -103,6 +132,7 @@ const segmentBTiers = [
   {
     id: 'monthly',
     name: 'Monthly Advisory',
+    subtitle: 'Standing monthly support. Remote.',
     price: '£350',
     vat: '/month + VAT',
     tagline: 'Standing monthly support. Remote.',
@@ -125,6 +155,7 @@ const segmentBTiers = [
   {
     id: 'sprint',
     name: 'Quarterly Sprint',
+    subtitle: 'One focused project. 90 days.',
     price: '£995',
     vat: '+ VAT',
     tagline: 'One focused project. 90 days.',
@@ -163,6 +194,8 @@ const questions = [
       { label: "My systems and processes aren't working properly", value: 'systems' },
       { label: 'I want to understand what AI could do for my business', value: 'ai' },
       { label: 'I need help choosing or implementing software', value: 'software' },
+      { label: 'I need a major technology overhaul across multiple areas', value: 'overhaul' },
+      { label: 'I need ongoing strategic and operational leadership', value: 'ongoing-leadership' },
       { label: "I'm not sure — I just know something needs to change", value: 'unsure' },
     ],
   },
@@ -171,8 +204,9 @@ const questions = [
     text: 'What level of involvement are you looking for?',
     options: [
       { label: 'A one-off review or report — standalone deliverable', value: 'oneoff' },
-      { label: 'Ongoing support over several months', value: 'ongoing' },
-      { label: 'Full implementation oversight — someone to drive it', value: 'full' },
+      { label: 'A defined project with a clear start and end', value: 'project' },
+      { label: 'A multi-workstream programme over several months', value: 'programme' },
+      { label: 'Ongoing retained support — part of the leadership team', value: 'ongoing' },
     ],
   },
   {
@@ -181,27 +215,39 @@ const questions = [
     options: [
       { label: 'Under £500', value: 'low' },
       { label: '£500 – £5,000', value: 'mid' },
-      { label: '£5,000+', value: 'high' },
+      { label: '£5,000 – £25,000', value: 'high' },
+      { label: '£25,000+', value: 'enterprise' },
     ],
   },
 ];
 
-function getSuggestedTierId(answers: Record<string, string>): string {
-  const { size, involvement, budget } = answers;
+function getSuggestedServiceId(answers: Record<string, string>): string {
+  const { size, challenge, involvement, budget } = answers;
+
+  // Small business or low budget → Segment B
   if (size === 'small' || budget === 'low') {
     if (involvement === 'ongoing') return 'monthly';
-    if (involvement === 'full') return 'sprint';
+    if (involvement === 'project' || involvement === 'programme') return 'sprint';
     return 'ai-check';
   }
-  if (involvement === 'full' || budget === 'high') return 'deliver';
-  if (involvement === 'ongoing') return 'advise';
-  return 'diagnose';
+
+  // Overhaul / programme / enterprise → Transform
+  if (challenge === 'overhaul' || involvement === 'programme' || budget === 'enterprise') return 'transform';
+
+  // Ongoing leadership / ongoing → Retained
+  if (challenge === 'ongoing-leadership' || involvement === 'ongoing') return 'retained';
+
+  // Software / project → Deliver
+  if (challenge === 'software' || involvement === 'project') return 'deliver';
+
+  // Default → Clarity
+  return 'clarity';
 }
 
-const allTiers = [...segmentATiers, ...segmentBTiers];
+const allTiers = [...coreServices, ...segmentBTiers];
 
 /* ─── Tier card ─────────────────────────────────────────────────────── */
-type Tier = typeof segmentATiers[0] | typeof segmentBTiers[0];
+type Tier = (typeof coreServices)[0] | (typeof segmentBTiers)[0];
 
 function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; dark: boolean }) {
   return (
@@ -222,14 +268,19 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
       )}
       {suggested && (
         <div className="absolute -top-3 right-5 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-bold">
-          ✓ Suggested for you
+          Suggested for you
         </div>
       )}
 
       <div className="mb-6">
-        <div className={`text-xs font-bold uppercase tracking-widest mb-2 ${
+        <div className={`text-xs font-bold uppercase tracking-widest mb-1 ${
           tier.highlight ? 'text-white/70' : dark ? 'text-[#219EBC]' : 'text-[#023047]'
         }`}>{tier.name}</div>
+        {'subtitle' in tier && tier.subtitle && (
+          <div className={`text-sm font-medium mb-2 ${
+            tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'
+          }`}>{tier.subtitle}</div>
+        )}
         <div className={`text-3xl font-bold ${tier.highlight || dark ? 'text-white' : 'text-[#023047]'}`}>{tier.price}</div>
         <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'}`}>{tier.vat}</div>
         <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]/80' : 'text-[#023047]/70'}`}>{tier.tagline}</p>
@@ -252,7 +303,7 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
 
       {'guarantee' in tier && tier.guarantee && (
         <div className={`flex items-center gap-2 text-xs font-semibold mb-4 ${tier.highlight ? 'text-white' : 'text-[#219EBC]'}`}>
-          <Shield size={13} className="flex-shrink-0" /> 3× Clarity Guarantee applies
+          <Shield size={13} className="flex-shrink-0" /> 3x Clarity Guarantee applies
         </div>
       )}
 
@@ -267,6 +318,63 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
   );
 }
 
+/* ─── Service connection flow ──────────────────────────────────────── */
+function ServiceFlow() {
+  const steps = ['Clarity', 'Deliver', 'Transform', 'Retained'];
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+      {steps.map((step, i) => (
+        <div key={step} className="flex items-center gap-2">
+          <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#023047]/10 border border-[#023047]/20 text-sm font-semibold text-[#023047]">
+            {step}
+          </span>
+          {i < steps.length - 1 && (
+            <ArrowRight size={16} className="text-[#219EBC] flex-shrink-0" />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ─── Indicative pricing table ─────────────────────────────────────── */
+const pricingRanges = [
+  { service: 'Clarity', sub: 'Audit', under1m: '\u00A32,500\u2013\u00A35,000', mid: '\u00A35,000\u2013\u00A312,000', over75m: '\u00A312,000\u2013\u00A325,000' },
+  { service: 'Deliver', sub: 'Fixed fee', under1m: '\u00A32,500\u2013\u00A35,000', mid: '\u00A35,000\u2013\u00A315,000', over75m: '\u00A315,000\u2013\u00A330,000+' },
+  { service: 'Deliver', sub: 'Monthly', under1m: '\u00A3750\u2013\u00A31,200/mo', mid: '\u00A31,200\u2013\u00A32,000/mo', over75m: '\u00A32,000\u2013\u00A33,500+/mo' },
+  { service: 'Transform', sub: 'Programme', under1m: '\u00A38,000\u2013\u00A325,000', mid: '\u00A325,000\u2013\u00A370,000', over75m: '\u00A370,000+' },
+  { service: 'Retained', sub: 'Monthly', under1m: '\u00A3750\u2013\u00A31,500/mo', mid: '\u00A31,500\u2013\u00A32,500/mo', over75m: '\u00A32,500\u2013\u00A34,000+/mo' },
+];
+
+function PricingTable() {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="border-b-2 border-[#8ECAE6]/40">
+            <th className="py-4 pr-4 text-sm font-bold text-[#023047]">Service</th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047]">Type</th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">Under &pound;1m</th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">&pound;1m &ndash; &pound;7.5m</th>
+            <th className="py-4 pl-4 text-sm font-bold text-[#023047] text-center">&pound;7.5m+</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pricingRanges.map((row, i) => (
+            <tr key={`${row.service}-${row.sub}`} className={i < pricingRanges.length - 1 ? 'border-b border-[#8ECAE6]/20' : ''}>
+              <td className="py-4 pr-4 text-sm font-semibold text-[#023047]">{row.service}</td>
+              <td className="py-4 px-4 text-sm text-[#023047]/70">{row.sub}</td>
+              <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.under1m}</td>
+              <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.mid}</td>
+              <td className="py-4 pl-4 text-sm text-[#023047]/70 text-center">{row.over75m}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 /* ─── Page ──────────────────────────────────────────────────────────── */
 export default function PricingPage() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -274,7 +382,7 @@ export default function PricingPage() {
   const [complete, setComplete] = useState(false);
 
   const currentQuestion = questions[step];
-  const suggestedTierId = complete ? getSuggestedTierId(answers) : null;
+  const suggestedServiceId = complete ? getSuggestedServiceId(answers) : null;
 
   function handleAnswer(value: string) {
     const newAnswers = { ...answers, [currentQuestion.id]: value };
@@ -292,8 +400,8 @@ export default function PricingPage() {
     setComplete(false);
   }
 
-  const suggestedTier = suggestedTierId ? allTiers.find(t => t.id === suggestedTierId) : null;
-  const isSegmentB = suggestedTierId ? ['ai-check', 'monthly', 'sprint'].includes(suggestedTierId) : false;
+  const suggestedTier = suggestedServiceId ? allTiers.find(t => t.id === suggestedServiceId) : null;
+  const isSegmentB = suggestedServiceId ? ['ai-check', 'monthly', 'sprint'].includes(suggestedServiceId) : false;
 
   return (
     <>
@@ -354,7 +462,7 @@ export default function PricingPage() {
                 We suggest: <span className="text-[#219EBC]">{suggestedTier?.name}</span>
               </h2>
               <p className="text-[#8ECAE6] mb-6">
-                {isSegmentB ? 'From the Small Business offer.' : 'From the Core Offer.'} All options are shown below — yours is highlighted in green.
+                {isSegmentB ? 'From the Small Business offer.' : 'From the Core Services.'} All options are shown below — yours is highlighted in green.
               </p>
               <button onClick={reset} className="text-sm text-[#8ECAE6] hover:text-white underline transition-colors" aria-label="Start the questionnaire again">
                 Start again
@@ -364,31 +472,35 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* SEGMENT A — only shown after questionnaire complete */}
+      {/* CORE SERVICES — only shown after questionnaire complete */}
       {complete && (
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-3">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Segment A · For established businesses</span>
+              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The four services</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Core Offer</h2>
-            <p className="text-[#023047]/70 text-lg">On-site. Independent. Sector-specific. From audit through to full implementation oversight.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Core Services</h2>
+            <p className="text-[#023047]/70 text-lg max-w-3xl">Each service is standalone. Each is a natural progression to the next. The audit is the door, not the business.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {segmentATiers.map(tier => (
-              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedTierId} dark={false} />
+
+          {/* Service connection flow */}
+          <ServiceFlow />
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+            {coreServices.map(tier => (
+              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedServiceId} dark={false} />
             ))}
           </div>
           {/* Guarantee */}
           <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— The 3× Clarity Guarantee</span>
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— The 3x Clarity Guarantee</span>
             </div>
             <blockquote className="text-xl font-medium text-white leading-relaxed mb-4">
               &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
             </blockquote>
-            <p className="text-sm text-[#8ECAE6]">Applies to Diagnose and Advise tiers.</p>
+            <p className="text-sm text-[#8ECAE6]">Applies to the Clarity service.</p>
           </div>
         </div>
       </section>
@@ -407,8 +519,26 @@ export default function PricingPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {segmentBTiers.map(tier => (
-              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedTierId} dark={true} />
+              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedServiceId} dark={true} />
             ))}
+          </div>
+        </div>
+      </section>
+      )}
+
+      {/* INDICATIVE PRICING RANGES — only shown after questionnaire complete */}
+      {complete && (
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-3">
+              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Indicative ranges</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Pricing by business size</h2>
+            <p className="text-[#023047]/70 text-lg max-w-3xl">Indicative ranges based on annual turnover. Every engagement is scoped individually — these give a realistic starting point.</p>
+          </div>
+          <div className="rounded-2xl bg-white border border-[#8ECAE6]/30 p-6 lg:p-8">
+            <PricingTable />
           </div>
         </div>
       </section>
@@ -423,9 +553,10 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-[#023047] mb-10">Pricing questions answered</h2>
           <div className="space-y-8">
             {[
-              { q: 'Can I just get the Diagnose report without committing to more?', a: "Yes. Diagnose is fully standalone. There's no obligation to proceed to Advise or Deliver. Many clients use the report as the basis for going to market themselves." },
-              { q: 'Is travel included in the price?', a: 'For Segment A engagements (on-site), travel expenses are charged at cost and agreed in advance. Segment B is fully remote — no travel costs at all.' },
-              { q: "What's the difference between Advise and Deliver?", a: "Advise ends with a vendor recommendation. Deliver means I stay involved through implementation — owning the vendor relationship, running structured reviews, and signing off milestones on your behalf." },
+              { q: 'Can I just get the Clarity audit without committing to more?', a: "Yes. Clarity is fully standalone. There's no obligation to proceed to Deliver, Transform, or Retained. Many clients use the report as the basis for going to market themselves." },
+              { q: 'Is travel included in the price?', a: 'For Core Services engagements (on-site), travel expenses are charged at cost and agreed in advance. Small Business services are fully remote — no travel costs at all.' },
+              { q: "What's the difference between Deliver and Transform?", a: "Deliver is for a defined project — vendor selection, management, and implementation oversight for a single workstream. Transform is for multi-workstream programmes (ERP + eCommerce + process redesign) that require discovery, change management, and milestone governance across the business." },
+              { q: 'What does Retained actually look like in practice?', a: "You get defined days per month with Craig — agreed in advance. That typically includes attending leadership meetings, owning specific projects or workstreams, managing vendors, and coaching your team. It's a fractional CTO or Head of Operations role. No junior handoff." },
               { q: 'Is the AI Readiness Check only for small businesses?', a: "It's priced for smaller businesses, but any business can book one. It's a good standalone starting point if you want an honest view of where AI could genuinely help before committing to a larger engagement." },
               { q: 'Do you work outside the print and promotional sector?', a: "The core expertise is in print, decoration, workwear, and promotional products. That's where the fastest impact tends to be. But the operational and technology skills transfer — get in touch if you're unsure." },
             ].map(({ q, a }) => (
