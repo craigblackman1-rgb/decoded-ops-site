@@ -102,6 +102,7 @@ export function Header() {
               <Dropdown label="Sectors" items={sectors} />
               <Dropdown label="Problems" items={problems} />
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
+              <Link href="/blog" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Blog</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
               <Link href="/case-study" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case study</Link>
               <Link
@@ -128,6 +129,7 @@ export function Header() {
             <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
               {[
                 { label: 'Pricing', href: '/pricing' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'About', href: '/about' },
                 { label: 'Case study', href: '/case-study' },
               ].map(link => (
