@@ -27,14 +27,17 @@ export default function CaseStudyPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Case Study</span>
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Illustrative Scenario</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
                 What happens when<br />
                 <span className="text-[#219EBC]">the audit doesn&apos;t come first.</span>
               </h1>
+              <p className="text-lg text-[#023047]/70 leading-relaxed mb-2 max-w-xl">
+                A composite scenario based on real patterns observed across print and embroidery audits.
+              </p>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                A print and embroidery business. £154,000. 18 months. And what the £10,000 audit would have prevented.
+                £154,000 in costs. 18 months. What a £10,000 audit would have prevented.
               </p>
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                 Don&apos;t let this be your story <ArrowRight size={18} />
@@ -53,11 +56,11 @@ export default function CaseStudyPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The business</span>
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The Pattern</span>
               </div>
-              <h2 className="text-3xl font-bold text-[#023047] mb-6">A growing business. A decision made too quickly.</h2>
+              <h2 className="text-3xl font-bold text-[#023047] mb-6">A common scenario: Growth without preparation.</h2>
               <div className="space-y-4 text-[#023047]/70 leading-relaxed">
-                <p>A £2.4m print and embroidery business with 18 staff. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.</p>
+                <p>A £2.4m print and embroidery business with 18 staff. Successful. Growing. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.</p>
                 <p>The platform was selected based on a sales demo and a recommendation from another business owner in a different sector. The ERP vendor was asked whether integration was possible. They said yes.</p>
                 <p>No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed.</p>
               </div>
