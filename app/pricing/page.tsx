@@ -470,10 +470,10 @@ export default function PricingPage() {
                 <span className="text-xs font-semibold text-green-400 tracking-wider uppercase">— Results ready</span>
               </div>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-                We suggest: <span className="text-[#219EBC]">{suggestedTier?.name}</span>
+                We recommend: <span className="text-[#219EBC]">{suggestedTier?.name}</span>
               </h2>
               <p className="text-[#8ECAE6] mb-6">
-                {isSegmentB ? 'From the Small Business offer.' : 'From the Core Services.'} All options are shown below — yours is highlighted in green.
+                Scroll down to see the pricing and what's included.
               </p>
               <button onClick={reset} className="text-sm text-[#8ECAE6] hover:text-white underline transition-colors" aria-label="Start the questionnaire again">
                 Start again
@@ -483,73 +483,27 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* CORE SERVICES — only shown after questionnaire complete */}
-      {complete && (
+      {/* RECOMMENDED PRICING — only shown after questionnaire complete */}
+      {complete && suggestedTier && (
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-3">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The four services</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Core Services</h2>
-            <p className="text-[#023047]/70 text-lg max-w-3xl">Each service is standalone. Each is a natural progression to the next. The audit is the door, not the business.</p>
-          </div>
+        <div className="max-w-2xl mx-auto px-6 lg:px-8">
+          <TierCard tier={suggestedTier} suggested={false} dark={false} />
 
-          {/* Service connection flow */}
-          <ServiceFlow />
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
-            {coreServices.map(tier => (
-              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedServiceId} dark={false} />
-            ))}
-          </div>
-          {/* Guarantee */}
-          <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— The 3x Clarity Guarantee</span>
+          {suggestedTier.id === 'clarity' && (
+            <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 mt-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
+                <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Money-back guarantee</span>
+              </div>
+              <blockquote className="text-xl font-medium text-white leading-relaxed mb-4">
+                &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
+              </blockquote>
             </div>
-            <blockquote className="text-xl font-medium text-white leading-relaxed mb-4">
-              &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
-            </blockquote>
-            <p className="text-sm text-[#8ECAE6]">Applies to the Clarity service.</p>
-          </div>
-        </div>
-      </section>
-      )}
+          )}
 
-      {/* SMALL BUSINESS OFFER — only shown after questionnaire complete */}
-      {complete && (
-      <section className="py-20 lg:py-28 bg-[#023047]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-3">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Small Business · Under £500k</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">Small Business Offer</h2>
-            <p className="text-[#8ECAE6] text-lg">Remote. Fixed scope. No travel costs. Built for owner-operators who need practical technology and AI guidance at an accessible price.</p>
-          </div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
-            {segmentBTiers.map(tier => (
-              <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedServiceId} dark={true} />
-            ))}
-          </div>
-        </div>
-      </section>
-      )}
-
-      {/* INDICATIVE PRICING RANGES — only shown after questionnaire complete */}
-      {complete && (
-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-3">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Indicative ranges</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Pricing by business size</h2>
-            <p className="text-[#023047]/70 text-lg max-w-3xl">Indicative ranges based on annual turnover. All fees are Craig&apos;s fees — no VAT is charged. Vendor, software, and implementation costs are separate and confirmed with formal quotes before any commitment.</p>
-          </div>
-          <div className="rounded-2xl bg-white border border-[#8ECAE6]/30 p-6 lg:p-8">
-            <PricingTable />
+          <div className="mt-10 text-center">
+            <button onClick={reset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
+              Answer the questions again
+            </button>
           </div>
         </div>
       </section>
