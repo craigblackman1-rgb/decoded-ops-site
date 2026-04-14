@@ -154,7 +154,6 @@ export default function RetainedPage() {
               <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-6">How it&apos;s structured</div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-xl font-bold text-[#F8F9FA] mb-1">From &pound;750/month + VAT</div>
                   <div className="text-sm text-[#8ECAE6]">Fixed days per month. Agreed at the start of the engagement. Minimum 3 months.</div>
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">

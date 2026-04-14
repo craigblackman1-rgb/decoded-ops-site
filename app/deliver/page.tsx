@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, FileText, Search, Users, Shield, CheckCircle2 } from 'lucide-react';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 
 const processSteps = [
   { icon: FileText, num: '01', title: 'Brief',   desc: 'I write the vendor brief based on your Clarity report or existing requirements. Your needs, not the vendor\u2019s sales pitch.' },
@@ -25,23 +26,40 @@ export default function DeliverPage() {
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Deliver &middot; Project Delivery &amp; Vendor Management</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Deliver &middot; Project Delivery &amp; Vendor Management</span>
+              </div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+                The right vendor. The right outcome. <span className="text-[#219EBC]">On your terms.</span>
+              </h1>
+              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+                Solution architecture, vendor brief, procurement, and project oversight. I own the outcome without doing the build &mdash; so the vendor delivers what your business actually needs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                  Book a free discovery call <ArrowRight size={18} />
+                </Link>
+                <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                  Start with Clarity first
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-              The right vendor. The right outcome. <span className="text-[#219EBC]">On your terms.</span>
-            </h1>
-            <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-              Solution architecture, vendor brief, procurement, and project oversight. I own the outcome without doing the build &mdash; so the vendor delivers what your business actually needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
-              </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                Start with Clarity first
-              </Link>
+            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30 min-h-96">
+              <div className="w-full h-96" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '100%', height: '100%' }}>
+                  <WorkflowGraphic
+                  steps={[
+                    { label: 'Brief', sub: 'Requirements' },
+                    { label: 'Procure', sub: 'Vendors' },
+                    { label: 'Manage', sub: 'Oversight' },
+                    { label: 'Deliver', sub: 'Success', alert: false },
+                  ]}
+                  variant="light"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -96,7 +114,7 @@ export default function DeliverPage() {
       {/* WHAT'S INCLUDED */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-3xl">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; What&apos;s included</span>
@@ -109,19 +127,6 @@ export default function DeliverPage() {
                     <span className="text-[#023047]/70">{item}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl bg-[#023047] text-center">
-              <h3 className="text-xl font-bold text-[#F8F9FA] mb-4">Pricing</h3>
-              <p className="text-[#8ECAE6] text-lg leading-relaxed">
-                Fixed fee or monthly retainer.<br />
-                <span className="text-[#F8F9FA] font-semibold">From &pound;5,000 + VAT</span> (fixed)<br />
-                or <span className="text-[#F8F9FA] font-semibold">from &pound;1,200/mo + VAT</span>.
-              </p>
-              <div className="mt-6">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book a free discovery call <ArrowRight size={18} />
-                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Server, ShoppingCart, GitBranch, Users, Layers, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 
 const workstreams = [
   { icon: Server,       title: 'ERP & Core Systems',        desc: 'Selection, implementation, migration, and integration of your core business system. Built around how your business actually operates.' },
@@ -34,24 +35,41 @@ export default function TransformPage() {
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Transform &middot; Digital Transformation Programme</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Transform &middot; Digital Transformation Programme</span>
+              </div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+                Process-led. People-first.<br />
+                <span className="text-[#219EBC]">Technology that sticks.</span>
+              </h1>
+              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+                For businesses that need a coordinated transformation across multiple workstreams &mdash; ERP, eCommerce, process redesign, and more. Discovery required before scoping, because assumptions are where transformations fail.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                  Book a free discovery call <ArrowRight size={18} />
+                </Link>
+                <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                  Start with Clarity first
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-              Process-led. People-first.<br />
-              <span className="text-[#219EBC]">Technology that sticks.</span>
-            </h1>
-            <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-              For businesses that need a coordinated transformation across multiple workstreams &mdash; ERP, eCommerce, process redesign, and more. Discovery required before scoping, because assumptions are where transformations fail.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
-              </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                Start with Clarity first
-              </Link>
+            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30 min-h-96">
+              <div className="w-full h-96" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '100%', height: '100%' }}>
+                  <WorkflowGraphic
+                  steps={[
+                    { label: 'Discover', sub: 'Understanding' },
+                    { label: 'Design', sub: 'Architecture' },
+                    { label: 'Deploy', sub: 'Delivery' },
+                    { label: 'Sustain', sub: 'Success' },
+                  ]}
+                  variant="light"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +127,7 @@ export default function TransformPage() {
       {/* WHAT'S INCLUDED — dark */}
       <section className="py-20 lg:py-28 bg-[#023047]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-3xl">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
                 <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; What&apos;s included</span>
@@ -122,24 +140,6 @@ export default function TransformPage() {
                     <span className="text-[#8ECAE6]">{item}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10 text-center">
-              <h3 className="text-xl font-bold text-[#F8F9FA] mb-4">Pricing</h3>
-              <p className="text-[#8ECAE6] text-lg leading-relaxed">
-                <span className="text-[#F8F9FA] font-semibold">From &pound;8,000 + VAT</span> (fixed)<br />
-                or <span className="text-[#F8F9FA] font-semibold">from &pound;1,200/mo + VAT</span>.
-              </p>
-              <p className="text-[#8ECAE6] text-sm mt-3">Discovery phase required before scoping.</p>
-              <div className="mt-4 p-4 rounded-xl bg-[#219EBC]/10 border border-[#219EBC]/20">
-                <p className="text-[#F8F9FA] text-sm font-semibold">
-                  Discovery is not optional &mdash; I will not scope a Transform programme without a proper discovery phase.
-                </p>
-              </div>
-              <div className="mt-6">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book a free discovery call <ArrowRight size={18} />
-                </Link>
               </div>
             </div>
           </div>
