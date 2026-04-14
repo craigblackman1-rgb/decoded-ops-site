@@ -11,7 +11,7 @@ const coreServices = [
     name: 'Clarity',
     subtitle: 'Operational & technology audit',
     price: 'From £2,500',
-    vat: '+ VAT',
+    vat: null,
     tagline: 'The starting point. A full operational and technology audit — delivered in plain English with costed recommendations.',
     badge: 'Start here' as string | null,
     includes: [
@@ -35,8 +35,8 @@ const coreServices = [
     id: 'deliver',
     name: 'Deliver',
     subtitle: 'Project delivery & vendor management',
-    price: 'From £5,000',
-    vat: '+ VAT (or from £1,200/mo)',
+    price: 'From £2,500',
+    vat: 'fixed, then from £750/month',
     tagline: 'Independent vendor management and project delivery. One point of contact. No vendor loyalty — only yours.',
     badge: 'Most common' as string | null,
     includes: [
@@ -49,7 +49,7 @@ const coreServices = [
       'Milestone sign-off before payments released',
       'Final handover review & acceptance',
     ],
-    payment: 'Fixed fee or monthly retainer. Structure agreed at discovery.',
+    payment: 'Fixed fee covers architecture, brief & procurement. Monthly retainer during delivery. Minimum 3 months.',
     guarantee: false,
     cta: 'Book a free discovery call',
     ctaHref: '/contact',
@@ -60,7 +60,7 @@ const coreServices = [
     name: 'Transform',
     subtitle: 'Digital transformation programme',
     price: 'From £8,000',
-    vat: '+ VAT (or from £1,200/mo)',
+    vat: 'then from £1,000/month',
     tagline: 'Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first.',
     badge: null as string | null,
     includes: [
@@ -73,7 +73,7 @@ const coreServices = [
       'Regular written progress reporting',
       'Roadmap ownership through to completion',
     ],
-    payment: 'Fixed fee or monthly retainer. Discovery required before scoping.',
+    payment: 'Fixed programme fee plus monthly oversight retainer. Discovery required before scoping.',
     guarantee: false,
     cta: 'Request a proposal',
     ctaHref: '/contact',
@@ -84,7 +84,7 @@ const coreServices = [
     name: 'Retained',
     subtitle: 'Fractional CTO / Head of Operations',
     price: 'From £750',
-    vat: '/month + VAT',
+    vat: '/month',
     tagline: 'A direct line to Craig — no junior handoff. Defined days per month, agreed in advance.',
     badge: null as string | null,
     includes: [
@@ -104,15 +104,37 @@ const coreServices = [
   },
 ];
 
-/* ─── Segment B tiers ───────────────────────────────────────────────── */
+/* ─── Segment B / Micro tiers ───────────────────────────────────────── */
 const segmentBTiers = [
+  {
+    id: 'remote-clarity',
+    name: 'Remote Clarity',
+    subtitle: 'Video-based operational review. Remote.',
+    price: '£995',
+    vat: null,
+    tagline: 'The remote equivalent of the on-site audit — honest, specific, and actionable.',
+    badge: 'New' as string | null,
+    includes: [
+      'Pre-session questionnaire (self-completed)',
+      '90-minute structured video call',
+      'Written findings summary — plain English',
+      'Three priority actions identified',
+      'Current tech stack and AI readiness assessed',
+      'Delivered within 5 working days',
+    ],
+    payment: '100% on booking. Remote delivery — no travel costs.',
+    guarantee: false,
+    cta: 'Book your Remote Clarity',
+    ctaHref: '/contact',
+    highlight: false,
+  },
   {
     id: 'ai-check',
     name: 'AI Readiness Check',
     subtitle: 'Remote. Fixed scope. Fast turnaround.',
     price: '£395',
-    vat: '+ VAT',
-    tagline: 'Remote. Fixed scope. Fast turnaround.',
+    vat: null,
+    tagline: 'An honest view of where AI could genuinely help your operation — and what needs fixing first.',
     badge: 'Start here' as string | null,
     includes: [
       'Pre-session questionnaire (self-completed)',
@@ -134,8 +156,8 @@ const segmentBTiers = [
     name: 'Monthly Advisory',
     subtitle: 'Standing monthly support. Remote.',
     price: '£350',
-    vat: '/month + VAT',
-    tagline: 'Standing monthly support. Remote.',
+    vat: '/month',
+    tagline: 'Ongoing practical guidance on technology, AI, and operations from someone who has worked in these businesses.',
     badge: 'Best value' as string | null,
     includes: [
       'AI Readiness Check included as onboarding',
@@ -157,8 +179,8 @@ const segmentBTiers = [
     name: 'Quarterly Sprint',
     subtitle: 'One focused project. 90 days.',
     price: '£995',
-    vat: '+ VAT',
-    tagline: 'One focused project. 90 days.',
+    vat: null,
+    tagline: 'One defined problem. Three working sessions. A written action plan at the close.',
     badge: null as string | null,
     includes: [
       'AI Readiness Check included as onboarding',
@@ -177,70 +199,46 @@ const segmentBTiers = [
   },
 ];
 
-/* ─── Questionnaire ─────────────────────────────────────────────────── */
+/* ─── Questionnaire — 2 questions ───────────────────────────────────── */
 const questions = [
   {
+    id: 'situation',
+    text: 'Where are you right now?',
+    sub: 'Pick the one that fits best.',
+    options: [
+      { label: "Something isn't working but I'm not sure exactly what", detail: 'Operations feel inefficient. Money feels like it\'s leaking somewhere. I need a clear picture before committing to anything.', value: 'unknown' },
+      { label: 'I know what I need — a new system, eCommerce, or ERP', detail: 'I have a specific project in mind. I need someone to own getting it built properly.', value: 'known_project' },
+      { label: "I'm undertaking a major overhaul — multiple systems at once", detail: 'ERP, eCommerce, process redesign — several things changing at the same time.', value: 'known_big' },
+      { label: 'I need an ongoing technology and operations partner', detail: 'No big project right now. I want a senior person in my corner every month.', value: 'ongoing' },
+    ],
+  },
+  {
     id: 'size',
-    text: 'How would you describe your business?',
+    text: 'What is your approximate annual turnover?',
+    sub: 'All prices shown are Craig\'s fees. No VAT is charged.',
     options: [
-      { label: 'SME or established business (10+ staff)', value: 'sme' },
-      { label: 'Small business or sole trader (under 10 staff)', value: 'small' },
-    ],
-  },
-  {
-    id: 'challenge',
-    text: 'What best describes your current challenge?',
-    options: [
-      { label: "My systems and processes aren't working properly", value: 'systems' },
-      { label: 'I want to understand what AI could do for my business', value: 'ai' },
-      { label: 'I need help choosing or implementing software', value: 'software' },
-      { label: 'I need a major technology overhaul across multiple areas', value: 'overhaul' },
-      { label: 'I need ongoing strategic and operational leadership', value: 'ongoing-leadership' },
-      { label: "I'm not sure — I just know something needs to change", value: 'unsure' },
-    ],
-  },
-  {
-    id: 'involvement',
-    text: 'What level of involvement are you looking for?',
-    options: [
-      { label: 'A one-off review or report — standalone deliverable', value: 'oneoff' },
-      { label: 'A defined project with a clear start and end', value: 'project' },
-      { label: 'A multi-workstream programme over several months', value: 'programme' },
-      { label: 'Ongoing retained support — part of the leadership team', value: 'ongoing' },
-    ],
-  },
-  {
-    id: 'budget',
-    text: 'What budget range are you working with?',
-    options: [
-      { label: 'Under £500', value: 'low' },
-      { label: '£500 – £5,000', value: 'mid' },
-      { label: '£5,000 – £25,000', value: 'high' },
-      { label: '£25,000+', value: 'enterprise' },
+      { label: 'Under £500k', detail: 'Remote delivery options available', value: 'micro' },
+      { label: '£500k – £2m', detail: 'On-site engagement', value: 'small' },
+      { label: '£2m – £7.5m', detail: 'On-site engagement', value: 'mid' },
+      { label: '£7.5m or above', detail: 'Programme / retained', value: 'growth' },
     ],
   },
 ];
 
 function getSuggestedServiceId(answers: Record<string, string>): string {
-  const { size, challenge, involvement, budget } = answers;
+  const { situation, size } = answers;
 
-  // Small business or low budget → Segment B
-  if (size === 'small' || budget === 'low') {
-    if (involvement === 'ongoing') return 'monthly';
-    if (involvement === 'project' || involvement === 'programme') return 'sprint';
+  // Micro segment → small business products
+  if (size === 'micro') {
+    if (situation === 'ongoing') return 'monthly';
+    if (situation === 'known_project' || situation === 'known_big') return 'remote-clarity';
     return 'ai-check';
   }
 
-  // Overhaul / programme / enterprise → Transform
-  if (challenge === 'overhaul' || involvement === 'programme' || budget === 'enterprise') return 'transform';
-
-  // Ongoing leadership / ongoing → Retained
-  if (challenge === 'ongoing-leadership' || involvement === 'ongoing') return 'retained';
-
-  // Software / project → Deliver
-  if (challenge === 'software' || involvement === 'project') return 'deliver';
-
-  // Default → Clarity
+  // Core services by situation
+  if (situation === 'known_big') return 'transform';
+  if (situation === 'ongoing') return 'retained';
+  if (situation === 'known_project') return 'deliver';
   return 'clarity';
 }
 
@@ -282,7 +280,9 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
           }`}>{tier.subtitle}</div>
         )}
         <div className={`text-3xl font-bold ${tier.highlight || dark ? 'text-white' : 'text-[#023047]'}`}>{tier.price}</div>
-        <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'}`}>{tier.vat}</div>
+        {tier.vat && (
+          <div className={`text-sm mt-0.5 ${tier.highlight ? 'text-white/70' : dark ? 'text-[#8ECAE6]' : 'text-[#023047]/70'}`}>{tier.vat}</div>
+        )}
         <p className={`text-sm mt-3 leading-relaxed ${tier.highlight ? 'text-white/80' : dark ? 'text-[#8ECAE6]/80' : 'text-[#023047]/70'}`}>{tier.tagline}</p>
       </div>
 
@@ -337,13 +337,14 @@ function ServiceFlow() {
   );
 }
 
-/* ─── Indicative pricing table ─────────────────────────────────────── */
+/* ─── Indicative pricing table — 4 segments ────────────────────────── */
 const pricingRanges = [
-  { service: 'Clarity', sub: 'Audit', under1m: '\u00A32,500\u2013\u00A35,000', mid: '\u00A35,000\u2013\u00A312,000', over75m: '\u00A312,000\u2013\u00A325,000' },
-  { service: 'Deliver', sub: 'Fixed fee', under1m: '\u00A32,500\u2013\u00A35,000', mid: '\u00A35,000\u2013\u00A315,000', over75m: '\u00A315,000\u2013\u00A330,000+' },
-  { service: 'Deliver', sub: 'Monthly', under1m: '\u00A3750\u2013\u00A31,200/mo', mid: '\u00A31,200\u2013\u00A32,000/mo', over75m: '\u00A32,000\u2013\u00A33,500+/mo' },
-  { service: 'Transform', sub: 'Programme', under1m: '\u00A38,000\u2013\u00A325,000', mid: '\u00A325,000\u2013\u00A370,000', over75m: '\u00A370,000+' },
-  { service: 'Retained', sub: 'Monthly', under1m: '\u00A3750\u2013\u00A31,500/mo', mid: '\u00A31,500\u2013\u00A32,500/mo', over75m: '\u00A32,500\u2013\u00A34,000+/mo' },
+  { service: 'Clarity', sub: 'Audit', micro: 'Remote Clarity £995', small: '£2,500–£5,000', mid: '£5,000–£12,000', growth: '£12,000–£25,000' },
+  { service: 'Deliver', sub: 'Fixed fee', micro: '—', small: '£2,500–£5,000', mid: '£5,000–£15,000', growth: '£15,000–£30,000+' },
+  { service: 'Deliver', sub: 'Monthly', micro: '—', small: '£750–£1,200/mo', mid: '£1,200–£2,000/mo', growth: '£2,000–£3,500+/mo' },
+  { service: 'Transform', sub: 'Programme', micro: '—', small: '£8,000–£20,000', mid: '£20,000–£70,000', growth: '£70,000+' },
+  { service: 'Transform', sub: 'Monthly', micro: '—', small: '£1,000–£1,500/mo', mid: '£1,500–£2,500/mo', growth: '£2,500–£4,000+/mo' },
+  { service: 'Retained', sub: 'Monthly', micro: '£350/mo advisory', small: '£750–£1,500/mo', mid: '£1,500–£2,500/mo', growth: '£2,500–£4,000+/mo' },
 ];
 
 function PricingTable() {
@@ -354,9 +355,10 @@ function PricingTable() {
           <tr className="border-b-2 border-[#8ECAE6]/40">
             <th className="py-4 pr-4 text-sm font-bold text-[#023047]">Service</th>
             <th className="py-4 px-4 text-sm font-bold text-[#023047]">Type</th>
-            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">Under &pound;1m</th>
-            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">&pound;1m &ndash; &pound;7.5m</th>
-            <th className="py-4 pl-4 text-sm font-bold text-[#023047] text-center">&pound;7.5m+</th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">Micro<br/><span className="font-normal text-[#023047]/60">under £500k</span></th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">Small<br/><span className="font-normal text-[#023047]/60">£500k–£2m</span></th>
+            <th className="py-4 px-4 text-sm font-bold text-[#023047] text-center">Mid<br/><span className="font-normal text-[#023047]/60">£2m–£7.5m</span></th>
+            <th className="py-4 pl-4 text-sm font-bold text-[#023047] text-center">Growth<br/><span className="font-normal text-[#023047]/60">£7.5m+</span></th>
           </tr>
         </thead>
         <tbody>
@@ -364,9 +366,10 @@ function PricingTable() {
             <tr key={`${row.service}-${row.sub}`} className={i < pricingRanges.length - 1 ? 'border-b border-[#8ECAE6]/20' : ''}>
               <td className="py-4 pr-4 text-sm font-semibold text-[#023047]">{row.service}</td>
               <td className="py-4 px-4 text-sm text-[#023047]/70">{row.sub}</td>
-              <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.under1m}</td>
+              <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.micro}</td>
+              <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.small}</td>
               <td className="py-4 px-4 text-sm text-[#023047]/70 text-center">{row.mid}</td>
-              <td className="py-4 pl-4 text-sm text-[#023047]/70 text-center">{row.over75m}</td>
+              <td className="py-4 pl-4 text-sm text-[#023047]/70 text-center">{row.growth}</td>
             </tr>
           ))}
         </tbody>
@@ -401,7 +404,7 @@ export default function PricingPage() {
   }
 
   const suggestedTier = suggestedServiceId ? allTiers.find(t => t.id === suggestedServiceId) : null;
-  const isSegmentB = suggestedServiceId ? ['ai-check', 'monthly', 'sprint'].includes(suggestedServiceId) : false;
+  const isSegmentB = suggestedServiceId ? ['remote-clarity', 'ai-check', 'monthly', 'sprint'].includes(suggestedServiceId) : false;
 
   return (
     <>
@@ -415,7 +418,7 @@ export default function PricingPage() {
             Find the right engagement
           </h1>
           <p className="text-lg text-[#023047]/70 max-w-2xl mx-auto">
-            Answer four quick questions and we&apos;ll point you to the most relevant option for your business.
+            Two quick questions and we&apos;ll point you to the most relevant option. No VAT — Craig is not VAT registered.
           </p>
         </div>
       </section>
@@ -434,16 +437,24 @@ export default function PricingPage() {
               <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-3">
                 Question {step + 1} of {questions.length}
               </div>
-              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-8">{currentQuestion.text}</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{currentQuestion.text}</h2>
+              {currentQuestion.sub && (
+                <p className="text-[#8ECAE6] text-sm mb-8">{currentQuestion.sub}</p>
+              )}
               <div className="space-y-3">
                 {currentQuestion.options.map(opt => (
                   <button
                     key={opt.value}
                     onClick={() => handleAnswer(opt.value)}
-                    className="w-full text-left flex items-center justify-between gap-4 p-5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#219EBC]/20 hover:border-[#219EBC]/50 transition-all duration-200 group"
+                    className="w-full text-left flex items-start justify-between gap-4 p-5 rounded-xl border border-white/15 bg-white/5 hover:bg-[#219EBC]/20 hover:border-[#219EBC]/50 transition-all duration-200 group"
                   >
-                    <span className="text-white font-medium">{opt.label}</span>
-                    <ChevronRight size={18} className="text-[#8ECAE6] group-hover:text-[#219EBC] flex-shrink-0 transition-colors" />
+                    <div>
+                      <span className="text-white font-medium block">{opt.label}</span>
+                      {'detail' in opt && opt.detail && (
+                        <span className="text-[#8ECAE6]/70 text-sm mt-1 block">{opt.detail}</span>
+                      )}
+                    </div>
+                    <ChevronRight size={18} className="text-[#8ECAE6] group-hover:text-[#219EBC] flex-shrink-0 transition-colors mt-0.5" />
                   </button>
                 ))}
               </div>
@@ -506,18 +517,18 @@ export default function PricingPage() {
       </section>
       )}
 
-      {/* SEGMENT B — only shown after questionnaire complete */}
+      {/* SMALL BUSINESS OFFER — only shown after questionnaire complete */}
       {complete && (
       <section className="py-20 lg:py-28 bg-[#023047]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-3">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Segment B · Small Business</span>
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Small Business · Under £500k</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">Small Business Offer</h2>
-            <p className="text-[#8ECAE6] text-lg">Remote. Fixed scope. No travel costs. Built for owner-operators who need practical AI and technology guidance at an accessible price.</p>
+            <p className="text-[#8ECAE6] text-lg">Remote. Fixed scope. No travel costs. Built for owner-operators who need practical technology and AI guidance at an accessible price.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
             {segmentBTiers.map(tier => (
               <TierCard key={tier.id} tier={tier} suggested={tier.id === suggestedServiceId} dark={true} />
             ))}
@@ -535,7 +546,7 @@ export default function PricingPage() {
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Indicative ranges</span>
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-2">Pricing by business size</h2>
-            <p className="text-[#023047]/70 text-lg max-w-3xl">Indicative ranges based on annual turnover. Every engagement is scoped individually — these give a realistic starting point.</p>
+            <p className="text-[#023047]/70 text-lg max-w-3xl">Indicative ranges based on annual turnover. All fees are Craig&apos;s fees — no VAT is charged. Vendor, software, and implementation costs are separate and confirmed with formal quotes before any commitment.</p>
           </div>
           <div className="rounded-2xl bg-white border border-[#8ECAE6]/30 p-6 lg:p-8">
             <PricingTable />
@@ -553,11 +564,12 @@ export default function PricingPage() {
           <h2 className="text-3xl font-bold text-[#023047] mb-10">Pricing questions answered</h2>
           <div className="space-y-8">
             {[
+              { q: 'Is VAT charged on top of these prices?', a: 'No. Craig is not VAT registered. The prices shown are the prices you pay — nothing added on top.' },
               { q: 'Can I just get the Clarity audit without committing to more?', a: "Yes. Clarity is fully standalone. There's no obligation to proceed to Deliver, Transform, or Retained. Many clients use the report as the basis for going to market themselves." },
+              { q: 'Do the fees include vendor and software costs?', a: "No. All prices shown are Craig's fees only. Vendor, software, and third-party implementation costs are separate — confirmed with formal quotes once the brief has been written, before any commitment is made. They cannot be known before that point, and quoting them before a brief exists would be guesswork." },
               { q: 'Is travel included in the price?', a: 'For Core Services engagements (on-site), travel expenses are charged at cost and agreed in advance. Small Business services are fully remote — no travel costs at all.' },
               { q: "What's the difference between Deliver and Transform?", a: "Deliver is for a defined project — vendor selection, management, and implementation oversight for a single workstream. Transform is for multi-workstream programmes (ERP + eCommerce + process redesign) that require discovery, change management, and milestone governance across the business." },
               { q: 'What does Retained actually look like in practice?', a: "You get defined days per month with Craig — agreed in advance. That typically includes attending leadership meetings, owning specific projects or workstreams, managing vendors, and coaching your team. It's a fractional CTO or Head of Operations role. No junior handoff." },
-              { q: 'Is the AI Readiness Check only for small businesses?', a: "It's priced for smaller businesses, but any business can book one. It's a good standalone starting point if you want an honest view of where AI could genuinely help before committing to a larger engagement." },
               { q: 'Do you work outside the print and promotional sector?', a: "The core expertise is in print, decoration, workwear, and promotional products. That's where the fastest impact tends to be. But the operational and technology skills transfer — get in touch if you're unsure." },
             ].map(({ q, a }) => (
               <div key={q} className="border-b border-[#8ECAE6]/30 pb-8">
