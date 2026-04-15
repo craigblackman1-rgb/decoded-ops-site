@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
-import { FractionalModelGraphic } from '@/components/graphics/FractionalModelGraphic';
+import { RetainedModelGraphic } from '@/components/graphics/RetainedModelGraphic';
 
 const whenItFits = [
   { icon: Wrench,     title: 'Post-audit implementation',   desc: "The audit found the issues. Now you need someone to drive the fixes. Retained gives you the hands-on delivery without a full-time hire." },
@@ -69,7 +69,7 @@ export default function RetainedPage() {
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30">
-              <FractionalModelGraphic />
+              <RetainedModelGraphic />
             </div>
           </div>
         </div>
@@ -164,11 +164,6 @@ export default function RetainedPage() {
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">No lock-in after minimum</div>
                   <div className="text-sm text-[#8ECAE6]">30 days notice either side after the 3-month minimum. No penalties. No conditions.</div>
-                </div>
-                <div className="border-t border-[#F8F9FA]/10 pt-6">
-                  <Link href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold text-[#FFB703] hover:text-[#FB8500] transition-colors">
-                    See full pricing <ArrowRight size={15} />
-                  </Link>
                 </div>
               </div>
             </div>

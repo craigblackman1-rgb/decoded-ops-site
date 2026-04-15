@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
-import { FractionalModelGraphic } from '@/components/graphics/FractionalModelGraphic';
+import { FractionalFlexModel } from '@/components/graphics/FractionalFlexModel';
 
 const whenItFits = [
   { icon: Wrench,     title: 'Post-audit implementation',   desc: "The audit found the issues. Now you need someone to drive the fixes. Fractional ops gives you the hands-on delivery without a full-time hire." },
@@ -61,7 +61,7 @@ export default function FractionalPage() {
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30">
-              <FractionalModelGraphic />
+              <FractionalFlexModel />
             </div>
           </div>
         </div>
