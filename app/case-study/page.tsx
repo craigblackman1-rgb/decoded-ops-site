@@ -60,16 +60,17 @@ export default function CaseStudyPage() {
               </div>
               <h2 className="text-3xl font-bold text-[#023047] mb-6">A common scenario: Growth without preparation.</h2>
               <div className="space-y-4 text-[#023047]/70 leading-relaxed">
-                <p>A £2.4m print and embroidery business with 18 staff. Successful. Growing. The owner had been running the business for 12 years and had outgrown the original system. The decision was made to invest in a new eCommerce platform and connect it to the existing ERP.</p>
-                <p>The platform was selected based on a sales demo and a recommendation from another business owner in a different sector. The ERP vendor was asked whether integration was possible. They said yes.</p>
-                <p>No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed.</p>
+                <p>A £5.5m print and embroidery business. Successful. Growing. The owner had outgrown their original system and made the decision to invest in a new eCommerce platform integrated to their existing ERP.</p>
+                <p>The problem: the ERP platform was fairly new and lacked the capacity to manage productions, artwork approvals, and decorated garments natively. The eCommerce platform was selected without scoping integration. The ERP vendor confirmed integration was &ldquo;possible&rdquo;—but there was no existing API integration between them.</p>
+                <p>No independent audit was done. No vendor brief was written. No integration scoping was completed before contracts were signed. The cost to build that integration from scratch: £80,000.</p>
+                <p className="text-[#023047] font-semibold">What they didn&rsquo;t know: if this engagement had happened six months earlier, they wouldn&rsquo;t have paid £50,000 for their ERP implementation at all. A better platform existed that cost around £25,000 to implement and had native API integration built in. The eCommerce build would have been over 50% less expensive, with no custom workarounds needed for artwork, decorated garments, product publishing, custom attributes, or the hundreds of hours spent mapping supplier data and testing bespoke functionality.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: 'Business revenue', value: '£2.4m' },
-                { label: 'Staff at time', value: '18' },
-                { label: 'Years trading', value: '12' },
+                { label: 'Business revenue', value: '£5.5m' },
+                { label: 'ERP-eCommerce integration cost', value: '£80k' },
+                { label: 'Wasted ERP spend (could have been £25k)', value: '£50k' },
                 { label: 'Total losses', value: '£154k' },
               ].map(s => (
                 <div key={s.label} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40 text-center">
