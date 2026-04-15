@@ -104,7 +104,6 @@ export function Header() {
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
               <Link href="/blog" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Blog</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
-              <Link href="/case-study" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case study</Link>
               <Link
                 href="/contact"
                 className="px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
@@ -131,7 +130,6 @@ export function Header() {
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'Blog', href: '/blog' },
                 { label: 'About', href: '/about' },
-                { label: 'Case study', href: '/case-study' },
               ].map(link => (
                 <Link
                   key={link.href + link.label}

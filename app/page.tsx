@@ -288,19 +288,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CASE STUDY TEASER ────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#023047]/5 border-t border-[#8ECAE6]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">Real example</p>
-            <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
-            <p className="text-sm text-[#023047]/70">A print &amp; embroidery business. &pound;154,000. 18 months. What a &pound;10k audit would have prevented.</p>
-          </div>
-          <Link href="/case-study" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047]/90 transition-colors">
-            Read the full breakdown <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#F8F9FA]">

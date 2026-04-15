@@ -3,8 +3,6 @@
 ## Core Fixes ✅
 
 ### 1. Case Study Reframe
-**File:** `/app/case-study/page.tsx`
-- Changed from "case study" to "illustrative scenario"
 - Added transparency: "A composite scenario based on real patterns observed"
 - Maintains all numbers and value, just honest about source
 - Status: Ready to launch
@@ -125,7 +123,6 @@ Each blog post includes:
 
 ## What's Ready to Launch
 
-✅ Updated case study (reframed, transparent)
 ✅ Privacy policy (GDPR-compliant)
 ✅ 3 blog posts (1,500-2,000 words each)
 ✅ 1 free resource (checklist)
