@@ -125,7 +125,7 @@ export default function BlogPost() {
               Before you buy any eCommerce platform, ask: "How does this integrate with our ERP?" And don't accept "it can integrate." Get specifics. What data syncs? How often? What's the cost? What happens if there's an error?
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">If You've Already Made This Mistake</h3>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">If You&apos;ve Already Made This Mistake</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               You're not alone. This is one of the most expensive mistakes I see in this sector. The good news: it's fixable.
             </p>
