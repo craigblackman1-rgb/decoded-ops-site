@@ -5,7 +5,8 @@
       "mcp__plugin_claude-mem_mcp-search__smart_outline",
       "Bash(npm run:*)",
       "mcp__plugin_claude-mem_mcp-search__get_observations",
-      "mcp__plugin_claude-mem_mcp-search__search"
+      "mcp__plugin_claude-mem_mcp-search__search",
+      "Bash(find . -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.md\" \\\\\\) ! -path \"./node_modules/*\" ! -path \"./.next/*\" -exec grep -l \"case.study\\\\|case-study\\\\|caseStudy\" {} \\\\;)"
     ]
   }
 }

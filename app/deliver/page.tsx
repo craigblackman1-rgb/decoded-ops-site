@@ -214,20 +214,6 @@ export default function DeliverPage() {
         </div>
       </section>
 
-      {/* CASE STUDY HOOK */}
-      <section className="py-16 bg-[#023047]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <Link href="/case-study" className="group inline-block">
-            <p className="text-4xl lg:text-5xl font-bold text-[#023047] mb-2 group-hover:text-[#219EBC] transition-colors">
-              &pound;154,000. 18 months. No vendor brief.
-            </p>
-            <p className="text-[#219EBC] font-semibold flex items-center justify-center gap-2">
-              Read the case study <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </p>
-          </Link>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
