@@ -101,9 +101,9 @@ export default function HomePage() {
       </section>
 
       {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
-      <div className="bg-[#023047] py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center gap-3 flex-wrap">
-          <span className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/70 min-w-[70px]">I work with</span>
+      <div className="bg-[#023047] py-8 px-6">
+        <p className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/70 text-center mb-6">I work with</p>
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
           {sectors.map(s => (
             <Link key={s.href} href={s.href} className="text-xs text-[#F8F9FA]/70 border border-[#F8F9FA]/15 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">
               {s.name}
