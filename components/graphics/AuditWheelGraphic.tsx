@@ -32,7 +32,7 @@ export function AuditWheelGraphic() {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <svg viewBox="0 0 400 400" className="w-full max-w-[420px]" aria-hidden="true">
+      <svg viewBox="-40 0 480 400" className="w-full max-w-[420px]" aria-hidden="true">
         <defs>
           <radialGradient id="wheelBg" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#219EBC" stopOpacity="0.08" />

@@ -47,81 +47,99 @@ export default function DeliverPage() {
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30 min-h-96">
-              <svg viewBox="0 0 500 400" className="w-full h-full max-w-lg" xmlns="http://www.w3.org/2000/svg">
-                {/* Left side: YOU & BRIEF */}
+              <svg viewBox="0 0 600 420" className="w-full h-full max-w-lg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="briefGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#219EBC" stopOpacity="0.2"/>
+                    <stop offset="100%" stopColor="#219EBC" stopOpacity="0.05"/>
+                  </linearGradient>
+                  <linearGradient id="buildGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#8ECAE6" stopOpacity="0.1"/>
+                    <stop offset="100%" stopColor="#8ECAE6" stopOpacity="0.02"/>
+                  </linearGradient>
+                </defs>
+
+                {/* Left: YOU & BRIEF */}
                 <g>
-                  {/* Client circle */}
-                  <circle cx="80" cy="100" r="35" fill="#023047" opacity="0.1" stroke="#023047" strokeWidth="2"/>
-                  <text x="80" y="95" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#023047">YOU</text>
-                  <text x="80" y="115" textAnchor="middle" fontSize="12" fill="#023047" opacity="0.7">Your needs</text>
+                  {/* Decorative circle */}
+                  <circle cx="100" cy="90" r="32" fill="none" stroke="#219EBC" strokeWidth="1.5" opacity="0.3"/>
+                  <circle cx="100" cy="90" r="26" fill="#219EBC" opacity="0.08"/>
 
-                  {/* Brief document */}
-                  <rect x="30" y="180" width="100" height="130" rx="8" fill="none" stroke="#219EBC" strokeWidth="2" strokeDasharray="5,5"/>
-                  <text x="80" y="210" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#219EBC">THE BRIEF</text>
-                  <line x1="40" y1="225" x2="120" y2="225" stroke="#219EBC" strokeWidth="1" opacity="0.5"/>
-                  <line x1="40" y1="240" x2="120" y2="240" stroke="#219EBC" strokeWidth="1" opacity="0.5"/>
-                  <line x1="40" y1="255" x2="120" y2="255" stroke="#219EBC" strokeWidth="1" opacity="0.5"/>
-                  <line x1="40" y1="270" x2="110" y2="270" stroke="#219EBC" strokeWidth="1" opacity="0.5"/>
-                  <text x="80" y="295" textAnchor="middle" fontSize="11" fill="#023047" opacity="0.6">Your terms</text>
+                  {/* YOU label */}
+                  <text x="100" y="96" textAnchor="middle" fontSize="16" fontWeight="700" fill="#023047">YOU</text>
 
-                  {/* Arrow down from YOU to BRIEF */}
-                  <path d="M 80 140 L 80 175" stroke="#219EBC" strokeWidth="2" fill="none" markerEnd="url(#arrowHead)"/>
+                  {/* Brief box */}
+                  <g>
+                    <rect x="40" y="160" width="120" height="160" rx="12" fill="url(#briefGrad)" stroke="#219EBC" strokeWidth="2"/>
+                    <rect x="44" y="164" width="112" height="40" rx="8" fill="#219EBC" opacity="0.08"/>
+                    <text x="100" y="187" textAnchor="middle" fontSize="13" fontWeight="700" fill="#219EBC">THE BRIEF</text>
+                    <line x1="50" y1="210" x2="150" y2="210" stroke="#219EBC" strokeWidth="1" opacity="0.3"/>
+                    <line x1="50" y1="225" x2="150" y2="225" stroke="#219EBC" strokeWidth="1" opacity="0.3"/>
+                    <line x1="50" y1="240" x2="135" y2="240" stroke="#219EBC" strokeWidth="1" opacity="0.3"/>
+                    <text x="100" y="290" textAnchor="middle" fontSize="11" fontWeight="600" fill="#023047">Your requirements</text>
+                  </g>
+
+                  {/* Arrow down */}
+                  <path d="M 100 130 L 100 160" stroke="#219EBC" strokeWidth="2.5" fill="none"/>
+                  <path d="M 100 156 L 95 146 M 100 156 L 105 146" stroke="#219EBC" strokeWidth="2" fill="none" strokeLinecap="round"/>
                 </g>
 
-                {/* Center: OVERSIGHT & CONTROL */}
+                {/* Center: CONTROL & OVERSIGHT */}
                 <g>
-                  {/* Shield/control element */}
-                  <circle cx="250" cy="130" r="45" fill="none" stroke="#FFB703" strokeWidth="2.5"/>
-                  <path d="M 250 90 L 290 110 L 290 150 C 290 170 250 185 250 185 C 250 185 210 170 210 150 L 210 110 Z"
-                        fill="none" stroke="#FFB703" strokeWidth="2.5" strokeLinejoin="round"/>
-                  <text x="250" y="135" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#FFB703">CONTROL</text>
+                  {/* Control sphere */}
+                  <circle cx="300" cy="130" r="48" fill="none" stroke="#FFB703" strokeWidth="2.5" opacity="0.8"/>
+                  <circle cx="300" cy="130" r="44" fill="#FFB703" opacity="0.06"/>
+                  <circle cx="300" cy="130" r="38" fill="none" stroke="#FFB703" strokeWidth="1" opacity="0.4" strokeDasharray="2,3"/>
 
-                  {/* Checkmark for success */}
-                  <circle cx="250" cy="280" r="40" fill="none" stroke="#219EBC" strokeWidth="3"/>
-                  <path d="M 230 275 L 245 290 L 270 260" stroke="#219EBC" strokeWidth="3.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  <text x="250" y="335" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#219EBC">DELIVERED</text>
+                  {/* Control label */}
+                  <text x="300" y="124" textAnchor="middle" fontSize="12" fontWeight="700" fill="#FFB703" letterSpacing="0.5">CONTROL &</text>
+                  <text x="300" y="139" textAnchor="middle" fontSize="12" fontWeight="700" fill="#FFB703" letterSpacing="0.5">OVERSIGHT</text>
+
+                  {/* Success circle */}
+                  <circle cx="300" cy="290" r="44" fill="none" stroke="#219EBC" strokeWidth="3" opacity="0.9"/>
+                  <circle cx="300" cy="290" r="40" fill="#219EBC" opacity="0.05"/>
+                  <path d="M 283 287 L 295 299 L 322 270" stroke="#219EBC" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  <text x="300" y="350" textAnchor="middle" fontSize="12" fontWeight="700" fill="#219EBC" letterSpacing="0.5">DELIVERED</text>
+
+                  {/* Vertical flow line */}
+                  <line x1="300" y1="182" x2="300" y2="242" stroke="#FFB703" strokeWidth="1.5" opacity="0.4" strokeDasharray="4,4"/>
                 </g>
 
-                {/* Right side: VENDOR & BUILD */}
+                {/* Right: VENDOR & BUILD */}
                 <g>
-                  {/* Vendor circle */}
-                  <circle cx="420" cy="100" r="35" fill="#8ECAE6" opacity="0.15" stroke="#8ECAE6" strokeWidth="2"/>
-                  <text x="420" y="100" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#023047">⚙</text>
-                  <text x="420" y="120" textAnchor="middle" fontSize="12" fill="#023047" opacity="0.7">Vendor build</text>
+                  {/* Decorative circle */}
+                  <circle cx="500" cy="90" r="32" fill="none" stroke="#8ECAE6" strokeWidth="1.5" opacity="0.3"/>
+                  <circle cx="500" cy="90" r="26" fill="#8ECAE6" opacity="0.06"/>
 
-                  {/* Build/execution box */}
-                  <rect x="370" y="180" width="100" height="130" rx="8" fill="none" stroke="#8ECAE6" strokeWidth="2"/>
-                  <text x="420" y="210" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#8ECAE6">THE BUILD</text>
-                  <line x1="380" y1="225" x2="460" y2="225" stroke="#8ECAE6" strokeWidth="1" opacity="0.5"/>
-                  <line x1="380" y1="240" x2="460" y2="240" stroke="#8ECAE6" strokeWidth="1" opacity="0.5"/>
-                  <line x1="380" y1="255" x2="460" y2="255" stroke="#8ECAE6" strokeWidth="1" opacity="0.5"/>
-                  <line x1="380" y1="270" x2="450" y2="270" stroke="#8ECAE6" strokeWidth="1" opacity="0.5"/>
-                  <text x="420" y="295" textAnchor="middle" fontSize="11" fill="#023047" opacity="0.6">Their execution</text>
+                  {/* VENDOR label */}
+                  <text x="500" y="96" textAnchor="middle" fontSize="16" fontWeight="700" fill="#023047">VENDOR</text>
 
-                  {/* Arrow down from VENDOR to BUILD */}
-                  <path d="M 420 140 L 420 175" stroke="#8ECAE6" strokeWidth="2" fill="none" markerEnd="url(#arrowHead2)"/>
+                  {/* Build box */}
+                  <g>
+                    <rect x="440" y="160" width="120" height="160" rx="12" fill="url(#buildGrad)" stroke="#8ECAE6" strokeWidth="2" opacity="0.8"/>
+                    <rect x="444" y="164" width="112" height="40" rx="8" fill="#8ECAE6" opacity="0.06"/>
+                    <text x="500" y="187" textAnchor="middle" fontSize="13" fontWeight="700" fill="#8ECAE6">THE BUILD</text>
+                    <line x1="450" y1="210" x2="550" y2="210" stroke="#8ECAE6" strokeWidth="1" opacity="0.3"/>
+                    <line x1="450" y1="225" x2="550" y2="225" stroke="#8ECAE6" strokeWidth="1" opacity="0.3"/>
+                    <line x1="450" y1="240" x2="535" y2="240" stroke="#8ECAE6" strokeWidth="1" opacity="0.3"/>
+                    <text x="500" y="290" textAnchor="middle" fontSize="11" fontWeight="600" fill="#023047">Their execution</text>
+                  </g>
+
+                  {/* Arrow down */}
+                  <path d="M 500 130 L 500 160" stroke="#8ECAE6" strokeWidth="2.5" fill="none" opacity="0.7"/>
+                  <path d="M 500 156 L 495 146 M 500 156 L 505 146" stroke="#8ECAE6" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.7"/>
                 </g>
 
-                {/* Connecting flows */}
+                {/* Connecting paths */}
                 {/* BRIEF to CONTROL */}
-                <path d="M 135 240 Q 180 200 205 160" stroke="#219EBC" strokeWidth="2.5" fill="none" strokeDasharray="4,4" opacity="0.6"/>
+                <path d="M 162 240 Q 220 200 250 160" stroke="#219EBC" strokeWidth="1.5" fill="none" opacity="0.5" strokeDasharray="3,3"/>
 
                 {/* CONTROL to BUILD */}
-                <path d="M 295 160 Q 350 200 365 240" stroke="#FFB703" strokeWidth="2.5" fill="none" strokeDasharray="4,4" opacity="0.6"/>
+                <path d="M 350 160 Q 400 200 440 240" stroke="#FFB703" strokeWidth="1.5" fill="none" opacity="0.5" strokeDasharray="3,3"/>
 
-                {/* Both to SUCCESS (convergence) */}
-                <path d="M 130 310 Q 190 310 210 315" stroke="#219EBC" strokeWidth="2" fill="none" opacity="0.5"/>
-                <path d="M 370 310 Q 310 310 290 315" stroke="#219EBC" strokeWidth="2" fill="none" opacity="0.5"/>
-
-                {/* Arrow markers */}
-                <defs>
-                  <marker id="arrowHead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10" stroke="#219EBC" strokeWidth="2" fill="none"/>
-                  </marker>
-                  <marker id="arrowHead2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                    <path d="M 0 0 L 10 5 L 0 10" stroke="#8ECAE6" strokeWidth="2" fill="none"/>
-                  </marker>
-                </defs>
+                {/* Bottom convergence */}
+                <path d="M 162 320 Q 230 320 256 320" stroke="#219EBC" strokeWidth="1.5" fill="none" opacity="0.4"/>
+                <path d="M 440 320 Q 370 320 344 320" stroke="#219EBC" strokeWidth="1.5" fill="none" opacity="0.4"/>
               </svg>
             </div>
           </div>
