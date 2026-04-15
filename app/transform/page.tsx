@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Server, ShoppingCart, GitBranch, Users, Layers, TrendingUp, CheckCircle2 } from 'lucide-react';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { TransformProgrammeGraphic } from '@/components/graphics/TransformProgrammeGraphic';
 
 const workstreams = [
   { icon: Server,       title: 'ERP & Core Systems',        desc: 'Selection, implementation, migration, and integration of your core business system. Built around how your business actually operates.' },
@@ -56,20 +56,8 @@ export default function TransformPage() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30 min-h-96">
-              <div className="w-full h-96" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: '100%', height: '100%' }}>
-                  <WorkflowGraphic
-                  steps={[
-                    { label: 'Discover', sub: 'Understanding' },
-                    { label: 'Design', sub: 'Architecture' },
-                    { label: 'Deploy', sub: 'Delivery' },
-                    { label: 'Sustain', sub: 'Success' },
-                  ]}
-                  variant="light"
-                  />
-                </div>
-              </div>
+            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30">
+              <TransformProgrammeGraphic />
             </div>
           </div>
         </div>
