@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://decoded-ops.com/sitemap.xml
+Sitemap: https://decodedops.co.uk/sitemap.xml

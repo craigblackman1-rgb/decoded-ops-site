@@ -1,137 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://decoded-ops.com/</loc>
+    <loc>https://decodedops.co.uk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/about</loc>
+    <loc>https://decodedops.co.uk/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/audit</loc>
+    <loc>https://decodedops.co.uk/audit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/blog</loc>
+    <loc>https://decodedops.co.uk/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/blog/5-questions-vendors-wont-like</loc>
+    <loc>https://decodedops.co.uk/blog/5-questions-vendors-wont-like</loc>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/blog/ecommerce-integration-trap</loc>
+    <loc>https://decodedops.co.uk/blog/ecommerce-integration-trap</loc>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/blog/why-systems-dont-talk</loc>
+    <loc>https://decodedops.co.uk/blog/why-systems-dont-talk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/clarity</loc>
+    <loc>https://decodedops.co.uk/clarity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/contact</loc>
+    <loc>https://decodedops.co.uk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/cookies</loc>
+    <loc>https://decodedops.co.uk/cookies</loc>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/deliver</loc>
+    <loc>https://decodedops.co.uk/deliver</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/fractional</loc>
+    <loc>https://decodedops.co.uk/fractional</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/privacy</loc>
+    <loc>https://decodedops.co.uk/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/pricing</loc>
+    <loc>https://decodedops.co.uk/pricing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/resources/audit-checklist</loc>
+    <loc>https://decodedops.co.uk/resources/audit-checklist</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/retained</loc>
+    <loc>https://decodedops.co.uk/retained</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/transform</loc>
+    <loc>https://decodedops.co.uk/transform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/problems/ecommerce-not-connected</loc>
+    <loc>https://decodedops.co.uk/problems/ecommerce-not-connected</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/problems/erp-implementation-failure</loc>
+    <loc>https://decodedops.co.uk/problems/erp-implementation-failure</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/problems/systems-dont-talk</loc>
+    <loc>https://decodedops.co.uk/problems/systems-dont-talk</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/problems/wrong-erp-software</loc>
+    <loc>https://decodedops.co.uk/problems/wrong-erp-software</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/awards-engraving</loc>
+    <loc>https://decodedops.co.uk/sectors/awards-engraving</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/garment-decoration</loc>
+    <loc>https://decodedops.co.uk/sectors/garment-decoration</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/labels-packaging</loc>
+    <loc>https://decodedops.co.uk/sectors/labels-packaging</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/print-promotional</loc>
+    <loc>https://decodedops.co.uk/sectors/print-promotional</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/signs-graphics</loc>
+    <loc>https://decodedops.co.uk/sectors/signs-graphics</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://decoded-ops.com/sectors/workwear-teamwear</loc>
+    <loc>https://decodedops.co.uk/sectors/workwear-teamwear</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
   </url>
