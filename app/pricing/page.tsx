@@ -244,6 +244,74 @@ function getSuggestedServiceId(answers: Record<string, string>): string {
 
 const allTiers = [...coreServices, ...segmentBTiers];
 
+/* ─── Three-Tier Engagement Model — segment-aware ───────────────────── */
+const tierPricesBySegment = {
+  small:  { clarity: { price: '£2,500–£3,500',  note: 'Fixed fee — one payment' },    deliver:   { price: '£1,050–£1,200', note: '/mo · 3-month minimum' },   transform: { price: '£1,500–£2,200', note: '/mo · milestone minimum' } },
+  mid:    { clarity: { price: '£5,000–£8,000',   note: 'Fixed fee — one payment' },    deliver:   { price: '£1,200–£1,800', note: '/mo · 3-month minimum' },   transform: { price: '£2,200–£3,200', note: '/mo · milestone minimum' } },
+  growth: { clarity: { price: '£8,000–£12,000',  note: 'Fixed fee — one payment' },    deliver:   { price: '£1,800–£2,500', note: '/mo · 3-month minimum' },   transform: { price: '£3,200–£5,000+', note: '/mo · milestone minimum' } },
+} as const;
+
+const threeTierItems = [
+  {
+    id: 'clarity',
+    tier: 'Tier 1',
+    name: 'Clarity',
+    includes: [
+      'One day on site',
+      'Six-area written audit',
+      'Issues & opportunities register',
+      'Costed, prioritised recommendations',
+      'Independent vendor shortlist',
+      'Quick wins identified',
+      '90-day action plan',
+      'AI readiness scorecard',
+      '30-day post-delivery support window',
+    ],
+    payment: '50% on signing, 50% on delivery.',
+    guarantee: true,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'deliver',
+    tier: 'Tier 2',
+    name: 'Deliver',
+    includes: [
+      'Everything in Clarity',
+      'Month 1: audit delivered',
+      'Months 2–3: vendor briefs written',
+      'Procurement managed on your behalf',
+      'Competitive quotes secured',
+      'Vendor comparison & recommendation',
+      'Monthly capability workshop',
+      'Practical tools & frameworks left with you',
+    ],
+    payment: 'Monthly retainer. 3-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'transform',
+    tier: 'Tier 3',
+    name: 'Transform',
+    includes: [
+      'Everything in Deliver',
+      'Multi-workstream implementation oversight',
+      'Single point of contact across all vendors',
+      'Vendors held to the brief you own',
+      'Milestone sign-off before payments release',
+      'Regular structured progress reviews',
+      'Final handover & system acceptance',
+      'Priced at discovery based on scope',
+    ],
+    payment: 'Monthly retainer. Discovery required before scoping. Milestone-based minimum.',
+    guarantee: false,
+    cta: 'Request a proposal',
+    ctaHref: '/contact',
+  },
+];
+
 /* ─── Tier card ─────────────────────────────────────────────────────── */
 type Tier = (typeof coreServices)[0] | (typeof segmentBTiers)[0];
 
@@ -315,6 +383,97 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
         {tier.cta} <ArrowRight size={16} />
       </Link>
     </div>
+  );
+}
+
+/* ─── Three-Tier Results ────────────────────────────────────────────── */
+function ThreeTierResults({ size, suggestedId, onReset }: { size: string; suggestedId: string; onReset: () => void }) {
+  const prices = tierPricesBySegment[size as keyof typeof tierPricesBySegment] ?? tierPricesBySegment.small;
+
+  return (
+    <section className="py-20 lg:py-28 bg-[#F8F9FA]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— The Three-Tier Engagement Model</span>
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-3">Choose your depth of involvement</h2>
+          <p className="text-[#023047]/70 max-w-xl mx-auto text-lg">Each tier includes everything in the tier below it. Start at Clarity — or go straight to Deliver or Transform if you already know the scope.</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+          {threeTierItems.map((tier) => {
+            const isRecommended = tier.id === suggestedId;
+            const priceData = prices[tier.id as keyof typeof prices];
+            return (
+              <div key={tier.id} className={`relative flex flex-col rounded-2xl border p-8 transition-all ${
+                isRecommended
+                  ? 'bg-[#219EBC] border-[#219EBC] shadow-xl'
+                  : 'bg-white border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md'
+              }`}>
+                {isRecommended && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#FFB703] text-[#023047] text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                    Recommended for you
+                  </div>
+                )}
+                <div className="mb-6">
+                  <div className={`text-xs font-bold uppercase tracking-widest mb-1 ${isRecommended ? 'text-white/70' : 'text-[#219EBC]'}`}>{tier.tier}</div>
+                  <div className={`text-xl font-bold mb-3 ${isRecommended ? 'text-white' : 'text-[#023047]'}`}>{tier.name}</div>
+                  <div className={`text-3xl font-bold ${isRecommended ? 'text-white' : 'text-[#023047]'}`}>{priceData.price}</div>
+                  <div className={`text-sm mt-0.5 ${isRecommended ? 'text-white/70' : 'text-[#023047]/60'}`}>{priceData.note}</div>
+                </div>
+
+                <div className="flex-1 space-y-2.5 mb-8">
+                  {tier.includes.map((item) => (
+                    <div key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2 size={15} className={`mt-0.5 flex-shrink-0 ${isRecommended ? 'text-white/80' : 'text-[#219EBC]'}`} />
+                      <span className={`text-sm leading-snug ${item.startsWith('Everything in') ? 'font-semibold' : ''} ${
+                        isRecommended ? 'text-white/85' : 'text-[#023047]/70'
+                      }`}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className={`text-xs leading-relaxed mb-6 pb-6 border-b ${
+                  isRecommended ? 'text-white/60 border-white/20' : 'text-[#023047]/60 border-[#8ECAE6]/30'
+                }`}>{tier.payment}</div>
+
+                {tier.guarantee && (
+                  <div className={`flex items-center gap-2 text-xs font-semibold mb-4 ${isRecommended ? 'text-white' : 'text-[#219EBC]'}`}>
+                    <Shield size={13} className="flex-shrink-0" /> 3× Clarity Guarantee applies
+                  </div>
+                )}
+
+                <Link href={tier.ctaHref} className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full font-semibold text-sm transition-colors ${
+                  isRecommended
+                    ? 'bg-white text-[#219EBC] hover:bg-white/90'
+                    : 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]'
+                }`}>
+                  {tier.cta} <ArrowRight size={16} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+
+        {suggestedId === 'clarity' && (
+          <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Money-back guarantee</span>
+            </div>
+            <blockquote className="text-xl font-medium text-white leading-relaxed">
+              &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
+            </blockquote>
+          </div>
+        )}
+
+        <div className="text-center">
+          <button onClick={onReset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
+            Answer the questions again
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -481,30 +640,22 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* RECOMMENDED PRICING — only shown after questionnaire complete */}
-      {complete && suggestedTier && (
-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8">
-          <TierCard tier={suggestedTier} suggested={false} dark={false} />
-
-          {suggestedTier.id === 'clarity' && (
-            <div className="rounded-2xl bg-[#023047] p-8 lg:p-10 mt-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-                <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Money-back guarantee</span>
+      {/* RESULTS — shown after questionnaire complete */}
+      {complete && suggestedServiceId && (
+        isSegmentB || suggestedServiceId === 'retained' ? (
+          <section className="py-20 lg:py-28 bg-[#F8F9FA]">
+            <div className="max-w-2xl mx-auto px-6 lg:px-8">
+              {suggestedTier && <TierCard tier={suggestedTier} suggested={false} dark={false} />}
+              <div className="mt-10 text-center">
+                <button onClick={reset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
+                  Answer the questions again
+                </button>
               </div>
-              <blockquote className="text-xl font-medium text-white leading-relaxed mb-4">
-                &ldquo;If after reading the report you do not believe it has identified at least three times the value of the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions asked.&rdquo;
-              </blockquote>
             </div>
-          )}
-
-          <div className="mt-10 text-center">
-            <button onClick={reset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
-              Answer the questions again
-            </button>
-          </div>
-        </div>
-      </section>
+          </section>
+        ) : (
+          <ThreeTierResults size={answers.size} suggestedId={suggestedServiceId} onReset={reset} />
+        )
       )}
 
       {/* FAQ */}
