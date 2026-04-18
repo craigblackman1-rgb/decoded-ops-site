@@ -226,16 +226,7 @@ const questions = [
 ];
 
 function getSuggestedServiceId(answers: Record<string, string>): string {
-  const { situation, size } = answers;
-
-  // Micro segment → small business products
-  if (size === 'micro') {
-    if (situation === 'ongoing') return 'monthly';
-    if (situation === 'known_project' || situation === 'known_big') return 'remote-clarity';
-    return 'ai-check';
-  }
-
-  // Core services by situation
+  const { situation } = answers;
   if (situation === 'known_big') return 'transform';
   if (situation === 'ongoing') return 'retained';
   if (situation === 'known_project') return 'deliver';
@@ -386,6 +377,179 @@ function TierCard({ tier, suggested, dark }: { tier: Tier; suggested: boolean; d
   );
 }
 
+/* ─── Retained — Core tiers ─────────────────────────────────────────── */
+const retainedCoreTiers = [
+  {
+    id: 'advisory',
+    tierLabel: 'Advisory',
+    name: '2 days / month',
+    price: '£1,440',
+    priceNote: '/mo · 6-month minimum',
+    includes: [
+      'Monthly strategy session',
+      'Technology roadmap ownership',
+      'Async advisory throughout the month',
+      'Vendor oversight — reactive',
+      'Direct line to Craig — no junior handoff',
+    ],
+    payment: 'Monthly in advance. 6-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'embedded',
+    tierLabel: 'Embedded',
+    name: '4 days / month',
+    price: '£2,880',
+    priceNote: '/mo · 6-month minimum',
+    includes: [
+      'Everything in Advisory',
+      'Structured monthly reviews',
+      'Active vendor management',
+      'Decision support across technology and operations',
+      'Attendance at leadership and operations meetings',
+    ],
+    payment: 'Monthly in advance. 6-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'programme',
+    tierLabel: 'Programme',
+    name: '8 days / month',
+    price: '£5,760',
+    priceNote: '/mo · 6-month minimum',
+    includes: [
+      'Everything in Embedded',
+      'Active implementation oversight',
+      'Regular on-site presence',
+      'Full roadmap execution across all workstreams',
+      'Hands-on delivery alongside your team',
+    ],
+    payment: 'Monthly in advance. 6-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+];
+
+/* ─── Small business — three-tier ───────────────────────────────────── */
+const smallBizThreeTierItems = [
+  {
+    id: 'clarity',
+    tierLabel: 'Tier 1',
+    name: 'Clarity Check',
+    price: '£395',
+    priceNote: 'Fixed fee — no minimum',
+    includes: [
+      'Pre-session questionnaire',
+      '3-hour structured remote session',
+      'Six-area diagnostic',
+      'Issues & opportunities identified',
+      'Costed, prioritised recommendations',
+      'Written report within 3 working days',
+    ],
+    payment: '100% on booking. No minimum. Remote — no travel costs.',
+    guarantee: true,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'deliver',
+    tierLabel: 'Tier 2',
+    name: 'Deliver',
+    price: '£550',
+    priceNote: '/mo · 3-month minimum',
+    includes: [
+      'Everything in Clarity Check',
+      'Month 1: audit absorbed — findings delivered',
+      'Months 2–3: action on findings',
+      'Vendor conversations managed',
+      'Practical tools & frameworks left with you',
+    ],
+    payment: 'Monthly retainer. 3-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'transform',
+    tierLabel: 'Tier 3',
+    name: 'Transform',
+    price: '£770',
+    priceNote: '/mo · milestone minimum',
+    includes: [
+      'Everything in Deliver',
+      'One focused workstream — done properly',
+      'Scoped at discovery',
+      'Runs until the agreed output is delivered',
+      '90-min remote sessions throughout',
+    ],
+    payment: 'Monthly retainer. Discovery required. Milestone-based minimum.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+];
+
+/* ─── Small business — Retained tiers ───────────────────────────────── */
+const smallBizRetainedTiers = [
+  {
+    id: 'entry',
+    tierLabel: 'Entry',
+    name: '2 × 4hr sessions / month',
+    price: '£395',
+    priceNote: '/mo · 3-month minimum',
+    includes: [
+      'Monthly strategic check-in',
+      'Technology and operations advisory',
+      'Roadmap direction and nudges',
+      'Direct access to Craig',
+      'Clarity Check built into month one',
+    ],
+    payment: 'Monthly in advance. 3-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'mid',
+    tierLabel: 'Mid',
+    name: '4 × 4hr sessions / month',
+    price: '£695',
+    priceNote: '/mo · 3-month minimum',
+    includes: [
+      'Everything in Entry',
+      'Active vendor conversations',
+      'Decision support',
+      'Structured monthly review',
+    ],
+    payment: 'Monthly in advance. 3-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+  {
+    id: 'full',
+    tierLabel: 'Full',
+    name: '6 × 4hr sessions / month',
+    price: '£995',
+    priceNote: '/mo · 3-month minimum',
+    includes: [
+      'Everything in Mid',
+      'Hands-on roadmap execution',
+      'Deeper process work',
+      'Ongoing implementation oversight',
+    ],
+    payment: 'Monthly in advance. 3-month minimum. 30 days written notice after.',
+    guarantee: false,
+    cta: 'Book a free discovery call',
+    ctaHref: '/contact',
+  },
+];
+
 /* ─── Three-Tier Results ────────────────────────────────────────────── */
 function ThreeTierResults({ size, suggestedId, onReset }: { size: string; suggestedId: string; onReset: () => void }) {
   const prices = tierPricesBySegment[size as keyof typeof tierPricesBySegment] ?? tierPricesBySegment.small;
@@ -466,6 +630,106 @@ function ThreeTierResults({ size, suggestedId, onReset }: { size: string; sugges
             </blockquote>
           </div>
         )}
+
+        <div className="text-center">
+          <button onClick={onReset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
+            Answer the questions again
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Generic tiered results (retained + small biz) ─────────────────── */
+type FixedTier = {
+  id: string;
+  tierLabel: string;
+  name: string;
+  price: string;
+  priceNote: string;
+  includes: string[];
+  payment: string;
+  guarantee?: boolean;
+  cta: string;
+  ctaHref: string;
+};
+
+function TieredResultsSection({
+  eyebrow, heading, subtitle, tiers, suggestedId, badgeText = 'Recommended for you', onReset,
+}: {
+  eyebrow: string;
+  heading: string;
+  subtitle: string;
+  tiers: FixedTier[];
+  suggestedId: string;
+  badgeText?: string;
+  onReset: () => void;
+}) {
+  return (
+    <section className="py-20 lg:py-28 bg-[#F8F9FA]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— {eyebrow}</span>
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-3">{heading}</h2>
+          <p className="text-[#023047]/70 max-w-xl mx-auto text-lg">{subtitle}</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+          {tiers.map((tier) => {
+            const isHighlighted = tier.id === suggestedId;
+            return (
+              <div key={tier.id} className={`relative flex flex-col rounded-2xl border p-8 transition-all ${
+                isHighlighted
+                  ? 'bg-[#219EBC] border-[#219EBC] shadow-xl'
+                  : 'bg-white border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md'
+              }`}>
+                {isHighlighted && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#FFB703] text-[#023047] text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                    {badgeText}
+                  </div>
+                )}
+                <div className="mb-6">
+                  <div className={`text-xs font-bold uppercase tracking-widest mb-1 ${isHighlighted ? 'text-white/70' : 'text-[#219EBC]'}`}>{tier.tierLabel}</div>
+                  <div className={`text-xl font-bold mb-3 ${isHighlighted ? 'text-white' : 'text-[#023047]'}`}>{tier.name}</div>
+                  <div className={`text-3xl font-bold ${isHighlighted ? 'text-white' : 'text-[#023047]'}`}>{tier.price}</div>
+                  <div className={`text-sm mt-0.5 ${isHighlighted ? 'text-white/70' : 'text-[#023047]/60'}`}>{tier.priceNote}</div>
+                </div>
+
+                <div className="flex-1 space-y-2.5 mb-8">
+                  {tier.includes.map((item) => (
+                    <div key={item} className="flex items-start gap-2.5">
+                      <CheckCircle2 size={15} className={`mt-0.5 flex-shrink-0 ${isHighlighted ? 'text-white/80' : 'text-[#219EBC]'}`} />
+                      <span className={`text-sm leading-snug ${item.startsWith('Everything in') ? 'font-semibold' : ''} ${
+                        isHighlighted ? 'text-white/85' : 'text-[#023047]/70'
+                      }`}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className={`text-xs leading-relaxed mb-6 pb-6 border-b ${
+                  isHighlighted ? 'text-white/60 border-white/20' : 'text-[#023047]/60 border-[#8ECAE6]/30'
+                }`}>{tier.payment}</div>
+
+                {tier.guarantee && (
+                  <div className={`flex items-center gap-2 text-xs font-semibold mb-4 ${isHighlighted ? 'text-white' : 'text-[#219EBC]'}`}>
+                    <Shield size={13} className="flex-shrink-0" /> 3× Clarity Guarantee applies
+                  </div>
+                )}
+
+                <Link href={tier.ctaHref} className={`inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full font-semibold text-sm transition-colors ${
+                  isHighlighted
+                    ? 'bg-white text-[#219EBC] hover:bg-white/90'
+                    : 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]'
+                }`}>
+                  {tier.cta} <ArrowRight size={16} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
 
         <div className="text-center">
           <button onClick={onReset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
@@ -561,7 +825,7 @@ export default function PricingPage() {
   }
 
   const suggestedTier = suggestedServiceId ? allTiers.find(t => t.id === suggestedServiceId) : null;
-  const isSegmentB = suggestedServiceId ? ['remote-clarity', 'ai-check', 'monthly', 'sprint'].includes(suggestedServiceId) : false;
+  const isMicro = answers.size === 'micro';
 
   return (
     <>
@@ -642,19 +906,41 @@ export default function PricingPage() {
 
       {/* RESULTS — shown after questionnaire complete */}
       {complete && suggestedServiceId && (
-        isSegmentB || suggestedServiceId === 'retained' ? (
-          <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-            <div className="max-w-2xl mx-auto px-6 lg:px-8">
-              {suggestedTier && <TierCard tier={suggestedTier} suggested={false} dark={false} />}
-              <div className="mt-10 text-center">
-                <button onClick={reset} className="text-sm text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">
-                  Answer the questions again
-                </button>
-              </div>
-            </div>
-          </section>
+        isMicro ? (
+          suggestedServiceId === 'retained' ? (
+            <TieredResultsSection
+              eyebrow="Retained — Small Business"
+              heading="Choose your level of involvement"
+              subtitle="All sessions are remote. Three-month minimum. Clarity Check built into month one if not already completed."
+              tiers={smallBizRetainedTiers}
+              suggestedId="entry"
+              badgeText="Start here"
+              onReset={reset}
+            />
+          ) : (
+            <TieredResultsSection
+              eyebrow="Small Business Engagement Model"
+              heading="Choose your depth of involvement"
+              subtitle="Each tier includes everything in the tier below it. All sessions are remote. No travel costs."
+              tiers={smallBizThreeTierItems}
+              suggestedId={suggestedServiceId}
+              onReset={reset}
+            />
+          )
         ) : (
-          <ThreeTierResults size={answers.size} suggestedId={suggestedServiceId} onReset={reset} />
+          suggestedServiceId === 'retained' ? (
+            <TieredResultsSection
+              eyebrow="Retained — Fractional CTO / Head of Operations"
+              heading="Choose your level of involvement"
+              subtitle="A direct line to Craig — no junior handoff. Days agreed in writing at the outset, reviewed at three months."
+              tiers={retainedCoreTiers}
+              suggestedId="advisory"
+              badgeText="Start here"
+              onReset={reset}
+            />
+          ) : (
+            <ThreeTierResults size={answers.size} suggestedId={suggestedServiceId} onReset={reset} />
+          )
         )
       )}
 
