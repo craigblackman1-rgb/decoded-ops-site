@@ -9,7 +9,8 @@
       "Bash(find . -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.md\" \\\\\\) ! -path \"./node_modules/*\" ! -path \"./.next/*\" -exec grep -l \"case.study\\\\|case-study\\\\|caseStudy\" {} \\\\;)",
       "Bash(grep -E \"\\\\.\\(ts|tsx\\)$\")",
       "Bash(npm install:*)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(python3 create_roadmap.py)"
     ]
   }
 }
