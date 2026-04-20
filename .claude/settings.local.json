@@ -10,7 +10,9 @@
       "Bash(grep -E \"\\\\.\\(ts|tsx\\)$\")",
       "Bash(npm install:*)",
       "Bash(xargs grep:*)",
-      "Bash(python3 create_roadmap.py)"
+      "Bash(python3 create_roadmap.py)",
+      "Bash(pandoc --track-changes=all DO_Outreach_Plan_Apr2026.docx -o /tmp/outreach_plan.md)",
+      "Read(//tmp/**)"
     ]
   }
 }
