@@ -119,7 +119,7 @@ export default function CookiesPage() {
           <section>
             <h2 className="text-2xl font-bold mb-4">Security and data protection</h2>
             <p className="text-base leading-relaxed">
-              We take your privacy seriously. Cookies cannot be used to run programs, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. We use security measures to protect cookie data from unauthorized access and misuse.
+              We take your privacy seriously. Cookies cannot be used to run programmes, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. We use security measures to protect cookie data from unauthorised access and misuse.
             </p>
           </section>
 

@@ -50,7 +50,7 @@ export default function BlogPost() {
               Your business is different. You don't just sell a product. You sell an <em>idea with customization</em>. An order isn't "1 x T-shirt." It's:
             </p>
             <ul className="space-y-2 my-6 pl-6 list-disc text-[#023047]/80">
-              <li>Blank garment (choose size, color, fit)</li>
+              <li>Blank garment (choose size, colour, fit)</li>
               <li>Decoration design (upload art, approve proof, revisions)</li>
               <li>Decoration method (embroidery vs print vs sublimation)</li>
               <li>Delivery location (multiple locations if it's a corporate order)</li>
@@ -135,7 +135,7 @@ export default function BlogPost() {
             <ol className="space-y-3 my-6 pl-6 list-decimal text-[#023047]/80">
               <li><strong>Build the integration:</strong> Accept the cost and timeline. This is the "push through" approach.</li>
               <li><strong>Change the eCommerce platform:</strong> Switch to a platform designed for your industry. This has migration costs and pain, but it might be cheaper than the integration.</li>
-              <li><strong>Optimize your current process:</strong> Live with the manual workflow, but make it more efficient. This isn't a solution—it's a temporary survival strategy while you plan for option 1 or 2.</li>
+              <li><strong>Optimise your current process:</strong> Live with the manual workflow, but make it more efficient. This isn't a solution—it's a temporary survival strategy while you plan for option 1 or 2.</li>
             </ol>
 
             {/* CTA */}
