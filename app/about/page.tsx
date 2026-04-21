@@ -22,15 +22,15 @@ export default function AboutPage() {
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— About Craig Blackman</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                25 years in the sector.<br />
-                <span className="text-[#219EBC]">No vendor ties.<br />No agenda.</span>
+                25+ years inside<br />
+                <span className="text-[#219EBC]">product-based<br />businesses</span>
               </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Decoded Ops exists because the people selling technology to print and embroidery businesses rarely understand the businesses they&apos;re selling to. And the people who do understand the businesses don&apos;t always speak technology.
+                Craig has worked at every level in print, embroidery, and promotional merchandise businesses. Not as a consultant brought in to observe. As the person on the warehouse floor picking and packing. As the IT engineer. As the operations manager. As the one who implemented the systems, lived with the consequences, and fixed what went wrong. That is why he knows what a system needs to do for the person using it — not just the person commissioning it.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Start with a free call <ArrowRight size={18} />
+                  Book a free discovery call <ArrowRight size={18} />
                 </Link>
                 <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                   See Clarity
@@ -84,6 +84,67 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* THREE DIFFERENTIATORS */}
+      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
+              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— What makes the difference</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Three things that change how this works</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300 bg-white">
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Translation Gift</h3>
+              <p className="text-sm text-[#023047]/70 leading-relaxed">Takes half-formed frustrations, reflects back a clear path. Business owners feel understood.</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300 bg-white">
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Out-of-the-box Problem Solving</h3>
+              <p className="text-sm text-[#023047]/70 leading-relaxed">Never accepts a system&apos;s stated limitation. Finds another way.</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300 bg-white">
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Facilitation Gift</h3>
+              <p className="text-sm text-[#023047]/70 leading-relaxed">In a mixed group, asks the question that makes everyone stop. People adopt the result because they built it.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ERP ROI BENCHMARKS */}
+      <section className="py-20 lg:py-28 bg-[#023047]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
+              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— Proven impact</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">What ERP implementations deliver</h2>
+            <p className="text-[#8ECAE6] text-lg">Real outcomes from the sector. When the implementation is done right.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">−23%</div>
+              <p className="text-sm text-[#8ECAE6]">Operational costs</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">−22%</div>
+              <p className="text-sm text-[#8ECAE6]">Admin costs</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">91%</div>
+              <p className="text-sm text-[#8ECAE6]">Better stock control within 12m</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">+24%</div>
+              <p className="text-sm text-[#8ECAE6]">On-time delivery</p>
+            </div>
+            <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+              <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">58%</div>
+              <p className="text-sm text-[#8ECAE6]">ROI within 2 years</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* VALUES */}
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -119,7 +180,7 @@ export default function AboutPage() {
             <p className="text-sm text-[#023047]/70">Start with a free 60-minute call. No sales pitch. Just a conversation about what&apos;s happening in your business.</p>
           </div>
           <Link href="/contact" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] text-sm font-semibold hover:bg-[#FB8500] transition-colors">
-            Book a free call <ArrowRight size={16} />
+            Book a free discovery call <ArrowRight size={16} />
           </Link>
         </div>
       </section>

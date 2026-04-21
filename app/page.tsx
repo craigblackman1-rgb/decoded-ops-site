@@ -68,7 +68,7 @@ export default function HomePage() {
                   See how it works <ArrowRight size={18} />
                 </Link>
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                  <Phone size={18} /> Book a free 60-min call
+                  <Phone size={18} /> Book a free discovery call
                 </Link>
               </div>
 
@@ -172,7 +172,7 @@ export default function HomePage() {
                 Most technology advice fails businesses like yours because it comes from people who&apos;ve never processed a decorated order in their life. I built Decoded Ops because product-based businesses with a decoration service deserve someone who genuinely understands their operation from the inside.
               </p>
               <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Start with a free 60-min call
+                Book a free discovery call
               </Link>
             </div>
 
