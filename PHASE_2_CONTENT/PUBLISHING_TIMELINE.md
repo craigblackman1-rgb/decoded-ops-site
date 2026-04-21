@@ -1,284 +1,162 @@
-# Publishing Timeline & Delivery Plan
+# Publishing Timeline & Launch Plan (Weeks 1–4, April–May 2026)
 
-## Phase 2 Deliverables Summary
+## Week 1: April 21–27 (Introduction Week)
 
-### 1. Four Launch Posts (Weeks 1–4)
-- **P2-002: Week 1 ERP Pain Post** — 3 variants ready to choose from
-- **P2-003: Week 3 AI Take** — 3 variants ready to choose from
-- **P2-004: Week 4 Sector Observation** — 3 variants ready to choose from
-- **BONUS: Week 2 variant** — Included in P2-002 (use as Week 2 post)
+**Goal:** Establish presence, tell the story, build credibility
 
-### 2. 12-Week Content Calendar
-- **P2-005:** Full 12-week calendar with:
-  - Weekly post ideas mapped to 5 pillars
-  - Monthly themes (Month 1: Problem, Month 2: Costs, Month 3: Solutions)
-  - Supporting content ideas per pillar
-  - Post type distribution (articles vs. native posts)
-  - Engagement & CTA patterns
-  - Cross-promotion strategy
-  - Success metrics
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **April 21** | Mon | POSTS_WEEK_1_INTRODUCTION — Variant A | Introduction | The warehouse → IT → ops story (RECOMMENDED LAUNCH POST) | Free 60-min discovery call |
+| **April 23** | Wed | POSTS_WEEK_1_INTRODUCTION — Variant B | Introduction | £150k ERP failure story | Free 60-min discovery call |
+| **April 25** | Fri | POSTS_WEEK_1_INTRODUCTION — Variant C | Introduction | Clarity pitch — direct product entry point | Free 60-min discovery call |
 
-### 3. Warm DM Templates
-- **P2-006:** 7 templates + variations:
-  - General consultative open
-  - Sector-specific problem recognition
-  - Post-engagement insight share
-  - Referral thank you + offer
-  - Specific observation ("I noticed you...")
-  - Value-first share (no ask)
-  - Direct ask (low pressure)
-  - Plus: response patterns, follow-ups, context-specific variations, timing guidance
+**DM Outreach (Weeks 1):**
+- Start DM sequence to 10–15 warm targets (previous interactions, known sector contacts)
+- Use DM_TEMPLATES — Variant 1 or 3 (credibility play or audit offer)
+- Expected outcomes: 1–2 discovery calls booked by end of Week 1
 
-### 4. Supporting Collateral (Ready to Deploy)
-All posts include:
-- Multiple variants per topic
-- Selection notes (which variant works best and why)
-- Publishing notes (audience, tone, length, hashtags)
-- Repurposing ideas (video, carousel, email, webinar)
+**Engagement cadence:**
+- Monitor posts at 2 hours, 6 hours, 24 hours post-publication
+- Respond to all comments within 4 hours
+- Aim for 3–5 comments per post in first 48 hours
 
 ---
 
-## Week-by-Week Rollout Plan
+## Week 2: April 28–May 4 (Pain & Cost Week)
 
-### WEEK 1 (April 21–27)
-**Post:** "The £10k Question That Saves £150k" (ERP)
-- **Monday 21st:** Publish to LinkedIn as Article
-- **Wednesday 23rd:** Native post version (hook + link to article)
-- **Friday 25th:** Bonus resource (ERP Audit Checklist link)
-- **Supporting:** Add to website blog
-- **Email:** Include in newsletter to existing contacts
-- **DM:** Start warm outreach using Template 2 (Sector-Specific) to operations contacts
+**Goal:** Build on introduction with concrete pain points and ROI
 
-### WEEK 2 (April 28 – May 4)
-**Post:** "The Hidden Cost of Skipping One Step" (ERP variant)
-- **Monday 28th:** Publish to LinkedIn as Article
-- **Wednesday 30th:** Native post version (different angle from Week 1)
-- **Friday May 2nd:** Share a related insight or stat
-- **Supporting:** Send in warm emails to warm list
-- **DM:** Continue outreach, mix Template 1 (Consultative) with new connections
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **April 28** | Mon | POSTS_WEEK_2_PAIN — Variant A | War Story | The real £150k ERP failure + cost analysis | Free 60-min discovery call |
+| **April 30** | Wed | POSTS_WEEK_2_PAIN — Variant B | Operational Pain | Manual re-entry is costing you (status quo costs) | Let's figure out what's costing you |
+| **May 2** | Fri | POSTS_WEEK_2_PAIN — Variant C | Root Cause | Why most ERP projects fail | Free discovery call |
 
-### WEEK 3 (May 5–11)
-**Post:** "I'm Not Here to Sell You an AI Tool" (AI)
-- **Monday May 5th:** Publish to LinkedIn as Article
-- **Wednesday May 7th:** Native post version
-- **Friday May 9th:** Bonus — "5 Questions Before Buying an AI Tool" as separate post
-- **Supporting:** Create blog version + pin to profile
-- **DM:** Use Template 3 (Insight Share) with people who engage with this content
+**DM Outreach (Week 2):**
+- Extend DM sequence to 10–15 new warm targets
+- Use DM_TEMPLATES — Variant 2 (problem recognition hook)
+- Followup on Week 1 DMs that didn't respond (comment engagement strategy)
+- Expected outcomes: 2–3 additional discovery calls booked
 
-### WEEK 4 (May 12–18)
-**Post:** "What I See Regularly in Decorated Goods" (Sector Observation)
-- **Monday May 12th:** Publish to LinkedIn as Article
-- **Wednesday May 14th:** Native post version
-- **Friday May 16th:** "Operational Audit Checklist for Decorated Goods" (create if not exists)
-- **Supporting:** Tag all decorated goods connections
-- **DM:** Use Template 5 (Specific Observation) targeted at workwear/decorated goods ops leaders
+**Engagement cadence:**
+- Same as Week 1
+- Start capturing engagement metrics (reach, reactions, comments)
 
 ---
 
-## Month 1 Engagement & Results (Weeks 1–4)
+## Week 3: May 5–11 (AI Honest Takes Week)
 
-**Success Metrics:**
-- 500+ impressions per post (LinkedIn algorithm threshold)
-- 5–10 comments per post (sign of relevance)
-- 5–15 profile visits per post
-- 2–3 DMs/inquiries per week from content
+**Goal:** Position as thought leader, differentiate with "honest AI" framing
 
-**Optimization:**
-- Monitor which pillar resonates most (ERP vs. AI vs. Sector)
-- Track which variant drives more engagement
-- Adjust messaging based on comments
-- Identify 2–3 content themes for deeper exploration in Month 2
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **May 5** | Mon | POSTS_WEEK_3_AI — Variant A | AI Honest Take | "I am not here to sell you an AI tool" (VERBATIM FRAMING) | Free discovery call |
+| **May 7** | Wed | POSTS_WEEK_3_AI — Variant B | AI Skeptic | AI won't fix what's broken | Free discovery call |
+| **May 9** | Fri | POSTS_WEEK_3_AI — Variant C | AI Practical | When AI actually works (and when it doesn't) | Free discovery call |
 
----
+**DM Outreach (Week 3):**
+- New DM sequence to 10–15 targets focused on tech/operations keywords
+- Use DM_TEMPLATES — Variant 4 or 5 (direct offer or video angle)
+- By end of Week 3, should have ~5–6 discovery calls booked
+- Expected outcomes: 2–3 additional calls from AI positioning
 
-## Month 2 Timeline (Weeks 5–8)
-
-### WEEK 5 (May 19–25)
-**Posts:** Systems Integration (2 posts)
-- Monday: "Why Systems Don't Talk (And What It Costs)"
-- Wednesday: "How Much of Your Team's Time is Data Reconciliation?"
-
-### WEEK 6 (May 26 – June 1)
-**Post:** Client Win Story — Approval Cycle
-- Monday: "From 5-Day Approval Cycle to 24 Hours"
-- Include metrics, anonymisation, what changed
-
-### WEEK 7 (June 2–8)
-**Posts:** Vendor Deception (2 posts)
-- Monday: "What ERP Demos Don't Show You"
-- Wednesday: "5 Questions Vendors Won't Like (But Your Business Needs Answered)"
-
-### WEEK 8 (June 9–15)
-**Posts:** AI Parallels (2 posts)
-- Monday: "AI Projects Fail the Same Way as ERP Projects"
-- Wednesday: "The Real Cost of Automating a Broken Process"
+**Engagement cadence:**
+- Same as prior weeks
+- Start identifying highest-engagement posts from Weeks 1–2 for repurposing
 
 ---
 
-## Month 3 Timeline (Weeks 9–12)
+## Week 4: May 12–18 (Sector Observations Week)
 
-### WEEK 9 (June 16–22)
-**Posts:** Portal & B2B (2 posts)
-- Monday: "The B2B Portal Bottleneck (And It's Not What You Think)"
-- Wednesday: "Bulk Ordering Should Be Easy. Here's Why It Isn't."
+**Goal:** Demonstrate sector expertise, surface real bottlenecks
 
-### WEEK 10 (June 23–29)
-**Posts:** Visibility & Data (2 posts)
-- Monday: "Your Inventory Isn't Really Your Inventory"
-- Wednesday: "System Visibility Is the Foundation for Everything Else"
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **May 12** | Mon | POSTS_WEEK_4_SECTOR — Variant A | Sector | Artwork approval bottleneck (decorated goods/print) | Free discovery call |
+| **May 14** | Wed | POSTS_WEEK_4_SECTOR — Variant B | Sector | B2B portals that actually work (workwear) | Free discovery call |
+| **May 16** | Fri | POSTS_WEEK_4_SECTOR — Variant C | Sector | Order-to-despatch optimization | Free discovery call |
 
-### WEEK 11 (June 30 – July 6)
-**Post:** Client Win — ERP Replacement
-- Monday: "How to Replace an ERP Without Losing Your Mind"
-- Change management focus, anonymised results
+**DM Outreach (Week 4):**
+- New DM sequence to 10–15 sector-specific targets (from Apollo list or LinkedIn search)
+- Use DM_TEMPLATES — Variant 1, 3, or 5 (personalized to sector)
+- By end of Week 4, should have ~8–10 discovery calls booked across all 4 weeks
+- Expected outcomes: 2–3 additional calls from sector positioning
 
-### WEEK 12 (July 7–13)
-**Posts:** Meta Reflection & Wrap-Up (2 posts)
-- Monday: "What I Learned Talking to 50+ Operations Teams"
-- Wednesday: "The One Thing That Always Changes Everything"
+**Engagement cadence:**
+- Same as prior weeks
+- Start identifying 1–2 posts for boosting (if budget available)
 
 ---
 
-## Email & DM Cadence (Ongoing, All 12 Weeks)
+## Launch Day Checklist (April 21)
 
-### Weekly Email (Every Monday at 9 AM)
-- Subject: "[New Post] [Title]"
-- Body: Post excerpt (2–3 sentences) + link to article
-- Audience: Warm list (existing contacts, newsletter subscribers)
-- CTA: "Thoughts?" or "Let me know if this resonates"
+Before publishing the first post:
 
-### DM Outreach (3–5 per week, spread across 2–3 days)
-- **Monday/Wednesday:** 2–3 new DMs (Templates 1, 2, 5)
-- **Thursday:** 1–2 follow-ups to previous exchanges
-- **Friday/Saturday:** 1 relationship-building message (no ask)
-- **Response:** Reply to all engagement within 24 hours
-
-### Warm Email Sequence (As Needed)
-- If someone engages 2–3 times: Invite to "no-pressure" call
-- If someone clicks link multiple times: Share relevant resource
-- If someone is warm connection: Use Template 4 after introduction
+- [ ] LinkedIn profile fully updated (Decoded Ops branding, tagline, call-to-action)
+- [ ] All 4 post files created and formatted (check POSTS_WEEK_1–4)
+- [ ] DM templates copied to separate document for easy access
+- [ ] Calendar set for all 12 posts (April 21–May 16)
+- [ ] 30-minute discovery call template prepared (agenda, discovery questions)
+- [ ] Email template ready for call followup
+- [ ] Slack or calendar notification set for weekly DM outreach (Monday, 9 AM each week)
+- [ ] Engagement alarm set (2 hours post-publication, check comments)
+- [ ] Spreadsheet ready to track: post reach, engagement, DM responses, calls booked
 
 ---
 
-## Content Repurposing Plan (Month 4+)
+## Post-Week 4 Plan (May 19+)
 
-### Blog Archive
-- All 12 weeks become blog posts at `/blog/[slug]`
-- Cross-link related posts (ERP series, AI series, etc.)
-- Create pillar pages: `/blog/erp-war-stories`, `/blog/ai-advisory`, etc.
+**Weeks 5–16:** Continue with CONTENT_CALENDAR_12_WEEKS.md
 
-### Email Sequence
-- Create 6-week warm sequence: intro + Week 1, 2, 3, 5, 7, 12 posts
-- Automate to new newsletter subscribers
-- Use for retargeting on cold list
-
-### Video/Audio
-- Record 3–5 key posts as short videos (LinkedIn video, YouTube Shorts)
-- Create audio version (Substack, podcast)
-- Repurpose into webinar content
-
-### Evergreen Resources
-- "ERP Vendor Evaluation Checklist" (from Week 7 content)
-- "Operational Audit Checklist" (from Week 4 content)
-- "AI Foundation Assessment" (from Week 3 content)
-- Gate behind email signup for lead generation
-
-### Speaking/Outreach
-- Use as thought leadership for podcast pitches
-- Reference in speaking proposals
-- Quote in proposals to prospects
-- Use as case studies in sales conversations
+- **Weeks 5–6:** Post 4 more posts (Weeks 5 pillar + Variant A/B, Week 6 pillar + Variant A/B)
+- **Cadence:** 2–3 posts per week (Tuesday, Wednesday, Friday, 8–9 AM)
+- **DM outreach:** 10–15 new targets per week, rotating through templates
+- **Discovery calls:** Target 1–2 booked per week (8–10 total in 12-week window)
+- **Expected conversions:** 1–2 audits from 12 weeks of consistent posting + DM outreach
 
 ---
 
-## Success Criteria & Check-Ins
+## Success Metrics (Track Weekly)
 
-### Weekly Check (Every Friday)
-- [ ] Post published on schedule
-- [ ] Native post/follow-up published
-- [ ] Engagement metrics tracked
-- [ ] 2–3 DMs sent
-- [ ] Response rate noted
-
-### Monthly Check (End of each month)
-- [ ] Total impressions vs. target (1500–2000 for 4–5 posts)
-- [ ] Engagement rate (comments, saves, shares)
-- [ ] DM response rate (target: 25–30%)
-- [ ] Calls booked from content (target: 1–2 per month Month 1, 2–3 Month 2)
-- [ ] Newsletter subscriber growth
-- [ ] Website traffic from blog posts
-
-### Quarterly Review (End of Week 12)
-- Total reach across 12 weeks
-- Most engaging pillar/topic
-- Most effective DM template
-- DM response rate by variant
-- Conversion rate (DM → call → client)
-- Content repurposing opportunities
-- Adjustments for Phase 3
+| Metric | Target | Timing |
+|---|---|---|
+| **Post reach (avg per post)** | 200–500 impressions | Week 2 onward |
+| **Engagement rate** | 3–5% (reactions + comments + shares) | Week 2 onward |
+| **DM open rate** | 40–60% | Daily check |
+| **DM response rate** | 8–10% of opens | Daily check |
+| **Discovery calls booked** | 8–10 in 4 weeks | End of Week 4 |
+| **Audits scheduled** | 1–2 | End of Week 4 |
 
 ---
 
-## Resource Requirements
+## Troubleshooting & Adjustments
 
-### Writing (One-Time)
-- 4 launch posts with variants: 4–6 hours
-- 12-week calendar: 2–3 hours
-- 7 DM templates with variations: 2–3 hours
-- Supporting resources: 1–2 hours
-- **Total:** 10–14 hours (Done)
+**If post reach is low (<100 impressions):**
+- Check posting time (should be Tue–Fri, 8–9 AM UK)
+- Increase engagement — respond faster to comments
+- Try different post structure or opening hook next week
 
-### Publishing (Ongoing, 12 weeks)
-- Post publication: 30 min/week
-- Email sending: 20 min/week
-- DM outreach: 30 min/week
-- Engagement/replies: 30 min/week
-- **Total:** ~2 hours/week
+**If DM response rate drops (<5%):**
+- Switch templates (rotate through Variants 1, 3, 5)
+- Adjust targeting (filter by job title, company size, sector keywords)
+- Increase specificity in DM (more personalized, less generic)
 
-### Optimization (Ongoing)
-- Monthly check-in: 1 hour
-- Quarterly review: 2–3 hours
-- Content adjustments: 30 min/week
+**If discovery calls aren't converting to audits:**
+- Review discovery call structure (are you asking the right questions?)
+- Check if prospects are right fit (under/over £1m turnover, right sector?)
+- Consider adding second touch (proposal + case study email)
 
----
-
-## Deliverables Checklist
-
-### ✅ Ready to Launch
-- [x] P2-002: Week 1–2 ERP Pain Posts (3 variants each)
-- [x] P2-003: Week 3 AI Take (3 variants)
-- [x] P2-004: Week 4 Sector Observation (3 variants)
-- [x] P2-005: 12-Week Content Calendar
-- [x] P2-006: Warm DM Templates (7 templates + variations)
-
-### Ready for Review
-- [ ] Select best variants from each post (recommend: Variant 2 for P2-002, Variant 1 for P2-003, Variant 1 for P2-004)
-- [ ] Approve 12-week calendar topics
-- [ ] Confirm DM strategy and frequency
-- [ ] Set publishing schedule
-
-### Ready to Deploy
-- [ ] Add approved posts to LinkedIn queue (Monday/Wednesday schedule)
-- [ ] Create blog versions of all posts
-- [ ] Set up DM outreach tracker (Notion, Airtable, or CRM)
-- [ ] Create email newsletter signup if not exists
-- [ ] Schedule email sends (weekly, Monday 9 AM)
+**If engagement slows after Week 2:**
+- Mix post types (balance thought leadership with practical how-tos)
+- Add multimedia (simple images, charts) to posts
+- Respond faster to comments (within 2 hours of posting)
 
 ---
 
-## Sign-Off & Next Steps
+## Notes
 
-**Phase 2 Completion:** All 5 deliverables ready for review and approval.
-
-**Decision Required:**
-1. Approve selected post variants (Weeks 1–4)
-2. Confirm 12-week calendar (any topics to swap?)
-3. Approve DM strategy and frequency
-4. Set publishing start date (recommend: Monday Apr 21, 2026)
-
-**Phase 3 Planning (Weeks 13+):**
-- Expand content based on Month 1–3 performance
-- Create 2–3 new client case studies
-- Develop webinar or 30-min video content
-- Build email nurture sequence
-- Plan speaking/podcast outreach
+- **No boosting budget needed** for Weeks 1–4. Organic reach should be sufficient to establish presence.
+- **Best time to post:** Tuesday–Friday, 8–9 AM UK time (research-backed for B2B engagement)
+- **DM outreach:** Separate from posting — run parallel, not sequential
+- **Consistency is key:** 3 posts per week for 4 weeks = 12 posts. Stick to schedule.
+- **Quality over virality:** Don't chase engagement at the cost of authenticity. Slow, steady growth is better.
