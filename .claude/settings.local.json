@@ -12,7 +12,8 @@
       "Bash(xargs grep:*)",
       "Bash(python3 create_roadmap.py)",
       "Bash(pandoc --track-changes=all DO_Outreach_Plan_Apr2026.docx -o /tmp/outreach_plan.md)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }
