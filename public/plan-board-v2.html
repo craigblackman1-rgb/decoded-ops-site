@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoded Ops — Master Plan Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+
+        .sync-info {
+            text-align: right;
+        }
+
+        .sync-button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .sync-button:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+
+        .sync-button:active {
+            transform: scale(0.95);
+        }
+
+        .last-sync {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-top: 10px;
+        }
+
+        /* Status Banner */
+        .status-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-item label {
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .status-item .value {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Phase Sections */
+        .phase-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .phase-header.complete {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .phase-header.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .phase-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .phase-title h2 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .phase-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .phase-progress-container {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .phase-progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .phase-progress-fill {
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .phase-progress-text {
+            font-size: 12px;
+            opacity: 0.9;
+            text-align: right;
+        }
+
+        .phase-toggle {
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-toggle.expanded {
+            transform: rotate(180deg);
+        }
+
+        .phase-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .phase-content.expanded {
+            display: block;
+        }
+
+        /* Day Sections */
+        .day-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .day-header {
+            background: #f7fafc;
+            padding: 12px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .day-header .time {
+            font-size: 12px;
+            color: #718096;
+            margin-left: 10px;
+        }
+
+        /* Task Cards */
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .task {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .task:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #cbd5e0;
+        }
+
+        .task.done {
+            background: #ecfdf5;
+            border-color: #10b981;
+            opacity: 0.8;
+        }
+
+        .task.done .task-title {
+            text-decoration: line-through;
+            color: #718096;
+        }
+
+        .task.done::before {
+            content: "✅";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+
+        .task.active {
+            background: #fffbeb;
+            border-color: #f59e0b;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .task.active .badge {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .task-badge {
+            display: inline-block;
+            background: #cbd5e0;
+            color: #2d3748;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .task.done .task-badge {
+            background: #10b981;
+            color: white;
+        }
+
+        .task.active .task-badge {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .task-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .task-meta {
+            font-size: 12px;
+            color: #718096;
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .task-time {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .task-time::before {
+            content: "⏱";
+        }
+
+        .task-checkbox {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .task-with-checkbox {
+            padding-left: 45px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sync-info {
+                text-align: left;
+                margin-top: 15px;
+            }
+
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .phase-title {
+                width: 100%;
+            }
+
+            .phase-progress-container {
+                max-width: 100%;
+            }
+
+            .task-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>📋 Decoded Ops — Master Plan</h1>
+                <p>Phase 2 LinkedIn Launch + Phase 3 Apollo Campaign | Week of Apr 22–25, 2026</p>
+            </div>
+            <div class="sync-info">
+                <button class="sync-button" onclick="openSyncGuide()">🔄 Run Sync</button>
+                <div class="last-sync">Last synced: <span id="last-sync">--:--</span></div>
+            </div>
+        </header>
+
+        <div class="status-banner">
+            <div class="status-item">
+                <label>Total Tasks</label>
+                <div class="value" id="total-tasks">44</div>
+            </div>
+            <div class="status-item">
+                <label>Completed</label>
+                <div class="value" id="completed-tasks">0</div>
+            </div>
+            <div class="status-item">
+                <label>In Progress</label>
+                <div class="value" id="active-tasks">0</div>
+            </div>
+            <div class="status-item">
+                <label>Completion %</label>
+                <div class="value" id="completion-percent">0%</div>
+            </div>
+        </div>
+
+        <!-- THIS WEEK: Tue–Fri Apr 22–25 -->
+        <div class="phase-section">
+            <div class="phase-header active" onclick="togglePhase(this)">
+                <div class="phase-title">
+                    <span>🚀 THIS WEEK (Apr 22–25)</span>
+                    <div class="phase-badge">ACTIVE</div>
+                </div>
+                <div class="phase-progress-container">
+                    <div class="phase-progress-bar">
+                        <div class="phase-progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="phase-progress-text"><span id="this-week-percent">0</span>%</div>
+                </div>
+                <div class="phase-toggle expanded">▼</div>
+            </div>
+
+            <div class="phase-content expanded">
+                <!-- TUESDAY -->
+                <div class="day-section">
+                    <div class="day-header">📅 TUESDAY, APR 22 <span class="time">Tue 9:00–16:30</span></div>
+                    <div class="task-grid">
+                        <div class="task" data-task-id="P3-Setup-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Configure Apollo campaign</div>
+                            <div class="task-meta">
+                                <div class="task-time">90 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Setup-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Verify email & tracking</div>
+                            <div class="task-meta">
+                                <div class="task-time">15 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Review-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Review Week 1 posts (B & C)</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-DM-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Send warm DMs (10–15)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Create-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Import & test Email 1</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Create-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Import & test Email 2</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Create-003">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Import & test Email 3</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Launch-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Launch Segment A (Apollo)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEDNESDAY -->
+                <div class="day-section">
+                    <div class="day-header">📅 WEDNESDAY, APR 23 <span class="time">Wed 8:30–16:00</span></div>
+                    <div class="task-grid">
+                        <div class="task" data-task-id="P2-Post-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Post LinkedIn Post 2 @ 8:30 AM</div>
+                            <div class="task-meta">
+                                <div class="task-time">5 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Review-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Review Week 2 & 3 posts</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Engage-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Reply to comments (daily)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-DM-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Send warm DMs (10–15)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Monitor-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Check Email 1 metrics (24h)</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THURSDAY -->
+                <div class="day-section">
+                    <div class="day-header">📅 THURSDAY, APR 24 <span class="time">Thu 9:00–16:00</span></div>
+                    <div class="task-grid">
+                        <div class="task" data-task-id="P3-Launch-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Launch Segment B (if metrics good)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-DM-003">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Send warm DMs (10–15)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Engage-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Reply to comments (daily)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Review-004">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Review Week 4 & 12-week calendar</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Monitor-002">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Check Email 1 & 2 metrics (48h)</div>
+                            <div class="task-meta">
+                                <div class="task-time">60 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FRIDAY -->
+                <div class="day-section">
+                    <div class="day-header">📅 FRIDAY, APR 25 <span class="time">Fri 8:30–12:30</span></div>
+                    <div class="task-grid">
+                        <div class="task" data-task-id="P2-Post-003">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Post LinkedIn Post 3 @ 8:30 AM</div>
+                            <div class="task-meta">
+                                <div class="task-time">5 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Launch-003">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Launch Segment C (if metrics good)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-DM-004">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Send final DM batch (Week 1 wrap)</div>
+                            <div class="task-meta">
+                                <div class="task-time">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P2-Wrap-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 2</div>
+                            <div class="task-title">Review Week 1 engagement metrics</div>
+                            <div class="task-meta">
+                                <div class="task-time">45 min</div>
+                            </div>
+                        </div>
+
+                        <div class="task" data-task-id="P3-Wrap-001">
+                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
+                            <div class="task-badge">Phase 3</div>
+                            <div class="task-title">Record Apollo Week 1 metrics</div>
+                            <div class="task-meta">
+                                <div class="task-time">45 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASE OVERVIEW -->
+        <div class="phase-section">
+            <div class="phase-header complete" onclick="togglePhase(this)">
+                <div class="phase-title">
+                    <span>✅ PHASE 1: Website Conversion Foundation</span>
+                    <div class="phase-badge">COMPLETE</div>
+                </div>
+                <div class="phase-progress-container">
+                    <div class="phase-progress-bar">
+                        <div class="phase-progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="phase-progress-text">100%</div>
+                </div>
+                <div class="phase-toggle">▼</div>
+            </div>
+            <div class="phase-content">
+                <p style="color: #718096; font-size: 14px;">✅ All Phase 1 tasks complete (Apr 21, 2026)</p>
+            </div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-header active" onclick="togglePhase(this)">
+                <div class="phase-title">
+                    <span>🚀 PHASE 2: LinkedIn Launch</span>
+                    <div class="phase-badge">ACTIVE</div>
+                </div>
+                <div class="phase-progress-container">
+                    <div class="phase-progress-bar">
+                        <div class="phase-progress-fill" style="width: 5%"></div>
+                    </div>
+                    <div class="phase-progress-text">5% (1 of 20 weeks)</div>
+                </div>
+                <div class="phase-toggle">▼</div>
+            </div>
+            <div class="phase-content">
+                <p style="color: #718096; font-size: 14px; margin-bottom: 15px;">
+                    12-week LinkedIn campaign: 3 posts/week introduction → pain → AI → sector observations.
+                    <br>Week 1 (Apr 21–27): Introduction posts Mon/Wed/Fri + warm DMs daily.
+                </p>
+                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none;">📋 View detailed Phase 2 schedule →</a>
+            </div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-header active" onclick="togglePhase(this)">
+                <div class="phase-title">
+                    <span>🚀 PHASE 3: Cold Email Campaign (Apollo)</span>
+                    <div class="phase-badge">LAUNCHING TODAY</div>
+                </div>
+                <div class="phase-progress-container">
+                    <div class="phase-progress-bar">
+                        <div class="phase-progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="phase-progress-text">0% (starting Apr 22)</div>
+                </div>
+                <div class="phase-toggle">▼</div>
+            </div>
+            <div class="phase-content">
+                <p style="color: #718096; font-size: 14px; margin-bottom: 15px;">
+                    3-email sequence to 150–180 UK decorated goods contacts across 3 segments.
+                    <br>Email 1 (Pain Hook) sends today. Email 2 (Apr 28), Email 3 (May 1).
+                </p>
+                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none;">📋 View detailed Phase 3 schedule →</a>
+            </div>
+        </div>
+
+        <div class="phase-section">
+            <div class="phase-header" onclick="togglePhase(this)">
+                <div class="phase-title">
+                    <span>⏳ PHASE 4–10: Future Phases</span>
+                    <div class="phase-badge">QUEUED</div>
+                </div>
+                <div class="phase-toggle">▼</div>
+            </div>
+            <div class="phase-content">
+                <ul style="color: #718096; font-size: 14px; line-height: 1.8; margin-left: 20px;">
+                    <li><strong>Phase 4:</strong> Lead Magnet ("5 Warning Signs") — After Phase 1 ✅</li>
+                    <li><strong>Phase 5:</strong> Knowledge Base + Design System — After Phase 4</li>
+                    <li><strong>Phase 6:</strong> Content & SEO Optimization — Parallel with Phase 9</li>
+                    <li><strong>Phase 7:</strong> Proposal Generation & Lead Capture — After Phase 5</li>
+                    <li><strong>Phase 8:</strong> Analytics & CRO — After Phase 7</li>
+                    <li><strong>Phase 9:</strong> Thought Leadership — Parallel with Phase 6</li>
+                    <li><strong>Phase 10:</strong> Performance & Accessibility — Anytime</li>
+                </ul>
+                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none; display: block; margin-top: 15px;">📋 View complete task breakdown (44 tasks, 10 phases) →</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                📌 <strong>Sync system active:</strong> Mark tasks complete in COMPLETE_TASK_BREAKDOWN.md, then run <code>node sync-tasks.js</code>
+                <br>
+                📖 <strong>Read <a href="SYNC_WORKFLOW.md">SYNC_WORKFLOW.md</a></strong> for details on automated updates
+                <br><br>
+                Last updated: 2026-04-22 | Owner: Craig Blackman
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle phase sections
+        function togglePhase(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.phase-toggle');
+
+            content.classList.toggle('expanded');
+            toggle.classList.toggle('expanded');
+        }
+
+        // Mark task as complete
+        function markTask(checkbox) {
+            const task = checkbox.closest('.task');
+            if (checkbox.checked) {
+                task.classList.add('done');
+            } else {
+                task.classList.remove('done');
+            }
+            updateMetrics();
+        }
+
+        // Update metrics
+        function updateMetrics() {
+            const tasks = document.querySelectorAll('[data-task-id]');
+            const completed = document.querySelectorAll('[data-task-id] input:checked').length;
+            const total = tasks.length;
+            const percent = Math.round((completed / total) * 100);
+
+            document.getElementById('total-tasks').textContent = total;
+            document.getElementById('completed-tasks').textContent = completed;
+            document.getElementById('completion-percent').textContent = percent + '%';
+
+            // Update this week progress
+            const thisWeekBar = document.querySelector('#this-week-percent');
+            if (thisWeekBar) {
+                thisWeekBar.textContent = percent;
+                const fill = thisWeekBar.closest('.phase-progress-container').querySelector('.phase-progress-fill');
+                if (fill) {
+                    fill.style.width = percent + '%';
+                }
+            }
+
+            // Save to localStorage
+            localStorage.setItem('plan-board-updated', new Date().toLocaleTimeString());
+        }
+
+        // Open sync guide
+        function openSyncGuide() {
+            alert(`To sync task completion:
+
+1. Edit COMPLETE_TASK_BREAKDOWN.md
+2. Mark tasks complete: [x] P3-Setup-001: ...
+3. Run: node sync-tasks.js
+
+This automatically updates:
+- .plan.md (checklists)
+- public/plan-board.html (dashboard)
+
+See SYNC_WORKFLOW.md for details.`);
+        }
+
+        // Load metrics on page load
+        window.addEventListener('load', () => {
+            updateMetrics();
+            const lastSync = localStorage.getItem('plan-board-updated');
+            if (lastSync) {
+                document.getElementById('last-sync').textContent = lastSync;
+            }
+        });
+
+        // Expand all sections by default
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.phase-header').forEach(header => {
+                if (header.closest('.phase-section').querySelector('#this-week-percent') ||
+                    header.textContent.includes('PHASE 1') ||
+                    header.textContent.includes('PHASE 2') ||
+                    header.textContent.includes('PHASE 3')) {
+                    const content = header.nextElementSibling;
+                    const toggle = header.querySelector('.phase-toggle');
+                    if (!content.classList.contains('expanded')) {
+                        content.classList.add('expanded');
+                        toggle.classList.add('expanded');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
