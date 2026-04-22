@@ -14,7 +14,7 @@
       "Bash(pandoc --track-changes=all DO_Outreach_Plan_Apr2026.docx -o /tmp/outreach_plan.md)",
       "Read(//tmp/**)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "Bash(cat \"D:\\\\\\\\Claude\\\\\\\\Projects\\\\\\\\Decoded Ops\\\\\\\\decoded-ops-site\\\\\\\\.plan.md\")"
+      "Bash(cat \"D:\\\\Claude\\\\Projects\\\\Decoded Ops\\\\decoded-ops-site\\\\docs\\\\.plan.md\")"
     ]
   }
 }
