@@ -5,1422 +5,237 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Decoded Ops — Content Review</title>
   <style>
+    :root {
+      --live: #059669; --live-bg: #d1fae5;
+      --planned: #2563eb; --planned-bg: #dbeafe;
+      --soon: #d97706; --soon-bg: #fef3c7;
+      --draft: #7c3aed; --draft-bg: #ede9fe;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f0f2f5;
-      min-height: 100vh;
-      color: #1a202c;
-    }
-
-    /* ── Sidebar Nav ── */
-    .sidebar {
-      position: fixed;
-      top: 0; left: 0;
-      width: 220px;
-      height: 100vh;
-      background: #1a202c;
-      padding: 24px 0;
-      overflow-y: auto;
-      z-index: 100;
-    }
-
-    .sidebar-logo {
-      padding: 0 20px 20px;
-      border-bottom: 1px solid #2d3748;
-      margin-bottom: 16px;
-    }
-
-    .sidebar-logo h2 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #e2e8f0;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .sidebar-logo p {
-      font-size: 11px;
-      color: #718096;
-      margin-top: 2px;
-    }
-
-    .nav-section {
-      padding: 0 12px;
-      margin-bottom: 8px;
-    }
-
-    .nav-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: #4a5568;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 8px 8px 4px;
-    }
-
-    .nav-link {
-      display: block;
-      padding: 6px 8px;
-      font-size: 13px;
-      color: #a0aec0;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: all 0.15s;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      background: #2d3748;
-      color: #e2e8f0;
-    }
-
-    .nav-link.active {
-      background: #2d3748;
-      color: #68d391;
-    }
-
-    .nav-badge {
-      float: right;
-      font-size: 10px;
-      background: #2d3748;
-      color: #718096;
-      padding: 1px 6px;
-      border-radius: 10px;
-    }
-
-    /* ── Main Content ── */
-    .main {
-      margin-left: 220px;
-      padding: 32px 40px;
-      max-width: 1000px;
-    }
-
-    .page-header {
-      background: white;
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 32px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .page-header h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a202c;
-    }
-
-    .page-header p {
-      font-size: 14px;
-      color: #718096;
-      margin-top: 4px;
-    }
-
-    .header-meta {
-      text-align: right;
-      font-size: 12px;
-      color: #a0aec0;
-    }
-
-    /* ── Section ── */
-    .section {
-      margin-bottom: 48px;
-      scroll-margin-top: 32px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .section-header h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1a202c;
-    }
-
-    .section-tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .tag-linkedin { background: #dbeafe; color: #1d4ed8; }
-    .tag-email    { background: #fef3c7; color: #92400e; }
-    .tag-dm       { background: #f0fdf4; color: #166534; }
-
-    .source-link {
-      margin-left: auto;
-      font-size: 12px;
-      color: #6366f1;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 4px 10px;
-      border: 1px solid #c7d2fe;
-      border-radius: 6px;
-      background: #eef2ff;
-      transition: all 0.15s;
-    }
-
-    .source-link:hover {
-      background: #e0e7ff;
-      border-color: #6366f1;
-    }
-
-    /* ── Post Cards ── */
-    .post-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .post-card {
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      transition: box-shadow 0.15s;
-    }
-
-    .post-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .card-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid #f1f5f9;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    .card-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1a202c;
-      line-height: 1.3;
-    }
-
-    .card-subtitle {
-      font-size: 11px;
-      color: #94a3b8;
-      margin-top: 2px;
-    }
-
-    .variant-badge {
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 12px;
-      flex-shrink: 0;
-      margin-left: 8px;
-    }
-
-    .badge-a    { background: #fef9c3; color: #713f12; }
-    .badge-b    { background: #dbeafe; color: #1e40af; }
-    .badge-c    { background: #fce7f3; color: #9d174d; }
-    .badge-posted { background: #d1fae5; color: #065f46; }
-    .badge-today  { background: #fff7ed; color: #9a3412; }
-    .badge-fri    { background: #ede9fe; color: #5b21b6; }
-    .badge-draft  { background: #f1f5f9; color: #64748b; }
-
-    .card-body {
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #374151;
-      line-height: 1.65;
-      max-height: 220px;
-      overflow-y: auto;
-      white-space: pre-wrap;
-      cursor: text;
-    }
-
-    .card-body.expanded {
-      max-height: none;
-    }
-
-    .card-footer {
-      padding: 10px 16px;
-      border-top: 1px solid #f1f5f9;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .expand-btn {
-      font-size: 11px;
-      color: #6366f1;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      padding: 0;
-    }
-
-    .expand-btn:hover { text-decoration: underline; }
-
-    .copy-btn {
-      font-size: 11px;
-      background: #6366f1;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 4px 10px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-left: auto;
-      transition: background 0.15s;
-    }
-
-    .copy-btn:hover { background: #4f46e5; }
-    .copy-btn.copied { background: #10b981; }
-
-    /* ── Email Cards (full-width) ── */
-    .email-card {
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      overflow: hidden;
-    }
-
-    .email-header {
-      padding: 16px 20px 12px;
-      border-bottom: 1px solid #f1f5f9;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .email-num {
-      width: 32px;
-      height: 32px;
-      background: #fef3c7;
-      color: #92400e;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .email-meta h3 {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1a202c;
-    }
-
-    .email-meta p {
-      font-size: 12px;
-      color: #94a3b8;
-      margin-top: 2px;
-    }
-
-    .subject-pills {
-      padding: 12px 20px;
-      background: #fafafa;
-      border-bottom: 1px solid #f1f5f9;
-    }
-
-    .subject-pills-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
-    }
-
-    .subject-pill {
-      display: inline-block;
-      background: #fef3c7;
-      color: #92400e;
-      font-size: 12px;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin: 2px 4px 2px 0;
-      font-style: italic;
-    }
-
-    .email-body {
-      padding: 16px 20px;
-      font-size: 13px;
-      color: #374151;
-      line-height: 1.7;
-      white-space: pre-wrap;
-    }
-
-    .email-footer {
-      padding: 10px 20px;
-      border-top: 1px solid #f1f5f9;
-      display: flex;
-      gap: 8px;
-    }
-
-    /* ── DM Cards ── */
-    .dm-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-    }
-
-    .dm-card {
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
-
-    .dm-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid #f1f5f9;
-      background: #f8fafc;
-    }
-
-    .dm-header h3 {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1a202c;
-    }
-
-    .dm-subject {
-      font-size: 11px;
-      color: #64748b;
-      margin-top: 2px;
-      font-style: italic;
-    }
-
-    .dm-body {
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #374151;
-      line-height: 1.65;
-      white-space: pre-wrap;
-    }
-
-    .dm-footer {
-      padding: 10px 16px;
-      border-top: 1px solid #f1f5f9;
-      display: flex;
-      gap: 8px;
-    }
-
-    /* ── Notes box ── */
-    .notes-box {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 12px;
-      color: #92400e;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .notes-box strong { color: #78350f; }
-
-    /* ── Checklist card ── */
-    .checklist-card {
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      padding: 20px 24px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 0;
-      border-bottom: 1px solid #f8fafc;
-      font-size: 13px;
-      color: #374151;
-    }
-
-    .check-item:last-child { border-bottom: none; }
-
-    .check-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      flex-shrink: 0;
-    }
-
-    .check-done  { background: #d1fae5; color: #065f46; }
-    .check-todo  { background: #fee2e2; color: #991b1b; }
-    .check-warn  { background: #fff7ed; color: #9a3412; }
-
-    /* ── Divider ── */
-    .divider {
-      height: 1px;
-      background: #e2e8f0;
-      margin: 12px 0 20px;
-    }
-
-    /* ── Scrollbar ── */
-    .card-body::-webkit-scrollbar { width: 4px; }
-    .card-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-
-    @media (max-width: 768px) {
-      .sidebar { display: none; }
-      .main { margin-left: 0; padding: 20px; }
-      .post-grid, .dm-grid { grid-template-columns: 1fr; }
-    }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+
+    .topbar { background: #1e293b; border-bottom: 1px solid #334155; padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+    .topbar-brand { font-size: 15px; font-weight: 700; color: #f8fafc; }
+    .topbar-brand span { color: #38bdf8; }
+    .topbar-date { font-size: 12px; color: #64748b; }
+
+    .legend { display: flex; gap: 20px; padding: 12px 32px; background: #1e293b; border-bottom: 1px solid #334155; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.live { background: var(--live); }
+    .dot.soon { background: var(--soon); }
+    .dot.draft { background: var(--draft); }
+    .dot.planned { background: var(--planned); }
+
+    .filterbar { padding: 16px 32px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .flabel { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-right: 4px; }
+    .fpill { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid #334155; background: transparent; color: #94a3b8; transition: all 0.15s; }
+    .fpill:hover { border-color: #475569; color: #e2e8f0; }
+    .fpill.on { background: #334155; color: #f8fafc; border-color: #475569; }
+    .fpill.on.fl { background: var(--live); border-color: var(--live); color: white; }
+    .fpill.on.fs { background: var(--soon); border-color: var(--soon); color: white; }
+    .fpill.on.fd { background: var(--draft); border-color: var(--draft); color: white; }
+    .fpill.on.fp { background: var(--planned); border-color: var(--planned); color: white; }
+
+    .stats { display: flex; gap: 12px; padding: 0 32px 20px; flex-wrap: wrap; }
+    .stat { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px 18px; min-width: 110px; }
+    .snum { font-size: 26px; font-weight: 800; line-height: 1; }
+    .slabel { font-size: 11px; color: #64748b; margin-top: 4px; }
+    .cl { color: var(--live); } .cs { color: var(--soon); } .cd { color: var(--draft); } .cp { color: var(--planned); }
+
+    .body { padding: 0 32px 60px; }
+
+    .section { margin-bottom: 36px; }
+    .sh { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #1e293b; }
+    .si { font-size: 18px; }
+    .st { font-size: 16px; font-weight: 700; color: #f8fafc; }
+    .sm { font-size: 12px; color: #64748b; margin-left: auto; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+
+    .card { border-radius: 8px; padding: 13px 15px 13px 18px; border: 1px solid #1e293b; background: #1e293b; position: relative; transition: transform 0.1s, box-shadow 0.1s; overflow: hidden; }
+    .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    .card.live { border-color: #064e3b; } .card.live::before { background: var(--live); }
+    .card.soon { border-color: #78350f; } .card.soon::before { background: var(--soon); }
+    .card.draft { border-color: #4c1d95; } .card.draft::before { background: var(--draft); }
+    .card.planned { border-color: #1e3a8a; } .card.planned::before { background: var(--planned); }
+    .card.hidden { display: none; }
+
+    .ct { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 7px; }
+    .cn { font-size: 13px; font-weight: 600; color: #f8fafc; line-height: 1.4; flex: 1; }
+    .badge { font-size: 9px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+    .badge.live { background: var(--live-bg); color: #065f46; }
+    .badge.soon { background: var(--soon-bg); color: #92400e; }
+    .badge.draft { background: var(--draft-bg); color: #5b21b6; }
+    .badge.planned { background: var(--planned-bg); color: #1e3a8a; }
+
+    .cp2 { font-size: 10px; color: #475569; font-family: monospace; margin-bottom: 7px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag { font-size: 10px; padding: 1px 7px; border-radius: 3px; background: #0f172a; color: #64748b; border: 1px solid #334155; }
   </style>
 </head>
 <body>
 
-<!-- ── Sidebar ── -->
-<nav class="sidebar">
-  <div class="sidebar-logo">
-    <h2>Decoded Ops</h2>
-    <p>Content Review</p>
+<div class="topbar">
+  <div class="topbar-brand">Decoded<span>Ops</span> &nbsp;&mdash; Content Review</div>
+  <div class="topbar-date">Updated: 23 Apr 2026</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot live"></div> Live on site</div>
+  <div class="legend-item"><div class="dot soon"></div> Coming this week</div>
+  <div class="legend-item"><div class="dot draft"></div> Draft ready &mdash; not yet published</div>
+  <div class="legend-item"><div class="dot planned"></div> Planned &mdash; not yet created</div>
+</div>
+
+<div class="filterbar">
+  <span class="flabel">Filter</span>
+  <button class="fpill on" onclick="f('all',this)">All</button>
+  <button class="fpill fl" onclick="f('live',this)">&#9989; Live</button>
+  <button class="fpill fs" onclick="f('soon',this)">&#9203; This Week</button>
+  <button class="fpill fd" onclick="f('draft',this)">&#9997;&#65039; Draft Ready</button>
+  <button class="fpill fp" onclick="f('planned',this)">&#128203; Planned</button>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="snum cl" id="sl">0</div><div class="slabel">Live</div></div>
+  <div class="stat"><div class="snum cs" id="ss">0</div><div class="slabel">This Week</div></div>
+  <div class="stat"><div class="snum cd" id="sd">0</div><div class="slabel">Draft Ready</div></div>
+  <div class="stat"><div class="snum cp" id="sp">0</div><div class="slabel">Planned</div></div>
+  <div class="stat"><div class="snum" id="st" style="color:#e2e8f0">0</div><div class="slabel">Showing</div></div>
+</div>
+
+<div class="body">
+
+  <!-- WEBSITE PAGES -->
+  <div class="section">
+    <div class="sh"><span class="si">&#127760;</span><span class="st">Website Pages</span><span class="sm" id="m1"></span></div>
+    <div class="grid">
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Homepage</div><span class="badge live">Live</span></div><div class="cp2">/</div><div class="tags"><span class="tag">Core</span><span class="tag">Hero — needs ops-first copy update</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">About Craig</div><span class="badge live">Live</span></div><div class="cp2">/about</div><div class="tags"><span class="tag">Core</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Pricing</div><span class="badge live">Live</span></div><div class="cp2">/pricing</div><div class="tags"><span class="tag">Core</span><span class="tag">Questionnaire &#10003;</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Clarity Audit</div><span class="badge live">Live</span></div><div class="cp2">/clarity</div><div class="tags"><span class="tag">Service</span><span class="tag">3x Guarantee</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Deliver</div><span class="badge live">Live</span></div><div class="cp2">/deliver</div><div class="tags"><span class="tag">Service</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Transform</div><span class="badge live">Live</span></div><div class="cp2">/transform</div><div class="tags"><span class="tag">Service</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Retained (Fractional CTO)</div><span class="badge live">Live</span></div><div class="cp2">/retained</div><div class="tags"><span class="tag">Service</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Contact / Book Discovery Call</div><span class="badge live">Live</span></div><div class="cp2">/contact</div><div class="tags"><span class="tag">Primary CTA</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Blog Hub</div><span class="badge live">Live</span></div><div class="cp2">/blog</div><div class="tags"><span class="tag">Content Hub</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Audit Checklist</div><span class="badge live">Live</span></div><div class="cp2">/resources/audit-checklist</div><div class="tags"><span class="tag">Lead Magnet</span><span class="tag">20 questions</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Problem: ERP Implementation Failure</div><span class="badge live">Live</span></div><div class="cp2">/problems/erp-implementation-failure</div><div class="tags"><span class="tag">Problem</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Problem: eCommerce Not Connected</div><span class="badge live">Live</span></div><div class="cp2">/problems/ecommerce-not-connected</div><div class="tags"><span class="tag">Problem</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Problem: Systems Don't Talk</div><span class="badge live">Live</span></div><div class="cp2">/problems/systems-dont-talk</div><div class="tags"><span class="tag">Problem</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Problem: Wrong ERP Software</div><span class="badge live">Live</span></div><div class="cp2">/problems/wrong-erp-software</div><div class="tags"><span class="tag">Problem</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Garment Decoration</div><span class="badge live">Live</span></div><div class="cp2">/sectors/garment-decoration</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Print &amp; Promotional</div><span class="badge live">Live</span></div><div class="cp2">/sectors/print-promotional</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Workwear &amp; Teamwear</div><span class="badge live">Live</span></div><div class="cp2">/sectors/workwear-teamwear</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Signs &amp; Graphics</div><span class="badge live">Live</span></div><div class="cp2">/sectors/signs-graphics</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Awards &amp; Engraving</div><span class="badge live">Live</span></div><div class="cp2">/sectors/awards-engraving</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Sector: Labels &amp; Packaging</div><span class="badge live">Live</span></div><div class="cp2">/sectors/labels-packaging</div><div class="tags"><span class="tag">Sector</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Privacy Policy</div><span class="badge live">Live</span></div><div class="cp2">/privacy</div><div class="tags"><span class="tag">Legal</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Cookie Policy</div><span class="badge live">Live</span></div><div class="cp2">/cookies</div><div class="tags"><span class="tag">Legal</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Problem: Systems Falling Over / Outages</div><span class="badge planned">Planned</span></div><div class="cp2">/problems/systems-falling-over</div><div class="tags"><span class="tag">Problem</span><span class="tag">DR</span><span class="tag">CS-1</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Problem: No One Owns Operations</div><span class="badge planned">Planned</span></div><div class="cp2">/problems/no-one-owns-operations</div><div class="tags"><span class="tag">Problem</span><span class="tag">CS-1</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Problem: Manual Workarounds Everywhere</div><span class="badge planned">Planned</span></div><div class="cp2">/problems/manual-workarounds-everywhere</div><div class="tags"><span class="tag">Problem</span><span class="tag">CS-1</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Problem: AI — Nobody Knows Where to Start</div><span class="badge planned">Planned</span></div><div class="cp2">/problems/ai-nobody-knows-where-to-start</div><div class="tags"><span class="tag">Problem</span><span class="tag">AI/LLM</span><span class="tag">CS-1</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Downtime Cost Calculator</div><span class="badge planned">Planned</span></div><div class="cp2">/tools/downtime-cost-calculator</div><div class="tags"><span class="tag">Calculator</span><span class="tag">React</span><span class="tag">CS-2</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">RTO Calculator</div><span class="badge planned">Planned</span></div><div class="cp2">/tools/rto-calculator</div><div class="tags"><span class="tag">Calculator</span><span class="tag">React</span><span class="tag">CS-2</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Automation ROI Calculator</div><span class="badge planned">Planned</span></div><div class="cp2">/tools/automation-roi-calculator</div><div class="tags"><span class="tag">Calculator</span><span class="tag">React</span><span class="tag">CS-2</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Artwork Manager Template</div><span class="badge planned">Planned</span></div><div class="cp2">/tools/artwork-manager</div><div class="tags"><span class="tag">Free Tool</span><span class="tag">Google Sheets</span><span class="tag">CS-3</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Supplier Data Feed Template</div><span class="badge planned">Planned</span></div><div class="cp2">/tools/supplier-feed-template</div><div class="tags"><span class="tag">Free Tool</span><span class="tag">Google Sheets</span><span class="tag">CS-3</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Software Reviews Hub</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews</div><div class="tags"><span class="tag">Hub</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: Orderwise ERP</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/orderwise</div><div class="tags"><span class="tag">ERP Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: Profit 4 by OGL</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/profit-4-ogl</div><div class="tags"><span class="tag">ERP Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: Deco Network</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/deco-network</div><div class="tags"><span class="tag">ERP Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: Shopify</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/shopify</div><div class="tags"><span class="tag">eCommerce Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: Magento / Adobe Commerce</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/magento-adobe-commerce</div><div class="tags"><span class="tag">eCommerce Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Review: WooCommerce / WordPress</div><span class="badge planned">Planned</span></div><div class="cp2">/software-reviews/woocommerce-wordpress</div><div class="tags"><span class="tag">eCommerce Review</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Guide: Domain &amp; Platform Migration</div><span class="badge planned">Planned</span></div><div class="cp2">/guides/domain-platform-migration</div><div class="tags"><span class="tag">Whitepaper</span><span class="tag">PDF</span><span class="tag">CS-5</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Guide: Data Migration Reality</div><span class="badge planned">Planned</span></div><div class="cp2">/guides/data-migration-reality</div><div class="tags"><span class="tag">Whitepaper</span><span class="tag">PDF</span><span class="tag">CS-5</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Guide: Supplier Data Feeds</div><span class="badge planned">Planned</span></div><div class="cp2">/guides/supplier-data-feeds</div><div class="tags"><span class="tag">Whitepaper</span><span class="tag">PDF</span><span class="tag">CS-5</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">DR Readiness Checklist</div><span class="badge planned">Planned</span></div><div class="cp2">/resources/dr-readiness-checklist</div><div class="tags"><span class="tag">Lead Magnet</span><span class="tag">CS-7</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">FAQ Page</div><span class="badge planned">Planned</span></div><div class="cp2">/faq</div><div class="tags"><span class="tag">Q&amp;A</span><span class="tag">CS-8</span></div></div>
+    </div>
   </div>
-  <div class="nav-section">
-    <div class="nav-label">LinkedIn Posts</div>
-    <a class="nav-link" href="#week1">Week 1 — Intro <span class="nav-badge">3</span></a>
-    <a class="nav-link" href="#week2">Week 2 — ERP Pain <span class="nav-badge">3</span></a>
-    <a class="nav-link" href="#week3">Week 3 — AI Take <span class="nav-badge">3</span></a>
-    <a class="nav-link" href="#week4">Week 4 — Sector <span class="nav-badge">3</span></a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">Cold Email</div>
-    <a class="nav-link" href="#cold-email">3-Email Sequence <span class="nav-badge">3</span></a>
-    <a class="nav-link" href="#segments">Segment Strategy <span class="nav-badge">A B C</span></a>
-    <a class="nav-link" href="#preflight">Pre-flight Checklist</a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">LinkedIn DMs</div>
-    <a class="nav-link" href="#dm-templates">Warm DM Templates <span class="nav-badge">5</span></a>
-  </div>
-</nav>
 
-<!-- ── Main ── -->
-<main class="main">
-
-  <div class="page-header">
-    <div>
-      <h1>Content Review Dashboard</h1>
-      <p>All Phase 2 &amp; 3 content — LinkedIn posts, cold emails, DM templates</p>
-    </div>
-    <div class="header-meta">
-      <div>Last updated: 23 Apr 2026</div>
-      <div style="margin-top:4px; color:#10b981; font-weight:600;">17 files · 78+ pieces</div>
+  <!-- BLOG POSTS -->
+  <div class="section">
+    <div class="sh"><span class="si">&#9997;&#65039;</span><span class="st">Blog Posts</span><span class="sm" id="m2"></span></div>
+    <div class="grid">
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Why Systems Don't Talk (And What It Costs)</div><span class="badge live">Live</span></div><div class="cp2">/blog/why-systems-dont-talk</div><div class="tags"><span class="tag">Systems</span><span class="tag">~2,000 words</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">5 Questions Vendors Won't Like</div><span class="badge live">Live</span></div><div class="cp2">/blog/5-questions-vendors-wont-like</div><div class="tags"><span class="tag">ERP</span><span class="tag">~1,600 words</span></div></div>
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">The eCommerce Integration Trap</div><span class="badge live">Live</span></div><div class="cp2">/blog/ecommerce-integration-trap</div><div class="tags"><span class="tag">eCommerce</span><span class="tag">~1,900 words</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">The Night Your System Goes Down</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/the-night-your-system-goes-down</div><div class="tags"><span class="tag">Emotional</span><span class="tag">DR</span><span class="tag">CS-6</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Why Ops Leaders Don't Talk About Failure</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/why-operations-leaders-dont-talk-about-failure</div><div class="tags"><span class="tag">Emotional</span><span class="tag">Psychology</span><span class="tag">CS-6</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">The Loneliness of Being the Person Who Knows</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/the-loneliness-of-being-the-person-who-knows</div><div class="tags"><span class="tag">Emotional</span><span class="tag">Leadership</span><span class="tag">CS-6</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">What to Do When Your ERP Goes Down</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/erp-goes-down-what-to-do</div><div class="tags"><span class="tag">DR</span><span class="tag">Practical</span><span class="tag">CS-7</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Why Most SMEs Don't Have a DR Plan</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/sme-disaster-recovery-gap</div><div class="tags"><span class="tag">DR</span><span class="tag">CS-7</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">The CRM Nobody Uses</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/crm-adoption-failure</div><div class="tags"><span class="tag">CRM</span><span class="tag">CS-9</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">How to Evaluate an AI Tool Without Getting Sold To</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/how-to-evaluate-ai-tools</div><div class="tags"><span class="tag">AI/LLM</span><span class="tag">CS-9</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">The Hidden Cost of Keeping Your Legacy System</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/hidden-cost-legacy-systems</div><div class="tags"><span class="tag">IT</span><span class="tag">CS-9</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">When IT Support Is Actually the Problem</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/when-it-support-is-the-problem</div><div class="tags"><span class="tag">IT Support</span><span class="tag">CS-9</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Process Before Platform</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/process-before-platform</div><div class="tags"><span class="tag">Process</span><span class="tag">CS-9</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">What Good Looks Like: Operations Health Scorecard</div><span class="badge planned">Planned</span></div><div class="cp2">/blog/operations-health-scorecard</div><div class="tags"><span class="tag">Ops Health</span><span class="tag">CS-9</span></div></div>
     </div>
   </div>
 
-  <!-- ════════════════════════════════════════
-       WEEK 1 — INTRODUCTION
-  ════════════════════════════════════════ -->
-  <div class="section" id="week1">
-    <div class="section-header">
-      <h2>Week 1 — Introduction Posts</h2>
-      <span class="section-tag tag-linkedin">LinkedIn</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/POSTS_WEEK_1_INTRODUCTION.md">Open in VS Code →</a>
+  <!-- LINKEDIN -->
+  <div class="section">
+    <div class="sh"><span class="si">&#128188;</span><span class="st">LinkedIn Posts &mdash; 12-Week Campaign</span><span class="sm" id="m3"></span></div>
+    <div class="grid">
+      <div class="card live" data-s="live"><div class="ct"><div class="cn">Wk 1A — Introduction: Warehouse Story</div><span class="badge live">Posted</span></div><div class="cp2">Mon 21 Apr @ 8:30 AM</div><div class="tags"><span class="tag">Introduction</span><span class="tag">Launch post</span></div></div>
+      <div class="card soon" data-s="soon"><div class="ct"><div class="cn">Wk 1B — Introduction: Alternative Angle</div><span class="badge soon">This Week</span></div><div class="cp2">Wed 23 Apr @ 8:30 AM</div><div class="tags"><span class="tag">Introduction</span><span class="tag">Content ready</span></div></div>
+      <div class="card soon" data-s="soon"><div class="ct"><div class="cn">Wk 1C — Introduction: Clarity Pitch</div><span class="badge soon">This Week</span></div><div class="cp2">Fri 25 Apr @ 8:30 AM</div><div class="tags"><span class="tag">Introduction</span><span class="tag">Content ready</span></div></div>
+      <div class="card draft" data-s="draft"><div class="ct"><div class="cn">Wk 2 — ERP Pain (x3 variants)</div><span class="badge draft">Draft Ready</span></div><div class="cp2">Apr 28, 30 &middot; May 2</div><div class="tags"><span class="tag">ERP Pain</span><span class="tag">POSTS_WEEK_2_PAIN.md</span></div></div>
+      <div class="card draft" data-s="draft"><div class="ct"><div class="cn">Wk 3 — AI Honest Takes (x3 variants)</div><span class="badge draft">Draft Ready</span></div><div class="cp2">May 5, 7, 9</div><div class="tags"><span class="tag">AI/LLM</span><span class="tag">POSTS_WEEK_3_AI.md</span></div></div>
+      <div class="card draft" data-s="draft"><div class="ct"><div class="cn">Wk 4 — Sector Observations (x3 variants)</div><span class="badge draft">Draft Ready</span></div><div class="cp2">May 12, 14, 16</div><div class="tags"><span class="tag">Sector</span><span class="tag">POSTS_WEEK_4_SECTOR.md</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 5 — Downtime / DR Awareness (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">May 19, 21, 23</div><div class="tags"><span class="tag">DR</span><span class="tag">Calculator link</span><span class="tag">CS-7</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 6 — AI/LLM Deeper Dive (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">May 26, 28, 30</div><div class="tags"><span class="tag">AI/LLM</span><span class="tag">CS-10</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 7 — Software Review Teasers (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jun 2, 4, 6</div><div class="tags"><span class="tag">Reviews</span><span class="tag">Orderwise &middot; Shopify</span><span class="tag">CS-4</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 8 — Emotional Reality "The Truth" (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jun 9, 11, 13</div><div class="tags"><span class="tag">Emotional</span><span class="tag">High engagement</span><span class="tag">CS-6</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 9 — Free Tool Launch Posts (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jun 16, 18, 20</div><div class="tags"><span class="tag">Free Tool</span><span class="tag">Calculator &middot; Artwork Mgr</span><span class="tag">CS-2</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 10 — Ask Craig / Q&amp;A Format (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jun 23, 25, 27</div><div class="tags"><span class="tag">Q&amp;A</span><span class="tag">CS-8</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 11 — Process &amp; Workflow Stories (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jun 30 &middot; Jul 2, 4</div><div class="tags"><span class="tag">Process</span><span class="tag">Supplier feeds</span><span class="tag">CS-10</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Wk 12 — Q&amp;A Results &amp; Ops Health (x3)</div><span class="badge planned">Planned</span></div><div class="cp2">Jul 7, 9, 11</div><div class="tags"><span class="tag">Ops Health</span><span class="tag">12-wk wrap</span><span class="tag">CS-10</span></div></div>
     </div>
+  </div>
 
-    <div class="notes-box">
-      <strong>Publishing notes:</strong> Variant A recommended first — strongest story, establishes credibility. Variant B uses the £150k case study. Variant C is the direct Clarity product pitch. Best time: Tue–Thu 8–9 AM UK.
+  <!-- COLD EMAIL -->
+  <div class="section">
+    <div class="sh"><span class="si">&#128231;</span><span class="st">Cold Email &mdash; Apollo Sequences</span><span class="sm" id="m4"></span></div>
+    <div class="grid">
+      <div class="card soon" data-s="soon"><div class="ct"><div class="cn">Email 1 &mdash; The Pain Hook</div><span class="badge soon">Launching</span></div><div class="cp2">Day 1: Apr 22 &mdash; all segments</div><div class="tags"><span class="tag">Sector openers</span><span class="tag">P3_EXECUTION.md</span></div></div>
+      <div class="card draft" data-s="draft"><div class="ct"><div class="cn">Email 2 &mdash; The Proof</div><span class="badge draft">Draft Ready</span></div><div class="cp2">Day 4: Apr 28</div><div class="tags"><span class="tag">ERP case study</span><span class="tag">&#163;150k story</span></div></div>
+      <div class="card draft" data-s="draft"><div class="ct"><div class="cn">Email 3 &mdash; The Last Touch</div><span class="badge draft">Draft Ready</span></div><div class="cp2">Day 10: May 1</div><div class="tags"><span class="tag">Honest close</span><span class="tag">DO_Introduction.docx</span></div></div>
+      <div class="card soon" data-s="soon"><div class="ct"><div class="cn">Segment A &mdash; Garment Decoration (~55)</div><span class="badge soon">Launching</span></div><div class="cp2">Apr 22</div><div class="tags"><span class="tag">Apollo</span><span class="tag">Seg A</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Segment B &mdash; Promo Merch (~60)</div><span class="badge planned">Planned</span></div><div class="cp2">Apr 24 if metrics good</div><div class="tags"><span class="tag">Apollo</span><span class="tag">Seg B</span></div></div>
+      <div class="card planned" data-s="planned"><div class="ct"><div class="cn">Segment C &mdash; Workwear (~45)</div><span class="badge planned">Planned</span></div><div class="cp2">Apr 25 if metrics good</div><div class="tags"><span class="tag">Apollo</span><span class="tag">Seg C</span></div></div>
     </div>
+  </div>
 
-    <div class="post-grid">
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The Warehouse → IT → Ops Story</div>
-            <div class="card-subtitle">Recommended first post</div>
-          </div>
-          <span class="variant-badge badge-posted">✓ Posted</span>
-        </div>
-        <div class="card-body" id="w1a">I've worked at every level in decorated goods, workwear, and print businesses. Not as a consultant brought in to observe.
-
-I've picked and packed orders on the warehouse floor. I've sat in the comms room debugging connection issues at midnight. I've run operations, built timelines around bottlenecks that nobody else could see, implemented systems that actually worked because I knew what the people using them needed.
-
-That's why I started Decoded Ops. Because when an ERP project fails — and a lot of them do — it's almost never about the software. It's about not understanding the difference between what the business needs and what the owner thinks it needs.
-
-I help businesses that sell a physical product with decoration or personalisation attached — garment decoration, print, embroidery, workwear, promo merch, awards, signs. The type of business where every order is potentially different. Where production sits between order and despatch. Where generic advice is wrong from the start.
-
-I'm not here to sell you software. I'm here to give you clarity — operational clarity, technology clarity, the kind that lets you act.
-
-I don't use jargon. I don't hide behind reports. You'll understand the answer and why it matters to your actual business.
-
-First step: a 60-minute discovery call. Free. No obligation.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w1a', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w1a', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The £150k ERP Failure</div>
-            <div class="card-subtitle">Targets the failed ERP pain</div>
-          </div>
-          <span class="variant-badge badge-today">Wed 23 Apr</span>
-        </div>
-        <div class="card-body" id="w1b">I spent six months helping a decorated goods business fix an ERP implementation that cost them £150k and took 18 months. It didn't work. Production couldn't handle artwork. Ecommerce wasn't connected. Nobody had asked the people who were actually going to use it what they needed.
-
-They could have done an audit first for £10k. That's what Decoded Ops does.
-
-I work with businesses that sell a physical product with decoration or personalisation attached — workwear, print, garment decoration, promo merch, awards. The kind of business where every order is different, where production is the constraint, and where a single bottleneck can cost thousands a month.
-
-An audit takes three days. It costs a fixed fee. It identifies the real problems. And here's the important part: if the audit doesn't identify cost recovery or revenue opportunity at least 3× the fee, you get your money back. Full stop.
-
-No complicated terms. No conditions. That's the guarantee because I'm confident in what an audit finds.
-
-I've done this work inside these businesses — picked, packed, implemented systems, lived with the failures. I know what the technology needs to do for the person using it, not just the person commissioning it.
-
-First step: a 60-minute discovery call to understand what you're dealing with. Free. No sales pitch.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w1b', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w1b', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The Clarity Pitch</div>
-            <div class="card-subtitle">Direct product angle</div>
-          </div>
-          <span class="variant-badge badge-fri">Fri 25 Apr</span>
-        </div>
-        <div class="card-body" id="w1c">Every operational problem in a decorated goods or workwear business starts the same way: something is broken, nobody agrees on what it is, and the person trying to fix it is overwhelmed.
-
-That's where Clarity comes in.
-
-I audit the business in three days — IT infrastructure, software, ecommerce, operations, workflow, technology roadmap. I write a report that tells you exactly what's wrong, why it's costing you money, and what to do about it. In plain English. No jargon. No consultant-speak.
-
-I've worked inside these businesses — warehouse floor, IT, operations — so I know what the technology actually needs to do for the people using it. Not just the theory. The reality.
-
-The audit is fixed fee. If it doesn't identify cost recovery or revenue opportunity at least 3× the fee, you get your money back. No conditions.
-
-I work with garment decoration, print, embroidery, workwear, promo merch, awards, signs — any business where orders are customised and production is the bottleneck.
-
-60-minute free discovery call to figure out if we're a fit.
-
-That's it.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w1c', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w1c', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-  </div><!-- /week1 -->
-
-  <!-- ════════════════════════════════════════
-       WEEK 2 — ERP PAIN
-  ════════════════════════════════════════ -->
-  <div class="section" id="week2">
-    <div class="section-header">
-      <h2>Week 2 — ERP Pain &amp; Cost of Failure</h2>
-      <span class="section-tag tag-linkedin">LinkedIn</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/POSTS_WEEK_2_PAIN.md">Open in VS Code →</a>
-    </div>
-
-    <div class="notes-box">
-      <strong>Publishing notes:</strong> Variant A = specific £150k case (most powerful). Variant B = status quo operational pain (resonates with ops managers). Variant C = root cause / thought leadership. Hashtags: #ERP #Operations #ManufacturingTech #CostReduction
-    </div>
-
-    <div class="post-grid">
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The Real Cost of an ERP Failure</div>
-            <div class="card-subtitle">Specific case, most powerful</div>
-          </div>
-          <span class="variant-badge badge-a">A</span>
-        </div>
-        <div class="card-body" id="w2a">An ERP project I worked on cost a decorated goods business £150k and 18 months of chaos.
-
-It failed for a simple reason: nobody had asked the people who were actually going to use it what they needed.
-
-The software looked fine in the demo. But when production tried to handle custom artwork requests, it broke. Ecommerce wasn't connected. Stock didn't sync. People reverted to spreadsheets within two weeks.
-
-By month three, the system was blamed. By month six, they were replacing it.
-
-The math: £150k implementation + 18 months of disruption + ~125 hours per month of internal rework. Compare that to what a three-day audit costs: roughly £10k. That's 6.7% against a likely £150k problem. Not insurance. Just clarity before you commit.
-
-This is why I audit first. IT infrastructure, software, ecommerce, operations, workflow. Six areas. Written report. Plain English.
-
-If the report doesn't identify cost recovery or revenue opportunity at least 3× the fee, you get your money back. No conditions.
-
-I work with decorated goods, print, workwear, promo merch, awards — the type of business where every order is different and production is the constraint.
-
-Free 60-minute discovery call to figure out if an audit makes sense.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w2a', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w2a', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Manual Re-Entry is Costing You</div>
-            <div class="card-subtitle">Status quo pain, ops managers</div>
-          </div>
-          <span class="variant-badge badge-b">B</span>
-        </div>
-        <div class="card-body" id="w2b">Disconnected software costs money every single day. Not the dramatic kind of cost you notice. The slow kind that erodes margins.
-
-Here's what I see across decorated goods and workwear businesses:
-
-- Manual data re-entry: 3–6 hours per week (that's someone's job)
-- Disconnected stock: 3–5% of inbound orders at risk
-- Manual invoicing: 2–4 hours per week
-- No reporting on demand/pipeline: 3–5 hours per owner/week
-- Picking errors: 1–3% of orders requiring rework
-
-That's status quo. Not a disaster. Just... expensive.
-
-A proper ERP implementation can cut operational costs by 23% and admin costs by 22% in the first 12 months. But the implementation has to be done right.
-
-An audit tells you if it's worth doing and how to do it so it actually works.
-
-Three days. Fixed fee. If the audit doesn't identify cost recovery at least 3× the fee, you get your money back. No strings.
-
-I work with garment decoration, print, embroidery, workwear, promo merch, awards, signs. The kind of business where every order is different and that matters.
-
-Free discovery call. Let's figure out what's actually costing you.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w2b', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w2b', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Why Most ERP Projects Fail</div>
-            <div class="card-subtitle">Root cause / thought leadership</div>
-          </div>
-          <span class="variant-badge badge-c">C</span>
-        </div>
-        <div class="card-body" id="w2c">The ERP project fails because nobody asked the person using the system whether it actually worked for them. They asked the person who commissioned it. Different question. Different answer.
-
-Pattern I see repeatedly:
-
-1. System gets chosen in a meeting. The people who'll use it weren't there.
-2. Training happens. It covers how the software works, not how it fits their actual job.
-3. By week three, people are reverting to the old way. It's faster.
-4. By month three, the system is blamed.
-5. By month six, you're replacing it or limping along with workarounds.
-
-Nobody talks about the real cost: time, rework, frustration, and the decision that didn't get questioned at the start.
-
-An audit changes that. I come in, I understand the actual workflow, I map what the technology needs to do for the person using it — not just the theory. That's why systems I oversee work when others fail.
-
-I work with decorated goods, print, workwear, promo merch, awards — any business where orders are customised and production is tight.
-
-Three days. Fixed fee. If the audit doesn't identify cost recovery at least 3× the fee, you get your money back.
-
-Free 60-minute discovery to see if we're a fit.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w2c', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w2c', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-  </div><!-- /week2 -->
-
-  <!-- ════════════════════════════════════════
-       WEEK 3 — AI HONEST TAKE
-  ════════════════════════════════════════ -->
-  <div class="section" id="week3">
-    <div class="section-header">
-      <h2>Week 3 — AI: Honest Take</h2>
-      <span class="section-tag tag-linkedin">LinkedIn</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/POSTS_WEEK_3_AI.md">Open in VS Code →</a>
-    </div>
-
-    <div class="notes-box">
-      <strong>Publishing notes:</strong> Variant A = verbatim from DO_Master_Context.md — use first. Variant B = cynical angle ("AI won't fix what's broken"). Variant C = practical "when AI works" — thought leadership. Hashtags: #AI #Operations #ManufacturingTech #BusinessStrategy
-    </div>
-
-    <div class="post-grid">
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The AI Reality</div>
-            <div class="card-subtitle">Verbatim DO voice — use first</div>
-          </div>
-          <span class="variant-badge badge-a">A</span>
-        </div>
-        <div class="card-body" id="w3a">I am not here to sell you an AI tool.
-
-I am here to tell you honestly whether AI will help your business right now, what you need to fix first, and where the real opportunities are in your specific operation.
-
-That's different.
-
-In decorated goods and workwear businesses, I've seen the AI conversation go two ways. One: someone buys a tool, nobody uses it because it doesn't fit the actual workflow. Two: someone understands their bottleneck first, then uses AI to solve it — picking, design approval, demand forecasting, workforce scheduling.
-
-Same AI tool. Different outcomes.
-
-Here's what I actually tell clients: if you're drowning in manual data entry, an AI tool won't fix that. You need systems integration first. If your picking process is error-prone, AI doesn't help until you understand why. If your ecommerce and ERP don't talk to each other, AI won't bridge that gap.
-
-But if you understand the bottleneck and the workflow, AI can save you hours a week. Real hours. On the actual work that matters.
-
-I work with businesses to figure out what's actually worth fixing. Then we decide if AI is the solution or if it's something else.
-
-Free 60-minute discovery to understand what you're dealing with.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w3a', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w3a', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">AI Won't Fix What's Broken</div>
-            <div class="card-subtitle">Cynical angle, credibility play</div>
-          </div>
-          <span class="variant-badge badge-b">B</span>
-        </div>
-        <div class="card-body" id="w3b">AI is everywhere. And everywhere, people are expecting it to fix operational chaos it never caused.
-
-Here's the reality: if your business can't run a repeatable process without AI, AI won't fix it. It'll just make the chaos faster.
-
-I've seen:
-- AI customer service bots that make customers angrier because the routing is broken underneath
-- AI demand forecasting that nobody uses because the inventory system doesn't sync with orders
-- AI design approval workflows that nobody adopted because the first one used a tool nobody had access to
-
-Same AI, same hype, different outcomes based on what was actually broken before the AI arrived.
-
-In decorated goods and workwear, the bottleneck is usually something much simpler: workflow, systems integration, clarity on what the actual process is. Fix that first. Then add AI.
-
-That's what I help with. Not selling tools. Understanding the real problem.
-
-Three days. Fixed fee audit. If the report doesn't identify cost recovery at least 3× the fee, you get your money back.
-
-Free 60-minute discovery call.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w3b', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w3b', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">When AI Actually Works</div>
-            <div class="card-subtitle">Practical how-to, thought leadership</div>
-          </div>
-          <span class="variant-badge badge-c">C</span>
-        </div>
-        <div class="card-body" id="w3c">AI works in one scenario: when you understand the bottleneck, the process is documented, and the system is consistent enough to automate.
-
-AI doesn't work in: chaos, undocumented processes, systems that don't talk to each other, or when you're hoping it'll fix a problem you haven't actually identified.
-
-Example. Decorated goods business. Manual artwork approval is taking 8 hours a week.
-
-Approach 1 (wrong): Buy an AI design checker. It arrives. Nobody knows how to use it. It doesn't integrate with the order system. It gets abandoned week three.
-
-Approach 2 (right): Understand the approval process. Document it. Check what's actually slowing it down (turns out it's not checking the design, it's tracking who approved it and for what customer). Fix the tracking system. Then see if AI helps with the actual design checking.
-
-Different answer. Same AI.
-
-I help businesses figure out which category they're in. Not to sell them something. To be honest about what'll actually work.
-
-I audit six areas: IT infrastructure, software, ecommerce, operations, workflow, technology roadmap.
-
-Three days. Fixed fee. 3× guarantee on cost recovery — full refund if we don't find it.
-
-Free discovery call to see if we're a fit.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w3c', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w3c', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-  </div><!-- /week3 -->
-
-  <!-- ════════════════════════════════════════
-       WEEK 4 — SECTOR OBSERVATIONS
-  ════════════════════════════════════════ -->
-  <div class="section" id="week4">
-    <div class="section-header">
-      <h2>Week 4 — Sector Observations</h2>
-      <span class="section-tag tag-linkedin">LinkedIn</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/POSTS_WEEK_4_SECTOR.md">Open in VS Code →</a>
-    </div>
-
-    <div class="notes-box">
-      <strong>Publishing notes:</strong> Variant A = artwork approval (universal decorated goods bottleneck). Variant B = B2B portal gaps (workwear/B2B focus, mentions Demystify Commerce + Brightpearl). Variant C = order-to-despatch systems thinking. Hashtags: #DecorationIndustry #Operations #B2B #Workwear #OrderManagement
-    </div>
-
-    <div class="post-grid">
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">The Artwork Approval Bottleneck</div>
-            <div class="card-subtitle">Universal decorated goods pain</div>
-          </div>
-          <span class="variant-badge badge-a">A</span>
-        </div>
-        <div class="card-body" id="w4a">Every decorated goods and workwear business has the same bottleneck that nobody talks about: artwork approval.
-
-An order comes in. Customer supplies artwork (or you do). Someone checks it. Is the file format right? Are the colours safe? Does it meet brand guidelines? Will it print?
-
-That person has to say yes or no, track feedback, and send it back to the customer. And on a day with 15 orders, that's 15 rounds of communication.
-
-Most businesses do this in email. Or WhatsApp. Or a spreadsheet.
-
-Some software claims to handle it. But it doesn't integrate with orders, so people ignore it and go back to email.
-
-That bottleneck costs money in three ways:
-
-1. Time. Someone is checking every artwork, every revision, manually.
-2. Delays. Because it's manual, orders wait. Artwork gets approved Tuesday when it should have been Monday.
-3. Errors. A file gets missed, or the wrong file gets approved, and you only find out when it's on the print floor.
-
-The fix is usually simple. Not software — workflow. Who needs to approve? What are they actually checking for? How does that trigger the next step?
-
-Map that clearly, and everything else falls into place.
-
-I work with garment decoration, print, embroidery, workwear, promo merch, awards, signs. That bottleneck is universal.
-
-Free 60-minute discovery to understand what's actually costing you.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w4a', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w4a', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">B2B Portals That Actually Work</div>
-            <div class="card-subtitle">Workwear / B2B ecommerce focus</div>
-          </div>
-          <span class="variant-badge badge-b">B</span>
-        </div>
-        <div class="card-body" id="w4b">Workwear and decorated goods businesses that sell B2B have a problem: existing ecommerce platforms don't handle workwear workflows.
-
-Customers need custom ranges per site. Credit terms. Multi-site orders. Bulk pricing. Maybe personalization per person.
-
-Shopify doesn't do that. WooCommerce doesn't do that. Standard ecommerce is built for B2C.
-
-So businesses either:
-1. Stay with manual ordering (email, spreadsheet). Cost: hours, errors, bottleneck.
-2. Buy ecommerce software that doesn't fit the use case. Cost: implementation, workarounds, unused features.
-3. Build custom. Cost: £20–50k, 6–12 months, then you own it forever.
-
-There's a middle ground. Platforms like Demystify Commerce or Brightpearl integration. Not a generic ecommerce checkout — a B2B ordering interface that understands workwear. Custom ranges per customer. Multi-site. Credit management. Personalization. Integrated to your backend.
-
-Cost: £5–15k, 8–12 weeks, and it actually works for the customer and your team.
-
-The problem: most businesses don't know this option exists. They're stuck between "no system" and "buy something generic and hope."
-
-That's what I audit for. Software fit. What your customers actually need. What your business can run.
-
-Free discovery to understand your workflow.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w4b', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w4b', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Order Management to Despatch</div>
-            <div class="card-subtitle">Systems thinking, operations focus</div>
-          </div>
-          <span class="variant-badge badge-c">C</span>
-        </div>
-        <div class="card-body" id="w4c">From order to despatch, every decorated goods business loses time at the same three points:
-
-1. Artwork approval to production. Order sits waiting for artwork sign-off. Production doesn't start until it's approved. Approval is manual. Slack time: 1–3 days.
-
-2. Production planning. What's printing today? What's embroidering? What's being assembled? That answer comes from a combination of order system, spreadsheet, and someone in their head. Planning is reactive, not proactive. Slack time: 1–2 days, plus rework when priorities change.
-
-3. Picking and despatch. Orders leave production. Are they picked correctly? Is quality checked? Or is picking manual, and mistakes get caught at the customer?
-
-Here's what you get if you map and improve those three points:
-
-- 48-hour order turnaround instead of 5–7 days
-- 15% fewer picking errors
-- Production can actually plan instead of react
-- Customers get delivery dates they can count on
-- Nobody's stressed at despatch
-
-Most businesses don't optimise these. They're too busy operating the existing workflow. That's exactly what an audit finds.
-
-I work with decorated goods, print, embroidery, workwear, promo merch, awards, signs.
-
-Free discovery to walk through your order-to-despatch process.
-
-Let's talk.</div>
-        <div class="card-footer">
-          <button class="expand-btn" onclick="toggleExpand('w4c', this)">Show all</button>
-          <button class="copy-btn" onclick="copyText('w4c', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-  </div><!-- /week4 -->
-
-  <!-- ════════════════════════════════════════
-       COLD EMAIL SEQUENCE
-  ════════════════════════════════════════ -->
-  <div class="section" id="cold-email">
-    <div class="section-header">
-      <h2>Cold Email — 3-Email Sequence</h2>
-      <span class="section-tag tag-email">Apollo</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/P3_EXECUTION.md">Open in VS Code →</a>
-    </div>
-
-    <div class="notes-box">
-      <strong>Targets:</strong> Open rate &gt;40% · Reply rate &gt;8% · Call booked 15–20% of replies. Send: Day 1 → Day 4 → Day 10. Launch Segment A first (Garment Decoration).
-    </div>
-
-    <!-- Email 1 -->
-    <div class="email-card">
-      <div class="email-header">
-        <div class="email-num">1</div>
-        <div class="email-meta">
-          <h3>The Pain Hook — Day 1</h3>
-          <p>No solution mention. One low-friction ask.</p>
-        </div>
-        <button class="copy-btn" style="margin-left:auto" onclick="copyText('e1body', this)">Copy email</button>
-      </div>
-      <div class="subject-pills">
-        <div class="subject-pills-label">Subject line variants (pick one)</div>
-        <span class="subject-pill">"erp projects that fail quietly"</span>
-        <span class="subject-pill">"why 6 months becomes 18"</span>
-        <span class="subject-pill">"the math on decorated goods operations"</span>
-      </div>
-      <div class="email-body" id="e1body">Hi [First Name],
-
-Most decorated goods operations run on systems that were never designed for them.
-
-You're managing artwork approvals in email threads, customer orders across 4 different platforms, and your team spends 15-20 hours a week hunting down information that should be visible in one place.
-
-When ERP projects fail in your sector — and they do, regularly — it's not usually a technology problem. It's because nobody mapped your real workflow before picking a system.
-
-I've audited that situation in dozen+ operations like yours. Most caught it early enough. Some didn't.
-
-Worth a 30-minute conversation to see if you're heading in the right direction?
-
-[Your name]
-Decoded Ops</div>
-      <div class="email-footer">
-        <span style="font-size:12px; color:#94a3b8;">Why it works: stacks 3 sector-specific pain points · no solution mention · peer tone · one low-friction ask</span>
-      </div>
-    </div>
-
-    <!-- Email 2 -->
-    <div class="email-card">
-      <div class="email-header">
-        <div class="email-num">2</div>
-        <div class="email-meta">
-          <h3>The Proof — Day 4</h3>
-          <p>References Email 1 · Real cost comparison · Same CTA lands differently</p>
-        </div>
-        <button class="copy-btn" style="margin-left:auto" onclick="copyText('e2body', this)">Copy email</button>
-      </div>
-      <div class="email-body" id="e2body">Hi [First Name],
-
-A few days back I mentioned how ERP projects often get sideways in decorated goods operations.
-
-Wanted to share what I saw with a company doing roughly what you are: they scoped an implementation without documenting their artwork approval process. Three months in, the project had already cost £80k and was 6 months behind. The audit afterward? £10k. Would've taken a week upfront.
-
-The difference between running a bad system and running a good one isn't usually the software. It's having someone actually understand your operation before you commit.
-
-Happy to talk through what that looks like in your case.
-
-[Your name]
-Decoded Ops</div>
-      <div class="email-footer">
-        <span style="font-size:12px; color:#94a3b8;">Why it works: references E1 · specific cost comparison (£80k vs £10k) · anonymised but credible · proof is financial, not technical</span>
-      </div>
-    </div>
-
-    <!-- Email 3 -->
-    <div class="email-card">
-      <div class="email-header">
-        <div class="email-num">3</div>
-        <div class="email-meta">
-          <h3>The Last Touch — Day 10</h3>
-          <p>Honest close · No pressure · Reframes ask as a resource</p>
-        </div>
-        <button class="copy-btn" style="margin-left:auto" onclick="copyText('e3body', this)">Copy email</button>
-      </div>
-      <div class="email-body" id="e3body">Hi [First Name],
-
-I'll keep this one short.
-
-If now's not the right time to look at how your operation actually runs, that's fair. Most businesses have other fires right now.
-
-But if you think it might be worth understanding whether an ERP overhaul would actually work for you — before you invest six figures — I've put together a short brief that outlines what a proper assessment looks like.
-
-Happy to send it over if you think it'd be useful.
-
-[Your name]
-Decoded Ops</div>
-      <div class="email-footer">
-        <span style="font-size:12px; color:#94a3b8;">Why it works: removes pressure · reframes ask as resource (DO_Introduction.docx) · respects their time</span>
-      </div>
-    </div>
-
-  </div><!-- /cold-email -->
-
-  <!-- ════════════════════════════════════════
-       SEGMENT STRATEGY
-  ════════════════════════════════════════ -->
-  <div class="section" id="segments">
-    <div class="section-header">
-      <h2>Segment Strategy</h2>
-      <span class="section-tag tag-email">Apollo</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/P3_EXECUTION.md">Open in VS Code →</a>
-    </div>
-
-    <div class="post-grid">
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Segment A — Garment Decoration</div>
-            <div class="card-subtitle">Screen print, embroidery · Launch first</div>
-          </div>
-          <span class="variant-badge badge-a">A</span>
-        </div>
-        <div class="card-body" id="segA" style="max-height:none"><strong>Pain driver:</strong> Artwork approval bottleneck (5–10 days typical)
-<strong>Secondary:</strong> Order management across print + decoration + shipping
-<strong>Subject variant:</strong> "why 6 months becomes 18"
-<strong>Opener:</strong> "Most garment decoration operations run design approval through email threads"
-<strong>Target:</strong> ~40–60 UK companies
-<strong>Decision maker:</strong> Operations Manager or Managing Director</div>
-        <div class="card-footer">
-          <button class="copy-btn" onclick="copyText('segA', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Segment B — Promotional Merchandise</div>
-            <div class="card-subtitle">Multi-channel orders, B2B portal gaps</div>
-          </div>
-          <span class="variant-badge badge-b">B</span>
-        </div>
-        <div class="card-body" id="segB" style="max-height:none"><strong>Pain driver:</strong> B2B portal gaps, multi-channel orders (online, wholesale, direct)
-<strong>Secondary:</strong> Stock management + spec variations
-<strong>Subject variant:</strong> "the math on decorated goods operations"
-<strong>Opener:</strong> "You're managing customer orders across 4 platforms and your sales team spends 25–30% of their time answering 'where is my order?'"
-<strong>Target:</strong> ~50–70 UK companies
-<strong>Decision maker:</strong> Sales Director or Operations Director</div>
-        <div class="card-footer">
-          <button class="copy-btn" onclick="copyText('segB', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Segment C — Workwear / Corporate Gifting</div>
-            <div class="card-subtitle">Compliance, customisation complexity</div>
-          </div>
-          <span class="variant-badge badge-c">C</span>
-        </div>
-        <div class="card-body" id="segC" style="max-height:none"><strong>Pain driver:</strong> Customisation + compliance tracking (sizes, colours, branding)
-<strong>Secondary:</strong> Batch vs. small-order complexity
-<strong>Subject variant:</strong> "erp projects that fail quietly"
-<strong>Opener:</strong> "When workwear operations scale, their systems don't. Most run on spreadsheets and email chains."
-<strong>Target:</strong> ~40–50 UK companies
-<strong>Decision maker:</strong> Operations Manager or Finance Director</div>
-        <div class="card-footer">
-          <button class="copy-btn" onclick="copyText('segC', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-  </div><!-- /segments -->
-
-  <!-- ════════════════════════════════════════
-       PRE-FLIGHT CHECKLIST
-  ════════════════════════════════════════ -->
-  <div class="section" id="preflight">
-    <div class="section-header">
-      <h2>Apollo Pre-Flight Checklist</h2>
-      <span class="section-tag tag-email">Launch</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/P3_EXECUTION.md">Open in VS Code →</a>
-    </div>
-
-    <div class="checklist-card">
-      <div class="check-item">
-        <div class="check-icon check-done">✓</div>
-        <span>Apollo account access confirmed</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-done">✓</div>
-        <span>DO_Introduction.docx ready for Email 3 attachment</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-todo">✗</div>
-        <span>Target list segmented — minimum 30 companies per segment (A/B/C) in Apollo</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-todo">✗</div>
-        <span>Email domain verified — craig@decodedops.co.uk confirmed working</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-todo">✗</div>
-        <span>Test send completed — all 3 emails received at craig@decodedops.co.uk, formatting checked</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-todo">✗</div>
-        <span>Tracking configured — opens/clicks/replies enabled in Apollo settings</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon check-todo">✗</div>
-        <span>First name merge field confirmed — {first_name} renders correctly</span>
-      </div>
-    </div>
-  </div><!-- /preflight -->
-
-  <!-- ════════════════════════════════════════
-       WARM DM TEMPLATES
-  ════════════════════════════════════════ -->
-  <div class="section" id="dm-templates">
-    <div class="section-header">
-      <h2>Warm DM Templates</h2>
-      <span class="section-tag tag-dm">LinkedIn DMs</span>
-      <a class="source-link" href="vscode://file/D:/Claude/Projects/Decoded%20Ops/decoded-ops-site/content/phase-2/DM_TEMPLATES.md">Open in VS Code →</a>
-    </div>
-
-    <div class="notes-box">
-      <strong>Rules:</strong> No pitch in the DM. Keep under 100 words. One CTA only. Personalise with sector/company detail. Send Mon–Fri 9–11 AM UK. Expected: 3–4 replies per 20 DMs sent, 1–2 discovery calls booked.
-    </div>
-
-    <div class="dm-grid">
-
-      <div class="dm-card">
-        <div class="dm-header">
-          <h3>Template 1 — Translation Gift Opener</h3>
-          <div class="dm-subject">Subject: Noticed your profile</div>
-        </div>
-        <div class="dm-body" id="dm1">Hi [Name],
-
-Just come across your profile. You're managing decoration/workwear/print business in [sector/location], and I think there's value in a conversation.
-
-I spend my time helping businesses like yours cut through the noise — understand what's actually costing them money operationally, and what would make a real difference. Usually turns out it's simpler than they thought.
-
-I'm not here to sell anything. Just to have a conversation and see if there's a fit.
-
-If you've got 30 minutes next week, I'd like to talk through your biggest operational bottleneck. Free. No catch.
-
-Let me know.
-
-Craig
-Decoded Ops</div>
-        <div class="dm-footer">
-          <button class="copy-btn" onclick="copyText('dm1', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="dm-card">
-        <div class="dm-header">
-          <h3>Template 2 — Problem Recognition Hook</h3>
-          <div class="dm-subject">Subject: Saw something in your profile that resonated</div>
-        </div>
-        <div class="dm-body" id="dm2">Hi [Name],
-
-I work with businesses in your sector — decorated goods, workwear, print, promo merch. And one thing I notice everywhere is the same problem: great at the core business, drowning in the operational noise that sits between order and despatch.
-
-Manual approvals. Disconnected stock. No visibility on production. Systems that don't talk to each other.
-
-I wonder if any of that sounds familiar?
-
-I started Decoded Ops after implementing systems inside these businesses — not advising from outside, actually doing the work. So I know what's real and what isn't.
-
-30-minute call. You'll either think "yeah, this person gets it" or you won't. Either way, no obligation.
-
-Worth a conversation?
-
-Craig
-Decoded Ops</div>
-        <div class="dm-footer">
-          <button class="copy-btn" onclick="copyText('dm2', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="dm-card">
-        <div class="dm-header">
-          <h3>Template 3 — Audit Credibility Play</h3>
-          <div class="dm-subject">Subject: Three-day audit that pays for itself</div>
-        </div>
-        <div class="dm-body" id="dm3">Hi [Name],
-
-I work with [sector] businesses doing operational audits — looking at IT, software, ecommerce, workflow, the full picture.
-
-Standard approach: [audit]→[report]→[conversation about what matters].
-
-Here's the part that matters: if the audit doesn't identify cost recovery or lost revenue at least 3× the fee, you get your money back. Full stop. No conditions.
-
-I'm confident enough in what an audit finds to put that in writing.
-
-If you've been thinking "something's costing us money and I can't quite see what," that's what an audit's for.
-
-Free 30-minute call to see if it makes sense?
-
-Craig
-Decoded Ops</div>
-        <div class="dm-footer">
-          <button class="copy-btn" onclick="copyText('dm3', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="dm-card">
-        <div class="dm-header">
-          <h3>Template 4 — Direct Offer</h3>
-          <div class="dm-subject">For warm referrals or known contacts</div>
-        </div>
-        <div class="dm-body" id="dm4">Hi [Name],
-
-Craig Blackman here — we connected through [mutual/connection].
-
-Quick question: are you happy with how your [systems/processes/ecommerce] are working right now?
-
-Most businesses I talk to aren't. Usually because nobody's ever stepped back to look at it as a whole.
-
-I do that work. Operational and technology clarity — the kind that lets you actually act.
-
-Would a 30-minute call be worth your time? No pitch, just a conversation.
-
-Let me know.
-
-Craig
-Decoded Ops</div>
-        <div class="dm-footer">
-          <button class="copy-btn" onclick="copyText('dm4', this)">Copy</button>
-        </div>
-      </div>
-
-      <div class="dm-card">
-        <div class="dm-header">
-          <h3>Template 5 — Video / Post Angle</h3>
-          <div class="dm-subject">Subject: Related to your recent post about [topic]</div>
-        </div>
-        <div class="dm-body" id="dm5">Hi [Name],
-
-Just saw your post about [specific operational challenge]. That's exactly the kind of problem I see across [sector] businesses.
-
-What I've found is most solutions come down to understanding what you're actually trying to solve — sounds obvious, but most audit and ERP projects start from the wrong question.
-
-I'd like to explore that with you in a 30-minute conversation. Nothing formal, just shop talk.
-
-Worth your time?
-
-Craig
-Decoded Ops</div>
-        <div class="dm-footer">
-          <button class="copy-btn" onclick="copyText('dm5', this)">Copy</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="notes-box" style="margin-top:16px">
-      <strong>Follow-up cadence:</strong> Day 1 — send DM · Day 5 — comment on a recent post (non-promotional) · Day 8 — short follow-up DM ("Wasn't sure if that landed. Still think we could have a valuable conversation?") · Stop after Day 8.
-    </div>
-
-  </div><!-- /dm-templates -->
-
-</main>
+</div>
 
 <script>
-  function toggleExpand(id, btn) {
-    const el = document.getElementById(id);
-    if (el.classList.contains('expanded')) {
-      el.classList.remove('expanded');
-      btn.textContent = 'Show all';
-    } else {
-      el.classList.add('expanded');
-      btn.textContent = 'Collapse';
-    }
+  function f(status, btn) {
+    document.querySelectorAll('.fpill').forEach(p => p.classList.remove('on'));
+    btn.classList.add('on');
+    document.querySelectorAll('.card').forEach(c => {
+      c.classList.toggle('hidden', status !== 'all' && c.dataset.s !== status);
+    });
+    upd();
   }
 
-  function copyText(id, btn) {
-    const el = document.getElementById(id);
-    const text = el.innerText || el.textContent;
-    navigator.clipboard.writeText(text.trim()).then(() => {
-      const original = btn.textContent;
-      btn.textContent = 'Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
-    });
+  function upd() {
+    const vis = s => document.querySelectorAll('.card.' + s + ':not(.hidden)').length;
+    document.getElementById('sl').textContent = vis('live');
+    document.getElementById('ss').textContent = vis('soon');
+    document.getElementById('sd').textContent = vis('draft');
+    document.getElementById('sp').textContent = vis('planned');
+    document.getElementById('st').textContent = document.querySelectorAll('.card:not(.hidden)').length;
+    const ms = [['m1','#sec1'],['m2','#sec2'],['m3','#sec3'],['m4','#sec4']];
   }
 
-  // Highlight active nav link on scroll
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  sections.forEach(s => observer.observe(s));
+  window.addEventListener('load', upd);
 </script>
-
 </body>
 </html>
