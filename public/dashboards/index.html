@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decoded Ops — Dashboards</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f1f5f9;
+      letter-spacing: -0.02em;
+    }
+
+    .logo p {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 28px 32px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      background: #273548;
+      border-color: #4f6b8a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .icon-plan    { background: #1d4ed820; }
+    .icon-content { background: #065f4620; }
+
+    .card-text h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 4px;
+    }
+
+    .card-text p {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .card-arrow {
+      margin-left: auto;
+      color: #475569;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .card:hover .card-arrow { color: #94a3b8; }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #334155;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">
+    <h1>Decoded Ops</h1>
+    <p>Internal dashboards — local only</p>
+  </div>
+
+  <div class="cards">
+
+    <a class="card" href="/dashboards/content-review.html">
+      <div class="card-icon icon-content">📋</div>
+      <div class="card-text">
+        <h2>Content Review</h2>
+        <p>LinkedIn posts (Weeks 1–4), cold email sequence, DM templates — all Phase 2 &amp; 3 content</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="/dashboards/plan-board.html">
+      <div class="card-icon icon-plan">📌</div>
+      <div class="card-text">
+        <h2>Plan Board</h2>
+        <p>Master implementation plan — phase status, story cards, task tracking</p>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+
+  <div class="footer">localhost:8765 · Next.js dev server</div>
+</div>
+
+</body>
+</html>
