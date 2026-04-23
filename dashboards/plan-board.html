@@ -5,856 +5,802 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decoded Ops — Master Plan Dashboard</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #f0f2f5;
             min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 28px;
             color: #1a202c;
-            margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 14px;
-            color: #718096;
-            margin-bottom: 15px;
-        }
-
-        .sync-info {
-            text-align: right;
-        }
-
-        .sync-button {
-            background: #10b981;
+        /* ─── TOP NAV ─── */
+        .top-nav {
+            background: #1a202c;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 52px;
         }
-
-        .sync-button:hover {
-            background: #059669;
-            transform: scale(1.05);
-        }
-
-        .sync-button:active {
-            transform: scale(0.95);
-        }
-
-        .last-sync {
-            font-size: 12px;
+        .top-nav h1 { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+        .nav-links { display: flex; gap: 4px; }
+        .nav-link {
             color: #a0aec0;
-            margin-top: 10px;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
         }
+        .nav-link:hover { background: #2d3748; color: white; }
+        .nav-link.active { background: #4a5568; color: white; }
 
-        /* Status Banner */
-        .status-banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        /* ─── LAYOUT ─── */
+        .page { max-width: 1400px; margin: 0 auto; padding: 30px 24px; }
+
+        /* ─── STAT BANNER ─── */
+        .stat-banner {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
         }
-
-        .status-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .status-item label {
-            font-size: 12px;
-            text-transform: uppercase;
-            opacity: 0.9;
-            letter-spacing: 1px;
-        }
-
-        .status-item .value {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        /* Phase Sections */
-        .phase-section {
+        .stat-card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            overflow: hidden;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
         }
-
-        .phase-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .phase-header.complete {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-
-        .phase-header.active {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-        }
-
-        .phase-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-        }
-
-        .phase-title h2 {
-            font-size: 18px;
+        .stat-card .label {
+            font-size: 11px;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #718096;
+            margin-bottom: 8px;
+        }
+        .stat-card .value { font-size: 28px; font-weight: 800; color: #1a202c; }
+        .stat-card .sub { font-size: 12px; color: #a0aec0; margin-top: 4px; }
+        .stat-card.green .value { color: #10b981; }
+        .stat-card.amber .value { color: #f59e0b; }
+        .stat-card.blue .value { color: #3b82f6; }
+        .stat-card.purple .value { color: #8b5cf6; }
+
+        /* ─── SECTION ─── */
+        .section { margin-bottom: 36px; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a202c;
+        }
+        .section-count {
+            background: #e2e8f0;
+            color: #4a5568;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
         }
 
-        .phase-badge {
-            background: rgba(255,255,255,0.3);
-            padding: 4px 12px;
+        /* ─── FILTER PILLS ─── */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .filter-pill {
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .phase-progress-container {
-            flex: 1;
-            max-width: 300px;
-        }
-
-        .phase-progress-bar {
-            height: 8px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-
-        .phase-progress-fill {
-            height: 100%;
-            background: rgba(255,255,255,0.8);
-            border-radius: 4px;
-            transition: width 0.3s ease;
-        }
-
-        .phase-progress-text {
-            font-size: 12px;
-            opacity: 0.9;
-            text-align: right;
-        }
-
-        .phase-toggle {
-            font-size: 20px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+            background: white;
+            color: #4a5568;
+            border-color: #e2e8f0;
         }
+        .filter-pill:hover { border-color: #cbd5e0; }
+        .filter-pill.active-filter { background: #1a202c; color: white; border-color: #1a202c; }
+        .filter-pill.live { border-color: #10b981; color: #059669; }
+        .filter-pill.live.active-filter { background: #10b981; color: white; }
+        .filter-pill.planned { border-color: #3b82f6; color: #2563eb; }
+        .filter-pill.planned.active-filter { background: #3b82f6; color: white; }
+        .filter-pill.in-progress { border-color: #f59e0b; color: #d97706; }
+        .filter-pill.in-progress.active-filter { background: #f59e0b; color: white; }
 
-        .phase-toggle.expanded {
-            transform: rotate(180deg);
-        }
-
-        .phase-content {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .phase-content.expanded {
-            display: block;
-        }
-
-        /* Day Sections */
-        .day-section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .day-header {
-            background: #f7fafc;
-            padding: 12px;
-            border-left: 4px solid #667eea;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #2d3748;
-        }
-
-        .day-header .time {
-            font-size: 12px;
+        /* ─── CONTENT INVENTORY GRID ─── */
+        .inventory-group { margin-bottom: 28px; }
+        .inventory-group-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: #718096;
-            margin-left: 10px;
-        }
-
-        /* Task Cards */
-        .task-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-        }
-
-        .task {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .task:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #cbd5e0;
-        }
-
-        .task.done {
-            background: #ecfdf5;
-            border-color: #10b981;
-            opacity: 0.8;
-        }
-
-        .task.done .task-title {
-            text-decoration: line-through;
-            color: #718096;
-        }
-
-        .task.done::before {
-            content: "✅";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 18px;
-        }
-
-        .task.active {
-            background: #fffbeb;
-            border-color: #f59e0b;
-            border-left: 4px solid #f59e0b;
-        }
-
-        .task.active .badge {
-            background: #f59e0b;
-            color: white;
-        }
-
-        .task-badge {
-            display: inline-block;
-            background: #cbd5e0;
-            color: #2d3748;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .task.done .task-badge {
-            background: #10b981;
-            color: white;
-        }
-
-        .task.active .task-badge {
-            background: #f59e0b;
-            color: white;
-        }
-
-        .task-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .task-meta {
-            font-size: 12px;
-            color: #718096;
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .task-time {
+            padding: 8px 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 10px;
+        }
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .inv-card {
+            background: white;
+            border-radius: 8px;
+            padding: 14px 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            border-left: 4px solid #e2e8f0;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .inv-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-1px); }
+        .inv-card.status-live { border-left-color: #10b981; }
+        .inv-card.status-planned { border-left-color: #3b82f6; }
+        .inv-card.status-in-progress { border-left-color: #f59e0b; }
+
+        .inv-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+        .inv-card-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a202c;
+            line-height: 1.4;
+            flex: 1;
+        }
+        .status-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .status-badge.live { background: #d1fae5; color: #065f46; }
+        .status-badge.planned { background: #dbeafe; color: #1e3a8a; }
+        .status-badge.in-progress { background: #fef3c7; color: #92400e; }
+
+        .inv-card-path {
+            font-size: 11px;
+            color: #a0aec0;
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 6px;
+        }
+        .inv-card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .inv-tag {
+            font-size: 10px;
+            background: #f7fafc;
+            color: #718096;
+            padding: 2px 7px;
+            border-radius: 3px;
+            border: 1px solid #e2e8f0;
         }
 
-        .task-time::before {
-            content: "⏱";
+        /* ─── PHASE CARDS ─── */
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
         }
+        .phase-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-top: 4px solid #e2e8f0;
+        }
+        .phase-card.complete { border-top-color: #10b981; }
+        .phase-card.active { border-top-color: #f59e0b; }
+        .phase-card.planned { border-top-color: #3b82f6; }
+        .phase-card.queued { border-top-color: #e2e8f0; }
 
-        .task-checkbox {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 20px;
-            height: 20px;
+        .phase-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .phase-card-title { font-size: 15px; font-weight: 700; color: #1a202c; line-height: 1.3; flex: 1; }
+        .phase-card-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+        .phase-card-badge.complete { background: #d1fae5; color: #065f46; }
+        .phase-card-badge.active { background: #fef3c7; color: #92400e; }
+        .phase-card-badge.planned { background: #dbeafe; color: #1e3a8a; }
+        .phase-card-badge.queued { background: #f1f5f9; color: #64748b; }
+
+        .phase-card-desc {
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+        .phase-progress-bar {
+            height: 6px;
+            background: #f1f5f9;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+        .phase-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        .phase-progress-fill.complete { background: #10b981; }
+        .phase-progress-fill.active { background: #f59e0b; }
+        .phase-progress-fill.planned { background: #3b82f6; }
+        .phase-progress-fill.queued { background: #cbd5e0; }
+        .phase-card-meta { font-size: 11px; color: #a0aec0; display: flex; justify-content: space-between; }
+
+        /* ─── THIS WEEK TASKS ─── */
+        .task-table { width: 100%; border-collapse: collapse; }
+        .task-table thead tr { background: #f7fafc; }
+        .task-table th {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #718096;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .task-table td {
+            padding: 12px 14px;
+            font-size: 13px;
+            border-bottom: 1px solid #f0f2f5;
+            vertical-align: middle;
+        }
+        .task-table tr:hover td { background: #f7fafc; }
+        .task-table tr.done td { opacity: 0.5; }
+        .task-table tr.done .task-name { text-decoration: line-through; }
+        .day-row td {
+            background: #f7fafc;
+            font-weight: 700;
+            font-size: 12px;
+            color: #4a5568;
+            padding: 8px 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .task-checkbox-cell { width: 40px; }
+        .task-check {
+            width: 18px;
+            height: 18px;
             cursor: pointer;
-            accent-color: #667eea;
+            accent-color: #10b981;
+        }
+        .phase-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .phase-tag.p2 { background: #dbeafe; color: #1e3a8a; }
+        .phase-tag.p3 { background: #f3e8ff; color: #5b21b6; }
+        .time-tag { font-size: 11px; color: #a0aec0; }
+
+        /* ─── WHITEPAPER / GUIDE ITEMS ─── */
+        .content-block {
+            background: white;
+            border-radius: 8px;
+            padding: 16px 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 1px;
         }
 
-        .task-with-checkbox {
-            padding-left: 45px;
-        }
-
-        /* Footer */
+        /* ─── FOOTER ─── */
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #718096;
+            padding: 30px 20px;
+            color: #a0aec0;
             font-size: 12px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
         }
 
-        footer a {
-            color: #667eea;
-            text-decoration: none;
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .stat-banner { grid-template-columns: repeat(3, 1fr); }
+            .nav-links { display: none; }
         }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .sync-info {
-                text-align: left;
-                margin-top: 15px;
-            }
-
-            .phase-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .phase-title {
-                width: 100%;
-            }
-
-            .phase-progress-container {
-                max-width: 100%;
-            }
-
-            .task-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .stat-banner { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div>
-                <h1>📋 Decoded Ops — Master Plan</h1>
-                <p>Phase 2 LinkedIn Launch + Phase 3 Apollo Campaign | Week of Apr 22–25, 2026</p>
-            </div>
-            <div class="sync-info">
-                <button class="sync-button" onclick="openSyncGuide()">🔄 Run Sync</button>
-                <div class="last-sync">Last synced: <span id="last-sync">--:--</span></div>
-            </div>
-        </header>
 
-        <div class="status-banner">
-            <div class="status-item">
-                <label>Total Tasks</label>
-                <div class="value" id="total-tasks">44</div>
-            </div>
-            <div class="status-item">
-                <label>Completed</label>
-                <div class="value" id="completed-tasks">0</div>
-            </div>
-            <div class="status-item">
-                <label>In Progress</label>
-                <div class="value" id="active-tasks">0</div>
-            </div>
-            <div class="status-item">
-                <label>Completion %</label>
-                <div class="value" id="completion-percent">0%</div>
-            </div>
+<nav class="top-nav">
+    <h1>📋 Decoded Ops — Master Plan</h1>
+    <div class="nav-links">
+        <a href="#this-week" class="nav-link">This Week</a>
+        <a href="#content-inventory" class="nav-link">Content Inventory</a>
+        <a href="#phases" class="nav-link">All Phases</a>
+    </div>
+</nav>
+
+<div class="page">
+
+    <!-- STAT BANNER -->
+    <div class="stat-banner">
+        <div class="stat-card green">
+            <div class="label">Live Pages</div>
+            <div class="value" id="stat-live-pages">28</div>
+            <div class="sub">on decodedops.co.uk</div>
         </div>
-
-        <!-- THIS WEEK: Tue–Fri Apr 22–25 -->
-        <div class="phase-section">
-            <div class="phase-header active" onclick="togglePhase(this)">
-                <div class="phase-title">
-                    <span>🚀 THIS WEEK (Apr 22–25)</span>
-                    <div class="phase-badge">ACTIVE</div>
-                </div>
-                <div class="phase-progress-container">
-                    <div class="phase-progress-bar">
-                        <div class="phase-progress-fill" style="width: 0%"></div>
-                    </div>
-                    <div class="phase-progress-text"><span id="this-week-percent">0</span>%</div>
-                </div>
-                <div class="phase-toggle expanded">▼</div>
-            </div>
-
-            <div class="phase-content expanded">
-                <!-- TUESDAY -->
-                <div class="day-section">
-                    <div class="day-header">📅 TUESDAY, APR 22 <span class="time">Tue 9:00–16:30</span></div>
-                    <div class="task-grid">
-                        <div class="task" data-task-id="P3-Setup-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Configure Apollo campaign</div>
-                            <div class="task-meta">
-                                <div class="task-time">90 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Setup-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Verify email & tracking</div>
-                            <div class="task-meta">
-                                <div class="task-time">15 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Review-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Review Week 1 posts (B & C)</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-DM-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Send warm DMs (10–15)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Create-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Import & test Email 1</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Create-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Import & test Email 2</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Create-003">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Import & test Email 3</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Launch-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Launch Segment A (Apollo)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- WEDNESDAY -->
-                <div class="day-section">
-                    <div class="day-header">📅 WEDNESDAY, APR 23 <span class="time">Wed 8:30–16:00</span></div>
-                    <div class="task-grid">
-                        <div class="task" data-task-id="P2-Post-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Post LinkedIn Post 2 @ 8:30 AM</div>
-                            <div class="task-meta">
-                                <div class="task-time">5 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Review-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Review Week 2 & 3 posts</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Engage-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Reply to comments (daily)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-DM-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Send warm DMs (10–15)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Monitor-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Check Email 1 metrics (24h)</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- THURSDAY -->
-                <div class="day-section">
-                    <div class="day-header">📅 THURSDAY, APR 24 <span class="time">Thu 9:00–16:00</span></div>
-                    <div class="task-grid">
-                        <div class="task" data-task-id="P3-Launch-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Launch Segment B (if metrics good)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-DM-003">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Send warm DMs (10–15)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Engage-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Reply to comments (daily)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Review-004">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Review Week 4 & 12-week calendar</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Monitor-002">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Check Email 1 & 2 metrics (48h)</div>
-                            <div class="task-meta">
-                                <div class="task-time">60 min</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FRIDAY -->
-                <div class="day-section">
-                    <div class="day-header">📅 FRIDAY, APR 25 <span class="time">Fri 8:30–12:30</span></div>
-                    <div class="task-grid">
-                        <div class="task" data-task-id="P2-Post-003">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Post LinkedIn Post 3 @ 8:30 AM</div>
-                            <div class="task-meta">
-                                <div class="task-time">5 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Launch-003">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Launch Segment C (if metrics good)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-DM-004">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Send final DM batch (Week 1 wrap)</div>
-                            <div class="task-meta">
-                                <div class="task-time">30 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P2-Wrap-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 2</div>
-                            <div class="task-title">Review Week 1 engagement metrics</div>
-                            <div class="task-meta">
-                                <div class="task-time">45 min</div>
-                            </div>
-                        </div>
-
-                        <div class="task" data-task-id="P3-Wrap-001">
-                            <input type="checkbox" class="task-checkbox task-with-checkbox" onchange="markTask(this)">
-                            <div class="task-badge">Phase 3</div>
-                            <div class="task-title">Record Apollo Week 1 metrics</div>
-                            <div class="task-meta">
-                                <div class="task-time">45 min</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-card blue">
+            <div class="label">Planned Pages</div>
+            <div class="value" id="stat-planned-pages">22</div>
+            <div class="sub">tools, reviews, guides</div>
         </div>
-
-        <!-- PHASE OVERVIEW -->
-        <div class="phase-section">
-            <div class="phase-header complete" onclick="togglePhase(this)">
-                <div class="phase-title">
-                    <span>✅ PHASE 1: Website Conversion Foundation</span>
-                    <div class="phase-badge">COMPLETE</div>
-                </div>
-                <div class="phase-progress-container">
-                    <div class="phase-progress-bar">
-                        <div class="phase-progress-fill" style="width: 100%"></div>
-                    </div>
-                    <div class="phase-progress-text">100%</div>
-                </div>
-                <div class="phase-toggle">▼</div>
-            </div>
-            <div class="phase-content">
-                <p style="color: #718096; font-size: 14px;">✅ All Phase 1 tasks complete (Apr 21, 2026)</p>
-            </div>
+        <div class="stat-card green">
+            <div class="label">Blog Posts Live</div>
+            <div class="value">3</div>
+            <div class="sub">published Apr 2026</div>
         </div>
-
-        <div class="phase-section">
-            <div class="phase-header active" onclick="togglePhase(this)">
-                <div class="phase-title">
-                    <span>🚀 PHASE 2: LinkedIn Launch</span>
-                    <div class="phase-badge">ACTIVE</div>
-                </div>
-                <div class="phase-progress-container">
-                    <div class="phase-progress-bar">
-                        <div class="phase-progress-fill" style="width: 5%"></div>
-                    </div>
-                    <div class="phase-progress-text">5% (1 of 20 weeks)</div>
-                </div>
-                <div class="phase-toggle">▼</div>
-            </div>
-            <div class="phase-content">
-                <p style="color: #718096; font-size: 14px; margin-bottom: 15px;">
-                    12-week LinkedIn campaign: 3 posts/week introduction → pain → AI → sector observations.
-                    <br>Week 1 (Apr 21–27): Introduction posts Mon/Wed/Fri + warm DMs daily.
-                </p>
-                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none;">📋 View detailed Phase 2 schedule →</a>
-            </div>
+        <div class="stat-card blue">
+            <div class="label">Blog Posts Planned</div>
+            <div class="value">9</div>
+            <div class="sub">across ops pillars</div>
         </div>
-
-        <div class="phase-section">
-            <div class="phase-header active" onclick="togglePhase(this)">
-                <div class="phase-title">
-                    <span>🚀 PHASE 3: Cold Email Campaign (Apollo)</span>
-                    <div class="phase-badge">LAUNCHING TODAY</div>
-                </div>
-                <div class="phase-progress-container">
-                    <div class="phase-progress-bar">
-                        <div class="phase-progress-fill" style="width: 0%"></div>
-                    </div>
-                    <div class="phase-progress-text">0% (starting Apr 22)</div>
-                </div>
-                <div class="phase-toggle">▼</div>
-            </div>
-            <div class="phase-content">
-                <p style="color: #718096; font-size: 14px; margin-bottom: 15px;">
-                    3-email sequence to 150–180 UK decorated goods contacts across 3 segments.
-                    <br>Email 1 (Pain Hook) sends today. Email 2 (Apr 28), Email 3 (May 1).
-                </p>
-                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none;">📋 View detailed Phase 3 schedule →</a>
-            </div>
+        <div class="stat-card amber">
+            <div class="label">Active Phase</div>
+            <div class="value">2 + 3</div>
+            <div class="sub">LinkedIn + Apollo</div>
         </div>
-
-        <div class="phase-section">
-            <div class="phase-header" onclick="togglePhase(this)">
-                <div class="phase-title">
-                    <span>⏳ PHASE 4–10: Future Phases</span>
-                    <div class="phase-badge">QUEUED</div>
-                </div>
-                <div class="phase-toggle">▼</div>
-            </div>
-            <div class="phase-content">
-                <ul style="color: #718096; font-size: 14px; line-height: 1.8; margin-left: 20px;">
-                    <li><strong>Phase 4:</strong> Lead Magnet ("5 Warning Signs") — After Phase 1 ✅</li>
-                    <li><strong>Phase 5:</strong> Knowledge Base + Design System — After Phase 4</li>
-                    <li><strong>Phase 6:</strong> Content & SEO Optimization — Parallel with Phase 9</li>
-                    <li><strong>Phase 7:</strong> Proposal Generation & Lead Capture — After Phase 5</li>
-                    <li><strong>Phase 8:</strong> Analytics & CRO — After Phase 7</li>
-                    <li><strong>Phase 9:</strong> Thought Leadership — Parallel with Phase 6</li>
-                    <li><strong>Phase 10:</strong> Performance & Accessibility — Anytime</li>
-                </ul>
-                <a href="COMPLETE_TASK_BREAKDOWN.md" style="color: #667eea; text-decoration: none; display: block; margin-top: 15px;">📋 View complete task breakdown (44 tasks, 10 phases) →</a>
-            </div>
+        <div class="stat-card purple">
+            <div class="label">Total Phases</div>
+            <div class="value">20</div>
+            <div class="sub">core + expansion</div>
         </div>
-
-        <footer>
-            <p>
-                📌 <strong>Sync system active:</strong> Mark tasks complete in COMPLETE_TASK_BREAKDOWN.md, then run <code>node sync-tasks.js</code>
-                <br>
-                📖 <strong>Read <a href="SYNC_WORKFLOW.md">SYNC_WORKFLOW.md</a></strong> for details on automated updates
-                <br><br>
-                Last updated: 2026-04-22 | Owner: Craig Blackman
-            </p>
-        </footer>
     </div>
 
-    <script>
-        // Toggle phase sections
-        function togglePhase(header) {
-            const content = header.nextElementSibling;
-            const toggle = header.querySelector('.phase-toggle');
+    <!-- ═══════════════════════════════════════════════════════════
+         THIS WEEK
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="section" id="this-week">
+        <div class="section-header">
+            <h2>🚀 This Week — Apr 22–25, 2026</h2>
+            <span class="section-count" id="week-complete-count">0 / 18 done</span>
+        </div>
 
-            content.classList.toggle('expanded');
-            toggle.classList.toggle('expanded');
+        <div style="background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); overflow: hidden;">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th class="task-checkbox-cell"></th>
+                        <th>Task</th>
+                        <th>Phase</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- TUESDAY -->
+                    <tr class="day-row"><td colspan="4">📅 Tuesday, Apr 22</td></tr>
+                    <tr data-task="T1"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T1')"></td><td class="task-name">Configure Apollo campaign</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">90 min</td></tr>
+                    <tr data-task="T2"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T2')"></td><td class="task-name">Verify email &amp; tracking (test send)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">15 min</td></tr>
+                    <tr data-task="T3"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T3')"></td><td class="task-name">Review Week 1 posts B &amp; C</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T4"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T4')"></td><td class="task-name">Send warm DMs (10–15)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T5"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T5')"></td><td class="task-name">Import &amp; test Apollo Email 1</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T6"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T6')"></td><td class="task-name">Import &amp; test Apollo Email 2</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T7"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T7')"></td><td class="task-name">Import &amp; test Apollo Email 3</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T8"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T8')"></td><td class="task-name">Launch Segment A (Garment Decoration)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">30 min</td></tr>
+
+                    <!-- WEDNESDAY -->
+                    <tr class="day-row"><td colspan="4">📅 Wednesday, Apr 23</td></tr>
+                    <tr data-task="T9"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T9')"></td><td class="task-name">Post LinkedIn Post 2 @ 8:30 AM (Variant B)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">5 min</td></tr>
+                    <tr data-task="T10"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T10')"></td><td class="task-name">Review Week 2 &amp; 3 posts</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T11"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T11')"></td><td class="task-name">Reply to comments on Post 1 &amp; 2</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T12"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T12')"></td><td class="task-name">Send warm DMs (10–15)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T13"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T13')"></td><td class="task-name">Check Email 1 open/click metrics (24h)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">60 min</td></tr>
+
+                    <!-- THURSDAY -->
+                    <tr class="day-row"><td colspan="4">📅 Thursday, Apr 24</td></tr>
+                    <tr data-task="T14"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T14')"></td><td class="task-name">Launch Segment B if metrics good (Promo Merch)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T15"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T15')"></td><td class="task-name">Send warm DMs (10–15)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T16"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T16')"></td><td class="task-name">Review Week 4 &amp; 12-week calendar updates</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">60 min</td></tr>
+                    <tr data-task="T17"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T17')"></td><td class="task-name">Check Email 1 &amp; 2 metrics (48h)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">30 min</td></tr>
+
+                    <!-- FRIDAY -->
+                    <tr class="day-row"><td colspan="4">📅 Friday, Apr 25</td></tr>
+                    <tr data-task="T18"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T18')"></td><td class="task-name">Post LinkedIn Post 3 @ 8:30 AM (Variant C)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">5 min</td></tr>
+                    <tr data-task="T19"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T19')"></td><td class="task-name">Launch Segment C if metrics good (Workwear)</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T20"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T20')"></td><td class="task-name">Send final DM batch — Week 1 wrap</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">30 min</td></tr>
+                    <tr data-task="T21"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T21')"></td><td class="task-name">Review Week 1 engagement metrics (LinkedIn)</td><td><span class="phase-tag p2">P2</span></td><td class="time-tag">45 min</td></tr>
+                    <tr data-task="T22"><td><input type="checkbox" class="task-check" onchange="taskToggle(this,'T22')"></td><td class="task-name">Record Apollo Week 1 metrics</td><td><span class="phase-tag p3">P3</span></td><td class="time-tag">45 min</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CONTENT INVENTORY
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="section" id="content-inventory">
+        <div class="section-header">
+            <h2>📊 Content Inventory</h2>
+            <span class="section-count" id="inv-total-count">Loading…</span>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-pill active-filter" onclick="filterInventory('all', this)">All</button>
+            <button class="filter-pill live" onclick="filterInventory('live', this)">✅ Live</button>
+            <button class="filter-pill in-progress" onclick="filterInventory('in-progress', this)">🔄 In Progress</button>
+            <button class="filter-pill planned" onclick="filterInventory('planned', this)">📋 Planned</button>
+        </div>
+
+        <!-- WEBSITE PAGES -->
+        <div class="inventory-group" data-group="pages">
+            <div class="inventory-group-title">
+                🌐 Website Pages
+                <span class="section-count" id="pages-count"></span>
+            </div>
+            <div class="inventory-grid">
+                <!-- LIVE -->
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Homepage</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/</div><div class="inv-card-tags"><span class="inv-tag">Core</span><span class="inv-tag">Hero</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">About Craig</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/about</div><div class="inv-card-tags"><span class="inv-tag">Core</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Pricing</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/pricing</div><div class="inv-card-tags"><span class="inv-tag">Core</span><span class="inv-tag">Questionnaire</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Clarity Audit</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/clarity</div><div class="inv-card-tags"><span class="inv-tag">Service</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Deliver</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/deliver</div><div class="inv-card-tags"><span class="inv-tag">Service</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Transform</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/transform</div><div class="inv-card-tags"><span class="inv-tag">Service</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Retained (Fractional CTO)</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/retained</div><div class="inv-card-tags"><span class="inv-tag">Service</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Contact / Discovery Call</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/contact</div><div class="inv-card-tags"><span class="inv-tag">Core</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Blog Hub</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/blog</div><div class="inv-card-tags"><span class="inv-tag">Content Hub</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Audit Checklist</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/resources/audit-checklist</div><div class="inv-card-tags"><span class="inv-tag">Lead Magnet</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Problem: ERP Implementation Failure</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/problems/erp-implementation-failure</div><div class="inv-card-tags"><span class="inv-tag">Problem</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Problem: eCommerce Not Connected</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/problems/ecommerce-not-connected</div><div class="inv-card-tags"><span class="inv-tag">Problem</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Problem: Systems Don't Talk</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/problems/systems-dont-talk</div><div class="inv-card-tags"><span class="inv-tag">Problem</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Problem: Wrong ERP Software</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/problems/wrong-erp-software</div><div class="inv-card-tags"><span class="inv-tag">Problem</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Garment Decoration</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/garment-decoration</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Print &amp; Promotional</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/print-promotional</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Workwear &amp; Teamwear</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/workwear-teamwear</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Signs &amp; Graphics</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/signs-graphics</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Awards &amp; Engraving</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/awards-engraving</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Sector: Labels &amp; Packaging</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/sectors/labels-packaging</div><div class="inv-card-tags"><span class="inv-tag">Sector</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Privacy Policy</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/privacy</div><div class="inv-card-tags"><span class="inv-tag">Legal</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Cookie Policy</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/cookies</div><div class="inv-card-tags"><span class="inv-tag">Legal</span></div></div>
+                <!-- PLANNED PAGES -->
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Problem: Systems Falling Over (DR/Outage)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/problems/systems-falling-over</div><div class="inv-card-tags"><span class="inv-tag">Problem</span><span class="inv-tag">CS-1</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Problem: No One Owns Operations</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/problems/no-one-owns-operations</div><div class="inv-card-tags"><span class="inv-tag">Problem</span><span class="inv-tag">CS-1</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Problem: Manual Workarounds Everywhere</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/problems/manual-workarounds-everywhere</div><div class="inv-card-tags"><span class="inv-tag">Problem</span><span class="inv-tag">CS-1</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Problem: AI — Nobody Knows Where to Start</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/problems/ai-nobody-knows-where-to-start</div><div class="inv-card-tags"><span class="inv-tag">Problem</span><span class="inv-tag">CS-1</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Tools Hub</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools</div><div class="inv-card-tags"><span class="inv-tag">Hub</span><span class="inv-tag">CS-2</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Downtime Cost Calculator</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools/downtime-cost-calculator</div><div class="inv-card-tags"><span class="inv-tag">Calculator</span><span class="inv-tag">CS-2</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">RTO Calculator</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools/rto-calculator</div><div class="inv-card-tags"><span class="inv-tag">Calculator</span><span class="inv-tag">CS-2</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Automation ROI Calculator</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools/automation-roi-calculator</div><div class="inv-card-tags"><span class="inv-tag">Calculator</span><span class="inv-tag">CS-2</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Artwork Manager Template</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools/artwork-manager</div><div class="inv-card-tags"><span class="inv-tag">Free Tool</span><span class="inv-tag">CS-3</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Supplier Feed Template</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/tools/supplier-feed-template</div><div class="inv-card-tags"><span class="inv-tag">Free Tool</span><span class="inv-tag">CS-3</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Software Reviews Hub</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews</div><div class="inv-card-tags"><span class="inv-tag">Hub</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: Orderwise ERP</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/orderwise</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">ERP</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: Profit 4 (OGL)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/profit-4-ogl</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">ERP</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: Deco Network</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/deco-network</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">ERP</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: Shopify</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/shopify</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">eCommerce</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: Magento / Adobe Commerce</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/magento-adobe-commerce</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">eCommerce</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Review: WooCommerce / WordPress</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/software-reviews/woocommerce-wordpress</div><div class="inv-card-tags"><span class="inv-tag">Review</span><span class="inv-tag">eCommerce</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Guide: Domain &amp; Platform Migration</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/guides/domain-platform-migration</div><div class="inv-card-tags"><span class="inv-tag">Guide</span><span class="inv-tag">CS-5</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Guide: Data Migration Reality</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/guides/data-migration-reality</div><div class="inv-card-tags"><span class="inv-tag">Guide</span><span class="inv-tag">CS-5</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Guide: Supplier Data Feeds</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/guides/supplier-data-feeds</div><div class="inv-card-tags"><span class="inv-tag">Guide</span><span class="inv-tag">CS-5</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">DR Readiness Checklist</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/resources/dr-readiness-checklist</div><div class="inv-card-tags"><span class="inv-tag">Lead Magnet</span><span class="inv-tag">CS-7</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">FAQ Page</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/faq</div><div class="inv-card-tags"><span class="inv-tag">Q&amp;A</span><span class="inv-tag">CS-8</span></div></div>
+            </div>
+        </div>
+
+        <!-- BLOG POSTS -->
+        <div class="inventory-group" data-group="blog">
+            <div class="inventory-group-title">
+                ✍️ Blog Posts
+                <span class="section-count" id="blog-count"></span>
+            </div>
+            <div class="inventory-grid">
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Why Systems Don't Talk (And What It Costs)</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/blog/why-systems-dont-talk</div><div class="inv-card-tags"><span class="inv-tag">Systems</span><span class="inv-tag">2,000 words</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">5 Questions Vendors Won't Like</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/blog/5-questions-vendors-wont-like</div><div class="inv-card-tags"><span class="inv-tag">ERP</span><span class="inv-tag">1,600 words</span></div></div>
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">The eCommerce Integration Trap</div><span class="status-badge live">Live</span></div><div class="inv-card-path">/blog/ecommerce-integration-trap</div><div class="inv-card-tags"><span class="inv-tag">eCommerce</span><span class="inv-tag">1,900 words</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">The Night Your System Goes Down</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/the-night-your-system-goes-down</div><div class="inv-card-tags"><span class="inv-tag">Emotional</span><span class="inv-tag">DR</span><span class="inv-tag">CS-6</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Why Operations Leaders Don't Talk About Failure</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/why-operations-leaders-dont-talk-about-failure</div><div class="inv-card-tags"><span class="inv-tag">Emotional</span><span class="inv-tag">CS-6</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">The Loneliness of Being the Person Who Knows</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/the-loneliness-of-being-the-person-who-knows</div><div class="inv-card-tags"><span class="inv-tag">Emotional</span><span class="inv-tag">Psychology</span><span class="inv-tag">CS-6</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">What to Do When Your ERP Goes Down</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/erp-goes-down-what-to-do</div><div class="inv-card-tags"><span class="inv-tag">DR</span><span class="inv-tag">Practical</span><span class="inv-tag">CS-7</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Why Most SMEs Don't Have a DR Plan</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/sme-disaster-recovery-gap</div><div class="inv-card-tags"><span class="inv-tag">DR</span><span class="inv-tag">CS-7</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">The CRM Nobody Uses</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/crm-adoption-failure</div><div class="inv-card-tags"><span class="inv-tag">CRM</span><span class="inv-tag">CS-9</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">How to Evaluate an AI Tool Without Getting Sold To</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/how-to-evaluate-ai-tools</div><div class="inv-card-tags"><span class="inv-tag">AI/LLM</span><span class="inv-tag">CS-9</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">The Hidden Cost of Keeping Your Legacy System</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/hidden-cost-legacy-systems</div><div class="inv-card-tags"><span class="inv-tag">IT</span><span class="inv-tag">CS-9</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">When IT Support Is Actually the Problem</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/when-it-support-is-the-problem</div><div class="inv-card-tags"><span class="inv-tag">IT Support</span><span class="inv-tag">CS-9</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Process Before Platform</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/process-before-platform</div><div class="inv-card-tags"><span class="inv-tag">Process</span><span class="inv-tag">CS-9</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">What Good Looks Like: An Operations Health Scorecard</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">/blog/operations-health-scorecard</div><div class="inv-card-tags"><span class="inv-tag">Ops Health</span><span class="inv-tag">CS-9</span></div></div>
+            </div>
+        </div>
+
+        <!-- LINKEDIN CONTENT -->
+        <div class="inventory-group" data-group="linkedin">
+            <div class="inventory-group-title">
+                💼 LinkedIn Posts
+                <span class="section-count" id="linkedin-count"></span>
+            </div>
+            <div class="inventory-grid">
+                <div class="inv-card status-live" data-status="live"><div class="inv-card-top"><div class="inv-card-title">Week 1 — Introduction (Variant A: Warehouse Story)</div><span class="status-badge live">Posted</span></div><div class="inv-card-path">Mon Apr 21 @ 8:30 AM</div><div class="inv-card-tags"><span class="inv-tag">Introduction</span></div></div>
+                <div class="inv-card status-in-progress" data-status="in-progress"><div class="inv-card-top"><div class="inv-card-title">Week 1 — Introduction (Variant B: Alternative Angle)</div><span class="status-badge in-progress">This Week</span></div><div class="inv-card-path">Wed Apr 23 @ 8:30 AM</div><div class="inv-card-tags"><span class="inv-tag">Introduction</span></div></div>
+                <div class="inv-card status-in-progress" data-status="in-progress"><div class="inv-card-top"><div class="inv-card-title">Week 1 — Introduction (Variant C: Clarity Pitch)</div><span class="status-badge in-progress">This Week</span></div><div class="inv-card-path">Fri Apr 25 @ 8:30 AM</div><div class="inv-card-tags"><span class="inv-tag">Introduction</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 2 — ERP Pain (x3 variants)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Apr 28, 30 · May 2</div><div class="inv-card-tags"><span class="inv-tag">ERP Pain</span><span class="inv-tag">Ready</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 3 — AI Honest Takes (x3 variants)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">May 5, 7, 9</div><div class="inv-card-tags"><span class="inv-tag">AI/LLM</span><span class="inv-tag">Ready</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 4 — Sector Observations (x3 variants)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">May 12, 14, 16</div><div class="inv-card-tags"><span class="inv-tag">Sector</span><span class="inv-tag">Ready</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 5 — Downtime Cost / DR Awareness</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">May 19, 21, 23</div><div class="inv-card-tags"><span class="inv-tag">DR</span><span class="inv-tag">CS-7</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 6 — AI/LLM Deeper Dive</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">May 26, 28, 30</div><div class="inv-card-tags"><span class="inv-tag">AI/LLM</span><span class="inv-tag">CS-10</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 7 — Software Review Teasers</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jun 2, 4, 6</div><div class="inv-card-tags"><span class="inv-tag">Reviews</span><span class="inv-tag">CS-4</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 8 — Emotional Reality Series</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jun 9, 11, 13</div><div class="inv-card-tags"><span class="inv-tag">Emotional</span><span class="inv-tag">CS-6</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 9 — Free Tool Launch Posts</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jun 16, 18, 20</div><div class="inv-card-tags"><span class="inv-tag">Free Tool</span><span class="inv-tag">CS-2</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 10 — Ask Craig / Q&amp;A Format</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jun 23, 25, 27</div><div class="inv-card-tags"><span class="inv-tag">Q&amp;A</span><span class="inv-tag">CS-8</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 11 — Process &amp; Workflow Stories</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jun 30 · Jul 2, 4</div><div class="inv-card-tags"><span class="inv-tag">Process</span><span class="inv-tag">CS-10</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Week 12 — Q&amp;A Results &amp; Operations Health</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Jul 7, 9, 11</div><div class="inv-card-tags"><span class="inv-tag">Ops Health</span><span class="inv-tag">CS-10</span></div></div>
+            </div>
+        </div>
+
+        <!-- COLD EMAIL -->
+        <div class="inventory-group" data-group="email">
+            <div class="inventory-group-title">
+                📧 Cold Email (Apollo)
+                <span class="section-count" id="email-count"></span>
+            </div>
+            <div class="inventory-grid">
+                <div class="inv-card status-in-progress" data-status="in-progress"><div class="inv-card-top"><div class="inv-card-title">Segment A — Garment Decoration (50–60 contacts)</div><span class="status-badge in-progress">Launching</span></div><div class="inv-card-path">Email 1: Apr 22 · Email 2: Apr 28 · Email 3: May 1</div><div class="inv-card-tags"><span class="inv-tag">P3</span><span class="inv-tag">Sector A</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Segment B — Promo Merch (50–70 contacts)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Launch: Apr 24 if metrics good</div><div class="inv-card-tags"><span class="inv-tag">P3</span><span class="inv-tag">Sector B</span></div></div>
+                <div class="inv-card status-planned" data-status="planned"><div class="inv-card-top"><div class="inv-card-title">Segment C — Workwear (40–50 contacts)</div><span class="status-badge planned">Planned</span></div><div class="inv-card-path">Launch: Apr 25 if metrics good</div><div class="inv-card-tags"><span class="inv-tag">P3</span><span class="inv-tag">Sector C</span></div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         ALL PHASES
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="section" id="phases">
+        <div class="section-header">
+            <h2>📌 All Phases</h2>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+            <span style="font-size: 13px; font-weight: 700; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px;">Core Phases</span>
+        </div>
+        <div class="phase-grid" style="margin-bottom: 30px;">
+            <div class="phase-card complete">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 0 — Brand &amp; Document Consolidation</div><span class="phase-card-badge complete">Complete</span></div>
+                <div class="phase-card-desc">Brand guidelines, pricing architecture, master context doc. Foundation for all phases.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill complete" style="width:100%"></div></div>
+                <div class="phase-card-meta"><span>Completed Apr 2026</span><span>100%</span></div>
+            </div>
+            <div class="phase-card complete">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 1 — Website Conversion Foundation</div><span class="phase-card-badge complete">Complete</span></div>
+                <div class="phase-card-desc">Pricing questionnaire, About page, Clarity guarantee, global CTA audit. All conversion tasks complete.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill complete" style="width:100%"></div></div>
+                <div class="phase-card-meta"><span>Completed Apr 21, 2026</span><span>100%</span></div>
+            </div>
+            <div class="phase-card active">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 2 — LinkedIn Launch</div><span class="phase-card-badge active">Active</span></div>
+                <div class="phase-card-desc">12-week campaign. 3 posts/week. Introduction → pain → AI → sector observations. Warm DM outreach daily.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill active" style="width:8%"></div></div>
+                <div class="phase-card-meta"><span>Started Apr 21, 2026</span><span>Week 1 of 12</span></div>
+            </div>
+            <div class="phase-card active">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 3 — Cold Email (Apollo)</div><span class="phase-card-badge active">Launching</span></div>
+                <div class="phase-card-desc">3-email sequence to 150–180 UK decorated goods contacts. 3 segments. Targets >40% open, >8% reply.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill active" style="width:5%"></div></div>
+                <div class="phase-card-meta"><span>Started Apr 22, 2026</span><span>Seg A launching</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 4 — Lead Magnet</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">"5 Warning Signs" PDF. Email capture form on website. Apollo nurture sequence for downloads.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phase 1 ✅</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 5 — Knowledge Base &amp; Design System</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">Win themes, case study library, Tailwind design tokens. Foundation for Phase 6–9.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phases 1–4</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 6 — Content &amp; SEO Optimisation</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">Gap analysis, homepage rewrite, service + sector page enhancement, structured data. Now expanded via CS phases.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phase 5</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 7 — Proposal Generation</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">Dynamic proposal component, PDF export, email integration, Bitrix24 CRM sync.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phase 5</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 8 — Analytics &amp; CRO</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">GA4 event tracking, Bitrix24 dashboard, A/B test framework, monthly review process.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phase 7</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 9 — Thought Leadership</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">Blog calendar, case study library, resource centre. Now expanded via CS phases.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>After Phase 5</span><span>0%</span></div>
+            </div>
+            <div class="phase-card queued">
+                <div class="phase-card-header"><div class="phase-card-title">Phase 10 — Performance &amp; Accessibility</div><span class="phase-card-badge queued">Queued</span></div>
+                <div class="phase-card-desc">Lighthouse 90+, Core Web Vitals green, WCAG 2.1 AA, mobile refinement. Can run parallel anytime.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill queued" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>Parallel anytime</span><span>0%</span></div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 14px; margin-top: 10px;">
+            <span style="font-size: 13px; font-weight: 700; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px;">Content Strategy Expansion — Approved Apr 23, 2026</span>
+            <span style="font-size: 12px; color: #a0aec0; margin-left: 10px;">Full detail: docs/CONTENT_STRATEGY_EXPANSION.md</span>
+        </div>
+        <div class="phase-grid">
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-1 — Positioning Reset &amp; Navigation</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">4 new problem pages, Resources nav, homepage Operations-first rewrite, LinkedIn calendar rebalanced.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>Start here — highest leverage</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-2 — Interactive Calculators</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">Downtime cost, RTO, and Automation ROI calculators. React components. Strong LinkedIn hooks.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>3 calculators · /tools/</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-3 — Free Apps &amp; Templates</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">Artwork Manager template, Supplier Data Feed template. Shareable Google Sheets + landing pages.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>2 tools · /tools/</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-4 — Software Reviews Hub</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">6 honest operator-led reviews: Orderwise, Profit 4, Deco Network, Shopify, Magento, WooCommerce.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>6 reviews · /software-reviews/</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-5 — Whitepapers &amp; Guides</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">Domain migration, data migration, supplier data feeds. Web + PDF. Optional email gate for lead gen.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>3 guides · /guides/</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-6 — Emotional &amp; Psychology Content</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">3 blog posts + 6 "The Truth" LinkedIn posts. No dev needed. Highest engagement potential.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>High LinkedIn engagement</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-7 — Disaster Recovery &amp; Resilience</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">2 blog posts, DR Readiness Checklist lead magnet, 3 LinkedIn posts. Underserved niche.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>DR niche · strong differentiation</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-8 — Q&amp;A Session Strategy</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">Monthly LinkedIn Q&amp;A posts, FAQ page, newsletter format. Sustainable recurring cadence.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>/faq · LinkedIn Monthly</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-9 — Blog Expansion</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">6 new posts: CRM adoption, AI evaluation, legacy cost, IT support failures, process-first, ops scorecard.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>6 posts · full ops coverage</span><span>0%</span></div>
+            </div>
+            <div class="phase-card planned">
+                <div class="phase-card-header"><div class="phase-card-title">CS-10 — LinkedIn Calendar Rebuild</div><span class="phase-card-badge planned">Planned</span></div>
+                <div class="phase-card-desc">Full rebuild of weeks 5–12 posts. New pillar rotation: DR, AI, reviews, emotional, tools, Q&amp;A, process, supplier.</div>
+                <div class="phase-progress-bar"><div class="phase-progress-fill planned" style="width:0%"></div></div>
+                <div class="phase-card-meta"><span>24+ new posts · weeks 5–12</span><span>0%</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Decoded Ops — Master Plan Dashboard &nbsp;|&nbsp; Last updated: 2026-04-23 &nbsp;|&nbsp; Owner: Craig Blackman</p>
+    <p style="margin-top: 8px;">Detail files: <code>docs/.plan.md</code> &nbsp;·&nbsp; <code>docs/CONTENT_STRATEGY_EXPANSION.md</code> &nbsp;·&nbsp; <code>content/phase-2/PUBLISHING_TIMELINE.md</code></p>
+</footer>
+
+<script>
+    // ── Task toggle (persisted to localStorage) ──
+    function taskToggle(cb, id) {
+        const row = cb.closest('tr');
+        if (cb.checked) {
+            row.classList.add('done');
+            localStorage.setItem('task_' + id, '1');
+        } else {
+            row.classList.remove('done');
+            localStorage.removeItem('task_' + id);
         }
+        updateWeekCount();
+    }
 
-        // Mark task as complete
-        function markTask(checkbox) {
-            const task = checkbox.closest('.task');
-            if (checkbox.checked) {
-                task.classList.add('done');
+    function updateWeekCount() {
+        const total = document.querySelectorAll('tr[data-task]').length;
+        const done = document.querySelectorAll('tr[data-task].done').length;
+        const el = document.getElementById('week-complete-count');
+        if (el) el.textContent = done + ' / ' + total + ' done';
+    }
+
+    // ── Inventory filter ──
+    function filterInventory(status, btn) {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active-filter'));
+        btn.classList.add('active-filter');
+
+        document.querySelectorAll('.inv-card').forEach(card => {
+            if (status === 'all') {
+                card.style.display = '';
             } else {
-                task.classList.remove('done');
-            }
-            updateMetrics();
-        }
-
-        // Update metrics
-        function updateMetrics() {
-            const tasks = document.querySelectorAll('[data-task-id]');
-            const completed = document.querySelectorAll('[data-task-id] input:checked').length;
-            const total = tasks.length;
-            const percent = Math.round((completed / total) * 100);
-
-            document.getElementById('total-tasks').textContent = total;
-            document.getElementById('completed-tasks').textContent = completed;
-            document.getElementById('completion-percent').textContent = percent + '%';
-
-            // Update this week progress
-            const thisWeekBar = document.querySelector('#this-week-percent');
-            if (thisWeekBar) {
-                thisWeekBar.textContent = percent;
-                const fill = thisWeekBar.closest('.phase-progress-container').querySelector('.phase-progress-fill');
-                if (fill) {
-                    fill.style.width = percent + '%';
-                }
-            }
-
-            // Save to localStorage
-            localStorage.setItem('plan-board-updated', new Date().toLocaleTimeString());
-        }
-
-        // Open sync guide
-        function openSyncGuide() {
-            alert(`To sync task completion:
-
-1. Edit COMPLETE_TASK_BREAKDOWN.md
-2. Mark tasks complete: [x] P3-Setup-001: ...
-3. Run: node sync-tasks.js
-
-This automatically updates:
-- .plan.md (checklists)
-- public/plan-board.html (dashboard)
-
-See SYNC_WORKFLOW.md for details.`);
-        }
-
-        // Load metrics on page load
-        window.addEventListener('load', () => {
-            updateMetrics();
-            const lastSync = localStorage.getItem('plan-board-updated');
-            if (lastSync) {
-                document.getElementById('last-sync').textContent = lastSync;
+                card.style.display = card.dataset.status === status ? '' : 'none';
             }
         });
+        updateInventoryCounts();
+    }
 
-        // Expand all sections by default
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.phase-header').forEach(header => {
-                if (header.closest('.phase-section').querySelector('#this-week-percent') ||
-                    header.textContent.includes('PHASE 1') ||
-                    header.textContent.includes('PHASE 2') ||
-                    header.textContent.includes('PHASE 3')) {
-                    const content = header.nextElementSibling;
-                    const toggle = header.querySelector('.phase-toggle');
-                    if (!content.classList.contains('expanded')) {
-                        content.classList.add('expanded');
-                        toggle.classList.add('expanded');
-                    }
-                }
-            });
+    function updateInventoryCounts() {
+        // Total visible
+        const visible = document.querySelectorAll('.inv-card:not([style*="none"])').length;
+        const total = document.querySelectorAll('.inv-card').length;
+        const el = document.getElementById('inv-total-count');
+        if (el) el.textContent = visible + ' of ' + total + ' items';
+    }
+
+    // ── Restore task states from localStorage ──
+    window.addEventListener('load', () => {
+        document.querySelectorAll('tr[data-task]').forEach(row => {
+            const id = row.dataset.task;
+            if (localStorage.getItem('task_' + id)) {
+                row.classList.add('done');
+                const cb = row.querySelector('.task-check');
+                if (cb) cb.checked = true;
+            }
         });
-    </script>
+        updateWeekCount();
+        updateInventoryCounts();
+    });
+</script>
 </body>
 </html>

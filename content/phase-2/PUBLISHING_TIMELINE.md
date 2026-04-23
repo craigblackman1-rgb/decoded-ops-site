@@ -104,15 +104,143 @@ Before publishing the first post:
 
 ---
 
-## Post-Week 4 Plan (May 19+)
+## Week 5: May 19–23 (Disaster Recovery & Downtime)
 
-**Weeks 5–16:** Continue with CONTENT_CALENDAR_12_WEEKS.md
+**Goal:** Own the DR/resilience space — underserved topic, high-anxiety area for ops leaders
 
-- **Weeks 5–6:** Post 4 more posts (Weeks 5 pillar + Variant A/B, Week 6 pillar + Variant A/B)
-- **Cadence:** 2–3 posts per week (Tuesday, Wednesday, Friday, 8–9 AM)
-- **DM outreach:** 10–15 new targets per week, rotating through templates
-- **Discovery calls:** Target 1–2 booked per week (8–10 total in 12-week window)
-- **Expected conversions:** 1–2 audits from 12 weeks of consistent posting + DM outreach
+**Pillar: Risk & Recovery**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **May 19** | Mon | "Your ERP just crashed. 4 hours until trading opens. What's your plan?" | DR Provocation | Visceral scenario — no answer given, drives comments | Free discovery call |
+| **May 21** | Wed | Downtime cost calculator launch | Free Tool | "I built this. Paste in your numbers." → link to /tools/downtime-cost-calculator | Try the calculator |
+| **May 23** | Fri | "The support contract that doesn't actually cover a support scenario" | Named Problem | Industry pattern — SLA vs. reality | Free discovery call |
+
+**Content to create:** `/tools/downtime-cost-calculator` page (CS-2)
+
+---
+
+## Week 6: May 26–30 (AI/LLM — Deeper Dive)
+
+**Goal:** Build on Week 3 AI take with more practical depth
+
+**Pillar: Systems & Technology**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **May 26** | Mon | "How to evaluate an AI tool without getting sold to" | Practical Guide | 5 questions to ask. No hype. | Free discovery call |
+| **May 28** | Wed | "The AI project that failed — and why" | War Story | Anonymised. Wrong order: platform before process. | Free discovery call |
+| **May 30** | Fri | "What operations teams are actually doing with AI in 2026" | Observation | Honest field report — not what you read on LinkedIn | Free discovery call |
+
+---
+
+## Week 7: June 2–6 (Software Review Teasers)
+
+**Goal:** Establish Craig as independent software voice; drive traffic to review pages
+
+**Pillar: Systems & Technology**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jun 2** | Mon | "I've seen Orderwise implemented 12+ times. Here's what the sales demo won't tell you." | Review Teaser | → links to /software-reviews/orderwise | Read the full review |
+| **Jun 4** | Wed | "Shopify for decorated goods businesses: what works, what breaks" | Review Teaser | → links to /software-reviews/shopify | Read the full review |
+| **Jun 6** | Fri | "Why I'd never recommend Magento for a business under £5m turnover" | Hot Take | → links to /software-reviews/magento-adobe-commerce | Read why |
+
+**Content to create:** Software reviews hub + first 2–3 review pages (CS-4)
+
+---
+
+## Week 8: June 9–13 (The Truth — Emotional Reality Series)
+
+**Goal:** Highest-engagement content type. Acknowledge the human side of operations leadership.
+
+**Pillar: Operational Reality**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jun 9** | Mon | "The thing LinkedIn won't show you about ERP go-live week" | Emotional Truth | First person. Raw. Real. | Free discovery call |
+| **Jun 11** | Wed | "The call at 7pm on a Friday when the system is down and trading is tomorrow" | Emotional Truth | Short, punchy — visceral scenario | Free discovery call |
+| **Jun 13** | Fri | "Every operations leader I know has a story they don't tell clients" | Emotional Truth | Invitation to share. Drives comments. | "Tell me yours" → DM |
+
+**Blog post to publish this week:** "The Night Your System Goes Down" (CS-6)
+
+---
+
+## Week 9: June 16–20 (Free Tools Launch)
+
+**Goal:** Give people something useful. Tools earn trust faster than posts alone.
+
+**Pillar: Free Tools & Resources**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jun 16** | Mon | "I built a free automation ROI calculator. The result might surprise you." | Tool Launch | → /tools/automation-roi-calculator | Try it free |
+| **Jun 18** | Wed | "Free artwork manager template for decoration businesses" | Tool Launch | → /tools/artwork-manager | Download free |
+| **Jun 20** | Fri | "Three numbers every operations leader should know (and most don't)" | Education | Ties to calculators — downtime cost, manual task cost, recovery time | Try the calculators |
+
+**Content to create:** `/tools/automation-roi-calculator`, `/tools/artwork-manager` (CS-2, CS-3)
+
+---
+
+## Week 10: June 23–27 (Ask Craig — Q&A Format)
+
+**Goal:** Invite direct engagement. Surface questions for blog/FAQ content.
+
+**Pillar: Straight Talk Q&A**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jun 23** | Mon | "This month I'm answering questions about ERP and software selection. Drop yours below." | Q&A Launch | Open invitation. Reply to every comment personally. | Comment below |
+| **Jun 25** | Wed | Answer to a top question from Monday's post | Q&A Answer | Format: "Someone asked me X. Here's the honest answer." | Free discovery call |
+| **Jun 27** | Fri | "The question I get asked most about AI — and my honest answer" | Q&A | Pre-written answer to the most common question | Free discovery call |
+
+**To build this week:** `/faq` page draft (CS-8)
+
+---
+
+## Week 11: June 30 – July 4 (Process & Workflow)
+
+**Goal:** Cover the process/workflow pillar — distinct from ERP/tech
+
+**Pillar: Process & Workflow**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jun 30** | Mon | "Process before platform. The order most businesses get wrong." | Principle | Classic mistake: buy software, then figure out the process. | Free discovery call |
+| **Jul 2** | Wed | "Supplier data feeds: why every new supplier takes 3 weeks to onboard (and how to fix it)" | Pain + Solution | Links to /guides/supplier-data-feeds | Download the guide |
+| **Jul 4** | Fri | "The manual workaround your team has been doing for 3 years that nobody talks about" | Recognition | Drives comments — people share their own examples | Free discovery call |
+
+**Blog post to publish:** "Process Before Platform" (CS-9)
+
+---
+
+## Week 12: July 7–11 (Ops Health & Review)
+
+**Goal:** Consolidate. Position the Operations Health framing. Invite audits.
+
+**Pillar: Operational Reality + Free Tools**
+
+| Date | Day | Post | Type | Details | CTA |
+|---|---|---|---|---|---|
+| **Jul 7** | Mon | "Q&A results: the 3 questions I got asked most (and what they tell us)" | Q&A Wrap | Repurposed from Week 10 comments | Free discovery call |
+| **Jul 9** | Wed | "What good operations looks like at a £2m business vs a £20m business" | Observation | Size-relative benchmarking — links to scorecard blog | Book a Clarity audit |
+| **Jul 11** | Fri | "12 weeks of posting. Here's what I've learned." | Reflection | Honest wrap-up. Engagement meta-post. | Follow for more |
+
+**Blog post to publish:** "What Good Looks Like: Operations Health Scorecard" (CS-9)
+
+---
+
+## Post-Week 12 Plan (July 14+)
+
+**Ongoing cadence:** 2–3 posts/week (same Mon/Wed/Fri rhythm)
+
+- **Content rotation:** All 6 pillars on a 2-week cycle
+- **New content triggers:** Publish a review → tease it on LinkedIn. Build a guide → post about it. Run a Q&A → answer live, repurpose as blog.
+- **DM outreach:** 3–5 targeted DMs/week (reduced from launch intensity)
+- **Monthly newsletter:** "This month in Decoded Ops" — 1 long-form, 3 repurposed posts, 1 Q&A answer
+- **Discovery calls:** Target 4+ per month from combined LinkedIn + cold email + website
+
+---
 
 ---
 
