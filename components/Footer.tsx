@@ -29,13 +29,21 @@ const company = [
   { label: 'Privacy policy', href: '/privacy' },
 ];
 
+const locations = [
+  { label: 'Fractional CTO — all locations', href: '/locations/fractional-cto' },
+  { label: 'Technology Audit — all locations', href: '/locations/tech-audit' },
+  { label: 'West Sussex', href: '/locations/fractional-cto/chichester' },
+  { label: 'East Sussex', href: '/locations/fractional-cto/brighton' },
+  { label: 'Surrey', href: '/locations/fractional-cto/guildford' },
+];
+
 export function Footer() {
   return (
     <footer className="bg-[#023047] text-white" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 md:col-span-2">
             <Link href="/" className="text-2xl font-bold tracking-tight block mb-4" aria-label="Decoded Ops — home">
               Decoded<span className="text-[#FFB703]" aria-hidden="true">Ops</span>
             </Link>
@@ -109,6 +117,20 @@ export function Footer() {
             <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Problems we solve</h2>
             <ul className="space-y-2.5">
               {problems.map(link => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Locations */}
+          <nav aria-label="Location links">
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Locations</h2>
+            <ul className="space-y-2.5">
+              {locations.map(link => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
                     {link.label}

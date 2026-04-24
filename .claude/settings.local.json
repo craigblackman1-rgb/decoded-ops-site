@@ -16,7 +16,8 @@
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(cat \"D:\\\\Claude\\\\Projects\\\\Decoded Ops\\\\decoded-ops-site\\\\docs\\\\.plan.md\")",
       "Bash(curl -s \"http://localhost:8765/blog/why-systems-dont-talk\")",
-      "Bash(curl -s \"http://localhost:8765/blog/5-questions-vendors-wont-like\")"
+      "Bash(curl -s \"http://localhost:8765/blog/5-questions-vendors-wont-like\")",
+      "mcp__plugin_claude-mem_mcp-search__smart_unfold"
     ]
   }
 }
