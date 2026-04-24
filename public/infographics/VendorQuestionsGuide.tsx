@@ -11,7 +11,7 @@ export default function VendorQuestionsGuide() {
       number: '1',
       question: "Can you show me a business like ours that successfully integrated this system with our ERP?",
       keyPoint: 'Real proof, not promises',
-      insight: 'If they can\'t name a similar customer, the integration required heavy customization—meaning you\'re paying for an expensive one-off project, not a plug-and-play feature.',
+      insight: 'If they can\'t name a similar customer, the integration required heavy customisation—meaning you\'re paying for an expensive one-off project, not a plug-and-play feature.',
       warning: 'Red flag: "We have the capability" without real examples'
     },
     {

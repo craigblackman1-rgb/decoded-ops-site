@@ -48,7 +48,7 @@ export default function BlogPost() {
               Standard eCommerce platforms are built for businesses that sell finished products. You pick an item, you add to cart, you check out. The system assumes inventory is simple: you have X units, you ship them to the customer, you have X-1 units left.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              Your business is different. You don't just sell a product. You sell an <em>idea with customization</em>. An order isn't "1 x T-shirt." It's:
+              Your business is different. You don't just sell a product. You sell an <em>idea with customisation</em>. An order isn't "1 x T-shirt." It's:
             </p>
             <ul className="space-y-2 my-6 pl-6 list-disc text-[#023047]/80">
               <li>Blank garment (choose size, colour, fit)</li>
@@ -99,7 +99,7 @@ export default function BlogPost() {
               You ask the eCommerce vendor: "Can you integrate with our ERP?" They say yes. You ask for a quote. It's £20k–50k. The timeline is 3–6 months. By now, you've already launched the website and your customers are experiencing the broken workflow.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              And here's the thing: even after the integration is built, the customization problem isn't solved. Your system still can't validate artwork or understand your production workflow. The integration just passes data between two systems that weren't designed for your business.
+              And here's the thing: even after the integration is built, the customisation problem isn't solved. Your system still can't validate artwork or understand your production workflow. The integration just passes data between two systems that weren't designed for your business.
             </p>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What You Should Have Done Differently</h2>
@@ -109,7 +109,7 @@ export default function BlogPost() {
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">1. Start with your workflow, not the platform</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              Map out your actual order process. From the moment a customer starts thinking about ordering, all the way through to delivery and invoice. What information do you need to collect? What decisions happen at each step? Where does customization happen?
+              Map out your actual order process. From the moment a customer starts thinking about ordering, all the way through to delivery and invoice. What information do you need to collect? What decisions happen at each step? Where does customisation happen?
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               Once you know your workflow, you can evaluate whether a platform supports it. Most don't.
@@ -117,7 +117,7 @@ export default function BlogPost() {
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">2. Look for platforms built for your industry</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              There are eCommerce platforms specifically built for print, embroidery, and decorated apparel. They understand artwork upload. They understand customization. They integrate with production systems out of the box.
+              There are eCommerce platforms specifically built for print, embroidery, and decorated apparel. They understand artwork upload. They understand customisation. They integrate with production systems out of the box.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               They're not as trendy as Shopify. But they're cheaper to implement, they work faster, and they don't require a £40k integration project to talk to your ERP.

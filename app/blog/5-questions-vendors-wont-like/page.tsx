@@ -50,7 +50,7 @@ export default function BlogPost() {
               Watch what happens when you ask this. The vendor will often go quiet. They'll talk about the <em>capability</em> to integrate with your ERP. But they won't name a customer who actually did it.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              This tells you everything. If they can't point to a real example in a real business like yours, the integration probably required so much customization that it's not a repeatable process. And that means you're paying for a one-off, expensive project—not buying a plug-and-play feature.
+              This tells you everything. If they can't point to a real example in a real business like yours, the integration probably required so much customisation that it's not a repeatable process. And that means you're paying for a one-off, expensive project—not buying a plug-and-play feature.
             </p>
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">2. "What happens to my data if I leave?"</h3>
@@ -80,7 +80,7 @@ export default function BlogPost() {
               The vendor will give you a quote. They'll also tell you it's an estimate. What they won't tell you upfront is what happens if you go over.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              If the quote is £20k and you end up at £40k because of unexpected customizations, who pays for it? Is there a cap? Is there a "time and materials" escalation clause buried in the contract?
+              If the quote is £20k and you end up at £40k because of unexpected customisations, who pays for it? Is there a cap? Is there a "time and materials" escalation clause buried in the contract?
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               Get this in writing before you sign anything. And ask specifically: "What is the trigger for additional costs?" Most of the time, the answer is "scope creep"—which means you asked for something slightly different than what was originally quoted, and now you're paying for it.

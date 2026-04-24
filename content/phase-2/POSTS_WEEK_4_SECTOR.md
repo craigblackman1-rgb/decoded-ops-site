@@ -34,7 +34,7 @@ Let's talk.
 
 Workwear and decorated goods businesses that sell B2B have a problem: existing ecommerce platforms don't handle workwear workflows.
 
-Customers need custom ranges per site. Credit terms. Multi-site orders. Bulk pricing. Maybe personalization per person.
+Customers need custom ranges per site. Credit terms. Multi-site orders. Bulk pricing. Maybe personalisation per person.
 
 Shopify doesn't do that. WooCommerce doesn't do that. Standard ecommerce is built for B2C.
 

@@ -37,7 +37,7 @@ export default function ClarityPage() {
   return (
     <>
       {/* 3× GUARANTEE */}
-      <section className="pt-16 pb-8 bg-[#219EBC]">
+      <section className="py-6 bg-[#219EBC]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">
             <blockquote className="italic text-lg lg:text-xl text-[#023047] font-medium">

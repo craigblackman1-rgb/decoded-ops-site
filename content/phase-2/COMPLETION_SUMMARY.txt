@@ -158,7 +158,7 @@ NOTES FOR CRAIG
 ==============================================================================
 
 - Variant A posts are strongest — use as first of each week
-- DM personalization is critical — don't send generic messages
+- DM personalisation is critical — don't send generic messages
 - Consistency matters more than virality — 3 posts/week is the rhythm
 - Respond to comments fast (within 4 hours) — signals engagement to LinkedIn
 - No paid boost needed for Weeks 1–4 — organic reach should be sufficient

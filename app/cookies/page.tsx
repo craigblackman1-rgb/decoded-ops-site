@@ -69,7 +69,7 @@ export default function CookiesPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Functional cookies</h3>
                 <p className="text-base leading-relaxed">
-                  These cookies enable enhanced functionality and personalization. They remember choices you've made (such as your preferences) and can be used to provide services you've requested.
+                  These cookies enable enhanced functionality and personalisation. They remember choices you've made (such as your preferences) and can be used to provide services you've requested.
                 </p>
                 <p className="text-sm text-[#023047]/70 mt-2">Examples: Preference remembering, form data</p>
               </div>

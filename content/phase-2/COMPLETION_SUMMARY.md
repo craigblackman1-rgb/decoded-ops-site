@@ -116,7 +116,7 @@ All Phase 2 deliverables are ready for review and immediate deployment.
 2. **Problem Recognition** (sector-specific) — Speaks to their pain
 3. **Post-Engagement Insight Share** — After they engage with your content
 4. **Referral Thank You + Offer** — After warm introduction
-5. **"I Noticed You..."** (specific observation) — Research-based personalization
+5. **"I Noticed You..."** (specific observation) — Research-based personalisation
 6. **Value-First Share** (no ask) — Article, resource, or insight with no pitch
 7. **Direct Ask** (low pressure) — After rapport is established
 
