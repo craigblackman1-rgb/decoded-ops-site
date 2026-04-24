@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "Next.js Dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--", "-p", "8765"],
+      "runtimeExecutable": "next",
+      "runtimeArgs": ["dev", "-p", "8765"],
       "port": 8765,
       "autoPort": false
     }
