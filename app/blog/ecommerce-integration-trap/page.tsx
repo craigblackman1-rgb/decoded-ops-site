@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import EcommerceBreakdownChart from '@/public/infographics/EcommerceBreakdownChart';
 
 export const metadata = {
   title: 'The eCommerce Integration Trap (For Decorated Apparel & Print Businesses) | Decoded Ops',
@@ -61,6 +62,8 @@ export default function BlogPost() {
             </p>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Where It Breaks Down</h2>
+
+            <EcommerceBreakdownChart />
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">The Customization Problem</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">

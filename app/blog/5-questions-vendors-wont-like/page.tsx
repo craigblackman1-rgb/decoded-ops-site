@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import VendorQuestionsGuide from '@/public/infographics/VendorQuestionsGuide';
 
 export const metadata = {
   title: '5 Questions Vendors Won\'t Like (But Your Business Needs Answered) | Decoded Ops',
@@ -42,7 +43,7 @@ export default function BlogPost() {
               The problem is that "yes" at the beginning often becomes "that's not included in your plan" or "that requires custom development" or "actually, that's not how the system works" once you're live and dependent on them.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Five Questions</h2>
+            <VendorQuestionsGuide />
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">1. "Can you show me a business like ours that successfully integrated this system with our ERP?"</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">

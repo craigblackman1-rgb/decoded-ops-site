@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import SystemsCostBreakdown from '@/public/infographics/SystemsCostBreakdown';
 
 export const metadata = {
   title: 'Why Systems Don\'t Talk (And What It Costs) | Decoded Ops',
@@ -53,12 +54,8 @@ export default function BlogPost() {
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               But when you measure it, the numbers are staggering:
             </p>
-            <ul className="space-y-3 my-8 pl-6 border-l-2 border-[#219EBC]">
-              <li className="text-[#023047]/80"><strong>3–6 hours per week</strong> lost to manual re-keying between your eCommerce platform and ERP</li>
-              <li className="text-[#023047]/80"><strong>2–4 hours per week</strong> spent on manual invoicing and reconciliation</li>
-              <li className="text-[#023047]/80"><strong>3–5% of inbound stock</strong> at risk from inventory errors that don't sync</li>
-              <li className="text-[#023047]/80"><strong>1–3% of orders</strong> affected by picking and despatch mistakes</li>
-            </ul>
+
+            <SystemsCostBreakdown />
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               On a £2m business, that's roughly <strong>£40k–80k per year</strong> in lost productivity and error correction alone. Not including the customer dissatisfaction when orders go wrong.
             </p>
