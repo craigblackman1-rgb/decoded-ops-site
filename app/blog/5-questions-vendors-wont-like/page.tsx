@@ -32,7 +32,7 @@ export default function BlogPost() {
       </section>
 
       {/* CONTENT */}
-      <section className="py-16 lg:py-20">
+      <section className="pt-8 lg:pt-12 pb-16 lg:pb-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div className="prose prose-lg max-w-none text-[#023047]">
 
