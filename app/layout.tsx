@@ -39,6 +39,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('js', new Date());
             gtag('config', 'G-SN2Z3J31CZ');`}
         </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="GagP9ji+yt3Y0PukCnZybQ"
+          strategy="afterInteractive"
+        />
 
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
