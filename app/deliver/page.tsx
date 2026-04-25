@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText, Search, Users, Shield, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Project Delivery & Vendor Management | Decoded Ops',
+  description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
+  alternates: { canonical: '/deliver' },
+};
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 
 const processSteps = [

@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, ShoppingCart, GitBranch, Users, Layers, TrendingUp, CheckCircle2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Digital Transformation Programme | Decoded Ops',
+  description: 'Multi-workstream technology programmes for print and decoration businesses. ERP, eCommerce, process redesign. Discovery required before scoping.',
+  alternates: { canonical: '/transform' },
+};
 import { TransformProgrammeGraphic } from '@/components/graphics/TransformProgrammeGraphic';
 
 const workstreams = [

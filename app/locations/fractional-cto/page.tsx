@@ -4,9 +4,9 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO Services Across Sussex and Surrey | Decoded Ops',
+  title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
   description:
-    'Senior technology leadership for growing businesses across West Sussex, East Sussex, and Surrey — without the full-time hire. Find your nearest location.',
+    'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
   alternates: { canonical: '/locations/fractional-cto' },
 };
 

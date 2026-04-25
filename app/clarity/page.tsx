@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2, Zap, Settings, Users } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
+  description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. If we don\'t find 3× the fee in recoverable costs, full refund.',
+  alternates: { canonical: '/clarity' },
+};
 import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';
 
 const auditAreas = [

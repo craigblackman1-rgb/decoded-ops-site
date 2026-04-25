@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, Wrench, Brain } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Decoded Ops | Technology Consultancy',
+  description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+  alternates: { canonical: '/about' },
+};
 import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
 import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';
 

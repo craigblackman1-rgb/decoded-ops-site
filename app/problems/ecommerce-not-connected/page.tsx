@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+
+export const metadata: Metadata = {
+  title: 'eCommerce Not Connected to Operations | Decoded Ops',
+  description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+  alternates: { canonical: '/problems/ecommerce-not-connected' },
+};
 
 export default function EcommerceNotConnectedPage() {
   return (

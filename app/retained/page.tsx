@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Retained CTO Services | Decoded Ops',
+  description: 'Fractional CTO and Head of Operations on a retained basis. Monthly strategic and operational leadership, vendor management, and a direct line to Craig.',
+  alternates: { canonical: '/retained' },
+};
 import { RetainedModelGraphic } from '@/components/graphics/RetainedModelGraphic';
 
 const whenItFits = [

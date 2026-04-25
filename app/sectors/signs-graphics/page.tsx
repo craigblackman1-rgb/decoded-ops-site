@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+export const metadata: Metadata = {
+  title: 'Signs & Graphics Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+  alternates: { canonical: '/sectors/signs-graphics' },
+};
 
 const workflow = (
   <WorkflowGraphic

@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+
+export const metadata: Metadata = {
+  title: 'Garment Decoration Technology & Operations | Decoded Ops',
+  description: 'Technology and operations consultancy for garment decoration businesses. Systems audit, project delivery, and fractional CTO support.',
+  alternates: { canonical: '/sectors/garment-decoration' },
+};
 
 const workflow = (
   <WorkflowGraphic

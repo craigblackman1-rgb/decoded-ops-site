@@ -21,7 +21,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Decoded Ops — Technology made simple for print, embroidery & workwear businesses',
+  metadataBase: new URL('https://decodedops.co.uk'),
+  title: 'Decoded Ops | Technology for Print & Embroidery Businesses',
   description: 'Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.',
 };
 

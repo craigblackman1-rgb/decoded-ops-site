@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   return {
     title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
-    description: `Senior technology leadership for ${loc.name} businesses — without the full-time hire. Decoded Ops provides fractional CTO services across ${loc.county}. Book a free discovery call.`,
+    description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
     alternates: {
       canonical: `/locations/fractional-cto/${loc.slug}`,
     },

@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+
+export const metadata: Metadata = {
+  title: 'Wrong ERP Software for Your Business | Decoded Ops',
+  description: 'Bought ERP software that doesn\'t fit? You\'re not alone. Independent advice on whether to fix, replace, or make the best of what you have.',
+  alternates: { canonical: '/problems/wrong-erp-software' },
+};
 
 export default function WrongERPSoftwarePage() {
   return (

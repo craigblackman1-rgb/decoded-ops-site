@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+
+export const metadata: Metadata = {
+  title: 'ERP Implementation Failure | Decoded Ops',
+  description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+  alternates: { canonical: '/problems/erp-implementation-failure' },
+};
 
 export default function ERPImplementationFailurePage() {
   return (

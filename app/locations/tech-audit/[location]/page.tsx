@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   return {
     title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-    description: `Find out exactly what your systems are costing you. Decoded Ops delivers independent technology audits for ${loc.name} SMEs, starting from £395. 3× Clarity Guarantee — if we don't find it, you don't pay.`,
+    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
     alternates: {
       canonical: `/locations/tech-audit/${loc.slug}`,
     },

@@ -17,7 +17,8 @@
       "Bash(cat \"D:\\\\Claude\\\\Projects\\\\Decoded Ops\\\\decoded-ops-site\\\\docs\\\\.plan.md\")",
       "Bash(curl -s \"http://localhost:8765/blog/why-systems-dont-talk\")",
       "Bash(curl -s \"http://localhost:8765/blog/5-questions-vendors-wont-like\")",
-      "mcp__plugin_claude-mem_mcp-search__smart_unfold"
+      "mcp__plugin_claude-mem_mcp-search__smart_unfold",
+      "Bash(python -c \"import json; data=json.load\\(open\\('D:/Claude/Projects/Decoded Ops/decoded-ops-site/.next/routes-manifest.json'\\)\\); [print\\(r['source'],'->', r['destination'], '\\('+str\\(r.get\\('statusCode',301\\)\\)+'\\)'\\) for r in data.get\\('redirects',[]\\)]\")"
     ]
   }
 }

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import VendorQuestionsGuide from '@/public/infographics/VendorQuestionsGuide';
 
 export const metadata = {
-  title: '5 Questions Vendors Won\'t Like (But Your Business Needs Answered) | Decoded Ops',
+  title: '5 Questions Vendors Won\'t Like | Decoded Ops',
   description: 'The questions to ask your ERP, eCommerce, and software vendors that they\'ll try to dodge — and why you need to ask them anyway.',
 };
 

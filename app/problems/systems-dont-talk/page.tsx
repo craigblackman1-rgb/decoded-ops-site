@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+
+export const metadata: Metadata = {
+  title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
+  description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what your disconnected software stack is actually costing you each week.',
+  alternates: { canonical: '/problems/systems-dont-talk' },
+};
 
 export default function SystemsDontTalkPage() {
   return (

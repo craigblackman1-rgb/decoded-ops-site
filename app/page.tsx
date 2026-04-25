@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Decoded Ops | Fractional CTO & Tech Audit for Print SMEs',
+  description: 'Fractional CTO and technology audit services for print, embroidery, and decoration businesses. Plain English, real answers, 25 years in the sector.',
+  alternates: { canonical: '/' },
+};
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 

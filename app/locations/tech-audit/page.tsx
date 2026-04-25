@@ -4,9 +4,9 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
 
 export const metadata: Metadata = {
-  title: 'Technology Audit for SMEs Across Sussex and Surrey | Decoded Ops',
+  title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
   description:
-    'Independent technology audits for small and medium-sized businesses across West Sussex, East Sussex, and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+    'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
   alternates: { canonical: '/locations/tech-audit' },
 };
 

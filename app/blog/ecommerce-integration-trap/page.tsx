@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import EcommerceBreakdownChart from '@/public/infographics/EcommerceBreakdownChart';
 
 export const metadata = {
-  title: 'The eCommerce Integration Trap (For Decorated Apparel & Print Businesses) | Decoded Ops',
+  title: 'The eCommerce Integration Trap | Decoded Ops',
   description: 'Why standard eCommerce platforms fail for print, embroidery, and decoration businesses. The integration complexity you didn\'t anticipate.',
 };
 

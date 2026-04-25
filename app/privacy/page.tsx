@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Decoded Ops',
+  description: 'How Decoded Ops collects, uses, and protects your personal data. Read our full privacy policy for details of your rights and how to contact us.',
+  alternates: { canonical: '/privacy' },
+};
+
 export default function PrivacyPage() {
   return (
     <>

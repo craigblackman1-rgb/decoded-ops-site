@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | Decoded Ops',
-  description: 'Learn how Decoded Ops uses cookies and how to manage your preferences.',
+  description: 'How Decoded Ops uses cookies — what we set, why we set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
 };
 
 export default function CookiesPage() {
