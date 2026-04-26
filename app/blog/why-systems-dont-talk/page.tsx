@@ -1,15 +1,70 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import SystemsCostBreakdown from '@/public/infographics/SystemsCostBreakdown';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: 'Why Systems Don\'t Talk (And What It Costs) | Decoded Ops',
   description: 'Understanding system integration failures in print and embroidery businesses. Why your ERP and eCommerce don\'t connect — and what that costs you every week.',
+  alternates: { canonical: '/blog/why-systems-dont-talk' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2026-04-01T00:00:00Z',
+    authors: ['https://decodedops.co.uk/about'],
+    section: 'Operations',
+    title: 'Why Systems Don\'t Talk (And What It Costs)',
+    description: 'The hidden cost of disconnected ERP and eCommerce systems in print and embroidery businesses.',
+    url: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Systems Don\'t Talk (And What It Costs)',
+    description: 'The hidden cost of disconnected ERP and eCommerce systems in print and embroidery businesses.',
+  },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: "Why Systems Don't Talk (And What It Costs)",
+      datePublished: '2026-04-01T00:00:00Z',
+      dateModified: '2026-04-01T00:00:00Z',
+      author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      url: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
+      mainEntityOfPage: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
+      description: 'The hidden cost of disconnected ERP and eCommerce systems in print and embroidery businesses. Typically £40,000–£80,000 per year on a £2m business.',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: "Why don't ERP and eCommerce systems integrate automatically in print businesses?",
+          acceptedAnswer: { '@type': 'Answer', text: "They were usually bought at different times without integration in mind. ERP vendors say integration is possible but rarely mention it costs £15,000–£20,000 in custom development. Data quality issues — duplicates, inconsistent naming, missing fields — add further complexity before any integration can work." },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does system disconnection actually cost a print or embroidery business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'On a £2m business, disconnected systems typically cost £40,000–£80,000 per year in lost productivity and error correction alone — not including customer dissatisfaction when orders go wrong because of manual re-keying errors.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What are the options for fixing disconnected systems without a big project?',
+          acceptedAnswer: { '@type': 'Answer', text: 'There are four main approaches: use native integration connectors if both systems support them; use middleware like Zapier or Make to connect them; commission custom development to your exact specification; or redesign the process so the systems can be used differently without requiring integration at all.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
+      <JsonLd data={schema} />
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -24,8 +79,10 @@ export default function BlogPost() {
             The hidden cost of disconnected systems in print, embroidery, and decoration businesses.
           </p>
           <div className="flex items-center gap-4 text-sm text-[#023047]/60">
+            <span>By Craig Blackman</span>
+            <span>·</span>
             <span>April 2026</span>
-            <span>•</span>
+            <span>·</span>
             <span>8 min read</span>
           </div>
         </div>

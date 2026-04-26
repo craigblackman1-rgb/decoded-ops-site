@@ -1,11 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2, Zap, Settings, Users } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
   description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. If we don\'t find 3× the fee in recoverable costs, full refund.',
   alternates: { canonical: '/clarity' },
+  openGraph: {
+    type: 'website',
+    title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
+    description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. Full refund if we don\'t find 3× the fee in recoverable costs.',
+    url: 'https://decodedops.co.uk/clarity',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Clarity Audit — £395 Technology Audit',
+    description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. Full refund guarantee.',
+  },
 };
 import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';
 
@@ -40,9 +53,52 @@ const nextSteps = [
   { icon: Users,     title: 'Retained',   href: '/retained',   desc: 'Monthly strategic and operational leadership — roadmap ownership, vendor management, ongoing.' },
 ];
 
+const claritySchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HowTo',
+      name: 'How the Clarity Audit Works',
+      description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses, delivering a written report within 5 working days.',
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'Discovery call', text: 'A free 60-minute call before the on-site day. Craig learns enough about your business to make the day as useful as possible.' },
+        { '@type': 'HowToStep', position: 2, name: 'One day in your business', text: 'Craig follows your processes — not interviews people about them. Six areas. Every system touched. Every step observed.' },
+        { '@type': 'HowToStep', position: 3, name: 'Written report', text: 'Every finding documented. Every issue quantified in time and cost. Prioritised by impact, delivered within 5 working days.' },
+        { '@type': 'HowToStep', position: 4, name: 'Debrief call', text: 'A call to walk through the findings together. Every question answered. The unfiltered version.' },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Clarity Audit cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity Audit covers six areas: IT infrastructure (security, connectivity, identity management, and IT costs), software and systems (every tool in use assessed), eCommerce and digital (platform, UX, integrations, and B2B capability), processes and operations (every process mapped from order to invoice), growth and opportunity (revenue lines with most potential, new channels, technology roadmap), and AI readiness (where AI could genuinely help your specific operation).' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does the Clarity Audit cost?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity Audit costs £395 for small businesses. If the report does not identify at least 3× the fee (£1,185) in recoverable cost or lost revenue, you receive a full refund — no conditions, no questions. A core engagement starts from £2,500.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How long does the Clarity Audit take?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The audit itself takes one day on site. You then receive a written report within 5 working days, followed by a debrief call included in the fee. A free 60-minute discovery call happens before the on-site day.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What do I receive at the end of the Clarity Audit?',
+          acceptedAnswer: { '@type': 'Answer', text: 'You receive a written audit report (not a slide deck) with every issue quantified in time and money, prioritised recommendations with quick wins first, an independent vendor brief if new software is needed, a debrief call to walk through everything, and 30 days of follow-up support after delivery.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function ClarityPage() {
   return (
     <>
+      <JsonLd data={claritySchema} />
       {/* 3× GUARANTEE */}
       <section className="py-6 bg-[#219EBC]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

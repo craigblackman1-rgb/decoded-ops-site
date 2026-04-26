@@ -1,15 +1,70 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import EcommerceBreakdownChart from '@/public/infographics/EcommerceBreakdownChart';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: 'The eCommerce Integration Trap | Decoded Ops',
   description: 'Why standard eCommerce platforms fail for print, embroidery, and decoration businesses. The integration complexity you didn\'t anticipate.',
+  alternates: { canonical: '/blog/ecommerce-integration-trap' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2026-04-01T00:00:00Z',
+    authors: ['https://decodedops.co.uk/about'],
+    section: 'eCommerce',
+    title: 'The eCommerce Integration Trap',
+    description: 'Why standard eCommerce platforms fail for print and decorated apparel businesses — and what you should have done differently.',
+    url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The eCommerce Integration Trap',
+    description: 'Why standard eCommerce platforms fail for print and decorated apparel businesses — and what you should have done differently.',
+  },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: 'The eCommerce Integration Trap (For Decorated Apparel & Print Businesses)',
+      datePublished: '2026-04-01T00:00:00Z',
+      dateModified: '2026-04-01T00:00:00Z',
+      author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
+      mainEntityOfPage: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
+      description: 'Why standard eCommerce platforms fail for print, embroidery, and decorated apparel businesses, and what to do if you have already made this mistake.',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why do standard eCommerce platforms fail for print and embroidery businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: "Standard platforms like Shopify and WooCommerce are built for businesses selling finished products. Print and embroidery businesses sell customised goods — artwork upload, proof approval, decoration method selection — none of which standard platforms handle natively. This forces manual workarounds that can add 2–3 hours of admin per 50 orders per day." },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does the eCommerce integration problem cost print businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: "Integration projects to connect a standard eCommerce platform with an industry ERP typically cost £20,000–£50,000 with timelines of 3–6 months. Even after the integration is built, the customisation problem — artwork validation, production workflow — is not solved. The integration only passes data between two systems that were not designed for your business." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What eCommerce options exist for decorated apparel and print businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: "There are eCommerce platforms built specifically for print, embroidery, and decorated apparel that handle artwork upload, customisation, and ERP integration natively. They are cheaper to implement than generic platforms and avoid the £40,000+ integration project that connecting Shopify or WooCommerce to an industry ERP typically requires." },
+        },
+      ],
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
+      <JsonLd data={schema} />
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -24,8 +79,10 @@ export default function BlogPost() {
             Why standard platforms fail. Where the complexity hides. What you should know before you buy.
           </p>
           <div className="flex items-center gap-4 text-sm text-[#023047]/60">
+            <span>By Craig Blackman</span>
+            <span>·</span>
             <span>April 2026</span>
-            <span>•</span>
+            <span>·</span>
             <span>7 min read</span>
           </div>
         </div>

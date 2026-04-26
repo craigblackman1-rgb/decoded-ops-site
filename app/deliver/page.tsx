@@ -1,11 +1,46 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText, Search, Users, Shield, CheckCircle2 } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Project Delivery & Vendor Management | Decoded Ops',
   description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
   alternates: { canonical: '/deliver' },
+  openGraph: {
+    type: 'website',
+    title: 'Project Delivery & Vendor Management | Decoded Ops',
+    description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
+    url: 'https://decodedops.co.uk/deliver',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Project Delivery & Vendor Management | Decoded Ops',
+    description: 'Independent vendor briefs, procurement support, and project oversight. One point of contact. Delivered on your terms.',
+  },
+};
+
+const deliverSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the Deliver service?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Deliver is independent vendor management for technology implementations. Craig writes the vendor brief based on your requirements, approaches vendors on your behalf, manages the procurement process as a single point of contact, and oversees the project through to final handover — ensuring milestones are signed off before payments are released.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does Deliver protect against overspending on software projects?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Milestones are signed off before payments are released. Vendors are held to the brief, changes are challenged, and Craig acts as your independent representative throughout. The brief comes before the vendor — separating what you actually need from what a vendor wants to sell you.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to do the Clarity Audit before Deliver?',
+      acceptedAnswer: { '@type': 'Answer', text: "You don't have to, but Clarity produces the vendor brief that Deliver uses. Starting with the Clarity Audit means the vendor brief reflects what your business actually needs — rather than assumptions made at the start of a project." },
+    },
+  ],
 };
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 
@@ -30,6 +65,7 @@ const includedItems = [
 export default function DeliverPage() {
   return (
     <>
+      <JsonLd data={deliverSchema} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

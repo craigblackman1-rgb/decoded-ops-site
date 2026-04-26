@@ -1,12 +1,48 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Retained CTO Services | Decoded Ops',
   description: 'Fractional CTO and Head of Operations on a retained basis. Monthly strategic and operational leadership, vendor management, and a direct line to Craig.',
   alternates: { canonical: '/retained' },
+  openGraph: {
+    type: 'website',
+    title: 'Retained CTO Services | Decoded Ops',
+    description: 'Fractional CTO and Head of Operations on a retained basis. Monthly strategic and operational leadership, vendor management, and a direct line to Craig.',
+    url: 'https://decodedops.co.uk/retained',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Retained CTO Services | Decoded Ops',
+    description: 'Fractional CTO on a retained basis. Monthly strategic and operational leadership without the full-time cost.',
+  },
 };
+
+const retainedSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does the Retained service include?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The Retained service provides a defined number of days per month (agreed in advance), attendance at leadership and operations meetings, ownership of specific projects or workstreams, vendor management and technology procurement oversight, technology roadmap ownership, team coaching and process documentation, and a direct line to Craig Blackman — not a team of junior consultants.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'When does the Retained model make sense?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Retained suits four situations: post-audit implementation (you have the findings, now need someone to drive the fixes without a full-time hire); ERP or technology transitions (you need someone who understands the sector, the vendors, and can hold everyone accountable); scaling without chaos (revenue is growing but systems are not keeping up); or covering an ops gap (ops director has left, or you have never had one and need senior operational thinking without an £80,000+ salary commitment).' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is Retained different from hiring a full-time CTO?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 3 months.' },
+    },
+  ],
+};
+
 import { RetainedModelGraphic } from '@/components/graphics/RetainedModelGraphic';
 
 const whenItFits = [
@@ -36,6 +72,7 @@ const serviceJourney = [
 export default function RetainedPage() {
   return (
     <>
+      <JsonLd data={retainedSchema} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

@@ -1,15 +1,70 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import VendorQuestionsGuide from '@/public/infographics/VendorQuestionsGuide';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: '5 Questions Vendors Won\'t Like | Decoded Ops',
   description: 'The questions to ask your ERP, eCommerce, and software vendors that they\'ll try to dodge — and why you need to ask them anyway.',
+  alternates: { canonical: '/blog/5-questions-vendors-wont-like' },
+  openGraph: {
+    type: 'article',
+    publishedTime: '2026-04-01T00:00:00Z',
+    authors: ['https://decodedops.co.uk/about'],
+    section: 'Vendor Management',
+    title: '5 Questions Vendors Won\'t Like',
+    description: 'The questions to ask your ERP, eCommerce, and software vendors before you sign.',
+    url: 'https://decodedops.co.uk/blog/5-questions-vendors-wont-like',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '5 Questions Vendors Won\'t Like',
+    description: 'The questions to ask your ERP, eCommerce, and software vendors before you sign.',
+  },
+};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: "5 Questions Vendors Won't Like (But Your Business Needs Answered)",
+      datePublished: '2026-04-01T00:00:00Z',
+      dateModified: '2026-04-01T00:00:00Z',
+      author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      url: 'https://decodedops.co.uk/blog/5-questions-vendors-wont-like',
+      mainEntityOfPage: 'https://decodedops.co.uk/blog/5-questions-vendors-wont-like',
+      description: 'The questions to ask ERP, eCommerce, and software vendors that they will try to dodge — and why you need to ask them before signing any contract.',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What questions should I ask a software vendor before signing a contract?',
+          acceptedAnswer: { '@type': 'Answer', text: "Ask them to show a similar business that successfully integrated with your ERP. Ask what happens to your data if you leave. Ask what options you have if their support can't resolve a problem. Ask what happens if the implementation goes over budget or timeline. Ask to see a reference contract from a similar implementation." },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why do software vendors avoid answering specific integration questions?',
+          acceptedAnswer: { '@type': 'Answer', text: "Vendors prefer to stay vague because specificity exposes risk. If they can't name a customer who successfully integrated with your ERP, it likely means the integration required so much customisation that it isn't a repeatable process — meaning you're paying for a one-off expensive project, not a standard feature." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What should I do if a vendor is vague about data portability?',
+          acceptedAnswer: { '@type': 'Answer', text: "Treat it as a red flag. Vendors who are cagey about data export have built in lock-in — and lock-in always costs money eventually. Request a specific data portability clause in writing, including format, timeline, and any associated fees, before signing any contract." },
+        },
+      ],
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
+      <JsonLd data={schema} />
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -24,8 +79,10 @@ export default function BlogPost() {
             The questions to ask before signing any software contract.
           </p>
           <div className="flex items-center gap-4 text-sm text-[#023047]/60">
+            <span>By Craig Blackman</span>
+            <span>·</span>
             <span>April 2026</span>
-            <span>•</span>
+            <span>·</span>
             <span>6 min read</span>
           </div>
         </div>

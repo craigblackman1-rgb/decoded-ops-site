@@ -1,12 +1,48 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, ShoppingCart, GitBranch, Users, Layers, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Digital Transformation Programme | Decoded Ops',
   description: 'Multi-workstream technology programmes for print and decoration businesses. ERP, eCommerce, process redesign. Discovery required before scoping.',
   alternates: { canonical: '/transform' },
+  openGraph: {
+    type: 'website',
+    title: 'Digital Transformation Programme | Decoded Ops',
+    description: 'Multi-workstream technology programmes for print and decoration businesses. ERP, eCommerce, process redesign. Discovery required before scoping.',
+    url: 'https://decodedops.co.uk/transform',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Digital Transformation Programme | Decoded Ops',
+    description: 'Multi-workstream technology transformation for print and decoration businesses. Process-led. People-first.',
+  },
 };
+
+const transformSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What does the Transform programme include?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. Discovery is required before scoping.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why do digital transformation projects fail in print and embroidery businesses?',
+      acceptedAnswer: { '@type': 'Answer', text: 'The most common pattern: system selected without users involved, training on how it works rather than how it fits the job, reversion by week three, system blamed by month three. Employee buy-in is the single biggest project risk. Transform addresses this by hearing people before any decision is made and making the system work for the user — not just the person commissioning it.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is Transform different from a standard IT project?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Transform is process-led and people-first. Craig maps actual working practices before any system decision is made, manages change across all workstreams simultaneously, and holds vendors accountable across the programme. It is a coordinated programme with milestone governance — not a collection of separate projects.' },
+    },
+  ],
+};
+
 import { TransformProgrammeGraphic } from '@/components/graphics/TransformProgrammeGraphic';
 
 const workstreams = [
@@ -39,6 +75,7 @@ const serviceStages = [
 export default function TransformPage() {
   return (
     <>
+      <JsonLd data={transformSchema} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
