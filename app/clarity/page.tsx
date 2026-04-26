@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
     description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. Full refund if we don\'t find 3× the fee in recoverable costs.',
     url: 'https://decodedops.co.uk/clarity',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

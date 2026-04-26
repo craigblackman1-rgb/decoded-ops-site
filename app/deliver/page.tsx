@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Project Delivery & Vendor Management | Decoded Ops',
     description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
     url: 'https://decodedops.co.uk/deliver',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

@@ -15,7 +15,7 @@ export const metadata = {
     title: 'The eCommerce Integration Trap',
     description: 'Why standard eCommerce platforms fail for print and decorated apparel businesses — and what you should have done differently.',
     url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

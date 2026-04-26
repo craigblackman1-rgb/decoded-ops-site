@@ -18,7 +18,9 @@
       "Bash(curl -s \"http://localhost:8765/blog/why-systems-dont-talk\")",
       "Bash(curl -s \"http://localhost:8765/blog/5-questions-vendors-wont-like\")",
       "mcp__plugin_claude-mem_mcp-search__smart_unfold",
-      "Bash(python -c \"import json; data=json.load\\(open\\('D:/Claude/Projects/Decoded Ops/decoded-ops-site/.next/routes-manifest.json'\\)\\); [print\\(r['source'],'->', r['destination'], '\\('+str\\(r.get\\('statusCode',301\\)\\)+'\\)'\\) for r in data.get\\('redirects',[]\\)]\")"
+      "Bash(python -c \"import json; data=json.load\\(open\\('D:/Claude/Projects/Decoded Ops/decoded-ops-site/.next/routes-manifest.json'\\)\\); [print\\(r['source'],'->', r['destination'], '\\('+str\\(r.get\\('statusCode',301\\)\\)+'\\)'\\) for r in data.get\\('redirects',[]\\)]\")",
+      "Bash(sed -i \"s|'/og-default.png', width: 1200, height: 630|'/opengraph-image', width: 1200, height: 630|g\" app/clarity/page.tsx app/deliver/page.tsx app/retained/page.tsx app/transform/page.tsx app/blog/why-systems-dont-talk/page.tsx app/blog/5-questions-vendors-wont-like/page.tsx app/blog/ecommerce-integration-trap/page.tsx)",
+      "Bash(sed -i \"s|/og-default.png|/opengraph-image|g\" app/layout.tsx)"
     ]
   }
 }

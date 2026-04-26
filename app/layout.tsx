@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     url: 'https://decodedops.co.uk',
     title: 'Decoded Ops | Technology for Print & Embroidery Businesses',
     description: 'Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Decoded Ops' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Decoded Ops' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Ops | Technology for Print & Embroidery Businesses',
     description: 'Operations and technology consultancy for print and embroidery businesses. Plain English. Real answers.',
-    images: ['/og-default.png'],
+    images: ['/opengraph-image'],
   },
 };
 
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           },
           areaServed: 'GB',
           knowsAbout: ['print technology', 'embroidery operations', 'ERP systems', 'fractional CTO', 'technology audit', 'eCommerce integration'],
-          sameAs: ['https://www.linkedin.com/company/decoded-ops'],
+          sameAs: ['https://www.linkedin.com/company/decodedops'],
         }} />
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
