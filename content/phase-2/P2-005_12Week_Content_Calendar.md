@@ -12,7 +12,7 @@
 
 | Week | Pillar | Post Idea 1 | Post Idea 2 | Post Idea 3 |
 |------|--------|------------|------------|------------|
-| **1** | ERP War Story | **LAUNCH: "The £10k Question That Saves £150k"** — ERP failure story, audit ROI framing | — | — |
+| **1** | ERP War Story | **LAUNCH: "The Question I Ask Every Business Before Touching Their Tech Stack"** — operations-first positioning, audit value framing | — | — |
 | **2** | ERP War Story | **"The Hidden Cost of Skipping One Step"** — Why ERP projects fail before they start | — | — |
 | **3** | AI Honest Takes | **"I'm Not Here to Sell You an AI Tool"** — AI advisory philosophy, foundations-first approach | — | — |
 | **4** | Sector Observation | **"What I See Regularly in Decorated Goods"** — Three operational bottlenecks (approval, order mgmt, portal) | — | — |
@@ -62,13 +62,13 @@
 
 ### ERP War Stories (Weeks 1, 2, 7, 11)
 **Angle:** Real project failures + honest lessons
-- £150k failure (approval, integration, requirements)
+- ERP failure case study (approval, integration, requirements) — *specific figures TBC before publishing*
 - Vendor deception (what demos hide)
 - Change management (how to do it right)
 - Lessons learned (pattern recognition)
 
 **Posts should include:**
-- Specific costs (£150k, £75k, 18 months, 125 hrs/month)
+- Specific costs (timeline: 18 months, 125 hrs/month) — *financial figures TBC*
 - Anonymised client details
 - What went wrong (not requirements, no integration plan, demo-based decision)
 - What would have helped (audit, planning, right questions)
@@ -153,7 +153,7 @@
 ## Key Messaging Threads
 
 ### Thread 1: ERP Projects Fail in Predictable Ways
-- Week 1: £150k failure story
+- Week 1: ERP failure story — *case study figures TBC*
 - Week 2: Why projects fail (no requirements, no plan)
 - Week 7: Vendor deception (what demos hide)
 - Week 11: What works instead (change management)

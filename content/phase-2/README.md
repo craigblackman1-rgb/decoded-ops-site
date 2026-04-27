@@ -12,7 +12,7 @@ This directory contains all Phase 2 LinkedIn content, DM templates, publishing s
 3 variants of the introduction post. Choose Variant A for your first post.
 
 - Variant A (RECOMMENDED): The warehouse → IT → ops story.
-- Variant B: £150k ERP failure + problem identification.
+- Variant B: ERP failure + problem identification — *case study figures TBC.*
 - Variant C: Clarity product pitch.
 
 Length: 150–200 words, copy-paste ready to LinkedIn.
@@ -23,7 +23,7 @@ Publish: Week 1 (April 21, 23, 25)
 ### 2. POSTS_WEEK_2_PAIN.md
 3 variants focused on operational pain and the cost of failure.
 
-- Variant A: Real £150k case study.
+- Variant A: Real ERP failure case study — *figures TBC before publishing.*
 - Variant B: Status quo pain — manual re-entry, disconnected stock, invoicing waste.
 - Variant C: Root cause analysis — why ERP projects fail.
 
@@ -121,7 +121,7 @@ Track: Week, Post Date, Variant, Reach, Engagement, DMs Sent, Responses, Calls B
 
 **Week 1 post order:**
 1. April 21 — Variant A (warehouse story)
-2. April 23 — Variant B (£150k failure)
+2. April 23 — Variant B (ERP failure — *figures TBC*)
 3. April 25 — Variant C (Clarity pitch)
 
 ---

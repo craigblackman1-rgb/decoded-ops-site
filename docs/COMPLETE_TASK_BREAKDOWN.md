@@ -173,7 +173,7 @@
 - [ ] Open `POSTS_WEEK_2_PAIN.md`
 - [ ] Review all 3 variants (A, B, C) for:
   - Sector-specific pain framing (decorated goods, not generic)
-  - £150k ERP failure case study clarity
+  - ERP failure case study clarity — *figures under review, confirm before publishing*
   - CTA: "Happy to talk through your situation"
   - Tone: matter-of-fact, not salesy
 - [ ] Approve or request edits
@@ -848,7 +848,7 @@
 # NEXT WEEK (WEEK OF APR 28) PREVIEW
 
 ## PHASE 2: Week 2 LinkedIn Posts (ERP Pain)
-- Mon Apr 28: Schedule P2-002 Variant A (£150k case study)
+- Mon Apr 28: Schedule P2-002 Variant A (ERP failure case study — *revise figures before publishing*)
 - Wed Apr 30: Schedule P2-002 Variant B
 - Fri May 2: Schedule P2-002 Variant C
 - Daily: Warm DMs (10–15), engagement replies

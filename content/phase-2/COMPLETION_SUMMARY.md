@@ -12,15 +12,15 @@ All Phase 2 deliverables are ready for review and immediate deployment.
 **File:** `P2-002_Week2_ERP_Pain_Post.md`
 
 **3 Variants Ready:**
-1. "The Math Nobody Likes to Do" — Headline-driven, focuses on ROI math (£10k audit / £150k project)
+1. "The Math Nobody Likes to Do" — Headline-driven, focuses on ROI math (audit cost vs. project cost — *specific figures TBC*)
 2. "Why ERP Projects Fail (And What It Costs)" — Narrative-driven, story from failure to solution
 3. "The Audit That Pays for Itself" — Principle-driven, focuses on audit as prevention
 
 **Recommendation:** Variant 2 (strongest narrative arc) or Variant 3 (best for warm audiences)
 
 **Key Details:**
-- Anonymised £150k ERP failure from DO_Master_Context.md
-- Real costs: £150k+, 18+ months, ~125 hrs/month internal time
+- Anonymised ERP failure from DO_Master_Context.md — *cost figures under review, do not publish specific numbers until confirmed*
+- Real costs: significant spend, 18+ months, ~125 hrs/month internal time — *exact figures TBC*
 - Solution: £10k audit → £75k implementation, 6–8 months
 - ROI: 6.7% cost avoidance
 - Length: 300–350 words per variant
@@ -163,7 +163,7 @@ All Phase 2 deliverables are ready for review and immediate deployment.
 
 | Week | Post | Format | Recommended Variant | Status |
 |------|------|--------|---|---|
-| **1** | "£10k Question That Saves £150k" | Article + Native | Variant 2 or 3 | ✅ Ready |
+| **1** | "The Question I Ask Every Business Before Touching Their Tech Stack" | Article + Native | Variant 2 or 3 | ✅ Ready — *revise figures before publishing* |
 | **2** | "Hidden Cost of Skipping One Step" | Article + Native | (Use Week 1 variant 1) | ✅ Ready |
 | **3** | "I'm Not Here to Sell You an AI Tool" | Article + Native | Variant 1 | ✅ Ready |
 | **4** | "What I See Regularly" (Sector) | Article + Native | Variant 1 or 2 | ✅ Ready |
@@ -190,7 +190,7 @@ All Phase 2 deliverables are ready for review and immediate deployment.
 ## 💡 Highlights & Unique Features
 
 ### Content Quality
-- **Specific:** Uses real numbers (£150k, 24 hours vs. 5 days, 20–30% capacity)
+- **Specific:** Uses real numbers (24 hours vs. 5 days, 20–30% capacity) — *ERP cost figures TBC*
 - **Honest:** Anti-hype, acknowledges costs and limitations
 - **Actionable:** 5-step assessment for AI, 3 specific bottlenecks for sector, etc.
 - **Grounded:** Built from verbatim DO_Master_Context.md + real sector pain
@@ -342,7 +342,7 @@ Everything is designed to be adapted to your specific situation and voice.
 
 **Phase 2 Complete. All 5 Tasks Delivered.**
 
-- ✅ **P2-002:** Week 2 Pain Post (ERP) — 3 variants, £150k failure story
+- ✅ **P2-002:** Week 2 Pain Post (ERP) — 3 variants, ERP failure story — *revise figures before publishing*
 - ✅ **P2-003:** Week 3 AI Take — 3 variants, verbatim advisory philosophy
 - ✅ **P2-004:** Week 4 Sector Observation — 3 variants, decorated goods/workwear pain
 - ✅ **P2-005:** 12-Week Content Calendar — Complete strategy, 5 pillars, 12 weeks mapped

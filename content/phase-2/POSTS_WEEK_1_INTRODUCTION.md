@@ -20,9 +20,9 @@ Let's talk.
 
 ---
 
-## VARIANT B: The £150k ERP Failure
+## VARIANT B: The ERP Failure *(case study figures under review — do not publish until confirmed)*
 
-I spent six months helping a decorated goods business fix an ERP implementation that cost them £150k and took 18 months. It didn't work. Production couldn't handle artwork. Ecommerce wasn't connected. Nobody had asked the people who were actually going to use it what they needed.
+I spent six months helping a decorated goods business fix an ERP implementation that took 18 months and significantly exceeded budget. It didn't work. Production couldn't handle artwork. Ecommerce wasn't connected. Nobody had asked the people who were actually going to use it what they needed.
 
 They could have done an audit first for £10k. That's what Decoded Ops does.
 
@@ -65,7 +65,7 @@ Let's talk.
 ## Publishing Notes
 
 - **Variant A** is recommended for the first post — it's the strongest story and establishes credibility and experience in one go.
-- **Variant B** targets the pain point (failed ERP) and uses the actual £150k case study.
+- **Variant B** targets the pain point (failed ERP) — *case study figures under review, update before publishing.*
 - **Variant C** is more direct product pitch — use if you want to emphasize Clarity as the entry point.
 - Post length: 150–200 words, copy-paste ready to LinkedIn.
 - Best time: Tuesday–Thursday, 8–9 AM UK time.

@@ -349,7 +349,7 @@ Angle: When you can see the operational problems clearly but can't get leadershi
 
 6 posts (1 per week, rotating into the content calendar):
 1. "The thing LinkedIn won't show you about ERP go-live week"
-2. "What a £150k failed implementation actually costs in human terms"
+2. "What a failed implementation actually costs in human terms" — *avoid specific cost figures until case study confirmed*
 3. "Every operations leader I know has a story they don't tell clients"
 4. "The call at 7pm on a Friday when the system is down and trading is tomorrow"
 5. "Why the most important IT decision you make is who you trust, not which software you buy"
@@ -539,3 +539,25 @@ File to create: `content/phase-2/POSTS_WEEKS_5_TO_12.md`
 - Styling: Tailwind CSS — follow existing class patterns
 - Content pillar tracking: update `content/phase-2/PUBLISHING_TIMELINE.md` when new posts are drafted
 - Plan tracking: `docs/.plan.md` is the master plan — add new phases there when executing
+
+---
+
+## Programmatic SEO — Completed (Apr 24, 2026)
+
+Two sets of location-based SEO pages are live:
+
+### Set 1: Fractional CTO Location Pages
+- Hub: `/locations/fractional-cto` — lists all 27 towns grouped by county
+- Dynamic pages: `/locations/fractional-cto/[location]` — one page per town
+- Coverage: West Sussex, East Sussex, Surrey (27 towns total)
+- Schema: `ProfessionalService` with city `areaServed`
+
+### Set 2: Tech Audit Location Pages
+- Hub: `/locations/tech-audit` — same 27-town structure
+- Dynamic pages: `/locations/tech-audit/[location]`
+- Coverage: West Sussex, East Sussex, Surrey (27 towns total)
+- Schema: `ProfessionalService` with city `areaServed`
+
+**Data source:** `data/locations.ts`
+**Template component:** `app/locations/[service]/[location]/page.tsx`
+**Status:** Live — both hubs and all 54 dynamic pages are indexed in sitemap.

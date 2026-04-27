@@ -2,7 +2,7 @@
 
 ## VARIANT A: The Real Cost of an ERP Failure
 
-An ERP project I worked on cost a decorated goods business £150k and 18 months of chaos.
+An ERP project I worked on cost a decorated goods business significantly more than budgeted, with 18 months of chaos.
 
 It failed for a simple reason: nobody had asked the people who were actually going to use it what they needed.
 
@@ -10,7 +10,7 @@ The software looked fine in the demo. But when production tried to handle custom
 
 By month three, the system was blamed. By month six, they were replacing it.
 
-The math: £150k implementation + 18 months of disruption + ~125 hours per month of internal rework. Compare that to what a three-day audit costs: roughly £10k. That's 6.7% against a likely £150k problem. Not insurance. Just clarity before you commit.
+The cost: a significant implementation spend, 18 months of disruption, ~125 hours per month of internal rework. Compare that to what a three-day audit costs: roughly £10k. The ratio is stark. Not insurance. Just clarity before you commit.
 
 This is why I audit first. IT infrastructure, software, ecommerce, operations, workflow. Six areas. Written report. Plain English.
 
@@ -78,7 +78,7 @@ Let's talk.
 
 ## Publishing Notes
 
-- **Variant A** focuses on the real £150k case — most powerful because it's specific and relatable.
+- **Variant A** focuses on the real ERP failure case — most powerful because it's specific and relatable. *Update with confirmed figures before publishing.*
 - **Variant B** goes hard on the status quo pain — "manual re-entry is costing you" resonates with operations managers.
 - **Variant C** targets the root cause — why ERP projects fail — good for thought leadership angle.
 - Post length: 150–200 words, copy-paste ready.

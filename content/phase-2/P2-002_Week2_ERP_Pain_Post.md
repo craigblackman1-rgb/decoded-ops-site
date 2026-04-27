@@ -1,18 +1,18 @@
 # P2-002: Week 2 Pain Post (ERP)
 
 ## Context
-Anonymised £150k ERP failure story from DO_Master_Context.md
+Anonymised ERP failure story — case study figures under review, do not publish with specific cost numbers until confirmed
 - Real project: ERP from demo, no requirements brief, no eCommerce integration, couldn't handle production/artwork
-- Result: £150k+, 18+ months, ~125 hrs/month internal time
+- Result: significant cost overrun, 18+ months, ~125 hrs/month internal time — *exact figures TBC before publishing*
 - With upfront audit: ~£75k, 6–8 months
-- ROI: £10k audit against £150k project = 6.7% cost avoidance
+- ROI: audit cost vs. project cost avoidance — *framing TBC pending confirmed figures*
 
 ---
 
 ## VARIANT 1: "The Math Nobody Likes to Do"
 
 **Headline:**
-The £10k Question That Saves £150k
+The Question I Ask Every Business Before Touching Their Tech Stack
 
 **Body:**
 
@@ -22,7 +22,7 @@ No requirements brief. No integration planning. No honest conversation about wha
 
 The demo looked good in the showroom.
 
-18 months later: £150k+ spent, 18 months gone, 125+ hours a month of internal time wasted, and the system still doesn't handle production artwork approvals the way they work.
+18 months later: significant spend, 18 months gone, 125+ hours a month of internal time wasted, and the system still doesn't handle production artwork approvals the way they work.
 
 It gets worse: everything *stays wrong* because changing ERP mid-implementation costs three times more.
 
@@ -57,7 +57,7 @@ A real example: a business in decorated goods bought an ERP system based on a ve
 - How does inventory sync with our eCommerce?
 - Can the team actually use this, or do we need to change how we work first?
 
-Result: £150k+ spent, 18 months of implementation, 125+ hours a month of internal effort, and still broken.
+Result: significant spend, 18 months of implementation, 125+ hours a month of internal effort, and still broken.
 
 The worst part: they're locked in now. Changing systems costs three times more.
 
@@ -92,7 +92,7 @@ Not because the software is wrong. Because someone skipped the question nobody w
 
 I worked on a project where that question wasn't asked. A business implemented an ERP without understanding their own requirements. No integration planning. No artwork workflow design. No honest conversation with the team about what they actually needed.
 
-Cost: £150k+. Timeline: 18+ months. Internal effort: ~125 hours a month.
+Cost: significant. Timeline: 18+ months. Internal effort: ~125 hours a month. *(exact figures TBC)*
 
 The system still couldn't do what they needed.
 
@@ -106,7 +106,7 @@ Start with a Clarity Audit. £10k. Before you sign anything, someone independent
 
 That audit typically costs 6–7% of what a failed implementation costs.
 
-For one client, it prevented a £150k mistake.
+For one client, it prevented a very costly mistake.
 
 For another, it identified that they didn't need a new ERP at all — they needed to fix their operations first.
 
@@ -139,4 +139,4 @@ If you're evaluating ERP systems or already in the implementation weeds, happy t
 - **Tone:** Specific, grounded, no jargon
 - **CTA tone:** Soft, consultative, no pressure
 - **Length:** ~300–350 words (fits LinkedIn post + LinkedIn article)
-- **Engagement hook:** Lead with the £150k number, not the audit price
+- **Engagement hook:** Lead with the cost and timeline, not the audit price — *update with confirmed figures when available*

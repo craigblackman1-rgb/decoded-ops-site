@@ -7,7 +7,7 @@
 | Date | Day | Post | Type | Details | CTA |
 |---|---|---|---|---|---|
 | **April 21** | Mon | POSTS_WEEK_1_INTRODUCTION — Variant A | Introduction | The warehouse → IT → ops story (RECOMMENDED LAUNCH POST) | Free 60-min discovery call |
-| **April 23** | Wed | POSTS_WEEK_1_INTRODUCTION — Variant B | Introduction | £150k ERP failure story | Free 60-min discovery call |
+| **April 23** | Wed | POSTS_WEEK_1_INTRODUCTION — Variant B | Introduction | ERP failure story — *figures TBC* | Free 60-min discovery call |
 | **April 25** | Fri | POSTS_WEEK_1_INTRODUCTION — Variant C | Introduction | Clarity pitch — direct product entry point | Free 60-min discovery call |
 
 **DM Outreach (Weeks 1):**
@@ -28,7 +28,7 @@
 
 | Date | Day | Post | Type | Details | CTA |
 |---|---|---|---|---|---|
-| **April 28** | Mon | POSTS_WEEK_2_PAIN — Variant A | War Story | The real £150k ERP failure + cost analysis | Free 60-min discovery call |
+| **April 28** | Mon | POSTS_WEEK_2_PAIN — Variant A | War Story | ERP failure + cost analysis — *figures TBC before publishing* | Free 60-min discovery call |
 | **April 30** | Wed | POSTS_WEEK_2_PAIN — Variant B | Operational Pain | Manual re-entry is costing you (status quo costs) | Let's figure out what's costing you |
 | **May 2** | Fri | POSTS_WEEK_2_PAIN — Variant C | Root Cause | Why most ERP projects fail | Free discovery call |
 
