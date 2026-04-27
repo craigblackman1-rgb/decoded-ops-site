@@ -97,7 +97,7 @@ export default function BlogPost() {
               You need to sell online. So you look at eCommerce platforms. Shopify looks simple. WooCommerce looks cheap. BigCommerce looks powerful. You pick one, set it up, and launch.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-8">
-              Then the first 10 orders come in and you realize: your eCommerce platform doesn't understand your business.
+              Then the first 10 orders come in and you realise: your eCommerce platform doesn't understand your business.
             </p>
 
             <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Problem: You're Not a Generic Retailer</h2>
@@ -122,14 +122,14 @@ export default function BlogPost() {
 
             <EcommerceBreakdownChart />
 
-            <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">The Customization Problem</h3>
+            <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">The Customisation Problem</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               Your customer uploads artwork. The system can't validate it (is it the right format? High enough resolution? Will it work for embroidery?). So you have to manually review every single order before you can start production. That's not efficiency. That's a manual workaround that defeats the purpose of having a website.
             </p>
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">The Inventory Problem</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              Your blanks inventory is in your ERP. Your eCommerce platform doesn't know about it. So a customer orders a size-M red t-shirt and the system says it's in stock. Two hours later, your warehouse tells you you're actually out. You have to email the customer and apologize.
+              Your blanks inventory is in your ERP. Your eCommerce platform doesn't know about it. So a customer orders a size-M red t-shirt and the system says it's in stock. Two hours later, your warehouse tells you you're actually out. You have to email the customer and apologise.
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               Even if you manually update inventory twice a day, you still have the 12-hour window where the system lies.
@@ -150,7 +150,7 @@ export default function BlogPost() {
 
             <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Integration False Promise</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              When you realize the eCommerce platform doesn't work as-is, you think: "I just need to integrate it with my ERP."
+              When you realise the eCommerce platform doesn't work as-is, you think: "I just need to integrate it with my ERP."
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               You ask the eCommerce vendor: "Can you integrate with our ERP?" They say yes. You ask for a quote. It's £20k–50k. The timeline is 3–6 months. By now, you've already launched the website and your customers are experiencing the broken workflow.
