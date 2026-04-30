@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": false
+    },
+    {
+      "name": "dashboards",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["../decoded-ops-workspace/scripts/serve-dashboards.js"],
+      "port": 3005,
+      "autoPort": true
     }
   ]
 }
