@@ -30,7 +30,13 @@
       "Bash(python -m http.server 3003)",
       "Bash(node scripts/sync-plan.js)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3005/)",
-      "Bash(py --version)"
+      "Bash(py --version)",
+      "Read(//d/Claude/Projects/Decoded Ops/decoded-ops-workspace/**)",
+      "Bash(node scripts/build_calendar_excel.js)",
+      "Bash(npm init *)",
+      "Bash(powershell -Command \"\\(Get-Item 'D:\\\\Claude\\\\Projects\\\\Decoded Ops\\\\decoded-ops-workspace\\\\docs\\\\DecodedOps_ContentCalendar_2026.xlsx'\\).LastWriteTime\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/tools)",
+      "PowerShell(Set-Location \"D:\\\\Claude\\\\Projects\\\\Decoded Ops\\\\decoded-ops-site\"; Start-Process -NoNewWindow -FilePath \"npm\" -ArgumentList \"run\", \"dev\" -RedirectStandardOutput \"$env:TEMP\\\\nextjs-out.txt\" -RedirectStandardError \"$env:TEMP\\\\nextjs-err.txt\"; Start-Sleep -Seconds 10; Get-Content \"$env:TEMP\\\\nextjs-out.txt\" -ErrorAction SilentlyContinue; Get-Content \"$env:TEMP\\\\nextjs-err.txt\" -ErrorAction SilentlyContinue)"
     ]
   }
 }

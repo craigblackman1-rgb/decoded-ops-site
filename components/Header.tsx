@@ -103,6 +103,7 @@ export function Header() {
               <Dropdown label="Problems" items={problems} />
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
               <Link href="/blog" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Blog</Link>
+              <Link href="/tools" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Tools</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
               <Link
                 href="/contact"
@@ -129,6 +130,7 @@ export function Header() {
               {[
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'Blog', href: '/blog' },
+                { label: 'Tools', href: '/tools' },
                 { label: 'About', href: '/about' },
               ].map(link => (
                 <Link
