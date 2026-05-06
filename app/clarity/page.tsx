@@ -241,7 +241,7 @@ export default function ClarityPage() {
                 <rect x="40" y="20" width="200" height="28" rx="8" fill="#219EBC" />
                 <rect x="40" y="40" width="200" height="8" fill="#219EBC" />
                 {/* Doc title */}
-                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="system-ui">CLARITY AUDIT REPORT</text>
+                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="Outfit, sans-serif">CLARITY AUDIT REPORT</text>
                 {/* Lines of text */}
                 {[60, 76, 92, 108, 124, 140, 156].map((y, i) => (
                   <rect key={y} x="60" y={y} width={i % 3 === 2 ? 100 : 160} height="7" rx="3"
@@ -256,12 +256,12 @@ export default function ClarityPage() {
                 ))}
                 {/* Bottom section — quantified */}
                 <rect x="56" y="164" width="168" height="1" fill="#8ECAE6" opacity="0.3" />
-                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#219EBC" fontWeight="700" fontFamily="system-ui">TOTAL RECOVERABLE VALUE</text>
-                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#023047" fontWeight="800" fontFamily="system-ui">&pound;47,200</text>
+                <text x="140" y="177" textAnchor="middle" fontSize="8" fill="#219EBC" fontWeight="700" fontFamily="Outfit, sans-serif">TOTAL RECOVERABLE VALUE</text>
+                <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#023047" fontWeight="800" fontFamily="Outfit, sans-serif">&pound;47,200</text>
                 {/* Corner badge */}
                 <circle cx="220" cy="26" r="16" fill="#023047" />
-                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#219EBC" fontWeight="700" fontFamily="system-ui">3&times;</text>
-                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#8ECAE6" fontFamily="system-ui">Clarity</text>
+                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#219EBC" fontWeight="700" fontFamily="Outfit, sans-serif">3&times;</text>
+                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#8ECAE6" fontFamily="Outfit, sans-serif">Clarity</text>
               </svg>
             </div>
           </div>

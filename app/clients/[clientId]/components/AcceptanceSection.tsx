@@ -91,7 +91,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
                 >
                   <h4 className="text-base font-bold text-white mb-1">{opt.name}</h4>
                   <p className="text-xs text-[rgba(255,255,255,0.45)] mb-2.5">{opt.desc}</p>
-                  <div className="text-lg font-black text-[#FFB703] font-mono">{opt.price}</div>
+                  <div className="text-lg font-black text-[#FFB703] font-[family-name:var(--font-outfit)]">{opt.price}</div>
                 </div>
               ))}
             </div>

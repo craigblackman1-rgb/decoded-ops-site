@@ -65,7 +65,7 @@ export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
             onChange={(e) => setCode(e.target.value.toUpperCase())}
             onKeyDown={handleKeyDown}
             placeholder="Enter access code"
-            className="flex-1 px-5 py-3.5 bg-[rgba(255,255,255,0.05)] border-none outline-none text-white font-mono text-sm tracking-widest placeholder-[rgba(255,255,255,0.2)]"
+            className="flex-1 px-5 py-3.5 bg-[rgba(255,255,255,0.05)] border-none outline-none text-white font-[family-name:var(--font-dm-sans)] text-sm tracking-widest placeholder-[rgba(255,255,255,0.2)]"
             autoComplete="off"
             spellCheck="false"
           />

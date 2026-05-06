@@ -83,7 +83,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
                     Option {option.id}
                   </div>
                   <h3 className="text-xl font-black mb-3">{option.name}</h3>
-                  <div className={`text-3xl font-black font-mono leading-none ${
+                  <div className={`text-3xl font-black font-[family-name:var(--font-outfit)] leading-none ${
                     isC ? 'text-[#023047]' : isB ? 'text-[#FFB703]' : 'text-[#8ECAE6]'
                   }`}>
                     {option.amount}
@@ -145,7 +145,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
                     {col.items.map((item, j) => {
                       if (item.style === 'big') {
                         return (
-                          <div key={j} className={`text-xl font-black font-mono py-2 pb-3 border-b border-[rgba(0,0,0,0.06)] mb-1.5 ${isDec ? 'text-[#219EBC]' : 'text-[#023047]'}`}>
+                          <div key={j} className={`text-xl font-black font-[family-name:var(--font-outfit)] py-2 pb-3 border-b border-[rgba(0,0,0,0.06)] mb-1.5 ${isDec ? 'text-[#219EBC]' : 'text-[#023047]'}`}>
                             {item.label}
                           </div>
                         );
@@ -191,7 +191,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
                   <td className="px-4 py-3 text-sm font-bold">{row.area}</td>
                   <td className="px-4 py-3 text-sm text-[rgba(0,0,0,0.6)]">{row.basis}</td>
                   <td className="px-4 py-3">
-                    <span className="font-bold text-[#1B5E20] bg-[#E8F5E9] px-2.5 py-1 rounded font-mono text-xs">
+                    <span className="font-bold text-[#1B5E20] bg-[#E8F5E9] px-2.5 py-1 rounded font-[family-name:var(--font-outfit)] text-xs">
                       {row.value}
                     </span>
                   </td>

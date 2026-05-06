@@ -237,7 +237,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
               <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
             </div>
-            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#999] font-mono border border-[#e0e0e0]">
+            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#999] font-[family-name:var(--font-dm-sans)] border border-[#e0e0e0]">
               stock.tacklebag.co.uk/dashboard
             </div>
           </div>
@@ -319,8 +319,8 @@ export default function DemoSection({ data }: { data: DemoData }) {
                           <tr key={i} className="border-b border-[#f0f0f0] hover:bg-[#f9f9f9]">
                             <td className="px-4 py-3 text-sm font-semibold text-[#023047]">{row.school}</td>
                             <td className="px-4 py-3 text-sm text-[#555]">{row.product}</td>
-                            <td className="px-4 py-3 text-xs font-mono text-[#888]">{row.sku}</td>
-                            <td className={`px-4 py-3 text-center font-bold font-mono text-sm ${
+                            <td className="px-4 py-3 text-xs font-[family-name:var(--font-dm-sans)] text-[#888]">{row.sku}</td>
+                            <td className={`px-4 py-3 text-center font-bold font-[family-name:var(--font-dm-sans)] text-sm ${
                               row.stock === 0 ? 'text-[#C62828]' :
                               row.stock < row.min ? 'text-[#E65100]' : 'text-[#1B5E20]'
                             }`}>
@@ -415,7 +415,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
                     plugins: {
                       legend: {
                         display: true,
-                        labels: { color: '#555', font: { size: 11, family: 'Inter' } },
+                        labels: { color: '#555', font: { size: 11, family: 'Outfit' } },
                       },
                     },
                     scales: {
@@ -439,7 +439,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
             {(logShown || simLog.length > 0) && (
               <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
                 <div className="font-bold text-[#023047] mb-3 text-sm">Simulation Log</div>
-                <div className="bg-[#f9f9f9] border border-[#eee] rounded-lg p-3 max-h-32 overflow-y-auto font-mono text-xs text-[#555] space-y-0.5">
+                <div className="bg-[#f9f9f9] border border-[#eee] rounded-lg p-3 max-h-32 overflow-y-auto font-[family-name:var(--font-dm-sans)] text-xs text-[#555] space-y-0.5">
                   {simLog.map((line, i) => (
                     <div
                       key={i}

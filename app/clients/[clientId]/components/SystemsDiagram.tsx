@@ -132,7 +132,7 @@ export default function SystemsDiagram() {
         lbl.setAttribute('y', ty.toString());
         lbl.setAttribute('fill', e.c);
         lbl.setAttribute('font-size', '10');
-        lbl.setAttribute('font-family', 'Inter, sans-serif');
+        lbl.setAttribute('font-family', 'Outfit, sans-serif');
         lbl.setAttribute('font-weight', '600');
         lbl.textContent = e.label;
         svg.appendChild(lbl);
@@ -166,7 +166,7 @@ export default function SystemsDiagram() {
       txt.setAttribute('text-anchor', 'middle');
       txt.setAttribute('fill', '#fff');
       txt.setAttribute('font-size', '10');
-      txt.setAttribute('font-family', 'Inter, sans-serif');
+      txt.setAttribute('font-family', 'Outfit, sans-serif');
       txt.setAttribute('font-weight', '700');
       txt.textContent = n.label;
 
@@ -190,7 +190,7 @@ export default function SystemsDiagram() {
       warn.textContent = 'Tracker ERP as the central hub — orders, production, dispatch, accounts all connected';
     }
     warn.setAttribute('font-size', '11');
-    warn.setAttribute('font-family', 'Inter, sans-serif');
+    warn.setAttribute('font-family', 'Outfit, sans-serif');
     svg.appendChild(warn);
   }
 

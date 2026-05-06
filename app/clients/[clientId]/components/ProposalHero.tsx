@@ -94,7 +94,7 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
               key={i}
               className="p-6 md:p-8 bg-[rgba(255,255,255,0.02)]"
             >
-               <div className="text-4xl md:text-5xl lg:text-6xl font-black text-[#FFB703] font-mono leading-tight">
+               <div className="text-4xl md:text-5xl lg:text-6xl font-black text-[#FFB703] font-[family-name:var(--font-outfit)] leading-tight">
                  <span data-stat-num={stat.num}>0</span>
               </div>
               <div className="text-xs text-[#8ECAE6] mt-1.5 font-medium tracking-wide">

@@ -52,7 +52,7 @@ export default function NextStepsSection({ data }: { data: NextStepsData }) {
               key={step.num}
               className="p-7 bg-[rgba(255,255,255,0.04)] rounded-xl border border-[rgba(255,255,255,0.08)] relative"
             >
-              <div className="absolute top-4 right-5 text-5xl font-black text-[#FFB703] opacity-15 font-mono leading-none">
+              <div className="absolute top-4 right-5 text-5xl font-black text-[#FFB703] opacity-15 font-[family-name:var(--font-outfit)] leading-none">
                 {step.num}
               </div>
               <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-2">

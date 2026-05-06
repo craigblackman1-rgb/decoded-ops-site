@@ -16,7 +16,7 @@ export default function Image() {
           width: '100%',
           height: '100%',
           backgroundColor: '#F8F9FA',
-          fontFamily: 'system-ui, sans-serif',
+          fontFamily: 'Outfit, sans-serif',
         }}
       >
         {/* Left panel */}
