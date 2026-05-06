@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
 import { JsonLd } from '@/components/JsonLd';
+import { AppShell } from '@/components/AppShell';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -83,9 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           knowsAbout: ['print technology', 'embroidery operations', 'ERP systems', 'fractional CTO', 'technology audit', 'eCommerce integration'],
           sameAs: ['https://www.linkedin.com/company/decodedops'],
         }} />
-        <Header />
-        <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+        <AppShell>
+          <main id="main-content" className="flex-1">{children}</main>
+        </AppShell>
         <CookieConsent />
       </body>
     </html>
