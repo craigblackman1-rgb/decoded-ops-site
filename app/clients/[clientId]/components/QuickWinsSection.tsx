@@ -34,10 +34,10 @@ export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
   return (
     <section className="bg-[#010f17] text-white px-5 py-24 md:px-20">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-14">
-          <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
-            Phase 1 Detail
-          </div>
+           <div className="mb-14">
+           <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
+             Phase1 Detail
+           </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight">
             Eight fixes.<br />Six weeks.<br />Before peak season.
           </h2>

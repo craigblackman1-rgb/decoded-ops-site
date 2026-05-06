@@ -1,259 +1,248 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+interface NodeData {
+  x: number;
+  y: number;
+  label: string;
+  color: string;
+  r: number;
+}
+
+interface Edge {
+  f: string;
+  t: string;
+  c: string;
+  label?: string;
+}
+
+const nodes: Record<string, NodeData> = {
+  symphony:  { x: 400, y: 170, label: 'Symphony', color: '#219EBC', r: 36 },
+  tracker:   { x: 400, y: 170, label: 'Tracker ERP', color: '#219EBC', r: 38 },
+  website:   { x: 110, y: 90, label: 'TackleBag.co.uk', color: '#8ECAE6', r: 30 },
+  qb:        { x: 680, y: 90, label: 'QuickBooks', color: '#4ade80', r: 30 },
+  ship:      { x: 685, y: 240, label: 'ShipStation', color: '#a78bfa', r: 30 },
+  excel:     { x: 110, y: 245, label: 'Excel/OneDrive', color: '#FB8500', r: 30 },
+  email:     { x: 215, y: 310, label: 'Email/Manual', color: '#f87171', r: 28 },
+  crm:       { x: 555, y: 300, label: 'CRM', color: '#34d399', r: 28 },
+  jobsheet:  { x: 220, y: 270, label: 'Job Sheets', color: '#FFB703', r: 26 },
+};
+
+const chaosEdges: Edge[] = [
+  { f: 'website', t: 'symphony', c: '#FFB703' },
+  { f: 'symphony', t: 'qb', c: '#f87171' },
+  { f: 'symphony', t: 'ship', c: '#a78bfa' },
+  { f: 'excel', t: 'email', c: '#FB8500' },
+  { f: 'email', t: 'qb', c: '#f87171' },
+  { f: 'excel', t: 'symphony', c: '#FB8500' },
+  { f: 'website', t: 'excel', c: '#FB8500' },
+  { f: 'website', t: 'email', c: '#f87171' },
+  { f: 'email', t: 'ship', c: '#f87171' },
+  { f: 'excel', t: 'qb', c: '#FB8500' },
+];
+
+const cleanEdges: Edge[] = [
+  { f: 'website', t: 'tracker', c: '#219EBC', label: 'orders' },
+  { f: 'tracker', t: 'qb', c: '#4ade80', label: 'invoicing' },
+  { f: 'tracker', t: 'ship', c: '#a78bfa', label: 'dispatch' },
+  { f: 'tracker', t: 'crm', c: '#34d399', label: 'customers' },
+  { f: 'tracker', t: 'jobsheet', c: '#FFB703', label: 'production' },
+];
 
 export default function SystemsDiagram() {
-  const [state, setState] = useState<'current' | 'future'>('current');
+  const [mode, setMode] = useState<'chaos' | 'clean'>('chaos');
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    buildSVG(mode);
+  }, [mode]);
+
+  function buildSVG(currentMode: 'chaos' | 'clean') {
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    // Clear existing content but keep defs
+    const existingDefs = svg.querySelector('defs');
+    svg.innerHTML = '';
+    if (existingDefs) svg.appendChild(existingDefs);
+
+    // (Re)create defs
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+
+    const marker1 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+    marker1.setAttribute('id', 'arrowh');
+    marker1.setAttribute('markerWidth', '8');
+    marker1.setAttribute('markerHeight', '8');
+    marker1.setAttribute('refX', '7');
+    marker1.setAttribute('refY', '3');
+    marker1.setAttribute('orient', 'auto');
+    const polygon1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    polygon1.setAttribute('points', '0,0 8,3 0,6');
+    polygon1.setAttribute('fill', '#FFB703');
+    marker1.appendChild(polygon1);
+
+    const marker2 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+    marker2.setAttribute('id', 'arrowc');
+    marker2.setAttribute('markerWidth', '8');
+    marker2.setAttribute('markerHeight', '8');
+    marker2.setAttribute('refX', '7');
+    marker2.setAttribute('refY', '3');
+    marker2.setAttribute('orient', 'auto');
+    const polygon2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    polygon2.setAttribute('points', '0,0 8,3 0,6');
+    polygon2.setAttribute('fill', '#4ade80');
+    marker2.appendChild(polygon2);
+
+    defs.appendChild(marker1);
+    defs.appendChild(marker2);
+    svg.appendChild(defs);
+
+    const edges = currentMode === 'chaos' ? chaosEdges : cleanEdges;
+
+    edges.forEach((e, i) => {
+      const f = nodes[e.f];
+      const t = nodes[e.t];
+      if (!f || !t) return;
+
+      const dx = t.x - f.x;
+      const dy = t.y - f.y;
+      const cx = f.x + dx / 2 + (currentMode === 'chaos' ? (i % 3 - 1) * 40 : 0);
+      const cy = f.y + dy / 2 + (currentMode === 'chaos' ? (i % 2 === 0 ? -30 : 30) : 0);
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M${f.x},${f.y} Q${cx},${cy} ${t.x},${t.y}`);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', e.c);
+      path.setAttribute('stroke-width', currentMode === 'chaos' ? '1.5' : '2.5');
+      path.setAttribute('stroke-dasharray', currentMode === 'chaos' ? '4 4' : '8 3');
+      path.setAttribute('opacity', currentMode === 'chaos' ? '0.5' : '0.85');
+
+      if (currentMode !== 'chaos') {
+        path.setAttribute('marker-end', 'url(#arrowh)');
+        path.style.animation = `flowAnim ${0.8 + i * 0.15}s linear infinite`;
+      }
+      svg.appendChild(path);
+
+      if (currentMode !== 'chaos' && e.label) {
+        const tx = (f.x + t.x) / 2 + 10;
+        const ty = (f.y + t.y) / 2 - 8;
+        const lbl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        lbl.setAttribute('x', tx.toString());
+        lbl.setAttribute('y', ty.toString());
+        lbl.setAttribute('fill', e.c);
+        lbl.setAttribute('font-size', '10');
+        lbl.setAttribute('font-family', 'Inter, sans-serif');
+        lbl.setAttribute('font-weight', '600');
+        lbl.textContent = e.label;
+        svg.appendChild(lbl);
+      }
+    });
+
+    // Draw nodes
+    Object.entries(nodes).forEach(([k, n]) => {
+      if (currentMode === 'chaos' && (k === 'crm' || k === 'tracker' || k === 'jobsheet')) return;
+      if (currentMode !== 'chaos' && (k === 'symphony' || k === 'excel' || k === 'email')) return;
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('cx', n.x.toString());
+      circle.setAttribute('cy', n.y.toString());
+      circle.setAttribute('r', n.r.toString());
+      circle.setAttribute('fill', n.color);
+      circle.setAttribute('opacity', '0.15');
+
+      const circle2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle2.setAttribute('cx', n.x.toString());
+      circle2.setAttribute('cy', n.y.toString());
+      circle2.setAttribute('r', (n.r - 4).toString());
+      circle2.setAttribute('fill', n.color);
+      circle2.setAttribute('opacity', '0.9');
+
+      const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.setAttribute('x', n.x.toString());
+      txt.setAttribute('y', (n.y + 4).toString());
+      txt.setAttribute('text-anchor', 'middle');
+      txt.setAttribute('fill', '#fff');
+      txt.setAttribute('font-size', '10');
+      txt.setAttribute('font-family', 'Inter, sans-serif');
+      txt.setAttribute('font-weight', '700');
+      txt.textContent = n.label;
+
+      g.appendChild(circle);
+      g.appendChild(circle2);
+      g.appendChild(txt);
+      svg.appendChild(g);
+    });
+
+    // Add description text
+    const warn = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    warn.setAttribute('x', '400');
+    warn.setAttribute('y', '330');
+    warn.setAttribute('text-anchor', 'middle');
+
+    if (currentMode === 'chaos') {
+      warn.setAttribute('fill', '#FB8500');
+      warn.textContent = 'Manual processes connecting every system — every line is a person filling a gap';
+    } else {
+      warn.setAttribute('fill', '#219EBC');
+      warn.textContent = 'Tracker ERP as the central hub — orders, production, dispatch, accounts all connected';
+    }
+    warn.setAttribute('font-size', '11');
+    warn.setAttribute('font-family', 'Inter, sans-serif');
+    svg.appendChild(warn);
+  }
 
   return (
     <div className="bg-[#023047] rounded-2xl p-12 text-white">
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold mb-2">Current State vs. Future State</h3>
         <p className="text-[#8ECAE6] text-sm max-w-2xl mx-auto">
-          Your systems are disconnected and manual. We'll consolidate them into a single, integrated platform that flows data cleanly into your future ERP.
+          Toggle between states to see the transformation · coloured lines show data flows
         </p>
       </div>
 
       {/* Toggle Buttons */}
-      <div className="flex gap-0 bg-[rgba(255,255,255,0.05)] rounded-lg overflow-hidden width-fit-content mx-auto mb-8 w-fit">
+      <div className="flex gap-0 bg-[rgba(255,255,255,0.05)] rounded-lg overflow-hidden w-fit mx-auto mb-8">
         <button
-          onClick={() => setState('current')}
+          onClick={() => setMode('chaos')}
           className={`px-6 py-2 text-sm font-semibold transition-all ${
-            state === 'current'
+            mode === 'chaos'
               ? 'bg-[#219EBC] text-white'
               : 'bg-transparent text-[rgba(255,255,255,0.5)] hover:text-[rgba(255,255,255,0.7)]'
           }`}
         >
-          Current (Chaos)
+          Current State — The Chaos
         </button>
         <button
-          onClick={() => setState('future')}
+          onClick={() => setMode('clean')}
           className={`px-6 py-2 text-sm font-semibold transition-all ${
-            state === 'future'
+            mode === 'clean'
               ? 'bg-[#219EBC] text-white'
               : 'bg-transparent text-[rgba(255,255,255,0.5)] hover:text-[rgba(255,255,255,0.7)]'
           }`}
         >
-          Future (Clarity)
+          Future State — The Fix
         </button>
       </div>
 
-      {/* Diagrams */}
+      {/* SVG Diagram */}
       <svg
-        viewBox="0 0 1000 380"
+        ref={svgRef}
+        viewBox="0 0 800 340"
         className="w-full max-w-4xl mx-auto"
         style={{ height: 'auto' }}
-      >
-        {/* Define gradients and styles */}
-        <defs>
-          <style>{`
-            .system-box { fill: ${state === 'current' ? 'rgba(251,133,0,0.1)' : 'rgba(33,158,188,0.1)'}; stroke: ${state === 'current' ? '#FB8500' : '#219EBC'}; stroke-width: 2; }
-            .system-text { font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; fill: #fff; text-anchor: middle; }
-            .system-label { font-family: Inter, sans-serif; font-size: 11px; fill: ${state === 'current' ? '#FFB703' : '#8ECAE6'}; text-anchor: middle; }
-            .flow-line { stroke: ${state === 'current' ? 'rgba(251,133,0,0.4)' : 'rgba(33,158,188,0.4)'}; stroke-width: 2; fill: none; }
-            .flow-manual { stroke-dasharray: 5,5; stroke: ${state === 'current' ? '#FFB703' : '#FFB703'}; opacity: ${state === 'current' ? '1' : '0.3'}; }
-            .flow-auto { stroke: ${state === 'current' ? '#FB8500' : '#219EBC'}; opacity: ${state === 'current' ? '0.3' : '1'}; }
-            .node-circle { r: 6; fill: ${state === 'current' ? '#FB8500' : '#219EBC'}; }
-            .icon-text { font-family: Inter, sans-serif; font-size: 24px; }
-          `}</style>
-        </defs>
+      />
 
-        {/* Current State */}
-        {state === 'current' && (
-          <>
-            {/* Symphony ERP */}
-            <rect x="50" y="30" width="120" height="80" className="system-box" rx="8" />
-            <text x="110" y="50" className="system-text">
-              Symphony
-            </text>
-            <text x="110" y="68" className="system-label">
-              ERP
-            </text>
-            <text x="110" y="95" className="icon-text">
-              💾
-            </text>
-
-            {/* Excel Sheets */}
-            <rect x="220" y="30" width="120" height="80" className="system-box" rx="8" />
-            <text x="280" y="50" className="system-text">
-              Excel Sheets
-            </text>
-            <text x="280" y="68" className="system-label">
-              (manual)
-            </text>
-            <text x="280" y="95" className="icon-text">
-              📊
-            </text>
-
-            {/* Email */}
-            <rect x="390" y="30" width="120" height="80" className="system-box" rx="8" />
-            <text x="450" y="50" className="system-text">
-              Email
-            </text>
-            <text x="450" y="68" className="system-label">
-              (job briefs)
-            </text>
-            <text x="450" y="95" className="icon-text">
-              📧
-            </text>
-
-            {/* Handwritten Notes */}
-            <rect x="560" y="30" width="120" height="80" className="system-box" rx="8" />
-            <text x="620" y="50" className="system-text">
-              Hand Notes
-            </text>
-            <text x="620" y="68" className="system-label">
-              (informal)
-            </text>
-            <text x="620" y="95" className="icon-text">
-              ✍️
-            </text>
-
-            {/* Slack Messages */}
-            <rect x="730" y="30" width="120" height="80" className="system-box" rx="8" />
-            <text x="790" y="50" className="system-text">
-              Slack
-            </text>
-            <text x="790" y="68" className="system-label">
-              (scattered)
-            </text>
-            <text x="790" y="95" className="icon-text">
-              💬
-            </text>
-
-            {/* Problems Below */}
-            <text x="500" y="180" className="system-text" fontSize="14" fontWeight="bold">
-              Results:
-            </text>
-            <text x="500" y="205" className="system-label">
-              • Demand forecasting done manually (error-prone)
-            </text>
-            <text x="500" y="225" className="system-label">
-              • Duplicate data entry across systems
-            </text>
-            <text x="500" y="245" className="system-label">
-              • Stock levels in Excel, not Symphony (decisions made on stale data)
-            </text>
-            <text x="500" y="265" className="system-label">
-              • Customer comms & job briefs written from scratch each time
-            </text>
-            <text x="500" y="285" className="system-label">
-              • No visibility: peak demand not predicted until orders arrive
-            </text>
-            <text x="500" y="305" className="system-label">
-              • Impossible to automate anything downstream
-            </text>
-
-            {/* Messy Connections */}
-            <path d="M 170 70 L 220 70" className="flow-line flow-manual" />
-            <path d="M 340 70 L 390 70" className="flow-line flow-manual" />
-            <path d="M 510 70 L 560 70" className="flow-line flow-manual" />
-            <path d="M 680 70 L 730 70" className="flow-line flow-manual" />
-          </>
-        )}
-
-        {/* Future State */}
-        {state === 'future' && (
-          <>
-            {/* Decoded Ops Platform */}
-            <rect x="100" y="30" width="800" height="80" className="system-box" rx="8" />
-            <text x="500" y="50" className="system-text" fontSize="16" fontWeight="bold">
-              Decoded Ops Integrated Platform
-            </text>
-            <text x="500" y="75" className="system-label" fontSize="12">
-              (Stock Control · Job Briefing · Demand Forecast · Symphony Integration)
-            </text>
-
-            {/* Connections to External Systems */}
-
-            {/* Symphony Input */}
-            <rect x="50" y="180" width="100" height="70" className="system-box" rx="8" />
-            <text x="100" y="200" className="system-text" fontSize="12">
-              Symphony
-            </text>
-            <text x="100" y="230" className="icon-text">
-              💾
-            </text>
-            <path d="M 150 215 L 400 120" className="flow-line flow-auto" markerEnd="url(#arrowhead)" />
-            <text x="250" y="160" className="system-label" fontSize="11">
-              Live data sync
-            </text>
-
-            {/* Web App Output */}
-            <rect x="280" y="180" width="100" height="70" className="system-box" rx="8" />
-            <text x="330" y="200" className="system-text" fontSize="12">
-              Web App
-            </text>
-            <text x="330" y="230" className="icon-text">
-              💻
-            </text>
-            <path d="M 330 160 L 330 180" className="flow-line flow-auto" markerEnd="url(#arrowhead)" />
-            <text x="350" y="172" className="system-label" fontSize="11">
-              Teams use
-            </text>
-
-            {/* Forecast Output */}
-            <rect x="510" y="180" width="100" height="70" className="system-box" rx="8" />
-            <text x="560" y="200" className="system-text" fontSize="12">
-              Forecast
-            </text>
-            <text x="560" y="230" className="icon-text">
-              📈
-            </text>
-            <path d="M 600 160 L 650 180" className="flow-line flow-auto" markerEnd="url(#arrowhead)" />
-            <text x="620" y="172" className="system-label" fontSize="11">
-              Auto-generated
-            </text>
-
-            {/* Back to Symphony */}
-            <rect x="740" y="180" width="100" height="70" className="system-box" rx="8" />
-            <text x="790" y="200" className="system-text" fontSize="12">
-              Symphony
-            </text>
-            <text x="790" y="225" className="system-label" fontSize="11">
-              (Purchasing)
-            </text>
-            <text x="790" y="240" className="icon-text">
-              🔄
-            </text>
-            <path d="M 700 120 L 750 180" className="flow-line flow-auto" markerEnd="url(#arrowhead)" />
-            <text x="720" y="148" className="system-label" fontSize="11">
-              Auto-orders
-            </text>
-
-            {/* Benefits Below */}
-            <text x="500" y="305" className="system-text" fontSize="14" fontWeight="bold">
-              Results:
-            </text>
-            <text x="500" y="330" className="system-label">
-              • Demand forecasting automated from Symphony sales data
-            </text>
-            <text x="500" y="350" className="system-label">
-              • Single source of truth; real-time stock visibility
-            </text>
-            <text x="500" y="370" className="system-label">
-              • Automatic reorder triggers when stock hits threshold
-            </text>
-            <text x="500" y="390" className="system-label">
-              • Job briefs auto-generated from orders; zero manual copy work
-            </text>
-
-            {/* Arrow marker */}
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3, 0 6" fill="#219EBC" />
-              </marker>
-            </defs>
-          </>
-        )}
-      </svg>
+      <style>{`
+        @keyframes flowAnim {
+          to { stroke-dashoffset: -20; }
+        }
+        path[style*="flowAnim"] {
+          animation: flowAnim 1.2s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

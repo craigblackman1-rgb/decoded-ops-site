@@ -43,7 +43,7 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#023047] relative overflow-hidden flex flex-col justify-center px-10 py-20 md:px-20">
+     <section className="min-h-screen bg-[#023047] relative overflow-hidden flex flex-col justify-center px-20 md:px-20 pt-30 md:pt-30 pb-20">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-5"
@@ -55,7 +55,10 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
       />
 
       {/* Glow effect */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-[rgba(33,158,188,0.15)] to-transparent pointer-events-none -translate-y-1/2 translate-x-1/2" />
+      <div
+        className="absolute top-0 right-0 w-96 h-96 pointer-events-none -translate-y-1/2 translate-x-1/2"
+        style={{ background: 'radial-gradient(circle, rgba(33,158,188,0.15) 0%, transparent 70%)' }}
+      />
 
       <div className="relative z-10 max-w-5xl">
         {/* Tag */}
@@ -70,29 +73,28 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
         <h1 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-4xl">
           <div dangerouslySetInnerHTML={{
             __html: title
-              .replace(/<span class="highlight">/g, '<span class="text-[#219EBC]">')
-              .replace(/<span class="amber">/g, '<span class="text-[#FFB703]">')
-              .replace(/<br>/g, '</br>')
+              .replace(/<span class="highlight">/g, '<span style="color:#219EBC">')
+              .replace(/<span class="amber">/g, '<span style="color:#FFB703">')
           }} />
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-[#8ECAE6] max-w-2xl mb-12 leading-relaxed font-light">
+         <p className="text-lg md:text-xl text-[#8ECAE6] max-w-2xl mb-12 leading-relaxed">
           {subtitle}
         </p>
 
         {/* Stats Grid */}
-        <div
-          ref={statsRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.06)] rounded-2xl overflow-hidden max-w-2xl"
-        >
+         <div
+           ref={statsRef}
+           className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.06)] rounded-2xl overflow-hidden max-w-4xl"
+         >
           {stats.map((stat, i) => (
             <div
               key={i}
               className="p-6 md:p-8 bg-[rgba(255,255,255,0.02)]"
             >
-              <div className="text-3xl md:text-4xl font-black text-[#FFB703] font-mono leading-tight">
-                <span data-stat-num={stat.num}>0</span>
+               <div className="text-4xl md:text-5xl lg:text-6xl font-black text-[#FFB703] font-mono leading-tight">
+                 <span data-stat-num={stat.num}>0</span>
               </div>
               <div className="text-xs text-[#8ECAE6] mt-1.5 font-medium tracking-wide">
                 {stat.label}

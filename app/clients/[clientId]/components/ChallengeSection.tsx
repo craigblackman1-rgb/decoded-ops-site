@@ -32,7 +32,7 @@ export default function ChallengeSection({ data }: { data: ChallengeData }) {
               <div key={i}>{line}</div>
             ))}
           </h2>
-          <p className="text-base lg:text-lg text-[rgba(2,48,71,0.55)] max-w-4xl leading-relaxed">
+           <p className="text-base lg:text-lg text-[rgba(2,48,71,0.55)] max-w-2xl leading-relaxed">
             {data.subtitle}
           </p>
         </div>

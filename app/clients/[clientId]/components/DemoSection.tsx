@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -11,6 +11,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from 'chart.js';
 
 ChartJS.register(
@@ -20,7 +21,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 interface Stock {
@@ -29,7 +31,7 @@ interface Stock {
   sku: string;
   stock: number;
   min: number;
-  status: 'ok' | 'low' | 'out';
+  ordered: boolean;
 }
 
 interface DemoData {
@@ -39,19 +41,13 @@ interface DemoData {
   stocks: Stock[];
 }
 
-const statusStyles = {
-  ok: 'bg-[#E8F5E9] text-[#1B5E20]',
-  low: 'bg-[#FFF8E1] text-[#E65100]',
-  out: 'bg-[#FFEBEE] text-[#C62828]',
-};
-
 const forecastChartData = {
-  labels: ['Jul W1', 'Jul W2', 'Jul W3', 'Aug W1', 'Aug W2', 'Aug W3', 'Aug W4', 'Sep W1', 'Sep W2', 'Sep W3'],
+  labels: ['Wk 1 Jul', 'Wk 2 Jul', 'Wk 3 Jul', 'Wk 1 Aug', 'Wk 2 Aug', 'Wk 3 Aug', 'Wk 4 Aug', 'Wk 1 Sep', 'Wk 2 Sep', 'Wk 3 Sep'],
   datasets: [
     {
-      label: 'Orders',
+      label: 'Forecast',
       data: [42, 55, 78, 95, 140, 165, 180, 172, 120, 85],
-      backgroundColor: 'rgba(33, 158, 188, 0.1)',
+      backgroundColor: 'rgba(33, 158, 188, 0.25)',
       borderColor: '#219EBC',
       borderWidth: 2,
       borderRadius: 4,
@@ -62,39 +58,160 @@ const forecastChartData = {
       pointBorderWidth: 2,
       pointRadius: 5,
     },
+    {
+      label: 'Actual (to date)',
+      data: [40, 52, 80, null, null, null, null, null, null, null],
+      backgroundColor: 'rgba(255, 183, 3, 0.35)',
+      borderColor: '#FFB703',
+      borderWidth: 2,
+      borderRadius: 4,
+      fill: true,
+      tension: 0.4,
+      pointBackgroundColor: '#FFB703',
+      pointBorderColor: '#fff',
+      pointBorderWidth: 2,
+      pointRadius: 5,
+    },
   ],
 };
 
+const originalStock: Stock[] = [
+  { school: 'East Mosley CC', product: 'Canterbury Polo (S)', sku: 'EMCC-CAN-PL-S', stock: 18, min: 10, ordered: false },
+  { school: 'East Mosley CC', product: 'Canterbury Polo (M)', sku: 'EMCC-CAN-PL-M', stock: 12, min: 10, ordered: false },
+  { school: 'East Mosley CC', product: 'Canterbury Polo (L)', sku: 'EMCC-CAN-PL-L', stock: 4, min: 8, ordered: false },
+  { school: 'Blackheath RFC', product: 'Club Shorts (S)', sku: 'BRFC-SHT-S', stock: 22, min: 8, ordered: false },
+  { school: 'Blackheath RFC', product: 'Club Shorts (M)', sku: 'BRFC-SHT-M', stock: 0, min: 6, ordered: false },
+  { school: 'KSW Karate', product: 'Mizuno Gi (M)', sku: 'KSW-MIZ-GM-M', stock: 3, min: 5, ordered: false },
+  { school: 'KSW Karate', product: 'Mizuno Gi (L)', sku: 'KSW-MIZ-GM-L', stock: 7, min: 5, ordered: false },
+  { school: "St Paul's School", product: 'Adidas Training Top (S)', sku: 'SPS-ADI-TT-S', stock: 15, min: 12, ordered: false },
+  { school: "St Paul's School", product: 'Adidas Training Top (M)', sku: 'SPS-ADI-TT-M', stock: 8, min: 12, ordered: false },
+  { school: "St Paul's School", product: 'Adidas Training Top (L)', sku: 'SPS-ADI-TT-L', stock: 2, min: 8, ordered: false },
+];
+
 export default function DemoSection({ data }: { data: DemoData }) {
+  const [stocks, setStocks] = useState<Stock[]>(originalStock.map(r => ({ ...r })));
+  const [filter, setFilter] = useState('all');
   const [isSimulating, setIsSimulating] = useState(false);
   const [simLog, setSimLog] = useState<string[]>([]);
-  const [stocks, setStocks] = useState(data.stocks);
+  const [logShown, setLogShown] = useState(false);
+  const [alerts, setAlerts] = useState<Array<{ text: string; level: string; detail: string }>>([]);
+  const chartRef = useRef<any>(null);
 
-  const handleSimulate = () => {
+  function statusFor(stock: number, min: number) {
+    return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';
+  }
+
+  function badgeFor(stock: number, min: number, ordered: boolean) {
+    if (ordered) return <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: 'rgba(33,158,188,0.1)', color: '#1565C0' }}>Ordered</span>;
+    if (stock === 0) return <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: 'rgba(198,40,40,0.1)', color: '#C62828' }}>Out of Stock</span>;
+    if (stock < 6) return <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: 'rgba(230,81,0,0.1)', color: '#E65100' }}>Critical Low</span>;
+    if (stock < 10) return <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: 'rgba(255,183,3,0.1)', color: '#E65100' }}>Low Stock</span>;
+    return <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold" style={{ background: 'rgba(27,94,32,0.1)', color: '#1B5E20' }}>OK</span>;
+  }
+
+  function updateAlerts(currentStocks: Stock[]) {
+    const alerts: Array<{ text: string; level: string; detail: string }> = [];
+    currentStocks.forEach(r => {
+      const st = statusFor(r.stock, r.min);
+      if (st !== 'ok') {
+        alerts.push({
+          text: r.product.split(' (')[0],
+          level: st === 'out' ? 'crit' : 'warn',
+          detail: st === 'out' ? 'Out of stock — reorder immediately' : `Stock at ${r.stock} (min: ${r.min})`,
+        });
+      }
+    });
+    setAlerts(alerts);
+  }
+
+  function handleFulfill(i: number) {
+    setStocks(prev => {
+      const updated = [...prev];
+      if (updated[i].stock > 0) {
+        updated[i] = { ...updated[i], stock: updated[i].stock - 1 };
+        updateAlerts(updated);
+        addLog(`✓ Fulfilled 1x ${updated[i].product.split(' (')[0]} — ${updated[i].stock} remaining`, 'ok');
+      }
+      return updated;
+    });
+  }
+
+  function handleReorder(i: number) {
+    setStocks(prev => {
+      const updated = [...prev];
+      updated[i] = { ...updated[i], ordered: true };
+      updateAlerts(updated);
+      addLog(`📦 Reorder placed for ${updated[i].product.split(' (')[0]}`, 'info');
+      return updated;
+    });
+  }
+
+  function addLog(msg: string, type: string) {
+    const timestamp = new Date().toLocaleTimeString();
+    setSimLog(prev => [`[${timestamp}] ${msg}`, ...prev]);
+    setLogShown(true);
+  }
+
+  function handleFilterChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setFilter(e.target.value);
+  }
+
+  function handleRestoreStock() {
+    setStocks(originalStock.map(r => ({ ...r })));
+    setSimLog([]);
+    setLogShown(false);
+    setFilter('all');
+    updateAlerts(originalStock);
+    addLog('Stock levels restored to baseline', 'info');
+  }
+
+  function handleSimulateWeekend() {
+    if (isSimulating) return;
     setIsSimulating(true);
     setSimLog([]);
+    setLogShown(true);
+    addLog('Starting weekend order simulation — 47 orders incoming…', 'info');
 
-    const messages = [
-      '→ Processing orders for week of July 15...',
-      '→ Canterbury teamwear: -18 units (peak season)',
-      '→ Checking stock levels: LOW on item SKU-402',
-      '✓ Auto-reorder triggered for SKU-402 (min: 20, current: 8)',
-      '→ Stock holding optimized: +£2.3k freed',
-      '✓ Forecast updated: demand peak detected Aug 1–15',
-      '✓ Simulation complete',
+    const changes = [
+      { i: 0, by: 6 }, { i: 1, by: 5 }, { i: 2, by: 3 },
+      { i: 3, by: 8 }, { i: 4, by: 0 }, { i: 5, by: 2 },
+      { i: 7, by: 7 }, { i: 8, by: 4 }, { i: 9, by: 2 },
     ];
 
-    let i = 0;
+    let step = 0;
     const interval = setInterval(() => {
-      if (i < messages.length) {
-        setSimLog((prev) => [...prev, messages[i]]);
-        i++;
-      } else {
-        setIsSimulating(false);
+      if (step >= changes.length) {
         clearInterval(interval);
+        setIsSimulating(false);
+        addLog('47 orders processed. 3 items need attention.', 'warn');
+        return;
       }
-    }, 400);
-  };
+      setStocks(prev => {
+        const updated = [...prev];
+        const c = changes[step];
+        const prevStock = updated[c.i].stock;
+        updated[c.i] = { ...updated[c.i], stock: Math.max(0, prevStock - c.by) };
+        updateAlerts(updated);
+        addLog(
+          `Order: ${updated[c.i].product.split(' (')[0]} (${c.by} units) — ${prevStock} → ${updated[c.i].stock}`,
+          updated[c.i].stock < updated[c.i].min ? 'warn' : 'ok'
+        );
+        return updated;
+      });
+      step++;
+    }, 350);
+  }
+
+  useEffect(() => {
+    updateAlerts(stocks);
+  }, []);
+
+  const filteredStocks = filter === 'all'
+    ? stocks
+    : stocks.filter(r => {
+        const map: Record<string, string> = { cricket: 'East Mosley CC', rugby: 'Blackheath RFC', karate: 'KSW Karate', school: "St Paul's School" };
+        return r.school.includes(map[filter]?.split(' ')[0] || '');
+      });
 
   return (
     <section className="bg-[#F8F9FA] text-[#023047] px-5 py-24 md:px-20">
@@ -125,7 +242,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
             </div>
           </div>
 
-          {/* App Content */}
+          {/* App Header */}
           <div className="bg-[#023047] px-6 py-4 flex items-center justify-between border-b border-[rgba(33,158,188,0.2)]">
             <div className="font-bold text-white text-sm tracking-wide">
               Tackle<span className="text-[#FFB703]">Bag</span> Stock Command
@@ -144,22 +261,34 @@ export default function DemoSection({ data }: { data: DemoData }) {
             {/* Toolbar */}
             <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
               <div>
-                <div className="font-bold text-lg">Stock Overview</div>
+                <div className="font-bold text-lg text-[#023047]">Stock Overview</div>
                 <div className="text-xs text-[#999]">Last updated: just now</div>
               </div>
               <div className="flex gap-3 flex-wrap">
-                <select className="px-4 py-2 border border-[#e0e0e0] rounded-lg text-sm bg-white">
-                  <option>All schools & clubs</option>
+                <select
+                  value={filter}
+                  onChange={handleFilterChange}
+                  className="px-4 py-2 border border-[#e0e0e0] rounded-lg text-sm bg-white text-[#023047]"
+                >
+                  <option value="all">All schools & clubs</option>
+                  <option value="cricket">East Mosley CC</option>
+                  <option value="rugby">Blackheath RFC</option>
+                  <option value="karate">KSW Karate</option>
+                  <option value="school">St Paul's School</option>
                 </select>
-                <button className="px-4 py-2 border border-[#ddd] rounded-lg text-sm hover:bg-[#f0f0f0]">
-                  ↺ Restock
+                <button
+                  onClick={handleRestoreStock}
+                  className="px-4 py-2 border border-[#ddd] rounded-lg text-sm hover:bg-[#f0f0f0] bg-white"
+                >
+                  ↺ Restock All
                 </button>
                 <button
-                  onClick={handleSimulate}
+                  onClick={handleSimulateWeekend}
                   disabled={isSimulating}
-                  className="px-4 py-2 bg-[#023047] text-white rounded-lg text-sm font-bold hover:bg-[#035670] disabled:opacity-50"
+                  className="px-4 py-2 bg-[#023047] text-white rounded-lg text-sm font-bold hover:bg-[#035670] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                  id="sim-btn"
                 >
-                  ⚡ Simulate
+                  ⚡ Simulate Weekend Orders
                 </button>
               </div>
             </div>
@@ -174,29 +303,54 @@ export default function DemoSection({ data }: { data: DemoData }) {
                       <tr className="bg-[#023047] text-white">
                         <th className="px-4 py-3 text-left font-bold text-xs">School / Club</th>
                         <th className="px-4 py-3 text-left font-bold text-xs">Product</th>
-                        <th className="px-4 py-3 text-center font-bold text-xs">Stock</th>
+                        <th className="px-4 py-3 text-left font-bold text-xs">SKU</th>
+                        <th className="px-4 py-3 text-center font-bold text-xs">In Stock</th>
+                        <th className="px-4 py-3 text-center font-bold text-xs">Min Level</th>
                         <th className="px-4 py-3 text-center font-bold text-xs">Status</th>
+                        <th className="px-4 py-3 text-center font-bold text-xs">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {stocks.map((row, i) => (
-                        <tr key={i} className="border-b border-[#f0f0f0] hover:bg-[#f9f9f9]">
-                          <td className="px-4 py-3 text-sm text-[#555]">{row.school}</td>
-                          <td className="px-4 py-3 text-sm text-[#555]">{row.product}</td>
-                          <td className="px-4 py-3 text-center font-bold font-mono text-sm">{row.stock}</td>
-                          <td className="px-4 py-3 text-center">
-                            <span
-                              className={`inline-block px-2 py-1 rounded-full text-xs font-bold ${
-                                statusStyles[row.status]
-                              }`}
-                            >
-                              {row.status === 'ok' && '✓ OK'}
-                              {row.status === 'low' && '⚠ Low'}
-                              {row.status === 'out' && '✕ Out'}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
+                      {filteredStocks.map((row, i) => {
+                        const globalIndex = stocks.findIndex(s =>
+                          s.sku === row.sku && s.school === row.school
+                        );
+                        return (
+                          <tr key={i} className="border-b border-[#f0f0f0] hover:bg-[#f9f9f9]">
+                            <td className="px-4 py-3 text-sm font-semibold text-[#023047]">{row.school}</td>
+                            <td className="px-4 py-3 text-sm text-[#555]">{row.product}</td>
+                            <td className="px-4 py-3 text-xs font-mono text-[#888]">{row.sku}</td>
+                            <td className={`px-4 py-3 text-center font-bold font-mono text-sm ${
+                              row.stock === 0 ? 'text-[#C62828]' :
+                              row.stock < row.min ? 'text-[#E65100]' : 'text-[#1B5E20]'
+                            }`}>
+                              {row.stock}
+                            </td>
+                            <td className="px-4 py-3 text-center text-sm text-[#888]">{row.min}</td>
+                            <td className="px-4 py-3 text-center">
+                              {badgeFor(row.stock, row.min, row.ordered)}
+                            </td>
+                            <td className="px-4 py-3">
+                              <div className="flex gap-1.5 justify-center">
+                                <button
+                                  onClick={() => handleFulfill(globalIndex)}
+                                  disabled={row.stock === 0 || row.ordered}
+                                  className="px-2.5 py-1 rounded text-xs font-semibold cursor-pointer border transition-all bg-transparent border-[#023047] text-[#023047] hover:bg-[#023047] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+                                >
+                                  -1 Fulfill
+                                </button>
+                                <button
+                                  onClick={() => handleReorder(globalIndex)}
+                                  disabled={row.ordered}
+                                  className="px-2.5 py-1 rounded text-xs font-semibold cursor-pointer border transition-all bg-transparent border-[#219EBC] text-[#219EBC] hover:bg-[#219EBC] hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+                                >
+                                  Reorder
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -205,46 +359,74 @@ export default function DemoSection({ data }: { data: DemoData }) {
               {/* Alerts Panel */}
               <div className="bg-white rounded-xl p-5 shadow-sm border border-[#e0e0e0]">
                 <div className="flex justify-between items-center mb-4">
-                  <div className="font-bold text-[#023047] text-sm">Active Alerts</div>
-                  <div className="bg-[#FB8500] text-white text-xs font-bold px-2 py-1 rounded-full">3</div>
+                  <div className="font-bold text-[#023047] text-sm">Alerts</div>
+                  <div
+                    className="text-xs font-bold px-2 py-0.5 rounded-full text-white"
+                    style={{
+                      background: alerts.some(a => a.level === 'crit') ? '#C62828' : alerts.length > 0 ? '#FB8500' : '#888',
+                    }}
+                  >
+                    {alerts.length}
+                  </div>
                 </div>
-
-                {/* Alert Items */}
                 <div className="space-y-3">
-                  <div className="p-3 rounded-lg bg-[#FFF8E1] border-l-3 border-[#FFB703]">
-                    <div className="font-semibold text-xs text-[#5D4037]">SKU-402 Low Stock</div>
-                    <div className="text-xs text-[#E65100] mt-1">8 units remaining (min: 20)</div>
-                  </div>
-
-                  <div className="p-3 rounded-lg bg-[#FFEBEE] border-l-3 border-[#C62828]">
-                    <div className="font-semibold text-xs text-[#5D4037]">Reorder Due</div>
-                    <div className="text-xs text-[#C62828] mt-1">SKU-501 stockout imminent</div>
-                  </div>
-
-                  <div className="p-3 rounded-lg bg-[#E3F2FD] border-l-3 border-[#1565C0]">
-                    <div className="font-semibold text-xs text-[#1565C0]">Forecast Alert</div>
-                    <div className="text-xs text-[#1565C0] mt-1">Peak demand detected for Aug 1–15</div>
-                  </div>
+                  {alerts.length === 0 ? (
+                    <div className="p-3 rounded-lg bg-[#E3F2FD] border-l-3 border-[#1565C0]">
+                      <div className="font-semibold text-xs text-[#1565C0]">System ready</div>
+                      <div className="text-xs text-[#1565C0] mt-1">All stock levels within normal range</div>
+                    </div>
+                  ) : (
+                    alerts.map((alert, i) => (
+                      <div
+                        key={i}
+                        className={`p-3 rounded-lg border-l-3 ${
+                          alert.level === 'crit'
+                            ? 'bg-[#FFEBEE] border-[#C62828]'
+                            : 'bg-[#FFF8E1] border-[#FFB703]'
+                        }`}
+                      >
+                        <div className={`font-semibold text-xs ${
+                          alert.level === 'crit' ? 'text-[#5D4037]' : 'text-[#5D4037]'
+                        }`}>
+                          {alert.text}
+                        </div>
+                        <div className={`text-xs mt-1 ${
+                          alert.level === 'crit' ? 'text-[#C62828]' : 'text-[#E65100]'
+                        }`}>
+                          {alert.detail}
+                        </div>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
 
             {/* Forecast Panel */}
             <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
-              <div className="font-bold text-[#023047] mb-4 text-sm">📈 Demand Forecast — Jul–Sep 2026</div>
-              <div className="w-full h-64">
+              <div className="font-bold text-[#023047] mb-4 text-sm">📈 Demand Forecast — Jul–Sep 2026 (Canterbury teamwear)</div>
+              <div className="w-full h-36 md:h-48">
                 <Line
+                  ref={chartRef}
                   data={forecastChartData}
                   options={{
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
                       legend: {
-                        display: false,
+                        display: true,
+                        labels: { color: '#555', font: { size: 11, family: 'Inter' } },
                       },
                     },
                     scales: {
+                      x: {
+                        ticks: { color: '#888', font: { size: 10 } },
+                        grid: { color: 'rgba(0,0,0,0.04)' },
+                      },
                       y: {
+                        ticks: { color: '#888', font: { size: 10 } },
+                        grid: { color: 'rgba(0,0,0,0.04)' },
+                        title: { display: true, text: 'Units', color: '#888', font: { size: 10 } },
                         beginAtZero: true,
                       },
                     },
@@ -254,19 +436,19 @@ export default function DemoSection({ data }: { data: DemoData }) {
             </div>
 
             {/* Simulation Log */}
-            {(isSimulating || simLog.length > 0) && (
+            {(logShown || simLog.length > 0) && (
               <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
                 <div className="font-bold text-[#023047] mb-3 text-sm">Simulation Log</div>
-                <div className="bg-[#f9f9f9] border border-[#eee] rounded-lg p-3 max-h-40 overflow-y-auto font-mono text-xs text-[#555] space-y-1">
+                <div className="bg-[#f9f9f9] border border-[#eee] rounded-lg p-3 max-h-32 overflow-y-auto font-mono text-xs text-[#555] space-y-0.5">
                   {simLog.map((line, i) => (
                     <div
                       key={i}
                       className={`${
                         line.includes('✓')
                           ? 'text-[#1B5E20]'
-                          : line.includes('LOW') || line.includes('warn')
-                            ? 'text-[#E65100]'
-                            : 'text-[#555]'
+                          : line.includes('warn') || line.includes('attention')
+                          ? 'text-[#E65100]'
+                          : 'text-[#555]'
                       }`}
                     >
                       {line}

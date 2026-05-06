@@ -41,7 +41,7 @@ export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-9999 bg-[#023047] flex flex-col items-center justify-center gap-8 transition-all duration-800 ${
+      className={`fixed inset-0 z-[9999] bg-[#023047] flex flex-col items-center justify-center gap-8 transition-all duration-700 ${
         isHidden ? 'opacity-0 invisible' : 'opacity-100 visible'
       }`}
     >
