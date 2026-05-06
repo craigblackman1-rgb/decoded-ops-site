@@ -68,7 +68,7 @@ export default function ChallengeSection({ data }: { data: ChallengeData }) {
                 <h3 className="text-lg font-bold text-[#023047] mb-2">
                   {point.title}
                 </h3>
-                <p className="text-sm text-[#555] leading-relaxed mb-3">
+                <p className="text-sm text-[#023047] leading-relaxed mb-3">
                   {point.description}
                 </p>
                 <div className={`text-xs font-bold px-3 py-2 ${statBgClass} rounded-lg ${statTextClass} inline-block`}>

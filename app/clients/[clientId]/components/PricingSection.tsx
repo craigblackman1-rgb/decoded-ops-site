@@ -155,11 +155,11 @@ export default function PricingSection({ data }: { data: PricingData }) {
                           isDec
                             ? 'bg-[rgba(33,158,188,0.07)] text-[rgba(2,48,71,0.8)]'
                             : item.style === 'bad'
-                            ? 'bg-[rgba(198,40,40,0.05)] text-[#555]'
-                            : 'text-[#888]'
+                             ? 'bg-[rgba(198,40,40,0.05)] text-[#023047]'
+                             : 'text-[#8aa8b5]'
                         }`}>
                           <span className={`flex-shrink-0 font-bold text-xs mt-0.5 ${
-                            isDec ? 'text-[#219EBC]' : item.style === 'bad' ? 'text-[#C62828]' : 'text-[#bbb]'
+                             isDec ? 'text-[#219EBC]' : item.style === 'bad' ? 'text-[#C62828]' : 'text-[#8aa8b5]'
                           }`}>
                             {isDec ? '✓' : item.style === 'bad' ? '✕' : '—'}
                           </span>
@@ -216,7 +216,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
           </div>
           <div className="bg-white rounded-xl p-7 shadow-sm">
             <h3 className="text-base font-bold text-[#023047] mb-4">What's not included</h3>
-            <div className="text-sm text-[#555] leading-loose">
+            <div className="text-sm text-[#5a7d8f] leading-loose">
               {data.notIncluded.map((item, i) => (
                 <div key={i}>✕ {item}</div>
               ))}

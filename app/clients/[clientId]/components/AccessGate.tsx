@@ -7,22 +7,34 @@ interface AccessGateProps {
   onUnlock: () => void;
 }
 
+const SESSION_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
+
 export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    const isUnlocked = localStorage.getItem('clients_tacklebag_unlocked');
-    if (isUnlocked) {
-      setIsHidden(true);
-      onUnlock();
+    const stored = localStorage.getItem('clients_tacklebag_unlocked');
+    if (stored) {
+      try {
+        const { timestamp } = JSON.parse(stored);
+        const now = Date.now();
+        if (now - timestamp < SESSION_DURATION) {
+          setIsHidden(true);
+          onUnlock();
+        } else {
+          localStorage.removeItem('clients_tacklebag_unlocked');
+        }
+      } catch {
+        localStorage.removeItem('clients_tacklebag_unlocked');
+      }
     }
   }, [onUnlock]);
 
   const handleUnlock = () => {
     if (code.trim().toUpperCase() === accessCode) {
-      localStorage.setItem('clients_tacklebag_unlocked', 'true');
+      localStorage.setItem('clients_tacklebag_unlocked', JSON.stringify({ timestamp: Date.now() }));
       setIsHidden(true);
       setTimeout(() => onUnlock(), 800);
     } else {

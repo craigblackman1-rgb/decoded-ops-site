@@ -96,6 +96,8 @@ export default function DemoSection({ data }: { data: DemoData }) {
   const [logShown, setLogShown] = useState(false);
   const [alerts, setAlerts] = useState<Array<{ text: string; level: string; detail: string }>>([]);
   const chartRef = useRef<any>(null);
+  const stocksRef = useRef(stocks);
+  stocksRef.current = stocks;
 
   function statusFor(stock: number, min: number) {
     return stock === 0 ? 'out' : stock < min ? 'low' : 'ok';
@@ -126,27 +128,35 @@ export default function DemoSection({ data }: { data: DemoData }) {
 
   function handleFulfill(i: number) {
     setStocks(prev => {
-      const updated = [...prev];
-      if (updated[i].stock > 0) {
+      if (prev[i].stock > 0) {
+        const updated = [...prev];
         updated[i] = { ...updated[i], stock: updated[i].stock - 1 };
-        updateAlerts(updated);
-        addLog(`✓ Fulfilled 1x ${updated[i].product.split(' (')[0]} — ${updated[i].stock} remaining`, 'ok');
+        return updated;
       }
-      return updated;
+      return prev;
     });
+    setTimeout(() => {
+      const item = stocksRef.current[i];
+      if (item.stock > 0) {
+        updateAlerts(stocksRef.current);
+        addLog(`✓ Fulfilled 1x ${item.product.split(' (')[0]} — ${item.stock} remaining`);
+      }
+    }, 0);
   }
 
   function handleReorder(i: number) {
     setStocks(prev => {
       const updated = [...prev];
       updated[i] = { ...updated[i], ordered: true };
-      updateAlerts(updated);
-      addLog(`📦 Reorder placed for ${updated[i].product.split(' (')[0]}`, 'info');
       return updated;
     });
+    setTimeout(() => {
+      updateAlerts(stocksRef.current);
+      addLog(`📦 Reorder placed for ${stocksRef.current[i].product.split(' (')[0]}`);
+    }, 0);
   }
 
-  function addLog(msg: string, type: string) {
+  function addLog(msg: string) {
     const timestamp = new Date().toLocaleTimeString();
     setSimLog(prev => [`[${timestamp}] ${msg}`, ...prev]);
     setLogShown(true);
@@ -162,7 +172,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
     setLogShown(false);
     setFilter('all');
     updateAlerts(originalStock);
-    addLog('Stock levels restored to baseline', 'info');
+    addLog('Stock levels restored to baseline');
   }
 
   function handleSimulateWeekend() {
@@ -170,7 +180,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
     setIsSimulating(true);
     setSimLog([]);
     setLogShown(true);
-    addLog('Starting weekend order simulation — 47 orders incoming…', 'info');
+    addLog('Starting weekend order simulation — 47 orders incoming…');
 
     const changes = [
       { i: 0, by: 6 }, { i: 1, by: 5 }, { i: 2, by: 3 },
@@ -183,21 +193,21 @@ export default function DemoSection({ data }: { data: DemoData }) {
       if (step >= changes.length) {
         clearInterval(interval);
         setIsSimulating(false);
-        addLog('47 orders processed. 3 items need attention.', 'warn');
+        addLog('47 orders processed. 3 items need attention.');
         return;
       }
-      setStocks(prev => {
-        const updated = [...prev];
-        const c = changes[step];
-        const prevStock = updated[c.i].stock;
-        updated[c.i] = { ...updated[c.i], stock: Math.max(0, prevStock - c.by) };
-        updateAlerts(updated);
+      const c = changes[step];
+      const currentStocks = stocksRef.current;
+      const prevStock = currentStocks[c.i].stock;
+      const newStock = Math.max(0, prevStock - c.by);
+      const updated = currentStocks.map((s, idx) =>
+        idx === c.i ? { ...s, stock: newStock } : s
+      );
+      setStocks(updated);
+      updateAlerts(updated);
         addLog(
-          `Order: ${updated[c.i].product.split(' (')[0]} (${c.by} units) — ${prevStock} → ${updated[c.i].stock}`,
-          updated[c.i].stock < updated[c.i].min ? 'warn' : 'ok'
+          `Order: ${currentStocks[c.i].product.split(' (')[0]} (${c.by} units) — ${prevStock} → ${newStock}`
         );
-        return updated;
-      });
       step++;
     }, 350);
   }
@@ -237,7 +247,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
               <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
             </div>
-            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#999] font-[family-name:var(--font-dm-sans)] border border-[#e0e0e0]">
+            <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-[family-name:var(--font-dm-sans)] border border-[#d4e8f0]">
               stock.tacklebag.co.uk/dashboard
             </div>
           </div>
@@ -262,7 +272,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
             <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
               <div>
                 <div className="font-bold text-lg text-[#023047]">Stock Overview</div>
-                <div className="text-xs text-[#999]">Last updated: just now</div>
+                <div className="text-xs text-[#5a7d8f]">Last updated: just now</div>
               </div>
               <div className="flex gap-3 flex-wrap">
                 <select
@@ -318,7 +328,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
                         return (
                           <tr key={i} className="border-b border-[#f0f0f0] hover:bg-[#f9f9f9]">
                             <td className="px-4 py-3 text-sm font-semibold text-[#023047]">{row.school}</td>
-                            <td className="px-4 py-3 text-sm text-[#555]">{row.product}</td>
+                             <td className="px-4 py-3 text-sm text-[#023047]">{row.product}</td>
                             <td className="px-4 py-3 text-xs font-[family-name:var(--font-dm-sans)] text-[#888]">{row.sku}</td>
                             <td className={`px-4 py-3 text-center font-bold font-[family-name:var(--font-dm-sans)] text-sm ${
                               row.stock === 0 ? 'text-[#C62828]' :
@@ -439,7 +449,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
             {(logShown || simLog.length > 0) && (
               <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
                 <div className="font-bold text-[#023047] mb-3 text-sm">Simulation Log</div>
-                <div className="bg-[#f9f9f9] border border-[#eee] rounded-lg p-3 max-h-32 overflow-y-auto font-[family-name:var(--font-dm-sans)] text-xs text-[#555] space-y-0.5">
+                <div className="bg-[#F8F9FA] border border-[#d4e8f0] rounded-lg p-3 max-h-32 overflow-y-auto font-[family-name:var(--font-dm-sans)] text-xs text-[#023047] space-y-0.5">
                   {simLog.map((line, i) => (
                     <div
                       key={i}
@@ -448,7 +458,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
                           ? 'text-[#1B5E20]'
                           : line.includes('warn') || line.includes('attention')
                           ? 'text-[#E65100]'
-                          : 'text-[#555]'
+                           : 'text-[#023047]'
                       }`}
                     >
                       {line}
@@ -465,7 +475,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
           <div className="text-2xl flex-shrink-0">💡</div>
           <div>
             <strong className="text-[#023047]">This is a working prototype.</strong>
-            <p className="text-sm text-[#555] mt-1">
+            <p className="text-sm text-[#023047] mt-1">
               The real app would connect directly to Symphony for live stock data, replacing the current Excel files with a single web-based view accessible from any device — including mobile on the warehouse floor. All data structured to export cleanly into your future ERP.
             </p>
           </div>
