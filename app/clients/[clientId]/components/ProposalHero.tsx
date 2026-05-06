@@ -69,14 +69,15 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
           </span>
         </div>
 
-        {/* Title */}
-        <h1 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-4xl">
-          <div dangerouslySetInnerHTML={{
-            __html: title
-              .replace(/<span class="highlight">/g, '<span style="color:#219EBC">')
-              .replace(/<span class="amber">/g, '<span style="color:#FFB703">')
-          }} />
-        </h1>
+         {/* Title */}
+         <h1 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-4xl">
+           <div className="text-white" dangerouslySetInnerHTML={{
+             __html: title
+               .replace(/<span class="highlight">/g, '<span class="text-[#219EBC]">')
+               .replace(/<span class="amber">/g, '<span class="text-[#FFB703]">')
+               .replace(/<br>/g, '<br/>')
+           }} />
+         </h1>
 
         {/* Subtitle */}
          <p className="text-lg md:text-xl text-[#8ECAE6] max-w-2xl mb-12 leading-relaxed">

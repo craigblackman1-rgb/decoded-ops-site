@@ -32,7 +32,7 @@ export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
     );
 
   return (
-    <section className="bg-[#010f17] text-white px-5 py-24 md:px-20">
+     <section className="bg-[#010f17] px-5 py-24 md:px-20">
       <div className="max-w-6xl mx-auto">
            <div className="mb-14">
            <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
