@@ -1,5 +1,11 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 interface JourneyData {
   tag: string;
   title: string;
@@ -9,8 +15,30 @@ interface JourneyData {
 }
 
 export default function JourneySection({ data }: { data: JourneyData }) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          scrub: false,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-[#010f17] text-white px-8 py-20 md:px-20">
+    <section ref={sectionRef} className="bg-[#010f17] text-white px-8 py-20 md:px-20">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
