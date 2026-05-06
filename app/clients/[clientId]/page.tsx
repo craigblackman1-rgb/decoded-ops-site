@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AccessGate from './components/AccessGate';
 import ProposalHero from './components/ProposalHero';
 import ChallengeSection from './components/ChallengeSection';
@@ -14,6 +14,53 @@ import NextStepsSection from './components/NextStepsSection';
 import AcceptanceSection from './components/AcceptanceSection';
 import { tacklebagProposal } from './data/tacklebag-proposal';
 
+function ProposalNav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[100] px-10 py-4 flex justify-between items-center transition-all duration-300 ${
+        scrolled
+          ? 'bg-[rgba(2,48,71,0.95)] backdrop-blur-md border-b border-[rgba(33,158,188,0.2)]'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="text-xs font-bold tracking-widest text-[#8ECAE6] uppercase">
+        Decoded Ops
+      </div>
+      <div className="hidden md:flex gap-7">
+        {[
+          ['#challenge', 'Challenge'],
+          ['#roadmap', 'Roadmap'],
+          ['#demo', 'Stock App'],
+          ['#investment', 'Investment'],
+          ['#accept', 'Accept'],
+        ].map(([href, label]) => (
+          <a
+            key={href}
+            href={href}
+            className="text-xs font-medium text-[rgba(255,255,255,0.6)] hover:text-[#FFB703] transition-colors tracking-wide"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+      <a
+        href="#accept"
+        className="px-5 py-2 bg-[#219EBC] hover:bg-[#1a7d97] text-white text-xs font-bold rounded-md transition-colors"
+      >
+        Start Phase 1 →
+      </a>
+    </nav>
+  );
+}
+
 export default function ProposalPage() {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
@@ -25,45 +72,68 @@ export default function ProposalPage() {
       />
 
       {isUnlocked && (
-        <div className="bg-[#010f17]">
-          <ProposalHero
-            tag={tacklebagProposal.hero.tag}
-            title={tacklebagProposal.hero.title}
-            subtitle={tacklebagProposal.hero.subtitle}
-            stats={tacklebagProposal.hero.stats}
-          />
+        <>
+          <ProposalNav />
+          <div>
+            <div id="hero">
+              <ProposalHero
+                tag={tacklebagProposal.hero.tag}
+                title={tacklebagProposal.hero.title}
+                subtitle={tacklebagProposal.hero.subtitle}
+                stats={tacklebagProposal.hero.stats}
+              />
+            </div>
 
-          <ChallengeSection data={tacklebagProposal.challenge} />
+            <div id="challenge">
+              <ChallengeSection data={tacklebagProposal.challenge} />
+            </div>
 
-          <JourneySection data={tacklebagProposal.journey} />
+            <div id="journey">
+              <JourneySection data={tacklebagProposal.journey} />
+            </div>
 
-          <RoadmapSection data={tacklebagProposal.roadmap} />
+            <div id="roadmap">
+              <RoadmapSection data={tacklebagProposal.roadmap} />
+            </div>
 
-          <QuickWinsSection wins={tacklebagProposal.quickWins} />
+            <div id="quickwins">
+              <QuickWinsSection wins={tacklebagProposal.quickWins} />
+            </div>
 
-          <DemoSection data={tacklebagProposal.demo} />
+            <div id="demo">
+              <DemoSection data={tacklebagProposal.demo} />
+            </div>
 
-          <WhySection data={tacklebagProposal.why} />
+            <div id="why">
+              <WhySection data={tacklebagProposal.why} />
+            </div>
 
-          <PricingSection data={tacklebagProposal.pricing} />
+            <div id="investment">
+              <PricingSection data={tacklebagProposal.pricing} />
+            </div>
 
-          <NextStepsSection data={tacklebagProposal.nextSteps} />
+            <div id="nextsteps">
+              <NextStepsSection data={tacklebagProposal.nextSteps} />
+            </div>
 
-          <AcceptanceSection data={tacklebagProposal.acceptance} />
+            <div id="accept">
+              <AcceptanceSection data={tacklebagProposal.acceptance} />
+            </div>
 
-          {/* Footer */}
-          <footer className="bg-[#023047] border-t border-[rgba(33,158,188,0.2)] px-8 py-8 md:px-20">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-              <div className="font-bold tracking-widest text-[#8ECAE6]">DECODED OPS</div>
-              <div className="text-[rgba(255,255,255,0.5)]">
+            {/* Footer — matches HTML footer exactly */}
+            <footer className="bg-[#023047] px-20 py-8 flex justify-between items-center border-t border-[rgba(255,255,255,0.06)] flex-wrap gap-3">
+              <div className="text-xs font-bold tracking-widest text-[#8ECAE6] uppercase">
+                Decoded Ops
+              </div>
+              <div className="text-xs text-[rgba(255,255,255,0.3)]">
                 Prepared exclusively for TackleBag Ltd · May 2026 · Confidential
               </div>
-              <div className="text-[rgba(255,255,255,0.5)]">
+              <div className="text-xs text-[rgba(255,255,255,0.3)]">
                 craig@decodedops.co.uk · 07735 620 603
               </div>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
+        </>
       )}
     </>
   );

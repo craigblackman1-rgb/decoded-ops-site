@@ -97,14 +97,16 @@ export default function DemoSection({ data }: { data: DemoData }) {
   };
 
   return (
-    <section className="bg-[#F8F9FA] text-[#023047] px-8 py-20 md:px-20">
+    <section className="bg-[#F8F9FA] text-[#023047] px-5 py-24 md:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
             {data.tag}
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-4">{data.title}</h2>
-          <p className="text-lg text-[rgba(2,48,71,0.6)] max-w-2xl">
+          <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight text-[#023047]">
+            {data.title.split('\n').map((l, i) => <div key={i}>{l}</div>)}
+          </h2>
+          <p className="text-base lg:text-lg text-[rgba(2,48,71,0.55)] max-w-2xl leading-relaxed">
             {data.subtitle}
           </p>
         </div>

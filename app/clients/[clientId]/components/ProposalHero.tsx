@@ -67,10 +67,13 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
         </div>
 
         {/* Title */}
-        <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
-          {title.split('\n').map((line, i) => (
-            <div key={i}>{line}</div>
-          ))}
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-tight max-w-4xl">
+          <div dangerouslySetInnerHTML={{
+            __html: title
+              .replace(/<span class="highlight">/g, '<span class="text-[#219EBC]">')
+              .replace(/<span class="amber">/g, '<span class="text-[#FFB703]">')
+              .replace(/<br>/g, '</br>')
+          }} />
         </h1>
 
         {/* Subtitle */}
@@ -101,10 +104,10 @@ export default function ProposalHero({ tag, title, subtitle, stats }: HeroProps)
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-10 flex items-center gap-2.5 text-xs text-[rgba(255,255,255,0.3)] uppercase tracking-widest font-medium">
-        <span>Scroll to explore</span>
-        <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg width="16" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 16 20" className="animate-bounce">
+          <path d="M8 3v14M3 13l5 5 5-5" />
         </svg>
+        <span>Scroll to explore</span>
       </div>
     </section>
   );

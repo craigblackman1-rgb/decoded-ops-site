@@ -21,66 +21,57 @@ interface NextStepsData {
 
 export default function NextStepsSection({ data }: { data: NextStepsData }) {
   return (
-    <section className="bg-[#F8F9FA] text-[#023047] px-8 py-20 md:px-20">
+    <section className="bg-[#023047] text-white px-5 py-24 md:px-20">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <div className="text-xs font-bold tracking-widest text-[#FB8500] uppercase mb-3">
+        <div className="mb-14">
+          <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
             {data.tag}
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-4">{data.title}</h2>
-          <p className="text-lg text-[rgba(2,48,71,0.6)] max-w-2xl">
+          <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight text-white">
+            {data.title.split('\n').map((line, i) => <div key={i}>{line}</div>)}
+          </h2>
+          <p className="text-base lg:text-lg text-[rgba(255,255,255,0.55)] max-w-2xl leading-relaxed">
             {data.subtitle}
           </p>
         </div>
 
-        {/* Validity Banner */}
-        <div className="bg-[rgba(255,183,3,0.1)] border-l-4 border-[#FFB703] rounded-lg p-6 mb-12 flex gap-4">
-          <div className="text-2xl flex-shrink-0">⏰</div>
-          <div>
-            <p className="text-sm text-[#555]">
-              This proposal is valid until <strong>{data.deadline}</strong>. A decision by{' '}
-              <strong>{data.decisionDate}</strong> is needed to start Phase 1 in the first week of June and have all deliverables live before August.
-            </p>
+        {/* Validity bar */}
+        <div className="flex items-center gap-3 px-7 py-5 bg-[rgba(251,133,0,0.1)] border border-[rgba(251,133,0,0.2)] rounded-xl mb-12 text-sm">
+          <span className="text-xl flex-shrink-0">⏰</span>
+          <div className="text-[rgba(255,255,255,0.8)]">
+            This proposal is valid until{' '}
+            <strong className="text-[#FFB703]">{data.deadline}</strong>. A decision by{' '}
+            <strong className="text-[#FFB703]">{data.decisionDate}</strong> is needed to start Phase 1 in the first week of June and have all deliverables live before August.
           </div>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Steps grid */}
+        <div className="grid md:grid-cols-3 gap-5 mb-12">
           {data.steps.map((step) => (
             <div
               key={step.num}
-              className="p-8 bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] shadow-sm hover:shadow-md transition-shadow"
+              className="p-7 bg-[rgba(255,255,255,0.04)] rounded-xl border border-[rgba(255,255,255,0.08)] relative"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[#023047] text-white flex items-center justify-center font-bold text-lg">
-                  {step.num}
-                </div>
-                <div className="text-xs font-bold text-[#8ECAE6] uppercase tracking-wider">
-                  {step.date}
-                </div>
+              <div className="absolute top-4 right-5 text-5xl font-black text-[#FFB703] opacity-15 font-mono leading-none">
+                {step.num}
               </div>
-              <h3 className="font-bold text-lg mb-2">{step.title}</h3>
-              <p className="text-sm text-[#555] leading-relaxed">
-                {step.description}
-              </p>
+              <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-2">
+                {step.date}
+              </div>
+              <h3 className="text-base font-bold text-white mb-2">{step.title}</h3>
+              <p className="text-sm text-[rgba(255,255,255,0.5)] leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Contact Info */}
-        <div className="bg-[rgba(2,48,71,0.05)] rounded-2xl p-8 border border-[rgba(2,48,71,0.1)] flex flex-col md:flex-row gap-8 items-start md:items-center">
+        {/* Contact block */}
+        <div className="flex flex-col md:flex-row gap-5 md:gap-12 items-start p-7 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-xl flex-wrap">
           <div>
-            <div className="text-xs font-bold text-[#8ECAE6] uppercase tracking-widest mb-2">
-              Call or email directly
-            </div>
-            <div className="text-4xl font-black text-[#023047]">
-              {data.contact.phone}
-            </div>
-            <div className="text-lg text-[#219EBC] mt-2">
-              {data.contact.email}
-            </div>
+            <div className="text-xs text-[#8ECAE6] mb-1">Call or email me directly</div>
+            <div className="text-3xl font-black text-white">{data.contact.phone}</div>
+            <div className="text-base text-[#219EBC] mt-1">{data.contact.email}</div>
           </div>
-          <div className="text-sm text-[rgba(2,48,71,0.6)] max-w-sm">
+          <div className="text-sm text-[rgba(255,255,255,0.5)] max-w-sm leading-relaxed">
             {data.contact.note}
           </div>
         </div>

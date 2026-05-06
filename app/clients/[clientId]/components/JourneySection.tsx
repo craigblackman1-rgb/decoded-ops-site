@@ -44,8 +44,12 @@ export default function JourneySection({ data }: { data: JourneyData }) {
           <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
             {data.tag}
           </div>
-          <h2 className="text-5xl md:text-6xl font-black mb-4">{data.title}</h2>
-          <p className="text-lg text-[rgba(255,255,255,0.6)] max-w-2xl">
+          <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight max-w-3xl">
+            {data.title.split('\n').map((line, i) => (
+              <div key={i}>{line}</div>
+            ))}
+          </h2>
+          <p className="text-base lg:text-lg text-[rgba(255,255,255,0.55)] max-w-4xl leading-relaxed">
             {data.subtitle}
           </p>
         </div>
