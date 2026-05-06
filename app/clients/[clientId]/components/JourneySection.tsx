@@ -1,0 +1,79 @@
+'use client';
+
+interface JourneyData {
+  tag: string;
+  title: string;
+  subtitle: string;
+  now: string[];
+  future: string[];
+}
+
+export default function JourneySection({ data }: { data: JourneyData }) {
+  return (
+    <section className="bg-[#010f17] text-white px-8 py-20 md:px-20">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16">
+          <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
+            {data.tag}
+          </div>
+          <h2 className="text-5xl md:text-6xl font-black mb-4">{data.title}</h2>
+          <p className="text-lg text-[rgba(255,255,255,0.6)] max-w-2xl">
+            {data.subtitle}
+          </p>
+        </div>
+
+        {/* Three column layout: Now | Arrows | Future */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+          {/* NOW Column */}
+          <div>
+            <div className="bg-[#FB8500] px-5 py-3 rounded-t-xl font-bold text-white text-sm text-center uppercase tracking-wide">
+              Now
+            </div>
+            <div className="space-y-2">
+              {data.now.map((item, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-[rgba(251,133,0,0.1)] border border-[rgba(251,133,0,0.2)] rounded-lg text-sm flex items-start gap-3 text-white"
+                >
+                  <div className="w-6 h-6 rounded-full bg-[rgba(251,133,0,0.2)] flex items-center justify-center flex-shrink-0 mt-0.5 text-xs text-[#FB8500] font-bold">
+                    ✕
+                  </div>
+                  <div>{item}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ARROWS Column */}
+          <div className="hidden md:flex flex-col items-center justify-start pt-12 gap-3">
+            {[...Array(13)].map((_, i) => (
+              <div key={i} className="text-2xl font-black text-[#FFB703]">
+                →
+              </div>
+            ))}
+          </div>
+
+          {/* FUTURE Column */}
+          <div>
+            <div className="bg-[#219EBC] px-5 py-3 rounded-t-xl font-bold text-white text-sm text-center uppercase tracking-wide">
+              Future
+            </div>
+            <div className="space-y-2">
+              {data.future.map((item, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-[rgba(33,158,188,0.1)] border border-[rgba(33,158,188,0.2)] rounded-lg text-sm flex items-start gap-3 text-white"
+                >
+                  <div className="w-6 h-6 rounded-full bg-[rgba(33,158,188,0.2)] flex items-center justify-center flex-shrink-0 mt-0.5 text-xs text-[#219EBC] font-bold">
+                    ✓
+                  </div>
+                  <div>{item}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
