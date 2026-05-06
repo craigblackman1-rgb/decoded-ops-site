@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 interface RoadmapData {
   tag: string;
   title: string;
@@ -153,8 +155,8 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
             </thead>
             <tbody>
               {PHASE_ROWS.map((phase) => (
-                <>
-                  <tr key={`phase-${phase.label}`}>
+                <React.Fragment key={phase.label}>
+                  <tr>
                     <td
                       colSpan={11}
                       className="px-4 py-2 text-xs font-bold tracking-widest text-white uppercase"
@@ -187,7 +189,7 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
                       </tr>
                     );
                   })}
-                </>
+                </React.Fragment>
               ))}
             </tbody>
           </table>
