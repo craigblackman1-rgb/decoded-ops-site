@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'eCommerce Not Connected to Operations | Decoded Ops',
   description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
   alternates: { canonical: '/problems/ecommerce-not-connected' },
+  openGraph: {
+    title: 'eCommerce Not Connected to Operations | Decoded Ops',
+    description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+    url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'eCommerce Not Connected to Operations | Decoded Ops',
+    description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+  },
 };
 
 const ecommerceNotConnectedSchema = {

@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Workwear & Teamwear Technology | Decoded Ops',
   description: 'Technology and operations consultancy for workwear and teamwear businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/workwear-teamwear' },
+  openGraph: {
+    title: 'Workwear & Teamwear Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for workwear and teamwear businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/workwear-teamwear',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Workwear & Teamwear Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for workwear and teamwear businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/workwear-teamwear#webpage',
+  url: 'https://decodedops.co.uk/sectors/workwear-teamwear',
+  name: 'Workwear & Teamwear Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for workwear and teamwear businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function WorkwearTeamwearPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Workwear & teamwear"
       tagline="Managed accounts and repeat orders ||should be your most efficient business. Usually they're not.||"
       intro="Workwear and teamwear businesses have the best opportunity for systemised, scalable revenue — but only if the technology and processes can actually support it. Most can't."
@@ -45,5 +69,6 @@ export default function WorkwearTeamwearPage() {
       ]}
       cta="Find out what your managed accounts are really costing you to run"
     />
+    </>
   );
 }

@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   description:
     'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
   alternates: { canonical: '/locations/fractional-cto' },
+  openGraph: {
+    title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
+    description:
+      'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
+    url: 'https://decodedops.co.uk/locations/fractional-cto',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
+    description:
+      'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
+  },
 };
 
 const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;

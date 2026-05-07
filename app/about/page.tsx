@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: 'About Decoded Ops | Technology Consultancy',
   description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    type: 'website',
+    title: 'About Decoded Ops | Technology Consultancy',
+    description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+    url: 'https://decodedops.co.uk/about',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Decoded Ops | Technology Consultancy',
+    description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+  },
 };
 import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
 import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';

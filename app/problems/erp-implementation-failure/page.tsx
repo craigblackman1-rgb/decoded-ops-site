@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'ERP Implementation Failure | Decoded Ops',
   description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
   alternates: { canonical: '/problems/erp-implementation-failure' },
+  openGraph: {
+    title: 'ERP Implementation Failure | Decoded Ops',
+    description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+    url: 'https://decodedops.co.uk/problems/erp-implementation-failure',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ERP Implementation Failure | Decoded Ops',
+    description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+  },
 };
 
 const erpFailureSchema = {

@@ -61,6 +61,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://decodedops.co.uk/resources</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://decodedops.co.uk/resources/audit-checklist</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
@@ -74,6 +79,21 @@
     <loc>https://decodedops.co.uk/resources/software-reviews</loc>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/small-business</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/retained</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/transform</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <!-- Blog posts (new) -->
   <url>
@@ -125,16 +145,6 @@
     <loc>https://decodedops.co.uk/tools/rto-calculator</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://decodedops.co.uk/retained</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://decodedops.co.uk/transform</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://decodedops.co.uk/problems/ecommerce-not-connected</loc>

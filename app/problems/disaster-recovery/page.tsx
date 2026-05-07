@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'Systems Disaster Recovery & Outage Planning | Decoded Ops',
   description: 'When your systems go down, every hour costs money. Find out why most print and embroidery businesses don\'t have a DR plan — and what to do about it.',
   alternates: { canonical: '/problems/disaster-recovery' },
+  openGraph: {
+    title: 'Systems Disaster Recovery & Outage Planning | Decoded Ops',
+    description: 'When your systems go down, every hour costs money. Find out why most print and embroidery businesses don\'t have a DR plan — and what to do about it.',
+    url: 'https://decodedops.co.uk/problems/disaster-recovery',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Systems Disaster Recovery & Outage Planning | Decoded Ops',
+    description: 'When your systems go down, every hour costs money. Find out why most print and embroidery businesses don\'t have a DR plan — and what to do about it.',
+  },
 };
 
 const drSchema = {

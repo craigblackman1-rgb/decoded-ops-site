@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users } from 'lucide-react';
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Ops | Print & Embroidery Technology Consultant',
   description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Decoded Ops | Print & Embroidery Technology Consultant',
     description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
@@ -16,6 +18,29 @@ export const metadata: Metadata = {
     title: 'Decoded Ops | Print & Embroidery Technology Consultant',
     description: 'Operations and technology consultancy for print, embroidery, and decoration businesses.',
   },
+};
+
+const homepageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/#webpage',
+      url: 'https://decodedops.co.uk',
+      name: 'Decoded Ops | Print & Embroidery Technology Consultant',
+      description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'ItemList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' } },
+        { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Deliver', url: 'https://decodedops.co.uk/deliver' } },
+        { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Transform', url: 'https://decodedops.co.uk/transform' } },
+        { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Retained', url: 'https://decodedops.co.uk/retained' } },
+      ],
+    },
+  ],
 };
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
@@ -54,6 +79,7 @@ const sectors = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homepageSchema} />
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

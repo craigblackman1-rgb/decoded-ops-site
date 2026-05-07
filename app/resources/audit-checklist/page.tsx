@@ -4,6 +4,18 @@ import { ArrowRight, CheckCircle2, Download } from 'lucide-react';
 export const metadata = {
   title: 'Operational Audit Checklist | Decoded Ops',
   description: 'A practical checklist to evaluate your operations, technology, and processes. Use this before you hire a consultant.',
+  alternates: { canonical: '/resources/audit-checklist' },
+  openGraph: {
+    type: 'website',
+    title: 'Operational Audit Checklist | Decoded Ops',
+    description: 'A practical checklist to evaluate your operations, technology, and processes. Use this before you hire a consultant.',
+    url: 'https://decodedops.co.uk/resources/audit-checklist',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Operational Audit Checklist | Decoded Ops',
+    description: 'A practical checklist to evaluate your operations, technology, and processes. Use this before you hire a consultant.',
+  },
 };
 
 const checklist = [

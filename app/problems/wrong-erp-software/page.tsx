@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'Wrong ERP Software for Your Business | Decoded Ops',
   description: 'Bought ERP software that doesn\'t fit? You\'re not alone. Independent advice on whether to fix, replace, or make the best of what you have.',
   alternates: { canonical: '/problems/wrong-erp-software' },
+  openGraph: {
+    title: 'Wrong ERP Software for Your Business | Decoded Ops',
+    description: 'Bought ERP software that doesn\'t fit? You\'re not alone. Independent advice on whether to fix, replace, or make the best of what you have.',
+    url: 'https://decodedops.co.uk/problems/wrong-erp-software',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wrong ERP Software for Your Business | Decoded Ops',
+    description: 'Bought ERP software that doesn\'t fit? You\'re not alone. Independent advice on whether to fix, replace, or make the best of what you have.',
+  },
 };
 
 const wrongErpSchema = {

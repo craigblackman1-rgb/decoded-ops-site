@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
   description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what your disconnected software stack is actually costing you each week.',
   alternates: { canonical: '/problems/systems-dont-talk' },
+  openGraph: {
+    title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
+    description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what your disconnected software stack is actually costing you each week.',
+    url: 'https://decodedops.co.uk/problems/systems-dont-talk',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
+    description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what your disconnected software stack is actually costing you each week.',
+  },
 };
 
 const systemsDontTalkSchema = {

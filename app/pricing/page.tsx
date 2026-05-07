@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £2,500. Project delivery, transformation programmes, and retained engagements priced by business size.',
     url: 'https://decodedops.co.uk/pricing',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing | Decoded Ops',
+    description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £2,500. Project delivery, transformation programmes, and retained engagements priced by business size.',
+  },
 };
 
 export default function PricingPage() {

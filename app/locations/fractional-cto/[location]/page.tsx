@@ -22,6 +22,17 @@ export async function generateMetadata({
     alternates: {
       canonical: `/locations/fractional-cto/${loc.slug}`,
     },
+    openGraph: {
+      title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
+      description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+      url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
+      description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+    },
   };
 }
 

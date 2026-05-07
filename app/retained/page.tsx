@@ -50,7 +50,7 @@ const retainedSchema = {
         {
           '@type': 'Question',
           name: 'How is Retained different from hiring a full-time CTO?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 3 months.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 6 months for core engagements, with 30 days written notice after.' },
         },
       ],
     },
@@ -116,7 +116,7 @@ export default function RetainedPage() {
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
                 <div>
-                  <div className="text-2xl font-bold text-[#023047]">3 months</div>
+                  <div className="text-2xl font-bold text-[#023047]">6 months</div>
                   <div className="text-sm text-[#023047]/70">Minimum engagement</div>
                 </div>
                 <div className="w-px bg-[#8ECAE6]" />
@@ -212,7 +212,7 @@ export default function RetainedPage() {
               <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-6">How it&apos;s structured</div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-sm text-[#8ECAE6]">Fixed days per month. Agreed at the start of the engagement. Minimum 3 months.</div>
+                  <div className="text-sm text-[#8ECAE6]">Fixed days per month. Agreed at the start of the engagement. Minimum 6 months.</div>
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-sm text-[#8ECAE6] leading-relaxed">
@@ -221,7 +221,7 @@ export default function RetainedPage() {
                 </div>
                 <div className="border-t border-[#F8F9FA]/10 pt-6">
                   <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">No lock-in after minimum</div>
-                  <div className="text-sm text-[#8ECAE6]">30 days notice either side after the 3-month minimum. No penalties. No conditions.</div>
+                  <div className="text-sm text-[#8ECAE6]">30 days notice either side after the 6-month minimum. No penalties. No conditions.</div>
                 </div>
               </div>
             </div>

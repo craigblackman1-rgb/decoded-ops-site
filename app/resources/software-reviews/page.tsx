@@ -5,6 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 export const metadata = {
   title: 'Software Reviews for Print & Embroidery | Decoded Ops',
   description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+  alternates: { canonical: '/resources/software-reviews' },
+  openGraph: {
+    type: 'website',
+    title: 'Software Reviews for Print & Embroidery | Decoded Ops',
+    description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+    url: 'https://decodedops.co.uk/resources/software-reviews',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Software Reviews for Print & Embroidery | Decoded Ops',
+    description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+  },
 };
 
 const schema = {

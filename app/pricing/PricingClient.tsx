@@ -199,7 +199,7 @@ const segmentBTiers = [
   },
 ];
 
-/* ─── Questionnaire — 2 questions ───────────────────────────────────── */
+/* ─── Questionnaire — 5 questions ───────────────────────────────────── */
 const questions = [
   {
     id: 'situation',
@@ -221,6 +221,37 @@ const questions = [
       { label: '£500k – £2m', detail: 'On-site engagement', value: 'small' },
       { label: '£2m – £7.5m', detail: 'On-site engagement', value: 'mid' },
       { label: '£7.5m or above', detail: 'Programme / retained', value: 'growth' },
+    ],
+  },
+  {
+    id: 'locations',
+    text: 'How many physical locations does your business operate from?',
+    sub: 'This helps me understand the complexity of your setup.',
+    options: [
+      { label: 'Single site', detail: 'One location — everything runs from here', value: 'single' },
+      { label: '2–3 sites', detail: 'Multiple locations across the UK', value: 'multi' },
+      { label: '4 or more', detail: 'Distributed across several sites', value: 'distributed' },
+    ],
+  },
+  {
+    id: 'systems',
+    text: 'How many key software systems do you currently use?',
+    sub: 'Think ERP, eCommerce, accounting, CRM, production software.',
+    options: [
+      { label: '1–3 systems', detail: 'A relatively simple tech stack', value: 'low' },
+      { label: '4–7 systems', detail: 'Several tools — some integrated, some not', value: 'medium' },
+      { label: '8 or more', detail: 'A complex tech landscape', value: 'high' },
+    ],
+  },
+  {
+    id: 'timeline',
+    text: 'What\'s your timeline for making a decision?',
+    sub: 'No pressure — this helps me prioritise.',
+    options: [
+      { label: 'Urgent — this month', detail: 'Something needs to change now', value: 'urgent' },
+      { label: 'Soon — 1 to 3 months', detail: 'Planning to start in the near term', value: 'soon' },
+      { label: 'Planning — 3 to 6 months', detail: 'Gathering information before committing', value: 'planning' },
+      { label: 'No rush — just exploring', detail: 'Curious about options for the future', value: 'exploring' },
     ],
   },
 ];
@@ -839,7 +870,7 @@ export function PricingClient() {
             Find the right engagement
           </h1>
           <p className="text-lg text-[#023047]/70 max-w-2xl mx-auto">
-            Two quick questions and we&apos;ll point you to the most relevant option. No VAT — Craig is not VAT registered.
+            Five quick questions and I&apos;ll point you to the most relevant option. No VAT — Craig is not VAT registered.
           </p>
         </div>
       </section>

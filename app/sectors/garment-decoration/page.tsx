@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Garment Decoration Technology & Operations | Decoded Ops',
   description: 'Technology and operations consultancy for garment decoration businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/garment-decoration' },
+  openGraph: {
+    title: 'Garment Decoration Technology & Operations | Decoded Ops',
+    description: 'Technology and operations consultancy for garment decoration businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/garment-decoration',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Garment Decoration Technology & Operations | Decoded Ops',
+    description: 'Technology and operations consultancy for garment decoration businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/garment-decoration#webpage',
+  url: 'https://decodedops.co.uk/sectors/garment-decoration',
+  name: 'Garment Decoration Technology & Operations | Decoded Ops',
+  description: 'Technology and operations consultancy for garment decoration businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function GarmentDecorationPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Garment decoration"
       tagline="The systems behind embroidery, DTG, screen print and heat transfer ||were never built for your business.||"
       intro="Every decoration method has its own production logic, its own constraints, and its own failure modes. Most ERP systems treat them all the same. That's where the cost lives."
@@ -45,5 +69,6 @@ export default function GarmentDecorationPage() {
       ]}
       cta="Find out what your decoration workflow is really costing you"
     />
+    </>
   );
 }

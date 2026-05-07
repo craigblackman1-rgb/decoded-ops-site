@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Signs & Graphics Technology | Decoded Ops',
   description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/signs-graphics' },
+  openGraph: {
+    title: 'Signs & Graphics Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/signs-graphics',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Signs & Graphics Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
+  url: 'https://decodedops.co.uk/sectors/signs-graphics',
+  name: 'Signs & Graphics Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function SignsGraphicsPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Signs & graphics"
       tagline="Large format and signage businesses run on ||tight margins and complex survey-to-fit workflows.||"
       intro="Signs and graphics businesses have production processes that generic ERP systems struggle to model. The result is usually spreadsheets, whiteboards, and people carrying information in their heads."
@@ -45,5 +69,6 @@ export default function SignsGraphicsPage() {
       ]}
       cta="Understand where your signs business is losing time and margin"
     />
+    </>
   );
 }

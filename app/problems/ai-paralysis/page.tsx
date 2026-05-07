@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'AI Paralysis in Print & Embroidery Businesses | Decoded Ops',
   description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
   alternates: { canonical: '/problems/ai-paralysis' },
+  openGraph: {
+    title: 'AI Paralysis in Print & Embroidery Businesses | Decoded Ops',
+    description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
+    url: 'https://decodedops.co.uk/problems/ai-paralysis',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Paralysis in Print & Embroidery Businesses | Decoded Ops',
+    description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
+  },
 };
 
 const aiParalysisSchema = {

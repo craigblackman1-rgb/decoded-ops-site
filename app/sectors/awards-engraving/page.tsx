@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Awards & Engraving Technology | Decoded Ops',
   description: 'Technology and operations consultancy for awards and engraving businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/awards-engraving' },
+  openGraph: {
+    title: 'Awards & Engraving Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for awards and engraving businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/awards-engraving',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Awards & Engraving Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for awards and engraving businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
+  url: 'https://decodedops.co.uk/sectors/awards-engraving',
+  name: 'Awards & Engraving Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for awards and engraving businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function AwardsEngravingPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Awards & engraving"
       tagline="Personalisation at scale is operationally complex. ||Most awards businesses are still solving it manually.||"
       intro="Variable data, bespoke personalisation, and tight event deadlines make awards and engraving one of the most operationally demanding niches in the decorated products sector."
@@ -45,5 +69,6 @@ export default function AwardsEngravingPage() {
       ]}
       cta="Find out what your personalisation workflow is really costing you"
     />
+    </>
   );
 }

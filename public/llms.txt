@@ -1,0 +1,30 @@
+# Decoded Ops
+> Independent technology and operations consultancy for print, embroidery, workwear, and promotional merchandise businesses. Plain English. No jargon. No vendor agenda.
+
+## Services
+- [Clarity Audit](https://decodedops.co.uk/clarity): Operational and technology audit. From £2,500. On-site or remote. 3× Clarity Guarantee.
+- [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. From £1,050/month. 3-month minimum.
+- [Transform](https://decodedops.co.uk/transform): Multi-workstream digital transformation. From £1,500/month. Milestone-based minimum.
+- [Retained](https://decodedops.co.uk/retained): Fractional CTO / Head of Operations. From £1,440/month. 6-month minimum.
+
+## Small Business
+- [Small Business Services](https://decodedops.co.uk/small-business): Remote ops support for businesses under £500k. Clarity Check £395. Monthly from £395.
+
+## Resources
+- [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
+- [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
+- [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
+- [Software Reviews](https://decodedops.co.uk/resources/software-reviews): Independent ERP and eCommerce reviews.
+
+## Tools
+- [Pricing Questionnaire](https://decodedops.co.uk/pricing): Find the right engagement for your business.
+- [Automation ROI Calculator](https://decodedops.co.uk/tools/automation-roi-calculator)
+- [RTO Calculator](https://decodedops.co.uk/tools/rto-calculator)
+- [Downtime Cost Calculator](https://decodedops.co.uk/tools/downtime-cost-calculator)
+- [Ops Health Score](https://decodedops.co.uk/tools/ops-health-score)
+- [AI Readiness Check](https://decodedops.co.uk/tools/ai-readiness-check)
+- [Should I Replace My ERP?](https://decodedops.co.uk/tools/should-i-replace-erp)
+
+## Key Pages
+- [About](https://decodedops.co.uk/about): 25+ years in product-based businesses.
+- [Contact](https://decodedops.co.uk/contact): Book a free 60-minute discovery call.

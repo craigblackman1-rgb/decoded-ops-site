@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   title: 'Hidden Cost of Manual Workarounds | Decoded Ops',
   description: 'Spreadsheets, shadow systems, and manual processes that keep the business running but hide the real cost of operational inefficiency.',
   alternates: { canonical: '/problems/manual-workarounds' },
+  openGraph: {
+    title: 'Hidden Cost of Manual Workarounds | Decoded Ops',
+    description: 'Spreadsheets, shadow systems, and manual processes that keep the business running but hide the real cost of operational inefficiency.',
+    url: 'https://decodedops.co.uk/problems/manual-workarounds',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hidden Cost of Manual Workarounds | Decoded Ops',
+    description: 'Spreadsheets, shadow systems, and manual processes that keep the business running but hide the real cost of operational inefficiency.',
+  },
 };
 
 const manualWorkaroundsSchema = {

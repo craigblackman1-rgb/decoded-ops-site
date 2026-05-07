@@ -4,6 +4,17 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Decoded Ops',
   description: 'How Decoded Ops collects, uses, and protects your personal data. Read our full privacy policy for details of your rights and how to contact us.',
   alternates: { canonical: '/privacy' },
+  openGraph: {
+    type: 'website',
+    title: 'Privacy Policy | Decoded Ops',
+    description: 'How Decoded Ops collects, uses, and protects your personal data. Read our full privacy policy for details of your rights and how to contact us.',
+    url: 'https://decodedops.co.uk/privacy',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Decoded Ops',
+    description: 'How Decoded Ops collects, uses, and protects your personal data. Read our full privacy policy for details of your rights and how to contact us.',
+  },
 };
 
 export default function PrivacyPage() {

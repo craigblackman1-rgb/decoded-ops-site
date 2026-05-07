@@ -1,10 +1,35 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Free Operational Tools | Decoded Ops',
   description:
     'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+  alternates: { canonical: '/tools' },
+  openGraph: {
+    type: 'website',
+    title: 'Free Operational Tools | Decoded Ops',
+    description:
+      'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+    url: 'https://decodedops.co.uk/tools',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Operational Tools | Decoded Ops',
+    description:
+      'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+  },
+};
+
+const toolsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://decodedops.co.uk/tools#collection',
+  url: 'https://decodedops.co.uk/tools',
+  name: 'Free Tools | Decoded Ops',
+  description: 'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const tools = [
@@ -49,6 +74,7 @@ const tools = [
 export default function ToolsPage() {
   return (
     <main>
+      <JsonLd data={toolsSchema} />
       {/* Hero */}
       <section
         className="pt-24 pb-16 lg:pt-32 lg:pb-24"

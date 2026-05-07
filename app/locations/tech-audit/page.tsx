@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   description:
     'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
   alternates: { canonical: '/locations/tech-audit' },
+  openGraph: {
+    title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
+    description:
+      'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+    url: 'https://decodedops.co.uk/locations/tech-audit',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
+    description:
+      'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+  },
 };
 
 const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;

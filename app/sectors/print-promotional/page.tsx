@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Print & Promotional Technology | Decoded Ops',
   description: 'Technology and operations consultancy for print and promotional businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/print-promotional' },
+  openGraph: {
+    title: 'Print & Promotional Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for print and promotional businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/print-promotional',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Print & Promotional Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for print and promotional businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/print-promotional#webpage',
+  url: 'https://decodedops.co.uk/sectors/print-promotional',
+  name: 'Print & Promotional Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for print and promotional businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function PrintPromotionalPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Print & promotional"
       tagline="Printed merchandise has margins too thin to absorb ||the operational waste you can't see.||"
       intro="In promotional merchandise, margin compression is constant. The businesses that survive and grow are the ones whose systems are tight enough to protect margin at every step of the order process."
@@ -45,5 +69,6 @@ export default function PrintPromotionalPage() {
       ]}
       cta="Find out where your margin is going"
     />
+    </>
   );
 }

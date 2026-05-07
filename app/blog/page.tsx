@@ -1,9 +1,32 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
   title: 'Blog | Decoded Ops',
   description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+  alternates: { canonical: '/blog' },
+  openGraph: {
+    type: 'website',
+    title: 'Blog | Decoded Ops',
+    description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+    url: 'https://decodedops.co.uk/blog',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog | Decoded Ops',
+    description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+  },
+};
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': 'https://decodedops.co.uk/blog#collection',
+  url: 'https://decodedops.co.uk/blog',
+  name: 'Blog | Decoded Ops',
+  description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const posts = [
@@ -60,6 +83,7 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={blogSchema} />
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">

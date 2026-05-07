@@ -1,11 +1,33 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Labels & Packaging Technology | Decoded Ops',
   description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
   alternates: { canonical: '/sectors/labels-packaging' },
+  openGraph: {
+    title: 'Labels & Packaging Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+    url: 'https://decodedops.co.uk/sectors/labels-packaging',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Labels & Packaging Technology | Decoded Ops',
+    description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+  },
+};
+
+const sectorSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': 'https://decodedops.co.uk/sectors/labels-packaging#webpage',
+  url: 'https://decodedops.co.uk/sectors/labels-packaging',
+  name: 'Labels & Packaging Technology | Decoded Ops',
+  description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
 const workflow = (
@@ -24,7 +46,9 @@ const workflow = (
 
 export default function LabelsPackagingPage() {
   return (
-    <SectorPage
+    <>
+      <JsonLd data={sectorSchema} />
+      <SectorPage
       sector="Labels & packaging"
       tagline="Variable data printing and compliance labelling ||requires operational precision most systems can't deliver.||"
       intro="Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times."
@@ -45,5 +69,6 @@ export default function LabelsPackagingPage() {
       ]}
       cta="Understand the operational risk and cost in your labels business"
     />
+    </>
   );
 }
