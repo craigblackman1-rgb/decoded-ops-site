@@ -2,6 +2,10 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Client Proposals — Decoded Ops',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function ClientsPage() {

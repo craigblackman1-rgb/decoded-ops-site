@@ -75,6 +75,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name: 'Decoded Ops',
           url: 'https://decodedops.co.uk',
           description: 'Technology and operations consultancy for print, embroidery and decoration businesses. Plain English. Real answers. 25 years in the sector.',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Worthing',
+            addressRegion: 'West Sussex',
+            addressCountry: 'GB',
+          },
+          telephone: '07735 620 603',
           founder: {
             '@type': 'Person',
             name: 'Craig Blackman',

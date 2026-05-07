@@ -1,7 +1,22 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users } from 'lucide-react';
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
+
+export const metadata: Metadata = {
+  title: 'Decoded Ops | Print & Embroidery Technology Consultant',
+  description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+  openGraph: {
+    title: 'Decoded Ops | Print & Embroidery Technology Consultant',
+    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+    url: 'https://decodedops.co.uk',
+  },
+  twitter: {
+    title: 'Decoded Ops | Print & Embroidery Technology Consultant',
+    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses.',
+  },
+};
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
 
@@ -65,7 +80,7 @@ export default function HomePage() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  See how it works <ArrowRight size={18} />
+                  See how the Clarity Audit works <ArrowRight size={18} />
                 </Link>
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                   <Phone size={18} /> Book a free 60-min call
@@ -143,7 +158,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <p className="mt-8 text-sm text-[#023047]/50 text-center">Based on operational audits across print, embroidery, workwear, and promotional merchandise businesses.</p>
+          <div className="mt-8 text-sm text-[#023047]/70 text-center max-w-2xl mx-auto space-y-2">
+            <p>These patterns show up in every audit. Read about <Link href="/problems/systems-dont-talk" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">what it looks like when your systems don&apos;t talk</Link>, <Link href="/problems/ecommerce-not-connected" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">why eCommerce disconnect costs more than you think</Link>, and <Link href="/problems/erp-implementation-failure" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">how ERP implementations go wrong</Link>.</p>
+            <p className="text-[#023047]/40">Based on operational audits across print, embroidery, workwear, and promotional merchandise businesses.</p>
+          </div>
         </div>
       </section>
 
@@ -296,8 +314,8 @@ export default function HomePage() {
             <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
             <p className="text-sm text-[#023047]/70">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
           </div>
-          <Link href="/clarity" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047]/90 transition-colors">
-            Read the full breakdown <ArrowRight size={16} />
+          <Link href="/problems/erp-implementation-failure" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047]/90 transition-colors">
+            See what went wrong <ArrowRight size={16} />
           </Link>
         </div>
       </section>

@@ -33,7 +33,7 @@ const schema = {
       datePublished: '2026-04-01T00:00:00Z',
       dateModified: '2026-04-01T00:00:00Z',
       author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
-      publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/why-systems-dont-talk',

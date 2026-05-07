@@ -60,7 +60,7 @@ const claritySchema = {
       '@type': 'Service',
       name: 'Clarity Audit',
       description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses. Written report within 5 working days.',
-      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       serviceType: 'Operational and Technology Audit',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/clarity',

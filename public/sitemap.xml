@@ -11,11 +11,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decodedops.co.uk/audit</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://decodedops.co.uk/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -56,11 +51,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://decodedops.co.uk/fractional</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://decodedops.co.uk/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
@@ -74,6 +64,26 @@
     <loc>https://decodedops.co.uk/resources/audit-checklist</loc>
     <changefreq>yearly</changefreq>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools/automation-roi-calculator</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools/downtime-cost-calculator</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools/rto-calculator</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://decodedops.co.uk/retained</loc>

@@ -28,7 +28,7 @@ const retainedSchema = {
       '@type': 'Service',
       name: 'Retained — Fractional CTO and Head of Operations',
       description: 'Monthly strategic and operational technology leadership for print and decoration businesses. Fractional CTO without the full-time cost.',
-      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       serviceType: 'Fractional CTO and Operations Leadership',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/retained',

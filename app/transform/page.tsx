@@ -28,7 +28,7 @@ const transformSchema = {
       '@type': 'Service',
       name: 'Transform — Digital Transformation Programme',
       description: 'Multi-workstream digital transformation for print and decoration businesses covering ERP, eCommerce, process redesign, and change management.',
-      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       serviceType: 'Digital Transformation Programme',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/transform',

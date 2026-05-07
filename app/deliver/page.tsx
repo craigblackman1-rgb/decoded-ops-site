@@ -28,7 +28,7 @@ const deliverSchema = {
       '@type': 'Service',
       name: 'Deliver — Project Delivery and Vendor Management',
       description: 'Independent vendor management, procurement support, and project oversight for technology implementations in print and decoration businesses.',
-      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       serviceType: 'Project Delivery and Vendor Management',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/deliver',
