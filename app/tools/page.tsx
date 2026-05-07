@@ -9,6 +9,24 @@ export const metadata: Metadata = {
 
 const tools = [
   {
+    title: 'Should I Replace My ERP?',
+    description:
+      'Eight yes/no questions to help you decide whether your system is fixable or it\'s time to plan an exit.',
+    href: '/tools/should-i-replace-erp',
+  },
+  {
+    title: 'AI Readiness Check',
+    description:
+      'Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your foundation first.',
+    href: '/tools/ai-readiness-check',
+  },
+  {
+    title: 'Ops Health Score',
+    description:
+      'Rate your business across five operational dimensions to see where you stand — and where to focus first.',
+    href: '/tools/ops-health-score',
+  },
+  {
     title: 'Downtime Cost Calculator',
     description:
       'Calculate the annual cost of system outages across labour and lost revenue.',

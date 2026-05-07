@@ -19,11 +19,22 @@ const sectors = [
   { label: 'Labels & packaging', href: '/sectors/labels-packaging' },
 ];
 
+const resources = [
+  { label: 'Calculators', href: '/tools' },
+  { label: 'Audit checklist', href: '/resources/audit-checklist' },
+  { label: 'Software reviews', href: '/resources/software-reviews' },
+  { label: 'Blog', href: '/blog' },
+];
+
 const problems = [
   { label: 'ERP implementation failure', href: '/problems/erp-implementation-failure' },
   { label: 'eCommerce not connected to production', href: '/problems/ecommerce-not-connected' },
   { label: "Systems don't talk to each other", href: '/problems/systems-dont-talk' },
   { label: 'Wrong ERP software', href: '/problems/wrong-erp-software' },
+  { label: 'Disaster recovery & outage', href: '/problems/disaster-recovery' },
+  { label: 'No operations owner', href: '/problems/no-ops-owner' },
+  { label: 'Manual workarounds', href: '/problems/manual-workarounds' },
+  { label: 'AI paralysis', href: '/problems/ai-paralysis' },
 ];
 
 function Dropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {
@@ -78,6 +89,7 @@ export function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileSectorsOpen, setMobileSectorsOpen] = useState(false);
   const [mobileProblemsOpen, setMobileProblemsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
 
   return (
     <>
@@ -101,9 +113,8 @@ export function Header() {
               <Dropdown label="Services" items={services} />
               <Dropdown label="Sectors" items={sectors} />
               <Dropdown label="Problems" items={problems} />
+              <Dropdown label="Resources" items={resources} />
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
-              <Link href="/blog" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Blog</Link>
-              <Link href="/tools" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Tools</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
               <Link
                 href="/contact"
@@ -129,8 +140,6 @@ export function Header() {
             <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
               {[
                 { label: 'Pricing', href: '/pricing' },
-                { label: 'Blog', href: '/blog' },
-                { label: 'Tools', href: '/tools' },
                 { label: 'About', href: '/about' },
               ].map(link => (
                 <Link
@@ -177,6 +186,28 @@ export function Header() {
                 {mobileSectorsOpen && (
                   <div id="mobile-sectors" className="pl-4 pb-2 space-y-1">
                     {sectors.map(link => (
+                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
+                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Resources accordion */}
+              <div className="border-b border-[#8ECAE6]/20">
+                <button
+                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                  aria-expanded={mobileResourcesOpen}
+                  aria-controls="mobile-resources"
+                >
+                  Resources <ChevronDown size={14} className={`transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+                </button>
+                {mobileResourcesOpen && (
+                  <div id="mobile-resources" className="pl-4 pb-2 space-y-1">
+                    {resources.map(link => (
                       <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
                         className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
                         {link.label}

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" font-family="'DM Sans', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F9FA"/>
+      <stop offset="100%" stop-color="#E8ECF0"/>
+    </linearGradient>
+    <filter id="shadowInner">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+    <filter id="shadowCenter">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Segment arc paths -->
+    <!-- Each arc covers 60 degrees (360/6) with gaps -->
+    <!-- Arc from angle start to start+60 with ~55 degrees visible (5deg gap) -->
+    <!-- Using path arcs: M cx cy L edge-start A r r 0 0 1 edge-end Z -->
+
+    <!-- Segment 1: IT Infrastructure (0° to 60°) -->
+    <clipPath id="seg1">
+      <path d="M 400 400 L 400 140 A 260 260 0 0 1 625 270 Z"/>
+    </clipPath>
+    <!-- Segment 2: Software & Systems (60° to 120°) -->
+    <clipPath id="seg2">
+      <path d="M 400 400 L 625 270 A 260 260 0 0 1 625 530 Z"/>
+    </clipPath>
+    <!-- Segment 3: eCommerce & Digital (120° to 180°) -->
+    <clipPath id="seg3">
+      <path d="M 400 400 L 625 530 A 260 260 0 0 1 400 660 Z"/>
+    </clipPath>
+    <!-- Segment 4: Operations & Workflow (180° to 240°) -->
+    <clipPath id="seg4">
+      <path d="M 400 400 L 400 660 A 260 260 0 0 1 175 530 Z"/>
+    </clipPath>
+    <!-- Segment 5: Technology Budget & Roadmap (240° to 300°) -->
+    <clipPath id="seg5">
+      <path d="M 400 400 L 175 530 A 260 260 0 0 1 175 270 Z"/>
+    </clipPath>
+    <!-- Segment 6: AI Readiness (300° to 360°) -->
+    <clipPath id="seg6">
+      <path d="M 400 400 L 175 270 A 260 260 0 0 1 400 140 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="400" y="48" text-anchor="middle" font-size="24" font-weight="800" fill="#023047" font-family="'Outfit', Arial, sans-serif">Six Areas of Operational Assessment</text>
+  <text x="400" y="70" text-anchor="middle" font-size="13" fill="#023047" opacity="0.5">Every Clarity Audit examines all six — nothing is optional</text>
+
+  <!-- ============ The Segments (drawn manually as rotated groups) ============ -->
+
+  <!-- Outer ring segments (angled labels) -->
+  <g transform="translate(400, 400)">
+
+    <!-- 1. IT Infrastructure — top-right (0°) -->
+    <g transform="rotate(-60)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#219EBC" opacity="0.08"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#219EBC" opacity="0.06"/>
+      <!-- Icon area -->
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">🖥️</text>
+      <!-- Title -->
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">IT Infrastructure</text>
+      <!-- Details -->
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Servers, networks, hosting</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Backup &amp; disaster recovery</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Security &amp; access controls</text>
+      <!-- Score dots -->
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#219EBC"/>
+        <circle cx="15" cy="0" r="4" fill="#219EBC"/>
+        <circle cx="30" cy="0" r="4" fill="#219EBC" opacity="0.3"/>
+        <circle cx="45" cy="0" r="4" fill="#219EBC" opacity="0.3"/>
+        <circle cx="60" cy="0" r="4" fill="#219EBC" opacity="0.3"/>
+      </g>
+    </g>
+
+    <!-- 2. Software & Systems (60°) -->
+    <g transform="rotate(0)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#023047" opacity="0.08"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#023047" opacity="0.05"/>
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">💾</text>
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">Software &amp; Systems</text>
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">ERP / MIS fitness assessment</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Licence utilisation audit</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Integration capability</text>
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#023047"/>
+        <circle cx="15" cy="0" r="4" fill="#023047"/>
+        <circle cx="30" cy="0" r="4" fill="#023047"/>
+        <circle cx="45" cy="0" r="4" fill="#023047" opacity="0.3"/>
+        <circle cx="60" cy="0" r="4" fill="#023047" opacity="0.3"/>
+      </g>
+    </g>
+
+    <!-- 3. eCommerce & Digital (120°) -->
+    <g transform="rotate(60)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#8ECAE6" opacity="0.12"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#8ECAE6" opacity="0.08"/>
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">🛒</text>
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">eCommerce &amp; Digital</text>
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Platform fit for your model</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">B2B portal capabilities</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Order-to-production flow</text>
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#8ECAE6"/>
+        <circle cx="15" cy="0" r="4" fill="#8ECAE6"/>
+        <circle cx="30" cy="0" r="4" fill="#8ECAE6"/>
+        <circle cx="45" cy="0" r="4" fill="#8ECAE6"/>
+        <circle cx="60" cy="0" r="4" fill="#8ECAE6" opacity="0.3"/>
+      </g>
+    </g>
+
+    <!-- 4. Operations & Workflow (180°) -->
+    <g transform="rotate(120)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#FFB703" opacity="0.1"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#FFB703" opacity="0.06"/>
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">📋</text>
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">Operations &amp; Workflow</text>
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Process documentation audit</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Bottleneck identification</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Manual workaround costing</text>
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#FFB703"/>
+        <circle cx="15" cy="0" r="4" fill="#FFB703"/>
+        <circle cx="30" cy="0" r="4" fill="#FFB703"/>
+        <circle cx="45" cy="0" r="4" fill="#FFB703"/>
+        <circle cx="60" cy="0" r="4" fill="#FFB703"/>
+      </g>
+    </g>
+
+    <!-- 5. Technology Budget & Roadmap (240°) -->
+    <g transform="rotate(180)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#FB8500" opacity="0.1"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#FB8500" opacity="0.06"/>
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">📊</text>
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">Budget &amp; Roadmap</text>
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Spend vs. value analysis</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">12-month technology plan</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">ROI benchmarking</text>
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#FB8500"/>
+        <circle cx="15" cy="0" r="4" fill="#FB8500"/>
+        <circle cx="30" cy="0" r="4" fill="#FB8500"/>
+        <circle cx="45" cy="0" r="4" fill="#FB8500"/>
+        <circle cx="60" cy="0" r="4" fill="#FB8500"/>
+      </g>
+    </g>
+
+    <!-- 6. AI Readiness (300°) -->
+    <g transform="rotate(240)">
+      <path d="M 0 -140 A 140 140 0 0 1 121 70 L 0 0 Z" fill="#023047" opacity="0.06"/>
+      <path d="M 0 -260 A 260 260 0 0 1 225 130 L 0 0 Z" fill="#023047" opacity="0.04"/>
+      <rect x="-50" y="-230" width="100" height="100" rx="50" fill="white" filter="url(#shadowInner)"/>
+      <text x="0" y="-192" text-anchor="middle" font-size="32">🤖</text>
+      <text x="0" y="-110" text-anchor="middle" font-size="15" font-weight="700" fill="#023047" font-family="'Outfit', Arial, sans-serif">AI Readiness</text>
+      <text x="0" y="-90" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Process foundation check</text>
+      <text x="0" y="-74" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Data quality assessment</text>
+      <text x="0" y="-58" text-anchor="middle" font-size="11" fill="#023047" opacity="0.6">Opportunity identification</text>
+      <g transform="translate(-30, -38)">
+        <circle cx="0" cy="0" r="4" fill="#023047" opacity="0.5"/>
+        <circle cx="15" cy="0" r="4" fill="#023047" opacity="0.5"/>
+        <circle cx="30" cy="0" r="4" fill="#023047" opacity="0.2"/>
+        <circle cx="45" cy="0" r="4" fill="#023047" opacity="0.2"/>
+        <circle cx="60" cy="0" r="4" fill="#023047" opacity="0.2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Center circle -->
+  <circle cx="400" cy="400" r="80" fill="#023047" filter="url(#shadowCenter)"/>
+  <circle cx="400" cy="400" r="76" fill="none" stroke="#219EBC" stroke-width="2" opacity="0.3"/>
+  <text x="400" y="388" text-anchor="middle" font-size="14" font-weight="800" fill="#F8F9FA" font-family="'Outfit', Arial, sans-serif">Clarity</text>
+  <text x="400" y="406" text-anchor="middle" font-size="11" fill="#8ECAE6">Audit</text>
+
+  <!-- Bottom badge -->
+  <g transform="translate(400, 745)">
+    <rect x="-140" y="-15" width="280" height="30" rx="15" fill="#023047" opacity="0.05"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="600" fill="#023047">1 day on-site • Written report in 5 days • 3× Guarantee</text>
+  </g>
+</svg>

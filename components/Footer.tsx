@@ -14,6 +14,10 @@ const problems = [
   { label: 'eCommerce not connected', href: '/problems/ecommerce-not-connected' },
   { label: "Systems don't talk to each other", href: '/problems/systems-dont-talk' },
   { label: 'Wrong ERP software', href: '/problems/wrong-erp-software' },
+  { label: 'Disaster recovery & outage', href: '/problems/disaster-recovery' },
+  { label: 'No operations owner', href: '/problems/no-ops-owner' },
+  { label: 'Manual workarounds', href: '/problems/manual-workarounds' },
+  { label: 'AI paralysis', href: '/problems/ai-paralysis' },
 ];
 
 const services = [
@@ -123,6 +127,17 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </nav>
+
+          {/* Resources */}
+          <nav aria-label="Resource links">
+            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Resources</h2>
+            <ul className="space-y-2.5">
+              <li><Link href="/tools" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Calculators</Link></li>
+              <li><Link href="/resources/audit-checklist" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Audit checklist</Link></li>
+              <li><Link href="/resources/software-reviews" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Software reviews</Link></li>
+              <li><Link href="/blog" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Blog</Link></li>
             </ul>
           </nav>
 

@@ -66,9 +66,35 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://decodedops.co.uk/resources/5-warning-signs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/resources/software-reviews</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <!-- Blog posts (new) -->
+  <url>
+    <loc>https://decodedops.co.uk/blog/the-real-cost-of-a-failed-erp-project</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/blog/ai-isnt-your-problem-your-processes-are</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/blog/what-happens-when-your-systems-go-down</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
     <loc>https://decodedops.co.uk/tools</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://decodedops.co.uk/tools/automation-roi-calculator</loc>
@@ -76,9 +102,24 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://decodedops.co.uk/tools/should-i-replace-erp</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools/ai-readiness-check</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/tools/ops-health-score</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://decodedops.co.uk/tools/downtime-cost-calculator</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://decodedops.co.uk/tools/rto-calculator</loc>
@@ -112,6 +153,26 @@
   </url>
   <url>
     <loc>https://decodedops.co.uk/problems/wrong-erp-software</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/problems/disaster-recovery</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/problems/no-ops-owner</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/problems/manual-workarounds</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://decodedops.co.uk/problems/ai-paralysis</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
   </url>

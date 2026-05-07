@@ -8,6 +8,30 @@ export const metadata = {
 
 const posts = [
   {
+    slug: 'the-real-cost-of-a-failed-erp-project',
+    title: 'The Real Cost of a Failed ERP Project',
+    excerpt: 'How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project — and how an upfront audit would have prevented it.',
+    date: 'May 2026',
+    readTime: '9 min',
+    category: 'ERP',
+  },
+  {
+    slug: 'ai-isnt-your-problem-your-processes-are',
+    title: 'AI Is Not Your Problem. Your Processes Are.',
+    excerpt: 'Before you invest in AI, fix your processes. AI amplifies what you already have — including your problems. Here\'s what to do first.',
+    date: 'May 2026',
+    readTime: '8 min',
+    category: 'AI & Technology',
+  },
+  {
+    slug: 'what-happens-when-your-systems-go-down',
+    title: 'What Happens When Your Systems Go Down',
+    excerpt: 'Most businesses don\'t have a disaster recovery plan. Here\'s what happens when your systems go down — and what to do before they do.',
+    date: 'June 2026',
+    readTime: '8 min',
+    category: 'Operations',
+  },
+  {
     slug: 'why-systems-dont-talk',
     title: "Why Systems Don't Talk (And What It Costs)",
     excerpt: 'Understanding system integration failures in print and embroidery businesses. Why your ERP and eCommerce don\'t connect — and what that costs you every week.',

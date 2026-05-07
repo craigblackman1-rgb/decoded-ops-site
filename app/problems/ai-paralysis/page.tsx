@@ -1,0 +1,71 @@
+import type { Metadata } from 'next';
+import { ProblemPage } from '@/components/ProblemPage';
+import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { JsonLd } from '@/components/JsonLd';
+
+export const metadata: Metadata = {
+  title: 'AI Paralysis in Print & Embroidery Businesses | Decoded Ops',
+  description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
+  alternates: { canonical: '/problems/ai-paralysis' },
+};
+
+const aiParalysisSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why are small and medium print businesses struggling with AI adoption?',
+          acceptedAnswer: { '@type': 'Answer', text: 'AI is being sold as a magic solution, but most businesses in this sector don\'t have the process foundation, data quality, or digital infrastructure to make AI work. The real opportunity is in fixing what\'s broken first.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need AI to stay competitive in the decorated goods industry?',
+          acceptedAnswer: { '@type': 'Answer', text: 'In most cases, no — not yet. What will make you uncompetitive is continuing with broken processes and disconnected systems while pretending the problem is that you haven\'t adopted AI.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What should I do before investing in AI tools?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Get your data in order, stabilise your core systems, document your processes, and identify the specific operational problems AI might actually help with — rather than buying AI and looking for a problem to apply it to.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I separate genuine AI opportunities from vendor hype?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Ask any AI vendor: what specific operational problem does this solve in a print or embroidery business? If they can\'t answer clearly and concretely, it is hype — regardless of how impressive the technology looks.' },
+        },
+      ],
+    },
+  ],
+};
+
+export default function AiParalysisPage() {
+  return (
+    <>
+      <JsonLd data={aiParalysisSchema} />
+      <ProblemPage
+      problem="AI paralysis"
+      headline="Everyone is talking about AI. ||No one can tell you what it means for your business.||"
+      intro="Every software vendor is adding AI features. Every conference talk is about AI. Every competitor is asking you about your AI strategy. But when you ask what AI actually means for a print, embroidery, or decoration business, the answers are vague, generic, or non-existent."
+      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      symptoms={[
+        "You feel pressure to 'have an AI strategy' but don't know where to start",
+        "Vendors are selling AI features you didn't ask for and can't see the value of",
+        "You've been told AI will transform your business — but nobody can say how",
+        "You're worried about being left behind but don't want to invest in hype",
+        "Your team are experimenting with ChatGPT but there's no coherent approach",
+        "You suspect AI could help somewhere, but you don't know where",
+        "Every article you read contradicts the last one",
+      ]}
+      causes={[
+        { title: 'AI is being sold as magic, not as a tool', body: "The AI narrative in the technology industry is built on transformational stories that rarely translate to operational reality. A business that prints and despatches physical products needs practical answers, not visionary promises." },
+        { title: 'No process foundation to apply AI to', body: "AI works best when applied to well-defined, well-documented processes with clean data. Most businesses in this sector have undocumented processes, inconsistent data, and systems that don't talk to each other. AI cannot fix those things — it can only amplify them." },
+        { title: 'The wrong question is being asked', body: "'How do we adopt AI?' is the wrong question. The right question is 'What specific operational problems do we have that AI might help solve?' Without that reframing, AI adoption becomes a solution in search of a problem." },
+        { title: 'Fear of missing out is driving decisions', body: "The fear that competitors will adopt AI and pull ahead creates pressure to do something — anything. That pressure leads to buying AI tools without a clear use case, which leads to wasted investment and reinforces the cynicism that stopped the business from engaging in the first place." },
+      ]}
+      howIHelp="I give you an honest, grounded assessment of where AI can actually help your business right now. I am not here to sell you an AI tool. I look at your current processes, your data quality, your technology stack, and your team's capability — and I tell you what needs to be in place before AI can deliver value, where the real AI opportunities are in your specific operation, and what is noise that you can safely ignore. No hype. No vendor agenda. Just a clear answer."
+    />
+    </>
+  );
+}
