@@ -23,22 +23,36 @@ export const metadata: Metadata = {
 
 const retainedSchema = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What does the Retained service include?',
-      acceptedAnswer: { '@type': 'Answer', text: 'The Retained service provides a defined number of days per month (agreed in advance), attendance at leadership and operations meetings, ownership of specific projects or workstreams, vendor management and technology procurement oversight, technology roadmap ownership, team coaching and process documentation, and a direct line to Craig Blackman — not a team of junior consultants.' },
+      '@type': 'Service',
+      name: 'Retained — Fractional CTO and Head of Operations',
+      description: 'Monthly strategic and operational technology leadership for print and decoration businesses. Fractional CTO without the full-time cost.',
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      serviceType: 'Fractional CTO and Operations Leadership',
+      areaServed: 'GB',
+      url: 'https://decodedops.co.uk/retained',
+      offers: { '@type': 'Offer', price: '1440', priceCurrency: 'GBP', priceRange: 'From £1,440/month' },
     },
     {
-      '@type': 'Question',
-      name: 'When does the Retained model make sense?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Retained suits four situations: post-audit implementation (you have the findings, now need someone to drive the fixes without a full-time hire); ERP or technology transitions (you need someone who understands the sector, the vendors, and can hold everyone accountable); scaling without chaos (revenue is growing but systems are not keeping up); or covering an ops gap (ops director has left, or you have never had one and need senior operational thinking without an £80,000+ salary commitment).' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How is Retained different from hiring a full-time CTO?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 3 months.' },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Retained service include?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The Retained service provides a defined number of days per month (agreed in advance), attendance at leadership and operations meetings, ownership of specific projects or workstreams, vendor management and technology procurement oversight, technology roadmap ownership, team coaching and process documentation, and a direct line to Craig Blackman — not a team of junior consultants.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'When does the Retained model make sense?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Retained suits four situations: post-audit implementation (you have the findings, now need someone to drive the fixes without a full-time hire); ERP or technology transitions (you need someone who understands the sector, the vendors, and can hold everyone accountable); scaling without chaos (revenue is growing but systems are not keeping up); or covering an ops gap (ops director has left, or you have never had one and need senior operational thinking without an £80,000+ salary commitment).' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is Retained different from hiring a full-time CTO?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 3 months.' },
+        },
+      ],
     },
   ],
 };

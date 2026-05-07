@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Wrong ERP Software for Your Business | Decoded Ops',
@@ -8,9 +9,42 @@ export const metadata: Metadata = {
   alternates: { canonical: '/problems/wrong-erp-software' },
 };
 
+const wrongErpSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why does selecting ERP software based on a demo lead to problems?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Vendors are excellent at demos. They show you the things the software does well and move quickly past the things it does not. Without sector expertise on your side of the table, you are evaluating presentation skills.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why should you write an independent vendor brief before selecting ERP?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A vendor brief — written by someone who understands your business model before you talk to any vendor — changes the selection process entirely. Without it, you are being sold to rather than making an informed choice.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why are ERP reference sites in other sectors misleading?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Generic ERP vendors often have good reference sites in manufacturing or distribution. Those references do not tell you how the software performs in a decoration business with mixed methods, variable artwork, and short-run personalisation.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the total cost of ownership for an ERP system?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Implementation, training, customisation, integration, ongoing support. The total cost of ownership for an ERP is often two to three times the headline licence cost. That comparison rarely happens before selection.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function WrongERPSoftwarePage() {
   return (
-    <ProblemPage
+    <>
+      <JsonLd data={wrongErpSchema} />
+      <ProblemPage
       problem="Wrong ERP software"
       headline="The system looked right in the demo. ||It doesn't fit your business.||"
       intro="Selecting the wrong ERP is one of the most expensive mistakes a business in this sector can make. The cost isn't just the software — it's the implementation, the disruption, the workarounds that accumulate, and the productivity you never recover."
@@ -32,5 +66,6 @@ export default function WrongERPSoftwarePage() {
       ]}
       howIHelp="If you're in a system that doesn't fit, I give you an honest assessment of what your options are. Sometimes there's more capability in the existing system than you're using — the implementation was poor, not the software. Sometimes the software genuinely isn't right and you need to plan a managed exit. Either way, I help you understand the real cost of staying versus moving — and if you're moving, I write the independent vendor brief that makes sure you don't end up in the same situation again."
     />
+    </>
   );
 }

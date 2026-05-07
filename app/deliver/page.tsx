@@ -23,22 +23,36 @@ export const metadata: Metadata = {
 
 const deliverSchema = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What is the Deliver service?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Deliver is independent vendor management for technology implementations. Craig writes the vendor brief based on your requirements, approaches vendors on your behalf, manages the procurement process as a single point of contact, and oversees the project through to final handover — ensuring milestones are signed off before payments are released.' },
+      '@type': 'Service',
+      name: 'Deliver — Project Delivery and Vendor Management',
+      description: 'Independent vendor management, procurement support, and project oversight for technology implementations in print and decoration businesses.',
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      serviceType: 'Project Delivery and Vendor Management',
+      areaServed: 'GB',
+      url: 'https://decodedops.co.uk/deliver',
+      offers: { '@type': 'Offer', price: '1050', priceCurrency: 'GBP', priceRange: 'From £1,050/month' },
     },
     {
-      '@type': 'Question',
-      name: 'How does Deliver protect against overspending on software projects?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Milestones are signed off before payments are released. Vendors are held to the brief, changes are challenged, and Craig acts as your independent representative throughout. The brief comes before the vendor — separating what you actually need from what a vendor wants to sell you.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need to do the Clarity Audit before Deliver?',
-      acceptedAnswer: { '@type': 'Answer', text: "You don't have to, but Clarity produces the vendor brief that Deliver uses. Starting with the Clarity Audit means the vendor brief reflects what your business actually needs — rather than assumptions made at the start of a project." },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is the Deliver service?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Deliver is independent vendor management for technology implementations. Craig writes the vendor brief based on your requirements, approaches vendors on your behalf, manages the procurement process as a single point of contact, and oversees the project through to final handover — ensuring milestones are signed off before payments are released.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does Deliver protect against overspending on software projects?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Milestones are signed off before payments are released. Vendors are held to the brief, changes are challenged, and Craig acts as your independent representative throughout. The brief comes before the vendor — separating what you actually need from what a vendor wants to sell you.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need to do the Clarity Audit before Deliver?',
+          acceptedAnswer: { '@type': 'Answer', text: "You don't have to, but Clarity produces the vendor brief that Deliver uses. Starting with the Clarity Audit means the vendor brief reflects what your business actually needs — rather than assumptions made at the start of a project." },
+        },
+      ],
     },
   ],
 };

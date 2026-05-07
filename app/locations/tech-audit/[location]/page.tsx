@@ -72,6 +72,8 @@ export default async function TechAuditLocationPage({
             '@type': 'ProfessionalService',
             name: 'Decoded Ops',
             description: `Technology audit services for small businesses in ${loc.name}, ${loc.county}`,
+            address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
+            telephone: '07735 620 603',
             areaServed: {
               '@type': 'City',
               name: loc.name,
@@ -80,6 +82,8 @@ export default async function TechAuditLocationPage({
                 name: loc.county,
               },
             },
+            serviceRadius: { '@type': 'Distance', name: 'Within 2 hours of Worthing' },
+            geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
             serviceType: 'Technology Audit',
             offers: {
               '@type': 'Offer',

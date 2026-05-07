@@ -23,22 +23,36 @@ export const metadata: Metadata = {
 
 const transformSchema = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+  '@graph': [
     {
-      '@type': 'Question',
-      name: 'What does the Transform programme include?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. Discovery is required before scoping.' },
+      '@type': 'Service',
+      name: 'Transform — Digital Transformation Programme',
+      description: 'Multi-workstream digital transformation for print and decoration businesses covering ERP, eCommerce, process redesign, and change management.',
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      serviceType: 'Digital Transformation Programme',
+      areaServed: 'GB',
+      url: 'https://decodedops.co.uk/transform',
+      offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP', priceRange: 'From £1,500/month' },
     },
     {
-      '@type': 'Question',
-      name: 'Why do digital transformation projects fail in print and embroidery businesses?',
-      acceptedAnswer: { '@type': 'Answer', text: 'The most common pattern: system selected without users involved, training on how it works rather than how it fits the job, reversion by week three, system blamed by month three. Employee buy-in is the single biggest project risk. Transform addresses this by hearing people before any decision is made and making the system work for the user — not just the person commissioning it.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How is Transform different from a standard IT project?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Transform is process-led and people-first. Craig maps actual working practices before any system decision is made, manages change across all workstreams simultaneously, and holds vendors accountable across the programme. It is a coordinated programme with milestone governance — not a collection of separate projects.' },
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Transform programme include?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. Discovery is required before scoping.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why do digital transformation projects fail in print and embroidery businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The most common pattern: system selected without users involved, training on how it works rather than how it fits the job, reversion by week three, system blamed by month three. Employee buy-in is the single biggest project risk. Transform addresses this by hearing people before any decision is made and making the system work for the user — not just the person commissioning it.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is Transform different from a standard IT project?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Transform is process-led and people-first. Craig maps actual working practices before any system decision is made, manages change across all workstreams simultaneously, and holds vendors accountable across the programme. It is a coordinated programme with milestone governance — not a collection of separate projects.' },
+        },
+      ],
     },
   ],
 };

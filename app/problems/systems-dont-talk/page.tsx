@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
@@ -8,9 +9,42 @@ export const metadata: Metadata = {
   alternates: { canonical: '/problems/systems-dont-talk' },
 };
 
+const systemsDontTalkSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why do business systems get selected without considering integration?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Each system was chosen to solve a specific problem — without asking how it would connect to everything else. The integration question was deferred and never properly answered.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What happens when there is no integration architecture?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Without a view of the whole technology ecosystem, you cannot make good decisions about individual components. Systems accumulate. Complexity compounds.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do API limitations affect system integration?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Some systems in this sector have limited or proprietary APIs that make integration technically difficult or commercially prohibitive. That constraint is rarely disclosed at the point of sale.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why is the cost of manual workarounds invisible to business owners?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The cost of manual data re-entry, reporting overhead, and error correction does not appear on any invoice. It is buried in staff time that gets attributed to everything except the real cause.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function SystemsDontTalkPage() {
   return (
-    <ProblemPage
+    <>
+      <JsonLd data={systemsDontTalkSchema} />
+      <ProblemPage
       problem="Systems don't talk to each other"
       headline="You have five systems. ||None of them know what the others are doing.||"
       intro="The average decoration or print business has between four and seven separate software systems. Order management, ERP, accounts, artwork, eCommerce, despatch. Each one is an island. The bridges between them are people, spreadsheets, and emails."
@@ -32,5 +66,6 @@ export default function SystemsDontTalkPage() {
       ]}
       howIHelp="I map your entire technology ecosystem — every system, every data flow, every manual bridge — and give you a clear view of what it's actually costing you. Then I give you independent options: integration where it's practical, consolidation where it makes more sense, and replacement where the current stack is the problem. No vendor relationships. No preferred solutions. Just a clear picture and a practical path forward."
     />
+    </>
   );
 }

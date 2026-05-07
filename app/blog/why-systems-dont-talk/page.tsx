@@ -34,9 +34,13 @@ const schema = {
       dateModified: '2026-04-01T00:00:00Z',
       author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/why-systems-dont-talk',
       description: 'The hidden cost of disconnected ERP and eCommerce systems in print and embroidery businesses. Typically £40,000–£80,000 per year on a £2m business.',
+      wordCount: 1600,
+      articleSection: 'Operations',
+      keywords: 'ERP integration, eCommerce integration, system integration, print business, embroidery business, disconnected systems',
     },
     {
       '@type': 'FAQPage',

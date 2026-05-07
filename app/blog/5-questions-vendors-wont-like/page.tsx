@@ -34,9 +34,13 @@ const schema = {
       dateModified: '2026-04-01T00:00:00Z',
       author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/5-questions-vendors-wont-like',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/5-questions-vendors-wont-like',
       description: 'The questions to ask ERP, eCommerce, and software vendors that they will try to dodge — and why you need to ask them before signing any contract.',
+      wordCount: 1200,
+      articleSection: 'Vendor Management',
+      keywords: 'vendor management, ERP vendor questions, software selection, vendor evaluation, technology procurement, print business',
     },
     {
       '@type': 'FAQPage',

@@ -34,9 +34,13 @@ const schema = {
       dateModified: '2026-04-01T00:00:00Z',
       author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
       description: 'Why standard eCommerce platforms fail for print, embroidery, and decorated apparel businesses, and what to do if you have already made this mistake.',
+      wordCount: 1400,
+      articleSection: 'eCommerce',
+      keywords: 'eCommerce integration, print business ecommerce, decoration ecommerce, ERP ecommerce integration, ecommerce platform selection',
     },
     {
       '@type': 'FAQPage',

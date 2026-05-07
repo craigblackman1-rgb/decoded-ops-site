@@ -57,6 +57,16 @@ const claritySchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Service',
+      name: 'Clarity Audit',
+      description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses. Written report within 5 working days.',
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+      serviceType: 'Operational and Technology Audit',
+      areaServed: 'GB',
+      url: 'https://decodedops.co.uk/clarity',
+      offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', priceRange: 'From £395' },
+    },
+    {
       '@type': 'HowTo',
       name: 'How the Clarity Audit Works',
       description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses, delivering a written report within 5 working days.',
