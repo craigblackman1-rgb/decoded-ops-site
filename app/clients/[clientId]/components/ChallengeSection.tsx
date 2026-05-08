@@ -1,6 +1,6 @@
 'use client';
 
-import SystemsDiagram from './SystemsDiagram';
+import SystemsDiagram, { SystemsDiagramData } from './SystemsDiagram';
 
 interface PainPoint {
   title: string;
@@ -18,7 +18,7 @@ interface ChallengeData {
   painPoints: PainPoint[];
 }
 
-export default function ChallengeSection({ data }: { data: ChallengeData }) {
+export default function ChallengeSection({ data, systems }: { data: ChallengeData; systems?: SystemsDiagramData }) {
   return (
     <section className="bg-[#F8F9FA] text-[#023047] px-8 py-20 md:px-20">
       <div className="max-w-6xl mx-auto">
@@ -80,7 +80,7 @@ export default function ChallengeSection({ data }: { data: ChallengeData }) {
         </div>
 
         {/* Systems Diagram */}
-        <SystemsDiagram />
+        <SystemsDiagram data={systems} />
       </div>
     </section>
   );

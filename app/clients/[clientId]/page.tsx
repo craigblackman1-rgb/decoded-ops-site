@@ -112,7 +112,7 @@ export default function ProposalPage() {
             </div>
 
             <div id="challenge">
-              <ChallengeSection data={proposal.challenge} />
+              <ChallengeSection data={proposal.challenge} systems={proposal.systems} />
             </div>
 
             <div id="journey">

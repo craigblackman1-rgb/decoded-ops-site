@@ -17,92 +17,103 @@ interface Edge {
   label?: string;
 }
 
-const nodes: Record<string, NodeData> = {
-  symphony:  { x: 400, y: 170, label: 'Symphony', color: '#219EBC', r: 36 },
-  tracker:   { x: 400, y: 170, label: 'Tracker ERP', color: '#219EBC', r: 38 },
-  website:   { x: 110, y: 90, label: 'TackleBag.co.uk', color: '#8ECAE6', r: 30 },
-  qb:        { x: 680, y: 90, label: 'QuickBooks', color: '#4ade80', r: 30 },
-  ship:      { x: 685, y: 240, label: 'ShipStation', color: '#a78bfa', r: 30 },
+export interface SystemsDiagramData {
+  chaosNodes: string[];
+  cleanNodes: string[];
+  nodes: Record<string, NodeData>;
+  chaosEdges: Edge[];
+  chaosDescription: string;
+  cleanEdges: Edge[];
+  cleanDescription: string;
+}
+
+// ── TackleBag hardcoded fallback ────────────────────────────────────────────
+
+const TB_NODES: Record<string, NodeData> = {
+  symphony:  { x: 400, y: 170, label: 'Symphony',       color: '#219EBC', r: 36 },
+  tracker:   { x: 400, y: 170, label: 'Tracker ERP',    color: '#219EBC', r: 38 },
+  website:   { x: 110, y: 90,  label: 'TackleBag.co.uk',color: '#8ECAE6', r: 30 },
+  qb:        { x: 680, y: 90,  label: 'QuickBooks',     color: '#4ade80', r: 30 },
+  ship:      { x: 685, y: 240, label: 'ShipStation',    color: '#a78bfa', r: 30 },
   excel:     { x: 110, y: 245, label: 'Excel/OneDrive', color: '#FB8500', r: 30 },
-  email:     { x: 215, y: 310, label: 'Email/Manual', color: '#f87171', r: 28 },
-  crm:       { x: 555, y: 300, label: 'CRM', color: '#34d399', r: 28 },
-  jobsheet:  { x: 220, y: 270, label: 'Job Sheets', color: '#FFB703', r: 26 },
+  email:     { x: 215, y: 310, label: 'Email/Manual',   color: '#f87171', r: 28 },
+  crm:       { x: 555, y: 300, label: 'CRM',            color: '#34d399', r: 28 },
+  jobsheet:  { x: 220, y: 270, label: 'Job Sheets',     color: '#FFB703', r: 26 },
 };
 
-const chaosEdges: Edge[] = [
+const TB_CHAOS_EDGES: Edge[] = [
   { f: 'website', t: 'symphony', c: '#FFB703' },
-  { f: 'symphony', t: 'qb', c: '#f87171' },
-  { f: 'symphony', t: 'ship', c: '#a78bfa' },
-  { f: 'excel', t: 'email', c: '#FB8500' },
-  { f: 'email', t: 'qb', c: '#f87171' },
-  { f: 'excel', t: 'symphony', c: '#FB8500' },
-  { f: 'website', t: 'excel', c: '#FB8500' },
-  { f: 'website', t: 'email', c: '#f87171' },
-  { f: 'email', t: 'ship', c: '#f87171' },
-  { f: 'excel', t: 'qb', c: '#FB8500' },
+  { f: 'symphony', t: 'qb',     c: '#f87171' },
+  { f: 'symphony', t: 'ship',   c: '#a78bfa' },
+  { f: 'excel',   t: 'email',   c: '#FB8500' },
+  { f: 'email',   t: 'qb',      c: '#f87171' },
+  { f: 'excel',   t: 'symphony',c: '#FB8500' },
+  { f: 'website', t: 'excel',   c: '#FB8500' },
+  { f: 'website', t: 'email',   c: '#f87171' },
+  { f: 'email',   t: 'ship',    c: '#f87171' },
+  { f: 'excel',   t: 'qb',      c: '#FB8500' },
 ];
 
-const cleanEdges: Edge[] = [
+const TB_CLEAN_EDGES: Edge[] = [
   { f: 'website', t: 'tracker', c: '#219EBC', label: 'orders' },
-  { f: 'tracker', t: 'qb', c: '#4ade80', label: 'invoicing' },
-  { f: 'tracker', t: 'ship', c: '#a78bfa', label: 'dispatch' },
-  { f: 'tracker', t: 'crm', c: '#34d399', label: 'customers' },
-  { f: 'tracker', t: 'jobsheet', c: '#FFB703', label: 'production' },
+  { f: 'tracker', t: 'qb',      c: '#4ade80', label: 'invoicing' },
+  { f: 'tracker', t: 'ship',    c: '#a78bfa', label: 'dispatch' },
+  { f: 'tracker', t: 'crm',     c: '#34d399', label: 'customers' },
+  { f: 'tracker', t: 'jobsheet',c: '#FFB703', label: 'production' },
 ];
 
-export default function SystemsDiagram() {
+const TB_DATA: SystemsDiagramData = {
+  chaosNodes: ['symphony', 'website', 'qb', 'ship', 'excel', 'email'],
+  cleanNodes: ['tracker', 'website', 'qb', 'ship', 'crm', 'jobsheet'],
+  nodes: TB_NODES,
+  chaosEdges: TB_CHAOS_EDGES,
+  chaosDescription: 'Manual processes connecting every system — every line is a person filling a gap',
+  cleanEdges: TB_CLEAN_EDGES,
+  cleanDescription: 'Tracker ERP as the central hub — orders, production, dispatch, accounts all connected',
+};
+
+// ── Component ───────────────────────────────────────────────────────────────
+
+export default function SystemsDiagram({ data }: { data?: SystemsDiagramData }) {
   const [mode, setMode] = useState<'chaos' | 'clean'>('chaos');
   const svgRef = useRef<SVGSVGElement>(null);
+  const d = data || TB_DATA;
 
   useEffect(() => {
     buildSVG(mode);
-  }, [mode]);
+  }, [mode, d]);
 
   function buildSVG(currentMode: 'chaos' | 'clean') {
     const svg = svgRef.current;
     if (!svg) return;
 
-    // Clear existing content but keep defs
-    const existingDefs = svg.querySelector('defs');
     svg.innerHTML = '';
-    if (existingDefs) svg.appendChild(existingDefs);
 
-    // (Re)create defs
+    // Defs
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-
-    const marker1 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-    marker1.setAttribute('id', 'arrowh');
-    marker1.setAttribute('markerWidth', '8');
-    marker1.setAttribute('markerHeight', '8');
-    marker1.setAttribute('refX', '7');
-    marker1.setAttribute('refY', '3');
-    marker1.setAttribute('orient', 'auto');
-    const polygon1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    polygon1.setAttribute('points', '0,0 8,3 0,6');
-    polygon1.setAttribute('fill', '#FFB703');
-    marker1.appendChild(polygon1);
-
-    const marker2 = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-    marker2.setAttribute('id', 'arrowc');
-    marker2.setAttribute('markerWidth', '8');
-    marker2.setAttribute('markerHeight', '8');
-    marker2.setAttribute('refX', '7');
-    marker2.setAttribute('refY', '3');
-    marker2.setAttribute('orient', 'auto');
-    const polygon2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    polygon2.setAttribute('points', '0,0 8,3 0,6');
-    polygon2.setAttribute('fill', '#4ade80');
-    marker2.appendChild(polygon2);
-
-    defs.appendChild(marker1);
-    defs.appendChild(marker2);
+    ['arrowh', 'arrowc'].forEach((id, i) => {
+      const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+      marker.setAttribute('id', id);
+      marker.setAttribute('markerWidth', '8');
+      marker.setAttribute('markerHeight', '8');
+      marker.setAttribute('refX', '7');
+      marker.setAttribute('refY', '3');
+      marker.setAttribute('orient', 'auto');
+      const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      poly.setAttribute('points', '0,0 8,3 0,6');
+      poly.setAttribute('fill', i === 0 ? '#FFB703' : '#4ade80');
+      marker.appendChild(poly);
+      defs.appendChild(marker);
+    });
     svg.appendChild(defs);
 
-    const edges = currentMode === 'chaos' ? chaosEdges : cleanEdges;
+    const edges = currentMode === 'chaos' ? d.chaosEdges : d.cleanEdges;
+    const activeNodes = currentMode === 'chaos' ? d.chaosNodes : d.cleanNodes;
 
+    // Edges
     edges.forEach((e, i) => {
-      const f = nodes[e.f];
-      const t = nodes[e.t];
+      const f = d.nodes[e.f];
+      const t = d.nodes[e.t];
       if (!f || !t) return;
 
       const dx = t.x - f.x;
@@ -117,7 +128,6 @@ export default function SystemsDiagram() {
       path.setAttribute('stroke-width', currentMode === 'chaos' ? '1.5' : '2.5');
       path.setAttribute('stroke-dasharray', currentMode === 'chaos' ? '4 4' : '8 3');
       path.setAttribute('opacity', currentMode === 'chaos' ? '0.5' : '0.85');
-
       if (currentMode !== 'chaos') {
         path.setAttribute('marker-end', 'url(#arrowh)');
         path.style.animation = `flowAnim ${0.8 + i * 0.15}s linear infinite`;
@@ -125,11 +135,9 @@ export default function SystemsDiagram() {
       svg.appendChild(path);
 
       if (currentMode !== 'chaos' && e.label) {
-        const tx = (f.x + t.x) / 2 + 10;
-        const ty = (f.y + t.y) / 2 - 8;
         const lbl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        lbl.setAttribute('x', tx.toString());
-        lbl.setAttribute('y', ty.toString());
+        lbl.setAttribute('x', ((f.x + t.x) / 2 + 10).toString());
+        lbl.setAttribute('y', ((f.y + t.y) / 2 - 8).toString());
         lbl.setAttribute('fill', e.c);
         lbl.setAttribute('font-size', '10');
         lbl.setAttribute('font-family', 'Outfit, sans-serif');
@@ -139,10 +147,9 @@ export default function SystemsDiagram() {
       }
     });
 
-    // Draw nodes
-    Object.entries(nodes).forEach(([k, n]) => {
-      if (currentMode === 'chaos' && (k === 'crm' || k === 'tracker' || k === 'jobsheet')) return;
-      if (currentMode !== 'chaos' && (k === 'symphony' || k === 'excel' || k === 'email')) return;
+    // Nodes
+    Object.entries(d.nodes).forEach(([k, n]) => {
+      if (!activeNodes.includes(k)) return;
 
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
 
@@ -176,22 +183,16 @@ export default function SystemsDiagram() {
       svg.appendChild(g);
     });
 
-    // Add description text
-    const warn = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    warn.setAttribute('x', '400');
-    warn.setAttribute('y', '330');
-    warn.setAttribute('text-anchor', 'middle');
-
-    if (currentMode === 'chaos') {
-      warn.setAttribute('fill', '#FB8500');
-      warn.textContent = 'Manual processes connecting every system — every line is a person filling a gap';
-    } else {
-      warn.setAttribute('fill', '#219EBC');
-      warn.textContent = 'Tracker ERP as the central hub — orders, production, dispatch, accounts all connected';
-    }
-    warn.setAttribute('font-size', '11');
-    warn.setAttribute('font-family', 'Outfit, sans-serif');
-    svg.appendChild(warn);
+    // Description text
+    const desc = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    desc.setAttribute('x', '400');
+    desc.setAttribute('y', '330');
+    desc.setAttribute('text-anchor', 'middle');
+    desc.setAttribute('fill', currentMode === 'chaos' ? '#FB8500' : '#219EBC');
+    desc.setAttribute('font-size', '11');
+    desc.setAttribute('font-family', 'Outfit, sans-serif');
+    desc.textContent = currentMode === 'chaos' ? d.chaosDescription : d.cleanDescription;
+    svg.appendChild(desc);
   }
 
   return (
@@ -203,7 +204,6 @@ export default function SystemsDiagram() {
         </p>
       </div>
 
-      {/* Toggle Buttons */}
       <div className="flex gap-0 bg-[rgba(255,255,255,0.05)] rounded-lg overflow-hidden w-fit mx-auto mb-8">
         <button
           onClick={() => setMode('chaos')}
@@ -227,7 +227,6 @@ export default function SystemsDiagram() {
         </button>
       </div>
 
-      {/* SVG Diagram */}
       <svg
         ref={svgRef}
         viewBox="0 0 800 340"
