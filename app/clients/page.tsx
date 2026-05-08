@@ -22,6 +22,12 @@ export default function ClientsPage() {
       description: 'Operational Clarity Audit — Infrastructure, ERP, eCommerce & B2B Portal',
       industry: 'Workwear & Corporate Clothing',
     },
+    {
+      id: 'hanicks',
+      name: 'Hanicks Ltd',
+      description: 'eCommerce Operations & Technology Programme — IBasis App, ERP, Multi-Channel Automation',
+      industry: 'Heating Spare Parts — eCommerce',
+    },
   ];
 
   return (

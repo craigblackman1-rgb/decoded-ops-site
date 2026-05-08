@@ -62,41 +62,23 @@ export default function JourneySection({ data }: { data: JourneyData }) {
                Now
              </div>
              <div className="space-y-2">
-               {data.now.map((item, i) => {
-                 // Items 8 & 9 (index 8,9): Server 2012 & flat network — red styling
-                 const isRed = i === 8 || i === 9;
-                 // Item 11 (index 11): Zero AI usage — amber styling
-                 const isAmber = i === 11;
-                 return (
-                   <div
-                     key={i}
-                     className={`p-4 rounded-lg text-sm flex items-start gap-3 ${
-                       isRed
-                         ? 'bg-[rgba(198,40,40,0.08)] border border-[rgba(198,40,40,0.3)] text-[rgba(255,255,255,0.8)]'
-                         : isAmber
-                         ? 'bg-[rgba(255,183,3,0.06)] border border-[rgba(255,183,3,0.3)] text-[rgba(255,255,255,0.8)]'
-                         : 'bg-[rgba(251,133,0,0.1)] border border-[rgba(251,133,0,0.2)] text-[rgba(255,255,255,0.8)]'
-                     }`}
-                   >
-                     <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold ${
-                       isRed
-                         ? 'bg-[rgba(198,40,40,0.2)] text-[#C62828]'
-                         : isAmber
-                         ? 'bg-[rgba(255,183,3,0.2)] text-[#FFB703]'
-                         : 'bg-[rgba(251,133,0,0.2)] text-[#FB8500]'
-                     }`}>
-                       ✕
-                     </div>
-                     <div>{item}</div>
+               {data.now.map((item, i) => (
+                 <div
+                   key={i}
+                   className="p-4 rounded-lg text-sm flex items-start gap-3 bg-[rgba(251,133,0,0.1)] border border-[rgba(251,133,0,0.2)] text-[rgba(255,255,255,0.8)]"
+                 >
+                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold bg-[rgba(251,133,0,0.2)] text-[#FB8500]">
+                     ✕
                    </div>
-                 );
-               })}
+                   <div>{item}</div>
+                 </div>
+               ))}
              </div>
            </div>
 
           {/* ARROWS Column */}
           <div className="hidden md:flex flex-col items-center justify-start pt-12 gap-3">
-            {[...Array(13)].map((_, i) => (
+            {[...Array(data.now.length)].map((_, i) => (
               <div key={i} className="text-2xl font-black text-[#FFB703]">
                 →
               </div>
@@ -109,29 +91,17 @@ export default function JourneySection({ data }: { data: JourneyData }) {
                Future
              </div>
              <div className="space-y-2">
-               {data.future.map((item, i) => {
-                 // Item 11 (index 11): AI tools embedded — amber styling
-                 const isAmber = i === 11;
-                 return (
-                   <div
-                     key={i}
-                     className={`p-4 rounded-lg text-sm flex items-start gap-3 ${
-                       isAmber
-                         ? 'bg-[rgba(255,183,3,0.06)] border border-[rgba(255,183,3,0.3)] text-[rgba(255,255,255,0.8)]'
-                         : 'bg-[rgba(33,158,188,0.1)] border border-[rgba(33,158,188,0.2)] text-white'
-                     }`}
-                   >
-                     <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold ${
-                       isAmber
-                         ? 'bg-[rgba(255,183,3,0.2)] text-[#FFB703]'
-                         : 'bg-[rgba(33,158,188,0.2)] text-[#219EBC]'
-                     }`}>
-                       ✓
-                     </div>
-                     <div>{item}</div>
+               {data.future.map((item, i) => (
+                 <div
+                   key={i}
+                   className="p-4 rounded-lg text-sm flex items-start gap-3 bg-[rgba(33,158,188,0.1)] border border-[rgba(33,158,188,0.2)] text-white"
+                 >
+                   <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold bg-[rgba(33,158,188,0.2)] text-[#219EBC]">
+                     ✓
                    </div>
-                 );
-               })}
+                   <div>{item}</div>
+                 </div>
+               ))}
              </div>
            </div>
         </div>

@@ -17,10 +17,12 @@ import NextStepsSection from './components/NextStepsSection';
 import AcceptanceSection from './components/AcceptanceSection';
 import { tacklebagProposal } from './data/tacklebag-proposal';
 import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
+import { hanicksProposal } from './data/hanicks-proposal';
 
 const proposals: Record<string, any> = {
   tacklebag: tacklebagProposal,
   'cobra-workwear': cobraWorkwearProposal,
+  hanicks: hanicksProposal,
 };
 
 function ProposalNav() {

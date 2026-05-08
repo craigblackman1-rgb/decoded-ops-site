@@ -39,14 +39,31 @@ interface DemoData {
   title: string;
   subtitle: string;
   stocks: Stock[];
+  appName?: string;
+  url?: string;
+  filterLabel?: string;
+  filterOptions?: Array<{ value: string; label: string }>;
+  forecastTitle?: string;
+  forecastLabels?: string[];
+  forecastData?: number[];
+  forecastActual?: (number | null)[];
+  simChanges?: Array<{ i: number; by: number }>;
+  simTotalOrders?: number;
+  noteTitle?: string;
+  noteText?: string;
 }
 
-const forecastChartData = {
-  labels: ['Wk 1 Jul', 'Wk 2 Jul', 'Wk 3 Jul', 'Wk 1 Aug', 'Wk 2 Aug', 'Wk 3 Aug', 'Wk 4 Aug', 'Wk 1 Sep', 'Wk 2 Sep', 'Wk 3 Sep'],
-  datasets: [
-    {
-      label: 'Forecast',
-      data: [42, 55, 78, 95, 140, 165, 180, 172, 120, 85],
+const DEFAULT_FORECAST_LABELS = ['Wk 1 Jul', 'Wk 2 Jul', 'Wk 3 Jul', 'Wk 4 Jul', 'Wk 1 Aug', 'Wk 2 Aug', 'Wk 3 Aug', 'Wk 1 Sep', 'Wk 2 Sep', 'Wk 3 Sep'];
+const DEFAULT_FORECAST_DATA = [42, 55, 78, 95, 140, 165, 180, 172, 120, 85];
+const DEFAULT_FORECAST_ACTUAL: (number | null)[] = [40, 52, 80, null, null, null, null, null, null, null];
+
+function buildForecastChart(labels: string[], forecast: number[], actual: (number | null)[]) {
+  return {
+    labels,
+    datasets: [
+      {
+        label: 'Forecast',
+        data: forecast,
       backgroundColor: 'rgba(33, 158, 188, 0.25)',
       borderColor: '#219EBC',
       borderWidth: 2,
@@ -60,7 +77,7 @@ const forecastChartData = {
     },
     {
       label: 'Actual (to date)',
-      data: [40, 52, 80, null, null, null, null, null, null, null],
+      data: actual,
       backgroundColor: 'rgba(255, 183, 3, 0.35)',
       borderColor: '#FFB703',
       borderWidth: 2,
@@ -73,7 +90,8 @@ const forecastChartData = {
       pointRadius: 5,
     },
   ],
-};
+  };
+}
 
 const originalStock: Stock[] = [
   { school: 'East Mosley CC', product: 'Canterbury Polo (S)', sku: 'EMCC-CAN-PL-S', stock: 18, min: 10, ordered: false },
@@ -88,9 +106,17 @@ const originalStock: Stock[] = [
   { school: "St Paul's School", product: 'Adidas Training Top (L)', sku: 'SPS-ADI-TT-L', stock: 2, min: 8, ordered: false },
 ];
 
+const DEFAULT_STOCKS = originalStock;
+
 export default function DemoSection({ data }: { data: DemoData }) {
-  const [stocks, setStocks] = useState<Stock[]>(originalStock.map(r => ({ ...r })));
+  const stockSource = data.stocks || DEFAULT_STOCKS;
+  const [stocks, setStocks] = useState<Stock[]>(stockSource.map(r => ({ ...r })));
   const [filter, setFilter] = useState('all');
+  const chartData = buildForecastChart(
+    data.forecastLabels || DEFAULT_FORECAST_LABELS,
+    data.forecastData || DEFAULT_FORECAST_DATA,
+    data.forecastActual || DEFAULT_FORECAST_ACTUAL,
+  );
   const [isSimulating, setIsSimulating] = useState(false);
   const [simLog, setSimLog] = useState<string[]>([]);
   const [logShown, setLogShown] = useState(false);
@@ -167,11 +193,11 @@ export default function DemoSection({ data }: { data: DemoData }) {
   }
 
   function handleRestoreStock() {
-    setStocks(originalStock.map(r => ({ ...r })));
+    setStocks(stockSource.map(r => ({ ...r })));
     setSimLog([]);
     setLogShown(false);
     setFilter('all');
-    updateAlerts(originalStock);
+    updateAlerts(stockSource);
     addLog('Stock levels restored to baseline');
   }
 
@@ -180,9 +206,10 @@ export default function DemoSection({ data }: { data: DemoData }) {
     setIsSimulating(true);
     setSimLog([]);
     setLogShown(true);
-    addLog('Starting weekend order simulation — 47 orders incoming…');
+    const totalOrders = data.simTotalOrders || 47;
+    addLog(`Starting weekend order simulation — ${totalOrders} orders incoming…`);
 
-    const changes = [
+    const changes = data.simChanges || [
       { i: 0, by: 6 }, { i: 1, by: 5 }, { i: 2, by: 3 },
       { i: 3, by: 8 }, { i: 4, by: 0 }, { i: 5, by: 2 },
       { i: 7, by: 7 }, { i: 8, by: 4 }, { i: 9, by: 2 },
@@ -193,7 +220,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
       if (step >= changes.length) {
         clearInterval(interval);
         setIsSimulating(false);
-        addLog('47 orders processed. 3 items need attention.');
+        addLog(`${totalOrders} orders processed. 3 items need attention.`);
         return;
       }
       const c = changes[step];
@@ -219,8 +246,9 @@ export default function DemoSection({ data }: { data: DemoData }) {
   const filteredStocks = filter === 'all'
     ? stocks
     : stocks.filter(r => {
-        const map: Record<string, string> = { cricket: 'East Mosley CC', rugby: 'Blackheath RFC', karate: 'KSW Karate', school: "St Paul's School" };
-        return r.school.includes(map[filter]?.split(' ')[0] || '');
+        const legacyMap: Record<string, string> = { cricket: 'East Mosley CC', rugby: 'Blackheath RFC', karate: 'KSW Karate', school: "St Paul's School" };
+        const target = legacyMap[filter] || filter;
+        return r.school === target;
       });
 
   return (
@@ -248,14 +276,14 @@ export default function DemoSection({ data }: { data: DemoData }) {
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
             </div>
             <div className="flex-1 mx-4 bg-white rounded px-3 py-1 text-xs text-[#5a7d8f] font-[family-name:var(--font-dm-sans)] border border-[#d4e8f0]">
-              stock.tacklebag.co.uk/dashboard
+              {data.url || 'stock.tacklebag.co.uk/dashboard'}
             </div>
           </div>
 
           {/* App Header */}
           <div className="bg-[#023047] px-6 py-4 flex items-center justify-between border-b border-[rgba(33,158,188,0.2)]">
             <div className="font-bold text-white text-sm tracking-wide">
-              Tackle<span className="text-[#FFB703]">Bag</span> Stock Command
+              {data.appName || 'TackleBag Stock Command'}
             </div>
             <div className="flex gap-6 text-xs text-[#8ECAE6]">
               <span className="text-[#FFB703] font-semibold">Dashboard</span>
@@ -280,11 +308,15 @@ export default function DemoSection({ data }: { data: DemoData }) {
                   onChange={handleFilterChange}
                   className="px-4 py-2 border border-[#e0e0e0] rounded-lg text-sm bg-white text-[#023047]"
                 >
-                  <option value="all">All schools & clubs</option>
-                  <option value="cricket">East Mosley CC</option>
-                  <option value="rugby">Blackheath RFC</option>
-                  <option value="karate">KSW Karate</option>
-                  <option value="school">St Paul's School</option>
+                  {(data.filterOptions || [
+                    { value: 'all', label: 'All schools & clubs' },
+                    { value: 'cricket', label: 'East Mosley CC' },
+                    { value: 'rugby', label: 'Blackheath RFC' },
+                    { value: 'karate', label: 'KSW Karate' },
+                    { value: 'school', label: "St Paul's School" },
+                  ]).map(opt => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
                 </select>
                 <button
                   onClick={handleRestoreStock}
@@ -414,11 +446,11 @@ export default function DemoSection({ data }: { data: DemoData }) {
 
             {/* Forecast Panel */}
             <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
-              <div className="font-bold text-[#023047] mb-4 text-sm">📈 Demand Forecast — Jul–Sep 2026 (Canterbury teamwear)</div>
+              <div className="font-bold text-[#023047] mb-4 text-sm">{data.forecastTitle || '📈 Demand Forecast — Jul–Sep 2026 (Canterbury teamwear)'}</div>
               <div className="w-full h-36 md:h-48">
                 <Line
                   ref={chartRef}
-                  data={forecastChartData}
+                  data={chartData}
                   options={{
                     responsive: true,
                     maintainAspectRatio: false,
@@ -474,9 +506,9 @@ export default function DemoSection({ data }: { data: DemoData }) {
         <div className="mt-8 p-6 bg-[rgba(33,158,188,0.1)] border border-[#219EBC] rounded-lg flex gap-4">
           <div className="text-2xl flex-shrink-0">💡</div>
           <div>
-            <strong className="text-[#023047]">This is a working prototype.</strong>
+            <strong className="text-[#023047]">{data.noteTitle || 'This is a working prototype.'}</strong>
             <p className="text-sm text-[#023047] mt-1">
-              The real app would connect directly to Symphony for live stock data, replacing the current Excel files with a single web-based view accessible from any device — including mobile on the warehouse floor. All data structured to export cleanly into your future ERP.
+              {data.noteText || 'The real app would connect directly to Symphony for live stock data, replacing the current Excel files with a single web-based view accessible from any device — including mobile on the warehouse floor. All data structured to export cleanly into your future ERP.'}
             </p>
           </div>
         </div>
