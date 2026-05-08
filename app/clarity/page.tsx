@@ -134,13 +134,10 @@ export default function ClarityPage() {
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 A structured, independent review of your operations, technology, and processes. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Book a free discovery call <ArrowRight size={18} />
                 </Link>
-              </div>
-              <div className="text-sm text-[#023047]/70">
-                <p><strong>Investment starts from:</strong> £2,500 (core) · £395 (small business)</p>
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center">

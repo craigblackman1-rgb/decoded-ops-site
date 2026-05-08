@@ -27,10 +27,11 @@ const services = [
   { label: 'Retained — Fractional CTO', href: '/retained' },
 ];
 
-const company = [
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Privacy policy', href: '/privacy' },
+const resources = [
+  { label: 'Calculators & tools', href: '/tools' },
+  { label: 'Audit checklist', href: '/resources/audit-checklist' },
+  { label: 'Software reviews', href: '/resources/software-reviews' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 const locations = [
@@ -44,17 +45,17 @@ const locations = [
 export function Footer() {
   return (
     <footer className="bg-[#023047] text-white" aria-label="Site footer">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-2 md:col-span-2">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand + Company */}
+          <div className="lg:col-span-1">
             <Link href="/" className="text-2xl font-bold tracking-tight block mb-4" aria-label="Decoded Ops — home">
               Decoded<span className="text-[#FFB703]" aria-hidden="true">Ops</span>
             </Link>
-            <p className="text-sm text-[#8ECAE6] leading-relaxed mb-6 max-w-xs">
+            <p className="text-sm text-[#8ECAE6] leading-relaxed mb-5 max-w-xs">
               Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 mb-5">
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -67,97 +68,92 @@ export function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="mt-6 text-sm text-[#8ECAE6]">
-              <div className="mb-1">
-                <a href="mailto:craig@decodedops.co.uk" className="hover:text-white transition-colors">craig@decodedops.co.uk</a>
-              </div>
-              <div>
-                <a href="tel:+447735620603" className="hover:text-white transition-colors">07735 620 603</a>
-              </div>
+            <div className="text-sm text-[#8ECAE6] mb-5 space-y-1">
+              <div><a href="mailto:craig@decodedops.co.uk" className="hover:text-white transition-colors">craig@decodedops.co.uk</a></div>
+              <div><a href="tel:+447735620603" className="hover:text-white transition-colors">07735 620 603</a></div>
             </div>
+            <nav aria-label="Company links">
+              <ul className="space-y-2">
+                <li><Link href="/about" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/contact" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/privacy" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Privacy policy</Link></li>
+              </ul>
+            </nav>
           </div>
 
-          {/* Services & Company */}
-          <nav aria-label="Services and company links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Services</h2>
-            <ul className="space-y-2.5">
-              {services.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4 mt-8">Company</h2>
-            <ul className="space-y-2.5">
-              {company.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* Services + Resources */}
+          <div>
+            <nav aria-label="Services and resources links">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Services</h2>
+              <ul className="space-y-2.5 mb-8">
+                {services.map(link => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Resources</h2>
+              <ul className="space-y-2.5">
+                {resources.map(link => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           {/* Sectors */}
-          <nav aria-label="Sector links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Sectors</h2>
-            <ul className="space-y-2.5">
-              {sectors.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div>
+            <nav aria-label="Sector links">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Sectors</h2>
+              <ul className="space-y-2.5">
+                {sectors.map(link => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           {/* Problems */}
-          <nav aria-label="Problems we solve links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Problems we solve</h2>
-            <ul className="space-y-2.5">
-              {problems.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div>
+            <nav aria-label="Problems we solve links">
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Problems we solve</h2>
+              <ul className="space-y-2.5">
+                {problems.map(link => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
 
-          {/* Resources */}
-          <nav aria-label="Resource links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Resources</h2>
-            <ul className="space-y-2.5">
-              <li><Link href="/tools" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Calculators</Link></li>
-              <li><Link href="/resources/audit-checklist" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Audit checklist</Link></li>
-              <li><Link href="/resources/software-reviews" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Software reviews</Link></li>
-              <li><Link href="/blog" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Blog</Link></li>
-            </ul>
-          </nav>
-
-          {/* Locations */}
-          <nav aria-label="Location links">
-            <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Locations</h2>
-            <ul className="space-y-2.5">
-              {locations.map(link => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        {/* Locations — inline strip */}
+        <div className="border-t border-[#F8F9FA]/10 pt-6 pb-6 mb-6">
+          <nav aria-label="Location links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#8ECAE6]">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]">Locations</span>
+            {locations.map(link => (
+              <Link key={link.href} href={link.href} className="hover:text-white transition-colors">
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
 
-        <div className="border-t border-[#F8F9FA]/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#8ECAE6]">© {new Date().getFullYear()} Decoded Ops. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-[#8ECAE6]">&copy; {new Date().getFullYear()} Decoded Ops. All rights reserved.</p>
           <p className="text-xs text-[#8ECAE6]">Built with precision and purpose.</p>
         </div>
       </div>
