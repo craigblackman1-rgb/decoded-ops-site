@@ -4,18 +4,23 @@ import { useState, useEffect } from 'react';
 
 interface AccessGateProps {
   accessCode: string;
+  clientName: string;
+  clientId: string;
   onUnlock: () => void;
 }
 
 const SESSION_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
 
-export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
+const LS_KEY = (id: string) => `clients_${id}_unlocked`;
+
+export default function AccessGate({ accessCode, clientName, clientId, onUnlock }: AccessGateProps) {
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('clients_tacklebag_unlocked');
+    const key = LS_KEY(clientId);
+    const stored = localStorage.getItem(key);
     if (stored) {
       try {
         const { timestamp } = JSON.parse(stored);
@@ -24,17 +29,17 @@ export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
           setIsHidden(true);
           onUnlock();
         } else {
-          localStorage.removeItem('clients_tacklebag_unlocked');
+          localStorage.removeItem(key);
         }
       } catch {
-        localStorage.removeItem('clients_tacklebag_unlocked');
+        localStorage.removeItem(key);
       }
     }
-  }, [onUnlock]);
+  }, [clientId, onUnlock]);
 
   const handleUnlock = () => {
     if (code.trim().toUpperCase() === accessCode) {
-      localStorage.setItem('clients_tacklebag_unlocked', JSON.stringify({ timestamp: Date.now() }));
+      localStorage.setItem(LS_KEY(clientId), JSON.stringify({ timestamp: Date.now() }));
       setIsHidden(true);
       setTimeout(() => onUnlock(), 800);
     } else {
@@ -62,7 +67,7 @@ export default function AccessGate({ accessCode, onUnlock }: AccessGateProps) {
           Decoded Ops
         </div>
         <h1 className="text-2xl sm:text-4xl font-black text-white mb-6 leading-tight max-w-lg text-center">
-          This proposal was prepared<br />exclusively for you, Paul.
+          This proposal was prepared<br />exclusively for you, {clientName}.
         </h1>
         <p className="text-sm text-[#8ECAE6] text-center max-w-sm">
           Enter your access code to view your operations roadmap

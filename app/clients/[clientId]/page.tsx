@@ -93,6 +93,8 @@ export default function ProposalPage() {
     <>
       <AccessGate
         accessCode={proposal.accessCode}
+        clientName={proposal.client.name}
+        clientId={clientId}
         onUnlock={() => setIsUnlocked(true)}
       />
 
