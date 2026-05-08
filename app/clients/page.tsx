@@ -16,6 +16,12 @@ export default function ClientsPage() {
       description: '12-month operations transformation roadmap',
       industry: 'Garment Decoration & Screen Printing',
     },
+    {
+      id: 'cobra-workwear',
+      name: 'Cobra Workwear',
+      description: 'Operational Clarity Audit — Infrastructure, ERP, eCommerce & B2B Portal',
+      industry: 'Workwear & Corporate Clothing',
+    },
   ];
 
   return (

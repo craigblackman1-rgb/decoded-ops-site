@@ -1,6 +1,9 @@
 'use client';
 
+'use client';
+
 import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import AccessGate from './components/AccessGate';
 import ProposalHero from './components/ProposalHero';
 import ChallengeSection from './components/ChallengeSection';
@@ -13,6 +16,12 @@ import PricingSection from './components/PricingSection';
 import NextStepsSection from './components/NextStepsSection';
 import AcceptanceSection from './components/AcceptanceSection';
 import { tacklebagProposal } from './data/tacklebag-proposal';
+import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
+
+const proposals: Record<string, any> = {
+  tacklebag: tacklebagProposal,
+  'cobra-workwear': cobraWorkwearProposal,
+};
 
 function ProposalNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,12 +71,28 @@ function ProposalNav() {
 }
 
 export default function ProposalPage() {
+  const params = useParams();
+  const clientId = (params.clientId as string) || 'tacklebag';
+  const proposal = proposals[clientId];
   const [isUnlocked, setIsUnlocked] = useState(false);
+
+  if (!proposal) {
+    return (
+      <main className="min-h-screen bg-[#023047] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-black text-white mb-2">Proposal not found</h1>
+          <p className="text-sm text-[rgba(255,255,255,0.5)]">
+            No proposal exists for "{clientId}".
+          </p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <>
       <AccessGate
-        accessCode={tacklebagProposal.accessCode}
+        accessCode={proposal.accessCode}
         onUnlock={() => setIsUnlocked(true)}
       />
 
@@ -77,56 +102,57 @@ export default function ProposalPage() {
           <div>
             <div id="hero">
               <ProposalHero
-                tag={tacklebagProposal.hero.tag}
-                title={tacklebagProposal.hero.title}
-                subtitle={tacklebagProposal.hero.subtitle}
-                stats={tacklebagProposal.hero.stats}
+                tag={proposal.hero.tag}
+                title={proposal.hero.title}
+                subtitle={proposal.hero.subtitle}
+                stats={proposal.hero.stats}
               />
             </div>
 
             <div id="challenge">
-              <ChallengeSection data={tacklebagProposal.challenge} />
+              <ChallengeSection data={proposal.challenge} />
             </div>
 
             <div id="journey">
-              <JourneySection data={tacklebagProposal.journey} />
+              <JourneySection data={proposal.journey} />
             </div>
 
             <div id="roadmap">
-              <RoadmapSection data={tacklebagProposal.roadmap} />
+              <RoadmapSection data={proposal.roadmap} />
             </div>
 
             <div id="quickwins">
-              <QuickWinsSection wins={tacklebagProposal.quickWins} />
+              <QuickWinsSection wins={proposal.quickWins} />
             </div>
 
-            <div id="demo">
-              <DemoSection data={tacklebagProposal.demo} />
-            </div>
+            {proposal.demo && (
+              <div id="demo">
+                <DemoSection data={proposal.demo} />
+              </div>
+            )}
 
             <div id="why">
-              <WhySection data={tacklebagProposal.why} />
+              <WhySection data={proposal.why} />
             </div>
 
             <div id="investment">
-              <PricingSection data={tacklebagProposal.pricing} />
+              <PricingSection data={proposal.pricing} />
             </div>
 
             <div id="nextsteps">
-              <NextStepsSection data={tacklebagProposal.nextSteps} />
+              <NextStepsSection data={proposal.nextSteps} />
             </div>
 
             <div id="accept">
-              <AcceptanceSection data={tacklebagProposal.acceptance} />
+              <AcceptanceSection data={proposal.acceptance} />
             </div>
 
-            {/* Footer — matches HTML footer exactly */}
             <footer className="bg-[#023047] px-20 py-8 flex justify-between items-center border-t border-[rgba(255,255,255,0.06)] flex-wrap gap-3">
               <div className="text-lg font-bold tracking-tight">
                 <span className="text-[#F8F9FA]">Decoded</span><span className="text-[#FFB703]">Ops</span>
               </div>
               <div className="text-xs text-[rgba(255,255,255,0.3)]">
-                Prepared exclusively for TackleBag Ltd · May 2026 · Confidential
+                Prepared exclusively for {proposal.client.company || proposal.client.name} · May 2026 · Confidential
               </div>
               <div className="text-xs text-[rgba(255,255,255,0.3)]">
                 craig@decodedops.co.uk · 07735 620 603
