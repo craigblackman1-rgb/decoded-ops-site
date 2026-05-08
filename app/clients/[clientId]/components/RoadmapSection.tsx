@@ -2,6 +2,13 @@
 
 import React from 'react';
 
+interface WorkstreamTimeline {
+  months: string[];
+  phases: Array<{ label: string; color: string; rows: number[] }>;
+  workstreams: Array<{ label: string; color: string; cells: boolean[] }>;
+  footnote?: string;
+}
+
 interface RoadmapData {
   tag: string;
   title: string;
@@ -16,60 +23,26 @@ interface RoadmapData {
     workstream: string;
     months: string[];
   }>;
+  workstreamTimeline?: WorkstreamTimeline;
 }
 
-// Matches the HTML stack-layer styling exactly — bottom to top order
-const LAYER_STYLES = [
-  // order 5 = bottom (Foundation)
-  { ml: '0px',   bg: 'rgba(255,183,3,0.12)',    border: '#FFB703', dot: true },
-  // order 4 = Phase 1
-  { ml: '40px',  bg: 'rgba(251,133,0,0.12)',    border: '#FB8500', dot: false },
-  // order 3 = Phase 2
-  { ml: '80px',  bg: 'rgba(33,158,188,0.12)',   border: '#219EBC', dot: false },
-  // order 2 = Phase 3
-  { ml: '120px', bg: 'rgba(21,101,192,0.15)',   border: '#4FC3F7', dot: false },
-  // order 1 = ERP
-  { ml: '160px', bg: 'rgba(33,158,188,0.1)',    border: '#023047', dot: false },
+// Hardcoded TackleBag data — used as fallback when workstreamTimeline is not provided
+const TACKLEBAG_MONTHS = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Q1 '27", "Q2 '27", "Q3+"];
+
+const TACKLEBAG_PHASE_ROWS: Array<{ label: string; color: string; rows: number[] }> = [
+  { label: 'PHASE 1 · Foundations & 8 Quick Wins', color: '#FB8500', rows: [0, 1, 2, 3, 4, 5, 6, 7] },
+  { label: 'PHASE 2 · Commercial Engine & AI Integration', color: '#219EBC', rows: [8, 9, 10, 11] },
+  { label: 'PHASE 3 · Future-State Foundation', color: '#023047', rows: [12, 13, 14, 15, 16] },
 ];
 
-const MONTHS = ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Q1 '27", "Q2 '27", "Q3+"];
-
-// Timeline colour per workstream row (matches HTML)
-const ROW_COLORS = [
+const TACKLEBAG_ROW_COLORS = [
   '#C62828', '#FB8500', '#4ade80', '#FFB703', '#FFB703',
   '#8ECAE6', '#219EBC', '#219EBC', '#219EBC', '#8ECAE6',
   '#888', '#023047', '#023047', '#023047', '#219EBC',
   '#888', '#023047',
 ];
 
-const PHASE_ROWS: Array<{ label: string; color: string; rows: number[] }> = [
-  { label: 'PHASE 1 · Foundations & 8 Quick Wins', color: '#FB8500', rows: [0, 1, 2, 3, 4, 5, 6, 7] },
-  { label: 'PHASE 2 · Commercial Engine & AI Integration', color: '#219EBC', rows: [8, 9, 10, 11] },
-  { label: 'PHASE 3 · Future-State Foundation', color: '#023047', rows: [12, 13, 14, 15, 16] },
-];
-
-// Cell values by workstream row — matches the HTML exactly
-const TIMELINE_CELLS: boolean[][] = [
-  [true,true,false,false,false,false,false,false,false,false], // QW1 IT Infrastructure
-  [true,true,false,false,false,false,false,false,false,false], // QW2 PCI DSS
-  [true,true,false,false,false,false,false,false,false,false], // QW3 Warehouse 5S
-  [true,true,false,false,false,false,false,false,false,false], // QW4 SKU / Barcode
-  [true,true,true,false,false,false,false,false,false,false], // QW5 Job Sheet App
-  [true,true,true,false,false,false,false,false,false,false], // QW6 Stock Control App
-  [true,true,false,false,false,false,false,false,false,false], // QW7 Demand Forecasting
-  [true,true,false,false,false,false,false,false,false,false], // QW8 Symphony → Accounts
-  [false,false,true,true,true,false,false,false,false,false], // CRM & Email Automation
-  [false,false,true,true,true,false,false,false,false,false], // Website SEO
-  [false,false,false,true,true,false,false,false,false,false], // AI Integration Starter
-  [false,false,true,true,false,false,false,false,false,false], // Cross-sell / Upsell
-  [false,false,false,true,true,true,false,false,false,false], // Design Workflow
-  [false,false,false,false,false,true,true,true,false,false], // ERP Evaluation
-  [false,false,false,false,false,false,false,true,true,false], // ERP Selection + SOW
-  [false,false,false,false,false,false,false,false,true,true], // ERP Implementation
-  [false,false,false,false,false,false,false,false,false,true], // New Ecommerce
-];
-
-const WORKSTREAM_LABELS = [
+const TACKLEBAG_WORKSTREAM_LABELS = [
   'QW1 · IT Infrastructure',
   'QW2 · PCI DSS Compliance',
   'QW3 · Warehouse 5S & Bins',
@@ -89,8 +62,135 @@ const WORKSTREAM_LABELS = [
   'New Ecommerce',
 ];
 
+const TACKLEBAG_TIMELINE_CELLS: boolean[][] = [
+  [true,true,false,false,false,false,false,false,false,false],
+  [true,true,false,false,false,false,false,false,false,false],
+  [true,true,false,false,false,false,false,false,false,false],
+  [true,true,false,false,false,false,false,false,false,false],
+  [true,true,true,false,false,false,false,false,false,false],
+  [true,true,true,false,false,false,false,false,false,false],
+  [true,true,false,false,false,false,false,false,false,false],
+  [true,true,false,false,false,false,false,false,false,false],
+  [false,false,true,true,true,false,false,false,false,false],
+  [false,false,true,true,true,false,false,false,false,false],
+  [false,false,false,true,true,false,false,false,false,false],
+  [false,false,true,true,false,false,false,false,false,false],
+  [false,false,false,true,true,true,false,false,false,false],
+  [false,false,false,false,false,true,true,true,false,false],
+  [false,false,false,false,false,false,false,true,true,false],
+  [false,false,false,false,false,false,false,false,true,true],
+  [false,false,false,false,false,false,false,false,false,true],
+];
+
+const TACKLEBAG_FOOTNOTE = '⚡ Phase 1 completes before August peak — no new implementations during your busiest months';
+
+// Matches the HTML stack-layer styling exactly — bottom to top order
+const LAYER_STYLES = [
+  { ml: '0px',   bg: 'rgba(255,183,3,0.12)',    border: '#FFB703', dot: true },
+  { ml: '40px',  bg: 'rgba(251,133,0,0.12)',    border: '#FB8500', dot: false },
+  { ml: '80px',  bg: 'rgba(33,158,188,0.12)',   border: '#219EBC', dot: false },
+  { ml: '120px', bg: 'rgba(21,101,192,0.15)',   border: '#4FC3F7', dot: false },
+  { ml: '160px', bg: 'rgba(33,158,188,0.1)',    border: '#023047', dot: false },
+];
+
+function TimelineTable({
+  months,
+  phaseRows,
+  workstreamLabels,
+  timelineCells,
+  rowColors,
+  footnote,
+}: {
+  months: string[];
+  phaseRows: Array<{ label: string; color: string; rows: number[] }>;
+  workstreamLabels: string[];
+  timelineCells: boolean[][];
+  rowColors: string[];
+  footnote: string;
+}) {
+  return (
+    <div className="overflow-x-auto pb-3">
+      <table className="border-collapse" style={{ minWidth: '800px', width: '100%' }}>
+        <thead>
+          <tr className="bg-[rgba(255,255,255,0.05)]">
+            <th className="px-4 py-2.5 text-xs font-semibold text-[#8ECAE6] tracking-widest text-left border border-[rgba(255,255,255,0.06)] min-w-[180px]">
+              Workstream
+            </th>
+            {months.map((m) => (
+              <th key={m} className="px-2 py-2.5 text-xs font-semibold text-[#8ECAE6] tracking-widest text-center border border-[rgba(255,255,255,0.06)]">
+                {m}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {phaseRows.map((phase) => (
+            <React.Fragment key={phase.label}>
+              <tr>
+                <td
+                  colSpan={months.length + 1}
+                  className="px-4 py-2 text-xs font-bold tracking-widest text-white uppercase"
+                  style={{ background: phase.color }}
+                >
+                  {phase.label}
+                </td>
+              </tr>
+              {phase.rows.map((ri) => {
+                const color = rowColors[ri] || '#219EBC';
+                const cells = timelineCells[ri] || [];
+                return (
+                  <tr key={ri} className="hover:bg-[rgba(255,255,255,0.02)]">
+                    <td className="px-4 py-2 text-xs text-[rgba(255,255,255,0.7)] border border-[rgba(255,255,255,0.06)] h-10">
+                      {workstreamLabels[ri]}
+                    </td>
+                    {cells.map((filled, j) => (
+                      <td
+                        key={j}
+                        className={`h-10 relative ${filled ? 'border border-[rgba(255,255,255,0.06)]' : ''}`}
+                        style={filled ? { background: `${color}20`, borderColor: `${color}40` } : {}}
+                      >
+                        {filled ? (
+                          <div
+                            className="absolute inset-x-1 top-1/2 -translate-y-1/2 h-1 rounded"
+                            style={{ background: color }}
+                          />
+                        ) : null}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </React.Fragment>
+          ))}
+        </tbody>
+      </table>
+      <p className="text-xs text-[#8ECAE6] opacity-50 text-center mt-3">{footnote}</p>
+    </div>
+  );
+}
+
 export default function RoadmapSection({ data }: { data: RoadmapData }) {
   const sorted = [...data.phases].sort((a, b) => b.order - a.order);
+  const wt = data.workstreamTimeline;
+
+  // Build props for the timeline table — data-driven if workstreamTimeline exists, otherwise TackleBag fallback
+  const timelineProps = wt
+    ? {
+        months: wt.months,
+        phaseRows: wt.phases,
+        workstreamLabels: wt.workstreams.map((w) => w.label),
+        timelineCells: wt.workstreams.map((w) => w.cells),
+        rowColors: wt.workstreams.map((w) => w.color),
+        footnote: wt.footnote || '',
+      }
+    : {
+        months: TACKLEBAG_MONTHS,
+        phaseRows: TACKLEBAG_PHASE_ROWS,
+        workstreamLabels: TACKLEBAG_WORKSTREAM_LABELS,
+        timelineCells: TACKLEBAG_TIMELINE_CELLS,
+        rowColors: TACKLEBAG_ROW_COLORS,
+        footnote: TACKLEBAG_FOOTNOTE,
+      };
 
   return (
     <section className="bg-[#023047] text-white px-5 py-24 md:px-20 overflow-hidden">
@@ -138,65 +238,7 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
           })}
         </div>
 
-        {/* Timeline table */}
-        <div className="overflow-x-auto pb-3">
-          <table className="border-collapse" style={{ minWidth: '800px', width: '100%' }}>
-            <thead>
-              <tr className="bg-[rgba(255,255,255,0.05)]">
-                <th className="px-4 py-2.5 text-xs font-semibold text-[#8ECAE6] tracking-widest text-left border border-[rgba(255,255,255,0.06)] min-w-[180px]">
-                  Workstream
-                </th>
-                {MONTHS.map((m) => (
-                  <th key={m} className="px-2 py-2.5 text-xs font-semibold text-[#8ECAE6] tracking-widest text-center border border-[rgba(255,255,255,0.06)]">
-                    {m}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {PHASE_ROWS.map((phase) => (
-                <React.Fragment key={phase.label}>
-                  <tr>
-                    <td
-                      colSpan={11}
-                      className="px-4 py-2 text-xs font-bold tracking-widest text-white uppercase"
-                      style={{ background: phase.color }}
-                    >
-                      {phase.label}
-                    </td>
-                  </tr>
-                  {phase.rows.map((ri) => {
-                    const color = ROW_COLORS[ri] || '#219EBC';
-                    return (
-                      <tr key={ri} className="hover:bg-[rgba(255,255,255,0.02)]">
-                        <td className="px-4 py-2 text-xs text-[rgba(255,255,255,0.7)] border border-[rgba(255,255,255,0.06)] h-10">
-                          {WORKSTREAM_LABELS[ri]}
-                        </td>
-                        {TIMELINE_CELLS[ri].map((filled, j) => (
-                          <td
-                            key={j}
-                            className={`h-10 relative ${filled ? 'border border-[rgba(255,255,255,0.06)]' : ''}`}
-                            style={filled ? { background: `${color}20`, borderColor: `${color}40` } : {}}
-                          >
-                            {filled ? (
-                              <div
-                                className="absolute inset-x-1 top-1/2 -translate-y-1/2 h-1 rounded"
-                                style={{ background: color }}
-                              />
-                            ) : null}
-                          </td>
-                        ))}
-                      </tr>
-                    );
-                  })}
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="text-xs text-[#8ECAE6] opacity-50 text-center mt-3">
-          ⚡ Phase 1 completes before August peak — no new implementations during your busiest months
-        </p>
+        <TimelineTable {...timelineProps} />
 
         <style>{`
           @keyframes dotPulse {

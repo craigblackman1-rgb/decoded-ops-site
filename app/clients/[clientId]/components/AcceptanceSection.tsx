@@ -6,7 +6,7 @@ interface AcceptanceData {
   tag: string;
   title: string;
   subtitle: string;
-  tackleBag: {
+  client: {
     company: string;
     placeholders: { name: string; title: string; email: string };
   };
@@ -18,12 +18,13 @@ interface AcceptanceData {
     website: string;
     terms: string;
   };
+  options?: Array<{ id: string; name: string; desc: string; price: string }>;
 }
 
-const OPTIONS = [
-  { id: 'C', name: 'Option C', desc: 'Foundation — 3-month minimum', price: '£2,000/month' },
-  { id: 'B', name: 'Option B ⭐', desc: 'Growth — 6-month commitment (Recommended)', price: '£2,800/month' },
-  { id: 'A', name: 'Option A', desc: 'Full Transform — 12–18 month engagement', price: '£4,900/month' },
+const DEFAULT_OPTIONS = [
+  { id: 'C', name: 'Tier 1 — Clarity', desc: 'One-off audit + recommendations report', price: '£1,995 fixed' },
+  { id: 'B', name: 'Tier 2 — Deliver ⭐', desc: 'Audit + vendor procurement (Recommended)', price: '£850/month' },
+  { id: 'A', name: 'Tier 3 — Transform + Retained', desc: 'Full implementation oversight — ERP, portal, integrations', price: '£1,250/month' },
 ];
 
 export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
@@ -31,11 +32,15 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
   const [form, setForm] = useState({ name: '', title: '', email: '', date: '' });
   const [submitted, setSubmitted] = useState(false);
 
+  const options = data.options || DEFAULT_OPTIONS;
+  const clientCompany = data.client?.company || 'Client';
+
   const handleSubmit = async () => {
     if (!form.name || !form.email) {
       alert('Please fill in your name and email.');
       return;
     }
+    const selectedOption = options.find(o => o.id === selected);
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -43,7 +48,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          message: `Proposal Acceptance — Option ${selected}\n\nCompany: TackleBag Ltd\nContact: ${form.name} (${form.title})\nEmail: ${form.email}`,
+          message: `Proposal Acceptance — ${selectedOption?.name || selected}\n\nCompany: ${clientCompany}\nContact: ${form.name} (${form.title})\nEmail: ${form.email}`,
         }),
       });
     } catch {
@@ -72,14 +77,14 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
             <div className="text-5xl mb-4">🎉</div>
             <h3 className="text-2xl font-black text-[#4ade80] mb-2">Excellent — let's get started.</h3>
             <p className="text-base text-[rgba(255,255,255,0.6)]">
-              Craig will receive your acceptance and be in touch within one working day with the scope-of-work letter and next steps. Looking forward to it.
+              Craig will receive your acceptance and be in touch within one working day with next steps. Looking forward to it.
             </p>
           </div>
         ) : (
           <>
             {/* Option selector */}
             <div className="grid md:grid-cols-3 gap-4 mb-12">
-              {OPTIONS.map((opt) => (
+              {options.map((opt) => (
                 <div
                   key={opt.id}
                   onClick={() => setSelected(opt.id)}
@@ -98,10 +103,10 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
 
             {/* Signature grid */}
             <div className="grid md:grid-cols-2 gap-5 mb-8">
-              {/* TackleBag */}
+              {/* Client side */}
               <div className="p-7 bg-[rgba(255,255,255,0.04)] rounded-xl border border-[rgba(255,255,255,0.08)]">
                 <h3 className="text-sm font-bold text-[#8ECAE6] uppercase tracking-widest mb-5">
-                  {data.tackleBag.company}
+                  {clientCompany}
                 </h3>
                 {['Full Name', 'Title', 'Email', 'Date'].map((label) => {
                   const key = label.toLowerCase().replace(' ', '') as keyof typeof form;
@@ -115,9 +120,9 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
                         value={form[key]}
                         onChange={e => setForm(p => ({ ...p, [key]: e.target.value }))}
                         placeholder={
-                          label === 'Full Name' ? data.tackleBag.placeholders.name
-                          : label === 'Title' ? data.tackleBag.placeholders.title
-                          : label === 'Email' ? data.tackleBag.placeholders.email
+                          label === 'Full Name' ? data.client.placeholders.name
+                          : label === 'Title' ? data.client.placeholders.title
+                          : label === 'Email' ? data.client.placeholders.email
                           : "Today's date"
                         }
                         className="w-full px-3.5 py-2.5 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] rounded-md text-white text-sm placeholder-[rgba(255,255,255,0.25)] outline-none focus:border-[#219EBC] transition-colors"
@@ -175,7 +180,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
               onClick={handleSubmit}
               className="w-full py-5 bg-[#219EBC] hover:bg-[#1a7d97] hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-[rgba(33,158,188,0.3)] text-white font-bold text-base rounded-xl transition-all duration-300 tracking-wide"
             >
-              Confirm Engagement — Let's Build →
+              Confirm Engagement — Let's Begin →
             </button>
           </>
         )}

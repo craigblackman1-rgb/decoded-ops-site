@@ -477,7 +477,7 @@ export const tacklebagProposal = {
     tag: 'Ready to Start',
     title: 'Choose your option\nand let\'s begin.',
     subtitle: 'Select the engagement that\'s right for TackleBag, sign below, and I\'ll have a scope-of-work letter with you within five working days.',
-    tackleBag: {
+    client: {
       company: 'TackleBag Ltd',
       placeholders: {
         name: 'Paul Lawson',
