@@ -49,24 +49,24 @@ const PHASE_ROWS: Array<{ label: string; color: string; rows: number[] }> = [
 ];
 
 // Cell values by workstream row — matches the HTML exactly
-const TIMELINE_CELLS: number[][] = [
-  [1,1,0,0,0,0,0,0,0,0], // QW1 IT Infrastructure
-  [1,1,0,0,0,0,0,0,0,0], // QW2 PCI DSS
-  [1,1,0,0,0,0,0,0,0,0], // QW3 Warehouse 5S
-  [1,1,0,0,0,0,0,0,0,0], // QW4 SKU / Barcode
-  [1,1,1,0,0,0,0,0,0,0], // QW5 Job Sheet App
-  [1,1,1,0,0,0,0,0,0,0], // QW6 Stock Control App
-  [1,1,0,0,0,0,0,0,0,0], // QW7 Demand Forecasting
-  [1,1,0,0,0,0,0,0,0,0], // QW8 Symphony → Accounts
-  [0,0,1,1,1,0,0,0,0,0], // CRM & Email Automation
-  [0,0,1,1,1,0,0,0,0,0], // Website SEO
-  [0,0,0,1,1,0,0,0,0,0], // AI Integration Starter
-  [0,0,1,1,0,0,0,0,0,0], // Cross-sell / Upsell
-  [0,0,0,1,1,1,0,0,0,0], // Design Workflow
-  [0,0,0,0,0,1,1,1,0,0], // ERP Evaluation
-  [0,0,0,0,0,0,0,1,1,0], // ERP Selection + SOW
-  [0,0,0,0,0,0,0,0,1,1], // ERP Implementation
-  [0,0,0,0,0,0,0,0,0,1], // New Ecommerce
+const TIMELINE_CELLS: boolean[][] = [
+  [true,true,false,false,false,false,false,false,false,false], // QW1 IT Infrastructure
+  [true,true,false,false,false,false,false,false,false,false], // QW2 PCI DSS
+  [true,true,false,false,false,false,false,false,false,false], // QW3 Warehouse 5S
+  [true,true,false,false,false,false,false,false,false,false], // QW4 SKU / Barcode
+  [true,true,true,false,false,false,false,false,false,false], // QW5 Job Sheet App
+  [true,true,true,false,false,false,false,false,false,false], // QW6 Stock Control App
+  [true,true,false,false,false,false,false,false,false,false], // QW7 Demand Forecasting
+  [true,true,false,false,false,false,false,false,false,false], // QW8 Symphony → Accounts
+  [false,false,true,true,true,false,false,false,false,false], // CRM & Email Automation
+  [false,false,true,true,true,false,false,false,false,false], // Website SEO
+  [false,false,false,true,true,false,false,false,false,false], // AI Integration Starter
+  [false,false,true,true,false,false,false,false,false,false], // Cross-sell / Upsell
+  [false,false,false,true,true,true,false,false,false,false], // Design Workflow
+  [false,false,false,false,false,true,true,true,false,false], // ERP Evaluation
+  [false,false,false,false,false,false,false,true,true,false], // ERP Selection + SOW
+  [false,false,false,false,false,false,false,false,true,true], // ERP Implementation
+  [false,false,false,false,false,false,false,false,false,true], // New Ecommerce
 ];
 
 const WORKSTREAM_LABELS = [
@@ -178,12 +178,12 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
                             className={`h-10 relative ${filled ? 'border border-[rgba(255,255,255,0.06)]' : ''}`}
                             style={filled ? { background: `${color}20`, borderColor: `${color}40` } : {}}
                           >
-                            {filled && (
+                            {filled ? (
                               <div
                                 className="absolute inset-x-1 top-1/2 -translate-y-1/2 h-1 rounded"
                                 style={{ background: color }}
                               />
-                            )}
+                            ) : null}
                           </td>
                         ))}
                       </tr>

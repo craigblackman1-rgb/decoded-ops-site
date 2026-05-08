@@ -31,8 +31,8 @@ function ProposalNav() {
           : 'bg-transparent'
       }`}
     >
-      <div className="text-xs font-bold tracking-widest text-[#8ECAE6] uppercase">
-        Decoded Ops
+      <div className="text-lg font-bold tracking-tight">
+        <span className="text-[#F8F9FA]">Decoded</span><span className="text-[#FFB703]">Ops</span>
       </div>
       <div className="hidden md:flex gap-7">
         {[
@@ -122,8 +122,8 @@ export default function ProposalPage() {
 
             {/* Footer — matches HTML footer exactly */}
             <footer className="bg-[#023047] px-20 py-8 flex justify-between items-center border-t border-[rgba(255,255,255,0.06)] flex-wrap gap-3">
-              <div className="text-xs font-bold tracking-widest text-[#8ECAE6] uppercase">
-                Decoded Ops
+              <div className="text-lg font-bold tracking-tight">
+                <span className="text-[#F8F9FA]">Decoded</span><span className="text-[#FFB703]">Ops</span>
               </div>
               <div className="text-xs text-[rgba(255,255,255,0.3)]">
                 Prepared exclusively for TackleBag Ltd · May 2026 · Confidential
