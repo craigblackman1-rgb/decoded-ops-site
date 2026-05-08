@@ -316,7 +316,7 @@ export const tacklebagProposal = {
   pricing: {
     tag: 'The Investment',
     title: 'Three options.\nOne right answer\nfor TackleBag.',
-    subtitle: 'Each option is a fixed monthly retainer. The rate reflects the number of days committed and the scope delivered each month. All fees exclude VAT, confirmed in writing before work begins.',
+    subtitle: 'Each option is a fixed monthly retainer. The rate reflects the number of days committed and the scope delivered each month. Confirmed in writing before work begins.',
     options: [
       {
         id: 'C',
@@ -427,7 +427,7 @@ export const tacklebagProposal = {
       },
     ],
     paymentTerms: [
-      'Fixed monthly retainer — £2,000 (C) · £2,800 (B) · £4,900 (A) + VAT. Invoiced at the start of each month. Rate locked for the full term.',
+      'Fixed monthly retainer — £2,000 (C) · £2,800 (B) · £4,900 (A). Invoiced at the start of each month. Rate locked for the full term.',
       '3-month minimum on all options. 30 days written notice to end after the minimum term',
       'Scope reviewed and confirmed in writing before each phase extension. No price changes without written agreement.',
       'Net 14 from invoice · Expenses at cost, agreed in advance · No day-rate surprises',

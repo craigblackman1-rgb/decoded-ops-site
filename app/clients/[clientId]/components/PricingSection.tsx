@@ -92,7 +92,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
                   <div className={`text-xs font-bold mt-2.5 mb-1 ${isB ? 'text-[#FFB703]' : 'opacity-60'}`}>
                     📅 {option.days}
                   </div>
-                  <div className="text-xs opacity-40 mb-3">+ VAT · {option.minimum}</div>
+                  <div className="text-xs opacity-40 mb-3">{option.minimum}</div>
                   <p className="text-xs leading-relaxed opacity-70 italic">{option.bestFor}</p>
                 </div>
 

@@ -212,7 +212,7 @@ export const cobraWorkwearProposal = {
   pricing: {
     tag: 'The Investment',
     title: 'Three tiers.\nClear scope.\nNo surprises.',
-    subtitle: 'Clarity is a fixed fee. Deliver and Transform are monthly retainers — you pay for what you use, and the minimum commitment reflects the scope of the work. All fees exclude VAT.',
+    subtitle: 'Clarity is a fixed fee. Deliver and Transform are monthly retainers — you pay for what you use, and the minimum commitment reflects the scope of the work.',
     options: [
       {
         id: 'C',
@@ -323,8 +323,8 @@ export const cobraWorkwearProposal = {
     ],
     paymentTerms: [
       'Tier 1 (Clarity): £1,995 fixed. 50% on signing, 50% on delivery of the written report.',
-      'Tier 2 (Deliver): £850/month + VAT, invoiced monthly in advance. 3-month minimum. 30 days written notice after minimum period.',
-      'Tier 3 (Transform + Retained): £1,250/month + VAT, invoiced monthly in advance. Milestone-based minimum agreed at scoping. 30 days written notice after completion.',
+      'Tier 2 (Deliver): £850/month, invoiced monthly in advance. 3-month minimum. 30 days written notice after minimum period.',
+      'Tier 3 (Transform + Retained): £1,250/month, invoiced monthly in advance. Milestone-based minimum agreed at scoping. 30 days written notice after completion.',
       'Vendor and third-party costs paid directly by Cobra Workwear to the relevant provider.',
       'Expenses at cost, agreed in advance. Travel at 45p/mile (HMRC rate).',
     ],
