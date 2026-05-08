@@ -124,7 +124,7 @@ export default function ProposalPage() {
             </div>
 
             <div id="quickwins">
-              <QuickWinsSection wins={proposal.quickWins} />
+              <QuickWinsSection wins={proposal.quickWins} section={proposal.quickWinsSection} />
             </div>
 
             {proposal.demo && (

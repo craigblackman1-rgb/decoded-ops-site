@@ -11,6 +11,12 @@ interface QuickWin {
   carries: string;
 }
 
+interface SectionHeader {
+  tag: string;
+  title: string;
+  subtitle: string;
+}
+
 // Matches HTML c1–c8 head background and border-bottom exactly
 const CARD_HEAD_STYLES: Record<number, string> = {
   1: 'bg-[rgba(198,40,40,0.35)] border-b-2 border-[#C62828]',
@@ -23,7 +29,15 @@ const CARD_HEAD_STYLES: Record<number, string> = {
   8: 'bg-[rgba(2,48,71,0.95)] border-b-2 border-[#4ade80]',
 };
 
-export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
+// TackleBag defaults — used when no section prop is supplied
+const TACKLEBAG_SECTION: SectionHeader = {
+  tag: 'Phase1 Detail',
+  title: 'Eight fixes.\nSix weeks.\nBefore peak season.',
+  subtitle: 'Each quick win solves a real problem identified in the Clarity audit and carries cleanly into the ERP when it arrives. Nothing here is throwaway work.',
+};
+
+export default function QuickWinsSection({ wins, section }: { wins: QuickWin[]; section?: SectionHeader }) {
+  const s = section || TACKLEBAG_SECTION;
   const [openCards, setOpenCards] = useState<number[]>([]);
 
   const toggle = (num: number) =>
@@ -36,13 +50,13 @@ export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
       <div className="max-w-6xl mx-auto">
            <div className="mb-14">
            <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
-             Phase1 Detail
+             {s.tag}
            </div>
           <h2 className="text-4xl lg:text-5xl font-black mb-4 leading-tight">
-            Eight fixes.<br />Six weeks.<br />Before peak season.
+            {s.title.split('\n').map((line, i) => <div key={i}>{line}</div>)}
           </h2>
           <p className="text-base lg:text-lg text-[rgba(255,255,255,0.55)] max-w-2xl leading-relaxed">
-            Each quick win solves a real problem identified in the Clarity audit and carries cleanly into the ERP when it arrives. Nothing here is throwaway work.
+            {s.subtitle}
           </p>
         </div>
 
