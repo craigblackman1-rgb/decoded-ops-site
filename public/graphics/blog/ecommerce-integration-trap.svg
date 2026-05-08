@@ -1,0 +1,53 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <style>
+      .prussian-blue-bg { fill: #023047; }
+      .cerulean { fill: #219EBC; }
+      .sky-blue { fill: #8ECAE6; }
+      .amber { fill: #FFB703; }
+      .orange { fill: #FB8500; }
+      .white-text { fill: #FFFFFF; }
+      .light-blue-text { fill: #8ECAE6; }
+      .dark-blue-text { fill: #023047; }
+      .path-stroke { stroke: #8ECAE6; stroke-width: 8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .trap-stroke { stroke: #FB8500; stroke-width: 8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .shadow { filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1200" height="630" class="prussian-blue-bg"/>
+  <text x="600" y="80" text-anchor="middle" font-size="50" font-weight="bold" class="white-text">The Ecommerce Integration Trap</text>
+  <text x="600" y="125" text-anchor="middle" font-size="24" class="light-blue-text">Uncovering hidden costs and complexity in connecting platforms</text>
+  <rect x="100" y="240" width="250" height="150" rx="15" ry="15" class="cerulean shadow"/>
+  <text x="225" y="310" text-anchor="middle" font-size="28" font-weight="bold" class="dark-blue-text">Ecommerce</text>
+  <text x="225" y="345" text-anchor="middle" font-size="20" class="dark-blue-text">(Shopify / WooCommerce)</text>
+  <rect x="850" y="240" width="250" height="150" rx="15" ry="15" class="cerulean shadow"/>
+  <text x="975" y="310" text-anchor="middle" font-size="28" font-weight="bold" class="dark-blue-text">ERP &</text>
+  <text x="975" y="345" text-anchor="middle" font-size="28" font-weight="bold" class="dark-blue-text">Inventory</text>
+  <path d="M350 315 H400 V200 H550 V430 H700 V200 H800 V315 H850" class="path-stroke"/>
+  <path d="M550 200 V150 H600 V200" class="trap-stroke"/>
+  <text x="575" y="175" text-anchor="middle" font-size="18" font-weight="bold" class="amber">Dead End</text>
+  <path d="M600 175 L595 170 M600 175 L595 180" stroke="#FB8500" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <g transform="translate(475, 200)">
+    <circle cx="0" cy="0" r="25" class="amber shadow"/>
+    <text x="0" y="8" text-anchor="middle" font-size="24" font-weight="bold" class="dark-blue-text">$?</text>
+    <text x="0" y="55" text-anchor="middle" font-size="18" class="white-text">Hidden Costs</text>
+  </g>
+  <g transform="translate(625, 430)">
+    <rect x="-25" y="-25" width="50" height="50" rx="10" ry="10" class="orange shadow"/>
+    <path d="M-15 -10 L-5 -10 L-5 0 L5 0 L5 10 L15 10" stroke="#023047" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-15 10 L-5 10 L-5 0 L5 0 L5 -10 L15 -10" stroke="#023047" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="0" y="55" text-anchor="middle" font-size="18" class="white-text">Complexity</text>
+  </g>
+  <g transform="translate(750, 200)">
+    <rect x="-25" y="-25" width="50" height="50" rx="10" ry="10" class="sky-blue shadow"/>
+    <path d="M-15 -10 H15 M-15 0 H15 M-15 10 H15" stroke="#FB8500" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="0" y="55" text-anchor="middle" font-size="18" class="white-text">Data Silos</text>
+  </g>
+  <g transform="translate(550, 430)">
+    <circle cx="0" cy="0" r="25" class="orange shadow"/>
+    <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke="#023047" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="0" y="55" text-anchor="middle" font-size="18" class="white-text">Maintenance</text>
+  </g>
+  <path d="M350 315 L340 310 M350 315 L340 320" stroke="#8ECAE6" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M850 315 L860 310 M850 315 L860 320" stroke="#8ECAE6" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>
