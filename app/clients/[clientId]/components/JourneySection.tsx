@@ -55,7 +55,7 @@ export default function JourneySection({ data }: { data: JourneyData }) {
         </div>
 
         {/* Three column layout: Now | Arrows | Future */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2">
            {/* NOW Column */}
            <div>
              <div className="bg-[#FB8500] px-5 py-3 rounded-t-xl font-bold text-white text-sm text-center uppercase tracking-wide">

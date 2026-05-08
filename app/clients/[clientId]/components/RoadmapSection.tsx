@@ -175,7 +175,7 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
                         {TIMELINE_CELLS[ri].map((filled, j) => (
                           <td
                             key={j}
-                            className="border border-[rgba(255,255,255,0.06)] h-10 relative"
+                            className={`h-10 relative ${filled ? 'border border-[rgba(255,255,255,0.06)]' : ''}`}
                             style={filled ? { background: `${color}20`, borderColor: `${color}40` } : {}}
                           >
                             {filled && (

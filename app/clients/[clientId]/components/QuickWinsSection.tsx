@@ -13,14 +13,14 @@ interface QuickWin {
 
 // Matches HTML c1–c8 head background and border-bottom exactly
 const CARD_HEAD_STYLES: Record<number, string> = {
-  1: 'bg-[rgba(198,40,40,0.15)] border-b-2 border-[#C62828]',
-  2: 'bg-[rgba(251,133,0,0.15)] border-b-2 border-[#FB8500]',
-  3: 'bg-[rgba(27,94,32,0.2)] border-b-2 border-[#4ade80]',
-  4: 'bg-[rgba(2,48,71,0.9)] border-b-2 border-[#8ECAE6]',
-  5: 'bg-[rgba(255,183,3,0.12)] border-b-2 border-[#FFB703]',
-  6: 'bg-[rgba(2,48,71,0.9)] border-b-2 border-[#FFB703]',
-  7: 'bg-[rgba(2,48,71,0.9)] border-b-2 border-[#219EBC]',
-  8: 'bg-[rgba(2,48,71,0.9)] border-b-2 border-[#4ade80]',
+  1: 'bg-[rgba(198,40,40,0.35)] border-b-2 border-[#C62828]',
+  2: 'bg-[rgba(251,133,0,0.35)] border-b-2 border-[#FB8500]',
+  3: 'bg-[rgba(27,94,32,0.35)] border-b-2 border-[#4ade80]',
+  4: 'bg-[rgba(2,48,71,0.95)] border-b-2 border-[#8ECAE6]',
+  5: 'bg-[rgba(255,183,3,0.25)] border-b-2 border-[#FFB703]',
+  6: 'bg-[rgba(2,48,71,0.95)] border-b-2 border-[#FFB703]',
+  7: 'bg-[rgba(2,48,71,0.95)] border-b-2 border-[#219EBC]',
+  8: 'bg-[rgba(2,48,71,0.95)] border-b-2 border-[#4ade80]',
 };
 
 export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
@@ -32,7 +32,7 @@ export default function QuickWinsSection({ wins }: { wins: QuickWin[] }) {
     );
 
   return (
-     <section className="bg-[#010f17] px-5 py-24 md:px-20">
+     <section className="bg-[#010f17] text-white px-5 py-24 md:px-20">
       <div className="max-w-6xl mx-auto">
            <div className="mb-14">
            <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
