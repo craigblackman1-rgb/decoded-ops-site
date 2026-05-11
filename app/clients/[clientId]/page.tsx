@@ -15,6 +15,7 @@ import WhySection from './components/WhySection';
 import PricingSection from './components/PricingSection';
 import NextStepsSection from './components/NextStepsSection';
 import AcceptanceSection from './components/AcceptanceSection';
+import PortalMockupSection from './components/PortalMockupSection';
 import { tacklebagProposal } from './data/tacklebag-proposal';
 import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
 import { hanicksProposal } from './data/hanicks-proposal';
@@ -49,7 +50,7 @@ function ProposalNav() {
         {[
           ['#challenge', 'Challenge'],
           ['#roadmap', 'Roadmap'],
-          ['#demo', 'Stock App'],
+          ['#portal-mockup', 'Portal'],
           ['#investment', 'Investment'],
           ['#accept', 'Accept'],
         ].map(([href, label]) => (
@@ -132,6 +133,12 @@ export default function ProposalPage() {
             {proposal.demo && (
               <div id="demo">
                 <DemoSection data={proposal.demo} />
+              </div>
+            )}
+
+            {proposal.portalMockup && (
+              <div id="portal-mockup">
+                <PortalMockupSection data={proposal.portalMockup} />
               </div>
             )}
 
