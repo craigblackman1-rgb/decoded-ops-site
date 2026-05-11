@@ -6,7 +6,7 @@ export const cobraWorkwearProposal = {
     industry: 'Workwear & Corporate Clothing',
   },
   hero: {
-    tag: 'Clarity Audit Proposal · Cobra Workwear · May 2026',
+    tag: 'Proposal · Cobra Workwear · May 2026',
     title: 'From <span class="highlight">manual workarounds</span><br>to a business that<br><span class="amber">scales.</span>',
     subtitle: 'A structured, independent review of your operations, technology, and processes. One day on site. Everything it costs you in writing within five days.',
     stats: [
@@ -106,7 +106,7 @@ export const cobraWorkwearProposal = {
     future: [
       'B2B trade portal — customer-specific login, product ranges, and credit terms online',
       'Trade customers self-serving orders 24/7 — less phone and email handling for the team',
-      'Zorelo ERP (or equivalent) selected against a documented requirements brief',
+      'Pantha ERP (or equivalent) selected against a documented requirements brief',
       'ERP integrated with Shopify and Xero — orders flow end to end without re-entry',
       'Live reporting dashboard — real-time view of orders, stock, and revenue',
       'Automated purchase orders and supplier communication workflows',
@@ -122,7 +122,7 @@ export const cobraWorkwearProposal = {
     subtitle: 'Three phases from audit through to go-live. Phase 1 delivers the clarity you need to make informed decisions. Phases 2 and 3 are where the build happens.',
     phases: [
       {
-        name: 'Phase 1 — Clarity Audit & Requirements',
+        name: 'Phase 1 — Discovery & Requirements',
         duration: 'May 2026',
         details: 'Discovery Day, findings report, B2B portal requirements brief, ERP requirements document. Everything delivered in under 5 working days from the on-site visit.',
         order: 3,
@@ -144,7 +144,7 @@ export const cobraWorkwearProposal = {
     workstreamTimeline: {
       months: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', "Q1 '27"],
       phases: [
-        { label: 'PHASE 1 · Clarity Audit & Requirements', color: '#FB8500', rows: [0, 1, 2, 3] },
+        { label: 'PHASE 1 · Discovery & Requirements', color: '#FB8500', rows: [0, 1, 2, 3] },
         { label: 'PHASE 2 · Vendor Selection & Architecture', color: '#219EBC', rows: [4, 5, 6, 7] },
         { label: 'PHASE 3 · Build, Integration & Go-live', color: '#1a6e9b', rows: [8, 9, 10, 11, 12] },
       ],
@@ -303,7 +303,7 @@ export const cobraWorkwearProposal = {
     tag: 'The Investment',
     title: 'Three tiers.\nClear scope.\nNo surprises.',
     subtitle: 'Discovery Day is a fixed fee. Deliver and Transform are monthly retainers with unrestricted email and phone access throughout, and named deliverables agreed in writing each month. You are not buying time — you are buying the outcomes, and the access to make them happen.',
-    valueSubtitle: 'For context at Cobra Workwear\'s scale — compare the cost of going direct to a vendor, doing it internally, or working with Decoded Ops. Craig brings sector-specific knowledge from day one, with the audit already done, at a fixed rate that can be switched off after the minimum term.',
+    valueSubtitle: 'For context at Cobra Workwear\'s scale — compare the cost of going direct to a vendor, doing it internally, or working with Decoded Ops. Craig brings sector-specific knowledge from day one, at a fixed rate with no vendor commissions and unrestricted access throughout the engagement.',
     options: [
       {
         id: 'C',

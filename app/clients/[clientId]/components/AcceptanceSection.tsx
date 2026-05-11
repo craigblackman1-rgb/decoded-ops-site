@@ -22,9 +22,9 @@ interface AcceptanceData {
 }
 
 const DEFAULT_OPTIONS = [
-  { id: 'C', name: 'Tier 1 — Clarity', desc: 'One-off audit + recommendations report', price: '£1,995 fixed' },
-  { id: 'B', name: 'Tier 2 — Deliver ⭐', desc: 'Audit + vendor procurement (Recommended)', price: '£850/month' },
-  { id: 'A', name: 'Tier 3 — Transform + Retained', desc: 'Full implementation oversight — ERP, portal, integrations', price: '£1,250/month' },
+  { id: 'C', name: 'Tier 1 — Discovery Day', desc: 'Structured on-site audit + written assessment + specifications', price: '£1,500 fixed' },
+  { id: 'B', name: 'Tier 2 — Deliver Consultancy ⭐', desc: 'Full consultancy programme — vendor selection, requirements, integration architecture (Recommended)', price: 'from £1,400/month' },
+  { id: 'A', name: 'Tier 3 — Transform Programme', desc: 'Full implementation oversight + (optional) productised build line', price: 'from £1,800/month' },
 ];
 
 export default function AcceptanceSection({ data }: { data: AcceptanceData }) {

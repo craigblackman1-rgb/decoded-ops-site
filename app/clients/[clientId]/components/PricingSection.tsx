@@ -35,7 +35,7 @@ interface PricingData {
 }
 
 export default function PricingSection({ data }: { data: PricingData }) {
-  // HTML orders: C (Foundation), B (Growth/Recommended), A (Full Transform)
+  // HTML orders: C (Tier 1 — entry), B (Tier 2 — recommended/middle), A (Tier 3 — premium)
   const orderedOptions = ['C', 'B', 'A'].map(id => data.options.find(o => o.id === id)!).filter(Boolean);
 
   return (
