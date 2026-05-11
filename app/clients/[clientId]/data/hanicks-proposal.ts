@@ -458,9 +458,10 @@ export const hanicksProposal = {
       },
     ],
     paymentTerms: [
-      'Tier 1 (Discovery Day): £1,500 fixed. Single invoice on acceptance. Credited against Tier 2 or 3 if you proceed within 60 days.',
+      'Tier 1 (Discovery Day): £1,500 fixed. 50% on signing, 50% on delivery of the written assessment.',
       'Tier 2 (Deliver Consultancy): £1,800/month, invoiced monthly in advance. 6-month minimum. 30 days written notice after minimum period.',
       'Tier 3 (Transform + IBasis App): £20,500 across the 6-month programme — £9,500 build fee invoiced against milestones; £1,800/month consultancy retainer invoiced monthly in advance; £200 hosting setup invoiced at Month 1. Ongoing app support from Month 7 at £750/month.',
+      'Discovery Day credit: the £1,500 Discovery Day fee is credited against the first consultancy retainer invoice of Tier 2 or Tier 3 if a signed acceptance is received within 60 days of the Discovery Day written assessment being delivered. Build milestone payments under Tier 3 are unaffected. Total engagement value is unchanged.',
       'No VAT (Craig Blackman, sole trader, below VAT threshold).',
       'Expenses (travel to site) invoiced at cost with receipts.',
     ],

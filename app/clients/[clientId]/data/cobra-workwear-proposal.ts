@@ -383,9 +383,10 @@ export const cobraWorkwearProposal = {
       },
     ],
     paymentTerms: [
-      'Tier 1 (Discovery Day): £1,500 fixed. Single invoice on acceptance. Credited against Tier 2 or 3 if you proceed within 60 days.',
+      'Tier 1 (Discovery Day): £1,500 fixed. 50% on signing, 50% on delivery of the written assessment.',
       'Tier 2 (Deliver Consultancy): £1,400/month, invoiced monthly in advance. 6-month minimum. 30 days written notice after minimum period.',
       'Tier 3 (Transform Programme): £1,800/month, invoiced monthly in advance. 9–12 month milestone-based minimum agreed at scoping. 30 days written notice after completion.',
+      'Discovery Day credit: the £1,500 Discovery Day fee is credited against the first invoice of Tier 2 or Tier 3 if a signed acceptance is received within 60 days of the Discovery Day written assessment being delivered. Total engagement value is unchanged.',
       'Software, third-party build, and vendor implementation costs paid directly by Cobra Workwear to the relevant provider. Competitive quotes secured by Decoded Ops on your behalf.',
       'Expenses at cost, agreed in advance. Travel at 45p/mile (HMRC rate).',
     ],
