@@ -26,6 +26,7 @@ interface PricingData {
   tag: string;
   title: string;
   subtitle: string;
+  valueSubtitle?: string;
   options: PricingOption[];
   valueComparison: ValueComparison[];
   roi: Array<{ area: string; basis: string; value: string }>;
@@ -125,7 +126,7 @@ export default function PricingSection({ data }: { data: PricingData }) {
         <div className="mb-12 mt-12">
           <h3 className="text-xl font-bold text-[#023047] mb-1.5">What would you pay for this any other way?</h3>
           <p className="text-sm text-[rgba(2,48,71,0.5)] mb-6 leading-relaxed max-w-3xl">
-            For context at TackleBag's scale — this is what comparable resource typically costs. Craig brings sector-specific knowledge from day one, with the audit already done, at a fixed rate that can be switched off after the minimum term.
+            {data.valueSubtitle || 'Craig brings sector-specific knowledge from day one, with the audit already done, at a fixed rate that can be switched off after the minimum term.'}
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             {data.valueComparison.map((col, i) => {

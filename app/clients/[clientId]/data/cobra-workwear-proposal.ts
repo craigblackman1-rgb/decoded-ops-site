@@ -119,24 +119,24 @@ export const cobraWorkwearProposal = {
   roadmap: {
     tag: 'The Plan',
     title: 'Three tiers.\nOne direction.\nYour choice.',
-    subtitle: 'Each tier reflects how far into the engagement you want Decoded Ops involved from the outset. The Clarity audit is identical in every tier — the difference is what comes after it.',
+    subtitle: 'Three phases from audit through to go-live. Phase 1 delivers the clarity you need to make informed decisions. Phases 2 and 3 are where the build happens.',
     phases: [
       {
-        name: 'Tier 1 — Discovery Day',
-        duration: 'One structured day on-site',
-        details: 'Discovery, requirements, vendor shortlist. Written assessment within 5 working days. Fixed fee. £1,500 credited to Tier 2 or 3 if you proceed within 60 days.',
+        name: 'Phase 1 — Clarity Audit & Requirements',
+        duration: 'May 2026',
+        details: 'Discovery Day, findings report, B2B portal requirements brief, ERP requirements document. Everything delivered in under 5 working days from the on-site visit.',
         order: 3,
       },
       {
-        name: 'Tier 2 — Deliver Consultancy',
-        duration: '6-month engagement',
-        details: 'Everything in Discovery Day plus ERP evaluation, B2B portal vendor selection, integration architecture and procurement. Embedded support throughout — unrestricted email and phone access. Monthly retainer.',
+        name: 'Phase 2 — Vendor Selection & Architecture',
+        duration: 'Jun–Jul 2026',
+        details: 'ERP evaluation (Pantha plus alternatives), B2B portal vendor selection, competitive quotes, integration architecture design. Vendors compete on your brief, not their demo.',
         order: 2,
       },
       {
-        name: 'Tier 3 — Transform Programme',
-        duration: '9–12 months',
-        details: 'Full programme. Decoded Ops as architect, vendor manager, and single point of accountability. Third-party build partner introduced and managed against your brief. Implementation through to go-live.',
+        name: 'Phase 3 — Build, Integration & Go-live',
+        duration: 'Aug 2026 – Q1 2027',
+        details: 'ERP implementation, B2B portal build, Shopify and Xero integration, staff training, UAT, and go-live. Decoded Ops as architect and single point of accountability throughout.',
         order: 1,
       },
     ],
@@ -265,6 +265,7 @@ export const cobraWorkwearProposal = {
     tag: 'The Investment',
     title: 'Three tiers.\nClear scope.\nNo surprises.',
     subtitle: 'Discovery Day is a fixed fee. Deliver and Transform are monthly retainers with unrestricted email and phone access throughout, and named deliverables agreed in writing each month. You are not buying time — you are buying the outcomes, and the access to make them happen.',
+    valueSubtitle: 'For context at Cobra Workwear\'s scale — compare the cost of going direct to a vendor, doing it internally, or working with Decoded Ops. Craig brings sector-specific knowledge from day one, with the audit already done, at a fixed rate that can be switched off after the minimum term.',
     options: [
       {
         id: 'C',
@@ -450,5 +451,10 @@ export const cobraWorkwearProposal = {
       website: 'decodedops.co.uk',
       terms: 'This engagement is subject to Decoded Ops Standard Terms & Conditions. By proceeding you confirm you have read and accept this proposal and the associated terms.',
     },
+    options: [
+      { id: 'C', name: 'Tier 1 — Discovery Day', desc: 'Structured on-site audit + written assessment + specifications', price: '£1,500 fixed' },
+      { id: 'B', name: 'Tier 2 — Deliver Consultancy ⭐', desc: 'ERP evaluation, B2B portal vendor selection, integration architecture (Recommended)', price: '£1,400/month' },
+      { id: 'A', name: 'Tier 3 — Transform Programme', desc: 'Full programme — implementation oversight through to go-live', price: '£1,800/month' },
+    ],
   },
 };
