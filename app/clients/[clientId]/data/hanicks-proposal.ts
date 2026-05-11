@@ -159,7 +159,7 @@ export const hanicksProposal = {
       {
         name: 'Month 6 — Stabilisation, Handover & Review',
         duration: 'Oct–Nov 2026',
-        details: 'Go-live support. N8N and IBasis App documentation. Ongoing retainer options proposed. Own-brand product onboarding roadmap.',
+        details: 'Go-live support. N8N and IBasis App documentation. Own-brand product onboarding roadmap. ERP implementation PM proposal delivered — scoped against the confirmed vendor and project plan, ready for Month 7 if Hanicks wants Craig to continue as project manager through go-live.',
         order: 1,
       },
     ],
@@ -295,6 +295,8 @@ export const hanicksProposal = {
     simTotalOrders: 90,
     noteTitle: 'This is a working prototype.',
     noteText: 'The real IBasis App would connect directly to IBasis, HRP and DHS supplier data sources, ingesting product data, normalising it, and serving it to the ERP, WooCommerce and all seven sales channels. All data structured to export cleanly into your future ERP.',
+    stockSourceLabel: 'Supplier',
+    appNavItems: ['Dashboard', 'Products', 'Channels', 'Forecast', 'Reports'],
   },
   why: {
     tag: 'Why Decoded Ops',
@@ -384,7 +386,7 @@ export const hanicksProposal = {
         period: '6-month programme',
         minimum: '6-month milestone-based programme',
         recommended: true,
-        bestFor: 'The full programme — IBasis App built by Decoded Ops, ERP selected, all seven channels automated, end-to-end implementation oversight. App hosted in your own Vercel account from day one — Hanicks owns the infrastructure. Everything in Deliver included, plus the bespoke build delivered, plus ongoing support from Month 7. A single accountable partner across consultancy and product.',
+        bestFor: 'The full programme — IBasis App built by Decoded Ops, ERP selected, all seven channels automated, end-to-end implementation oversight. App hosted in your own Vercel account from day one — Hanicks owns the infrastructure. Everything in Deliver included, plus the bespoke build delivered, plus ongoing support from Month 7. If you want Craig to continue as project manager through ERP go-live, that is scoped separately at Month 6 — once the ERP vendor and implementation plan are confirmed — so you are priced against a real project, not an estimate.',
         breakdown: [
           { label: 'IBasis App build (fixed scope · milestone-based)', value: '£9,500' },
           { label: 'Deliver Consultancy retainer × 6 months @ £1,800/mo', value: '£10,800' },
@@ -393,6 +395,7 @@ export const hanicksProposal = {
           { label: 'N8N automation + 7-channel stock and order sync', value: 'Included' },
           { label: 'Total — Months 1–6', value: '£20,500' },
           { label: 'Ongoing app support from Month 7 (hosting, monitoring, fixes)', value: '£750/mo' },
+          { label: 'ERP implementation PM oversight from Month 7 — scoped at Month 6', value: 'Separate proposal' },
         ],
       },
     ],
@@ -461,6 +464,7 @@ export const hanicksProposal = {
       'Tier 1 (Discovery Day): £1,500 fixed. 50% on signing, 50% on delivery of the written assessment.',
       'Tier 2 (Deliver Consultancy): £1,800/month, invoiced monthly in advance. 6-month minimum. 30 days written notice after minimum period.',
       'Tier 3 (Transform + IBasis App): £20,500 across the 6-month programme — £9,500 build fee invoiced against milestones; £1,800/month consultancy retainer invoiced monthly in advance; £200 hosting setup invoiced at Month 1. Ongoing app support from Month 7 at £750/month.',
+      'ERP implementation PM oversight (Month 7+): if Hanicks wants Craig to continue as project manager through ERP implementation and go-live, a separate proposal is provided at Month 6. It is scoped once the ERP vendor is selected and their implementation plan is confirmed — so the fee reflects the actual project, not an estimate made before the vendor is known. No commitment is required now.',
       'Discovery Day credit: the £1,500 Discovery Day fee is credited against the first consultancy retainer invoice of Tier 2 or Tier 3 if a signed acceptance is received within 60 days of the Discovery Day written assessment being delivered. Build milestone payments under Tier 3 are unaffected. Total engagement value is unchanged.',
       'No VAT (Craig Blackman, sole trader, below VAT threshold).',
       'Expenses (travel to site) invoiced at cost with receipts.',

@@ -1,7 +1,5 @@
 'use client';
 
-'use client';
-
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import AccessGate from './components/AccessGate';
@@ -26,7 +24,7 @@ const proposals: Record<string, any> = {
   hanicks: hanicksProposal,
 };
 
-function ProposalNav() {
+function ProposalNav({ hasPortal, hasDemo }: { hasPortal: boolean; hasDemo: boolean }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,6 +32,20 @@ function ProposalNav() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const middleLink: [string, string] | null = hasPortal
+    ? ['#portal-mockup', 'Portal']
+    : hasDemo
+    ? ['#demo', 'Demo']
+    : null;
+
+  const navLinks: [string, string][] = [
+    ['#challenge', 'Challenge'],
+    ['#roadmap', 'Roadmap'],
+    ...(middleLink ? [middleLink] : []),
+    ['#investment', 'Investment'],
+    ['#accept', 'Accept'],
+  ];
 
   return (
     <nav
@@ -47,13 +59,7 @@ function ProposalNav() {
         <span className="text-[#F8F9FA]">Decoded</span><span className="text-[#FFB703]">Ops</span>
       </div>
       <div className="hidden md:flex gap-7">
-        {[
-          ['#challenge', 'Challenge'],
-          ['#roadmap', 'Roadmap'],
-          ['#portal-mockup', 'Portal'],
-          ['#investment', 'Investment'],
-          ['#accept', 'Accept'],
-        ].map(([href, label]) => (
+        {navLinks.map(([href, label]) => (
           <a
             key={href}
             href={href}
@@ -103,7 +109,7 @@ export default function ProposalPage() {
 
       {isUnlocked && (
         <>
-          <ProposalNav />
+          <ProposalNav hasPortal={!!proposal.portalMockup} hasDemo={!!proposal.demo} />
           <div>
             <div id="hero">
               <ProposalHero

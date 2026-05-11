@@ -56,19 +56,20 @@ export default function PricingSection({ data }: { data: PricingData }) {
         {/* ── Pricing Cards ── */}
         <div className="grid md:grid-cols-3 gap-5 mb-12">
           {orderedOptions.map((option) => {
-            const isB = option.id === 'B';
+            const isRecommended = option.recommended === true;
             const isC = option.id === 'C';
+            const isB = option.id === 'B';
             const isA = option.id === 'A';
             return (
               <div
                 key={option.id}
                 className={`rounded-2xl overflow-hidden border-2 transition-all duration-300 relative ${
-                  isB
+                  isRecommended
                     ? 'border-[#219EBC] -translate-y-3 shadow-2xl shadow-[rgba(33,158,188,0.2)]'
                     : 'border-transparent'
                 }`}
               >
-                {isB && (
+                {isRecommended && (
                   <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#219EBC] text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-wide">
                     ⭐ Recommended
                   </div>

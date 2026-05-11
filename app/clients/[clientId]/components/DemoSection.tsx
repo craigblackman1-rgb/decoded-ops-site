@@ -51,6 +51,8 @@ interface DemoData {
   simTotalOrders?: number;
   noteTitle?: string;
   noteText?: string;
+  stockSourceLabel?: string;
+  appNavItems?: string[];
 }
 
 const DEFAULT_FORECAST_LABELS = ['Wk 1 Jul', 'Wk 2 Jul', 'Wk 3 Jul', 'Wk 4 Jul', 'Wk 1 Aug', 'Wk 2 Aug', 'Wk 3 Aug', 'Wk 1 Sep', 'Wk 2 Sep', 'Wk 3 Sep'];
@@ -286,11 +288,9 @@ export default function DemoSection({ data }: { data: DemoData }) {
               {data.appName || 'TackleBag Stock Command'}
             </div>
             <div className="flex gap-6 text-xs text-[#8ECAE6]">
-              <span className="text-[#FFB703] font-semibold">Dashboard</span>
-              <span className="opacity-50">Schools</span>
-              <span className="opacity-50">Suppliers</span>
-              <span className="opacity-50">Forecast</span>
-              <span className="opacity-50">Reports</span>
+              {(data.appNavItems || ['Dashboard', 'Schools', 'Suppliers', 'Forecast', 'Reports']).map((item, i) => (
+                <span key={item} className={i === 0 ? 'text-[#FFB703] font-semibold' : 'opacity-50'}>{item}</span>
+              ))}
             </div>
           </div>
 
@@ -343,7 +343,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
                   <table className="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
                     <thead>
                       <tr className="bg-[#023047] text-white">
-                        <th className="px-4 py-3 text-left font-bold text-xs">School / Club</th>
+                        <th className="px-4 py-3 text-left font-bold text-xs">{data.stockSourceLabel || 'School / Club'}</th>
                         <th className="px-4 py-3 text-left font-bold text-xs">Product</th>
                         <th className="px-4 py-3 text-left font-bold text-xs">SKU</th>
                         <th className="px-4 py-3 text-center font-bold text-xs">In Stock</th>
