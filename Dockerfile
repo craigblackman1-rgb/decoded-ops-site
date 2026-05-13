@@ -16,6 +16,3 @@ COPY . .
 
 # Expose dev server port
 EXPOSE 3000
-
-# Run development server on port 3000
-CMD ["next", "dev", "-p", "3000"]
