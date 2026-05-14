@@ -17,11 +17,13 @@ import PortalMockupSection from './components/PortalMockupSection';
 import { tacklebagProposal } from './data/tacklebag-proposal';
 import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
 import { hanicksProposal } from './data/hanicks-proposal';
+import { cwearProposal } from './data/cwear-proposal';
 
 const proposals: Record<string, any> = {
   tacklebag: tacklebagProposal,
   'cobra-workwear': cobraWorkwearProposal,
   hanicks: hanicksProposal,
+  cwear: cwearProposal,
 };
 
 function ProposalNav({ hasPortal, hasDemo }: { hasPortal: boolean; hasDemo: boolean }) {

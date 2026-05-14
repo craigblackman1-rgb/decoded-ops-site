@@ -28,6 +28,12 @@ export default function ClientsPage() {
       description: 'eCommerce Operations & Technology Programme — IBasis App, ERP, Multi-Channel Automation',
       industry: 'Heating Spare Parts — eCommerce',
     },
+    {
+      id: 'cwear',
+      name: 'Corporatewear UK (Cwear)',
+      description: 'ERP Migration Discovery — Visualsoft to BlueCherry or Alternative',
+      industry: 'Workwear & Corporate Clothing — Embroidery & Print',
+    },
   ];
 
   return (
