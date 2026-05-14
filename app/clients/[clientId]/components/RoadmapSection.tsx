@@ -238,7 +238,7 @@ export default function RoadmapSection({ data }: { data: RoadmapData }) {
           })}
         </div>
 
-        <TimelineTable {...timelineProps} />
+        {data.workstreamTimeline && <TimelineTable {...timelineProps} />}
 
         <style>{`
           @keyframes dotPulse {

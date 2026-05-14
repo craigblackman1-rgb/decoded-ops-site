@@ -80,7 +80,7 @@ export default function ChallengeSection({ data, systems }: { data: ChallengeDat
         </div>
 
         {/* Systems Diagram */}
-        <SystemsDiagram data={systems} />
+        {systems && <SystemsDiagram data={systems} />}
       </div>
     </section>
   );
