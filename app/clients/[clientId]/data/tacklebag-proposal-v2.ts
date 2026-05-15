@@ -1,5 +1,5 @@
 export const tacklebagProposalV2 = {
-  accessCode: 'PEAK26',
+  accessCode: '2#dhGVUVBP7rx8BqVeZb*Q',
   client: {
     name: 'TackleBag',
     company: 'TackleBag Ltd',
@@ -19,7 +19,7 @@ export const tacklebagProposalV2 = {
   challenge: {
     tag: 'Why this matters now',
     title: 'Peak season is coming.\nThe audit showed exactly\nwhat\'s in the way.',
-    subtitle: 'TackleBag runs 60% of annual revenue through July–August. Right now, the picking process, product data, and demand planning are all built for 10 orders a day — not 50. These are the gaps that cost you most at peak.',
+    subtitle: 'TackleBag runs 60% of annual revenue through August–September. Right now, the picking process, product data, and demand planning are all built for 10 orders a day — not 50. These are the gaps that cost you most at peak.',
     painPoints: [
       {
         title: 'One order at a time — no pick path',
@@ -226,7 +226,7 @@ export const tacklebagProposalV2 = {
           { label: '4 on-site days at Twickenham', value: 'Included' },
           { label: 'ERP requirements brief', value: '—' },
           { label: 'Supplier lead time framework', value: '—' },
-          { label: 'On-site during July peak observation', value: '—' },
+          { label: 'On-site during August–September peak observation', value: '—' },
           { label: '50% on signing / 50% on completion', value: '£4,500' },
         ],
       },
@@ -247,7 +247,7 @@ export const tacklebagProposalV2 = {
           { label: '4 on-site days at Twickenham', value: 'Included' },
           { label: 'Full ERP requirements brief — ready to go on day one in November', value: 'Included' },
           { label: 'Supplier lead time framework — right purchasing decisions before peak', value: 'Included' },
-          { label: 'On-site during July peak observation', value: '—' },
+          { label: 'On-site during August–September peak observation', value: '—' },
           { label: '50% on signing / 50% on completion', value: '£7,000' },
         ],
       },
@@ -258,7 +258,7 @@ export const tacklebagProposalV2 = {
         amount: '£10,000',
         period: ' fixed',
         minimum: '8-week engagement',
-        bestFor: 'Maximum coverage. Craig present during the start of peak to spot anything else that can be fixed fast.',
+        bestFor: 'Maximum coverage. Craig on-site during the real peak to spot anything else that can be fixed fast.',
         breakdown: [
           { label: 'Unlimited email and phone access throughout', value: 'Included' },
           { label: 'Warehouse implementation — priority school lines binned, pick path defined', value: 'Included' },
@@ -267,7 +267,7 @@ export const tacklebagProposalV2 = {
           { label: '4 on-site days at Twickenham', value: 'Included' },
           { label: 'Full ERP requirements brief — ready to go on day one in November', value: 'Included' },
           { label: 'Supplier lead time framework — right purchasing decisions before peak', value: 'Included' },
-          { label: 'On-site during July — live peak observation, quick fixes captured in real time', value: 'Included' },
+          { label: 'On-site during August–September — live peak observation, quick fixes captured in real time', value: 'Included' },
           { label: '50% on signing / 50% on completion', value: '£10,000' },
         ],
       },
