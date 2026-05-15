@@ -2,6 +2,13 @@
 
 import { useState } from 'react';
 
+interface AppModule {
+  id: string;
+  name: string;
+  desc: string;
+  price: string;
+}
+
 interface AcceptanceData {
   tag: string;
   title: string;
@@ -19,6 +26,7 @@ interface AcceptanceData {
     terms: string;
   };
   options?: Array<{ id: string; name: string; desc: string; price: string }>;
+  appModules?: AppModule[];
 }
 
 const DEFAULT_OPTIONS = [
@@ -29,11 +37,19 @@ const DEFAULT_OPTIONS = [
 
 export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
   const [selected, setSelected] = useState('B');
+  const [selectedModules, setSelectedModules] = useState<string[]>([]);
   const [form, setForm] = useState({ name: '', title: '', email: '', date: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const options = data.options || DEFAULT_OPTIONS;
+  const appModules = data.appModules || [];
   const clientCompany = data.client?.company || 'Client';
+
+  const toggleModule = (id: string) => {
+    setSelectedModules(prev =>
+      prev.includes(id) ? prev.filter(m => m !== id) : [...prev, id]
+    );
+  };
 
   const handleSubmit = async () => {
     if (!form.name || !form.email) {
@@ -41,6 +57,12 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
       return;
     }
     const selectedOption = options.find(o => o.id === selected);
+    const moduleNames = selectedModules
+      .map(id => appModules.find(m => m.id === id)?.name)
+      .filter(Boolean);
+    const modulesText = moduleNames.length
+      ? `\nApp Modules: ${moduleNames.join(', ')}`
+      : '\nApp Modules: None';
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -48,7 +70,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          message: `Proposal Acceptance — ${selectedOption?.name || selected}\n\nCompany: ${clientCompany}\nContact: ${form.name} (${form.title})\nEmail: ${form.email}`,
+          message: `Proposal Acceptance — ${selectedOption?.name || selected}${modulesText}\n\nCompany: ${clientCompany}\nContact: ${form.name} (${form.title})\nEmail: ${form.email}`,
         }),
       });
     } catch {
@@ -83,7 +105,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
         ) : (
           <>
             {/* Option selector */}
-            <div className="grid md:grid-cols-3 gap-4 mb-12">
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
               {options.map((opt) => (
                 <div
                   key={opt.id}
@@ -100,6 +122,51 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
                 </div>
               ))}
             </div>
+
+            {/* App Modules */}
+            {appModules.length > 0 && (
+              <div className="mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-xs font-bold tracking-widest text-[#8ECAE6] uppercase">
+                    Add-on modules
+                  </div>
+                  <div className="h-px flex-1 bg-[rgba(255,255,255,0.08)]" />
+                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {appModules.map(mod => {
+                    const isSelected = selectedModules.includes(mod.id);
+                    return (
+                      <div
+                        key={mod.id}
+                        onClick={() => toggleModule(mod.id)}
+                        className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 flex items-center gap-4 ${
+                          isSelected
+                            ? 'border-[#FFB703] bg-[rgba(255,183,3,0.08)]'
+                            : 'border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,183,3,0.3)]'
+                        }`}
+                      >
+                        <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
+                          isSelected
+                            ? 'border-[#FFB703] bg-[#FFB703]'
+                            : 'border-[rgba(255,255,255,0.3)]'
+                        }`}>
+                          {isSelected && (
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <path d="M2 6l3 3 5-5" stroke="#023047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-bold text-white">{mod.name}</h4>
+                          <p className="text-xs text-[rgba(255,255,255,0.45)] leading-relaxed">{mod.desc}</p>
+                        </div>
+                        <div className="text-sm font-bold text-[#FFB703] font-[family-name:var(--font-outfit)] whitespace-nowrap">{mod.price}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Signature grid */}
             <div className="grid md:grid-cols-2 gap-5 mb-8">

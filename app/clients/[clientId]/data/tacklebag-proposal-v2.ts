@@ -336,7 +336,7 @@ export const tacklebagProposalV2 = {
     paymentTerms: [
       '**50% on signing** — **50% on completion**. No monthly invoices, no day-rate tracking.',
       'Fixed fee confirmed in writing before work begins. No price changes without written agreement.',
-      'Stock Control + Job Sheet App: separate engagement — **£9,500 + VAT** build fee (30% / 40% / 30% milestone payments) plus **£450/mo + VAT** support from go-live.',
+      'Stock Control + Job Sheet App: two optional modules at **£4,750 + VAT each** — Stock Control Module (real-time stock, bin tracking, handheld picking) and Artwork & Job Sheet Module (digital job sheets, artwork storage, thread/print specs). 30% / 40% / 30% milestone payments per module. **£450/mo + VAT** combined support from go-live.',
       'Net 3 from invoice. Expenses at cost (travel at 45p/mile), agreed in advance.',
       'Governing law: England and Wales.',
       'Proposal valid until **23 May 2026**.',
@@ -409,6 +409,10 @@ export const tacklebagProposalV2 = {
       { id: 'C', name: 'Essential', desc: 'Core peak season fixes', price: '£4,500 fixed' },
       { id: 'B', name: 'Deliver (Recommended) ⭐', desc: 'Peak prep + ERP ready for November', price: '£7,000 fixed' },
       { id: 'A', name: 'Embedded', desc: 'Full peak coverage + November fully prepared', price: '£10,000 fixed' },
+    ],
+    appModules: [
+      { id: 'stock', name: 'Stock Control Module', desc: 'Real-time stock visibility, bin tracking, handheld picking', price: '+£4,750' },
+      { id: 'artwork', name: 'Artwork & Job Sheet Module', desc: 'Digital job sheets, artwork storage, thread/print specs', price: '+£4,750' },
     ],
   },
 };
