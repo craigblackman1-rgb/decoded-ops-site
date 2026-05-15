@@ -101,51 +101,28 @@ export default function PricingSection({ data }: { data: PricingData }) {
 
                 {/* Card body */}
                 <div className="bg-white px-6 pb-7">
-                  {option.breakdown.map((line, i) => (
-                    <div
-                      key={i}
-                      className={`py-2.5 text-sm flex justify-between items-center gap-3 ${
-                        i < option.breakdown.length - 1 ? 'border-b border-[rgba(0,0,0,0.06)]' : ''
-                      }`}
-                    >
-                      <span className={`text-xs ${i === option.breakdown.length - 1 && line.value === 'TBC' ? 'text-[#aaa] italic' : 'text-[rgba(0,0,0,0.6)]'}`}>
-                        {line.label}
-                      </span>
-                      <span className={`font-bold text-sm whitespace-nowrap ${
-                        line.value === 'TBC' ? 'text-[#aaa]' : 'text-[#023047]'
-                      }`}>
-                        {line.value}
-                      </span>
-                    </div>
-                  ))}
-
-                  {/* Post-programme retained box */}
-                  {option.postProgramme && option.postProgramme.length > 0 && (
-                    <div className="mt-5 rounded-xl border-2 border-[#219EBC] bg-[rgba(33,158,188,0.04)] p-4">
-                      <div className="text-[10px] font-bold text-[#219EBC] uppercase tracking-widest mb-3">
-                        From Month 4 — Ongoing
+                  {option.breakdown.map((line, i) => {
+                    const isIncludedValue = line.label.includes('not charged separately');
+                    const isTBC = line.value === 'TBC';
+                    return (
+                      <div
+                        key={i}
+                        className={`py-2.5 text-sm flex justify-between items-center gap-3 ${
+                          i < option.breakdown.length - 1 ? 'border-b border-[rgba(0,0,0,0.06)]' : ''
+                        } ${isIncludedValue ? 'bg-[rgba(33,158,188,0.04)] -mx-6 px-6 rounded' : ''}`}
+                      >
+                        <span className={`text-xs ${isTBC ? 'text-[#aaa] italic' : isIncludedValue ? 'text-[#219EBC] font-medium' : 'text-[rgba(0,0,0,0.6)]'}`}>
+                          {line.label}
+                        </span>
+                        <span className={`font-bold text-sm whitespace-nowrap ${
+                          isTBC ? 'text-[#aaa]' : isIncludedValue ? 'text-[#219EBC]' : 'text-[#023047]'
+                        }`}>
+                          {isIncludedValue ? `${line.value} ✓` : line.value}
+                        </span>
                       </div>
-                      {option.postProgramme.map((line, i) => (
-                        <div
-                          key={i}
-                          className={`py-2 flex justify-between items-center gap-3 ${
-                            i < option.postProgramme!.length - 1
-                              ? 'border-b border-[rgba(33,158,188,0.15)]'
-                              : ''
-                          }`}
-                        >
-                          <span className="text-xs text-[rgba(2,48,71,0.6)]">{line.label}</span>
-                          <span className={`font-bold text-sm whitespace-nowrap ${
-                            i === option.postProgramme!.length - 1
-                              ? 'text-[#219EBC]'
-                              : 'text-[#023047]'
-                          }`}>
-                            {line.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                    );
+                  })}
+
                 </div>
               </div>
             );
