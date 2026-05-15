@@ -27,6 +27,7 @@ interface AcceptanceData {
   };
   options?: Array<{ id: string; name: string; desc: string; price: string }>;
   appModules?: AppModule[];
+  appModuleNote?: string;
 }
 
 const DEFAULT_OPTIONS = [
@@ -165,6 +166,11 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
                     );
                   })}
                 </div>
+                {data.appModuleNote && (
+                  <p className="mt-3 text-xs text-[rgba(255,255,255,0.35)] leading-relaxed">
+                    {data.appModuleNote}
+                  </p>
+                )}
               </div>
             )}
 

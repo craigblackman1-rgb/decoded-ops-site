@@ -23,12 +23,32 @@ interface ValueComparison {
   items: ValueItem[];
 }
 
+interface AddOnModule {
+  id: string;
+  icon: string;
+  name: string;
+  description: string;
+  features: string[];
+  price: string;
+  paymentNote: string;
+}
+
+interface AddOns {
+  tag: string;
+  title: string;
+  subtitle: string;
+  support: { label: string; price: string };
+  payment: string;
+  modules: AddOnModule[];
+}
+
 interface PricingData {
   tag: string;
   title: string;
   subtitle: string;
   valueSubtitle?: string;
   options: PricingOption[];
+  addOns?: AddOns;
   valueComparison: ValueComparison[];
   roi: Array<{ area: string; basis: string; value: string }>;
   paymentTerms: string[];
@@ -128,6 +148,59 @@ export default function PricingSection({ data }: { data: PricingData }) {
             );
           })}
         </div>
+
+        {/* ── Add-on Modules ── */}
+        {data.addOns && data.addOns.modules.length > 0 && (
+          <div className="mb-12 mt-4">
+            <div className="text-xs font-bold tracking-widest text-[#219EBC] uppercase mb-3">
+              {data.addOns.tag}
+            </div>
+            <h3 className="text-2xl font-black text-[#023047] mb-2">{data.addOns.title}</h3>
+            <p className="text-sm text-[rgba(2,48,71,0.55)] mb-6 leading-relaxed max-w-3xl">{data.addOns.subtitle}</p>
+
+            <div className="grid md:grid-cols-2 gap-5 mb-5">
+              {data.addOns.modules.map((mod) => (
+                <div key={mod.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[rgba(2,48,71,0.07)]">
+                  {/* Module head */}
+                  <div className="bg-[#023047] px-7 pt-7 pb-6">
+                    <div className="text-3xl mb-3">{mod.icon}</div>
+                    <h4 className="text-lg font-black text-white mb-2">{mod.name}</h4>
+                    <p className="text-xs text-[rgba(255,255,255,0.6)] leading-relaxed">{mod.description}</p>
+                  </div>
+                  {/* Module body */}
+                  <div className="px-7 py-6">
+                    <ul className="mb-6 space-y-2">
+                      {mod.features.map((f, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-xs text-[rgba(2,48,71,0.75)] leading-snug">
+                          <span className="text-[#219EBC] font-bold flex-shrink-0 mt-0.5">✓</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="border-t border-[rgba(0,0,0,0.06)] pt-5 flex items-end justify-between gap-4">
+                      <div>
+                        <div className="text-xs text-[rgba(2,48,71,0.45)] mb-1">Fixed build fee</div>
+                        <div className="text-2xl font-black text-[#023047] font-[family-name:var(--font-outfit)]">{mod.price}</div>
+                        <div className="text-xs text-[rgba(2,48,71,0.45)] mt-1">{mod.paymentNote}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="inline-block bg-[rgba(33,158,188,0.08)] text-[#219EBC] text-xs font-bold px-3 py-1.5 rounded-lg">
+                          Optional add-on
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Combined support note */}
+            <div className="bg-[#023047] rounded-xl px-6 py-4 flex items-center justify-between gap-4">
+              <p className="text-xs text-[rgba(255,255,255,0.6)] leading-relaxed max-w-xl">{data.addOns.support.label}</p>
+              <div className="text-[#FFB703] font-black text-lg font-[family-name:var(--font-outfit)] whitespace-nowrap">{data.addOns.support.price}</div>
+            </div>
+          </div>
+        )}
 
         {/* ── Value Comparison ── */}
         {data.valueComparison.length > 0 && (
