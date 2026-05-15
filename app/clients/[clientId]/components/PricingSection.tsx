@@ -10,6 +10,7 @@ interface PricingOption {
   recommended?: boolean;
   bestFor: string;
   breakdown: Array<{ label: string; value: string }>;
+  postProgramme?: Array<{ label: string; value: string }>;
 }
 
 interface ValueItem {
@@ -117,6 +118,34 @@ export default function PricingSection({ data }: { data: PricingData }) {
                       </span>
                     </div>
                   ))}
+
+                  {/* Post-programme retained box */}
+                  {option.postProgramme && option.postProgramme.length > 0 && (
+                    <div className="mt-5 rounded-xl border-2 border-[#219EBC] bg-[rgba(33,158,188,0.04)] p-4">
+                      <div className="text-[10px] font-bold text-[#219EBC] uppercase tracking-widest mb-3">
+                        From Month 4 — Ongoing
+                      </div>
+                      {option.postProgramme.map((line, i) => (
+                        <div
+                          key={i}
+                          className={`py-2 flex justify-between items-center gap-3 ${
+                            i < option.postProgramme!.length - 1
+                              ? 'border-b border-[rgba(33,158,188,0.15)]'
+                              : ''
+                          }`}
+                        >
+                          <span className="text-xs text-[rgba(2,48,71,0.6)]">{line.label}</span>
+                          <span className={`font-bold text-sm whitespace-nowrap ${
+                            i === option.postProgramme!.length - 1
+                              ? 'text-[#219EBC]'
+                              : 'text-[#023047]'
+                          }`}>
+                            {line.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             );
