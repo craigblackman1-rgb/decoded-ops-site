@@ -223,12 +223,7 @@ export const cwearProposal = {
       'ERP and implementation partner costs paid directly by Corporatewear UK. Competitive quotes secured by Decoded Ops.',
       'Expenses at cost, agreed in advance. Travel at 45p/mile (HMRC rate).',
     ],
-    notIncluded: [
-      'ERP software licences and vendor implementation fees (paid directly by Corporatewear UK)',
-      'Third-party integration partner costs for Shopify, portal, or Xero work',
-      'Ongoing IT support or managed services',
-      'Ongoing bookkeeping or accounting services',
-    ],
+    notIncluded: [],
   },
   nextSteps: {
     tag: 'To Start',
