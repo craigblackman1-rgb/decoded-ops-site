@@ -1,5 +1,5 @@
 export const tacklebagProposalV2 = {
-  accessCode: '2#dhGVUVBP7rx8BqVeZb*Q',
+  accessCode: 'PK9-TB26-XM7R',
   client: {
     name: 'TackleBag',
     company: 'TackleBag Ltd',
