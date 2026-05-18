@@ -1,5 +1,5 @@
 export const hanicksProposal = {
-  accessCode: 'HANICKS2026',
+  accessCode: 'KJ7M-DV9X-QR2L',
   client: {
     name: 'Hanicks',
     company: 'Hanicks Ltd',
