@@ -23,9 +23,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files/.env
+# local env files
 .env*
-.env.*.env*.local
+.env.*.local
 
 # vercel
 .vercel
@@ -34,4 +34,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# claude
 .claude
+
+# project docs (keep locally, don't commit)
+*.xlsx
+*.csv
+proposal-*.md
+seo-task-hub.html
+cover-friday-*
