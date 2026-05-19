@@ -27,6 +27,8 @@ const resources = [
 ];
 
 const problems = [
+  { label: 'Slow, manual processes', href: '/problems/slow-processes' },
+  { label: "Operation can't keep up with growth", href: '/problems/cant-scale-operations' },
   { label: 'ERP implementation failure', href: '/problems/erp-implementation-failure' },
   { label: 'eCommerce not connected to production', href: '/problems/ecommerce-not-connected' },
   { label: "Systems don't talk to each other", href: '/problems/systems-dont-talk' },
