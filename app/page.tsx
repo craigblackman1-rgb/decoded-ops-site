@@ -144,9 +144,9 @@ export default function HomePage() {
       {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
       <div className="bg-[#023047] py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center gap-3 flex-wrap">
-          <span className="text-xs font-medium tracking-widest uppercase text-[#F8F9FA]/70 min-w-[70px]">I work with</span>
+          <span className="text-xs font-semibold tracking-wider uppercase text-[#F8F9FA]/90 whitespace-nowrap">I work with</span>
           {sectors.map(s => (
-            <Link key={s.href} href={s.href} className="text-xs text-[#F8F9FA]/70 border border-[#F8F9FA]/15 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">
+            <Link key={s.href} href={s.href} className="text-xs font-medium text-[#F8F9FA]/80 border border-[#F8F9FA]/20 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">
               {s.name}
             </Link>
           ))}
@@ -157,7 +157,7 @@ export default function HomePage() {
       <div className="bg-[#023047] py-16 px-6 text-center border-t border-[#F8F9FA]/10">
         <blockquote className="text-xl lg:text-2xl font-semibold text-[#F8F9FA] max-w-3xl mx-auto leading-relaxed mb-4">
           &ldquo;If I spent a day in your business looking at your systems, your processes, and your technology &mdash; how{' '}
-          <span className="text-[#219EBC]">confident</span> are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
+          <span className="text-[#219EBC]">confident</span>{' '}are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
         </blockquote>
         <p className="text-sm text-[#F8F9FA]/70">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
       </div>
