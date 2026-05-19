@@ -51,6 +51,16 @@ const smallBizSchema = {
           name: 'Do I need to commit to anything upfront?',
           acceptedAnswer: { '@type': 'Answer', text: 'No. The Clarity Check is a one-off fixed fee with no commitment. Monthly and sprint options have a 3-month minimum with 30 days written notice after.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What does a small business operations consultant actually do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check — delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is this like managed IT support for small businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business — not just keeping the lights on.' },
+        },
       ],
     },
   ],
@@ -123,11 +133,14 @@ export default function SmallBusinessPage() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— For small businesses</span>
           </div>
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6 max-w-3xl mx-auto">
-            Operational support for businesses <span className="text-[#219EBC]">under £500k</span>
+            Small business operations consultant. <span className="text-[#219EBC]">Technology and systems support without the enterprise price tag.</span>
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-2xl mx-auto">
             The same operational thinking I bring to larger businesses — adapted for smaller ones. Remote delivery. 
             Fixed prices. No jargon. No vendor agenda.
+          </p>
+          <p className="text-sm text-[#023047]/60 leading-relaxed mb-8 max-w-2xl mx-auto">
+            A small business operations consultant covers what a full-time operations director would — technology decisions, vendor oversight, process improvement, and AI readiness — on a flexible, affordable basis built for businesses under £500k.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
@@ -140,7 +153,7 @@ export default function SmallBusinessPage() {
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Four ways to work together</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Fractional operations and technology support for small businesses</h2>
             <p className="text-[#023047]/70 text-lg">Each designed for a different situation. All delivered remotely. All with a direct line to me — not a junior team.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">

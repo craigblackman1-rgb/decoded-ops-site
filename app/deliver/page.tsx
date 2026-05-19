@@ -52,6 +52,16 @@ const deliverSchema = {
           name: 'Do I need to do the Clarity Audit before Deliver?',
           acceptedAnswer: { '@type': 'Answer', text: "You don't have to, but Clarity produces the vendor brief that Deliver uses. Starting with the Clarity Audit means the vendor brief reflects what your business actually needs — rather than assumptions made at the start of a project." },
         },
+        {
+          '@type': 'Question',
+          name: 'What does an independent ERP implementation consultant do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'An independent ERP implementation consultant writes the requirements brief, approaches vendors on your behalf, manages the procurement process, and oversees the project through to handover — without being tied to any vendor or earning commission on any sale. Their job is to get the right outcome for your business, not to place a software sale.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need an ERP implementation consultant for a small business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'If you are selecting or implementing manufacturing ERP software without sector-specific experience on your side of the table, yes. ERP procurement support for small business is not about managing complexity for its own sake — it is about avoiding the most common and most expensive mistakes that happen when businesses go to vendors unprepared.' },
+        },
       ],
     },
   ],
@@ -59,7 +69,7 @@ const deliverSchema = {
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 
 const processSteps = [
-  { icon: FileText, num: '01', title: 'Brief',   desc: 'I write the vendor brief based on your Clarity report or existing requirements. Your needs, not the vendor\u2019s sales pitch.' },
+  { icon: FileText, num: '01', title: 'Brief',   desc: 'I write the vendor brief based on your Clarity report or existing requirements. Your needs, not the vendor\u2019s sales pitch. An independent ERP implementation consultant writes the brief before approaching any vendor — not after seeing a demo.' },
   { icon: Search,   num: '02', title: 'Procure',  desc: 'I go to market on your behalf. Vendors are approached, managed, and compared on a like-for-like basis. No commitment until you\u2019ve reviewed all options.' },
   { icon: Users,    num: '03', title: 'Manage',   desc: 'I act as your single point of contact. Vendors are held to the brief. Changes are challenged. Progress is reviewed and documented.' },
   { icon: Shield,   num: '04', title: 'Deliver',  desc: 'Milestones are signed off before payments are released. Final handover review and acceptance. The project is done when it works, not when the vendor says it\u2019s done.' },
@@ -86,14 +96,14 @@ export default function DeliverPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Deliver &middot; Project Delivery &amp; Vendor Management</span>
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Deliver &middot; ERP Implementation &amp; Vendor Management</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                The right vendor. The right outcome. <span className="text-[#219EBC]">On your terms.</span>
-              </h1>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Solution architecture, vendor brief, procurement, and project oversight. I own the outcome without doing the build &mdash; so the vendor delivers what your business actually needs.
-              </p>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+                  Independent ERP implementation consultant. <span className="text-[#219EBC]">The brief first. The vendor second.</span>
+                </h1>
+                <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+                  Independent ERP implementation support — from vendor brief through to go-live sign-off. No vendor ties. No commissions. Just the outcome your business actually needs.
+                </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Book a free discovery call <ArrowRight size={18} />
@@ -224,7 +234,7 @@ export default function DeliverPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
               <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; The process</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">Brief first. Build second.</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">How an independent ERP implementation consultant works</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, i) => {
@@ -257,7 +267,10 @@ export default function DeliverPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; What&apos;s included</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-8">Everything you need to get the right outcome</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-8">What independent ERP implementation consultancy includes</h2>
+              <p className="text-[#023047]/70 leading-relaxed mb-6">
+                Manufacturing ERP software selection is one of the highest-stakes decisions in this sector. A single implementation without independent oversight can cost £80,000–£150,000 more than it should. Independent ERP solutions consultancy separates what you need from what a vendor wants to sell you.
+              </p>
               <div className="space-y-4">
                 {includedItems.map(item => (
                   <div key={item} className="flex items-start gap-3">

@@ -60,6 +60,16 @@ const schema = {
           name: 'What eCommerce options exist for decorated apparel and print businesses?',
           acceptedAnswer: { '@type': 'Answer', text: "There are eCommerce platforms built specifically for print, embroidery, and decorated apparel that handle artwork upload, customisation, and ERP integration natively. They are cheaper to implement than generic platforms and avoid the £40,000+ integration project that connecting Shopify or WooCommerce to an industry ERP typically requires." },
         },
+        {
+          '@type': 'Question',
+          name: 'Why do Shopify ERP integrations fail for print and embroidery businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: "Shopify ERP integrations for print businesses fail because Shopify's data model does not natively support personalisation, decoration method selection, or artwork upload. The integration can move order totals and customer details — but the production-critical information that a print or embroidery business needs rarely transfers cleanly. The result is an integration that technically works but still requires significant manual intervention." },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the typical cost of an eCommerce integration project for a decoration business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A custom integration between a generic eCommerce platform and an industry ERP typically costs £20,000–£50,000 with a 3–6 month timeline. Even after the integration is built, the customisation problem — artwork validation, production workflow — is not solved. The integration only passes data between two systems that were not designed for your business.' },
+        },
       ],
     },
   ],
@@ -122,7 +132,7 @@ export default function BlogPost() {
               A standard eCommerce platform can handle steps 1 and 4. It can sort of handle step 5. But steps 2 and 3 break it completely.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Where It Breaks Down</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Where eCommerce fulfilment breaks down for decorated goods businesses</h2>
 
             <EcommerceBreakdownChart />
 
@@ -146,13 +156,16 @@ export default function BlogPost() {
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               If you're efficient, this adds 2-3 minutes per order. On 50 orders a day, that's 2-3 hours of manual work every day.
             </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              This is not an eCommerce fulfilment problem — it is a systems integration problem that shows up at fulfilment. The eCommerce platform captures the order. The ERP or MIS needs to execute it. When those two systems are not connected, a person in the middle is the integration.
+            </p>
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">The Reporting Problem</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               You want to know: "How many orders came through the website this month, versus from the phone?" Your eCommerce system has part of the answer. Your ERP has the rest. They don't talk to each other, so you manually piece together reports from both systems.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Integration False Promise</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The false promise: eCommerce integration will fix the fulfilment problem</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               When you realise the eCommerce platform doesn't work as-is, you think: "I just need to integrate it with my ERP."
             </p>
@@ -163,7 +176,7 @@ export default function BlogPost() {
               And here's the thing: even after the integration is built, the customisation problem isn't solved. Your system still can't validate artwork or understand your production workflow. The integration just passes data between two systems that weren't designed for your business.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What You Should Have Done Differently</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">How to avoid the eCommerce fulfilment trap</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               This doesn't mean you shouldn't have an eCommerce platform. It means you should have chosen differently.
             </p>
@@ -182,6 +195,9 @@ export default function BlogPost() {
             </p>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               They're not as trendy as Shopify. But they're cheaper to implement, they work faster, and they don't require a £40k integration project to talk to your ERP.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              B2B order management is another area where generic platforms fall short. If you have wholesale customers placing repeat orders, a B2B portal with account pricing, order history, and direct-to-production routing is what makes that relationship scalable — not a Shopify store with a wholesale password.
             </p>
 
             <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">3. Require integration as a starting point, not an afterthought</h3>

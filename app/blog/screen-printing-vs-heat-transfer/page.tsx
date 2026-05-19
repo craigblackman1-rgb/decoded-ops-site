@@ -125,7 +125,7 @@ export default function BlogPost() {
               Once set up, a manual carousel screen press can print 60–100 garments per hour. An automatic press can reach 500+ per hour. At high volumes, nothing beats it for throughput.
             </p>
 
-            <h3 className="text-xl font-semibold text="[#023047] mt-10 mb-4">Ink and Substrate Constraints</h3>
+            <h3 className="text-xl font-semibold text-[#023047] mt-10 mb-4">Ink and Substrate Constraints</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               Screen printing works best on flat, smooth surfaces. Irregular garment areas, thick seams, and pockets create registration problems. Colour gradients and photographic images require additional screens or halftone techniques that increase complexity and cost.
             </p>

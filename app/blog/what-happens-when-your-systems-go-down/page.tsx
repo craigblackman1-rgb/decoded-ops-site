@@ -59,6 +59,16 @@ const schema = {
           name: 'Can cloud software protect me from downtime?',
           acceptedAnswer: { '@type': 'Answer', text: 'Cloud reduces some risks but introduces others — internet dependency, provider outages, and multi-system recovery complexity. Cloud is not a disaster recovery plan.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What is a DRP disaster recovery plan and does my small business need one?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A DRP (disaster recovery plan) is a documented set of procedures for restoring critical systems after an outage, failure, or cyberattack. Every business that depends on software to take orders, manage production, or despatch goods needs one. Without a DRP, the question is not whether a recovery plan exists — it is whether you can afford to find out it does not.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the difference between backup and disaster recovery for a small manufacturer?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Backup stores copies of your data. Disaster recovery defines how your business gets back to operational status after a failure — in what order systems are restored, by whom, within what time target. A business continuity disaster recovery plan covers both: what data is protected and how fast operations can resume. Cloud backup without a recovery procedure is a false sense of security.' },
+        },
       ],
     },
   ],
@@ -74,8 +84,7 @@ export default function BlogPost() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Blog</span>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            What Happens When
-            <span className="text-[#219EBC]"> Your Systems Go Down</span>
+            When Your Systems Go Down: <span className="text-[#219EBC]">Build Your DRP Disaster Recovery Plan Now</span>
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
             It happens on a Tuesday morning. You arrive, make coffee, sit down at your desk — and nothing works. Server down. Hosting gone. Ransomware. Whatever the cause, the result is the same: your business has stopped.
@@ -108,7 +117,7 @@ export default function BlogPost() {
               This scenario plays out in businesses like yours every week. And most of them don't have a plan for it.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Cost of Not Being Prepared</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The cost of operating without a disaster recovery plan</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               When I ask business owners how much a day of downtime would cost, they usually underestimate by a factor of three. Here's what's actually lost:
             </p>
@@ -144,9 +153,12 @@ export default function BlogPost() {
               <li>"We'll figure it out when it happens" — you will, but it will cost ten times more than planning in advance</li>
             </ul>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What a Good DR Plan Looks Like</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What a DRP disaster recovery plan looks like for a small business</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               A disaster recovery plan for a small or medium business doesn't need to be a 50-page document. It needs to answer four questions clearly:
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              A disaster recovery policy does not need to be a 50-page document — but it does need to exist in writing, somewhere accessible even when the network is down. Backup and disaster recovery are related but different. Backup stores your data. A DRP defines how you restore operations: which systems come back first, in what order, within what recovery time objective.
             </p>
             <ol className="space-y-3 my-6 pl-6 list-decimal text-[#023047]/80">
               <li><strong>What systems do we protect first?</strong> Not every system needs instant recovery. Prioritise based on business impact.</li>
@@ -158,7 +170,7 @@ export default function BlogPost() {
               And one more thing: <strong>test it.</strong> A DR plan that has never been tested is a wish, not a plan. Schedule a test day. See what breaks. Fix it. Test again.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What You Can Do Today</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Three things you can do this week towards backup and disaster recovery</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               You don't need a full audit to start improving your resilience. Here are three things you can do this week:
             </p>

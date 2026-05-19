@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Hire a Fractional CTO | Print & Decoration Specialists | Decoded Ops',
@@ -22,9 +23,36 @@ export const metadata: Metadata = {
 
 const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;
 
+const locationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Where does the fractional CTO service cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Based in West Sussex, the fractional CTO service covers businesses across Sussex, Surrey, and the wider UK. On-site days are available throughout the UK for businesses that need hands-on involvement.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the difference between hiring a fractional CTO and using managed IT support?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Managed IT support services handle day-to-day IT issues — helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you offer fractional CTO services for print businesses in Sussex?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership — not generic IT consultancy.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function FractionalCTOLocationsHub() {
   return (
     <>
+      <JsonLd data={locationSchema} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 max-w-3xl">
@@ -32,11 +60,11 @@ export default function FractionalCTOLocationsHub() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Fractional CTO</span>
           </div>
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-            Fractional CTO services across{' '}
-            <span className="text-[#219EBC]">Sussex and Surrey</span>
+            Hire a fractional CTO{' '}
+            <span className="text-[#219EBC]">across Sussex, Surrey, and the UK</span>
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-2xl">
-            Senior technology leadership for growing businesses — without the cost of a full-time hire. Based in the South East, on-site wherever you need it.
+            Hire a fractional CTO for your print, embroidery, or decoration business — with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
           </p>
           <Link
             href="/contact"
@@ -44,6 +72,21 @@ export default function FractionalCTOLocationsHub() {
           >
             Book a free call <ArrowRight size={18} />
           </Link>
+        </div>
+      </section>
+
+      {/* FRACTIONAL CTO SERVICES SECTION */}
+      <section className="py-12 bg-[#023047]/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4">Fractional CTO services for print and decoration businesses</h2>
+            <p className="text-[#023047]/70 leading-relaxed mb-4">
+              Fractional CTO services give you the technology leadership a growing business needs — without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
+            </p>
+            <p className="text-[#023047]/70 leading-relaxed">
+              Available UK-wide. Based in West Sussex. On-site where the work requires it.
+            </p>
+          </div>
         </div>
       </section>
 

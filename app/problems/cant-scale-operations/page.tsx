@@ -74,6 +74,21 @@ const cantScaleSchema = {
             text: "Most consultancy fails because it produces a report that sits on a shelf. Decoded Ops builds recommendations around what is actually implementable in your business — not theoretical best practice. If implementation support is needed, the Deliver service provides structured project management to act on the findings.",
           },
         },
+        {
+          '@type': 'Question',
+          name: 'Why does scaling a small business feel harder than growing it?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at £500k becomes a bottleneck at £1m. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it — not after.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What are the signs that my operations are not keeping up with growth?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The most common signs: despatch lead times are creeping up despite no change in production capacity; the same operational bottlenecks keep reappearing; customer complaints are increasing proportionally faster than order volume; you are hiring but the output per person is falling; and the business owner is spending more time on operational firefighting than on the business itself.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I scale a print or decoration business operationally?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Start with an honest assessment of where the current bottlenecks are — not where they were six months ago, but where they are right now. Scaling operations in a print or decoration business typically involves three stages: documenting and stabilising current processes, connecting systems so information flows without manual intervention, and building the management visibility to make operational decisions on data rather than gut feel.' },
+        },
       ],
     },
   ],
@@ -92,8 +107,8 @@ export default function CantScaleOperationsPage() {
       <JsonLd data={cantScaleSchema} />
       <ProblemPage
         problem="Operations that can't keep up with growth"
-        headline="You're busier than ever. ||Why is the margin getting worse?||"
-        intro="More orders. More staff. More pressure. But not more profit — and not more confidence that tomorrow is going to be better than today. That's an operations problem. When a business grows faster than its processes, the cracks appear in predictable places and get wider every time you take on more volume. I help businesses like yours build the operational foundations that let you scale without the chaos."
+        headline="Your business is growing. ||Your operations aren't scaling with it.||"
+        intro="Scaling operations in a small business is not just about doing more of the same — it is about rebuilding the systems and processes that were designed for half your current volume before they become the ceiling on your growth. More orders. More staff. More pressure. But not more profit — and not more confidence that tomorrow is going to be better than today. That's an operations problem. When a business grows faster than its processes, the cracks appear in predictable places and get wider every time you take on more volume. I help businesses like yours build the operational foundations that let you scale without the chaos."
         heroGraphic={
           <WorkflowGraphic
             steps={scalingSteps}

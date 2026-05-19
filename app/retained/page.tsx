@@ -52,6 +52,16 @@ const retainedSchema = {
           name: 'How is Retained different from hiring a full-time CTO?',
           acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 6 months for core engagements, with 30 days written notice after.' },
         },
+        {
+          '@type': 'Question',
+          name: 'Is a fractional CTO the same as managed IT support?',
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support handles day-to-day IT issues — helpdesk, hardware, connectivity. A fractional CTO provides strategic and operational technology leadership: roadmap ownership, vendor selection, ERP oversight, and technology decision-making. The two are complementary, not interchangeable.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need a full-time CTO or will part-time CTO services work for a small business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'For most print, embroidery, and decoration businesses under £5m revenue, a part-time or fractional CTO is more appropriate than a full-time hire. You get the thinking and the oversight without carrying a full-time salary before the business is ready to support it.' },
+        },
       ],
     },
   ],
@@ -61,9 +71,9 @@ import { RetainedModelGraphic } from '@/components/graphics/RetainedModelGraphic
 
 const whenItFits = [
   { icon: Wrench,     title: 'Post-audit implementation',   desc: "The audit found the issues. Now you need someone to drive the fixes. Retained gives you the hands-on delivery without a full-time hire." },
-  { icon: TrendingUp, title: 'ERP or technology transition', desc: "You're implementing new software. You need someone who understands the sector, the vendors, and your business — and can hold everyone accountable." },
+  { icon: TrendingUp, title: 'ERP or technology transition', desc: "You're implementing new software. You need someone who understands the sector, the vendors, and your business — and can hold everyone accountable. A fractional CTO without vendor ties is the most effective way to hold an implementation to account." },
   { icon: Users,      title: 'Scaling without chaos',        desc: "Revenue is growing but the systems aren't keeping up. You need operational infrastructure built around how your business actually works." },
-  { icon: Clock,      title: 'Covering a gap',               desc: "Your ops director has left, or you've never had one. You need senior operational thinking without the \u00A380k+ salary commitment." },
+  { icon: Clock,      title: 'Covering a gap',               desc: "Your ops director has left, or you've never had a dedicated IT or operations lead. Fractional CTO services give you senior operational thinking without the £80k+ salary commitment." },
 ];
 
 const whatItIncludes = [
@@ -96,10 +106,13 @@ export default function RetainedPage() {
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Retained &middot; Fractional CTO / Head of Operations</span>
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                Senior operational thinking. <span className="text-[#219EBC]">Without the full-time cost.</span>
+                Your fractional CTO. <span className="text-[#219EBC]">Without the full-time cost.</span>
               </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. Ongoing.
+              </p>
+              <p className="text-sm text-[#023047]/60 leading-relaxed mb-8 max-w-xl">
+                Fractional CTO services give you the technology leadership and vendor oversight a growing business needs — without recruiting for a role that will cost £80,000+ before it has delivered value.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
@@ -165,7 +178,7 @@ export default function RetainedPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; When it fits</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Four situations where Retained makes sense</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Four situations where a fractional CTO makes sense</h2>
             <p className="text-[#023047]/70 text-lg">Not every business needs a full-time ops director. But every business needs the thinking.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -193,7 +206,7 @@ export default function RetainedPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
                 <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; What&apos;s included</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-8">What Retained actually looks like</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-8">What fractional CTO services actually look like</h2>
               <div className="space-y-4">
                 {whatItIncludes.map(item => (
                   <div key={item} className="flex items-start gap-3">

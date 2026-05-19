@@ -26,9 +26,9 @@ const auditAreas = [
   { icon: Server,       num: '01', title: 'IT Infrastructure',     desc: 'Security posture, connectivity, identity management, and IT costs. Every risk identified, costed, and prioritised. Licensing waste surfaced and eliminated.' },
   { icon: Layers,       num: '02', title: 'Software & Systems',     desc: "Every tool in use assessed — what it costs, what it does, whether it's right. ERP, MIS, and management platforms assessed or selected. Independent vendor brief on your terms." },
   { icon: ShoppingCart, num: '03', title: 'eCommerce & Digital',    desc: 'Platform, UX, integrations, B2B capability, decoration tools. Customer journey mapped end to end. WCAG accessibility review included.' },
-  { icon: GitBranch,    num: '04', title: 'Processes & Operations', desc: 'Every process mapped from order in to invoice out. Stock, fulfilment, and despatch reviewed. Quick wins separated from bigger projects.' },
+  { icon: GitBranch,    num: '04', title: 'Processes & Operations', desc: 'Every process mapped from order in to invoice out. Stock, fulfilment, and despatch reviewed. Quick wins separated from bigger projects. This is where the operations audit finds the friction that software alone cannot fix — undocumented steps, manual bridges, and processes that have never been questioned.' },
   { icon: TrendingUp,   num: '05', title: 'Growth & Opportunity',   desc: "Revenue lines with most potential identified. New channels and markets assessed. Technology roadmap built for where you're going, not where you've been." },
-  { icon: Sparkles,     num: '06', title: 'AI Readiness',           desc: "Where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale." },
+  { icon: Sparkles,     num: '06', title: 'AI Readiness',           desc: "The AI readiness assessment within the audit covers where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale." },
 ];
 
 const processSteps = [
@@ -100,6 +100,21 @@ const claritySchema = {
           name: 'What do I receive at the end of the Clarity Audit?',
           acceptedAnswer: { '@type': 'Answer', text: 'You receive a written audit report (not a slide deck) with every issue quantified in time and money, prioritised recommendations with quick wins first, an independent vendor brief if new software is needed, a debrief call to walk through everything, and 30 days of follow-up support after delivery.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What is included in a technology audit for a small business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity technology audit covers IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth opportunity, and AI readiness. Every area is assessed on site in a single day. You receive a written report within 5 working days with every finding quantified in time and money.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is this an IT audit, a software audit, or an operations audit?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It is all three. The Clarity Audit is a combined IT audit, software audit, and operations audit delivered in a single day. The reason for covering all three together is that the problems rarely live in just one area — technology choices affect process efficiency, and process gaps drive software decisions.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can a technology audit help with eCommerce integration problems?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. eCommerce is one of the six areas covered in every Clarity Audit. The audit assesses your eCommerce platform, how it connects to your ERP or order management system, where the gaps are, and what a realistic fix looks like — with costs.' },
+        },
       ],
     },
   ],
@@ -128,12 +143,12 @@ export default function ClarityPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Clarity &middot; Operational &amp; Technology Audit</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                One day on site. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five days.
-              </h1>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                A structured, independent review of your operations, technology, and processes. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
-              </p>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+                  One day. A complete technology audit. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five working days.
+                </h1>
+                <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+                  A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
+                </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Book a free discovery call <ArrowRight size={18} />

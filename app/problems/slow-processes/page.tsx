@@ -74,6 +74,21 @@ const slowProcessesSchema = {
             text: "The Clarity Audit covers six areas across the whole operation — including processes and workflow, IT infrastructure, software, eCommerce, growth opportunity, and AI readiness. If a focused process review is preferred, that can be discussed separately.",
           },
         },
+        {
+          '@type': 'Question',
+          name: 'What does a process improvement consultant do for a print or decoration business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A process improvement consultant observes your actual workflows — not the documented ones — and identifies where time, money, and quality are being lost. In the print and embroidery sector, this typically covers the order intake to despatch cycle, artwork approval loops, production scheduling, and the handoffs between departments. The output is a prioritised improvement plan with every finding quantified in hours per week and pounds per year.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I improve production efficiency in a small manufacturing or decoration business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current process end to end — from the moment an order arrives to the moment it leaves the building. Time each step. Identify where jobs pause, where information is missing, and where work is being done twice. Process bottleneck analysis tells you where to focus improvement effort first. The biggest gains are almost always in the handoffs between steps, not in the steps themselves.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is process improvement the same as lean manufacturing?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Lean process improvement principles apply to print, embroidery, and decoration businesses — but the terminology and complexity of a full lean implementation is often overkill for a business under £5m. The practical goal is the same: eliminate the steps that do not add value, reduce waiting time between steps, and make the workflow visible and manageable.' },
+        },
       ],
     },
   ],
@@ -130,7 +145,7 @@ export default function SlowProcessesPage() {
             body: "Without a simple, shared view of the job queue, people work on what's in front of them — not what's most urgent. Work piles up at some stages and moves too fast through others. The bottleneck is invisible until it's a crisis.",
           },
         ]}
-        howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work — watching an order move from intake to despatch, timing steps, noting where things pause, talking to the people doing the work because they already know where the problems are. By the end of the day I have a clear map of every step in your key processes, the specific points where time is being lost, and a sense of which problems are habit, which are design, and which are fixable this week. Within five working days you have a written report: every finding documented, every issue quantified in hours per week and pounds per year, recommendations prioritised by impact. This is the Clarity Audit — and process improvement is a core part of what it covers, not an afterthought."
+        howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work — watching an order move from intake to despatch, timing steps, noting where things pause, talking to the people doing the work because they already know where the problems are. By the end of the day I have a clear map of every step in your key processes, the specific points where time is being lost, and a sense of which problems are habit, which are design, and which are fixable this week. Within five working days you have a written report: every finding documented, every issue quantified in hours per week and pounds per year, recommendations prioritised by impact. This is the process improvement consultancy approach — observe first, quantify second, recommend third. No workshops. No questionnaires. A day in your business and a written report within five working days."
       />
     </>
   );

@@ -3,23 +3,23 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'The Real Cost of a Failed ERP Project | Decoded Ops',
-  description: 'How much does a failed ERP implementation actually cost print and embroidery businesses? More than the software. Here are the real numbers.',
+  title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
+  description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
   alternates: { canonical: '/blog/the-real-cost-of-a-failed-erp-project' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-05-11T00:00:00Z',
     authors: ['https://decodedops.co.uk/about'],
     section: 'ERP',
-    title: 'The Real Cost of a Failed ERP Project',
-    description: 'How much does a failed ERP implementation actually cost print and embroidery businesses? More than the software.',
+    title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
+    description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
     url: 'https://decodedops.co.uk/blog/the-real-cost-of-a-failed-erp-project',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Real Cost of a Failed ERP Project',
-    description: 'How much does a failed ERP implementation actually cost print and embroidery businesses? More than the software.',
+    title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
+    description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
   },
 };
 
@@ -59,6 +59,16 @@ const schema = {
           name: 'How can I avoid an ERP implementation failure?',
           acceptedAnswer: { '@type': 'Answer', text: 'Start with an independent operational and technology audit before you talk to any vendor. Write a vendor brief based on your actual business, not a demo. And have someone independent overseeing the implementation.' },
         },
+        {
+          '@type': 'Question',
+          name: 'How much does ERP implementation cost for a small business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'For a small business in the print or embroidery sector, an ERP implementation typically costs £30,000–£120,000 in total, including software licences, implementation fees, internal staff time, and training. Without independent oversight, cost overruns of 30–60% are common. The implementation I describe in this article reached £250,000 in total cost against an original estimate of around £80,000.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Should I hire an ERP implementation consultant for a small manufacturing business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes — particularly if you are selecting ERP without previous experience in the sector, or if the implementation involves connecting multiple systems (eCommerce, production, B2B ordering). An independent ERP implementation consultant writes the brief before you approach vendors, holds the vendor to account during delivery, and signs off milestones before payments are released. Against a £100,000+ implementation, the cost of independent oversight is modest.' },
+        },
       ],
     },
   ],
@@ -74,8 +84,7 @@ export default function BlogPost() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Blog</span>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            The Real Cost of a
-            <span className="text-[#219EBC]"> Failed ERP Project</span>
+            ERP Implementation Failure: <span className="text-[#219EBC]">The Real Cost for Print Businesses</span>
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
             How much does a failed ERP implementation actually cost? More than the software. More than the implementation fees. And in most cases, far more than the upfront audit that would have prevented it.
@@ -108,6 +117,11 @@ export default function BlogPost() {
               The frustrating part? A £10,000 operational audit before they selected the software would have identified every problem that later killed the project.
             </p>
 
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Why ERP implementation failure is so common in this sector</h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              ERP implementation failure in the print and embroidery sector follows a predictable pattern. The same five mistakes appear across almost every failed or struggling implementation. Manufacturing ERP software is not inherently unreliable — but it is almost always implemented without the right brief, the right oversight, or the right internal ownership.
+            </p>
+
             <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The Real Cost Breakdown</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               When an ERP project fails, the cost is rarely just the software licence. Here's what the full picture looks like:
@@ -138,7 +152,7 @@ export default function BlogPost() {
               If the implementation fails completely and you need to start over, you're looking at the entire cost again — plus the damage to team confidence and the reluctance to invest in a second system after the first one failed.
             </p>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">Why ERP Projects Fail in This Sector</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">The five patterns behind every ERP implementation failure</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               The print, embroidery, and decoration sector is not like manufacturing or distribution. Every order can be different. Personalisation data has to flow from order to production. Artwork approval is part of the workflow. Stock might be blank goods, finished goods, or held for specific customers.
             </p>
@@ -156,7 +170,7 @@ export default function BlogPost() {
               <li><strong>Data quality ignored.</strong> The implementation proceeds on the assumption that existing data can be migrated as-is. It can't.</li>
             </ol>
 
-            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What an Audit Would Have Caught</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mt-12 mb-6">What independent ERP oversight would have prevented</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
               In the case I described at the start, an operational audit would have identified:
             </p>

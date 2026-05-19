@@ -4,19 +4,19 @@ import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconn
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'No Operations Owner in Your Business | Decoded Ops',
-  description: 'When no one owns operations, decisions fall through cracks, problems go unaddressed, and the same fires get put out week after week.',
+  title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
+  description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
   alternates: { canonical: '/problems/no-ops-owner' },
   openGraph: {
-    title: 'No Operations Owner in Your Business | Decoded Ops',
-    description: 'When no one owns operations, decisions fall through cracks, problems go unaddressed, and the same fires get put out week after week.',
+    title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
+    description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
     url: 'https://decodedops.co.uk/problems/no-ops-owner',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'No Operations Owner in Your Business | Decoded Ops',
-    description: 'When no one owns operations, decisions fall through cracks, problems go unaddressed, and the same fires get put out week after week.',
+    title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
+    description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
   },
 };
 
@@ -46,6 +46,16 @@ const noOpsOwnerSchema = {
           name: 'What is the cost of not having dedicated operations leadership?',
           acceptedAnswer: { '@type': 'Answer', text: 'The cost shows up in slower growth, repeated mistakes, missed improvements, and owner burnout. Every operational issue that has to be escalated to the owner costs ten times what it would if someone owned operations day-to-day.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What does a fractional head of operations do for a small business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A fractional head of operations owns the operational agenda on a part-time basis — technology decisions, process improvement, vendor oversight, and cross-department coordination. They provide the sales and operations planning (S&OP) thinking a growing business needs without the cost of a full-time operations director.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is a fractional operations director the same as managed IT support?',
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support handles day-to-day IT issues. A fractional operations director owns the wider operational agenda — systems strategy, process improvement, technology decision-making, and the management of improvement projects that cross departmental lines. IT support is a component of that; it is not a substitute for it.' },
+        },
       ],
     },
   ],
@@ -58,7 +68,7 @@ export default function NoOpsOwnerPage() {
       <ProblemPage
       problem="No operations owner"
       headline="Every ops decision ends up on your desk. ||Who is running the business day to day?||"
-      intro="In many growing businesses, operations has no owner. The MD handles the big decisions, department heads handle their areas, and everything in between — the processes that cross teams, the systems that connect departments, the improvements that nobody owns — falls through the cracks."
+      intro="In many growing businesses, operations has no owner. The MD handles the big decisions, department heads handle their areas, and everything in between — the processes that cross teams, the systems that connect departments, the improvements that nobody owns — falls through the cracks. A head of operations for small business does not have to be a full-time hire. Fractional operations leadership gives you the accountability and the thinking without the overhead."
       heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
       symptoms={[
         "Operational decisions that affect multiple departments get made by committee or not at all",
@@ -70,12 +80,12 @@ export default function NoOpsOwnerPage() {
         "New systems get bought but never properly embedded into how the team works",
       ]}
       causes={[
-        { title: "Operations grew without anyone noticing", body: "When a business is small, everyone knows what everyone else is doing. As it grows, operational complexity multiplies — but nobody is given explicit ownership of the systems and processes that cross departmental lines." },
+        { title: "Operations grew without anyone noticing", body: "When a business is small, everyone knows what everyone else is doing. As it grows, operational complexity multiplies — but nobody is given explicit ownership of the systems and processes that cross departmental lines. Sales and operations planning (S&OP) becomes impossible when no one has ownership of the operational data. Decisions get made on gut feel because there is no reliable picture of capacity, pipeline, or throughput." },
         { title: 'The owner is still the default ops person', body: "In many owner-operated businesses, the MD grew up doing the operational work. They understand it better than anyone. But they can't both do the work and step back to improve the system — and there's no one else to hand it to." },
         { title: 'Operations is seen as admin, not leadership', body: "Operations doesn't feel like a strategic role. It sounds like paperwork and process. So it gets delegated downward, shared around, or left to whoever shouts loudest. In reality, operations is where growth gets enabled or blocked." },
         { title: 'No clear progression from doer to leader', body: "The person who knows the operations best is often the person doing the operational work. Promoting them means losing their hands-on contribution — and many businesses can't afford that trade-off without a plan." },
       ]}
-      howIHelp="I help you understand whether your business needs a dedicated operations person, a fractional operations leader, or a different structure entirely. We look at where your time is going, where the bottlenecks are, and what level of operational ownership your business can support right now. Then I give you a practical roadmap — whether that means hiring, restructuring, or stepping into a retained fractional role that gives you operational leadership without the full-time commitment."
+      howIHelp="I help you understand whether your business needs a dedicated operations person, a fractional operations leader, or a different structure entirely. We look at where your time is going, where the bottlenecks are, and what level of operational ownership your business can support right now. Then I give you a practical roadmap — whether that means hiring, restructuring, or stepping into a retained fractional role that gives you operational leadership without the full-time commitment. If a fractional head of operations is the right answer — someone who owns the operational agenda on a part-time basis — the Retained service provides exactly that."
     />
     </>
   );

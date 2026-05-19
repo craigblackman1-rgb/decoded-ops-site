@@ -52,6 +52,16 @@ const transformSchema = {
           name: 'How is Transform different from a standard IT project?',
           acceptedAnswer: { '@type': 'Answer', text: 'Transform is process-led and people-first. Craig maps actual working practices before any system decision is made, manages change across all workstreams simultaneously, and holds vendors accountable across the programme. It is a coordinated programme with milestone governance — not a collection of separate projects.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What is the difference between ERP implementation and an ERP transformation programme?',
+          acceptedAnswer: { '@type': 'Answer', text: 'ERP implementation is the process of configuring, migrating, and going live with a single ERP system. A transformation programme covers the full technology and systems architecture — multiple systems, integrations, eCommerce, B2B portals, and the processes that connect them. Transform is for businesses where the scope goes beyond a single software project.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you support an eCommerce ERP integration as part of Transform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. eCommerce to ERP integration is one of the most common scopes within a Transform engagement. The implementation covers both systems — the eCommerce platform and the ERP or MIS — plus the integration layer between them, ensuring that orders flow from checkout to production without manual re-entry.' },
+        },
       ],
     },
   ],
@@ -98,10 +108,9 @@ export default function TransformPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Transform &middot; Digital Transformation Programme</span>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                Process-led. People-first.<br />
-                <span className="text-[#219EBC]">Technology that sticks.</span>
-              </h1>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+                  A full ERP implementation programme. <span className="text-[#219EBC]">Designed around how your business works.</span>
+                </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 For businesses that need a coordinated transformation across multiple workstreams &mdash; ERP, eCommerce, process redesign, and more. Discovery required before scoping, because assumptions are where transformations fail.
               </p>
@@ -139,6 +148,9 @@ export default function TransformPage() {
               <p className="text-[#F8F9FA] text-lg leading-relaxed font-bold">
                 Employee buy-in is not an HR issue. It is the single biggest project risk.
               </p>
+              <p className="text-[#8ECAE6] text-lg leading-relaxed">
+                Transform is the right engagement when the work goes beyond a single vendor or project. An ERP implementation programme for a print, embroidery, or decoration business typically involves multiple systems — order management, eCommerce, production scheduling, and B2B portals — that need to work as an integrated whole. That is what Transform is built for.
+              </p>
             </div>
           </div>
         </div>
@@ -151,7 +163,7 @@ export default function TransformPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
               <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Workstreams</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">What a Transform programme covers</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">ERP implementation for manufacturing and decoration businesses</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {workstreams.map(ws => {
