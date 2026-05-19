@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://decodedops.co.uk'),
   title: 'Decoded Ops | Print & Embroidery Technology Consultant',
   description: 'Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   robots: {
     index: true,
     follow: true,
