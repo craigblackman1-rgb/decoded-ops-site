@@ -4,20 +4,20 @@ import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkl
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
-  description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. If we don\'t find 3× the fee in recoverable costs, full refund.',
+  title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
+  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, processes, AI readiness, and growth opportunity. Written report, clear recommendations, and a 3× guarantee.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Clarity Audit — £395 Technology Audit | Decoded Ops',
-    description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. Full refund if we don\'t find 3× the fee in recoverable costs.',
+    title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, processes, AI readiness, and growth opportunity. Written report, clear recommendations, and a 3× guarantee.',
     url: 'https://decodedops.co.uk/clarity',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clarity Audit — £395 Technology Audit',
-    description: 'One-day operational and technology audit. Six areas, written report, clear recommendations. Full refund guarantee.',
+    title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
+    description: 'One-day audit covering IT infrastructure, software, eCommerce, processes, AI readiness, and growth opportunity. Written report and 3× guarantee.',
   },
 };
 import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';

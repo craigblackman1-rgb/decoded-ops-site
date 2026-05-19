@@ -4,20 +4,20 @@ import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'luci
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Retained CTO Services | Decoded Ops',
-  description: 'Fractional CTO and Head of Operations on a retained basis. Monthly strategic and operational leadership, vendor management, and a direct line to Craig.',
+  title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
+  description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
-    title: 'Retained CTO Services | Decoded Ops',
-    description: 'Fractional CTO and Head of Operations on a retained basis. Monthly strategic and operational leadership, vendor management, and a direct line to Craig.',
+    title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
+    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
     url: 'https://decodedops.co.uk/retained',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Retained CTO Services | Decoded Ops',
-    description: 'Fractional CTO on a retained basis. Monthly strategic and operational leadership without the full-time cost.',
+    title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
+    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership without the full-time salary.',
   },
 };
 

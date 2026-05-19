@@ -4,20 +4,20 @@ import { ArrowRight, FileText, Search, Users, Shield, CheckCircle2 } from 'lucid
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Project Delivery & Vendor Management | Decoded Ops',
-  description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
+  title: 'ERP & Technology Implementation Consultant | Decoded Ops',
+  description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses. No vendor agenda.',
   alternates: { canonical: '/deliver' },
   openGraph: {
     type: 'website',
-    title: 'Project Delivery & Vendor Management | Decoded Ops',
-    description: 'Independent vendor briefs, procurement support, and project oversight for technology implementations. One point of contact. Delivered on your terms.',
+    title: 'ERP & Technology Implementation Consultant | Decoded Ops',
+    description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses. No vendor agenda.',
     url: 'https://decodedops.co.uk/deliver',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Project Delivery & Vendor Management | Decoded Ops',
-    description: 'Independent vendor briefs, procurement support, and project oversight. One point of contact. Delivered on your terms.',
+    title: 'ERP & Technology Implementation Consultant | Decoded Ops',
+    description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses.',
   },
 };
 

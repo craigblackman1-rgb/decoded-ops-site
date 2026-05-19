@@ -4,22 +4,19 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
-  description:
-    'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
+  title: 'Hire a Fractional CTO | Print & Decoration Specialists | Decoded Ops',
+  description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
   alternates: { canonical: '/locations/fractional-cto' },
   openGraph: {
-    title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
-    description:
-      'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
+    title: 'Hire a Fractional CTO | Print & Decoration Specialists | Decoded Ops',
+    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
     url: 'https://decodedops.co.uk/locations/fractional-cto',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional CTO Services Across Sussex & Surrey | Decoded Ops',
-    description:
-      'Senior technology leadership for growing businesses across Sussex and Surrey — without the full-time hire. Find your nearest location.',
+    title: 'Hire a Fractional CTO | Print & Decoration Specialists | Decoded Ops',
+    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
   },
 };
 

@@ -4,23 +4,23 @@ import EcommerceBreakdownChart from '@/public/infographics/EcommerceBreakdownCha
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'The eCommerce Integration Trap | Decoded Ops',
-  description: 'Why standard eCommerce platforms fail for print, embroidery, and decoration businesses. The integration complexity you didn\'t anticipate.',
+  title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It) | Decoded Ops',
+  description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every eCommerce fulfilment integration project to fail.",
   alternates: { canonical: '/blog/ecommerce-integration-trap' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-04-01T00:00:00Z',
     authors: ['https://decodedops.co.uk/about'],
     section: 'eCommerce',
-    title: 'The eCommerce Integration Trap',
-    description: 'Why standard eCommerce platforms fail for print and decorated apparel businesses — and what you should have done differently.',
+    title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It)',
+    description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every eCommerce fulfilment integration project to fail.",
     url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The eCommerce Integration Trap',
-    description: 'Why standard eCommerce platforms fail for print and decorated apparel businesses — and what you should have done differently.',
+    title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It)',
+    description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.",
   },
 };
 

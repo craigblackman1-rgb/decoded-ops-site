@@ -4,19 +4,19 @@ import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconn
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'ERP Implementation Failure | Decoded Ops',
-  description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+  title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
+  description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
   alternates: { canonical: '/problems/erp-implementation-failure' },
   openGraph: {
-    title: 'ERP Implementation Failure | Decoded Ops',
-    description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+    title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
+    description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
     url: 'https://decodedops.co.uk/problems/erp-implementation-failure',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERP Implementation Failure | Decoded Ops',
-    description: 'ERP implementation failures in print and embroidery businesses — causes, recovery options, and how to avoid repeating the same mistakes.',
+    title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
+    description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
   },
 };
 

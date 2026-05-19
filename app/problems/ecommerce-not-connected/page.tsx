@@ -4,19 +4,19 @@ import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconn
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'eCommerce Not Connected to Operations | Decoded Ops',
-  description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+  title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
+  description: "Your Shopify orders come in but your stock doesn't update, your ERP doesn't know, and your invoicing is manual. Here's how to fix eCommerce integration for print and decoration businesses.",
   alternates: { canonical: '/problems/ecommerce-not-connected' },
   openGraph: {
-    title: 'eCommerce Not Connected to Operations | Decoded Ops',
-    description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+    title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
+    description: "Your Shopify orders come in but your stock doesn't update, your ERP doesn't know, and your invoicing is manual. Here's how to fix eCommerce integration for print and decoration businesses.",
     url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'eCommerce Not Connected to Operations | Decoded Ops',
-    description: 'When your eCommerce platform doesn\'t connect to your operational systems, every order costs more than it should. Here\'s what it costs and how to fix it.',
+    title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
+    description: "Your Shopify orders come in but your stock doesn't update and your invoicing is manual. Here's how to fix eCommerce integration for decoration businesses.",
   },
 };
 

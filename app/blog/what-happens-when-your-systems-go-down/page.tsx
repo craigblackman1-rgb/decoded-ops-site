@@ -3,23 +3,23 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'What Happens When Your Systems Go Down | Decoded Ops',
-  description: 'Most businesses don\'t have a disaster recovery plan. Here\'s what happens when your systems go down — and what to do before they do.',
+  title: 'What Happens When Your Systems Go Down? Build Your Recovery Plan | Decoded Ops',
+  description: "Most small print and decoration businesses have no disaster recovery plan. Here's what a DRP data recovery plan needs to cover — before the crisis, not during it.",
   alternates: { canonical: '/blog/what-happens-when-your-systems-go-down' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-06-08T00:00:00Z',
     authors: ['https://decodedops.co.uk/about'],
     section: 'Operations',
-    title: 'What Happens When Your Systems Go Down',
-    description: 'Most businesses don\'t have a disaster recovery plan. Here\'s what happens when your systems go down.',
+    title: 'What Happens When Your Systems Go Down? Build Your Recovery Plan',
+    description: "Most small print and decoration businesses have no disaster recovery plan. Here's what a DRP data recovery plan needs to cover — before the crisis, not during it.",
     url: 'https://decodedops.co.uk/blog/what-happens-when-your-systems-go-down',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What Happens When Your Systems Go Down',
-    description: 'Most businesses don\'t have a disaster recovery plan. Here\'s what happens when your systems go down.',
+    title: 'What Happens When Your Systems Go Down? Build Your Recovery Plan',
+    description: "Most small print and decoration businesses have no disaster recovery plan. Here's what a DRP data recovery plan needs to cover — before the crisis, not during it.",
   },
 };
 
