@@ -150,6 +150,37 @@ export default function SmallBusinessPage() {
         </div>
       </section>
 
+      {/* Small business visual strip */}
+      <section className="py-8 bg-[#023047] border-t border-[#F8F9FA]/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto p-4 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
+            <svg viewBox="0 0 500 80" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="20" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
+              <text x="70" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">CLARITY</text>
+              <text x="70" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£395</text>
+
+              <text x="140" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+
+              <rect x="160" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
+              <text x="210" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">DELIVER</text>
+              <text x="210" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£550/mo</text>
+
+              <text x="280" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+
+              <rect x="300" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
+              <text x="350" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">TRANSFORM</text>
+              <text x="350" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£770/mo</text>
+
+              <text x="420" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+
+              <rect x="440" y="15" width="40" height="50" rx="8" fill="#FFB703" opacity="0.15" stroke="#FFB703" strokeWidth="1.5" />
+              <text x="460" y="38" textAnchor="middle" fontSize="7" fontWeight="700" fill="#FFB703">RETAINED</text>
+              <text x="460" y="52" textAnchor="middle" fontSize="7" fill="#8ECAE6">£395+</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 lg:py-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">

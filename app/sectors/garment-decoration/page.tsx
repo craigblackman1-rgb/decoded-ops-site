@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
@@ -72,6 +73,11 @@ export default function GarmentDecorationPage() {
   return (
     <>
       <JsonLd data={sectorSchema} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk' },
+        { name: 'Sectors', url: 'https://decodedops.co.uk/#sectors' },
+        { name: 'Garment Decoration', url: 'https://decodedops.co.uk/sectors/garment-decoration' },
+      ]} />
       <SectorPage
       sector="Garment decoration"
       tagline="Garment decoration business systems ||were never built for how you actually work.||"

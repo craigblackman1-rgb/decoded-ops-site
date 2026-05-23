@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 import { PricingClient } from './PricingClient';
 
 export const metadata: Metadata = {
-  title: 'Pricing | Decoded Ops',
-  description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £2,500. Project delivery, transformation programmes, and retained engagements priced by business size.',
+  title: 'Consultancy Pricing — Clarity, Deliver, Transform | Decoded Ops',
+  description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £395. Project delivery, transformation programmes, and retained engagements.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
-    title: 'Pricing | Decoded Ops',
-    description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £2,500. Project delivery, transformation programmes, and retained engagements priced by business size.',
+    title: 'Consultancy Pricing — Clarity, Deliver, Transform | Decoded Ops',
+    description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £395. Project delivery, transformation programmes, and retained engagements.',
     url: 'https://decodedops.co.uk/pricing',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing | Decoded Ops',
-    description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £2,500. Project delivery, transformation programmes, and retained engagements priced by business size.',
+    title: 'Consultancy Pricing — Clarity, Deliver, Transform | Decoded Ops',
+    description: 'Transparent pricing for operational and technology consultancy. Clarity audit from £395.',
   },
 };
 

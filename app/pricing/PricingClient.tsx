@@ -875,6 +875,47 @@ export function PricingClient() {
         </div>
       </section>
 
+      {/* SERVICE FLOW VISUAL */}
+      <section className="py-12 bg-[#023047]/5 border-t border-[#8ECAE6]/20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ServiceFlow />
+          {/* Pricing overview graphic */}
+          <div className="max-w-3xl mx-auto mt-8 p-6 rounded-2xl bg-white border border-[#8ECAE6]/30">
+            <svg viewBox="0 0 600 120" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              {/* 4 connected circles representing the service flow */}
+              <circle cx="75" cy="60" r="40" fill="#023047" opacity="0.08" />
+              <circle cx="75" cy="60" r="30" fill="#023047" />
+              <text x="75" y="56" textAnchor="middle" fontSize="11" fontWeight="700" fill="#FFB703">CLARITY</text>
+              <text x="75" y="70" textAnchor="middle" fontSize="9" fill="#8ECAE6">Audit</text>
+
+              <line x1="115" y1="60" x2="185" y2="60" stroke="#219EBC" strokeWidth="2" strokeDasharray="4,3" />
+              <polygon points="185,56 195,60 185,64" fill="#219EBC" />
+
+              <circle cx="225" cy="60" r="40" fill="#219EBC" opacity="0.08" />
+              <circle cx="225" cy="60" r="30" fill="#219EBC" />
+              <text x="225" y="56" textAnchor="middle" fontSize="11" fontWeight="700" fill="#F8F9FA">DELIVER</text>
+              <text x="225" y="70" textAnchor="middle" fontSize="9" fill="#8ECAE6">Build</text>
+
+              <line x1="265" y1="60" x2="335" y2="60" stroke="#219EBC" strokeWidth="2" strokeDasharray="4,3" />
+              <polygon points="335,56 345,60 335,64" fill="#219EBC" />
+
+              <circle cx="375" cy="60" r="40" fill="#219EBC" opacity="0.08" />
+              <circle cx="375" cy="60" r="30" fill="#023047" />
+              <text x="375" y="56" textAnchor="middle" fontSize="10" fontWeight="700" fill="#FFB703">TRANSFORM</text>
+              <text x="375" y="70" textAnchor="middle" fontSize="9" fill="#8ECAE6">Programme</text>
+
+              <line x1="415" y1="60" x2="485" y2="60" stroke="#219EBC" strokeWidth="2" strokeDasharray="4,3" />
+              <polygon points="485,56 495,60 485,64" fill="#219EBC" />
+
+              <circle cx="525" cy="60" r="40" fill="#219EBC" opacity="0.08" />
+              <circle cx="525" cy="60" r="30" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="2" />
+              <text x="525" y="56" textAnchor="middle" fontSize="10" fontWeight="700" fill="#023047">RETAINED</text>
+              <text x="525" y="70" textAnchor="middle" fontSize="9" fill="#023047" opacity="0.6">Ongoing</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
       {/* QUESTIONNAIRE */}
       <section className="py-16 bg-[#023047]">
         <div className="max-w-2xl mx-auto px-6">

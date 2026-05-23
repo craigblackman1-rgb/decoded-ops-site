@@ -6,16 +6,16 @@ import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Decoded Ops | Print & Embroidery Technology Consultant',
-  description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+  title: 'Print & Embroidery Technology Consultant | Decoded Ops',
+  description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Written report in five days. 3x guarantee.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Decoded Ops | Print & Embroidery Technology Consultant',
-    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+    title: 'Print & Embroidery Technology Consultant | Decoded Ops',
+    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Written report in five days. 3x guarantee.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
-    title: 'Decoded Ops | Print & Embroidery Technology Consultant',
+    title: 'Print & Embroidery Technology Consultant | Decoded Ops',
     description: 'Operations and technology consultancy for print, embroidery, and decoration businesses.',
   },
 };
@@ -143,7 +143,7 @@ export default function HomePage() {
 
       {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
       <div className="bg-[#023047] py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center gap-3 flex-wrap">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
           <span className="text-xs font-semibold tracking-wider uppercase text-[#F8F9FA]/90 whitespace-nowrap">I work with</span>
           {sectors.map(s => (
             <Link key={s.href} href={s.href} className="text-xs font-medium text-[#F8F9FA]/80 border border-[#F8F9FA]/20 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">

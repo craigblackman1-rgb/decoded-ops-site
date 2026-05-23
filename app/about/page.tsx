@@ -1,25 +1,27 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, Wrench, Brain } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
+import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';
 
 export const metadata: Metadata = {
-  title: 'About Decoded Ops | Technology Consultancy',
-  description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+  title: 'About Craig Blackman | Decoded Ops',
+  description: '25+ years inside print, embroidery, and decoration businesses. Independent technology consultant. No vendor relationships, no referral fees.',
   alternates: { canonical: '/about' },
   openGraph: {
     type: 'website',
-    title: 'About Decoded Ops | Technology Consultancy',
-    description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+    title: 'About Craig Blackman | Decoded Ops',
+    description: '25+ years inside print, embroidery, and decoration businesses. Independent technology consultant. No vendor relationships, no referral fees.',
     url: 'https://decodedops.co.uk/about',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Decoded Ops | Technology Consultancy',
-    description: 'Independent technology consultant for print, embroidery, and decoration businesses. 25 years sector experience. No vendor relationships, no referral fees.',
+    title: 'About Craig Blackman | Decoded Ops',
+    description: '25+ years inside print, embroidery, and decoration businesses. Independent technology consultant.',
   },
 };
-import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
-import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';
 
 const values = [
   { icon: Shield, title: 'Independence',     desc: "No referral fees. No vendor relationships. No commission. Every recommendation is made on merit alone — and I'll tell you when the answer is to change nothing." },
@@ -28,9 +30,36 @@ const values = [
   { icon: Shield, title: 'Specificity',       desc: "Every finding is quantified. Every recommendation is costed. You don't get a slide deck of observations — you get a clear statement of what each problem is costing you." },
 ];
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Craig Blackman',
+  jobTitle: 'Founder & Principal Consultant',
+  description: 'Technology and operations consultant with 25+ years of experience in print, embroidery, workwear, and promotional merchandise businesses.',
+  url: 'https://decodedops.co.uk/about',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Decoded Ops',
+    url: 'https://decodedops.co.uk',
+  },
+  knowsAbout: ['print technology', 'embroidery operations', 'ERP systems', 'eCommerce integration', 'operations management', 'technology consulting'],
+  sameAs: ['https://www.linkedin.com/company/decodedops'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Worthing',
+    addressRegion: 'West Sussex',
+    addressCountry: 'GB',
+  },
+};
+
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={personSchema} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk' },
+        { name: 'About', url: 'https://decodedops.co.uk/about' },
+      ]} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
