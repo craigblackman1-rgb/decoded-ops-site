@@ -4,8 +4,8 @@ import EcommerceBreakdownChart from '@/public/infographics/EcommerceBreakdownCha
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It) | Decoded Ops',
-  description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every eCommerce fulfilment integration project to fail.",
+  title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It)',
+  description: 'Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.',
   alternates: { canonical: '/blog/ecommerce-integration-trap' },
   openGraph: {
     type: 'article',
@@ -13,14 +13,14 @@ export const metadata = {
     authors: ['https://decodedops.co.uk/about'],
     section: 'eCommerce',
     title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It)',
-    description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every eCommerce fulfilment integration project to fail.",
+    description: 'Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.',
     url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The eCommerce Integration Trap: What Goes Wrong (And How to Avoid It)',
-    description: "Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.",
+    description: 'Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.',
   },
 };
 
@@ -37,7 +37,7 @@ const schema = {
       image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/ecommerce-integration-trap',
-      description: 'Why standard eCommerce platforms fail for print, embroidery, and decorated apparel businesses, and what to do if you have already made this mistake.',
+      description: 'Why connecting your eCommerce platform to your operations is harder than vendors tell you — and the pattern that causes almost every integration project to fail.',
       wordCount: 1400,
       articleSection: 'eCommerce',
       keywords: 'eCommerce integration, print business ecommerce, decoration ecommerce, ERP ecommerce integration, ecommerce platform selection',

@@ -4,20 +4,20 @@ import { ArrowRight, Server, ShoppingCart, GitBranch, Users, Layers, TrendingUp,
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Digital Transformation Programme | Decoded Ops',
-  description: 'Multi-workstream technology programmes for print and decoration businesses. ERP, eCommerce, process redesign. Discovery required before scoping.',
+  title: 'ERP & Technology Transformation Programme | Decoded Ops',
+  description: 'Full implementation oversight, vendor management, and systems build for print, embroidery, and decoration businesses going through a major technology change.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
-    title: 'Digital Transformation Programme | Decoded Ops',
-    description: 'Multi-workstream technology programmes for print and decoration businesses. ERP, eCommerce, process redesign. Discovery required before scoping.',
+    title: 'ERP & Technology Transformation Programme | Decoded Ops',
+    description: 'Full implementation oversight, vendor management, and systems build for print, embroidery, and decoration businesses going through a major technology change.',
     url: 'https://decodedops.co.uk/transform',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Transformation Programme | Decoded Ops',
-    description: 'Multi-workstream technology transformation for print and decoration businesses. Process-led. People-first.',
+    title: 'ERP & Technology Transformation Programme | Decoded Ops',
+    description: 'Full implementation oversight, vendor management, and systems build for print, embroidery, and decoration businesses going through a major technology change.',
   },
 };
 

@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
-  title: 'Stop Manual Re-entry: Business Process Automation for Small Business | Decoded Ops',
-  description: 'Spreadsheets, shadow systems, and manual re-entry are costing you more than you think. Business process automation for print, embroidery, and decoration businesses.',
+  title: 'Manual Workarounds Are Costing You More Than You Think | Decoded Ops',
+  description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds — you\'re paying for a system that isn\'t working. Here\'s the real cost.',
   alternates: { canonical: '/problems/manual-workarounds' },
   openGraph: {
-    title: 'Stop Manual Re-entry: Business Process Automation for Small Business | Decoded Ops',
-    description: 'Spreadsheets, shadow systems, and manual re-entry are costing you more than you think. Business process automation for print, embroidery, and decoration businesses.',
+    title: 'Manual Workarounds Are Costing You More Than You Think | Decoded Ops',
+    description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds — you\'re paying for a system that isn\'t working. Here\'s the real cost.',
     url: 'https://decodedops.co.uk/problems/manual-workarounds',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stop Manual Re-entry: Business Process Automation for Small Business | Decoded Ops',
-    description: 'Spreadsheets, shadow systems, and manual re-entry are costing you more than you think. Business process automation for print, embroidery, and decoration businesses.',
+    title: 'Manual Workarounds Are Costing You More Than You Think | Decoded Ops',
+    description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds — you\'re paying for a system that isn\'t working. Here\'s the real cost.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function ManualWorkaroundsPage() {
         { title: 'Workarounds become institutionalised', body: "After enough time, the workaround isn't seen as a workaround — it's seen as how things are done. New starters are trained on the shadow system as if it were official. The original software investment becomes a sunk cost that nobody wants to admit hasn't delivered." },
       ]}
       howIHelp="I audit your actual operational workflows — not the documented ones, the ones your team actually use. I identify every workaround, every spreadsheet, every manual bridge between systems, and I calculate what they're costing you in time, errors, and risk. Then I give you a prioritised plan to eliminate them: quick wins that pay for themselves, integration fixes that close the gaps, and the honest conversation about whether the current system can ever work for your business model. The outcome is a business process automation roadmap — not a technology wish list, but a prioritised set of changes (some immediate, some longer term) that eliminate the manual work your team has been carrying for years."
+    
+      slug="manual-workarounds"
+      targetService={problemRouting['manual-workarounds'].targetService}
+      relatedProblems={problemRouting['manual-workarounds'].relatedProblems}
+      relatedReading={problemRouting['manual-workarounds'].relatedReading}
     />
     </>
   );

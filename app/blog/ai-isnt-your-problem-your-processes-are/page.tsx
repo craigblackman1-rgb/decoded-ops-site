@@ -3,23 +3,23 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'AI Is Not Your Problem. Your Processes Are. | Decoded Ops',
-  description: 'Before you invest in AI, fix your processes. AI amplifies what you already have — including your problems. Here\'s what to do first.',
+  title: 'AI Isn\'t Your Problem. Your Processes Are. | Decoded Ops',
+  description: 'Before you invest in AI tools, you need clean data, documented processes, and integrated systems. Here\'s how to know if your business is actually AI-ready.',
   alternates: { canonical: '/blog/ai-isnt-your-problem-your-processes-are' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-05-25T00:00:00Z',
     authors: ['https://decodedops.co.uk/about'],
     section: 'AI & Technology',
-    title: 'AI Is Not Your Problem. Your Processes Are.',
-    description: 'Before you invest in AI, fix your processes. AI amplifies what you already have — including your problems.',
+    title: 'AI Isn\'t Your Problem. Your Processes Are. | Decoded Ops',
+    description: 'Before you invest in AI tools, you need clean data, documented processes, and integrated systems. Here\'s how to know if your business is actually AI-ready.',
     url: 'https://decodedops.co.uk/blog/ai-isnt-your-problem-your-processes-are',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Is Not Your Problem. Your Processes Are.',
-    description: 'Before you invest in AI, fix your processes. AI amplifies what you already have — including your problems.',
+    title: 'AI Isn\'t Your Problem. Your Processes Are. | Decoded Ops',
+    description: 'Before you invest in AI tools, you need clean data, documented processes, and integrated systems. Here\'s how to know if your business is actually AI-ready.',
   },
 };
 
@@ -36,7 +36,7 @@ const schema = {
       image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/ai-isnt-your-problem-your-processes-are',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/ai-isnt-your-problem-your-processes-are',
-      description: 'Before you invest in AI, fix your processes. AI amplifies what you already have — including your problems.',
+      description: 'Before you invest in AI tools, you need clean data, documented processes, and integrated systems. Here\'s how to know if your business is actually AI-ready.',
       wordCount: 1500,
       articleSection: 'AI & Technology',
       keywords: 'AI for print business, AI readiness, business process, operational efficiency, AI strategy, process before platform',

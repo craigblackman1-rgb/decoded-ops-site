@@ -14,9 +14,9 @@ const questions = [
 ];
 
 const results = [
-  { min: 0, max: 3, label: 'Not Ready — Fix Your Foundations', color: '#FB8500', description: 'Your business needs foundational work before AI can deliver value. Clean data, documented processes, and integrated systems are prerequisites — without them, AI will amplify your existing problems, not solve them. Start with an operational audit to build the foundation.', action: 'Book a Clarity Audit' },
-  { min: 4, max: 6, label: 'Getting There — Proceed Carefully', color: '#FFB703', description: 'You have some of the pieces in place, but not all. Small, targeted AI experiments in well-defined areas could work, but a broader AI strategy would be premature. Focus on closing the gaps in your weakest area before committing to AI investment.', action: 'Discuss Your Readiness' },
-  { min: 7, max: 10, label: 'Ready — Evaluate with Confidence', color: '#219EBC', description: 'Your operations are well-structured enough to evaluate AI tools on their actual merits. You can run proof-of-concept projects in specific areas with a good chance of success. The key is to choose the right problem to solve first — not the most exciting technology.', action: 'Explore AI Opportunities' },
+  { min: 0, max: 3, label: 'Not Ready — Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
+  { min: 4, max: 6, label: 'Getting There — Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
+  { min: 7, max: 10, label: 'Ready — Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
 ];
 
 type Answer = 'yes' | 'no' | null;

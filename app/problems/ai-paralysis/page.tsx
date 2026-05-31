@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
-  title: 'AI Readiness for Print & Decoration Businesses | Decoded Ops',
-  description: 'Not sure if your business is ready for AI? Cut through the hype with an honest AI readiness assessment for print, embroidery, and decoration businesses.',
+  title: 'AI Paralysis: Why Most Small Businesses Are Stuck on AI | Decoded Ops',
+  description: 'Everyone says you need AI. Nobody says what to fix first. Here\'s an honest view of AI readiness for print, decoration, and workwear businesses — what\'s worth doing now, and what isn\'t.',
   alternates: { canonical: '/problems/ai-paralysis' },
   openGraph: {
-    title: 'AI Readiness for Print & Decoration Businesses | Decoded Ops',
-    description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
+    title: 'AI Paralysis: Why Most Small Businesses Are Stuck on AI | Decoded Ops',
+    description: 'Everyone says you need AI. Nobody says what to fix first. Here\'s an honest view of AI readiness for print, decoration, and workwear businesses — what\'s worth doing now, and what isn\'t.',
     url: 'https://decodedops.co.uk/problems/ai-paralysis',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Readiness for Print & Decoration Businesses | Decoded Ops',
-    description: 'Everyone is talking about AI. No one can tell you what it actually means for your business. Cut through the hype and get a practical AI readiness assessment.',
+    title: 'AI Paralysis: Why Most Small Businesses Are Stuck on AI | Decoded Ops',
+    description: 'Everyone says you need AI. Nobody says what to fix first. Here\'s an honest view of AI readiness for print, decoration, and workwear businesses — what\'s worth doing now, and what isn\'t.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function AiParalysisPage() {
         { title: 'Fear of missing out is driving decisions', body: "The fear that competitors will adopt AI and pull ahead creates pressure to do something — anything. That pressure leads to buying AI tools without a clear use case, which leads to wasted investment and reinforces the cynicism that stopped the business from engaging in the first place." },
       ]}
       howIHelp="I give you an honest, grounded assessment of where AI can actually help your business right now. I am not here to sell you an AI tool. I look at your current processes, your data quality, your technology stack, and your team's capability — and I tell you what needs to be in place before AI can deliver value, where the real AI opportunities are in your specific operation, and what is noise that you can safely ignore. No hype. No vendor agenda. Just a clear answer. Think of it as an AI readiness check built specifically for businesses in the print, embroidery, and decoration sector — not a generic AI strategy that could apply to any industry."
+    
+      slug="ai-paralysis"
+      targetService={problemRouting['ai-paralysis'].targetService}
+      relatedProblems={problemRouting['ai-paralysis'].relatedProblems}
+      relatedReading={problemRouting['ai-paralysis'].relatedReading}
     />
     </>
   );

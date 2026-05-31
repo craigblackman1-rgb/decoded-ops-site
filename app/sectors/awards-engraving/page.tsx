@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Awards & Engraving Technology | Decoded Ops',
@@ -68,6 +69,10 @@ export default function AwardsEngravingPage() {
         'Quantify the cost of current manual processes and proof-related rework',
       ]}
       cta="Find out what your personalisation workflow is really costing you"
+    
+      slug="awards-engraving"
+      targetService={sectorRouting['awards-engraving'].targetService}
+      relatedProblems={sectorRouting['awards-engraving'].relatedProblems}
     />
     </>
   );

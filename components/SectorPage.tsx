@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ReactNode } from 'react';
+import { BreadcrumbSchema } from './BreadcrumbSchema';
 
 interface Challenge { title: string; body: string }
 
@@ -13,12 +14,25 @@ interface SectorPageProps {
   challenges: Challenge[];
   whatIdo: string[];
   cta?: string;
+  /** Slug for breadcrumb URL */
+  slug?: string;
+  /** Primary commercial endpoint for this sector */
+  targetService?: { href: string; label: string; anchor: string };
+  /** 3 most relevant problem pages for this sector */
+  relatedProblems?: { href: string; label: string }[];
 }
 
-export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, challenges, whatIdo, cta }: SectorPageProps) {
+export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, challenges, whatIdo, cta, slug, targetService, relatedProblems }: SectorPageProps) {
   const parts = tagline.split('||');
   return (
     <>
+      {slug && (
+        <BreadcrumbSchema items={[
+          { name: 'Home', url: 'https://decodedops.co.uk/' },
+          { name: 'Sectors', url: 'https://decodedops.co.uk/sectors' },
+          { name: sector, url: `https://decodedops.co.uk/sectors/${slug}` },
+        ]} />
+      )}
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -123,6 +137,42 @@ export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, cha
           </div>
         </div>
       </section>
+
+      {/* SECTOR CROSS-LINKS — target service + 3 relevant problems */}
+      {(targetService || (relatedProblems && relatedProblems.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-[#F8F9FA] border-t border-[#023047]/10">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {targetService && (
+                <div className="rounded-2xl bg-[#023047] text-white p-8">
+                  <div className="text-xs font-semibold tracking-wider uppercase text-[#FFB703] mb-3">The work in this sector</div>
+                  <h3 className="text-2xl font-bold mb-3">{targetService.label}</h3>
+                  <p className="text-white/80 text-sm leading-relaxed mb-6">{targetService.anchor}</p>
+                  <Link href={targetService.href} className="inline-flex items-center gap-2 text-[#FFB703] font-semibold hover:gap-3 transition-all">
+                    See how it works <ArrowRight size={18} />
+                  </Link>
+                </div>
+              )}
+              {relatedProblems && relatedProblems.length > 0 && (
+                <div className="rounded-2xl bg-white border border-[#023047]/10 p-8">
+                  <div className="text-xs font-semibold tracking-wider uppercase text-[#023047]/60 mb-3">Most common in {sector.toLowerCase()}</div>
+                  <h3 className="text-lg font-bold text-[#023047] mb-4">The problems we see most often</h3>
+                  <ul className="space-y-3">
+                    {relatedProblems.map(p => (
+                      <li key={p.href}>
+                        <Link href={p.href} className="text-[#023047] hover:text-[#219EBC] flex items-start gap-2 text-sm leading-snug">
+                          <ArrowRight size={14} className="mt-1 flex-shrink-0 text-[#219EBC]" />
+                          <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

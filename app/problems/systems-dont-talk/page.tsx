@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
   title: 'When Your Systems Don\'t Talk to Each Other | Decoded Ops',
@@ -76,6 +77,11 @@ export default function SystemsDontTalkPage() {
         { title: 'The cost of the workaround is invisible', body: "The cost of manual data re-entry, reporting overhead, and error correction doesn't appear on any invoice. It's buried in staff time that gets attributed to everything except the real cause." },
       ]}
       howIHelp="I map your entire technology ecosystem — every system, every data flow, every manual bridge — and give you a clear view of what it's actually costing you. Then I give you independent options: integration where it's practical, consolidation where it makes more sense, and replacement where the current stack is the problem. No vendor relationships. No preferred solutions. Just a clear picture and a practical path forward."
+    
+      slug="systems-dont-talk"
+      targetService={problemRouting['systems-dont-talk'].targetService}
+      relatedProblems={problemRouting['systems-dont-talk'].relatedProblems}
+      relatedReading={problemRouting['systems-dont-talk'].relatedReading}
     />
     </>
   );

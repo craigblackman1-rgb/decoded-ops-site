@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
   title: 'Slow Processes Costing You Time and Money | Decoded Ops',
@@ -146,7 +147,12 @@ export default function SlowProcessesPage() {
           },
         ]}
         howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work — watching an order move from intake to despatch, timing steps, noting where things pause, talking to the people doing the work because they already know where the problems are. By the end of the day I have a clear map of every step in your key processes, the specific points where time is being lost, and a sense of which problems are habit, which are design, and which are fixable this week. Within five working days you have a written report: every finding documented, every issue quantified in hours per week and pounds per year, recommendations prioritised by impact. This is the process improvement consultancy approach — observe first, quantify second, recommend third. No workshops. No questionnaires. A day in your business and a written report within five working days."
-      />
+      
+      slug="slow-processes"
+      targetService={problemRouting['slow-processes'].targetService}
+      relatedProblems={problemRouting['slow-processes'].relatedProblems}
+      relatedReading={problemRouting['slow-processes'].relatedReading}
+    />
     </>
   );
 }

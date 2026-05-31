@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
-    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership without the full-time salary.',
+    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
   },
 };
 
@@ -108,8 +108,11 @@ export default function RetainedPage() {
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
                 Your fractional CTO. <span className="text-[#219EBC]">Without the full-time cost.</span>
               </h1>
+              <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
+                Six months without anyone owning the technology decisions and the same questions are still being asked in the same Monday meeting. The vendors are still circling. The roadmap is still a whiteboard.
+              </p>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. Ongoing.
+                Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. <strong className="text-[#023047]">25 years inside the sector</strong>, on retainer.
               </p>
               <p className="text-sm text-[#023047]/60 leading-relaxed mb-8 max-w-xl">
                 Fractional CTO services give you the technology leadership and vendor oversight a growing business needs — without recruiting for a role that will cost £80,000+ before it has delivered value.

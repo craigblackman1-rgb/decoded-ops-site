@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
-  title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
-  description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
+  title: 'No Operations Owner? Here\'s What That Costs You | Decoded Ops',
+  description: 'When no one owns operations in a growing business, the same problems repeat — until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
   alternates: { canonical: '/problems/no-ops-owner' },
   openGraph: {
-    title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
-    description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
+    title: 'No Operations Owner? Here\'s What That Costs You | Decoded Ops',
+    description: 'When no one owns operations in a growing business, the same problems repeat — until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
     url: 'https://decodedops.co.uk/problems/no-ops-owner',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'No Head of Operations? Fractional Operations Leadership for Small Business | Decoded Ops',
-    description: 'When no one owns operations, the same problems keep coming back. Fractional head of operations and sales & operations planning support for print and decoration businesses.',
+    title: 'No Operations Owner? Here\'s What That Costs You | Decoded Ops',
+    description: 'When no one owns operations in a growing business, the same problems repeat — until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function NoOpsOwnerPage() {
         { title: 'No clear progression from doer to leader', body: "The person who knows the operations best is often the person doing the operational work. Promoting them means losing their hands-on contribution — and many businesses can't afford that trade-off without a plan." },
       ]}
       howIHelp="I help you understand whether your business needs a dedicated operations person, a fractional operations leader, or a different structure entirely. We look at where your time is going, where the bottlenecks are, and what level of operational ownership your business can support right now. Then I give you a practical roadmap — whether that means hiring, restructuring, or stepping into a retained fractional role that gives you operational leadership without the full-time commitment. If a fractional head of operations is the right answer — someone who owns the operational agenda on a part-time basis — the Retained service provides exactly that."
+    
+      slug="no-ops-owner"
+      targetService={problemRouting['no-ops-owner'].targetService}
+      relatedProblems={problemRouting['no-ops-owner'].relatedProblems}
+      relatedReading={problemRouting['no-ops-owner'].relatedReading}
     />
     </>
   );

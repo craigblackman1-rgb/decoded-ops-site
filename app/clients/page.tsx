@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Client Proposals — Decoded Ops',
+  alternates: { canonical: '/clients' },
   robots: {
     index: false,
     follow: false,

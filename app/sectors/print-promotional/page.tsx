@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
-  title: 'Print Shop Operations Management & Systems Consultant | Decoded Ops',
-  description: 'Technology and operations consultancy for print shops and promotional merchandise businesses. Print production scheduling, artwork approval workflow, and eCommerce integration.',
+  title: 'Print & Promotional Merchandise Operations | Decoded Ops',
+  description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
   alternates: { canonical: '/sectors/print-promotional' },
   openGraph: {
-    title: 'Print Shop Operations Management & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for print shops and promotional merchandise businesses. Print production scheduling, artwork approval workflow, and eCommerce integration.',
+    title: 'Print & Promotional Merchandise Operations | Decoded Ops',
+    description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
     url: 'https://decodedops.co.uk/sectors/print-promotional',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Print Shop Operations Management & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for print shops and promotional merchandise businesses. Print production scheduling, artwork approval workflow, and eCommerce integration.',
+    title: 'Print & Promotional Merchandise Operations | Decoded Ops',
+    description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
   },
 };
 
@@ -89,6 +90,10 @@ export default function PrintPromotionalPage() {
         'Quantify the real cost of every inefficiency found',
       ]}
       cta="Find out where your margin is going"
+    
+      slug="print-promotional"
+      targetService={sectorRouting['print-promotional'].targetService}
+      relatedProblems={sectorRouting['print-promotional'].relatedProblems}
     />
     </>
   );

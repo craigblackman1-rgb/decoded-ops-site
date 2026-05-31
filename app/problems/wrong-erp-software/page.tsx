@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
   title: 'Wrong ERP Software: How to Choose the Right System | Decoded Ops',
-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for small business in print, embroidery, and decoration — without the vendor bias.",
+  description: 'Chose an ERP that doesn\'t fit your operation? You\'re not alone. Here\'s how to evaluate ERP for print, embroidery, and decoration businesses — without the vendor bias.',
   alternates: { canonical: '/problems/wrong-erp-software' },
   openGraph: {
     title: 'Wrong ERP Software: How to Choose the Right System | Decoded Ops',
-    description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for small business in print, embroidery, and decoration — without the vendor bias.",
+    description: 'Chose an ERP that doesn\'t fit your operation? You\'re not alone. Here\'s how to evaluate ERP for print, embroidery, and decoration businesses — without the vendor bias.',
     url: 'https://decodedops.co.uk/problems/wrong-erp-software',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wrong ERP Software: How to Choose the Right System | Decoded Ops',
-    description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for small business — without the vendor bias.",
+    description: 'Chose an ERP that doesn\'t fit your operation? You\'re not alone. Here\'s how to evaluate ERP for print, embroidery, and decoration businesses — without the vendor bias.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function WrongERPSoftwarePage() {
         { title: "The total cost wasn't modelled", body: "Implementation, training, customisation, integration, ongoing support. The total cost of ownership for an ERP is often two to three times the headline licence cost. That comparison rarely happens before selection." },
       ]}
       howIHelp="If you're in a system that doesn't fit, I give you an honest assessment of what your options are. Sometimes there's more capability in the existing system than you're using — the implementation was poor, not the software. Sometimes the software genuinely isn't right and you need to plan a managed exit. Either way, I help you understand the real cost of staying versus moving — and if you're moving, I write the independent vendor brief that makes sure you don't end up in the same situation again. And if you're moving, I write the independent vendor brief that makes sure the next ERP for your small business is chosen on fit — not on how good the demo looked."
+    
+      slug="wrong-erp-software"
+      targetService={problemRouting['wrong-erp-software'].targetService}
+      relatedProblems={problemRouting['wrong-erp-software'].relatedProblems}
+      relatedReading={problemRouting['wrong-erp-software'].relatedReading}
     />
     </>
   );

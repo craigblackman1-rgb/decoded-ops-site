@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
   title: "Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops",
@@ -145,7 +146,12 @@ export default function CantScaleOperationsPage() {
           },
         ]}
         howIHelp="I come on site and follow how work moves through your business — the whole flow, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, identify what's missing, and quantify the cost in time, margin, and risk. Within five days you have a written report with every finding documented and every recommendation prioritised. Quick wins are separated from structural changes, so you know what to do this week and what to plan for properly. If you need help implementing the changes — not just identifying them — I run a structured Deliver engagement to do that work with you. And for businesses at a growth inflection point who need ongoing operational leadership, there's a retained option: monthly strategic and operational support without the cost of a full-time hire."
-      />
+      
+      slug="cant-scale-operations"
+      targetService={problemRouting['cant-scale-operations'].targetService}
+      relatedProblems={problemRouting['cant-scale-operations'].relatedProblems}
+      relatedReading={problemRouting['cant-scale-operations'].relatedReading}
+    />
     </>
   );
 }

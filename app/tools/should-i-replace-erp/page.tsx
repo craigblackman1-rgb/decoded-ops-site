@@ -16,9 +16,9 @@ const questions = [
 ];
 
 const results = [
-  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Your current system is probably capable of meeting your needs. The issue is more likely how it was implemented, configured, or adopted. Before you consider replacement, invest in an operational audit to identify what can be fixed with configuration, training, or better processes.', action: 'Book a Clarity Audit' },
-  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'You have real reasons to consider replacement, but moving too fast could lead to a second failed implementation. Start with an independent audit to scope your actual requirements, then use that brief to evaluate alternatives. Do not start talking to vendors until you know what you actually need.', action: 'Do an Audit First' },
-  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Your system is holding you back. The cost of staying is higher than the cost of moving. But how you exit matters — a managed transition over 6-12 months will cost less and cause less disruption than a rushed replacement. Start with an independent vendor brief written around your actual business, not a demo.', action: 'Start Planning' },
+  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
+  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Do an Audit First' },
+  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Start Planning' },
 ];
 
 type Answer = 'yes' | 'no' | null;

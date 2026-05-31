@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ReactNode } from 'react';
+import { BreadcrumbSchema } from './BreadcrumbSchema';
 
 interface ProblemPageProps {
   problem: string;
@@ -11,12 +12,27 @@ interface ProblemPageProps {
   symptoms: string[];
   causes: { title: string; body: string }[];
   howIHelp: string;
+  /** Slug for breadcrumb URL (e.g. 'erp-implementation-failure') */
+  slug?: string;
+  /** Target service for the "Get this fixed" CTA — drives internal-linking topology */
+  targetService?: { href: string; label: string; anchor: string };
+  /** 2-4 sibling problem pages */
+  relatedProblems?: { href: string; label: string }[];
+  /** 1-3 related blog posts */
+  relatedReading?: { href: string; label: string }[];
 }
 
-export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, symptoms, causes, howIHelp }: ProblemPageProps) {
+export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading }: ProblemPageProps) {
   const parts = headline.split('||');
   return (
     <>
+      {slug && (
+        <BreadcrumbSchema items={[
+          { name: 'Home', url: 'https://decodedops.co.uk/' },
+          { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
+          { name: problem, url: `https://decodedops.co.uk/problems/${slug}` },
+        ]} />
+      )}
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -126,6 +142,58 @@ export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, 
           </div>
         </div>
       </section>
+
+      {/* GET THIS FIXED — service routing + related problems + further reading */}
+      {(targetService || (relatedProblems && relatedProblems.length > 0) || (relatedReading && relatedReading.length > 0)) && (
+        <section className="py-16 lg:py-20 bg-[#F8F9FA] border-t border-[#023047]/10">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-3 gap-8">
+              {targetService && (
+                <div className="rounded-2xl bg-[#023047] text-white p-8">
+                  <div className="text-xs font-semibold tracking-wider uppercase text-[#FFB703] mb-3">Get this fixed</div>
+                  <h3 className="text-2xl font-bold mb-3">{targetService.label}</h3>
+                  <p className="text-white/80 text-sm leading-relaxed mb-6">{targetService.anchor}</p>
+                  <Link href={targetService.href} className="inline-flex items-center gap-2 text-[#FFB703] font-semibold hover:gap-3 transition-all">
+                    See how it works <ArrowRight size={18} />
+                  </Link>
+                </div>
+              )}
+              {relatedProblems && relatedProblems.length > 0 && (
+                <div className="rounded-2xl bg-white border border-[#023047]/10 p-8">
+                  <div className="text-xs font-semibold tracking-wider uppercase text-[#023047]/60 mb-3">Related problems</div>
+                  <h3 className="text-lg font-bold text-[#023047] mb-4">You might also have</h3>
+                  <ul className="space-y-3">
+                    {relatedProblems.map(p => (
+                      <li key={p.href}>
+                        <Link href={p.href} className="text-[#023047] hover:text-[#219EBC] flex items-start gap-2 text-sm leading-snug">
+                          <ArrowRight size={14} className="mt-1 flex-shrink-0 text-[#219EBC]" />
+                          <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {relatedReading && relatedReading.length > 0 && (
+                <div className="rounded-2xl bg-white border border-[#023047]/10 p-8">
+                  <div className="text-xs font-semibold tracking-wider uppercase text-[#023047]/60 mb-3">Further reading</div>
+                  <h3 className="text-lg font-bold text-[#023047] mb-4">From the blog</h3>
+                  <ul className="space-y-3">
+                    {relatedReading.map(p => (
+                      <li key={p.href}>
+                        <Link href={p.href} className="text-[#023047] hover:text-[#219EBC] flex items-start gap-2 text-sm leading-snug">
+                          <ArrowRight size={14} className="mt-1 flex-shrink-0 text-[#219EBC]" />
+                          <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

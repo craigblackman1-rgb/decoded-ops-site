@@ -3,21 +3,22 @@ import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
-  title: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
-  description: 'Technology and operations consultancy for garment decoration businesses. Embroidery business management, artwork management software, and production scheduling for embroidery and DTF.',
+  title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+  description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
   alternates: { canonical: '/sectors/garment-decoration' },
   openGraph: {
-    title: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Embroidery business management, artwork management software, and production scheduling for embroidery and DTF.',
+    title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
     url: 'https://decodedops.co.uk/sectors/garment-decoration',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Embroidery business management, artwork management software, and production scheduling for embroidery and DTF.',
+    title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
   },
 };
 
@@ -100,6 +101,10 @@ export default function GarmentDecorationPage() {
         'Quantify every finding in time, headcount, and money',
       ]}
       cta="Find out what your decoration workflow is really costing you"
+    
+      slug="garment-decoration"
+      targetService={sectorRouting['garment-decoration'].targetService}
+      relatedProblems={sectorRouting['garment-decoration'].relatedProblems}
     />
     </>
   );

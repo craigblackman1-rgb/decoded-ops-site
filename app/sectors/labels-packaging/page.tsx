@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Labels & Packaging Technology | Decoded Ops',
@@ -68,6 +69,10 @@ export default function LabelsPackagingPage() {
         'Recommend systems suited to the specific demands of short-run variable data label production',
       ]}
       cta="Understand the operational risk and cost in your labels business"
+    
+      slug="labels-packaging"
+      targetService={sectorRouting['labels-packaging'].targetService}
+      relatedProblems={sectorRouting['labels-packaging'].relatedProblems}
     />
     </>
   );

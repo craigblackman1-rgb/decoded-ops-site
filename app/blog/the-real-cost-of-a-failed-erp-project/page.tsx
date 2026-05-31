@@ -3,23 +3,23 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
-  description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
+  title: 'The Real Cost of a Failed ERP Project (And How to Avoid It) | Decoded Ops',
+  description: 'A real case study: £150k spent, 18 months wasted, and a system that still didn\'t work. Here\'s the full cost breakdown — and what an upfront audit would have prevented.',
   alternates: { canonical: '/blog/the-real-cost-of-a-failed-erp-project' },
   openGraph: {
     type: 'article',
     publishedTime: '2026-05-11T00:00:00Z',
     authors: ['https://decodedops.co.uk/about'],
     section: 'ERP',
-    title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
-    description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
+    title: 'The Real Cost of a Failed ERP Project (And How to Avoid It) | Decoded Ops',
+    description: 'A real case study: £150k spent, 18 months wasted, and a system that still didn\'t work. Here\'s the full cost breakdown — and what an upfront audit would have prevented.',
     url: 'https://decodedops.co.uk/blog/the-real-cost-of-a-failed-erp-project',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERP Implementation Failure: The Real Cost for Print & Embroidery Businesses | Decoded Ops',
-    description: 'How much does an ERP implementation failure actually cost in print, embroidery, and decoration? More than the software. The real numbers — and what an independent ERP implementation consultant would have prevented.',
+    title: 'The Real Cost of a Failed ERP Project (And How to Avoid It) | Decoded Ops',
+    description: 'A real case study: £150k spent, 18 months wasted, and a system that still didn\'t work. Here\'s the full cost breakdown — and what an upfront audit would have prevented.',
   },
 };
 
@@ -28,7 +28,7 @@ const schema = {
   '@graph': [
     {
       '@type': 'BlogPosting',
-      headline: 'The Real Cost of a Failed ERP Project',
+      headline: 'The Real Cost of a Failed ERP Project (Print & Embroidery)',
       datePublished: '2026-05-11T00:00:00Z',
       dateModified: '2026-05-11T00:00:00Z',
       author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
@@ -36,10 +36,10 @@ const schema = {
       image: 'https://decodedops.co.uk/opengraph-image',
       url: 'https://decodedops.co.uk/blog/the-real-cost-of-a-failed-erp-project',
       mainEntityOfPage: 'https://decodedops.co.uk/blog/the-real-cost-of-a-failed-erp-project',
-      description: 'How much does a failed ERP implementation actually cost print and embroidery businesses? The real numbers — software, implementation, time, and hidden costs.',
+      description: 'A real case study: £150k spent, 18 months wasted, and a system that still didn\'t work. Here\'s the full cost breakdown — and what an upfront audit would have prevented.',
       wordCount: 1700,
       articleSection: 'ERP',
-      keywords: 'ERP failure cost, ERP implementation failure, ERP ROI, print business ERP, embroidery business systems',
+      keywords: 'cost of failed erp project, erp project failure cost, failed erp implementation cost, erp write-off, ERP recovery cost',
     },
     {
       '@type': 'FAQPage',
@@ -84,7 +84,7 @@ export default function BlogPost() {
             <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Blog</span>
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            ERP Implementation Failure: <span className="text-[#219EBC]">The Real Cost for Print Businesses</span>
+            The Real Cost of a <span className="text-[#219EBC]">Failed ERP Project</span>
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
             How much does a failed ERP implementation actually cost? More than the software. More than the implementation fees. And in most cases, far more than the upfront audit that would have prevented it.
@@ -196,11 +196,16 @@ export default function BlogPost() {
             <div className="mt-12 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
               <h3 className="text-lg font-bold text-[#023047] mb-3">Thinking about a new ERP?</h3>
               <p className="text-[#023047]/80 leading-relaxed mb-6">
-                Before you talk to vendors, talk to someone who's seen this play out dozens of times. A free discovery call. No pitch. Just an honest conversation about whether you're heading into the same trap.
+                Before you talk to vendors, talk to someone who's seen this play out dozens of times. Our <Link href="/transform" className="text-[#219EBC] font-semibold underline underline-offset-2 hover:text-[#FB8500]">ERP implementation programme</Link> is built around exactly this — independent oversight, vendor accountability, and a clean exit if the project isn't tracking. Or start with <Link href="/problems/erp-implementation-failure" className="text-[#219EBC] font-semibold underline underline-offset-2 hover:text-[#FB8500]">why ERP projects fail in decorated goods businesses</Link>.
               </p>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/transform" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                  See the ERP implementation programme <ArrowRight size={18} />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#023047]/20 text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors">
+                  Or book a discovery call
+                </Link>
+              </div>
             </div>
 
           </div>

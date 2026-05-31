@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
   title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
-  description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
+  description: 'Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here\'s why — and how to avoid it.',
   alternates: { canonical: '/problems/erp-implementation-failure' },
   openGraph: {
     title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
-    description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
+    description: 'Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here\'s why — and how to avoid it.',
     url: 'https://decodedops.co.uk/problems/erp-implementation-failure',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
-    description: "Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.",
+    description: 'Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here\'s why — and how to avoid it.',
   },
 };
 
@@ -87,6 +88,11 @@ export default function ERPImplementationFailurePage() {
         { title: 'Wrong ERP for small business operations', body: "Sometimes the implementation fails because the ERP for small business was selected on demo, not on fit. A system that performs well for a distribution company can be a poor fit for a decorated goods business with mixed methods, variable artwork, and short-run personalisation." },
       ]}
       howIHelp="I come in after a failed or struggling implementation and give you an honest assessment of where it is, why it went wrong, and what the options are. Sometimes that means getting more out of the existing system. Sometimes it means a recovery plan. Sometimes it means acknowledging the sunk cost and starting over — with a proper independent brief this time. Either way, you get a clear picture and a practical path forward."
+    
+      slug="erp-implementation-failure"
+      targetService={problemRouting['erp-implementation-failure'].targetService}
+      relatedProblems={problemRouting['erp-implementation-failure'].relatedProblems}
+      relatedReading={problemRouting['erp-implementation-failure'].relatedReading}
     />
     </>
   );

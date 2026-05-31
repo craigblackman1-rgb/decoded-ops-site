@@ -98,10 +98,10 @@ export default function HomePage() {
               </h1>
 
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don&apos;t talk to each other.
+                You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don&apos;t talk to each other. <strong className="text-[#023047]">25 years inside print, embroidery, and decoration businesses</strong> says the same patterns repeat &mdash; and they&apos;re fixable.
               </p>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                I help print, embroidery, workwear, and promotional merchandise businesses decode exactly what&apos;s happening in their operation &mdash; and build a clear plan to fix it. Plain English. No jargon. No vendor agenda.
+                Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Clarity audit <strong className="text-[#023047]">from £395</strong>. Plain English. No jargon. No vendor agenda.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">

@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
-  title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
-  description: "Your Shopify orders come in but your stock doesn't update, your ERP doesn't know, and your invoicing is manual. Here's how to fix eCommerce integration for print and decoration businesses.",
+  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix | Decoded Ops',
+  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
   alternates: { canonical: '/problems/ecommerce-not-connected' },
   openGraph: {
-    title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
-    description: "Your Shopify orders come in but your stock doesn't update, your ERP doesn't know, and your invoicing is manual. Here's how to fix eCommerce integration for print and decoration businesses.",
+    title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix | Decoded Ops',
+    description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
     url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "eCommerce Integration for Small Business: Fix the Disconnect | Decoded Ops",
-    description: "Your Shopify orders come in but your stock doesn't update and your invoicing is manual. Here's how to fix eCommerce integration for decoration businesses.",
+    title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix | Decoded Ops',
+    description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function EcommerceNotConnectedPage() {
         { title: 'The wrong platform for the business model', body: "Generic eCommerce platforms weren't designed for businesses that decorate, personalise, or produce to order. The data model doesn't fit — and that limits what any integration can achieve. If the wholesale order system or eCommerce platform cannot represent your product data accurately, no integration will fix the underlying mismatch." },
       ]}
       howIHelp="I assess the specific integration problem — both systems, both data models, and the gap between them. Then I give you an independent view of what the realistic options are. That might be a proper integration using the APIs that exist. It might mean a middleware solution. It might mean acknowledging that the current eCommerce platform isn't the right one for your business model and helping you select a replacement. You get a clear view of costs, timescales, and risks for each option — not a sales pitch."
+    
+      slug="ecommerce-not-connected"
+      targetService={problemRouting['ecommerce-not-connected'].targetService}
+      relatedProblems={problemRouting['ecommerce-not-connected'].relatedProblems}
+      relatedReading={problemRouting['ecommerce-not-connected'].relatedReading}
     />
     </>
   );

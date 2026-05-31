@@ -5,19 +5,19 @@ import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
-  description: 'One-day technology and operations audit for print and decoration businesses. Written report, clear recommendations, 3x guarantee.',
+  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
     title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
-    description: 'One-day technology and operations audit for print and decoration businesses. Written report, clear recommendations, 3x guarantee.',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
     url: 'https://decodedops.co.uk/clarity',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology & Operations Audit | Decoded Ops',
-    description: 'One-day audit covering IT, software, eCommerce, processes, and AI readiness. Written report and 3x guarantee.',
+    title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
   },
 };
 import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';

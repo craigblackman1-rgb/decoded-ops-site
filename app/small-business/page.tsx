@@ -4,20 +4,20 @@ import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock } from 'l
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Small Business Operational Support | Decoded Ops',
-  description: 'Remote operational and technology support for small businesses under £500k. Fixed prices. No minimum commitment. Clarity Check from £395.',
+  title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
-    title: 'Small Business Operational Support | Decoded Ops',
-    description: 'Remote operational and technology support for small decoration, print, and workwear businesses. From £395. No jargon. No vendor agenda.',
+    title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Small Business Support | Decoded Ops',
-    description: 'Remote ops support for small print and decoration businesses. From £395. Plain English.',
+    title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
   },
 };
 
@@ -27,7 +27,7 @@ const smallBizSchema = {
     {
       '@type': 'Service',
       name: 'Small Business Operational Support',
-      description: 'Remote operational and technology support for small print, embroidery, decoration, and workwear businesses. Fixed prices with no minimum commitment.',
+      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
       serviceType: 'Small Business Operational Support',
       areaServed: 'GB',

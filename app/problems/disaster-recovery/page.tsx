@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
-  title: 'Business Continuity & Disaster Recovery Plan for Print Operations | Decoded Ops',
-  description: "What happens when your systems go down and you have orders to ship? Build a business continuity and disaster recovery plan for print, decoration, and workwear businesses.",
+  title: 'Business Continuity & Disaster Recovery for Print Operations | Decoded Ops',
+  description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
   alternates: { canonical: '/problems/disaster-recovery' },
   openGraph: {
-    title: 'Business Continuity & Disaster Recovery Plan for Print Operations | Decoded Ops',
-    description: "What happens when your systems go down and you have orders to ship? Build a business continuity and disaster recovery plan for print, decoration, and workwear businesses.",
+    title: 'Business Continuity & Disaster Recovery for Print Operations | Decoded Ops',
+    description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
     url: 'https://decodedops.co.uk/problems/disaster-recovery',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Business Continuity & Disaster Recovery Plan for Print Operations | Decoded Ops',
-    description: "What happens when your systems go down and you have orders to ship? Build a business continuity and disaster recovery plan for print and decoration businesses.",
+    title: 'Business Continuity & Disaster Recovery for Print Operations | Decoded Ops',
+    description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
   },
 };
 
@@ -86,6 +87,11 @@ export default function DisasterRecoveryPage() {
         { title: 'Cost of downtime is invisible until it happens', body: "Lost orders, halted production, missed despatch deadlines, overtime to catch up, and reputational damage — none of these appear on a balance sheet until the outage is over. By then the cost has already been incurred. For a small manufacturer, the RTO (recovery time objective) and RPO (recovery point objective) are rarely defined — which means nobody knows how much downtime is acceptable until they are in the middle of it." },
       ]}
       howIHelp="I assess your current technology stack, backup architecture, and recovery capabilities — then give you a practical DR plan built around your actual business. Not a 50-page IT document. A clear, prioritised set of actions covering what to protect first, how fast you can realistically recover each system, and what it would cost to reduce that recovery time. Plus a simple test schedule so you know the plan works before you need it."
+    
+      slug="disaster-recovery"
+      targetService={problemRouting['disaster-recovery'].targetService}
+      relatedProblems={problemRouting['disaster-recovery'].relatedProblems}
+      relatedReading={problemRouting['disaster-recovery'].relatedReading}
     />
     </>
   );

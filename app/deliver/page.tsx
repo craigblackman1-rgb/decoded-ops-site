@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'ERP & Technology Implementation Consultant | Decoded Ops',
-  description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses. No vendor agenda.',
+  description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses.',
   alternates: { canonical: '/deliver' },
   openGraph: {
     type: 'website',
     title: 'ERP & Technology Implementation Consultant | Decoded Ops',
-    description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses. No vendor agenda.',
+    description: 'Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses.',
     url: 'https://decodedops.co.uk/deliver',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },

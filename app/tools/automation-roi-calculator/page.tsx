@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: 'Automation ROI Calculator | Decoded Ops',
   description:
     'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+  alternates: { canonical: '/tools/automation-roi-calculator' },
 };
 
 export default function AutomationRoiCalculatorPage() {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
 import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
 import { JsonLd } from '@/components/JsonLd';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Signs & Graphics Technology | Decoded Ops',
@@ -68,6 +69,10 @@ export default function SignsGraphicsPage() {
         'Recommend technology suited to the specific operational model of a signs and graphics business',
       ]}
       cta="Understand where your signs business is losing time and margin"
+    
+      slug="signs-graphics"
+      targetService={sectorRouting['signs-graphics'].targetService}
+      relatedProblems={sectorRouting['signs-graphics'].relatedProblems}
     />
     </>
   );

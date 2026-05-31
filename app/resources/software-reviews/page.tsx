@@ -3,19 +3,19 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata = {
-  title: 'Software Reviews for Print & Embroidery | Decoded Ops',
-  description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+  title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+  description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
   alternates: { canonical: '/resources/software-reviews' },
   openGraph: {
     type: 'website',
-    title: 'Software Reviews for Print & Embroidery | Decoded Ops',
-    description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+    title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     url: 'https://decodedops.co.uk/resources/software-reviews',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software Reviews for Print & Embroidery | Decoded Ops',
-    description: 'Honest, independent reviews of ERP, eCommerce, and production software used in print, embroidery, and decoration businesses.',
+    title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
   },
 };
 
@@ -25,7 +25,7 @@ const schema = {
     {
       '@type': 'CollectionPage',
       name: 'Software Reviews for Print & Embroidery Businesses',
-      description: 'Honest, independent reviews of ERP, eCommerce, and production software.',
+      description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
       url: 'https://decodedops.co.uk/resources/software-reviews',
     },
   ],
@@ -34,27 +34,27 @@ const schema = {
 const reviews = [
   {
     name: 'Orderwise',
-    description: 'ERP and production management software widely used in the decorated goods sector. We review what it does well, where the gaps are, and what the implementation actually costs.',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     status: 'Coming soon',
   },
   {
     name: 'Unleashed',
-    description: 'Cloud-based inventory management and ERP platform. We assess its fit for businesses that manufacture, decorate, and despatch — rather than pure inventory management.',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     status: 'Coming soon',
   },
   {
     name: 'Printavo',
-    description: 'Shop management solution built for print and decoration shops. We review its production capabilities, integration options, and scalability.',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     status: 'Coming soon',
   },
   {
     name: 'Cin7',
-    description: 'Inventory and order management platform. We evaluate its multi-channel capabilities and suitability for businesses with complex production workflows.',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     status: 'Coming soon',
   },
   {
     name: 'Shopify + B2B Portal',
-    description: 'Using Shopify as a B2B ordering portal with custom pricing, credit terms, and multi-site management. We review the plugin ecosystem and integration requirements.',
+    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
     status: 'Coming soon',
   },
 ];
