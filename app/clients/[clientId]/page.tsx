@@ -19,6 +19,7 @@ import { tacklebagProposalV2 } from './data/tacklebag-proposal-v2';
 import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
 import { hanicksProposal } from './data/hanicks-proposal';
 import { cwearProposal } from './data/cwear-proposal';
+import { scotshirtsProposal } from './data/scotshirts-proposal';
 
 const proposals: Record<string, any> = {
   tacklebag: tacklebagProposal,
@@ -26,6 +27,7 @@ const proposals: Record<string, any> = {
   'cobra-workwear': cobraWorkwearProposal,
   hanicks: hanicksProposal,
   cwear: cwearProposal,
+  scotshirts: scotshirtsProposal,
 };
 
 function ProposalNav({ hasPortal, hasDemo }: { hasPortal: boolean; hasDemo: boolean }) {
