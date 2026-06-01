@@ -13,8 +13,21 @@ export default auth((req) => {
     return Response.redirect(new URL('/clients/login', nextUrl.origin))
   }
 
-  // Not logged in and visiting a protected route → login
-  if (!isLoggedIn && nextUrl.pathname !== '/clients/login') {
+  // /admin/* — require admin role
+  if (nextUrl.pathname.startsWith('/admin')) {
+    if (!isLoggedIn) {
+      const loginUrl = new URL('/clients/login', nextUrl.origin)
+      loginUrl.searchParams.set('callbackUrl', nextUrl.pathname)
+      return Response.redirect(loginUrl)
+    }
+    const user = req.auth?.user as { clientId?: string } | undefined
+    if (user?.clientId !== 'admin') {
+      return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
+    }
+  }
+
+  // Not logged in and visiting a protected client route → login
+  if (!isLoggedIn && nextUrl.pathname.startsWith('/clients') && nextUrl.pathname !== '/clients/login') {
     const loginUrl = new URL('/clients/login', nextUrl.origin)
     loginUrl.searchParams.set('callbackUrl', nextUrl.pathname)
     return Response.redirect(loginUrl)
@@ -24,5 +37,5 @@ export default auth((req) => {
 })
 
 export const config = {
-  matcher: ['/clients/:path*'],
+  matcher: ['/clients/:path*', '/admin/:path*'],
 }

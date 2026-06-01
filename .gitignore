@@ -43,3 +43,5 @@ next-env.d.ts
 proposal-*.md
 seo-task-hub.html
 cover-friday-*
+
+.vercel

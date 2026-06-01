@@ -2,6 +2,7 @@ import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { getClientDocuments } from '@/data/client-documents'
+import { getPublishedDocs } from '@/data/documents-store'
 import { ArrowLeft, FileText, FileSpreadsheet } from 'lucide-react'
 
 interface SessionUser {
@@ -54,7 +55,9 @@ export default async function ClientDocumentsPage() {
   const clientId = user.clientId || 'client'
   const clientName = clientNames[clientId] || clientId
   const isAdmin = clientId === 'admin'
+  const publishedState = getPublishedDocs()
 
+  // Get all docs for this client (or all clients for admin)
   let docs = isAdmin
     ? Object.entries(clientNames)
         .filter(([id]) => id !== 'admin')
@@ -62,6 +65,12 @@ export default async function ClientDocumentsPage() {
           getClientDocuments(id).map((d) => ({ ...d, clientRef: clientNames[id] || id }))
         )
     : getClientDocuments(clientId)
+
+  // Filter by published state (admin sees everything)
+  if (!isAdmin) {
+    const clientPublished = publishedState[clientId] || {}
+    docs = docs.filter((d) => clientPublished[d.id] === true)
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900">
@@ -80,7 +89,7 @@ export default async function ClientDocumentsPage() {
           <h1 className="text-3xl font-bold text-white mb-2">Document Library</h1>
           {!isAdmin && (
             <p className="text-slate-400">
-              Proposals, invoices, and project documents for <span className="text-white">{clientName}</span>.
+              Documents for <span className="text-white">{clientName}</span>.
             </p>
           )}
           {isAdmin && (
@@ -123,12 +132,13 @@ export default async function ClientDocumentsPage() {
                   </div>
                 </div>
                 {doc.href ? (
-                  <Link
+                  <a
                     href={doc.href}
+                    target="_blank"
                     className="shrink-0 px-3 py-1.5 text-xs font-medium text-[#219EBC] border border-[#219EBC]/30 rounded-lg hover:bg-[#219EBC]/10 transition-colors ml-4"
                   >
                     View
-                  </Link>
+                  </a>
                 ) : (
                   <span className="shrink-0 px-3 py-1.5 text-xs text-slate-500 ml-4">
                     Coming soon

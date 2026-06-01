@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice DO-003 — TackleBag × Decoded Ops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --prussian: #023047;
+  --cerulean: #219EBC;
+  --sky: #8ECAE6;
+  --amber: #FFB703;
+  --orange: #FB8500;
+  --offwhite: #F8F9FA;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--offwhite);
+  color: var(--prussian);
+  line-height: 1.5;
+  font-size: 14px;
+}
+h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px;
+}
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 3px solid var(--prussian);
+}
+.invoice-header .left .logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.invoice-header .left .logo span { color: var(--cerulean); }
+.invoice-header .left .tagline {
+  font-size: 12px;
+  color: #888;
+}
+.invoice-header .right { text-align: right; }
+.invoice-header .right h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--prussian);
+  letter-spacing: 1px;
+}
+.invoice-header .right .ref {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: var(--cerulean);
+  margin-top: 4px;
+}
+.address-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+.address-grid .col h3 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.address-grid .col p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+}
+.dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+.dates .item .label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+}
+.dates .item .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--prussian);
+}
+.table-wrap { margin-bottom: 32px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background: var(--prussian);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+th:last-child { text-align: right; }
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+td:last-child {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+tr:nth-child(even) td { background: #fafafa; }
+.total td {
+  font-weight: 800;
+  background: var(--prussian) !important;
+  color: white;
+  font-size: 16px;
+}
+.total td:last-child { font-size: 18px; }
+.payment-block {
+  margin-top: 32px;
+  padding: 24px;
+  background: #f0f4f8;
+  border-radius: 8px;
+  border-left: 4px solid var(--cerulean);
+}
+.payment-block h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--prussian);
+}
+.payment-block p {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+}
+.footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #999;
+}
+@media print {
+  body { background: white; }
+  .page { padding: 24px 32px; }
+}
+@media (max-width: 600px) {
+  .page { padding: 20px; }
+  .invoice-header { flex-direction: column-reverse; gap: 16px; }
+  .address-grid { grid-template-columns: 1fr; }
+  .dates { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="invoice-header">
+    <div class="left">
+      <div class="logo">Decoded<span>Ops</span></div>
+      <div class="tagline">Plain English. No jargon. No vendor agenda.</div>
+    </div>
+    <div class="right">
+      <h1>INVOICE</h1>
+      <div class="ref">DO-003</div>
+    </div>
+  </div>
+
+  <div class="address-grid">
+    <div class="col">
+      <h3>From</h3>
+      <p>
+        <strong>Decoded Ops</strong><br>
+        Craig Blackman<br>
+        craig@decodedops.co.uk<br>
+        07735 620 603
+      </p>
+    </div>
+    <div class="col">
+      <h3>To</h3>
+      <p>
+        <strong>TackleBag Ltd</strong><br>
+        Twickenham, London<br>
+        UK<br>
+        Attn: Paul Lawson
+      </p>
+    </div>
+  </div>
+
+  <div class="dates">
+    <div class="item">
+      <div class="label">Invoice Date</div>
+      <div class="value">May 2026</div>
+    </div>
+    <div class="item">
+      <div class="label">Due Date</div>
+      <div class="value">To be confirmed</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th style="text-align:right">Amount</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Data Application — Follow-on scope (DO-003) — TBC</td>
+          <td>TBC</td>
+        </tr>
+        <tr class="total">
+          <td colspan="2">Total Due</td>
+          <td>TBC</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="payment-block">
+    <h3>Notes</h3>
+    <p>This invoice covers the data application follow-on scope as agreed.</p>
+    <p>Full amount and payment terms to be confirmed upon scope finalisation.</p>
+    <p>Please quote invoice reference <strong>DO-003</strong> with payment.</p>
+  </div>
+
+  <div class="footer">
+    <span>Decoded Ops</span>
+    <span>Plain English. No jargon. No vendor agenda.</span>
+    <span>DO-003</span>
+  </div>
+
+</div>
+</body>
+</html>

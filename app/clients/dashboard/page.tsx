@@ -150,9 +150,17 @@ export default async function ClientDashboardPage() {
         {/* Admin overview */}
         {isAdmin && (
           <div className="border-t border-slate-700/50 pt-8">
-            <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
-              All Clients
-            </h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider">
+                Admin
+              </h2>
+              <Link
+                href="/admin/documents"
+                className="text-xs text-[#219EBC] hover:text-[#8ECAE6] transition-colors font-medium"
+              >
+                Manage published documents →
+              </Link>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {Object.entries(clientNames)
                 .filter(([id]) => id !== 'admin')
