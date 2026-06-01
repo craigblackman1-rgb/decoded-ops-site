@@ -1,15 +1,27 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { auth } from '@/auth'
+import { NextResponse } from 'next/server'
 
-export function middleware(request: NextRequest) {
-  // Don't redirect /clients routes
-  if (request.nextUrl.pathname.startsWith('/clients')) {
-    return NextResponse.next();
+export default auth((req) => {
+  const { nextUrl } = req
+  const isLoggedIn = !!req.auth
+
+  // Already logged in — redirect to dashboard from root listing or login
+  if (isLoggedIn) {
+    if (nextUrl.pathname === '/clients/login' || nextUrl.pathname === '/clients' || nextUrl.pathname === '/clients/') {
+      return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
+    }
   }
 
-  return NextResponse.next();
-}
+  // Not logged in and visiting a protected route → login
+  if (!isLoggedIn && nextUrl.pathname !== '/clients/login') {
+    const loginUrl = new URL('/clients/login', nextUrl.origin)
+    loginUrl.searchParams.set('callbackUrl', nextUrl.pathname)
+    return Response.redirect(loginUrl)
+  }
+
+  return NextResponse.next()
+})
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
-};
+  matcher: ['/clients/:path*'],
+}

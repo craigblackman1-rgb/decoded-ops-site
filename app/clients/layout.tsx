@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Client Proposals — Decoded Ops',
-  description: 'Gated client proposals and project documentation',
-  alternates: { canonical: '/clients' },
+  title: 'Client Portal — Decoded Ops',
+  description: 'Secure client portal — proposals, documents, and project resources.',
   robots: { index: false, follow: false },
 };
 

@@ -118,6 +118,7 @@ export function Header() {
               <Dropdown label="Resources" items={resources} />
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
+              <Link href="/clients/login" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Client Login</Link>
               <Link
                 href="/contact"
                 className="px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
@@ -143,6 +144,7 @@ export function Header() {
               {[
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'About', href: '/about' },
+                { label: 'Client Login', href: '/clients/login' },
               ].map(link => (
                 <Link
                   key={link.href + link.label}
