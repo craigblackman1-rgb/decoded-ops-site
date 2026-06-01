@@ -5,6 +5,14 @@ export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
 
+  // /clients root — redirect logged-in to dashboard, others to login
+  if (nextUrl.pathname === '/clients' || nextUrl.pathname === '/clients/') {
+    if (isLoggedIn) {
+      return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
+    }
+    return Response.redirect(new URL('/clients/login', nextUrl.origin))
+  }
+
   // Not logged in and visiting a protected route → login
   if (!isLoggedIn && nextUrl.pathname !== '/clients/login') {
     const loginUrl = new URL('/clients/login', nextUrl.origin)
