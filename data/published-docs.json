@@ -2,8 +2,10 @@
   "tacklebag": {
     "engagement-letter": true,
     "invoice-tb-001": true,
-    "invoice-do-003": false,
-    "terms-conditions": true
+    "invoice-do-003": true,
+    "terms-conditions": true,
+    "proposal-1": true,
+    "proposal-2": true
   },
   "cobra-workwear": {},
   "hanicks": {},
