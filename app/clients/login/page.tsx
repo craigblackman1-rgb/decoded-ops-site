@@ -1,19 +1,37 @@
 'use client'
 
-import { Suspense, useState, FormEvent } from 'react'
+import { Suspense, useState, FormEvent, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/clients/dashboard'
+  const { status } = useSession()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push(callbackUrl)
+    }
+  }, [status, callbackUrl, router])
+
+  if (status === 'loading') {
+    return (
+      <div className="text-center">
+        <div className="text-2xl font-bold tracking-tight mb-6">
+          <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
+        </div>
+        <p className="text-sm text-slate-400">Loading...</p>
+      </div>
+    )
+  }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -108,7 +126,7 @@ export default function ClientLoginPage() {
   return (
     <Suspense fallback={
       <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 flex items-center justify-center px-6">
-        <div className="w-full max-w-sm text-center">
+          <div className="w-full max-w-sm text-center">
           <div className="text-2xl font-bold tracking-tight mb-6">
             <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
           </div>
