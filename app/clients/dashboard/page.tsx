@@ -1,9 +1,8 @@
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { getClientDocuments } from '@/data/client-documents'
 import { SignOutButton } from '@/components/SignOutButton'
-import { FileText, FileCheck, ArrowRight } from 'lucide-react'
+import { FileText, ArrowRight } from 'lucide-react'
 
 interface SessionUser {
   name?: string | null
@@ -54,7 +53,6 @@ export default async function ClientDashboardPage() {
   const user = session.user as SessionUser
   const clientId = user.clientId || 'client'
   const clientName = clientNames[clientId] || clientId
-  const docs = getClientDocuments(clientId)
   const proposals = proposalLinks[clientId] || []
   const isAdmin = clientId === 'admin'
 
@@ -103,23 +101,20 @@ export default async function ClientDashboardPage() {
             </span>
           </Link>
 
-          <div className="p-6 border border-slate-700/50 rounded-xl bg-slate-800/20">
+          <Link
+            href="/clients/documents"
+            className="p-6 border border-slate-700/50 rounded-xl bg-slate-800/20 hover:bg-slate-800/40 hover:border-slate-600/50 transition-all group"
+          >
             <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-3">
-              Recent Activity
+              Recent Documents
             </h2>
-            {docs.length > 0 ? (
-              <ul className="space-y-2">
-                {docs.slice(0, 3).map((doc) => (
-                  <li key={doc.id} className="text-sm text-slate-400 flex items-start gap-2">
-                    <FileCheck size={14} className="mt-0.5 shrink-0 text-[#219EBC]" />
-                    <span>{doc.title} <span className="text-slate-500">— {doc.date}</span></span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-sm text-slate-500">No documents yet.</p>
-            )}
-          </div>
+            <p className="text-sm text-slate-400 mb-3">
+              View and download proposals, invoices, reports and project documents.
+            </p>
+            <span className="text-sm text-[#219EBC] font-medium group-hover:text-blue-300 flex items-center gap-1">
+              Browse all documents <ArrowRight size={14} />
+            </span>
+          </Link>
         </div>
 
         {/* Proposals */}
@@ -154,12 +149,9 @@ export default async function ClientDashboardPage() {
               <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider">
                 Admin
               </h2>
-              <Link
-                href="/admin/documents"
-                className="text-xs text-[#219EBC] hover:text-[#8ECAE6] transition-colors font-medium"
-              >
-                Manage published documents →
-              </Link>
+              <span className="text-xs text-slate-500">
+                Document publishing moved to Hub
+              </span>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {Object.entries(clientNames)
