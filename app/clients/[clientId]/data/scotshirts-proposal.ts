@@ -80,7 +80,7 @@ export const scotshirtsProposal = {
   roadmap: {
     tag: 'The plan',
     title: 'Three stages.\nOne direction.',
-    subtitle: 'We start by understanding the full picture. Everything after that is built on what we find.',
+    subtitle: 'I start by understanding the full picture. Everything after that is built on what I find.',
     phases: [
       {
         name: 'Phase 1 — Discovery Day',
@@ -90,13 +90,13 @@ export const scotshirtsProposal = {
       },
       {
         name: 'Phase 2 — Deliver',
-        duration: 'Months 1–6',
-        details: 'Discovery Day absorbed into Month 1. Quoting system designed and documented. Lead and enquiry management process built. Production scheduling moved off A3 sheets and into a system Vicky and Emily can run. Supplier automation scoped and implemented or briefed to a third party with full oversight.',
+        duration: 'Months 1–12',
+        details: 'Discovery Day absorbed into Month 1. The next twelve months move Scott Shirts systematically off paper. Months 1–3: quoting system and enquiry management built and the team trained on both. Months 4–8: production scheduling off the A3 sheets and into a system Vicky can run without being asked. Months 9–12: supplier automation live, Xero connected, and the business running visibly without you needing to be there.',
         order: 2,
       },
       {
         name: 'Phase 3 — Transform',
-        duration: 'Months 6+',
+        duration: 'Months 12+',
         details: 'If the engagement calls for a full app build — job sheet module, supplier feed automation, production scheduling — this is where it happens. Same commercial structure as the operational apps I\'m building for other garment decoration clients right now.',
         order: 1,
       },
@@ -191,11 +191,11 @@ export const scotshirtsProposal = {
         id: 'B',
         name: 'Deliver Consultancy',
         days: 'Embedded support · Unrestricted access',
-        amount: '£1,400/mo',
+        amount: '£1,500/mo',
         period: 'retainer',
-        minimum: '6-month minimum (£8,400)',
+        minimum: '12-month minimum (£18,000)',
         recommended: false,
-        bestFor: 'The full operational overhaul. Discovery Day absorbed into Month 1. Quoting system, enquiry management, production scheduling, and supplier automation — designed and implemented over six months. You finish with a business that runs without you having to be there.',
+        bestFor: 'A twelve-month programme to move Scott Shirts systematically off paper. Discovery Day absorbed into Month 1. Quoting system, enquiry management, production scheduling, and supplier automation — built, documented, and the team trained on all of it. You finish with a business Vicky and Emily can run without you needing to be there.',
         breakdown: [
           { label: 'Month 1 — Discovery Day fully absorbed', value: 'Included' },
           { label: 'Quoting system — pricing matrix accessible to all team members', value: 'Included' },
@@ -203,8 +203,9 @@ export const scotshirtsProposal = {
           { label: 'Production scheduling — off A3 sheets, into a system', value: 'Included' },
           { label: 'Supplier automation — AWD and others imported from file, not typed', value: 'Included' },
           { label: 'Xero integration scoped and connected', value: 'Included' },
+          { label: 'Team training throughout — Vicky and Emily run it, not just understand it', value: 'Included' },
           { label: 'Unrestricted email and phone access throughout', value: 'Included' },
-          { label: '£1,400/month · 6-month minimum · 30 days notice', value: '£8,400 min.' },
+          { label: '£1,500/month · 12-month minimum · 30 days notice', value: '£18,000 min.' },
         ],
       },
       {
@@ -230,7 +231,7 @@ export const scotshirtsProposal = {
     roi: [],
     paymentTerms: [
       'Tier 1 (Discovery Day): £1,500 fixed. 50% on signing, 50% on delivery of the written assessment.',
-      'Tier 2 (Deliver Consultancy): £1,400/month, invoiced monthly in advance. 6-month minimum. 30 days written notice after minimum period.',
+      'Tier 2 (Deliver Consultancy): £1,500/month, invoiced monthly in advance. 12-month minimum. 30 days written notice after minimum period.',
       'Tier 3 (Transform Programme): £1,800/month consultancy retainer plus a separate app build fee, both quoted after Discovery Day.',
       'Discovery Day credit: the £1,500 fee is credited against the first invoice of Deliver or Transform if you proceed within 60 days of the written assessment.',
       'Travel to Edinburgh: 45p/mile (HMRC rate), agreed in advance, invoiced at cost. Overnight accommodation where required, agreed in advance.',
@@ -254,8 +255,8 @@ export const scotshirtsProposal = {
       {
         num: 2,
         date: 'Step 2',
-        title: 'We agree the on-site date',
-        description: 'I\'ll contact you within one working day to confirm a date. We sort travel and any logistics together.',
+        title: 'Agree the on-site date',
+        description: 'I\'ll contact you within one working day to confirm a date. We sort out travel and logistics together before then.',
       },
       {
         num: 3,
@@ -292,7 +293,7 @@ export const scotshirtsProposal = {
     },
     options: [
       { id: 'C', name: 'Tier 1 — Discovery Day ⭐', desc: 'One day on-site · Written assessment · Roadmap (Recommended)', price: '£1,500 fixed' },
-      { id: 'B', name: 'Tier 2 — Deliver Consultancy', desc: 'Full operational overhaul — enquiry management, production scheduling, supplier automation', price: '£1,400/month' },
+      { id: 'B', name: 'Tier 2 — Deliver Consultancy', desc: '12-month programme — enquiry management, production scheduling, supplier automation, team training', price: '£1,500/month' },
       { id: 'A', name: 'Tier 3 — Transform Programme', desc: 'Full programme including custom app build — quoted after Discovery Day', price: '£1,800/month + build' },
     ],
   },
