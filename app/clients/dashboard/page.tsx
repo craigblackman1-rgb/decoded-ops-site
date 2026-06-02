@@ -35,7 +35,7 @@ const proposalLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'ERP Migration Discovery Proposal', href: '/clients/cwear' },
   ],
   scotshirts: [
-    { label: 'Proposal', href: '/clients/scotshirts' },
+    { label: 'Operational Systems Proposal — Scott Shirts', href: '/clients/scotshirts' },
   ],
   admin: [
     { label: 'TackleBag', href: '/clients/tacklebag' },
