@@ -75,10 +75,8 @@ export default async function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
-                  style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)', '--do-border-hover': 'var(--do-cerulean)' } as React.CSSProperties}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-border-subtle)'; }}
+                  className="blog-card group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
+                  style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
                 >
                   <div className="flex items-start justify-between gap-6 mb-4">
                     <div>
@@ -110,10 +108,8 @@ export default async function BlogPage() {
             <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Free Resources</h2>
             <Link
               href="/resources/audit-checklist"
-              className="group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
+              className="blog-card group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
               style={{ backgroundColor: 'var(--do-cerulean)/0.05', border: '1px solid var(--do-cerulean)/0.3' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.6'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.3'; }}
             >
               <div className="flex items-start justify-between gap-6">
                 <div>
@@ -139,9 +135,7 @@ export default async function BlogPage() {
             <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
               These resources are free. An audit is where things get specific — every finding quantified, every recommendation costed, every next step mapped.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary-hover)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary)'; }}>
+            <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               Book a free discovery call <ArrowRight size={18} />
             </Link>
           </div>
