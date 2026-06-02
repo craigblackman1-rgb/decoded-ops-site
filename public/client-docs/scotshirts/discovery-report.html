@@ -1,552 +1,385 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discovery Visit Report — ScotShirts — Decoded Ops</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --pb: #023047;
-      --ce: #219EBC;
-      --sb: #8ECAE6;
-      --am: #FFB703;
-      --or: #FB8500;
-      --ow: #F8F9FA;
-      --display: 'Outfit', system-ui, sans-serif;
-      --body: 'DM Sans', system-ui, -apple-system, sans-serif;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScotShirts — Discovery Notes | Decoded Ops</title>
+<meta name="description" content="ScotShirts discovery call notes — key observations, needs assessment, and recommended direction. Prepared by Decoded Ops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --prussian: #023047;
+  --cerulean: #219EBC;
+  --sky:      #8ECAE6;
+  --amber:    #FFB703;
+  --orange:   #FB8500;
+  --offwhite: #F8F9FA;
+  --bg:       var(--offwhite);
+  --fg:       var(--prussian);
+  --muted:    rgba(2,48,71,0.7);
+  --border:   rgba(142,202,230,0.4);
+  --border-soft: rgba(2,48,71,0.1);
+  --font-display: "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body:    "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
 
-    body {
-      background: var(--pb);
-      color: var(--ow);
-      font-family: var(--body);
-      font-size: 15px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    .page {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0;
-    }
+img { max-width: 100%; display: block; }
+a { color: var(--cerulean); text-decoration: underline; text-underline-offset: 2px; transition: color 200ms; }
+a:hover { color: var(--prussian); }
 
-    /* ── Hero Header ── */
-    .hero {
-      background: linear-gradient(135deg, var(--pb) 0%, #034063 100%);
-      padding: 64px 40px 48px;
-      position: relative;
-      overflow: hidden;
-    }
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--fg); margin: 0; }
+h1 { font-size: clamp(2.25rem, 5vw, 3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600; line-height: 1.25; }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 500; line-height: 1.25; }
+p  { margin: 0 0 1rem; color: var(--muted); }
+p:last-child { margin-bottom: 0; }
 
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 50% 60% at 80% 20%, rgba(33,158,188,0.12), transparent);
-      pointer-events: none;
-    }
+.do-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.25rem 0.75rem; border-radius: 9999px;
+  background: rgba(33,158,188,0.1); border: 1px solid rgba(33,158,188,0.2);
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--cerulean);
+  margin-bottom: 1rem;
+}
 
-    .hero__brand {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--ow);
-      letter-spacing: -0.01em;
-      margin-bottom: 40px;
-      position: relative;
-    }
+.do-container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+@media (min-width: 1024px) { .do-container { padding: 0 2rem; } }
 
-    .hero__brand span { color: var(--ce); }
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  height: 4.5rem;
+  background: rgba(248,249,250,0.95);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(142,202,230,0.3);
+  display: flex; align-items: center;
+}
+.site-header .do-container {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+}
+.logotype {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.25rem;
+  letter-spacing: -0.02em; color: var(--prussian); text-decoration: none;
+}
+.logotype span { color: var(--cerulean); }
+.header-meta { font-size: 0.875rem; color: var(--muted); }
 
-    .hero__label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--am);
-      padding: 6px 14px;
-      border-radius: 9999px;
-      background: rgba(255,183,3,0.1);
-      border: 1px solid rgba(255,183,3,0.2);
-      margin-bottom: 20px;
-      position: relative;
-    }
+/* Hero */
+.hero { padding: 8rem 0 3rem; text-align: center; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(33,158,188,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 { margin-bottom: 0.75rem; }
+.hero .subtitle { font-size: 1.125rem; color: var(--muted); max-width: 36rem; margin: 0 auto; }
 
-    .hero h1 {
-      font-family: var(--display);
-      font-weight: 900;
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--ow);
-      margin-bottom: 24px;
-      position: relative;
-    }
+.meta-strip {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem; font-size: 0.875rem; color: var(--muted);
+}
+.meta-strip span { display: inline-flex; align-items: center; gap: 0.375rem; }
+.meta-strip .label { color: var(--fg); font-weight: 600; }
+.meta-strip .status {
+  display: inline-block; padding: 0.125rem 0.625rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  background: rgba(33,158,188,0.12); color: var(--cerulean);
+}
 
-    .hero h1 em {
-      font-style: normal;
-      color: var(--ce);
-    }
+/* Content card */
+.content-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 1rem;
+  padding: 2.5rem; margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) { .content-card { padding: 3rem; } }
 
-    .hero__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      position: relative;
-    }
+.content-card h2 {
+  margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.content-card h2::after {
+  content: ''; position: absolute; bottom: -1px; left: 0;
+  width: 3rem; height: 2px; background: var(--cerulean);
+}
+.content-card h3 { margin: 1.5rem 0 0.75rem; color: var(--fg); }
+.content-card p, .content-card li { color: var(--muted); }
+.content-card ul, .content-card ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.content-card li { margin-bottom: 0.5rem; }
+.content-card li:last-child { margin-bottom: 0; }
+.content-card strong { color: var(--fg); }
+.content-card hr { margin: 2rem 0; border: none; border-top: 1px solid var(--border); }
 
-    .hero__meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+/* Problem cards */
+.problem-grid { display: grid; gap: 1rem; }
+@media (min-width: 768px) { .problem-grid { grid-template-columns: repeat(2, 1fr); } }
 
-    .hero__meta-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--sb);
-      opacity: 0.6;
-    }
+.problem-card {
+  background: var(--offwhite); border: 1px solid var(--border); border-radius: 1rem;
+  padding: 1.5rem; transition: border-color 300ms, box-shadow 300ms;
+}
+.problem-card:hover {
+  border-color: rgba(33,158,188,0.4);
+  box-shadow: 0 4px 8px -2px rgba(2,48,71,0.08), 0 2px 4px -2px rgba(2,48,71,0.04);
+}
+.problem-card .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 9999px;
+  background: rgba(33,158,188,0.12); color: var(--cerulean);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+.problem-card h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+.problem-card p { font-size: 0.9375rem; margin-bottom: 0; }
 
-    .hero__meta-value {
-      font-family: var(--display);
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--ow);
-    }
+/* Needs list */
+.needs-list { counter-reset: need; list-style: none; padding-left: 0 !important; }
+.needs-list li {
+  counter-increment: need; position: relative;
+  padding: 1rem 1rem 1rem 3.5rem; background: var(--offwhite);
+  border-radius: 0.75rem; margin-bottom: 0.75rem; border: 1px solid var(--border);
+  transition: border-color 300ms;
+}
+.needs-list li:hover { border-color: rgba(33,158,188,0.4); }
+.needs-list li::before {
+  content: counter(need); position: absolute; left: 0.75rem; top: 50%;
+  transform: translateY(-50%); width: 2rem; height: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 9999px; background: var(--prussian); color: var(--offwhite);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.875rem;
+}
 
-    /* ── Content Area ── */
-    .content {
-      background: var(--ow);
-      color: var(--pb);
-      padding: 48px 40px 64px;
-    }
+/* Checklist */
+.checklist { list-style: none; padding-left: 0 !important; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  padding: 0.75rem 0; border-bottom: 1px solid var(--border-soft);
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist .check {
+  flex-shrink: 0; width: 1.25rem; height: 1.25rem; margin-top: 0.125rem;
+  border-radius: 9999px; display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+}
+.checklist .check--done { background: rgba(22,163,74,0.12); color: #16A34A; }
+.checklist .check--todo { background: rgba(2,48,71,0.06); color: var(--muted); }
 
-    .content section {
-      margin-bottom: 48px;
-    }
+/* Context banner */
+.context-banner {
+  background: var(--prussian); color: var(--offwhite); border-radius: 1rem;
+  padding: 2rem 2.5rem; margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) { .context-banner { padding: 2.5rem 3rem; } }
+.context-banner h2 { color: var(--offwhite); border-bottom-color: rgba(248,249,250,0.15); }
+.context-banner h2::after { background: var(--amber); }
+.context-banner p { color: var(--sky); }
+.context-banner strong { color: var(--offwhite); }
+.context-banner .note {
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(248,249,250,0.1);
+  font-size: 0.875rem; color: var(--sky); font-style: italic;
+}
 
-    .content section:last-of-type {
-      margin-bottom: 0;
-    }
+/* Footer */
+.site-footer {
+  padding: 3rem 0; border-top: 1px solid var(--border);
+  text-align: center; font-size: 0.875rem; color: var(--muted);
+}
+.site-footer .logotype { display: inline-block; margin-bottom: 0.5rem; }
+.site-footer p { font-size: 0.875rem; margin-bottom: 0; }
 
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ce);
-      margin-bottom: 8px;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 20px;
-      height: 2px;
-      background: var(--ce);
-      border-radius: 1px;
-    }
-
-    .content h2 {
-      font-family: var(--display);
-      font-weight: 800;
-      font-size: 22px;
-      color: var(--pb);
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    .content h3 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--pb);
-      margin-bottom: 8px;
-      margin-top: 20px;
-    }
-
-    .content p {
-      font-size: 14.5px;
-      color: rgba(2,48,71,0.7);
-      margin-bottom: 14px;
-    }
-
-    .content ul, .content ol {
-      margin: 0 0 16px 20px;
-      font-size: 14.5px;
-      color: rgba(2,48,71,0.7);
-    }
-
-    .content li {
-      margin-bottom: 6px;
-    }
-
-    /* ── Executive Summary Card ── */
-    .summary-card {
-      padding: 24px 28px;
-      border-radius: 12px;
-      background: rgba(33,158,188,0.04);
-      border: 1px solid rgba(33,158,188,0.15);
-    }
-
-    .summary-card p {
-      margin: 0;
-      color: rgba(2,48,71,0.7);
-    }
-
-    /* ── Finding Cards ── */
-    .findings {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .finding {
-      padding: 20px 24px;
-      border-radius: 10px;
-      background: var(--ow);
-      border: 1px solid rgba(142,202,230,0.3);
-      border-left: 3px solid var(--ce);
-    }
-
-    .finding.low { border-left-color: var(--ce); }
-    .finding.medium { border-left-color: var(--am); }
-    .finding.high { border-left-color: var(--or); }
-    .finding.critical { border-left-color: #E63946; }
-
-    .finding__tag {
-      display: inline-block;
-      font-family: var(--display);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 9999px;
-      margin-bottom: 10px;
-    }
-
-    .finding__tag.ops { background: rgba(33,158,188,0.1); color: var(--ce); }
-    .finding__tag.tech { background: rgba(255,183,3,0.12); color: var(--or); }
-    .finding__tag.urgent { background: rgba(230,57,70,0.1); color: #E63946; }
-    .finding__tag.process { background: rgba(142,202,230,0.15); color: var(--pb); }
-
-    .finding h4 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--pb);
-      margin-bottom: 6px;
-    }
-
-    .finding p {
-      font-size: 13.5px;
-      color: rgba(2,48,71,0.6);
-      margin: 0;
-    }
-
-    /* ── Priority Actions ── */
-    .action-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .action-list li {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      border-radius: 10px;
-      background: var(--ow);
-      border: 1px solid rgba(142,202,230,0.25);
-    }
-
-    .action-number {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--pb);
-      color: var(--ce);
-      font-family: var(--display);
-      font-size: 13px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .action-content h4 {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--pb);
-      margin-bottom: 4px;
-    }
-
-    .action-content p {
-      font-size: 13.5px;
-      color: rgba(2,48,71,0.6);
-      margin: 0;
-    }
-
-    /* ── Next Steps ── */
-    .next-steps {
-      padding: 24px 28px;
-      border-radius: 12px;
-      background: var(--pb);
-      color: var(--ow);
-    }
-
-    .next-steps p {
-      color: var(--sb);
-    }
-
-    .next-steps ul {
-      color: var(--sb);
-    }
-
-    .next-steps li {
-      color: rgba(248,249,250,0.8);
-    }
-
-    .next-steps li::before {
-      color: var(--am);
-    }
-
-    /* ── Placeholder ── */
-    .placeholder {
-      background: rgba(255,183,3,0.06);
-      border: 1px dashed rgba(255,183,3,0.3);
-      border-radius: 10px;
-      padding: 28px 24px;
-      text-align: center;
-      color: rgba(2,48,71,0.35);
-      font-size: 13px;
-      font-style: italic;
-    }
-
-    .placeholder p {
-      margin: 0;
-      color: inherit;
-      font-style: italic;
-    }
-
-    /* ── Footer ── */
-    .footer {
-      background: var(--pb);
-      padding: 32px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      border-top: 1px solid rgba(248,249,250,0.06);
-    }
-
-    .footer__brand {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--ow);
-    }
-
-    .footer__brand span { color: var(--ce); }
-
-    .footer__links {
-      font-size: 12px;
-      color: var(--sb);
-      opacity: 0.6;
-    }
-
-    .footer__links a {
-      color: var(--sb);
-      text-decoration: none;
-      transition: color 200ms;
-    }
-
-    .footer__links a:hover { color: var(--am); }
-
-    .footer__confidential {
-      width: 100%;
-      text-align: center;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(248,249,250,0.2);
-      margin-top: 8px;
-    }
-
-    /* ── Print ── */
-    @media print {
-      body { background: #fff; color: #111; }
-      .hero { background: #fff; padding: 32px 24px 24px; }
-      .hero::before { display: none; }
-      .hero__brand { color: #111; }
-      .hero__brand span { color: var(--ce); }
-      .hero h1 { color: #111; }
-      .hero__meta-label { color: #666; }
-      .hero__meta-value { color: #333; }
-      .content { background: #fff; padding: 24px; }
-      .content h2 { color: #111; }
-      .content h3 { color: #111; }
-      .content p, .content li { color: #333; }
-      .summary-card { background: #f5f8fa; border-color: #d4e8f0; }
-      .finding { background: #fff; border-color: #d4e8f0; }
-      .finding h4 { color: #111; }
-      .finding p { color: #555; }
-      .action-list li { background: #fff; border-color: #d4e8f0; }
-      .action-number { background: var(--pb); color: var(--ce); }
-      .action-content h4 { color: #111; }
-      .action-content p { color: #555; }
-      .next-steps { background: #f5f5f5; color: #333; }
-      .next-steps p { color: #555; }
-      .next-steps li { color: #333; }
-      .footer { background: #fff; border-top-color: #ddd; }
-      .footer__brand { color: #111; }
-      .footer__links { color: #666; }
-      .footer__confidential { color: #bbb; }
-    }
-  </style>
+@media (max-width: 768px) {
+  .content-card { padding: 1.5rem; }
+  .header-meta { display: none; }
+}
+</style>
 </head>
 <body>
-  <div class="page">
 
-    <!-- ═══ HERO ═══ -->
-    <div class="hero">
-      <div class="hero__brand">Decoded<span>Ops</span></div>
-      <div class="hero__label">Discovery Visit Report</div>
-      <h1>ScotShirts — <em>Edinburgh</em></h1>
-      <div class="hero__meta">
-        <div class="hero__meta-item">
-          <span class="hero__meta-label">Client</span>
-          <span class="hero__meta-value">ScotShirts Ltd</span>
-        </div>
-        <div class="hero__meta-item">
-          <span class="hero__meta-label">Date</span>
-          <span class="hero__meta-value">[Date of Visit]</span>
-        </div>
-        <div class="hero__meta-item">
-          <span class="hero__meta-label">Consultant</span>
-          <span class="hero__meta-value">Craig Blackman</span>
-        </div>
-        <div class="hero__meta-item">
-          <span class="hero__meta-label">Contact</span>
-          <span class="hero__meta-value">Louise</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ CONTENT ═══ -->
-    <div class="content">
-
-      <!-- Executive Summary -->
-      <section>
-        <div class="section-label">Overview</div>
-        <h2>Executive Summary</h2>
-        <div class="summary-card">
-          <p>[Content to be added — High-level summary of the on-site discovery visit at ScotShirts. Cover the purpose of the visit, who was met, what was observed, and the overall assessment of current operations, systems, and opportunities for improvement.]</p>
-        </div>
-      </section>
-
-      <!-- Key Findings -->
-      <section>
-        <div class="section-label">Observations</div>
-        <h2>Key Findings</h2>
-        <div class="findings">
-
-          <div class="finding critical">
-            <span class="finding__tag urgent">Urgent</span>
-            <h4>[Finding title — critical priority issue]</h4>
-            <p>[Content to be added — Describe the finding, why it matters, and the observed evidence from the visit.]</p>
-          </div>
-
-          <div class="finding medium">
-            <span class="finding__tag tech">Technology</span>
-            <h4>[Finding title — systems or technology]</h4>
-            <p>[Content to be added — Describe the technology finding and its operational impact on the business.]</p>
-          </div>
-
-          <div class="finding low">
-            <span class="finding__tag ops">Operations</span>
-            <h4>[Finding title — process or workflow]</h4>
-            <p>[Content to be added — Describe the operational finding and the recommended direction for improvement.]</p>
-          </div>
-
-          <!-- Duplicate the .finding block above to add more findings -->
-
-        </div>
-      </section>
-
-      <!-- Priority Actions -->
-      <section>
-        <div class="section-label">Recommended Actions</div>
-        <h2>Priority Actions</h2>
-        <ol class="action-list">
-          <li>
-            <div class="action-number">1</div>
-            <div class="action-content">
-              <h4>[Priority action title]</h4>
-              <p>[Content to be added — Describe the action, who owns it, and the suggested timeline.]</p>
-            </div>
-          </li>
-          <li>
-            <div class="action-number">2</div>
-            <div class="action-content">
-              <h4>[Priority action title]</h4>
-              <p>[Content to be added — Describe the action, who owns it, and the suggested timeline.]</p>
-            </div>
-          </li>
-          <li>
-            <div class="action-number">3</div>
-            <div class="action-content">
-              <h4>[Priority action title]</h4>
-              <p>[Content to be added — Describe the action, who owns it, and the suggested timeline.]</p>
-            </div>
-          </li>
-          <!-- Duplicate li blocks to add items 4 and 5 -->
-        </ol>
-      </section>
-
-      <!-- Agreed Next Steps -->
-      <section>
-        <div class="section-label">Moving Forward</div>
-        <h2>Agreed Next Steps</h2>
-        <div class="next-steps">
-          <p>[Content to be added — Concrete next steps agreed with ScotShirts during the visit, including follow-up schedule, commitments made, and any deliverables to be produced.]</p>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
-      <div class="footer__brand">Decoded<span>Ops</span></div>
-      <div class="footer__links">
-        <a href="mailto:craig@decodedops.co.uk">craig@decodedops.co.uk</a> · <a href="https://decodedops.co.uk">decodedops.co.uk</a>
-      </div>
-      <div class="footer__confidential">Confidential — Prepared for ScotShirts Ltd by Decoded Ops</div>
-    </div>
-
+<header class="site-header">
+  <div class="do-container">
+    <a href="https://decodedops.co.uk" class="logotype">Decoded<span>Ops</span></a>
+    <div class="header-meta">Discovery Notes — Reference Only</div>
   </div>
+</header>
+
+<section class="hero">
+  <div class="do-container">
+    <span class="do-eyebrow">Discovery Call Notes</span>
+    <h1>ScotShirts</h1>
+    <p class="subtitle">Garment decoration business, Edinburgh. Key notes from the discovery call — reference only. A formal proposal will follow from these findings.</p>
+    <div class="meta-strip">
+      <span><span class="label">Contact:</span> Louise</span>
+      <span><span class="label">Business:</span> ScotShirts · Edinburgh</span>
+      <span><span class="label">Turnover:</span> £540,000</span>
+      <span><span class="status">Discovery complete</span></span>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="do-container" style="padding-bottom: 5rem;">
+
+  <!-- Context Banner -->
+  <div class="context-banner">
+    <h2>About these notes</h2>
+    <p>These are key observations and findings captured during the discovery call with Louise at ScotShirts. They are <strong>reference notes only</strong> — not a proposal, not a scope of work, and not a commitment to deliver. A formal proposal will be built from these findings and sent separately.</p>
+    <p class="note">Prepared by Craig Blackman, Decoded Ops · For discussion purposes only.</p>
+  </div>
+
+  <!-- The Business -->
+  <div class="content-card">
+    <h2>The business</h2>
+    <p>ScotShirts is a garment decoration business based in Edinburgh, in operation for 43 years. Louise took over from her parents three years ago.</p>
+
+    <h3>Services</h3>
+    <p>Screen print (6-station manual + automatic), heat seal (multiple machines including 898), DTF, embroidery.</p>
+
+    <h3>Team</h3>
+    <ul>
+      <li><strong>Vicky</strong> — Office manager, 16–18 years with the business. The production schedule and most operational knowledge lives in her head.</li>
+      <li><strong>Emily</strong> — Day-to-day implementation.</li>
+      <li><strong>Jamie</strong> — Shortest tenure at 3 years.</li>
+      <li><strong>Louise</strong> — Goes in 2–3 days per week. Ideas person, not an implementer. Relies on Vicky and Emily to execute.</li>
+    </ul>
+
+    <h3>Louise's background</h3>
+    <p>Marketing and branding. Grew up in this industry. Knows the technical side deeply. Has three rugby clubs approaching for teamwear. Strong leavers days niche (Ultimate Leavers Hoodies).</p>
+
+    <hr>
+
+    <h3>Three websites</h3>
+    <ol>
+      <li><strong>ScotShirts</strong> (scottshirts.co.uk) — main business</li>
+      <li><strong>Hoodie Tea / HUDT</strong> (hoodietee.com / hudt.com) — described as "horrendous," needs a redo</li>
+      <li><strong>Ultimate Leavers Hoodies</strong> (ultimateleavershoodies.com) — leavers days specific</li>
+    </ol>
+    <p>All three are enquiry-driven, not e-commerce. Louise is explicit: she does <strong>not</strong> want e-commerce on these sites. Clients — charities, schools, clubs, events — enquire, ScotShirts quotes and produces. The aim is one operational system behind all three brands.</p>
+  </div>
+
+  <!-- Current Problems -->
+  <div class="content-card">
+    <h2>Current problems</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">1</div>
+        <h4>Everything is on paper</h4>
+        <p>Orders written by hand in an order book. No digital order management. No visibility unless you walk to the order book.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">2</div>
+        <h4>Production schedule is in Vicky's head</h4>
+        <p>No system. Vicky manages it. If Vicky is off, nobody knows what to produce. A3 sheets on the office wall are the current "system."</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">3</div>
+        <h4>Manual supplier entry is wasting hours</h4>
+        <p>AWD orders arrive as Excel/CSV. Vicky manually enters every SKU, colour, and size on the supplier website — one line at a time. AWD has 100–200 colour options per product. 10–15 orders per two days = significant admin hours burned for no reason.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">4</div>
+        <h4>No lead follow-up</h4>
+        <p>Enquiries come in via the websites. Someone replies. Nobody tracks it. No CRM, no database. Louise knows that if she turns on paid advertising, the leads will flood in and fall straight through the gaps.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">5</div>
+        <h4>No standardised quoting</h4>
+        <p>Pricing lives in people's heads. Vicky and Emily quote from memory, not from a defined pricing matrix. No consistency. Hard to scale or hand off.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">6</div>
+        <h4>Xero just adopted</h4>
+        <p>Recently migrated to Xero. Whatever operational system comes next needs to integrate with it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Louise is NOT asking for -->
+  <div class="content-card">
+    <h2>What Louise is not asking for</h2>
+    <ul>
+      <li>E-commerce. She is clear on this.</li>
+      <li>A consultant who hands her documentation and walks away. She needs someone who does it.</li>
+      <li>A system that requires her to manage it. Vicky and Emily need to run it day-to-day without her.</li>
+    </ul>
+  </div>
+
+  <!-- Needs -->
+  <div class="content-card">
+    <h2>Needs — in priority order</h2>
+    <ol class="needs-list">
+      <li><strong>Operational visibility</strong> — see what's happening without being there.</li>
+      <li><strong>Production scheduling</strong> — off A3 sheets, into a system.</li>
+      <li><strong>Lead/enquiry management</strong> — track every enquiry from first contact to completed order.</li>
+      <li><strong>Standardised quoting</strong> — pricing matrix that Vicky and Emily both work from.</li>
+      <li><strong>Supplier feed automation</strong> — stop manually entering AWD orders.</li>
+      <li><strong>Xero integration</strong> — connect whatever goes in.</li>
+      <li><strong>Website consolidation</strong> — one system behind all three brands (lower urgency).</li>
+    </ol>
+  </div>
+
+  <!-- What Craig can build -->
+  <div class="content-card">
+    <h2>Transferable elements from other engagements</h2>
+    <p>Very similar profile to TackleBag. Craig is already building supplier feed automation, job sheet / production scheduling, and stock control for TackleBag. For ScotShirts, the transferable elements are:</p>
+    <ul>
+      <li>Supplier CSV import and automation (AWD → system)</li>
+      <li>Production schedule / job sheet app</li>
+      <li>Lead management (lightweight CRM/pipeline)</li>
+    </ul>
+    <p style="margin-top: 1rem; font-style: italic; font-size: 0.9375rem;">Note: DecoNetwork was discussed and both Craig and Louise agreed it is not suitable for ScotShirts' needs.</p>
+  </div>
+
+  <!-- Recommended direction -->
+  <div class="content-card">
+    <h2>Recommended direction</h2>
+    <p>Based on the discovery call, the recommended approach is to begin with a structured Discovery Day on-site in Edinburgh. This would cover:</p>
+    <ul>
+      <li>Walk every process end-to-end — from enquiry through to delivery</li>
+      <li>Document current-state workflows and pain points in detail</li>
+      <li>Produce a written assessment with issues register, requirements document, and prioritised roadmap</li>
+      <li>Define the scope for any custom application build (production scheduling, supplier automation, lead management)</li>
+    </ul>
+    <p style="margin-top: 1rem;">The Discovery Day fee would be credited against any subsequent engagement if ScotShirts proceeds within 60 days. A formal proposal with pricing and scope will be sent separately.</p>
+  </div>
+
+  <!-- Open questions -->
+  <div class="content-card">
+    <h2>Open questions / actions</h2>
+    <ul class="checklist">
+      <li><span class="check check--todo">•</span> Send proposal link by email</li>
+      <li><span class="check check--todo">•</span> Confirm Louise's surname and email (not captured on call)</li>
+      <li><span class="check check--done">✓</span> Turnover confirmed: £540,000 — Segment 1</li>
+      <li><span class="check check--todo">•</span> Discuss travel/overnight for Discovery Day</li>
+      <li><span class="check check--todo">•</span> Any peak season? Leavers days = May/June school calendar</li>
+      <li><span class="check check--todo">•</span> Budget expectation from Louise?</li>
+      <li><span class="check check--todo">•</span> Add to pipeline in DO Hub CRM</li>
+    </ul>
+  </div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="do-container">
+    <a href="https://decodedops.co.uk" class="logotype">Decoded<span>Ops</span></a>
+    <p>Operations and technology consultancy for the garment decoration, print, embroidery, workwear, and promotional merchandise sector.</p>
+  </div>
+</footer>
+
 </body>
 </html>
