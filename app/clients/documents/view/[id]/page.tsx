@@ -1,5 +1,6 @@
 import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 interface SessionUser {
   clientId?: string
@@ -27,12 +28,50 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
 
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'auto' }}>
-      <iframe
-        srcDoc={doc.html_content}
-        style={{ width: '100%', height: '100%', border: 'none' }}
-        title={doc.title}
-      />
-    </div>
+    <main style={{ minHeight: '100vh', background: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
+      <div style={{
+        background: '#fff',
+        borderBottom: '1px solid #d4e8f0',
+        padding: '12px 24px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Link
+            href="/clients/documents"
+            style={{
+              fontSize: 13,
+              color: '#219EBC',
+              textDecoration: 'none',
+              fontWeight: 500,
+            }}
+          >
+            ← Back to Documents
+          </Link>
+          <span style={{
+            width: 1, height: 20, background: '#d4e8f0', display: 'inline-block',
+          }} />
+          <span style={{
+            fontFamily: "'Outfit', Arial, sans-serif",
+            fontSize: 15,
+            fontWeight: 600,
+            color: '#023047',
+          }}>
+            {doc.title || doc.doc_number}
+          </span>
+        </div>
+        <div style={{ fontSize: 13, color: '#5a7d8f' }}>
+          {doc.doc_number}
+        </div>
+      </div>
+      <div style={{ flex: 1, position: 'relative' }}>
+        <iframe
+          srcDoc={doc.html_content}
+          style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+          title={doc.title}
+        />
+      </div>
+    </main>
   )
 }

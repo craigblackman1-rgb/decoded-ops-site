@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import ProposalHero from './components/ProposalHero';
 import ChallengeSection from './components/ChallengeSection';
 import JourneySection from './components/JourneySection';
@@ -19,6 +19,17 @@ import { cobraWorkwearProposal } from './data/cobra-workwear-proposal';
 import { hanicksProposal } from './data/hanicks-proposal';
 import { cwearProposal } from './data/cwear-proposal';
 import { scotshirtsProposal } from './data/scotshirts-proposal';
+
+// Populated after migration — doc IDs from Supabase
+// e.g. 'tacklebag': 'uuid-from-client_documents',
+const LEGACY_PROPOSAL_REDIRECTS: Record<string, string> = {
+  // 'tacklebag': '',
+  // 'tacklebag-v2': '',
+  // 'cobra-workwear': '',
+  // 'hanicks': '',
+  // 'cwear': '',
+  // 'scotshirts': '',
+};
 
 const proposals: Record<string, any> = {
   tacklebag: tacklebagProposal,
@@ -86,7 +97,16 @@ function ProposalNav({ hasPortal, hasDemo }: { hasPortal: boolean; hasDemo: bool
 
 export default function ProposalPage() {
   const params = useParams();
+  const router = useRouter();
   const clientId = (params.clientId as string) || 'tacklebag';
+
+  useEffect(() => {
+    const redirectDocId = LEGACY_PROPOSAL_REDIRECTS[clientId];
+    if (redirectDocId) {
+      router.push(`/clients/documents/view/${redirectDocId}`);
+    }
+  }, [clientId, router]);
+
   const proposal = proposals[clientId];
   if (!proposal) {
     return (

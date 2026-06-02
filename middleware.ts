@@ -1,6 +1,16 @@
 import { auth } from '@/auth'
 import { NextResponse } from 'next/server'
 
+// Proposal slugs that are publicly accessible (no login required)
+const PUBLIC_PROPOSALS = [
+  '/clients/tacklebag',
+  '/clients/tacklebag-v2',
+  '/clients/cobra-workwear',
+  '/clients/hanicks',
+  '/clients/cwear',
+  '/clients/scotshirts',
+]
+
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
@@ -24,6 +34,11 @@ export default auth((req) => {
     if (user?.clientId !== 'admin') {
       return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
     }
+  }
+
+  // Public proposal URLs — no auth required
+  if (PUBLIC_PROPOSALS.includes(nextUrl.pathname)) {
+    return NextResponse.next()
   }
 
   // Not logged in and visiting a protected client route → login
