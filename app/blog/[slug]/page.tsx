@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import type { Metadata } from 'next';
+import localBlogPosts from '@/data/blog-index.json';
 
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
@@ -113,10 +114,12 @@ export default async function BlogPost({ params }: PageProps) {
 
   if (!item) {
     return (
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-[#023047] mb-6">Blog Post Not Found</h1>
-          <Link href="/blog" className="text-[#219EBC] font-semibold hover:underline">← Back to Blog</Link>
+          <h1 className="text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Post Not Found</h1>
+          <Link href="/blog" className="font-semibold hover:underline" style={{ color: 'var(--do-cerulean)' }}>
+            <span className="inline-flex items-center gap-2"><ArrowLeft size={16} /> Back to Insights</span>
+          </Link>
         </div>
       </section>
     );
@@ -124,7 +127,7 @@ export default async function BlogPost({ params }: PageProps) {
 
   const pubDate = item.publishedDate ? new Date(item.publishedDate).toISOString() : new Date().toISOString();
   const displayDate = item.publishedDate
-    ? new Date(item.publishedDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
+    ? new Date(item.publishedDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
     : '';
   const wordCount = (item.html || '').replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length;
   const readTime = Math.max(1, Math.round(wordCount / 200));
@@ -138,19 +141,26 @@ export default async function BlogPost({ params }: PageProps) {
   return (
     <>
       {schemas.map((s, i) => <JsonLd key={i} data={s} />)}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+
+      {/* Article header */}
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: 'var(--do-surface-page)' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Blog</span>
+          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-8 hover:underline" style={{ color: 'var(--do-cerulean)' }}>
+            <ArrowLeft size={16} /> Back to Insights
+          </Link>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: 'var(--do-cerulean)/0.1', border: '1px solid var(--do-cerulean)/0.2' }}>
+            <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>{item.category || 'Insights'}</span>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
             {item.title}
           </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
-            {item.excerpt || ''}
-          </p>
-          <div className="flex items-center gap-4 text-sm text-[#023047]/60">
-            <span>By Craig Blackman</span>
+          {item.excerpt && (
+            <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--do-text-muted)' }}>
+              {item.excerpt}
+            </p>
+          )}
+          <div className="flex items-center gap-4 text-sm" style={{ color: 'var(--do-text-muted)', opacity: 0.7 }}>
+            <span>Craig Blackman</span>
             <span>·</span>
             <span>{displayDate}</span>
             <span>·</span>
@@ -159,24 +169,184 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="pt-2 lg:pt-4 pb-16 lg:pb-20">
+      {/* Article body */}
+      <section className="pt-4 pb-16 lg:pb-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="prose prose-lg max-w-none text-[#023047]"
+          <div
+            className="do-blog-prose"
             dangerouslySetInnerHTML={{ __html: item.html || '' }}
           />
-          <div className="mt-12 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">
+
+          {/* CTA box */}
+          <div className="mt-12 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-cerulean)/0.08', border: '1px solid var(--do-cerulean)/0.2' }}>
+            <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
               Plain English. No jargon. No vendor agenda.
             </h3>
-            <p className="text-[#023047]/80 leading-relaxed mb-6">
-              A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you'll never read. No recommendations you can't implement.
+            <p className="leading-relaxed mb-6" style={{ color: 'var(--do-text-muted)' }}>
+              A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
             </p>
-            <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary-hover)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary)'; }}>
               See Clarity <ArrowRight size={18} />
             </Link>
           </div>
+
+          {/* Related posts */}
+          {(() => {
+            const allPosts = localBlogPosts.items || [];
+            const related = allPosts
+              .filter((p: any) => p.slug !== slug && p.category === item.category)
+              .slice(0, 3);
+            if (related.length === 0) return null;
+            return (
+              <div className="mt-16 pt-12" style={{ borderTop: '1px solid var(--do-border-subtle)' }}>
+                <h3 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
+                  More in {item.category}
+                </h3>
+                <div className="space-y-6">
+                  {related.map((post: any) => {
+                    const pubDate = post.date || post.publishedDate;
+                    const date = pubDate ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : '';
+                    return (
+                      <Link
+                        key={post.slug}
+                        href={`/blog/${post.slug}`}
+                        className="group block p-6 rounded-xl transition-all duration-200 hover:shadow-sm"
+                        style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.4'; }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-border-subtle)'; }}
+                      >
+                        <h4 className="text-lg font-bold mb-2 group-hover:text-[var(--do-cerulean)] transition-colors" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
+                          {post.title}
+                        </h4>
+                        <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--do-text-muted)' }}>
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center gap-3 text-xs" style={{ color: 'var(--do-text-muted)', opacity: 0.6 }}>
+                          <span>{date}</span>
+                          <span>·</span>
+                          <span>{post.readTime} min read</span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
+
+      {/* Prose styling for blog post HTML content */}
+      <style jsx global>{`
+        .do-blog-prose {
+          color: var(--do-text-primary);
+          font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+          line-height: 1.75;
+          font-size: 1.0625rem;
+        }
+        .do-blog-prose h2 {
+          font-family: var(--font-outfit), sans-serif;
+          font-weight: 700;
+          font-size: 1.75rem;
+          line-height: 1.25;
+          color: var(--do-text-primary);
+          margin-top: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        .do-blog-prose h3 {
+          font-family: var(--font-outfit), sans-serif;
+          font-weight: 600;
+          font-size: 1.375rem;
+          line-height: 1.3;
+          color: var(--do-text-primary);
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+        }
+        .do-blog-prose p {
+          margin-bottom: 1.25rem;
+          color: var(--do-text-primary);
+        }
+        .do-blog-prose ul, .do-blog-prose ol {
+          margin-bottom: 1.25rem;
+          padding-left: 1.5rem;
+        }
+        .do-blog-prose li {
+          margin-bottom: 0.5rem;
+        }
+        .do-blog-prose strong {
+          font-weight: 600;
+          color: var(--do-text-primary);
+        }
+        .do-blog-prose a {
+          color: var(--do-cerulean);
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+        .do-blog-prose a:hover {
+          color: var(--do-orange);
+        }
+        .do-blog-prose blockquote {
+          border-left: 4px solid var(--do-amber);
+          padding: 1rem 1.25rem;
+          margin: 1.5rem 0;
+          background: var(--do-cerulean)/0.04;
+          border-radius: 0 var(--do-radius-lg) var(--do-radius-lg) 0;
+          font-style: italic;
+          color: var(--do-text-muted);
+        }
+        .do-blog-prose code {
+          font-family: ui-monospace, 'JetBrains Mono', 'IBM Plex Mono', Menlo, monospace;
+          font-size: 0.875rem;
+          background: var(--do-prussian-blue)/0.06;
+          padding: 0.15em 0.4em;
+          border-radius: var(--do-radius-sm);
+        }
+        .do-blog-prose pre {
+          background: var(--do-prussian-blue);
+          color: var(--do-off-white);
+          padding: 1.25rem;
+          border-radius: var(--do-radius-lg);
+          overflow-x: auto;
+          margin: 1.5rem 0;
+        }
+        .do-blog-prose pre code {
+          background: none;
+          padding: 0;
+          color: inherit;
+        }
+        .do-blog-prose img {
+          max-width: 100%;
+          height: auto;
+          border-radius: var(--do-radius-lg);
+          margin: 1.5rem 0;
+        }
+        .do-blog-prose table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5rem 0;
+          font-size: 0.9375rem;
+        }
+        .do-blog-prose th {
+          font-family: var(--font-outfit), sans-serif;
+          font-weight: 600;
+          text-align: left;
+          padding: 0.75rem 1rem;
+          border-bottom: 2px solid var(--do-prussian-blue);
+          color: var(--do-text-primary);
+        }
+        .do-blog-prose td {
+          padding: 0.75rem 1rem;
+          border-bottom: 1px solid var(--do-border-subtle);
+          color: var(--do-text-primary);
+        }
+        .do-blog-prose hr {
+          border: none;
+          border-top: 1px solid var(--do-border-subtle);
+          margin: 2rem 0;
+        }
+      `}</style>
     </>
   );
 }

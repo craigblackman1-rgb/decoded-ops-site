@@ -7,19 +7,19 @@ import localBlogPosts from '@/data/blog-index.json';
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  title: 'Operations & Technology Insights | Decoded Ops Blog',
-  description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+  title: 'Insights — Decoded Ops',
+  description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
   alternates: { canonical: '/blog' },
   openGraph: {
     type: 'website',
-    title: 'Operations & Technology Insights | Decoded Ops Blog',
-    description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+    title: 'Insights — Decoded Ops',
+    description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
     url: 'https://decodedops.co.uk/blog',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations & Technology Insights | Decoded Ops Blog',
-    description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+    title: 'Insights — Decoded Ops',
+    description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
   },
 };
 
@@ -28,8 +28,8 @@ const blogSchema = {
   '@type': 'CollectionPage',
   '@id': 'https://decodedops.co.uk/blog#collection',
   url: 'https://decodedops.co.uk/blog',
-  name: 'Operations & Technology Insights | Decoded Ops Blog',
-  description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+  name: 'Insights — Decoded Ops',
+  description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
@@ -51,13 +51,16 @@ export default async function BlogPage() {
   return (
     <>
       <JsonLd data={blogSchema} />
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            Blog & Resources
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: 'var(--do-prussian-blue)/0.08', border: '1px solid var(--do-prussian-blue)/0.15' }}>
+            <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: 'var(--do-prussian-blue)' }}>Insights</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
+            Things I&apos;ve learned the hard way
           </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed">
-            Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--do-text-muted)' }}>
+            Plain-English writing on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.
           </p>
         </div>
       </section>
@@ -72,67 +75,73 @@ export default async function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block p-8 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/60 hover:shadow-md transition-all duration-300 bg-white"
+                  className="group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
+                  style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)', '--do-border-hover': 'var(--do-cerulean)' } as React.CSSProperties}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-border-subtle)'; }}
                 >
                   <div className="flex items-start justify-between gap-6 mb-4">
                     <div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#219EBC]/10 border border-[#219EBC]/20 mb-4">
-                        <span className="text-xs font-semibold text-[#219EBC] uppercase">{post.category}</span>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style={{ backgroundColor: 'var(--do-cerulean)/0.1', border: '1px solid var(--do-cerulean)/0.2' }}>
+                        <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>{post.category}</span>
                       </div>
-                      <h2 className="text-2xl font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors mb-3">
+                      <h2 className="text-2xl font-bold transition-colors mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
                         {post.title}
                       </h2>
-                      <p className="text-[#023047]/70 leading-relaxed mb-4 max-w-2xl">
+                      <p className="leading-relaxed mb-4 max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
                         {post.excerpt}
                       </p>
                     </div>
                     <div className="flex-shrink-0 mt-2">
-                      <ArrowRight size={24} className="text-[#219EBC] group-hover:translate-x-2 transition-transform" />
+                      <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" style={{ color: 'var(--do-cerulean)' }} />
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-[#023047]/60">
+                  <div className="flex items-center gap-4 text-sm" style={{ color: 'var(--do-text-muted)', opacity: 0.7 }}>
                     <span>{date}</span>
-                    <span>•</span>
+                    <span>·</span>
                     <span>{post.readTime} min read</span>
-                    <span>•</span>
-                    <span>By Craig Blackman</span>
                   </div>
                 </Link>
               );
             })}
           </div>
 
-          <div className="border-t border-[#8ECAE6]/30 pt-16">
-            <h2 className="text-3xl font-bold text-[#023047] mb-8">Free Resources</h2>
+          <div className="border-t pt-16" style={{ borderColor: 'var(--do-border-subtle)' }}>
+            <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Free Resources</h2>
             <Link
               href="/resources/audit-checklist"
-              className="group block p-8 rounded-2xl border border-[#219EBC]/40 hover:border-[#219EBC]/70 hover:shadow-md transition-all duration-300 bg-[#219EBC]/5"
+              className="group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
+              style={{ backgroundColor: 'var(--do-cerulean)/0.05', border: '1px solid var(--do-cerulean)/0.3' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.6'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.3'; }}
             >
               <div className="flex items-start justify-between gap-6">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-                    <span className="text-xs font-semibold text-[#219EBC] uppercase">Checklist</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style={{ backgroundColor: 'var(--do-cerulean)/0.15', border: '1px solid var(--do-cerulean)/0.3' }}>
+                    <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>Checklist</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors mb-3">
+                  <h3 className="text-2xl font-bold transition-colors mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
                     Operational Audit Checklist
                   </h3>
-                  <p className="text-[#023047]/70 leading-relaxed max-w-2xl">
-                    20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant—or to understand what an audit actually covers.
+                  <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
+                    20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant — or to understand what an audit actually covers.
                   </p>
                 </div>
                 <div className="flex-shrink-0 mt-2">
-                  <ArrowRight size={24} className="text-[#219EBC] group-hover:translate-x-2 transition-transform" />
+                  <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" style={{ color: 'var(--do-cerulean)' }} />
                 </div>
               </div>
             </Link>
           </div>
 
-          <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Ready to dive deeper?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
-              These resources are free. An audit is where things get specific—every finding quantified, every recommendation costed, every next step mapped.
+          <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-surface-dark)' }}>
+            <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-on-dark)' }}>Ready to dive deeper?</h3>
+            <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
+              These resources are free. An audit is where things get specific — every finding quantified, every recommendation costed, every next step mapped.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary-hover)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary)'; }}>
               Book a free discovery call <ArrowRight size={18} />
             </Link>
           </div>

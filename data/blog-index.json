@@ -10,105 +10,6 @@
       "featuredImage": null
     },
     {
-      "slug": "embroidery-stitch-density",
-      "title": "Embroidery Stitch Density: The Operations Guide for Print Businesses",
-      "excerpt": "How embroidery stitch density affects quality, machine throughput, and production costs.",
-      "date": "2026-05-19",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "heat-press-temperature-settings",
-      "title": "Heat Press Temperature & Dwell Time: The Operations Guide",
-      "excerpt": "Get heat press temperature, pressure, and dwell time right. A practical guide for decorated goods production managers.",
-      "date": "2026-05-19",
-      "readTime": 7,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "what-happens-when-your-systems-go-down",
-      "title": "What Happens to Your Business When Your Systems Go Down",
-      "excerpt": "System downtime costs more than you think. Here's how to calculate the real cost and build resilience.",
-      "date": "2026-05-15",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "ralawise-integration",
-      "title": "Ralawise Integration: Automating Bulk Orders Without the Chaos",
-      "excerpt": "Stop manually ordering from Ralawise. Here's how to automate ordering, inventory sync, and demand forecasting.",
-      "date": "2026-05-20",
-      "readTime": 9,
-      "category": "Integration",
-      "featuredImage": null
-    },
-    {
-      "slug": "screen-printing-vs-heat-transfer",
-      "title": "Screen Printing vs. Heat Transfer: Which Method Actually Makes Sense for Your Shop?",
-      "excerpt": "Screen printing or heat transfer? The right answer depends on order volume, substrate, and your workflow.",
-      "date": "2026-05-22",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "artwork-approval-process",
-      "title": "Artwork Approval Workflow: Stop Losing Days to Email Ping-Pong",
-      "excerpt": "Email-based artwork approval is killing your production timeline. Here's a workflow that cuts approval time from days to hours.",
-      "date": "2026-05-25",
-      "readTime": 7,
-      "category": "Workflow",
-      "featuredImage": null
-    },
-    {
-      "slug": "bulk-order-management",
-      "title": "Bulk Order Management: How to Buy Smart Without Tying Up Cash",
-      "excerpt": "Bulk ordering is a balancing act between service levels and cash flow. Here's a framework to get it right.",
-      "date": "2026-05-27",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "print-production-scheduling",
-      "title": "Print Production Scheduling: Stop Promising Delivery Dates You Can't Keep",
-      "excerpt": "Production scheduling is the difference between happy customers and constant firefighting.",
-      "date": "2026-06-01",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": null
-    },
-    {
-      "slug": "embroidery-quality-standards",
-      "title": "Embroidery Quality Standards: How to Know What 'Good' Actually Looks Like",
-      "excerpt": "Without written quality standards, embroidery QC is subjective. Here's how to set standards that reduce rework.",
-      "date": "2026-06-03",
-      "readTime": 8,
-      "category": "Quality",
-      "featuredImage": null
-    },
-    {
-      "slug": "ai-isnt-your-problem-your-processes-are",
-      "title": "AI Isn't Your Problem. Your Processes Are.",
-      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI.",
-      "date": "2026-05-25",
-      "readTime": 7,
-      "category": "Technology",
-      "featuredImage": null
-    },
-    {
-      "slug": "ecommerce-integration-trap",
-      "title": "The eCommerce Integration Trap",
-      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong and how to avoid the common pitfalls.",
-      "date": "2026-05-10",
-      "readTime": 6,
-      "category": "Integration",
-      "featuredImage": null
-    },
-    {
       "slug": "5-questions-vendors-wont-like",
       "title": "5 Questions Your Software Vendor Doesn't Want You to Ask",
       "excerpt": "Before you sign a software contract, ask these five questions.",
@@ -124,6 +25,24 @@
       "date": "2026-04-28",
       "readTime": 8,
       "category": "Integration",
+      "featuredImage": null
+    },
+    {
+      "slug": "ecommerce-integration-trap",
+      "title": "The eCommerce Integration Trap",
+      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong and how to avoid the common pitfalls.",
+      "date": "2026-05-10",
+      "readTime": 6,
+      "category": "Integration",
+      "featuredImage": null
+    },
+    {
+      "slug": "what-happens-when-your-systems-go-down",
+      "title": "What Happens to Your Business When Your Systems Go Down",
+      "excerpt": "System downtime costs more than you think. Here's how to calculate the real cost and build resilience.",
+      "date": "2026-05-15",
+      "readTime": 8,
+      "category": "Operations",
       "featuredImage": null
     },
     {
@@ -199,12 +118,21 @@
       "featuredImage": null
     },
     {
+      "slug": "ai-isnt-your-problem-your-processes-are",
+      "title": "AI Isn't Your Problem. Your Processes Are.",
+      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI.",
+      "date": "2026-05-25",
+      "readTime": 7,
+      "category": "Technology",
+      "featuredImage": null
+    },
+    {
       "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
       "title": "How to Evaluate an AI Tool Without Getting Sold To",
-      "excerpt": "How to Evaluate an AI Tool Without Getting Sold To",
+      "excerpt": "Most AI tools solve problems you don't have yet. Here's how to evaluate one honestly — without the sales pitch.",
       "date": "2026-06-02",
-      "readTime": 1,
-      "category": "Operations",
+      "readTime": 7,
+      "category": "Technology",
       "featuredImage": null
     },
     {
