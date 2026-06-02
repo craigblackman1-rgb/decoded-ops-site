@@ -1,4 +1,5 @@
 export const tacklebagProposalV2 = {
+  quoteNumber: 'DO-Q-2026-001',
   accessCode: 'PK9-TB26-XM7R',
   client: {
     name: 'TackleBag',

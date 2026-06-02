@@ -1,4 +1,5 @@
 export const hanicksProposal = {
+  quoteNumber: 'DO-Q-2026-005',
   accessCode: 'KJ7M-DV9X-QR2L',
   client: {
     name: 'Hanicks',

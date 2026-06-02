@@ -1,4 +1,5 @@
 export const scotshirtsProposal = {
+  quoteNumber: 'DO-Q-2026-004',
   accessCode: 'SCOTT2026',
   client: {
     name: 'Louise',

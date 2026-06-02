@@ -1,4 +1,5 @@
 export const cobraWorkwearProposal = {
+  quoteNumber: 'DO-Q-2026-002',
   accessCode: 'COBRA2026',
   client: {
     name: 'Aled',

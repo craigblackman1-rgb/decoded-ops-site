@@ -1,4 +1,5 @@
 export const cwearProposal = {
+  quoteNumber: 'DO-Q-2026-003',
   accessCode: 'CWEAR2026',
   client: {
     name: 'Vinay',
