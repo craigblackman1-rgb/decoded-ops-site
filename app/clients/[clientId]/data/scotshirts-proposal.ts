@@ -3,11 +3,11 @@ export const scotshirtsProposal = {
   accessCode: 'SCOTT2026',
   client: {
     name: 'Louise',
-    company: 'Scott Shirts',
+    company: 'Scotshirts',
     industry: 'Garment Decoration — Screen Print, DTF & Embroidery',
   },
   hero: {
-    tag: 'Proposal · Scott Shirts · June 2026',
+    tag: 'Proposal · Scotshirts · June 2026',
     title: 'From paper orders<br>to a business you can<br><span class="amber">actually see.</span>',
     subtitle: 'One day on-site in Edinburgh. I look at every process — how orders come in, how production gets managed, how you quote, how you follow up leads — and tell you exactly what to fix first.',
     stats: [
@@ -19,7 +19,7 @@ export const scotshirtsProposal = {
   challenge: {
     tag: 'What\'s in the way',
     title: 'The skills are there.\nThe kit is there.\nThe visibility isn\'t.',
-    subtitle: 'Scott Shirts has been running for 43 years. The problem isn\'t capability — it\'s that everything is managed on paper, in people\'s heads, and across email inboxes. When you can\'t see what\'s happening, it\'s very hard to grow.',
+    subtitle: 'Scotshirts has been running for 43 years. The problem isn\'t capability — it\'s that everything is managed on paper, in people\'s heads, and across email inboxes. When you can\'t see what\'s happening, it\'s very hard to grow.',
     painPoints: [
       {
         title: 'Orders on paper — no overview',
@@ -91,7 +91,7 @@ export const scotshirtsProposal = {
       {
         name: 'Phase 2 — Deliver',
         duration: 'Months 1–12',
-        details: 'Discovery Day absorbed into Month 1. The next twelve months move Scott Shirts systematically off paper. Months 1–3: quoting system and enquiry management built and the team trained on both. Months 4–8: production scheduling off the A3 sheets and into a system Vicky can run without being asked. Months 9–12: supplier automation live, Xero connected, and the business running visibly without you needing to be there.',
+        details: 'Discovery Day absorbed into Month 1. The next twelve months move Scotshirts systematically off paper. Months 1–3: quoting system and enquiry management built and the team trained on both. Months 4–8: production scheduling off the A3 sheets and into a system Vicky can run without being asked. Months 9–12: supplier automation live, Xero connected, and the business running visibly without you needing to be there.',
         order: 2,
       },
       {
@@ -106,7 +106,7 @@ export const scotshirtsProposal = {
   quickWinsSection: {
     tag: 'What gets fixed',
     title: 'Three areas.\nOne structured day.\nNothing guessed.',
-    subtitle: 'These are the three areas that will have the biggest impact on how Scott Shirts runs day to day. Everything I audit feeds into these directly.',
+    subtitle: 'These are the three areas that will have the biggest impact on how Scotshirts runs day to day. Everything I audit feeds into these directly.',
   },
   quickWins: [
     {
@@ -154,7 +154,7 @@ export const scotshirtsProposal = {
       {
         typical: 'Recommends software where they earn referral fees or commissions',
         decoded: 'Zero vendor relationships. Zero commissions. No preferred supplier list.',
-        benefit: 'Every recommendation is based on what\'s right for Scott Shirts, nothing else.',
+        benefit: 'Every recommendation is based on what\'s right for Scotshirts, nothing else.',
       },
       {
         typical: 'Large firm — junior consultant does the work, senior signs it off',
@@ -179,7 +179,7 @@ export const scotshirtsProposal = {
         recommended: true,
         bestFor: 'One structured day on-site in Edinburgh. I walk every process, talk to Vicky and Emily, and look at how orders, production, quoting, and enquiries actually work — not how they\'re supposed to. Written assessment within 5 working days. The £1,500 is credited against Deliver or Transform if you proceed within 60 days.',
         breakdown: [
-          { label: 'Full day on-site at Scott Shirts, Edinburgh', value: 'Included' },
+          { label: 'Full day on-site at Scotshirts, Edinburgh', value: 'Included' },
           { label: 'Written assessment — findings, priorities, what to do first', value: 'Included' },
           { label: 'Issues register — everything logged, nothing missed', value: 'Included' },
           { label: 'Requirements document — what the systems need to do', value: 'Included' },
@@ -195,7 +195,7 @@ export const scotshirtsProposal = {
         period: 'retainer',
         minimum: '12-month minimum (£18,000)',
         recommended: false,
-        bestFor: 'A twelve-month programme to move Scott Shirts systematically off paper. Discovery Day absorbed into Month 1. Quoting system, enquiry management, production scheduling, and supplier automation — built, documented, and the team trained on all of it. You finish with a business Vicky and Emily can run without you needing to be there.',
+        bestFor: 'A twelve-month programme to move Scotshirts systematically off paper. Discovery Day absorbed into Month 1. Quoting system, enquiry management, production scheduling, and supplier automation — built, documented, and the team trained on all of it. You finish with a business Vicky and Emily can run without you needing to be there.',
         breakdown: [
           { label: 'Month 1 — Discovery Day fully absorbed', value: 'Included' },
           { label: 'Quoting system — pricing matrix accessible to all team members', value: 'Included' },
@@ -215,7 +215,7 @@ export const scotshirtsProposal = {
         amount: '£1,800/mo',
         period: 'retainer',
         minimum: 'Milestone-based minimum',
-        bestFor: 'The full programme, including a custom app build — job sheet and production module, supplier feed automation, enquiry management — built specifically for how Scott Shirts operates. Same model as the apps I\'m building for other garment decoration clients right now. Consultancy retainer plus a separate build fee, quoted after Discovery Day.',
+        bestFor: 'The full programme, including a custom app build — job sheet and production module, supplier feed automation, enquiry management — built specifically for how Scotshirts operates. Same model as the apps I\'m building for other garment decoration clients right now. Consultancy retainer plus a separate build fee, quoted after Discovery Day.',
         breakdown: [
           { label: 'Everything in Deliver — fully absorbed', value: 'Included' },
           { label: 'Custom job sheet and production scheduling app', value: 'Included' },
@@ -276,7 +276,7 @@ export const scotshirtsProposal = {
     title: 'Select your option\nand let\'s begin.',
     subtitle: 'Fill in your details below and I\'ll confirm the Discovery Day date within one working day.',
     client: {
-      company: 'Scott Shirts',
+      company: 'Scotshirts',
       placeholders: {
         name: 'Louise',
         title: 'Director',
