@@ -57,13 +57,13 @@ export default async function ClientDashboardPage() {
   const isAdmin = clientId === 'admin'
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900">
+    <main className="min-h-screen bg-[#F8F9FA]">
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
             <Link href="/" className="text-lg font-bold tracking-tight">
-              <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
+              <span className="text-[#023047]">Decoded</span><span className="text-[#FFB703]">Ops</span>
             </Link>
           </div>
           <SignOutButton />
@@ -71,10 +71,10 @@ export default async function ClientDashboardPage() {
 
         {/* Welcome */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-3xl font-bold text-[#023047] mb-2">
             Welcome, {user.name || 'Client'}
           </h1>
-          <p className="text-slate-400">
+          <p className="text-[#5a7d8f]">
             {clientName} portal — documents, proposals, and project resources.
           </p>
         </div>
@@ -83,35 +83,35 @@ export default async function ClientDashboardPage() {
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           <Link
             href="/clients/documents"
-            className="p-6 border border-blue-500/20 rounded-xl bg-blue-950/10 hover:bg-blue-950/20 hover:border-blue-400/40 transition-all group"
+            className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-[#219EBC]/20 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-[#219EBC]/10 flex items-center justify-center">
                 <FileText size={20} className="text-[#219EBC]" />
               </div>
-              <h2 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
+              <h2 className="text-lg font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors">
                 Document Library
               </h2>
             </div>
-            <p className="text-sm text-slate-400 mb-3">
+            <p className="text-sm text-[#5a7d8f] mb-3">
               Access proposals, invoices, reports and project documents.
             </p>
-            <span className="text-sm text-[#219EBC] font-medium group-hover:text-blue-300 flex items-center gap-1">
+            <span className="text-sm text-[#219EBC] font-medium group-hover:text-[#023047] flex items-center gap-1">
               Browse documents <ArrowRight size={14} />
             </span>
           </Link>
 
           <Link
             href="/clients/documents"
-            className="p-6 border border-slate-700/50 rounded-xl bg-slate-800/20 hover:bg-slate-800/40 hover:border-slate-600/50 transition-all group"
+            className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
           >
-            <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-3">
               Recent Documents
             </h2>
-            <p className="text-sm text-slate-400 mb-3">
+            <p className="text-sm text-[#5a7d8f] mb-3">
               View and download proposals, invoices, reports and project documents.
             </p>
-            <span className="text-sm text-[#219EBC] font-medium group-hover:text-blue-300 flex items-center gap-1">
+            <span className="text-sm text-[#219EBC] font-medium group-hover:text-[#023047] flex items-center gap-1">
               Browse all documents <ArrowRight size={14} />
             </span>
           </Link>
@@ -120,7 +120,7 @@ export default async function ClientDashboardPage() {
         {/* Proposals */}
         {proposals.length > 0 && (
           <div className="mb-10">
-            <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">
+            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-4">
               Proposals
             </h2>
             <div className="space-y-3">
@@ -128,13 +128,13 @@ export default async function ClientDashboardPage() {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="block p-5 border border-blue-500/20 rounded-lg bg-blue-950/10 hover:bg-blue-950/20 hover:border-blue-400/40 transition-all group"
+                  className="block p-5 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-all group"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-white font-medium group-hover:text-blue-300 transition-colors">
+                    <span className="text-[#023047] font-medium group-hover:text-[#219EBC] transition-colors">
                       {p.label}
                     </span>
-                    <ArrowRight size={16} className="text-slate-500 group-hover:text-[#219EBC] transition-colors" />
+                    <ArrowRight size={16} className="text-[#d4e8f0] group-hover:text-[#219EBC] transition-colors" />
                   </div>
                 </Link>
               ))}
@@ -144,12 +144,12 @@ export default async function ClientDashboardPage() {
 
         {/* Admin overview */}
         {isAdmin && (
-          <div className="border-t border-slate-700/50 pt-8">
+          <div className="border-t border-[#d4e8f0] pt-8">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider">
+              <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider">
                 Admin
               </h2>
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-[#5a7d8f]">
                 Document publishing moved to Hub
               </span>
             </div>
@@ -160,11 +160,11 @@ export default async function ClientDashboardPage() {
                   <Link
                     key={id}
                     href={`/clients/${id}`}
-                    className="p-4 border border-slate-700/50 rounded-lg bg-slate-800/20 hover:bg-slate-800/40 transition-colors"
+                    className="p-4 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-colors"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-white font-medium text-sm">{name}</span>
-                      <ArrowRight size={14} className="text-slate-500" />
+                      <span className="text-[#023047] font-medium text-sm">{name}</span>
+                      <ArrowRight size={14} className="text-[#d4e8f0]" />
                     </div>
                   </Link>
                 ))}

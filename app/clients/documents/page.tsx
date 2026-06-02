@@ -34,10 +34,10 @@ function IconForType(type: string) {
 
 function DocTypeBadge({ type }: { type: string }) {
   const colors: Record<string, string> = {
-    proposal: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
-    invoice: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
-    report: 'bg-green-500/20 text-green-300 border-green-500/30',
-    document: 'bg-slate-500/20 text-slate-300 border-slate-500/30',
+    proposal: 'bg-[#219EBC]/10 text-[#023047] border-[#219EBC]/30',
+    invoice: 'bg-[#FFB703]/15 text-[#023047] border-[#FFB703]/40',
+    report: 'bg-[#219EBC]/10 text-[#023047] border-[#219EBC]/30',
+    document: 'bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30',
   }
   return (
     <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border ${colors[type] || colors.document}`}>
@@ -91,48 +91,48 @@ export default async function ClientDocumentsPage() {
   }))
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900">
+    <main className="min-h-screen bg-[#F8F9FA]">
       <div className="max-w-4xl mx-auto px-6 py-12">
         <Link
           href="/clients/dashboard"
-          className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-sm text-[#5a7d8f] hover:text-[#023047] transition-colors mb-8"
         >
           <ArrowLeft size={14} />
           Back to dashboard
         </Link>
 
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white mb-2">Document Library</h1>
-          <p className="text-slate-400">
+          <h1 className="text-3xl font-bold text-[#023047] mb-2">Document Library</h1>
+          <p className="text-[#5a7d8f]">
             Documents and resources from Decoded Ops.
           </p>
         </div>
 
         {docs.length === 0 ? (
-          <div className="p-10 border border-slate-700/50 rounded-xl bg-slate-800/20 text-center">
-            <FileText size={32} className="mx-auto text-slate-600 mb-3" />
-            <p className="text-slate-400 text-sm">No documents available yet.</p>
+          <div className="p-10 border border-[#d4e8f0] rounded-xl bg-white text-center">
+            <FileText size={32} className="mx-auto text-[#d4e8f0] mb-3" />
+            <p className="text-[#5a7d8f] text-sm">No documents available yet.</p>
           </div>
         ) : (
           <div className="space-y-2">
             {docs.map((doc) => (
               <div
                 key={doc.id}
-                className="flex items-center justify-between p-4 border border-slate-700/50 rounded-lg bg-slate-800/20 hover:bg-slate-800/40 transition-colors"
+                className="flex items-center justify-between p-4 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-colors"
               >
                   <div className="flex items-start gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-lg bg-slate-700/50 flex items-center justify-center shrink-0 mt-0.5 text-slate-400">
+                    <div className="w-8 h-8 rounded-lg bg-[#F8F9FA] border border-[#d4e8f0] flex items-center justify-center shrink-0 mt-0.5 text-[#5a7d8f]">
                       {IconForType(doc.type)}
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
                         <DocTypeBadge type={doc.type} />
                       </div>
-                      <p className="text-sm font-medium text-white truncate">
+                      <p className="text-sm font-medium text-[#023047] truncate">
                         {doc.title}
                       </p>
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        {doc.description} <span className="text-slate-600">· {doc.date}</span>
+                      <p className="text-xs text-[#5a7d8f] mt-0.5">
+                        {doc.description} <span className="text-[#d4e8f0]">· {doc.date}</span>
                       </p>
                     </div>
                   </div>

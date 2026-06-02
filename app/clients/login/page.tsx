@@ -26,9 +26,9 @@ function LoginForm() {
     return (
       <div className="text-center">
         <div className="text-2xl font-bold tracking-tight mb-6">
-          <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
+          <span className="text-[#023047]">Decoded</span><span className="text-[#FFB703]">Ops</span>
         </div>
-        <p className="text-sm text-slate-400">Loading...</p>
+        <p className="text-sm text-[#5a7d8f]">Loading...</p>
       </div>
     )
   }
@@ -60,19 +60,19 @@ function LoginForm() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 flex items-center justify-center px-6">
+    <main className="min-h-screen bg-[#F8F9FA] flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
           <Link href="/" className="text-2xl font-bold tracking-tight inline-block mb-6">
-            <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
+            <span className="text-[#023047]">Decoded</span><span className="text-[#FFB703]">Ops</span>
           </Link>
-          <h1 className="text-2xl font-bold text-white mb-2">Client Portal</h1>
-          <p className="text-sm text-slate-400">Sign in to access your documents and proposals.</p>
+          <h1 className="text-2xl font-bold text-[#023047] mb-2">Client Portal</h1>
+          <p className="text-sm text-[#5a7d8f]">Sign in to access your documents and proposals.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="email" className="block text-xs font-medium text-slate-300 mb-1.5 uppercase tracking-wider">
+            <label htmlFor="email" className="block text-xs font-medium text-[#023047] mb-1.5 uppercase tracking-wider">
               Email
             </label>
             <input
@@ -83,12 +83,12 @@ function LoginForm() {
               placeholder="you@company.co.uk"
               required
               autoComplete="email"
-              className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-xs font-medium text-slate-300 mb-1.5 uppercase tracking-wider">
+            <label htmlFor="password" className="block text-xs font-medium text-[#023047] mb-1.5 uppercase tracking-wider">
               Password
             </label>
             <input
@@ -99,12 +99,12 @@ function LoginForm() {
               placeholder="Your password"
               required
               autoComplete="current-password"
-              className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
+              className="w-full px-4 py-3 bg-white border border-[#d4e8f0] rounded-lg text-[#023047] text-sm placeholder-[#5a7d8f] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition"
             />
           </div>
 
           {error && (
-            <div className="text-sm text-[#FB8500] bg-[rgba(251,133,0,0.1)] border border-[rgba(251,133,0,0.3)] rounded-lg px-4 py-2.5">
+            <div className="text-sm text-[#FB8500] bg-[rgba(251,133,0,0.08)] border border-[rgba(251,133,0,0.25)] rounded-lg px-4 py-2.5">
               {error}
             </div>
           )}
@@ -112,7 +112,7 @@ function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-5 py-3 bg-[#FFB703] text-[#023047] rounded-lg hover:bg-[#FB8500] transition-colors text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full px-5 py-3 bg-[#FFB703] text-[#023047] rounded-lg hover:bg-[#FB8500] hover:text-white transition-colors text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Signing in...' : 'Sign in'}
           </button>
@@ -125,12 +125,12 @@ function LoginForm() {
 export default function ClientLoginPage() {
   return (
     <Suspense fallback={
-      <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 flex items-center justify-center px-6">
+      <main className="min-h-screen bg-[#F8F9FA] flex items-center justify-center px-6">
           <div className="w-full max-w-sm text-center">
           <div className="text-2xl font-bold tracking-tight mb-6">
-            <span className="text-white">Decoded</span><span className="text-[#FFB703]">Ops</span>
+            <span className="text-[#023047]">Decoded</span><span className="text-[#FFB703]">Ops</span>
           </div>
-          <p className="text-sm text-slate-400">Loading...</p>
+          <p className="text-sm text-[#5a7d8f]">Loading...</p>
         </div>
       </main>
     }>
