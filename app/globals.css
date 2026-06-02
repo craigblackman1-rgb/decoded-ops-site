@@ -127,6 +127,9 @@ h1, h2, h3, h4, h5, h6 {
 .blog-card { transition: border-color var(--do-duration-normal) var(--do-ease-default); }
 .blog-card:hover { border-color: var(--do-cerulean) !important; }
 
+.blog-card-subtle { transition: border-color var(--do-duration-normal) var(--do-ease-default); }
+.blog-card-subtle:hover { border-color: color-mix(in srgb, var(--do-cerulean) 40%, transparent) !important; }
+
 .blog-cta-btn { transition: background-color var(--do-duration-normal) var(--do-ease-default); }
 .blog-cta-btn:hover { background-color: var(--do-action-primary-hover) !important; }
 

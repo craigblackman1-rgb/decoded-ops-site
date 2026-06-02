@@ -185,9 +185,7 @@ export default async function BlogPost({ params }: PageProps) {
             <p className="leading-relaxed mb-6" style={{ color: 'var(--do-text-muted)' }}>
               A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
             </p>
-            <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary-hover)'; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--do-action-primary)'; }}>
+            <Link href="/clarity" className="blog-cta-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               See Clarity <ArrowRight size={18} />
             </Link>
           </div>
@@ -212,10 +210,8 @@ export default async function BlogPost({ params }: PageProps) {
                       <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className="group block p-6 rounded-xl transition-all duration-200 hover:shadow-sm"
+                        className="blog-card-subtle group block p-6 rounded-xl transition-all duration-200 hover:shadow-sm"
                         style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-cerulean)/0.4'; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--do-border-subtle)'; }}
                       >
                         <h4 className="text-lg font-bold mb-2 group-hover:text-[var(--do-cerulean)] transition-colors" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
                           {post.title}
