@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
-import blogPosts from '@/data/blog-index.json';
+import type { Metadata } from 'next';
+import localBlogPosts from '@/data/blog-index.json';
 
-export const metadata = {
+const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
+
+export const metadata: Metadata = {
   title: 'Operations & Technology Insights | Decoded Ops Blog',
   description: 'Insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
   alternates: { canonical: '/blog' },
@@ -30,18 +33,21 @@ const blogSchema = {
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
-const authorSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Craig Blackman',
-  url: 'https://decodedops.co.uk/about',
-  jobTitle: 'Founder & Principal Consultant at Decoded Ops',
-  sameAs: ['https://www.linkedin.com/company/decodedops'],
-};
+async function fetchBlogIndex() {
+  try {
+    const res = await fetch(`${HUB_API}/api/content/index`, {
+      next: { revalidate: 300 },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.items || [];
+    }
+  } catch {}
+  return localBlogPosts.items || [];
+}
 
-const posts = blogPosts.items || [];
-
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await fetchBlogIndex();
   return (
     <>
       <JsonLd data={blogSchema} />
@@ -60,7 +66,8 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="space-y-8 mb-20">
             {posts.map((post: any) => {
-              const date = post.date ? new Date(post.date).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : '';
+              const pubDate = post.date || post.publishedDate;
+              const date = pubDate ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : '';
               return (
                 <Link
                   key={post.slug}

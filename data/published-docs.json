@@ -10,5 +10,8 @@
   "cobra-workwear": {},
   "hanicks": {},
   "cwear": {},
-  "scotshirts": {}
+  "scotshirts": {
+    "scotshirts-discovery-report": true,
+    "prop-scotshirts-1": true
+  }
 }

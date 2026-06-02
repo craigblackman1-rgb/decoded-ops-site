@@ -1,9 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
-import AccessGate from './components/AccessGate';
+import { useParams } from 'next/navigation';
 import ProposalHero from './components/ProposalHero';
 import ChallengeSection from './components/ChallengeSection';
 import JourneySection from './components/JourneySection';
@@ -88,22 +86,8 @@ function ProposalNav({ hasPortal, hasDemo }: { hasPortal: boolean; hasDemo: bool
 
 export default function ProposalPage() {
   const params = useParams();
-  const router = useRouter();
-  const { data: session, status } = useSession();
   const clientId = (params.clientId as string) || 'tacklebag';
   const proposal = proposals[clientId];
-  const [isUnlocked, setIsUnlocked] = useState(false);
-
-  // Auto-unlock if the session user has access to this client
-  useEffect(() => {
-    if (status === 'authenticated') {
-      const user = session?.user as any;
-      if (user?.clientId === clientId || user?.clientId === 'admin') {
-        setIsUnlocked(true);
-      }
-    }
-  }, [status, session, clientId]);
-
   if (!proposal) {
     return (
       <main className="min-h-screen bg-[#023047] flex items-center justify-center">
@@ -119,17 +103,8 @@ export default function ProposalPage() {
 
   return (
     <>
-      <AccessGate
-        accessCode={proposal.accessCode}
-        clientName={proposal.client.name}
-        clientId={clientId}
-        onUnlock={() => setIsUnlocked(true)}
-      />
-
-      {isUnlocked && (
-        <>
-          <ProposalNav hasPortal={!!proposal.portalMockup} hasDemo={!!proposal.demo} />
-          <div>
+      <ProposalNav hasPortal={!!proposal.portalMockup} hasDemo={!!proposal.demo} />
+      <div>
             <div id="hero">
               <ProposalHero
                 tag={proposal.hero.tag}
@@ -195,8 +170,6 @@ export default function ProposalPage() {
               </div>
             </footer>
           </div>
-        </>
-      )}
     </>
   );
 }

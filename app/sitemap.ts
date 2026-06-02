@@ -1,11 +1,25 @@
 import { MetadataRoute } from 'next'
-import blogPosts from '@/data/blog-index.json'
+import localBlogPosts from '@/data/blog-index.json'
 import { locations } from '@/data/locations'
 
 const BASE_URL = 'https://decodedops.co.uk'
+const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = blogPosts.items || []
+async function fetchBlogPosts() {
+  try {
+    const res = await fetch(`${HUB_API}/api/content/index`, {
+      next: { revalidate: 300 },
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.items || [];
+    }
+  } catch {}
+  return localBlogPosts.items || [];
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await fetchBlogPosts();
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -29,9 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Blog posts
-  const blogPages: MetadataRoute.Sitemap = posts.map(post => ({
+  const blogPages: MetadataRoute.Sitemap = posts.map((post: any) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date) : new Date(),
+    lastModified: new Date(post.date || post.publishedDate || new Date()),
     changeFrequency: 'yearly' as const,
     priority: 0.6,
   }))

@@ -97,6 +97,14 @@ export const clientDocuments: Record<string, ClientDoc[]> = {
       description: 'Engagement proposal.',
       href: '/clients/scotshirts',
     },
+    {
+      id: 'scotshirts-discovery-report',
+      title: 'Discovery Visit Report — June 2026',
+      type: 'report',
+      date: '2 June 2026',
+      description: 'Summary of findings and priority actions from the on-site discovery visit in Edinburgh.',
+      href: '/client-docs/scotshirts/discovery-report.html',
+    },
   ],
 }
 
