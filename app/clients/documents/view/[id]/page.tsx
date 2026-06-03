@@ -7,7 +7,7 @@ interface SessionUser {
 }
 
 interface HubDoc {
-  id: string
+  id: string | number
   client_id?: string
   html_content?: string
   title?: string
@@ -20,21 +20,23 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   const user = session.user as SessionUser
   const { id } = await params
   const clientId = user.clientId
+  const decoded = decodeURIComponent(id)
 
   const hubUrl = process.env.HUB_API_URL
   if (!hubUrl) return <div className="empty">Hub not configured</div>
 
-  const res = await fetch(`${hubUrl}/api/public/client-docs?clientId=${clientId}`, {
+  const res = await fetch(`${hubUrl}/api/public/client-docs/${decoded}`, {
     next: { revalidate: 60 },
   })
 
-  if (!res.ok) return <div className="empty">Document not found</div>
+  if (!res.ok) {
+    if (res.status === 404) return <div className="empty">Document not found</div>
+    return <div className="empty">Failed to load document</div>
+  }
 
-  const docs: HubDoc[] = await res.json()
-  const doc = docs.find((d) => d.id === id)
+  const doc: HubDoc = await res.json()
 
   if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
-  if (doc.client_id && doc.client_id !== clientId) notFound()
 
   return (
     <main style={{ minHeight: '100vh', background: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
