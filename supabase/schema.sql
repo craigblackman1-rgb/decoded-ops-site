@@ -46,46 +46,16 @@ create index if not exists idx_auth_audit_log_created_at on auth_audit_log(creat
 -- ============================================
 -- 3. Client documents table
 -- ============================================
-create table if not exists client_documents (
-  id uuid primary key default uuid_generate_v4(),
-  client_id text not null,
-  title text not null,
-  document_type text not null default 'other' check (document_type in ('proposal', 'invoice', 'report', 'terms', 'letter', 'other')),
-  file_path text not null default '',
-  file_size integer,
-  mime_type text,
-  is_public boolean not null default false,
-  created_at timestamp with time zone not null default now(),
-  updated_at timestamp with time zone not null default now()
-);
-
-create index if not exists idx_client_documents_client_id on client_documents(client_id);
-create index if not exists idx_client_documents_type on client_documents(document_type);
+-- NOTE: client_documents is managed by the Hub.
+-- The Hub creates this table with columns: doc_type, doc_number, html_content, published, access_token.
+-- DO NOT create or alter this table here.
 
 -- ============================================
 -- 4. Row Level Security
 -- ============================================
 alter table client_users enable row level security;
 alter table auth_audit_log enable row level security;
-alter table client_documents enable row level security;
-
--- Drop existing policies to avoid conflicts on re-run
-drop policy if exists "Clients can view own documents" on client_documents;
-drop policy if exists "Admins can view all documents" on client_documents;
-
-create policy "Clients can view own documents"
-  on client_documents for select
-  using (client_id = (select client_id from client_users where email = auth.jwt()->>'email'));
-
-create policy "Admins can view all documents"
-  on client_documents for select
-  using (
-    exists (
-      select 1 from client_users
-      where client_users.email = auth.jwt()->>'email'
-      and client_users.role = 'admin'
-    )
-  );
+-- client_documents RLS is managed by the Hub
 
 -- ============================================
 -- 5. Triggers for updated_at
@@ -104,11 +74,7 @@ create trigger update_client_users_updated_at
   for each row
   execute function update_updated_at_column();
 
-drop trigger if exists update_client_documents_updated_at on client_documents;
-create trigger update_client_documents_updated_at
-  before update on client_documents
-  for each row
-  execute function update_updated_at_column();
+-- client_documents trigger is managed by the Hub
 
 -- ============================================
 -- 6. Seed initial users
