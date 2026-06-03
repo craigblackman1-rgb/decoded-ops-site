@@ -31,32 +31,6 @@ const clientNames: Record<string, string> = {
   admin: 'Decoded Ops',
 }
 
-const proposalLinks: Record<string, { label: string; href: string }[]> = {
-  tacklebag: [
-    { label: 'Operations Transformation Proposal', href: '/clients/tacklebag' },
-    { label: 'Data App Follow-On', href: '/clients/tacklebag-v2' },
-  ],
-  'cobra-workwear': [
-    { label: 'Operational Clarity Proposal', href: '/clients/cobra-workwear' },
-  ],
-  hanicks: [
-    { label: 'eCommerce Ops Programme Proposal', href: '/clients/hanicks' },
-  ],
-  cwear: [
-    { label: 'ERP Migration Discovery Proposal', href: '/clients/cwear' },
-  ],
-  scotshirts: [
-    { label: 'Operational Systems Proposal — Scotshirts', href: '/clients/scotshirts' },
-  ],
-  admin: [
-    { label: 'TackleBag', href: '/clients/tacklebag' },
-    { label: 'Cobra Workwear', href: '/clients/cobra-workwear' },
-    { label: 'Hanicks Ltd', href: '/clients/hanicks' },
-    { label: 'Corporatewear UK', href: '/clients/cwear' },
-    { label: 'ScotShirts', href: '/clients/scotshirts' },
-  ],
-}
-
 const docTypeIcons: Record<string, typeof FileText> = {
   proposal: FileText,
   invoice: FileSpreadsheet,
@@ -112,7 +86,6 @@ export default async function ClientDashboardPage() {
   const user = session.user as SessionUser
   const clientId = user.clientId || 'client'
   const clientName = clientNames[clientId] || clientId
-  const proposals = proposalLinks[clientId] || []
   const isAdmin = clientId === 'admin'
 
   const hubDocs = await fetchHubDocs(clientId)
@@ -220,31 +193,6 @@ export default async function ClientDashboardPage() {
                     View
                   </a>
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Proposals */}
-        {proposals.length > 0 && (
-          <div className="mb-10">
-            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-4">
-              Proposals
-            </h2>
-            <div className="space-y-3">
-              {proposals.map((p) => (
-                <Link
-                  key={p.href}
-                  href={p.href}
-                  className="block p-5 border border-[#d4e8f0] rounded-lg bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-sm)] transition-all group"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[#023047] font-medium group-hover:text-[#219EBC] transition-colors">
-                      {p.label}
-                    </span>
-                    <ArrowRight size={16} className="text-[#d4e8f0] group-hover:text-[#219EBC] transition-colors" />
-                  </div>
-                </Link>
               ))}
             </div>
           </div>
