@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import BlogList from '@/components/BlogList';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
 
@@ -67,42 +68,7 @@ export default async function BlogPage() {
 
       <section className="py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="space-y-8 mb-20">
-            {posts.map((post: any) => {
-              const pubDate = post.date || post.publishedDate;
-              const date = pubDate ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : '';
-              return (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="blog-card group block p-8 rounded-2xl hover:shadow-md transition-all duration-300"
-                  style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
-                >
-                  <div className="flex items-start justify-between gap-6 mb-4">
-                    <div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style={{ backgroundColor: 'var(--do-cerulean)/0.1', border: '1px solid var(--do-cerulean)/0.2' }}>
-                        <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>{post.category}</span>
-                      </div>
-                      <h2 className="text-2xl font-bold transition-colors mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-                        {post.title}
-                      </h2>
-                      <p className="leading-relaxed mb-4 max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
-                        {post.excerpt}
-                      </p>
-                    </div>
-                    <div className="flex-shrink-0 mt-2">
-                      <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" style={{ color: 'var(--do-cerulean)' }} />
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 text-sm" style={{ color: 'var(--do-text-muted)', opacity: 0.7 }}>
-                    <span>{date}</span>
-                    <span>·</span>
-                    <span>{post.readTime} min read</span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <BlogList posts={posts} />
 
           <div className="border-t pt-16" style={{ borderColor: 'var(--do-border-subtle)' }}>
             <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Free Resources</h2>

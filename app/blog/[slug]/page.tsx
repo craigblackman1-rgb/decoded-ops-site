@@ -43,7 +43,7 @@ function buildArticleSchema(item: any, slug: string, pubDate: string) {
           '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk',
           address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
         },
-        image: 'https://decodedops.co.uk/opengraph-image',
+        image: item.featuredImage ? `https://decodedops.co.uk${item.featuredImage}` : 'https://decodedops.co.uk/opengraph-image',
         url: `https://decodedops.co.uk/blog/${slug}`,
         mainEntityOfPage: `https://decodedops.co.uk/blog/${slug}`,
         description: item.seo?.description || item.excerpt || item.title,
@@ -56,12 +56,16 @@ function buildArticleSchema(item: any, slug: string, pubDate: string) {
 }
 
 async function fetchBlogPost(slug: string) {
-  const res = await fetch(`${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}`, {
-    next: { revalidate: 300 },
-  });
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data.item || null;
+  try {
+    const res = await fetch(`${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.item || null;
+  } catch {
+    return null;
+  }
 }
 
 export async function generateStaticParams() {
@@ -69,12 +73,12 @@ export async function generateStaticParams() {
     const res = await fetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return (data.items || []).map((item: any) => ({ slug: item.slug }));
-  } catch {
-    return [];
-  }
+    if (res.ok) {
+      const data = await res.json();
+      return (data.items || []).map((item: any) => ({ slug: item.slug }));
+    }
+  } catch {}
+  return (localBlogPosts.items || []).map((item: any) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -98,7 +102,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       url: `https://decodedops.co.uk/blog/${slug}`,
-      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+      images: [{ url: item.featuredImage || '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -169,6 +173,21 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Inline image 1 */}
+      {item.images?.[0] && (
+        <section className="py-8">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <img
+              src={item.images[0]}
+              alt=""
+              className="w-full rounded-2xl shadow-sm"
+              style={{ border: '1px solid var(--do-border-subtle)' }}
+              loading="lazy"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Article body */}
       <section className="pt-4 pb-16 lg:pb-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
@@ -176,6 +195,19 @@ export default async function BlogPost({ params }: PageProps) {
             className="do-blog-prose"
             dangerouslySetInnerHTML={{ __html: item.html || '' }}
           />
+
+          {/* Inline image 2 */}
+          {item.images?.[1] && (
+            <div className="mt-12">
+              <img
+                src={item.images[1]}
+                alt=""
+                className="w-full rounded-2xl shadow-sm"
+                style={{ border: '1px solid var(--do-border-subtle)' }}
+                loading="lazy"
+              />
+            </div>
+          )}
 
           {/* CTA box */}
           <div className="mt-12 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-cerulean)/0.08', border: '1px solid var(--do-cerulean)/0.2' }}>

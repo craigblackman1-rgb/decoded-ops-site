@@ -7,7 +7,8 @@
       "date": "2026-05-01",
       "readTime": 9,
       "category": "ERP",
-      "featuredImage": null
+      "featuredImage": "/images/blog/the-real-cost-of-a-failed-erp-project-thumb.svg",
+      "images": ["/images/blog/the-real-cost-of-a-failed-erp-project-img-1.svg", "/images/blog/the-real-cost-of-a-failed-erp-project-img-2.svg"]
     },
     {
       "slug": "5-questions-vendors-wont-like",
@@ -16,7 +17,8 @@
       "date": "2026-05-05",
       "readTime": 5,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/5-questions-vendors-wont-like-thumb.svg",
+      "images": ["/images/blog/5-questions-vendors-wont-like-img-1.svg", "/images/blog/5-questions-vendors-wont-like-img-2.svg"]
     },
     {
       "slug": "why-systems-dont-talk",
@@ -25,7 +27,8 @@
       "date": "2026-04-28",
       "readTime": 8,
       "category": "Integration",
-      "featuredImage": null
+      "featuredImage": "/images/blog/why-systems-dont-talk-thumb.svg",
+      "images": ["/images/blog/why-systems-dont-talk-img-1.svg", "/images/blog/why-systems-dont-talk-img-2.svg"]
     },
     {
       "slug": "ecommerce-integration-trap",
@@ -34,7 +37,8 @@
       "date": "2026-05-10",
       "readTime": 6,
       "category": "Integration",
-      "featuredImage": null
+      "featuredImage": "/images/blog/ecommerce-integration-trap-thumb.svg",
+      "images": ["/images/blog/ecommerce-integration-trap-img-1.svg", "/images/blog/ecommerce-integration-trap-img-2.svg"]
     },
     {
       "slug": "what-happens-when-your-systems-go-down",
@@ -43,7 +47,8 @@
       "date": "2026-05-15",
       "readTime": 8,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/what-happens-when-your-systems-go-down-thumb.svg",
+      "images": ["/images/blog/what-happens-when-your-systems-go-down-img-1.svg", "/images/blog/what-happens-when-your-systems-go-down-img-2.svg"]
     },
     {
       "slug": "embroidery-stitch-density-quality-speed-cost",
@@ -52,7 +57,8 @@
       "date": "2026-05-19",
       "readTime": 9,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/embroidery-stitch-density-quality-speed-cost-thumb.svg",
+      "images": ["/images/blog/embroidery-stitch-density-quality-speed-cost-img-1.svg", "/images/blog/embroidery-stitch-density-quality-speed-cost-img-2.svg"]
     },
     {
       "slug": "heat-press-temperature-dwell-time-operations-guide",
@@ -61,7 +67,8 @@
       "date": "2026-05-20",
       "readTime": 9,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/heat-press-temperature-dwell-time-operations-guide-thumb.svg",
+      "images": ["/images/blog/heat-press-temperature-dwell-time-operations-guide-img-1.svg", "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-2.svg"]
     },
     {
       "slug": "ralawise-integration-bulk-orders-stock-management",
@@ -70,7 +77,8 @@
       "date": "2026-05-21",
       "readTime": 9,
       "category": "Integration",
-      "featuredImage": null
+      "featuredImage": "/images/blog/ralawise-integration-bulk-orders-stock-management-thumb.svg",
+      "images": ["/images/blog/ralawise-integration-bulk-orders-stock-management-img-1.svg", "/images/blog/ralawise-integration-bulk-orders-stock-management-img-2.svg"]
     },
     {
       "slug": "screen-printing-vs-heat-transfer-scale-your-business",
@@ -79,7 +87,8 @@
       "date": "2026-05-22",
       "readTime": 9,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-thumb.svg",
+      "images": ["/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-1.svg", "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-2.svg"]
     },
     {
       "slug": "artwork-approval-workflow-brief-to-sign-off-24-hours",
@@ -88,7 +97,8 @@
       "date": "2026-05-23",
       "readTime": 8,
       "category": "Workflow",
-      "featuredImage": null
+      "featuredImage": "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-thumb.svg",
+      "images": ["/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-1.svg", "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-2.svg"]
     },
     {
       "slug": "bulk-order-management-wholesale-decorated-goods",
@@ -97,7 +107,8 @@
       "date": "2026-05-26",
       "readTime": 9,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/bulk-order-management-wholesale-decorated-goods-thumb.svg",
+      "images": ["/images/blog/bulk-order-management-wholesale-decorated-goods-img-1.svg", "/images/blog/bulk-order-management-wholesale-decorated-goods-img-2.svg"]
     },
     {
       "slug": "production-scheduling-print-embroidery-capacity-quality-rush",
@@ -106,7 +117,8 @@
       "date": "2026-05-27",
       "readTime": 9,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-thumb.svg",
+      "images": ["/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-1.svg", "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-2.svg"]
     },
     {
       "slug": "embroidery-quality-standards-stitch-density-thread-durability",
@@ -115,7 +127,8 @@
       "date": "2026-05-28",
       "readTime": 9,
       "category": "Quality",
-      "featuredImage": null
+      "featuredImage": "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-thumb.svg",
+      "images": ["/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-1.svg", "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-2.svg"]
     },
     {
       "slug": "ai-isnt-your-problem-your-processes-are",
@@ -124,7 +137,8 @@
       "date": "2026-05-25",
       "readTime": 7,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/ai-isnt-your-problem-your-processes-are-thumb.svg",
+      "images": ["/images/blog/ai-isnt-your-problem-your-processes-are-img-1.svg", "/images/blog/ai-isnt-your-problem-your-processes-are-img-2.svg"]
     },
     {
       "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
@@ -133,7 +147,8 @@
       "date": "2026-06-02",
       "readTime": 7,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-thumb.svg",
+      "images": ["/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-1.svg", "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-2.svg"]
     },
     {
       "slug": "the-artwork-file-that-broke-the-erp-cartoon",
@@ -142,7 +157,8 @@
       "date": "2026-06-05",
       "readTime": 7,
       "category": "Workflow",
-      "featuredImage": null
+      "featuredImage": "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-thumb.svg",
+      "images": ["/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-1.svg", "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-2.svg"]
     },
     {
       "slug": "crm-adoption-failure-why-it-happens-and-how-to-fix-it",
@@ -151,7 +167,8 @@
       "date": "2026-06-06",
       "readTime": 8,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-thumb.svg",
+      "images": ["/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-1.svg", "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-2.svg"]
     },
     {
       "slug": "b2b-portal-down-on-christmas-jumper-day-cartoon",
@@ -160,7 +177,8 @@
       "date": "2026-06-07",
       "readTime": 7,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-thumb.svg",
+      "images": ["/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-1.svg", "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-2.svg"]
     },
     {
       "slug": "what-good-operations-actually-looks-like",
@@ -169,7 +187,8 @@
       "date": "2026-06-08",
       "readTime": 8,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/what-good-operations-actually-looks-like-thumb.svg",
+      "images": ["/images/blog/what-good-operations-actually-looks-like-img-1.svg", "/images/blog/what-good-operations-actually-looks-like-img-2.svg"]
     },
     {
       "slug": "when-it-support-is-the-problem",
@@ -178,7 +197,8 @@
       "date": "2026-06-10",
       "readTime": 8,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/when-it-support-is-the-problem-thumb.svg",
+      "images": ["/images/blog/when-it-support-is-the-problem-img-1.svg", "/images/blog/when-it-support-is-the-problem-img-2.svg"]
     },
     {
       "slug": "the-hidden-cost-of-running-legacy-systems",
@@ -187,7 +207,8 @@
       "date": "2026-06-12",
       "readTime": 8,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/the-hidden-cost-of-running-legacy-systems-thumb.svg",
+      "images": ["/images/blog/the-hidden-cost-of-running-legacy-systems-img-1.svg", "/images/blog/the-hidden-cost-of-running-legacy-systems-img-2.svg"]
     },
     {
       "slug": "orderwise-what-it-does-well-what-it-doesn-t",
@@ -196,7 +217,8 @@
       "date": "2026-06-15",
       "readTime": 8,
       "category": "Technology",
-      "featuredImage": null
+      "featuredImage": "/images/blog/orderwise-what-it-does-well-what-it-doesn-t-thumb.svg",
+      "images": ["/images/blog/orderwise-what-it-does-well-what-it-doesn-t-img-1.svg", "/images/blog/orderwise-what-it-does-well-what-it-doesn-t-img-2.svg"]
     },
     {
       "slug": "process-before-platform",
@@ -205,7 +227,8 @@
       "date": "2026-06-17",
       "readTime": 8,
       "category": "Operations",
-      "featuredImage": null
+      "featuredImage": "/images/blog/process-before-platform-thumb.svg",
+      "images": ["/images/blog/process-before-platform-img-1.svg", "/images/blog/process-before-platform-img-2.svg"]
     }
   ]
 }

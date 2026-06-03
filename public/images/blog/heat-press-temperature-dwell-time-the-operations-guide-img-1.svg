@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg133" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#219EBC"/>
+      <stop offset="100%" stop-color="#8ECAE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg133)"/>
+  <!-- Decorative diamond -->
+  <rect x="40" y="40" width="60" height="60" rx="12" fill="#023047" opacity="0.15" transform="rotate(15, 70, 70)"/>
+  <!-- Quote mark -->
+  <text x="40" y="120" font-family="Georgia,serif" font-size="72" fill="#023047" opacity="0.2">"</text>
+  <!-- Tagline -->
+  <text x="40" y="200" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#023047" opacity="0.6">INSIGHT</text>
+  <!-- Title -->
+  <text x="40" y="250" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Heat Press Temperature &amp; Dwell Time: The</text>
+  <text x="40" y="292" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Operations Guide</text>
+  <!-- Excerpt -->
+  <text x="40" y="354" font-family="system-ui,sans-serif" font-size="15" fill="#023047" opacity="0.75">Heat press temperature and dwell time are operations</text>
+  <text x="40" y="380" font-family="system-ui,sans-serif" font-size="15" fill="#023047" opacity="0.75">decisions, not just machine settings. Wrong settings =</text>
+  <!-- Category + brand -->
+  <rect x="40" y="580" width="128" height="30" rx="15" fill="#023047" opacity="0.15"/>
+  <text x="54" y="600" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#023047">OPERATIONS</text>
+  <text x="40" y="650" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#023047" opacity="0.5">DECODED OPS</text>
+</svg>
