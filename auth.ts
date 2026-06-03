@@ -2,9 +2,19 @@ import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import bcrypt from 'bcryptjs'
 import { getSupabase, type DbUser } from '@/lib/supabase'
+import { headers } from 'next/headers'
 
 const MAX_FAILED_ATTEMPTS = 5
 const LOCKOUT_DURATION_MINUTES = 30
+
+async function getClientIp(): Promise<string | null> {
+  try {
+    const hdrs = await headers()
+    return hdrs.get('x-forwarded-for') || hdrs.get('x-real-ip') || hdrs.get('cf-connecting-ip') || null
+  } catch {
+    return null
+  }
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -21,6 +31,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!supabase) return null
 
         const email = (credentials.email as string).toLowerCase().trim()
+        const ipAddress = await getClientIp()
 
         try {
           const { data: user, error } = await (supabase as any)
@@ -30,17 +41,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             .single() as { data: DbUser | null; error: unknown }
 
           if (error || !user) {
-            await logAuditEvent(supabase, 'login_failed', email, null, null, { reason: 'user_not_found' })
+            await logAuditEvent(supabase, 'login_failed', email, null, ipAddress, null, { reason: 'user_not_found' })
             return null
           }
 
           if (!user.is_active) {
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { reason: 'account_disabled' })
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_disabled' })
             return null
           }
 
           if (user.locked_until && new Date(user.locked_until) > new Date()) {
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { reason: 'account_locked' })
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_locked' })
             return null
           }
 
@@ -55,7 +66,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                 .from('client_users')
                 .update({ failed_attempts: newFailedAttempts, locked_until: lockedUntil.toISOString() })
                 .eq('id', user.id)
-              await logAuditEvent(supabase, 'account_locked', email, user.client_id, null, { attempts: newFailedAttempts })
+              await logAuditEvent(supabase, 'account_locked', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
             } else {
               await (supabase as any)
                 .from('client_users')
@@ -63,7 +74,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                 .eq('id', user.id)
             }
 
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { attempts: newFailedAttempts })
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
             return null
           }
 
@@ -72,7 +83,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             .update({ failed_attempts: 0, locked_until: null, last_login: new Date().toISOString() })
             .eq('id', user.id)
 
-          await logAuditEvent(supabase, 'login_success', email, user.client_id, null)
+          await logAuditEvent(supabase, 'login_success', email, user.client_id, ipAddress, null)
 
           return {
             id: user.id,
@@ -108,8 +119,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   session: {
     strategy: 'jwt',
+    maxAge: 8 * 60 * 60,
   },
-  trustHost: true,
 })
 
 async function logAuditEvent(
@@ -117,7 +128,8 @@ async function logAuditEvent(
   eventType: string,
   email: string | null,
   clientId: string | null,
-  _ipAddress: string | null,
+  ipAddress: string | null,
+  _userAgent: string | null,
   details?: Record<string, unknown>
 ) {
   if (!supabase) return
@@ -126,10 +138,10 @@ async function logAuditEvent(
       event_type: eventType,
       email,
       client_id: clientId,
-      ip_address: _ipAddress,
+      ip_address: ipAddress,
       details: details || {},
     })
-  } catch {
-    // Silently fail — audit logging should not break authentication
+  } catch (error) {
+    console.error('[auth audit] failed to log event:', error)
   }
 }

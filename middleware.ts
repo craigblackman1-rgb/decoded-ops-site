@@ -15,6 +15,11 @@ export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
 
+  // Block direct access to public client-docs directory
+  if (nextUrl.pathname.startsWith('/client-docs/')) {
+    return Response.redirect(new URL('/clients/login', nextUrl.origin))
+  }
+
   // /clients root — redirect logged-in to dashboard, others to login
   if (nextUrl.pathname === '/clients' || nextUrl.pathname === '/clients/') {
     if (isLoggedIn) {
@@ -38,7 +43,9 @@ export default auth((req) => {
 
   // Public proposal URLs — no auth required
   if (PUBLIC_PROPOSALS.includes(nextUrl.pathname)) {
-    return NextResponse.next()
+    const response = NextResponse.next()
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+    return response
   }
 
   // Not logged in and visiting a protected client route → login
@@ -48,9 +55,11 @@ export default auth((req) => {
     return Response.redirect(loginUrl)
   }
 
-  return NextResponse.next()
+  const response = NextResponse.next()
+  response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  return response
 })
 
 export const config = {
-  matcher: ['/clients/:path*', '/admin/:path*'],
+  matcher: ['/clients/:path*', '/admin/:path*', '/client-docs/:path*'],
 }

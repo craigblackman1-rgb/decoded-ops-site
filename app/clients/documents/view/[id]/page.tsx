@@ -1,9 +1,17 @@
 import { auth } from '@/auth'
-import { redirect } from 'next/navigation'
+import { redirect, notFound } from 'next/navigation'
 import Link from 'next/link'
 
 interface SessionUser {
   clientId?: string
+}
+
+interface HubDoc {
+  id: string
+  client_id?: string
+  html_content?: string
+  title?: string
+  doc_number?: string
 }
 
 export default async function DocumentViewPage({ params }: { params: Promise<{ id: string }> }) {
@@ -22,10 +30,11 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
 
   if (!res.ok) return <div className="empty">Document not found</div>
 
-  const docs = await res.json()
-  const doc = docs.find((d: any) => d.id === id)
+  const docs: HubDoc[] = await res.json()
+  const doc = docs.find((d) => d.id === id)
 
   if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
+  if (doc.client_id && doc.client_id !== clientId) notFound()
 
   return (
     <main style={{ minHeight: '100vh', background: '#F8F9FA', display: 'flex', flexDirection: 'column' }}>
@@ -68,6 +77,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
       <div style={{ flex: 1, position: 'relative' }}>
         <iframe
           srcDoc={doc.html_content}
+          sandbox=""
           style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
           title={doc.title}
         />

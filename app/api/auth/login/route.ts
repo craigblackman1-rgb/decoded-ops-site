@@ -2,8 +2,32 @@ import { NextRequest, NextResponse } from 'next/server'
 import { signIn } from '@/auth'
 import { loginRatelimit } from '@/lib/rate-limit'
 
+function sanitiseCallbackUrl(url: string | undefined): string {
+  if (!url) return '/clients/dashboard'
+  if (url.startsWith('/') && !url.startsWith('//')) return url
+  return '/clients/dashboard'
+}
+
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown'
+  const origin = req.headers.get('origin')
+  const host = req.headers.get('host')
+  if (origin && host) {
+    try {
+      const expectedOrigin = `https://${host}`
+      if (origin !== expectedOrigin && origin !== `http://${host}`) {
+        return NextResponse.json({ error: 'Invalid request origin.' }, { status: 403 })
+      }
+    } catch {
+      return NextResponse.json({ error: 'Invalid request.' }, { status: 400 })
+    }
+  }
+
+  const contentType = req.headers.get('content-type') || ''
+  if (!contentType.includes('application/json')) {
+    return NextResponse.json({ error: 'Invalid content type.' }, { status: 415 })
+  }
+
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || req.headers.get('cf-connecting-ip') || req.headers.get('x-real-ip') || 'unknown'
 
   const rateLimiter = loginRatelimit()
   if (rateLimiter) {
@@ -29,6 +53,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email and password are required.' }, { status: 400 })
     }
 
+    if (typeof email !== 'string' || typeof password !== 'string') {
+      return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 })
+    }
+
+    if (email.length > 320 || password.length > 128) {
+      return NextResponse.json({ error: 'Input too long.' }, { status: 400 })
+    }
+
     const result = await signIn('credentials', {
       email,
       password,
@@ -41,7 +73,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       ok: true,
-      redirectTo: callbackUrl || '/clients/dashboard',
+      redirectTo: sanitiseCallbackUrl(callbackUrl),
     })
   } catch {
     return NextResponse.json(

@@ -23,9 +23,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*
-.env.*.local
+# local env files — keep everything except .env.example
+.env
+.env.*
+!.env.example
+*.local
+.env.production
+.env.prod
 
 # vercel
 .vercel
