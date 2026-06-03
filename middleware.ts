@@ -30,8 +30,8 @@ export default auth((req) => {
       loginUrl.searchParams.set('callbackUrl', nextUrl.pathname)
       return Response.redirect(loginUrl)
     }
-    const user = req.auth?.user as { clientId?: string } | undefined
-    if (user?.clientId !== 'admin') {
+    const user = req.auth?.user as { role?: string } | undefined
+    if (user?.role !== 'admin') {
       return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
     }
   }

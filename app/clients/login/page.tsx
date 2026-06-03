@@ -2,7 +2,7 @@
 
 import { Suspense, useState, FormEvent, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { signIn, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 function LoginForm() {
@@ -15,6 +15,7 @@ function LoginForm() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [tooManyAttempts, setTooManyAttempts] = useState(false)
 
   useEffect(() => {
     if (status === 'authenticated') {
@@ -37,21 +38,34 @@ function LoginForm() {
     e.preventDefault()
     setError('')
     setLoading(true)
+    setTooManyAttempts(false)
 
     try {
-      const result = await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, callbackUrl }),
       })
 
-      if (result?.error) {
-        setError('Invalid email or password.')
+      const data = await res.json()
+
+      if (!res.ok) {
+        if (res.status === 429) {
+          setTooManyAttempts(true)
+          setError(data.error || 'Too many attempts. Please wait before trying again.')
+          setLoading(false)
+          return
+        }
+        setError(data.error || 'Invalid email or password.')
         setLoading(false)
         return
       }
 
-      router.push(callbackUrl)
+      if (data.warning) {
+        setError(data.warning)
+      }
+
+      router.push(data.redirectTo)
       router.refresh()
     } catch {
       setError('Something went wrong. Please try again.')
@@ -104,7 +118,11 @@ function LoginForm() {
           </div>
 
           {error && (
-            <div className="text-sm text-[#FB8500] bg-[rgba(251,133,0,0.08)] border border-[rgba(251,133,0,0.25)] rounded-lg px-4 py-2.5">
+            <div className={`text-sm rounded-lg px-4 py-2.5 ${
+              tooManyAttempts
+                ? 'text-red-700 bg-red-50 border border-red-200'
+                : 'text-[#FB8500] bg-[rgba(251,133,0,0.08)] border border-[rgba(251,133,0,0.25)]'
+            }`}>
               {error}
             </div>
           )}

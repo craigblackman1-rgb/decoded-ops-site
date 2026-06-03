@@ -1,6 +1,10 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import bcrypt from 'bcryptjs'
+import { getSupabase, type DbUser } from '@/lib/supabase'
+
+const MAX_FAILED_ATTEMPTS = 5
+const LOCKOUT_DURATION_MINUTES = 30
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -13,23 +17,69 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null
 
+        const supabase = getSupabase()
+        if (!supabase) return null
+
+        const email = (credentials.email as string).toLowerCase().trim()
+
         try {
-          const usersJson = process.env.CLIENT_USERS
-          if (!usersJson) return null
+          const { data: user, error } = await (supabase as any)
+            .from('client_users')
+            .select('id, email, password_hash, name, client_id, role, is_active, failed_attempts, locked_until')
+            .eq('email', email)
+            .single() as { data: DbUser | null; error: unknown }
 
-          const users: { email: string; passwordHash: string; name: string; clientId: string }[] = JSON.parse(usersJson)
-          const user = users.find((u) => u.email === credentials.email)
+          if (error || !user) {
+            await logAuditEvent(supabase, 'login_failed', email, null, null, { reason: 'user_not_found' })
+            return null
+          }
 
-          if (!user) return null
+          if (!user.is_active) {
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { reason: 'account_disabled' })
+            return null
+          }
 
-          const isValid = await bcrypt.compare(credentials.password as string, user.passwordHash)
-          if (!isValid) return null
+          if (user.locked_until && new Date(user.locked_until) > new Date()) {
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { reason: 'account_locked' })
+            return null
+          }
+
+          const isValid = await bcrypt.compare(credentials.password as string, user.password_hash)
+
+          if (!isValid) {
+            const newFailedAttempts = user.failed_attempts + 1
+
+            if (newFailedAttempts >= MAX_FAILED_ATTEMPTS) {
+              const lockedUntil = new Date(Date.now() + LOCKOUT_DURATION_MINUTES * 60 * 1000)
+              await (supabase as any)
+                .from('client_users')
+                .update({ failed_attempts: newFailedAttempts, locked_until: lockedUntil.toISOString() })
+                .eq('id', user.id)
+              await logAuditEvent(supabase, 'account_locked', email, user.client_id, null, { attempts: newFailedAttempts })
+            } else {
+              await (supabase as any)
+                .from('client_users')
+                .update({ failed_attempts: newFailedAttempts })
+                .eq('id', user.id)
+            }
+
+            await logAuditEvent(supabase, 'login_failed', email, user.client_id, null, { attempts: newFailedAttempts })
+            return null
+          }
+
+          await (supabase as any)
+            .from('client_users')
+            .update({ failed_attempts: 0, locked_until: null, last_login: new Date().toISOString() })
+            .eq('id', user.id)
+
+          await logAuditEvent(supabase, 'login_success', email, user.client_id, null)
 
           return {
-            id: user.email,
+            id: user.id,
             email: user.email,
             name: user.name,
-            clientId: user.clientId,
+            clientId: user.client_id,
+            role: user.role,
           }
         } catch {
           return null
@@ -41,12 +91,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.clientId = (user as any).clientId
+        token.role = (user as any).role
       }
       return token
     },
     async session({ session, token }) {
       if (session.user) {
         ;(session.user as any).clientId = token.clientId
+        ;(session.user as any).role = token.role
       }
       return session
     },
@@ -59,3 +111,25 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   trustHost: true,
 })
+
+async function logAuditEvent(
+  supabase: ReturnType<typeof getSupabase>,
+  eventType: string,
+  email: string | null,
+  clientId: string | null,
+  _ipAddress: string | null,
+  details?: Record<string, unknown>
+) {
+  if (!supabase) return
+  try {
+    await (supabase as any).from('auth_audit_log').insert({
+      event_type: eventType,
+      email,
+      client_id: clientId,
+      ip_address: _ipAddress,
+      details: details || {},
+    })
+  } catch {
+    // Silently fail — audit logging should not break authentication
+  }
+}
