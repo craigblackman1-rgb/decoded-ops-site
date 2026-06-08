@@ -26,7 +26,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   if (!hubUrl) return <div className="empty">Hub not configured</div>
 
   const res = await fetch(`${hubUrl}/api/public/client-docs/${decoded}`, {
-    next: { revalidate: 60 },
+    cache: 'no-store',
   })
 
   if (!res.ok) {

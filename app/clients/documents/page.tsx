@@ -55,15 +55,23 @@ function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts']
+
 async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
   const hubUrl = process.env.HUB_API_URL
   if (!hubUrl) return []
+  const ids = clientId === 'admin' ? ALL_CLIENT_IDS : [clientId]
   try {
-    const res = await fetch(`${hubUrl}/api/public/client-docs?clientId=${clientId}`, {
-      next: { revalidate: 60 },
-    })
-    if (res.ok) return await res.json()
-    return []
+    const results = await Promise.all(
+      ids.map(id =>
+        fetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : [])
+          .catch(() => [])
+      )
+    )
+    return results.flat().sort((a: HubDoc, b: HubDoc) =>
+      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    )
   } catch {
     return []
   }
@@ -129,7 +137,7 @@ export default async function ClientDocumentsPage() {
                   </div>
                 </div>
                 <a
-                  href={`/clients/documents/view/${doc.id}`}
+                  href={`/clients/documents/view/${encodeURIComponent(doc.doc_number)}`}
                   target="_blank"
                   className="shrink-0 px-3 py-1.5 text-xs font-medium text-[#219EBC] border border-[#219EBC]/30 rounded-lg hover:bg-[#219EBC]/10 transition-colors ml-4"
                 >
