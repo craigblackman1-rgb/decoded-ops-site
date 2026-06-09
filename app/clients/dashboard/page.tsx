@@ -2,7 +2,7 @@ import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { SignOutButton } from '@/components/SignOutButton'
-import { FileText, ArrowRight, FileSpreadsheet, FileBarChart } from 'lucide-react'
+import { FileText, ArrowRight, FileSpreadsheet, FileBarChart, LayoutList } from 'lucide-react'
 
 interface SessionUser {
   name?: string | null
@@ -124,6 +124,26 @@ export default async function ClientDashboardPage() {
         {/* Quick links */}
         <div className="grid md:grid-cols-2 gap-4 mb-10">
           <Link
+            href="/clients/project"
+            className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-[#219EBC]/10 flex items-center justify-center">
+                <LayoutList size={20} className="text-[#219EBC]" />
+              </div>
+              <h2 className="text-lg font-bold text-[#023047] group-hover:text-[#219EBC] transition-colors">
+                Your Project
+              </h2>
+            </div>
+            <p className="text-sm text-[#5a7d8f] mb-3">
+              Phases, milestones, and actions needed from you.
+            </p>
+            <span className="text-sm text-[#219EBC] font-medium group-hover:text-[#023047] flex items-center gap-1">
+              View project plan <ArrowRight size={14} />
+            </span>
+          </Link>
+
+          <Link
             href="/clients/documents"
             className="p-6 border border-[#d4e8f0] rounded-xl bg-white hover:border-[#219EBC]/40 hover:shadow-[var(--do-shadow-md)] transition-all group"
           >
@@ -142,23 +162,6 @@ export default async function ClientDashboardPage() {
               Browse documents <ArrowRight size={14} />
             </span>
           </Link>
-
-          <div className="p-6 border border-[#d4e8f0] rounded-xl bg-white">
-            <h2 className="text-sm font-semibold text-[#5a7d8f] uppercase tracking-wider mb-3">
-              Documents ({hubDocs.length})
-            </h2>
-            <p className="text-sm text-[#5a7d8f] mb-3">
-              {hubDocs.length > 0
-                ? `${hubDocs.length} document${hubDocs.length > 1 ? 's' : ''} published from Decoded Ops.`
-                : 'No documents published yet.'}
-            </p>
-            <Link
-              href="/clients/documents"
-              className="text-sm text-[#219EBC] font-medium hover:text-[#023047] flex items-center gap-1 transition-colors"
-            >
-              View all <ArrowRight size={14} />
-            </Link>
-          </div>
         </div>
 
         {/* Published documents from Hub */}
