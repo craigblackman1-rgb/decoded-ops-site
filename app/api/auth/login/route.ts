@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { AuthError } from 'next-auth'
 import { signIn } from '@/auth'
 import { loginRatelimit } from '@/lib/rate-limit'
 
@@ -75,7 +76,11 @@ export async function POST(req: NextRequest) {
       ok: true,
       redirectTo: sanitiseCallbackUrl(callbackUrl),
     })
-  } catch {
+  } catch (error) {
+    if (error instanceof AuthError) {
+      return NextResponse.json({ error: 'Invalid email or password.' }, { status: 401 })
+    }
+    console.error('[login] unexpected error:', error)
     return NextResponse.json(
       { error: 'Authentication service unavailable. Please try again.' },
       { status: 503 }
