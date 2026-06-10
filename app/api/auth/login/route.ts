@@ -77,10 +77,13 @@ export async function POST(req: NextRequest) {
       redirectTo: sanitiseCallbackUrl(callbackUrl),
     })
   } catch (error) {
+    console.error('[login] error type:', error?.constructor?.name)
+    console.error('[login] error message:', (error as any)?.message)
+    console.error('[login] error cause:', (error as any)?.cause)
+    console.error('[login] full error:', JSON.stringify(error, null, 2))
     if (error instanceof AuthError) {
       return NextResponse.json({ error: 'Invalid email or password.' }, { status: 401 })
     }
-    console.error('[login] unexpected error:', error)
     return NextResponse.json(
       { error: 'Authentication service unavailable. Please try again.' },
       { status: 503 }

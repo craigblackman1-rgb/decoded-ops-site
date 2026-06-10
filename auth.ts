@@ -26,10 +26,18 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) return null
+        console.log('[authorize] called with email:', credentials?.email)
+        if (!credentials?.email || !credentials?.password) {
+          console.log('[authorize] missing credentials')
+          return null
+        }
 
         const supabase = getSupabase()
-        if (!supabase) return null
+        if (!supabase) {
+          console.log('[authorize] supabase not available - check SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY')
+          return null
+        }
+        console.log('[authorize] supabase connected')
 
         const email = (credentials.email as string).toLowerCase().trim()
         const ipAddress = await getClientIp()
@@ -56,7 +64,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             return null
           }
 
+          console.log('[authorize] user found, comparing password')
           const isValid = await bcrypt.compare(credentials.password as string, user.password_hash)
+          console.log('[authorize] password valid:', isValid)
 
           if (!isValid) {
             const newFailedAttempts = user.failed_attempts + 1
