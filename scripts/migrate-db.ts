@@ -34,7 +34,7 @@ async function main() {
     if (rows.length === 0) continue
 
     console.log(`  Inserting into new DB...`)
-    const { error: insertError } = await newDb.from(tablename).insert(rows, { ignoreDuplicates: true })
+    const { error: insertError } = await newDb.from(tablename).upsert(rows, { ignoreDuplicates: true })
     if (insertError) {
       console.error(`  Failed to insert:`, insertError)
       continue
