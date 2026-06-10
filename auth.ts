@@ -17,6 +17,7 @@ async function getClientIp(): Promise<string | null> {
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   providers: [
     Credentials({
       name: 'credentials',
