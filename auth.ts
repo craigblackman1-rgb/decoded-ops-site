@@ -50,6 +50,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             .single() as { data: DbUser | null; error: unknown }
 
           if (error || !user) {
+            console.log('[authorize] user not found or query error:', JSON.stringify(error))
             await logAuditEvent(supabase, 'login_failed', email, null, ipAddress, null, { reason: 'user_not_found' })
             return null
           }
