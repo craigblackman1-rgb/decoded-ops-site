@@ -79,7 +79,6 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
       <div style={{ flex: 1, position: 'relative' }}>
         <iframe
           srcDoc={doc.html_content}
-          sandbox="allow-scripts allow-same-origin"
           style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
           title={doc.title}
         />
