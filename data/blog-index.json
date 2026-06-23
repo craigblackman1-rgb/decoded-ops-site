@@ -229,6 +229,66 @@
       "category": "Operations",
       "featuredImage": "/images/blog/process-before-platform-thumb.svg",
       "images": ["/images/blog/process-before-platform-img-1.svg", "/images/blog/process-before-platform-img-2.svg"]
+    },
+    {
+      "slug": "lean-six-sigma-small-business",
+      "title": "Is Lean Six Sigma Right for Your Small Business?",
+      "excerpt": "Lean Six Sigma sounds like enterprise stuff. Here's the version that actually applies to a print or decoration business under £5m — and when it's worth your time.",
+      "date": "2026-06-25",
+      "readTime": 5,
+      "category": "Operations",
+      "featuredImage": "/images/blog/lean-six-sigma-small-business-thumb.svg",
+      "images": []
+    },
+    {
+      "slug": "hire-fractional-cto",
+      "title": "Hire a Fractional CTO: What It Costs, What You Get, and When It Makes Sense",
+      "excerpt": "What a fractional CTO actually costs, what you get for the money, and the four situations where fractional leadership beats a full-time hire.",
+      "date": "2026-06-26",
+      "readTime": 5,
+      "category": "Technology",
+      "featuredImage": "/images/blog/hire-fractional-cto-thumb.svg",
+      "images": []
+    },
+    {
+      "slug": "erp-selection-decorated-goods",
+      "title": "ERP Selection for Decorated Goods: A Plain-English Buying Guide",
+      "excerpt": "How to choose an ERP for print, embroidery, and decoration businesses — with a process that puts your requirements first and the vendor demo second.",
+      "date": "2026-06-27",
+      "readTime": 6,
+      "category": "ERP",
+      "featuredImage": "/images/blog/erp-selection-decorated-goods-thumb.svg",
+      "images": []
+    },
+    {
+      "slug": "what-is-erp-decorated-goods",
+      "title": "What Is ERP? And Does Your Decorated Goods Business Actually Need One?",
+      "excerpt": "A jargon-free explanation of what ERP actually does for a decorated goods business — and how to know whether you need one or are being sold something you don't.",
+      "date": "2026-06-28",
+      "readTime": 6,
+      "category": "ERP",
+      "featuredImage": "/images/blog/what-is-erp-decorated-goods-thumb.svg",
+      "images": []
+    },
+    {
+      "slug": "cloud-erp-print-business",
+      "title": "Cloud ERP for a Print Business: What Changes When You Move Online",
+      "excerpt": "Cloud ERP for small print businesses: what changes, what you need to check, and the hidden traps that on-premise systems don't have.",
+      "date": "2026-06-29",
+      "readTime": 6,
+      "category": "ERP",
+      "featuredImage": "/images/blog/cloud-erp-print-business-thumb.svg",
+      "images": []
+    },
+    {
+      "slug": "local-seo-print-shop",
+      "title": "Local SEO for Print Shops: How to Show Up When Nearby Customers Are Searching",
+      "excerpt": "Local SEO for print shops: practical steps to rank in local search, optimise your Google Business Profile, and win nearby customers.",
+      "date": "2026-06-30",
+      "readTime": 6,
+      "category": "Marketing",
+      "featuredImage": "/images/blog/local-seo-print-shop-thumb.svg",
+      "images": []
     }
   ]
 }

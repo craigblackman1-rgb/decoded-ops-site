@@ -6,8 +6,8 @@ import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Print & Embroidery Technology Consultant | Decoded Ops',
-  description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Written report in five days. 3x guarantee.',
+  title: 'Print, Embroidery & Decoration Technology Consultant | Decoded Ops',
+  description: 'Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Clarity audit from £395. 25 years in the sector. Plain English. No vendor agenda.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Print & Embroidery Technology Consultant | Decoded Ops',

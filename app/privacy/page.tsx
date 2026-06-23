@@ -37,7 +37,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-2xl font-bold text-[#023047] mb-4">1. Introduction</h2>
               <p className="text-[#023047]/80 leading-relaxed mb-4">
-                Decoded Ops (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the decoded-ops.com website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                Decoded Ops (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the decodedops.co.uk website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
               <p className="text-[#023047]/80 leading-relaxed">
                 Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our website.
@@ -191,8 +191,8 @@ export default function PrivacyPage() {
               <div className="bg-[#F8F9FA] border border-[#8ECAE6]/40 rounded-2xl p-6 mt-4">
                 <p className="font-semibold text-[#023047] mb-2">Decoded Ops</p>
                 <p className="text-[#023047]/80 leading-relaxed">
-                  <strong>Email:</strong> hello@decoded-ops.com<br />
-                  <strong>Website:</strong> decoded-ops.com
+                  <strong>Email:</strong> craig@decodedops.co.uk<br />
+                  <strong>Website:</strong> decodedops.co.uk
                 </p>
               </div>
             </div>

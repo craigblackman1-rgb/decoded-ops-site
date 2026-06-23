@@ -34,27 +34,28 @@ const schema = {
 const reviews = [
   {
     name: 'Orderwise',
-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
-    status: 'Coming soon',
+    description: 'Used by a lot of UK decorated goods businesses — but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).',
+    status: 'Review available',
+    href: '/blog/orderwise-what-it-does-well-what-it-doesn-t',
   },
   {
     name: 'Unleashed',
-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
+    description: 'A popular cloud-based inventory and manufacturing platform. Works well for straightforward stock management, but the limitations for decoration-specific workflows and multi-site production scheduling are rarely discussed at demo stage.',
     status: 'Coming soon',
   },
   {
     name: 'Printavo',
-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
+    description: 'US-based MIS built for screen printers. Growing UK adoption, but the accounting integration and multi-currency gaps create workarounds for British businesses. Worth evaluating for the right operation profile.',
     status: 'Coming soon',
   },
   {
     name: 'Cin7',
-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
+    description: 'Positioned as an all-in-one inventory and order management platform. Strong for product-based businesses, but the implementation complexity and API limitations for decorated goods workflows need a careful look before committing.',
     status: 'Coming soon',
   },
   {
     name: 'Shopify + B2B Portal',
-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who\'s implemented them.',
+    description: 'The most common eCommerce front end in the sector. The question is not whether you can build a B2B portal on Shopify — it\'s whether it will connect to your ERP without a six-figure integration project.',
     status: 'Coming soon',
   },
 ];
@@ -77,15 +78,19 @@ export default function SoftwareReviewsPage() {
       <section className="py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6">
-            {reviews.map((review) => (
-              <div key={review.name} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 transition-all duration-300">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#219EBC]/10 border border-[#219EBC]/20 mb-4">
-                  <span className="text-xs font-semibold text-[#219EBC] uppercase">{review.status}</span>
-                </div>
-                <h2 className="text-xl font-bold text-[#023047] mb-3">{review.name}</h2>
-                <p className="text-sm text-[#023047]/70 leading-relaxed">{review.description}</p>
-              </div>
-            ))}
+            {reviews.map((review) => {
+              const CardWrapper = review.href ? 'a' : 'div';
+              const wrapperProps = review.href ? { href: review.href, className: "block group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-sm transition-all duration-300 cursor-pointer" } : { className: "group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA]" };
+              return (
+                <CardWrapper key={review.name} {...wrapperProps}>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#219EBC]/10 border border-[#219EBC]/20 mb-4">
+                    <span className="text-xs font-semibold text-[#219EBC] uppercase">{review.status}</span>
+                  </div>
+                  <h2 className="text-xl font-bold text-[#023047] mb-3">{review.name}</h2>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{review.description}</p>
+                </CardWrapper>
+              );
+            })}
           </div>
 
           <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
