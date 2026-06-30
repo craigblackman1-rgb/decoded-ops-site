@@ -48,4 +48,11 @@ proposal-*.md
 seo-task-hub.html
 cover-friday-*
 
+# Operational setup/session docs — not codebase
+SCOTSHIRTS_SETUP.md
+SECURITY_HARDENING_DIRECTIVE.md
+SECURITY_MIGRATION.md
+OPENCODE_INSTRUCTIONS.md
+supabase/MIGRATION*.md
+
 .vercel
