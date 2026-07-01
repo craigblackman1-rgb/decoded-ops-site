@@ -157,7 +157,7 @@ export default function ClarityPage() {
                 <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book a free discovery call <ArrowRight size={18} />
+                  Book your Clarity Audit call <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
@@ -258,7 +258,7 @@ export default function ClarityPage() {
               </div>
               <div className="mt-10">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book a free discovery call <ArrowRight size={18} />
+                  Book your Clarity Audit call <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
