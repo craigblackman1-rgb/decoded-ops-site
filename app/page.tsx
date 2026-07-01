@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users } from 'lucide-react';
+import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users, Package, ShoppingBag, Dumbbell } from 'lucide-react';
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 import { JsonLd } from '@/components/JsonLd';
@@ -332,7 +332,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CASE STUDY TEASER ────────────────────────────────────────────────── */}
+      {/* ── CURRENT WORK — live named engagements ──────────────────────────────── */}
+      <section className="py-20 bg-white border-t border-[#8ECAE6]/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#219EBC] mb-2">What I&apos;m doing right now</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Not hypothetical. Live engagements, named with permission.</h2>
+            <p className="text-[#023047]/70 text-lg">Four different sectors, same approach every time: fix the process and the data before you automate anything.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Wrench, name: 'Hanicks', desc: 'Project-leading a Khaos Control ERP implementation plus a custom supplier and Amazon FBA app.', href: '/case-studies/hanicks' },
+              { icon: Package, name: 'TackleBag', desc: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of their ERP.', href: '/case-studies/tacklebag' },
+              { icon: ShoppingBag, name: 'Cobra Workwear', desc: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping delivery.', href: '/case-studies/cobra-workwear' },
+              { icon: Dumbbell, name: 'Eternal Fitness', desc: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.', href: '/case-studies/eternal-fitness' },
+            ].map(c => {
+              const Icon = c.icon;
+              return (
+                <Link key={c.href} href={c.href} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-lg transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-[#219EBC]/10 flex items-center justify-center mb-4 group-hover:bg-[#219EBC]/20 transition-colors">
+                    <Icon size={20} className="text-[#219EBC]" />
+                  </div>
+                  <h3 className="font-bold text-[#023047] mb-2 group-hover:text-[#219EBC] transition-colors">{c.name}</h3>
+                  <p className="text-sm text-[#023047]/70 leading-relaxed">{c.desc}</p>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
+              See all client work <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CASE STUDY TEASER — supporting evidence ──────────────────────────── */}
       <section className="py-16 bg-[#023047]/5 border-t border-[#8ECAE6]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
