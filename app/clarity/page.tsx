@@ -151,9 +151,10 @@ export default function ClarityPage() {
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
                   One day. A complete technology audit. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five working days.
                 </h1>
-                <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+                <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
                   A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
                 </p>
+                <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Book a free discovery call <ArrowRight size={18} />

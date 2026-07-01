@@ -14,6 +14,8 @@ export interface LocationPageProps {
   tagline: string;
   intro: string;
   localContext: string;
+  driveTime?: string;
+  localFact?: string;
   painPoints: PainPoint[];
   whatIdo: string[];
   cta: string;
@@ -29,6 +31,8 @@ export function LocationPage({
   tagline,
   intro,
   localContext,
+  driveTime,
+  localFact,
   painPoints,
   whatIdo,
   cta,
@@ -95,6 +99,22 @@ export function LocationPage({
               <p className="text-[#023047]/70 text-lg leading-relaxed mt-4">
                 The work I do is the same wherever the business is based — a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
               </p>
+              {(driveTime || localFact) && (
+                <div className="mt-6 p-5 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                  {driveTime && (
+                    <div>
+                      <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wide mb-1">From Worthing</div>
+                      <div className="text-sm text-[#023047]/80">{driveTime}</div>
+                    </div>
+                  )}
+                  {localFact && (
+                    <div className="flex-1">
+                      <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wide mb-1">{town}</div>
+                      <div className="text-sm text-[#023047]/80">{localFact}</div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>

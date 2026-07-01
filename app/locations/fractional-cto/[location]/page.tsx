@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { LocationPage } from '@/components/LocationPage';
 import { locations, getLocation } from '@/data/locations';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export async function generateStaticParams() {
   return locations.map((l) => ({ location: l.slug }));
@@ -75,6 +76,11 @@ export default async function FractionalCTOLocationPage({
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Fractional CTO Locations', url: 'https://decodedops.co.uk/locations/fractional-cto' },
+        { name: loc.name, url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}` },
+      ]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -108,6 +114,8 @@ export default async function FractionalCTOLocationPage({
         tagline={`Senior technology leadership for ||${loc.name} businesses|| — without the full-time hire.`}
         intro={`Growing businesses in ${loc.name} face real technology decisions — vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
         localContext={loc.localContext}
+        driveTime={loc.driveTime}
+        localFact={loc.localFact}
         painPoints={painPoints}
         whatIdo={whatIdo}
         cta={`Find out if a fractional CTO is right for your ${loc.name} business`}

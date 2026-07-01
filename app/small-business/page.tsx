@@ -144,9 +144,10 @@ export default function SmallBusinessPage() {
             The same operational thinking I bring to larger businesses — adapted for smaller ones. Remote delivery. 
             Fixed prices. No jargon. No vendor agenda.
           </p>
-          <p className="text-sm text-[#023047]/60 leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-sm text-[#023047]/60 leading-relaxed mb-4 max-w-2xl mx-auto">
             A small business operations consultant covers what a full-time operations director would — technology decisions, vendor oversight, process improvement, and AI readiness — on a flexible, affordable basis built for businesses under £500k.
           </p>
+          <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
               See all pricing <ArrowRight size={18} />

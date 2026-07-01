@@ -119,9 +119,10 @@ export default function RetainedPage() {
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. <strong className="text-[#023047]">25 years inside the sector</strong>, on retainer.
               </p>
-              <p className="text-sm text-[#023047]/60 leading-relaxed mb-8 max-w-xl">
+              <p className="text-sm text-[#023047]/60 leading-relaxed mb-4 max-w-xl">
                 Fractional CTO services give you the technology leadership and vendor oversight a growing business needs — without recruiting for a role that will cost £80,000+ before it has delivered value.
               </p>
+              <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   Talk about your situation <ArrowRight size={18} />

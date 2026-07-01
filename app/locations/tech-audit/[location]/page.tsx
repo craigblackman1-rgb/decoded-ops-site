@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { LocationPage } from '@/components/LocationPage';
 import { locations, getLocation } from '@/data/locations';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export async function generateStaticParams() {
   return locations.map((l) => ({ location: l.slug }));
@@ -75,6 +76,11 @@ export default async function TechAuditLocationPage({
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Tech Audit Locations', url: 'https://decodedops.co.uk/locations/tech-audit' },
+        { name: loc.name, url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}` },
+      ]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -114,6 +120,8 @@ export default async function TechAuditLocationPage({
         tagline={`Find out exactly what your systems are ||costing your ${loc.name} business.||`}
         intro={`Most ${loc.name} businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is a structured, independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.`}
         localContext={loc.localContext}
+        driveTime={loc.driveTime}
+        localFact={loc.localFact}
         painPoints={painPoints}
         whatIdo={whatIdo}
         cta={`Book a Clarity Audit for your ${loc.name} business — from £395`}

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
@@ -28,6 +29,10 @@ const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;
 export default function TechAuditLocationsHub() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Tech Audit Locations', url: 'https://decodedops.co.uk/locations/tech-audit' },
+      ]} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

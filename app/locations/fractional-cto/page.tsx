@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Hire a Fractional CTO | Decoded Ops — Print & Decoration Specialists',
@@ -53,6 +54,10 @@ export default function FractionalCTOLocationsHub() {
   return (
     <>
       <JsonLd data={locationSchema} />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Fractional CTO Locations', url: 'https://decodedops.co.uk/locations/fractional-cto' },
+      ]} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 max-w-3xl">
