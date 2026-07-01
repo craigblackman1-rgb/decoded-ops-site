@@ -1,5 +1,21 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Download } from 'lucide-react';
+import { JsonLd } from '@/components/JsonLd';
+
+// Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Operational Audit Checklist',
+      description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses.',
+      author: { '@type': 'Person', name: 'Craig Blackman' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+      url: 'https://decodedops.co.uk/resources/audit-checklist',
+    },
+  ],
+};
 
 export const metadata = {
   title: 'Free Technology & Operations Audit Checklist | Decoded Ops',
@@ -95,6 +111,7 @@ const checklist = [
 export default function ChecklistPage() {
   return (
     <>
+      <JsonLd data={schema} />
       {/* HERO */}
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
