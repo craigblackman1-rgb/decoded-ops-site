@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
@@ -126,6 +127,10 @@ const services = [
 export default function SmallBusinessPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Small Business Consulting', url: 'https://decodedops.co.uk/small-business' },
+      ]} />
       <JsonLd data={smallBizSchema} />
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">

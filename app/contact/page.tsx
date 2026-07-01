@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { ContactClient } from './ContactClient';
 
 export const metadata: Metadata = {
@@ -19,5 +20,13 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactClient />;
+  return (
+    <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Contact', url: 'https://decodedops.co.uk/contact' },
+      ]} />
+      <ContactClient />
+    </>
+  );
 }

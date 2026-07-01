@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2, Zap, Settings, Users } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
@@ -123,6 +124,10 @@ const claritySchema = {
 export default function ClarityPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' },
+      ]} />
       <JsonLd data={claritySchema} />
       {/* 3× GUARANTEE */}
       <section className="py-6 bg-[#219EBC]">

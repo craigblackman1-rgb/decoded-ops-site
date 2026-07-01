@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import RelatedPosts from '@/components/RelatedPosts';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
 
@@ -49,7 +51,7 @@ function buildArticleSchema(item: any, slug: string, pubDate: string) {
         description: item.seo?.description || item.excerpt || item.title,
         wordCount: (item.html || '').replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length,
         articleSection: 'Operations',
-        keywords: (item.title || '').toLowerCase().split(' ').slice(0, 8).join(', '),
+        keywords: item.primary_keyword || (item.title || '').toLowerCase().split(' ').slice(0, 8).join(', '),
       },
     ],
   };
@@ -116,7 +118,7 @@ export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params;
   const item = await fetchBlogPost(slug);
 
-  if (!item) {
+  if (!item || item.status === 'archived') {
     return (
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
@@ -145,6 +147,11 @@ export default async function BlogPost({ params }: PageProps) {
   return (
     <>
       {schemas.map((s, i) => <JsonLd key={i} data={s} />)}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Insights', url: 'https://decodedops.co.uk/blog' },
+        { name: item.title, url: `https://decodedops.co.uk/blog/${slug}` },
+      ]} />
 
       {/* Article header */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: 'var(--do-surface-page)' }}>
@@ -222,47 +229,8 @@ export default async function BlogPost({ params }: PageProps) {
             </Link>
           </div>
 
-          {/* Related posts */}
-          {(() => {
-            const allPosts = localBlogPosts.items || [];
-            const related = allPosts
-              .filter((p: any) => p.slug !== slug && p.category === item.category)
-              .slice(0, 3);
-            if (related.length === 0) return null;
-            return (
-              <div className="mt-16 pt-12" style={{ borderTop: '1px solid var(--do-border-subtle)' }}>
-                <h3 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-                  More in {item.category}
-                </h3>
-                <div className="space-y-6">
-                  {related.map((post: any) => {
-                    const pubDate = post.date || post.publishedDate;
-                    const date = pubDate ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : '';
-                    return (
-                      <Link
-                        key={post.slug}
-                        href={`/blog/${post.slug}`}
-                        className="blog-card-subtle group block p-6 rounded-xl transition-all duration-200 hover:shadow-sm"
-                        style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
-                      >
-                        <h4 className="text-lg font-bold mb-2 group-hover:text-[var(--do-cerulean)] transition-colors" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-                          {post.title}
-                        </h4>
-                        <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--do-text-muted)' }}>
-                          {post.excerpt}
-                        </p>
-                        <div className="flex items-center gap-3 text-xs" style={{ color: 'var(--do-text-muted)', opacity: 0.6 }}>
-                          <span>{date}</span>
-                          <span>·</span>
-                          <span>{post.readTime} min read</span>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })()}
+          {/* Related posts by cluster */}
+          <RelatedPosts currentSlug={slug} cluster={item.cluster} />
         </div>
       </section>
     </>

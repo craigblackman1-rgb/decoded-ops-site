@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Free Operational Tools | Decoded Ops',
@@ -74,6 +75,10 @@ const tools = [
 export default function ToolsPage() {
   return (
     <main>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Tools', url: 'https://decodedops.co.uk/tools' },
+      ]} />
       <JsonLd data={toolsSchema} />
       {/* Hero */}
       <section

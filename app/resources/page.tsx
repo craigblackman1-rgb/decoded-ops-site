@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, ClipboardCheck, AlertTriangle, Star } from 'lucide-react';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Free Resources for Print & Embroidery Businesses | Decoded Ops',
@@ -44,6 +45,10 @@ const resources = [
 export default function ResourcesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Resources', url: 'https://decodedops.co.uk/resources' },
+      ]} />
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Wrench, Package, ShoppingBag, Dumbbell } from 'lucide-react';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 // Target keyword: "decoded ops case studies" (brand/trust — low volume, supports commercial pages rather than ranking independently)
 export const metadata: Metadata = {
@@ -58,6 +59,10 @@ const cases = [
 export default function CaseStudiesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Client Work', url: 'https://decodedops.co.uk/case-studies' },
+      ]} />
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">

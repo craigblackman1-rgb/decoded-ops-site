@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import BlogList from '@/components/BlogList';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
@@ -51,6 +52,10 @@ export default async function BlogPage() {
   const posts = await fetchBlogIndex();
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Insights', url: 'https://decodedops.co.uk/blog' },
+      ]} />
       <JsonLd data={blogSchema} />
       <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8">

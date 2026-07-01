@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, FileText, Search, Users, Shield, CheckCircle2 } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'ERP & Technology Implementation Consultant | Decoded Ops',
@@ -89,6 +90,10 @@ const includedItems = [
 export default function DeliverPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'ERP & Technology Implementation', url: 'https://decodedops.co.uk/deliver' },
+      ]} />
       <JsonLd data={deliverSchema} />
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">

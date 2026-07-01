@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { PricingClient } from './PricingClient';
 
 export const metadata: Metadata = {
@@ -19,5 +20,13 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  return <PricingClient />;
+  return (
+    <>
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Pricing', url: 'https://decodedops.co.uk/pricing' },
+      ]} />
+      <PricingClient />
+    </>
+  );
 }
