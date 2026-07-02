@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, ClipboardCheck, AlertTriangle, Star } from 'lucide-react';
+import { ArrowRight, ClipboardCheck, AlertTriangle, Star, Workflow, Gauge } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
@@ -39,6 +39,18 @@ const resources = [
     title: 'Software Reviews',
     desc: 'Honest, independent reviews of ERP, eCommerce, and production software used in this sector. No affiliate links. No sponsors.',
     href: '/resources/software-reviews',
+  },
+  {
+    icon: Workflow,
+    title: 'The Decoded Method',
+    desc: 'A three-layer system for documenting how your business runs — Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
+    href: '/resources/decoded-method',
+  },
+  {
+    icon: Gauge,
+    title: 'What 5 & 6 Sigma Mean for Your Operation',
+    desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business — and why closing the gap is about process, not machinery.',
+    href: '/resources/six-sigma',
   },
 ];
 
