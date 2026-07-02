@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Decoded Method — Operations Schematic (prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#023047; --cyan:#219EBC; --sky:#8ECAE6; --amber:#FFB703; --orange:#FB8500; --off:#F8F9FA; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#021f2e;font-family:'DM Sans',system-ui,Arial,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
+  .stage{width:100%;max-width:1240px;}
+  .cap{color:#5f8296;font-size:12px;text-align:center;margin-top:16px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;}
+  svg{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);}
+
+  /* motion */
+  .draw{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 1.6s ease forwards;}
+  .draw.d2{animation-delay:.5s;} .draw.d3{animation-delay:.9s;} .draw.d4{animation-delay:1.3s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .fade{opacity:0;animation:fade .8s ease forwards;}
+  .fade.f1{animation-delay:.3s;} .fade.f2{animation-delay:.8s;} .fade.f3{animation-delay:1.3s;} .fade.f4{animation-delay:1.8s;}
+  @keyframes fade{to{opacity:1;}}
+  .halo{transform-origin:center;transform-box:fill-box;animation:breathe 3.2s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:.15;r:16px;}50%{opacity:.4;r:22px;}}
+  @media (prefers-reduced-motion: reduce){
+    .draw{animation:none;stroke-dashoffset:0;} .fade{animation:none;opacity:1;} .halo{animation:none;} .dot{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+<svg viewBox="0 0 1240 720" role="img" aria-label="The Decoded Method shown as an operations schematic: a Process Register spine feeding SOPs, with an Improvement Log feeding back.">
+  <defs>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#0a3d5c" stroke-width="0.6"/>
+    </pattern>
+    <radialGradient id="glowC" cx="30%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#219EBC" stop-opacity="0.10"/><stop offset="100%" stop-color="#023047" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowA" cx="82%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#FFB703" stop-opacity="0.07"/><stop offset="100%" stop-color="#023047" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#FFB703"/></marker>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="1240" height="720" fill="#023047"/>
+  <rect width="1240" height="720" fill="url(#grid)" opacity="0.55"/>
+  <rect width="1240" height="720" fill="url(#glowC)"/>
+  <rect width="1240" height="720" fill="url(#glowA)"/>
+  <rect x="0" y="0" width="1240" height="6" fill="#FFB703"/>
+
+  <!-- title -->
+  <text x="60" y="66" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3" fill="#219EBC">HOW IT WORKS</text>
+  <text x="60" y="104" font-family="Outfit" font-weight="800" font-size="30" fill="#F8F9FA">The Decoded Method, as a system</text>
+
+  <!-- ================= 01 PROCESS REGISTER ================= -->
+  <g class="fade f1">
+    <rect x="60" y="188" width="34" height="26" rx="5" fill="#023047" stroke="#219EBC" stroke-width="1.5"/>
+    <text x="77" y="206" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#219EBC">01</text>
+    <text x="106" y="206" font-family="Outfit" font-weight="700" font-size="14" letter-spacing="1.5" fill="#F8F9FA">PROCESS REGISTER</text>
+  </g>
+  <!-- spine -->
+  <line class="draw d2" x1="150" y1="250" x2="150" y2="632" stroke="#219EBC" stroke-width="2.5"/>
+  <circle cx="150" cy="250" r="6" fill="#FFB703" class="fade f2"/>
+  <!-- register rows -->
+  <!-- node template: circle on spine + ref + name + status -->
+  <g class="fade f2" font-family="DM Sans">
+    <g>
+      <circle cx="150" cy="300" r="5" fill="#8ECAE6"/>
+      <text x="176" y="296" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8ECAE6">DO-PR-001</text>
+      <text x="176" y="314" font-size="14" fill="#F8F9FA">Discovery Day</text>
+      <circle cx="360" cy="304" r="4" fill="#219EBC"/>
+    </g>
+    <g>
+      <circle id="nodeB" cx="150" cy="380" r="5" fill="#8ECAE6"/>
+      <circle cx="150" cy="380" class="halo" r="16" fill="#FFB703"/>
+      <circle cx="150" cy="380" r="5" fill="#FFB703"/>
+      <text x="176" y="376" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8ECAE6">DO-PR-002</text>
+      <text x="176" y="394" font-size="14" fill="#F8F9FA">Client Onboarding</text>
+      <circle cx="360" cy="384" r="4" fill="#219EBC"/>
+    </g>
+    <g>
+      <circle cx="150" cy="460" r="5" fill="#8ECAE6"/>
+      <text x="176" y="456" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8ECAE6">DO-PR-004</text>
+      <text x="176" y="474" font-size="14" fill="#F8F9FA">Proposal Build</text>
+      <circle cx="360" cy="464" r="4" fill="#219EBC"/>
+    </g>
+    <g>
+      <circle cx="150" cy="540" r="5" fill="#8ECAE6"/>
+      <text x="176" y="536" font-family="'JetBrains Mono',monospace" font-size="12" fill="#8ECAE6">DO-PR-009</text>
+      <text x="176" y="554" font-size="14" fill="#F8F9FA">Client Handover</text>
+      <rect x="352" y="533" width="16" height="8" rx="4" fill="#FFB703"/>
+    </g>
+  </g>
+  <text x="60" y="668" font-family="DM Sans" font-style="italic" font-size="13" fill="#8ECAE6" opacity="0.7" class="fade f3">The spine. Every process, owned and dated, on one page.</text>
+
+  <!-- ================= 02 SOPs ================= -->
+  <g class="fade f2">
+    <rect x="520" y="188" width="34" height="26" rx="5" fill="#023047" stroke="#219EBC" stroke-width="1.5"/>
+    <text x="537" y="206" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#219EBC">02</text>
+    <text x="566" y="206" font-family="Outfit" font-weight="700" font-size="14" letter-spacing="1.5" fill="#F8F9FA">SOPs · ONE PAGE EACH</text>
+  </g>
+  <!-- connectors register -> SOP -->
+  <path id="connA" class="draw d3" d="M164 380 C 320 380 360 300 520 300" fill="none" stroke="#219EBC" stroke-width="2" stroke-opacity="0.8" marker-end="url(#ah)"/>
+  <path id="connB" class="draw d3" d="M164 460 C 320 460 360 470 520 470" fill="none" stroke="#219EBC" stroke-width="2" stroke-opacity="0.8" marker-end="url(#ah)"/>
+
+  <!-- SOP module A -->
+  <g class="fade f3">
+    <rect x="528" y="250" width="230" height="130" rx="10" fill="#04314a" stroke="#8ECAE6" stroke-opacity="0.35"/>
+    <rect x="528" y="250" width="230" height="28" rx="10" fill="#219EBC"/>
+    <rect x="528" y="266" width="230" height="12" fill="#219EBC"/>
+    <text x="544" y="269" font-family="'JetBrains Mono',monospace" font-size="11" fill="#023047" font-weight="600">DO-SOP-002 · Onboarding</text>
+    <g font-family="DM Sans" font-size="11" fill="#8ECAE6">
+      <rect x="544" y="292" width="120" height="6" rx="3" fill="#8ECAE6" opacity="0.5"/>
+      <rect x="544" y="308" width="180" height="6" rx="3" fill="#8ECAE6" opacity="0.35"/>
+      <rect x="544" y="324" width="150" height="6" rx="3" fill="#8ECAE6" opacity="0.35"/>
+      <rect x="544" y="340" width="198" height="8" rx="4" fill="#FFB703" opacity="0.85"/>
+      <rect x="544" y="358" width="110" height="6" rx="3" fill="#8ECAE6" opacity="0.35"/>
+    </g>
+  </g>
+  <!-- SOP module B -->
+  <g class="fade f4">
+    <rect x="528" y="418" width="230" height="110" rx="10" fill="#04314a" stroke="#8ECAE6" stroke-opacity="0.35"/>
+    <rect x="528" y="418" width="230" height="28" rx="10" fill="#219EBC"/>
+    <rect x="528" y="434" width="230" height="12" fill="#219EBC"/>
+    <text x="544" y="437" font-family="'JetBrains Mono',monospace" font-size="11" fill="#023047" font-weight="600">DO-SOP-004 · Proposal</text>
+    <g>
+      <rect x="544" y="460" width="130" height="6" rx="3" fill="#8ECAE6" opacity="0.5"/>
+      <rect x="544" y="476" width="180" height="6" rx="3" fill="#8ECAE6" opacity="0.35"/>
+      <rect x="544" y="492" width="160" height="8" rx="4" fill="#FFB703" opacity="0.85"/>
+      <rect x="544" y="510" width="110" height="6" rx="3" fill="#8ECAE6" opacity="0.35"/>
+    </g>
+  </g>
+  <text x="528" y="560" font-family="DM Sans" font-style="italic" font-size="13" fill="#8ECAE6" opacity="0.7" class="fade f4">One page. Five sections. Handed over, not explained.</text>
+
+  <!-- ================= 03 IMPROVEMENT LOG ================= -->
+  <g class="fade f3">
+    <rect x="928" y="188" width="34" height="26" rx="5" fill="#023047" stroke="#FFB703" stroke-width="1.5"/>
+    <text x="945" y="206" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="14" fill="#FFB703">03</text>
+    <text x="974" y="206" font-family="Outfit" font-weight="700" font-size="14" letter-spacing="1.5" fill="#F8F9FA">IMPROVEMENT LOG</text>
+  </g>
+  <g class="fade f4">
+    <rect x="936" y="250" width="244" height="200" rx="12" fill="#04314a" stroke="#FFB703" stroke-opacity="0.4"/>
+    <text x="958" y="286" font-family="'JetBrains Mono',monospace" font-size="11" fill="#FFB703">DO-IL-014</text>
+    <g font-family="DM Sans">
+      <text x="958" y="316" font-family="Outfit" font-weight="700" font-size="12" letter-spacing="1" fill="#219EBC">WHAT BROKE</text>
+      <text x="958" y="334" font-size="12.5" fill="#8ECAE6">Proposals priced from memory.</text>
+      <text x="958" y="366" font-family="Outfit" font-weight="700" font-size="12" letter-spacing="1" fill="#219EBC">WHAT CHANGED</text>
+      <text x="958" y="384" font-size="12.5" fill="#8ECAE6">SOP forces canonical pricing.</text>
+      <text x="958" y="416" font-family="Outfit" font-weight="700" font-size="12" letter-spacing="1" fill="#FFB703">RESULT</text>
+      <text x="958" y="434" font-size="12.5" fill="#F8F9FA">No under-quotes since.</text>
+    </g>
+  </g>
+  <!-- feedback arc: log -> register node B -->
+  <path id="fb" class="draw d4" d="M936 300 C 620 130 320 130 158 366" fill="none" stroke="#FFB703" stroke-width="2" stroke-dasharray="6 6" stroke-opacity="0.85" marker-end="url(#ah)"/>
+  <text x="600" y="126" text-anchor="middle" font-family="DM Sans" font-style="italic" font-size="13" fill="#FFB703" opacity="0.75" class="fade f4">When something changes, it feeds back and updates the register.</text>
+
+  <!-- ================= FLOWING DATA DOTS ================= -->
+  <!-- down the spine -->
+  <circle class="dot" r="4" fill="#FFB703"><animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#connA"/></animateMotion></circle>
+  <circle class="dot" r="4" fill="#FFB703"><animateMotion dur="4.6s" begin="1s" repeatCount="indefinite"><mpath href="#connB"/></animateMotion></circle>
+  <circle class="dot" r="3.5" fill="#8ECAE6"><animateMotion dur="3.4s" repeatCount="indefinite" path="M150 250 V632"/></circle>
+  <circle class="dot" r="3.5" fill="#8ECAE6"><animateMotion dur="3.4s" begin="1.7s" repeatCount="indefinite" path="M150 250 V632"/></circle>
+  <!-- feedback dot -->
+  <circle class="dot" r="4.5" fill="#FFB703"><animateMotion dur="5s" begin="2s" repeatCount="indefinite"><mpath href="#fb"/></animateMotion></circle>
+</svg>
+</div>
+<p class="cap">PROTOTYPE · operations schematic in the blueprint / editorial language · motion + execution direction for review</p>
+</body>
+</html>
