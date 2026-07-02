@@ -17,18 +17,18 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'The Decoded Method — A Simple Way to Document How Your Business Runs | Decoded Ops',
+  title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
   description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
   alternates: { canonical: '/resources/decoded-method' },
   openGraph: {
     type: 'website',
-    title: 'The Decoded Method — A Simple Way to Document How Your Business Runs | Decoded Ops',
+    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
     description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
     url: 'https://decodedops.co.uk/resources/decoded-method',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Decoded Method — A Simple Way to Document How Your Business Runs | Decoded Ops',
+    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
     description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
   },
 };
@@ -39,7 +39,7 @@ const principles = [
   'Owner on everything. One named person. Not a team.',
   'Reviewed regularly. Quarterly for most; at each milestone for active builds.',
   'Delivery-linked. Every system handed over ships with its process pack. Handover is never verbal-only.',
-  'ISO-ready, not ISO-burdened. Maps to ISO 9001 principles — without the certification weight.',
+  'ISO-ready, not ISO-burdened. Maps to ISO 9001 principles, without the certification weight.',
 ];
 
 const processRegister = [
@@ -60,7 +60,7 @@ const processRegister = [
 function ThreeLayerStack() {
   return (
     <svg viewBox="0 0 1200 520" className="w-full h-auto" role="img" aria-label="Three-Layer Stack diagram">
-      <title>Three-Layer Stack — Process Register, SOPs, Improvement Log</title>
+      <title>Three-Layer Stack: Process Register, SOPs, Improvement Log</title>
       <defs>
         <pattern id="grid-dm" width="40" height="40" patternUnits="userSpaceOnUse">
           <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0a3d5c" strokeWidth="0.5"/>
@@ -110,7 +110,7 @@ function ThreeLayerStack() {
 function OnePageSOP() {
   return (
     <svg viewBox="0 0 900 620" className="w-full h-auto" role="img" aria-label="One-page SOP card diagram">
-      <title>One-page SOP card — Five sections layout</title>
+      <title>One-page SOP card: Five sections layout</title>
       <defs>
         <pattern id="grid-sop" width="40" height="40" patternUnits="userSpaceOnUse">
           <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0a3d5c" strokeWidth="0.5"/>
@@ -159,7 +159,7 @@ function OnePageSOP() {
 function ProcessRegisterTable() {
   return (
     <svg viewBox="0 0 1200 420" className="w-full h-auto" role="img" aria-label="Process Register table diagram">
-      <title>Process Register table — Register, process name, owner, category, status, last reviewed</title>
+      <title>Process Register table: Register, process name, owner, category, status, last reviewed</title>
       <rect width="1200" height="420" fill="#F8F9FA"/>
       
       {/* Header row */}
@@ -210,7 +210,7 @@ function ProcessRegisterTable() {
 function ImprovementLoop() {
   return (
     <svg viewBox="0 0 900 520" className="w-full h-auto" role="img" aria-label="Improvement loop diagram">
-      <title>Improvement loop — What Broke, What Changed, Result cycle</title>
+      <title>Improvement loop: What Broke, What Changed, Result cycle</title>
       <rect width="900" height="520" fill="#F8F9FA"/>
       
       {/* Left spine accent */}
@@ -256,7 +256,7 @@ export default function DecodedMethodPage() {
             The Decoded Method
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
-            How to document the way your business runs — without a 200-page manual nobody opens. Three layers, plain English, one page per process. Built to be handed over, not held onto.
+            How to document the way your business runs without a 200-page manual nobody opens. Three layers, plain English, one page per process. Built to be handed over, not held onto.
           </p>
           <ThreeLayerStack />
         </div>
@@ -270,7 +270,7 @@ export default function DecodedMethodPage() {
           <div className="mb-16 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
             <h2 className="text-xl font-bold text-[#023047] mb-4">Why most process documentation fails</h2>
             <p className="text-[#023047]/80 leading-relaxed mb-4">
-              Most businesses have their processes in one place: someone's head. When that person is on holiday, or leaves, the process leaves with them. The usual fix — a giant quality manual — fails for the opposite reason: it's too long to maintain, so it goes stale and nobody trusts it.
+              Most businesses have their processes in one place: someone's head. When that person is on holiday, or leaves, the process leaves with them. The usual fix, a giant quality manual, fails for the opposite reason: it's too long to maintain, so it goes stale and nobody trusts it.
             </p>
             <p className="text-[#023047]/80 leading-relaxed">
               The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A Kaizen improvement habit without the DMAIC ceremony. Lean enough to actually keep up to date.
@@ -284,45 +284,45 @@ export default function DecodedMethodPage() {
             </p>
             
             <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 1 — The Process Register.</h3>
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 1: The Process Register.</h3>
               <p className="text-[#023047]/80 leading-relaxed mb-4">
                 The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.
               </p>
               <ProcessRegisterTable />
               <ul className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>Ref</strong> — a short code, e.g. TB-PR-001</li>
-                <li><strong>Owner</strong> — one named person, never "the team"</li>
-                <li><strong>Category</strong> — Delivery, Sales, Admin, Finance, Marketing, or Tech</li>
-                <li><strong>Status</strong> — active, draft, review, or archived</li>
-                <li><strong>Last reviewed</strong> — the month it was last checked</li>
+                <li><strong>Ref</strong>: a short code, e.g. TB-PR-001</li>
+                <li><strong>Owner</strong>: one named person, never "the team"</li>
+                <li><strong>Category</strong>: Delivery, Sales, Admin, Finance, Marketing, or Tech</li>
+                <li><strong>Status</strong>: active, draft, review, or archived</li>
+                <li><strong>Last reviewed</strong>: the month it was last checked</li>
               </ul>
             </div>
 
             <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 2 — The SOPs.</h3>
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 2: The SOPs.</h3>
               <p className="text-[#023047]/80 leading-relaxed mb-4">
-                The how-to layer. One page per process — a hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.
+                The how-to layer. One page per process. A hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.
               </p>
               <OnePageSOP />
               <ol className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>What this process does</strong> — one sentence: what it produces and why it exists</li>
-                <li><strong>Trigger</strong> — the specific event that starts it (never "when needed")</li>
-                <li><strong>Steps</strong> — numbered, plain English, actionable</li>
-                <li><strong>What good looks like</strong> — a measurable outcome, so you know it worked</li>
-                <li><strong>AI skills</strong> — which tools to reach for, and in what order</li>
+                <li><strong>What this process does</strong>: one sentence: what it produces and why it exists</li>
+                <li><strong>Trigger</strong>: the specific event that starts it (never "when needed")</li>
+                <li><strong>Steps</strong>: numbered, plain English, actionable</li>
+                <li><strong>What good looks like</strong>: a measurable outcome, so you know it worked</li>
+                <li><strong>AI skills</strong>: which tools to reach for, and in what order</li>
               </ol>
             </div>
 
             <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 3 — The Improvement Log.</h3>
+              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 3: The Improvement Log.</h3>
               <p className="text-[#023047]/80 leading-relaxed mb-4">
-                The Kaizen layer. When something breaks or gets better, you log it in three fields — nothing more. Every entry points back to the process it changed, so the register stays honest over time.
+                The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.
               </p>
               <ImprovementLoop />
               <ol className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>What broke</strong> — what was failing, inconsistent, or slow</li>
-                <li><strong>What changed</strong> — what you actually altered</li>
-                <li><strong>Result</strong> — what improved, and how you know</li>
+                <li><strong>What broke</strong>: what was failing, inconsistent, or slow</li>
+                <li><strong>What changed</strong>: what you actually altered</li>
+                <li><strong>Result</strong>: what improved, and how you know</li>
               </ol>
             </div>
           </div>
@@ -340,7 +340,7 @@ export default function DecodedMethodPage() {
           <div className="mb-16 p-8 rounded-2xl bg-[#023047]">
             <h2 className="text-xl font-bold text-[#F8F9FA] mb-4">What it looks like in practice</h2>
             <p className="text-[#8ECAE6] mb-4">
-              Here's the live register we run Decoded Ops on. Twelve processes, each owned, each with a status. This is the same artefact a Clarity engagement produces for a client — usually the first time they've seen their whole operation on one page.
+              Here's the live register we run Decoded Ops on. Twelve processes, each owned, each with a status. This is the same artefact a Clarity engagement produces for a client, usually the first time they've seen their whole operation on one page.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-xs">
@@ -376,7 +376,7 @@ export default function DecodedMethodPage() {
           <div className="p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
             <h3 className="text-lg font-bold text-[#023047] mb-3">Want this run across your own operation?</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              A Clarity engagement builds your Process Register with you — mapping what you actually do, who owns it, and where the gaps are. It's usually the first time it's all written down.
+              A Clarity engagement builds your Process Register with you, mapping what you actually do, who owns it, and where the gaps are. It's usually the first time it's all written down.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
@@ -385,7 +385,7 @@ export default function DecodedMethodPage() {
               <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                 See what Clarity covers
               </Link>
-              <PrintDownloadButton />
+              <PrintDownloadButton pdfHref="/downloads/decoded-method.pdf" />
             </div>
           </div>
 

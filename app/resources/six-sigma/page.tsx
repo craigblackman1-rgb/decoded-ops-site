@@ -18,25 +18,25 @@ const schema = {
 
 export const metadata = {
   title: 'What 5 & 6 Sigma Mean for Your Print & Embroidery Operation | Decoded Ops',
-  description: 'Sigma measures process quality — the higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
+  description: 'Sigma measures process quality. The higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
   alternates: { canonical: '/resources/six-sigma' },
   openGraph: {
     type: 'website',
     title: 'What 5 & 6 Sigma Mean for Your Print & Embroidery Operation | Decoded Ops',
-    description: 'Sigma measures process quality — the higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
+    description: 'Sigma measures process quality. The higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
     url: 'https://decodedops.co.uk/resources/six-sigma',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What 5 & 6 Sigma Mean for Your Print & Embroidery Operation | Decoded Ops',
-    description: 'Sigma measures process quality — the higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
+    description: 'Sigma measures process quality. The higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
   },
 };
 
 const sigmaLevels = [
   {
     level: '3σ',
-    title: 'Industry Baseline — Where Most Start',
+    title: 'Industry Baseline: Where Most Start',
     body: 'Roughly 1 in 15 garments has a detectable defect. Misregistration, thread breaks, ink spread. Common when processes rely on operator feel over standard procedure.',
     yield: '93.3%',
     dpmo: '66,807',
@@ -44,7 +44,7 @@ const sigmaLevels = [
   },
   {
     level: '4σ',
-    title: 'Controlled — Documented Processes in Place',
+    title: 'Controlled: Documented Processes in Place',
     body: 'Around 6 defects per 1,000 garments. Equipment calibration is routine. Operators follow standardised settings for heat, pressure, dwell time, thread tension.',
     yield: '99.4%',
     dpmo: '6,210',
@@ -52,7 +52,7 @@ const sigmaLevels = [
   },
   {
     level: '5σ',
-    title: 'High Performance — Engineered & Measured',
+    title: 'High Performance: Engineered & Measured',
     body: 'Only 233 defects per million. Artwork approvals locked. Stitch density standardised by fabric type. Heat press profiles stored per substrate. Statistical sampling replaces end-of-run checking.',
     yield: '99.98%',
     dpmo: '233',
@@ -60,7 +60,7 @@ const sigmaLevels = [
   },
   {
     level: '6σ',
-    title: 'World Class — Near-Zero Defect Output',
+    title: 'World Class: Near-Zero Defect Output',
     body: 'Just 3.4 defects per million. Full process capability studies per decoration type. Real-time machine monitoring. Achievable in high-volume workwear and teamwear operations with the right infrastructure.',
     yield: '99.9997%',
     dpmo: '3.4',
@@ -71,7 +71,7 @@ const sigmaLevels = [
 function SigmaScale() {
   return (
     <svg viewBox="0 0 1200 360" className="w-full h-auto" role="img" aria-label="Sigma quality scale diagram">
-      <title>Sigma Quality Scale — 1σ to 6σ</title>
+      <title>Sigma Quality Scale: 1σ to 6σ</title>
       <defs>
         <pattern id="grid-scale" width="40" height="40" patternUnits="userSpaceOnUse">
           <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0a3d5c" strokeWidth="0.5"/>
@@ -134,7 +134,7 @@ export default function SixSigmaPage() {
             What do <span className="text-[#219EBC]">3, 4, 5 &amp; 6 Sigma</span> mean for your print &amp; embroidery operation?
           </h1>
           <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
-            Sigma measures process quality. The higher the sigma level, the fewer defects per million opportunities — and the more reliable your output.
+            Sigma measures process quality. The higher the sigma level, the fewer defects per million opportunities, and the more reliable your output.
           </p>
         </div>
       </section>
@@ -144,7 +144,7 @@ export default function SixSigmaPage() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8 flex items-center gap-2">
           <AlertTriangle size={18} className="text-[#023047]" />
           <p className="text-sm font-semibold text-[#023047]">
-            Most decoration businesses operate at 3–4 Sigma. Here's what that actually means.
+            Most decoration businesses operate at 3 to 4 Sigma. Here's what that actually means.
           </p>
         </div>
       </div>
@@ -196,14 +196,14 @@ export default function SixSigmaPage() {
           <div className="p-8 rounded-2xl bg-[#023047]">
             <div className="text-xs font-bold text-[#FFB703] uppercase tracking-wider mb-3">The Real Gap</div>
             <p className="text-[#F8F9FA] leading-relaxed">
-              Moving from <strong className="text-[#FFB703]">3 Sigma to 5 Sigma</strong> cuts your defect rate by <strong className="text-[#FFB703]">99.6%</strong>. That's not a machine upgrade — it's a <em className="text-[#8ECAE6]">process redesign</em>. Standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.
+              Moving from <strong className="text-[#FFB703]">3 Sigma to 5 Sigma</strong> cuts your defect rate by <strong className="text-[#FFB703]">99.6%</strong>. That's not a machine upgrade. It's a <em className="text-[#8ECAE6]">process redesign</em>. Standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.
             </p>
           </div>
           
           <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
             <h3 className="text-lg font-bold text-[#023047] mb-3">The gap is process, not machinery.</h3>
             <p className="text-[#023047]/80 leading-relaxed mb-6">
-              If your defect rate feels stuck, the fix usually isn't new equipment — it's documenting and standardising what your best operator already does. That's exactly what a Clarity engagement maps.
+              If your defect rate feels stuck, the fix usually isn't new equipment. It's documenting and standardising what your best operator already does. That's exactly what a Clarity engagement maps.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
@@ -212,7 +212,7 @@ export default function SixSigmaPage() {
               <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                 See what Clarity covers
               </Link>
-              <PrintDownloadButton />
+              <PrintDownloadButton pdfHref="/downloads/six-sigma.pdf" />
             </div>
           </div>
         </div>
