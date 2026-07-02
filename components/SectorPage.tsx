@@ -58,9 +58,9 @@ export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, cha
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="flex items-center justify-center">
               {heroGraphic ? (
-                <div className="w-full p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30">
+                <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
                   {heroGraphic}
                 </div>
               ) : heroImage ? (
