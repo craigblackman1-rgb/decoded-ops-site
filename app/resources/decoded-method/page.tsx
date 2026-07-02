@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Download, Check } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
-import { PrintDownloadButton } from '@/components/PrintDownloadButton';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -241,154 +240,235 @@ function ImprovementLoop() {
   );
 }
 
+const layers = [
+  {
+    n: '01', name: 'The Process Register', accent: '#219EBC',
+    blurb: "The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.",
+    graphic: <ProcessRegisterTable />,
+    fields: [
+      ['Ref', 'a short code, e.g. TB-PR-001'],
+      ['Owner', 'one named person, never "the team"'],
+      ['Category', 'Delivery, Sales, Admin, Finance, Marketing, or Tech'],
+      ['Status', 'active, draft, review, or archived'],
+      ['Last reviewed', 'the month it was last checked'],
+    ],
+  },
+  {
+    n: '02', name: 'The SOPs', accent: '#8ECAE6',
+    blurb: "The how-to layer. One page per process, a hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.",
+    graphic: <OnePageSOP />,
+    fields: [
+      ['What this process does', 'one sentence: what it produces and why it exists'],
+      ['Trigger', 'the specific event that starts it, never "when needed"'],
+      ['Steps', 'numbered, plain English, actionable'],
+      ['What good looks like', 'a measurable outcome, so you know it worked'],
+      ['AI skills', 'which tools to reach for, and in what order'],
+    ],
+  },
+  {
+    n: '03', name: 'The Improvement Log', accent: '#FFB703',
+    blurb: "The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.",
+    graphic: <ImprovementLoop />,
+    fields: [
+      ['What broke', 'what was failing, inconsistent, or slow'],
+      ['What changed', 'what you actually altered'],
+      ['Result', 'what improved, and how you know'],
+    ],
+  },
+];
+
+const statusStyle: Record<string, string> = {
+  active: 'bg-[#219EBC] text-white',
+  draft: 'bg-[#8ECAE6] text-[#023047]',
+  review: 'bg-[#FFB703] text-[#023047]',
+};
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
+}
+
 export default function DecodedMethodPage() {
   return (
     <>
       <JsonLd data={schema} />
-      
-      {/* HERO */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Free Resource</span>
+
+      {/* HERO — premium dark, playbook cover language */}
+      <section className="relative overflow-hidden bg-[#023047] pt-28 pb-20 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-x-0 top-0 h-1.5 bg-[#FFB703]" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{ backgroundImage: 'linear-gradient(#0a3d5c 1px, transparent 1px), linear-gradient(90deg, #0a3d5c 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+        />
+        <div className="pointer-events-none absolute -top-24 right-0 h-[440px] w-[440px] rounded-full bg-[#219EBC]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-10 h-[380px] w-[380px] rounded-full bg-[#FFB703]/5 blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <Eyebrow>Free Playbook</Eyebrow>
+            <h1 className="mt-5 text-4xl lg:text-6xl font-extrabold text-white leading-[1.03]">
+              The Decoded <span className="text-[#FFB703]">Method</span>
+            </h1>
+            <div className="mt-6 h-1 w-16 rounded-full bg-[#219EBC]" />
+            <p className="mt-6 text-lg text-[#8ECAE6] leading-relaxed max-w-xl">
+              A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person's head.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <Download size={18} /> Download the playbook
+              </a>
+              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
+                See what Clarity covers <ArrowRight size={18} />
+              </Link>
+            </div>
+            <p className="mt-4 text-sm text-white/40">7-page PDF · no email required</p>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            The Decoded Method
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
-            How to document the way your business runs without a 200-page manual nobody opens. Three layers, plain English, one page per process. Built to be handed over, not held onto.
-          </p>
-          <ThreeLayerStack />
+
+          <div className="relative mx-auto lg:ml-auto w-full max-w-[300px] lg:max-w-[360px]">
+            <div className="absolute -inset-6 rounded-3xl bg-[#219EBC]/10 blur-2xl" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/decoded-method-cover.png"
+              alt="The Decoded Method Playbook — cover"
+              width={1075}
+              height={1521}
+              className="relative w-full rounded-lg shadow-2xl ring-1 ring-white/10 rotate-[-2.5deg] transition-transform"
+            />
+          </div>
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="py-16 lg:py-20">
+      {/* WHY */}
+      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <Eyebrow>The problem</Eyebrow>
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
+          <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" />
+          <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed">
+            Most businesses keep their processes in one place: someone's head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+          </p>
+          <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+            The usual fix is a giant quality manual. That fails for the opposite reason: it's too long to keep up to date, so it goes stale, and once it's stale nobody trusts it.
+          </p>
+          <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+            The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
+          </p>
+        </div>
+      </section>
 
-          {/* Intro band */}
-          <div className="mb-16 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
-            <h2 className="text-xl font-bold text-[#023047] mb-4">Why most process documentation fails</h2>
-            <p className="text-[#023047]/80 leading-relaxed mb-4">
-              Most businesses have their processes in one place: someone's head. When that person is on holiday, or leaves, the process leaves with them. The usual fix, a giant quality manual, fails for the opposite reason: it's too long to maintain, so it goes stale and nobody trusts it.
-            </p>
-            <p className="text-[#023047]/80 leading-relaxed">
-              The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A Kaizen improvement habit without the DMAIC ceremony. Lean enough to actually keep up to date.
-            </p>
+      {/* THREE LAYERS */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Eyebrow>The system</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Three layers, each with a job</h2>
+            <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed">Together they make a system you can hand to a new starter and trust them to follow.</p>
           </div>
 
-          {/* Three layers */}
-          <div className="mb-16">
-            <p className="text-[#023047]/80 leading-relaxed mb-8">
-              Three layers, each with a job. Together they make a system you can hand to a new starter and trust them to follow.
-            </p>
-            
-            <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 1: The Process Register.</h3>
-              <p className="text-[#023047]/80 leading-relaxed mb-4">
-                The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.
-              </p>
-              <ProcessRegisterTable />
-              <ul className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>Ref</strong>: a short code, e.g. TB-PR-001</li>
-                <li><strong>Owner</strong>: one named person, never "the team"</li>
-                <li><strong>Category</strong>: Delivery, Sales, Admin, Finance, Marketing, or Tech</li>
-                <li><strong>Status</strong>: active, draft, review, or archived</li>
-                <li><strong>Last reviewed</strong>: the month it was last checked</li>
-              </ul>
-            </div>
-
-            <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 2: The SOPs.</h3>
-              <p className="text-[#023047]/80 leading-relaxed mb-4">
-                The how-to layer. One page per process. A hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.
-              </p>
-              <OnePageSOP />
-              <ol className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>What this process does</strong>: one sentence: what it produces and why it exists</li>
-                <li><strong>Trigger</strong>: the specific event that starts it (never "when needed")</li>
-                <li><strong>Steps</strong>: numbered, plain English, actionable</li>
-                <li><strong>What good looks like</strong>: a measurable outcome, so you know it worked</li>
-                <li><strong>AI skills</strong>: which tools to reach for, and in what order</li>
-              </ol>
-            </div>
-
-            <div className="mb-12">
-              <h3 className="text-lg font-bold text-[#023047] mb-3">Layer 3: The Improvement Log.</h3>
-              <p className="text-[#023047]/80 leading-relaxed mb-4">
-                The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.
-              </p>
-              <ImprovementLoop />
-              <ol className="mt-4 space-y-1 text-sm text-[#023047]/70">
-                <li><strong>What broke</strong>: what was failing, inconsistent, or slow</li>
-                <li><strong>What changed</strong>: what you actually altered</li>
-                <li><strong>Result</strong>: what improved, and how you know</li>
-              </ol>
-            </div>
-          </div>
-
-          {/* Six principles */}
-          <div className="mb-16 grid md:grid-cols-2 gap-4">
-            {principles.map((p, i) => (
-              <div key={i} className="p-4 rounded-lg border-l-4 border-[#219EBC] bg-[#F8F9FA]">
-                <p className="text-sm text-[#023047]/80">{p}</p>
+          <div className="mt-14 space-y-20">
+            {layers.map((layer) => (
+              <div key={layer.n} className="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                  <div className="flex items-center gap-4">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#023047] text-white font-extrabold text-lg" style={{ boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
+                    <h3 className="text-2xl font-bold text-[#023047]">{layer.name}</h3>
+                  </div>
+                  <p className="mt-5 text-[#023047]/80 leading-relaxed">{layer.blurb}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {layer.fields.map(([k, v]) => (
+                      <li key={k} className="flex gap-3 text-sm text-[#023047]/80">
+                        <Check size={18} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                        <span><strong className="text-[#023047]">{k}</strong> — {v}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+                  {layer.graphic}
+                </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Worked example */}
-          <div className="mb-16 p-8 rounded-2xl bg-[#023047]">
-            <h2 className="text-xl font-bold text-[#F8F9FA] mb-4">What it looks like in practice</h2>
-            <p className="text-[#8ECAE6] mb-4">
-              Here's the live register we run Decoded Ops on. Twelve processes, each owned, each with a status. This is the same artefact a Clarity engagement produces for a client, usually the first time they've seen their whole operation on one page.
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr className="text-[#219EBC] border-b border-[#219EBC]/20">
-                    <th className="text-left py-2">Ref</th>
-                    <th className="text-left py-2">Process</th>
-                    <th className="text-left py-2">Status</th>
+      {/* SIX PRINCIPLES */}
+      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <Eyebrow>The rules</Eyebrow>
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The six principles</h2>
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {principles.map((p, i) => {
+              const [head, ...rest] = p.split('. ');
+              return (
+                <div key={i} className="p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 border-l-[#219EBC] shadow-sm">
+                  <h3 className="font-bold text-[#023047]">{head}.</h3>
+                  <p className="mt-1.5 text-sm text-[#023047]/70 leading-relaxed">{rest.join('. ')}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WORKED EXAMPLE */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <Eyebrow>A worked example</Eyebrow>
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The register we run Decoded Ops on</h2>
+          <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed max-w-2xl">
+            Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they've seen their whole operation on one page.
+          </p>
+          <div className="mt-10 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#023047] text-white">
+                  <th className="text-left font-semibold px-5 py-3.5 w-32">Ref</th>
+                  <th className="text-left font-semibold px-5 py-3.5">Process</th>
+                  <th className="text-left font-semibold px-5 py-3.5 w-28">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {processRegister.map((row, i) => (
+                  <tr key={i} className={i % 2 ? 'bg-[#F8F9FA]' : 'bg-white'}>
+                    <td className="px-5 py-3 font-semibold text-[#023047]">{row.ref}</td>
+                    <td className="px-5 py-3 text-[#023047]/80">{row.process}</td>
+                    <td className="px-5 py-3">
+                      <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${statusStyle[row.status]}`}>{row.status}</span>
+                    </td>
                   </tr>
-                </thead>
-                <tbody className="text-[#F8F9FA]">
-                  {processRegister.map((row, i) => (
-                    <tr key={i} className="border-b border-[#8ECAE6]/10 last:border-0">
-                      <td className="py-2">{row.ref}</td>
-                      <td className="py-2">{row.process}</td>
-                      <td className="py-2">
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
-                          row.status === 'active' ? 'bg-[#219EBC] text-[#F8F9FA]' :
-                          row.status === 'draft' ? 'bg-[#8ECAE6] text-[#023047]' :
-                          'bg-[#FFB703] text-[#023047]'
-                        }`}>
-                          {row.status}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </div>
+      </section>
 
-          {/* CTA */}
-          <div className="p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">Want this run across your own operation?</h3>
-            <p className="text-[#023047]/80 leading-relaxed mb-6">
-              A Clarity engagement builds your Process Register with you, mapping what you actually do, who owns it, and where the gaps are. It's usually the first time it's all written down.
+      {/* DOWNLOAD + CLARITY BAND */}
+      <section className="relative overflow-hidden bg-[#023047] py-20 lg:py-24">
+        <div className="pointer-events-none absolute -top-20 right-10 h-[360px] w-[360px] rounded-full bg-[#219EBC]/10 blur-3xl" />
+        <div className="relative max-w-5xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+          <div className="relative mx-auto w-full max-w-[240px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/decoded-method-cover.png" alt="The Decoded Method Playbook" width={1075} height={1521} className="w-full rounded-lg shadow-2xl ring-1 ring-white/10" />
+          </div>
+          <div>
+            <Eyebrow>Take it with you</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-white leading-tight">Get the whole playbook, free</h2>
+            <p className="mt-5 text-[#8ECAE6] leading-relaxed">
+              Seven pages: the three layers with worked examples, the six principles, and a self-assessment scorecard to see where your operation stands right now. No email required.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <Download size={18} /> Download the playbook
+              </a>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
+                Book a discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                See what Clarity covers
-              </Link>
-              <PrintDownloadButton pdfHref="/downloads/decoded-method.pdf" />
             </div>
+            <p className="mt-6 text-sm text-white/50 leading-relaxed">
+              Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are.
+            </p>
           </div>
-
         </div>
       </section>
     </>
