@@ -20,9 +20,13 @@ const sectors = [
 ];
 
 const resources = [
-  { label: 'Calculators', href: '/tools' },
+  { label: 'All resources', href: '/resources' },
+  { label: 'The Decoded Method', href: '/resources/decoded-method' },
+  { label: '5 & 6 Sigma explained', href: '/resources/six-sigma' },
   { label: 'Audit checklist', href: '/resources/audit-checklist' },
+  { label: '5 warning signs', href: '/resources/5-warning-signs' },
   { label: 'Software reviews', href: '/resources/software-reviews' },
+  { label: 'Calculators', href: '/tools' },
   { label: 'Blog', href: '/blog' },
 ];
 
