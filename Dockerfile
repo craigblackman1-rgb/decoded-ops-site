@@ -11,8 +11,11 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN --mount=type=cache,target=/app/.next/cache \
-    npm run build
+# Build without a persistent .next/cache mount. That cache survives even
+# `docker build --no-cache`, which caused stale prerendered pages (e.g. a
+# changed shared nav not propagating). A clean build each time guarantees
+# every prerendered page reflects the current source.
+RUN npm run build
 
 FROM base AS runner
 WORKDIR /app
