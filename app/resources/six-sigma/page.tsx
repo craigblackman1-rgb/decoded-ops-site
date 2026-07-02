@@ -63,7 +63,7 @@ export default function SixSigmaPage() {
           <div>
             <Eyebrow>Free Playbook · Garment Decoration</Eyebrow>
             <h1 className="mt-5 text-4xl lg:text-5xl font-extrabold text-white leading-[1.06]">
-              What <span className="text-[#FFB703]">5 &amp; 6 Sigma</span> mean for your print &amp; embroidery operation
+              What <span className="text-[#FFB703]">5 &amp; 6 Sigma</span>{' '}mean for your print &amp; embroidery operation
             </h1>
             <div className="mt-6 h-1 w-16 rounded-full bg-[#219EBC]" />
             <p className="mt-6 text-lg text-[#8ECAE6] leading-relaxed max-w-xl">
