@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
 interface PainPoint {
   title: string;
@@ -46,7 +47,8 @@ export function LocationPage({
       {/* HERO */}
       <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20">
                 <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— {badge}</span>
@@ -78,6 +80,12 @@ export function LocationPage({
                 {serviceLabel}
               </Link>
             </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+              <SystemsDisconnectedGraphic connected variant="light" />
+            </div>
+          </div>
           </div>
         </div>
       </section>
