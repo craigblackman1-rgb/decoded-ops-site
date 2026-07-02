@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ArrowRight, Download, Check } from 'lucide-react';
+import { ArrowRight, Download, Check, Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
+import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -153,19 +154,24 @@ export default function DecodedMethodPage() {
 
       {/* WHY */}
       <section className="py-20 lg:py-24 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <Eyebrow>The problem</Eyebrow>
-          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
-          <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" />
-          <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed">
-            Most businesses keep their processes in one place: someone's head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
-          </p>
-          <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
-            The usual fix is a giant quality manual. That fails for the opposite reason: it's too long to keep up to date, so it goes stale, and once it's stale nobody trusts it.
-          </p>
-          <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
-            The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
-          </p>
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <Eyebrow>The problem</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" />
+            <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed">
+              Most businesses keep their processes in one place: someone's head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+            </p>
+            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+              The usual fix is a giant quality manual. That fails for the opposite reason: it's too long to keep up to date, so it goes stale, and once it's stale nobody trusts it.
+            </p>
+            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+              The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg bg-white">
+            <SinglePointSchematic tone="light" />
+          </div>
         </div>
       </section>
 
@@ -214,10 +220,16 @@ export default function DecodedMethodPage() {
           <div className="mt-10 grid md:grid-cols-2 gap-5">
             {principles.map((p, i) => {
               const [head, ...rest] = p.split('. ');
+              const Icon = [Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck][i];
               return (
-                <div key={i} className="p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 border-l-[#219EBC] shadow-sm">
-                  <h3 className="font-bold text-[#023047]">{head}.</h3>
-                  <p className="mt-1.5 text-sm text-[#023047]/70 leading-relaxed">{rest.join('. ')}</p>
+                <div key={i} className="p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 border-l-[#219EBC] shadow-sm flex gap-4">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-[#219EBC]/10 flex items-center justify-center">
+                    <Icon size={20} className="text-[#219EBC]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#023047]">{head}.</h3>
+                    <p className="mt-1.5 text-sm text-[#023047]/70 leading-relaxed">{rest.join('. ')}</p>
+                  </div>
                 </div>
               );
             })}
@@ -281,7 +293,7 @@ export default function DecodedMethodPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-white/50 leading-relaxed">
-              Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are.
+              Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>
           </div>
         </div>
