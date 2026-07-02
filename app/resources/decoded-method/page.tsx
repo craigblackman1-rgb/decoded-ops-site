@@ -154,7 +154,7 @@ export default function DecodedMethodPage() {
 
       {/* WHY */}
       <section className="py-20 lg:py-24 bg-[#F8F9FA]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 items-center">
           <div>
             <Eyebrow>The problem</Eyebrow>
             <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
