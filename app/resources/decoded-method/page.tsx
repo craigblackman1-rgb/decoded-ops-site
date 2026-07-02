@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Download, Check } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -56,195 +57,10 @@ const processRegister = [
   { ref: 'DO-PR-012', process: 'Sub-contractor Engagement', status: 'draft' },
 ];
 
-function ThreeLayerStack() {
-  return (
-    <svg viewBox="0 0 1200 520" className="w-full h-auto" role="img" aria-label="Three-Layer Stack diagram">
-      <title>Three-Layer Stack: Process Register, SOPs, Improvement Log</title>
-      <defs>
-        <pattern id="grid-dm" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0a3d5c" strokeWidth="0.5"/>
-        </pattern>
-        <radialGradient id="glow-tr-dm" cx="80%" cy="16%" r="55%">
-          <stop offset="0%" stopColor="#219EBC" stopOpacity="0.08"/>
-          <stop offset="100%" stopColor="#023047" stopOpacity="0"/>
-        </radialGradient>
-        <radialGradient id="glow-bl-dm" cx="14%" cy="90%" r="42%">
-          <stop offset="0%" stopColor="#FFB703" stopOpacity="0.05"/>
-          <stop offset="100%" stopColor="#023047" stopOpacity="0"/>
-        </radialGradient>
-      </defs>
-      <rect width="1200" height="520" fill="#023047"/>
-      <rect width="1200" height="520" fill="url(#grid-dm)" opacity="0.6"/>
-      <rect width="1200" height="520" fill="url(#glow-tr-dm)"/>
-      <rect width="1200" height="520" fill="url(#glow-bl-dm)"/>
-      <rect x="0" y="0" width="8" height="520" fill="#219EBC"/>
-      
-      {/* Top slab - Process Register */}
-      <g transform="perspective(800) rotateX(8)">
-        <rect x="120" y="60" width="960" height="120" fill="#219EBC" rx="12"/>
-        <rect x="120" y="60" width="8" height="120" fill="#219EBC" rx="4"/>
-        <text x="140" y="110" fontFamily="Outfit, Arial, sans-serif" fontWeight="700" fontSize="28" fill="#F8F9FA">Process Register</text>
-        <text x="140" y="135" fontFamily="DM Sans, Arial, sans-serif" fontSize="16" fill="#8ECAE6">The spine. One row per process: name, owner, last reviewed.</text>
-      </g>
-      
-      {/* Middle slab - SOPs */}
-      <g transform="translate(80, 180)">
-        <rect x="120" y="60" width="960" height="120" fill="#8ECAE6" rx="12"/>
-        <rect x="120" y="60" width="8" height="120" fill="#8ECAE6" rx="4"/>
-        <text x="140" y="110" fontFamily="Outfit, Arial, sans-serif" fontWeight="700" fontSize="28" fill="#023047">SOPs · one page each</text>
-        <text x="140" y="135" fontFamily="DM Sans, Arial, sans-serif" fontSize="16" fill="#023047">The how-to layer. Five sections, no more, no fewer.</text>
-      </g>
-      
-      {/* Bottom slab - Improvement Log */}
-      <g transform="translate(160, 320)">
-        <rect x="120" y="60" width="960" height="120" fill="#023047" rx="12"/>
-        <rect x="120" y="60" width="8" height="120" fill="#FFB703" rx="4"/>
-        <text x="140" y="110" fontFamily="Outfit, Arial, sans-serif" fontWeight="700" fontSize="28" fill="#F8F9FA">Improvement Log</text>
-        <text x="140" y="135" fontFamily="DM Sans, Arial, sans-serif" fontSize="16" fill="#8ECAE6">The Kaizen layer. Log what broke, what changed, the result.</text>
-      </g>
-    </svg>
-  );
-}
-
-function OnePageSOP() {
-  return (
-    <svg viewBox="0 0 900 620" className="w-full h-auto" role="img" aria-label="One-page SOP card diagram">
-      <title>One-page SOP card: Five sections layout</title>
-      <defs>
-        <pattern id="grid-sop" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0a3d5c" strokeWidth="0.5"/>
-        </pattern>
-        <radialGradient id="glow-tr-sop" cx="80%" cy="16%" r="55%">
-          <stop offset="0%" stopColor="#219EBC" stopOpacity="0.08"/>
-          <stop offset="100%" stopColor="#023047" stopOpacity="0"/>
-        </radialGradient>
-        <radialGradient id="glow-bl-sop" cx="14%" cy="90%" r="42%">
-          <stop offset="0%" stopColor="#FFB703" stopOpacity="0.05"/>
-          <stop offset="100%" stopColor="#023047" stopOpacity="0"/>
-        </radialGradient>
-      </defs>
-      <rect width="900" height="620" fill="#023047"/>
-      <rect width="900" height="620" fill="url(#grid-sop)" opacity="0.6"/>
-      <rect width="900" height="620" fill="url(#glow-tr-sop)"/>
-      <rect width="900" height="620" fill="url(#glow-bl-sop)"/>
-      <rect x="0" y="0" width="8" height="620" fill="#219EBC"/>
-      
-      {/* Page */}
-      <rect x="80" y="80" width="740" height="480" fill="#F8F9FA" rx="12"/>
-      
-      {/* Header strip */}
-      <rect x="80" y="80" width="740" height="50" fill="#219EBC"/>
-      <text x="110" y="112" fontFamily="DM Sans, Arial, sans-serif" fontSize="14" fill="#F8F9FA" fontWeight="600">TB-PR-001 · Thread Colour Matching</text>
-      
-      {/* Sections */}
-      <text x="110" y="160" fontFamily="Outfit, Arial, sans-serif" fontSize="14" fill="#023047" fontWeight="600">1. What this process does</text>
-      <text x="110" y="182" fontFamily="DM Sans, Arial, sans-serif" fontSize="13" fill="#555">One sentence: what it produces and why it exists</text>
-      
-      <text x="110" y="210" fontFamily="Outfit, Arial, sans-serif" fontSize="14" fill="#023047" fontWeight="600">2. Trigger</text>
-      <text x="110" y="232" fontFamily="DM Sans, Arial, sans-serif" fontSize="13" fill="#555">The specific event that starts it (never "when needed")</text>
-      
-      <text x="110" y="260" fontFamily="Outfit, Arial, sans-serif" fontSize="14" fill="#023047" fontWeight="600">3. Steps</text>
-      <text x="110" y="282" fontFamily="DM Sans, Arial, sans-serif" fontSize="13" fill="#555">Numbered, plain English, actionable</text>
-      
-      <text x="110" y="310" fontFamily="Outfit, Arial, sans-serif" fontSize="14" fill="#023047" fontWeight="600">4. What good looks like</text>
-      <text x="110" y="332" fontFamily="DM Sans, Arial, sans-serif" fontSize="13" fill="#FFB703">A measurable outcome, so you know it worked</text>
-      
-      <text x="110" y="360" fontFamily="Outfit, Arial, sans-serif" fontSize="14" fill="#023047" fontWeight="600">5. AI skills</text>
-      <text x="110" y="382" fontFamily="DM Sans, Arial, sans-serif" fontSize="13" fill="#555">Which tools to reach for, and in what order</text>
-    </svg>
-  );
-}
-
-function ProcessRegisterTable() {
-  return (
-    <svg viewBox="0 0 1200 420" className="w-full h-auto" role="img" aria-label="Process Register table diagram">
-      <title>Process Register table: Register, process name, owner, category, status, last reviewed</title>
-      <rect width="1200" height="420" fill="#F8F9FA"/>
-      
-      {/* Header row */}
-      <g fontFamily="Outfit, Arial, sans-serif" fontSize="13" fontWeight="700" fill="#023047">
-        <text x="40">Ref</text>
-        <text x="180">Process Name</text>
-        <text x="440">Owner</text>
-        <text x="580">Context</text>
-        <text x="720">Category</text>
-        <text x="880">Status</text>
-        <text x="1040">Last Reviewed</text>
-      </g>
-      <line x1="36" y1="30" x2="1180" y2="30" stroke="#8ECAE6" strokeWidth="1"/>
-      
-      {/* Data rows */}
-      <g fontFamily="DM Sans, Arial, sans-serif" fontSize="12" fill="#555">
-        <text x="40" y="60">DO-PR-001</text>
-        <text x="180" y="60">Discovery Day Delivery</text>
-        <text x="440" y="60">Craig</text>
-        <text x="580" y="60">Clarity</text>
-        <text x="720" y="60">Delivery</text>
-        <rect x="876" y="44" width="56" height="20" rx="10" fill="#219EBC"/>
-        <text x="904" y="58" fontFamily="DM Sans, Arial, sans-serif" fontSize="10" fill="#F8F9FA" fontWeight="600">active</text>
-        <text x="1040" y="60">Jun 2025</text>
-        
-        <text x="40" y="100">TB-PR-004</text>
-        <text x="180" y="100">Order Intake Sync</text>
-        <text x="440" y="100">Sarah</text>
-        <text x="580" y="100">Deliver</text>
-        <text x="720" y="100">Tech</text>
-        <rect x="876" y="84" width="56" height="20" rx="10" fill="#8ECAE6"/>
-        <text x="904" y="98" fontFamily="DM Sans, Arial, sans-serif" fontSize="10" fill="#023047" fontWeight="600">draft</text>
-        <text x="1040" y="100">May 2025</text>
-        
-        <text x="40" y="140">DO-PR-007</text>
-        <text x="180" y="140">Monthly Retained Review</text>
-        <text x="440" y="140">Craig</text>
-        <text x="580" y="140">Retained</text>
-        <text x="720" y="140">Admin</text>
-        <rect x="876" y="124" width="56" height="20" rx="10" fill="#FFB703"/>
-        <text x="904" y="138" fontFamily="DM Sans, Arial, sans-serif" fontSize="10" fill="#023047" fontWeight="600">review</text>
-        <text x="1040" y="140">Jun 2025</text>
-      </g>
-    </svg>
-  );
-}
-
-function ImprovementLoop() {
-  return (
-    <svg viewBox="0 0 900 520" className="w-full h-auto" role="img" aria-label="Improvement loop diagram">
-      <title>Improvement loop: What Broke, What Changed, Result cycle</title>
-      <rect width="900" height="520" fill="#F8F9FA"/>
-      
-      {/* Left spine accent */}
-      <rect x="0" y="0" width="8" height="520" fill="#219EBC"/>
-      
-      {/* Three nodes */}
-      <rect x="160" y="100" width="200" height="80" rx="12" fill="#219EBC" fillOpacity="0.1"/>
-      <text x="260" y="140" fontFamily="Outfit, Arial, sans-serif" fontSize="16" fill="#023047" fontWeight="600" textAnchor="middle">What Broke</text>
-      <text x="260" y="158" fontFamily="DM Sans, Arial, sans-serif" fontSize="11" fill="#555" textAnchor="middle">Failing, slow, inconsistent</text>
-      
-      <rect x="360" y="240" width="200" height="80" rx="12" fill="#8ECAE6" fillOpacity="0.2"/>
-      <text x="460" y="280" fontFamily="Outfit, Arial, sans-serif" fontSize="16" fill="#023047" fontWeight="600" textAnchor="middle">What Changed</text>
-      <text x="460" y="298" fontFamily="DM Sans, Arial, sans-serif" fontSize="11" fill="#555" textAnchor="middle">What you altered</text>
-      
-      <rect x="160" y="380" width="200" height="80" rx="12" fill="#FFB703" fillOpacity="0.15"/>
-      <text x="260" y="420" fontFamily="Outfit, Arial, sans-serif" fontSize="16" fill="#023047" fontWeight="600" textAnchor="middle">Result</text>
-      <text x="260" y="438" fontFamily="DM Sans, Arial, sans-serif" fontSize="11" fill="#FFB703" textAnchor="middle">What improved, how you know</text>
-      
-      {/* Curved arrows */}
-      <path d="M 260 180 C 260 220 260 220 360 240" fill="none" stroke="#219EBC" strokeWidth="2" markerEnd="url(#arrow)"/>
-      <path d="M 360 320 C 360 400 260 400 260 460" fill="none" stroke="#219EBC" strokeWidth="2" markerEnd="url(#arrow)"/>
-      <defs>
-        <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-          <path d="M 0 0 L 6 3 L 0 6" fill="#219EBC"/>
-        </marker>
-      </defs>
-    </svg>
-  );
-}
-
 const layers = [
   {
     n: '01', name: 'The Process Register', accent: '#219EBC',
     blurb: "The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.",
-    graphic: <ProcessRegisterTable />,
     fields: [
       ['Ref', 'a short code, e.g. TB-PR-001'],
       ['Owner', 'one named person, never "the team"'],
@@ -256,7 +72,6 @@ const layers = [
   {
     n: '02', name: 'The SOPs', accent: '#8ECAE6',
     blurb: "The how-to layer. One page per process, a hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.",
-    graphic: <OnePageSOP />,
     fields: [
       ['What this process does', 'one sentence: what it produces and why it exists'],
       ['Trigger', 'the specific event that starts it, never "when needed"'],
@@ -268,7 +83,6 @@ const layers = [
   {
     n: '03', name: 'The Improvement Log', accent: '#FFB703',
     blurb: "The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.",
-    graphic: <ImprovementLoop />,
     fields: [
       ['What broke', 'what was failing, inconsistent, or slow'],
       ['What changed', 'what you actually altered'],
@@ -357,34 +171,35 @@ export default function DecodedMethodPage() {
 
       {/* THREE LAYERS */}
       <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <Eyebrow>The system</Eyebrow>
             <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Three layers, each with a job</h2>
-            <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed">Together they make a system you can hand to a new starter and trust them to follow.</p>
+            <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed">Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.</p>
           </div>
 
-          <div className="mt-14 space-y-20">
+          {/* Live operations schematic */}
+          <div className="mt-12 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-xl">
+            <ThreeLayerSchematic tone="dark" />
+          </div>
+
+          {/* The three layers, explained */}
+          <div className="mt-16 grid md:grid-cols-3 gap-10">
             {layers.map((layer) => (
-              <div key={layer.n} className="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                  <div className="flex items-center gap-4">
-                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#023047] text-white font-extrabold text-lg" style={{ boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
-                    <h3 className="text-2xl font-bold text-[#023047]">{layer.name}</h3>
-                  </div>
-                  <p className="mt-5 text-[#023047]/80 leading-relaxed">{layer.blurb}</p>
-                  <ul className="mt-6 space-y-2.5">
-                    {layer.fields.map(([k, v]) => (
-                      <li key={k} className="flex gap-3 text-sm text-[#023047]/80">
-                        <Check size={18} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
-                        <span><strong className="text-[#023047]">{k}</strong> — {v}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div key={layer.n}>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#023047] text-white font-extrabold" style={{ boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
+                  <h3 className="text-xl font-bold text-[#023047]">{layer.name}</h3>
                 </div>
-                <div className="rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
-                  {layer.graphic}
-                </div>
+                <p className="mt-4 text-sm text-[#023047]/75 leading-relaxed">{layer.blurb}</p>
+                <ul className="mt-5 space-y-2">
+                  {layer.fields.map(([k, v]) => (
+                    <li key={k} className="flex gap-2.5 text-sm text-[#023047]/80">
+                      <Check size={16} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                      <span><strong className="text-[#023047]">{k}</strong> — {v}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
