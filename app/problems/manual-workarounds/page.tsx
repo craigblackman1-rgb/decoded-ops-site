@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { ManualWorkaroundsSchematic } from '@/components/schematics/problems/ManualWorkaroundsSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function ManualWorkaroundsPage() {
       problem="Manual workarounds and shadow systems"
       headline="Your team has built a second system. ||It lives in spreadsheets.||"
       intro="Almost every business in this sector has shadow systems — spreadsheets, manual logs, sticky notes, and workarounds that exist alongside the official software. They keep the business running. They also hide the real cost of operational inefficiency. Business process automation for small businesses in this sector is not about replacing people — it is about eliminating the manual re-entry, duplicate data, and shadow spreadsheets that slow every team down."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<ManualWorkaroundsSchematic />}
       symptoms={[
         "Spreadsheets are acting as databases for core operational data",
         "Data is being entered into the same system more than once",

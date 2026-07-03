@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { GarmentDecorationSchematic } from '@/components/schematics/sectors/GarmentDecorationSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
@@ -56,20 +56,6 @@ const sectorSchema = {
   ],
 };
 
-const workflow = (
-  <WorkflowGraphic
-    title="Garment decoration order flow"
-    steps={[
-      { label: 'Order in', sub: 'eCommerce / B2B' },
-      { label: 'Artwork check', sub: 'Sign-off loop' },
-      { label: 'Blank sourcing', sub: 'Stock check' },
-      { label: 'Method assign', sub: 'Embr / DTG / SP', alert: true },
-      { label: 'Production', sub: 'Schedule slot' },
-      { label: 'QC & despatch', sub: 'Ship confirm' },
-    ]}
-  />
-);
-
 export default function GarmentDecorationPage() {
   return (
     <>
@@ -83,7 +69,7 @@ export default function GarmentDecorationPage() {
       sector="Garment decoration"
       tagline="Garment decoration business systems ||were never built for how you actually work.||"
       intro="Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management — and your systems should reflect that difference."
-      heroGraphic={workflow}
+      heroGraphic={<GarmentDecorationSchematic />}
       challenges={[
         { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures — all managed in systems that don't account for the difference." },
         { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop — but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
