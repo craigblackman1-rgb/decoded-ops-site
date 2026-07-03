@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { WrongErpSchematic } from '@/components/schematics/problems/WrongErpSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function WrongERPSoftwarePage() {
       problem="Wrong ERP software"
       headline="The ERP for small business looked right in the demo. ||It doesn't fit how your business works.||"
       intro="Selecting the wrong ERP for small business is one of the most expensive mistakes in this sector. The cost isn't just the software — it's the implementation, the disruption, the workarounds that accumulate, and the productivity you never recover. And in most cases, it was avoidable with an independent evaluation before the contracts were signed."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<WrongErpSchematic />}
       symptoms={[
         "The system can't handle decoration method-specific workflows without heavy customisation",
         "You're maintaining manual processes alongside the system because it can't replace them",

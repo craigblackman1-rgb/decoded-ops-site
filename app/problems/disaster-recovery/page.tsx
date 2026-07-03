@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { DisasterRecoverySchematic } from '@/components/schematics/problems/DisasterRecoverySchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function DisasterRecoveryPage() {
       problem="No disaster recovery plan"
       headline="Your systems go down on a Tuesday morning. ||When do you get back up?||"
       intro="Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. Not because they don't care — but because DR feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<DisasterRecoverySchematic />}
       symptoms={[
         "You don't have a written plan for what happens when critical systems go down",
         "You assume your hosting provider or software vendor handles backup and recovery",

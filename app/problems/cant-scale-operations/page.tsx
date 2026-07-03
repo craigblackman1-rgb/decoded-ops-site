@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { CantScaleSchematic } from '@/components/schematics/problems/CantScaleSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -110,13 +110,7 @@ export default function CantScaleOperationsPage() {
         problem="Operations that can't keep up with growth"
         headline="Your business is growing. ||Your operations aren't scaling with it.||"
         intro="Scaling operations in a small business is not just about doing more of the same — it is about rebuilding the systems and processes that were designed for half your current volume before they become the ceiling on your growth. More orders. More staff. More pressure. But not more profit — and not more confidence that tomorrow is going to be better than today. That's an operations problem. When a business grows faster than its processes, the cracks appear in predictable places and get wider every time you take on more volume. I help businesses like yours build the operational foundations that let you scale without the chaos."
-        heroGraphic={
-          <WorkflowGraphic
-            steps={scalingSteps}
-            title="What happens to operations as you grow"
-            variant="light"
-          />
-        }
+        heroGraphic={<CantScaleSchematic />}
         symptoms={[
           "You're taking on more work but profitability per order is falling",
           "Senior people are spending their days doing admin that should sit further down the team",

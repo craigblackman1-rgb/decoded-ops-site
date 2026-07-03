@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { SystemsDontTalkSchematic } from '@/components/schematics/problems/SystemsDontTalkSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -60,7 +60,7 @@ export default function SystemsDontTalkPage() {
       problem="Systems don't talk to each other"
       headline="You have five systems. ||None of them know what the others are doing.||"
       intro="The average decoration or print business has between four and seven separate software systems. Order management, ERP, accounts, artwork, eCommerce, despatch. Each one is an island. The bridges between them are people, spreadsheets, and emails."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<SystemsDontTalkSchematic />}
       symptoms={[
         "Data is being entered manually into more than one system",
         "You can't get a complete picture of an order without checking multiple places",

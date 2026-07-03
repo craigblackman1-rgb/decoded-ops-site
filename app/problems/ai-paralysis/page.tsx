@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { AiParalysisSchematic } from '@/components/schematics/problems/AiParalysisSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function AiParalysisPage() {
       problem="AI paralysis"
       headline="Everyone is talking about AI. ||No one can tell you what it means for your business.||"
       intro="AI readiness for small business is a question most owners can't honestly answer — not because they haven't thought about it, but because every vendor, consultant, and conference has a different version of the answer. Every software vendor is adding AI features. Every conference talk is about AI. But when you ask what AI actually means for a print, embroidery, or decoration business, the answers are vague, generic, or non-existent."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<AiParalysisSchematic />}
       symptoms={[
         "You feel pressure to 'have an AI strategy' but don't know where to start",
         "Vendors are selling AI features you didn't ask for and can't see the value of",

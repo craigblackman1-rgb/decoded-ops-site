@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { EcommerceNotConnectedSchematic } from '@/components/schematics/problems/EcommerceNotConnectedSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function EcommerceNotConnectedPage() {
       problem="eCommerce not connected to production"
       headline="Your online store is live. ||Your production system doesn't know it exists.||"
       intro="eCommerce integration for small business is one of the most common and most costly problems in the print and decoration sector. Every order taken online that has to be manually re-entered into the production system. Every day. The cost in labour, errors, and missed despatch windows adds up fast — and most businesses have stopped noticing it."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<EcommerceNotConnectedSchematic />}
       symptoms={[
         "Online orders are being manually re-entered into your ERP or MIS",
         "There's a delay between order placed and order in production",

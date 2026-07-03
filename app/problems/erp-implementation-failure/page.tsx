@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { ErpImplementationFailureSchematic } from '@/components/schematics/problems/ErpImplementationFailureSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function ERPImplementationFailurePage() {
       problem="ERP implementation failure"
       headline="Your ERP implementation has gone wrong. ||Here's what to do next.||"
       intro="ERP implementation failure in this sector is more common than vendors will admit. Usually not because the software is bad — but because the implementation wasn't designed around how decoration and print businesses actually work. The wrong manufacturing ERP for your specific workflows. The right ERP, implemented without proper oversight. Both end the same way."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<ErpImplementationFailureSchematic />}
       symptoms={[
         "The system went live but the team are still using spreadsheets alongside it",
         "You went live late, over budget, or both",

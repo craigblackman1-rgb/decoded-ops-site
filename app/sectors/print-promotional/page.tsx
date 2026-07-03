@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { PrintPromotionalSchematic } from '@/components/schematics/sectors/PrintPromotionalSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { sectorRouting } from '@/data/sector-routing';
 
@@ -50,20 +50,6 @@ const sectorSchema = {
   ],
 };
 
-const workflow = (
-  <WorkflowGraphic
-    title="Print & promo order flow"
-    steps={[
-      { label: 'Quote request', sub: 'Multi-line order' },
-      { label: 'Supplier brief', sub: 'Price & lead time' },
-      { label: 'Sample & proof', sub: 'Approval loop', alert: true },
-      { label: 'PO raised', sub: 'Supplier confirm' },
-      { label: 'Goods in', sub: 'QC check' },
-      { label: 'Pack & ship', sub: 'Client delivery' },
-    ]}
-  />
-);
-
 export default function PrintPromotionalPage() {
   return (
     <>
@@ -72,7 +58,7 @@ export default function PrintPromotionalPage() {
       sector="Print & promotional"
       tagline="Print shop operations management ||starts with understanding what your current process actually costs.||"
       intro="Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints — even when the team is working hard."
-      heroGraphic={workflow}
+      heroGraphic={<PrintPromotionalSchematic />}
       challenges={[
         { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually — or in a system not built for it — is a permanent drag on margin." },
         { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L — but it's real." },

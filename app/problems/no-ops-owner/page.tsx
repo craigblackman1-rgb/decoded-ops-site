@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
+import { NoOpsOwnerSchematic } from '@/components/schematics/problems/NoOpsOwnerSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -70,7 +70,7 @@ export default function NoOpsOwnerPage() {
       problem="No operations owner"
       headline="Every ops decision ends up on your desk. ||Who is running the business day to day?||"
       intro="In many growing businesses, operations has no owner. The MD handles the big decisions, department heads handle their areas, and everything in between — the processes that cross teams, the systems that connect departments, the improvements that nobody owns — falls through the cracks. A head of operations for small business does not have to be a full-time hire. Fractional operations leadership gives you the accountability and the thinking without the overhead."
-      heroGraphic={<SystemsDisconnectedGraphic connected={false} />}
+      heroGraphic={<NoOpsOwnerSchematic />}
       symptoms={[
         "Operational decisions that affect multiple departments get made by committee or not at all",
         "The same operational problems keep resurfacing with no permanent fix",

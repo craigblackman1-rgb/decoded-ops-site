@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPage } from '@/components/SectorPage';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { WorkwearTeamwearSchematic } from '@/components/schematics/sectors/WorkwearTeamwearSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { sectorRouting } from '@/data/sector-routing';
 
@@ -50,20 +50,6 @@ const sectorSchema = {
   ],
 };
 
-const workflow = (
-  <WorkflowGraphic
-    title="Workwear managed account flow"
-    steps={[
-      { label: 'Account setup', sub: 'Spec & pricing' },
-      { label: 'Online shop', sub: 'Portal order in', alert: true },
-      { label: 'Approval check', sub: 'Budget / auth' },
-      { label: 'Production', sub: 'Spec to machine' },
-      { label: 'Quality check', sub: 'Spec vs output' },
-      { label: 'Despatch', sub: 'Named delivery' },
-    ]}
-  />
-);
-
 export default function WorkwearTeamwearPage() {
   return (
     <>
@@ -72,7 +58,7 @@ export default function WorkwearTeamwearPage() {
       sector="Workwear & teamwear"
       tagline="Workwear supplier operations ||need systems built for B2B, not B2C.||"
       intro="Workwear and teamwear suppliers operate in a fundamentally different mode from retail decoration businesses. B2B order management, multi-location delivery, contract pricing, and account portals are the norm — not the exception. Most generic eCommerce and ERP systems were not designed for this. The operational complexity of a workwear supplier requires systems that understand B2B."
-      heroGraphic={workflow}
+      heroGraphic={<WorkwearTeamwearSchematic />}
       challenges={[
         { title: 'Managed account complexity', body: "Each managed account has its own pricing, its own approved products, its own approval hierarchy, and its own delivery rules. Managing that at scale requires systems specifically built for it — not workarounds in a generic platform." },
         { title: 'The uniform specification problem', body: "Keeping embroidery specifications, sizing matrices, and decoration requirements accurate across hundreds of SKUs per client is an enormous data management challenge. One wrong spec means a rerun." },

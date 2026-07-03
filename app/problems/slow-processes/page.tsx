@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPage } from '@/components/ProblemPage';
-import { WorkflowGraphic } from '@/components/graphics/WorkflowGraphic';
+import { SlowProcessesSchematic } from '@/components/schematics/problems/SlowProcessesSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
@@ -111,13 +111,7 @@ export default function SlowProcessesPage() {
         problem="Slow, inefficient processes"
         headline="The bottleneck isn't always ||a software problem.||"
         intro="Most businesses I work with assume they have a technology problem. Buy better software, they think, and the friction goes away. Sometimes they're right. Often they're not. Slow turnaround, jobs that take twice as long as they should, the team constantly firefighting — that's usually a process problem. And no amount of new software fixes a process that was broken to begin with."
-        heroGraphic={
-          <WorkflowGraphic
-            steps={workflowSteps}
-            title="Where time disappears in a typical operation"
-            variant="light"
-          />
-        }
+        heroGraphic={<SlowProcessesSchematic />}
         symptoms={[
           "Jobs move smoothly to a point — then sit waiting for the next person or step",
           "Re-work is happening at the same stage, repeatedly, with no clearly understood reason",
