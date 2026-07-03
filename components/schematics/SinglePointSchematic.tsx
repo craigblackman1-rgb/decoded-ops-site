@@ -133,7 +133,7 @@ export function SinglePointSchematic({ tone = 'light', className }: { tone?: Ton
         <text x={CX} y={CY + 26} textAnchor="middle" style={fDisp} fontWeight="800" fontSize="30" fill="#023047">person</text>
 
         {/* status caption pill */}
-        <rect x={CX - 215} y={CY + 110} width="430" height="44" rx="22" fill="none" stroke={amber} strokeWidth="1.4" />
+        <rect x={CX - 215} y={CY + 110} width="430" height="44" rx="22" fill={c.bg} stroke={amber} strokeWidth="1.4" />
         <text x={CX} y={CY + 138} textAnchor="middle" style={fMono} fontSize="19" letterSpacing="1.5" fill={amber}>STATUS: SINGLE POINT OF FAILURE</text>
       </g>
 
