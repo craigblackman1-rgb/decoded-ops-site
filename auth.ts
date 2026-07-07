@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs'
 import { getDb, type DbUser } from '@/lib/supabase'
 import type { Pool } from 'pg'
 import { headers } from 'next/headers'
+import { authConfig } from '@/auth.config'
 
 const MAX_FAILED_ATTEMPTS = 5
 const LOCKOUT_DURATION_MINUTES = 30
@@ -18,7 +19,7 @@ async function getClientIp(): Promise<string | null> {
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  trustHost: true,
+  ...authConfig,
   providers: [
     Credentials({
       name: 'credentials',
@@ -112,29 +113,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.clientId = (user as any).clientId
-        token.role = (user as any).role
-      }
-      return token
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        ;(session.user as any).clientId = token.clientId
-        ;(session.user as any).role = token.role
-      }
-      return session
-    },
-  },
-  pages: {
-    signIn: '/clients/login',
-  },
-  session: {
-    strategy: 'jwt',
-    maxAge: 8 * 60 * 60,
-  },
 })
 
 async function logAuditEvent(

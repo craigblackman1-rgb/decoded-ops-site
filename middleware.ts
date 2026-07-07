@@ -1,5 +1,10 @@
-import { auth } from '@/auth'
+import NextAuth from 'next-auth'
+import { authConfig } from '@/auth.config'
 import { NextResponse } from 'next/server'
+
+// Edge-safe auth instance — must NOT import from '@/auth' (it pulls in `pg`,
+// a native Node module that cannot load on the Edge runtime).
+const { auth } = NextAuth(authConfig)
 
 // Proposal slugs that are publicly accessible (no login required)
 const PUBLIC_PROPOSALS = [
