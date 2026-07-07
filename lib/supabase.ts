@@ -1,25 +1,22 @@
-import { createClient } from '@supabase/supabase-js'
+import { Pool } from 'pg'
 
-let supabaseInstance: ReturnType<typeof createClient> | null = null
+let poolInstance: Pool | null = null
 
-export function getSupabase() {
-  if (supabaseInstance) return supabaseInstance
+export function getDb() {
+  if (poolInstance) return poolInstance
 
-  const url = process.env.SUPABASE_URL
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  const connectionString = process.env.DATABASE_URL
 
-  if (!url || !key) {
+  if (!connectionString) {
     return null
   }
 
-  supabaseInstance = createClient(url, key, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
+  poolInstance = new Pool({
+    connectionString,
+    ssl: { rejectUnauthorized: false },
   })
 
-  return supabaseInstance
+  return poolInstance
 }
 
 export type DbUser = {

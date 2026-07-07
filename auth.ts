@@ -1,7 +1,8 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import bcrypt from 'bcryptjs'
-import { getSupabase, type DbUser } from '@/lib/supabase'
+import { getDb, type DbUser } from '@/lib/supabase'
+import type { Pool } from 'pg'
 import { headers } from 'next/headers'
 
 const MAX_FAILED_ATTEMPTS = 5
@@ -32,36 +33,37 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           return null
         }
 
-        const supabase = getSupabase()
-        if (!supabase) {
-          console.log('[authorize] supabase not available - check SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY')
+        const db = getDb()
+        if (!db) {
+          console.log('[authorize] db not available - check DATABASE_URL')
           return null
         }
-        console.log('[authorize] supabase connected')
+        console.log('[authorize] db connected')
 
         const email = (credentials.email as string).toLowerCase().trim()
         const ipAddress = await getClientIp()
 
         try {
-          const { data: user, error } = await (supabase as any)
-            .from('client_users')
-            .select('id, email, password_hash, name, client_id, role, is_active, failed_attempts, locked_until')
-            .eq('email', email)
-            .single() as { data: DbUser | null; error: unknown }
+          const { rows } = await db.query<DbUser>(
+            `SELECT id, email, password_hash, name, client_id, role, is_active, failed_attempts, locked_until
+             FROM client_users WHERE email = $1`,
+            [email]
+          )
+          const user = rows[0] ?? null
 
-          if (error || !user) {
-            console.log('[authorize] user not found or query error:', JSON.stringify(error))
-            await logAuditEvent(supabase, 'login_failed', email, null, ipAddress, null, { reason: 'user_not_found' })
+          if (!user) {
+            console.log('[authorize] user not found')
+            await logAuditEvent(db, 'login_failed', email, null, ipAddress, null, { reason: 'user_not_found' })
             return null
           }
 
           if (!user.is_active) {
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_disabled' })
+            await logAuditEvent(db, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_disabled' })
             return null
           }
 
           if (user.locked_until && new Date(user.locked_until) > new Date()) {
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_locked' })
+            await logAuditEvent(db, 'login_failed', email, user.client_id, ipAddress, null, { reason: 'account_locked' })
             return null
           }
 
@@ -74,28 +76,28 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
             if (newFailedAttempts >= MAX_FAILED_ATTEMPTS) {
               const lockedUntil = new Date(Date.now() + LOCKOUT_DURATION_MINUTES * 60 * 1000)
-              await (supabase as any)
-                .from('client_users')
-                .update({ failed_attempts: newFailedAttempts, locked_until: lockedUntil.toISOString() })
-                .eq('id', user.id)
-              await logAuditEvent(supabase, 'account_locked', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
+              await db.query(
+                `UPDATE client_users SET failed_attempts = $1, locked_until = $2 WHERE id = $3`,
+                [newFailedAttempts, lockedUntil.toISOString(), user.id]
+              )
+              await logAuditEvent(db, 'account_locked', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
             } else {
-              await (supabase as any)
-                .from('client_users')
-                .update({ failed_attempts: newFailedAttempts })
-                .eq('id', user.id)
+              await db.query(
+                `UPDATE client_users SET failed_attempts = $1 WHERE id = $2`,
+                [newFailedAttempts, user.id]
+              )
             }
 
-            await logAuditEvent(supabase, 'login_failed', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
+            await logAuditEvent(db, 'login_failed', email, user.client_id, ipAddress, null, { attempts: newFailedAttempts })
             return null
           }
 
-          await (supabase as any)
-            .from('client_users')
-            .update({ failed_attempts: 0, locked_until: null, last_login: new Date().toISOString() })
-            .eq('id', user.id)
+          await db.query(
+            `UPDATE client_users SET failed_attempts = 0, locked_until = NULL, last_login = $1 WHERE id = $2`,
+            [new Date().toISOString(), user.id]
+          )
 
-          await logAuditEvent(supabase, 'login_success', email, user.client_id, ipAddress, null)
+          await logAuditEvent(db, 'login_success', email, user.client_id, ipAddress, null)
 
           return {
             id: user.id,
@@ -136,7 +138,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 })
 
 async function logAuditEvent(
-  supabase: ReturnType<typeof getSupabase>,
+  db: Pool,
   eventType: string,
   email: string | null,
   clientId: string | null,
@@ -144,15 +146,11 @@ async function logAuditEvent(
   _userAgent: string | null,
   details?: Record<string, unknown>
 ) {
-  if (!supabase) return
   try {
-    await (supabase as any).from('auth_audit_log').insert({
-      event_type: eventType,
-      email,
-      client_id: clientId,
-      ip_address: ipAddress,
-      details: details || {},
-    })
+    await db.query(
+      `INSERT INTO auth_audit_log (event_type, email, client_id, ip_address, details) VALUES ($1, $2, $3, $4, $5)`,
+      [eventType, email, clientId, ipAddress, JSON.stringify(details || {})]
+    )
   } catch (error) {
     console.error('[auth audit] failed to log event:', error)
   }
