@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users, Package, ShoppingBag, Dumbbell } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { HeroGraphic } from '@/components/HeroGraphic';
 import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
 import { JsonLd } from '@/components/JsonLd';
@@ -112,6 +113,7 @@ export default function HomePage() {
                   <Phone size={18} /> Book a free 60-min call
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 -mt-6 mb-12">Or book a call directly <ArrowRight size={14} /></a>
 
               {/* Stats strip */}
               <div className="flex flex-wrap gap-8">
@@ -218,6 +220,7 @@ export default function HomePage() {
               <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                 Start with a free 60-min call
               </Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
 
           </div>
@@ -394,6 +397,7 @@ export default function HomePage() {
               See engagement options &amp; pricing
             </Link>
           </div>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
         </div>
       </section>
     </>

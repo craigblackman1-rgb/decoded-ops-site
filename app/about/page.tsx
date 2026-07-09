@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Shield, Wrench, Brain } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
@@ -83,6 +84,7 @@ export default function AboutPage() {
                   See Clarity
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
               <div className="flex flex-wrap gap-8">
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">25+</div>
@@ -229,6 +231,7 @@ export default function AboutPage() {
           <Link href="/contact" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] text-sm font-semibold hover:bg-[#FB8500] transition-colors">
             Book a free discovery call <ArrowRight size={16} />
           </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
         </div>
       </section>
     </>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -131,6 +132,7 @@ export default function RetainedPage() {
                   Start with Clarity
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
               <div className="flex flex-wrap gap-8">
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">Fixed days</div>
@@ -267,6 +269,7 @@ export default function RetainedPage() {
               See full pricing
             </Link>
           </div>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
         </div>
       </section>
     </>

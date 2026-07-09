@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 
 // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
@@ -116,6 +117,7 @@ export default function FiveWarningSignsPage() {
                 See what a Clarity Audit covers
               </Link>
             </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

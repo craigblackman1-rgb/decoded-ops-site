@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Server, Layers, ShoppingCart, GitBranch, TrendingUp, Sparkles, CheckCircle2, Zap, Settings, Users } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -160,6 +161,7 @@ export default function ClarityPage() {
                   Book your Clarity Audit call <ArrowRight size={18} />
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
             <div className="hidden lg:flex items-center justify-center">
               <AuditWheelGraphic />
@@ -261,6 +263,7 @@ export default function ClarityPage() {
                   Book your Clarity Audit call <ArrowRight size={18} />
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
             <div className="hidden lg:flex items-center justify-center p-8 rounded-2xl bg-[#023047]">
               <svg viewBox="0 0 280 220" className="w-full max-w-xs" aria-hidden="true">

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { ReactNode } from 'react';
 import { BreadcrumbSchema } from './BreadcrumbSchema';
 
@@ -57,6 +58,7 @@ export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, 
                   See how the audit works
                 </Link>
               </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
             <div className="flex items-center justify-center">
               {heroGraphic ? (
@@ -138,6 +140,7 @@ export function ProblemPage({ problem, headline, intro, heroImage, heroGraphic, 
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                 Book a free call <ArrowRight size={18} />
               </Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3 text-center justify-center w-full">Or book a call directly <ArrowRight size={14} /></a>
             </div>
           </div>
         </div>

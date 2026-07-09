@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 
 export function AutomationRoiCalculator() {
   const [hoursPerWeek, setHoursPerWeek] = useState<number>(5);
@@ -204,6 +206,7 @@ export function AutomationRoiCalculator() {
           >
             Let&apos;s automate this together →
           </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center text-sm text-[#8ECAE6] hover:text-white font-medium mt-3">Or book a call directly <ArrowRight size={14} className="inline" /></a>
         </div>
       </div>
     </div>

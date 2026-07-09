@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Download, Check, Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
 import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
@@ -292,6 +293,7 @@ export default function DecodedMethodPage() {
                 Book a discovery call <ArrowRight size={18} />
               </Link>
             </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-4">Or book a call directly <ArrowRight size={14} /></a>
             <p className="mt-6 text-sm text-white/50 leading-relaxed">
               Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>

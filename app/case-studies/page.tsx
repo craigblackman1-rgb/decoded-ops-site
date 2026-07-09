@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Wrench, Package, ShoppingBag, Dumbbell } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 // Target keyword: "decoded ops case studies" (brand/trust — low volume, supports commercial pages rather than ranking independently)
@@ -109,6 +110,7 @@ export default function CaseStudiesPage() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
               Book a free discovery call <ArrowRight size={18} />
             </Link>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
         </div>
       </section>

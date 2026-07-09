@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Download, AlertTriangle } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { SixSigmaSchematic } from '@/components/schematics/SixSigmaSchematic';
 
@@ -166,6 +167,7 @@ export default function SixSigmaPage() {
                 Book a discovery call <ArrowRight size={18} />
               </Link>
             </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-4">Or book a call directly <ArrowRight size={14} /></a>
           </div>
         </div>
       </section>

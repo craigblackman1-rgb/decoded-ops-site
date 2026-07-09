@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 
 export function DowntimeCostCalculator() {
   const [employees, setEmployees] = useState<number>(10);
@@ -164,6 +166,7 @@ export function DowntimeCostCalculator() {
           >
             Talk to Craig about reducing this →
           </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center text-sm text-[#8ECAE6] hover:text-white font-medium mt-3">Or book a call directly <ArrowRight size={14} className="inline" /></a>
         </div>
       </div>
     </div>

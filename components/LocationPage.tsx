@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
 interface PainPoint {
@@ -80,6 +81,7 @@ export function LocationPage({
                 {serviceLabel}
               </Link>
             </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
           <div className="flex items-center justify-center">
             <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
@@ -212,6 +214,7 @@ export function LocationPage({
                 >
                   Book a free call <ArrowRight size={18} />
                 </Link>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3 text-center justify-center w-full">Or book a call directly <ArrowRight size={14} /></a>
                 <p className="text-xs text-[#8ECAE6]/60 text-center mt-4">
                   Serving {town} and across {county}
                 </p>

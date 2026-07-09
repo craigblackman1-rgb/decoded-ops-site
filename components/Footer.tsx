@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 
 const sectors = [
   { label: 'Garment decoration', href: '/sectors/garment-decoration' },
@@ -71,6 +73,7 @@ export function Footer() {
             <div className="text-sm text-[#8ECAE6] mb-5 space-y-1">
               <div><a href="mailto:craig@decodedops.co.uk" className="hover:text-white transition-colors">craig@decodedops.co.uk</a></div>
               <div><a href="tel:+447735620603" className="hover:text-white transition-colors">07735 620 603</a></div>
+              <div className="pt-2"><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1">Book a call directly <ArrowRight size={14} /></a></div>
             </div>
             <nav aria-label="Company links">
               <ul className="space-y-2">

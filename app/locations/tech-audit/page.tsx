@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 import { locations } from '@/data/locations';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -58,6 +59,7 @@ export default function TechAuditLocationsHub() {
               >
                 Book a free call <ArrowRight size={18} />
               </Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
           </div>
         </div>
