@@ -6,23 +6,23 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
-  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
+  title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
+  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
-    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
+    title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
     url: 'https://decodedops.co.uk/clarity',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology & Operations Audit for Print and Decoration Businesses | Decoded Ops',
-    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations, and a 3× guarantee.',
+    title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
   },
 };
-import { AuditWheelGraphic } from '@/components/graphics/AuditWheelGraphic';
+import { DiscoveryDaySchematic } from '@/components/schematics/DiscoveryDaySchematic';
 
 const auditAreas = [
   { icon: Server,       num: '01', title: 'IT Infrastructure',     desc: 'Security posture, connectivity, identity management, and IT costs. Every risk identified, costed, and prioritised. Licensing waste surfaced and eliminated.' },
@@ -50,7 +50,7 @@ const deliverables = [
 ];
 
 const nextSteps = [
-  { icon: Zap,       title: 'Deliver',    href: '/deliver',    desc: 'A fixed-scope project to implement the highest-impact recommendations from your Clarity report.' },
+  { icon: Zap,       title: 'Deliver',    href: '/deliver',    desc: 'A fixed-scope project to implement the highest-impact recommendations from your Discovery Day report.' },
   { icon: Settings,  title: 'Transform',  href: '/transform',  desc: 'A longer engagement to overhaul systems, processes, and technology across the business.' },
   { icon: Users,     title: 'Retained',   href: '/retained',   desc: 'Monthly strategic and operational leadership — roadmap ownership, vendor management, ongoing.' },
 ];
@@ -60,22 +60,22 @@ const claritySchema = {
   '@graph': [
     {
       '@type': 'Service',
-      name: 'Clarity Audit',
-      description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses. Written report within 5 working days.',
+      name: 'Discovery Day',
+      description: 'A one-day on-site technology and operations audit for print, embroidery, and decoration businesses. Written assessment within 5 working days.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
       serviceType: 'Operational and Technology Audit',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/clarity',
-      offers: { '@type': 'Offer', price: '395', priceCurrency: 'GBP', priceRange: 'From £395' },
+      offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP', priceRange: '£1,500 fixed' },
     },
     {
       '@type': 'HowTo',
-      name: 'How the Clarity Audit Works',
-      description: 'A one-day technology and operations audit for print, embroidery, and decoration businesses, delivering a written report within 5 working days.',
+      name: 'How Discovery Day Works',
+      description: 'A one-day on-site technology and operations audit for print, embroidery, and decoration businesses, delivering a written assessment within 5 working days.',
       step: [
         { '@type': 'HowToStep', position: 1, name: 'Discovery call', text: 'A free 60-minute call before the on-site day. Craig learns enough about your business to make the day as useful as possible.' },
         { '@type': 'HowToStep', position: 2, name: 'One day in your business', text: 'Craig follows your processes — not interviews people about them. Six areas. Every system touched. Every step observed.' },
-        { '@type': 'HowToStep', position: 3, name: 'Written report', text: 'Every finding documented. Every issue quantified in time and cost. Prioritised by impact, delivered within 5 working days.' },
+        { '@type': 'HowToStep', position: 3, name: 'Written assessment', text: 'Every finding documented. Every issue quantified in time and cost. Prioritised by impact, delivered within 5 working days.' },
         { '@type': 'HowToStep', position: 4, name: 'Debrief call', text: 'A call to walk through the findings together. Every question answered. The unfiltered version.' },
       ],
     },
@@ -84,38 +84,38 @@ const claritySchema = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'What does the Clarity Audit cover?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity Audit covers six areas: IT infrastructure (security, connectivity, identity management, and IT costs), software and systems (every tool in use assessed), eCommerce and digital (platform, UX, integrations, and B2B capability), processes and operations (every process mapped from order to invoice), growth and opportunity (revenue lines with most potential, new channels, technology roadmap), and AI readiness (where AI could genuinely help your specific operation).' },
+          name: 'What does Discovery Day cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day covers six areas: IT infrastructure (security, connectivity, identity management, and IT costs), software and systems (every tool in use assessed), eCommerce and digital (platform, UX, integrations, and B2B capability), processes and operations (every process mapped from order to invoice), growth and opportunity (revenue lines with most potential, new channels, technology roadmap), and AI readiness (where AI could genuinely help your specific operation).' },
         },
         {
           '@type': 'Question',
-          name: 'How much does the Clarity Audit cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity Audit costs £395 for small businesses. If the report does not identify at least 3× the fee (£1,185) in recoverable cost or lost revenue, you receive a full refund — no conditions, no questions. A core engagement starts from £2,500.' },
+          name: 'How much does Discovery Day cost?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day is £1,500, fixed, invoiced 50% on booking and 50% on delivery of the written assessment. If it does not deliver something you can act on, there is no obligation to proceed to anything further. If you go on to a Deliver or Transform engagement within 60 days of the written assessment, the £1,500 is credited against your first invoice.' },
         },
         {
           '@type': 'Question',
-          name: 'How long does the Clarity Audit take?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The audit itself takes one day on site. You then receive a written report within 5 working days, followed by a debrief call included in the fee. A free 60-minute discovery call happens before the on-site day.' },
+          name: 'How long does Discovery Day take?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The audit itself takes one day on site. You then receive a written assessment within 5 working days, followed by a debrief call included in the fee. A free 60-minute discovery call happens before the on-site day.' },
         },
         {
           '@type': 'Question',
-          name: 'What do I receive at the end of the Clarity Audit?',
-          acceptedAnswer: { '@type': 'Answer', text: 'You receive a written audit report (not a slide deck) with every issue quantified in time and money, prioritised recommendations with quick wins first, an independent vendor brief if new software is needed, a debrief call to walk through everything, and 30 days of follow-up support after delivery.' },
+          name: 'What do I receive at the end of Discovery Day?',
+          acceptedAnswer: { '@type': 'Answer', text: 'You receive a written assessment (not a slide deck) with every issue quantified in time and money, prioritised recommendations with quick wins first, an independent vendor brief if new software is needed, a debrief call to walk through everything, and 30 days of follow-up support after delivery.' },
         },
         {
           '@type': 'Question',
-          name: 'What is included in a technology audit for a small business?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The Clarity technology audit covers IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth opportunity, and AI readiness. Every area is assessed on site in a single day. You receive a written report within 5 working days with every finding quantified in time and money.' },
+          name: 'What is included in a one-day technology audit?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day covers IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth opportunity, and AI readiness. Every area is assessed on site in a single day. You receive a written assessment within 5 working days with every finding quantified in time and money.' },
         },
         {
           '@type': 'Question',
           name: 'Is this an IT audit, a software audit, or an operations audit?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It is all three. The Clarity Audit is a combined IT audit, software audit, and operations audit delivered in a single day. The reason for covering all three together is that the problems rarely live in just one area — technology choices affect process efficiency, and process gaps drive software decisions.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'It is all three. Discovery Day is a combined IT audit, software audit, and operations audit delivered in a single day. The reason for covering all three together is that the problems rarely live in just one area — technology choices affect process efficiency, and process gaps drive software decisions.' },
         },
         {
           '@type': 'Question',
           name: 'Can a technology audit help with eCommerce integration problems?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Yes. eCommerce is one of the six areas covered in every Clarity Audit. The audit assesses your eCommerce platform, how it connects to your ERP or order management system, where the gaps are, and what a realistic fix looks like — with costs.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. eCommerce is one of the six areas covered in every Discovery Day. The audit assesses your eCommerce platform, how it connects to your ERP or order management system, where the gaps are, and what a realistic fix looks like — with costs.' },
         },
       ],
     },
@@ -127,7 +127,7 @@ export default function ClarityPage() {
     <>
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://decodedops.co.uk/' },
-        { name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' },
+        { name: 'Discovery Day', url: 'https://decodedops.co.uk/clarity' },
       ]} />
       <JsonLd data={claritySchema} />
       {/* 3× GUARANTEE */}
@@ -135,7 +135,7 @@ export default function ClarityPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">
             <blockquote className="italic text-lg lg:text-xl text-[#023047] font-medium">
-              "If the report doesn&apos;t identify at least 3× the fee in recoverable cost or lost revenue, full refund. No conditions. No questions."
+              "If the written assessment doesn&apos;t give you something you can act on, you&apos;re not obligated to go any further. No conditions. No questions."
             </blockquote>
           </div>
         </div>
@@ -147,24 +147,26 @@ export default function ClarityPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Clarity &middot; Operational &amp; Technology Audit</span>
+                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Discovery Day &middot; On-Site Audit &amp; Written Plan</span>
               </div>
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
                   One day. A complete technology audit. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five working days.
                 </h1>
                 <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                  A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
+                  A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified. One fixed fee: <strong className="text-[#023047]">£1,500</strong>.
                 </p>
                 <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book your Clarity Audit call <ArrowRight size={18} />
+                  Book your Discovery Day call <ArrowRight size={18} />
                 </Link>
               </div>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
             </div>
             <div className="hidden lg:flex items-center justify-center">
-              <AuditWheelGraphic />
+              <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+                <DiscoveryDaySchematic />
+              </div>
             </div>
           </div>
         </div>
@@ -260,7 +262,7 @@ export default function ClarityPage() {
               </div>
               <div className="mt-10">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Book your Clarity Audit call <ArrowRight size={18} />
+                  Book your Discovery Day call <ArrowRight size={18} />
                 </Link>
               </div>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
@@ -272,7 +274,7 @@ export default function ClarityPage() {
                 <rect x="40" y="20" width="200" height="28" rx="8" fill="#219EBC" />
                 <rect x="40" y="40" width="200" height="8" fill="#219EBC" />
                 {/* Doc title */}
-                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="Outfit, sans-serif">CLARITY AUDIT REPORT</text>
+                <text x="140" y="39" textAnchor="middle" fontSize="10" fontWeight="700" fill="#F8F9FA" fontFamily="Outfit, sans-serif">DISCOVERY DAY REPORT</text>
                 {/* Lines of text */}
                 {[60, 76, 92, 108, 124, 140, 156].map((y, i) => (
                   <rect key={y} x="60" y={y} width={i % 3 === 2 ? 100 : 160} height="7" rx="3"
@@ -291,8 +293,8 @@ export default function ClarityPage() {
                 <text x="140" y="192" textAnchor="middle" fontSize="18" fill="#023047" fontWeight="800" fontFamily="Outfit, sans-serif">&pound;47,200</text>
                 {/* Corner badge */}
                 <circle cx="220" cy="26" r="16" fill="#023047" />
-                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#219EBC" fontWeight="700" fontFamily="Outfit, sans-serif">3&times;</text>
-                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#8ECAE6" fontFamily="Outfit, sans-serif">Clarity</text>
+                <text x="220" y="22" textAnchor="middle" fontSize="7" fill="#219EBC" fontWeight="700" fontFamily="Outfit, sans-serif">5 DAY</text>
+                <text x="220" y="31" textAnchor="middle" fontSize="6" fill="#8ECAE6" fontFamily="Outfit, sans-serif">turnaround</text>
               </svg>
             </div>
           </div>
@@ -306,7 +308,7 @@ export default function ClarityPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
               <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; What comes next</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">What happens after Clarity?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">What happens after Discovery Day?</h2>
             <p className="text-[#8ECAE6] text-lg">The audit gives you the full picture. These are the three ways to act on it.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
