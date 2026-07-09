@@ -1,8 +1,10 @@
 'use client';
 
-import { ArrowRight, Mail, Phone, Clock, MessageSquare, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { ArrowRight, Mail, Phone, Clock, MessageSquare, CheckCircle, AlertCircle, Loader, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { submitContactForm } from './actions';
+
+const BOOKING_URL = 'https://bookings.cloud.microsoft/bookwithme/user/cd8e6071c12d43198fdd3d4b5a1f0c6e%40decodedops.co.uk/meetingtype/P0WZOGSVokOqOnMRxyU1eg2?anonymous&ismsaljsauthenabled';
 
 export function ContactClient() {
   const [formState, setFormState] = useState<{
@@ -65,6 +67,15 @@ export function ContactClient() {
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
                 No sales pitch. No obligation. A direct conversation about your business, what&apos;s frustrating you, and whether there&apos;s something I can help with.
               </p>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors text-sm mb-6"
+              >
+                <Calendar size={16} />
+                Book a call directly <ArrowRight size={16} />
+              </a>
               <div className="space-y-4">
                 <a href="mailto:craig@decodedops.co.uk" className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center group-hover:bg-[#219EBC] transition-colors">
