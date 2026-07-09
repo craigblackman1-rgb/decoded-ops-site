@@ -7,19 +7,19 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
-  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
+  description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
     title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
-    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.',
     url: 'https://decodedops.co.uk/clarity',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops',
-    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. £1,500 fixed. Written report, clear recommendations.',
+    description: 'A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.',
   },
 };
 import { DiscoveryDaySchematic } from '@/components/schematics/DiscoveryDaySchematic';
@@ -66,7 +66,6 @@ const claritySchema = {
       serviceType: 'Operational and Technology Audit',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/clarity',
-      offers: { '@type': 'Offer', price: '1500', priceCurrency: 'GBP', priceRange: '£1,500 fixed' },
     },
     {
       '@type': 'HowTo',
@@ -90,7 +89,7 @@ const claritySchema = {
         {
           '@type': 'Question',
           name: 'How much does Discovery Day cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day is £1,500, fixed, invoiced 50% on booking and 50% on delivery of the written assessment. If it does not deliver something you can act on, there is no obligation to proceed to anything further. If you go on to a Deliver or Transform engagement within 60 days of the written assessment, the £1,500 is credited against your first invoice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day is a single fixed fee, invoiced 50% on booking and 50% on delivery of the written assessment — get in touch and Craig will give you the exact figure on the first call. If it does not deliver something you can act on, there is no obligation to proceed to anything further. If you go on to a Deliver or Transform engagement within 60 days of the written assessment, the fee is credited against your first invoice.' },
         },
         {
           '@type': 'Question',
@@ -153,7 +152,7 @@ export default function ClarityPage() {
                   One day. A complete technology audit. <span className="text-[#219EBC]">Everything it costs you</span> in writing within five working days.
                 </h1>
                 <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                  A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified. One fixed fee: <strong className="text-[#023047]">£1,500</strong>.
+                  A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified. <strong className="text-[#023047]">One fixed fee, no surprises.</strong>
                 </p>
                 <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4">
