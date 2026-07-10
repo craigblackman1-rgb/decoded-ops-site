@@ -105,7 +105,7 @@ export default function HomePage() {
                 Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   See how Discovery Day works <ArrowRight size={18} />
                 </Link>
@@ -113,23 +113,20 @@ export default function HomePage() {
                   <Phone size={18} /> Book a free 60-min call
                 </Link>
               </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3 mb-12">Or book a call directly <ArrowRight size={14} /></a>
 
               {/* Stats strip */}
-              <div className="flex flex-wrap gap-8">
+              <div className="grid grid-cols-3 max-w-xl">
                 <div>
                   <div className="text-2xl font-bold text-[#023047]">25+</div>
                   <div className="text-sm text-[#023047]/70">Years in the sector</div>
                 </div>
-                <div className="w-px bg-[#8ECAE6]" />
-                <div>
+                <div className="border-l border-[#8ECAE6] pl-6">
                   <div className="text-2xl font-bold text-[#023047]">3×</div>
                   <div className="text-sm text-[#023047]/70">Clarity guarantee</div>
                 </div>
-                <div className="w-px bg-[#8ECAE6]" />
-                <div>
+                <div className="border-l border-[#8ECAE6] pl-6">
                   <div className="text-2xl font-bold text-[#023047]">100%</div>
-                  <div className="text-sm text-[#023047]/70">Independent &mdash; no vendor agenda</div>
+                  <div className="text-sm text-[#023047]/70">No vendor agenda</div>
                 </div>
               </div>
             </div>
