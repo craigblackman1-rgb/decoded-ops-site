@@ -36,8 +36,7 @@ const reviews = [
   {
     name: 'Orderwise',
     description: 'Used by a lot of UK decorated goods businesses — but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).',
-    status: 'Review available',
-    href: '/blog/orderwise-what-it-does-well-what-it-doesn-t',
+    status: 'Coming soon',
   },
   {
     name: 'Unleashed',

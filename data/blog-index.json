@@ -8,7 +8,10 @@
       "readTime": 9,
       "category": "ERP",
       "featuredImage": "/images/blog/the-real-cost-of-a-failed-erp-project-thumb.svg",
-      "images": ["/images/blog/the-real-cost-of-a-failed-erp-project-img-1.svg", "/images/blog/the-real-cost-of-a-failed-erp-project-img-2.svg"]
+      "images": [
+        "/images/blog/the-real-cost-of-a-failed-erp-project-img-1.svg",
+        "/images/blog/the-real-cost-of-a-failed-erp-project-img-2.svg"
+      ]
     },
     {
       "slug": "5-questions-vendors-wont-like",
@@ -18,7 +21,10 @@
       "readTime": 5,
       "category": "Technology",
       "featuredImage": "/images/blog/5-questions-vendors-wont-like-thumb.svg",
-      "images": ["/images/blog/5-questions-vendors-wont-like-img-1.svg", "/images/blog/5-questions-vendors-wont-like-img-2.svg"]
+      "images": [
+        "/images/blog/5-questions-vendors-wont-like-img-1.svg",
+        "/images/blog/5-questions-vendors-wont-like-img-2.svg"
+      ]
     },
     {
       "slug": "why-systems-dont-talk",
@@ -28,7 +34,10 @@
       "readTime": 8,
       "category": "Integration",
       "featuredImage": "/images/blog/why-systems-dont-talk-thumb.svg",
-      "images": ["/images/blog/why-systems-dont-talk-img-1.svg", "/images/blog/why-systems-dont-talk-img-2.svg"]
+      "images": [
+        "/images/blog/why-systems-dont-talk-img-1.svg",
+        "/images/blog/why-systems-dont-talk-img-2.svg"
+      ]
     },
     {
       "slug": "ecommerce-integration-trap",
@@ -38,7 +47,10 @@
       "readTime": 6,
       "category": "Integration",
       "featuredImage": "/images/blog/ecommerce-integration-trap-thumb.svg",
-      "images": ["/images/blog/ecommerce-integration-trap-img-1.svg", "/images/blog/ecommerce-integration-trap-img-2.svg"]
+      "images": [
+        "/images/blog/ecommerce-integration-trap-img-1.svg",
+        "/images/blog/ecommerce-integration-trap-img-2.svg"
+      ]
     },
     {
       "slug": "what-happens-when-your-systems-go-down",
@@ -48,27 +60,36 @@
       "readTime": 8,
       "category": "Operations",
       "featuredImage": "/images/blog/what-happens-when-your-systems-go-down-thumb.svg",
-      "images": ["/images/blog/what-happens-when-your-systems-go-down-img-1.svg", "/images/blog/what-happens-when-your-systems-go-down-img-2.svg"]
+      "images": [
+        "/images/blog/what-happens-when-your-systems-go-down-img-1.svg",
+        "/images/blog/what-happens-when-your-systems-go-down-img-2.svg"
+      ]
     },
     {
       "slug": "embroidery-stitch-density-quality-speed-cost",
       "title": "Embroidery Stitch Density: How It Affects Quality, Speed, and Cost",
-      "excerpt": "The setting most businesses never look at — until rework, late jobs, and margin erosion force them to.",
+      "excerpt": "The setting most businesses never look at \u2014 until rework, late jobs, and margin erosion force them to.",
       "date": "2026-05-19",
       "readTime": 9,
       "category": "Operations",
       "featuredImage": "/images/blog/embroidery-stitch-density-quality-speed-cost-thumb.svg",
-      "images": ["/images/blog/embroidery-stitch-density-quality-speed-cost-img-1.svg", "/images/blog/embroidery-stitch-density-quality-speed-cost-img-2.svg"]
+      "images": [
+        "/images/blog/embroidery-stitch-density-quality-speed-cost-img-1.svg",
+        "/images/blog/embroidery-stitch-density-quality-speed-cost-img-2.svg"
+      ]
     },
     {
       "slug": "heat-press-temperature-dwell-time-operations-guide",
       "title": "Heat Press Temperature & Dwell Time: The Complete Operations Guide",
-      "excerpt": "Three settings. All three matter. Getting one wrong ruins the result — and the garment.",
+      "excerpt": "Three settings. All three matter. Getting one wrong ruins the result \u2014 and the garment.",
       "date": "2026-05-20",
       "readTime": 9,
       "category": "Operations",
       "featuredImage": "/images/blog/heat-press-temperature-dwell-time-operations-guide-thumb.svg",
-      "images": ["/images/blog/heat-press-temperature-dwell-time-operations-guide-img-1.svg", "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-2.svg"]
+      "images": [
+        "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-1.svg",
+        "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-2.svg"
+      ]
     },
     {
       "slug": "ralawise-integration-bulk-orders-stock-management",
@@ -78,17 +99,23 @@
       "readTime": 9,
       "category": "Integration",
       "featuredImage": "/images/blog/ralawise-integration-bulk-orders-stock-management-thumb.svg",
-      "images": ["/images/blog/ralawise-integration-bulk-orders-stock-management-img-1.svg", "/images/blog/ralawise-integration-bulk-orders-stock-management-img-2.svg"]
+      "images": [
+        "/images/blog/ralawise-integration-bulk-orders-stock-management-img-1.svg",
+        "/images/blog/ralawise-integration-bulk-orders-stock-management-img-2.svg"
+      ]
     },
     {
       "slug": "screen-printing-vs-heat-transfer-scale-your-business",
       "title": "Screen Printing vs Heat Transfer: Which Scales Your Business?",
-      "excerpt": "Both methods work. The question is which one fits where you're going — not where you are right now.",
+      "excerpt": "Both methods work. The question is which one fits where you're going \u2014 not where you are right now.",
       "date": "2026-05-22",
       "readTime": 9,
       "category": "Operations",
       "featuredImage": "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-thumb.svg",
-      "images": ["/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-1.svg", "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-2.svg"]
+      "images": [
+        "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-1.svg",
+        "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-2.svg"
+      ]
     },
     {
       "slug": "artwork-approval-workflow-brief-to-sign-off-24-hours",
@@ -98,7 +125,10 @@
       "readTime": 8,
       "category": "Workflow",
       "featuredImage": "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-thumb.svg",
-      "images": ["/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-1.svg", "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-2.svg"]
+      "images": [
+        "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-1.svg",
+        "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-2.svg"
+      ]
     },
     {
       "slug": "bulk-order-management-wholesale-decorated-goods",
@@ -108,7 +138,10 @@
       "readTime": 9,
       "category": "Operations",
       "featuredImage": "/images/blog/bulk-order-management-wholesale-decorated-goods-thumb.svg",
-      "images": ["/images/blog/bulk-order-management-wholesale-decorated-goods-img-1.svg", "/images/blog/bulk-order-management-wholesale-decorated-goods-img-2.svg"]
+      "images": [
+        "/images/blog/bulk-order-management-wholesale-decorated-goods-img-1.svg",
+        "/images/blog/bulk-order-management-wholesale-decorated-goods-img-2.svg"
+      ]
     },
     {
       "slug": "production-scheduling-print-embroidery-capacity-quality-rush",
@@ -118,7 +151,10 @@
       "readTime": 9,
       "category": "Operations",
       "featuredImage": "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-thumb.svg",
-      "images": ["/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-1.svg", "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-2.svg"]
+      "images": [
+        "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-1.svg",
+        "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-2.svg"
+      ]
     },
     {
       "slug": "embroidery-quality-standards-stitch-density-thread-durability",
@@ -128,7 +164,10 @@
       "readTime": 9,
       "category": "Quality",
       "featuredImage": "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-thumb.svg",
-      "images": ["/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-1.svg", "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-2.svg"]
+      "images": [
+        "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-1.svg",
+        "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-2.svg"
+      ]
     },
     {
       "slug": "ai-isnt-your-problem-your-processes-are",
@@ -138,27 +177,36 @@
       "readTime": 7,
       "category": "Technology",
       "featuredImage": "/images/blog/ai-isnt-your-problem-your-processes-are-thumb.svg",
-      "images": ["/images/blog/ai-isnt-your-problem-your-processes-are-img-1.svg", "/images/blog/ai-isnt-your-problem-your-processes-are-img-2.svg"]
+      "images": [
+        "/images/blog/ai-isnt-your-problem-your-processes-are-img-1.svg",
+        "/images/blog/ai-isnt-your-problem-your-processes-are-img-2.svg"
+      ]
     },
     {
       "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
       "title": "How to Evaluate an AI Tool Without Getting Sold To",
-      "excerpt": "Most AI tools solve problems you don't have yet. Here's how to evaluate one honestly — without the sales pitch.",
+      "excerpt": "Most AI tools solve problems you don't have yet. Here's how to evaluate one honestly \u2014 without the sales pitch.",
       "date": "2026-06-02",
       "readTime": 7,
       "category": "Technology",
       "featuredImage": "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-thumb.svg",
-      "images": ["/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-1.svg", "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-2.svg"]
+      "images": [
+        "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-1.svg",
+        "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-2.svg"
+      ]
     },
     {
       "slug": "the-artwork-file-that-broke-the-erp-cartoon",
       "title": "The Artwork File That Broke the ERP",
-      "excerpt": "A low-res JPEG. An order with no artwork attached. Production stops. This happens every day — and it doesn't have to.",
+      "excerpt": "A low-res JPEG. An order with no artwork attached. Production stops. This happens every day \u2014 and it doesn't have to.",
       "date": "2026-06-05",
       "readTime": 7,
       "category": "Workflow",
       "featuredImage": "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-thumb.svg",
-      "images": ["/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-1.svg", "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-2.svg"]
+      "images": [
+        "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-1.svg",
+        "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-2.svg"
+      ]
     },
     {
       "slug": "crm-adoption-failure-why-it-happens-and-how-to-fix-it",
@@ -168,7 +216,10 @@
       "readTime": 8,
       "category": "Technology",
       "featuredImage": "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-thumb.svg",
-      "images": ["/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-1.svg", "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-2.svg"]
+      "images": [
+        "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-1.svg",
+        "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-2.svg"
+      ]
     },
     {
       "slug": "b2b-portal-down-on-christmas-jumper-day-cartoon",
@@ -178,7 +229,10 @@
       "readTime": 7,
       "category": "Technology",
       "featuredImage": "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-thumb.svg",
-      "images": ["/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-1.svg", "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-2.svg"]
+      "images": [
+        "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-1.svg",
+        "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-2.svg"
+      ]
     },
     {
       "slug": "what-good-operations-actually-looks-like",
@@ -188,7 +242,10 @@
       "readTime": 8,
       "category": "Operations",
       "featuredImage": "/images/blog/what-good-operations-actually-looks-like-thumb.svg",
-      "images": ["/images/blog/what-good-operations-actually-looks-like-img-1.svg", "/images/blog/what-good-operations-actually-looks-like-img-2.svg"]
+      "images": [
+        "/images/blog/what-good-operations-actually-looks-like-img-1.svg",
+        "/images/blog/what-good-operations-actually-looks-like-img-2.svg"
+      ]
     },
     {
       "slug": "when-it-support-is-the-problem",
@@ -198,7 +255,10 @@
       "readTime": 8,
       "category": "Technology",
       "featuredImage": "/images/blog/when-it-support-is-the-problem-thumb.svg",
-      "images": ["/images/blog/when-it-support-is-the-problem-img-1.svg", "/images/blog/when-it-support-is-the-problem-img-2.svg"]
+      "images": [
+        "/images/blog/when-it-support-is-the-problem-img-1.svg",
+        "/images/blog/when-it-support-is-the-problem-img-2.svg"
+      ]
     },
     {
       "slug": "the-hidden-cost-of-running-legacy-systems",
@@ -208,17 +268,10 @@
       "readTime": 8,
       "category": "Technology",
       "featuredImage": "/images/blog/the-hidden-cost-of-running-legacy-systems-thumb.svg",
-      "images": ["/images/blog/the-hidden-cost-of-running-legacy-systems-img-1.svg", "/images/blog/the-hidden-cost-of-running-legacy-systems-img-2.svg"]
-    },
-    {
-      "slug": "orderwise-what-it-does-well-what-it-doesn-t",
-      "title": "Orderwise: What It Does Well, What It Doesn't",
-      "excerpt": "An honest assessment based on real experience. Not a sponsored review. What works and where the gaps are.",
-      "date": "2026-06-15",
-      "readTime": 8,
-      "category": "Technology",
-      "featuredImage": "/images/blog/orderwise-what-it-does-well-what-it-doesn-t-thumb.svg",
-      "images": ["/images/blog/orderwise-what-it-does-well-what-it-doesn-t-img-1.svg", "/images/blog/orderwise-what-it-does-well-what-it-doesn-t-img-2.svg"]
+      "images": [
+        "/images/blog/the-hidden-cost-of-running-legacy-systems-img-1.svg",
+        "/images/blog/the-hidden-cost-of-running-legacy-systems-img-2.svg"
+      ]
     },
     {
       "slug": "process-before-platform",
@@ -228,12 +281,15 @@
       "readTime": 8,
       "category": "Operations",
       "featuredImage": "/images/blog/process-before-platform-thumb.svg",
-      "images": ["/images/blog/process-before-platform-img-1.svg", "/images/blog/process-before-platform-img-2.svg"]
+      "images": [
+        "/images/blog/process-before-platform-img-1.svg",
+        "/images/blog/process-before-platform-img-2.svg"
+      ]
     },
     {
       "slug": "lean-six-sigma-small-business",
       "title": "Is Lean Six Sigma Right for Your Small Business?",
-      "excerpt": "Lean Six Sigma sounds like enterprise stuff. Here's the version that actually applies to a print or decoration business under £5m — and when it's worth your time.",
+      "excerpt": "Lean Six Sigma sounds like enterprise stuff. Here's the version that actually applies to a print or decoration business under \u00a35m \u2014 and when it's worth your time.",
       "date": "2026-06-25",
       "readTime": 5,
       "category": "Operations",
@@ -253,7 +309,7 @@
     {
       "slug": "erp-selection-decorated-goods",
       "title": "ERP Selection for Decorated Goods: A Plain-English Buying Guide",
-      "excerpt": "How to choose an ERP for print, embroidery, and decoration businesses — with a process that puts your requirements first and the vendor demo second.",
+      "excerpt": "How to choose an ERP for print, embroidery, and decoration businesses \u2014 with a process that puts your requirements first and the vendor demo second.",
       "date": "2026-06-27",
       "readTime": 6,
       "category": "ERP",
@@ -263,7 +319,7 @@
     {
       "slug": "what-is-erp-decorated-goods",
       "title": "What Is ERP? And Does Your Decorated Goods Business Actually Need One?",
-      "excerpt": "A jargon-free explanation of what ERP actually does for a decorated goods business — and how to know whether you need one or are being sold something you don't.",
+      "excerpt": "A jargon-free explanation of what ERP actually does for a decorated goods business \u2014 and how to know whether you need one or are being sold something you don't.",
       "date": "2026-06-28",
       "readTime": 6,
       "category": "ERP",
