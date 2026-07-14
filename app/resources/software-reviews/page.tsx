@@ -32,7 +32,7 @@ const schema = {
   ],
 };
 
-const reviews = [
+const reviews: Array<{ name: string; description: string; status: string; href?: string }> = [
   {
     name: 'Orderwise',
     description: 'Used by a lot of UK decorated goods businesses — but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).',
