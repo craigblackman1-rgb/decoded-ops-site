@@ -800,7 +800,7 @@ const pricingRanges = [
   { service: 'Retained', sub: 'Monthly retainer', micro: 'From £395/mo', small: 'From £1,440/mo', mid: '£1,440–£2,880/mo', growth: '£2,880–£5,760+/mo' },
 ];
 
-function PricingTable() {
+export function PricingTable() {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left border-collapse">

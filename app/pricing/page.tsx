@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { PricingClient } from './PricingClient';
+import { PricingClient, PricingTable } from './PricingClient';
 
 export const metadata: Metadata = {
   title: 'Consultancy Pricing — Clarity, Deliver, Transform | Decoded Ops',
@@ -26,6 +26,13 @@ export default function PricingPage() {
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Pricing', url: 'https://decodedops.co.uk/pricing' },
       ]} />
+      <section className="py-16 bg-white border-b border-[#8ECAE6]/20">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-[#023047] mb-2">Indicative pricing by business size</h2>
+          <p className="text-sm text-[#023047]/70 mb-8">No VAT — Craig is not VAT registered. Vendor and software costs are separate, confirmed once a brief exists.</p>
+          <PricingTable />
+        </div>
+      </section>
       <PricingClient />
     </>
   );
