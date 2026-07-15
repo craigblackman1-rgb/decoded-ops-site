@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users, Package, ShoppingBag, Dumbbell } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { DiscoveryDaySchematic } from '@/components/schematics/DiscoveryDaySchematic';
-import { SectorExpertiseGraphic } from '@/components/SectorExpertiseGraphic';
+import { SectorCredibilityPhoto } from '@/components/SectorCredibilityPhoto';
 import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -197,9 +197,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
 
-            {/* Left — sector expertise graphic */}
+            {/* Left — sector credibility photo */}
             <div className="order-2 lg:order-1">
-              <SectorExpertiseGraphic />
+              <SectorCredibilityPhoto />
             </div>
 
             {/* Right — content */}
