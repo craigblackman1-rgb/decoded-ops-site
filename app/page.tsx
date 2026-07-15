@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users, Package, ShoppingBag, Dumbbell } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
-import { DiscoveryDaySchematic } from '@/components/schematics/DiscoveryDaySchematic';
+import { HeroVisual } from '@/components/HeroVisual';
 import { SectorCredibilityPhoto } from '@/components/SectorCredibilityPhoto';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -131,11 +132,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right column — Discovery Day schematic */}
-            <div className="hidden lg:flex items-center justify-center pb-6 w-full">
-              <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
-                <DiscoveryDaySchematic />
-              </div>
+            {/* Right column — hero photo + live software card */}
+            <div className="hidden lg:flex items-center justify-center w-full">
+              <HeroVisual />
             </div>
 
           </div>
@@ -164,30 +163,30 @@ export default function HomePage() {
       </div>
 
       {/* ── THE COST OF STANDING STILL ───────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; The cost of standing still</span>
+      <section className="relative py-20 lg:py-28 bg-[#023047] overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="hidden lg:block absolute inset-y-0 left-[58%] w-[3px] bg-gradient-to-b from-[#FFB703] to-[#219EBC] opacity-50 -skew-x-12"
+        />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFB703]/10 border border-[#FFB703]/30 mb-4">
+              <span className="text-xs font-semibold text-[#FFB703] tracking-wider uppercase">&mdash; The cost of standing still</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">What disconnected systems actually cost you</h2>
-            <p className="text-[#023047]/70 text-lg">These are the numbers I see in businesses like yours, every week. Not hypothetical. Not worst-case. Just the quiet cost of systems that don&apos;t talk to each other.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">What disconnected systems actually cost you</h2>
+            <p className="text-[#F8F9FA]/70 text-lg mb-6">These are the numbers I see in businesses like yours, every week. Not hypothetical. Not worst-case. Just the quiet cost of systems that don&apos;t talk to each other.</p>
+            <p className="text-sm text-[#F8F9FA]/60">Read about <Link href="/problems/systems-dont-talk" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">what it looks like when your systems don&apos;t talk</Link>, <Link href="/problems/ecommerce-not-connected" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">why eCommerce disconnect costs more than you think</Link>, and <Link href="/problems/erp-implementation-failure" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">how ERP implementations go wrong</Link>.</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-3">
             {statusQuoCosts.map(item => (
-              <div key={item.label} className="p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300">
-                <div className="text-3xl font-bold text-[#023047] mb-1">
-                  {item.value}<span className="text-lg font-semibold text-[#023047]/50">{item.per}</span>
+              <div key={item.label} className="p-5 rounded-2xl bg-white/[0.04] border border-[#8ECAE6]/20">
+                <div className="whitespace-nowrap text-2xl lg:text-3xl font-bold text-[#FFB703] mb-1.5 leading-none">
+                  {item.value}<span className="text-sm font-semibold text-[#FFB703]/60">{item.per}</span>
                 </div>
-                <p className="text-sm text-[#023047]/70 leading-relaxed">{item.label}</p>
+                <p className="text-xs text-[#F8F9FA]/65 leading-relaxed">{item.label}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8 text-sm text-[#023047]/70 text-center max-w-2xl mx-auto space-y-2">
-            <p>These patterns show up in every audit. Read about <Link href="/problems/systems-dont-talk" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">what it looks like when your systems don&apos;t talk</Link>, <Link href="/problems/ecommerce-not-connected" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">why eCommerce disconnect costs more than you think</Link>, and <Link href="/problems/erp-implementation-failure" className="text-[#219EBC] hover:text-[#023047] underline transition-colors font-medium">how ERP implementations go wrong</Link>.</p>
-            <p className="text-[#023047]/40">Based on operational audits across print, embroidery, workwear, and promotional merchandise businesses.</p>
           </div>
         </div>
       </section>
@@ -229,9 +228,9 @@ export default function HomePage() {
             {differentiators.map(d => {
               const Icon = d.icon;
               return (
-                <div key={d.title} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40">
-                  <div className="w-11 h-11 rounded-xl bg-[#219EBC]/10 flex items-center justify-center mb-4">
-                    <Icon size={22} className="text-[#219EBC]" />
+                <div key={d.title} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40 text-center md:text-left">
+                  <div className="w-14 h-14 rounded-full bg-[#219EBC]/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <Icon size={26} className="text-[#219EBC]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#023047] mb-2">{d.title}</h3>
                   <p className="text-sm text-[#023047]/70 leading-relaxed">{d.desc}</p>
@@ -371,8 +370,17 @@ export default function HomePage() {
 
       {/* ── CASE STUDY TEASER — supporting evidence ──────────────────────────── */}
       <section className="py-16 bg-[#023047]/5 border-t border-[#8ECAE6]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8">
+          <div className="relative w-full md:w-48 aspect-[4/3] rounded-xl overflow-hidden shadow-md shrink-0">
+            <Image
+              src="/images/real-example.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 192px"
+              className="object-cover [filter:grayscale(0.55)_sepia(0.15)_contrast(1.08)_brightness(0.9)]"
+            />
+          </div>
+          <div className="flex-1">
             <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">Real example</p>
             <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
             <p className="text-sm text-[#023047]/70">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
