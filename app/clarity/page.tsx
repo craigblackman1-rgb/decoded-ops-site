@@ -89,7 +89,7 @@ const claritySchema = {
         {
           '@type': 'Question',
           name: 'How much does Discovery Day cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day is a single fixed fee, invoiced 50% on booking and 50% on delivery of the written assessment — get in touch and Craig will give you the exact figure on the first call. If it does not deliver something you can act on, there is no obligation to proceed to anything further. If you go on to a Deliver or Transform engagement within 60 days of the written assessment, the fee is credited against your first invoice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Discovery Day is a single fixed fee, invoiced 50% on booking and 50% on delivery of the written assessment — get in touch and Craig will give you the exact figure on the first call. If it does not deliver something you can act on, there is no obligation to proceed to anything further. Discovery Day is always billed as its own standalone fee, never credited or discounted against a later Deliver, Transform, or Retained engagement.' },
         },
         {
           '@type': 'Question',
