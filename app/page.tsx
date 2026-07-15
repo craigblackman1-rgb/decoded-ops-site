@@ -105,11 +105,11 @@ export default function HomePage() {
                 Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+              <div className="flex flex-wrap gap-4 mb-10">
+                <Link href="/clarity" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                   See how Discovery Day works <ArrowRight size={18} />
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                <Link href="/contact" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                   <Phone size={18} /> Book a free 60-min call
                 </Link>
               </div>
