@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import RelatedPosts from '@/components/RelatedPosts';
@@ -119,16 +120,7 @@ export default async function BlogPost({ params }: PageProps) {
   const item = await fetchBlogPost(slug);
 
   if (!item || item.status === 'archived') {
-    return (
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: 'var(--do-surface-page)' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>Post Not Found</h1>
-          <Link href="/blog" className="font-semibold hover:underline" style={{ color: 'var(--do-cerulean)' }}>
-            <span className="inline-flex items-center gap-2"><ArrowLeft size={16} /> Back to Insights</span>
-          </Link>
-        </div>
-      </section>
-    );
+    notFound();
   }
 
   const pubDate = item.publishedDate ? new Date(item.publishedDate).toISOString() : new Date().toISOString();
