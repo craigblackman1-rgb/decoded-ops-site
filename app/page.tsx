@@ -381,9 +381,9 @@ export default function HomePage() {
             />
           </div>
           <div className="flex-1">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">Real example</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">A pattern I see repeatedly</p>
             <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
-            <p className="text-sm text-[#023047]/70">A print &amp; embroidery business. £154,000. 18 months. What a £10k audit would have prevented.</p>
+            <p className="text-sm text-[#023047]/70">ERP implementations that skip an independent audit routinely run over budget and behind schedule &mdash; because nobody scoped the business before scoping the software.</p>
           </div>
           <Link href="/problems/erp-implementation-failure" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047]/90 transition-colors">
             See what went wrong <ArrowRight size={16} />
