@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { CredentialsGraphic } from '@/components/graphics/CredentialsGraphic';
 import { ExpertiseTimelineGraphic } from '@/components/graphics/ExpertiseTimelineGraphic';
+import { ScreenshotFrame } from '@/components/ScreenshotFrame';
 
 export const metadata: Metadata = {
   title: 'About Craig Blackman | Decoded Ops',
@@ -191,6 +192,43 @@ export default function AboutPage() {
               <p className="text-sm text-[#8ECAE6]">ROI within 2 years</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* PROOF OF WORK — real product, not another diagram */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
+              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Not just advice</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">I build the systems too.</h2>
+            <p className="text-[#023047]/70 text-lg leading-relaxed mb-4">
+              Most technology consultants hand over a report and leave. When a client needs a real tool &mdash; an eCommerce sync, a pick-and-pack queue, a stock connector &mdash; I build it myself and keep it running.
+            </p>
+            <p className="text-[#023047]/70 leading-relaxed">
+              This is a live queue from a client&apos;s order sync, running in production today.
+            </p>
+          </div>
+          <ScreenshotFrame url="hub.decodedops.co.uk/sprints" live>
+            <div className="p-4 lg:p-5 space-y-2">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-bold text-[#023047]">Order Sync Queue</span>
+              </div>
+              {[
+                { label: 'Polo shirt, navy / L', status: 'Pushed', tone: '#219EBC' },
+                { label: 'Polo shirt, navy / XL', status: 'Verifying', tone: '#FFB703' },
+                { label: 'Training shorts, black', status: 'Pushed', tone: '#219EBC' },
+                { label: 'Training shorts, navy', status: 'Queued', tone: '#8ECAE6' },
+              ].map(row => (
+                <div key={row.label} className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#023047]/[0.03] border border-[#023047]/[0.06]">
+                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: row.tone }} aria-hidden="true" />
+                  <span className="flex-1 text-xs text-[#023047]/80 truncate">{row.label}</span>
+                  <span className="text-[11px] font-mono text-[#023047]/50">{row.status}</span>
+                </div>
+              ))}
+            </div>
+          </ScreenshotFrame>
         </div>
       </section>
 

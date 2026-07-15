@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import { LogoWordmark } from '@/components/LogoWordmark';
 
 const sectors = [
   { label: 'Garment decoration', href: '/sectors/garment-decoration' },
@@ -32,7 +33,6 @@ const services = [
 const resources = [
   { label: 'Calculators & tools', href: '/tools' },
   { label: 'Audit checklist', href: '/resources/audit-checklist' },
-  { label: 'Software reviews', href: '/resources/software-reviews' },
   { label: 'Blog', href: '/blog' },
 ];
 
@@ -51,9 +51,7 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand + Company */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold tracking-tight block mb-4" aria-label="Decoded Ops — home">
-              Decoded<span className="text-[#FFB703]" aria-hidden="true">Ops</span>
-            </Link>
+            <LogoWordmark variant="footer" className="block mb-4" />
             <p className="text-sm text-[#8ECAE6] leading-relaxed mb-5 max-w-xs">
               Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.
             </p>
@@ -78,6 +76,7 @@ export function Footer() {
             <nav aria-label="Company links">
               <ul className="space-y-2">
                 <li><Link href="/about" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/case-studies" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Case Studies</Link></li>
                 <li><Link href="/contact" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Contact</Link></li>
                 <li><Link href="/clients/login" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Client Login</Link></li>
                 <li><Link href="/privacy" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Privacy policy</Link></li>
