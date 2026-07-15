@@ -219,7 +219,7 @@ export default function HomePage() {
               <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
                 Start with a free 60-min call
               </Link>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-full border border-[#219EBC]/30 text-[#219EBC] hover:border-[#219EBC] hover:bg-[#219EBC]/5 text-sm font-medium transition-colors">Or book a call directly <ArrowRight size={14} /></a>
             </div>
 
           </div>

@@ -25,7 +25,6 @@ const resources = [
   { label: '5 & 6 Sigma explained', href: '/resources/six-sigma' },
   { label: 'Audit checklist', href: '/resources/audit-checklist' },
   { label: '5 warning signs', href: '/resources/5-warning-signs' },
-  { label: 'Software reviews', href: '/resources/software-reviews' },
   { label: 'Calculators', href: '/tools' },
   { label: 'Blog', href: '/blog' },
 ];
@@ -120,9 +119,10 @@ export function Header() {
               <Dropdown label="Sectors" items={sectors} />
               <Dropdown label="Problems" items={problems} />
               <Dropdown label="Resources" items={resources} />
+              <Link href="/case-studies" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case Studies</Link>
               <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
               <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
-              <Link href="/clients/login" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Client Login</Link>
+              <Link href="/clients/login" className="text-[#023047]/60 hover:text-[#219EBC] transition-colors text-xs font-medium">Client Login</Link>
               <Link
                 href="/contact"
                 className="px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
@@ -146,6 +146,7 @@ export function Header() {
           {mobileOpen && (
             <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
               {[
+                { label: 'Case Studies', href: '/case-studies' },
                 { label: 'Pricing', href: '/pricing' },
                 { label: 'About', href: '/about' },
                 { label: 'Client Login', href: '/clients/login' },

@@ -96,12 +96,12 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
       ))}
 
       {/* written plan node */}
-      <GlassNode x={1090} y={MID - 80} width={150} height={160} tone={tone} idPrefix={ID} accent="amber">
-        <g className="sch-fade sch-f4">
-          <text x={1114} y={MID - 30} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>WRITTEN</text>
-          <text x={1114} y={MID - 4} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>PLAN</text>
-          <text x={1114} y={MID + 38} style={fMono} fontSize="17" fill={AMBER} opacity="0.95">5 working</text>
-          <text x={1114} y={MID + 58} style={fMono} fontSize="17" fill={AMBER} opacity="0.95">days</text>
+      <GlassNode x={1060} y={MID - 80} width={150} height={160} tone={tone} idPrefix={ID} accent="amber">
+        <g className="sch-fade sch-f4" textAnchor="middle">
+          <text x={1135} y={MID - 30} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>WRITTEN</text>
+          <text x={1135} y={MID - 4} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>PLAN</text>
+          <text x={1135} y={MID + 38} style={fMono} fontSize="17" fill={AMBER} opacity="0.95">5 working</text>
+          <text x={1135} y={MID + 58} style={fMono} fontSize="17" fill={AMBER} opacity="0.95">days</text>
         </g>
       </GlassNode>
 
