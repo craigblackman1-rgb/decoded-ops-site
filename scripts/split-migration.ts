@@ -4,7 +4,7 @@ import * as fs from 'fs'
 const OLD_URL = 'https://jevddhgetwustkzgpjpn.supabase.co'
 const OLD_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpldmRkaGdldHd1c3RremdwanBuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3ODExMDAxMywiZXhwIjoyMDkzNjg2MDEzfQ.VdUURQXP9Dl6MVxkAqwnN7kmd-H6q0JrVS9gAIl7FGU'
 
-const DIR = '/home/craigblackman/Documents/decoded-ops/Website/supabase'
+const DIR = 'D:/apps/decoded-ops-website/supabase'
 
 function escapeSql(val: any): string {
   if (val === null || val === undefined) return 'NULL'
