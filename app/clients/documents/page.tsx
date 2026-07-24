@@ -19,6 +19,9 @@ interface HubDoc {
   html_content: string | null
   created_at: string
   updated_at: string
+  status?: string
+  client_signature?: string
+  client_signed_date?: string
 }
 
 const docTypeIcons: Record<string, typeof FileText> = {
@@ -47,6 +50,21 @@ function DocTypeBadge({ type }: { type: string }) {
   return (
     <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border ${colors[type] || colors.other}`}>
       {type.replace('_', ' ')}
+    </span>
+  )
+}
+
+function StatusBadge({ status }: { status: string }) {
+  if (status === 'signed') {
+    return (
+      <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border bg-[#22c55e]/10 text-[#157F3C] border-[#22c55e]/20">
+        Signed
+      </span>
+    )
+  }
+  return (
+    <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border bg-[#8ECAE6]/10 text-[#023047] border-[#8ECAE6]/30">
+      Outstanding
     </span>
   )
 }
@@ -123,6 +141,7 @@ export default async function ClientDocumentsPage() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
                       <DocTypeBadge type={doc.doc_type} />
+                      {doc.status && <StatusBadge status={doc.status} />}
                       <span className="text-[10px] font-mono text-[#d4e8f0]">{doc.doc_number}</span>
                     </div>
                     <p className="text-sm font-medium text-[#023047] truncate">
