@@ -1,7 +1,7 @@
 'use server';
 
-import nodemailer from 'nodemailer';
 import { z } from 'zod';
+import { sendEmail, getEmailStatus } from '@/lib/email';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -12,25 +12,14 @@ const contactFormSchema = z.object({
 
 type ContactFormInput = z.infer<typeof contactFormSchema>;
 
-// Initialize transporter
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: process.env.SMTP_PORT === '465',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
 export async function submitContactForm(formData: unknown) {
   try {
     // Validate input
     const validatedData = contactFormSchema.parse(formData);
 
-    // Check environment variables
-    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('SMTP configuration missing');
+    // Check an email backend is configured
+    if (!getEmailStatus().configured) {
+      console.error('Email backend not configured (RESEND_API_KEY / SMTP_HOST+USER+PASS)');
       return {
         success: false,
         error: 'Email service is not configured. Please try again later.',
@@ -38,11 +27,9 @@ export async function submitContactForm(formData: unknown) {
     }
 
     const contactEmail = process.env.CONTACT_EMAIL || 'craig@decodedops.co.uk';
-    const fromEmail = process.env.SMTP_FROM || 'noreply@decodedops.co.uk';
 
     // Send email to site owner
-    await transporter.sendMail({
-      from: fromEmail,
+    const ownerResult = await sendEmail({
       to: contactEmail,
       replyTo: validatedData.email,
       subject: `New Contact Form Submission from ${validatedData.name}`,
@@ -89,9 +76,16 @@ Reply to this email to respond to the inquiry.
       `,
     });
 
-    // Send confirmation email to user
-    await transporter.sendMail({
-      from: fromEmail,
+    if (!ownerResult.success) {
+      console.error('Contact form owner-notification send failed:', ownerResult.error);
+      return {
+        success: false,
+        error: 'Something went wrong. Please try again later.',
+      };
+    }
+
+    // Send confirmation email to user (best-effort — form already succeeded above)
+    const confirmationResult = await sendEmail({
       to: validatedData.email,
       subject: 'We received your message — Decoded Ops',
       html: `
@@ -142,6 +136,10 @@ Decoded Ops — Systems Operations & Implementation
 https://decodedops.co.uk
       `,
     });
+
+    if (!confirmationResult.success) {
+      console.error('Contact form confirmation send failed:', confirmationResult.error);
+    }
 
     return {
       success: true,
