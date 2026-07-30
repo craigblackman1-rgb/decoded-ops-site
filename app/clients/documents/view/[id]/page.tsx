@@ -17,6 +17,7 @@ interface HubDoc {
   status?: string
   client_signature?: string
   client_signed_date?: string
+  signable?: boolean
 }
 
 function formatDate(dateStr: string): string {
@@ -55,7 +56,12 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
 
   if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
 
-  const isSigned = doc.status === 'signed'
+  // Signing is only wired up for quotes and contracts; the hub marks those
+  // `signable`. Anything else (meeting notes, invoices, terms uploaded as plain
+  // documents) has no sign endpoint behind it, so it gets no panel and no
+  // signed/outstanding badge. Absent field means not signable.
+  const isSignable = doc.signable === true
+  const isSigned = isSignable && doc.status === 'signed'
   const clientName = session.user?.name ?? undefined
 
   return (
@@ -93,7 +99,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          {isSigned && doc.client_signature ? (
+          {!isSignable ? null : isSigned && doc.client_signature ? (
             <span style={{
               fontSize: 12,
               color: '#22c55e',
@@ -123,7 +129,17 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
           </span>
         </div>
       </div>
-      <div style={{ flex: 1, position: 'relative' }}>
+      <div
+        style={{
+          flex: 1,
+          position: 'relative',
+          // Without a floor here the panel below claims the height it needs out
+          // of this flex child, squashing the document to a couple of hundred
+          // pixels on a laptop with no way to scroll. Keeping a floor pushes the
+          // panel below the fold instead, so the page scrolls to reach it.
+          minHeight: isSignable ? 'min(80vh, 760px)' : undefined,
+        }}
+      >
         <iframe
           srcDoc={doc.html_content}
           style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
@@ -131,7 +147,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
         />
       </div>
 
-      {isSigned && doc.client_signature ? (
+      {!isSignable ? null : isSigned && doc.client_signature ? (
         <div style={{
           maxWidth: 560,
           margin: '0 auto',

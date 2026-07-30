@@ -10,6 +10,14 @@ export async function POST(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // Document numbers are not globally unique across tables, so the hub cannot
+  // tell whose document it is being asked to sign from the number alone. Pass
+  // the signed-in client through so the hub can refuse a mismatch.
+  const clientId = (session.user as { clientId?: string }).clientId;
+  if (!clientId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { id } = await params;
   const docNumber = decodeURIComponent(id);
 
@@ -37,7 +45,7 @@ export async function POST(
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, signature, date }),
+        body: JSON.stringify({ name, signature, date, clientId }),
       }
     );
 
