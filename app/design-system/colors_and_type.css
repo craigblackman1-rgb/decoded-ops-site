@@ -1,0 +1,478 @@
+/* ============================================================
+   DECODED OPS — DESIGN SYSTEM v3.0  ·  CONSOLIDATED
+   19 Jul 2026
+
+   This file is the ONLY token declaration in the system. Every
+   surface binds it; nothing redeclares it.
+
+   v3.0 closes every open decision. Where two surfaces disagreed,
+   one value was chosen and the other is now WRONG rather than
+   "the other option". The rationale for each is in DECISIONS.md.
+
+   Layers:
+     1   Primitive   raw values
+     2   Semantic    contextual meaning (light = default)
+     2a  Migration   aliases for names being retired — DELETE BY
+                     the date on each block; nothing here may grow
+     2b  Dark        specification, not yet shipped
+     3   Component   specific usage
+
+   Fonts: Outfit (display) + DM Sans (body). Two families, never
+   three — the mono token now resolves to the SYSTEM mono stack,
+   which downloads nothing.
+
+   Palette: six brand colours. The functional and category sets
+   below sit deliberately outside that lock and are closed.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+
+/* ============================================================
+   LAYER 1 — PRIMITIVE TOKENS
+   ============================================================ */
+
+:root {
+  /* --- The six. No others. --- */
+  --do-prussian-blue:   #023047;
+  --do-cerulean:        #219EBC;
+  --do-sky-blue:        #8ECAE6;
+  --do-amber:           #FFB703;
+  --do-orange:          #FB8500;
+  --do-off-white:       #F8F9FA;
+  --do-white:           #FFFFFF;
+  --do-black:           #000000;
+
+  /* --- Typography ---
+     DECIDED (D6): JetBrains Mono is removed. --do-font-mono now
+     resolves to the platform mono stack — it downloads nothing and
+     exists only for genuine code. For NUMERIC ALIGNMENT use DM Sans
+     with .tabular-nums, never this token.                        */
+  --do-font-heading:    'Outfit', Arial, Helvetica Neue, ui-sans-serif, system-ui, sans-serif;
+  --do-font-body:       'DM Sans', Arial, Helvetica Neue, ui-sans-serif, system-ui, sans-serif;
+  --do-font-mono:       ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --do-weight-regular:   400;
+  --do-weight-medium:    500;
+  --do-weight-semibold:  600;
+  --do-weight-bold:      700;
+  --do-weight-extrabold: 800;
+
+  --do-text-xs:   0.75rem;
+  --do-text-sm:   0.875rem;
+  --do-text-base: 1rem;
+  --do-text-lg:   1.125rem;
+  --do-text-xl:   1.25rem;
+  --do-text-2xl:  1.5rem;
+  --do-text-3xl:  2rem;
+  --do-text-4xl:  2.5rem;
+  --do-text-5xl:  3rem;
+  --do-text-6xl:  3.5rem;
+  --do-text-7xl:  4.5rem;
+
+  --do-leading-tight:   1.2;
+  --do-leading-snug:    1.35;
+  --do-leading-normal:  1.5;
+  --do-leading-relaxed: 1.75;
+
+  --do-tracking-tight:  -0.03em;
+  --do-tracking-normal: 0;
+  --do-tracking-wide:   0.06em;
+  --do-tracking-wider:  0.1em;
+
+  /* --- Spacing (4px step) --- */
+  --do-space-0:  0;
+  --do-space-1:  0.25rem;
+  --do-space-2:  0.5rem;
+  --do-space-3:  0.75rem;
+  --do-space-4:  1rem;
+  --do-space-5:  1.25rem;
+  --do-space-6:  1.5rem;
+  --do-space-8:  2rem;
+  --do-space-10: 2.5rem;
+  --do-space-12: 3rem;
+  --do-space-16: 4rem;
+  --do-space-20: 5rem;
+  --do-space-24: 6rem;
+  --do-space-32: 8rem;
+
+  /* --- Border radius ---
+     DECIDED (D2): the TIGHT scale wins. The marketing site is the
+     canonical brand implementation and is tight; the hub app is
+     tight. A 16–24px radius reads consumer-app; Decoded Ops is an
+     operations practice and should read precise.
+
+     The data app and commerce currently run the LOOSE scale
+     (0.5/0.75/1/1.5rem) — every step exactly one notch larger.
+     They move to these values. See DECISIONS.md §D2.            */
+  --do-radius-none: 0;
+  --do-radius-sm:   0.25rem;   /* 4px  — checkboxes, chips */
+  --do-radius-md:   0.375rem;  /* 6px  — ALL buttons (D5) */
+  --do-radius-lg:   0.5rem;    /* 8px  — inputs, nav items */
+  --do-radius-xl:   0.75rem;   /* 12px — cards, table wraps */
+  --do-radius-2xl:  1rem;      /* 16px — panels, callouts, marketing cards */
+  --do-radius-full: 9999px;    /* pills, badges */
+
+  /* --- Shadows — Prussian Blue at low opacity, flat-leaning --- */
+  --do-shadow-xs:    0 1px 2px 0 rgb(2 48 71 / 0.06);
+  --do-shadow-sm:    0 1px 3px 0 rgb(2 48 71 / 0.08), 0 1px 2px -1px rgb(2 48 71 / 0.06);
+  --do-shadow-md:    0 4px 6px -1px rgb(2 48 71 / 0.08), 0 2px 4px -2px rgb(2 48 71 / 0.06);
+  --do-shadow-lg:    0 10px 15px -3px rgb(2 48 71 / 0.08), 0 4px 6px -4px rgb(2 48 71 / 0.05);
+  --do-shadow-xl:    0 20px 25px -5px rgb(2 48 71 / 0.08), 0 8px 10px -6px rgb(2 48 71 / 0.04);
+  --do-shadow-amber: 0 4px 14px 0 rgb(255 183 3 / 0.35);
+
+  /* --- Motion --- */
+  --do-duration-fast:   150ms;
+  --do-duration-normal: 250ms;
+  --do-duration-slow:   400ms;
+  --do-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --do-ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Z-index ---
+     DECIDED (D7): the scale now describes what actually renders.
+     --do-z-modal was 400 while the only real modal used 500; the
+     scale was raised to reality rather than the component lowered,
+     because 500 is correct — a modal must clear the 350 drawer.  */
+  --do-z-dropdown: 100;
+  --do-z-sticky:   200;
+  --do-z-overlay:  300;
+  --do-z-drawer:   350;
+  --do-z-modal:    500;
+  --do-z-toast:    600;
+
+  /* --- Layout dimensions ---
+     DECIDED (D8): prefixed names are canonical. The unprefixed
+     originals are aliased in Layer 2a for one migration cycle.   */
+  --do-sidebar-w: 260px;
+  --do-header-h:  64px;
+
+  /* --- Breakpoints — documentation contract only ---
+     CSS custom properties do NOT work inside @media. These name
+     the canonical numbers so a stray 768px is greppable. Adopt in
+     the Tailwind/PostCSS config, never via var().                */
+  --do-bp-sm: 600px;
+  --do-bp-md: 900px;
+  --do-bp-lg: 1100px;
+}
+
+/* ============================================================
+   LAYER 2 — SEMANTIC TOKENS (LIGHT = DEFAULT)
+   ============================================================ */
+
+:root {
+  /* --- Surfaces ---
+     DECIDED (D9): --do-surface-card and --do-bg-card are DELETED.
+     The former resolved identically to --do-surface-page (a card
+     with zero contrast against the page); the latter was a
+     redundant fourth alias. Neither had a live consumer.
+     Anything sitting ON the page uses --do-surface-raised.       */
+  --do-surface-page:    var(--do-off-white);
+  --do-surface-raised:  var(--do-white);
+  --do-surface-overlay: var(--do-white);
+  --do-surface-dark:    var(--do-prussian-blue);
+  --do-surface-accent:  var(--do-cerulean);
+
+  /* --- Text ---
+     Cerulean is 2.98:1 on Off-White and 4.41:1 on Prussian Blue.
+     It FAILS AA in both directions and is not a text colour in any
+     context — it is a border, icon, indicator and eyebrow colour.
+     --do-text-accent is retained for large display type only.    */
+  --do-text-primary:       var(--do-prussian-blue);  /* 13.14:1 on Off-White */
+  --do-text-secondary:     #3a5f74;
+  --do-text-muted:         #3e6274;
+  --do-text-subtle:        #5a7d8f;                  /* placeholders/disabled ONLY */
+  --do-text-on-dark:       var(--do-off-white);      /* 13.14:1 on Prussian Blue */
+  --do-text-muted-on-dark: var(--do-sky-blue);       /* 7.74:1 — the muted tier on dark */
+  --do-text-accent:        var(--do-cerulean);       /* ≥24px display only */
+
+  /* --- Borders --- */
+  --do-border-subtle:  #d4e8f0;                      /* the quiet default */
+  --do-border-default: var(--do-sky-blue);           /* real dividers */
+  --do-border-strong:  var(--do-cerulean);           /* focus / active */
+  --do-border-dark:    rgba(142, 202, 230, 0.25);
+
+  /* --- Actions — one Amber CTA per view --- */
+  --do-action-primary:        var(--do-amber);
+  --do-action-primary-hover:  var(--do-orange);
+  --do-action-primary-text:   var(--do-prussian-blue);  /* 7.93:1 — never white (1.75:1) */
+  --do-action-outline-border: var(--do-cerulean);
+  --do-action-outline-text:   var(--do-prussian-blue);
+
+  --do-focus-ring:        var(--do-cerulean);
+  --do-focus-ring-offset: var(--do-off-white);
+
+  /* ── FUNCTIONAL PALETTE — product surfaces only, never marketing ──
+     DECIDED (D1): the hub's fills win. The data app and commerce
+     currently ship #16A34A / #DC2626 as FILLS — those values are now
+     the -text siblings only.
+
+     Decision 07 stands: a fill is never a text colour on light.    */
+  --do-status-success:      #22c55e;
+  --do-status-success-bg:   #F0FDF4;
+  --do-status-success-tint: rgba(34, 197, 94, 0.12);
+  --do-status-warning:      var(--do-amber);
+  --do-status-warning-bg:   #FFFBEB;
+  --do-status-warning-tint: rgba(255, 183, 3, 0.14);
+  --do-status-danger:       #ef4444;
+  --do-status-danger-bg:    #FEF2F2;
+  --do-status-danger-tint:  rgba(239, 68, 68, 0.12);
+  --do-status-info:         var(--do-cerulean);
+  --do-status-info-bg:      #ECF8FB;
+  --do-status-info-tint:    rgba(33, 158, 188, 0.12);
+
+  /* Status TEXT on light — AA-safe. The fills are 1.7–3.5:1 and all fail. */
+  --do-success-text: #157F3C;  /* 5.1:1 */
+  --do-danger-text:  #DC2626;  /* 4.8:1 */
+  --do-warning-text: #B45309;  /* 6.4:1 */
+  --do-info-text:    #0E6B84;  /* 6.0:1 */
+
+  /* Status text ON DARK — theme-invariant, needed in the LIGHT theme too,
+     because the brand's core device is a dark band inside a light page.
+     On dark, Decision 07 inverts: the fill IS the readable colour.       */
+  --do-success-text-on-dark: #22c55e;  /* 6.08:1 on Prussian Blue */
+  --do-warning-text-on-dark: #FFB703;  /* 7.93:1 */
+  --do-info-text-on-dark:    #8ECAE6;  /* 7.74:1 — Sky Blue, NOT Cerulean (4.41:1) */
+  --do-danger-text-on-dark:  #F87171;  /* 5.01:1 — #ef4444 is only 3.68:1 */
+
+  /* ── CATEGORY PALETTE — data categories, not brand ──
+     DECIDED (D10): these five were loose hex scattered through the
+     hub's CRM and format badges. They are legitimate — a data
+     category needs a distinguishable hue and the six-colour lock
+     cannot supply ten. They are now a CLOSED, NAMED set. Adding a
+     sixth requires the same sign-off as a seventh brand colour.
+     Use as fills and borders only; pair with --do-text-primary.   */
+  --do-cat-pink:   #ec4899;
+  --do-cat-violet: #8B5CF6;
+  --do-cat-rose:   #f43f5e;
+  --do-cat-orange: #fb923c;
+  --do-cat-grey:   #6b7280;
+
+  /* --- Decorative --- */
+  --do-eyebrow-color: var(--do-cerulean);
+  --do-badge-bg:      var(--do-amber);
+  --do-badge-text:    var(--do-prussian-blue);
+  --do-stat-value:    var(--do-off-white);
+  --do-stat-label:    var(--do-sky-blue);
+  --do-pattern-color: rgba(33, 158, 188, 0.07);
+  --do-divider-color: var(--do-sky-blue);
+
+  --do-scrollbar-track:       var(--do-off-white);
+  --do-scrollbar-thumb:       var(--do-sky-blue);
+  --do-scrollbar-thumb-hover: var(--do-cerulean);
+  --do-scrollbar-width:       8px;
+}
+
+/* ============================================================
+   LAYER 2a — MIGRATION ALIASES
+
+   Every alias below points a RETIRED name at its canonical
+   token so nothing breaks mid-migration. Direction is one-way
+   and this layer must never grow.
+
+   DELETE THIS ENTIRE BLOCK once DECISIONS.md lanes 1–4 are done.
+   Target: 31 Aug 2026.
+   ============================================================ */
+
+:root {
+  /* Data-app status vocabulary → canonical fills (D1) */
+  --do-success:      var(--do-status-success);
+  --do-success-bg:   var(--do-status-success-bg);
+  --do-success-tint: var(--do-status-success-tint);
+  --do-danger:       var(--do-status-danger);
+  --do-danger-bg:    var(--do-status-danger-bg);
+  --do-danger-tint:  var(--do-status-danger-tint);
+  --do-warning:      var(--do-status-warning);
+  --do-warning-bg:   var(--do-status-warning-bg);
+  --do-warning-tint: var(--do-status-warning-tint);
+  --do-info:         var(--do-status-info);
+  --do-info-bg:      var(--do-status-info-bg);
+  --do-info-tint:    var(--do-status-info-tint);
+
+  /* Pill radius: loose-family name → canonical (D2).
+     Without this, var(--do-radius-pill) resolves to nothing and the
+     element renders SQUARE with no error — the most invisible
+     failure in the system. */
+  --do-radius-pill: var(--do-radius-full);
+
+  /* Unprefixed layout dims → prefixed (D8) */
+  --sidebar-w: var(--do-sidebar-w);
+  --header-h:  var(--do-header-h);
+
+  /* Deleted surface tiers → the correct one (D9).
+     Retained ONLY so an un-migrated consumer renders correctly
+     rather than transparently. Both must disappear. */
+  --do-surface-card: var(--do-surface-raised);
+  --do-bg-card:      var(--do-surface-raised);
+}
+
+/* ============================================================
+   LAYER 2b — DARK THEME  ·  SPECIFICATION ONLY
+
+   No surface ships dark as of 19 Jul 2026. Build to this; do not
+   claim it is implemented.
+
+   The palette has one dark colour, so the ladder lifts Prussian
+   Blue with Sky Blue at low alpha — a tint of two palette colours,
+   permitted under Decision 02. Never introduce a grey.
+
+   Primitives never change. Only semantics re-map, so any component
+   reading semantic tokens themes for free.
+   ============================================================ */
+
+[data-theme="dark"] {
+  --do-surface-page:    var(--do-prussian-blue);
+  --do-surface-raised:  color-mix(in srgb, #8ECAE6 6%,  #023047);  /* #0A3951 */
+  --do-surface-overlay: color-mix(in srgb, #8ECAE6 10%, #023047);  /* #103F57 */
+  --do-surface-dark:    var(--do-prussian-blue);
+
+  --do-text-primary:       var(--do-off-white);            /* 13.14:1 */
+  --do-text-secondary:     rgba(248, 249, 250, 0.72);      /* 7.50:1 */
+  --do-text-muted:         var(--do-sky-blue);             /* 7.74:1 */
+  --do-text-subtle:        rgba(142, 202, 230, 0.65);
+  --do-text-on-dark:       var(--do-off-white);
+  --do-text-muted-on-dark: var(--do-sky-blue);
+  --do-text-accent:        var(--do-cerulean);             /* 4.41:1 — large/UI only */
+
+  --do-border-subtle:  rgba(142, 202, 230, 0.12);
+  --do-border-default: rgba(142, 202, 230, 0.25);
+  --do-border-strong:  var(--do-cerulean);
+  --do-border-dark:    rgba(142, 202, 230, 0.12);
+
+  /* Amber/Prussian survives the flip at 7.93:1 both ways */
+  --do-action-primary:       var(--do-amber);
+  --do-action-primary-hover: var(--do-orange);
+  --do-action-primary-text:  var(--do-prussian-blue);
+
+  --do-status-success-bg: rgba(34, 197, 94, 0.16);
+  --do-status-warning-bg: rgba(255, 183, 3, 0.16);
+  --do-status-danger-bg:  rgba(239, 68, 68, 0.16);
+  --do-status-info-bg:    rgba(33, 158, 188, 0.16);
+
+  /* Decision 07 inverts — re-aim at the on-dark siblings */
+  --do-success-text: var(--do-success-text-on-dark);
+  --do-warning-text: var(--do-warning-text-on-dark);
+  --do-info-text:    var(--do-info-text-on-dark);
+  --do-danger-text:  var(--do-danger-text-on-dark);
+
+  --do-pattern-color: rgba(33, 158, 188, 0.11);
+  --do-divider-color: rgba(142, 202, 230, 0.25);
+
+  /* Prussian-on-dark shadow is invisible. Express depth with a
+     surface step or a border. The amber glow is the one survivor. */
+  --do-shadow-xs: none;
+  --do-shadow-sm: none;
+  --do-shadow-md: 0 0 0 1px rgba(142, 202, 230, 0.12);
+  --do-shadow-lg: 0 0 0 1px rgba(142, 202, 230, 0.18);
+  --do-shadow-xl: 0 0 0 1px rgba(142, 202, 230, 0.22);
+
+  --do-header-bg:          rgba(2, 48, 71, 0.85);
+  --do-header-border:      rgba(142, 202, 230, 0.18);
+  --do-card-bg:            var(--do-surface-raised);
+  --do-card-border:        rgba(142, 202, 230, 0.14);
+  --do-card-border-hover:  rgba(33, 158, 188, 0.45);
+  --do-kanban-card-bg:     var(--do-surface-raised);
+  --do-kanban-card-border: rgba(142, 202, 230, 0.14);
+  --do-modal-backdrop:     rgba(0, 0, 0, 0.6);
+  --do-cv-overlay:         rgba(0, 0, 0, 0.5);
+  --do-cv-shadow:          -8px 0 30px rgba(0, 0, 0, 0.4);
+  --do-scrollbar-track:    var(--do-prussian-blue);
+  --do-scrollbar-thumb:    rgba(142, 202, 230, 0.25);
+  --do-sidebar-text-active: var(--do-sky-blue);
+}
+
+/* ============================================================
+   LAYER 3 — COMPONENT TOKENS
+   ============================================================ */
+
+:root {
+  /* Sidebar
+     DECIDED (D11): the active nav label is SKY BLUE, not Cerulean.
+     Cerulean on Prussian Blue is 4.41:1 and fails AA at the 12px
+     nav size. Cerulean is retained for the left indicator bar and
+     the hover background, where contrast does not apply.          */
+  --do-sidebar-bg:            var(--do-prussian-blue);
+  --do-sidebar-text:          rgba(248, 249, 250, 0.55);
+  --do-sidebar-text-active:   var(--do-sky-blue);        /* 7.74:1 */
+  --do-sidebar-indicator:     var(--do-cerulean);
+  --do-sidebar-section-title: rgba(248, 249, 250, 0.35);
+  --do-sidebar-border:        rgba(142, 202, 230, 0.12);
+  --do-sidebar-hover-bg:      rgba(33, 158, 188, 0.12);
+
+  --do-header-bg:     rgba(255, 255, 255, 0.85);
+  --do-header-border: rgba(142, 202, 230, 0.25);
+
+  --do-table-header-bg:   var(--do-prussian-blue);
+  --do-table-header-text: rgba(248, 249, 250, 0.7);
+  --do-table-row-border:  rgba(142, 202, 230, 0.15);
+  --do-table-hover-bg:    rgba(33, 158, 188, 0.03);
+
+  --do-card-bg:           var(--do-surface-raised);
+  --do-card-border:       var(--do-border-subtle);
+  --do-card-border-hover: rgba(33, 158, 188, 0.4);
+  --do-card-radius:       var(--do-radius-xl);
+
+  /* Buttons — DECIDED (D5): 6px, sentence case. Both halves of
+     Decision 04 are now satisfiable by one component.            */
+  --do-btn-radius:  var(--do-radius-md);
+  --do-btn-padding: var(--do-space-3) var(--do-space-5);
+
+  --do-kanban-card-bg:        var(--do-surface-raised);
+  --do-kanban-card-border:    rgba(142, 202, 230, 0.2);
+  --do-kanban-header-backlog: rgba(2, 48, 71, 0.04);
+  --do-kanban-header-sprint:  rgba(33, 158, 188, 0.08);
+  --do-kanban-header-doing:   rgba(255, 183, 3, 0.06);
+  --do-kanban-header-done:    rgba(34, 197, 94, 0.06);
+
+  --do-modal-backdrop:  rgba(2, 48, 71, 0.5);
+  --do-modal-max-width: 480px;
+
+  --do-cv-overlay:     rgba(2, 48, 71, 0.35);
+  --do-cv-panel-width: min(640px, 100vw);
+  --do-cv-shadow:      -8px 0 30px rgba(2, 48, 71, 0.12);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--do-font-body);
+  background: var(--do-surface-page);
+  color: var(--do-text-primary);
+  font-size: var(--do-text-base);
+  line-height: var(--do-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--do-cerulean); color: var(--do-white); }
+
+::-webkit-scrollbar { width: var(--do-scrollbar-width); height: var(--do-scrollbar-width); }
+::-webkit-scrollbar-track { background: var(--do-scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--do-scrollbar-thumb); border-radius: var(--do-radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--do-scrollbar-thumb-hover); }
+
+/* Decision 03 — this replaces a mono font for numeric alignment. */
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   ACCESSIBILITY + PRINT
+   Both blocks ship with the token file so every surface that
+   binds it inherits them. The hub currently has neither.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+}
+
+@media print {
+  header, footer, nav { display: none !important; }
+  @page { margin: 16mm; }
+  body { background: #fff; color: #000; }
+}
