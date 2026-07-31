@@ -168,7 +168,7 @@ export default function ERPImplementationFailurePage() {
             go-live.</p>
           <div className="btn-row justify-center">
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
-            <Link className="btn btn--outline" href="/clarity">See how a Discovery Day works</Link>
+            <Link className="btn btn--outline" href="/clarity">See how a Clarity Audit works</Link>
           </div>
         </div>
       </section>

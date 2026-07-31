@@ -107,7 +107,7 @@ export default function DecodedMethodPage() {
       <section className="g-navy cta-strip">
         <div className="container" style={{ maxWidth: 760 }}>
           <h2>See it in action.</h2>
-          <p className="lead">A Discovery Day is the method&rsquo;s first layer, run over one day in your business.
+          <p className="lead">A Clarity Audit is the method&rsquo;s first layer, run over one day in your business.
             You&rsquo;ll see exactly what a process register looks like when it&rsquo;s about you.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/clarity">See it in action</Link>

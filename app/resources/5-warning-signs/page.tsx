@@ -100,7 +100,7 @@ export default function FiveWarningSignsPage() {
             </div>
           </div>
 
-          <div className="g-navy" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+          <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
             <h3>Recognise two or more of these?</h3>
             <p style={{ marginBottom: 24 }}>
               A Clarity Audit finds where the cost is hiding, quantifies it, and gives you a specific, costed plan to fix it — in plain English, with no vendor agenda.

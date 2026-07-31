@@ -50,7 +50,7 @@ export default function SixSigmaPage() {
       <JsonLd data={schema} />
 
       {/* HERO — dark ground */}
-      <section className="g-navy">
+      <section className="g-off">
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
           <div>
             <span className="eyebrow">— Free playbook · Garment decoration</span>
@@ -120,7 +120,7 @@ export default function SixSigmaPage() {
       </section>
 
       {/* THE REAL GAP (dark) */}
-      <section className="g-navy">
+      <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">— The real gap</span>
           <h2>The gap is process, not machinery</h2>
@@ -134,7 +134,7 @@ export default function SixSigmaPage() {
       </section>
 
       {/* DOWNLOAD BAND (dark) */}
-      <section className="g-navy">
+      <section className="g-off">
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: 48, alignItems: 'center' }}>
           <div style={{ margin: '0 auto', width: '100%', maxWidth: 240 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}

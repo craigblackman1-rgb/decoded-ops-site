@@ -124,7 +124,7 @@ export default function CommercePage() {
             </div>
             <div className="panel">
               <h3>How it starts</h3>
-              <p>With a Discovery Day, the same as any rung 3 conversation. Everything on the market
+              <p>With a Clarity Audit, the same as any rung 3 conversation. Everything on the market
                 goes on the table first, priced, including the options I&rsquo;d expect you to reject &mdash; and
                 the decision stays yours.</p>
               <p><Link href="/how-i-build" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>How I decide

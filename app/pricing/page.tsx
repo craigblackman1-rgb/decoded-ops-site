@@ -12,12 +12,12 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Pricing — Decoded Ops',
-  description: 'Plain pricing for technology consultancy and Systems work — Discovery Day, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+  description: 'Plain pricing for technology consultancy and Systems work — Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
     title: 'Pricing — Decoded Ops',
-    description: 'Plain pricing for technology consultancy and Systems work — Discovery Day, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+    description: 'Plain pricing for technology consultancy and Systems work — Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
     url: 'https://decodedops.co.uk/pricing',
   },
   twitter: {
@@ -55,7 +55,7 @@ export default function PricingPage() {
           <p className="eyebrow">Consultancy</p>
           <h2>Diagnosis, then delivery.</h2>
           <p className="lead" style={{ marginTop: 16 }}>Priced by the size of the business, because the work
-            scales with it. Discovery Day is the entry point into everything below it.</p>
+            scales with it. Clarity Audit is the entry point into everything below it.</p>
 
           <div className="table-wrap">
             <table className="ds-table">
@@ -70,18 +70,13 @@ export default function PricingPage() {
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Discovery Day</th>
+                  <th scope="row">Clarity Audit</th>
                   <td className="full" colSpan={3}>
-                    <span className="price">£1,500 fixed</span>
+                    <span className="price">From £1,500</span>
                     <span className="price-sub">One day on site, a written plan within five working days.
-                      The entry point into everything else.</span>
+                      £1,500 is the floor for a single site — more sites scale up from there, scoped
+                      after the first call. The entry point into everything else.</span>
                   </td>
-                </tr>
-                <tr>
-                  <th scope="row">Clarity</th>
-                  <td><span className="price">£2,500–£3,500</span></td>
-                  <td><span className="price">£5,000–£8,000</span></td>
-                  <td><span className="price">£8,000–£12,000</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Deliver</th>
@@ -157,7 +152,7 @@ export default function PricingPage() {
           <div className="inset">
             <b>12-month minimum</b> across all tiers and segments, 30 days&rsquo; notice after that. On site
             every six to eight weeks, travel at cost. Any app build is always a separate line, quoted
-            after Discovery Day, never folded into the retainer.
+            after Clarity Audit, never folded into the retainer.
           </div>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
@@ -183,14 +178,14 @@ export default function PricingPage() {
           <h2>Three products. Published prices.</h2>
 
           <div className="inset" style={{ marginTop: 26 }}>
-            <b>If an off-the-shelf platform fits, that&rsquo;s folded into Discovery Day and Clarity at no
+            <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
             extra cost.</b> Nothing separate to buy. Building something only makes sense once buying
             has been ruled out in writing — <Link href="/how-i-build"
               style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
           </div>
           <div className="inset">
             <b>App Scoping Session, £750 fixed.</b> Mandatory before any Data App, Artwork Manager or
-            Commerce build, and waived if you&rsquo;ve had a Discovery Day in the last six months.
+            Commerce build, and waived if you&rsquo;ve had a Clarity Audit in the last six months.
           </div>
 
           <div className="table-wrap">
@@ -231,7 +226,7 @@ export default function PricingPage() {
             exchange for a named reference and accepting that some features arrive during the
             engagement. Stated plainly, not a discount dressed as an offer.</p>
           <p className="table-foot">A full custom build is never priced on this page. If nothing on the
-            market fits, that&rsquo;s a Discovery Day conversation and a quote written for your business, not
+            market fits, that&rsquo;s a Clarity Audit conversation and a quote written for your business, not
             a row on a table.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
@@ -305,7 +300,7 @@ export default function PricingPage() {
             with no obligation — just an honest conversation about your operation.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how Discovery Day works</Link>
+            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how Clarity Audit works</Link>
           </div>
         </div>
       </section>

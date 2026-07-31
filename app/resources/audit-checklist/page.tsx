@@ -165,7 +165,7 @@ export default function ChecklistPage() {
           </div>
 
           {/* Key Takeaways */}
-          <div className="g-navy" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+          <div className="g-tint" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
             <h2>Key takeaways</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>

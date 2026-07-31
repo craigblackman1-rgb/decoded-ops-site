@@ -218,6 +218,36 @@
 .sk-ga0{ stop-color:var(--sk-ga0); stop-opacity:var(--sk-ga0o) }
 .sk-ga1{ stop-color:var(--sk-ga1); stop-opacity:var(--sk-ga1o) }
 
+/* ── problem-page shared components (buy-vs-build, data-scattered,
+   inventory-blind, legacy-system — Lane D addition, 2026-07-31) ── */
+
+/* cause cards — numbered kickers */
+.cause{ position:relative }
+.cause .n{ display:block; font-family:var(--do-font-heading); font-size:var(--do-text-sm);
+  font-weight:800; color:var(--do-text-primary); opacity:.55; margin-bottom:6px }
+
+/* answer box on navy ground */
+.answer{ background:color-mix(in srgb, var(--do-off-white) 6%, transparent);
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 18%, transparent);
+  border-left:4px solid var(--do-amber); border-radius:var(--do-radius-2xl);
+  padding:36px; margin-top:32px; max-width:78ch }
+.answer p{ font-size:var(--do-text-lg); line-height:var(--do-leading-relaxed);
+  color:color-mix(in srgb, var(--do-off-white) 84%, transparent) }
+.answer p:last-child{ margin-bottom:0 }
+.answer b{ color:var(--do-off-white) }
+
+/* symptom checklist — two-column list with amber marker dots */
+.symptoms{ list-style:none; padding:0; margin:34px 0 0;
+  display:grid; grid-template-columns:1fr 1fr; gap:0 34px }
+@media(max-width:820px){ .symptoms{ grid-template-columns:1fr } }
+.symptoms li{ display:flex; gap:14px; padding:15px 0; font-size:var(--do-text-base);
+  color:var(--do-text-secondary);
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.symptoms li::before{ content:''; flex:0 0 auto; width:18px; height:18px; margin-top:4px;
+  border-radius:var(--do-radius-sm);
+  border:2px solid color-mix(in srgb, var(--do-amber) 70%, transparent);
+  background:color-mix(in srgb, var(--do-amber) 16%, transparent) }
+
 /* diagrams render fully visible (no scroll-in animation) without the
    page-local JS the mockups used to add .sk-in on intersection — see
    loop-status.md for the reasoning. This keeps .sk-fade content visible

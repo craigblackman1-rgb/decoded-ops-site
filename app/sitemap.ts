@@ -61,6 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'cant-scale-operations', 'slow-processes', 'erp-implementation-failure',
     'ecommerce-not-connected', 'systems-dont-talk', 'wrong-erp-software',
     'disaster-recovery', 'no-ops-owner', 'manual-workarounds', 'ai-paralysis',
+    'buy-vs-build', 'data-scattered', 'inventory-blind', 'legacy-system',
   ].map(slug => ({
     url: `${BASE_URL}/problems/${slug}`,
     lastModified: new Date(),
@@ -70,7 +71,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Sector pages
   const sectorPages = [
-    'garment-decoration', 'print-promotional', 'workwear-teamwear',
+    'garment-decoration', 'print-promotional', 'workwear',
+    'teamwear-clubwear', 'schoolwear', 'promotional-merchandise',
     'signs-graphics', 'awards-engraving', 'labels-packaging',
   ].map(slug => ({
     url: `${BASE_URL}/sectors/${slug}`,

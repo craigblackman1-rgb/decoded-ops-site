@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Print, Embroidery & Decoration Technology Consultant | Decoded Ops',
-  description: 'Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Discovery Day — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.',
+  description: 'Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Clarity Audit — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Print & Embroidery Technology Consultant | Decoded Ops',
@@ -36,7 +36,7 @@ const homepageSchema = {
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Discovery Day', url: 'https://decodedops.co.uk/clarity' } },
+        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' } },
         { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Deliver', url: 'https://decodedops.co.uk/deliver' } },
         { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Transform', url: 'https://decodedops.co.uk/transform' } },
         { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Retained', url: 'https://decodedops.co.uk/retained' } },
@@ -48,9 +48,9 @@ const homepageSchema = {
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
 
 const services = [
-  { icon: Search,   name: 'Discovery Day', subtitle: 'On-Site Audit & Written Plan',       desc: "A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.", href: '/clarity',   badge: 'Start here' as string | null },
+  { icon: Search,   name: 'Clarity Audit', subtitle: 'On-Site Audit & Written Plan',       desc: "A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.", href: '/clarity',   badge: 'Start here' as string | null },
   { icon: FileText, name: 'Deliver',   subtitle: 'Project Delivery & Vendor Management', desc: 'Independent vendor brief, procurement, and project oversight. One point of contact. The vendor delivers what your business actually needs.', href: '/deliver',   badge: null as string | null },
-  { icon: Layers,   name: 'Transform', subtitle: 'Digital Transformation Programme',     desc: 'Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first. Discovery required before scoping.', href: '/transform', badge: null as string | null },
+  { icon: Layers,   name: 'Transform', subtitle: 'Digital Transformation Programme',     desc: 'Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first. Clarity Audit required before scoping.', href: '/transform', badge: null as string | null },
   { icon: Users,    name: 'Retained',  subtitle: 'Fractional CTO / Head of Operations',  desc: 'Monthly strategic and operational leadership. Roadmap ownership. Vendor management. A direct line to Craig.', href: '/retained',  badge: null as string | null },
 ];
 
@@ -103,12 +103,12 @@ export default function HomePage() {
                 You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don&apos;t talk to each other. <strong className="text-[#023047]">25 years inside print, embroidery, and decoration businesses</strong> says the same patterns repeat &mdash; and they&apos;re fixable.
               </p>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
+                Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Clarity Audit gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <Link href="/clarity" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  See how Discovery Day works <ArrowRight size={18} />
+                  See how Clarity Audit works <ArrowRight size={18} />
                 </Link>
                 <Link href="/contact" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
                   <Phone size={18} /> Book a free 60-min call

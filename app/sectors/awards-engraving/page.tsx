@@ -170,7 +170,7 @@ export default function AwardsEngravingPage() {
           <p className="lede">The audit starts with a free 60-minute call. No obligation. Just a conversation about what&apos;s happening in your business.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" href="/contact">Book a free discovery call <ArrowRight size={16} aria-hidden="true" /></Link>
-            <Link className="btn btn--outline" href="/clarity">See how a Discovery Day works <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link className="btn btn--outline" href="/clarity">See how a Clarity Audit works <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

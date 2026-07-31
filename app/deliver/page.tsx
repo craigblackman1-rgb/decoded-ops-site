@@ -34,7 +34,7 @@ const deliverSchema = {
       serviceType: 'Project Delivery and Vendor Management',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/deliver',
-      offers: { '@type': 'Offer', price: '1050', priceCurrency: 'GBP', priceRange: 'From £1,050/month' },
+      offers: { '@type': 'Offer', price: '1200', priceCurrency: 'GBP', priceRange: 'From £1,200/month' },
     },
     {
       '@type': 'FAQPage',

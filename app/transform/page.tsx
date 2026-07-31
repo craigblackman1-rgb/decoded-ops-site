@@ -42,7 +42,7 @@ const transformSchema = {
         {
           '@type': 'Question',
           name: 'What does the Transform programme include?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. Discovery is required before scoping.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. A Clarity Audit is required before scoping.' },
         },
         {
           '@type': 'Question',
@@ -118,7 +118,7 @@ export default function TransformPage() {
                   A full ERP implementation programme. <span className="text-[#219EBC]">Designed around how your business works.</span>
                 </h1>
               <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                For businesses that need a coordinated transformation across multiple workstreams &mdash; ERP, eCommerce, process redesign, and more. Discovery required before scoping, because assumptions are where transformations fail.
+                For businesses that need a coordinated transformation across multiple workstreams &mdash; ERP, eCommerce, process redesign, and more. Clarity Audit required before scoping, because assumptions are where transformations fail.
               </p>
               <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
               <div className="flex flex-col sm:flex-row gap-4">

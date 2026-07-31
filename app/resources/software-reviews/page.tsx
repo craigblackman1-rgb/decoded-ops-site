@@ -91,7 +91,7 @@ export default function SoftwareReviewsPage() {
             })}
           </div>
 
-          <div className="g-navy" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+          <div className="g-tint" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
             <h3>Need a review before you decide?</h3>
             <p style={{ marginBottom: 24 }}>
               If you're evaluating a specific platform and need an independent opinion, I can help. No vendor relationship. No preferred solution. Just an honest assessment based on how the software actually performs in businesses like yours.

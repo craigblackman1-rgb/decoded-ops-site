@@ -169,7 +169,7 @@ export default function ArtworkManagerPage() {
             </table>
           </div>
           <p className="table-foot">There&rsquo;s no Extended tier for this product. If what you need is bigger
-            than Standard, that&rsquo;s a different conversation and it starts with a Discovery Day, not a
+            than Standard, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
             tier list.</p>
         </div>
       </section>
