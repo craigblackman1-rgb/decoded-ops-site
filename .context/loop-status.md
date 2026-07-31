@@ -6,3 +6,13 @@
 2026-07-31T10:22:00+01:00 | lane-0 | wire 3 redirects in next.config.ts | done: /decoded-data-app->/apps/data-app, /resources/decoded-method->/decoded-method, /sectors/workwear-teamwear->/sectors/workwear, all 308 permanent, confirmed present in .next/routes-manifest.json after build
 2026-07-31T10:24:00+01:00 | lane-0 | npm run build | done: exit 0, Turbopack build, 141/141 static pages generated, zero errors (existing unrelated eslint issues elsewhere in repo untouched, npm run build itself does not run eslint as a blocking step)
 2026-07-31T10:28:00+01:00 | lane-0 | git commit + push ds-impl/lane-0-foundation | done: commit f076f0e, pushed to origin (branch visible at https://github.com/craigblackman1-rgb/decoded-ops-site/tree/ds-impl/lane-0-foundation), NOT pushed to staging
+
+2026-07-31T11:09:44 | lane-c | app/sectors/teamwear-clubwear/page.tsx | build-green
+2026-07-31T11:09:44 | lane-c | app/sectors/schoolwear/page.tsx | build-green
+2026-07-31T11:09:44 | lane-c | app/sectors/promotional-merchandise/page.tsx | build-green
+
+2026-07-31T11:12:33 | lane-c | app/sectors/garment-decoration/page.tsx | build-green (reskin)
+2026-07-31T11:12:33 | lane-c | app/sectors/print-promotional/page.tsx | build-green (reskin)
+2026-07-31T11:12:33 | lane-c | app/sectors/signs-graphics/page.tsx | build-green (reskin)
+2026-07-31T11:12:33 | lane-c | app/sectors/awards-engraving/page.tsx | build-green (reskin)
+2026-07-31T11:12:33 | lane-c | app/sectors/labels-packaging/page.tsx | build-green (reskin)
