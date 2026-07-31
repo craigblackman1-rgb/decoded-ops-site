@@ -1,0 +1,168 @@
+/* ══════════════════════════════════════════════════════════════════════
+   DECODED OPS — PLATE COMPONENT
+   Extracted 31 Jul 2026 from artwork-plates.html, where it existed only
+   as document-local CSS and could not be bound by any page.
+
+   Pair with ds-plates.js. Load after ds-marketing.css.
+
+   PL-03 APPLIED. The .p-* classes were already token-driven; the drift
+   lived in the JS frame() <defs>, which hardcoded seven values:
+     #219EBC glow ×2 · #FFB703/#FB8500 amber ×2 · #FFB703/#FB8500 amber-n
+     #8ECAE6/#219EBC bar · #FFB703/#FB8500 amber-b · #023047 scan
+   Those are now .p-glow0/1, .p-a0/1, .p-an0/1, .p-bar0/1, .p-ab0/1,
+   .p-scan. Nothing in this file or in ds-plates.js declares a hex except
+   pure white and pure black, which are mixing partners, not palette.
+
+   Declares no palette. Reads colors_and_type.css via ds-marketing.css.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ══ 1 · THE DRAWING SURFACE ═════════════════════════════════════════ */
+
+.pl{ width:100%; height:auto; display:block; font-family:var(--do-font-body) }
+
+.pl[data-tone="dark"]{
+  --p-bg0:color-mix(in srgb, var(--do-sky-blue) 9%, var(--do-prussian-blue));
+  --p-bg1:color-mix(in srgb, var(--do-prussian-blue) 76%, #000);
+  --p-ink:var(--do-off-white);
+  --p-mono:var(--do-sky-blue);
+  --p-node0:var(--do-sky-blue); --p-node0o:.15;
+  --p-node1:var(--do-cerulean); --p-node1o:.03;
+  --p-nodestroke:color-mix(in srgb, var(--do-sky-blue) 42%, transparent);
+  --p-drop:var(--do-prussian-blue); --p-dropo:.6;
+  --p-block:color-mix(in srgb, var(--do-prussian-blue) 82%, #000);
+  --p-accent-ink:var(--do-amber);          /* 7.93:1 on Prussian Blue */
+  --p-glow:var(--do-cerulean); --p-glowo:.18;
+  --p-scan:var(--do-prussian-blue); --p-scano:.35;
+}
+
+.pl[data-tone="light"]{
+  --p-bg0:#ffffff;
+  --p-bg1:var(--do-off-white);
+  --p-ink:var(--do-prussian-blue);
+  --p-mono:var(--do-text-secondary);
+  --p-node0:#ffffff; --p-node0o:1;
+  --p-node1:var(--do-sky-blue); --p-node1o:.2;
+  --p-nodestroke:color-mix(in srgb, var(--do-prussian-blue) 20%, transparent);
+  --p-drop:var(--do-prussian-blue); --p-dropo:.14;
+  --p-block:#ffffff;
+  --p-accent-ink:var(--do-prussian-blue);  /* amber ink is 1.7:1 on white */
+  --p-glow:var(--do-cerulean); --p-glowo:.10;
+  --p-scan:var(--do-prussian-blue); --p-scano:.18;
+}
+
+/* ══ 2 · INK & STROKE ════════════════════════════════════════════════ */
+
+.p-ink{ fill:var(--p-ink) }
+.p-mono{ fill:var(--p-mono) }
+.p-cyan{ fill:var(--do-cerulean) }
+.p-amber{ fill:var(--do-amber) }
+.p-scyan{ stroke:var(--do-cerulean) }
+.p-samber{ stroke:var(--do-amber) }
+.p-node{ stroke:var(--p-nodestroke) }
+.p-node-a{ stroke:color-mix(in srgb, var(--do-amber) 50%, transparent) }
+.p-block{ fill:var(--p-block) }
+.p-accent-ink{ fill:var(--p-accent-ink) }
+.p-grid{ stroke:var(--do-cerulean) }
+.p-shadow feDropShadow{ flood-color:var(--p-drop); flood-opacity:var(--p-dropo) }
+
+/* ══ 3 · GRADIENT STOPS — PL-03 ══════════════════════════════════════
+   Every stop the frame component needs, as a class. frame() no longer
+   writes a colour of any kind.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* page ground */
+.p-bg0{ stop-color:var(--p-bg0) }
+.p-bg1{ stop-color:var(--p-bg1) }
+
+/* node fill */
+.p-n0{ stop-color:var(--p-node0); stop-opacity:var(--p-node0o) }
+.p-n1{ stop-color:var(--p-node1); stop-opacity:var(--p-node1o) }
+
+/* corner glow */
+.p-glow0{ stop-color:var(--p-glow); stop-opacity:var(--p-glowo) }
+.p-glow1{ stop-color:var(--p-glow); stop-opacity:0 }
+
+/* amber node fill — the one node per drawing that carries the argument */
+.p-a0{ stop-color:var(--do-amber);  stop-opacity:.14 }
+.p-a1{ stop-color:var(--do-orange); stop-opacity:.03 }
+
+/* amber node fill, emphatic */
+.p-an0{ stop-color:var(--do-amber);  stop-opacity:.20 }
+.p-an1{ stop-color:var(--do-orange); stop-opacity:.05 }
+
+/* measure bars */
+.p-bar0{ stop-color:var(--do-sky-blue); stop-opacity:.72 }
+.p-bar1{ stop-color:var(--do-cerulean); stop-opacity:.28 }
+.p-ab0{ stop-color:var(--do-amber);  stop-opacity:.88 }
+.p-ab1{ stop-color:var(--do-orange); stop-opacity:.32 }
+
+/* photographic scanline */
+.p-scan{ fill:var(--p-scan); fill-opacity:var(--p-scano) }
+
+/* ══ 4 · EXHIBITS ════════════════════════════════════════════════════
+   The grade governs PHOTOGRAPHY only. A UI screen sits at full fidelity
+   inside the frame — grading it destroys interface legibility and
+   desaturates the brand colours inside the interface itself.
+   (Round 2 brief, Part 4 · PL-06 interim, rule 1.)
+   ═══════════════════════════════════════════════════════════════════ */
+
+.p-photo{ filter:grayscale(.5) sepia(.18) contrast(1.05) brightness(.92) }
+.p-screen{ filter:none }
+
+/* ══ 5 · PRESENTATION ════════════════════════════════════════════════ */
+
+.plate{ margin-top:var(--do-space-8) }
+
+.plate-head{ display:flex; flex-wrap:wrap; gap:12px; align-items:baseline;
+  justify-content:space-between; padding-bottom:12px; margin-bottom:14px;
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 45%, transparent) }
+.plate-head h3{ font-family:var(--do-font-heading); font-size:var(--do-text-xl);
+  font-weight:var(--do-weight-bold) }
+.plate-head .use{ font-size:var(--do-text-sm); color:var(--do-text-secondary);
+  max-width:58ch; margin:6px 0 0 }
+.g-navy .plate-head{ border-bottom-color:color-mix(in srgb, var(--do-sky-blue) 20%, transparent) }
+.g-navy .plate-head h3{ color:var(--do-text-on-dark) }
+.g-navy .plate-head .use{ color:var(--do-text-muted-on-dark) }
+
+/* the drawing number as it appears in running text — never Cerulean on
+   a light ground (D11); Cerulean is reserved for the on-navy case where
+   it is a UI mark inside the drawing, not prose. */
+.plate-no{ font-family:var(--do-font-mono); font-size:var(--do-text-xs);
+  letter-spacing:var(--do-tracking-wide); white-space:nowrap;
+  color:var(--do-text-secondary) }
+.g-navy .plate-no{ color:var(--do-text-muted-on-dark) }
+
+/* ══ 6 · MOTION ══════════════════════════════════════════════════════
+   Scoped to .sk-js. The <html> element gets that class from an inline
+   script in <head>, so with JS disabled or broken the drawing renders
+   fully visible instead of permanently at opacity 0.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.sk-js .pl .sk-draw{ stroke-dasharray:1; stroke-dashoffset:1 }   /* needs pathLength="1" */
+.sk-js .pl.sk-in .sk-draw{ animation:sk-draw 1s cubic-bezier(.4,0,.2,1) forwards }
+.sk-js .pl .sk-fade{ opacity:0 }
+.sk-js .pl.sk-in .sk-fade{ animation:sk-fade .55s ease forwards }
+.sk-js .pl .sk-dots{ opacity:0 }
+.sk-js .pl.sk-in .sk-dots{ opacity:1; transition:opacity .4s ease .7s }
+
+@media (prefers-reduced-motion:reduce){
+  .sk-js .pl .sk-draw{ stroke-dashoffset:0 }
+  .sk-js .pl .sk-fade,.sk-js .pl .sk-dots{ opacity:1 }
+  .sk-js .pl.sk-in .sk-draw,.sk-js .pl.sk-in .sk-fade{ animation:none }
+}
+
+/* ══ 7 · RESPONSIVE ══════════════════════════════════════════════════
+   A plate is a drawing, not a layout — it scales, it does not reflow.
+   Below the render band it is NOT hidden: it scrolls, with the frame
+   intact, because the title block is what makes it a drawing.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.plate-scroll{ overflow-x:auto; -webkit-overflow-scrolling:touch }
+.plate-scroll .plate-frame{ min-width:0 }
+@media (max-width:720px){
+  .plate-scroll .plate-frame{ min-width:680px }
+  .plate-scroll::after{ content:'Scroll to see the full drawing →';
+    display:block; margin-top:10px; font-size:var(--do-text-xs);
+    color:var(--do-text-secondary) }
+  .g-navy .plate-scroll::after{ color:var(--do-text-muted-on-dark) }
+}

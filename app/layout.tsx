@@ -2,12 +2,24 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Outfit, DM_Sans } from 'next/font/google';
 import './globals.css';
+// Design-system sheets (copied verbatim from
+// D:\apps\design-systems\ds-decoded-ops-fractional-cto-ops-design-system\).
+// Imported AFTER globals.css so canonical DS tokens win the cascade over
+// this repo's older `--do-*` token bridge in globals.css where the two
+// disagree (see the import-order note in the Lane 0 report). Do not import
+// colors_and_type.css separately here — ds-marketing.css already
+// `@import url('colors_and_type.css')`s it (relative, resolved by Next's
+// CSS pipeline since both files live in app/design-system/); a second
+// direct import would duplicate the whole token file in the CSS output.
+import './design-system/ds-marketing.css';
+import './design-system/ds-plates.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
 import { JsonLd } from '@/components/JsonLd';
 import { AppShell } from '@/components/AppShell';
 import { SessionProvider } from '@/components/SessionProvider';
+import { DsPlatesLoader } from '@/components/DsPlatesLoader';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -102,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AppShell>
         </SessionProvider>
         <CookieConsent />
+        <DsPlatesLoader />
       </body>
     </html>
   );

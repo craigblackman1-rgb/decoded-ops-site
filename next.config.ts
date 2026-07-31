@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
       { source: '/fractional', destination: '/retained', permanent: true },
       { source: '/:path*', destination: 'https://decodedops.co.uk/:path*', permanent: true, has: [{ type: 'host', value: 'www.decodedops.co.uk' }] },
       { source: '/client-docs/:path*', destination: '/clients/login', permanent: false },
+      // DS implementation work order (2026-07-31), Lane 0: old URLs being
+      // retired in favour of new DS-ported routes built by later lanes.
+      // Targets don't exist yet — that's expected, the other lanes build
+      // them; the redirect just needs to be ready ahead of that landing.
+      { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
+      { source: '/resources/decoded-method', destination: '/decoded-method', permanent: true },
+      { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
     ];
   },
   async headers() {
