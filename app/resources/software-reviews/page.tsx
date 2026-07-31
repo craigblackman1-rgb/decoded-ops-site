@@ -64,44 +64,44 @@ export default function SoftwareReviewsPage() {
   return (
     <>
       <JsonLd data={schema} />
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            Software Reviews
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 800 }}>
+          <h1>Software reviews</h1>
+          <p className="lede">
             Independent, honest reviews of the software platforms used in print, embroidery, and decoration businesses. Each review covers what the vendor promises, what the reality is for businesses in this sector, what the implementation actually costs, and where the hidden issues are.
           </p>
         </div>
       </section>
 
-      <section className="py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 800 }}>
+          <div className="grid grid--2">
             {reviews.map((review) => {
               const CardWrapper = review.href ? 'a' : 'div';
-              const wrapperProps = review.href ? { href: review.href, className: "block group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-sm transition-all duration-300 cursor-pointer" } : { className: "group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA]" };
+              const wrapperProps = review.href ? { href: review.href, className: 'card', style: { cursor: 'pointer' } } : { className: 'card' };
               return (
                 <CardWrapper key={review.name} {...wrapperProps}>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#219EBC]/10 border border-[#219EBC]/20 mb-4">
-                    <span className="text-xs font-semibold text-[#219EBC] uppercase">{review.status}</span>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '4px 12px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 20%, transparent)', marginBottom: 16 }}>
+                    <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', color: 'var(--do-cerulean)' }}>{review.status}</span>
                   </div>
-                  <h2 className="text-xl font-bold text-[#023047] mb-3">{review.name}</h2>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed">{review.description}</p>
+                  <h2 style={{ fontSize: 'var(--do-text-xl)' }}>{review.name}</h2>
+                  <p style={{ marginBottom: 0 }}>{review.description}</p>
                 </CardWrapper>
               );
             })}
           </div>
 
-          <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Need a review before you decide?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
+          <div className="g-navy" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+            <h3>Need a review before you decide?</h3>
+            <p style={{ marginBottom: 24 }}>
               If you're evaluating a specific platform and need an independent opinion, I can help. No vendor relationship. No preferred solution. Just an honest assessment based on how the software actually performs in businesses like yours.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <Link href="/contact" className="btn btn--primary">
               Book a free discovery call <ArrowRight size={18} />
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
+            </div>
           </div>
         </div>
       </section>

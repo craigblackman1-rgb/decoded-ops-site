@@ -54,37 +54,43 @@ export default function OpsHealthScorePage() {
 
   return (
     <main>
-      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
-          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Ops Health Score</h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Rate your business across five operational dimensions to get a clear picture of where you stand — and where to focus first.</p>
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">— Free tool</span>
+          <h1>Ops health score</h1>
+          <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand — and where to focus first.</p>
         </div>
       </section>
 
-      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
           {!showResults ? (
-            <div className="space-y-6">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {dimensions.map(d => (
-                <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
-                  <div className="flex items-start justify-between mb-4">
+                <div key={d.id} className="card">
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, marginBottom: 8 }}>
                     <div>
-                      <h2 className="text-lg font-bold text-[#023047] font-[family-name:var(--font-outfit)]">{d.label}</h2>
-                      <div className="relative group">
-                        <p className="text-xs text-[#023047]/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
-                        <div className="absolute left-0 top-full mt-2 w-72 bg-[#023047] text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
-                          <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
-                          <p><strong className="text-[#FFB703]">Mid (3):</strong> {d.mid}</p>
-                          <p><strong className="text-[#219EBC]">High (4-5):</strong> {d.high}</p>
+                      <h2 style={{ marginBottom: 0 }}>{d.label}</h2>
+                      <div className="relative group" style={{ position: 'relative' }}>
+                        <p style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)', marginTop: 4, marginBottom: 0, display: 'flex', alignItems: 'center', gap: 4, cursor: 'help' }}>Hover for descriptions <Info size={12} /></p>
+                        <div className="group-hover-panel" style={{ position: 'absolute', left: 0, top: '100%', marginTop: 8, width: 288, background: 'var(--do-prussian-blue)', color: 'var(--do-text-on-dark)', fontSize: 'var(--do-text-xs)', padding: 12, borderRadius: 'var(--do-radius-lg)', opacity: 0, pointerEvents: 'none', zIndex: 10, boxShadow: 'var(--do-shadow-lg)', display: 'flex', flexDirection: 'column', gap: 8, transition: 'opacity var(--do-duration-normal)' }}>
+                          <p style={{ margin: 0 }}><strong style={{ color: 'var(--do-orange)' }}>Low (1-2):</strong> {d.low}</p>
+                          <p style={{ margin: 0 }}><strong style={{ color: 'var(--do-amber)' }}>Mid (3):</strong> {d.mid}</p>
+                          <p style={{ margin: 0 }}><strong style={{ color: 'var(--do-sky-blue)' }}>High (4-5):</strong> {d.high}</p>
                         </div>
                       </div>
                     </div>
-                    <div className="flex gap-1.5">
+                    <div style={{ display: 'flex', gap: 6 }}>
                       {[1, 2, 3, 4, 5].map(n => (
                         <button key={n} onClick={() => setScore(d.id, n)}
-                          className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-[#023047]/40 bg-[#023047]/5 hover:bg-[#023047]/10'}`}
-                          style={{ backgroundColor: scores[d.id] === n ? getScoreColor(n) : undefined }}
+                          className="score-btn"
+                          style={{
+                            width: 36, height: 36, borderRadius: 'var(--do-radius-lg)', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)',
+                            border: 'none', cursor: 'pointer', transition: 'all var(--do-duration-normal)',
+                            color: scores[d.id] === n ? 'var(--do-white)' : 'var(--do-text-subtle)',
+                            background: scores[d.id] === n ? getScoreColor(n) : 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)',
+                            transform: scores[d.id] === n ? 'scale(1.1)' : 'none',
+                          }}
                           aria-label={`Score ${n} for ${d.label}`}
                         >{n}</button>
                       ))}
@@ -94,44 +100,49 @@ export default function OpsHealthScorePage() {
               ))}
 
               <button onClick={() => allAnswered && setShowResults(true)}
-                className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+                className={allAnswered ? 'btn btn--primary' : 'btn'}
+                style={{
+                  width: '100%', padding: '16px 24px', cursor: allAnswered ? 'pointer' : 'not-allowed',
+                  background: allAnswered ? undefined : 'var(--do-border-subtle)',
+                  color: allAnswered ? undefined : 'var(--do-text-subtle)',
+                }}
                 disabled={!allAnswered}
               >
-                {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+                {allAnswered ? 'See your score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
               </button>
             </div>
           ) : (
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
-                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+              <div className="card" style={{ textAlign: 'center', marginBottom: 32 }}>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', marginBottom: 24, backgroundColor: `${result.color}20`, border: `1px solid ${result.color}40` }}>
+                  <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', color: result.color }}>{result.label}</span>
                 </div>
-                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <div style={{ fontSize: 'var(--do-text-5xl)', fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-bold)', marginBottom: 16, color: result.color }}>{total}/25</div>
+                <p className="lede" style={{ margin: '0 auto 32px', maxWidth: '38ch', color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>{result.description}</p>
+                <div className="btn-row" style={{ justifyContent: 'center', margin: 0 }}>
+                  <Link href="/contact" className="btn btn--primary">
                     Book a Clarity Audit <ArrowRight size={18} />
                   </Link>
-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                  <button onClick={reset} className="btn btn--outline">
                     <RotateCcw size={16} /> Try again
                   </button>
                 </div>
               </div>
 
               {/* Dimension breakdown */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
-                <h3 className="text-sm font-bold text-[#023047] mb-4">Dimension Scores</h3>
-                <div className="space-y-3">
+              <div className="card">
+                <h3>Dimension scores</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {dimensions.map(d => {
                     const s = scores[d.id] || 0;
                     return (
                       <div key={d.id}>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-[#023047]/80">{d.label}</span>
-                          <span className="font-semibold" style={{ color: getScoreColor(s) }}>{s}/5</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 'var(--do-text-sm)', marginBottom: 4 }}>
+                          <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>{d.label}</span>
+                          <span style={{ fontWeight: 'var(--do-weight-semibold)', color: getScoreColor(s) }}>{s}/5</span>
                         </div>
-                        <div className="h-2 rounded-full bg-[#8ECAE6]/20 overflow-hidden">
-                          <div className="h-full rounded-full transition-all" style={{ width: `${(s / 5) * 100}%`, backgroundColor: getScoreColor(s) }} />
+                        <div style={{ height: 8, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-sky-blue) 20%, transparent)', overflow: 'hidden' }}>
+                          <div style={{ height: '100%', borderRadius: 'var(--do-radius-full)', transition: 'all var(--do-duration-normal)', width: `${(s / 5) * 100}%`, backgroundColor: getScoreColor(s) }} />
                         </div>
                       </div>
                     );

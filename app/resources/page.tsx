@@ -61,35 +61,29 @@ export default function ResourcesPage() {
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Resources', url: 'https://decodedops.co.uk/resources' },
       ]} />
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Resources</span>
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-              Tools and guides <span className="text-[#219EBC]">you can use today</span>
-            </h1>
-            <p className="text-lg text-[#023047]/70 leading-relaxed max-w-xl">
-              Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.
-            </p>
-          </div>
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">— Resources</span>
+          <h1>Tools and guides <em>you can use today</em></h1>
+          <p className="lede">
+            Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.
+          </p>
         </div>
       </section>
 
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="g-off">
+        <div className="wrap">
+          <div className="grid grid--3">
             {resources.map(r => {
               const Icon = r.icon;
               return (
-                <Link key={r.href} href={r.href} className="group p-8 rounded-2xl border border-[#8ECAE6]/40 bg-white hover:border-[#219EBC]/40 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center mb-4 group-hover:bg-[#219EBC]/20 transition-colors">
-                    <Icon size={24} className="text-[#219EBC]" />
+                <Link key={r.href} href={r.href} className="card">
+                  <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
-                  <h2 className="text-xl font-bold text-[#023047] mb-3 group-hover:text-[#219EBC] transition-colors">{r.title}</h2>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed mb-4">{r.desc}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#219EBC] group-hover:text-[#023047] transition-colors">
+                  <h2 style={{ fontSize: 'var(--do-text-xl)' }}>{r.title}</h2>
+                  <p>{r.desc}</p>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)' }}>
                     Read more <ArrowRight size={14} />
                   </span>
                 </Link>

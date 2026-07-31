@@ -114,51 +114,47 @@ export default function ChecklistPage() {
     <>
       <JsonLd data={schema} />
       {/* HERO */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Free Resource</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            Operational Audit Checklist
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">— Free resource</span>
+          <h1>Operational audit checklist</h1>
+          <p className="lede">
             20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant—or to understand what an audit actually covers.
           </p>
         </div>
       </section>
 
       {/* CONTENT */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
 
           {/* Intro */}
-          <div className="mb-16 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
-            <h2 className="text-xl font-bold text-[#023047] mb-4">How to use this checklist</h2>
-            <p className="text-[#023047]/80 leading-relaxed mb-4">
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+            <h2>How to use this checklist</h2>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
               Go through each section and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
             </p>
-            <p className="text-[#023047]/80 leading-relaxed">
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
               The items you can't answer are the most valuable—they're where the hidden costs usually are.
             </p>
           </div>
 
           {/* Checklist */}
-          <div className="space-y-12">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
             {checklist.map((section, sectionIndex) => (
               <div key={sectionIndex}>
-                <h2 className="text-2xl font-bold text-[#023047] mb-6 pb-4 border-b border-[#8ECAE6]/30">
+                <h2 style={{ paddingBottom: 16, marginBottom: 24, borderBottom: '1px solid var(--do-border-subtle)' }}>
                   {section.section}
                 </h2>
-                <div className="space-y-4">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {section.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex gap-4 items-start p-4 rounded-lg bg-[#F8F9FA] hover:bg-[#F8F9FA]/80 transition-colors">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-5 h-5 rounded-full border-2 border-[#219EBC] flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-[#219EBC]/30" />
+                    <div key={itemIndex} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: 16, borderRadius: 'var(--do-radius-lg)', background: 'var(--do-off-white)' }}>
+                      <div style={{ flexShrink: 0, marginTop: 4 }}>
+                        <div style={{ width: 20, height: 20, borderRadius: '50%', border: '2px solid var(--do-cerulean)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 30%, transparent)' }} />
                         </div>
                       </div>
-                      <p className="text-[#023047]/80 leading-relaxed">
+                      <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
                         {item}
                       </p>
                     </div>
@@ -169,30 +165,30 @@ export default function ChecklistPage() {
           </div>
 
           {/* Key Takeaways */}
-          <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
-            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key Takeaways</h2>
-            <div className="space-y-4 text-[#8ECAE6]">
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+          <div className="g-navy" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+            <h2>Key takeaways</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   If you can't answer 5+ questions, you probably have a bigger operational problem than you realize.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   The items about "manual work" and "re-keying" are where the money is hiding.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   If your systems don't integrate, you're paying 3-5% of revenue in manual workarounds.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   Inventory accuracy problems typically cost 1-3% of stock value per year.
                 </p>
               </div>
@@ -200,20 +196,20 @@ export default function ChecklistPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">Once you've worked through this checklist...</h3>
-            <p className="text-[#023047]/80 leading-relaxed mb-6">
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>
+            <h3>Once you've worked through this checklist...</h3>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
               The real value is in understanding what you don't know. If there are gaps, an audit identifies them formally, quantifies them, and gives you a roadmap to fix them.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
+              <Link href="/contact" className="btn btn--primary">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+              <Link href="/clarity" className="btn btn--outline">
                 See what an audit covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

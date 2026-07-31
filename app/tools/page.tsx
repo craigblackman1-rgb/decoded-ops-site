@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -81,46 +82,26 @@ export default function ToolsPage() {
       ]} />
       <JsonLd data={toolsSchema} />
       {/* Hero */}
-      <section
-        className="pt-24 pb-16 lg:pt-32 lg:pb-24"
-        style={{ backgroundColor: '#023047' }}
-      >
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <h1
-            className="font-[family-name:var(--font-outfit)] text-4xl lg:text-5xl font-bold text-white mb-6"
-          >
-            Calculate Your Operational Cost
-          </h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+          <span className="eyebrow">— Free tools</span>
+          <h1>Calculate your operational cost</h1>
+          <p className="lede" style={{ margin: '0 auto' }}>
             Free tools to quantify operational inefficiency — so you know exactly what it&apos;s costing you.
           </p>
         </div>
       </section>
 
       {/* Cards */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <section className="g-off">
+        <div className="wrap">
+          <div className="grid grid--3">
             {tools.map((tool) => (
-              <div
-                key={tool.href}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col"
-              >
-                <h2
-                  className="font-[family-name:var(--font-outfit)] font-semibold text-xl mb-3"
-                  style={{ color: '#023047' }}
-                >
-                  {tool.title}
-                </h2>
-                <p className="font-[family-name:var(--font-dm-sans)] text-gray-600 text-sm mb-6 flex-grow">
-                  {tool.description}
-                </p>
-                <Link
-                  href={tool.href}
-                  className="font-[family-name:var(--font-dm-sans)] text-sm font-medium"
-                  style={{ color: '#219EBC' }}
-                >
-                  Use Calculator →
+              <div key={tool.href} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
+                <h2>{tool.title}</h2>
+                <p style={{ flexGrow: 1 }}>{tool.description}</p>
+                <Link href={tool.href} className="btn btn--outline" style={{ marginTop: 20 }}>
+                  Use calculator <ArrowRight size={16} />
                 </Link>
               </div>
             ))}
