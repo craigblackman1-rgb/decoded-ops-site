@@ -37,75 +37,82 @@ const schema = {
 
 export default function CobraWorkwearCaseStudyPage() {
   return (
-    <main>
-      <JsonLd data={schema} />
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Post-Audit · Workwear</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            Cobra Workwear: an independent view before the ERP decision, not after
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed">
-            Cobra Workwear needed a B2B customer ordering portal — logins, custom ranges per customer, credit terms, multi-site, Xero integration — plus an ERP that could actually support it. The Clarity Audit came first, before anything got built or signed off.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">The problem</h2>
-          <p className="text-[#023047]/80 leading-relaxed mb-8">
-            Cobra were evaluating an ERP platform without an independent view on whether it actually fit their operation, running alongside Shopify with a B2B portal still to be scoped and built. Getting the platform choice wrong here doesn't just cost money on the software, it shapes the next 12 to 18 months of how the whole ordering and fulfilment process works. That's not a decision to make off the back of a vendor demo.
-          </p>
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">What I did</h2>
-          <div className="space-y-4 mb-8">
-            {[
-              'Ran a Clarity Audit against Cobra\'s actual, documented requirements, not the vendor\'s pitch',
-              'Evaluated the ERP platform on the table independently, with no vendor relationship or referral fee riding on the outcome',
-              'Scoped what the B2B portal actually needs to do: logins, custom ranges per customer, credit terms, multi-site support, and a clean Xero integration',
-              'Positioned Decoded Ops as architect and project manager for the build, not the builder — a vetted third-party partner delivers the portal, keeping cost sensitive and avoiding a build-line markup',
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="text-[#023047]/80 leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 mb-8">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">Why the audit came before the build</h3>
-            <p className="text-[#023047]/80 leading-relaxed">
-              A B2B portal that doesn't talk to the right ERP, chosen without an independent check, is exactly how a business ends up rebuilding the same thing twice. The audit exists to catch that before contracts are signed, not to write a report nobody acts on.
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">Status</h2>
-          <p className="text-[#023047]/80 leading-relaxed mb-8">
-            Clarity Audit complete. Now negotiating the Deliver and Transform engagement to take the portal and ERP work from scope into build.
-          </p>
-
-          <div className="p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Weighing up a similar decision?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
-              If you're choosing an ERP or scoping a customer portal and want an independent view before anything's signed, that's exactly what a Clarity Audit is for.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
-              </Link>
-              <Link href="/case-studies" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                See other client work
-              </Link>
+    <>
+      <style>{`.article-body{max-width:740px;margin:0 auto}`}</style>
+      <main>
+        <JsonLd data={schema} />
+        <section className="g-off">
+          <div className="wrap">
+            <div className="article-body">
+              <span className="eyebrow">Post-Audit · Workwear</span>
+              <h1>Cobra Workwear: an independent view before the ERP decision, not after</h1>
+              <p className="lede">
+                Cobra Workwear needed a B2B customer ordering portal — logins, custom ranges per customer, credit terms, multi-site, Xero integration — plus an ERP that could actually support it. The Clarity Audit came first, before anything got built or signed off.
+              </p>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
+        </section>
 
-        </div>
-      </section>
-    </main>
+        <section>
+          <div className="wrap">
+            <div className="article-body">
+
+              <h2>The problem</h2>
+              <p>
+                Cobra were evaluating an ERP platform without an independent view on whether it actually fit their operation, running alongside Shopify with a B2B portal still to be scoped and built. Getting the platform choice wrong here doesn&apos;t just cost money on the software, it shapes the next 12 to 18 months of how the whole ordering and fulfilment process works. That&apos;s not a decision to make off the back of a vendor demo.
+              </p>
+
+              <h2>What I did</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+                {[
+                  'Ran a Clarity Audit against Cobra\'s actual, documented requirements, not the vendor\'s pitch',
+                  'Evaluated the ERP platform on the table independently, with no vendor relationship or referral fee riding on the outcome',
+                  'Scoped what the B2B portal actually needs to do: logins, custom ranges per customer, credit terms, multi-site support, and a clean Xero integration',
+                  'Positioned Decoded Ops as architect and project manager for the build, not the builder — a vetted third-party partner delivers the portal, keeping cost sensitive and avoiding a build-line markup',
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ padding: '32px', borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: '32px' }}>
+                <h3>Why the audit came before the build</h3>
+                <p>
+                  A B2B portal that doesn&apos;t talk to the right ERP, chosen without an independent check, is exactly how a business ends up rebuilding the same thing twice. The audit exists to catch that before contracts are signed, not to write a report nobody acts on.
+                </p>
+              </div>
+
+              <h2>Status</h2>
+              <p style={{ marginBottom: '32px' }}>
+                Clarity Audit complete. Now negotiating the Deliver and Transform engagement to take the portal and ERP work from scope into build.
+              </p>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="g-navy">
+          <div className="wrap">
+            <div className="article-body">
+              <h3>Weighing up a similar decision?</h3>
+              <p className="lede">
+                If you&apos;re choosing an ERP or scoping a customer portal and want an independent view before anything&apos;s signed, that&apos;s exactly what a Clarity Audit is for.
+              </p>
+              <div className="btn-row">
+                <Link href="/contact" className="btn btn--primary">
+                  Book a free discovery call <ArrowRight size={18} />
+                </Link>
+                <Link href="/case-studies" className="btn btn--outline">
+                  See other client work
+                </Link>
+              </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
