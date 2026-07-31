@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { ProblemPage } from '@/components/ProblemPage';
-import { ErpImplementationFailureSchematic } from '@/components/schematics/problems/ErpImplementationFailureSchematic';
+import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
-import { problemRouting } from '@/data/problem-routing';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
@@ -21,6 +20,10 @@ export const metadata: Metadata = {
   },
 };
 
+// Anchor page rebuild, 31 Jul 2026. Replaces the previously withdrawn
+// large-cost-figure framing per the positioning review — see the mockup
+// source comment in problems-erp-implementation-failure.html. No withdrawn
+// cost figure appears anywhere on this page.
 const erpFailureSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -66,34 +69,109 @@ export default function ERPImplementationFailurePage() {
   return (
     <>
       <JsonLd data={erpFailureSchema} />
-      <ProblemPage
-      problem="ERP implementation failure"
-      headline="Your ERP implementation has gone wrong. ||Here's what to do next.||"
-      intro="ERP implementation failure in this sector is more common than vendors will admit. Usually not because the software is bad — but because the implementation wasn't designed around how decoration and print businesses actually work. The wrong manufacturing ERP for your specific workflows. The right ERP, implemented without proper oversight. Both end the same way."
-      heroGraphic={<ErpImplementationFailureSchematic />}
-      symptoms={[
-        "The system went live but the team are still using spreadsheets alongside it",
-        "You went live late, over budget, or both",
-        "The vendor is still on-site months after the planned go-live",
-        "Key processes still can't be done in the system",
-        "You're paying for a system you're only using 40% of",
-        "Your team have lost confidence in the data",
-        "You're thinking about starting the selection process again",
-      ]}
-      causes={[
-        { title: 'Scoping done by the vendor', body: "When the vendor scopes their own implementation, they scope for the software — not for your business. The gaps only become visible after go-live." },
-        { title: 'No independent oversight', body: "Without someone in your corner who understands both the sector and the software, there's no one to hold the vendor to account when they miss requirements or cut corners. An ERP implementation consultant working independently — not appointed by the vendor — is the single most effective way to prevent this." },
-        { title: 'Data not prepared', body: "Most implementation failures trace back to data quality. Clean data migration is unglamorous work that vendors underprice and businesses underestimate." },
-        { title: 'Wrong software for the business model', body: "Sometimes the implementation fails because the software was the wrong choice from the start — selected on demo, not on fit." },
-        { title: 'Wrong ERP for small business operations', body: "Sometimes the implementation fails because the ERP for small business was selected on demo, not on fit. A system that performs well for a distribution company can be a poor fit for a decorated goods business with mixed methods, variable artwork, and short-run personalisation." },
-      ]}
-      howIHelp="I come in after a failed or struggling implementation and give you an honest assessment of where it is, why it went wrong, and what the options are. Sometimes that means getting more out of the existing system. Sometimes it means a recovery plan. Sometimes it means acknowledging the sunk cost and starting over — with a proper independent brief this time. Either way, you get a clear picture and a practical path forward."
-    
-      slug="erp-implementation-failure"
-      targetService={problemRouting['erp-implementation-failure'].targetService}
-      relatedProblems={problemRouting['erp-implementation-failure'].relatedProblems}
-      relatedReading={problemRouting['erp-implementation-failure'].relatedReading}
-    />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+        { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
+        { name: 'ERP implementation failure', url: 'https://decodedops.co.uk/problems/erp-implementation-failure' },
+      ]} />
+
+      {/* ── 1 · HERO — the new anchor ─────────────────────────────────────── */}
+      <section className="g-off">
+        <div className="wrap max-w-3xl mx-auto text-center">
+          <span className="eyebrow">— The problem</span>
+          <h1>What happens when the audit doesn&apos;t come first.</h1>
+          <div className="hair mx-auto" />
+          <p className="lede mx-auto">ERP implementations that skip an independent audit routinely run over budget and
+            behind schedule, because nobody scoped the business before scoping the software. The fix
+            isn&apos;t a bigger budget. It&apos;s doing the diagnostic work before any platform gets chosen.</p>
+          <div className="btn-row justify-center">
+            <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 2 · BEFORE / AFTER — Hanicks ──────────────────────────────────── */}
+      <section className="g-tint">
+        <div className="wrap">
+          <span className="eyebrow">— Hanicks · named with permission</span>
+          <h2>The platform stayed. The layer around it changed.</h2>
+          <div className="hair" />
+          <p className="lede">Nobody ripped out an ERP here. The diagnostic came
+            first, the data got fixed, and the platform they&apos;d already paid for started working.</p>
+
+          <div className="grid grid--2" style={{ marginTop: 34 }}>
+            <div className="card">
+              <span className="kicker">Before</span>
+              <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+                {[
+                  <>The <b>164,752</b> products scattered across supplier feeds</>,
+                  'No consistent SKU to match any of them against',
+                  'No reliable stock picture for the warehouse or the website',
+                  'A platform taking the blame for a data problem',
+                ].map((item, i) => (
+                  <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>
+                    — {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="card">
+              <span className="kicker">After</span>
+              <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+                {[
+                  <><b>127,135</b> matched automatically on the first run</>,
+                  <>A <b>77%</b> match rate, without anyone re-keying a row</>,
+                  <><b>11,064</b> pushed live to Khaos Control within weeks</>,
+                  'The platform stayed. The layer around it changed.',
+                ].map((item, i) => (
+                  <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>
+                    — {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3 · SUPPORTING STAT — TackleBag ───────────────────────────────── */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">— TackleBag · the same pattern</span>
+          <h2>Different business, ahead of the decision rather than after it.</h2>
+          <div className="hair" />
+
+          <div className="grid grid--2" style={{ marginTop: 34, maxWidth: 620 }}>
+            <div className="card">
+              <div style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-extrabold)', fontSize: 'clamp(2rem,4vw,2.75rem)', color: 'var(--do-amber)', lineHeight: 1 }}>9</div>
+              <p style={{ marginTop: 10 }}>supplier feeds automated end to end</p>
+            </div>
+            <div className="card">
+              <div style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-extrabold)', fontSize: 'clamp(2rem,4vw,2.75rem)', color: 'var(--do-amber)', lineHeight: 1 }}>20–40</div>
+              <p style={{ marginTop: 10 }}>hours a week, projected saving</p>
+            </div>
+          </div>
+
+          <p className="lede" style={{ marginTop: 28 }}>Same pattern, different business: the diagnostic work came ahead of
+            their own ERP decision, rather than after a failed one. That&apos;s the whole difference, and it&apos;s
+            the cheapest part of the project.</p>
+        </div>
+      </section>
+
+      {/* ── 4 · CTA STRIP ──────────────────────────────────────────────────── */}
+      <section className="g-white">
+        <div className="wrap max-w-2xl mx-auto text-center">
+          <h2>Book a free discovery call.</h2>
+          <div className="hair mx-auto" />
+          <p className="lede mx-auto">An hour on what&apos;s actually going wrong. If you&apos;re mid-way through an
+            implementation that&apos;s slipping, that&apos;s exactly the conversation to have now rather than after
+            go-live.</p>
+          <div className="btn-row justify-center">
+            <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+            <Link className="btn btn--outline" href="/clarity">See how a Discovery Day works</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

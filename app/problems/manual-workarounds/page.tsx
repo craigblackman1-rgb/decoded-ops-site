@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ProblemPage } from '@/components/ProblemPage';
+import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { ManualWorkaroundsSchematic } from '@/components/schematics/problems/ManualWorkaroundsSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
@@ -66,7 +66,7 @@ export default function ManualWorkaroundsPage() {
   return (
     <>
       <JsonLd data={manualWorkaroundsSchema} />
-      <ProblemPage
+      <ProblemPageDS
       problem="Manual workarounds and shadow systems"
       headline="Your team has built a second system. ||It lives in spreadsheets.||"
       intro="Almost every business in this sector has shadow systems — spreadsheets, manual logs, sticky notes, and workarounds that exist alongside the official software. They keep the business running. They also hide the real cost of operational inefficiency. Business process automation for small businesses in this sector is not about replacing people — it is about eliminating the manual re-entry, duplicate data, and shadow spreadsheets that slow every team down."

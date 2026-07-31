@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ProblemPage } from '@/components/ProblemPage';
+import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { DisasterRecoverySchematic } from '@/components/schematics/problems/DisasterRecoverySchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
@@ -66,7 +66,7 @@ export default function DisasterRecoveryPage() {
   return (
     <>
       <JsonLd data={drSchema} />
-      <ProblemPage
+      <ProblemPageDS
       problem="No disaster recovery plan"
       headline="Your systems go down on a Tuesday morning. ||When do you get back up?||"
       intro="Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. Not because they don't care — but because DR feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."

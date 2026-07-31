@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ProblemPage } from '@/components/ProblemPage';
+import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { SystemsDontTalkSchematic } from '@/components/schematics/problems/SystemsDontTalkSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
@@ -56,7 +56,7 @@ export default function SystemsDontTalkPage() {
   return (
     <>
       <JsonLd data={systemsDontTalkSchema} />
-      <ProblemPage
+      <ProblemPageDS
       problem="Systems don't talk to each other"
       headline="You have five systems. ||None of them know what the others are doing.||"
       intro="The average decoration or print business has between four and seven separate software systems. Order management, ERP, accounts, artwork, eCommerce, despatch. Each one is an island. The bridges between them are people, spreadsheets, and emails."
