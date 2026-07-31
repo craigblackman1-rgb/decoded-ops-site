@@ -12,3 +12,6 @@
 2026-07-31T10:47:00+01:00 | lane-a | app/apps/commerce/page.tsx | built: ported apps-commerce.html (hero-split/evidence--screen hero shot, feature triplet per tier, custom-work callout panels, pricing table + founding-client notice, cta strip); copy preserved verbatim; npm run build exit 0, /apps/commerce generated static
 2026-07-31T11:05:00+01:00 | lane-a | app/how-i-build/page.tsx | built: ported how-i-build.html (hero-center, ladder SVG plate diagram archetype 5 with three rungs + animateMotion, rungs grid with buy/buy-plus/full-custom cards, pull quote + disclosure panel, cta strip); copy preserved verbatim; npm run build exit 0, /how-i-build generated static
 2026-07-31T11:07:00+01:00 | lane-a | npm run build (final) | done: exit 0, 146/146 pages, all 5 units (apps index, data-app, artwork-manager, commerce, how-i-build) generate correctly; ready to commit + push
+fatal: ambiguous argument 'origin\ds-impl\lane-b;.context\loop-status.md': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
