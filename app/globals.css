@@ -1,9 +1,17 @@
-/* Register cascade layer order explicitly, ds first (lowest priority).
-   Without this, the DS marketing stylesheets (unlayered, imported below)
-   would sit in CSS's implicit final layer and beat every Tailwind utility
-   regardless of specificity -- that's what broke nav spacing site-wide
-   in the first staging deploy (2026-07-31). See ds-layer.css. */
-@layer ds, theme, base, components, utilities;
+/* Register cascade layer order explicitly.
+   `ds` sits AFTER base, BEFORE utilities:
+   - After base: Tailwind's own preflight (@layer base) resets margin/etc
+     to 0 on every element via `*`. DS component classes like .wrap
+     (margin:0 auto) and .log-row need to beat that reset -- putting `ds`
+     before `base`, as the first version of this fix did, meant Tailwind's
+     blanket reset silently overrode every DS component rule regardless of
+     specificity (cascade layers ignore specificity across layers). That
+     broke the .wrap centering on every DS-ported page even after the nav
+     fix landed (2026-07-31, second pass).
+   - Before utilities: so Tailwind utility classes (space-x-6, gap-*, etc,
+     used by the shared Header/Footer) still always win over anything in
+     `ds` -- that's what the nav spacing fix actually depends on. */
+@layer theme, base, ds, components, utilities;
 
 @import "tailwindcss";
 
