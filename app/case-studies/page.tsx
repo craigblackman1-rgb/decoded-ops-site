@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Wrench, Package, ShoppingBag, Dumbbell } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
-// Target keyword: "decoded ops case studies" (brand/trust — low volume, supports commercial pages rather than ranking independently)
 export const metadata: Metadata = {
   title: 'Client Work | Decoded Ops',
   description: 'Live engagements — what I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
@@ -24,36 +23,36 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    icon: Wrench,
     name: 'Hanicks',
     sector: 'Heating spares & eCommerce',
     desc: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
     href: '/case-studies/hanicks',
     status: 'Live engagement',
+    pull: '164,752 imported, 77% matched, 11,064 live',
   },
   {
-    icon: Package,
     name: 'TackleBag',
     sector: 'Branded apparel & decoration',
     desc: 'Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data straight into their ERP implementation.',
     href: '/case-studies/tacklebag',
     status: 'In Deliver',
+    pull: '9 supplier feeds automated, projected 20–40 hrs/week saved',
   },
   {
-    icon: ShoppingBag,
     name: 'Cobra Workwear',
     sector: 'Workwear',
     desc: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
     href: '/case-studies/cobra-workwear',
     status: 'Post-audit',
+    pull: 'B2B ordering portal and ERP evaluation, architecture and vendor brief',
   },
   {
-    icon: Dumbbell,
     name: 'Eternal Fitness',
     sector: 'Health & fitness (clinical populations)',
     desc: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for a 1-to-1 personal training studio.',
     href: '/case-studies/eternal-fitness',
     status: 'In build',
+    pull: 'Full site rebuild and an AI-assisted training plan tool',
   },
 ];
 
@@ -64,56 +63,103 @@ export default function CaseStudiesPage() {
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Client Work', url: 'https://decodedops.co.uk/case-studies' },
       ]} />
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Client Work</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            What I&apos;m actually building right now
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed">
-            Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
-          </p>
-        </div>
-      </section>
 
-      <section className="py-16 lg:py-20">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6">
-            {cases.map((c) => {
-              const Icon = c.icon;
-              return (
-                <Link key={c.href} href={c.href} className="group p-8 rounded-2xl border border-[#8ECAE6]/40 bg-white hover:border-[#219EBC]/40 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center group-hover:bg-[#219EBC]/20 transition-colors">
-                      <Icon size={24} className="text-[#219EBC]" />
-                    </div>
-                    <span className="text-xs font-semibold text-[#219EBC] uppercase tracking-wide">{c.status}</span>
+      <style>{`
+        .log-list { display: flex; flex-direction: column; gap: 16px; }
+        .log-row {
+          display: flex; align-items: center; gap: 24px;
+          padding: 24px 28px;
+          background: var(--do-surface-raised);
+          border: 1px solid var(--do-border-subtle);
+          border-radius: var(--do-radius-xl);
+          text-decoration: none; color: inherit;
+          transition: border-color var(--do-duration-normal), box-shadow var(--do-duration-normal);
+        }
+        .log-row:hover {
+          border-color: var(--do-border-strong);
+          box-shadow: var(--do-shadow-md);
+        }
+        .log-main { flex: 1; min-width: 0; }
+        .log-main h3 { margin-bottom: 4px; }
+        .log-sector {
+          font-size: var(--do-text-xs);
+          letter-spacing: var(--do-tracking-wide);
+          text-transform: uppercase;
+          color: color-mix(in srgb, var(--do-prussian-blue) 50%, transparent);
+          margin-bottom: 8px;
+        }
+        .log-desc {
+          font-size: var(--do-text-sm);
+          color: color-mix(in srgb, var(--do-prussian-blue) 74%, transparent);
+          margin-bottom: 0; line-height: var(--do-leading-relaxed);
+        }
+        .log-pull {
+          flex-shrink: 0; text-align: right; max-width: 260px;
+          font-family: var(--do-font-heading);
+          font-size: var(--do-text-lg);
+          font-weight: var(--do-weight-bold);
+          color: var(--do-text-primary);
+        }
+        .log-arrow {
+          flex-shrink: 0;
+          color: var(--do-cerulean);
+          transition: transform var(--do-duration-normal);
+        }
+        .log-row:hover .log-arrow { transform: translateX(4px); }
+        @media(max-width: 760px) {
+          .log-row { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px 22px; }
+          .log-pull { text-align: left; max-width: none; font-size: var(--do-text-base); }
+        }
+      `}</style>
+
+      <main>
+        <section className="g-off">
+          <div className="wrap">
+            <div style={{ maxWidth: '740px', margin: '0 auto' }}>
+              <span className="eyebrow">Client Work</span>
+              <h1>What I&apos;m actually building right now</h1>
+              <p className="lede">
+                Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="wrap">
+            <div className="log-list">
+              {cases.map((c) => (
+                <Link key={c.href} href={c.href} className="log-row">
+                  <div className="log-main">
+                    <h3>{c.name}</h3>
+                    <p className="log-sector">{c.sector} · {c.status}</p>
+                    <p className="log-desc">{c.desc}</p>
                   </div>
-                  <h2 className="text-xl font-bold text-[#023047] mb-1 group-hover:text-[#219EBC] transition-colors">{c.name}</h2>
-                  <p className="text-xs text-[#023047]/50 mb-3 uppercase tracking-wide">{c.sector}</p>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed mb-4">{c.desc}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#219EBC] group-hover:text-[#023047] transition-colors">
-                    Read more <ArrowRight size={14} />
-                  </span>
+                  <div className="log-pull">{c.pull}</div>
+                  <ArrowRight size={18} className="log-arrow" />
                 </Link>
-              );
-            })}
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Want to talk about your operation?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
-              Every engagement above started the same way — a Clarity Audit to find out what was actually going on before anything got built or implemented.
-            </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-              Book a free discovery call <ArrowRight size={18} />
-            </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+        <section className="g-navy">
+          <div className="wrap">
+            <div style={{ maxWidth: '740px', margin: '0 auto' }}>
+              <h3>Want to talk about your operation?</h3>
+              <p className="lede">
+                Every engagement above started the same way — a Clarity Audit to find out what was actually going on before anything got built or implemented.
+              </p>
+              <div className="btn-row">
+                <Link href="/contact" className="btn btn--primary">
+                  Book a free discovery call <ArrowRight size={18} />
+                </Link>
+              </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   );
 }
