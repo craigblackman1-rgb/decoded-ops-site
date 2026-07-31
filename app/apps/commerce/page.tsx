@@ -1,0 +1,216 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import '../../design-system/marketing-pages-extra.css';
+
+export const metadata: Metadata = {
+  title: 'Decoded Commerce — Decoded Ops',
+  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation — company accounts, spend limits, approval workflows and quote negotiation.',
+  alternates: { canonical: '/apps/commerce' },
+  openGraph: {
+    type: 'website',
+    title: 'Decoded Commerce — Decoded Ops',
+    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation.',
+    url: 'https://decodedops.co.uk/apps/commerce',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Decoded Commerce — Decoded Ops',
+    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality.',
+  },
+};
+
+export default function CommercePage() {
+  return (
+    <>
+      {/* 1 · HERO SPLIT */}
+      <section className="g-off">
+        <div className="wrap hero-split">
+          <div>
+            <p className="eyebrow">Decoded Commerce &middot; live infrastructure</p>
+            <h1>A storefront that fits how you actually sell.</h1>
+            <div className="hero-body">
+              <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
+                wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
+              <p>It&rsquo;s built on the Medusa B2B starter &mdash; company accounts, spend limits, approval
+                workflows, quote negotiation, order editing, and a full storefront and checkout, all on
+                an open-source core. Real foundations underneath, not a from-scratch build. That&rsquo;s
+                exactly why it prices where it does rather than in the £8,000&ndash;£20,000 bespoke range
+                you&rsquo;ll be quoted elsewhere.</p>
+            </div>
+            <div className="btn-row" style={{ marginTop: 30 }}>
+              <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
+              <Link className="btn btn--ghost btn-arrow" href="#pricing">See what it costs</Link>
+            </div>
+          </div>
+
+          <div className="hero-shot">
+            <div className="evidence evidence--screen">
+              <img src="/images/apps/commerce-plp.png" width={2160} height={3816}
+                   alt="A B2B trade storefront product listing page: decorated garments in a filtered grid with trade pricing shown per account, size and colour facets down the left, and a quote-request action alongside add to basket." />
+              <span className="stamp">decoded commerce &middot; trade storefront</span>
+            </div>
+            <p className="shot-caption">Trade pricing per account, quote requests alongside the basket, and
+              a catalogue that reads from the same data as the warehouse.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 · FEATURES TRIPLET · per tier */}
+      <section className="g-white">
+        <div className="wrap">
+          <p className="eyebrow">What each tier is</p>
+          <h2>Priced on functionality, not on days.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>You pick the tier by what the business needs to do,
+            not by how long I think it&rsquo;ll take me. The scope is written down before anything starts.</p>
+
+          <div className="grid grid--3">
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                     strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2.5" /><path d="M3 9h18" />
+                </svg>
+              </div>
+              <h3>Core</h3>
+              <p className="feature-meta">Single storefront</p>
+              <p>Product catalogue, customer accounts and logins, manual pricing tiers. No approval
+                workflow &mdash; if nobody in your customers&rsquo; businesses needs to sign off an order, you don&rsquo;t
+                need to pay for the machinery that makes them.</p>
+            </div>
+
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                     strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="8" r="3" /><path d="M3 19c0-3 2.7-4.6 6-4.6s6 1.6 6 4.6" />
+                  <path d="M17 9.5h4M17 13.5h4" />
+                </svg>
+              </div>
+              <h3>Standard</h3>
+              <p className="feature-meta">The B2B trade portal shape</p>
+              <p>Adds company accounts with multi-user roles, per-employee spending limits, approval
+                workflows, and quote negotiation. This is what most trade businesses in this sector
+                actually mean when they say they want a trade portal.</p>
+            </div>
+
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                     strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 6h7v5H4zM13 13h7v5h-7z" /><path d="M7.5 11v4.5H13" />
+                </svg>
+              </div>
+              <h3>Extended</h3>
+              <p className="feature-meta">More than one of everything</p>
+              <p>Multi-site storefronts, ERP integration &mdash; Khaos Control sync and similar &mdash; and bespoke
+                checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
+                price.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 · CUSTOM WORK CALLOUT */}
+      <section className="g-navy">
+        <div className="wrap">
+          <p className="eyebrow">Off the tier list</p>
+          <h2>When it&rsquo;s a full rebuild, not a tier.</h2>
+
+          <div className="grid grid--2" style={{ marginTop: 40 }}>
+            <div className="panel">
+              <h3>The worked example</h3>
+              <p>Hanicks: a full migration off WooCommerce, a new storefront, and reintegration back
+                into Khaos Control. That&rsquo;s scoped and quoted like any other full custom build, not read
+                off a tier list.</p>
+            </div>
+            <div className="panel">
+              <h3>How it starts</h3>
+              <p>With a Discovery Day, the same as any rung 3 conversation. Everything on the market
+                goes on the table first, priced, including the options I&rsquo;d expect you to reject &mdash; and
+                the decision stays yours.</p>
+              <p><Link href="/how-i-build" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>How I decide
+                what to build &rarr;</Link></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 · COMPARISON TABLE */}
+      <section className="g-white" id="pricing">
+        <div className="wrap">
+          <p className="eyebrow">What it costs</p>
+          <h2>Confirmed prices, published.</h2>
+
+          <div className="inset">
+            <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. What you sell, who buys
+            it, and how they&rsquo;re allowed to buy it &mdash; settled before the build is quoted.
+          </div>
+
+          <div className="table-wrap">
+            <table className="ds-table">
+              <caption>Decoded Commerce</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Tier</th>
+                  <th scope="col">Implementation</th>
+                  <th scope="col" className="col-star">Monthly</th>
+                  <th scope="col">Scope</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Core</th>
+                  <td><span className="price num">£4,750</span></td>
+                  <td className="col-star"><span className="price num">£450</span>
+                    <span className="price-sub">per month</span></td>
+                  <td className="scope">Single storefront, catalogue, accounts, manual pricing</td>
+                </tr>
+                <tr>
+                  <th scope="row">Standard <span className="star">Most take this</span></th>
+                  <td><span className="price num">£8,500&ndash;£9,500</span></td>
+                  <td className="col-star"><span className="price num">£650&ndash;£750</span>
+                    <span className="price-sub">per month</span></td>
+                  <td className="scope">Company accounts, spend limits, approval workflows, quote
+                    negotiation</td>
+                </tr>
+                <tr>
+                  <th scope="row">Extended</th>
+                  <td><span className="price num">From £15,000</span></td>
+                  <td className="col-star"><span className="price num">From £1,200</span>
+                    <span className="price-sub">per month</span></td>
+                  <td className="scope">Multi-site, ERP integration, bespoke checkout and pricing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="table-foot">Not VAT registered, so there&rsquo;s no VAT to add. A full rebuild like the
+            Hanicks migration isn&rsquo;t on this table on purpose &mdash; that&rsquo;s scoped separately.</p>
+
+          <div className="notice">
+            <p className="notice-tag">Founding-client terms</p>
+            <h3>No client has taken first delivery of the packaged product yet.</h3>
+            <p>Cobra Workwear and the Hanicks migration are real work, but nobody has yet bought Decoded
+              Commerce as a tiered product. Until that happens it sells at the rates above with the
+              first six months of support waived, in exchange for accepting that some features arrive
+              during the engagement and agreeing to be a named reference.</p>
+            <p>Stated plainly, because you&rsquo;d find out anyway &mdash; and you should be able to price it in
+              before you decide, not after.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 · CTA STRIP */}
+      <section className="g-off cta-strip">
+        <div className="wrap" style={{ maxWidth: 760 }}>
+          <h2>Talk about your storefront.</h2>
+          <p className="lede">An hour on what you sell and who buys it. If a tier fits, I&rsquo;ll name it. If
+            what you actually need is a migration, I&rsquo;ll say that instead of selling you a tier.</p>
+          <div className="btn-row">
+            <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
+            <Link className="btn btn--ghost btn-arrow" href="/apps">See the other systems</Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
