@@ -37,75 +37,82 @@ const schema = {
 
 export default function TackleBagCaseStudyPage() {
   return (
-    <main>
-      <JsonLd data={schema} />
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— In Deliver · Branded Apparel &amp; Decoration</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            TackleBag: building the data foundation before the ERP goes in
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed">
-            TackleBag came in for a Clarity Audit. What it found moved straight into a Deliver engagement, with a Stock Control module now doing the groundwork their eventual Khaos Control implementation would otherwise have to do the hard way.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">The problem</h2>
-          <p className="text-[#023047]/80 leading-relaxed mb-8">
-            Stock and SKU data was spread across spreadsheets and manual processes, with no single source of truth for bin locations or supplier feeds. That's a normal starting point for a decorated goods business at this scale, but it's exactly the kind of mess that gets carried straight into a new ERP if nobody deals with it first. Khaos Control implementation typically starts once the software's in, with data prep left to the client to sort out on the way.
-          </p>
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">What we're building</h2>
-          <div className="space-y-4 mb-8">
-            {[
-              'A Stock Control module with SKU standards and bin locations built in, so the data has a proper home before the ERP arrives',
-              'Direct data ports from the module into Khaos Control once implementation starts — no manual re-entry, no re-cleaning the same data twice',
-              'Supplier feed sanitisation built into the module, replacing spreadsheets that were never designed to hold this much detail reliably',
-              'A module that keeps running after Khaos Control goes live — the ERP doesn\'t clean incoming supplier data on its own, this does',
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="text-[#023047]/80 leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 mb-8">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">Why this order matters</h3>
-            <p className="text-[#023047]/80 leading-relaxed">
-              Khaos Control implementation is where the real project cost sits. Every hour spent cleaning and standardising data before that starts is an hour that doesn't get spent firefighting during implementation. The module isn't a stopgap that gets thrown away when the ERP lands. It's the thing doing the job the ERP was never going to do well on its own.
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">Status</h2>
-          <p className="text-[#023047]/80 leading-relaxed mb-8">
-            Active Deliver engagement, following a completed Clarity Audit. The Stock Control module is in build, ahead of the Khaos Control implementation it's designed to feed.
-          </p>
-
-          <div className="p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Recognise this pattern?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
-              If your stock data is spread across spreadsheets and you're eyeing an ERP, a Clarity Audit is the fastest way to find out what's actually going on before you commit to anything.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Book a free discovery call <ArrowRight size={18} />
-              </Link>
-              <Link href="/case-studies" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                See other client work
-              </Link>
+    <>
+      <style>{`.article-body{max-width:740px;margin:0 auto}`}</style>
+      <main>
+        <JsonLd data={schema} />
+        <section className="g-off">
+          <div className="wrap">
+            <div className="article-body">
+              <span className="eyebrow">In Deliver · Branded Apparel &amp; Decoration</span>
+              <h1>TackleBag: building the data foundation before the ERP goes in</h1>
+              <p className="lede">
+                TackleBag came in for a Clarity Audit. What it found moved straight into a Deliver engagement, with a Stock Control module now doing the groundwork their eventual Khaos Control implementation would otherwise have to do the hard way.
+              </p>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
+        </section>
 
-        </div>
-      </section>
-    </main>
+        <section>
+          <div className="wrap">
+            <div className="article-body">
+
+              <h2>The problem</h2>
+              <p>
+                Stock and SKU data was spread across spreadsheets and manual processes, with no single source of truth for bin locations or supplier feeds. That&apos;s a normal starting point for a decorated goods business at this scale, but it&apos;s exactly the kind of mess that gets carried straight into a new ERP if nobody deals with it first. Khaos Control implementation typically starts once the software&apos;s in, with data prep left to the client to sort out on the way.
+              </p>
+
+              <h2>What we&apos;re building</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+                {[
+                  'A Stock Control module with SKU standards and bin locations built in, so the data has a proper home before the ERP arrives',
+                  'Direct data ports from the module into Khaos Control once implementation starts — no manual re-entry, no re-cleaning the same data twice',
+                  'Supplier feed sanitisation built into the module, replacing spreadsheets that were never designed to hold this much detail reliably',
+                  'A module that keeps running after Khaos Control goes live — the ERP doesn\'t clean incoming supplier data on its own, this does',
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ padding: '32px', borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: '32px' }}>
+                <h3>Why this order matters</h3>
+                <p>
+                  Khaos Control implementation is where the real project cost sits. Every hour spent cleaning and standardising data before that starts is an hour that doesn&apos;t get spent firefighting during implementation. The module isn&apos;t a stopgap that gets thrown away when the ERP lands. It&apos;s the thing doing the job the ERP was never going to do well on its own.
+                </p>
+              </div>
+
+              <h2>Status</h2>
+              <p style={{ marginBottom: '32px' }}>
+                Active Deliver engagement, following a completed Clarity Audit. The Stock Control module is in build, ahead of the Khaos Control implementation it&apos;s designed to feed.
+              </p>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="g-navy">
+          <div className="wrap">
+            <div className="article-body">
+              <h3>Recognise this pattern?</h3>
+              <p className="lede">
+                If your stock data is spread across spreadsheets and you&apos;re eyeing an ERP, a Clarity Audit is the fastest way to find out what&apos;s actually going on before you commit to anything.
+              </p>
+              <div className="btn-row">
+                <Link href="/contact" className="btn btn--primary">
+                  Book a free discovery call <ArrowRight size={18} />
+                </Link>
+                <Link href="/case-studies" className="btn btn--outline">
+                  See other client work
+                </Link>
+              </div>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
