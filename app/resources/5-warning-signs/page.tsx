@@ -62,62 +62,58 @@ const signs = [
 export default function FiveWarningSignsPage() {
   return (
     <main>
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Free Resource</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            5 Warning Signs Your Systems Are Holding You Back
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">— Free resource</span>
+          <h1>5 warning signs your systems are holding you back</h1>
+          <p className="lede">
             Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses — not vendor theory. If two or more of these sound familiar, it's worth a closer look.
           </p>
         </div>
       </section>
 
-      <section className="py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
 
-          <div className="space-y-12 mb-16">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 48, marginBottom: 64 }}>
             {signs.map((sign, i) => (
               <div key={i}>
-                <h2 className="text-2xl font-bold text-[#023047] mb-4">{sign.title}</h2>
-                <p className="text-[#023047]/80 leading-relaxed">{sign.body}</p>
+                <h2>{sign.title}</h2>
+                <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>{sign.body}</p>
               </div>
             ))}
           </div>
 
-          <div className="p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 mb-16">
-            <h2 className="text-xl font-bold text-[#023047] mb-4">What I'm doing about this right now</h2>
-            <p className="text-[#023047]/80 leading-relaxed">
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+            <h2>What I'm doing about this right now</h2>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
               These aren't hypothetical scenarios. I'm currently running Deliver engagements with clients tackling exactly this — building the data foundation and connector work before their ERP goes live, not after, and putting a Process Register in place so operational knowledge doesn't sit in one person's head. It's the same approach on every engagement, whatever the sector.
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30 mb-16">
-            <div className="flex gap-4 items-start mb-4">
-              <CheckCircle2 size={22} className="flex-shrink-0 mt-1 text-[#FB8500]" />
-              <p className="text-[#023047]/80 leading-relaxed">
-                <strong className="text-[#023047]">The 3× Clarity Guarantee:</strong> if a Clarity Audit doesn't identify at least 3× the fee in recoverable cost or lost revenue, you get a full refund. No conditions. No questions.
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginBottom: 64 }}>
+            <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+              <CheckCircle2 size={22} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-orange)' }} />
+              <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
+                <strong style={{ color: 'var(--do-text-primary)' }}>The 3× Clarity Guarantee:</strong> if a Clarity Audit doesn't identify at least 3× the fee in recoverable cost or lost revenue, you get a full refund. No conditions. No questions.
               </p>
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl bg-[#023047]">
-            <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Recognise two or more of these?</h3>
-            <p className="text-[#8ECAE6] leading-relaxed mb-6">
+          <div className="g-navy" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+            <h3>Recognise two or more of these?</h3>
+            <p style={{ marginBottom: 24 }}>
               A Clarity Audit finds where the cost is hiding, quantifies it, and gives you a specific, costed plan to fix it — in plain English, with no vendor agenda.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
+              <Link href="/contact" className="btn btn--primary">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+              <Link href="/clarity" className="btn btn--outline">
                 See what a Clarity Audit covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

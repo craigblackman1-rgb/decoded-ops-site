@@ -49,81 +49,95 @@ export function ContactClient() {
     }
   };
 
+  const inputClass = {
+    width: '100%' as const,
+    padding: '12px 16px',
+    borderRadius: 'var(--do-radius-lg)',
+    border: '1px solid var(--do-border-subtle)',
+    background: 'var(--do-white)',
+    color: 'var(--do-text-primary)',
+    fontSize: 'var(--do-text-sm)',
+    fontFamily: 'var(--do-font-body)',
+    outline: 'none',
+    transition: 'border-color 0.2s, box-shadow 0.2s',
+  };
+
+  const inputDisabled = { ...inputClass, opacity: 0.5, cursor: 'not-allowed' };
+
   return (
     <>
       {/* HERO */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="g-off">
+        <div className="wrap">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Get in touch</span>
-              </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                Start with a free<br />
-                <span className="text-[#219EBC]">60-minute call.</span>
-              </h1>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
+              <span className="eyebrow" style={{ marginBottom: 22 }}>— Get in touch</span>
+              <h1 className="h1">Start with a free <em>60-minute call.</em></h1>
+              <p className="lede">
                 No sales pitch. No obligation. A direct conversation about your business, what&apos;s frustrating you, and whether there&apos;s something I can help with.
               </p>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors text-sm mb-6"
-              >
-                <Calendar size={16} />
-                Book a call directly <ArrowRight size={16} />
-              </a>
-              <div className="space-y-4">
-                <a href="mailto:craig@decodedops.co.uk" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center group-hover:bg-[#219EBC] transition-colors">
-                    <Mail size={20} className="text-[#219EBC] group-hover:text-white transition-colors" />
+              <div style={{ marginTop: 24, marginBottom: 24 }}>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--primary"
+                  style={{ width: '100%' }}
+                >
+                  <Calendar size={16} />
+                  Book a call directly <ArrowRight size={16} />
+                </a>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <a href="mailto:craig@decodedops.co.uk" style={{ display: 'flex', gap: 16, alignItems: 'center', textDecoration: 'none' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Mail size={20} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
                   <div>
-                    <div className="text-xs text-[#023047]/70 mb-0.5">Email</div>
-                    <div className="font-semibold text-[#023047] group-hover:text-[#219EBC] transition-colors">craig@decodedops.co.uk</div>
+                    <div style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)', marginBottom: 2 }}>Email</div>
+                    <div style={{ fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>craig@decodedops.co.uk</div>
                   </div>
                 </a>
-                <a href="tel:+447735620603" className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center group-hover:bg-[#219EBC] transition-colors">
-                    <Phone size={20} className="text-[#219EBC] group-hover:text-white transition-colors" />
+                <a href="tel:+447735620603" style={{ display: 'flex', gap: 16, alignItems: 'center', textDecoration: 'none' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Phone size={20} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
                   <div>
-                    <div className="text-xs text-[#023047]/70 mb-0.5">Phone</div>
-                    <div className="font-semibold text-[#023047] group-hover:text-[#219EBC] transition-colors">07735 620 603</div>
+                    <div style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)', marginBottom: 2 }}>Phone</div>
+                    <div style={{ fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>07735 620 603</div>
                   </div>
                 </a>
               </div>
             </div>
+
             {/* Form */}
-            <div className="bg-white rounded-2xl border border-[#8ECAE6]/40 shadow-sm p-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <MessageSquare size={12} className="text-[#023047]" />
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">Send a message</span>
+            <div style={{ background: 'var(--do-white)', borderRadius: 'var(--do-radius-2xl)', border: '1px solid var(--do-border-subtle)', boxShadow: 'var(--do-shadow-sm)', padding: 32 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 20%, transparent)', marginBottom: 24 }}>
+                <MessageSquare size={12} style={{ color: 'var(--do-text-primary)' }} />
+                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-text-primary)' }}>Send a message</span>
               </div>
 
               {formState.status === 'success' && (
-                <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 flex gap-3">
-                  <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                <div style={{ marginBottom: 24, padding: 16, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-status-success) 12%, transparent)', border: '1px solid color-mix(in srgb, var(--do-status-success) 20%, transparent)', display: 'flex', gap: 12 }}>
+                  <CheckCircle size={20} style={{ color: 'var(--do-success-text)', flexShrink: 0, marginTop: 2 }} />
                   <div>
-                    <p className="text-sm font-medium text-green-900">{formState.message}</p>
-                    <p className="text-xs text-green-700 mt-1">Check your email for confirmation.</p>
+                    <p style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-success-text)', marginBottom: 0 }}>{formState.message}</p>
+                    <p style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-success-text)', marginTop: 4 }}>Check your email for confirmation.</p>
                   </div>
                 </div>
               )}
 
               {formState.status === 'error' && (
-                <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 flex gap-3">
-                  <AlertCircle size={20} className="text-red-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium text-red-900">{formState.message}</p>
+                <div style={{ marginBottom: 24, padding: 16, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-status-danger) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-status-danger) 20%, transparent)', display: 'flex', gap: 12 }}>
+                  <AlertCircle size={20} style={{ color: 'var(--do-danger-text)', flexShrink: 0, marginTop: 2 }} />
+                  <p style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-danger-text)', marginBottom: 0 }}>{formState.message}</p>
                 </div>
               )}
 
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div className="grid sm:grid-cols-2 gap-4">
+              <form style={{ display: 'flex', flexDirection: 'column', gap: 16 }} onSubmit={handleSubmit}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                   <div>
-                    <label className="block text-sm font-medium text-[#023047] mb-1.5">Your name</label>
+                    <label style={{ display: 'block', fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-primary)', marginBottom: 6 }}>Your name</label>
                     <input
                       type="text"
                       name="name"
@@ -132,11 +146,13 @@ export function ContactClient() {
                       placeholder="Jane Smith"
                       required
                       disabled={formState.status === 'loading'}
-                      className="w-full px-4 py-3 rounded-xl border border-[#8ECAE6]/50 bg-[#F8F9FA] text-[#023047] placeholder-[#8ECAE6] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={formState.status === 'loading' ? inputDisabled : inputClass}
+                      onFocus={(e) => { const s = e.target.style; s.borderColor = 'var(--do-cerulean)'; s.boxShadow = '0 0 0 3px color-mix(in srgb, var(--do-cerulean) 12%, transparent)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = ''; e.target.style.boxShadow = ''; }}
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#023047] mb-1.5">Email address</label>
+                    <label style={{ display: 'block', fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-primary)', marginBottom: 6 }}>Email address</label>
                     <input
                       type="email"
                       name="email"
@@ -145,12 +161,14 @@ export function ContactClient() {
                       placeholder="jane@yourcompany.co.uk"
                       required
                       disabled={formState.status === 'loading'}
-                      className="w-full px-4 py-3 rounded-xl border border-[#8ECAE6]/50 bg-[#F8F9FA] text-[#023047] placeholder-[#8ECAE6] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={formState.status === 'loading' ? inputDisabled : inputClass}
+                      onFocus={(e) => { const s = e.target.style; s.borderColor = 'var(--do-cerulean)'; s.boxShadow = '0 0 0 3px color-mix(in srgb, var(--do-cerulean) 12%, transparent)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = ''; e.target.style.boxShadow = ''; }}
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#023047] mb-1.5">Your business</label>
+                  <label style={{ display: 'block', fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-primary)', marginBottom: 6 }}>Your business</label>
                   <input
                     type="text"
                     name="company"
@@ -159,11 +177,13 @@ export function ContactClient() {
                     placeholder="What you do, roughly how big you are"
                     required
                     disabled={formState.status === 'loading'}
-                    className="w-full px-4 py-3 rounded-xl border border-[#8ECAE6]/50 bg-[#F8F9FA] text-[#023047] placeholder-[#8ECAE6] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition-all text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={formState.status === 'loading' ? inputDisabled : inputClass}
+                    onFocus={(e) => { const s = e.target.style; s.borderColor = 'var(--do-cerulean)'; s.boxShadow = '0 0 0 3px color-mix(in srgb, var(--do-cerulean) 12%, transparent)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = ''; e.target.style.boxShadow = ''; }}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#023047] mb-1.5">What&apos;s going on</label>
+                  <label style={{ display: 'block', fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-primary)', marginBottom: 6 }}>What&apos;s going on</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -172,13 +192,19 @@ export function ContactClient() {
                     placeholder="Tell me about the situation — the system problems, the operational pain, the decision you're trying to make."
                     required
                     disabled={formState.status === 'loading'}
-                    className="w-full px-4 py-3 rounded-xl border border-[#8ECAE6]/50 bg-[#F8F9FA] text-[#023047] placeholder-[#8ECAE6] focus:outline-none focus:ring-2 focus:ring-[#219EBC] focus:border-transparent transition-all text-sm resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      ...(formState.status === 'loading' ? inputDisabled : inputClass),
+                      resize: 'none' as const,
+                    }}
+                    onFocus={(e) => { const s = e.target.style; s.borderColor = 'var(--do-cerulean)'; s.boxShadow = '0 0 0 3px color-mix(in srgb, var(--do-cerulean) 12%, transparent)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = ''; e.target.style.boxShadow = ''; }}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={formState.status === 'loading'}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn btn--primary"
+                  style={{ width: '100%', opacity: formState.status === 'loading' ? 0.5 : 1, cursor: formState.status === 'loading' ? 'not-allowed' : 'pointer' }}
                 >
                   {formState.status === 'loading' ? (
                     <>
@@ -198,16 +224,14 @@ export function ContactClient() {
       </section>
 
       {/* WHAT TO EXPECT — dark */}
-      <section className="py-20 lg:py-28 bg-[#023047]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— What to expect</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">How the first call works</h2>
-            <p className="text-[#8ECAE6] text-lg">No preparation needed. Just turn up and tell me what&apos;s happening.</p>
+      <section className="g-navy">
+        <div className="wrap">
+          <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+            <span className="eyebrow" style={{ marginBottom: 22 }}>— What to expect</span>
+            <h2 className="h2">How the first call works</h2>
+            <p className="lede">No preparation needed. Just turn up and tell me what&apos;s happening.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid--3">
             {[
               { icon: Clock, title: '60 minutes', desc: "That's all it takes to get a clear view of what's happening and whether I can help. No extended discovery process, no homework to complete." },
               { icon: MessageSquare, title: 'Direct questions', desc: "I'll ask direct questions about your operation, your systems, and the things that are frustrating you. You'll get direct answers back — not a follow-up proposal." },
@@ -215,12 +239,12 @@ export function ContactClient() {
             ].map(item => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="p-6 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-                  <div className="w-10 h-10 rounded-xl bg-[#219EBC]/20 flex items-center justify-center mb-4">
-                    <Icon size={20} className="text-[#219EBC]" />
+                <div key={item.title} className="card">
+                  <div style={{ width: 40, height: 40, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={20} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
-                  <h3 className="text-lg font-bold text-[#F8F9FA] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#8ECAE6] leading-relaxed">{item.desc}</p>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-on-dark)', marginBottom: 8 }}>{item.title}</h3>
+                  <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, lineHeight: 1.75, marginBottom: 0 }}>{item.desc}</p>
                 </div>
               );
             })}

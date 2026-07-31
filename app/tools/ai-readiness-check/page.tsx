@@ -50,62 +50,62 @@ export default function AiReadinessCheckPage() {
 
   return (
     <main>
-      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
-          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">AI Readiness Check</h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your operational foundation first.</p>
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">— Free tool</span>
+          <h1>AI readiness check</h1>
+          <p className="lede">Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your operational foundation first.</p>
         </div>
       </section>
 
-      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
           {!showResults ? (
             <div>
-              <div className="mb-8">
-                <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
+              <div style={{ marginBottom: 32 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 8 }}>
                   <span>Question {currentQ + 1} of {questions.length}</span>
                   <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
-                  <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+                <div style={{ height: 8, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-sky-blue) 30%, transparent)', overflow: 'hidden' }}>
+                  <div style={{ height: '100%', borderRadius: 'var(--do-radius-full)', transition: 'all var(--do-duration-normal)', width: `${(answeredCount / questions.length) * 100}%`, background: 'var(--do-cerulean)' }} />
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
-                <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
-                <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
-                <div className="flex gap-4">
-                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
-                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+              <div className="card">
+                <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 16 }}>Question {currentQ + 1}</div>
+                <h2 style={{ marginBottom: 32 }}>{questions[currentQ].text}</h2>
+                <div style={{ display: 'flex', gap: 16 }}>
+                  <button onClick={() => handleAnswer('yes')} className="btn" style={{ flex: 1, background: 'var(--do-prussian-blue)', color: 'var(--do-text-on-dark)' }}>Yes</button>
+                  <button onClick={() => handleAnswer('no')} className="btn btn--outline" style={{ flex: 1, borderColor: 'var(--do-prussian-blue)', color: 'var(--do-text-primary)' }}>No</button>
                 </div>
               </div>
             </div>
           ) : (
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
-                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+              <div className="card" style={{ textAlign: 'center', marginBottom: 32 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', marginBottom: 24, backgroundColor: `${result.color}20`, border: `1px solid ${result.color}40` }}>
+                  <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', color: result.color }}>{result.label}</span>
                 </div>
-                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <div style={{ fontSize: 'var(--do-text-5xl)', fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-bold)', marginBottom: 16, color: result.color }}>{score}/10</div>
+                <p className="lede" style={{ margin: '0 auto 32px', maxWidth: '38ch', color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>{result.description}</p>
+                <div className="btn-row" style={{ justifyContent: 'center', margin: 0 }}>
+                  <Link href="/contact" className="btn btn--primary">
                     {result.action} <ArrowRight size={18} />
                   </Link>
-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                  <button onClick={reset} className="btn btn--outline">
                     <RotateCcw size={16} /> Try again
                   </button>
                 </div>
               </div>
 
-              <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
-                <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
-                <div className="mt-4 space-y-2">
+              <details className="card">
+                <summary style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', cursor: 'pointer' }}>View your answers</summary>
+                <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {questions.map((q, i) => (
-                    <div key={q.id} className="flex items-start gap-3 text-sm">
-                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
-                      <span className="text-[#023047]/70">{q.text}</span>
+                    <div key={q.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 'var(--do-text-sm)' }}>
+                      <span style={{ marginTop: 2, fontWeight: 'var(--do-weight-bold)', color: answers[i] === 'yes' ? 'var(--do-orange)' : 'var(--do-cerulean)' }}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+                      <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>{q.text}</span>
                     </div>
                   ))}
                 </div>
