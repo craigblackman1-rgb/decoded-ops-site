@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import { SectorPage } from '@/components/SectorPage';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { LabelsPackagingSchematic } from '@/components/schematics/sectors/LabelsPackagingSchematic';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
+import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
   title: 'Labels & Packaging Technology | Decoded Ops',
@@ -31,35 +34,146 @@ const sectorSchema = {
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
+const tagline = 'Variable data printing and compliance labelling ||requires operational precision most systems can\'t deliver.||';
+const parts = tagline.split('||');
+
+const challenges = [
+  { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs — and ensuring the right version is always in production — is a critical operational challenge." },
+  { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
+  { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration — and doing it without errors — requires product data management that most businesses manage in spreadsheets." },
+  { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up — and maintaining it — is a specialist operational challenge." },
+];
+
+const whatIdo = [
+  'Audit your specification and version management process across your label SKU range',
+  'Review your variable data workflow from file intake through to press-ready output',
+  'Map substrate and press configuration management for accuracy and efficiency',
+  'Assess your customer integration capability and EDI readiness',
+  'Identify where compliance risk is sitting in your current processes',
+  'Recommend systems suited to the specific demands of short-run variable data label production',
+];
+
+const route = sectorRouting['labels-packaging'];
+
 export default function LabelsPackagingPage() {
   return (
     <>
       <JsonLd data={sectorSchema} />
-      <SectorPage
-      sector="Labels & packaging"
-      tagline="Variable data printing and compliance labelling ||requires operational precision most systems can't deliver.||"
-      intro="Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times."
-      heroGraphic={<LabelsPackagingSchematic />}
-      challenges={[
-        { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs — and ensuring the right version is always in production — is a critical operational challenge." },
-        { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
-        { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration — and doing it without errors — requires product data management that most businesses manage in spreadsheets." },
-        { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up — and maintaining it — is a specialist operational challenge." },
-      ]}
-      whatIdo={[
-        'Audit your specification and version management process across your label SKU range',
-        'Review your variable data workflow from file intake through to press-ready output',
-        'Map substrate and press configuration management for accuracy and efficiency',
-        'Assess your customer integration capability and EDI readiness',
-        'Identify where compliance risk is sitting in your current processes',
-        'Recommend systems suited to the specific demands of short-run variable data label production',
-      ]}
-      cta="Understand the operational risk and cost in your labels business"
-    
-      slug="labels-packaging"
-      targetService={sectorRouting['labels-packaging'].targetService}
-      relatedProblems={sectorRouting['labels-packaging'].relatedProblems}
-    />
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk' },
+        { name: 'Sectors', url: 'https://decodedops.co.uk/#sectors' },
+        { name: 'Labels & Packaging', url: 'https://decodedops.co.uk/sectors/labels-packaging' },
+      ]} />
+      {/* HERO SPLIT */}
+      <section className={`g-off ${styles.heroSection}`}>
+        <div className={`wrap ${styles.heroSplit}`}>
+          <div>
+            <span className="eyebrow">Sector · labels & packaging</span>
+            <h1>
+              {parts.map((p, i) =>
+                i % 2 === 0
+                  ? <span key={i}>{p}</span>
+                  : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+              )}
+            </h1>
+            <div className={styles.heroBody}>
+              <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times.</p>
+            </div>
+            <div className="btn-row">
+              <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
+            <LabelsPackagingSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {challenges.map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT I DO */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {whatIdo.map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CROSS-LINKS */}
+      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0)) && (
+        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+          <div className="wrap">
+            <div className="grid grid--2">
+              {route.targetService && (
+                <div className="card" style={{ background: 'var(--do-surface-dark)', color: 'var(--do-text-on-dark)' }}>
+                  <span className="kicker" style={{ color: 'var(--do-amber)' }}>The work in this sector</span>
+                  <h3 style={{ fontSize: 'var(--do-text-xl)', margin: '8px 0' }}>{route.targetService.label}</h3>
+                  <p style={{ marginBottom: '20px' }}>{route.targetService.anchor}</p>
+                  <Link href={route.targetService.href} style={{ color: 'var(--do-amber)', fontWeight: 'var(--do-weight-semibold)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    See how it works <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                </div>
+              )}
+              {route.relatedProblems && route.relatedProblems.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Most common in labels & packaging</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedProblems.map((p) => (
+                      <li key={p.href} style={{ marginBottom: '10px' }}>
+                        <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA STRIP */}
+      <section className="g-off">
+        <div className={`wrap ${styles.centred}`}>
+          <h2>Book a free discovery call.</h2>
+          <div className="hair" />
+          <p className="lede">The audit starts with a free 60-minute call. No obligation. Just a conversation about what&apos;s happening in your business.</p>
+          <div className="btn-row">
+            <Link className="btn btn--primary" href="/contact">Book a free discovery call <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link className="btn btn--outline" href="/clarity">See how a Discovery Day works <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
