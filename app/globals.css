@@ -1,3 +1,10 @@
+/* Register cascade layer order explicitly, ds first (lowest priority).
+   Without this, the DS marketing stylesheets (unlayered, imported below)
+   would sit in CSS's implicit final layer and beat every Tailwind utility
+   regardless of specificity -- that's what broke nav spacing site-wide
+   in the first staging deploy (2026-07-31). See ds-layer.css. */
+@layer ds, theme, base, components, utilities;
+
 @import "tailwindcss";
 
 /**

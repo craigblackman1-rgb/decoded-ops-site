@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import '../design-system/marketing-pages-extra.css';
 
 export const metadata: Metadata = {
   title: 'How I build — Decoded Ops',

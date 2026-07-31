@@ -1,0 +1,18 @@
+/* Wraps the canonical design-system stylesheets in the `ds` cascade layer
+   (declared in globals.css, ordered before Tailwind's theme/base/components/
+   utilities). This is an integration fix local to this Next.js app -- the
+   canonical files themselves (ds-marketing.css, ds-plates.css,
+   colors_and_type.css) are untouched and stay correct for the standalone
+   mockup pages they were built for, which have no Tailwind to conflict
+   with. Do not edit those files to work around this; edit this wrapper. */
+
+/* ds-marketing.css pulls in colors_and_type.css itself via its own
+   @import -- not repeated here, per the existing note in layout.tsx about
+   avoiding a duplicated token file. That nested import inherits this
+   layer() assignment, per the CSS Cascade Layers spec (an @import with
+   no layer name, nested inside content already assigned to a layer,
+   becomes an anonymous sub-layer within it -- it does not escape to the
+   top-level unlayered scope). */
+@import url('./ds-marketing.css') layer(ds);
+@import url('./ds-plates.css') layer(ds);
+@import url('./marketing-pages-extra.css') layer(ds);

@@ -3,16 +3,16 @@ import Script from 'next/script';
 import { Outfit, DM_Sans } from 'next/font/google';
 import './globals.css';
 // Design-system sheets (copied verbatim from
-// D:\apps\design-systems\ds-decoded-ops-fractional-cto-ops-design-system\).
-// Imported AFTER globals.css so canonical DS tokens win the cascade over
-// this repo's older `--do-*` token bridge in globals.css where the two
-// disagree (see the import-order note in the Lane 0 report). Do not import
-// colors_and_type.css separately here — ds-marketing.css already
-// `@import url('colors_and_type.css')`s it (relative, resolved by Next's
-// CSS pipeline since both files live in app/design-system/); a second
-// direct import would duplicate the whole token file in the CSS output.
-import './design-system/ds-marketing.css';
-import './design-system/ds-plates.css';
+// D:\apps\design-systems\ds-decoded-ops-fractional-cto-ops-design-system\),
+// imported through ds-layer.css which assigns them to the `ds` cascade
+// layer registered in globals.css (ordered before Tailwind's own layers).
+// Importing them unlayered, as the first staging deploy did, made every
+// DS rule beat every Tailwind utility regardless of specificity -- CSS
+// cascade layers give unlayered declarations top priority over ANY named
+// layer, full stop. That broke nav spacing and anything else relying on
+// Tailwind margin/gap utilities, site-wide, not just on the pages this
+// work order touched. Fixed 2026-07-31. Do not revert to a plain import.
+import './design-system/ds-layer.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
