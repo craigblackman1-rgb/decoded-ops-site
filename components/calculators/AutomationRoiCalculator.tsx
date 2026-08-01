@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import './calculators.css';
 
 export function AutomationRoiCalculator() {
   const [hoursPerWeek, setHoursPerWeek] = useState<number>(5);
@@ -37,27 +38,22 @@ export function AutomationRoiCalculator() {
 
   const fmt = (n: number) => `£${n.toLocaleString('en-GB')}`;
 
-  const savingColor = (n: number) => {
-    if (n > 0) return '#4ade80';
-    if (n < 0) return '#f87171';
-    return 'white';
+  const savingClass = (n: number) => {
+    if (n > 0) return 'calc-stat-value--positive';
+    if (n < 0) return 'calc-stat-value--negative';
+    return '';
   };
 
-  const inputClass =
-    'w-full border border-gray-200 rounded-lg px-4 py-3 text-[#023047] focus:outline-none focus:ring-2 focus:ring-[#219EBC]';
-  const labelClass =
-    'block text-sm font-medium text-gray-700 mb-1 font-[family-name:var(--font-dm-sans)]';
-
   return (
-    <div className="lg:grid lg:grid-cols-2 gap-8">
+    <div className="calc-grid">
       {/* Left column — inputs */}
       <div>
-        <h2 className="font-[family-name:var(--font-outfit)] text-[#023047] font-semibold text-lg mb-4">
+        <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
           Your Numbers
         </h2>
 
-        <div className="mb-4">
-          <label htmlFor="hoursPerWeek" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="hoursPerWeek" className="calc-label">
             Hours per week on this manual task
           </label>
           <input
@@ -66,12 +62,12 @@ export function AutomationRoiCalculator() {
             min={0}
             value={hoursPerWeek}
             onChange={(e) => setHoursPerWeek(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="staffCount" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="staffCount" className="calc-label">
             Number of staff doing it
           </label>
           <input
@@ -80,12 +76,12 @@ export function AutomationRoiCalculator() {
             min={0}
             value={staffCount}
             onChange={(e) => setStaffCount(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="hourlyRate" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="hourlyRate" className="calc-label">
             Average hourly rate (£)
           </label>
           <input
@@ -94,12 +90,12 @@ export function AutomationRoiCalculator() {
             min={0}
             value={hourlyRate}
             onChange={(e) => setHourlyRate(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="setupCost" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="setupCost" className="calc-label">
             One-off automation setup cost (£)
           </label>
           <input
@@ -108,15 +104,15 @@ export function AutomationRoiCalculator() {
             min={0}
             value={setupCost}
             onChange={(e) => setSetupCost(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
-          <p className="text-xs text-gray-400 mt-1 font-[family-name:var(--font-dm-sans)]">
+          <p className="calc-hint">
             (Include all implementation and integration costs)
           </p>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="monthlyMaintenance" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="monthlyMaintenance" className="calc-label">
             Monthly automation maintenance cost (£)
           </label>
           <input
@@ -125,26 +121,23 @@ export function AutomationRoiCalculator() {
             min={0}
             value={monthlyMaintenance}
             onChange={(e) => setMonthlyMaintenance(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
       </div>
 
       {/* Right column — results */}
-      <div className="lg:sticky lg:top-24 mt-8 lg:mt-0">
-        <div className="bg-[#023047] rounded-xl p-6 text-white">
-          <h2 className="font-[family-name:var(--font-outfit)] text-white font-semibold text-lg mb-6">
-            Automation ROI Analysis
-          </h2>
+      <div>
+        <div className="calc-panel">
+          <h2>Automation ROI Analysis</h2>
 
-          {/* Comparison table */}
-          <table className="w-full text-sm mb-6">
+          <table className="calc-table">
             <thead>
-              <tr className="text-white/60 font-[family-name:var(--font-dm-sans)] text-xs border-b border-white/20">
-                <th className="text-left pb-2 font-medium">Year</th>
-                <th className="text-right pb-2 font-medium">Manual Cost</th>
-                <th className="text-right pb-2 font-medium">Auto Cost</th>
-                <th className="text-right pb-2 font-medium">Saving</th>
+              <tr>
+                <th>Year</th>
+                <th>Manual Cost</th>
+                <th>Auto Cost</th>
+                <th>Saving</th>
               </tr>
             </thead>
             <tbody>
@@ -153,14 +146,11 @@ export function AutomationRoiCalculator() {
                 { label: 'Year 2', autoCost: year2AutomationCost, saving: year2Saving },
                 { label: 'Year 3', autoCost: year3AutomationCost, saving: year3Saving },
               ].map(({ label, autoCost, saving }) => (
-                <tr
-                  key={label}
-                  className="font-[family-name:var(--font-dm-sans)] border-b border-white/10"
-                >
-                  <td className="py-2 text-white/80">{label}</td>
-                  <td className="py-2 text-right text-white/80">{fmt(annualManualCost)}</td>
-                  <td className="py-2 text-right text-white/80">{fmt(autoCost)}</td>
-                  <td className="py-2 text-right font-medium" style={{ color: savingColor(saving) }}>
+                <tr key={label}>
+                  <td>{label}</td>
+                  <td>{fmt(annualManualCost)}</td>
+                  <td>{fmt(autoCost)}</td>
+                  <td className={savingClass(saving)} style={{ fontWeight: 600 }}>
                     {fmt(saving)}
                   </td>
                 </tr>
@@ -168,45 +158,30 @@ export function AutomationRoiCalculator() {
             </tbody>
           </table>
 
-          {/* Break-even */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Break-even
-            </p>
+          <div className="calc-stat">
+            <p className="calc-stat-label">Break-even</p>
             {breakEvenMonths !== null ? (
-              <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white">
-                {breakEvenMonths} months
-              </p>
+              <p className="calc-stat-value">{breakEvenMonths} months</p>
             ) : (
-              <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white/50">
-                Not achievable
-              </p>
+              <p className="calc-stat-value calc-stat-value--muted">Not achievable</p>
             )}
           </div>
 
-          {/* 3-Year ROI */}
-          <div className="border-t border-white/20 pt-5 mt-5 mb-6">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              3-YEAR ROI
-            </p>
-            <p
-              className="text-3xl font-bold font-[family-name:var(--font-outfit)]"
-              style={{ color: roiPercent >= 0 ? '#FFB703' : '#f87171' }}
-            >
+          <div className="calc-block-divider">
+            <p className="calc-stat-label">3-YEAR ROI</p>
+            <p className={`calc-stat-value calc-stat-value--large ${roiPercent >= 0 ? 'calc-stat-value--amber' : 'calc-stat-value--negative'}`}>
               {roiPercent}%
             </p>
           </div>
 
-          <hr className="border-white/20 mb-6" />
+          <hr className="calc-divider" style={{ marginTop: -12 }} />
 
-          {/* CTA */}
-          <Link
-            href="/contact"
-            className="block w-full bg-[#FFB703] text-[#023047] font-semibold py-3 rounded-lg text-center font-[family-name:var(--font-dm-sans)] hover:bg-[#e6a603] transition-colors"
-          >
+          <Link href="/contact" className="calc-cta">
             Let&apos;s automate this together →
           </Link>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center text-sm text-[#8ECAE6] hover:text-white font-medium mt-3">Or book a call directly <ArrowRight size={14} className="inline" /></a>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
+            Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+          </a>
         </div>
       </div>
     </div>

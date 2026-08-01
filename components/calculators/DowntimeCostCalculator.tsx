@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import './calculators.css';
 
 export function DowntimeCostCalculator() {
   const [employees, setEmployees] = useState<number>(10);
@@ -18,20 +19,16 @@ export function DowntimeCostCalculator() {
   const totalAnnualCost = annualLabourCost + annualRevenueLoss;
   const totalDowntimeHours = hoursPerOutage * outagesPerYear;
 
-  const inputClass =
-    'w-full border border-gray-200 rounded-lg px-4 py-3 text-[#023047] focus:outline-none focus:ring-2 focus:ring-[#219EBC]';
-  const labelClass = 'block text-sm font-medium text-gray-700 mb-1 font-[family-name:var(--font-dm-sans)]';
-
   return (
-    <div className="lg:grid lg:grid-cols-2 gap-8">
+    <div className="calc-grid">
       {/* Left column — inputs */}
       <div>
-        <h2 className="font-[family-name:var(--font-outfit)] text-[#023047] font-semibold text-lg mb-4">
+        <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
           Your Numbers
         </h2>
 
-        <div className="mb-4">
-          <label htmlFor="employees" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="employees" className="calc-label">
             Employees affected during an outage
           </label>
           <input
@@ -40,12 +37,12 @@ export function DowntimeCostCalculator() {
             min={0}
             value={employees}
             onChange={(e) => setEmployees(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="hourlySalary" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="hourlySalary" className="calc-label">
             Average hourly salary (£)
           </label>
           <input
@@ -54,12 +51,12 @@ export function DowntimeCostCalculator() {
             min={0}
             value={hourlySalary}
             onChange={(e) => setHourlySalary(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="outagesPerYear" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="outagesPerYear" className="calc-label">
             Outages per year
           </label>
           <input
@@ -68,12 +65,12 @@ export function DowntimeCostCalculator() {
             min={0}
             value={outagesPerYear}
             onChange={(e) => setOutagesPerYear(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="hoursPerOutage" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="hoursPerOutage" className="calc-label">
             Average hours per outage
           </label>
           <input
@@ -82,12 +79,12 @@ export function DowntimeCostCalculator() {
             min={0}
             value={hoursPerOutage}
             onChange={(e) => setHoursPerOutage(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="revenuePerHour" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="revenuePerHour" className="calc-label">
             Lost revenue per hour (£) — optional
           </label>
           <input
@@ -96,77 +93,53 @@ export function DowntimeCostCalculator() {
             min={0}
             value={revenuePerHour}
             onChange={(e) => setRevenuePerHour(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
-          <p className="text-xs text-gray-400 mt-1 font-[family-name:var(--font-dm-sans)]">
+          <p className="calc-hint">
             (Leave as 0 if you don&apos;t want to include revenue loss)
           </p>
         </div>
       </div>
 
       {/* Right column — results */}
-      <div className="lg:sticky lg:top-24 mt-8 lg:mt-0">
-        <div className="bg-[#023047] rounded-xl p-6 text-white">
-          <h2 className="font-[family-name:var(--font-outfit)] text-white font-semibold text-lg mb-6">
-            Your Annual Cost of Downtime
-          </h2>
+      <div>
+        <div className="calc-panel">
+          <h2>Your Annual Cost of Downtime</h2>
 
-          {/* Annual Labour Cost */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Annual Labour Cost
-            </p>
-            <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white">
-              £{annualLabourCost.toLocaleString('en-GB')}
-            </p>
+          <div className="calc-stat">
+            <p className="calc-stat-label">Annual Labour Cost</p>
+            <p className="calc-stat-value">£{annualLabourCost.toLocaleString('en-GB')}</p>
           </div>
 
-          {/* Annual Revenue Loss */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Annual Revenue Loss
-            </p>
+          <div className="calc-stat">
+            <p className="calc-stat-label">Annual Revenue Loss</p>
             {revenuePerHour === 0 ? (
-              <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white/50">
-                Not included
-              </p>
+              <p className="calc-stat-value calc-stat-value--muted">Not included</p>
             ) : (
-              <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white">
-                £{annualRevenueLoss.toLocaleString('en-GB')}
-              </p>
+              <p className="calc-stat-value">£{annualRevenueLoss.toLocaleString('en-GB')}</p>
             )}
           </div>
 
-          {/* Total Downtime Hours */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Total Downtime Hours/Year
-            </p>
-            <p className="text-xl font-bold font-[family-name:var(--font-outfit)] text-white">
+          <div className="calc-stat">
+            <p className="calc-stat-label">Total Downtime Hours/Year</p>
+            <p className="calc-stat-value" style={{ fontSize: 'var(--do-text-xl)' }}>
               {totalDowntimeHours.toLocaleString('en-GB')} hours
             </p>
           </div>
 
-          {/* Total Annual Cost */}
-          <div className="border-t border-white/20 pt-5 mt-5 mb-6">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              TOTAL ANNUAL COST
-            </p>
-            <p className="text-3xl font-bold font-[family-name:var(--font-outfit)] text-white">
-              £{totalAnnualCost.toLocaleString('en-GB')}
-            </p>
+          <div className="calc-block-divider">
+            <p className="calc-stat-label">TOTAL ANNUAL COST</p>
+            <p className="calc-stat-value calc-stat-value--large">£{totalAnnualCost.toLocaleString('en-GB')}</p>
           </div>
 
-          <hr className="border-white/20 mb-6" />
+          <hr className="calc-divider" style={{ marginTop: -12 }} />
 
-          {/* CTA */}
-          <Link
-            href="/contact"
-            className="block w-full bg-[#FFB703] text-[#023047] font-semibold py-3 rounded-lg text-center font-[family-name:var(--font-dm-sans)] hover:bg-[#e6a603] transition-colors"
-          >
+          <Link href="/contact" className="calc-cta">
             Talk to Craig about reducing this →
           </Link>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center text-sm text-[#8ECAE6] hover:text-white font-medium mt-3">Or book a call directly <ArrowRight size={14} className="inline" /></a>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
+            Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+          </a>
         </div>
       </div>
     </div>

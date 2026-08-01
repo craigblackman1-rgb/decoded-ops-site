@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import './calculators.css';
 
 export function RtoCalculator() {
   const [revenuePerHour, setRevenuePerHour] = useState<number>(1000);
@@ -22,20 +23,16 @@ export function RtoCalculator() {
   const currentBarPct = (currentRto / maxRto) * 100;
   const targetBarPct = (targetRto / maxRto) * 100;
 
-  const inputClass =
-    'w-full border border-gray-200 rounded-lg px-4 py-3 text-[#023047] focus:outline-none focus:ring-2 focus:ring-[#219EBC]';
-  const labelClass = 'block text-sm font-medium text-gray-700 mb-1 font-[family-name:var(--font-dm-sans)]';
-
   return (
-    <div className="lg:grid lg:grid-cols-2 gap-8">
+    <div className="calc-grid">
       {/* Left column — inputs */}
       <div>
-        <h2 className="font-[family-name:var(--font-outfit)] text-[#023047] font-semibold text-lg mb-4">
+        <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
           Your Numbers
         </h2>
 
-        <div className="mb-4">
-          <label htmlFor="revenuePerHour" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="revenuePerHour" className="calc-label">
             Revenue per hour (£)
           </label>
           <input
@@ -44,12 +41,12 @@ export function RtoCalculator() {
             min={0}
             value={revenuePerHour}
             onChange={(e) => setRevenuePerHour(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="currentRto" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="currentRto" className="calc-label">
             Current recovery time (hours)
           </label>
           <input
@@ -58,12 +55,12 @@ export function RtoCalculator() {
             min={0}
             value={currentRto}
             onChange={(e) => setCurrentRto(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="targetRto" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="targetRto" className="calc-label">
             Target recovery time (hours)
           </label>
           <input
@@ -72,12 +69,12 @@ export function RtoCalculator() {
             min={0}
             value={targetRto}
             onChange={(e) => setTargetRto(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="incidentsPerYear" className={labelClass}>
+        <div className="calc-input-group">
+          <label htmlFor="incidentsPerYear" className="calc-label">
             Major incidents per year
           </label>
           <input
@@ -86,106 +83,74 @@ export function RtoCalculator() {
             min={0}
             value={incidentsPerYear}
             onChange={(e) => setIncidentsPerYear(Number(e.target.value) || 0)}
-            className={inputClass}
+            className="calc-input"
           />
         </div>
       </div>
 
       {/* Right column — results */}
-      <div className="lg:sticky lg:top-24 mt-8 lg:mt-0">
-        <div className="bg-[#023047] rounded-xl p-6 text-white">
-          <h2 className="font-[family-name:var(--font-outfit)] text-white font-semibold text-lg mb-6">
-            Recovery Time Value Analysis
-          </h2>
+      <div>
+        <div className="calc-panel">
+          <h2>Recovery Time Value Analysis</h2>
 
           {/* RTO comparison bars */}
-          <div className="mb-6">
-            {/* Current RTO bar */}
-            <div className="mb-3">
-              <p className="text-xs text-white/60 mb-1 font-[family-name:var(--font-dm-sans)]">Current</p>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 bg-white/10 rounded-full h-3 overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all duration-300"
-                    style={{ width: `${currentBarPct}%`, backgroundColor: '#219EBC' }}
-                  />
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ marginBottom: 12 }}>
+              <p className="calc-stat-label">Current</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div className="calc-bar-track">
+                  <div className="calc-bar-fill" style={{ width: `${currentBarPct}%`, backgroundColor: 'var(--do-cerulean)' }} />
                 </div>
-                <span className="text-xs text-white/80 font-[family-name:var(--font-dm-sans)] w-10 text-right">
+                <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 80%, transparent)', width: 40, textAlign: 'right' }}>
                   {currentRto}h
                 </span>
               </div>
             </div>
 
-            {/* Target RTO bar */}
             <div>
-              <p className="text-xs text-white/60 mb-1 font-[family-name:var(--font-dm-sans)]">Target</p>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 bg-white/10 rounded-full h-3 overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all duration-300"
-                    style={{ width: `${targetBarPct}%`, backgroundColor: '#FFB703' }}
-                  />
+              <p className="calc-stat-label">Target</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div className="calc-bar-track">
+                  <div className="calc-bar-fill" style={{ width: `${targetBarPct}%`, backgroundColor: 'var(--do-amber)' }} />
                 </div>
-                <span className="text-xs text-white/80 font-[family-name:var(--font-dm-sans)] w-10 text-right">
+                <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 80%, transparent)', width: 40, textAlign: 'right' }}>
                   {targetRto}h
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Current Annual Recovery Cost */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Current Annual Recovery Cost
-            </p>
-            <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white">
-              £{currentAnnualCost.toLocaleString('en-GB')}
-            </p>
+          <div className="calc-stat">
+            <p className="calc-stat-label">Current Annual Recovery Cost</p>
+            <p className="calc-stat-value">£{currentAnnualCost.toLocaleString('en-GB')}</p>
           </div>
 
-          {/* Target Annual Recovery Cost */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Target Annual Recovery Cost
-            </p>
-            <p className="text-2xl font-bold font-[family-name:var(--font-outfit)] text-white">
-              £{targetAnnualCost.toLocaleString('en-GB')}
-            </p>
-            <p className="text-xs text-white/50 mt-0.5 font-[family-name:var(--font-dm-sans)]">
+          <div className="calc-stat">
+            <p className="calc-stat-label">Target Annual Recovery Cost</p>
+            <p className="calc-stat-value">£{targetAnnualCost.toLocaleString('en-GB')}</p>
+            <p style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 50%, transparent)', marginTop: 2 }}>
               with improved RTO
             </p>
           </div>
 
-          {/* Annual Saving */}
-          <div className="mb-5">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              Annual Saving
-            </p>
-            <p className="text-2xl font-bold font-[family-name:var(--font-outfit)]" style={{ color: '#FFB703' }}>
-              £{annualSaving.toLocaleString('en-GB')}
-            </p>
+          <div className="calc-stat">
+            <p className="calc-stat-label">Annual Saving</p>
+            <p className="calc-stat-value calc-stat-value--amber">£{annualSaving.toLocaleString('en-GB')}</p>
           </div>
 
-          {/* 3-Year Saving */}
-          <div className="border-t border-white/20 pt-5 mt-5 mb-6">
-            <p className="text-sm text-white/70 mb-1 font-[family-name:var(--font-dm-sans)]">
-              3-YEAR SAVING
-            </p>
-            <p className="text-3xl font-bold font-[family-name:var(--font-outfit)] text-white">
-              £{threeYearSaving.toLocaleString('en-GB')}
-            </p>
+          <div className="calc-block-divider">
+            <p className="calc-stat-label">3-YEAR SAVING</p>
+            <p className="calc-stat-value calc-stat-value--large">£{threeYearSaving.toLocaleString('en-GB')}</p>
           </div>
 
-          <hr className="border-white/20 mb-6" />
+          <hr className="calc-divider" style={{ marginTop: -12 }} />
 
-          {/* CTA */}
-          <Link
-            href="/contact"
-            className="block w-full bg-[#FFB703] text-[#023047] font-semibold py-3 rounded-lg text-center font-[family-name:var(--font-dm-sans)] hover:bg-[#e6a603] transition-colors"
-          >
+          <Link href="/contact" className="calc-cta">
             Get your RTO reviewed →
           </Link>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center text-sm text-[#8ECAE6] hover:text-white font-medium mt-3">Or book a call directly <ArrowRight size={14} className="inline" /></a>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
+            Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+          </a>
         </div>
       </div>
     </div>

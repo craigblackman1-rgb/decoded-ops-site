@@ -1,0 +1,77 @@
+/* Shared styling for the tools/* calculator components (AutomationRoiCalculator,
+   DowntimeCostCalculator, RtoCalculator). All three share one two-column layout:
+   left = plain inputs, right = a sunken navy results panel. Uses --do-* tokens
+   only, no new hex, no component redefinitions of ds-marketing.css's own classes. */
+
+.calc-grid { display: grid; gap: 32px; }
+@media (min-width: 1024px) {
+  .calc-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.calc-input-group { margin-bottom: 16px; }
+.calc-label {
+  display: block; font-size: var(--do-text-sm); font-weight: 600;
+  color: var(--do-text-secondary); margin-bottom: 6px;
+}
+.calc-input {
+  width: 100%; border: 1px solid var(--do-border-subtle); border-radius: var(--do-radius-lg);
+  padding: 12px 16px; color: var(--do-text-primary); background: var(--do-white);
+  font-family: var(--do-font-body);
+}
+.calc-input:focus {
+  outline: none; box-shadow: 0 0 0 2px var(--do-cerulean);
+}
+.calc-hint {
+  font-size: var(--do-text-xs); color: var(--do-text-subtle); margin-top: 4px;
+}
+
+.calc-panel {
+  position: sticky; top: 96px; border-radius: var(--do-radius-xl); padding: 24px;
+  background: var(--do-prussian-blue); color: var(--do-text-on-dark);
+}
+.calc-panel h2 {
+  color: var(--do-text-on-dark); font-weight: 600; font-size: var(--do-text-lg); margin-bottom: 24px;
+}
+.calc-stat { margin-bottom: 20px; }
+.calc-stat-label { font-size: var(--do-text-sm); color: var(--do-sky-blue); margin-bottom: 4px; }
+.calc-stat-value { font-size: var(--do-text-2xl); font-weight: 700; color: var(--do-text-on-dark); }
+.calc-stat-value--muted { color: color-mix(in srgb, var(--do-text-on-dark) 50%, transparent); }
+.calc-stat-value--large { font-size: var(--do-text-3xl); }
+.calc-stat-value--amber { color: var(--do-amber); }
+.calc-stat-value--positive { color: #4ade80; }
+.calc-stat-value--negative { color: #f87171; }
+
+.calc-divider { border: none; border-top: 1px solid color-mix(in srgb, var(--do-text-on-dark) 20%, transparent); margin: 24px 0; }
+.calc-block-divider {
+  border-top: 1px solid color-mix(in srgb, var(--do-text-on-dark) 20%, transparent);
+  padding-top: 20px; margin-top: 20px; margin-bottom: 24px;
+}
+
+.calc-bar-track {
+  flex: 1; background: color-mix(in srgb, var(--do-text-on-dark) 10%, transparent);
+  border-radius: var(--do-radius-full); height: 12px; overflow: hidden;
+}
+.calc-bar-fill { height: 100%; border-radius: var(--do-radius-full); transition: width .3s; }
+
+.calc-table { width: 100%; font-size: var(--do-text-sm); margin-bottom: 24px; border-collapse: collapse; }
+.calc-table thead tr {
+  color: var(--do-sky-blue); font-size: var(--do-text-xs);
+  border-bottom: 1px solid color-mix(in srgb, var(--do-text-on-dark) 20%, transparent);
+}
+.calc-table th { text-align: left; padding-bottom: 8px; font-weight: 500; }
+.calc-table th:not(:first-child) { text-align: right; }
+.calc-table td { padding: 8px 0; color: color-mix(in srgb, var(--do-text-on-dark) 80%, transparent); }
+.calc-table td:not(:first-child) { text-align: right; }
+.calc-table tbody tr { border-bottom: 1px solid color-mix(in srgb, var(--do-text-on-dark) 10%, transparent); }
+
+.calc-cta {
+  display: block; width: 100%; text-align: center; padding: 12px 0;
+  border-radius: var(--do-radius-lg); background: var(--do-amber); color: var(--do-prussian-blue);
+  font-weight: 600; text-decoration: none;
+}
+.calc-cta:hover { background: color-mix(in srgb, var(--do-amber) 90%, black); }
+.calc-secondary-link {
+  display: block; width: 100%; text-align: center; margin-top: 12px;
+  font-size: var(--do-text-sm); color: var(--do-sky-blue); font-weight: 500; text-decoration: none;
+}
+.calc-secondary-link:hover { color: var(--do-text-on-dark); }
