@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -37,82 +37,101 @@ const schema = {
 
 export default function HanicksCaseStudyPage() {
   return (
-    <>
-      <style>{`.article-body{max-width:740px;margin:0 auto}`}</style>
-      <main>
-        <JsonLd data={schema} />
-        <section className="g-off">
-          <div className="wrap">
-            <div className="article-body">
-              <span className="eyebrow">Live Engagement · Heating Spares &amp; eCommerce</span>
-              <h1>Hanicks: ERP implementation, run as one project, not three</h1>
-              <p className="lede">
-                Hanicks sell heating spares through their own website, direct, and Amazon FBA. They&apos;d already chosen Khaos Control as their ERP. What they needed was someone to run the whole thing as a single, coordinated project rather than a set of disconnected workstreams.
-              </p>
+    <main>
+      <JsonLd data={schema} />
+
+      {/* ── 1. HERO ── */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Client work · heating spares &amp; eCommerce</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+            The platform stayed. The layer around it changed.
+          </h1>
+          <p className="text-lg text-[#023047]/70 leading-relaxed max-w-3xl mx-auto">
+            Hanicks is a heating spares business — not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 2. THE NUMBERS ── */}
+      <section className="py-16 lg:py-20 bg-[#023047]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFB703]/15 border border-[#FFB703]/30 mb-4">
+            <span className="text-xs font-semibold text-[#FFB703] tracking-wider uppercase">— The numbers</span>
+          </div>
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#F8F9FA] leading-tight mb-10">
+            Not projected. Not modelled. What actually happened.
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
+            <div>
+              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>164,752</p>
+              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">WooCommerce products imported</p>
+            </div>
+            <div>
+              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>127,135</p>
+              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">matched automatically — a 77% first-run match rate</p>
+            </div>
+            <div>
+              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>11,064</p>
+              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">push-eligible products live to Khaos Control</p>
             </div>
           </div>
-        </section>
 
-        <section>
-          <div className="wrap">
-            <div className="article-body">
+          <p className="text-[#8ECAE6] leading-relaxed max-w-3xl">
+            Also: 2,872 new products and 28 new suppliers identified from a stock-take reconciliation, and 3,844 Amazon ASINs re-optimised ahead of a title-format deadline.
+          </p>
+        </div>
+      </section>
 
-              <h2>The problem</h2>
-              <p>
-                Khaos Control was the right ERP choice, but choosing the software was never the hard part. Amazon FBA has its own inventory and shipping confirmation flows that don&apos;t behave like a normal marketplace channel. Supplier data needed enriching and standardising before it could feed the new system properly. And without someone coordinating the ERP setup, the app build, and the channel automation as one piece of work, this was heading toward three separate projects quietly working against each other.
-              </p>
+      {/* ── 3. THE STORY ── */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
 
-              <h2>What I&apos;m doing</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-                {[
-                  'Acting as project lead across the whole engagement — Khaos Control implementation, the custom app build, and channel automation all run as one plan, not three',
-                  'Building the IBasis App: a custom application that interfaces with suppliers, the ERP, and Amazon, plus reporting that draws directly from accounts',
-                  'Designing the requirements document first, before implementation starts — it protects the project and gives Khaos Control a clear brief to build against',
-                  'Covering Amazon FBA\'s inventory and shipping confirmation flows explicitly in the automation design, rather than treating it like every other channel',
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
-                    <p>{item}</p>
-                  </div>
-                ))}
-              </div>
+          <h2 className="text-2xl font-bold text-[#023047] mb-4">The situation before</h2>
+          <p className="text-[#023047]/70 leading-relaxed mb-8">
+            Product data was scattered across supplier feeds, no consistent SKU matching, no reliable way to know what was actually in stock or where. The business needed a proper ERP, but going into that with dirty data would have meant paying to migrate a mess.
+          </p>
 
-              <div style={{ padding: '32px', borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: '32px' }}>
-                <h3>Why the app comes first, not the ERP</h3>
-                <p>
-                  The instinct is always to wait until the ERP is fully implemented before touching the data problem. That&apos;s backwards. The app doesn&apos;t get replaced when Khaos Control goes live, it keeps running the feeds and connections the ERP was never designed to handle. Data enriched and automated now is worth more than anything even the best ERP can produce from messy source data later.
-                </p>
-              </div>
+          <h2 className="text-2xl font-bold text-[#023047] mb-4">What was done</h2>
+          <p className="text-[#023047]/70 leading-relaxed mb-4">
+            Discovery Day identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+          </p>
+          <p className="text-[#023047]/70 leading-relaxed mb-8">
+            The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+          </p>
 
-              <h2>Status</h2>
-              <p style={{ marginBottom: '32px' }}>
-                Live engagement, in progress. Khaos Control implementation and the IBasis App build are running in parallel, coordinated against a single requirements document.
-              </p>
-
-            </div>
+          <div className="p-6 lg:p-7 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30 mb-8">
+            <h3 className="text-lg font-bold text-[#023047] mb-2">What's still in progress</h3>
+            <p className="text-[#023047]/70 text-sm leading-relaxed">
+              The remaining 23% of unmatched products are a known, visible list, not a hidden gap. They are being worked through rather than papered over.
+            </p>
           </div>
-        </section>
 
-        <section className="g-navy">
-          <div className="wrap">
-            <div className="article-body">
-              <h3>Facing something similar?</h3>
-              <p className="lede">
-                If you&apos;re choosing an ERP and quietly worried about everything around it, a Clarity Audit is where this conversation starts.
-              </p>
-              <div className="btn-row">
-                <Link href="/contact" className="btn btn--primary">
-                  Book a free discovery call <ArrowRight size={18} />
-                </Link>
-                <Link href="/case-studies" className="btn btn--outline">
-                  See other client work
-                </Link>
-              </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
-            </div>
+        </div>
+      </section>
+
+      {/* ── 4. CTA STRIP ── */}
+      <section className="py-16 lg:py-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mb-4">
+            See how the Data App does this.
+          </h2>
+          <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">
+            This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Discovery Day.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+              Book a free discovery call <ArrowRight size={18} />
+            </Link>
+            <Link href="/apps/data-app" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+              See the Data App <ArrowRight size={18} />
+            </Link>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
