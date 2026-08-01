@@ -151,6 +151,56 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ── Blog post template (/blog/[slug]) ── */
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--do-text-sm); font-weight: 700;
+  color: var(--do-text-primary); text-decoration: none; margin-bottom: 26px;
+}
+.back-link:hover { color: var(--do-cerulean); }
+
+.post-header { max-width: 72ch; }
+.post-header .lede { margin: 18px 0 0; max-width: 60ch; }
+
+.post-meta {
+  display: flex; gap: 10px; align-items: center;
+  font-size: var(--do-text-sm); color: var(--do-text-muted); margin-top: 22px;
+}
+.post-meta span:not(:last-child)::after { content: '·'; margin-left: 10px; opacity: .5; }
+
+.prose { max-width: 72ch; margin-inline: auto; }
+
+.post-cta {
+  border-radius: var(--do-radius-2xl); padding: 32px;
+  background: color-mix(in srgb, var(--do-cerulean) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--do-cerulean) 22%, transparent);
+  margin-top: 44px;
+}
+.post-cta h3 { font-size: var(--do-text-lg); margin-bottom: 10px; }
+.post-cta p {
+  color: var(--do-text-secondary); line-height: var(--do-leading-relaxed);
+  margin-bottom: 18px;
+}
+
+.related { margin-top: 48px; }
+.related h3 {
+  font-size: var(--do-text-base); margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--do-border-subtle);
+}
+.related-list a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 14px 0; text-decoration: none; font-size: var(--do-text-sm);
+  font-weight: 600; color: var(--do-text-primary);
+  border-bottom: 1px solid var(--do-border-subtle);
+}
+.related-list a:last-child { border-bottom: 0; }
+.related-list a:hover { color: var(--do-cerulean); }
+.related-list .tag {
+  font-size: var(--do-text-xs); font-weight: 500; color: var(--do-text-subtle);
+}
+
+.blurb { font-size: var(--do-text-sm); max-width: 34ch; margin-top: 16px; }
+
 /* ── Blog card hover ── */
 .blog-card { transition: border-color var(--do-duration-normal) var(--do-ease-default); }
 .blog-card:hover { border-color: var(--do-cerulean) !important; }
