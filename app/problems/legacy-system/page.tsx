@@ -4,19 +4,19 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Legacy system — Decoded Ops',
-  description: "The platform you bought ten years ago wasn't built for decoration. Why keeping the platform and adding a layer beats a full rip-and-replace, for decorated-goods businesses.",
+  title: 'Legacy system, decoration workflows — Decoded Ops',
+  description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork — and how a Decoded layer sits beside the platform you already own instead of replacing it.",
   alternates: { canonical: '/problems/legacy-system' },
   openGraph: {
-    title: 'Legacy system — Decoded Ops',
-    description: "The platform you bought ten years ago wasn't built for decoration. Why keeping the platform and adding a layer beats a full rip-and-replace, for decorated-goods businesses.",
+    title: 'Legacy system, decoration workflows — Decoded Ops',
+    description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork — and how a Decoded layer sits beside the platform you already own instead of replacing it.",
     url: 'https://decodedops.co.uk/problems/legacy-system',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Legacy system — Decoded Ops',
-    description: "The platform you bought ten years ago wasn't built for decoration. Why keeping the platform and adding a layer beats a full rip-and-replace, for decorated-goods businesses.",
+    title: 'Legacy system, decoration workflows — Decoded Ops',
+    description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork — and how a Decoded layer sits beside the platform you already own instead of replacing it.",
   },
 };
 
@@ -72,84 +72,67 @@ export default function LegacySystemPage() {
           <div>
             <span className="eyebrow">The problem</span>
             <h1>The platform you bought ten years ago wasn&apos;t built for decoration.</h1>
-            <p className="lede" style={{ margin: '18px 0 0', maxWidth: '56ch' }}>Decoration BOMs, blank versus finished goods, supplier artwork — none of it
-              was on the requirements list for a generic ERP. Every workaround since has been patching
-              around that gap, not closing it.</p>
+            <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
+              same thing they hold in the warehouse. Decoration doesn&apos;t work like that — a blank
+              garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
+              most platforms have no clean way to model it.</p>
             <div className="hero-cta">
               <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
             </div>
           </div>
           <figure className="evidence">
             <img src="/images/hero-craft.jpg"
-              alt="A decoration production floor running real workflows a generic ERP was never built to represent." />
-            <figcaption className="stamp">THE PLATFORM STAYS. THE LAYER CHANGES.</figcaption>
+              alt="A blank polo shirt beside its decorated version — the same product, two entirely different things to a generic ERP." />
+            <figcaption className="stamp">BLANK STOCK, FINISHED PRODUCT</figcaption>
           </figure>
         </div>
       </section>
 
-      {/* ── 2 · WHAT A GENERIC ERP DOESN&apos;T HANDLE ──────────────────────────── */}
+      {/* ── 2 · SYMPTOMS ──────────────────────────────────────────────────── */}
       <section className="g-tint">
         <div className="wrap">
-          <span className="eyebrow">Where a generic platform breaks down</span>
-          <h2>Three workflows most ERPs were never built for.</h2>
+          <span className="eyebrow">Sound familiar?</span>
+          <h2>Seven signs the platform wasn&apos;t built for this.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the problem
+            isn&apos;t your team working around the system. It&apos;s the system never having been designed for
+            decoration in the first place.</p>
 
-          <div className="grid grid--3" style={{ marginTop: 34 }}>
-            <article className="card cause">
-              <span className="n">01</span>
-              <h3>Decoration BOMs</h3>
-              <p>A decorated item is a blank plus a decoration method plus thread or ink plus setup
-                time. A generic ERP&apos;s bill of materials logic rarely represents that cleanly.</p>
-            </article>
-            <article className="card cause">
-              <span className="n">02</span>
-              <h3>Blank versus finished goods</h3>
-              <p>The plain garment and the decorated version aren&apos;t the same SKU, but most platforms
-                were built assuming one product, one code, start to finish.</p>
-            </article>
-            <article className="card cause">
-              <span className="n">03</span>
-              <h3>Supplier artwork</h3>
-              <p>Artwork files, versions, and approvals arrive from suppliers and customers alike.
-                Generic ERPs have nowhere for that to live, so it lives in email instead.</p>
-            </article>
-          </div>
+          <ul className="symptoms">
+            <li>Decoration BOMs are tracked in a spreadsheet because the platform can&apos;t model them</li>
+            <li>Blank and finished stock get confused, or tracked as if they&apos;re the same item</li>
+            <li>Supplier artwork lives in email threads, not attached to the order it belongs to</li>
+            <li>Every decoration method — print, embroidery, heat-press — needs its own workaround</li>
+            <li>The vendor&apos;s support team asks what &ldquo;decoration BOM&rdquo; even means</li>
+            <li>Customisation costs have exceeded what the licence was supposed to save you</li>
+            <li>You&apos;ve quietly accepted this is &ldquo;just how the software is&rdquo; rather than fixable</li>
+          </ul>
         </div>
       </section>
 
-      {/* ── 3 · THE LAYER-STACK MODEL, ARCHETYPE 4 ──────────────────────────── */}
+      {/* ── 3 · THE LAYER STACK · archetype 4 ───────────────────────────────── */}
       <section className="g-white">
         <div className="wrap">
           <span className="eyebrow">The fix</span>
           <h2>Keep the platform. Add the layer it&apos;s missing.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Ripping out a platform the business already knows and
-            has paid for is rarely the right first move. The gap sits beside it, not underneath it.</p>
+          <p className="lede" style={{ marginTop: 16 }}>Ripping out an ERP you&apos;ve already paid for and trained
+            staff on is rarely the right answer. Read bottom-up: the platform stays exactly where it
+            is, and the missing layer sits on top of it, not instead of it.</p>
 
-          <div className="stack" style={{ marginTop: 36, maxWidth: 820 }}>
-            <div style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20,
-              padding: '22px 26px', borderRadius: 'var(--do-radius-xl)',
-              border: '1px solid color-mix(in srgb, var(--do-amber) 45%, transparent)',
-              background: 'color-mix(in srgb, var(--do-amber) 14%, transparent)',
-            }}>
-              <div>
-                <h3 style={{ margin: '0 0 4px', fontFamily: 'var(--do-font-heading)', fontWeight: 700, fontSize: 'var(--do-text-xl)' }}>The custom layer</h3>
-                <p style={{ margin: 0, fontSize: 'var(--do-text-sm)', opacity: 0.85 }}>Decoration BOMs, blank/finished mapping, artwork
-                  versioning: exactly the jobs the platform doesn&apos;t do</p>
-              </div>
-              <span style={{ flex: '0 0 auto', fontSize: 'var(--do-text-xs)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', opacity: 0.6 }}>Sits beside</span>
+          <div className="layer-stack">
+            <div className="layer-tier layer-tier--base">
+              <div><h3>Your platform, unchanged</h3><p>Khaos Control, Symphony, or similar — stays as
+                the system of record for orders and accounts</p></div>
+              <span className="no">Layer 1</span>
             </div>
-            <div style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20,
-              padding: '22px 26px', borderRadius: 'var(--do-radius-xl)',
-              border: '1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent)',
-              background: 'var(--do-surface-raised)',
-            }}>
-              <div>
-                <h3 style={{ margin: '0 0 4px', fontFamily: 'var(--do-font-heading)', fontWeight: 700, fontSize: 'var(--do-text-xl)' }}>The existing platform</h3>
-                <p style={{ margin: 0, fontSize: 'var(--do-text-sm)', opacity: 0.85 }}>Stock, orders, accounts — everything it already does
-                  well, kept exactly as it is</p>
-              </div>
-              <span style={{ flex: '0 0 auto', fontSize: 'var(--do-text-xs)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', opacity: 0.6 }}>Stays</span>
+            <div className="layer-tier layer-tier--mid">
+              <div><h3>The Decoded Data App</h3><p>Decoration BOMs, blank-to-finished mapping, and
+                supplier artwork, modelled properly for the first time</p></div>
+              <span className="no">Layer 2</span>
+            </div>
+            <div className="layer-tier layer-tier--top">
+              <div><h3>Website, marketplaces, trade portal</h3><p>Every channel reading the same
+                decoration-aware catalogue, instead of a generic one</p></div>
+              <span className="no">Layer 3</span>
             </div>
           </div>
         </div>
@@ -159,24 +142,27 @@ export default function LegacySystemPage() {
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow eyebrow--amber">How I help</span>
-          <h2>An App Scoping Session tells you exactly what the layer needs to do.</h2>
+          <h2>No rip-and-replace. Just the layer that was missing.</h2>
 
           <div className="answer">
-            <p>A written assessment of what your current platform handles well, what it doesn&apos;t, and a
-              fixed price for the layer that closes the gap. <b>The platform you&apos;ve already paid for
-              stays. Only the missing piece gets built.</b></p>
+            <p>I don&apos;t start from &ldquo;which new platform should you buy.&rdquo; I start from what your current
+              platform already does well, and scope the layer that closes the gap — decoration BOMs,
+              artwork, blank-to-finished stock — <b>without touching what already works.</b></p>
+            <p>An App Scoping Session tells you honestly whether that&apos;s a small layer, a bigger one, or
+              whether the platform genuinely needs to change. Rarely the last one.</p>
           </div>
         </div>
       </section>
 
       {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
-      <section className="g-off cta-strip">
+      <section className="g-white cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Find out what your platform actually needs beside it.</h2>
-          <p className="lede">A half-day session, £750 fixed, never credited against the build.</p>
+          <h2>Find out what layer your platform is actually missing.</h2>
+          <p className="lede">An App Scoping Session — £750 fixed — scopes the gap and prices the fix, before
+            anything gets ripped out.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/how-i-build">See how the ladder works</Link>
+            <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
           </div>
         </div>
       </section>

@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Buy vs build — Decoded Ops',
-  description: "The question isn't buy or build. It's which platform, and what goes beside it. A vendor-neutral way to work the decision in order, for decorated-goods businesses.",
+  description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder — buy, buy plus a custom layer, full custom as a last resort — and how an App Scoping Session settles it.",
   alternates: { canonical: '/problems/buy-vs-build' },
   openGraph: {
     title: 'Buy vs build — Decoded Ops',
-    description: "The question isn't buy or build. It's which platform, and what goes beside it. A vendor-neutral way to work the decision in order, for decorated-goods businesses.",
+    description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder — buy, buy plus a custom layer, full custom as a last resort — and how an App Scoping Session settles it.",
     url: 'https://decodedops.co.uk/problems/buy-vs-build',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Buy vs build — Decoded Ops',
-    description: "The question isn't buy or build. It's which platform, and what goes beside it. A vendor-neutral way to work the decision in order, for decorated-goods businesses.",
+    description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder — buy, buy plus a custom layer, full custom as a last resort — and how an App Scoping Session settles it.",
   },
 };
 
@@ -29,27 +29,27 @@ const buyVsBuildSchema = {
         {
           '@type': 'Question',
           name: 'Should I buy off-the-shelf software or build custom for my print or embroidery business?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The question is not buy or build — it is which platform fits, and what gaps a custom layer closes. Most businesses land on buying a platform plus adding automation for the jobs the platform will not do. Full custom is a last resort.' },
+          acceptedAnswer: { '@type': 'Answer', text: "The question is not buy or build — it is which platform fits, and what gaps a custom layer closes. Most businesses land on buying a platform plus adding a custom layer beside it. Full custom is a last resort." },
         },
         {
           '@type': 'Question',
           name: 'What is the most common mistake when making a buy-vs-build technology decision?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Letting whoever gets to you first frame the decision on their terms. A platform vendor pitches buy. A developer pitches build. Neither works the ladder for you.' },
+          acceptedAnswer: { '@type': 'Answer', text: "Letting whoever gets to you first frame the decision on their terms. A platform vendor pitches buy. A developer pitches build. Neither works the ladder for you." },
         },
         {
           '@type': 'Question',
-          name: 'How do I know which rung I am on — buy, buy plus automation, or full custom?',
-          acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session works the ladder in order: a written data and feed assessment, a channel and integration map, and a recommended package with a fixed price. You get a written answer either way.' },
+          name: 'How do I know which rung I am on — buy, buy plus a custom layer, or full custom?',
+          acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session works the ladder in order: a written map of your workflow, a platform-fit assessment, and a scoped plan for what goes beside it. You get a written answer either way.' },
         },
         {
           '@type': 'Question',
           name: 'How much does it cost to have the buy-vs-build decision scoped properly?',
-          acceptedAnswer: { '@type': 'Answer', text: 'A half-day App Scoping Session costs £750 fixed, never credited against the build. It produces a written assessment you own outright — a specification you could hand to any developer.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session costs £750 fixed, waived if you have had a Discovery Day in the last six months. It produces a written assessment you own outright — a specification you could hand to any developer.' },
         },
         {
           '@type': 'Question',
-          name: 'What does buy plus automation mean for a decorated-goods business?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The platform is right but leaves gaps that a custom automation layer fills: decoration-specific workflows, supplier feed normalisation, blank-to-finished-goods mapping, and anything else a generic ERP was never built to handle.' },
+          name: 'What does buy plus a custom layer mean for a decorated-goods business?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The platform is right but leaves gaps — supplier feeds, artwork, reporting across more than one business. A purpose-built layer closes those gaps without touching what the platform already does well.' },
         },
       ],
     },
@@ -72,78 +72,91 @@ export default function BuyVsBuildPage() {
           <div>
             <span className="eyebrow">The problem</span>
             <h1>The question isn&apos;t buy or build. It&apos;s which platform, and what goes beside it.</h1>
-            <p className="lede" style={{ margin: '18px 0 0', maxWidth: '56ch' }}>Most technology decisions in this sector get framed as a straight choice:
-              buy something off the shelf, or build something bespoke. That framing skips the step
-              that actually matters — working out which platform fits and what it still won&apos;t do.</p>
+            <p className="lede">Most businesses in this sector frame it as a straight choice — an
+              off-the-shelf platform, or a full custom build. That&apos;s a false binary. The real question is
+              which platform fits your decoration workflow, and where the gap it leaves needs a purpose-built
+              layer beside it, not a rip-and-replace.</p>
             <div className="hero-cta">
               <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
             </div>
           </div>
           <figure className="evidence">
             <img src="/images/hero-craft.jpg"
-              alt="A working decoration floor, the kind of operation a buy-or-build decision has to fit around." />
-            <figcaption className="stamp">WORK THE LADDER IN ORDER</figcaption>
+              alt="Decorated garments staged on a production floor — the operation a platform decision has to actually serve." />
+            <figcaption className="stamp">THE OPERATION DECIDES, NOT THE VENDOR</figcaption>
           </figure>
         </div>
       </section>
 
-      {/* ── 2 · THE LADDER, ARCHETYPE 5 ────────────────────────────────────── */}
+      {/* ── 2 · THE LADDER · evidence ─────────────────────────────────────── */}
       <section className="g-tint">
         <div className="wrap">
           <span className="eyebrow">The ladder</span>
-          <h2>Work it in order. Never start at the top.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Three rungs, worked in sequence. Most businesses land
-            on rung two. Nobody should start at rung three.</p>
+          <h2>Three rungs, climbed in order — never skipped.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>Buy where it fits. Add a layer where it&apos;s close but
+            leaves gaps. Build from scratch only when nothing off the shelf comes close, and only after
+            saying so in writing.</p>
 
-          <div style={{ display: 'grid', gap: 16, marginTop: 36, maxWidth: 820 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 20, alignItems: 'flex-start', padding: '22px 26px', borderRadius: 'var(--do-radius-xl)', border: '1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent)' }}>
-              <span style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 800, fontSize: 'var(--do-text-xl)', opacity: 0.5 }}>1</span>
-              <div><h3>Buy</h3><p style={{ margin: 0, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>An off-the-shelf platform fits. Someone else&apos;s product, someone
-                else&apos;s roadmap. Track is the standing example in this sector. I earn nothing from what
-                you buy at this rung, which is the point.</p></div>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 20, alignItems: 'flex-start', padding: '22px 26px', borderRadius: 'var(--do-radius-xl)', border: '1px solid color-mix(in srgb, var(--do-amber) 55%, transparent)', background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)' }}>
-              <span style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 800, fontSize: 'var(--do-text-xl)', opacity: 0.5 }}>2</span>
-              <div><h3>Buy plus automation</h3><p style={{ margin: 0, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>The platform is right but leaves gaps. Both live
-                deployments I run today sit here: the platform stays, a custom layer does the jobs it
-                will not do. The default recommendation, not the exception.</p></div>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '64px 1fr', gap: 20, alignItems: 'flex-start', padding: '22px 26px', borderRadius: 'var(--do-radius-xl)', border: '1px dashed color-mix(in srgb, var(--do-sky-blue) 30%, transparent)' }}>
-              <span style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 800, fontSize: 'var(--do-text-xl)', opacity: 0.5 }}>3</span>
-              <div><h3>Full custom</h3><p style={{ margin: 0, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>Nothing off the shelf is fit for purpose. Last resort, and
-                said out loud as such. Never priced in public, scoped only after a proper diagnostic.</p></div>
-            </div>
+          <div className="rungs">
+            <article className="rung">
+              <span className="kicker">Rung 1</span>
+              <h3>Buy</h3>
+              <p>If something on the market already fits, it goes on the table, named and priced. Track
+                is the best platform I&apos;ve worked with in this sector, and I don&apos;t sell it or earn
+                anything from recommending it. That&apos;s not a pitch — it costs me nothing to say it.</p>
+            </article>
+
+            <article className="rung rung--default">
+              <span className="kicker">Rung 2 <span className="flag">The default</span></span>
+              <h3>Buy plus a custom layer</h3>
+              <p>Usually the platform is right but leaves gaps — supplier feeds, artwork, reporting
+                across more than one business. I show you what the gap costs to leave alone versus what
+                it costs to close with a purpose-built layer, and let you weigh it up.</p>
+            </article>
+
+            <article className="rung rung--last">
+              <span className="kicker">Rung 3 · Last resort</span>
+              <h3>Full custom</h3>
+              <p>If nothing off the shelf fits, that option goes on the table too — priced honestly,
+                alongside everything else considered and why it didn&apos;t make the cut. Never a published
+                price for a build like this. It&apos;s scoped, or it isn&apos;t offered at all.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* ── 3 · WHY THIS HAPPENS ───────────────────────────────────────────── */}
+      {/* ── 3 · THE APP SCOPING SESSION · archetype 5 ──────────────────────── */}
       <section className="g-white">
         <div className="wrap">
-          <span className="eyebrow">Why this happens</span>
-          <h2>Three reasons the ladder gets skipped.</h2>
+          <span className="eyebrow">How the decision gets made</span>
+          <h2>A phased roadmap, not a guess.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>The App Scoping Session is how you find out which rung
+            you&apos;re actually on — before any platform or build gets committed to.</p>
 
-          <div className="grid grid--3" style={{ marginTop: 34 }}>
-            <article className="card cause">
-              <span className="n">01</span>
-              <h3>A vendor asked the question first</h3>
-              <p>Whoever gets to you first frames the decision on their terms. A platform vendor pitches
-                rung one. A developer pitches rung three. Neither one is wrong to ask, but neither one
-                works the ladder for you.</p>
+          <div className="steps">
+            <article className="step">
+              <p className="step-n">STEP 1</p>
+              <h3>Map the workflow</h3>
+              <p>What the business actually needs the platform to do — decoration methods, order
+                volumes, the systems it has to talk to.</p>
             </article>
-            <article className="card cause">
-              <span className="n">02</span>
-              <h3>Nobody priced the alternative</h3>
-              <p>A custom quote looks expensive next to nothing. It looks different next to what a
-                platform plus a scoped layer actually costs, which is the comparison that usually
-                doesn&apos;t happen.</p>
+            <article className="step">
+              <p className="step-n">STEP 2</p>
+              <h3>Test platform fit</h3>
+              <p>Where an off-the-shelf platform like Track covers it outright, and precisely where it
+                doesn&apos;t — named gaps, not a vague sense of unease.</p>
             </article>
-            <article className="card cause">
-              <span className="n">03</span>
-              <h3>The gap was never named</h3>
-              <p>&ldquo;The platform doesn&apos;t do everything we need&rdquo; is not the same as knowing exactly what it
-                doesn&apos;t do. Without that list, rung two and rung three both stay guesswork.</p>
+            <article className="step step--last">
+              <p className="step-n">STEP 3</p>
+              <h3>Scope what goes beside it</h3>
+              <p>A written, priced plan for the layer that closes the gap — or, rarely, a case for full
+                custom, made honestly and in writing.</p>
             </article>
+          </div>
+
+          <div className="inset">
+            <b>App Scoping Session, £750 fixed.</b> Waived if you&apos;ve had a Discovery Day in the last six
+            months. This is the entry point for the systems line — not a Discovery Day.
           </div>
         </div>
       </section>
@@ -152,15 +165,14 @@ export default function BuyVsBuildPage() {
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow eyebrow--amber">How I help</span>
-          <h2>An App Scoping Session works the ladder for you.</h2>
+          <h2>No vendor relationships. No preferred platform. Just what fits.</h2>
 
           <div className="answer">
-            <p>A remote half-day (or on-site, travel at cost) that produces a written data and feed
-              assessment, a channel and integration map, a recommended package with a fixed price, and
-              a plain statement of what that package will not solve. <b>£750 fixed, never credited
-              against the build.</b></p>
-            <p>You own the assessment outright. It&apos;s a specification you could hand to any developer,
-              not only to me, which is what makes charging for it fair.</p>
+            <p>I don&apos;t sell Track, or any other platform. <b>I have nothing to gain from which rung you
+              end up on.</b></p>
+            <p>What I bring is the sector expertise to tell buy from buy-plus-a-layer from genuinely
+              needing custom — and the App Scoping Session to prove it in writing before you commit
+              budget to any of them.</p>
           </div>
         </div>
       </section>
@@ -169,11 +181,11 @@ export default function BuyVsBuildPage() {
       <section className="g-white cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Find out which rung you&apos;re actually on.</h2>
-          <p className="lede">A half-day session, £750 fixed, never credited against the build. You leave
-            with a written answer either way.</p>
+          <p className="lede">An App Scoping Session — £750 fixed, waived if you&apos;ve had a Discovery Day
+            recently — settles buy vs build with a written answer, not a guess.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+            <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
           </div>
         </div>
       </section>

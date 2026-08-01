@@ -4,19 +4,19 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Inventory blind — Decoded Ops',
-  description: "You're ordering stock you already have, and running out of stock you didn't know you needed. Why supplier feeds and real-time inventory need to be the same picture for decorated-goods businesses.",
+  title: 'Inventory blind spots — Decoded Ops',
+  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
   alternates: { canonical: '/problems/inventory-blind' },
   openGraph: {
-    title: 'Inventory blind — Decoded Ops',
-    description: "You're ordering stock you already have, and running out of stock you didn't know you needed. Why supplier feeds and real-time inventory need to be the same picture for decorated-goods businesses.",
+    title: 'Inventory blind spots — Decoded Ops',
+    description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
     url: 'https://decodedops.co.uk/problems/inventory-blind',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inventory blind — Decoded Ops',
-    description: "You're ordering stock you already have, and running out of stock you didn't know you needed. Why supplier feeds and real-time inventory need to be the same picture for decorated-goods businesses.",
+    title: 'Inventory blind spots — Decoded Ops',
+    description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
   },
 };
 
@@ -73,17 +73,17 @@ export default function InventoryBlindPage() {
             <span className="eyebrow">The problem</span>
             <h1>You&apos;re ordering stock you already have, and running out of stock you didn&apos;t know you
               needed.</h1>
-            <p className="lede" style={{ margin: '18px 0 0', maxWidth: '56ch' }}>Supplier feeds tell you what&apos;s available to order. They don&apos;t tell you what
-              you&apos;re actually holding, what&apos;s committed to open orders, or what&apos;s about to run out. Two
-              separate pictures, and most businesses are making buying decisions on the wrong one.</p>
+            <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem —
+              supplier feeds, the ERP, and the warehouse floor all showing a different number for the
+              same SKU, so nobody&apos;s confident enough in any of them to order against it.</p>
             <div className="hero-cta">
               <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
             </div>
           </div>
           <figure className="evidence">
             <img src="/images/hero-craft.jpg"
-              alt="Warehouse shelving stacked with decorated-goods stock, the kind of picture a real-time inventory view should reflect but often doesn&apos;t." />
-            <figcaption className="stamp">TWO PICTURES, ONE DECISION</figcaption>
+              alt="Stock boxed and labelled ready for despatch — the physical inventory the system is supposed to know about." />
+            <figcaption className="stamp">WHAT&apos;S ON THE SHELF, NOT WHAT&apos;S ON SCREEN</figcaption>
           </figure>
         </div>
       </section>
@@ -92,45 +92,48 @@ export default function InventoryBlindPage() {
       <section className="g-tint">
         <div className="wrap">
           <span className="eyebrow">Sound familiar?</span>
-          <h2>Six versions of the same blind spot.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the gap isn&apos;t
-            effort. It&apos;s that stock and supply are living in different systems.</p>
+          <h2>Seven signs you&apos;re flying blind on stock.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the fix isn&apos;t
+            a bigger stocktake. It&apos;s one stock picture everyone actually trusts.</p>
 
           <ul className="symptoms">
-            <li>A reorder goes out for stock that&apos;s sitting on a shelf, unreconciled</li>
-            <li>A popular line goes to zero with no warning, because nobody was watching that number</li>
-            <li>Committed stock against open orders isn&apos;t subtracted from what looks &ldquo;available&rdquo;</li>
-            <li>Someone does a physical stock-take and finds a different number to every system</li>
-            <li>Reordering is based on gut feel and who shouts loudest, not what the data says</li>
-            <li>A blank/decorated pairing looks in stock when only one half of it actually is</li>
+            <li>You&apos;ve placed a repeat order for stock that was already on the shelf</li>
+            <li>You&apos;ve run out of a line with no warning, mid production run</li>
+            <li>The website says &ldquo;in stock&rdquo; on something the warehouse sold out of days ago</li>
+            <li>Nobody trusts the ERP&apos;s stock figure enough to order against it alone</li>
+            <li>Someone does a manual stock check before every big order, just in case</li>
+            <li>Safety stock is a guess, not a number worked out from real demand</li>
+            <li>A rush order gets promised before anyone&apos;s actually checked what&apos;s available</li>
           </ul>
         </div>
       </section>
 
-      {/* ── 3 · WHY THIS HAPPENS ───────────────────────────────────────────── */}
+      {/* ── 3 · THE STOCK PICTURE · solution ───────────────────────────────── */}
       <section className="g-white">
         <div className="wrap">
-          <span className="eyebrow">Why this happens</span>
-          <h2>Three reasons the two pictures stay separate.</h2>
+          <span className="eyebrow">The fix</span>
+          <h2>One real-time stock picture, not a guess reconciled weekly.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>The Decoded Data App combines what your suppliers say
+            they&apos;ve got with what&apos;s actually moved through your own warehouse — so the number on screen
+            is the number on the shelf.</p>
 
-          <div className="grid grid--3" style={{ marginTop: 34 }}>
-            <article className="card cause">
-              <span className="n">01</span>
-              <h3>Supplier feeds show availability, not your stock</h3>
-              <p>A feed tells you what the supplier can sell you. It says nothing about what&apos;s already
-                on your shelf, so the two numbers never get compared automatically.</p>
+          <div className="picture">
+            <article className="card">
+              <h3>Supplier feeds</h3>
+              <p>What&apos;s available upstream, refreshed on a schedule that matches how the supplier
+                actually updates it.</p>
             </article>
-            <article className="card cause">
-              <span className="n">02</span>
-              <h3>Committed stock isn&apos;t subtracted anywhere</h3>
-              <p>An order that&apos;s confirmed but not yet despatched still shows as &ldquo;in stock&rdquo; in most
-                systems. That gap is exactly where the surprise stockouts come from.</p>
+            <span className="arrow" aria-hidden="true">+</span>
+            <article className="card">
+              <h3>Real warehouse movement</h3>
+              <p>What&apos;s physically come in and gone out — picked, packed, and despatched.</p>
             </article>
-            <article className="card cause">
-              <span className="n">03</span>
-              <h3>Decorated goods are two products wearing one SKU</h3>
-              <p>A blank and its decorated version get tracked as if they&apos;re the same item, when a
-                stockout on either half means the finished product can&apos;t ship.</p>
+          </div>
+          <div className="picture" style={{ marginTop: 20 }}>
+            <article className="card card--result" style={{ gridColumn: '1/-1' }}>
+              <h3>= one stock number, everywhere</h3>
+              <p>The ERP, the website, and the person taking the order all read the same figure — updated
+                as it changes, not reconciled once a week.</p>
             </article>
           </div>
         </div>
@@ -140,14 +143,13 @@ export default function InventoryBlindPage() {
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow eyebrow--amber">How I help</span>
-          <h2>The Data App puts stock and supply in the same picture.</h2>
+          <h2>Stock you can order against, not stock you have to double-check.</h2>
 
           <div className="answer">
-            <p>Supplier feeds and your real stock position, reconciled continuously, not on whatever
-              schedule someone remembers to run a report. <b>What&apos;s on the shelf, what&apos;s committed, and
-              what&apos;s actually available, in one number.</b></p>
-            <p>An App Scoping Session comes first: a written map of your current stock and feed setup,
-              and exactly what a fix would involve, before anything gets built.</p>
+            <p>I map where your stock picture actually breaks down — which feeds, which manual steps,
+              which system nobody quite trusts — and build the Data App layer that fixes it.</p>
+            <p><b>No more guesswork stock checks before a big order.</b> The number on screen becomes
+              the number worth ordering against.</p>
           </div>
         </div>
       </section>
@@ -155,11 +157,12 @@ export default function InventoryBlindPage() {
       {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
       <section className="g-white cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Find out what your inventory picture is actually missing.</h2>
-          <p className="lede">A half-day session, £750 fixed, never credited against the build.</p>
+          <h2>Stop guessing what&apos;s actually on the shelf.</h2>
+          <p className="lede">An App Scoping Session maps your current stock picture and what it would take
+            to make it real-time.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+            <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
           </div>
         </div>
       </section>
