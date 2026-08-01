@@ -8,6 +8,8 @@ interface RelatedPost {
   excerpt: string;
   publishedDate?: string;
   wordCount?: number;
+  category?: string;
+  cluster?: string;
 }
 
 async function fetchPublishedPosts(): Promise<RelatedPost[]> {
@@ -34,33 +36,15 @@ export default async function RelatedPosts({ currentSlug, cluster }: { currentSl
   if (related.length === 0) return null;
 
   return (
-    <div className="mt-16 pt-12" style={{ borderTop: '1px solid var(--do-border-subtle)' }}>
-      <h3 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-        More in this topic
-      </h3>
-      <div className="space-y-6">
+    <div className="related" data-od-id="related-posts">
+      <h3>Related reading</h3>
+      <div className="related-list">
         {related.map((post: any) => {
-          const pubDate = post.publishedDate;
-          const date = pubDate ? new Date(pubDate).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : '';
-          const readTime = post.wordCount ? Math.max(1, Math.round(post.wordCount / 200)) : undefined;
+          const tag = post.category || post.cluster || cluster;
           return (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="blog-card-subtle group block p-6 rounded-xl transition-all duration-200 hover:shadow-sm"
-              style={{ backgroundColor: 'var(--do-surface-page)', border: '1px solid var(--do-border-subtle)' }}
-            >
-              <h4 className="text-lg font-bold mb-2 group-hover:text-[var(--do-cerulean)] transition-colors" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-                {post.title}
-              </h4>
-              <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--do-text-muted)' }}>
-                {post.excerpt}
-              </p>
-              <div className="flex items-center gap-3 text-xs" style={{ color: 'var(--do-text-muted)', opacity: 0.6 }}>
-                {date && <span>{date}</span>}
-                {date && readTime && <span>·</span>}
-                {readTime && <span>{readTime} min read</span>}
-              </div>
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <span>{post.title}</span>
+              <span className="tag">{tag}</span>
             </Link>
           );
         })}

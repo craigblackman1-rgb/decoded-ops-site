@@ -146,23 +146,17 @@ export default async function BlogPost({ params }: PageProps) {
       ]} />
 
       {/* Article header */}
-      <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', marginBottom: 32, textDecoration: 'none' }}>
+      <section className="g-off" data-od-id="header">
+        <div className="wrap post-header">
+          <Link href="/blog" className="back-link">
             <ArrowLeft size={16} /> Back to Insights
           </Link>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 20%, transparent)', marginBottom: 24 }}>
-            <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', color: 'var(--do-cerulean)' }}>{item.category || 'Insights'}</span>
-          </div>
+          <span className="eyebrow">{item.category || 'Insights'}</span>
           <h1 className="h1">{item.title}</h1>
-          {item.excerpt && (
-            <p className="lede">{item.excerpt}</p>
-          )}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', opacity: 0.7, marginTop: 24 }}>
+          {item.excerpt && <p className="lede">{item.excerpt}</p>}
+          <div className="post-meta" data-od-id="post-meta">
             <span>Craig Blackman</span>
-            <span>·</span>
             <span>{displayDate}</span>
-            <span>·</span>
             <span>{readTime} min read</span>
           </div>
         </div>
@@ -170,13 +164,14 @@ export default async function BlogPost({ params }: PageProps) {
 
       {/* Inline image 1 */}
       {item.images?.[0] && (
-        <section style={{ padding: '32px 0' }}>
-          <div className="wrap" style={{ maxWidth: 960 }}>
+        <section className="g-white">
+          <div className="wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.images[0]}
               alt=""
-              style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', border: '1px solid var(--do-border-subtle)', boxShadow: 'var(--do-shadow-sm)' }}
+              className="rounded-2xl shadow-sm w-full"
+              style={{ border: '1px solid var(--do-border-subtle)' }}
               loading="lazy"
             />
           </div>
@@ -184,8 +179,8 @@ export default async function BlogPost({ params }: PageProps) {
       )}
 
       {/* Article body */}
-      <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
+      <section className="g-white" data-od-id="article">
+        <div className="wrap prose">
           <div
             className="do-blog-prose"
             dangerouslySetInnerHTML={{ __html: item.html || '' }}
@@ -193,21 +188,22 @@ export default async function BlogPost({ params }: PageProps) {
 
           {/* Inline image 2 */}
           {item.images?.[1] && (
-            <div style={{ marginTop: 48 }}>
+            <div className="mt-12">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.images[1]}
                 alt=""
-                style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', border: '1px solid var(--do-border-subtle)', boxShadow: 'var(--do-shadow-sm)' }}
+                className="w-full rounded-2xl shadow-sm"
+                style={{ border: '1px solid var(--do-border-subtle)' }}
                 loading="lazy"
               />
             </div>
           )}
 
           {/* CTA box */}
-          <div className="card" style={{ marginTop: 48, background: 'color-mix(in srgb, var(--do-cerulean) 8%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)' }}>
-            <h3 className="h3" style={{ marginBottom: 12 }}>Plain English. No jargon. No vendor agenda.</h3>
-            <p className="lede" style={{ marginBottom: 24 }}>
+          <div className="post-cta" data-od-id="post-cta">
+            <h3 className="h3">Plain English. No jargon. No vendor agenda.</h3>
+            <p>
               A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
             </p>
             <Link href="/clarity" className="btn btn--primary">
