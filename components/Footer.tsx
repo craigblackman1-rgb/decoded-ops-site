@@ -3,57 +3,79 @@ import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { LogoWordmark } from '@/components/LogoWordmark';
 
-const sectors = [
-  { label: 'Garment decoration', href: '/sectors/garment-decoration' },
-  { label: 'Print & promotional', href: '/sectors/print-promotional' },
-  { label: 'Workwear & teamwear', href: '/sectors/workwear-teamwear' },
-  { label: 'Signs & graphics', href: '/sectors/signs-graphics' },
-  { label: 'Awards & engraving', href: '/sectors/awards-engraving' },
-  { label: 'Labels & packaging', href: '/sectors/labels-packaging' },
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+const diagnoseLinks: FooterLink[] = [
+  { label: 'Discovery Day', href: '/clarity' },
+  { label: 'Technology audit', href: '/locations/tech-audit' },
 ];
 
-const problems = [
-  { label: 'ERP implementation failure', href: '/problems/erp-implementation-failure' },
-  { label: 'eCommerce not connected', href: '/problems/ecommerce-not-connected' },
-  { label: "Systems don't talk to each other", href: '/problems/systems-dont-talk' },
-  { label: 'Wrong ERP software', href: '/problems/wrong-erp-software' },
-  { label: 'Disaster recovery & outage', href: '/problems/disaster-recovery' },
-  { label: 'No operations owner', href: '/problems/no-ops-owner' },
-  { label: 'Manual workarounds', href: '/problems/manual-workarounds' },
+const buyVsBuildLinks: FooterLink[] = [
+  { label: 'How I build', href: '/how-i-build' },
+  { label: 'Data App', href: '/apps/data-app' },
+  { label: 'Artwork Manager', href: '/apps/artwork-manager' },
+];
+
+const ongoingLeadershipLinks: FooterLink[] = [
+  { label: 'Retained', href: '/retained' },
+  { label: 'Fractional CTO', href: '/locations/fractional-cto' },
+];
+
+const companyLinks: FooterLink[] = [
+  { label: 'About', href: '/about' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Client Login', href: '/clients/login' },
+];
+
+const sectorChips: FooterLink[] = [
+  { label: 'Workwear', href: '/sectors/workwear' },
+  { label: 'Teamwear', href: '/sectors/teamwear-clubwear' },
+  { label: 'Schoolwear', href: '/sectors/schoolwear' },
+  { label: 'Promo', href: '/sectors/promotional-merchandise' },
+  { label: 'Print', href: '/sectors/print-promotional' },
+  { label: 'Signage', href: '/sectors/signs-graphics' },
+];
+
+const problemChips: FooterLink[] = [
+  { label: 'ERP failure', href: '/problems/erp-implementation-failure' },
+  { label: 'Data scattered', href: '/problems/data-scattered' },
+  { label: 'Buy vs build', href: '/problems/buy-vs-build' },
+  { label: 'No ops owner', href: '/problems/no-ops-owner' },
   { label: 'AI paralysis', href: '/problems/ai-paralysis' },
 ];
 
-const services = [
-  { label: 'Clarity — Operational audit', href: '/clarity' },
-  { label: 'Deliver — Project delivery', href: '/deliver' },
-  { label: 'Transform — Digital transformation', href: '/transform' },
-  { label: 'Retained — Fractional CTO', href: '/retained' },
-];
-
-const resources = [
-  { label: 'Calculators & tools', href: '/tools' },
-  { label: 'Audit checklist', href: '/resources/audit-checklist' },
-  { label: 'Blog', href: '/blog' },
-];
-
-const locations = [
-  { label: 'Fractional CTO — all locations', href: '/locations/fractional-cto' },
-  { label: 'Technology Audit — all locations', href: '/locations/tech-audit' },
-  { label: 'West Sussex', href: '/locations/fractional-cto/chichester' },
-  { label: 'East Sussex', href: '/locations/fractional-cto/brighton' },
-  { label: 'Surrey', href: '/locations/fractional-cto/guildford' },
-];
+function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
+  return (
+    <div>
+      <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">{title}</h2>
+      <ul className="space-y-2.5">
+        {links.map(link => (
+          <li key={link.href + link.label}>
+            <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Footer() {
   return (
     <footer className="bg-[#023047] text-white" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand + Company */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-7 lg:gap-8 mb-0">
+          <div>
             <LogoWordmark variant="footer" className="block mb-4" />
             <p className="text-sm text-[#8ECAE6] leading-relaxed mb-5 max-w-xs">
-              Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.
+              Independent technology and operations consultancy for the decorated-goods sector. No vendor agenda.
             </p>
             <div className="flex gap-3 mb-5">
               <a
@@ -71,93 +93,58 @@ export function Footer() {
             <div className="text-sm text-[#8ECAE6] mb-5 space-y-1">
               <div><a href="mailto:craig@decodedops.co.uk" className="hover:text-white transition-colors">craig@decodedops.co.uk</a></div>
               <div><a href="tel:+447735620603" className="hover:text-white transition-colors">07735 620 603</a></div>
-              <div className="pt-2"><a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1">Book a call directly <ArrowRight size={14} /></a></div>
+              <div className="pt-2">
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium text-[#F8F9FA] border border-[#8ECAE6]/60 rounded-lg hover:bg-[#219EBC]/15 hover:border-[#8ECAE6] transition-colors"
+                >
+                  Book a free 60-min call <ArrowRight size={14} />
+                </a>
+              </div>
             </div>
-            <nav aria-label="Company links">
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/case-studies" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Case Studies</Link></li>
-                <li><Link href="/contact" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/clients/login" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Client Login</Link></li>
-                <li><Link href="/privacy" className="text-sm text-[#8ECAE6] hover:text-white transition-colors">Privacy policy</Link></li>
-              </ul>
-            </nav>
+            <p className="text-xs text-[#F8F9FA]/55 max-w-xs">Based in Worthing, West Sussex &middot; working across the UK</p>
           </div>
 
-          {/* Services + Resources */}
-          <div>
-            <nav aria-label="Services and resources links">
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Services</h2>
-              <ul className="space-y-2.5 mb-8">
-                {services.map(link => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Resources</h2>
-              <ul className="space-y-2.5">
-                {resources.map(link => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-
-          {/* Sectors */}
-          <div>
-            <nav aria-label="Sector links">
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Sectors</h2>
-              <ul className="space-y-2.5">
-                {sectors.map(link => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-
-          {/* Problems */}
-          <div>
-            <nav aria-label="Problems we solve links">
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA] mb-4">Problems we solve</h2>
-              <ul className="space-y-2.5">
-                {problems.map(link => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+          <FooterColumn title="Diagnose" links={diagnoseLinks} />
+          <FooterColumn title="Buy vs build" links={buyVsBuildLinks} />
+          <FooterColumn title="Ongoing leadership" links={ongoingLeadershipLinks} />
+          <FooterColumn title="Company" links={companyLinks} />
         </div>
 
-        {/* Locations — inline strip */}
-        <div className="border-t border-[#F8F9FA]/10 pt-6 pb-6 mb-6">
-          <nav aria-label="Location links" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#8ECAE6]">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]">Locations</span>
-            {locations.map(link => (
-              <Link key={link.href} href={link.href} className="hover:text-white transition-colors">
-                {link.label}
+        <div className="border-t border-[#F8F9FA]/12 mt-9 pt-5">
+          <div className="flex flex-wrap items-baseline gap-y-2 mb-2.5">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]/55 min-w-[82px]">Sectors</span>
+            <span className="flex flex-wrap gap-x-4 gap-y-2">
+              {sectorChips.map(link => (
+                <Link key={link.href} href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+              <Link href="/sectors" className="text-sm font-semibold text-[#FFB703] hover:text-white transition-colors">
+                All sectors &rarr;
               </Link>
-            ))}
-          </nav>
+            </span>
+          </div>
+          <div className="flex flex-wrap items-baseline gap-y-2">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]/55 min-w-[82px]">Problems</span>
+            <span className="flex flex-wrap gap-x-4 gap-y-2">
+              {problemChips.map(link => (
+                <Link key={link.href} href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+              <Link href="/problems" className="text-sm font-semibold text-[#FFB703] hover:text-white transition-colors">
+                All problems &rarr;
+              </Link>
+            </span>
+          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-7">
           <p className="text-xs text-[#8ECAE6]">&copy; {new Date().getFullYear()} Decoded Ops. All rights reserved.</p>
-          <p className="text-xs text-[#8ECAE6]">Built with precision and purpose.</p>
+          <p className="text-xs text-[#8ECAE6]">Plain English. No jargon. No vendor agenda.</p>
         </div>
       </div>
     </footer>

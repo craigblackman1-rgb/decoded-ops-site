@@ -4,46 +4,46 @@ import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { LogoWordmark } from '@/components/LogoWordmark';
 
-const services = [
-  { label: 'Clarity — Operational audit', href: '/clarity' },
-  { label: 'Deliver — Project delivery', href: '/deliver' },
-  { label: 'Transform — Digital transformation', href: '/transform' },
-  { label: 'Retained — Fractional CTO', href: '/retained' },
+interface PathLink {
+  label: string;
+  href: string;
+  desc?: string;
+}
+
+interface PathGroupData {
+  label: string;
+  descriptor: string;
+  links: PathLink[];
+}
+
+const pathGroups: PathGroupData[] = [
+  {
+    label: "Something's wrong",
+    descriptor: 'Start with a diagnostic',
+    links: [
+      { label: 'Discovery Day', href: '/clarity', desc: 'A full day on site, a written plan' },
+      { label: 'Technology audit', href: '/locations/tech-audit', desc: 'Focused on one part of the business' },
+    ],
+  },
+  {
+    label: 'Buy vs build',
+    descriptor: 'Systems & apps',
+    links: [
+      { label: 'How I build', href: '/how-i-build', desc: 'The buy-vs-build question' },
+      { label: 'Data App', href: '/apps/data-app', desc: 'Supplier feeds into one catalogue' },
+      { label: 'Artwork Manager', href: '/apps/artwork-manager', desc: 'Versions, approvals, delivery' },
+    ],
+  },
+  {
+    label: 'Ongoing leadership',
+    descriptor: 'A standing CTO',
+    links: [
+      { label: 'Retained', href: '/retained', desc: 'Advisory, embedded or programme' },
+    ],
+  },
 ];
 
-const sectors = [
-  { label: 'Garment decoration', href: '/sectors/garment-decoration' },
-  { label: 'Print & promotional', href: '/sectors/print-promotional' },
-  { label: 'Workwear & teamwear', href: '/sectors/workwear-teamwear' },
-  { label: 'Signs & graphics', href: '/sectors/signs-graphics' },
-  { label: 'Awards & engraving', href: '/sectors/awards-engraving' },
-  { label: 'Labels & packaging', href: '/sectors/labels-packaging' },
-];
-
-const resources = [
-  { label: 'All resources', href: '/resources' },
-  { label: 'The Decoded Method', href: '/resources/decoded-method' },
-  { label: '5 & 6 Sigma explained', href: '/resources/six-sigma' },
-  { label: 'Audit checklist', href: '/resources/audit-checklist' },
-  { label: '5 warning signs', href: '/resources/5-warning-signs' },
-  { label: 'Calculators', href: '/tools' },
-  { label: 'Blog', href: '/blog' },
-];
-
-const problems = [
-  { label: 'Slow, manual processes', href: '/problems/slow-processes' },
-  { label: "Operation can't keep up with growth", href: '/problems/cant-scale-operations' },
-  { label: 'ERP implementation failure', href: '/problems/erp-implementation-failure' },
-  { label: 'eCommerce not connected to production', href: '/problems/ecommerce-not-connected' },
-  { label: "Systems don't talk to each other", href: '/problems/systems-dont-talk' },
-  { label: 'Wrong ERP software', href: '/problems/wrong-erp-software' },
-  { label: 'Disaster recovery & outage', href: '/problems/disaster-recovery' },
-  { label: 'No operations owner', href: '/problems/no-ops-owner' },
-  { label: 'Manual workarounds', href: '/problems/manual-workarounds' },
-  { label: 'AI paralysis', href: '/problems/ai-paralysis' },
-];
-
-function Dropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {
+function PathGroup({ group }: { group: PathGroupData }) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -55,32 +55,47 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
     closeTimer.current = setTimeout(() => setOpen(false), 120);
   };
 
+  const menuId = `path-menu-${group.label.replace(/\s+/g, '-').toLowerCase()}`;
+
   return (
     <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
       <button
-        className="flex items-center gap-1 text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium"
+        className={`flex flex-col items-start gap-px py-2 pl-3 pr-8 text-left bg-transparent border border-transparent rounded-lg cursor-pointer transition-colors ${
+          open
+            ? 'bg-[#219EBC]/10 border-[#219EBC]/40'
+            : 'hover:bg-[#219EBC]/8 hover:border-[#219EBC]/30'
+        }`}
         aria-haspopup="true"
         aria-expanded={open}
+        aria-controls={menuId}
       >
-        {label} <ChevronDown size={14} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+        <span className="text-sm font-semibold text-[#023047] leading-tight">{group.label}</span>
+        <span className="text-[11px] leading-tight text-[#023047]/55">{group.descriptor}</span>
+        <ChevronDown
+          size={14}
+          className={`absolute right-2.5 top-1/2 -translate-y-1/2 text-[#023047]/55 transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
       </button>
       {open && (
         <div
-          className="absolute top-full left-0 pt-2 z-50"
+          id={menuId}
+          className="absolute left-0 top-[calc(100%+6px)] z-50 min-w-[230px]"
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
           role="menu"
         >
-          <div className="w-64 bg-[#F8F9FA] border border-[#8ECAE6]/40 rounded-2xl shadow-xl py-2 overflow-hidden">
-            {items.map(item => (
+          <div className="p-1.5 bg-white border border-[#d4e8f0] rounded-xl shadow-lg">
+            {group.links.map(item => (
               <Link
-                key={item.href}
+                key={item.href + item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 role="menuitem"
-                className="block px-4 py-2.5 text-sm text-[#023047] hover:bg-[#219EBC]/10 hover:text-[#219EBC] transition-colors"
+                className="block px-3.5 py-2.5 rounded-md text-sm font-medium text-[#023047] hover:bg-[#219EBC]/8 transition-colors whitespace-nowrap"
               >
                 {item.label}
+                {item.desc && <span className="block text-[11px] font-normal text-[#023047]/55 mt-px">{item.desc}</span>}
               </Link>
             ))}
           </div>
@@ -90,16 +105,21 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
   );
 }
 
+const flatLinks = [
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Pricing', href: '/pricing' },
+];
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileSectorsOpen, setMobileSectorsOpen] = useState(false);
-  const [mobileProblemsOpen, setMobileProblemsOpen] = useState(false);
-  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [mobileOpenGroups, setMobileOpenGroups] = useState<Record<number, boolean>>({});
+
+  const toggleMobileGroup = (idx: number) => {
+    setMobileOpenGroups(prev => ({ ...prev, [idx]: !prev[idx] }));
+  };
 
   return (
     <>
-      {/* Skip to main content — hidden until focused */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#FFB703] focus:text-[#023047] focus:font-semibold focus:text-sm focus:outline-none focus:ring-2 focus:ring-[#023047]"
@@ -112,21 +132,24 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             <LogoWordmark />
 
-            {/* Desktop nav */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Dropdown label="Services" items={services} />
-              <Dropdown label="Sectors" items={sectors} />
-              <Dropdown label="Problems" items={problems} />
-              <Dropdown label="Resources" items={resources} />
-              <Link href="/case-studies" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case Studies</Link>
-              <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
-              <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
-              <Link href="/clients/login" className="text-[#023047]/60 hover:text-[#219EBC] transition-colors text-xs font-medium">Client Login</Link>
+            <div className="hidden md:flex items-center gap-2.5">
+              {pathGroups.map(group => (
+                <PathGroup key={group.label} group={group} />
+              ))}
+              {flatLinks.map(link => (
+                <Link
+                  key={link.href + link.label}
+                  href={link.href}
+                  className="text-sm font-medium text-[#023047]/78 hover:text-[#023047] transition-colors py-2 px-1"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
                 href="/contact"
-                className="px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
+                className="ml-1 px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
               >
-                Book a free call
+                Book a free 60-min call
               </Link>
             </div>
 
@@ -141,15 +164,45 @@ export function Header() {
             </button>
           </div>
 
-          {/* Mobile menu */}
           {mobileOpen && (
             <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
-              {[
-                { label: 'Case Studies', href: '/case-studies' },
-                { label: 'Pricing', href: '/pricing' },
-                { label: 'About', href: '/about' },
-                { label: 'Client Login', href: '/clients/login' },
-              ].map(link => (
+              {pathGroups.map((group, idx) => (
+                <div key={group.label} className="border-b border-[#8ECAE6]/20">
+                  <button
+                    className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                    onClick={() => toggleMobileGroup(idx)}
+                    aria-expanded={mobileOpenGroups[idx] || false}
+                    aria-controls={`mobile-path-${idx}`}
+                  >
+                    <div className="flex flex-col items-start">
+                      <span>{group.label}</span>
+                      <span className="text-[11px] font-normal text-[#023047]/55">{group.descriptor}</span>
+                    </div>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${mobileOpenGroups[idx] ? 'rotate-180' : ''}`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {mobileOpenGroups[idx] && (
+                    <div id={`mobile-path-${idx}`} className="pl-4 pb-2 space-y-1">
+                      {group.links.map(link => (
+                        <Link
+                          key={link.href + link.label}
+                          href={link.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors"
+                        >
+                          {link.label}
+                          {link.desc && <span className="block text-[11px] text-[#023047]/55">{link.desc}</span>}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {flatLinks.map(link => (
                 <Link
                   key={link.href + link.label}
                   href={link.href}
@@ -160,97 +213,21 @@ export function Header() {
                 </Link>
               ))}
 
-              {/* Mobile Services accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
-                <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  aria-expanded={mobileServicesOpen}
-                >
-                  Services <ChevronDown size={14} className={`transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-                </button>
-                {mobileServicesOpen && (
-                  <div className="pl-4 pb-2 space-y-1">
-                    {services.map(link => (
-                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Sectors accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
-                <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
-                  onClick={() => setMobileSectorsOpen(!mobileSectorsOpen)}
-                  aria-expanded={mobileSectorsOpen}
-                  aria-controls="mobile-sectors"
-                >
-                  Sectors <ChevronDown size={14} className={`transition-transform ${mobileSectorsOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-                </button>
-                {mobileSectorsOpen && (
-                  <div id="mobile-sectors" className="pl-4 pb-2 space-y-1">
-                    {sectors.map(link => (
-                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Resources accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
-                <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
-                  onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
-                  aria-expanded={mobileResourcesOpen}
-                  aria-controls="mobile-resources"
-                >
-                  Resources <ChevronDown size={14} className={`transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-                </button>
-                {mobileResourcesOpen && (
-                  <div id="mobile-resources" className="pl-4 pb-2 space-y-1">
-                    {resources.map(link => (
-                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Problems accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
-                <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
-                  onClick={() => setMobileProblemsOpen(!mobileProblemsOpen)}
-                  aria-expanded={mobileProblemsOpen}
-                  aria-controls="mobile-problems"
-                >
-                  Problems <ChevronDown size={14} className={`transition-transform ${mobileProblemsOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
-                </button>
-                {mobileProblemsOpen && (
-                  <div id="mobile-problems" className="pl-4 pb-2 space-y-1">
-                    {problems.map(link => (
-                      <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <Link
+                href="/about"
+                onClick={() => setMobileOpen(false)}
+                className="block text-sm font-medium text-[#023047]/70 hover:text-[#219EBC] transition-colors py-2 border-b border-[#8ECAE6]/20"
+              >
+                About
+              </Link>
 
               <div className="pt-2">
-                <Link href="/contact" onClick={() => setMobileOpen(false)}
-                  className="inline-block px-6 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold">
-                  Book a free call
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-block px-6 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
+                >
+                  Book a free 60-min call
                 </Link>
               </div>
             </div>
