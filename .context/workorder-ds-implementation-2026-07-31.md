@@ -93,6 +93,20 @@ informally.
 
 **Round 2 postmortem:** Lane H (service pages) ignored the "do not touch ds-marketing.css" rule and deleted 196 lines of shared DS classes plus reverted the layout.tsx cascade-layer fix — caught before merge, only its 4 clean page.tsx files were cherry-picked in. Lane L (case-studies fix) was merged without full verification and turned out to have replaced 3 correctly-DS-bound pages with an old-Tailwind rebuild, shipping a real regression to staging for ~10 minutes before being caught and hotfixed (commit b9e53ff) via a direct re-port rather than another OpenCode dispatch. Lesson: verify OpenCode lane diffs against forbidden-file lists before merging, not just against build-passes-and-headline-matches.
 
+## Round 3 — final close-out (2026-08-01)
+
+- [x] `.context/tools/verify-pages.js` added (commit d3c4d3c) — derived route↔mockup check, not a hand-maintained list. First run: 73 PASS, 15 FAIL, 1 NO-MOCKUP across 89 pages.
+- [x] Investigated all 15 FAILs individually:
+  - **3 real bugs found and fixed** (commit c712ba4): `/tools/automation-roi-calculator`, `/tools/downtime-cost-calculator`, `/tools/rto-calculator` — the page shells were DS-bound but the actual calculator components (`components/calculators/*.tsx`) were 100% untouched old-Tailwind. Added `components/calculators/calculators.css` (--do-* tokens, no new hex) and converted all three, zero changes to calculation logic. Verified: 0 old-Tailwind classes remain, build clean.
+  - **3 false positives, confirmed not bugs**: `/small-business`, `/locations/fractional-cto`, `/locations/tech-audit` — all fully DS-styled with correct v8.1 pricing; their headlines deliberately diverge from the generic mockup copy for SEO (location/keyword-targeted), not a defect. Left as-is.
+  - **9 false positives, confirmed not bugs**: blog posts with no `cluster` tag in `blog-index.json` correctly render no "related reading" section by design (`RelatedPosts.tsx` returns `null`) — not a template bug.
+  - **1 confirmed still-blocked**: `/blog` index has no mockup yet; the "blog-dedup unit E0" gate referenced in the brief couldn't be located in the registry or `wo-marketing-content-migration-2026-07-31` — likely already resolved or predates the registry, but not confirmed. `blog-index.json` itself looks clean (28 non-duplicate slugs).
+- [x] Final verify-pages.js run: 76 PASS, 12 explained-non-bug FAILs, 1 NO-MOCKUP. Zero unexplained findings.
+- [x] All worktrees for this WO removed via `git worktree remove` (not raw delete); all merged feature/hotfix branches deleted from origin.
+- [x] OWNER cleared, work order closed.
+
+**DONE. Nothing outstanding except `/blog` index (needs an Open Design mockup — not a code fix) and `/blog/fractional-cto` (blocked on content) — both correctly deferred on `wo-ds-implementation-staging-2026-07-31`, not silently dropped.**
+
 ## LANES
 - Lane 0 — Foundation (DS binding, layout.tsx, redirects config) · MUST land first, everything else depends on it
 - Lane A — Systems pages (apps index, data-app, artwork-manager, commerce, how-i-build) · depends on Lane 0
