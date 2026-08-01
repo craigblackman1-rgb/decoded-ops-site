@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 
 // Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
@@ -37,101 +36,114 @@ const schema = {
 
 export default function HanicksCaseStudyPage() {
   return (
-    <main>
-      <JsonLd data={schema} />
+    <>
+      <style>{`
+        .hero-center{ text-align:center; max-width:760px; margin-inline:auto }
+        .hero-center h1{ max-width:none; margin-inline:auto }
+        .hero-center .lede{ margin:18px auto 0 }
+        .hero-center .eyebrow{ margin-inline:auto }
+        .stat .stat-num{ font-family:var(--do-font-heading); font-weight:800;
+          font-size:clamp(2.2rem,4vw,3.2rem); line-height:1; letter-spacing:-.03em;
+          color:var(--do-amber); font-variant-numeric:tabular-nums }
+        .stat .stat-label{ margin:10px 0 0; color:var(--do-text-muted-on-dark); font-size:.9375rem;
+          max-width:24ch }
+        .prose{ max-width:72ch; margin-inline:auto }
+        .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
+        .prose h2:first-child{ margin-top:0 }
+        .prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:14px }
+        .progress-note{ background:color-mix(in srgb, var(--do-amber) 10%, transparent);
+          border:1px solid color-mix(in srgb, var(--do-amber) 30%, transparent);
+          border-radius:var(--do-radius-2xl); padding:24px 28px; margin-top:36px }
+        .progress-note h3{ font-size:var(--do-text-base); margin-bottom:8px }
+        .progress-note p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm) }
+        .cta-strip{ text-align:center }
+        .cta-strip h2{ max-width:none; margin-inline:auto }
+        .cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
+        .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center }
+      `}</style>
+      <main>
+        <JsonLd data={schema} />
 
-      {/* ── 1. HERO ── */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Client work · heating spares &amp; eCommerce</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            The platform stayed. The layer around it changed.
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed max-w-3xl mx-auto">
-            Hanicks is a heating spares business — not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 2. THE NUMBERS ── */}
-      <section className="py-16 lg:py-20 bg-[#023047]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFB703]/15 border border-[#FFB703]/30 mb-4">
-            <span className="text-xs font-semibold text-[#FFB703] tracking-wider uppercase">— The numbers</span>
-          </div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-[#F8F9FA] leading-tight mb-10">
-            Not projected. Not modelled. What actually happened.
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
-            <div>
-              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>164,752</p>
-              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">WooCommerce products imported</p>
-            </div>
-            <div>
-              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>127,135</p>
-              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">matched automatically — a 77% first-run match rate</p>
-            </div>
-            <div>
-              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>11,064</p>
-              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[24ch]">push-eligible products live to Khaos Control</p>
-            </div>
-          </div>
-
-          <p className="text-[#8ECAE6] leading-relaxed max-w-3xl">
-            Also: 2,872 new products and 28 new suppliers identified from a stock-take reconciliation, and 3,844 Amazon ASINs re-optimised ahead of a title-format deadline.
-          </p>
-        </div>
-      </section>
-
-      {/* ── 3. THE STORY ── */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">The situation before</h2>
-          <p className="text-[#023047]/70 leading-relaxed mb-8">
-            Product data was scattered across supplier feeds, no consistent SKU matching, no reliable way to know what was actually in stock or where. The business needed a proper ERP, but going into that with dirty data would have meant paying to migrate a mess.
-          </p>
-
-          <h2 className="text-2xl font-bold text-[#023047] mb-4">What was done</h2>
-          <p className="text-[#023047]/70 leading-relaxed mb-4">
-            Discovery Day identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
-          </p>
-          <p className="text-[#023047]/70 leading-relaxed mb-8">
-            The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
-          </p>
-
-          <div className="p-6 lg:p-7 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30 mb-8">
-            <h3 className="text-lg font-bold text-[#023047] mb-2">What's still in progress</h3>
-            <p className="text-[#023047]/70 text-sm leading-relaxed">
-              The remaining 23% of unmatched products are a known, visible list, not a hidden gap. They are being worked through rather than papered over.
+        {/* 1. HERO */}
+        <section className="g-off">
+          <div className="wrap hero-center">
+            <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
+            <h1>The platform stayed. The layer around it changed.</h1>
+            <p className="lede">
+              Hanicks is a heating spares business — not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
             </p>
           </div>
+        </section>
 
-        </div>
-      </section>
+        {/* 2. THE NUMBERS */}
+        <section className="g-navy">
+          <div className="wrap">
+            <span className="eyebrow eyebrow--amber">The numbers</span>
+            <h2 style={{ marginTop: 14 }}>Not projected. Not modelled. What actually happened.</h2>
 
-      {/* ── 4. CTA STRIP ── */}
-      <section className="py-16 lg:py-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mb-4">
-            See how the Data App does this.
-          </h2>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">
-            This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Discovery Day.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-              Book a free discovery call <ArrowRight size={18} />
-            </Link>
-            <Link href="/apps/data-app" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-              See the Data App <ArrowRight size={18} />
-            </Link>
+            <div className="grid grid--3" style={{ marginTop: 40 }}>
+              <div className="stat">
+                <p className="stat-num num">164,752</p>
+                <p className="stat-label">WooCommerce products imported</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">127,135</p>
+                <p className="stat-label">matched automatically — a 77% first-run match rate</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">11,064</p>
+                <p className="stat-label">push-eligible products live to Khaos Control</p>
+              </div>
+            </div>
+            <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>
+              Also: 2,872 new products and 28 new suppliers identified from a stock-take reconciliation, and 3,844 Amazon ASINs re-optimised ahead of a title-format deadline.
+            </p>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        {/* 3. THE STORY */}
+        <section className="g-white">
+          <div className="wrap prose">
+            <h2>The situation before</h2>
+            <p>
+              Product data was scattered across supplier feeds, no consistent SKU matching, no reliable way to know what was actually in stock or where. The business needed a proper ERP, but going into that with dirty data would have meant paying to migrate a mess.
+            </p>
+
+            <h2>What was done</h2>
+            <p>
+              Discovery Day identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+            </p>
+            <p>
+              The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+            </p>
+
+            <div className="progress-note">
+              <h3>What&apos;s still in progress</h3>
+              <p>
+                The remaining 23% of unmatched products are a known, visible list, not a hidden gap. They are being worked through rather than papered over.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. CTA STRIP */}
+        <section className="g-off cta-strip">
+          <div className="wrap" style={{ maxWidth: 760 }}>
+            <h2>See how the Data App does this.</h2>
+            <p className="lede">
+              This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Discovery Day.
+            </p>
+            <div className="hero-cta">
+              <Link href="/contact" className="btn btn--primary">
+                Book a free discovery call <ArrowRight size={18} />
+              </Link>
+              <Link href="/apps/data-app" className="btn btn-ghost btn-arrow">
+                See the Data App
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
