@@ -15,3 +15,10 @@
 fatal: ambiguous argument 'origin\ds-impl\lane-b;.context\loop-status.md': unknown revision or path not in the working tree.
 Use '--' to separate paths from revisions, like this:
 'git <command> [<revision>...] -- [<file>...]'
+2026-08-01T15:30:00+01:00 | lane-i | app/design-system/marketing-pages-extra.css | added: .sources/.source (disconnected-systems grid), .picture/.picture .arrow/.card--result (stock picture diagram), .layer-stack/.layer-tier/.layer-tier--base/.layer-tier--mid/.layer-tier--top (decoration layer model) — all deriving from --do-* tokens, no new hex
+2026-08-01T15:30:00+01:00 | lane-i | app/problems/buy-vs-build/page.tsx | ported from problems-buy-vs-build.html mockup: hero-split, rungs (3 cards — buy/buy+custom layer/full custom), steps roadmap (3 phases), how-i-help (answer box), cta-strip; copy preserved verbatim
+2026-08-01T15:30:00+01:00 | lane-i | app/problems/data-scattered/page.tsx | ported from problems-data-scattered.html mockup: hero-split, sources grid (6 cards with ✕ markers), causes grid--2 (4 items), how-i-help with Hanicks case study reference (164,752/127,135/77%), cta-strip
+2026-08-01T15:30:00+01:00 | lane-i | app/problems/inventory-blind/page.tsx | ported from problems-inventory-blind.html mockup: hero-split, symptoms list (7 items), stock picture diagram (supplier feeds + warehouse movement = one stock number), how-i-help, cta-strip
+2026-08-01T15:30:00+01:00 | lane-i | app/problems/legacy-system/page.tsx | ported from problems-legacy-system.html mockup: hero-split, symptoms list (7 items), layer-stack (3 tiers, column-reverse), how-i-help, cta-strip
+2026-08-01T15:30:00+01:00 | lane-i | npm run build | done: exit 0, Turbopack, 153/153 pages, zero errors, all 4 new routes generated static
+2026-08-01T15:30:00+01:00 | lane-i | git commit + push ds-impl2/lane-prob-new | done: commit 90be627, 5 files changed (+315/-272), pushed to origin, NOT merged to staging
