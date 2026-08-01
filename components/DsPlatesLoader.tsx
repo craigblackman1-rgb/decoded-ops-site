@@ -22,6 +22,10 @@ import { useEffect } from 'react';
  */
 export function DsPlatesLoader() {
   useEffect(() => {
+    // Gate plate fade/draw animations on JS. Without this class the DS
+    // renders plates fully visible (the no-JS fallback). With it, plates
+    // start at opacity:0 and animate in on intersection.
+    document.documentElement.classList.add('sk-js');
     // ds-plates.js has no import/export statements (it's a plain script,
     // not an ES module) so TypeScript's isolatedModules check refuses to
     // treat it as an importable module. It works fine at runtime — this
