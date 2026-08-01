@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight, Download, AlertTriangle } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { SixSigmaSchematic } from '@/components/schematics/SixSigmaSchematic';
 
@@ -133,28 +132,18 @@ export default function SixSigmaPage() {
         </div>
       </section>
 
-      {/* DOWNLOAD BAND (dark) */}
-      <section className="g-off">
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: 48, alignItems: 'center' }}>
-          <div style={{ margin: '0 auto', width: '100%', maxWidth: 240 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)' }} />
-          </div>
-          <div>
-            <span className="eyebrow">— Take it with you</span>
-            <h2>Get the full playbook, free</h2>
-            <p className="lede">
-              Seven pages: the sigma scale in decoration terms, the six process areas where the gap is widest, and a self-assessment scorecard to see where your operation stands right now. No email required.
-            </p>
-            <div className="btn-row">
-              <a href="/downloads/six-sigma.pdf" download className="btn btn--primary">
-                <Download size={18} /> Download the playbook
-              </a>
-              <Link href="/contact" className="btn btn--outline">
-                Book a discovery call <ArrowRight size={18} />
-              </Link>
-            </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+      {/* CTA STRIP (light) */}
+      <section className="g-white" style={{ textAlign: 'center' }}>
+        <div className="wrap" style={{ maxWidth: 760 }}>
+          <h2>See where your operation sits on the scale.</h2>
+          <p className="lede">A Discovery Day maps your actual defect rate, finds the process gaps behind it, and gives you a costed plan to close them.</p>
+          <div className="btn-row">
+            <Link href="/contact" className="btn btn--primary">
+              Book a free discovery call <ArrowRight size={18} />
+            </Link>
+            <Link href="/clarity" className="btn btn--outline">
+              See what Clarity covers <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>

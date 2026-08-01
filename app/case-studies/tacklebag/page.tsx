@@ -1,17 +1,17 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 
 // Target keyword: "stock control app decorated goods" (secondary: "tacklebag decoded ops")
 export const metadata = {
   title: 'TackleBag — Clarity Audit to Stock Control Build | Decoded Ops',
-  description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.',
+  description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data straight into their ERP implementation.',
   alternates: { canonical: '/case-studies/tacklebag' },
   openGraph: {
     type: 'article',
     title: 'TackleBag — Clarity Audit to Stock Control Build | Decoded Ops',
-    description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.',
+    description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data straight into their ERP implementation.',
     url: 'https://decodedops.co.uk/case-studies/tacklebag',
   },
   twitter: {
@@ -27,7 +27,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'TackleBag — Clarity Audit to Stock Control Build',
-      description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.',
+      description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data straight into their ERP implementation.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
       url: 'https://decodedops.co.uk/case-studies/tacklebag',
@@ -35,84 +35,109 @@ const schema = {
   ],
 };
 
+const supplierFeeds = [
+  'Joma', 'Speedo', 'Canterbury', 'Mizuno', 'Adidas',
+  'Banner', 'Chadwick', 'Reydon', 'Surridge',
+];
+
 export default function TackleBagCaseStudyPage() {
   return (
-    <>
-      <style>{`.article-body{max-width:740px;margin:0 auto}`}</style>
-      <main>
-        <JsonLd data={schema} />
-        <section className="g-off">
-          <div className="wrap">
-            <div className="article-body">
-              <span className="eyebrow">In Deliver · Branded Apparel &amp; Decoration</span>
-              <h1>TackleBag: building the data foundation before the ERP goes in</h1>
-              <p className="lede">
-                TackleBag came in for a Clarity Audit. What it found moved straight into a Deliver engagement, with a Stock Control module now doing the groundwork their eventual Khaos Control implementation would otherwise have to do the hard way.
-              </p>
+    <main>
+      <JsonLd data={schema} />
+
+      {/* ── 1. HERO ── */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Client work · branded apparel &amp; decoration</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+            The diagnostic came before the decision.
+          </h1>
+          <p className="text-lg text-[#023047]/70 leading-relaxed max-w-3xl mx-auto">
+            TackleBag sells teamwear and schoolwear. Multiple suppliers, decorated and plain stock side by side, and an eCommerce platform, Symphony, that needed to reflect live stock accurately across nine supplier feeds at once.
+          </p>
+        </div>
+      </section>
+
+      {/* ── 2. THE NUMBERS ── */}
+      <section className="py-16 lg:py-20 bg-[#023047]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFB703]/15 border border-[#FFB703]/30 mb-4">
+            <span className="text-xs font-semibold text-[#FFB703] tracking-wider uppercase">— The numbers</span>
+          </div>
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#F8F9FA] leading-tight mb-10">
+            Nine feeds, automated end to end.
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8 max-w-2xl">
+            <div>
+              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>9</p>
+              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[26ch]">supplier feeds running automated stock sync</p>
+            </div>
+            <div>
+              <p className="text-[clamp(2.2rem,4vw,3.2rem)] font-extrabold text-[#FFB703] leading-none" style={{ fontFamily: 'var(--font-outfit)', fontVariantNumeric: 'tabular-nums' }}>20–40</p>
+              <p className="mt-2.5 text-[#8ECAE6] text-base max-w-[26ch]">hours a week of admin time projected saved</p>
             </div>
           </div>
-        </section>
 
-        <section>
-          <div className="wrap">
-            <div className="article-body">
-
-              <h2>The problem</h2>
-              <p>
-                Stock and SKU data was spread across spreadsheets and manual processes, with no single source of truth for bin locations or supplier feeds. That&apos;s a normal starting point for a decorated goods business at this scale, but it&apos;s exactly the kind of mess that gets carried straight into a new ERP if nobody deals with it first. Khaos Control implementation typically starts once the software&apos;s in, with data prep left to the client to sort out on the way.
-              </p>
-
-              <h2>What we&apos;re building</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
-                {[
-                  'A Stock Control module with SKU standards and bin locations built in, so the data has a proper home before the ERP arrives',
-                  'Direct data ports from the module into Khaos Control once implementation starts — no manual re-entry, no re-cleaning the same data twice',
-                  'Supplier feed sanitisation built into the module, replacing spreadsheets that were never designed to hold this much detail reliably',
-                  'A module that keeps running after Khaos Control goes live — the ERP doesn\'t clean incoming supplier data on its own, this does',
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
-                    <p>{item}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ padding: '32px', borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: '32px' }}>
-                <h3>Why this order matters</h3>
-                <p>
-                  Khaos Control implementation is where the real project cost sits. Every hour spent cleaning and standardising data before that starts is an hour that doesn&apos;t get spent firefighting during implementation. The module isn&apos;t a stopgap that gets thrown away when the ERP lands. It&apos;s the thing doing the job the ERP was never going to do well on its own.
-                </p>
-              </div>
-
-              <h2>Status</h2>
-              <p style={{ marginBottom: '32px' }}>
-                Active Deliver engagement, following a completed Clarity Audit. The Stock Control module is in build, ahead of the Khaos Control implementation it&apos;s designed to feed.
-              </p>
-
-            </div>
+          <p className="text-[#8ECAE6] leading-relaxed mb-4">Supplier feeds automated:</p>
+          <div className="flex flex-wrap gap-2">
+            {supplierFeeds.map((feed) => (
+              <span key={feed} className="px-3.5 py-1.5 rounded-full bg-white border border-[#d4e8f0] text-xs font-semibold text-[#023047]">
+                {feed}
+              </span>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="g-navy">
-          <div className="wrap">
-            <div className="article-body">
-              <h3>Recognise this pattern?</h3>
-              <p className="lede">
-                If your stock data is spread across spreadsheets and you&apos;re eyeing an ERP, a Clarity Audit is the fastest way to find out what&apos;s actually going on before you commit to anything.
-              </p>
-              <div className="btn-row">
-                <Link href="/contact" className="btn btn--primary">
-                  Book a free discovery call <ArrowRight size={18} />
-                </Link>
-                <Link href="/case-studies" className="btn btn--outline">
-                  See other client work
-                </Link>
-              </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
-            </div>
+      {/* ── 3. THE STORY ── */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+
+          <h2 className="text-2xl font-bold text-[#023047] mb-4">The situation before</h2>
+          <p className="text-[#023047]/70 leading-relaxed mb-8">
+            Manual admin around stock, supplier feeds, and getting products live on Symphony was eating hours every week that should have gone into running the business.
+          </p>
+
+          <h2 className="text-2xl font-bold text-[#023047] mb-4">What was done</h2>
+          <p className="text-[#023047]/70 leading-relaxed mb-4">
+            Symphony stayed as the eCommerce platform — it was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
+          </p>
+          <p className="text-[#023047]/70 leading-relaxed mb-8">
+            Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing — a real gap in the initial build, found and fixed live.
+          </p>
+
+          <div className="p-6 lg:p-7 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30 mb-8">
+            <h3 className="text-lg font-bold text-[#023047] mb-2">What's still in progress</h3>
+            <p className="text-[#023047]/70 text-sm leading-relaxed">
+              The Data App continues to expand: warehouse floor tooling and further supplier automation are active, ongoing work, not a finished state being presented as complete.
+            </p>
           </div>
-        </section>
-      </main>
-    </>
+
+        </div>
+      </section>
+
+      {/* ── 4. CTA STRIP ── */}
+      <section className="py-16 lg:py-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#023047] mb-4">
+            See how the Data App does this.
+          </h2>
+          <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">
+            This is a Systems (rung 2) example. For a diagnosis of what your own operation actually needs, book a Discovery Day.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+              Book a free discovery call <ArrowRight size={18} />
+            </Link>
+            <Link href="/apps/data-app" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+              See the Data App <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
