@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
 import './homepage.css';
 
 export const metadata: Metadata = {
@@ -97,12 +98,9 @@ export default function HomePage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-evidence">
-                <svg className="pl" data-tone="dark" data-p="ev" viewBox="0 0 1600 900" role="img"
-                     data-title="Decoded Data App — live deployment"
-                     data-sub="Supplier feed to platform, one clean catalogue between them"
-                     data-no="DO-ART-902" data-rev="01"
-                     data-class="DECODED OPS · ISSUED"
-                     aria-label="Evidence plate DO-ART-902. Left, a screen from the Decoded Data App showing a pick queue of decorated-garment jobs, an activity stream of supplier feed imports and a stock export, and a data-health panel reporting supplier coverage at 82 per cent and variant matching at 43 per cent. Right, a specification panel recording the client, what the screen shows, its source, and that no photographic grade has been applied because it is an interface, not a photograph.">
+                <Plate tone="dark" p="ev" title="Decoded Data App — live deployment"
+                       sub="Supplier feed to platform, one clean catalogue between them"
+                       no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
 
                   <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
 
@@ -111,43 +109,43 @@ export default function HomePage() {
                     <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
                            preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
                     <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
-                          opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+                           opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
                     <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
-                          strokeWidth="1.1" strokeOpacity=".35"/>
+                           strokeWidth="1.1" strokeOpacity=".35"/>
                     <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
                     <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
-                          fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
+                           fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
                   </g>
 
                   {/* THE SPECIFICATION */}
                   <g className="sk-fade sk-s4">
                     <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
-                          className="p-node" strokeWidth="1.1"/>
+                           className="p-node" strokeWidth="1.1"/>
                     <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
                     <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
-                          fontWeight="600">EXHIBIT</text>
+                           fontWeight="600">EXHIBIT</text>
                     <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
-                          strokeOpacity=".2"/>
+                           strokeOpacity=".2"/>
 
                     <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
-                          opacity=".45">CLIENT</text>
+                           opacity=".45">CLIENT</text>
                     <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
-                          fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
+                           fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
 
                     <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
-                          opacity=".45">SHOWS</text>
+                           opacity=".45">SHOWS</text>
                     <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                          fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+                           fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
                     <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
                       picking alongside Symphony</text>
 
                     <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
-                          opacity=".45">SOURCE</text>
+                           opacity=".45">SOURCE</text>
                     <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
-                          fontWeight="600" fontSize="22">Decoded Data App interface</text>
+                           fontWeight="600" fontSize="22">Decoded Data App interface</text>
 
                     <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
-                          strokeOpacity=".2"/>
+                           strokeOpacity=".2"/>
                     <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE — none. A
                       screen is not</text>
                     <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
@@ -155,7 +153,7 @@ export default function HomePage() {
                     <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
                       is evidence of.</text>
                   </g>
-                </svg>
+                </Plate>
               </div>
             </div>
           </div>
@@ -205,12 +203,9 @@ export default function HomePage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-measure">
-                <svg className="pl" data-tone="dark" data-p="ms" viewBox="0 0 1600 900" role="img"
-                     data-title="Supplier catalogue — raw to live"
-                     data-sub="Hanicks · one import pipeline, first automated run"
-                     data-no="DO-ART-202" data-rev="01"
-                     data-class="DECODED OPS · ISSUED"
-                     aria-label="Measure plate DO-ART-202. Three proportional bars quantifying one supplier-catalogue pipeline at Hanicks: 164,752 rows imported from supplier feeds, 127,135 of them matched automatically on the first run at 77 per cent, and 11,064 products pushed live to Khaos Control. Before the pipeline, matching was done by hand in spreadsheets with no repeatable run.">
+                <Plate tone="dark" p="ms" title="Supplier catalogue — raw to live"
+                       sub="Hanicks · one import pipeline, first automated run"
+                       no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
 
                   {/* track guides */}
                   <g className="sk-fade sk-s1" opacity=".5">
@@ -272,7 +267,7 @@ export default function HomePage() {
                     <text x="60" y="726" className="p-mono" fontSize="17" opacity=".5">Before: matched by
                       hand, no repeatable run, no way to tell what had changed since last time.</text>
                   </g>
-                </svg>
+                </Plate>
               </div>
             </div>
 
@@ -293,12 +288,9 @@ export default function HomePage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-ladder">
-                <svg className="pl" data-tone="dark" data-p="ld" viewBox="0 0 1600 900" role="img"
-                     data-title="The ladder — buy first, build only what is missing"
-                     data-sub="Three rungs in fixed order · every option priced"
-                     data-no="DO-ART-302" data-rev="01"
-                     data-class="DECODED OPS · ISSUED"
-                     aria-label="Flow plate DO-ART-302. Three rungs in fixed order along a spine. Rung one: buy off the shelf where it already fits. Rung two, the default and what both live clients run: buy the platform plus a custom automation layer to close the gaps it leaves. Rung three, a last resort: full custom, only when nothing off the shelf fits, and priced alongside everything else considered.">
+                <Plate tone="dark" p="ld" title="The ladder — buy first, build only what is missing"
+                       sub="Three rungs in fixed order · every option priced"
+                       no="DO-ART-302" rev="01" cls="DECODED OPS · ISSUED">
 
                   {/* the spine */}
                   <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
@@ -367,7 +359,7 @@ export default function HomePage() {
                       </animateMotion>
                     </circle>
                   </g>
-                </svg>
+                </Plate>
               </div>
             </div>
 

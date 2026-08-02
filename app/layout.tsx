@@ -19,7 +19,6 @@ import { CookieConsent } from '@/components/CookieConsent';
 import { JsonLd } from '@/components/JsonLd';
 import { AppShell } from '@/components/AppShell';
 import { SessionProvider } from '@/components/SessionProvider';
-import { DsPlatesLoader } from '@/components/DsPlatesLoader';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -114,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AppShell>
         </SessionProvider>
         <CookieConsent />
-        <DsPlatesLoader />
+
       </body>
     </html>
   );
