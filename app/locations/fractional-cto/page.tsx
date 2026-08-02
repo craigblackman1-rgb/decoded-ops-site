@@ -7,19 +7,19 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Hire a Fractional CTO | Decoded Ops — Print & Decoration Specialists',
-  description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
+  title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
+  description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
   alternates: { canonical: '/locations/fractional-cto' },
   openGraph: {
-    title: 'Hire a Fractional CTO | Decoded Ops — Print & Decoration Specialists',
-    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
+    title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
+    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
     url: 'https://decodedops.co.uk/locations/fractional-cto',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hire a Fractional CTO | Decoded Ops — Print & Decoration Specialists',
-    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.',
+    title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
+    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
   },
 };
 
@@ -39,12 +39,12 @@ const locationSchema = {
         {
           '@type': 'Question',
           name: 'What is the difference between hiring a fractional CTO and using managed IT support?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Managed IT support services handle day-to-day IT issues — helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Managed IT support services handle day-to-day IT issues: helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.' },
         },
         {
           '@type': 'Question',
           name: 'Do you offer fractional CTO services for print businesses in Sussex?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership — not generic IT consultancy.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership, not generic IT consultancy.' },
         },
       ],
     },
@@ -64,10 +64,10 @@ export default function FractionalCTOLocationsHub() {
       <section className="g-off">
         <div className="wrap">
           <div style={{ maxWidth: 720 }}>
-            <span className="eyebrow" style={{ marginBottom: 22 }}>— Fractional CTO</span>
+            <span className="eyebrow" style={{ marginBottom: 22 }}>Fractional CTO</span>
             <h1 className="h1">Hire a fractional CTO <em>across Sussex, Surrey, and the UK</em></h1>
             <p className="lede">
-              Hire a fractional CTO for your print, embroidery, or decoration business — with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
+              Hire a fractional CTO for your print, embroidery, or decoration business, with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
             </p>
             <div className="btn-row">
               <Link href="/contact" className="btn btn--primary">
@@ -85,7 +85,7 @@ export default function FractionalCTOLocationsHub() {
           <div style={{ maxWidth: '42ch' }}>
             <h2 className="h2">Fractional CTO services for print and decoration businesses</h2>
             <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75, marginBottom: 16 }}>
-              Fractional CTO services give you the technology leadership a growing business needs — without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
+              Fractional CTO services give you the technology leadership a growing business needs, without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
             </p>
             <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75 }}>
               Available UK-wide. Based in West Sussex. On-site where the work requires it.
@@ -130,7 +130,7 @@ export default function FractionalCTOLocationsHub() {
       {/* CROSS-LINK TO AUDIT HUB */}
       <section className="g-navy">
         <div className="wrap" style={{ textAlign: 'center' }}>
-          <span className="eyebrow" style={{ marginBottom: 22 }}>— Not sure where to start?</span>
+          <span className="eyebrow" style={{ marginBottom: 22 }}>Not sure where to start?</span>
           <h2 className="h2">Start with a Clarity Audit</h2>
           <p className="lede">
             A fixed-price, one-day diagnostic. Find out what your systems are costing you before committing to anything ongoing.

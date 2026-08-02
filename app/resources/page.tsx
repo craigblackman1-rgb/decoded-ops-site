@@ -43,13 +43,13 @@ const resources = [
   {
     icon: Workflow,
     title: 'The Decoded Method',
-    desc: 'A three-layer system for documenting how your business runs — Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
+    desc: 'A three-layer system for documenting how your business runs: Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
     href: '/resources/decoded-method',
   },
   {
     icon: Gauge,
     title: 'What 5 & 6 Sigma Mean for Your Operation',
-    desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business — and why closing the gap is about process, not machinery.',
+    desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business, and why closing the gap is about process, not machinery.',
     href: '/resources/six-sigma',
   },
 ];
@@ -63,7 +63,7 @@ export default function ResourcesPage() {
       ]} />
       <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— Resources</span>
+          <span className="eyebrow">Resources</span>
           <h1>Tools and guides <em>you can use today</em></h1>
           <p className="lede">
             Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.

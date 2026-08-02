@@ -116,10 +116,10 @@ export default function ChecklistPage() {
       {/* HERO */}
       <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— Free resource</span>
+          <span className="eyebrow">Free resource</span>
           <h1>Operational audit checklist</h1>
           <p className="lede">
-            20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant—or to understand what an audit actually covers.
+            20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function ChecklistPage() {
               Go through each section and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
             </p>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
-              The items you can't answer are the most valuable—they're where the hidden costs usually are.
+              The items you can't answer are the most valuable. They're where the hidden costs usually are.
             </p>
           </div>
 

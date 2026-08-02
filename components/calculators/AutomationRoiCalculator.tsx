@@ -46,7 +46,7 @@ export function AutomationRoiCalculator() {
 
   return (
     <div className="calc-grid">
-      {/* Left column — inputs */}
+      {/* Left column: inputs */}
       <div>
         <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
           Your Numbers
@@ -126,7 +126,7 @@ export function AutomationRoiCalculator() {
         </div>
       </div>
 
-      {/* Right column — results */}
+      {/* Right column: results */}
       <div>
         <div className="calc-panel">
           <h2>Automation ROI Analysis</h2>

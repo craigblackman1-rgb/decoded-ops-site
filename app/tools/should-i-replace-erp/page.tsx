@@ -16,9 +16,9 @@ const questions = [
 ];
 
 const results = [
-  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
-  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Do an Audit First' },
-  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Start Planning' },
+  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
+  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Do an Audit First' },
+  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Start Planning' },
 ];
 
 type Answer = 'yes' | 'no' | null;
@@ -54,7 +54,7 @@ export default function ShouldIReplaceErpPage() {
     <main>
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>Should I replace my ERP?</h1>
           <p className="lede">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
         </div>

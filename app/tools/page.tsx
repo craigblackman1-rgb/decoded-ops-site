@@ -44,13 +44,13 @@ const tools = [
   {
     title: 'AI Readiness Check',
     description:
-      'Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your foundation first.',
+      'Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your foundation first.',
     href: '/tools/ai-readiness-check',
   },
   {
     title: 'Ops Health Score',
     description:
-      'Rate your business across five operational dimensions to see where you stand — and where to focus first.',
+      'Rate your business across five operational dimensions to see where you stand, and where to focus first.',
     href: '/tools/ops-health-score',
   },
   {
@@ -68,7 +68,7 @@ const tools = [
   {
     title: 'Automation ROI Calculator',
     description:
-      'See when automating a manual process pays for itself — and what it returns over 3 years.',
+      'See when automating a manual process pays for itself, and what it returns over 3 years.',
     href: '/tools/automation-roi-calculator',
   },
 ];
@@ -84,10 +84,10 @@ export default function ToolsPage() {
       {/* Hero */}
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
-          <span className="eyebrow">— Free tools</span>
+          <span className="eyebrow">Free tools</span>
           <h1>Calculate your operational cost</h1>
           <p className="lede" style={{ margin: '0 auto' }}>
-            Free tools to quantify operational inefficiency — so you know exactly what it&apos;s costing you.
+            Free tools to quantify operational inefficiency, so you know exactly what it&apos;s costing you.
           </p>
         </div>
       </section>

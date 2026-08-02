@@ -6,19 +6,19 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   },
 };
 
@@ -28,7 +28,7 @@ const smallBizSchema = {
     {
       '@type': 'Service',
       name: 'Small Business Operational Support',
-      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
       serviceType: 'Small Business Operational Support',
       areaServed: 'GB',
@@ -56,12 +56,12 @@ const smallBizSchema = {
         {
           '@type': 'Question',
           name: 'What does a small business operations consultant actually do?',
-          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check — delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check, delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
         },
         {
           '@type': 'Question',
           name: 'Is this like managed IT support for small businesses?',
-          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business — not just keeping the lights on.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business, not just keeping the lights on.' },
         },
       ],
     },
@@ -73,10 +73,10 @@ const services = [
     icon: Sparkles,
     name: 'Clarity Check',
     price: '£595',
-    tagline: 'The starting point. A remote operational review — honest, specific, actionable.',
+    tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
     features: [
       '3-hour structured remote session',
-      'Written findings summary — plain English',
+      'Written findings summary, plain English',
       'Three priority actions identified',
       'Tech stack and AI readiness assessed',
       'Delivered within 5 working days',
@@ -101,7 +101,7 @@ const services = [
     icon: Wrench,
     name: 'Transform',
     price: '£1,095/mo',
-    tagline: 'Focused transformation programme — one workstream at a time.',
+    tagline: 'Focused transformation programme, one workstream at a time.',
     features: [
       '90-minute remote working sessions',
       'Single focused workstream',
@@ -127,7 +127,7 @@ const services = [
     icon: Brain,
     name: 'AI Readiness Check',
     price: '£395',
-    tagline: 'An honest, independent assessment of whether AI can help your business right now — and what needs fixing first.',
+    tagline: 'An honest, independent assessment of whether AI can help your business right now, and what needs fixing first.',
     features: [
       '90-minute structured remote session',
       'Data quality and process readiness review',
@@ -141,13 +141,13 @@ const services = [
     icon: Zap,
     name: 'Quarterly Sprint',
     price: '£995',
-    tagline: 'A single intensive session each quarter — an outside look at the whole operation without a monthly commitment.',
+    tagline: 'A single intensive session each quarter: an outside look at the whole operation without a monthly commitment.',
     features: [
       'Half-day remote or on-site session (travel at cost)',
       'Review of what\'s changed since last session',
       '2–3 named priorities for the quarter ahead',
       'Short written summary delivered within 3 days',
-      'No minimum commitment — booked fresh each quarter',
+      'No minimum commitment, booked fresh each quarter',
     ],
     cta: 'Book a Quarterly Sprint',
   },
@@ -165,15 +165,15 @@ export default function SmallBusinessPage() {
       {/* HERO */}
       <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
-          <span className="eyebrow" style={{ marginBottom: 22 }}>— For small businesses</span>
+          <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
           <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the enterprise price tag.</em></h1>
           <p className="lede">
-            The same operational thinking I bring to larger businesses — adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+            The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
-            A small business operations consultant covers what a full-time operations director would — technology decisions, vendor oversight, process improvement, and AI readiness — on a flexible, affordable basis built for businesses under £500k.
+            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
           </p>
-          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman — 25 years in print &amp; embroidery operations</p>
+          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
             <Link href="/pricing" className="btn btn--primary">
               See all pricing <ArrowRight size={18} />
@@ -218,7 +218,7 @@ export default function SmallBusinessPage() {
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
             <h2 className="h2">Fractional operations and technology support for small businesses</h2>
-            <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me — not a junior team.</p>
+            <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>
           </div>
           <div className="grid grid--3">
             {services.map((service) => {

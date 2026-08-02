@@ -29,7 +29,7 @@ export default function DowntimeCostCalculatorPage() {
       {/* Hero */}
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>Downtime cost calculator</h1>
           <p className="lede">
             Enter your numbers to see exactly what system outages cost your business each year across

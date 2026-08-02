@@ -21,7 +21,7 @@ export function DowntimeCostCalculator() {
 
   return (
     <div className="calc-grid">
-      {/* Left column — inputs */}
+      {/* Left column: inputs */}
       <div>
         <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
           Your Numbers
@@ -85,7 +85,7 @@ export function DowntimeCostCalculator() {
 
         <div className="calc-input-group">
           <label htmlFor="revenuePerHour" className="calc-label">
-            Lost revenue per hour (£) — optional
+            Lost revenue per hour (£), optional
           </label>
           <input
             id="revenuePerHour"
@@ -101,7 +101,7 @@ export function DowntimeCostCalculator() {
         </div>
       </div>
 
-      {/* Right column — results */}
+      {/* Right column: results */}
       <div>
         <div className="calc-panel">
           <h2>Your Annual Cost of Downtime</h2>

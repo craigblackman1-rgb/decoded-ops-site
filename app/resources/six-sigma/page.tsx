@@ -48,11 +48,11 @@ export default function SixSigmaPage() {
     <>
       <JsonLd data={schema} />
 
-      {/* HERO — dark ground */}
+      {/* HERO, dark ground */}
       <section className="g-off">
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
           <div>
-            <span className="eyebrow">— Free playbook · Garment decoration</span>
+            <span className="eyebrow">Free playbook · Garment decoration</span>
             <h1>What 5 &amp; 6 Sigma mean for your print &amp; embroidery operation</h1>
             <div className="hair" />
             <p className="lede">
@@ -71,12 +71,12 @@ export default function SixSigmaPage() {
 
           <div style={{ position: 'relative', margin: '0 auto', width: '100%', maxWidth: 320 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook — cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
+            <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
           </div>
         </div>
       </section>
 
-      {/* WARNING BAND — the one accent strip */}
+      {/* WARNING BAND, the one accent strip */}
       <div className="strip">
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, textAlign: 'center' }}>
           <AlertTriangle size={18} style={{ flexShrink: 0 }} />
@@ -88,7 +88,7 @@ export default function SixSigmaPage() {
       <section className="g-off">
         <div className="wrap">
           <div style={{ maxWidth: '46ch' }}>
-            <span className="eyebrow">— The scale</span>
+            <span className="eyebrow">The scale</span>
             <h2>From reactive to near-zero defect</h2>
             <p className="lede">Each sigma level is a defect rate. Here is where the gap between 3 Sigma and 5 Sigma sits, and what it is worth.</p>
           </div>
@@ -121,7 +121,7 @@ export default function SixSigmaPage() {
       {/* THE REAL GAP (dark) */}
       <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— The real gap</span>
+          <span className="eyebrow">The real gap</span>
           <h2>The gap is process, not machinery</h2>
           <p className="lede">
             Moving from <strong style={{ color: 'var(--do-amber)' }}>3 Sigma to 5 Sigma</strong> cuts your defect rate by <strong style={{ color: 'var(--do-amber)' }}>99.6%</strong>. That is not a machine upgrade. It is a process redesign: standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.

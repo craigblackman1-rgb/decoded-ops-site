@@ -51,7 +51,7 @@ export function LocationPage({
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-                <span className="eyebrow" style={{ marginBottom: 0 }}>— {badge}</span>
+                <span className="eyebrow" style={{ marginBottom: 0 }}>{badge}</span>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 20%, transparent)' }}>
                   <MapPin size={12} style={{ color: 'var(--do-cerulean)' }} />
                   <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-cerulean)' }}>{county}</span>
@@ -89,7 +89,7 @@ export function LocationPage({
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'start' }}>
             <div>
-              <span className="eyebrow" style={{ marginBottom: 22 }}>— {town}</span>
+              <span className="eyebrow" style={{ marginBottom: 22 }}>{town}</span>
               <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>
                 What this looks like for {town} businesses
               </h2>
@@ -97,7 +97,7 @@ export function LocationPage({
             <div>
               <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75 }}>{localContext}</p>
               <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75, marginTop: 16 }}>
-                The work I do is the same wherever the business is based — a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
+                The work I do is the same wherever the business is based: a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
               </p>
               {(driveTime || localFact) && (
                 <div className="card" style={{ marginTop: 24, display: 'flex', gap: 32, flexDirection: 'row' }}>
@@ -124,10 +124,10 @@ export function LocationPage({
       <section className="g-tint">
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
-            <span className="eyebrow" style={{ marginBottom: 22 }}>— Where the cost hides</span>
+            <span className="eyebrow" style={{ marginBottom: 22 }}>Where the cost hides</span>
             <h2 className="h2">The problems that tend to appear</h2>
             <p className="lede">
-              These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business — but the underlying structure is almost always the same.
+              These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business, but the underlying structure is almost always the same.
             </p>
           </div>
           <div className="grid grid--2">
@@ -150,7 +150,7 @@ export function LocationPage({
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 80px)', alignItems: 'start' }}>
             <div>
-              <span className="eyebrow" style={{ marginBottom: 22 }}>— How I help</span>
+              <span className="eyebrow" style={{ marginBottom: 22 }}>How I help</span>
               <h2 className="h2">What the work actually looks like</h2>
               <p className="lede">
                 No frameworks. No generic recommendations. A structured, independent process that produces specific answers for this business.
@@ -181,7 +181,7 @@ export function LocationPage({
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
                   {[
                     'No vendor relationships or commission',
-                    'Worked at every level — warehouse floor to boardroom',
+                    'Worked at every level, warehouse floor to boardroom',
                     '3× Clarity Guarantee on audit work',
                     'Based in the South East, on-site across Sussex and Surrey',
                   ].map((item) => (
@@ -209,7 +209,7 @@ export function LocationPage({
         <div className="wrap" style={{ textAlign: 'center' }}>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
           <p style={{ color: 'var(--do-text-secondary)' }}>
-            {county} · East Sussex · West Sussex · Surrey —{' '}
+            {county} · East Sussex · West Sussex · Surrey,{' '}
             <Link href={serviceUrl} style={{ color: 'var(--do-cerulean)', textDecoration: 'underline' }}>
               view all locations
             </Link>

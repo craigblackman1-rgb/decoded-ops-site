@@ -29,10 +29,10 @@ export default function RtoCalculatorPage() {
       {/* Hero */}
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>RTO calculator</h1>
           <p className="lede">
-            See what your current recovery time is costing you — and what faster recovery is actually worth in pounds.
+            See what your current recovery time is costing you, and what faster recovery is actually worth in pounds.
           </p>
         </div>
       </section>

@@ -19,20 +19,20 @@ export async function generateMetadata({
 
   return {
     title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
-    description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+    description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
     alternates: {
       canonical: `/locations/fractional-cto/${loc.slug}`,
     },
     openGraph: {
       title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
-      description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+      description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
       url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
-      description: `Fractional CTO for ${loc.name} businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+      description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
     },
   };
 }
@@ -40,7 +40,7 @@ export async function generateMetadata({
 const painPoints = [
   {
     title: 'No one owns the technology decisions',
-    body: 'Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem — and the cost of those decisions compounds quietly until it becomes visible.',
+    body: 'Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem, and the cost of those decisions compounds quietly until it becomes visible.',
   },
   {
     title: 'Growing faster than your infrastructure',
@@ -57,12 +57,12 @@ const painPoints = [
 ];
 
 const whatIdo = [
-  'Map your current technology landscape — what\'s running, what it costs, and what it\'s supposed to do versus what it actually does',
+  'Map your current technology landscape: what\'s running, what it costs, and what it\'s supposed to do versus what it actually does',
   'Identify the decisions that need to be made and build a prioritised roadmap you can act on',
-  'Act as your technology voice in commercial conversations — with vendors, with developers, with investors or board',
-  'Attend leadership meetings as your part-time tech director — present and accountable, not just on call when something breaks',
+  'Act as your technology voice in commercial conversations: with vendors, with developers, with investors or board',
+  'Attend leadership meetings as your part-time tech director, present and accountable, not just on call when something breaks',
   'Build internal capability so you become less dependent over time, not more',
-  'Run the Clarity Audit first if the picture is unclear — a fixed-price diagnostic before any ongoing commitment',
+  'Run the Clarity Audit first if the picture is unclear, a fixed-price diagnostic before any ongoing commitment',
 ];
 
 export default async function FractionalCTOLocationPage({
@@ -111,8 +111,8 @@ export default async function FractionalCTOLocationPage({
         county={loc.county}
         service="Fractional CTO"
         badge={`Fractional CTO · ${loc.county}`}
-        tagline={`Senior technology leadership for ||${loc.name} businesses|| — without the full-time hire.`}
-        intro={`Growing businesses in ${loc.name} face real technology decisions — vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
+        tagline={`Senior technology leadership for ||${loc.name} businesses||, without the full-time hire.`}
+        intro={`Growing businesses in ${loc.name} face real technology decisions: vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}

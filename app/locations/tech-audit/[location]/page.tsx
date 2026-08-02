@@ -40,15 +40,15 @@ export async function generateMetadata({
 const painPoints = [
   {
     title: 'Your systems don\'t talk to each other',
-    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors — and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors, and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
   },
   {
-    title: 'You know costs are higher than they should be — but can\'t see where',
-    body: 'The overhead is there — in headcount, in rework, in customer service time — but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+    title: 'You know costs are higher than they should be, but can\'t see where',
+    body: 'The overhead is there, in headcount, in rework, in customer service time, but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
   },
   {
     title: 'Ready to scale, but the operations aren\'t',
-    body: 'Revenue could grow faster. The constraint is operational — systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
+    body: 'Revenue could grow faster. The constraint is operational: systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
   },
   {
     title: 'Decisions being made on incomplete information',
@@ -57,12 +57,12 @@ const painPoints = [
 ];
 
 const whatIdo = [
-  'One structured day on site — talking to the people doing the work, not just the people managing it',
+  'One structured day on site, talking to the people doing the work, not just the people managing it',
   'Map every system you\'re running, what it costs, and what it\'s actually being used for versus what it was bought to do',
-  'Document every manual handoff and workaround — this is almost always where the cost is hiding',
+  'Document every manual handoff and workaround. This is almost always where the cost is hiding',
   'Identify the three to five changes that would recover the most cost or unlock the most revenue',
-  'Produce a written report within five working days — specific, costed, with independent vendor recommendations',
-  'Back it with the 3× Clarity Guarantee — if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions',
+  'Produce a written report within five working days: specific, costed, with independent vendor recommendations',
+  'Back it with the 3× Clarity Guarantee: if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions',
 ];
 
 export default async function TechAuditLocationPage({
@@ -106,7 +106,7 @@ export default async function TechAuditLocationPage({
               '@type': 'Offer',
               price: '1500',
               priceCurrency: 'GBP',
-              description: 'Clarity Audit — technology audit and systems diagnostic',
+              description: 'Clarity Audit, technology audit and systems diagnostic',
             },
             url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
           }),
@@ -124,7 +124,7 @@ export default async function TechAuditLocationPage({
         localFact={loc.localFact}
         painPoints={painPoints}
         whatIdo={whatIdo}
-        cta={`Book a Clarity Audit for your ${loc.name} business — from £1,500`}
+        cta={`Book a Clarity Audit for your ${loc.name} business, from £1,500`}
         serviceUrl="/clarity"
         serviceLabel="See how the Clarity Audit works"
       />

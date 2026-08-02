@@ -20,7 +20,7 @@ const dimensions: Dimension[] = [
   { id: 'strategy', label: 'Technology Strategy', low: 'No roadmap. Systems bought reactively.', mid: 'Informal roadmap exists. Some planning in place.', high: 'Clear technology roadmap aligned to business goals.' },
 ];
 
-const scoreLabels = ['1 — Critical', '2 — Weak', '3 — Acceptable', '4 — Good', '5 — Excellent'];
+const scoreLabels = ['1: Critical', '2: Weak', '3: Acceptable', '4: Good', '5: Excellent'];
 
 function getScoreColor(score: number): string {
   if (score <= 2) return '#FB8500';
@@ -29,10 +29,10 @@ function getScoreColor(score: number): string {
 }
 
 function getHealthLabel(total: number): { label: string; color: string; description: string } {
-  if (total <= 10) return { label: 'Critical — Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
-  if (total <= 15) return { label: 'Fragile — Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk — fixing them now is cheaper than waiting.' };
-  if (total <= 20) return { label: 'Stable — Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
-  return { label: 'Strong — Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
+  if (total <= 10) return { label: 'Critical: Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
+  if (total <= 15) return { label: 'Fragile: Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk: fixing them now is cheaper than waiting.' };
+  if (total <= 20) return { label: 'Stable: Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
+  return { label: 'Strong: Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
 }
 
 export default function OpsHealthScorePage() {
@@ -56,9 +56,9 @@ export default function OpsHealthScorePage() {
     <main>
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>Ops health score</h1>
-          <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand — and where to focus first.</p>
+          <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand, and where to focus first.</p>
         </div>
       </section>
 

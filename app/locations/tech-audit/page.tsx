@@ -39,14 +39,14 @@ export default function TechAuditLocationsHub() {
       <section className="g-off">
         <div className="wrap">
           <div style={{ maxWidth: 720 }}>
-            <span className="eyebrow" style={{ marginBottom: 22 }}>— Technology Audit</span>
+            <span className="eyebrow" style={{ marginBottom: 22 }}>Technology Audit</span>
             <h1 className="h1">Technology audits for <em>Sussex and Surrey businesses</em></h1>
             <p className="lede">
-              A structured, independent audit that tells you exactly what your systems are costing you — and what to do about it. Starting from £1,500.
+              A structured, independent audit that tells you exactly what your systems are costing you, and what to do about it. Starting from £1,500.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
               <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3× Clarity Guarantee</span>
-              <span style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)' }}>— if we don&apos;t find 3× the fee in recoverable cost or lost revenue, full refund</span>
+              <span style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)' }}>If I don&apos;t find 3× the fee in recoverable cost or lost revenue, you get a full refund</span>
             </div>
             <div>
               <Link href="/contact" className="btn btn--primary" style={{ marginBottom: 12 }}>
@@ -96,7 +96,7 @@ export default function TechAuditLocationsHub() {
       {/* CROSS-LINK TO FRACTIONAL CTO HUB */}
       <section className="g-navy">
         <div className="wrap" style={{ textAlign: 'center' }}>
-          <span className="eyebrow" style={{ marginBottom: 22 }}>— Need ongoing support?</span>
+          <span className="eyebrow" style={{ marginBottom: 22 }}>Need ongoing support?</span>
           <h2 className="h2">Fractional CTO engagement</h2>
           <p className="lede">
             After the audit, some businesses need someone to stay involved and own the technology decisions. That&apos;s the fractional CTO model.

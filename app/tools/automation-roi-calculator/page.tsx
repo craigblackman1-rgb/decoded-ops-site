@@ -28,7 +28,7 @@ export default function AutomationRoiCalculatorPage() {
       />
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>Automation ROI calculator</h1>
           <p className="lede">
             Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.

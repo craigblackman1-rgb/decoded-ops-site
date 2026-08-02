@@ -14,9 +14,9 @@ const questions = [
 ];
 
 const results = [
-  { min: 0, max: 3, label: 'Not Ready — Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
-  { min: 4, max: 6, label: 'Getting There — Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
-  { min: 7, max: 10, label: 'Ready — Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
+  { min: 0, max: 3, label: 'Not Ready: Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
+  { min: 4, max: 6, label: 'Getting There: Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
+  { min: 7, max: 10, label: 'Ready: Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
 ];
 
 type Answer = 'yes' | 'no' | null;
@@ -52,9 +52,9 @@ export default function AiReadinessCheckPage() {
     <main>
       <section className="g-navy">
         <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">— Free tool</span>
+          <span className="eyebrow">Free tool</span>
           <h1>AI readiness check</h1>
-          <p className="lede">Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your operational foundation first.</p>
+          <p className="lede">Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your operational foundation first.</p>
         </div>
       </section>
 
