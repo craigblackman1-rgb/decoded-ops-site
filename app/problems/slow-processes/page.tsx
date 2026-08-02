@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPageDS } from '@/components/ProblemPageDS';
+import { Plate } from '@/components/Plate';
 import { SlowProcessesSchematic } from '@/components/schematics/problems/SlowProcessesSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
@@ -147,6 +148,39 @@ export default function SlowProcessesPage() {
       relatedProblems={problemRouting['slow-processes'].relatedProblems}
       relatedReading={problemRouting['slow-processes'].relatedReading}
     />
+      {/* ── PLATE · DO-ART-409 ──────────────────────────────────────────── */}
+      <section className="g-white" data-od-id="plate">
+        <div className="wrap">
+          <Plate tone="dark" no="DO-ART-409" title="Slow manual → fast documented process" rev="01" cls="DECODED OPS · ISSUED">
+            <rect x="50" y="100" width="700" height="520" rx="12"
+                  fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
+                  stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
+            <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                  fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
+            <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+              <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Artwork approval: days of email chains</tspan></text>
+              <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Order entry: re-keyed across three systems</tspan></text>
+              <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Quoting: spreadsheet and guesswork</tspan></text>
+              <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Every step waits for a person</tspan></text>
+            </g>
+
+            <rect x="850" y="100" width="700" height="520" rx="12"
+                  fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+                  stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+            <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                  fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
+            <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+              <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Automated approval routing cuts days to hours</tspan></text>
+              <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Single order entry, pushed everywhere</tspan></text>
+              <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Quoting based on live supplier data</tspan></text>
+              <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">System does the routing, people do the exceptions</tspan></text>
+            </g>
+
+            <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
+            <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+          </Plate>
+        </div>
+      </section>
     </>
   );
 }

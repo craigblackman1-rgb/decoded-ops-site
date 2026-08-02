@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ProblemPageDS } from '@/components/ProblemPageDS';
+import { Plate } from '@/components/Plate';
 import { NoOpsOwnerSchematic } from '@/components/schematics/problems/NoOpsOwnerSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
@@ -93,6 +94,39 @@ export default function NoOpsOwnerPage() {
       relatedProblems={problemRouting['no-ops-owner'].relatedProblems}
       relatedReading={problemRouting['no-ops-owner'].relatedReading}
     />
+      {/* ── PLATE · DO-ART-408 ──────────────────────────────────────────── */}
+      <section className="g-white" data-od-id="plate">
+        <div className="wrap">
+          <Plate tone="dark" no="DO-ART-408" title="Nobody accountable → named ownership" rev="01" cls="DECODED OPS · ISSUED">
+            <rect x="50" y="100" width="700" height="520" rx="12"
+                  fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
+                  stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
+            <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                  fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
+            <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+              <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Nobody knows who owns which process</tspan></text>
+              <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Problems fall between departments</tspan></text>
+              <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Fix is reactive: whoever shouts loudest</tspan></text>
+              <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">No single person accountable for operations</tspan></text>
+            </g>
+
+            <rect x="850" y="100" width="700" height="520" rx="12"
+                  fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+                  stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+            <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                  fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
+            <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+              <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Process Register names every owner</tspan></text>
+              <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Clear accountability per workflow</tspan></text>
+              <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Issues caught by the Improvement Log</tspan></text>
+              <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Operations has a named, accountable lead</tspan></text>
+            </g>
+
+            <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
+            <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+          </Plate>
+        </div>
+      </section>
     </>
   );
 }
