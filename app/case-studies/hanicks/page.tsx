@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
 
 // Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
 export const metadata = {
@@ -72,6 +73,77 @@ export default function HanicksCaseStudyPage() {
             <p className="lede">
               Hanicks is a heating spares business — not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
             </p>
+          </div>
+        </section>
+
+        {/* 1b. PLATE · DO-ART-205 */}
+        <section className="g-navy">
+          <div className="wrap">
+            <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
+            <h2>Before and after, paired line for line.</h2>
+            <div className="hair"></div>
+            <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw feed rows to products live in the platform.</p>
+
+            <div className="plate-scroll">
+              <div className="plate-frame" data-od-id="plate-hanicks">
+                <Plate tone="dark" p="hs" title="Supplier catalogue — before and after"
+                       sub="Hanicks · 164,752 products, 77% matched on the first run"
+                       no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
+
+                  <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
+                    <rect x="100" y="210" width="650" height="480" rx="14" fill="url(#hs-amber-n)"
+                          className="p-node-a" strokeWidth="1.6"/>
+                    <rect x="100" y="210" width="650" height="56" rx="14" className="p-amber" opacity=".92"/>
+                    <rect x="100" y="252" width="650" height="14" className="p-amber" opacity=".92"/>
+                    <text x="128" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
+                          letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
+                  </g>
+                  <g className="sk-fade sk-s3" fontSize="22">
+                    <text x="140" y="332" className="p-ink">164,752 products across feeds</text>
+                    <text x="140" y="402" className="p-ink">No consistent SKU</text>
+                    <text x="140" y="472" className="p-ink">No reliable stock picture</text>
+                    <text x="140" y="542" className="p-ink">The platform getting the blame</text>
+                    <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
+                      <path d="M106 319 L118 331 M118 319 L106 331"/>
+                      <path d="M106 389 L118 401 M118 389 L106 401"/>
+                      <path d="M106 459 L118 471 M118 459 L106 471"/>
+                      <path d="M106 529 L118 541 M118 529 L106 541"/>
+                    </g>
+                  </g>
+
+                  <path id="hs-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
+                        fill="none" strokeWidth="3" markerEnd="url(#hs-ah)"/>
+
+                  <g className="sk-fade sk-s4" filter="url(#hs-shadow)">
+                    <rect x="850" y="210" width="650" height="480" rx="14" fill="url(#hs-node)"
+                          className="p-node" strokeWidth="1.6"/>
+                    <rect x="850" y="210" width="650" height="56" rx="14" className="p-cyan" opacity=".95"/>
+                    <rect x="850" y="252" width="650" height="14" className="p-cyan" opacity=".95"/>
+                    <text x="878" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
+                          letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
+                  </g>
+                  <g className="sk-fade sk-s5" fontSize="22">
+                    <text x="890" y="332" className="p-ink">127,135 matched on the first run</text>
+                    <text x="890" y="402" className="p-ink">77% matched automatically</text>
+                    <text x="890" y="472" className="p-ink">11,064 live at Khaos Control</text>
+                    <text x="890" y="542" className="p-ink">Same platform, kept</text>
+                    <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+                       strokeLinejoin="round" fill="none">
+                      <path d="M856 325 L863 332 L876 318"/>
+                      <path d="M856 395 L863 402 L876 388"/>
+                      <path d="M856 465 L863 472 L876 458"/>
+                      <path d="M856 535 L863 542 L876 528"/>
+                    </g>
+                  </g>
+
+                  <g className="sk-dots">
+                    <circle r="6" className="p-cyan">
+                      <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#hs-p"/></animateMotion>
+                    </circle>
+                  </g>
+                </Plate>
+              </div>
+            </div>
           </div>
         </section>
 
