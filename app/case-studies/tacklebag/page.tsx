@@ -162,7 +162,7 @@ export default function TackleBagCaseStudyPage() {
             <span className="eyebrow eyebrow--amber">The numbers</span>
             <h2 style={{ marginTop: 14 }}>Nine feeds, automated end to end.</h2>
 
-            <div className="grid grid--2" style={{ marginTop: 40, maxWidth: 640 }}>
+            <div className="grid grid--3" style={{ marginTop: 40, maxWidth: 820 }}>
               <div className="stat">
                 <p className="stat-num num">9</p>
                 <p className="stat-label">supplier feeds running automated stock sync</p>
@@ -170,6 +170,10 @@ export default function TackleBagCaseStudyPage() {
               <div className="stat">
                 <p className="stat-num num">20–40</p>
                 <p className="stat-label">hours a week of admin time projected saved</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">Live</p>
+                <p className="stat-label">project underway, Symphony integration proven in production</p>
               </div>
             </div>
 

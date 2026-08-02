@@ -80,9 +80,9 @@ export default function HanicksCaseStudyPage() {
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
-            <h2>Before and after, paired line for line.</h2>
+            <h2>Not projected. Not modelled. What actually happened.</h2>
             <div className="hair"></div>
-            <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw feed rows to products live in the platform.</p>
+            <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-hanicks">
@@ -183,7 +183,7 @@ export default function HanicksCaseStudyPage() {
 
             <h2>What was done</h2>
             <p>
-              Discovery Day identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+              A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
             </p>
             <p>
               The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
