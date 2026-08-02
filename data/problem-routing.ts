@@ -14,7 +14,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/transform',
       label: 'ERP implementation programme',
-      anchor: 'Independent oversight, vendor accountability, and a clean exit if the project isn\'t tracking — the way ERP implementation should have run from day one.',
+      anchor: 'Independent oversight, vendor accountability, and a clean exit if the project isn\'t tracking, the way ERP implementation should have run from day one.',
     },
     relatedProblems: [
       { href: '/problems/wrong-erp-software', label: 'You chose the wrong ERP for your business model' },
@@ -31,7 +31,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/transform',
       label: 'ERP selection and implementation',
-      anchor: 'Independent vendor brief, like-for-like comparison, and selection based on fit — not the demo.',
+      anchor: 'Independent vendor brief, like-for-like comparison, and selection based on fit, not the demo.',
     },
     relatedProblems: [
       { href: '/problems/erp-implementation-failure', label: 'Your ERP implementation has gone wrong' },
@@ -47,7 +47,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/transform',
       label: 'eCommerce integration programme',
-      anchor: 'Connect Shopify, WooCommerce or your B2B portal end-to-end with your ERP, stock, and despatch — no spreadsheet middleware.',
+      anchor: 'Connect Shopify, WooCommerce or your B2B portal directly with your ERP, stock, and despatch, no spreadsheet middleware.',
     },
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
@@ -64,11 +64,11 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/retained',
       label: 'Retained operational oversight',
-      anchor: 'A fractional CTO who owns your continuity plan — tested, current, and ready before the crisis, not during.',
+      anchor: 'A fractional CTO who owns your continuity plan, tested, current, and ready before the crisis, not during.',
     },
     relatedProblems: [
       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
-      { href: '/problems/no-ops-owner', label: 'No one owns operations end-to-end' },
+      { href: '/problems/no-ops-owner', label: 'No one owns operations from start to finish' },
     ],
     relatedReading: [
       { href: '/blog/what-happens-when-your-systems-go-down', label: 'What happens when your systems go down?' },
@@ -79,7 +79,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/retained',
       label: 'Fractional Head of Operations',
-      anchor: 'Senior operational leadership without the £80k+ salary — vendor management, roadmap ownership, weekly direct line.',
+      anchor: 'Senior operational leadership without the £80k+ salary, vendor management, roadmap ownership, weekly direct line.',
     },
     relatedProblems: [
       { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
@@ -94,7 +94,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/transform',
       label: 'Process redesign and automation',
-      anchor: 'End-to-end mapping, fixing the process before automating it, and eliminating the spreadsheet bridges that have become the real operating model.',
+      anchor: 'Full-process mapping, fixing it before automating it, and eliminating the spreadsheet bridges that have become the real operating model.',
     },
     relatedProblems: [
       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
@@ -110,7 +110,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Technology & operations audit (start here)',
-      anchor: 'One day on site. Six areas. A written report that tells you what AI could actually help with — and what to fix first.',
+      anchor: 'One day on site. Six areas. A written report that tells you what AI could actually help with, and what to fix first.',
     },
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
@@ -155,10 +155,10 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/retained',
       label: 'Retained operational leadership',
-      anchor: 'A fractional CTO/Head of Operations who builds the operational infrastructure that fits how your business actually works — not a generic playbook.',
+      anchor: 'A fractional CTO/Head of Operations who builds the operational infrastructure that fits how your business actually works, not a generic playbook.',
     },
     relatedProblems: [
-      { href: '/problems/no-ops-owner', label: 'No one owns operations end-to-end' },
+      { href: '/problems/no-ops-owner', label: 'No one owns operations from start to finish' },
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
       { href: '/problems/slow-processes', label: 'Your processes are too slow' },
     ],
