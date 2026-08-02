@@ -43,7 +43,7 @@ export function LabelsPackagingSchematic({ tone = 'dark', className }: { tone?: 
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Labels and packaging production schematic: a spec feeds a die-line proof with a tolerance sign-off loop, then a press scheduling node shown as a mini gantt chart of run length versus changeover, then finishing and ship — a single linear chain."
+      aria-label="Labels and packaging production schematic: a spec feeds a die-line proof with a tolerance sign-off loop, then a press scheduling node shown as a mini gantt chart of run length versus changeover, then finishing and ship, a single linear chain."
     >
       <SchematicDefs tone={tone} idPrefix={ID} />
 
@@ -53,7 +53,7 @@ export function LabelsPackagingSchematic({ tone = 'dark', className }: { tone?: 
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — LABELS &amp; PACKAGING</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: LABELS &amp; PACKAGING</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Margins live in the changeover</text>
 
       {/* zone bands */}

@@ -53,7 +53,7 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       <section className="g-off">
         <div className="wrap grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="eyebrow">— {problem}</span>
+            <span className="eyebrow">{problem}</span>
             <h1>
               {parts.map((part, i) =>
                 i % 2 === 0 ? <span key={i}>{part}</span> : <em key={i}>{part}</em>
@@ -80,13 +80,13 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       {/* THE PROBLEM STATED */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">— Does this sound familiar?</span>
+          <span className="eyebrow">Does this sound familiar?</span>
           <h2>The problem stated</h2>
           <div className="hair" />
           <div className="grid grid--2">
             {symptoms.map((s, i) => (
               <div className="card" key={i}>
-                <p>— {s}</p>
+                <p>{s}</p>
               </div>
             ))}
           </div>
@@ -96,10 +96,10 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       {/* WHAT IT COSTS */}
       <section className="g-tint">
         <div className="wrap">
-          <span className="eyebrow">— Why it happens</span>
+          <span className="eyebrow">Why it happens</span>
           <h2>What it costs</h2>
           <div className="hair" />
-          <p className="lede">Understanding why the problem exists is the first step to fixing it — and knowing whether you&apos;re looking at a system problem or a process problem changes everything.</p>
+          <p className="lede">Understanding why the problem exists is the first step to fixing it, and knowing whether you&apos;re looking at a system problem or a process problem changes everything.</p>
           <div className="grid grid--2">
             {causes.map((c, i) => (
               <article className="card" key={c.title}>
@@ -116,18 +116,18 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       <section className="g-white">
         <div className="wrap grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <span className="eyebrow">— How I help</span>
+            <span className="eyebrow">How I help</span>
             <h2>What happens when you call</h2>
             <div className="hair" />
             <p className="lede">{howIHelp}</p>
           </div>
           <div className="card">
             <h3>Let&apos;s talk about what&apos;s happening</h3>
-            <p>The first call is free. 60 minutes. No sales pitch — just a direct conversation about your situation.</p>
+            <p>The first call is free. 60 minutes. No sales pitch, just a direct conversation about your situation.</p>
             <ul style={{ margin: '18px 0 26px', padding: 0, listStyle: 'none' }}>
               {['One day on site', 'Written report in 5 days', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (
                 <li key={item} style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)', marginBottom: 8 }}>
-                  — {item}
+                  {item}
                 </li>
               ))}
             </ul>

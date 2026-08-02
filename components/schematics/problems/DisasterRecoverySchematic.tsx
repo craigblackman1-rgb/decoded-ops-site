@@ -50,7 +50,7 @@ export function DisasterRecoverySchematic({ tone = 'dark', className }: { tone?:
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — UNTESTED RECOVERY</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: UNTESTED RECOVERY</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">A backup is not a recovery plan</text>
 
       {/* live -> backup: solid cyan, proven */}
@@ -91,11 +91,11 @@ export function DisasterRecoverySchematic({ tone = 'dark', className }: { tone?:
       <g className="sch-fade sch-f4">
         <rect x="90" y="640" width="1060" height="150" rx="10" fill="none" stroke={c.grid} strokeWidth="1.4" />
         <text x="120" y="682" style={fMono} fontSize="20" fill={c.ink} opacity="0.9">backup runs</text>
-        <text x="620" y="682" style={fMono} fontSize="20" fill={CYAN}>— yes</text>
+        <text x="620" y="682" style={fMono} fontSize="20" fill={CYAN}>: yes</text>
         <text x="120" y="720" style={fMono} fontSize="20" fill={c.ink} opacity="0.9">restore tested</text>
-        <text x="620" y="720" style={fMono} fontSize="20" fill={AMBER}>— never</text>
+        <text x="620" y="720" style={fMono} fontSize="20" fill={AMBER}>: never</text>
         <text x="120" y="758" style={fMono} fontSize="20" fill={c.ink} opacity="0.9">who knows how</text>
-        <text x="620" y="758" style={fMono} fontSize="20" fill={AMBER}>— one person</text>
+        <text x="620" y="758" style={fMono} fontSize="20" fill={AMBER}>: one person</text>
       </g>
 
       {motion && (

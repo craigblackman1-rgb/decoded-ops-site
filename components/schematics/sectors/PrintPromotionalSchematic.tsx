@@ -67,7 +67,7 @@ export function PrintPromotionalSchematic({ tone = 'dark', className }: { tone?:
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — PRINT &amp; PROMOTIONAL</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: PRINT &amp; PROMOTIONAL</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Half your production isn&apos;t yours</text>
 
       {/* zone bands (top row label) */}

@@ -50,7 +50,7 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — ORPHANED STOREFRONT</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: ORPHANED STOREFRONT</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Your webstore doesn&apos;t know what&apos;s in the warehouse</text>
 
       {/* webstore node */}
@@ -95,7 +95,7 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
       <GlassNode x={520} y={570} width={290} height={120} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f4">
           <text x={546} y={624} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>STOCK</text>
-          <text x={546} y={652} style={fMono} fontSize="17" fill={AMBER} opacity="0.9">shows in stock — isn&apos;t</text>
+          <text x={546} y={652} style={fMono} fontSize="17" fill={AMBER} opacity="0.9">shows in stock, isn&apos;t</text>
         </g>
       </GlassNode>
       <GlassNode x={900} y={570} width={230} height={120} tone={tone} idPrefix={ID} accent="cyan">

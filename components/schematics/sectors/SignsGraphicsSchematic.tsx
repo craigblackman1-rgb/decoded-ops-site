@@ -60,7 +60,7 @@ export function SignsGraphicsSchematic({ tone = 'dark', className }: { tone?: To
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — SIGNS &amp; GRAPHICS</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: SIGNS &amp; GRAPHICS</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Every job is a project with a deadline on site</text>
 
       {/* zone bands */}

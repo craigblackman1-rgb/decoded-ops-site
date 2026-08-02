@@ -62,7 +62,7 @@ export function NoOpsOwnerSchematic({ tone = 'dark', className }: { tone?: Tone;
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — THE GAPS</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: THE GAPS</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Everyone owns a step. Nobody owns the flow</text>
 
       {/* process nodes + owner chips + gap zones */}
@@ -96,7 +96,7 @@ export function NoOpsOwnerSchematic({ tone = 'dark', className }: { tone?: Tone;
           </g>
         );
       })}
-      <text x="620" y={MID + 100} textAnchor="middle" style={fMono} fontSize="19" letterSpacing="2" fill={AMBER} opacity="0.9" className="sch-fade sch-f3">NO OWNER — WHERE JOBS STALL</text>
+      <text x="620" y={MID + 100} textAnchor="middle" style={fMono} fontSize="19" letterSpacing="2" fill={AMBER} opacity="0.9" className="sch-fade sch-f3">NO OWNER: WHERE JOBS STALL</text>
       {[0, 1, 2].map((i) => {
         const gx = START_X + (i + 1) * NODE_W + i * GAP_W + GAP_W / 2;
         return (

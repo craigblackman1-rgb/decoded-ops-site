@@ -71,7 +71,7 @@ export function ContactClient() {
         <div className="wrap">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
             <div>
-              <span className="eyebrow" style={{ marginBottom: 22 }}>— Get in touch</span>
+              <span className="eyebrow" style={{ marginBottom: 22 }}>Get in touch</span>
               <h1 className="h1">Start with a free <em>60-minute call.</em></h1>
               <p className="lede">
                 No sales pitch. No obligation. A direct conversation about your business, what&apos;s frustrating you, and whether there&apos;s something I can help with.
@@ -189,7 +189,7 @@ export function ContactClient() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    placeholder="Tell me about the situation — the system problems, the operational pain, the decision you're trying to make."
+                    placeholder="Tell me about the situation, the system problems, the operational pain, the decision you're trying to make."
                     required
                     disabled={formState.status === 'loading'}
                     style={{
@@ -227,14 +227,14 @@ export function ContactClient() {
       <section className="g-navy">
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
-            <span className="eyebrow" style={{ marginBottom: 22 }}>— What to expect</span>
+            <span className="eyebrow" style={{ marginBottom: 22 }}>What to expect</span>
             <h2 className="h2">How the first call works</h2>
             <p className="lede">No preparation needed. Just turn up and tell me what&apos;s happening.</p>
           </div>
           <div className="grid grid--3">
             {[
               { icon: Clock, title: '60 minutes', desc: "That's all it takes to get a clear view of what's happening and whether I can help. No extended discovery process, no homework to complete." },
-              { icon: MessageSquare, title: 'Direct questions', desc: "I'll ask direct questions about your operation, your systems, and the things that are frustrating you. You'll get direct answers back — not a follow-up proposal." },
+              { icon: MessageSquare, title: 'Direct questions', desc: "I'll ask direct questions about your operation, your systems, and the things that are frustrating you. You'll get direct answers back, not a follow-up proposal." },
               { icon: ArrowRight, title: 'A clear next step', desc: "At the end of the call, you'll know whether an audit makes sense, what it would involve, and what it would cost. No pressure. You decide what happens next." },
             ].map(item => {
               const Icon = item.icon;

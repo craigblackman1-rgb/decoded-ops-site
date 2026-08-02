@@ -42,7 +42,7 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Bottleneck diagram: a wide, growing intake of orders funnels through quote, artwork and production gates of decreasing width — a queue backs up hard at the narrow artwork gate — before a thin trickle reaches despatch."
+      aria-label="Bottleneck diagram: a wide, growing intake of orders funnels through quote, artwork and production gates of decreasing width, a queue backs up hard at the narrow artwork gate, before a thin trickle reaches despatch."
     >
       <SchematicDefs tone={tone} idPrefix={ID} />
 
@@ -52,12 +52,12 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — THE BOTTLENECK</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: THE BOTTLENECK</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Growth stopped at your narrowest point</text>
 
       {/* wide intake stack, funnelling toward QUOTE */}
       <g className="sch-fade sch-f2">
-        <text x="64" y="232" style={fMono} fontSize="17" fill={c.mono} opacity="0.7">orders in — growing</text>
+        <text x="64" y="232" style={fMono} fontSize="17" fill={c.mono} opacity="0.7">orders in, growing</text>
         {Array.from({ length: 8 }).map((_, i) => (
           <rect key={i} x={64} y={250 + i * 56} width={44} height={36} rx="4"
             fill="none" stroke={CYAN} strokeWidth="1.6" opacity="0.6" />

@@ -49,7 +49,7 @@ export function GarmentDecorationSchematic({ tone = 'dark', className }: { tone?
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Garment decoration production flow: an order moves from intake through artwork sign-off and blank sourcing, splits across embroidery, DTG and screen print — each with a different lead time — then converges into quality control and despatch.">
+      aria-label="Garment decoration production flow: an order moves from intake through artwork sign-off and blank sourcing, splits across embroidery, DTG and screen print, each with a different lead time, then converges into quality control and despatch.">
       <SchematicDefs tone={tone} idPrefix={ID} />
 
       {/* backdrop */}
@@ -58,7 +58,7 @@ export function GarmentDecorationSchematic({ tone = 'dark', className }: { tone?
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — GARMENT DECORATION</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: GARMENT DECORATION</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">One order, three production realities</text>
 
       {/* zone bands — single row at y=170; topmost node edge is y=250, no collisions */}
