@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPageDS } from '@/components/SectorPageDS';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -54,6 +55,46 @@ export default function TeamwearClubwearPage() {
           alt: 'A folded zip-neck polo shirt in cream and sand panels, photographed flat on a plain grey surface.',
         }}
         shotCaption="One base garment. Twenty-four names, twenty-four numbers, and one sponsor logo that has to sit in the same place on every one."
+        plate={
+          <Plate tone="dark" p="tw" title="Teamwear — squad list to kitted-out"
+                 sub="Four connected stages: kit range data, squad list, personalisation proofs, production"
+                 no="DO-ART-109" rev="01" cls="DECODED OPS · ISSUED">
+
+            <path id="tw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                  fill="none" strokeWidth="2.5" markerEnd="url(#tw-ah)"/>
+
+            <g className="sk-fade sk-s3">
+              <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#tw-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Supplier kit range catalogue</text>
+              <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Ranges · sizes ·
+                colourways — live across every channel a team orders through</text>
+            </g>
+
+            <g className="sk-fade sk-s4">
+              <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#tw-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Squad list management</text>
+              <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Name · number ·
+                size per player · sponsor logo per age group — not a spreadsheet</text>
+            </g>
+
+            <g className="sk-fade sk-s5" filter="url(#tw-shadow)">
+              <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#tw-amber-n)"
+                    className="p-node-a" strokeWidth="2"/>
+              <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                    fontSize="28">Personalisation + proof</text>
+              <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Proof per
+                kit · sponsor logo approval · production-ready data that doesn&apos;t need re-keying</text>
+            </g>
+
+            <g className="sk-dots">
+              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#tw-spine"/></animateMotion></circle>
+            </g>
+          </Plate>
+        }
         featuresHeading="Three problems, in roughly this order."
         features={[
           {

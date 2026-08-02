@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SignsGraphicsSchematic } from '@/components/schematics/sectors/SignsGraphicsSchematic';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
@@ -86,6 +87,63 @@ export default function SignsGraphicsPage() {
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
             <SignsGraphicsSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE DIAGRAM · DO-ART-114 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div className="plate-scroll">
+            <div className="plate-frame">
+              <Plate tone="dark" p="sg" title="Signs & graphics — site survey to sign-off"
+                     sub="Four connected systems: survey, design, production, installation"
+                     no="DO-ART-114" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="sg-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#sg-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#sg-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Site survey</text>
+                  <text x="840" y="658" className="p-mono" fontSize="17" opacity=".85">Measurements ·
+                    access · fixing requirements — the data the whole job depends on</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#sg-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Design &amp; artwork proof</text>
+                  <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Client approval
+                    before production · version control · not managed in email</text>
+                </g>
+
+                <g className="sk-fade sk-s5">
+                  <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#sg-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Production</text>
+                  <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Substrate · finish ·
+                    size · fixing method — job costed accurately, not estimated</text>
+                </g>
+
+                <g className="sk-fade sk-s6" filter="url(#sg-shadow)">
+                  <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#sg-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Installation &amp; sign-off</text>
+                  <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Team
+                    scheduling · site access · third-party contractors · final sign-off captured</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sg-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

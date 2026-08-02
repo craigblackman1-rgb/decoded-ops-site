@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPageDS } from '@/components/SectorPageDS';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -54,6 +55,46 @@ export default function WorkwearPage() {
           alt: 'A fanned stack of work shirts in a dozen colourways, collars and button plackets showing, on a plain studio background.',
         }}
         shotCaption="One garment, a dozen colourways, three decoration methods, and a size curve behind every one of them."
+        plate={
+          <Plate tone="dark" p="ww" title="Workwear — supplier to branded garment"
+                 sub="Three systems that have to connect: supplier catalogue, production floor, customer portal"
+                 no="DO-ART-108" rev="01" cls="DECODED OPS · ISSUED">
+
+            <path id="ww-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                  fill="none" strokeWidth="2.5" markerEnd="url(#ww-ah)"/>
+
+            <g className="sk-fade sk-s3">
+              <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#ww-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Supplier catalogue</text>
+              <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Ranges · sizing ·
+                colourways · stock availability — current, not copy-pasted</text>
+            </g>
+
+            <g className="sk-fade sk-s4">
+              <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ww-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Production floor</text>
+              <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Decoration method
+                mix · blank stock · personalisation — the step generic systems skip</text>
+            </g>
+
+            <g className="sk-fade sk-s5" filter="url(#ww-shadow)">
+              <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ww-amber-n)"
+                    className="p-node-a" strokeWidth="2"/>
+              <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                    fontSize="28">Customer-facing channels</text>
+              <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">eCommerce
+                · B2B trade portal · automated replenishment · size-history-driven reorders</text>
+            </g>
+
+            <g className="sk-dots">
+              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ww-spine"/></animateMotion></circle>
+            </g>
+          </Plate>
+        }
         featuresHeading="Three problems, in roughly this order."
         features={[
           {

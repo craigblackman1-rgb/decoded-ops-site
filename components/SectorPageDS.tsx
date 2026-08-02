@@ -24,6 +24,8 @@ interface SectorPageDSProps {
   heroSecondaryCta: SectorLink;
   heroImage: { src: string; width: number; height: number; alt: string };
   shotCaption: string;
+  /** Optional plate diagram to render between hero and features */
+  plate?: ReactNode;
   featuresHeading: string;
   features: [Feature, Feature, Feature];
   otherSectors: SectorLink[];
@@ -52,6 +54,7 @@ export function SectorPageDS({
   heroSecondaryCta,
   heroImage,
   shotCaption,
+  plate,
   featuresHeading,
   features,
   otherSectors,
@@ -90,6 +93,19 @@ export function SectorPageDS({
           </div>
         </div>
       </section>
+
+      {/* PLATE DIAGRAM */}
+      {plate && (
+        <section className="g-navy">
+          <div className="wrap">
+            <div className="plate-scroll">
+              <div className="plate-frame">
+                {plate}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FEATURES TRIPLET */}
       <section className="g-white">

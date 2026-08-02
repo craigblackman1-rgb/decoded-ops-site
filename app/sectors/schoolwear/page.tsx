@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPageDS } from '@/components/SectorPageDS';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -54,6 +55,47 @@ export default function SchoolwearPage() {
           alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
         }}
         shotCaption="Every school badge is a thread file before it's a garment — and the size curve behind it changes every September."
+        plate={
+          <Plate tone="dark" p="sw" title="Schoolwear — supplier range to parent delivery"
+                 sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
+                 no="DO-ART-110" rev="01" cls="DECODED OPS · ISSUED">
+
+            <path id="sw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                  fill="none" strokeWidth="2.5" markerEnd="url(#sw-ah)"/>
+
+            <g className="sk-fade sk-s3">
+              <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#sw-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Supplier kit range catalogue</text>
+              <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Blazers · PE kit ·
+                accessories — live data before the August rush, not during it</text>
+            </g>
+
+            <g className="sk-fade sk-s4">
+              <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#sw-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">School badge management</text>
+              <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Badge per school ·
+                embroidery spec · version control — not an email thread</text>
+            </g>
+
+            <g className="sk-fade sk-s5" filter="url(#sw-shadow)">
+              <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#sw-amber-n)"
+                    className="p-node-a" strokeWidth="2"/>
+              <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                    fontSize="28">Parent portal + production</text>
+              <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Order
+                routes to correct school · badge applied correctly · production scheduled from live
+                demand</text>
+            </g>
+
+            <g className="sk-dots">
+              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sw-spine"/></animateMotion></circle>
+            </g>
+          </Plate>
+        }
         featuresHeading="Three problems, all of them worse in August."
         features={[
           {

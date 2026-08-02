@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SectorPageDS } from '@/components/SectorPageDS';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
@@ -54,6 +55,46 @@ export default function PromotionalMerchandisePage() {
           alt: 'An assortment of branded promotional items grouped on a plain surface, the kind of mixed order a merchandise supplier fulfils from several different supplier ranges at once.',
         }}
         shotCaption="One order, four supplier ranges, four different lead times, and one logo that has to work on all of them."
+        plate={
+          <Plate tone="dark" p="pm" title="Promotional merchandise — supplier range to delivered order"
+                 sub="Three connected systems: multi-supplier catalogue, artwork management, order fulfilment"
+                 no="DO-ART-111" rev="01" cls="DECODED OPS · ISSUED">
+
+            <path id="pm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                  fill="none" strokeWidth="2.5" markerEnd="url(#pm-ah)"/>
+
+            <g className="sk-fade sk-s3">
+              <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#pm-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Multi-supplier catalogue</text>
+              <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Dozens of ranges ·
+                live pricing · live stock — not a folder of spreadsheets nobody trusts</text>
+            </g>
+
+            <g className="sk-fade sk-s4">
+              <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#pm-node)"
+                    className="p-node" strokeWidth="1.4"/>
+              <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                    fontSize="26">Artwork management</text>
+              <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Client logo
+                versioning · proof approval · audit trail — not an email thread per order</text>
+            </g>
+
+            <g className="sk-fade sk-s5" filter="url(#pm-shadow)">
+              <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#pm-amber-n)"
+                    className="p-node-a" strokeWidth="2"/>
+              <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                    fontSize="28">Order fulfilment</text>
+              <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Decoration
+                cost · supplier lead times · margin trackable per job — not estimated after delivery</text>
+            </g>
+
+            <g className="sk-dots">
+              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pm-spine"/></animateMotion></circle>
+            </g>
+          </Plate>
+        }
         featuresHeading="Three problems, in roughly this order."
         features={[
           {

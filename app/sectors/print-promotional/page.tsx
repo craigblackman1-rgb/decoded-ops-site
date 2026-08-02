@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PrintPromotionalSchematic } from '@/components/schematics/sectors/PrintPromotionalSchematic';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
@@ -107,6 +108,63 @@ export default function PrintPromotionalPage() {
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
             <PrintPromotionalSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE DIAGRAM · DO-ART-113 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div className="plate-scroll">
+            <div className="plate-frame">
+              <Plate tone="dark" p="pp" title="Print & promotional — quote to delivered print run"
+                     sub="Four connected systems: quoting, supplier management, artwork approval, production scheduling"
+                     no="DO-ART-113" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="pp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#pp-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#pp-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Quoting &amp; order intake</text>
+                  <text x="940" y="658" className="p-mono" fontSize="17" opacity=".85">Cost modelled
+                    accurately before the order is priced</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#pp-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Supplier management</text>
+                  <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Multiple suppliers ·
+                    multiple portals — one consolidated view of what is ordered and when it arrives</text>
+                </g>
+
+                <g className="sk-fade sk-s5">
+                  <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#pp-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Artwork approval</text>
+                  <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Proof management
+                    with audit trail — not an email thread per job</text>
+                </g>
+
+                <g className="sk-fade sk-s6" filter="url(#pp-shadow)">
+                  <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#pp-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Production scheduling</text>
+                  <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Substrate
+                    · print method · drying time · finishing — a schedule that reflects the real job</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pp-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

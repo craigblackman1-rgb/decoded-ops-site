@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { AwardsEngravingSchematic } from '@/components/schematics/sectors/AwardsEngravingSchematic';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
@@ -86,6 +87,54 @@ export default function AwardsEngravingPage() {
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
             <AwardsEngravingSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE DIAGRAM · DO-ART-115 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div className="plate-scroll">
+            <div className="plate-frame">
+              <Plate tone="dark" p="ae" title="Awards & engraving — variable data to delivered awards"
+                     sub="Three connected systems: data intake, proof management, production"
+                     no="DO-ART-115" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="ae-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#ae-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#ae-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Variable data intake</text>
+                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Names · titles ·
+                    dates · messages — verified before production, not during it</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ae-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Proof approval at volume</text>
+                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Fifty proofs ·
+                    fifty approvals — a workflow that doesn&apos;t consume more time than production itself</text>
+                </g>
+
+                <g className="sk-fade sk-s5" filter="url(#ae-shadow)">
+                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ae-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Production + deadline delivery</text>
+                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Glass ·
+                    crystal · metal · wood — method-matched engraving, scheduled to the event date</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ae-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

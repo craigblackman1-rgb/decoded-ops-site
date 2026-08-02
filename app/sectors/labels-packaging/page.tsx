@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { LabelsPackagingSchematic } from '@/components/schematics/sectors/LabelsPackagingSchematic';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
@@ -86,6 +87,54 @@ export default function LabelsPackagingPage() {
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
             <LabelsPackagingSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE DIAGRAM · DO-ART-116 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div className="plate-scroll">
+            <div className="plate-frame">
+              <Plate tone="dark" p="lp" title="Labels & packaging — specification to compliant delivery"
+                     sub="Three connected systems: specification control, variable data printing, delivery"
+                     no="DO-ART-116" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="lp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#lp-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#lp-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Specification control</text>
+                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Hundreds of label
+                    SKUs · version management · compliance data — right version, every time</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#lp-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Variable data printing</text>
+                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Short-run ·
+                    high-variation · substrate matched to press — workflow built for the job, not generic</text>
+                </g>
+
+                <g className="sk-fade sk-s5" filter="url(#lp-shadow)">
+                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#lp-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Compliance delivery</text>
+                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Correct
+                    spec · correct substrate · EDI integration — delivered right first time</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#lp-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>
