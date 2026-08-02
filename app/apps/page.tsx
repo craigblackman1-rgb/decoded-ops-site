@@ -35,7 +35,7 @@ export default function AppsPage() {
       {/* 2 · LOG LIST · one row per app */}
       <section className="g-white">
         <div className="wrap">
-          <p className="eyebrow">Three of them</p>
+          <p className="eyebrow">Four of them</p>
           <h2>Built for the job, then priced.</h2>
 
           <div className="log-list">
@@ -69,12 +69,16 @@ export default function AppsPage() {
                 the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
-          </div>
 
-          <div className="inset">
-            <b>What isn&rsquo;t listed here.</b> There&rsquo;s a CRM four commits in. It isn&rsquo;t for sale, at any
-            price, until it works end to end &mdash; and putting it on this page would be selling you
-            something that doesn&rsquo;t. When it&rsquo;s ready, it&rsquo;ll appear here with the same proof as the rest.
+            <Link className="log-row" href="/apps/crm">
+              <div>
+                <span className="chip chip--pre">Founding client terms</span>
+                <h3 style={{ marginTop: 14 }}>Decoded CRM</h3>
+              </div>
+              <p>Leads, companies, contacts and deals through to quotes, contracts, sales orders and
+                invoices, built around how this sector actually sells.</p>
+              <span className="go">See how it works</span>
+            </Link>
           </div>
         </div>
       </section>

@@ -367,7 +367,7 @@ export default function HomePage() {
               <article className="card">
                 <span className="kicker">Rung 1</span>
                 <h3>Buy</h3>
-                <p>If something on the market already fits, it goes on the table, named and priced. Track
+                <p>If something on the market already fits, it goes on the table, named and priced. Tracker
                   is the best platform I&rsquo;ve worked with in this sector, and I don&rsquo;t sell it or earn
                   anything from recommending it. That&rsquo;s not a pitch. It costs me nothing to say it.</p>
               </article>

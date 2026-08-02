@@ -50,7 +50,7 @@ export default function EternalFitnessCaseStudyPage() {
                 Eternal Fitness is a private, 1-to-1 personal training studio working mainly with clients managing health conditions, not a general weight-loss audience. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
               </p>
               <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
-                I built this for my wife&apos;s business. Which meant there was nowhere to hide if it did not work.
+                Esther is my wife, named plainly. This is paid client work, not a favour or free build — she pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
               </p>
             </div>
           </div>

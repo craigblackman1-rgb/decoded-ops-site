@@ -19,20 +19,20 @@ export async function generateMetadata({
 
   return {
     title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     alternates: {
       canonical: `/locations/tech-audit/${loc.slug}`,
     },
     openGraph: {
       title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     },
   };
 }
@@ -104,9 +104,9 @@ export default async function TechAuditLocationPage({
             serviceType: 'Technology Audit',
             offers: {
               '@type': 'Offer',
-              price: '395',
+              price: '1500',
               priceCurrency: 'GBP',
-              description: 'Clarity Check — small business technology audit',
+              description: 'Clarity Audit — technology audit and systems diagnostic',
             },
             url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
           }),
@@ -124,7 +124,7 @@ export default async function TechAuditLocationPage({
         localFact={loc.localFact}
         painPoints={painPoints}
         whatIdo={whatIdo}
-        cta={`Book a Clarity Audit for your ${loc.name} business — from £395`}
+        cta={`Book a Clarity Audit for your ${loc.name} business — from £1,500`}
         serviceUrl="/clarity"
         serviceLabel="See how the Clarity Audit works"
       />

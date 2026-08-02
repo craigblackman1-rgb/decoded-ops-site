@@ -35,7 +35,7 @@ const smallBizSchema = {
       url: 'https://decodedops.co.uk/small-business',
       offers: [
         { '@type': 'Offer', name: 'Clarity Check', price: '595', priceCurrency: 'GBP' },
-        { '@type': 'Offer', name: 'Monthly Advisory', price: '360', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: 'Retained', price: '360', priceCurrency: 'GBP' },
         { '@type': 'Offer', name: 'Quarterly Sprint', price: '995', priceCurrency: 'GBP' },
         { '@type': 'Offer', name: 'AI Readiness Check', price: '395', priceCurrency: 'GBP' },
       ],

@@ -8,12 +8,12 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 export const metadata: Metadata = {
   title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
   description:
-    'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+    'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
   alternates: { canonical: '/locations/tech-audit' },
   openGraph: {
     title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
     description:
-      'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+      'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
     url: 'https://decodedops.co.uk/locations/tech-audit',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
     description:
-      'Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.',
+      'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
   },
 };
 
@@ -42,7 +42,7 @@ export default function TechAuditLocationsHub() {
             <span className="eyebrow" style={{ marginBottom: 22 }}>— Technology Audit</span>
             <h1 className="h1">Technology audits for <em>Sussex and Surrey businesses</em></h1>
             <p className="lede">
-              A structured, independent audit that tells you exactly what your systems are costing you — and what to do about it. Starting from £395.
+              A structured, independent audit that tells you exactly what your systems are costing you — and what to do about it. Starting from £1,500.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
               <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3× Clarity Guarantee</span>
@@ -82,7 +82,7 @@ export default function TechAuditLocationsHub() {
                       <div style={{ fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)', fontSize: 'var(--do-text-base)' }}>
                         {loc.name}
                       </div>
-                      <div style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)', marginTop: 4 }}>Technology Audit · from £395</div>
+                      <div style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)', marginTop: 4 }}>Technology Audit · from £1,500</div>
                     </div>
                     <ArrowRight size={16} style={{ color: 'var(--do-cerulean)', opacity: 0, transition: 'opacity 0.2s' }} />
                   </Link>
