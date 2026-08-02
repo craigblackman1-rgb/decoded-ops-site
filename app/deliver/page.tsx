@@ -4,18 +4,18 @@ import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Deliver — Decoded Ops',
+  title: 'Deliver: Decoded Ops',
     description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
   alternates: { canonical: '/deliver' },
   openGraph: {
     type: 'website',
-    title: 'Deliver — Decoded Ops',
+    title: 'Deliver: Decoded Ops',
   description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
     url: 'https://decodedops.co.uk/deliver',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Deliver — Decoded Ops',
+    title: 'Deliver: Decoded Ops',
     description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table.',
   },
 };
@@ -28,7 +28,7 @@ export default function DeliverPage() {
         <div className="wrap">
           <span className="eyebrow">Deliver</span>
           <h1>The Process &amp; Quality System. The thing you&apos;re left with.</h1>
-          <p className="lede">Deliver is the implementation phase — someone technical on your side of the
+          <p className="lede">Deliver is the implementation phase: someone technical on your side of the
             table for the whole build, from brief through to handover. What you keep afterwards isn&apos;t
             just something that works. It&apos;s a documented system for how the business runs it.</p>
           <div className={s.heroCta}>
@@ -43,7 +43,7 @@ export default function DeliverPage() {
           <span className="eyebrow">What you&apos;re left with</span>
           <h2>Three real artifacts, not a memory of the engagement.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Every Deliver engagement builds these alongside the
-            project itself — so what you keep afterwards is a documented process, not just something
+            project itself, so what you keep afterwards is a documented process, not just something
             that works and nobody can explain.</p>
 
           <div className="grid grid--3">
@@ -56,7 +56,7 @@ export default function DeliverPage() {
               </div>
               <p className={s.featureMeta}>From Map</p>
               <h3>The Process Register</h3>
-              <p>Every process that matters, named and described as it actually runs — not as the org
+              <p>Every process that matters, named and described as it actually runs. Not as the org
                 chart says it should. The reference point for everything documented afterwards.</p>
             </div>
             <div className={s.feature} data-od-id="output-sops">
@@ -69,7 +69,7 @@ export default function DeliverPage() {
               <p className={s.featureMeta}>From Document</p>
               <h3>Written SOPs</h3>
               <p>So the process doesn&apos;t live in one person&apos;s head. Written so someone who doesn&apos;t
-                already know the job can follow it — when they&apos;re on holiday, the business doesn&apos;t
+                already know the job can follow it. When they&apos;re on holiday, the business doesn&apos;t
                 stop.</p>
             </div>
             <div className={s.feature} data-od-id="output-log">
@@ -82,7 +82,7 @@ export default function DeliverPage() {
               <p className={s.featureMeta}>From Check &amp; Log</p>
               <h3>An Improvement Log</h3>
               <p>What&apos;s been improved and what&apos;s next, owned by you and still running after I&apos;ve
-                gone — the thing that makes the system keep working without me.</p>
+                gone. The thing that makes the system keep working without me.</p>
             </div>
           </div>
         </div>
@@ -92,14 +92,14 @@ export default function DeliverPage() {
       <section className="g-tint" data-od-id="deliver-loop">
         <div className="wrap">
           <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
-          <h2>Map, document, check, log — then round again.</h2>
+          <h2>Map, document, check, log. Then round again.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
             the engagement ends, because the last step feeds the first one.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
               <Plate tone="dark" p="pq" title="A loop, not a document"
-                     sub="Four steps — the fourth feeds the first"
+                     sub="Four steps. The fourth feeds the first."
                      no="DO-ART-305" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
@@ -157,7 +157,7 @@ export default function DeliverPage() {
                       strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
                       d="M1280 540 C 1280 630, 255 630, 255 542"/>
                 <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
-                      fontStyle="italic" opacity=".8">Then round again — for every process that
+                      fontStyle="italic" opacity=".8">Then round again, for every process that
                   matters.</text>
 
                 <g className="sk-dots">
@@ -173,14 +173,14 @@ export default function DeliverPage() {
             <article className={s.step}>
               <p className={s.stepN}>STEP 1</p>
               <h3>Map</h3>
-              <p>The process as it actually runs, watched end to end — not as the org chart describes
+              <p>The process as it actually runs, watched from start to finish. Not as the org chart describes
                 it and not as anyone remembers it.</p>
             </article>
             <article className={s.step}>
               <p className={s.stepN}>STEP 2</p>
               <h3>Document</h3>
               <p>Written as an SOP someone who doesn&apos;t already know the job can follow. That&apos;s the
-                test — not whether the person who wrote it recognises it.</p>
+                test. Not whether the person who wrote it recognises it.</p>
             </article>
             <article className={s.step}>
               <p className={s.stepN}>STEP 3</p>
@@ -202,7 +202,7 @@ export default function DeliverPage() {
       <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Book a Clarity Audit.</h2>
-          <p className="lede">Every Deliver engagement starts here — a full day on site and a written plan,
+          <p className="lede">Every Deliver engagement starts here: a full day on site and a written plan,
             before anything gets built.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>

@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'The systems — Decoded Ops',
-  description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce — proven at real clients before they went anywhere near a price list.',
+  title: 'The systems: Decoded Ops',
+  description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
   alternates: { canonical: '/apps' },
   openGraph: {
     type: 'website',
-    title: 'The systems — Decoded Ops',
-    description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce — proven at real clients before they went anywhere near a price list.',
+    title: 'The systems: Decoded Ops',
+    description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
     url: 'https://decodedops.co.uk/apps',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The systems — Decoded Ops',
+    title: 'The systems: Decoded Ops',
     description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients before it went anywhere near a price list.',
   },
 };
@@ -65,7 +65,7 @@ export default function AppsPage() {
                 <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
               </div>
               <p>Storefront build and migration. Three tiers by functionality, plus scoped custom work
-                for a full rebuild &mdash; Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
+                for a full rebuild. Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
                 the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
@@ -88,13 +88,13 @@ export default function AppsPage() {
         <div className="wrap">
           <p className="eyebrow">Architecture &middot; DO-ART-104</p>
           <h2>Three apps, one platform.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Nothing replaced — each app plugs a specific gap
+          <p className="lede" style={{ marginTop: 16 }}>Nothing replaced. Each app plugs a specific gap
             alongside the platform you already run.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="ap" title="Three apps, one platform"
-                     sub="Nothing replaced — each app plugs a specific gap"
+                     sub="Nothing replaced. Each app plugs a specific gap"
                      no="DO-ART-104" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2">
@@ -165,7 +165,7 @@ export default function AppsPage() {
           <p className="eyebrow">Before any of this</p>
           <h2>Software is the last answer, not the first.</h2>
           <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>If a platform already on the market does
-            the job, that&rsquo;s what goes on the table &mdash; named, priced, and with no commission in it for me.
+            the job, that&rsquo;s what goes on the table: named, priced, and with no commission in it for me.
             These three exist because for a specific set of jobs, nothing on the market did.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
             <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>

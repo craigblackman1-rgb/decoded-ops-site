@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Decoded Data App — Decoded Ops',
+  title: 'Decoded Data App: Decoded Ops',
   description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
   alternates: { canonical: '/apps/data-app' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Data App — Decoded Ops',
+    title: 'Decoded Data App: Decoded Ops',
     description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
     url: 'https://decodedops.co.uk/apps/data-app',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Data App — Decoded Ops',
+    title: 'Decoded Data App: Decoded Ops',
     description: 'Supplier feeds in, one clean catalogue out. Live at Hanicks and TackleBag.',
   },
 };
@@ -57,13 +57,13 @@ export default function DataAppPage() {
           <p className="eyebrow">Not a replacement &middot; DO-ART-105</p>
           <h2>Your platform stays. This sits alongside it.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Supplier feeds, data enrichment, catalogue maintenance
-            across channels &mdash; the jobs your platform was never built for. Ripping it out and starting
+            across channels. The jobs your platform was never built for. Ripping it out and starting
             again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="da" title="A layer, not a rip-out"
-                     sub="Where the Data App sits — three layers, read bottom-up"
+                     sub="Where the Data App sits. Three layers, read bottom-up"
                      no="DO-ART-105" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="da-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V310"
@@ -166,7 +166,7 @@ export default function DataAppPage() {
 
           <div className="inset">
             <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. Half a day working out
-            which feeds, which channels, and which tier actually fits &mdash; so the quote that follows is a
+            which feeds, which channels, and which tier actually fits, so the quote that follows is a
             real number, not a range.
           </div>
 

@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'How I build — Decoded Ops',
-  description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short — so whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+  title: 'How I build: Decoded Ops',
+    description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
   alternates: { canonical: '/how-i-build' },
   openGraph: {
     type: 'website',
-    title: 'How I build — Decoded Ops',
-    description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short — so whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+    title: 'How I build: Decoded Ops',
+  description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
     url: 'https://decodedops.co.uk/how-i-build',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How I build — Decoded Ops',
+    title: 'How I build: Decoded Ops',
     description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short.",
   },
 };
@@ -28,7 +28,7 @@ export default function HowIBuildPage() {
           <p className="eyebrow">How I build</p>
           <h1>The facts, the options, and the decision stays yours.</h1>
           <p className="lede">I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
-            and where it falls short &mdash; so whatever you decide, you decide on the merits, not on my
+            and where it falls short, so whatever you decide, you decide on the merits, not on my
             say-so.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
@@ -47,7 +47,7 @@ export default function HowIBuildPage() {
 
           <div className="plate-scroll">
             <div className="plate-frame">
-              <Plate tone="dark" p="ld" title="The ladder — buy first, build only what is missing"
+               <Plate tone="dark" p="ld" title="The ladder. Buy first, build only what is missing"
                      sub="Three rungs in fixed order · every option priced"
                      no="DO-ART-302" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -125,7 +125,7 @@ export default function HowIBuildPage() {
               <p>If something on the market already fits, it goes on the table, named and priced.
                 Tracker is the best platform I&rsquo;ve worked with in this sector, and I don&rsquo;t sell it or
                 earn anything from recommending it.</p>
-              <p>That costs me nothing to say. Which is rather the point &mdash; you can weigh what I tell you
+              <p>That costs me nothing to say. Which is rather the point: you can weigh what I tell you
                 about it knowing there&rsquo;s nothing in it for me either way.</p>
             </article>
 
@@ -170,7 +170,7 @@ export default function HowIBuildPage() {
                   <text x="330" y="474" textAnchor="middle" className="p-mono" fontSize="17"
                         opacity=".75">Unchanged. Kept.</text>
                   <text x="330" y="580" textAnchor="middle" className="p-mono" fontSize="16"
-                        letterSpacing="1.4" opacity=".55">RUNG 1 — WHAT YOU ALREADY OWN</text>
+                         letterSpacing="1.6" opacity=".55">RUNG 1: WHAT YOU ALREADY OWN</text>
                 </g>
 
                 <g className="sk-fade sk-s4">
@@ -192,7 +192,7 @@ export default function HowIBuildPage() {
                   <text x="1260" y="480" textAnchor="middle" className="p-accent-ink" fontSize="17"
                         fontWeight="600">Cross-business reporting</text>
                   <text x="1260" y="580" textAnchor="middle" className="p-mono" fontSize="16"
-                        letterSpacing="1.4" opacity=".6">RUNG 2 — THE GAPS, NAMED</text>
+                         letterSpacing="1.6" opacity=".6">RUNG 2: THE GAPS, NAMED</text>
                 </g>
 
                 <text x="800" y="740" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
@@ -238,7 +238,7 @@ export default function HowIBuildPage() {
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Book a free discovery call.</h2>
           <p className="lede">An hour on what&rsquo;s actually going wrong. You&rsquo;ll get an honest read on which
-            rung you&rsquo;re on &mdash; including if the answer is that you don&rsquo;t need me at all.</p>
+            rung you&rsquo;re on, including if the answer is that you don&rsquo;t need me at all.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
             <Link className="btn btn--ghost btn-arrow" href="/apps">See what I&rsquo;ve built</Link>

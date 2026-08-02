@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Client Work | Decoded Ops',
-  description: 'Live engagements — what I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
+  description: 'Live engagements. What I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
   alternates: { canonical: '/case-studies' },
   openGraph: {
     type: 'website',
     title: 'Client Work | Decoded Ops',
-    description: 'Live engagements — what I\'m actually building right now, not hypotheticals.',
+    description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
     url: 'https://decodedops.co.uk/case-studies',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Client Work | Decoded Ops',
-    description: 'Live engagements — what I\'m actually building right now, not hypotheticals.',
+    description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
   },
 };
 
@@ -148,7 +148,7 @@ export default function CaseStudiesPage() {
             <div style={{ maxWidth: '740px', margin: '0 auto' }}>
               <h3>Want to talk about your operation?</h3>
               <p className="lede">
-                Every engagement above started the same way — a Clarity Audit to find out what was actually going on before anything got built or implemented.
+                Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything got built or implemented.
               </p>
               <div className="btn-row">
                 <Link href="/contact" className="btn btn--primary">

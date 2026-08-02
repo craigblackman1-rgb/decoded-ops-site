@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Decoded CRM — Decoded Ops',
+  title: 'Decoded CRM: Decoded Ops',
   description: 'Leads, companies, contacts, deals, quotes, contracts, sales orders, invoices and diary, built around how a decoration business actually sells. Now available on founding-client terms.',
   alternates: { canonical: '/apps/crm' },
   openGraph: {
     type: 'website',
-    title: 'Decoded CRM — Decoded Ops',
+    title: 'Decoded CRM: Decoded Ops',
     description: 'Leads, companies, contacts, deals, quotes, contracts, sales orders, invoices and diary, built around how a decoration business actually sells.',
     url: 'https://decodedops.co.uk/apps/crm',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded CRM — Decoded Ops',
+    title: 'Decoded CRM: Decoded Ops',
     description: 'Leads, companies, contacts, deals, quotes, contracts, sales orders, invoices and diary. Founding-client terms.',
   },
 };
@@ -56,7 +56,7 @@ export default function CrmPage() {
           <p className="eyebrow">Three parts</p>
           <h2>Pipeline, paperwork, and the diary that ties them together.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Most of what goes wrong in sales admin isn&apos;t the
-            selling &mdash; it&apos;s the handoff. A quote that never became an order. An invoice raised against
+            selling. It&apos;s the handoff. A quote that never became an order. An invoice raised against
             the wrong contact. A follow-up nobody diarised.</p>
 
           <div className="grid grid--3">
@@ -81,7 +81,7 @@ export default function CrmPage() {
                 </svg>
               </div>
               <h3>Quotes, contracts, sales orders, invoices</h3>
-              <p>The paperwork chain that follows a deal is built in, not bolted on &mdash; a quote converts to
+              <p>The paperwork chain that follows a deal is built in, not bolted on. A quote converts to
                 an order without re-keying it, and an invoice is raised against the order that actually
                 shipped.</p>
             </div>
@@ -106,13 +106,13 @@ export default function CrmPage() {
         <div className="wrap">
           <p className="eyebrow">Flow</p>
           <h2>Lead to invoice, one tracked path.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Three connected stages &mdash; nothing re-keyed between
+          <p className="lede" style={{ marginTop: 16 }}>Three connected stages. Nothing re-keyed between
             them.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="crm" title="Lead to invoice, one tracked path"
-                     sub="Three connected stages — nothing re-keyed between them"
+                     sub="Three connected stages. Nothing re-keyed between them"
                      no="DO-ART-117" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="crm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
@@ -141,7 +141,7 @@ export default function CrmPage() {
                   <text x="660" y="462" className="p-accent-ink" fontSize="16" fontWeight="600">invoice,
                     one record</text>
                   <text x="660" y="586" className="p-mono" fontSize="15" letterSpacing="1.4"
-                        opacity=".7">STAGE 2 — NOTHING RE-KEYED</text>
+                        opacity=".7">STAGE 2: NOTHING RE-KEYED</text>
                 </g>
 
                 <g className="sk-fade sk-s5">
@@ -152,7 +152,7 @@ export default function CrmPage() {
                   <text x="1170" y="424" className="p-mono" fontSize="15" opacity=".8">Follow-ups against</text>
                   <text x="1170" y="448" className="p-mono" fontSize="15" opacity=".8">the account, not a person</text>
                   <text x="1170" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
-                        opacity=".55">STAGE 3 — NOTHING DROPPED</text>
+                        opacity=".55">STAGE 3: NOTHING DROPPED</text>
                 </g>
 
                 <g className="sk-dots">
@@ -176,7 +176,7 @@ export default function CrmPage() {
               sells on founding-client terms: full implementation pricing, the first six months of
               support waived, in exchange for accepting that some features arrive during the engagement
               and agreeing to be a named reference.</p>
-            <p>That&apos;s the whole arrangement. It isn&apos;t a discount dressed as an offer &mdash; you get the
+            <p>That&apos;s the whole arrangement. It isn&apos;t a discount dressed as an offer. You get the
               implementation you paid for, and I get the first reference I can point at.</p>
           </div>
         </div>
@@ -209,8 +209,8 @@ export default function CrmPage() {
               </tbody>
             </table>
           </div>
-          <p className="table-foot">If what you need is bigger than this &mdash; multiple entities, a bespoke
-            integration into a platform you already run &mdash; that&apos;s a different conversation, and it
+          <p className="table-foot">If what you need is bigger than this (multiple entities, a bespoke
+            integration into a platform you already run), that&apos;s a different conversation, and it
             starts with a Clarity Audit, not a price list.</p>
         </div>
       </section>

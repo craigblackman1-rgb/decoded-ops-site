@@ -6,17 +6,17 @@ import { Plate } from '@/components/Plate';
 import './homepage.css';
 
 export const metadata: Metadata = {
-  title: 'Decoded Ops — operations and technology consultancy for decorated goods',
+  title: 'Decoded Ops: operations and technology consultancy for decorated goods',
   description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Decoded Ops — operations and technology consultancy for decorated goods',
+    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
     description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Ops — operations and technology consultancy for decorated goods',
+    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
     description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses.',
   },
 };
@@ -60,7 +60,7 @@ export default function HomePage() {
         <section className="g-off" data-od-id="hero">
           <div className="wrap hero">
             <div>
-              <span className="eyebrow">&mdash; Operations &amp; technology consultancy</span>
+              <span className="eyebrow">Operations &amp; technology consultancy</span>
               <h1>The penny drop moment.</h1>
               <div className="hair"></div>
               <div className="hero-body">
@@ -90,15 +90,15 @@ export default function HomePage() {
         {/* ══════════ 2 · EVIDENCE · DO-ART-902 ══════════ */}
         <section className="g-white" data-od-id="evidence">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Evidence &middot; DO-ART-902</span>
+            <span className="eyebrow">Evidence &middot; DO-ART-902</span>
             <h2>Supplier feeds in. One clean catalogue out.</h2>
             <div className="hair"></div>
-            <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform &mdash;
+            <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform:
               feeds imported, products matched, stock pushed to the system they already own.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-evidence">
-                <Plate tone="dark" p="ev" title="Decoded Data App — live deployment"
+                <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
                        sub="Supplier feed to platform, one clean catalogue between them"
                        no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -146,7 +146,7 @@ export default function HomePage() {
 
                     <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
                            strokeOpacity=".2"/>
-                    <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE — none. A
+                    <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
                       screen is not</text>
                     <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
                       grading it would</text>
@@ -162,7 +162,7 @@ export default function HomePage() {
         {/* ══════════ 3 · WHAT OWNERS NOTICE ══════════ */}
         <section className="g-tint" data-od-id="approach">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Why owners keep me in the room</span>
+            <span className="eyebrow">Why owners keep me in the room</span>
             <h2>Three things you notice in the first hour.</h2>
             <div className="hair"></div>
 
@@ -195,7 +195,7 @@ export default function HomePage() {
         {/* ══════════ 4 · MEASURE · DO-ART-202 ══════════ */}
         <section className="g-navy" data-od-id="measure">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Measure &middot; DO-ART-202</span>
+            <span className="eyebrow">Measure &middot; DO-ART-202</span>
             <h2>Not projected. Not modelled. What actually happened.</h2>
             <div className="hair"></div>
             <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw
@@ -203,7 +203,7 @@ export default function HomePage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-measure">
-                <Plate tone="dark" p="ms" title="Supplier catalogue — raw to live"
+                <Plate tone="dark" p="ms" title="Supplier catalogue: raw to live"
                        sub="Hanicks · one import pipeline, first automated run"
                        no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -251,7 +251,7 @@ export default function HomePage() {
                     <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
                           fontWeight="700" fontSize="30">11,064</text>
                     <text x="700" y="510" className="p-mono" fontSize="17" opacity=".5">in range, priced
-                      and published — within weeks</text>
+                      and published, within weeks</text>
                   </g>
 
                   {/* the lever */}
@@ -279,7 +279,7 @@ export default function HomePage() {
         {/* ══════════ 5 · THE LADDER · DO-ART-302 ══════════ */}
         <section className="g-off" data-od-id="ladder">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Flow &middot; DO-ART-302</span>
+            <span className="eyebrow">Flow &middot; DO-ART-302</span>
             <h2>The facts, the options, and the decision stays yours.</h2>
             <div className="hair"></div>
             <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market,
@@ -288,7 +288,7 @@ export default function HomePage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-ladder">
-                <Plate tone="dark" p="ld" title="The ladder — buy first, build only what is missing"
+                <Plate tone="dark" p="ld" title="The ladder: buy first, build only what is missing"
                        sub="Three rungs in fixed order · every option priced"
                        no="DO-ART-302" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -311,7 +311,7 @@ export default function HomePage() {
                           letterSpacing="1.6" opacity=".7">RUNG 1 &middot; IF IT FITS</text>
                   </g>
 
-                  {/* RUNG 2 — the default */}
+                  {/* RUNG 2: the default */}
                   <g className="sk-fade sk-s4" filter="url(#ld-shadow)">
                     <rect x="620" y="240" width="380" height="190" rx="12" fill="url(#ld-amber-n)"
                           className="p-node-a" strokeWidth="1.8"/>

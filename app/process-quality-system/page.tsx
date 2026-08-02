@@ -4,19 +4,19 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Process & Quality System — Decoded Ops',
-  description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes — built during the engagement and owned by you after it.',
+  title: 'Process & Quality System: Decoded Ops',
+  description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
   alternates: { canonical: '/process-quality-system' },
   openGraph: {
     type: 'website',
-    title: 'Process & Quality System — Decoded Ops',
-    description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes — built during the engagement and owned by you after it.',
+    title: 'Process & Quality System: Decoded Ops',
+    description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
     url: 'https://decodedops.co.uk/process-quality-system',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Process & Quality System — Decoded Ops',
-    description: 'A working system for how the business documents, checks and improves its own processes — built during the engagement and owned by you after it.',
+    title: 'Process & Quality System: Decoded Ops',
+    description: 'A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
   },
 };
 
@@ -34,7 +34,7 @@ export default function ProcessQualitySystemPage() {
           <p className="eyebrow">Process &amp; Quality System</p>
           <h1>What you&rsquo;re actually left with.</h1>
           <p className="lead">Not a report that sits in a drawer. A working system for how the business
-            documents, checks, and improves its own processes — built during the engagement and owned by
+            documents, checks, and improves its own processes, built during the engagement and owned by
             you after it.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary btn-arrow" href="/deliver">See how this fits into Deliver</Link>
@@ -53,7 +53,7 @@ export default function ProcessQualitySystemPage() {
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="pq" title="A loop, not a document"
-                     sub="Four steps — the fourth feeds the first"
+                     sub="Four steps. The fourth feeds the first"
                      no="DO-ART-305" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
@@ -111,7 +111,7 @@ export default function ProcessQualitySystemPage() {
                       strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
                       d="M1280 540 C 1280 630, 255 630, 255 542"/>
                 <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
-                      fontStyle="italic" opacity=".8">Then round again — for every process that
+                      fontStyle="italic" opacity=".8">Then round again, for every process that
                   matters.</text>
               </Plate>
             </div>
@@ -121,13 +121,13 @@ export default function ProcessQualitySystemPage() {
             <article className="step">
               <p className="step-n">STEP 1</p>
               <h3>Map the process</h3>
-              <p>As it actually runs, watched end to end. Not as the org chart describes it and not as
+              <p>As it actually runs, watched from start to finish. Not as the org chart describes it and not as
                 anyone remembers it.</p>
             </article>
             <article className="step">
               <p className="step-n">STEP 2</p>
               <h3>Document it as an SOP</h3>
-              <p>Written so someone who doesn&rsquo;t already know the job can follow it. That&rsquo;s the test —
+              <p>Written so someone who doesn&rsquo;t already know the job can follow it. That&rsquo;s the test:
                 not whether the person who wrote it recognises it.</p>
             </article>
             <article className="step">
@@ -151,7 +151,7 @@ export default function ProcessQualitySystemPage() {
         <div className="container" style={{ maxWidth: 760 }}>
           <h2>See how this fits into Deliver.</h2>
           <p className="lead">Every Deliver engagement builds this alongside the project itself, so what you
-            keep afterwards is a documented process — not just something that works and nobody can
+            keep afterwards is a documented process, not just something that works and nobody can
             explain.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/deliver">See how this fits into Deliver</Link>

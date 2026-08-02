@@ -4,19 +4,19 @@ import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Transform — Decoded Ops',
-  description: 'Transform is the programme that follows a Clarity Audit — the plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds automated end to end.',
+  title: 'Transform: Decoded Ops',
+  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds fully automated.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
-    title: 'Transform — Decoded Ops',
-    description: 'Transform is the programme that follows a Clarity Audit — the plan, executed. Named results at Hanicks and TackleBag.',
+    title: 'Transform: Decoded Ops',
+    description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Named results at Hanicks and TackleBag.',
     url: 'https://decodedops.co.uk/transform',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Transform — Decoded Ops',
-    description: 'Transform is the programme that follows a Clarity Audit — the plan, executed.',
+    title: 'Transform: Decoded Ops',
+    description: 'Transform is the programme that follows a Clarity Audit: the plan, executed.',
   },
 };
 
@@ -28,7 +28,7 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Transform</span>
           <h1>The plan, executed.</h1>
-          <p className="lede">Transform isn&apos;t a separate product — it&apos;s what happens after a Clarity Audit
+          <p className="lede">Transform isn&apos;t a separate product. It&apos;s what happens after a Clarity Audit
             finds something that needs proper change, not a quick fix. The same diagnostic discipline,
             run at programme scale, over weeks rather than a day.</p>
           <div className={s.heroCta}>
@@ -44,13 +44,13 @@ export default function TransformPage() {
           <h2>Same approach, twice, in two different businesses.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Hanicks: 164,752 products imported and 77% matched on
             the first run. TackleBag: nine supplier feeds automated, a projected saving of 20 to 40
-            hours a week. Same approach both times — fix the process and the data before automating
+            hours a week. Same approach both times: fix the process and the data before automating
             anything.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="transform-ba-diagram">
               <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
-                     sub="Hanicks — before and after, paired line for line"
+                     sub="Hanicks: before and after, paired line for line"
                      no="DO-ART-403" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2" filter="url(#tb-shadow)">
@@ -110,7 +110,7 @@ export default function TransformPage() {
 
           <div className={s.ba} data-od-id="transform-ba-cards">
             <div className={`${s.baCol} ${s.baColNow}`} data-od-id="ba-now">
-              <h3>Before — both businesses</h3>
+              <h3>Before: both businesses</h3>
               <ul>
                 <li>Supplier data spread across feeds that all disagreed</li>
                 <li>Matching and re-keying done by hand, every time a range changed</li>
@@ -123,13 +123,13 @@ export default function TransformPage() {
               <ul>
                 <li>Hanicks: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
                 <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> live at Khaos Control</li>
-                <li>TackleBag: <strong>9</strong> supplier feeds automated end to end</li>
+                <li>TackleBag: <strong>9</strong> supplier feeds fully automated</li>
                 <li>TackleBag: a projected saving of <strong>20–40 hours</strong> a week</li>
               </ul>
             </div>
           </div>
 
-          <p className={s.tableFoot}>Both named with permission. Same approach both times — fix the process
+          <p className={s.tableFoot}>Both named with permission. Same approach both times: fix the process
             and the data before automating anything.</p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function TransformPage() {
                 </svg>
               </div>
               <h3>Sequence the plan</h3>
-              <p>The Clarity Audit report becomes a phased programme — what happens first, what
+              <p>The Clarity Audit report becomes a phased programme, what happens first, what
                 depends on what, and what can run in parallel without the business grinding to a
                 halt.</p>
             </div>
@@ -166,7 +166,7 @@ export default function TransformPage() {
               </div>
               <h3>Vendor-neutral delivery</h3>
               <p>Every vendor quotes against the same brief, and someone technical stays on your side
-                of the table for the build — the same discipline as Deliver, run at programme scale.</p>
+                of the table for the build, the same discipline as Deliver, run at programme scale.</p>
             </div>
             <div className={s.feature} data-od-id="dimension-embed">
               <div className={s.featureMark} aria-hidden="true">
@@ -176,7 +176,7 @@ export default function TransformPage() {
                 </svg>
               </div>
               <h3>Embed the Process &amp; Quality System</h3>
-              <p>Not a single workflow documented — the whole programme, so what&apos;s still running after
+              <p>Not a single workflow documented: the whole programme, so what&apos;s still running after
                 I&apos;ve gone is a system the business owns, not a memory of a project.</p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function TransformPage() {
       <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Book a Clarity Audit.</h2>
-          <p className="lede">Transform is scoped per engagement — there&apos;s no published price for a
+          <p className="lede">Transform is scoped per engagement. There&apos;s no published price for a
             programme this size, and there won&apos;t be. It starts the same way everything does: a full
             day on site and a written plan.</p>
           <div className={s.heroCta}>

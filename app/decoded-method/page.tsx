@@ -4,22 +4,22 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\decoded-method.html.
-// New route — also the target of the /resources/decoded-method redirect
+// New route, also the target of the /resources/decoded-method redirect
 // Lane 0 already wired in next.config.ts.
 
 export const metadata: Metadata = {
-  title: 'The Decoded Method — Decoded Ops',
+  title: 'The Decoded Method: Decoded Ops',
   description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
   alternates: { canonical: '/decoded-method' },
   openGraph: {
     type: 'website',
-    title: 'The Decoded Method — Decoded Ops',
+    title: 'The Decoded Method: Decoded Ops',
     description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
     url: 'https://decodedops.co.uk/decoded-method',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Decoded Method — Decoded Ops',
+    title: 'The Decoded Method: Decoded Ops',
     description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: Process Register, SOPs, Improvement Log.',
   },
 };
@@ -38,7 +38,7 @@ export default function DecodedMethodPage() {
           <p className="eyebrow">The Decoded Method</p>
           <h1>The system behind every engagement.</h1>
           <p className="lead">Every Clarity, Deliver and Transform engagement runs on the same three-layer
-            method. Not a framework invented for the website — it&rsquo;s how I actually run the work, and how
+            method. Not a framework invented for the website. It&rsquo;s how I actually run the work, and how
             I run Decoded Ops itself.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary btn-arrow" href="/clarity">See it in action</Link>
@@ -92,7 +92,7 @@ export default function DecodedMethodPage() {
               </div>
               <h3>Improvement Log</h3>
               <p>Change doesn&rsquo;t stop at go-live. Every engagement leaves a running log of what&rsquo;s been
-                improved and what&rsquo;s next, owned by you — not filed away once I leave.</p>
+                improved and what&rsquo;s next, owned by you. Not filed away once I leave.</p>
             </div>
           </div>
 
@@ -109,13 +109,13 @@ export default function DecodedMethodPage() {
         <div className="container">
           <p className="eyebrow">The loop &middot; DO-ART-304</p>
           <h2>Process Register to Improvement Log, then repeat.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order — the log feeds back
+          <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order. The log feeds back
             into the register.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="dm" title="Process Register to Improvement Log, then repeat"
-                     sub="Three layers in fixed order — the log feeds back into the register"
+                     sub="Three layers in fixed order. The log feeds back into the register"
                      no="DO-ART-304" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="dm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
@@ -163,7 +163,7 @@ export default function DecodedMethodPage() {
                 </g>
 
                 <text x="800" y="770" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
-                      letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER — NOT A ONE-OFF
+                      letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER. NOT A ONE-OFF
                   PROJECT</text>
 
                 <g className="sk-dots">

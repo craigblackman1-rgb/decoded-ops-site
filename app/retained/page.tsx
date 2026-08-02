@@ -6,22 +6,22 @@ import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\retained.html.
 // Figures (£1,440 / £2,880 / £5,760, 2/4/8 days a month, six-month
-// minimum) cross-checked against DO_Pricing_Architecture_v8.1.md — match
+// minimum) cross-checked against DO_Pricing_Architecture_v8.1.md: match
 // exactly, no changes. Replaces the previous Tailwind implementation.
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO — Decoded Ops',
+  title: 'Fractional CTO: Decoded Ops',
   description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
-    title: 'Fractional CTO — Decoded Ops',
+    title: 'Fractional CTO: Decoded Ops',
     description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
     url: 'https://decodedops.co.uk/retained',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional CTO — Decoded Ops',
+    title: 'Fractional CTO: Decoded Ops',
     description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire.',
   },
 };
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const retainedSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Retained — Fractional CTO',
+  name: 'Retained: Fractional CTO',
   description: 'Ongoing technology leadership for decorated-goods businesses. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
   provider: {
     '@type': 'Organization',
@@ -132,14 +132,14 @@ export default function RetainedPage() {
       <section className="g-tint">
         <div className="container">
           <p className="eyebrow">Scale &middot; DO-ART-204</p>
-          <h2>Advisory to Programme — the scale.</h2>
+          <h2>Advisory to Programme: the scale.</h2>
           <p className="lead" style={{ marginTop: 16 }}>2, 4 and 8 days a month. Price scales in proportion.
             Same price at every turnover band.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
-                     sub="2, 4 and 8 days a month — price scales in proportion"
+                     sub="2, 4 and 8 days a month, price scales in proportion"
                      no="DO-ART-204" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
@@ -183,7 +183,7 @@ export default function RetainedPage() {
                         strokeOpacity=".22"/>
                   <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="600" fontSize="24" opacity=".9">Exact scale. Double the
-                    days, double the price — every time.</text>
+                    days, double the price, every time.</text>
                   <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
                     minimum, all three tiers. Same price at every turnover band.</text>
                 </g>
@@ -209,7 +209,7 @@ export default function RetainedPage() {
             </div>
             <div className="panel">
               <h3>It doesn&rsquo;t fit when</h3>
-              <p>You haven&rsquo;t worked out what&rsquo;s actually broken yet. Start with a Clarity Audit instead —
+              <p>You haven&rsquo;t worked out what&rsquo;s actually broken yet. Start with a Clarity Audit instead.
                 a fractional CTO relationship works best once there&rsquo;s a plan to execute, not before one
                 exists. I&rsquo;d rather tell you that now than take a retainer for six months of finding out.</p>
               <p><Link href="/clarity" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>See how Discovery
@@ -229,7 +229,7 @@ export default function RetainedPage() {
       <section className="g-white cta-strip">
         <div className="container" style={{ maxWidth: 760 }}>
           <h2>Let&rsquo;s talk about whether this suits you.</h2>
-          <p className="lead">An hour, no obligation, and an honest answer at the end of it — including if
+          <p className="lead">An hour, no obligation, and an honest answer at the end of it, including if
             the answer is that you don&rsquo;t need this yet.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>

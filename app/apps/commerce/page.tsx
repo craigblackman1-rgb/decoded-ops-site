@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Decoded Commerce — Decoded Ops',
-  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation — company accounts, spend limits, approval workflows and quote negotiation.',
+  title: 'Decoded Commerce: Decoded Ops',
+  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation: company accounts, spend limits, approval workflows and quote negotiation.',
   alternates: { canonical: '/apps/commerce' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Commerce — Decoded Ops',
+    title: 'Decoded Commerce: Decoded Ops',
     description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation.',
     url: 'https://decodedops.co.uk/apps/commerce',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Commerce — Decoded Ops',
+    title: 'Decoded Commerce: Decoded Ops',
     description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality.',
   },
 };
@@ -31,7 +31,7 @@ export default function CommercePage() {
             <div className="hero-body">
               <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
-              <p>It&rsquo;s built on the Medusa B2B starter &mdash; company accounts, spend limits, approval
+              <p>It&rsquo;s built on the Medusa B2B starter: company accounts, spend limits, approval
                 workflows, quote negotiation, order editing, and a full storefront and checkout, all on
                 an open-source core. Real foundations underneath, not a from-scratch build. That&rsquo;s
                 exactly why it prices where it does rather than in the £8,000&ndash;£20,000 bespoke range
@@ -74,7 +74,7 @@ export default function CommercePage() {
               <h3>Core</h3>
               <p className="feature-meta">Single storefront</p>
               <p>Product catalogue, customer accounts and logins, manual pricing tiers. No approval
-                workflow &mdash; if nobody in your customers&rsquo; businesses needs to sign off an order, you don&rsquo;t
+                workflow. If nobody in your customers&rsquo; businesses needs to sign off an order, you don&rsquo;t
                 need to pay for the machinery that makes them.</p>
             </div>
 
@@ -102,7 +102,7 @@ export default function CommercePage() {
               </div>
               <h3>Extended</h3>
               <p className="feature-meta">More than one of everything</p>
-              <p>Multi-site storefronts, ERP integration &mdash; Khaos Control sync and similar &mdash; and bespoke
+              <p>Multi-site storefronts, ERP integration (Khaos Control sync and similar), and bespoke
                 checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
                 price.</p>
             </div>
@@ -185,7 +185,7 @@ export default function CommercePage() {
             <div className="panel">
               <h3>How it starts</h3>
               <p>With a Clarity Audit, the same as any rung 3 conversation. Everything on the market
-                goes on the table first, priced, including the options I&rsquo;d expect you to reject &mdash; and
+                goes on the table first, priced, including the options I&rsquo;d expect you to reject. And
                 the decision stays yours.</p>
               <p><Link href="/how-i-build" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>How I decide
                 what to build &rarr;</Link></p>
@@ -202,7 +202,7 @@ export default function CommercePage() {
 
           <div className="inset">
             <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. What you sell, who buys
-            it, and how they&rsquo;re allowed to buy it &mdash; settled before the build is quoted.
+            it, and how they&rsquo;re allowed to buy it. Settled before the build is quoted.
           </div>
 
           <div className="table-wrap">
@@ -243,7 +243,7 @@ export default function CommercePage() {
             </table>
           </div>
           <p className="table-foot">Not VAT registered, so there&rsquo;s no VAT to add. A full rebuild like the
-            Hanicks migration isn&rsquo;t on this table on purpose &mdash; that&rsquo;s scoped separately.</p>
+            Hanicks migration isn&rsquo;t on this table on purpose. That&rsquo;s scoped separately.</p>
 
           <div className="notice">
             <p className="notice-tag">Founding-client terms</p>
@@ -252,7 +252,7 @@ export default function CommercePage() {
               Commerce as a tiered product. Until that happens it sells at the rates above with the
               first six months of support waived, in exchange for accepting that some features arrive
               during the engagement and agreeing to be a named reference.</p>
-            <p>Stated plainly, because you&rsquo;d find out anyway &mdash; and you should be able to price it in
+            <p>Stated plainly, because you&rsquo;d find out anyway. And you should be able to price it in
               before you decide, not after.</p>
           </div>
         </div>

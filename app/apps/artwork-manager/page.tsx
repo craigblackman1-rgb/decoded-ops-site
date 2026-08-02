@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Decoded Artwork Manager — Decoded Ops',
+  title: 'Decoded Artwork Manager: Decoded Ops',
   description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor. Currently on founding-client terms.',
   alternates: { canonical: '/apps/artwork-manager' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Artwork Manager — Decoded Ops',
+    title: 'Decoded Artwork Manager: Decoded Ops',
     description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
     url: 'https://decodedops.co.uk/apps/artwork-manager',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Artwork Manager — Decoded Ops',
+    title: 'Decoded Artwork Manager: Decoded Ops',
     description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Currently on founding-client terms.',
   },
 };
@@ -69,7 +69,7 @@ export default function ArtworkManagerPage() {
                 </svg>
               </div>
               <h3>The vault</h3>
-              <p>Every format and every version of every logo in one place &mdash; with the thread library and
+              <p>Every format and every version of every logo in one place, with the thread library and
                 the colourways that go with it, and access for the staff who need it.</p>
               <p>Version history means you can prove which file went to the machine, and when.</p>
             </div>
@@ -109,13 +109,13 @@ export default function ArtworkManagerPage() {
         <div className="wrap">
           <p className="eyebrow">Flow &middot; DO-ART-106</p>
           <h2>Vault to floor, one tracked path.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Three connected stages — no email chain between
+          <p className="lede" style={{ marginTop: 16 }}>Three connected stages. No email chain between
             them.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="am" title="Vault to floor, one tracked path"
-                     sub="Three connected stages — no email chain between them"
+                     sub="Three connected stages. No email chain between them"
                      no="DO-ART-106" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="am-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
@@ -144,7 +144,7 @@ export default function ArtworkManagerPage() {
                   <text x="660" y="462" className="p-accent-ink" fontSize="16" fontWeight="600">version
                     that was shown</text>
                   <text x="660" y="586" className="p-mono" fontSize="15" letterSpacing="1.4"
-                        opacity=".7">STAGE 2 — NO EMAIL CHAIN</text>
+                        opacity=".7">STAGE 2: NO EMAIL CHAIN</text>
                 </g>
 
                 <g className="sk-fade sk-s5">
@@ -157,7 +157,7 @@ export default function ArtworkManagerPage() {
                   <text x="1170" y="448" className="p-mono" fontSize="15" opacity=".8">DST fallback ·
                     DTF/DTG hot folders</text>
                   <text x="1170" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
-                        opacity=".55">STAGE 3 — TO THE FLOOR</text>
+                        opacity=".55">STAGE 3: TO THE FLOOR</text>
                 </g>
 
                 <g className="sk-dots">
@@ -182,7 +182,7 @@ export default function ArtworkManagerPage() {
               support waived, in exchange for accepting that some features arrive during the engagement
               and agreeing to be a named reference.</p>
             <p>That&rsquo;s the whole arrangement. It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a
-              pilot you&rsquo;re paying to be part of &mdash; you get the implementation you paid for, and I get the
+              pilot you&rsquo;re paying to be part of. You get the implementation you paid for, and I get the
               first reference I can point at.</p>
           </div>
 
@@ -202,7 +202,7 @@ export default function ArtworkManagerPage() {
 
           <div className="inset">
             <b>App Scoping Session, £750 fixed.</b> Mandatory before either tier. Which formats, which
-            machines, how many customers proofing &mdash; worked out before anyone quotes a number.
+            machines, how many customers proofing. Worked out before anyone quotes a number.
           </div>
 
           <div className="table-wrap">
@@ -245,7 +245,7 @@ export default function ArtworkManagerPage() {
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Talk about founding-client terms.</h2>
           <p className="lede">An hour to work out whether being first is worth it to you. If your artwork
-            problem is smaller than this, I&rsquo;ll tell you that and we&rsquo;ll stop there.</p>
+            problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the end of it.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" href="/contact">Talk about founding-client terms</Link>
             <Link className="btn btn--ghost btn-arrow" href="/apps">See the other systems</Link>

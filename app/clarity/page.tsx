@@ -4,18 +4,18 @@ import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Clarity Audit — Decoded Ops',
+  title: 'Clarity Audit: Decoded Ops',
   description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500 and the way every Decoded Ops engagement starts.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Clarity Audit — Decoded Ops',
+    title: 'Clarity Audit: Decoded Ops',
     description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500.',
     url: 'https://decodedops.co.uk/clarity',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clarity Audit — Decoded Ops',
+    title: 'Clarity Audit: Decoded Ops',
     description: 'One day on site, a written report within five, and the 3× Clarity Guarantee.',
   },
 };
@@ -28,8 +28,8 @@ export default function ClarityPage() {
         <div className="wrap">
           <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
-          <p className="lede">A free 60-minute call, then one full day inside your business — six areas
-            covered, followed end to end rather than just discussed. £1,500, and if I can&apos;t find three
+          <p className="lede">A free 60-minute call, then one full day inside your business: six areas
+            covered, followed from start to finish rather than just discussed. £1,500, and if I can&apos;t find three
             times the fee in the first hour, the day is free. A written report within five working
             days, walked through with you in person.</p>
           <div className={s.heroCta}>
@@ -49,7 +49,7 @@ export default function ClarityPage() {
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="clarity-flow-diagram">
               <Plate tone="dark" p="cd" title="One call. One day. One clear plan."
-                     sub="Four fixed steps — you know what each one produces"
+                     sub="Four fixed steps. You know what each one produces."
                      no="DO-ART-306" rev="01" cls="DECODED OPS · ISSUED">
 
                 <path id="cd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
@@ -73,7 +73,7 @@ export default function ClarityPage() {
                   <text x="595" y="308" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="700" fontSize="24">On-site day</text>
                   <text x="595" y="342" textAnchor="middle" className="p-mono" fontSize="17"
-                        opacity=".85">six areas, followed end to end</text>
+                        opacity=".85">six areas, followed start to finish</text>
                   <circle cx="595" cy="460" r="13" className="p-cyan"/>
                   <text x="595" y="520" textAnchor="middle" className="p-mono" fontSize="17"
                         letterSpacing="1.5" opacity=".7">STEP 2</text>
@@ -104,7 +104,7 @@ export default function ClarityPage() {
                 </g>
 
                 <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
-                      fontStyle="italic" opacity=".8">Followed, observed, and quantified — not guessed
+                      fontStyle="italic" opacity=".8">Followed, observed, and quantified. Not guessed
                   at.</text>
 
                 <g className="sk-dots">
@@ -138,8 +138,8 @@ export default function ClarityPage() {
             <article className={`${s.step} ${s.stepLast}`}>
               <p className={s.stepN}>STEP 4</p>
               <h3>Debrief</h3>
-              <p>We walk through it together, so you can push back on it while I&apos;m still in the room.
-                Then it&apos;s yours — to act on with me, or without me.</p>
+              <p>I walk you through it, so you can push back while I&apos;m still in the room.
+                Then it&apos;s yours: to act on with me, or without me.</p>
             </article>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function ClarityPage() {
       <section className="g-white" data-od-id="areas">
         <div className="wrap">
           <span className="eyebrow">What gets covered</span>
-          <h2>Six areas, followed end to end.</h2>
+          <h2>Six areas, followed from start to finish.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. I follow the
             actual process, in the actual place it happens.</p>
 
@@ -157,7 +157,7 @@ export default function ClarityPage() {
             <article className="card" data-od-id="area-it">
               <span className="kicker">01 · Infrastructure</span>
               <h3>IT infrastructure</h3>
-              <p>Networks, backups, security — and the systems nobody&apos;s looked at since the day they
+              <p>Networks, backups, security, and the systems nobody&apos;s looked at since the day they
                 were installed.</p>
             </article>
             <article className="card" data-od-id="area-software">
@@ -169,7 +169,7 @@ export default function ClarityPage() {
             <article className="card" data-od-id="area-ecommerce">
               <span className="kicker">03 · eCommerce</span>
               <h3>eCommerce</h3>
-              <p>Where the website, the warehouse, and the platform agree — and where they quietly
+              <p>Where the website, the warehouse, and the platform agree, and where they quietly
                 don&apos;t.</p>
             </article>
             <article className="card" data-od-id="area-operations">
@@ -188,7 +188,7 @@ export default function ClarityPage() {
               <span className="kicker">06 · AI readiness</span>
               <h3>AI readiness</h3>
               <p>Whether the data and processes underneath are solid enough for automation to be worth
-                doing yet — most aren&apos;t.</p>
+                doing yet. Most aren&apos;t.</p>
             </article>
           </div>
         </div>

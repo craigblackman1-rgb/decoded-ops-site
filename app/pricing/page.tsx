@@ -5,25 +5,25 @@ import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\pricing.html.
 // Every figure below is cross-checked against
-// DO_Pricing_Architecture_v8.1.md (30 Jul 2026, canonical) — see the
+// DO_Pricing_Architecture_v8.1.md (30 Jul 2026, canonical), see the
 // Lane B build report. No figure changed during the port; the mockup
 // already matched the source document. This replaces the previous
 // PricingClient.tsx implementation, whose figures had drifted from
 // canonical (see the v8.1 § Reconciliation table).
 
 export const metadata: Metadata = {
-  title: 'Pricing — Decoded Ops',
-  description: 'Plain pricing for technology consultancy and Systems work — Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+  title: 'Pricing: Decoded Ops',
+  description: 'Plain pricing for technology consultancy and Systems work: Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
-    title: 'Pricing — Decoded Ops',
-    description: 'Plain pricing for technology consultancy and Systems work — Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+    title: 'Pricing: Decoded Ops',
+    description: 'Plain pricing for technology consultancy and Systems work: Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
     url: 'https://decodedops.co.uk/pricing',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing — Decoded Ops',
+    title: 'Pricing: Decoded Ops',
     description: 'Plain pricing for technology consultancy and Systems work. No hidden day rate.',
   },
 };
@@ -60,7 +60,7 @@ export default function PricingPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>Consultancy — by turnover band</caption>
+              <caption>Consultancy: by turnover band</caption>
               <thead>
                 <tr>
                   <th scope="col">Product</th>
@@ -75,7 +75,7 @@ export default function PricingPage() {
                   <td className="full" colSpan={3}>
                     <span className="price">From £1,500</span>
                     <span className="price-sub">One day on site, a written plan within five working days.
-                      £1,500 is the floor for a single site — more sites scale up from there, scoped
+                      £1,500 is the floor for a single site, more sites scale up from there, scoped
                       after the first call. The entry point into everything else.</span>
                   </td>
                 </tr>
@@ -101,7 +101,7 @@ export default function PricingPage() {
                   <th scope="row">Retained</th>
                   <td className="full" colSpan={3}>
                     <span className="price">£1,440 · £2,880 · £5,760 per month</span>
-                    <span className="price-sub">Advisory, Embedded and Programme — 2, 4 and 8 days a month.
+                    <span className="price-sub">Advisory, Embedded and Programme: 2, 4 and 8 days a month.
                       Same price at every turnover band. <Link href="/retained"
                         style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>How the fractional CTO work
                       runs →</Link></span>
@@ -111,7 +111,7 @@ export default function PricingPage() {
             </table>
           </div>
           <p className="table-foot">Ranges reflect scope, not negotiation. The anchor figure is the
-            recommended tier within each band — the number to plan around if you want one.</p>
+            recommended tier within each band, the number to plan around if you want one.</p>
 
           <h3 style={{ marginTop: 56, fontSize: '1.5rem' }}>Retained Transformation</h3>
           <p className="lead" style={{ marginTop: 12 }}>Ongoing programme delivery rather than advice. A
@@ -119,7 +119,7 @@ export default function PricingPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>Retained Transformation — by turnover band</caption>
+              <caption>Retained Transformation: by turnover band</caption>
               <thead>
                 <tr>
                   <th scope="col">Tier</th>
@@ -212,7 +212,7 @@ export default function PricingPage() {
                   <text x="60" y="594" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="600" fontSize="26">Full refund. No conditions.
                     No questions.</text>
-                  <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance —
+                  <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance,
                     near-certain cost avoidance, priced at the fee itself.</text>
                 </g>
               </Plate>
@@ -240,7 +240,7 @@ export default function PricingPage() {
           <div className="inset" style={{ marginTop: 26 }}>
             <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
             extra cost.</b> Nothing separate to buy. Building something only makes sense once buying
-            has been ruled out in writing — <Link href="/how-i-build"
+            has been ruled out in writing, <Link href="/how-i-build"
               style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
           </div>
           <div className="inset">
@@ -250,7 +250,7 @@ export default function PricingPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>The Decoded apps — implementation plus monthly</caption>
+              <caption>The Decoded apps: implementation plus monthly</caption>
               <thead>
                 <tr>
                   <th scope="col">Product</th>
@@ -270,7 +270,7 @@ export default function PricingPage() {
                   <th scope="row">Decoded Artwork Manager</th>
                   <td><span className="price">£4,750</span><span className="price-sub">+ £350/mo</span></td>
                   <td className="col-star"><span className="price">£8,500</span><span className="price-sub">+ £600/mo</span></td>
-                  <td><span className="price dash">—</span><span className="price-sub">no Extended tier</span></td>
+                  <td><span className="price dash">N/A</span><span className="price-sub">no Extended tier</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Decoded Commerce</th>
@@ -306,7 +306,7 @@ export default function PricingPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>Small business — fixed prices</caption>
+              <caption>Small business: fixed prices</caption>
               <thead>
                 <tr>
                   <th scope="col">Product</th>
@@ -357,7 +357,7 @@ export default function PricingPage() {
         <div className="container" style={{ maxWidth: 760 }}>
           <h2>Not sure which line you&rsquo;re in?</h2>
           <p className="lead">That&rsquo;s what the discovery call is for. It&rsquo;s free, takes 60 minutes, and comes
-            with no obligation — just an honest conversation about your operation.</p>
+            with no obligation, just an honest conversation about your operation.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
             <Link className="btn btn-ghost btn-arrow" href="/clarity">See how Clarity Audit works</Link>

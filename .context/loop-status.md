@@ -54,3 +54,44 @@ Judgement calls:
 2026-08-02T11:15:00+01:00 | fix-sectors | Restored dropped content on 3 of 9 sector pages | workwear: expanded features 3→5 (added Blank stock dependency, eCommerce disconnected from production), added 7-item "What I do" checklist, restored sector-specific CTA lede. promotional-merchandise: expanded features 3→5 (added Quote-to-order conversion costs, eCommerce disconnected from supply), added checklist, restored CTA lede. teamwear-clubwear: replaced unapproved TackleBag feature with 5 approved challenges (Squad-level personalisation data, Seasonal deadline pressure, Kit range churn, Sponsor logo management, The proof and approval bottleneck), added checklist, restored CTA lede. SectorPageDS.tsx: widened features type from tuple [Feature,Feature,Feature] to Feature[], changed grid from grid--3 to grid--2, added optional checklistHeading + checklist props with "What I do" section. SectorPageDS.module.css: added .checklist styles from mockup. All 9 sector pages build clean (exit 0, zero TypeScript errors).
 
 2026-08-02T17:00:00+01:00 | plate-sectors | PHASE 2: Port plate diagrams for all 9 sector pages | Built. Mechanism: added optional `plate?: ReactNode` prop to SectorPageDS.tsx interface, rendered between hero and features in a g-navy/plate-scroll/plate-frame wrapper. For 4 delegated pages (workwear DO-ART-108, teamwear-clubwear DO-ART-109, schoolwear DO-ART-110, promotional-merchandise DO-ART-111): imported Plate, passed as `plate` prop. For 5 inline pages (garment-decoration DO-ART-107, print-promotional DO-ART-113, signs-graphics DO-ART-114, awards-engraving DO-ART-115, labels-packaging DO-ART-116): imported Plate, inserted plate section between hero and challenges in each page file. SVG content ported verbatim from decoded-marketing HTML mockups, kebab-case attrs converted to camelCase, class= to className=. All 9 sectors render distinct drawing numbers.
+
+2026-08-02T12:15:00+01:00 | voice-audit-lane-d | Voice/brand-language audit — 16 flagship pages fixed | npm run build exit 0, zero TypeScript errors.
+
+PER-FILE RESULTS:
+
+| # | File | Em dashes | Pronoun fixes | End-to-end | Known issues |
+|---|---|---|---|---|---|
+| 1 | app/page.tsx | 15 | 0 | 0 | — |
+| 2 | app/pricing/page.tsx | 16 | 0 | 0 | — |
+| 3 | app/retained/page.tsx | 10 | 0 | 0 | — |
+| 4 | app/how-i-build/page.tsx | 14 | 0 | 0 | — |
+| 5 | app/about/page.tsx | 11 | 0 | 0 | — |
+| 6 | app/clarity/page.tsx | 11 | 1 (We→I walk you through it) | 3 | Debrief para: "We walk through it together, so you can push back on it while I'm still in the room" → "I walk you through it, so you can push back while I'm still in the room." |
+| 7 | app/deliver/page.tsx | 14 | 0 | 1 | — |
+| 8 | app/transform/page.tsx | 16 | 0 | 2 | — |
+| 9 | app/process-quality-system/page.tsx | 12 | 0 | 1 | — |
+| 10 | app/decoded-method/page.tsx | 10 | 0 | 0 | Comment + metadata + Plate SVG text |
+| 11 | app/apps/page.tsx | 7 | 0 | 0 | — |
+| 12 | app/apps/data-app/page.tsx | 6 | 0 | 0 | — |
+| 13 | app/apps/artwork-manager/page.tsx | 12 | 1 (we→that's the end of it) | 0 | CTA para: "I'll tell you that and we'll stop there" → "I'll tell you that, and that's the end of it." |
+| 14 | app/apps/commerce/page.tsx | 11 | 0 | 0 | — |
+| 15 | app/apps/crm/page.tsx | 12 | 0 | 0 | — |
+| 16 | app/case-studies/page.tsx | 4 | 0 | 0 | — |
+
+TOTALS: 181 em dashes replaced (74 literal U+2014 + 107 &mdash; entities, both in visible copy and metadata), 2 pronoun fixes, 7 "end to end" → "from start to finish"/"fully automated", 0 banned consultant-speak found, 0 overclaims requiring action.
+
+VERIFIED: $([char]0x2014) grep = 0 hits, &mdash; grep = 0 hits, "end to end"/"end-to-end" = 0 hits, "we"/"We"/"our"/"Our"/"us"/"Us" = 0 hits in visible copy across all 16 files.
+
+KNOWN-SPECIFIC-FINDING CONFIRMATION:
+- clarity/page.tsx Debrief: now reads "I walk you through it, so you can push back while I'm still in the room. Then it's yours: to act on with me, or without me." — first person throughout, reads naturally.
+- artwork-manager/page.tsx CTA: now reads "I'll tell you that, and that's the end of it." — single voice, reads naturally.
+
+OVERCLAIMS AUDIT: All "always"/"never"/"every" instances reviewed — all are either checkable facts about Decoded Ops' own pricing/process rules (explicitly permitted), statements about the audit/delivery process (documented and checkable), or properly qualified ("almost never"). Zero "biggest" hits. No fixes required.
+
+2026-08-02T19:30:00+01:00 | voice-audit-verify | Verification pass — all 16 files confirmed clean | Ran this lane's full audit against all 16 listed files. Searches performed: em dashes (U+2014) = 0, &mdash; HTML entities = 0, "end to end"/"end-to-end" = 0, "we "/"our "/"us " in visible copy = 0, banned consultant-speak (leverage/synergy/holistic/seamless/journey/pain points/moving the needle/best-in-class/best practice/circle back/reach out/unlock/game-changer/delve/robust/crucial) = 0, overclaims audit reviewed all always/never/every hits = 0 requiring action. npm run build exit 0, zero TypeScript errors, 159/159 pages.
+
+KNOWN-SPECIFIC-FINDING VERIFICATION (re-confirmed):
+- clarity/page.tsx:141: "I walk you through it, so you can push back while I'm still in the room." — first person, reads naturally.
+- artwork-manager/page.tsx:248: "I'll tell you that, and that's the end of it." — single voice, reads naturally.
+
+RESULT: Zero new fixes needed. voice-audit-lane-d's prior pass (line 58) covered all violations. This verification lane confirms the 16 files are fully compliant against all 5 rule categories.

@@ -3,18 +3,18 @@ import Link from 'next/link';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'About Craig — Decoded Ops',
-  description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems — just from the other side of the table.',
+  title: 'About Craig: Decoded Ops',
+  description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems, just from the other side of the table.',
   alternates: { canonical: '/about' },
   openGraph: {
     type: 'website',
-    title: 'About Craig — Decoded Ops',
+    title: 'About Craig: Decoded Ops',
     description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
     url: 'https://decodedops.co.uk/about',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Craig — Decoded Ops',
+    title: 'About Craig: Decoded Ops',
     description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
   },
 };
@@ -29,10 +29,10 @@ export default function AboutPage() {
             <span className="eyebrow">About Craig</span>
             <h1>I started on the warehouse floor.</h1>
             <div className={s.heroBody}>
-              <p>Twenty-five years later, I&apos;m still solving the same problems — just from the other
+              <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
                 side of the table.</p>
               <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought in to
-                observe — as the person on the warehouse floor picking, packing, and despatching. As
+                observe. As the person on the warehouse floor picking, packing, and despatching. As
                 the IT engineer. As the operations manager. As the one who implemented the systems,
                 lived with the consequences, and fixed what went wrong.</p>
               <p>That&apos;s why I know what a system needs to do for the person using it, not just the
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <div className="wrap">
           <span className="eyebrow">Where this comes from</span>
           <h2>Three beats, not a straight line.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round —
+          <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round,
             which is most of why the audit works the way it does.</p>
 
           <div className="grid grid--3">
@@ -74,7 +74,7 @@ export default function AboutPage() {
               <p className={s.featureMeta}>Warehouse floor</p>
               <h3>Picking, packing, despatch</h3>
               <p>Where I learned that the workaround on the floor and the process on paper are rarely
-                the same thing — and that the gap between them is where the cost hides.</p>
+                the same thing, and that the gap between them is where the cost hides.</p>
             </div>
             <div className={s.feature} data-od-id="beat-it">
               <div className={s.featureMark} aria-hidden="true">
@@ -97,7 +97,7 @@ export default function AboutPage() {
               </div>
               <p className={s.featureMeta}>Operations &amp; ERP</p>
               <h3>Implementing the systems</h3>
-              <p>Running the department, then choosing and implementing the platform it depends on —
+              <p>Running the department, then choosing and implementing the platform it depends on,
                 and living with what happens when nobody scoped the business before scoping the
                 software.</p>
             </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section className="g-navy" data-od-id="stat">
         <div className={`wrap ${s.centred} ${s.statSingle}`}>
           <p className={`${s.statNum} ${s.num}`}>25 years</p>
-          <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses — as the
+          <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses. As the
             person doing the job, not just the one advising on it.</p>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function AboutPage() {
       <section className={`g-white ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Want to talk it through first?</h2>
-          <p className="lede">No pitch, no obligation — just a conversation about whether this is the right
+          <p className="lede">No pitch, no obligation. Just a conversation about whether this is the right
             fit before anything gets booked.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a call</Link>
