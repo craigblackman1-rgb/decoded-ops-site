@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 
 // Target keyword: "ai training plan tool" (secondary: "eternal fitness decoded ops")
 export const metadata = {
-  title: 'Eternal Fitness — Full Site Build & AI Training Tool | Decoded Ops',
+  title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
   description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
   alternates: { canonical: '/case-studies/eternal-fitness' },
   openGraph: {
     type: 'article',
-    title: 'Eternal Fitness — Full Site Build & AI Training Tool | Decoded Ops',
+    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eternal Fitness — Full Site Build & AI Training Tool | Decoded Ops',
+    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
   },
 };
@@ -26,7 +26,7 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Eternal Fitness — Full Site Build and AI Training Tool',
+      headline: 'Eternal Fitness: Full Site Build and AI Training Tool',
       description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
@@ -50,7 +50,7 @@ export default function EternalFitnessCaseStudyPage() {
                 Eternal Fitness is a private, 1-to-1 personal training studio working mainly with clients managing health conditions, not a general weight-loss audience. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
               </p>
               <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
-                Esther is my wife, named plainly. This is paid client work, not a favour or free build — she pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
+                Esther is my wife, named plainly. This is paid client work, not a favour or free build. She pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
               </p>
             </div>
           </div>
@@ -68,10 +68,10 @@ export default function EternalFitnessCaseStudyPage() {
               <h2>What I&apos;m building</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
                 {[
-                  'A full site rebuild that reflects clinical framing rather than fitness-marketing convention — no "transformation," no before-and-after, no crush-it language',
+                  'A full site rebuild that reflects clinical framing rather than fitness-marketing convention, no "transformation," no before-and-after, no crush-it language',
                   'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition, with Esther reviewing and approving every output',
                   'Brand and tooling consistency across the site and the training plan output, so the two don\'t drift apart over time',
-                  'A technical foundation Esther can rely on without needing to manage it herself — she owns the clinical and brand decisions, I own the build',
+                  'A technical foundation Esther can rely on without needing to manage it herself. She owns the clinical and brand decisions, I own the build',
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />

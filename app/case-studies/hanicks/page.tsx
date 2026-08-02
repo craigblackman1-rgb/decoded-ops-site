@@ -5,18 +5,18 @@ import { Plate } from '@/components/Plate';
 
 // Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
 export const metadata = {
-  title: 'Hanicks — Khaos Control ERP + Custom App | Decoded Ops',
+  title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
   description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
   alternates: { canonical: '/case-studies/hanicks' },
   openGraph: {
     type: 'article',
-    title: 'Hanicks — Khaos Control ERP + Custom App | Decoded Ops',
+    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
     url: 'https://decodedops.co.uk/case-studies/hanicks',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hanicks — Khaos Control ERP + Custom App | Decoded Ops',
+    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app.',
   },
 };
@@ -26,7 +26,7 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Hanicks — Khaos Control ERP + Custom App',
+      headline: 'Hanicks: Khaos Control ERP + Custom App',
       description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
@@ -71,7 +71,7 @@ export default function HanicksCaseStudyPage() {
             <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
             <h1>The platform stayed. The layer around it changed.</h1>
             <p className="lede">
-              Hanicks is a heating spares business — not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
+              Hanicks is a heating spares business, not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
             </p>
           </div>
         </section>
@@ -79,14 +79,14 @@ export default function HanicksCaseStudyPage() {
         {/* 1b. PLATE · DO-ART-205 */}
         <section className="g-navy">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
+            <span className="eyebrow">Measure &middot; DO-ART-205</span>
             <h2>Not projected. Not modelled. What actually happened.</h2>
             <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-hanicks">
-                <Plate tone="dark" p="hs" title="Supplier catalogue — before and after"
+                <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
                        sub="Hanicks · 164,752 products, 77% matched on the first run"
                        no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -160,7 +160,7 @@ export default function HanicksCaseStudyPage() {
               </div>
               <div className="stat">
                 <p className="stat-num num">127,135</p>
-                <p className="stat-label">matched automatically — a 77% first-run match rate</p>
+                <p className="stat-label">matched automatically, a 77% first-run match rate</p>
               </div>
               <div className="stat">
                 <p className="stat-num num">11,064</p>
@@ -183,7 +183,7 @@ export default function HanicksCaseStudyPage() {
 
             <h2>What was done</h2>
             <p>
-              A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well — so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+              A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well, so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
             </p>
             <p>
               The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.

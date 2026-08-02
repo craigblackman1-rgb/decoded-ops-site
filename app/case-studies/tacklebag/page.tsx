@@ -5,18 +5,18 @@ import { Plate } from '@/components/Plate';
 
 // Target keyword: "stock control app decorated goods" (secondary: "tacklebag decoded ops")
 export const metadata = {
-  title: 'TackleBag — Clarity Audit to Stock Control Build | Decoded Ops',
+  title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
   description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.',
   alternates: { canonical: '/case-studies/tacklebag' },
   openGraph: {
     type: 'article',
-    title: 'TackleBag — Clarity Audit to Stock Control Build | Decoded Ops',
+    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.',
     url: 'https://decodedops.co.uk/case-studies/tacklebag',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TackleBag — Clarity Audit to Stock Control Build | Decoded Ops',
+    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module.',
   },
 };
@@ -26,7 +26,7 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'TackleBag — the diagnostic came before the decision',
+      headline: 'TackleBag: the diagnostic came before the decision',
       description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
@@ -88,14 +88,14 @@ export default function TackleBagCaseStudyPage() {
         {/* 1b. PLATE · DO-ART-206 */}
         <section className="g-navy">
           <div className="wrap">
-            <span className="eyebrow">&mdash; Measure &middot; DO-ART-206</span>
+            <span className="eyebrow">Measure &middot; DO-ART-206</span>
             <h2>Before and after, paired line for line.</h2>
             <div className="hair"></div>
             <p className="lede">TackleBag, named with permission. Nine supplier feeds, fully automated.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-tacklebag">
-                <Plate tone="dark" p="ta" title="Supplier feeds — before and after"
+                <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
                        sub="TackleBag · 9 feeds automated, 20–40 hrs/wk saved"
                        no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -198,10 +198,10 @@ export default function TackleBagCaseStudyPage() {
 
             <h2>What was done</h2>
             <p>
-              Symphony stayed as the eCommerce platform — it was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
+              Symphony stayed as the eCommerce platform. It was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
             </p>
             <p>
-              Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing — a real gap in the initial build, found and fixed live.
+              Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing, a real gap in the initial build, found and fixed live.
             </p>
 
             <div className="progress-note">

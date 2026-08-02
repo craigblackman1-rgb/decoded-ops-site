@@ -4,18 +4,18 @@ import { JsonLd } from '@/components/JsonLd';
 
 // Target keyword: "b2b ordering portal workwear" (secondary: "cobra workwear decoded ops")
 export const metadata = {
-  title: 'Cobra Workwear — B2B Portal & ERP Evaluation | Decoded Ops',
+  title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
   description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
   alternates: { canonical: '/case-studies/cobra-workwear' },
   openGraph: {
     type: 'article',
-    title: 'Cobra Workwear — B2B Portal & ERP Evaluation | Decoded Ops',
+    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
     description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
     url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cobra Workwear — B2B Portal & ERP Evaluation | Decoded Ops',
+    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
     description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
   },
 };
@@ -25,7 +25,7 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Cobra Workwear — architect and advisor, not the builder',
+      headline: 'Cobra Workwear: architect and advisor, not the builder',
       description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
@@ -120,7 +120,7 @@ export default function CobraWorkwearCaseStudyPage() {
             <div style={{ maxWidth: '72ch' }}>
               <h2 style={{ marginTop: 48 }}>The commercial shape</h2>
               <p style={{ color: 'var(--do-text-secondary)', lineHeight: 'var(--do-leading-relaxed)' }}>
-                Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price — pricing detail stays out of public case studies.
+                Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price: pricing detail stays out of public case studies.
               </p>
 
               <div className="progress-note">
@@ -133,7 +133,7 @@ export default function CobraWorkwearCaseStudyPage() {
           </div>
         </section>
 
-        {/* 3. CTA STRIP (navy) — never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
+        {/* 3. CTA STRIP (navy): never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
         <section className="g-navy cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>Evaluating an ERP or platform decision?</h2>
