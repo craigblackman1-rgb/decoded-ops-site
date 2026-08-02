@@ -233,7 +233,7 @@ export default function AiParalysisPage() {
             tell you that — and tell you what to fix instead.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book a discovery call</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how a Discovery Day works</Link>
+            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ interface FooterLink {
 }
 
 const diagnoseLinks: FooterLink[] = [
-  { label: 'Discovery Day', href: '/clarity' },
+  { label: 'Clarity Audit', href: '/clarity' },
   { label: 'Technology audit', href: '/locations/tech-audit' },
 ];
 
@@ -48,6 +48,10 @@ const problemChips: FooterLink[] = [
   { label: 'Buy vs build', href: '/problems/buy-vs-build' },
   { label: 'No ops owner', href: '/problems/no-ops-owner' },
   { label: 'AI paralysis', href: '/problems/ai-paralysis' },
+  { label: 'Growth bottleneck', href: '/problems/bottleneck-growth' },
+  { label: 'Ops in owner\'s head', href: '/problems/ops-in-owners-head' },
+  { label: 'Seasonal peaks', href: '/problems/seasonal-peaks' },
+  { label: 'Spreadsheet addiction', href: '/problems/spreadsheet-addiction' },
 ];
 
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {

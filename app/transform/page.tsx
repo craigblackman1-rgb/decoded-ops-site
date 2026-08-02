@@ -4,18 +4,18 @@ import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
   title: 'Transform — Decoded Ops',
-  description: 'Transform is the programme that follows Discovery Day — the plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds automated end to end.',
+  description: 'Transform is the programme that follows a Clarity Audit — the plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds automated end to end.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
     title: 'Transform — Decoded Ops',
-    description: 'Transform is the programme that follows Discovery Day — the plan, executed. Named results at Hanicks and TackleBag.',
+    description: 'Transform is the programme that follows a Clarity Audit — the plan, executed. Named results at Hanicks and TackleBag.',
     url: 'https://decodedops.co.uk/transform',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transform — Decoded Ops',
-    description: 'Transform is the programme that follows Discovery Day — the plan, executed.',
+    description: 'Transform is the programme that follows a Clarity Audit — the plan, executed.',
   },
 };
 
@@ -27,11 +27,11 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Transform</span>
           <h1>The plan, executed.</h1>
-          <p className="lede">Transform isn&apos;t a separate product — it&apos;s what happens after a Discovery Day
+          <p className="lede">Transform isn&apos;t a separate product — it&apos;s what happens after a Clarity Audit
             finds something that needs proper change, not a quick fix. The same diagnostic discipline,
             run at programme scale, over weeks rather than a day.</p>
           <div className={s.heroCta}>
-            <Link className="btn btn--primary" href="/contact">Book a Discovery Day</Link>
+            <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
           </div>
         </div>
       </section>
@@ -161,7 +161,7 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">What a Transform engagement covers</span>
           <h2>Three dimensions, run together.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Transform is the Discovery Day plan, turned into a
+          <p className="lede" style={{ marginTop: 16 }}>Transform is the Clarity Audit plan, turned into a
             programme. The same vendor-neutral discipline as Deliver, applied across more than one
             system or department at once.</p>
 
@@ -174,7 +174,7 @@ export default function TransformPage() {
                 </svg>
               </div>
               <h3>Sequence the plan</h3>
-              <p>The Discovery Day report becomes a phased programme — what happens first, what
+              <p>The Clarity Audit report becomes a phased programme — what happens first, what
                 depends on what, and what can run in parallel without the business grinding to a
                 halt.</p>
             </div>
@@ -208,7 +208,7 @@ export default function TransformPage() {
       {/* 4 · CTA STRIP */}
       <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Book a Discovery Day.</h2>
+          <h2>Book a Clarity Audit.</h2>
           <p className="lede">Transform is scoped per engagement — there&apos;s no published price for a
             programme this size, and there won&apos;t be. It starts the same way everything does: a full
             day on site and a written plan.</p>

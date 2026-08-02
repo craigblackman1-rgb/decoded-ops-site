@@ -4,18 +4,18 @@ import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
   title: 'Deliver — Decoded Ops',
-  description: 'Deliver is the implementation phase after Discovery Day: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
+    description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
   alternates: { canonical: '/deliver' },
   openGraph: {
     type: 'website',
     title: 'Deliver — Decoded Ops',
-    description: 'Deliver is the implementation phase after Discovery Day: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
+  description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
     url: 'https://decodedops.co.uk/deliver',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Deliver — Decoded Ops',
-    description: 'Deliver is the implementation phase after Discovery Day: someone technical on your side of the table.',
+    description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table.',
   },
 };
 
@@ -31,7 +31,7 @@ export default function DeliverPage() {
             table for the whole build, from brief through to handover. What you keep afterwards isn&apos;t
             just something that works. It&apos;s a documented system for how the business runs it.</p>
           <div className={s.heroCta}>
-            <Link className="btn btn--primary" href="/contact">Book a Discovery Day</Link>
+            <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
           </div>
         </div>
       </section>
@@ -224,7 +224,7 @@ export default function DeliverPage() {
       {/* 4 · CTA STRIP */}
       <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Book a Discovery Day.</h2>
+          <h2>Book a Clarity Audit.</h2>
           <p className="lede">Every Deliver engagement starts here — a full day on site and a written plan,
             before anything gets built.</p>
           <div className={s.heroCta}>

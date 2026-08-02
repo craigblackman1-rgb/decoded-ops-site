@@ -21,7 +21,7 @@ const pathGroups: PathGroupData[] = [
     label: "Something's wrong",
     descriptor: 'Start with a diagnostic',
     links: [
-      { label: 'Discovery Day', href: '/clarity', desc: 'A full day on site, a written plan' },
+      { label: 'Clarity Audit', href: '/clarity', desc: 'A full day on site, a written plan' },
       { label: 'Technology audit', href: '/locations/tech-audit', desc: 'Focused on one part of the business' },
     ],
   },

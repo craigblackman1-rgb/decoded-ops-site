@@ -44,7 +44,7 @@ const buyVsBuildSchema = {
         {
           '@type': 'Question',
           name: 'How much does it cost to have the buy-vs-build decision scoped properly?',
-          acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session costs £750 fixed, waived if you have had a Discovery Day in the last six months. It produces a written assessment you own outright — a specification you could hand to any developer.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session costs £750 fixed, waived if you have had a Clarity Audit in the last six months. It produces a written assessment you own outright — a specification you could hand to any developer.' },
         },
         {
           '@type': 'Question',
@@ -155,8 +155,8 @@ export default function BuyVsBuildPage() {
           </div>
 
           <div className="inset">
-            <b>App Scoping Session, £750 fixed.</b> Waived if you&apos;ve had a Discovery Day in the last six
-            months. This is the entry point for the systems line — not a Discovery Day.
+            <b>App Scoping Session, £750 fixed.</b> Waived if you&apos;ve had a Clarity Audit in the last six
+            months. This is the entry point for the systems line — not a Clarity Audit.
           </div>
         </div>
       </section>
@@ -181,7 +181,7 @@ export default function BuyVsBuildPage() {
       <section className="g-white cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Find out which rung you&apos;re actually on.</h2>
-          <p className="lede">An App Scoping Session — £750 fixed, waived if you&apos;ve had a Discovery Day
+          <p className="lede">An App Scoping Session — £750 fixed, waived if you&apos;ve had a Clarity Audit
             recently — settles buy vs build with a written answer, not a guess.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>

@@ -131,7 +131,7 @@ export default function HanicksCaseStudyPage() {
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
             <p className="lede">
-              This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Discovery Day.
+              This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Clarity Audit.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn--primary">

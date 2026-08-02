@@ -135,7 +135,7 @@ export function SectorPageDS({
           <div className="btn-row">
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
             <Link className="btn btn--outline" href="/clarity">
-              See how a Discovery Day works <ArrowRight size={16} aria-hidden="true" />
+              See how a Clarity Audit works <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
         </div>

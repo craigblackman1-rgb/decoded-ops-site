@@ -3,18 +3,18 @@ import Link from 'next/link';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
-  title: 'Discovery Day — Decoded Ops',
-  description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. Discovery Day is £1,500 and the way every Decoded Ops engagement starts.',
+  title: 'Clarity Audit — Decoded Ops',
+  description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500 and the way every Decoded Ops engagement starts.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Discovery Day — Decoded Ops',
-    description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. Discovery Day is £1,500.',
+    title: 'Clarity Audit — Decoded Ops',
+    description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500.',
     url: 'https://decodedops.co.uk/clarity',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Discovery Day — Decoded Ops',
+    title: 'Clarity Audit — Decoded Ops',
     description: 'One day on site, a written report within five, and the 3× Clarity Guarantee.',
   },
 };
@@ -25,7 +25,7 @@ export default function ClarityPage() {
       {/* 1 · HERO CENTRE */}
       <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
         <div className="wrap">
-          <span className="eyebrow">Discovery Day</span>
+          <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
           <p className="lede">A free 60-minute call, then one full day inside your business — six areas
             covered, followed end to end rather than just discussed. £1,500, and if I can&apos;t find three
@@ -40,7 +40,7 @@ export default function ClarityPage() {
       {/* 2 · THE FOUR STEPS */}
       <section className="g-tint" data-od-id="clarity-flow">
         <div className="wrap">
-          <span className="eyebrow">The Discovery Day</span>
+          <span className="eyebrow">The Clarity Audit</span>
           <h2>One call, one day on site, one written plan.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Four steps, and you know what each one produces
             before you commit to any of them.</p>

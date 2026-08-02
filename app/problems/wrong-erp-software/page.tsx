@@ -181,7 +181,7 @@ export default function WrongERPSoftwarePage() {
             and whether the fix is process, configuration, or a managed move to something that fits.</p>
           <div className="hero-cta">
             <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
-            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how a Discovery Day works</Link>
+            <Link className="btn btn-ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
           </div>
         </div>
       </section>

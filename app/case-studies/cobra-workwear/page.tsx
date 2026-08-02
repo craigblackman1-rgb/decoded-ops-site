@@ -100,7 +100,7 @@ export default function CobraWorkwearCaseStudyPage() {
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>Evaluating an ERP or platform decision?</h2>
             <p className="lede">
-              For a diagnosis of what your own ERP or platform situation needs, book a Discovery Day.
+              For a diagnosis of what your own ERP or platform situation needs, book a Clarity Audit.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn--primary">

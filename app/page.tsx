@@ -6,11 +6,11 @@ import './homepage.css';
 
 export const metadata: Metadata = {
   title: 'Decoded Ops — operations and technology consultancy for decorated goods',
-  description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan.',
+  description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Decoded Ops — operations and technology consultancy for decorated goods',
-    description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan.',
+    description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
@@ -28,13 +28,13 @@ const homepageSchema = {
       '@id': 'https://decodedops.co.uk/#webpage',
       url: 'https://decodedops.co.uk',
       name: 'Decoded Ops | operations and technology consultancy for decorated goods',
-      description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan.',
+      description: 'Independent technology and operations consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Discovery Day', url: 'https://decodedops.co.uk/clarity' } },
+        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' } },
         { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Deliver', url: 'https://decodedops.co.uk/deliver' } },
         { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Transform', url: 'https://decodedops.co.uk/transform' } },
         { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Retained', url: 'https://decodedops.co.uk/retained' } },
@@ -68,11 +68,11 @@ export default function HomePage() {
                   embroidery, and decoration businesses says the same patterns repeat, and they&rsquo;re
                   fixable.</p>
                 <p>Independent technology and operations consultancy for UK print, embroidery, workwear,
-                  and promotional merchandise businesses. Discovery Day gets you a full day on site and a
+                  and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a
                   written plan. Plain English. No jargon. No vendor agenda.</p>
               </div>
               <div className="btn-row">
-                <Link className="btn btn--primary" href="/clarity">See how Discovery Day works</Link>
+                <Link className="btn btn--primary" href="/clarity">See how a Clarity Audit works</Link>
                 <Link className="btn btn--outline" href="/contact">Book a free 60-min call</Link>
               </div>
             </div>

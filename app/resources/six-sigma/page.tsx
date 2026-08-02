@@ -136,7 +136,7 @@ export default function SixSigmaPage() {
       <section className="g-white" style={{ textAlign: 'center' }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>See where your operation sits on the scale.</h2>
-          <p className="lede">A Discovery Day maps your actual defect rate, finds the process gaps behind it, and gives you a costed plan to close them.</p>
+          <p className="lede">A Clarity Audit maps your actual defect rate, finds the process gaps behind it, and gives you a costed plan to close them.</p>
           <div className="btn-row">
             <Link href="/contact" className="btn btn--primary">
               Book a free discovery call <ArrowRight size={18} />

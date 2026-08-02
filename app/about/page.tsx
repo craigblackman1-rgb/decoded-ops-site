@@ -122,7 +122,7 @@ export default function AboutPage() {
             fit before anything gets booked.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a call</Link>
-            <Link className={`btn ${s.btnGhost} ${s.btnArrow}`} href="/clarity">See how Discovery Day works</Link>
+            <Link className={`btn ${s.btnGhost} ${s.btnArrow}`} href="/clarity">See how a Clarity Audit works</Link>
           </div>
         </div>
       </section>
