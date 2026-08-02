@@ -95,3 +95,5 @@ KNOWN-SPECIFIC-FINDING VERIFICATION (re-confirmed):
 - artwork-manager/page.tsx:248: "I'll tell you that, and that's the end of it." — single voice, reads naturally.
 
 RESULT: Zero new fixes needed. voice-audit-lane-d's prior pass (line 58) covered all violations. This verification lane confirms the 16 files are fully compliant against all 5 rule categories.
+
+2026-08-02T21:00:00+01:00 | voice-legal | Voice rewrite: privacy/cookies/CookieConsent/contact-actions | All 4 files found already in first-person singular (0 we/our/us remaining). The pronoun rewrite was applied before this session. Made 1 change: removed em dash from app/privacy/page.tsx line 121 (replaced with comma). Verified: 0 em dashes, 0 banned consultant-speak words across all 4 files. TypeScript compiled successfully (npm run build TS phase exit 0). Zero legal-meaning concerns.

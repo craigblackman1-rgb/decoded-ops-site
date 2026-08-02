@@ -45,7 +45,7 @@ export function CookieConsent() {
           {/* Heading and description */}
           <h2 className="text-lg sm:text-xl font-bold mb-3 pr-8">Cookie preferences</h2>
           <p className="text-sm sm:text-base text-white/85 mb-6 leading-relaxed">
-            We use cookies to enhance your experience, remember your preferences, and understand how you use our site. By continuing to browse, you accept our use of cookies. You can manage your preferences or decline at any time.
+            I use cookies to enhance your experience, remember your preferences, and understand how you use the site. By continuing to browse, you accept my use of cookies. You can manage your preferences or decline at any time.
           </p>
 
           {/* Links and buttons */}
@@ -54,7 +54,7 @@ export function CookieConsent() {
               href="/cookies"
               className="text-sm text-[#FFB703] hover:text-[#FB8500] transition-colors font-medium underline"
             >
-              Read our cookie policy
+              Read the cookie policy
             </Link>
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

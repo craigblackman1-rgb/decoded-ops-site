@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | Decoded Ops',
-  description: 'How Decoded Ops uses cookies — what we set, why we set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+  description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
   alternates: { canonical: '/cookies' },
   openGraph: {
     type: 'website',
     title: 'Cookie Policy | Decoded Ops',
-    description: 'How Decoded Ops uses cookies — what we set, why we set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
     url: 'https://decodedops.co.uk/cookies',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cookie Policy | Decoded Ops',
-    description: 'How Decoded Ops uses cookies — what we set, why we set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
   },
 };
 
@@ -46,30 +46,30 @@ export default function CookiesPage() {
               </p>
             </div>
 
-            {/* Why we use cookies */}
+            {/* Why I use cookies */}
             <div>
-              <h2 style={sectionH2}>Why we use cookies</h2>
+              <h2 style={sectionH2}>Why I use cookies</h2>
               <p style={bodyText}>
-                At Decoded Ops, we use cookies to:
+                I use cookies to:
               </p>
               <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>
-                <li><strong>Remember your preferences:</strong> We save your cookie consent choice so we don&apos;t ask again</li>
-                <li><strong>Improve your experience:</strong> Cookies help us understand how you navigate our site</li>
-                <li><strong>Measure analytics:</strong> We use cookies to count visitors and track which pages are most popular</li>
-                <li><strong>Security:</strong> Cookies help protect your account and prevent unauthorized access</li>
-                <li><strong>Marketing:</strong> We may use cookies to show you relevant content across the web</li>
+                <li><strong>Remember your preferences:</strong> I save your cookie consent choice so I don&apos;t ask again</li>
+                <li><strong>Improve your experience:</strong> Cookies help me understand how you navigate the site</li>
+                <li><strong>Measure analytics:</strong> I use cookies to count visitors and track which pages are most popular</li>
+                <li><strong>Security:</strong> Cookies help protect your data and prevent unauthorised access</li>
+                <li><strong>Marketing:</strong> I may use cookies to show you relevant content across the web</li>
               </ul>
             </div>
 
             {/* Types of cookies */}
             <div>
-              <h2 style={sectionH2}>Types of cookies we use</h2>
+              <h2 style={sectionH2}>Types of cookies I use</h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                 <div>
                   <h3 style={sectionH3}>Essential cookies</h3>
                   <p style={bodyText}>
-                    These cookies are necessary for our website to function properly. They enable core functionality like navigation and access to secure areas. Without these cookies, services you&apos;ve asked for cannot be provided. These cannot be disabled.
+                    These cookies are necessary for the website to function properly. They enable core functionality like navigation and access to secure areas. Without these cookies, services you&apos;ve asked for cannot be provided. These cannot be disabled.
                   </p>
                   <p style={smallText}>Examples: Cookie consent preference, session tokens, security settings</p>
                 </div>
@@ -77,7 +77,7 @@ export default function CookiesPage() {
                 <div>
                   <h3 style={sectionH3}>Performance cookies</h3>
                   <p style={bodyText}>
-                    These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our website. They help us understand which pages are most popular and how visitors navigate the site.
+                    These cookies allow me to count visits and traffic sources so I can measure and improve the performance of the website. They help me understand which pages are most popular and how visitors navigate the site.
                   </p>
                   <p style={smallText}>Examples: Google Analytics, page view tracking</p>
                 </div>
@@ -93,7 +93,7 @@ export default function CookiesPage() {
                 <div>
                   <h3 style={sectionH3}>Marketing cookies</h3>
                   <p style={bodyText}>
-                    These cookies are used to track your activity across the web so we can show you relevant content and advertising. They may be set by advertising networks with our permission.
+                    These cookies are used to track your activity across the web so I can show you relevant content and advertising. They may be set by advertising networks with my permission.
                   </p>
                   <p style={smallText}>Examples: Advertising tracking, remarketing pixels</p>
                 </div>
@@ -107,7 +107,7 @@ export default function CookiesPage() {
                 You have the right to choose whether to accept or decline cookies (except essential cookies which cannot be disabled). You can manage your preferences in several ways:
               </p>
               <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>
-                <li><strong>Cookie banner:</strong> Use the cookie preference banner that appears when you first visit our site</li>
+                <li><strong>Cookie banner:</strong> Use the cookie preference banner that appears when you first visit the site</li>
                 <li><strong>Browser settings:</strong> You can configure your browser to refuse cookies or alert you when a cookie is being sent. Each browser is different, so check your browser&apos;s help menu for instructions</li>
                 <li><strong>Third-party tools:</strong> You can visit sites like Your Online Choices to manage cookies from advertising networks</li>
               </ul>
@@ -117,15 +117,15 @@ export default function CookiesPage() {
             <div>
               <h2 style={sectionH2}>Third-party cookies</h2>
               <p style={bodyText}>
-                Some cookies on our site are set by third parties, including:
+                Some cookies on this site are set by third parties, including:
               </p>
               <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>
-                <li><strong>Google Analytics:</strong> For measuring website traffic and user behavior</li>
+                <li><strong>Google Analytics:</strong> For measuring website traffic and user behaviour</li>
                 <li><strong>Social media platforms:</strong> For social sharing and tracking</li>
                 <li><strong>Advertising networks:</strong> For targeted advertising and remarketing</li>
               </ul>
               <p style={bodyText}>
-                These third parties have their own privacy policies and are responsible for their own cookie practices. We recommend reviewing their policies if you want to understand how they use cookies.
+                These third parties have their own privacy policies and are responsible for their own cookie practices. I recommend reviewing their policies if you want to understand how they use cookies.
               </p>
             </div>
 
@@ -133,7 +133,7 @@ export default function CookiesPage() {
             <div>
               <h2 style={sectionH2}>Security and data protection</h2>
               <p style={bodyText}>
-                We take your privacy seriously. Cookies cannot be used to run programmes, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. We use security measures to protect cookie data from unauthorised access and misuse.
+                I take your privacy seriously. Cookies cannot be used to run programmes, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. I use security measures to protect cookie data from unauthorised access and misuse.
               </p>
             </div>
 
@@ -141,17 +141,17 @@ export default function CookiesPage() {
             <div>
               <h2 style={sectionH2}>Changes to this policy</h2>
               <p style={bodyText}>
-                We may update this cookie policy from time to time to reflect changes in our practices, technology, legal requirements, and other factors. We encourage you to review this policy periodically to stay informed about how we use cookies.
+                I may update this cookie policy from time to time to reflect changes in my practices, technology, legal requirements, and other factors. I encourage you to review this policy periodically to stay informed about how I use cookies.
               </p>
             </div>
 
             {/* Contact */}
             <div>
-              <h2 style={sectionH2}>Contact us</h2>
+              <h2 style={sectionH2}>Contact me</h2>
               <p style={bodyText}>
-                If you have questions about our use of cookies or this policy, please{' '}
+                If you have questions about my use of cookies or this policy, please{' '}
                 <a href="/contact" style={{ color: 'var(--do-cerulean)', textDecoration: 'underline', fontWeight: 'var(--do-weight-medium)' }}>
-                  contact us
+                  contact me
                 </a>
                 .
               </p>
@@ -164,7 +164,7 @@ export default function CookiesPage() {
               href="/"
               className="btn btn--outline"
             >
-              ← Back to home
+              Back to home
             </a>
           </div>
         </div>
