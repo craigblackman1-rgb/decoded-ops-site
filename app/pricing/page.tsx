@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\pricing.html.
 // Every figure below is cross-checked against
@@ -157,6 +158,65 @@ export default function PricingPage() {
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · GUARANTEE PLATE · DO-ART-203 */}
+      <section className="g-tint">
+        <div className="container">
+          <p className="eyebrow">Guarantee &middot; DO-ART-203</p>
+          <h2>The 3x Clarity Guarantee.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>Clarity Audit, £1,500 fixed. If it doesn&rsquo;t find three
+            times the fee, it&rsquo;s refunded.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="gt" title="The 3x Clarity Guarantee"
+                     sub="Clarity Audit, £1,500 fixed"
+                     no="DO-ART-203" rev="01" cls="DECODED OPS · ISSUED">
+
+                <g className="sk-fade sk-s1" opacity=".5">
+                  <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
+                        strokeOpacity=".35"/>
+                </g>
+
+                <g className="sk-fade sk-s2">
+                  <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">THE FEE</text>
+                  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">Clarity Audit,
+                    fixed</text>
+                  <rect x="430" y="228" width="240" height="62" rx="6" fill="url(#gt-bar)"
+                        className="p-node" strokeWidth="1"/>
+                  <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="700" fontSize="30">£1,500</text>
+                </g>
+
+                <g className="sk-fade sk-s4" filter="url(#gt-shadow)">
+                  <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">GUARANTEE THRESHOLD</text>
+                  <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">3x the fee,
+                    recoverable cost or lost revenue</text>
+                  <rect x="430" y="368" width="720" height="62" rx="6" fill="url(#gt-amber-b)"
+                        className="p-node-a" strokeWidth="1.4"/>
+                  <text x="458" y="410" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="700" fontSize="30">£4,500+</text>
+                </g>
+
+                <g className="sk-fade sk-s6">
+                  <line x1="60" y1="500" x2="1540" y2="500" className="p-scyan" strokeWidth=".6"
+                        strokeOpacity=".22"/>
+                  <rect x="60" y="528" width="4" height="18" rx="1" className="p-amber"/>
+                  <text x="80" y="544" className="p-mono" fontSize="16" letterSpacing="2.2"
+                        opacity=".55">IF IT DOESN&apos;T CLEAR THAT BAR</text>
+                  <text x="60" y="594" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="600" fontSize="26">Full refund. No conditions.
+                    No questions.</text>
+                  <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance —
+                    near-certain cost avoidance, priced at the fee itself.</text>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

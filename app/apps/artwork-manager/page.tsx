@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Decoded Artwork Manager — Decoded Ops',
@@ -98,6 +99,71 @@ export default function ArtworkManagerPage() {
                 and DTG.</p>
               <p>The file the floor gets is the file the machine wants, not something a person has to
                 convert first.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · VAULT TO FLOOR PLATE · DO-ART-106 */}
+      <section className="g-tint">
+        <div className="wrap">
+          <p className="eyebrow">Flow &middot; DO-ART-106</p>
+          <h2>Vault to floor, one tracked path.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>Three connected stages — no email chain between
+            them.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="am" title="Vault to floor, one tracked path"
+                     sub="Three connected stages — no email chain between them"
+                     no="DO-ART-106" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="am-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
+                      strokeWidth="2.5" markerEnd="url(#am-ah)" d="M470 460 H1130"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="110" y="330" width="360" height="260" rx="14" fill="url(#am-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="150" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">The vault</text>
+                  <text x="150" y="424" className="p-mono" fontSize="16" opacity=".8">Every format, every</text>
+                  <text x="150" y="448" className="p-mono" fontSize="16" opacity=".8">version, versioned</text>
+                  <text x="150" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
+                        opacity=".55">STAGE 1</text>
+                </g>
+
+                <g className="sk-fade sk-s4" filter="url(#am-shadow)">
+                  <rect x="620" y="300" width="360" height="320" rx="16" fill="url(#am-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="660" y="372" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="26">Customer</text>
+                  <text x="660" y="404" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="26">proofing</text>
+                  <text x="660" y="440" className="p-accent-ink" fontSize="16" fontWeight="600">Approved
+                    against the</text>
+                  <text x="660" y="462" className="p-accent-ink" fontSize="16" fontWeight="600">version
+                    that was shown</text>
+                  <text x="660" y="586" className="p-mono" fontSize="15" letterSpacing="1.4"
+                        opacity=".7">STAGE 2 — NO EMAIL CHAIN</text>
+                </g>
+
+                <g className="sk-fade sk-s5">
+                  <rect x="1130" y="330" width="360" height="260" rx="14" fill="url(#am-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="1170" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Machine delivery</text>
+                  <text x="1170" y="424" className="p-mono" fontSize="15" opacity=".8">Tajima · Barudan ·
+                    Happy</text>
+                  <text x="1170" y="448" className="p-mono" fontSize="15" opacity=".8">DST fallback ·
+                    DTF/DTG hot folders</text>
+                  <text x="1170" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
+                        opacity=".55">STAGE 3 — TO THE FLOOR</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#am-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
             </div>
           </div>
         </div>

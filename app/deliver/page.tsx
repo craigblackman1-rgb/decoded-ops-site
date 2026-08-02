@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -87,45 +88,21 @@ export default function DeliverPage() {
         </div>
       </section>
 
-      {/* 3 · THE PQS LOOP */}
+      {/* 3 · THE PQS LOOP · DO-ART-305 */}
       <section className="g-tint" data-od-id="deliver-loop">
         <div className="wrap">
-          <span className="eyebrow">How Deliver runs</span>
+          <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
           <h2>Map, document, check, log — then round again.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
             the engagement ends, because the last step feeds the first one.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
-              <svg className="pl" data-tone="dark" data-p="pq" viewBox="0 0 1600 900" role="img"
-                   data-title="A loop, not a document" data-sub="Four steps — the fourth feeds the first"
-                   data-no="DO-ART-305" data-rev="01" data-class="DECODED OPS · ISSUED"
-                   aria-label="Flow plate DO-ART-305. A four-step loop. One: map the process as it actually runs. Two: document it as an SOP. Three: check it is followed. Four: log what has improved. The fourth step loops back to the first, and the loop repeats for every process that matters.">
-                <defs>
-                  <linearGradient id="pq-bg" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-bg0" />
-                    <stop offset="100%" className="p-bg1" />
-                  </linearGradient>
-                  <linearGradient id="pq-node" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-n0" />
-                    <stop offset="100%" className="p-n1" />
-                  </linearGradient>
-                  <linearGradient id="pq-amber-n" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
-                    <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
-                  </linearGradient>
-                  <filter id="pq-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
-                  </filter>
-                  <marker id="pq-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
-                    <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
-                  </marker>
-                </defs>
-                <rect width="1600" height="900" fill="url(#pq-bg)" />
-                <line x1="0" y1="340" x2="1600" y2="340" className="p-grid" opacity=".6" />
-                <line x1="0" y1="580" x2="1600" y2="580" className="p-grid" opacity=".6" />
+              <Plate tone="dark" p="pq" title="A loop, not a document"
+                     sub="Four steps — the fourth feeds the first"
+                     no="DO-ART-305" rev="01" cls="DECODED OPS · ISSUED">
 
-                <path id="pq-spine" pathLength="1" className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+                <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
                       fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)" />
 
                 <g className="sk-fade sk-s3" filter="url(#pq-shadow)">
@@ -176,7 +153,7 @@ export default function DeliverPage() {
                         letterSpacing="1.5" opacity=".85">STEP 4</text>
                 </g>
 
-                <path id="pq-loop" pathLength="1" className="sk-draw sk-s6 p-scyan" fill="none"
+                <path id="pq-loop" pathLength={1} className="sk-draw sk-s6 p-scyan" fill="none"
                       strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
                       d="M1280 540 C 1280 630, 255 630, 255 542"/>
                 <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
@@ -188,7 +165,7 @@ export default function DeliverPage() {
                     <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#pq-spine"/></animateMotion>
                   </circle>
                 </g>
-              </svg>
+              </Plate>
             </div>
           </div>
 

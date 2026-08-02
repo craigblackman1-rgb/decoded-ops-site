@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'The systems — Decoded Ops',
@@ -74,6 +75,82 @@ export default function AppsPage() {
             <b>What isn&rsquo;t listed here.</b> There&rsquo;s a CRM four commits in. It isn&rsquo;t for sale, at any
             price, until it works end to end &mdash; and putting it on this page would be selling you
             something that doesn&rsquo;t. When it&rsquo;s ready, it&rsquo;ll appear here with the same proof as the rest.
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · THREE APPS PLATE · DO-ART-104 */}
+      <section className="g-tint">
+        <div className="wrap">
+          <p className="eyebrow">Architecture &middot; DO-ART-104</p>
+          <h2>Three apps, one platform.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>Nothing replaced — each app plugs a specific gap
+            alongside the platform you already run.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="ap" title="Three apps, one platform"
+                     sub="Nothing replaced — each app plugs a specific gap"
+                     no="DO-ART-104" rev="01" cls="DECODED OPS · ISSUED">
+
+                <g className="sk-fade sk-s2">
+                  <path id="ap-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
+                        markerEnd="url(#ap-ah)" d="M470 330 C 560 370, 600 390, 660 420"/>
+                  <path id="ap-l2" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
+                        markerEnd="url(#ap-ah)" d="M1130 330 C 1040 370, 1000 390, 940 420"/>
+                  <path id="ap-l3" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
+                        markerEnd="url(#ap-ah)" d="M800 620 C 800 580, 800 550, 800 512"/>
+                </g>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Data App</text>
+                  <text x="140" y="284" className="p-mono" fontSize="16" opacity=".8">Supplier feeds in,
+                    clean stock out</text>
+                  <text x="140" y="308" className="p-mono" fontSize="15" opacity=".55">Live · Hanicks,
+                    TackleBag</text>
+                </g>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="1110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="1140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Artwork Manager</text>
+                  <text x="1140" y="284" className="p-mono" fontSize="16" opacity=".8">Approved,
+                    machine-ready files</text>
+                  <text x="1140" y="308" className="p-mono" fontSize="15" opacity=".55">Pre-release ·
+                    founding client terms</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="610" y="620" width="380" height="130" rx="14" fill="url(#ap-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="640" y="672" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Commerce</text>
+                  <text x="640" y="704" className="p-mono" fontSize="16" opacity=".8">Clean storefront
+                    orders in</text>
+                  <text x="640" y="728" className="p-mono" fontSize="15" opacity=".55">Live
+                    infrastructure</text>
+                </g>
+
+                <g className="sk-fade sk-s5" filter="url(#ap-shadow)">
+                  <rect x="650" y="390" width="300" height="120" rx="16" fill="url(#ap-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="800" fontSize="26">Your platform</text>
+                  <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
+                        fontWeight="600">Khaos Control · Symphony · yours</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#ap-l1"/></animateMotion></circle>
+                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.4s"><mpath href="#ap-l2"/></animateMotion></circle>
+                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s"><mpath href="#ap-l3"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

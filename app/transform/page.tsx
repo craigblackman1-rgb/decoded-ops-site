@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -36,10 +37,10 @@ export default function TransformPage() {
         </div>
       </section>
 
-      {/* 2 · BEFORE / AFTER */}
+      {/* 2 · BEFORE / AFTER · DO-ART-403 */}
       <section className="g-tint" data-od-id="transform-ba">
         <div className="wrap">
-          <span className="eyebrow">Two live examples</span>
+          <span className="eyebrow">Two live examples &middot; DO-ART-403</span>
           <h2>Same approach, twice, in two different businesses.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Hanicks: 164,752 products imported and 77% matched on
             the first run. TackleBag: nine supplier feeds automated, a projected saving of 20 to 40
@@ -48,32 +49,9 @@ export default function TransformPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="transform-ba-diagram">
-              <svg className="pl" data-tone="dark" data-p="tb" viewBox="0 0 1600 900" role="img"
-                   data-title="Same business. Different Tuesday." data-sub="Hanicks — before and after, paired line for line"
-                   data-no="DO-ART-403" data-rev="01" data-class="DECODED OPS · ISSUED"
-                   aria-label="Compare plate DO-ART-403. Before and after, paired line for line. Now: supplier data scattered across feeds, no consistent SKU, stock counted by hand, and no reliable catalogue for the website. After: one matched catalogue, 77 per cent matched automatically on the first run, stock pushed straight to the platform, and every channel reading the same data.">
-                <defs>
-                  <linearGradient id="tb-bg" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-bg0" />
-                    <stop offset="100%" className="p-bg1" />
-                  </linearGradient>
-                  <linearGradient id="tb-node" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-n0" />
-                    <stop offset="100%" className="p-n1" />
-                  </linearGradient>
-                  <linearGradient id="tb-amber-n" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
-                    <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
-                  </linearGradient>
-                  <filter id="tb-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
-                  </filter>
-                  <marker id="tb-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
-                    <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
-                  </marker>
-                </defs>
-                <rect width="1600" height="900" fill="url(#tb-bg)" />
-                <line x1="0" y1="520" x2="1600" y2="520" className="p-grid" opacity=".6" />
+              <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
+                     sub="Hanicks — before and after, paired line for line"
+                     no="DO-ART-403" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2" filter="url(#tb-shadow)">
                   <rect x="100" y="200" width="650" height="500" rx="14" fill="url(#tb-amber-n)"
@@ -96,7 +74,7 @@ export default function TransformPage() {
                   </g>
                 </g>
 
-                <path id="tb-p" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
+                <path id="tb-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
                       fill="none" strokeWidth="3" markerEnd="url(#tb-ah)"/>
 
                 <g className="sk-fade sk-s4" filter="url(#tb-shadow)">
@@ -126,7 +104,7 @@ export default function TransformPage() {
                     <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#tb-p"/></animateMotion>
                   </circle>
                 </g>
-              </svg>
+              </Plate>
             </div>
           </div>
 

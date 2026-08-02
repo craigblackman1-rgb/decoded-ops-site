@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Decoded Data App — Decoded Ops',
@@ -50,84 +51,61 @@ export default function DataAppPage() {
         </div>
       </section>
 
-      {/* 2 · LAYER STACK · archetype 4 */}
+      {/* 2 · LAYER STACK · DO-ART-105 */}
       <section className="g-tint">
         <div className="wrap">
-          <p className="eyebrow">Not a replacement</p>
+          <p className="eyebrow">Not a replacement &middot; DO-ART-105</p>
           <h2>Your platform stays. This sits alongside it.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Supplier feeds, data enrichment, catalogue maintenance
             across channels &mdash; the jobs your platform was never built for. Ripping it out and starting
             again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
 
-          <div className="plate-frame">
-            <svg className="sk" data-tone="dark" viewBox="0 0 1240 640" role="img"
-                 aria-label="Three-layer stack, read bottom-up. Layer one, the foundation that stays as it is: the platform you already own, Khaos Control, Symphony or similar. Layer two, highlighted, is the new one: the Decoded Data App, taking supplier feeds in, matching and enriching them, and keeping the catalogue current. Layer three: the channels your customers see — website, marketplaces and trade portal. Each layer rests on the one below it.">
-              <defs>
-                <pattern id="da4-grid" width="34" height="34" patternUnits="userSpaceOnUse">
-                  <path d="M34 0H0V34" fill="none" className="sk-gridline" strokeWidth="0.6" />
-                </pattern>
-                <linearGradient id="da4-glass-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" className="sk-gc0" /><stop offset="100%" className="sk-gc1" />
-                </linearGradient>
-                <linearGradient id="da4-glass-amber" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" className="sk-ga0" /><stop offset="100%" className="sk-ga1" />
-                </linearGradient>
-                <filter id="da4-shadow" className="sk-drop" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3" />
-                </filter>
-                <marker id="da4-ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
-                  <path d="M0 0 L6 3 L0 6 Z" className="sk-amber" />
-                </marker>
-              </defs>
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="da" title="A layer, not a rip-out"
+                     sub="Where the Data App sits — three layers, read bottom-up"
+                     no="DO-ART-105" rev="01" cls="DECODED OPS · ISSUED">
 
-              <rect width="1240" height="640" rx="16" className="sk-bg" />
-              <rect width="1240" height="640" rx="16" fill="url(#da4-grid)" />
-              <rect width="1240" height="6" className="sk-amber" />
+                <path id="da-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V310"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#da-ah)"/>
 
-              <text x="60" y="64" className="sk-fade sk-s1 sk-cyan" fontSize="20" letterSpacing="3"
-                    fontWeight="500">WHERE IT SITS</text>
-              <text x="60" y="118" className="sk-fade sk-s1 sk-ink" fontFamily="Outfit,sans-serif"
-                    fontWeight="800" fontSize="46">A layer, not a rip-out.</text>
+                <g className="sk-fade sk-s3" filter="url(#da-shadow)">
+                  <rect x="260" y="220" width="1180" height="120" rx="14" fill="url(#da-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="310" y="272" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Channels</text>
+                  <text x="310" y="306" className="p-mono" fontSize="18" opacity=".85">website ·
+                    marketplaces · trade portal · print</text>
+                  <text x="1400" y="288" textAnchor="end" className="p-mono" fontSize="17"
+                        letterSpacing="1.5" opacity=".55">LAYER 3</text>
+                </g>
 
-              <path id="da4-spine" pathLength={1} className="sk-draw sk-s2 sk-stroke-cyan" d="M180 560 V236"
-                    fill="none" strokeWidth="2.5" markerEnd="url(#da4-ah)" />
+                <g className="sk-fade sk-s4" filter="url(#da-shadow)">
+                  <rect x="260" y="380" width="1180" height="140" rx="16" fill="url(#da-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="310" y="436" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Decoded Data App</text>
+                  <text x="310" y="470" className="p-accent-ink" fontSize="19" fontWeight="600">supplier
+                    feeds in · matched · enriched · kept current</text>
+                  <text x="1400" y="452" textAnchor="end" className="p-mono" fontSize="17"
+                        letterSpacing="1.5" opacity=".8">THE NEW LAYER</text>
+                </g>
 
-              {/* LAYER 3 — the channels */}
-              <g className="sk-fade sk-s5" filter="url(#da4-shadow)">
-                <rect x="240" y="190" width="920" height="110" rx="12" fill="url(#da4-glass-cyan)"
-                      className="sk-node" strokeWidth="1.4" />
-                <text x="288" y="238" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                      fontSize="24">Channels</text>
-                <text x="288" y="270" className="sk-mono" fontSize="18" opacity=".85">website &middot; marketplaces &middot; trade portal &middot; print</text>
-                <text x="1112" y="252" textAnchor="end" className="sk-mono" fontSize="17"
-                      letterSpacing="1.5" opacity=".55">LAYER 3</text>
-              </g>
+                <g className="sk-fade sk-s5" filter="url(#da-shadow)">
+                  <rect x="260" y="560" width="1180" height="120" rx="14" fill="url(#da-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">The platform you already own</text>
+                  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ·
+                    Symphony · whatever you run today</text>
+                  <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
+                        letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
+                </g>
 
-              {/* LAYER 2 — the Data App. Amber lands once, on the new thing. */}
-              <g className="sk-fade sk-s4" filter="url(#da4-shadow)">
-                <rect x="240" y="330" width="920" height="110" rx="12" fill="url(#da4-glass-amber)"
-                      className="sk-node-amber" strokeWidth="1.6" />
-                <text x="288" y="378" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                      fontSize="24">Decoded Data App</text>
-                <text x="288" y="410" className="sk-accent-ink" fontSize="18" opacity=".9">supplier feeds in &middot; matched &middot; enriched &middot; kept current</text>
-                <text x="1112" y="392" textAnchor="end" className="sk-mono" fontSize="17"
-                      letterSpacing="1.5" opacity=".7">THE NEW LAYER</text>
-              </g>
-
-              {/* LAYER 1 — the platform they already own */}
-              <g className="sk-fade sk-s3" filter="url(#da4-shadow)">
-                <rect x="240" y="470" width="920" height="110" rx="12" fill="url(#da4-glass-cyan)"
-                      className="sk-node" strokeWidth="1.4" />
-                <text x="288" y="518" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                      fontSize="24">The platform you already own</text>
-                <text x="288" y="550" className="sk-mono" fontSize="18" opacity=".85">Khaos Control &middot; Symphony &middot; whatever you run today</text>
-                <text x="1112" y="532" textAnchor="end" className="sk-mono" fontSize="17"
-                      letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
-              </g>
-
-              <text x="180" y="600" textAnchor="middle" className="sk-mono sk-fade sk-s6" fontSize="17"
-                    letterSpacing="1.5" opacity=".6">BUILD ORDER</text>
-            </svg>
+                <text x="180" y="740" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="17"
+                      letterSpacing="1.5" opacity=".6">BUILD ORDER</text>
+              </Plate>
+            </div>
           </div>
 
           <div className="steps">

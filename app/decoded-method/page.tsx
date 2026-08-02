@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\decoded-method.html.
 // New route — also the target of the /resources/decoded-method redirect
@@ -99,6 +100,77 @@ export default function DecodedMethodPage() {
             <b>It applies to me too.</b> Decoded Ops runs on its own process register, its own SOPs, and
             its own improvement log. If the method didn&rsquo;t survive contact with a real business, I&rsquo;d know
             before you did.
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · METHOD PLATE · DO-ART-304 */}
+      <section className="g-tint">
+        <div className="container">
+          <p className="eyebrow">The loop &middot; DO-ART-304</p>
+          <h2>Process Register to Improvement Log, then repeat.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order — the log feeds back
+            into the register.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="dm" title="Process Register to Improvement Log, then repeat"
+                     sub="Three layers in fixed order — the log feeds back into the register"
+                     no="DO-ART-304" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="dm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
+                      strokeWidth="2.5" markerEnd="url(#dm-ah)" d="M340 460 H1260"/>
+                <path id="dm-return" pathLength={1} className="sk-draw sk-s6 p-samber" fill="none"
+                      strokeWidth="2" strokeDasharray="2 7" markerEnd="url(#dm-ah)"
+                      d="M1300 540 C 1300 680, 340 680, 340 540"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="180" y="330" width="320" height="150" rx="14" fill="url(#dm-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="220" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">01 · Process Register</text>
+                  <text x="220" y="424" className="p-mono" fontSize="16" opacity=".8">A written map of how
+                    things actually work</text>
+                  <text x="220" y="450" className="p-mono" fontSize="15" opacity=".55">Before anything
+                    gets changed</text>
+                  <circle cx="340" cy="460" r="10" className="p-cyan"/>
+                </g>
+
+                <g className="sk-fade sk-s4" filter="url(#dm-shadow)">
+                  <rect x="640" y="300" width="320" height="180" rx="16" fill="url(#dm-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="680" y="368" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">02 · SOPs</text>
+                  <text x="680" y="400" className="p-accent-ink" fontSize="17" fontWeight="600">Documented,
+                    not one person&apos;s head</text>
+                  <text x="680" y="440" className="p-mono" fontSize="15" opacity=".7">When they&apos;re on
+                    holiday, the</text>
+                  <text x="680" y="460" className="p-mono" fontSize="15" opacity=".7">business doesn&apos;t
+                    stop</text>
+                  <circle cx="800" cy="460" r="12" className="p-amber"/>
+                </g>
+
+                <g className="sk-fade sk-s5">
+                  <rect x="1100" y="330" width="320" height="150" rx="14" fill="url(#dm-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="1140" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">03 · Improvement Log</text>
+                  <text x="1140" y="424" className="p-mono" fontSize="16" opacity=".8">Change doesn&apos;t stop
+                    at go-live</text>
+                  <text x="1140" y="450" className="p-mono" fontSize="15" opacity=".55">Owned by you,
+                    after I leave</text>
+                  <circle cx="1260" cy="460" r="10" className="p-cyan"/>
+                </g>
+
+                <text x="800" y="770" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
+                      letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER — NOT A ONE-OFF
+                  PROJECT</text>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#dm-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

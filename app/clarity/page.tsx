@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -37,45 +38,21 @@ export default function ClarityPage() {
         </div>
       </section>
 
-      {/* 2 · THE FOUR STEPS */}
+      {/* 2 · THE FOUR STEPS · DO-ART-306 */}
       <section className="g-tint" data-od-id="clarity-flow">
         <div className="wrap">
-          <span className="eyebrow">The Clarity Audit</span>
+          <span className="eyebrow">The Clarity Audit &middot; DO-ART-306</span>
           <h2>One call, one day on site, one written plan.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Four steps, and you know what each one produces
             before you commit to any of them.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="clarity-flow-diagram">
-              <svg className="pl" data-tone="dark" data-p="cd" viewBox="0 0 1600 900" role="img"
-                   data-title="One call. One day. One clear plan." data-sub="Four fixed steps — you know what each one produces"
-                   data-no="DO-ART-306" data-rev="01" data-class="DECODED OPS · ISSUED"
-                   aria-label="Flow plate DO-ART-306. Four-step linear flow. One: a free sixty-minute discovery call. Two: one full day on site, covering six areas. Three: a written report within five working days. Four: a debrief, walking the plan through with you.">
-                <defs>
-                  <linearGradient id="cd-bg" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-bg0" />
-                    <stop offset="100%" className="p-bg1" />
-                  </linearGradient>
-                  <linearGradient id="cd-node" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" className="p-n0" />
-                    <stop offset="100%" className="p-n1" />
-                  </linearGradient>
-                  <linearGradient id="cd-amber-n" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
-                    <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
-                  </linearGradient>
-                  <filter id="cd-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
-                  </filter>
-                  <marker id="cd-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
-                    <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
-                  </marker>
-                </defs>
-                <rect width="1600" height="900" fill="url(#cd-bg)" />
-                <line x1="0" y1="340" x2="1600" y2="340" className="p-grid" opacity=".6" />
-                <line x1="0" y1="560" x2="1600" y2="560" className="p-grid" opacity=".6" />
+              <Plate tone="dark" p="cd" title="One call. One day. One clear plan."
+                     sub="Four fixed steps — you know what each one produces"
+                     no="DO-ART-306" rev="01" cls="DECODED OPS · ISSUED">
 
-                <path id="cd-spine" pathLength="1" className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+                <path id="cd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
                       fill="none" strokeWidth="2.5" markerEnd="url(#cd-ah)" />
 
                 <g className="sk-fade sk-s3" filter="url(#cd-shadow)">
@@ -135,7 +112,7 @@ export default function ClarityPage() {
                     <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#cd-spine"/></animateMotion>
                   </circle>
                 </g>
-              </svg>
+              </Plate>
             </div>
           </div>
 

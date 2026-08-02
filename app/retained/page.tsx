@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
 
 // Ported from D:\apps\design-systems\decoded-marketing\retained.html.
 // Figures (£1,440 / £2,880 / £5,760, 2/4/8 days a month, six-month
@@ -123,6 +124,71 @@ export default function RetainedPage() {
           <div className="inset" style={{ maxWidth: 'none' }}>
             <b>Six-month minimum on all three tiers.</b> Long enough to be useful, short enough that
             you&rsquo;re not trapped in it. The price is the price at every turnover band.
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · SCALE PLATE · DO-ART-204 */}
+      <section className="g-tint">
+        <div className="container">
+          <p className="eyebrow">Scale &middot; DO-ART-204</p>
+          <h2>Advisory to Programme — the scale.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>2, 4 and 8 days a month. Price scales in proportion.
+            Same price at every turnover band.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
+                     sub="2, 4 and 8 days a month — price scales in proportion"
+                     no="DO-ART-204" rev="01" cls="DECODED OPS · ISSUED">
+
+                <g className="sk-fade sk-s1" opacity=".5">
+                  <line x1="430" y1="212" x2="430" y2="700" className="p-scyan" strokeWidth=".8"
+                        strokeOpacity=".35"/>
+                </g>
+
+                <g className="sk-fade sk-s2">
+                  <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">ADVISORY</text>
+                  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">2 days a month</text>
+                  <rect x="430" y="228" width="270" height="62" rx="6" fill="url(#rt-bar)"
+                        className="p-node" strokeWidth="1"/>
+                  <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="700" fontSize="28">£1,440</text>
+                </g>
+
+                <g className="sk-fade sk-s3">
+                  <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">EMBEDDED</text>
+                  <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">4 days a month</text>
+                  <rect x="430" y="368" width="540" height="62" rx="6" fill="url(#rt-bar)"
+                        className="p-node" strokeWidth="1"/>
+                  <text x="458" y="410" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="700" fontSize="28">£2,880</text>
+                </g>
+
+                <g className="sk-fade sk-s4" filter="url(#rt-shadow)">
+                  <text x="60" y="532" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">PROGRAMME</text>
+                  <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">8 days a
+                    month</text>
+                  <rect x="430" y="508" width="1080" height="62" rx="6" fill="url(#rt-amber-b)"
+                        className="p-node-a" strokeWidth="1.4"/>
+                  <text x="458" y="550" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="700" fontSize="28">£5,760</text>
+                </g>
+
+                <g className="sk-fade sk-s6">
+                  <line x1="60" y1="640" x2="1540" y2="640" className="p-scyan" strokeWidth=".6"
+                        strokeOpacity=".22"/>
+                  <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="600" fontSize="24" opacity=".9">Exact scale. Double the
+                    days, double the price — every time.</text>
+                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
+                    minimum, all three tiers. Same price at every turnover band.</text>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

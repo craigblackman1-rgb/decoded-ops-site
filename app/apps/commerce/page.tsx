@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Decoded Commerce — Decoded Ops',
@@ -104,6 +105,65 @@ export default function CommercePage() {
               <p>Multi-site storefronts, ERP integration &mdash; Khaos Control sync and similar &mdash; and bespoke
                 checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
                 price.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · CORE TO EXTENDED PLATE · DO-ART-103 */}
+      <section className="g-tint">
+        <div className="wrap">
+          <p className="eyebrow">Capability &middot; DO-ART-103</p>
+          <h2>Core to Extended, by capability.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>Each tier adds what the one below doesn&rsquo;t
+            have.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="cm" title="Core to Extended, by capability"
+                     sub="Each tier adds what the one below doesn't have"
+                     no="DO-ART-103" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="cm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V300"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#cm-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="260" y="580" width="1180" height="120" rx="14" fill="url(#cm-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="310" y="632" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Core</text>
+                  <text x="310" y="664" className="p-mono" fontSize="17" opacity=".85">Catalogue ·
+                    customer accounts · manual pricing</text>
+                  <text x="1400" y="646" textAnchor="end" className="p-mono" fontSize="16"
+                        letterSpacing="1.4" opacity=".55">SINGLE STOREFRONT</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="260" y="420" width="1180" height="130" rx="14" fill="url(#cm-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="310" y="472" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Standard</text>
+                  <text x="310" y="506" className="p-mono" fontSize="17" opacity=".85">+ company accounts
+                    · spend limits · approvals · quote negotiation</text>
+                  <text x="1400" y="486" textAnchor="end" className="p-mono" fontSize="16"
+                        letterSpacing="1.4" opacity=".7">THE B2B TRADE PORTAL SHAPE</text>
+                </g>
+
+                <g className="sk-fade sk-s5" filter="url(#cm-shadow)">
+                  <rect x="260" y="250" width="1180" height="140" rx="16" fill="url(#cm-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="310" y="312" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Extended</text>
+                  <text x="310" y="348" className="p-accent-ink" fontSize="18" fontWeight="600">+
+                    multi-site · ERP integration · bespoke checkout &amp; pricing</text>
+                  <text x="1400" y="330" textAnchor="end" className="p-mono" fontSize="16"
+                        letterSpacing="1.4" opacity=".85">MORE THAN ONE OF EVERYTHING</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#cm-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
             </div>
           </div>
         </div>
