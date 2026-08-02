@@ -27,7 +27,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'TackleBag — the diagnostic came before the decision',
-      description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds automated end to end.',
+      description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
       url: 'https://decodedops.co.uk/case-studies/tacklebag',
@@ -91,7 +91,7 @@ export default function TackleBagCaseStudyPage() {
             <span className="eyebrow">&mdash; Measure &middot; DO-ART-206</span>
             <h2>Before and after, paired line for line.</h2>
             <div className="hair"></div>
-            <p className="lede">TackleBag, named with permission. Nine supplier feeds, automated end to end.</p>
+            <p className="lede">TackleBag, named with permission. Nine supplier feeds, fully automated.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-tacklebag">
@@ -132,7 +132,7 @@ export default function TackleBagCaseStudyPage() {
                           letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
                   </g>
                   <g className="sk-fade sk-s5" fontSize="22">
-                    <text x="890" y="332" className="p-ink">9 supplier feeds automated end to end</text>
+                    <text x="890" y="332" className="p-ink">9 supplier feeds, fully automated</text>
                     <text x="890" y="402" className="p-ink">20–40 hours a week saved</text>
                     <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
                     <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
@@ -160,7 +160,7 @@ export default function TackleBagCaseStudyPage() {
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow eyebrow--amber">The numbers</span>
-            <h2 style={{ marginTop: 14 }}>Nine feeds, automated end to end.</h2>
+            <h2 style={{ marginTop: 14 }}>Nine feeds, fully automated.</h2>
 
             <div className="grid grid--3" style={{ marginTop: 40, maxWidth: 820 }}>
               <div className="stat">
