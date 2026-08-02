@@ -47,7 +47,7 @@ const sectorSchema = {
         {
           '@type': 'Question',
           name: 'How do I improve my print shop\'s artwork approval workflow?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current approval process step by step — from artwork received to sign-off confirmed. Most print shops lose 2–3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current approval process step by step: from artwork received to sign-off confirmed. Most print shops lose 2-3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.' },
         },
       ],
     },
@@ -58,12 +58,12 @@ const tagline = 'Print shop operations management ||starts with understanding wh
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually — or in a system not built for it — is a permanent drag on margin." },
-  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L — but it's real." },
+  { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
+  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
-  { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it — and the answer is usually uncomfortable." },
-  { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow — from brief through proof to sign-off — typically reduces production delays by 20–40% without any change to the print process itself." },
-  { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience — which works until volume grows beyond what one person can hold in their head." },
+  { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
+  { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow, from brief through proof to sign-off, typically reduces production delays by 20-40% without any change to the print process itself." },
+  { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience. That works until volume grows beyond what one person can hold in their head." },
 ];
 
 const whatIdo = [
@@ -99,7 +99,7 @@ export default function PrintPromotionalPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints — even when the team is working hard.</p>
+              <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints, even when the team is working hard.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -117,7 +117,7 @@ export default function PrintPromotionalPage() {
         <div className="wrap">
           <div className="plate-scroll">
             <div className="plate-frame">
-              <Plate tone="dark" p="pp" title="Print & promotional — quote to delivered print run"
+              <Plate tone="dark" p="pp" title="Print & promotional: quote to delivered print run"
                      sub="Four connected systems: quoting, supplier management, artwork approval, production scheduling"
                      no="DO-ART-113" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -139,7 +139,7 @@ export default function PrintPromotionalPage() {
                   <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Supplier management</text>
                   <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Multiple suppliers ·
-                    multiple portals — one consolidated view of what is ordered and when it arrives</text>
+                    multiple portals: one consolidated view of what is ordered and when it arrives</text>
                 </g>
 
                 <g className="sk-fade sk-s5">
@@ -148,7 +148,7 @@ export default function PrintPromotionalPage() {
                   <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Artwork approval</text>
                   <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Proof management
-                    with audit trail — not an email thread per job</text>
+                    with audit trail: not an email thread per job</text>
                 </g>
 
                 <g className="sk-fade sk-s6" filter="url(#pp-shadow)">
@@ -157,7 +157,7 @@ export default function PrintPromotionalPage() {
                   <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
                         fontSize="28">Production scheduling</text>
                   <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Substrate
-                    · print method · drying time · finishing — a schedule that reflects the real job</text>
+                    · print method · drying time · finishing: a schedule that reflects the real job</text>
                 </g>
 
                 <g className="sk-dots">
@@ -193,7 +193,7 @@ export default function PrintPromotionalPage() {
           <span className="eyebrow">How I help</span>
           <h2>What the work actually looks like</h2>
           <div className="hair" />
-          <p className="lede">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {whatIdo.map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -223,7 +223,7 @@ export default function PrintPromotionalPage() {
               {route.relatedProblems && route.relatedProblems.length > 0 && (
                 <div className="card">
                   <span className="kicker">Most common in print & promotional</span>
-                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {route.relatedProblems.map((p) => (
                       <li key={p.href} style={{ marginBottom: '10px' }}>

@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Workwear — Decoded Ops',
+  title: 'Workwear | Decoded Ops',
   description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   alternates: { canonical: '/sectors/workwear' },
   openGraph: {
-    title: 'Workwear — Decoded Ops',
+    title: 'Workwear | Decoded Ops',
     description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
     url: 'https://decodedops.co.uk/sectors/workwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Workwear — Decoded Ops',
+    title: 'Workwear | Decoded Ops',
     description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   },
 };
@@ -26,7 +26,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
   url: 'https://decodedops.co.uk/sectors/workwear',
-  name: 'Workwear — Decoded Ops',
+  name: 'Workwear | Decoded Ops',
   description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
@@ -56,7 +56,7 @@ export default function WorkwearPage() {
         }}
         shotCaption="One garment, a dozen colourways, three decoration methods, and a size curve behind every one of them."
         plate={
-          <Plate tone="dark" p="ww" title="Workwear — supplier to branded garment"
+          <Plate tone="dark" p="ww" title="Workwear: supplier to branded garment"
                  sub="Three systems that have to connect: supplier catalogue, production floor, customer portal"
                  no="DO-ART-108" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -69,7 +69,7 @@ export default function WorkwearPage() {
               <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Supplier catalogue</text>
               <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Ranges · sizing ·
-                colourways · stock availability — current, not copy-pasted</text>
+                colourways · stock availability: current, not copy-pasted</text>
             </g>
 
             <g className="sk-fade sk-s4">
@@ -78,7 +78,7 @@ export default function WorkwearPage() {
               <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Production floor</text>
               <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Decoration method
-                mix · blank stock · personalisation — the step generic systems skip</text>
+                mix · blank stock · personalisation: the step generic systems skip</text>
             </g>
 
             <g className="sk-fade sk-s5" filter="url(#ww-shadow)">
@@ -104,7 +104,7 @@ export default function WorkwearPage() {
               </svg>
             ),
             title: 'Supplier feed chaos',
-            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is the single biggest operational drag in the sector.',
+            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.',
           },
           {
             icon: (
@@ -113,7 +113,7 @@ export default function WorkwearPage() {
               </svg>
             ),
             title: 'Decoration and stock, in the same picture',
-            body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds \u2014 and workarounds mean data outside the system, which means errors and extra admin on every order.",
+            body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds. And workarounds mean data outside the system, which means errors and extra admin on every order.",
           },
           {
             icon: (
@@ -122,7 +122,7 @@ export default function WorkwearPage() {
               </svg>
             ),
             title: 'Blank stock dependency',
-            body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders \u2014 until the problem is already in the queue.',
+            body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders. Until the problem is already in the queue.',
           },
           {
             icon: (
@@ -145,7 +145,7 @@ export default function WorkwearPage() {
         ]}
         checklistHeading="An independent audit of the whole workwear workflow."
         checklist={[
-          'Map your order-to-despatch workflow end to end, including the decoration step',
+          'Map your order-to-despatch workflow in full, including the decoration step',
           'Identify where supplier catalogue data is being re-keyed or managed manually',
           'Review your blank stock management against committed orders for supply gap risk',
           'Audit how personalisation requirements flow from order intake to production',

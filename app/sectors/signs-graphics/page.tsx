@@ -39,8 +39,8 @@ const tagline = 'Large format and signage businesses run on ||tight margins and 
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed — it starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
-  { title: 'Substrate and finish complexity', body: "The number of variables in a signage job — substrate, finish, size, fixing method, installation requirements — makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
+  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed. It starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
+  { title: 'Substrate and finish complexity', body: "The number of variables in a signage job: substrate, finish, size, fixing method, installation requirements. It makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
   { title: 'Installation scheduling', body: "Coordinating installation teams, site access, third-party contractors, and delivery of materials is a logistics challenge that most job management systems don't handle well." },
   { title: 'Artwork and proof management', body: "Client approval of artwork before production is critical in this sector. Managing that process outside of the production system creates delay, rework, and missed deadlines." },
 ];
@@ -96,7 +96,7 @@ export default function SignsGraphicsPage() {
         <div className="wrap">
           <div className="plate-scroll">
             <div className="plate-frame">
-              <Plate tone="dark" p="sg" title="Signs & graphics — site survey to sign-off"
+              <Plate tone="dark" p="sg" title="Signs & graphics: site survey to sign-off"
                      sub="Four connected systems: survey, design, production, installation"
                      no="DO-ART-114" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -109,7 +109,7 @@ export default function SignsGraphicsPage() {
                   <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Site survey</text>
                   <text x="840" y="658" className="p-mono" fontSize="17" opacity=".85">Measurements ·
-                    access · fixing requirements — the data the whole job depends on</text>
+                    access · fixing requirements: the data the whole job depends on</text>
                 </g>
 
                 <g className="sk-fade sk-s4">
@@ -127,7 +127,7 @@ export default function SignsGraphicsPage() {
                   <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Production</text>
                   <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Substrate · finish ·
-                    size · fixing method — job costed accurately, not estimated</text>
+                    size · fixing method: job costed accurately, not estimated</text>
                 </g>
 
                 <g className="sk-fade sk-s6" filter="url(#sg-shadow)">
@@ -172,7 +172,7 @@ export default function SignsGraphicsPage() {
           <span className="eyebrow">How I help</span>
           <h2>What the work actually looks like</h2>
           <div className="hair" />
-          <p className="lede">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {whatIdo.map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -202,7 +202,7 @@ export default function SignsGraphicsPage() {
               {route.relatedProblems && route.relatedProblems.length > 0 && (
                 <div className="card">
                   <span className="kicker">Most common in signs & graphics</span>
-                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {route.relatedProblems.map((p) => (
                       <li key={p.href} style={{ marginBottom: '10px' }}>

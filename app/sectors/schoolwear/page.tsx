@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Schoolwear — Decoded Ops',
+  title: 'Schoolwear | Decoded Ops',
   description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
   alternates: { canonical: '/sectors/schoolwear' },
   openGraph: {
-    title: 'Schoolwear — Decoded Ops',
+    title: 'Schoolwear | Decoded Ops',
     description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
     url: 'https://decodedops.co.uk/sectors/schoolwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schoolwear — Decoded Ops',
+    title: 'Schoolwear | Decoded Ops',
     description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
   },
 };
@@ -26,7 +26,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
   url: 'https://decodedops.co.uk/sectors/schoolwear',
-  name: 'Schoolwear — Decoded Ops',
+  name: 'Schoolwear | Decoded Ops',
   description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
@@ -54,9 +54,9 @@ export default function SchoolwearPage() {
           height: 1067,
           alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
         }}
-        shotCaption="Every school badge is a thread file before it's a garment — and the size curve behind it changes every September."
+        shotCaption="Every school badge is a thread file before it's a garment. And the size curve behind it changes every September."
         plate={
-          <Plate tone="dark" p="sw" title="Schoolwear — supplier range to parent delivery"
+          <Plate tone="dark" p="sw" title="Schoolwear: supplier range to parent delivery"
                  sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
                  no="DO-ART-110" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -69,7 +69,7 @@ export default function SchoolwearPage() {
               <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Supplier kit range catalogue</text>
               <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Blazers · PE kit ·
-                accessories — live data before the August rush, not during it</text>
+                accessories: live data before the August rush, not during it</text>
             </g>
 
             <g className="sk-fade sk-s4">
@@ -78,7 +78,7 @@ export default function SchoolwearPage() {
               <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">School badge management</text>
               <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Badge per school ·
-                embroidery spec · version control — not an email thread</text>
+                embroidery spec · version control: not an email thread</text>
             </g>
 
             <g className="sk-fade sk-s5" filter="url(#sw-shadow)">

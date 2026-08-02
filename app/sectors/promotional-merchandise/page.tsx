@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Promotional merchandise — Decoded Ops',
+  title: 'Promotional merchandise | Decoded Ops',
   description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   alternates: { canonical: '/sectors/promotional-merchandise' },
   openGraph: {
-    title: 'Promotional merchandise — Decoded Ops',
+    title: 'Promotional merchandise | Decoded Ops',
     description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
     url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Promotional merchandise — Decoded Ops',
+    title: 'Promotional merchandise | Decoded Ops',
     description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   },
 };
@@ -26,7 +26,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
   url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
-  name: 'Promotional merchandise — Decoded Ops',
+  name: 'Promotional merchandise | Decoded Ops',
   description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
@@ -56,7 +56,7 @@ export default function PromotionalMerchandisePage() {
         }}
         shotCaption="One order, four supplier ranges, four different lead times, and one logo that has to work on all of them."
         plate={
-          <Plate tone="dark" p="pm" title="Promotional merchandise — supplier range to delivered order"
+          <Plate tone="dark" p="pm" title="Promotional merchandise: supplier range to delivered order"
                  sub="Three connected systems: multi-supplier catalogue, artwork management, order fulfilment"
                  no="DO-ART-111" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -69,7 +69,7 @@ export default function PromotionalMerchandisePage() {
               <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Multi-supplier catalogue</text>
               <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Dozens of ranges ·
-                live pricing · live stock — not a folder of spreadsheets nobody trusts</text>
+                live pricing · live stock: not a folder of spreadsheets nobody trusts</text>
             </g>
 
             <g className="sk-fade sk-s4">
@@ -78,7 +78,7 @@ export default function PromotionalMerchandisePage() {
               <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Artwork management</text>
               <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Client logo
-                versioning · proof approval · audit trail — not an email thread per order</text>
+                versioning · proof approval · audit trail: not an email thread per order</text>
             </g>
 
             <g className="sk-fade sk-s5" filter="url(#pm-shadow)">
@@ -87,7 +87,7 @@ export default function PromotionalMerchandisePage() {
               <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
                     fontSize="28">Order fulfilment</text>
               <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Decoration
-                cost · supplier lead times · margin trackable per job — not estimated after delivery</text>
+                cost · supplier lead times · margin trackable per job: not estimated after delivery</text>
             </g>
 
             <g className="sk-dots">
@@ -104,7 +104,7 @@ export default function PromotionalMerchandisePage() {
               </svg>
             ),
             title: 'Multi-supplier catalogue management',
-            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them \u2014 without re-keying \u2014 is the sector\u2019s defining operational challenge.',
+            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them, without re-keying, is the sector\u2019s defining operational challenge.',
           },
           {
             icon: (
@@ -131,7 +131,7 @@ export default function PromotionalMerchandisePage() {
               </svg>
             ),
             title: 'Quote-to-order conversion costs',
-            body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it \u2014 and the answer is usually uncomfortable.',
+            body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
           },
           {
             icon: (
@@ -158,7 +158,7 @@ export default function PromotionalMerchandisePage() {
           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
           { label: 'Schoolwear', href: '/sectors/schoolwear' },
         ]}
-        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking \u2014 on every order, not in the year-end numbers."
+        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking: on every order, not in the year-end numbers."
       />
     </>
   );

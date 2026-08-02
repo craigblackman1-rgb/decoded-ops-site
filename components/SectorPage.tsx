@@ -159,7 +159,7 @@ export function SectorPage({ sector, tagline, intro, heroImage, heroGraphic, cha
               {relatedProblems && relatedProblems.length > 0 && (
                 <div className="rounded-2xl bg-white border border-[#023047]/10 p-8">
                   <div className="text-xs font-semibold tracking-wider uppercase text-[#023047]/60 mb-3">Most common in {sector.toLowerCase()}</div>
-                  <h3 className="text-lg font-bold text-[#023047] mb-4">The problems we see most often</h3>
+                  <h3 className="text-lg font-bold text-[#023047] mb-4">The problems I see most often</h3>
                   <ul className="space-y-3">
                     {relatedProblems.map(p => (
                       <li key={p.href}>

@@ -5,19 +5,19 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Teamwear & Clubwear — Decoded Ops',
-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match — proven at TackleBag.',
+  title: 'Teamwear & Clubwear | Decoded Ops',
+  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
   alternates: { canonical: '/sectors/teamwear-clubwear' },
   openGraph: {
-    title: 'Teamwear & Clubwear — Decoded Ops',
-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match — proven at TackleBag.',
+    title: 'Teamwear & Clubwear | Decoded Ops',
+    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
     url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teamwear & Clubwear — Decoded Ops',
-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match — proven at TackleBag.',
+    title: 'Teamwear & Clubwear | Decoded Ops',
+    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
   },
 };
 
@@ -26,8 +26,8 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/teamwear-clubwear#webpage',
   url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
-  name: 'Teamwear & Clubwear — Decoded Ops',
-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match — proven at TackleBag.',
+  name: 'Teamwear & Clubwear | Decoded Ops',
+  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
@@ -56,7 +56,7 @@ export default function TeamwearClubwearPage() {
         }}
         shotCaption="One base garment. Twenty-four names, twenty-four numbers, and one sponsor logo that has to sit in the same place on every one."
         plate={
-          <Plate tone="dark" p="tw" title="Teamwear — squad list to kitted-out"
+          <Plate tone="dark" p="tw" title="Teamwear: squad list to kitted-out"
                  sub="Four connected stages: kit range data, squad list, personalisation proofs, production"
                  no="DO-ART-109" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -69,7 +69,7 @@ export default function TeamwearClubwearPage() {
               <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Supplier kit range catalogue</text>
               <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Ranges · sizes ·
-                colourways — live across every channel a team orders through</text>
+                colourways: live across every channel a team orders through</text>
             </g>
 
             <g className="sk-fade sk-s4">
@@ -78,7 +78,7 @@ export default function TeamwearClubwearPage() {
               <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                     fontSize="26">Squad list management</text>
               <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Name · number ·
-                size per player · sponsor logo per age group — not a spreadsheet</text>
+                size per player · sponsor logo per age group: not a spreadsheet</text>
             </g>
 
             <g className="sk-fade sk-s5" filter="url(#tw-shadow)">
@@ -104,7 +104,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'Squad-level personalisation data',
-            body: 'Names, numbers, sponsor logos \u2014 every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
+            body: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
           },
           {
             icon: (
@@ -113,7 +113,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'Seasonal deadline pressure',
-            body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that \u2014 and most systems don\u2019t account for it.',
+            body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that, and most systems don\u2019t account for it.',
           },
           {
             icon: (
@@ -122,7 +122,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'Kit range churn',
-            body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task \u2014 and when it\u2019s wrong, it\u2019s the order that fails, not the system.',
+            body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. And when it\u2019s wrong, it\u2019s the order that fails, not the system.',
           },
           {
             icon: (
@@ -131,7 +131,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'Sponsor logo management',
-            body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale \u2014 across multiple teams and age groups \u2014 is a dedicated workflow that email can\u2019t handle.',
+            body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale, across multiple teams and age groups, is a dedicated workflow that email can\u2019t handle.',
           },
           {
             icon: (
@@ -140,7 +140,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'The proof and approval bottleneck',
-            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is the single biggest lever in teamwear operations.',
+            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations.',
           },
         ]}
         checklistHeading="An independent audit of the whole teamwear workflow."

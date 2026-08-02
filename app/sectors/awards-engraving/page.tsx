@@ -39,14 +39,14 @@ const tagline = 'Personalisation at scale is operationally complex. ||Most award
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Variable data management', body: "Every award is different. Managing the variable data — names, titles, dates, messages — from customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
-  { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that — and most systems don't." },
-  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic — each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
+  { title: 'Variable data management', body: "Every award is different. Managing the variable data: names, titles, dates, messages. From customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
+  { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that, and most systems don't." },
+  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic. Each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
   { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
 ];
 
 const whatIdo = [
-  "Audit your variable data intake and verification process end to end",
+  "Audit your variable data intake and verification process in full",
   'Review your production scheduling approach for event-deadline management',
   'Map the proof and approval workflow and identify where it\'s creating bottlenecks',
   'Assess your supplier and product data management for the range you carry',
@@ -96,7 +96,7 @@ export default function AwardsEngravingPage() {
         <div className="wrap">
           <div className="plate-scroll">
             <div className="plate-frame">
-              <Plate tone="dark" p="ae" title="Awards & engraving — variable data to delivered awards"
+              <Plate tone="dark" p="ae" title="Awards & engraving: variable data to delivered awards"
                      sub="Three connected systems: data intake, proof management, production"
                      no="DO-ART-115" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -109,7 +109,7 @@ export default function AwardsEngravingPage() {
                   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Variable data intake</text>
                   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Names · titles ·
-                    dates · messages — verified before production, not during it</text>
+                    dates · messages: verified before production, not during it</text>
                 </g>
 
                 <g className="sk-fade sk-s4">
@@ -118,7 +118,7 @@ export default function AwardsEngravingPage() {
                   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Proof approval at volume</text>
                   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Fifty proofs ·
-                    fifty approvals — a workflow that doesn&apos;t consume more time than production itself</text>
+                    fifty approvals: a workflow that doesn&apos;t consume more time than production itself</text>
                 </g>
 
                 <g className="sk-fade sk-s5" filter="url(#ae-shadow)">
@@ -127,7 +127,7 @@ export default function AwardsEngravingPage() {
                   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
                         fontSize="28">Production + deadline delivery</text>
                   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Glass ·
-                    crystal · metal · wood — method-matched engraving, scheduled to the event date</text>
+                    crystal · metal · wood: method-matched engraving, scheduled to the event date</text>
                 </g>
 
                 <g className="sk-dots">
@@ -163,7 +163,7 @@ export default function AwardsEngravingPage() {
           <span className="eyebrow">How I help</span>
           <h2>What the work actually looks like</h2>
           <div className="hair" />
-          <p className="lede">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {whatIdo.map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -193,7 +193,7 @@ export default function AwardsEngravingPage() {
               {route.relatedProblems && route.relatedProblems.length > 0 && (
                 <div className="card">
                   <span className="kicker">Most common in awards & engraving</span>
-                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {route.relatedProblems.map((p) => (
                       <li key={p.href} style={{ marginBottom: '10px' }}>

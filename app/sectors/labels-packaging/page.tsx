@@ -39,10 +39,10 @@ const tagline = 'Variable data printing and compliance labelling ||requires oper
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs — and ensuring the right version is always in production — is a critical operational challenge." },
+  { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs, and ensuring the right version is always in production, is a critical operational challenge." },
   { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
-  { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration — and doing it without errors — requires product data management that most businesses manage in spreadsheets." },
-  { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up — and maintaining it — is a specialist operational challenge." },
+  { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration, and doing it without errors, requires product data management that most businesses manage in spreadsheets." },
+  { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up, and maintaining it, is a specialist operational challenge." },
 ];
 
 const whatIdo = [
@@ -78,7 +78,7 @@ export default function LabelsPackagingPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times.</p>
+              <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain. With zero tolerance for error and constant pressure on turnaround times.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -96,7 +96,7 @@ export default function LabelsPackagingPage() {
         <div className="wrap">
           <div className="plate-scroll">
             <div className="plate-frame">
-              <Plate tone="dark" p="lp" title="Labels & packaging — specification to compliant delivery"
+              <Plate tone="dark" p="lp" title="Labels & packaging: specification to compliant delivery"
                      sub="Three connected systems: specification control, variable data printing, delivery"
                      no="DO-ART-116" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -109,7 +109,7 @@ export default function LabelsPackagingPage() {
                   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Specification control</text>
                   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Hundreds of label
-                    SKUs · version management · compliance data — right version, every time</text>
+                    SKUs · version management · compliance data: right version, every time</text>
                 </g>
 
                 <g className="sk-fade sk-s4">
@@ -118,7 +118,7 @@ export default function LabelsPackagingPage() {
                   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">Variable data printing</text>
                   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Short-run ·
-                    high-variation · substrate matched to press — workflow built for the job, not generic</text>
+                    high-variation · substrate matched to press: workflow built for the job, not generic</text>
                 </g>
 
                 <g className="sk-fade sk-s5" filter="url(#lp-shadow)">
@@ -127,7 +127,7 @@ export default function LabelsPackagingPage() {
                   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
                         fontSize="28">Compliance delivery</text>
                   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Correct
-                    spec · correct substrate · EDI integration — delivered right first time</text>
+                    spec · correct substrate · EDI integration: delivered right first time</text>
                 </g>
 
                 <g className="sk-dots">
@@ -163,7 +163,7 @@ export default function LabelsPackagingPage() {
           <span className="eyebrow">How I help</span>
           <h2>What the work actually looks like</h2>
           <div className="hair" />
-          <p className="lede">A structured audit followed by specific, costed recommendations — no vague frameworks, no generic advice.</p>
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {whatIdo.map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -193,7 +193,7 @@ export default function LabelsPackagingPage() {
               {route.relatedProblems && route.relatedProblems.length > 0 && (
                 <div className="card">
                   <span className="kicker">Most common in labels & packaging</span>
-                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {route.relatedProblems.map((p) => (
                       <li key={p.href} style={{ marginBottom: '10px' }}>
