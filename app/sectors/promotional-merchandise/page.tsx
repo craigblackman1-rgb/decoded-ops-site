@@ -95,7 +95,7 @@ export default function PromotionalMerchandisePage() {
             </g>
           </Plate>
         }
-        featuresHeading="Three problems, in roughly this order."
+        featuresHeading="Five challenges specific to this sector."
         features={[
           {
             icon: (
@@ -103,8 +103,8 @@ export default function PromotionalMerchandisePage() {
                 <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
               </svg>
             ),
-            title: 'Every supplier, one clean catalogue',
-            body: 'Promotional merchandise runs on dozens of supplier ranges. The Decoded Data App brings them into one place, matched and current, instead of a folder of spreadsheets nobody trusts.',
+            title: 'Multi-supplier catalogue management',
+            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them \u2014 without re-keying \u2014 is the sector\u2019s defining operational challenge.',
           },
           {
             icon: (
@@ -112,8 +112,8 @@ export default function PromotionalMerchandisePage() {
                 <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
               </svg>
             ),
-            title: 'Artwork that doesn\'t live in email',
-            body: 'Client logos, in every format, with version control and an audit trail. Customers approve their own proofs instead of a back-and-forth that eats a day per order.',
+            title: 'The artwork loop',
+            body: 'Client logos, in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.',
           },
           {
             icon: (
@@ -121,16 +121,44 @@ export default function PromotionalMerchandisePage() {
                 <path d="M4 18 9.5 12l3.5 3.5L20 8" /><path d="M15.5 8H20v4.5" />
               </svg>
             ),
-            title: 'Margin protected at the order level',
-            body: 'When production sits between the order and the despatch, as it always does in this sector, a system that doesn\'t account for that quietly erodes margin on every job.',
+            title: 'Margin erosion at the order level',
+            body: 'When production sits between the order and the despatch, a system that doesn\u2019t account for decoration cost, supplier lead time variation, and artwork rework quietly erodes margin on every job.',
           },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" />
+              </svg>
+            ),
+            title: 'Quote-to-order conversion costs',
+            body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it \u2014 and the answer is usually uncomfortable.',
+          },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a14.8 14.8 0 0 0-3 10 14.8 14.8 0 0 0 3 10 14.8 14.8 0 0 0 3-10A14.8 14.8 0 0 0 12 2z" />
+              </svg>
+            ),
+            title: 'eCommerce disconnected from supply',
+            body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.',
+          },
+        ]}
+        checklistHeading="An independent audit of supplier data, artwork, and margin."
+        checklist={[
+          'Map your full order workflow from client enquiry to delivery',
+          'Audit your multi-supplier product data management for accuracy and currency',
+          'Review your artwork storage, proof approval, and version control process',
+          'Identify where supplier fragmentation is creating administrative overhead',
+          'Assess how margin is calculated and tracked at the order level',
+          'Review quoting accuracy and quote-to-order conversion costs',
+          'Quantify every finding in time, margin erosion, and administrative cost',
         ]}
         otherSectors={[
           { label: 'Workwear', href: '/sectors/workwear' },
           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
           { label: 'Schoolwear', href: '/sectors/schoolwear' },
         ]}
-        ctaLead="An hour on where the margin is actually going, and an honest read on whether it needs software at all."
+        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking \u2014 on every order, not in the year-end numbers."
       />
     </>
   );

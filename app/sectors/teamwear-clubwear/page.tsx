@@ -95,7 +95,7 @@ export default function TeamwearClubwearPage() {
             </g>
           </Plate>
         }
-        featuresHeading="Three problems, in roughly this order."
+        featuresHeading="Five challenges specific to this sector."
         features={[
           {
             icon: (
@@ -103,34 +103,62 @@ export default function TeamwearClubwearPage() {
                 <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
               </svg>
             ),
-            title: 'Every supplier feed, one current catalogue',
-            body: 'Kit ranges change season to season. The Decoded Data App keeps supplier data current across every channel, so what\'s on your site matches what\'s actually available to order.',
+            title: 'Squad-level personalisation data',
+            body: 'Names, numbers, sponsor logos \u2014 every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
           },
           {
             icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M8 4 4.5 7 6 9l2-1v12h8V8l2 1 1.5-2L16 4z" /><path d="M10.5 13h3" />
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><path d="M16 2v4M8 2v4M3 10h18" /><circle cx="12" cy="15" r="1" />
               </svg>
             ),
-            title: 'Squad-level personalisation, not one-size data',
-            body: 'Names, numbers, sponsor logos — every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
+            title: 'Seasonal deadline pressure',
+            body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that \u2014 and most systems don\u2019t account for it.',
           },
           {
             icon: (
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+                <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
               </svg>
             ),
-            title: 'Proven at scale in this exact sector',
-            body: 'TackleBag runs nine automated supplier feeds and a Data App alongside their Symphony platform, projected to save 20 to 40 hours a week. That\'s teamwear and schoolwear stock, live, not a pilot.',
+            title: 'Kit range churn',
+            body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task \u2014 and when it\u2019s wrong, it\u2019s the order that fails, not the system.',
           },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
+              </svg>
+            ),
+            title: 'Sponsor logo management',
+            body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale \u2014 across multiple teams and age groups \u2014 is a dedicated workflow that email can\u2019t handle.',
+          },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h10" /><path d="M9 18l3-3 3 3" />
+              </svg>
+            ),
+            title: 'The proof and approval bottleneck',
+            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is the single biggest lever in teamwear operations.',
+          },
+        ]}
+        checklistHeading="An independent audit of the whole teamwear workflow."
+        checklist={[
+          'Map your full order workflow from squad list to delivery',
+          'Identify where personalisation data is being managed manually',
+          'Review your supplier catalogue management for kit range accuracy',
+          'Audit the artwork and proof approval process for sponsor logos and numbering',
+          'Assess how seasonal deadlines are managed against production capacity',
+          'Review eCommerce and order management integration',
+          'Quantify every finding in time, admin cost, and rework',
         ]}
         otherSectors={[
           { label: 'Workwear', href: '/sectors/workwear' },
           { label: 'Schoolwear', href: '/sectors/schoolwear' },
           { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
         ]}
-        ctaLead="An hour on what's actually going wrong before next season starts, and an honest read on whether it needs software at all."
+        ctaLead="An hour on squad data, sponsor logos, and where the proof loop is eating time before the first match."
       />
     </>
   );

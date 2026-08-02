@@ -79,3 +79,13 @@
 .centred .lede { margin-inline: auto; }
 .centred .hair { margin-inline: auto; }
 .centred .btn-row { justify-content: center; }
+
+.checklist { list-style: none; padding: 0; margin: 34px 0 0; max-width: 78ch; }
+.checklist li { display: flex; gap: 16px; padding: 16px 0; font-size: var(--do-text-base);
+  color: var(--do-text-secondary);
+  border-bottom: 1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent); }
+.checklist li:last-child { border-bottom: 0; }
+.checklist li::before { content: ''; flex: 0 0 auto; width: 19px; height: 19px; margin-top: 3px;
+  border-radius: var(--do-radius-sm);
+  border: 2px solid color-mix(in srgb, var(--do-amber) 70%, transparent);
+  background: color-mix(in srgb, var(--do-amber) 16%, transparent); }

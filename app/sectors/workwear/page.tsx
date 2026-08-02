@@ -95,7 +95,7 @@ export default function WorkwearPage() {
             </g>
           </Plate>
         }
-        featuresHeading="Three problems, in roughly this order."
+        featuresHeading="Five challenges specific to this sector."
         features={[
           {
             icon: (
@@ -103,8 +103,8 @@ export default function WorkwearPage() {
                 <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
               </svg>
             ),
-            title: 'Supplier feed chaos, solved',
-            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. The Decoded Data App keeps that current across every channel without you re-keying it by hand.',
+            title: 'Supplier feed chaos',
+            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is the single biggest operational drag in the sector.',
           },
           {
             icon: (
@@ -113,7 +113,25 @@ export default function WorkwearPage() {
               </svg>
             ),
             title: 'Decoration and stock, in the same picture',
-            body: "A plain garment isn’t the same SKU as the decorated one. Systems that don’t understand that force workarounds, and workarounds mean data outside the system.",
+            body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds \u2014 and workarounds mean data outside the system, which means errors and extra admin on every order.",
+          },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><path d="M3.3 7 12 12l8.7-5M12 22V12" />
+              </svg>
+            ),
+            title: 'Blank stock dependency',
+            body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders \u2014 until the problem is already in the queue.',
+          },
+          {
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a14.8 14.8 0 0 0-3 10 14.8 14.8 0 0 0 3 10 14.8 14.8 0 0 0 3-10A14.8 14.8 0 0 0 12 2z" />
+              </svg>
+            ),
+            title: 'eCommerce disconnected from production',
+            body: 'Online orders that don\u2019t automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files arriving separately from the order. All of this is solvable.',
           },
           {
             icon: (
@@ -121,16 +139,26 @@ export default function WorkwearPage() {
                 <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
               </svg>
             ),
-            title: 'Replenishment that doesn’t wait on you',
-            body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing “we’re out of mediums again.”',
+            title: 'Replenishment that waits on you',
+            body: "Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing \u201cwe\u2019re out of mediums again.\u201d",
           },
+        ]}
+        checklistHeading="An independent audit of the whole workwear workflow."
+        checklist={[
+          'Map your order-to-despatch workflow end to end, including the decoration step',
+          'Identify where supplier catalogue data is being re-keyed or managed manually',
+          'Review your blank stock management against committed orders for supply gap risk',
+          'Audit how personalisation requirements flow from order intake to production',
+          'Assess eCommerce integration with production scheduling and order management',
+          'Review your replenishment model for repeat customer orders',
+          'Quantify every finding in time, headcount, and money',
         ]}
         otherSectors={[
           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
           { label: 'Schoolwear', href: '/sectors/schoolwear' },
           { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
         ]}
-        ctaLead="An hour on what’s actually going wrong in your operation, and an honest read on whether it needs software at all."
+        ctaLead="An hour on supplier data, blank stock dependency, and where your production step is creating admin work that shouldn't exist."
       />
     </>
   );

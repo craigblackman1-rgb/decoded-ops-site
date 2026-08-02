@@ -27,9 +27,11 @@ interface SectorPageDSProps {
   /** Optional plate diagram to render between hero and features */
   plate?: ReactNode;
   featuresHeading: string;
-  features: [Feature, Feature, Feature];
+  features: Feature[];
   otherSectors: SectorLink[];
   ctaLead: string;
+  checklistHeading?: string;
+  checklist?: string[];
 }
 
 /**
@@ -59,6 +61,8 @@ export function SectorPageDS({
   features,
   otherSectors,
   ctaLead,
+  checklistHeading,
+  checklist,
 }: SectorPageDSProps) {
   return (
     <>
@@ -115,7 +119,7 @@ export function SectorPageDS({
             <h2>{featuresHeading}</h2>
           </div>
 
-          <div className="grid grid--3">
+          <div className="grid grid--2">
             {features.map((f) => (
               <div key={f.title} className={styles.feature}>
                 <div className={styles.featureMark} aria-hidden="true">{f.icon}</div>
@@ -126,6 +130,21 @@ export function SectorPageDS({
           </div>
         </div>
       </section>
+
+      {/* WHAT I DO */}
+      {checklist && checklist.length > 0 && (
+        <section className="g-white">
+          <div className="wrap">
+            <span className="eyebrow">What I do</span>
+            <h2>{checklistHeading ?? 'An independent audit of the whole workflow.'}</h2>
+            <ul className={styles.checklist}>
+              {checklist.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* OTHER SECTORS */}
       <section className={`g-navy ${styles.tight}`}>
