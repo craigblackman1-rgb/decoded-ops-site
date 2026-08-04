@@ -58,7 +58,7 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
   return (
     <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
       <button
-        className="flex items-center gap-1 text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium"
+        className="flex items-center gap-1 text-prussian-blue hover:text-cerulean transition-colors text-sm font-medium"
         aria-haspopup="true"
         aria-expanded={open}
       >
@@ -71,14 +71,14 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
           onMouseLeave={handleLeave}
           role="menu"
         >
-          <div className="w-64 bg-[#F8F9FA] border border-[#8ECAE6]/40 rounded-2xl shadow-xl py-2 overflow-hidden">
+          <div className="w-64 bg-off-white border border-sky-blue/40 rounded-2xl shadow-xl py-2 overflow-hidden">
             {items.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 role="menuitem"
-                className="block px-4 py-2.5 text-sm text-[#023047] hover:bg-[#219EBC]/10 hover:text-[#219EBC] transition-colors"
+                className="block px-4 py-2.5 text-sm text-prussian-blue hover:bg-cerulean/10 hover:text-cerulean transition-colors"
               >
                 {item.label}
               </Link>
@@ -102,12 +102,12 @@ export function Header() {
       {/* Skip to main content — hidden until focused */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#FFB703] focus:text-[#023047] focus:font-semibold focus:text-sm focus:outline-none focus:ring-2 focus:ring-[#023047]"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-amber focus:text-prussian-blue focus:font-semibold focus:text-sm focus:outline-none focus:ring-2 focus:ring-prussian-blue"
       >
         Skip to main content
       </a>
 
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA]/95 backdrop-blur-sm border-b border-[#8ECAE6]/30">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-off-white/95 backdrop-blur-sm border-b border-sky-blue/30">
         <nav className="max-w-7xl mx-auto px-6 lg:px-8" aria-label="Main navigation">
           <div className="flex items-center justify-between h-20">
             <LogoWordmark />
@@ -118,20 +118,20 @@ export function Header() {
               <Dropdown label="Sectors" items={sectors} />
               <Dropdown label="Problems" items={problems} />
               <Dropdown label="Resources" items={resources} />
-              <Link href="/case-studies" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Case Studies</Link>
-              <Link href="/pricing" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">Pricing</Link>
-              <Link href="/about" className="text-[#023047] hover:text-[#219EBC] transition-colors text-sm font-medium">About</Link>
-              <Link href="/clients/login" className="text-[#023047]/60 hover:text-[#219EBC] transition-colors text-xs font-medium">Client Login</Link>
+              <Link href="/case-studies" className="text-prussian-blue hover:text-cerulean transition-colors text-sm font-medium">Case Studies</Link>
+              <Link href="/pricing" className="text-prussian-blue hover:text-cerulean transition-colors text-sm font-medium">Pricing</Link>
+              <Link href="/about" className="text-prussian-blue hover:text-cerulean transition-colors text-sm font-medium">About</Link>
+              <Link href="/clients/login" className="text-prussian-blue/60 hover:text-cerulean transition-colors text-xs font-medium">Client Login</Link>
               <Link
                 href="/contact"
-                className="px-5 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold"
+                className="px-5 py-2.5 bg-amber text-prussian-blue rounded-full hover:bg-orange-brand transition-colors text-sm font-semibold"
               >
                 Book a free call
               </Link>
             </div>
 
             <button
-              className="md:hidden p-2 text-[#023047] hover:text-[#219EBC]"
+              className="md:hidden p-2 text-prussian-blue hover:text-cerulean"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
@@ -143,7 +143,7 @@ export function Header() {
 
           {/* Mobile menu */}
           {mobileOpen && (
-            <div id="mobile-menu" className="md:hidden py-4 border-t border-[#8ECAE6]/30 space-y-1" role="navigation" aria-label="Mobile navigation">
+            <div id="mobile-menu" className="md:hidden py-4 border-t border-sky-blue/30 space-y-1" role="navigation" aria-label="Mobile navigation">
               {[
                 { label: 'Case Studies', href: '/case-studies' },
                 { label: 'Pricing', href: '/pricing' },
@@ -154,16 +154,16 @@ export function Header() {
                   key={link.href + link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block text-sm font-medium text-[#023047] hover:text-[#219EBC] transition-colors py-2 border-b border-[#8ECAE6]/20"
+                  className="block text-sm font-medium text-prussian-blue hover:text-cerulean transition-colors py-2 border-b border-sky-blue/20"
                 >
                   {link.label}
                 </Link>
               ))}
 
               {/* Mobile Services accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
+              <div className="border-b border-sky-blue/20">
                 <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  className="flex items-center justify-between w-full text-sm font-medium text-prussian-blue py-2"
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   aria-expanded={mobileServicesOpen}
                 >
@@ -173,7 +173,7 @@ export function Header() {
                   <div className="pl-4 pb-2 space-y-1">
                     {services.map(link => (
                       <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        className="block text-sm text-prussian-blue hover:text-cerulean py-1.5 transition-colors">
                         {link.label}
                       </Link>
                     ))}
@@ -182,9 +182,9 @@ export function Header() {
               </div>
 
               {/* Mobile Sectors accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
+              <div className="border-b border-sky-blue/20">
                 <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  className="flex items-center justify-between w-full text-sm font-medium text-prussian-blue py-2"
                   onClick={() => setMobileSectorsOpen(!mobileSectorsOpen)}
                   aria-expanded={mobileSectorsOpen}
                   aria-controls="mobile-sectors"
@@ -195,7 +195,7 @@ export function Header() {
                   <div id="mobile-sectors" className="pl-4 pb-2 space-y-1">
                     {sectors.map(link => (
                       <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        className="block text-sm text-prussian-blue hover:text-cerulean py-1.5 transition-colors">
                         {link.label}
                       </Link>
                     ))}
@@ -204,9 +204,9 @@ export function Header() {
               </div>
 
               {/* Mobile Resources accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
+              <div className="border-b border-sky-blue/20">
                 <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  className="flex items-center justify-between w-full text-sm font-medium text-prussian-blue py-2"
                   onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
                   aria-expanded={mobileResourcesOpen}
                   aria-controls="mobile-resources"
@@ -217,7 +217,7 @@ export function Header() {
                   <div id="mobile-resources" className="pl-4 pb-2 space-y-1">
                     {resources.map(link => (
                       <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        className="block text-sm text-prussian-blue hover:text-cerulean py-1.5 transition-colors">
                         {link.label}
                       </Link>
                     ))}
@@ -226,9 +226,9 @@ export function Header() {
               </div>
 
               {/* Mobile Problems accordion */}
-              <div className="border-b border-[#8ECAE6]/20">
+              <div className="border-b border-sky-blue/20">
                 <button
-                  className="flex items-center justify-between w-full text-sm font-medium text-[#023047] py-2"
+                  className="flex items-center justify-between w-full text-sm font-medium text-prussian-blue py-2"
                   onClick={() => setMobileProblemsOpen(!mobileProblemsOpen)}
                   aria-expanded={mobileProblemsOpen}
                   aria-controls="mobile-problems"
@@ -239,7 +239,7 @@ export function Header() {
                   <div id="mobile-problems" className="pl-4 pb-2 space-y-1">
                     {problems.map(link => (
                       <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                        className="block text-sm text-[#023047] hover:text-[#219EBC] py-1.5 transition-colors">
+                        className="block text-sm text-prussian-blue hover:text-cerulean py-1.5 transition-colors">
                         {link.label}
                       </Link>
                     ))}
@@ -249,7 +249,7 @@ export function Header() {
 
               <div className="pt-2">
                 <Link href="/contact" onClick={() => setMobileOpen(false)}
-                  className="inline-block px-6 py-2.5 bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-sm font-semibold">
+                  className="inline-block px-6 py-2.5 bg-amber text-prussian-blue rounded-full hover:bg-orange-brand transition-colors text-sm font-semibold">
                   Book a free call
                 </Link>
               </div>
