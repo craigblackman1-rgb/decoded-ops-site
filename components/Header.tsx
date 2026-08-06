@@ -90,17 +90,22 @@ const sectors: NavLink[] = [
 ];
 
 // ── "Small business" — new top-level slot, Craig's decision (2026-08-06) ──
+// Order mirrors the six products on /small-business, which lists them as peers.
 const smallBusinessPrices: (NavLink & { sub: string; price: string })[] = [
   { label: 'Clarity Check', sub: 'A written plan, no visit needed', price: '£595', href: '/small-business' },
   { label: 'Deliver', sub: 'I fix things, month by month', price: '£795/mo', href: '/small-business' },
   { label: 'Transform', sub: 'Rebuild how you work', price: '£1,095/mo', href: '/small-business' },
   { label: 'Retained', sub: 'Someone to ask, every month', price: 'from £360/mo', href: '/small-business' },
+  // Named to stay distinct from the free /tools/ai-readiness-check in the
+  // adjacent column — same words, different thing: this one is done for you.
+  { label: 'AI Readiness Check', sub: 'Assessed for you, not a self-test', price: '£395', href: '/small-business' },
+  { label: 'Quarterly Sprint', sub: 'One intensive look, no monthly tie-in', price: '£995', href: '/small-business' },
 ];
 const smallBusinessStart: NavGroup = {
   title: 'Start free',
   items: [
     { label: 'Ops health score', sub: 'Two minutes, twelve questions', href: '/tools/ops-health-score' },
-    { label: 'AI readiness check', sub: 'Where AI would actually pay', href: '/tools/ai-readiness-check' },
+    { label: 'AI readiness check', sub: 'Free two-minute self-test', href: '/tools/ai-readiness-check' },
     { label: 'The audit checklist', sub: 'Run it on yourself', href: '/resources/audit-checklist' },
     { label: 'Read the whole thing', sub: "What's included, what isn't", href: '/small-business' },
   ],
