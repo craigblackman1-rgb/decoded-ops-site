@@ -4,12 +4,20 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, CheckCircle, Circle, AlertCircle, Upload, ChevronDown, ChevronRight } from 'lucide-react';
 
+export interface EvidenceEntry {
+  kind: string;
+  detail: string;
+  occurred_at: string;
+  by: string;
+}
+
 export interface Task {
   id: string;
   title: string;
   status: string;
   assigned_to: string;
   due_date: string | null;
+  evidence?: EvidenceEntry[];
 }
 
 export interface Milestone {
@@ -208,6 +216,20 @@ export default function ProjectView({ projectName, projectId, startDate, endDate
                                         {taskUploads.map(u => (
                                           <div key={u.id} className="flex items-center gap-2 text-xs text-[#5a7d8f]">
                                             <Upload size={11} /><span className="truncate">{u.filename}</span><span>{fmtBytes(u.file_size)}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                    {task.evidence && task.evidence.length > 0 && (
+                                      <div className="mt-2 space-y-1">
+                                        {task.evidence.map((ev, i) => (
+                                          <div key={i} className="flex items-start gap-1.5 text-xs">
+                                            <CheckCircle size={11} className="text-[#16A34A] shrink-0 mt-0.5" />
+                                            <span className="text-[#5a7d8f]">
+                                              <span className="font-medium text-[#023047]">{ev.by}</span>
+                                              {ev.detail && <span>: {ev.detail}</span>}
+                                              <span className="ml-1.5 opacity-60">{fmtDate(ev.occurred_at)}</span>
+                                            </span>
                                           </div>
                                         ))}
                                       </div>
