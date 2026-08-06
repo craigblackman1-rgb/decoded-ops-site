@@ -8,30 +8,43 @@ interface FooterLink {
   href: string;
 }
 
-const diagnoseLinks: FooterLink[] = [
+// Column headings mirror the header's five groups so the two agree.
+const helpLinks: FooterLink[] = [
   { label: 'Clarity Audit', href: '/clarity' },
-  { label: 'Technology audit', href: '/locations/tech-audit' },
+  { label: 'Deliver', href: '/deliver' },
+  { label: 'Transform', href: '/transform' },
+  { label: 'Retained', href: '/retained' },
+  { label: 'Small business suite', href: '/small-business' },
+  { label: 'The Decoded Method', href: '/decoded-method' },
 ];
 
-const buyVsBuildLinks: FooterLink[] = [
-  { label: 'How I build', href: '/how-i-build' },
+const appsLinks: FooterLink[] = [
   { label: 'Data App', href: '/apps/data-app' },
   { label: 'Artwork Manager', href: '/apps/artwork-manager' },
+  { label: 'Trade store', href: '/apps/commerce' },
+  { label: 'Decoded CRM', href: '/apps/crm' },
+  { label: 'All apps', href: '/apps' },
+  { label: 'How I build', href: '/how-i-build' },
 ];
 
-const ongoingLeadershipLinks: FooterLink[] = [
-  { label: 'Retained', href: '/retained' },
-  { label: 'Fractional CTO', href: '/locations/fractional-cto' },
+const toolLinks: FooterLink[] = [
+  { label: 'Ops health score', href: '/tools/ops-health-score' },
+  { label: 'Cost of downtime', href: '/tools/downtime-cost-calculator' },
+  { label: 'Automation ROI', href: '/tools/automation-roi-calculator' },
+  { label: 'Recovery time', href: '/tools/rto-calculator' },
+  { label: 'AI readiness', href: '/tools/ai-readiness-check' },
+  { label: 'Replace my ERP?', href: '/tools/should-i-replace-erp' },
+  { label: 'All calculators', href: '/tools' },
 ];
 
 const companyLinks: FooterLink[] = [
   { label: 'About', href: '/about' },
-  { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Small business suite', href: '/small-business' },
+  { label: 'Case studies', href: '/case-studies' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Privacy', href: '/privacy' },
   { label: 'Client Login', href: '/clients/login' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Cookies', href: '/cookies' },
 ];
 
 const sectorChips: FooterLink[] = [
@@ -47,15 +60,38 @@ const sectorChips: FooterLink[] = [
 ];
 
 const problemChips: FooterLink[] = [
+  { label: "Systems don't talk", href: '/problems/systems-dont-talk' },
+  { label: 'Wrong ERP software', href: '/problems/wrong-erp-software' },
   { label: 'ERP failure', href: '/problems/erp-implementation-failure' },
-  { label: 'Data scattered', href: '/problems/data-scattered' },
-  { label: 'Buy vs build', href: '/problems/buy-vs-build' },
-  { label: 'No ops owner', href: '/problems/no-ops-owner' },
-  { label: 'AI paralysis', href: '/problems/ai-paralysis' },
+  { label: 'Legacy system', href: '/problems/legacy-system' },
+  { label: 'eCommerce disconnected', href: '/problems/ecommerce-not-connected' },
+  { label: 'Slow processes', href: '/problems/slow-processes' },
+  { label: "Can't scale", href: '/problems/cant-scale-operations' },
   { label: 'Growth bottleneck', href: '/problems/bottleneck-growth' },
-  { label: 'Ops in owner\'s head', href: '/problems/ops-in-owners-head' },
   { label: 'Seasonal peaks', href: '/problems/seasonal-peaks' },
   { label: 'Spreadsheet addiction', href: '/problems/spreadsheet-addiction' },
+  { label: 'Manual workarounds', href: '/problems/manual-workarounds' },
+  { label: 'Data scattered', href: '/problems/data-scattered' },
+  { label: 'Inventory blind', href: '/problems/inventory-blind' },
+  { label: "Ops in owner's head", href: '/problems/ops-in-owners-head' },
+  { label: 'No ops owner', href: '/problems/no-ops-owner' },
+  { label: 'Disaster recovery', href: '/problems/disaster-recovery' },
+  { label: 'AI paralysis', href: '/problems/ai-paralysis' },
+  { label: 'Buy vs build', href: '/problems/buy-vs-build' },
+];
+
+const guideChips: FooterLink[] = [
+  { label: 'Quality system', href: '/process-quality-system' },
+  { label: 'Audit checklist', href: '/resources/audit-checklist' },
+  { label: '5 warning signs', href: '/resources/5-warning-signs' },
+  { label: 'Six Sigma explained', href: '/resources/six-sigma' },
+  { label: 'Software reviews', href: '/resources/software-reviews' },
+  { label: 'Blog', href: '/blog' },
+];
+
+const locationChips: FooterLink[] = [
+  { label: 'Fractional CTO near you', href: '/locations/fractional-cto' },
+  { label: 'Technology audit near you', href: '/locations/tech-audit' },
 ];
 
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
@@ -71,6 +107,26 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function ChipRow({ label, chips, allLink }: { label: string; chips: FooterLink[]; allLink?: FooterLink }) {
+  return (
+    <div className="flex flex-wrap items-baseline gap-y-2 mb-2.5 last:mb-0">
+      <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]/55 min-w-[82px]">{label}</span>
+      <span className="flex flex-wrap gap-x-4 gap-y-2">
+        {chips.map(link => (
+          <Link key={link.href + link.label} href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
+            {link.label}
+          </Link>
+        ))}
+        {allLink && (
+          <Link href={allLink.href} className="text-sm font-semibold text-[#FFB703] hover:text-white transition-colors">
+            {allLink.label} &rarr;
+          </Link>
+        )}
+      </span>
     </div>
   );
 }
@@ -115,36 +171,17 @@ export function Footer() {
             <p className="text-xs text-[#F8F9FA]/55 max-w-xs">Based in Worthing, West Sussex &middot; working across the UK</p>
           </div>
 
-          <FooterColumn title="Diagnose" links={diagnoseLinks} />
-          <FooterColumn title="Buy vs build" links={buyVsBuildLinks} />
-          <FooterColumn title="Ongoing leadership" links={ongoingLeadershipLinks} />
+          <FooterColumn title="How I help" links={helpLinks} />
+          <FooterColumn title="Apps &amp; software" links={appsLinks} />
+          <FooterColumn title="Free tools" links={toolLinks} />
           <FooterColumn title="Company" links={companyLinks} />
         </div>
 
         <div className="border-t border-[#F8F9FA]/12 mt-9 pt-5">
-          <div className="flex flex-wrap items-baseline gap-y-2 mb-2.5">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]/55 min-w-[82px]">Sectors</span>
-            <span className="flex flex-wrap gap-x-4 gap-y-2">
-              {sectorChips.map(link => (
-                <Link key={link.href} href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                  {link.label}
-                </Link>
-              ))}
-            </span>
-          </div>
-          <div className="flex flex-wrap items-baseline gap-y-2">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#F8F9FA]/55 min-w-[82px]">Problems</span>
-            <span className="flex flex-wrap gap-x-4 gap-y-2">
-              {problemChips.map(link => (
-                <Link key={link.href} href={link.href} className="text-sm text-[#8ECAE6] hover:text-white transition-colors">
-                  {link.label}
-                </Link>
-              ))}
-              <Link href="/problems" className="text-sm font-semibold text-[#FFB703] hover:text-white transition-colors">
-                All problems &rarr;
-              </Link>
-            </span>
-          </div>
+          <ChipRow label="Sectors" chips={sectorChips} />
+          <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All problems', href: '/problems' }} />
+          <ChipRow label="Guides" chips={guideChips} allLink={{ label: 'All resources', href: '/resources' }} />
+          <ChipRow label="Locations" chips={locationChips} />
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-7">
