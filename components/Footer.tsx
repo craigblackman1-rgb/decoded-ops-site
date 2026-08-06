@@ -28,6 +28,8 @@ const services = [
   { label: 'Deliver — Project delivery', href: '/deliver' },
   { label: 'Transform — Digital transformation', href: '/transform' },
   { label: 'Retained — Fractional CTO', href: '/retained' },
+  { label: 'Small business suite', href: '/small-business' },
+  { label: 'Decoded Data App', href: '/decoded-data-app' },
 ];
 
 const resources = [
