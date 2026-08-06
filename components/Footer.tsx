@@ -27,6 +27,7 @@ const ongoingLeadershipLinks: FooterLink[] = [
 const companyLinks: FooterLink[] = [
   { label: 'About', href: '/about' },
   { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Small business suite', href: '/small-business' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy', href: '/privacy' },
@@ -34,12 +35,15 @@ const companyLinks: FooterLink[] = [
 ];
 
 const sectorChips: FooterLink[] = [
+  { label: 'Garment decoration', href: '/sectors/garment-decoration' },
   { label: 'Workwear', href: '/sectors/workwear' },
   { label: 'Teamwear', href: '/sectors/teamwear-clubwear' },
   { label: 'Schoolwear', href: '/sectors/schoolwear' },
   { label: 'Promo', href: '/sectors/promotional-merchandise' },
   { label: 'Print', href: '/sectors/print-promotional' },
   { label: 'Signage', href: '/sectors/signs-graphics' },
+  { label: 'Awards & engraving', href: '/sectors/awards-engraving' },
+  { label: 'Labels & packaging', href: '/sectors/labels-packaging' },
 ];
 
 const problemChips: FooterLink[] = [
@@ -126,9 +130,6 @@ export function Footer() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/sectors" className="text-sm font-semibold text-[#FFB703] hover:text-white transition-colors">
-                All sectors &rarr;
-              </Link>
             </span>
           </div>
           <div className="flex flex-wrap items-baseline gap-y-2">
