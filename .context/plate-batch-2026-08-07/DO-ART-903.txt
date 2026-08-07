@@ -1,0 +1,95 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'ef',
+  title: 'The plan the tool cannot sign off',
+  sub: 'Eternal Fitness · training plan tool, first draft awaiting clinical approval',
+  no: 'DO-ART-903',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+{/* ══ EXHIBIT — the screen ══ */}
+    <g className="sk-fade sk-s2">
+      <rect x="60" y="230" width="880" height="470" rx="12" fill="url(#ef-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="60" y="230" width="880" height="470" rx="12" fill="url(#ef-scan)" opacity=".22" style="mix-blend-mode:overlay"/>
+
+      {/* screen header */}
+      <line x1="60" y1="298" x2="940" y2="298" className="p-scyan" strokeWidth=".8" strokeOpacity=".22"/>
+      <rect x="86" y="256" width="4" height="16" rx="1" className="p-cyan"/>
+      <text x="102" y="270" className="p-mono" fontSize="16" letterSpacing="2.4" fontWeight="600" opacity=".85">SESSION PLAN · DRAFT 1</text>
+      <text x="914" y="270" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">generated in seconds</text>
+    </g>
+
+    {/* constraint chips */}
+    <g className="sk-fade sk-s3">
+      <rect x="86" y="322" width="330" height="42" rx="8" fill="none" className="p-scyan" strokeWidth="1" strokeOpacity=".4"/>
+      <circle cx="108" cy="343" r="4" className="p-cyan"/>
+      <text x="124" y="349" className="p-mono" fontSize="15" opacity=".78">Equipment — confirmed studio list</text>
+      <rect x="432" y="322" width="330" height="42" rx="8" fill="none" className="p-scyan" strokeWidth="1" strokeOpacity=".4"/>
+      <circle cx="454" cy="343" r="4" className="p-cyan"/>
+      <text x="470" y="349" className="p-mono" fontSize="15" opacity=".78">Condition — on file, per client</text>
+    </g>
+
+    {/* generated rows */}
+    <g className="sk-fade sk-s4">
+      <g className="p-mono" fontSize="13" letterSpacing="2" opacity=".42">
+        <text x="86" y="404">BLOCK</text><text x="420" y="404">PRESCRIPTION</text><text x="720" y="404">AGAINST</text>
+      </g>
+      <line x1="86" y1="416" x2="914" y2="416" className="p-scyan" strokeWidth=".8" strokeOpacity=".18"/>
+
+      <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">
+        <text x="86" y="452">Warm-up</text><text x="86" y="500">Lower body</text>
+        <text x="86" y="548">Upper body</text><text x="86" y="596">Cool-down</text>
+      </g>
+      <g className="p-mono" fontSize="16" opacity=".7">
+        <text x="420" y="452">8 min, low intensity</text><text x="420" y="500">3 × 10, seated</text>
+        <text x="420" y="548">3 × 12, supported</text><text x="420" y="596">6 min, mobility</text>
+      </g>
+      <g className="p-mono" fontSize="15" opacity=".5">
+        <text x="720" y="452">confirmed kit</text><text x="720" y="500">confirmed kit</text>
+        <text x="720" y="548">confirmed kit</text><text x="720" y="596">confirmed kit</text>
+      </g>
+      <line x1="86" y1="470" x2="914" y2="470" className="p-scyan" strokeWidth=".6" strokeOpacity=".12"/>
+      <line x1="86" y1="518" x2="914" y2="518" className="p-scyan" strokeWidth=".6" strokeOpacity=".12"/>
+      <line x1="86" y1="566" x2="914" y2="566" className="p-scyan" strokeWidth=".6" strokeOpacity=".12"/>
+    </g>
+
+    {/* the gate */}
+    <g className="sk-fade sk-s5">
+      <rect x="86" y="622" width="828" height="52" rx="8" fill="url(#ef-amber-n)" className="p-node-a" strokeWidth="1.2"/>
+      <circle cx="116" cy="648" r="7" fill="none" className="p-samber" strokeWidth="2"/>
+      <path d="M112.5 648 l3 3 l6 -7" fill="none" className="p-samber" strokeWidth="2" strokeOpacity=".35"/>
+      <text x="140" y="644" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">Held — awaiting clinical approval</text>
+      <text x="140" y="665" className="p-mono" fontSize="15" opacity=".62">Nothing reaches a client until Esther Fair, Level 4 PT, signs it off</text>
+    </g>
+
+    {/* illustrative stamp */}
+    <g className="sk-fade sk-s6">
+      <rect x="640" y="242" width="274" height="34" rx="6" className="p-block" opacity=".85"/>
+      <text x="658" y="264" className="p-mono" fontSize="14" letterSpacing="1.6" opacity=".75">ILLUSTRATIVE — NOT CLIENT DATA</text>
+    </g>
+
+    {/* ══ SPECIFICATION PANEL ══ */}
+    <g className="sk-fade sk-s4">
+      <rect x="980" y="230" width="540" height="470" rx="12" fill="url(#ef-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="1006" y="256" width="4" height="16" rx="1" className="p-cyan"/>
+      <text x="1022" y="270" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600">EXHIBIT</text>
+      <line x1="1006" y1="292" x2="1494" y2="292" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+
+      <text x="1006" y="330" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">ROLE</text>
+      <text x="1006" y="360" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="22">Technical lead</text>
+      <text x="1006" y="384" className="p-mono" fontSize="15" opacity=".6">Site rebuild and the tooling behind it</text>
+
+      <text x="1006" y="432" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT IT IS BUILT AGAINST</text>
+      <text x="1006" y="462" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="22">Real constraints, not templates</text>
+      <text x="1006" y="486" className="p-mono" fontSize="15" opacity=".6">Confirmed equipment · each client's condition</text>
+
+      <text x="1006" y="534" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHO DECIDES</text>
+      <text x="1006" y="564" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="22">The clinician, every time</text>
+      <text x="1006" y="588" className="p-mono" fontSize="15" opacity=".6">The tool does the groundwork. It does not decide what is safe.</text>
+
+      <line x1="1006" y1="620" x2="1494" y2="620" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+      <text x="1006" y="652" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">STATUS</text>
+      <text x="1006" y="678" className="p-mono" fontSize="16" opacity=".72">In build — no outcome figure yet, so none is claimed</text>
+    </g>

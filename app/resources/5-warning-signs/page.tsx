@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
 
 // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
 export const metadata = {
@@ -69,6 +70,74 @@ export default function FiveWarningSignsPage() {
           <p className="lede">
             Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it's worth a closer look.
           </p>
+        </div>
+      </section>
+
+      {/* PLATE · DO-ART-422 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">The signs, compared &middot; DO-ART-422</span>
+          <h2>Five signs, and what each one looks like fixed.</h2>
+          <div className="hair"></div>
+          <p className="lede" style={{ marginTop: 16 }}>
+            The gap between a broken process and the same process after a Clarity Audit. Every sign here is real — including the one that cost £150,000 to learn.
+          </p>
+
+          <div className="plate-scroll">
+            <div className="plate-frame" data-od-id="plate-5-warning-signs">
+              <Plate tone="dark" p="wrn" title="Five signs, and what each one looks like fixed"
+                     sub=""
+                     no="DO-ART-422" rev="01" cls="DECODED OPS · ISSUED">
+
+                <rect x="50" y="100" width="700" height="520" rx="12"
+                      fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
+                      stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
+                <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                      fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
+                <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+                  <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Nobody can put a number on what it costs</tspan></text>
+                  <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The process lives in a head and a workaround</tspan></text>
+                  <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Growth feels like wading, not momentum</tspan></text>
+                  <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The last platform was bought off a demo</tspan></text>
+                </g>
+
+                <rect x="850" y="100" width="700" height="520" rx="12"
+                      fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+                      stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+                <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
+                      fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
+                <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
+                  <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">The monthly cost is added up and written down</tspan></text>
+                  <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Written down once, so a fortnight off is survivable</tspan></text>
+                  <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Volume rises without the pain rising with it</tspan></text>
+                  <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Requirements written before anyone demos</tspan></text>
+                </g>
+
+                <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
+                <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+
+                {/* the number sign 5 carries */}
+                <g className="sk-fade sk-s6">
+                  <rect x="50" y="660" width="1500" height="98" rx="10"
+                        fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
+                        stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
+                  <text x="80" y="694" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".45">SIGN 5, PRICED — ONE REAL PROJECT</text>
+                  <g fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="34">
+                    <text x="80" y="740" fill="var(--do-amber)">£150,000</text>
+                    <text x="470" y="740" fill="var(--do-amber)">18 months</text>
+                    <text x="850" y="740" fill="var(--do-amber)">125 hrs/mo</text>
+                    <text x="1240" y="740" fill="var(--do-cerulean)">£10,000</text>
+                  </g>
+                  <g className="p-mono" fontSize="15" opacity=".6">
+                    <text x="272" y="740">spent</text>
+                    <text x="654" y="740">of disruption</text>
+                    <text x="1035" y="740">of internal time</text>
+                    <text x="1400" y="740">the audit — 6.7%</text>
+                  </g>
+                </g>
+              </Plate>
+            </div>
+          </div>
         </div>
       </section>
 

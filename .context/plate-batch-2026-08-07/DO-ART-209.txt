@@ -1,0 +1,95 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'sig',
+  title: 'The sigma scale',
+  sub: 'What 3σ, 5σ and 6σ actually cost a decoration floor',
+  no: 'DO-ART-209',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+<defs>
+      <linearGradient id="sig-scale" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stopColor="var(--do-amber)"/>
+        <stop offset="52%" stopColor="var(--do-sky-blue)"/>
+        <stop offset="100%" stopColor="var(--do-cerulean)"/>
+      </linearGradient>
+    </defs>
+
+    <g className="sk-fade sk-s2">
+      <text x="60" y="200" className="p-mono" fontSize="15" letterSpacing="2.6" opacity=".5">DEFECTS PER MILLION OPPORTUNITIES</text>
+      <text x="60" y="244" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="32">The higher the sigma, the fewer faults escape the floor</text>
+    </g>
+
+    {/* ══ the shift ══ */}
+    <path id="sig-shift" pathLength="1" className="sk-draw sk-s5 p-scyan"
+          d="M680 424 C 790 306, 1050 306, 1160 424" fill="none" strokeWidth="3" markerEnd="url(#sig-ah)"/>
+    <g className="sk-fade sk-s5" textAnchor="middle">
+      <text x="920" y="352" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="62">99.6%</text>
+      <text x="920" y="386" className="p-mono" fontSize="18" opacity=".68">fewer defects, moving 3σ to 5σ</text>
+    </g>
+
+    {/* ══ the track ══ */}
+    <g className="sk-fade sk-s3">
+      <rect x="200" y="455" width="1200" height="10" rx="5" fill="var(--do-prussian-blue)" opacity=".55"/>
+    </g>
+    <rect className="sk-draw sk-s3" x="200" y="455" width="1200" height="10" rx="5" fill="url(#sig-scale)"/>
+
+    {/* ticks */}
+    <g className="sk-fade sk-s4" textAnchor="middle">
+      {/* 1σ */}
+      <line x1="200" y1="447" x2="200" y2="475" className="p-samber" strokeWidth="2"/>
+      <text x="200" y="434" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">1σ</text>
+      <text x="200" y="506" className="p-mono" fontSize="18" opacity=".78">690,000</text>
+      {/* 2σ */}
+      <line x1="440" y1="447" x2="440" y2="475" className="p-scyan" strokeWidth="2" strokeOpacity=".6"/>
+      <text x="440" y="434" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24" opacity=".85">2σ</text>
+      <text x="440" y="506" className="p-mono" fontSize="18" opacity=".7">308,000</text>
+      {/* 3σ */}
+      <line x1="680" y1="447" x2="680" y2="475" className="p-samber" strokeWidth="2"/>
+      <text x="680" y="434" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">3σ</text>
+      <text x="680" y="506" className="p-mono" fontSize="18" opacity=".78">66,807</text>
+      {/* 4σ */}
+      <line x1="920" y1="447" x2="920" y2="475" className="p-scyan" strokeWidth="2" strokeOpacity=".6"/>
+      <text x="920" y="434" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24" opacity=".85">4σ</text>
+      <text x="920" y="506" className="p-mono" fontSize="18" opacity=".7">6,210</text>
+      {/* 5σ */}
+      <line x1="1160" y1="447" x2="1160" y2="475" className="p-scyan" strokeWidth="2"/>
+      <text x="1160" y="434" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">5σ</text>
+      <text x="1160" y="506" className="p-mono" fontSize="18" opacity=".78">233</text>
+      {/* 6σ */}
+      <line x1="1400" y1="447" x2="1400" y2="475" className="p-scyan" strokeWidth="2"/>
+      <text x="1400" y="434" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">6σ</text>
+      <text x="1400" y="506" className="p-mono" fontSize="18" opacity=".78">3.4</text>
+
+      <text x="800" y="534" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".38">DEFECTS PER MILLION</text>
+    </g>
+
+    {/* target zone, below the track so it does not fight the shift arc */}
+    <g className="sk-fade sk-s6">
+      <path d="M1100 566 v20 h340 v-20" fill="none" className="p-scyan" strokeWidth="1.5" strokeOpacity=".7"/>
+      <text x="1270" y="612" textAnchor="middle" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="16" letterSpacing="1.4">TARGET ZONE</text>
+    </g>
+
+    {/* where you probably are */}
+    <g className="sk-fade sk-s6">
+      <path d="M600 566 v20 h160 v-20" fill="none" className="p-samber" strokeWidth="1.5" strokeOpacity=".7"/>
+      <text x="680" y="612" textAnchor="middle" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="16" letterSpacing="1.4">MOST FLOORS</text>
+    </g>
+
+    {/* ══ takeaway ══ */}
+    <g className="sk-fade sk-s6">
+      <line x1="60" y1="656" x2="1540" y2="656" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+      <text x="60" y="694" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">At 3σ, roughly 1 in 15 garments has a visible fault. At 5σ, it is 233 in a million.</text>
+      <text x="60" y="730" className="p-mono" fontSize="17" opacity=".62">That jump is not a new machine. It is a better process: standard settings, documented steps, checks at the right points.</text>
+    </g>
+
+    {/* travelling marker */}
+    <g className="sk-dots">
+      <circle r="7" className="p-cyan">
+        <animateMotion dur="4s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;0.5;1" calcMode="linear">
+          <mpath href="#sig-shift"/>
+        </animateMotion>
+      </circle>
+    </g>

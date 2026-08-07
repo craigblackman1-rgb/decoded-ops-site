@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import s from '@/app/deco-page.module.css';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'About Craig: Decoded Ops',
@@ -51,6 +52,112 @@ export default function AboutPage() {
             </div>
             <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
               system that runs them.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE · DO-ART-904 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">Career arc &middot; DO-ART-904</span>
+          <h2>Three vantage points, one problem that never changed.</h2>
+          <div className="hair"></div>
+          <p className="lede" style={{ marginTop: 16 }}>
+            Twenty-five years in print, embroidery, and decoration — from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
+          </p>
+
+          <div className="plate-scroll">
+            <div className="plate-frame" data-od-id="plate-about">
+              <Plate tone="dark" p="abt" title="Three heights, one gap"
+                     sub="Craig Blackman · twenty-five years, three vantage points, the same problem"
+                     no="DO-ART-904" rev="01" cls="DECODED OPS · ISSUED">
+
+                {/* ══ EXHIBIT — three vantage bands ══ */}
+                <g className="sk-fade sk-s2">
+                  <text x="66" y="212" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">LOOKING DOWN FROM</text>
+                  <text x="800" y="212" textAnchor="end" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">WHAT BECAME VISIBLE</text>
+                </g>
+
+                {/* band 3 — highest, drawn first so the stack reads bottom-up */}
+                <g className="sk-fade sk-s3" filter="url(#abt-shadow)">
+                  <rect x="60" y="230" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+                </g>
+                <g className="sk-fade sk-s3">
+                  <rect x="86" y="258" width="4" height="18" rx="1" className="p-cyan"/>
+                  <text x="102" y="272" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">03 · OPERATIONS &amp; ERP</text>
+                  <text x="102" y="308" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Choosing the platform</text>
+                  <text x="102" y="336" className="p-mono" fontSize="16" opacity=".6">Running the department, then implementing what it depends on</text>
+                  <text x="914" y="308" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Who signed it off</text>
+                  <text x="914" y="334" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and what nobody scoped first</text>
+                </g>
+
+                {/* band 2 */}
+                <g className="sk-fade sk-s4" filter="url(#abt-shadow)">
+                  <rect x="60" y="382" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+                </g>
+                <g className="sk-fade sk-s4">
+                  <rect x="86" y="410" width="4" height="18" rx="1" className="p-cyan"/>
+                  <text x="102" y="424" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">02 · IT &amp; SYSTEMS</text>
+                  <text x="102" y="460" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Keeping it all running</text>
+                  <text x="102" y="488" className="p-mono" fontSize="16" opacity=".6">Networks, backups, the software nobody remembers choosing</text>
+                  <text x="914" y="460" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Why it &ldquo;can't do that&rdquo;</text>
+                  <text x="914" y="486" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">usually the start of the conversation</text>
+                </g>
+
+                {/* band 1 — the floor */}
+                <g className="sk-fade sk-s5" filter="url(#abt-shadow)">
+                  <rect x="60" y="534" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+                </g>
+                <g className="sk-fade sk-s5">
+                  <rect x="86" y="562" width="4" height="18" rx="1" className="p-cyan"/>
+                  <text x="102" y="576" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">01 · WAREHOUSE FLOOR</text>
+                  <text x="102" y="612" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Picking, packing, despatch</text>
+                  <text x="102" y="640" className="p-mono" fontSize="16" opacity=".6">Doing the job, not observing it</text>
+                  <text x="914" y="612" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">The workaround</text>
+                  <text x="914" y="638" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and that it wasn't in any document</text>
+                </g>
+
+                {/* ══ THE CONSTANT — one amber thread through all three ══ */}
+                <path id="abt-thread" pathLength="1" className="sk-draw sk-s6 p-samber"
+                      d="M40 660 V296" fill="none" strokeWidth="2.5" markerEnd="url(#abt-ah)"/>
+                <g className="sk-fade sk-s6">
+                  <circle cx="40" cy="600" r="5" className="p-amber"/>
+                  <circle cx="40" cy="448" r="5" className="p-amber"/>
+                  <circle cx="40" cy="296" r="5" className="p-amber"/>
+                  <text x="30" y="700" className="p-mono" fontSize="15" letterSpacing="1.6" fill="none"></text>
+                </g>
+                <g className="sk-fade sk-s6">
+                  <rect x="60" y="690" width="880" height="46" rx="8" fill="url(#abt-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+                  <circle cx="86" cy="713" r="5" className="p-amber"/>
+                  <text x="104" y="719" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="18">The constant — the gap between the process on paper and the workaround on the floor</text>
+                </g>
+
+                {/* ══ SPECIFICATION PANEL ══ */}
+                <g className="sk-fade sk-s4">
+                  <rect x="980" y="230" width="540" height="506" rx="12" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="1006" y="256" width="4" height="16" rx="1" className="p-cyan"/>
+                  <text x="1022" y="270" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600">EXHIBIT</text>
+                  <line x1="1006" y1="292" x2="1494" y2="292" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+
+                  <text x="1006" y="330" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SPAN</text>
+                  <text x="1006" y="374" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="46">25 years</text>
+
+                  <text x="1006" y="428" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SECTORS</text>
+                  <text x="1006" y="458" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Print · embroidery</text>
+                  <text x="1006" y="486" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Workwear · decoration</text>
+
+                  <text x="1006" y="534" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT CHANGED</text>
+                  <text x="1006" y="564" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">The vantage point</text>
+
+                  <text x="1006" y="612" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT DIDN'T</text>
+                  <text x="1006" y="642" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="21">The problem</text>
+
+                  <line x1="1006" y1="672" x2="1494" y2="672" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
+                  <text x="1006" y="706" className="p-mono" fontSize="15" opacity=".62">Which is most of why the audit</text>
+                  <text x="1006" y="726" className="p-mono" fontSize="15" opacity=".62">works the way it does.</text>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

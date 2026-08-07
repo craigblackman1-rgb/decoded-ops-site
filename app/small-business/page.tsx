@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock, Brain, Zap } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
@@ -178,6 +179,134 @@ export default function SmallBusinessPage() {
             <Link href="/pricing" className="btn btn--primary">
               See all pricing <ArrowRight size={18} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE · DO-ART-208 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">Pricing comparison &middot; DO-ART-208</span>
+          <h2>Same work, half the day rate.</h2>
+          <div className="hair"></div>
+          <p className="lede" style={{ marginTop: 16 }}>
+            Remote delivery for under-£500k businesses compared against standard on-site pricing. Both ladders, priced per day.
+          </p>
+
+          <div className="plate-scroll">
+            <div className="plate-frame" data-od-id="plate-small-business">
+              <Plate tone="dark" p="smb" title="Same work, half the day rate"
+                     sub="Remote delivery for under-£500k · both ladders priced per day, one at half the other"
+                     no="DO-ART-208" rev="01" cls="DECODED OPS · ISSUED">
+
+                {/* ══ LEFT — standard, on site ══ */}
+                <g className="sk-fade sk-s2">
+                  <rect x="50" y="168" width="730" height="396" rx="12" fill="url(#smb-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="80" y="188" width="4" height="16" rx="1" className="p-scyan" strokeWidth="0" fill="currentColor" opacity=".5"/>
+                  <text x="80" y="202" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".7">STANDARD — ON SITE</text>
+                  <line x1="80" y1="220" x2="750" y2="220" className="p-scyan" strokeWidth=".6" strokeOpacity=".22"/>
+                </g>
+                <g className="sk-fade sk-s3">
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">
+                    <text x="80" y="262">Clarity Audit</text>
+                    <text x="80" y="320">Retained · Advisory</text>
+                    <text x="80" y="378">Retained · Embedded</text>
+                    <text x="80" y="436">Retained · Programme</text>
+                  </g>
+                  <g className="p-mono" fontSize="15" opacity=".55">
+                    <text x="80" y="284">one day on site, written plan in five</text>
+                    <text x="80" y="342">2 days a month</text>
+                    <text x="80" y="400">4 days a month</text>
+                    <text x="80" y="458">8 days a month</text>
+                  </g>
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26" textAnchor="end" opacity=".92">
+                    <text x="750" y="266">from £1,500</text>
+                    <text x="750" y="324">£1,440</text>
+                    <text x="750" y="382">£2,880</text>
+                    <text x="750" y="440">£5,760</text>
+                  </g>
+                  <g className="p-mono" fontSize="14" textAnchor="end" opacity=".45">
+                    <text x="750" y="286">per audit</text>
+                    <text x="750" y="344">per month</text>
+                    <text x="750" y="402">per month</text>
+                    <text x="750" y="460">per month</text>
+                  </g>
+                </g>
+                <g className="sk-fade sk-s4">
+                  <line x1="80" y1="482" x2="750" y2="482" className="p-scyan" strokeWidth=".6" strokeOpacity=".22"/>
+                  <text x="80" y="510" className="p-mono" fontSize="14" letterSpacing="2" opacity=".45">WORKS OUT AT</text>
+                  <text x="80" y="546" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="38" opacity=".92">£720 <tspan fontSize="20" fontWeight="600" opacity=".6">a day</tspan></text>
+                </g>
+
+                {/* ══ RIGHT — small business, remote ══ */}
+                <g className="sk-fade sk-s3">
+                  <rect x="820" y="168" width="730" height="396" rx="12"
+                        fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+                        stroke="color-mix(in srgb, var(--do-cerulean) 30%, transparent)" strokeWidth="1.5"/>
+                  <text x="850" y="202" className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="17" letterSpacing="2.4" fontWeight="700">SMALL BUSINESS — REMOTE</text>
+                  <line x1="850" y1="220" x2="1520" y2="220" className="p-scyan" strokeWidth=".6" strokeOpacity=".3"/>
+                </g>
+                <g className="sk-fade sk-s4">
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">
+                    <text x="850" y="262">Clarity Check</text>
+                    <text x="850" y="320">Retained · Entry</text>
+                    <text x="850" y="378">Retained · Mid</text>
+                    <text x="850" y="436">Retained · Full</text>
+                  </g>
+                  <g className="p-mono" fontSize="15" opacity=".55">
+                    <text x="850" y="284">three hours remote, findings in five</text>
+                    <text x="850" y="342">2 × 4hr sessions a month</text>
+                    <text x="850" y="400">4 × 4hr sessions a month</text>
+                    <text x="850" y="458">6 × 4hr sessions a month</text>
+                  </g>
+                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26" textAnchor="end">
+                    <text x="1520" y="266">£595</text>
+                    <text x="1520" y="324">£360</text>
+                    <text x="1520" y="382">£720</text>
+                    <text x="1520" y="440">£1,080</text>
+                  </g>
+                  <g className="p-mono" fontSize="14" textAnchor="end" opacity=".45">
+                    <text x="1520" y="286">per check</text>
+                    <text x="1520" y="344">per month</text>
+                    <text x="1520" y="402">per month</text>
+                    <text x="1520" y="460">per month</text>
+                  </g>
+                </g>
+                <g className="sk-fade sk-s5">
+                  <line x1="850" y1="482" x2="1520" y2="482" className="p-scyan" strokeWidth=".6" strokeOpacity=".3"/>
+                  <text x="850" y="510" className="p-mono" fontSize="14" letterSpacing="2" opacity=".45">WORKS OUT AT</text>
+                  <text x="850" y="546" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="38">£360 <tspan fontSize="20" fontWeight="600" opacity=".7">a day</tspan></text>
+                </g>
+
+                {/* connector */}
+                <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M780 366 H812" fill="none" strokeWidth="2" markerEnd="url(#smb-ah)"/>
+
+                {/* ══ THE FINDING ══ */}
+                <g className="sk-fade sk-s6">
+                  <rect x="50" y="590" width="1500" height="86" rx="10" fill="url(#smb-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+                  <rect x="76" y="612" width="4" height="42" rx="1" className="p-amber"/>
+                  <text x="96" y="632" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="24">Exactly half, at every tier. The difference is the travel, not the thinking.</text>
+                  <text x="96" y="660" className="p-mono" fontSize="16" opacity=".62">Same person, same questions, same written output. One version drives to you.</text>
+                </g>
+
+                {/* ══ REMOTE-ONLY STRIP ══ */}
+                <g className="sk-fade sk-s6">
+                  <text x="50" y="712" className="p-mono" fontSize="14" letterSpacing="2" opacity=".42">REMOTE ONLY — NO ON-SITE EQUIVALENT</text>
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">
+                    <text x="50" y="748">Deliver</text>
+                    <text x="440" y="748">Transform</text>
+                    <text x="830" y="748">AI Readiness Check</text>
+                    <text x="1240" y="748">Quarterly Sprint</text>
+                  </g>
+                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">
+                    <text x="200" y="748">£795/mo</text>
+                    <text x="620" y="748">£1,095/mo</text>
+                    <text x="1080" y="748">£395</text>
+                    <text x="1424" y="748">£995</text>
+                  </g>
+                </g>
+              </Plate>
+            </div>
           </div>
         </div>
       </section>

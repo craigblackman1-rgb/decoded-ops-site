@@ -1,0 +1,85 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'chk',
+  title: 'Six areas, then the seventh',
+  sub: 'The audit checklist as a sequence · what you can check today, and what only the checking answers',
+  no: 'DO-ART-307',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+<g className="sk-fade sk-s2">
+      <text x="80" y="180" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">WHAT YOU CAN GO AND CHECK TODAY</text>
+    </g>
+
+    {/* ══ ROW 1 ══ */}
+    <g className="sk-fade sk-s3" filter="url(#chk-shadow)">
+      <rect x="80" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="585" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="1090" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+    </g>
+    <g className="sk-fade sk-s3">
+      <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
+        <text x="106" y="234">01</text><text x="611" y="234">02</text><text x="1116" y="234">03</text>
+      </g>
+      <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
+        <text x="504" y="234">6 questions</text><text x="1009" y="234">5 questions</text><text x="1514" y="234">5 questions</text>
+      </g>
+      <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
+        <text x="106" y="286">IT &amp; security</text>
+        <text x="611" y="286">Systems &amp; software</text>
+        <text x="1116" y="286">eCommerce</text>
+      </g>
+      <g className="p-mono" fontSize="16" opacity=".6">
+        <text x="106" y="322">Backups, access, and what IT costs</text>
+        <text x="611" y="322">Every system, and whether they talk</text>
+        <text x="1116" y="322">Does the website talk to the ERP</text>
+      </g>
+    </g>
+
+    {/* row 1 connectors */}
+    <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M534 281 H578" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+    <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1039 281 H1083" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+    {/* turn down */}
+    <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1315 370 V410" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+
+    {/* ══ ROW 2 — runs right to left ══ */}
+    <g className="sk-fade sk-s4" filter="url(#chk-shadow)">
+      <rect x="1090" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="585" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="80" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+    </g>
+    <g className="sk-fade sk-s4">
+      <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
+        <text x="1116" y="454">04</text><text x="611" y="454">05</text><text x="106" y="454">06</text>
+      </g>
+      <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
+        <text x="1514" y="454">6 questions</text><text x="1009" y="454">5 questions</text><text x="504" y="454">5 questions</text>
+      </g>
+      <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
+        <text x="1116" y="506">Processes &amp; operations</text>
+        <text x="611" y="506">Inventory &amp; stock</text>
+        <text x="106" y="506">Costs &amp; financial</text>
+      </g>
+      <g className="p-mono" fontSize="16" opacity=".6">
+        <text x="1116" y="542">Order to invoice, stock to despatch</text>
+        <text x="611" y="542">Whether the count matches the system</text>
+        <text x="106" y="542">Cost per order, and where revenue leaks</text>
+      </g>
+    </g>
+
+    {/* row 2 connectors, pointing left */}
+    <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M1083 501 H1039" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+    <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M578 501 H534" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+    {/* down into the outcome */}
+    <path pathLength="1" className="sk-draw sk-s5 p-samber" d="M305 590 V630" fill="none" strokeWidth="2.5" markerEnd="url(#chk-ah)"/>
+
+    {/* ══ THE SEVENTH ══ */}
+    <g className="sk-fade sk-s6">
+      <rect x="80" y="636" width="1460" height="118" rx="10" fill="url(#chk-amber)" className="p-samber" strokeWidth="1.2" strokeOpacity=".5"/>
+      <text x="106" y="674" className="p-amber" fontSize="15" letterSpacing="2.4" fontWeight="600">07 · GROWTH &amp; STRATEGIC</text>
+      <text x="1514" y="674" textAnchor="end" className="p-amber" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700">4 questions</text>
+      <text x="106" y="712" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">The section you cannot answer until the other six are done</text>
+      <text x="106" y="740" className="p-mono" fontSize="16" opacity=".62">Grow 20% next year — what would have to change? The first six tell you. Guessing does not.</text>
+    </g>

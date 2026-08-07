@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
 
 // Target keyword: "b2b ordering portal workwear" (secondary: "cobra workwear decoded ops")
 export const metadata = {
@@ -89,6 +90,114 @@ export default function CobraWorkwearCaseStudyPage() {
                 <div><dt>Structure</dt><dd>12-month minimum retainer</dd></div>
                 <div><dt>Status</dt><dd>Live and ongoing</dd></div>
               </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* 1b. PLATE · DO-ART-101 */}
+        <section className="g-navy">
+          <div className="wrap">
+            <span className="eyebrow">Architecture &middot; DO-ART-101</span>
+            <h2>Trade ordering, target state.</h2>
+            <div className="hair"></div>
+            <p className="lede" style={{ marginTop: 16 }}>
+              Cobra&rsquo;s customer-facing, business-systems and production zones, feeding into a specified spine: scoped and overseen by Decoded Ops, built by the implementation partner.
+            </p>
+
+            <div className="plate-scroll">
+              <div className="plate-frame" data-od-id="plate-cobra-workwear">
+                <Plate tone="dark" p="cbr" title="Trade ordering — target state"
+                       sub="Cobra Workwear &middot; specified by Decoded Ops, built by the partner team"
+                       no="DO-ART-101" rev="02" cls="DECODED OPS · ISSUED">
+
+                  {/* ── client zones ── */}
+                  <g className="sk-fade sk-s2">
+                    <rect x="60" y="230" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
+                    <rect x="76" y="248" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
+                    <text x="90" y="260" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">CUSTOMER-FACING</text>
+                    <rect x="60" y="380" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
+                    <rect x="76" y="398" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
+                    <text x="90" y="410" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">BUSINESS SYSTEMS</text>
+                    <rect x="60" y="530" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
+                    <rect x="76" y="548" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
+                    <text x="90" y="560" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">PRODUCTION</text>
+                  </g>
+
+                  <g className="sk-fade sk-s3" filter="url(#cbr-shadow)">
+                    <rect x="90" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="310" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="530" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="90" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="310" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="530" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="90" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="310" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                    <rect x="530" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
+                  </g>
+                  <g className="sk-fade sk-s3" textAnchor="middle">
+                    <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="20">
+                      <text x="190" y="303">Trade accounts</text><text x="410" y="303">Retail storefront</text><text x="630" y="303">Reorder</text>
+                      <text x="190" y="453">ERP</text><text x="410" y="453">Accounts</text><text x="630" y="453">Stock &amp; buying</text>
+                      <text x="190" y="603">Embroidery</text><text x="410" y="603">Print</text><text x="630" y="603">Despatch</text>
+                    </g>
+                    <g className="p-mono" fontSize="15" opacity=".6">
+                      <text x="190" y="322">B2B ordering</text><text x="410" y="322">Shopify, replaced</text><text x="630" y="322">repeat lines</text>
+                      <text x="190" y="472">under evaluation</text><text x="410" y="472">finance</text><text x="630" y="472">purchasing</text>
+                      <text x="190" y="622">decoration</text><text x="410" y="622">decoration</text><text x="630" y="622">carrier labels</text>
+                    </g>
+                  </g>
+
+                  {/* feeds into the spine */}
+                  <path id="cbr-f1" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 290 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
+                  <path id="cbr-f2" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 440 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
+                  <path id="cbr-f3" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 590 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
+
+                  {/* ── the specified spine ── */}
+                  <g className="sk-fade sk-s5">
+                    <rect x="880" y="230" width="640" height="420" rx="12" fill="url(#cbr-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".5"/>
+                    <rect x="900" y="250" width="4" height="14" rx="1" className="p-amber"/>
+                    <text x="914" y="262" className="p-amber" fontSize="17" letterSpacing="2.4" fontWeight="600">THE SPECIFIED SPINE</text>
+                    <text x="914" y="286" className="p-mono" fontSize="15" letterSpacing="1.4" opacity=".6">SCOPED AND OVERSEEN — BUILT BY THE PARTNER TEAM</text>
+                    <line x1="900" y1="302" x2="1500" y2="302" className="p-samber" strokeWidth=".6" strokeOpacity=".2"/>
+                  </g>
+                  <g className="sk-fade sk-s6" filter="url(#cbr-shadow)">
+                    <rect x="906" y="322" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
+                    <rect x="1214" y="322" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
+                    <rect x="906" y="404" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
+                    <rect x="1214" y="404" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
+                    <rect x="906" y="486" width="598" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
+                  </g>
+                  <g className="sk-fade sk-s6" textAnchor="middle">
+                    <g fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="20" className="p-accent-ink">
+                      <text x="1051" y="348">B2B trade portal</text>
+                      <text x="1359" y="348">Storefront</text>
+                      <text x="1051" y="430">ERP evaluation</text>
+                      <text x="1359" y="430">Integration architecture</text>
+                      <text x="1205" y="512">Vendor requirements — written before anyone demoed</text>
+                    </g>
+                    <g className="p-mono" fontSize="15" opacity=".62">
+                      <text x="1051" y="368">Medusa v2</text>
+                      <text x="1359" y="368">Next.js</text>
+                      <text x="1051" y="450">shortlist &middot; procurement</text>
+                      <text x="1359" y="450">checked weekly, not signed off once</text>
+                      <text x="1205" y="532">the brief the partner team builds against</text>
+                    </g>
+                  </g>
+
+                  <g className="sk-fade sk-s6">
+                    <circle cx="86" cy="694" r="5" className="p-cyan"/>
+                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">Cobra&apos;s operation — kept and connected, not replaced</text>
+                    <circle cx="700" cy="694" r="5" className="p-amber"/>
+                    <text x="716" y="700" className="p-mono" fontSize="16" opacity=".7">Scoped and overseen by Decoded Ops &middot; built by the implementation partner</text>
+                  </g>
+
+                  <g className="sk-dots">
+                    <circle r="6" className="p-cyan"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#cbr-f1"/></animateMotion></circle>
+                    <circle r="6" className="p-cyan"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#cbr-f2"/></animateMotion></circle>
+                    <circle r="6" className="p-cyan"><animateMotion dur="2.9s" repeatCount="indefinite"><mpath href="#cbr-f3"/></animateMotion></circle>
+                  </g>
+                </Plate>
+              </div>
             </div>
           </div>
         </section>
