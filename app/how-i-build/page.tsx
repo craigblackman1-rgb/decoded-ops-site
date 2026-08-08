@@ -81,7 +81,7 @@ export default function HowIBuildPage() {
                         strokeOpacity=".45" strokeDasharray="4 5"/>
                   <circle cx="810" cy="520" r="18" className="p-amber"/>
                   <text x="810" y="578" textAnchor="middle" className="p-mono" fontSize="18"
-                        letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE DEFAULT</text>
+                        letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE NORMAL ANSWER</text>
                 </g>
 
                 <g className="sk-fade sk-s5" filter="url(#ld-shadow)" opacity=".82">

@@ -108,7 +108,7 @@ export default function BuyVsBuildPage() {
       </article>
 
       <article className="rung rung--default">
-       <span className="kicker">Rung 2 <span className="flag">The default</span></span>
+       <span className="kicker">Rung 2 <span className="flag">The normal answer</span></span>
        <h3>Buy plus a custom layer</h3>
        <p>Usually the platform is right but leaves gaps, supplier feeds, artwork, reporting
         across more than one business. I show you what the gap costs to leave alone versus what

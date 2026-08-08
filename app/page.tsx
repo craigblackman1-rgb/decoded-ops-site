@@ -325,7 +325,7 @@ export default function HomePage() {
                           strokeOpacity=".45" strokeDasharray="4 5"/>
                     <circle cx="810" cy="520" r="18" className="p-amber"/>
                     <text x="810" y="578" textAnchor="middle" className="p-mono" fontSize="18"
-                          letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE DEFAULT</text>
+                          letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE NORMAL ANSWER</text>
                   </g>
 
                   {/* RUNG 3 */}
@@ -373,7 +373,7 @@ export default function HomePage() {
               </article>
 
               <article className="card rung--default">
-                <span className="kicker">Rung 2 <span className="flag">The default</span></span>
+                <span className="kicker">Rung 2 <span className="flag">The normal answer</span></span>
                 <h3>Buy plus a custom layer</h3>
                 <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting
                   across more than one business. I&rsquo;ll show you what the gap costs to leave alone versus
