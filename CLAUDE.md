@@ -48,6 +48,37 @@ wired into Tailwind's `@theme` block at `globals.css:65-76`. The marketing pages
 use Tailwind utilities directly; client-portal pages use inline style objects
 (same brand hex values — not reusable components from the hub).
 
+## Pricing policy — enforced, do not "restore" prices from a mockup
+
+Craig's rule, 8 August 2026: **Decoded Ops prices appear on `/pricing` and nowhere
+else.** App build prices appear nowhere at all, including `/pricing`, because what a
+build costs is specific to the client and the requirement. Two figures are deliberate
+exceptions and may appear anywhere they already do:
+
+- **£1,500** — the Clarity Audit entry anchor. Load-bearing in the location-page meta
+  descriptions and the site-wide OG card.
+- **£750** — the App Scoping Session, the fixed entry step for the systems line.
+
+Turnover bands (`£500k`, `£1m`, `£7.5m`), a client's own costs, the `£80k` salary
+comparison and competitors' market ranges are not Decoded Ops prices and are fine.
+
+```bash
+node .context/price-audit.mjs --check
+```
+
+Exits non-zero and prints `file:line` for any disallowed price. Run it before any push
+that touches copy.
+
+**The `decoded-marketing` mockups are deliberately stale on this.** They still carry
+every removed price, including a `small-business.html` plate built around the day rate
+(which the brand rules say is never published). If you are porting a page from a mockup,
+port the layout and ignore its prices. `mockup-vs-app.mjs` only reports missing artwork,
+so it will not flag this for you: the `--check` above is what catches it.
+
+Related: the £150,000 ERP case study was retired on 30 July 2026 (`decoded-ops/
+references/stats.md`) and removed from this repo on 8 August. Do not reintroduce it from
+an older mockup or proposal.
+
 ## Key Directories
 
 ```
