@@ -193,11 +193,6 @@ export const tacklebagProposalV2 = {
     ],
     caseStudies: [
       {
-        title: 'ERP consolidation — garment decorator, SE England',
-        description: 'Three legacy systems consolidated into a single ERP. 18-month engagement covering requirements, vendor selection, implementation management, and go-live.',
-        result: '40% reduction in order processing time · Stock holding down by a third · Programme value: £150,000',
-      },
-      {
         title: 'Ecommerce migration — multi-site decorator, £2m turnover',
         description: 'Platform migration from a legacy website to a modern ecommerce stack. Data migration, SEO continuity, ERP integration — delivered without losing a single contract customer.',
         result: '60% organic traffic increase in six months post go-live',
