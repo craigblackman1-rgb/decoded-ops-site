@@ -71,12 +71,12 @@ export default function HowIBuildPage() {
                 <g className="sk-fade sk-s4" filter="url(#ld-shadow)">
                   <rect x="620" y="240" width="380" height="190" rx="12" fill="url(#ld-amber-n)"
                         className="p-node-a" strokeWidth="1.8"/>
-                  <text x="810" y="305" textAnchor="middle" className="p-ink"
+                  {/* Two lines, vertically centred in the 240..430 node. Was three
+                      lines until the "both live clients" claim came out. */}
+                  <text x="810" y="324" textAnchor="middle" className="p-ink"
                         fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">Buy plus</text>
-                  <text x="810" y="343" textAnchor="middle" className="p-ink"
+                  <text x="810" y="362" textAnchor="middle" className="p-ink"
                         fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">a custom layer</text>
-                  <text x="810" y="388" textAnchor="middle" className="p-accent-ink" fontSize="20">what
-                    both live clients run</text>
                   <line x1="810" y1="430" x2="810" y2="500" className="p-samber" strokeWidth="1.2"
                         strokeOpacity=".45" strokeDasharray="4 5"/>
                   <circle cx="810" cy="520" r="18" className="p-amber"/>
