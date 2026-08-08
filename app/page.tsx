@@ -44,6 +44,45 @@ const homepageSchema = {
   ],
 };
 
+/* Verified figures only, from decoded-ops/references/stats.md "Status Quo Costs". */
+const statusQuo = [
+  { value: '3–6 hrs', per: '/week', label: 'Lost to manual re-keying between systems that don’t talk to each other' },
+  { value: '3–5%', per: '', label: 'Of inbound stock at risk where inventory is disconnected' },
+  { value: '2–4 hrs', per: '/week', label: 'Spent on manual invoicing and reconciliation' },
+  { value: '1–3%', per: '', label: 'Of orders affected by picking and despatch errors' },
+];
+
+const services = [
+  {
+    href: '/clarity',
+    kicker: 'On-site audit and written plan',
+    name: 'Clarity Audit',
+    flag: 'Start here',
+    desc: 'A full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days.',
+  },
+  {
+    href: '/deliver',
+    kicker: 'Delivery and vendor management',
+    name: 'Deliver',
+    flag: null,
+    desc: 'Independent vendor brief, procurement and project oversight. One point of contact, and someone technical sitting on your side of the table.',
+  },
+  {
+    href: '/transform',
+    kicker: 'Multi-workstream programme',
+    name: 'Transform',
+    flag: null,
+    desc: 'ERP, eCommerce and process redesign run together as one programme. Process led and people first, and scoped only once an audit has shown what it needs to cover.',
+  },
+  {
+    href: '/retained',
+    kicker: 'Fractional CTO',
+    name: 'Retained',
+    flag: null,
+    desc: 'Monthly strategic and operational leadership. Roadmap ownership, vendor management, and a direct line to me.',
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -87,83 +126,69 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ══════════ 2 · EVIDENCE · DO-ART-902 ══════════ */}
-        <section className="g-white" data-od-id="evidence">
+        {/* ══════════ 2 · THE COST OF STANDING STILL ══════════ */}
+        <section className="g-navy" data-od-id="cost">
           <div className="wrap">
-            <span className="eyebrow">Evidence &middot; DO-ART-902</span>
-            <h2>Supplier feeds in. One clean catalogue out.</h2>
+            <span className="eyebrow">The cost of standing still</span>
+            <h2>What disconnected systems actually cost you.</h2>
             <div className="hair"></div>
-            <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform:
-              feeds imported, products matched, stock pushed to the system they already own.</p>
+            <p className="lede">These are the numbers I see in businesses like yours most weeks. Not
+              hypothetical, and not worst case. Just the quiet cost of systems that don&rsquo;t talk to each
+              other.</p>
 
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-evidence">
-                <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
-                       sub="Supplier feed to platform, one clean catalogue between them"
-                       no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
+            <div className="grid grid--4" style={{ marginTop: 44 }}>
+              {statusQuo.map(item => (
+                <div className="stat" key={item.label}>
+                  <p className="stat-num num">{item.value}{item.per && <span style={{ fontSize: '0.5em', opacity: 0.6 }}>{item.per}</span>}</p>
+                  <p className="stat-label">{item.label}</p>
+                </div>
+              ))}
+            </div>
 
-                  <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
+            <p className="stat-caption">More on each of these: <Link href="/problems/systems-dont-talk">what
+              it looks like when your systems don&rsquo;t talk</Link>, <Link href="/problems/ecommerce-not-connected">why
+              an eCommerce disconnect costs more than you think</Link>, and <Link href="/problems/erp-implementation-failure">how
+              ERP implementations go wrong</Link>.</p>
+          </div>
+        </section>
 
-                  {/* THE EXHIBIT */}
-                  <g className="sk-fade sk-s2">
-                    <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
-                           preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
-                    <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
-                           opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
-                    <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
-                           strokeWidth="1.1" strokeOpacity=".35"/>
-                    <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
-                    <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
-                           fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
-                  </g>
+        {/* ══════════ 3 · WHAT I ACTUALLY DO ══════════ */}
+        <section className="g-white" data-od-id="services">
+          <div className="wrap">
+            <span className="eyebrow">How I help</span>
+            <h2>A day on site, a written plan, then as much or as little as you need.</h2>
+            <div className="hair"></div>
+            <p className="lede">Four services. Each one stands on its own, and each one is a natural next
+              step from the one before it. Almost everyone starts with a Clarity Audit, because until
+              somebody has followed your processes from start to finish, everything after that is
+              guesswork.</p>
 
-                  {/* THE SPECIFICATION */}
-                  <g className="sk-fade sk-s4">
-                    <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
-                           className="p-node" strokeWidth="1.1"/>
-                    <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
-                    <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
-                           fontWeight="600">EXHIBIT</text>
-                    <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
-                           strokeOpacity=".2"/>
+            <div className="grid grid--4" style={{ marginTop: 40 }}>
+              {services.map(s => (
+                <Link className="card" href={s.href} key={s.href}>
+                  <span className="kicker">
+                    {s.kicker}{s.flag && <span className="flag">{s.flag}</span>}
+                  </span>
+                  <h3>{s.name}</h3>
+                  <p>{s.desc}</p>
+                </Link>
+              ))}
+            </div>
 
-                    <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">CLIENT</text>
-                    <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
-
-                    <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">SHOWS</text>
-                    <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
-                    <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
-                      picking alongside Symphony</text>
-
-                    <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">SOURCE</text>
-                    <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">Decoded Data App interface</text>
-
-                    <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
-                           strokeOpacity=".2"/>
-                    <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
-                      screen is not</text>
-                    <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
-                      grading it would</text>
-                    <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
-                      is evidence of.</text>
-                  </g>
-                </Plate>
-              </div>
+            <div className="notice" style={{ marginTop: 36 }}>
+              <p className="notice-tag">The 3&times; Clarity Guarantee</p>
+              <h3>Three times the fee, or you don&rsquo;t pay it.</h3>
+              <p>If the report doesn&rsquo;t identify at least three times the fee in recoverable cost or lost
+                revenue, it&rsquo;s refunded in full. No conditions. No questions.</p>
             </div>
           </div>
         </section>
 
-        {/* ══════════ 3 · WHAT OWNERS NOTICE ══════════ */}
+        {/* ══════════ 4 · WHAT OWNERS NOTICE ══════════ */}
         <section className="g-tint" data-od-id="approach">
           <div className="wrap">
             <span className="eyebrow">Why owners keep me in the room</span>
-            <h2>Three things you notice in the first hour.</h2>
+            <h2>Three things you notice in the first hour on site.</h2>
             <div className="hair"></div>
 
             <div className="grid grid--3">
@@ -176,30 +201,31 @@ export default function HomePage() {
               </article>
               <article className="card">
                 <span className="kicker">02 &middot; Problem solving</span>
-                <h3>&ldquo;It can&rsquo;t do that&rdquo; is where I start</h3>
-                <p>When a system can&rsquo;t do something, I don&rsquo;t accept the limitation. I find a different
-                  way, connecting things not designed to connect, reframing the problem so the existing
-                  tool handles it differently.</p>
+                <h3>When the system &ldquo;can&rsquo;t do that&rdquo;</h3>
+                <p>That&rsquo;s usually where the conversation starts rather than where it stops. I find a
+                  different way, connecting things not designed to connect, reframing the problem so the
+                  tool you already own handles it differently.</p>
               </article>
               <article className="card">
                 <span className="kicker">03 &middot; Facilitation</span>
-                <h3>The room agrees before I leave</h3>
+                <h3>People adopt what they helped build</h3>
                 <p>In a mixed group, directors, warehouse staff, office teams, I ask the question that
-                  makes everyone stop. People adopt the result because they built it. That&rsquo;s how change
+                  makes everyone stop. They adopt the result because they built it. That&rsquo;s how change
                   actually sticks.</p>
               </article>
             </div>
           </div>
         </section>
 
-        {/* ══════════ 4 · MEASURE · DO-ART-202 ══════════ */}
+        {/* ══════════ 5 · MEASURE · DO-ART-202 ══════════ */}
         <section className="g-navy" data-od-id="measure">
           <div className="wrap">
             <span className="eyebrow">Measure &middot; DO-ART-202</span>
-            <h2>Not projected. Not modelled. What actually happened.</h2>
+            <h2>Nobody retypes a supplier spreadsheet.</h2>
             <div className="hair"></div>
-            <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw
-              feed rows to products live in the platform.</p>
+            <p className="lede">Hanicks, named with permission. One import pipeline, run to a schedule,
+              doing a job that used to be done by hand every time a supplier changed a range. Not
+              projected and not modelled. This is what actually happened.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-measure">
@@ -276,7 +302,34 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ══════════ 5 · THE LADDER · DO-ART-302 ══════════ */}
+        {/* ══════════ 6 · WHERE THE SOFTWARE CAME FROM ══════════ */}
+        <section className="g-white" data-od-id="why-software">
+          <div className="wrap">
+            <span className="eyebrow">Where the software came from</span>
+            <h2>I didn&rsquo;t set out to build software.</h2>
+            <div className="hair"></div>
+
+            <div className="grid grid--2" style={{ marginTop: 40, alignItems: 'start' }}>
+              <div>
+                <p className="lede">I kept meeting the same gap in businesses I was already fixing. The
+                  platform was usually right. It just would not do one particular job, and nothing on the
+                  market closed that gap at a price a business this size could justify. So I built the
+                  thing that did.</p>
+                <p className="lede">That is why the apps exist. They came out of the operational work,
+                  rather than being a product line I went looking for a market for.</p>
+              </div>
+              <div className="panel">
+                <h3>Which is why buying always gets tested first.</h3>
+                <p>If something on the market fits, that is what goes on the table, named and priced, with
+                  nothing in it for me either way. Building only earns its place once buying has been
+                  ruled out in writing.</p>
+                <p><Link href="/how-i-build">How I decide what to build</Link></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════ 7 · THE LADDER · DO-ART-302 ══════════ */}
         <section className="g-off" data-od-id="ladder">
           <div className="wrap">
             <span className="eyebrow">Flow &middot; DO-ART-302</span>
@@ -311,7 +364,7 @@ export default function HomePage() {
                           letterSpacing="1.6" opacity=".7">RUNG 1 &middot; IF IT FITS</text>
                   </g>
 
-                  {/* RUNG 2: the default */}
+                  {/* RUNG 2: the normal answer */}
                   <g className="sk-fade sk-s4" filter="url(#ld-shadow)">
                     <rect x="620" y="240" width="380" height="190" rx="12" fill="url(#ld-amber-n)"
                           className="p-node-a" strokeWidth="1.8"/>
@@ -392,7 +445,80 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ══════════ 6 · CTA ══════════ */}
+        {/* ══════════ 8 · EVIDENCE · DO-ART-902 ══════════ */}
+        <section className="g-navy" data-od-id="evidence">
+          <div className="wrap">
+            <span className="eyebrow">Evidence &middot; DO-ART-902</span>
+            <h2>Rung 2, running in a real business.</h2>
+            <div className="hair"></div>
+            <p className="lede">Supplier feeds in, one clean catalogue out. The Data App alongside a
+              platform the client already owned: feeds imported, products matched, stock pushed back into
+              the system they were already paying for.</p>
+
+            <div className="plate-scroll">
+              <div className="plate-frame" data-od-id="plate-evidence">
+                <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
+                       sub="Supplier feed to platform, one clean catalogue between them"
+                       no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
+
+                  <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
+
+                  {/* THE EXHIBIT */}
+                  <g className="sk-fade sk-s2">
+                    <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
+                           preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
+                    <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
+                           opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+                    <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
+                           strokeWidth="1.1" strokeOpacity=".35"/>
+                    <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
+                    <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
+                           fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
+                  </g>
+
+                  {/* THE SPECIFICATION */}
+                  <g className="sk-fade sk-s4">
+                    <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
+                           className="p-node" strokeWidth="1.1"/>
+                    <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
+                    <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
+                           fontWeight="600">EXHIBIT</text>
+                    <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
+                           strokeOpacity=".2"/>
+
+                    <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
+                           opacity=".45">CLIENT</text>
+                    <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
+                           fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
+
+                    <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
+                           opacity=".45">SHOWS</text>
+                    <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
+                           fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+                    <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
+                      picking alongside Symphony</text>
+
+                    <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
+                           opacity=".45">SOURCE</text>
+                    <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
+                           fontWeight="600" fontSize="22">Decoded Data App interface</text>
+
+                    <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
+                           strokeOpacity=".2"/>
+                    <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
+                      screen is not</text>
+                    <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
+                      grading it would</text>
+                    <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
+                      is evidence of.</text>
+                  </g>
+                </Plate>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════ 9 · CTA ══════════ */}
         <section className="g-white" data-od-id="cta">
           <div className="wrap centred">
             <h2>Ready to find out what&rsquo;s really going on?</h2>
