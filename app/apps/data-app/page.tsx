@@ -35,7 +35,7 @@ export default function DataAppPage() {
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-              <Link className="btn btn--ghost btn-arrow" href="/pricing">See what it costs</Link>
+              <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price this</Link>
             </div>
           </div>
 
@@ -195,7 +195,7 @@ export default function DataAppPage() {
               </tbody>
             </table>
           </div>
-          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
       </section>
 

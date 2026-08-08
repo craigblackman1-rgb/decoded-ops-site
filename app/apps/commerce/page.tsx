@@ -34,12 +34,12 @@ export default function CommercePage() {
               <p>It&rsquo;s built on the Medusa B2B starter: company accounts, spend limits, approval
                 workflows, quote negotiation, order editing, and a full storefront and checkout, all on
                 an open-source core. Real foundations underneath, not a from-scratch build. That&rsquo;s
-                exactly why it prices where it does rather than in the £8,000&ndash;£20,000 bespoke range
-                you&rsquo;ll be quoted elsewhere.</p>
+                exactly why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
+                quoted elsewhere for the same thing.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
-              <Link className="btn btn--ghost btn-arrow" href="/pricing">See what it costs</Link>
+              <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price this</Link>
             </div>
           </div>
 
@@ -198,7 +198,7 @@ export default function CommercePage() {
       <section className="g-white" id="pricing">
         <div className="wrap">
           <p className="eyebrow">What each tier covers</p>
-          <h2>Confirmed prices, published.</h2>
+          <h2>Three tiers. Pick by what the business needs to do.</h2>
 
           <div className="inset">
             <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. What you sell, who buys
@@ -233,7 +233,7 @@ export default function CommercePage() {
           </div>
           <p className="table-foot">A full rebuild like the Hanicks migration isn&rsquo;t on this table on
             purpose. That&rsquo;s scoped separately.</p>
-          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
 
           <div className="notice">
             <p className="notice-tag">Founding-client terms</p>

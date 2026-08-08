@@ -229,7 +229,7 @@ export default function ArtworkManagerPage() {
           <p className="table-foot">There&rsquo;s no Extended tier for this product. If what you need is bigger
             than Standard, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
             tier list.</p>
-          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
       </section>
 

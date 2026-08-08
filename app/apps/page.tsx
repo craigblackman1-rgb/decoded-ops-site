@@ -181,7 +181,7 @@ export default function AppsPage() {
             something you can already buy fits better, I&rsquo;ll say that instead.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" href="/contact">Talk about what you need</Link>
-            <Link className="btn btn--ghost btn-arrow" href="/pricing">See what they cost</Link>
+            <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price them</Link>
           </div>
         </div>
       </section>

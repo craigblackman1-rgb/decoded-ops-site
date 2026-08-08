@@ -56,7 +56,7 @@ const signs = [
   },
   {
     title: '5. You bought your last system off the back of a demo',
-    body: "This is the one I see most often, and it's the most expensive. A business bought an ERP system after a good demo. No requirements brief. No assessment of how it would talk to their eCommerce platform. It couldn't handle the production and artwork workflows that were central to how the business actually operated. Result: £150,000 spent, eighteen months of disruption, and around 125 hours a month of internal management time swallowed up fixing it. An audit upfront would have cost around £10,000, 6.7% of what the failed project ended up costing. Not insurance. Near-certain cost avoidance.",
+    body: "This is the one I see most often, and it's the most expensive. A demo shows you software working perfectly, on the vendor's data, in the vendor's example business. It tells you very little about whether it fits yours. What happens next is consistent enough that I can usually call it in advance: the system gets chosen without the people who have to use it, they get trained on how the software works rather than how it fits their job, most of them are back to the old way by week three, and by month three the software is getting the blame. Usually the software was fine. Nobody scoped the business before they scoped the system. Writing your requirements down before anyone books a demo is near-certain cost avoidance.",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function FiveWarningSignsPage() {
           <h2>Five signs, and what each one looks like fixed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            The gap between a broken process and the same process after a Clarity Audit. Every sign here is real — including the one that cost £150,000 to learn.
+            The gap between a broken process and the same process after a Clarity Audit. Every sign here is one I have walked into myself, not a checklist borrowed from a vendor.
           </p>
 
           <div className="plate-scroll">
@@ -116,23 +116,23 @@ export default function FiveWarningSignsPage() {
                 <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
                 <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
 
-                {/* the number sign 5 carries */}
+                {/* Sign 5, as the sequence it actually follows. The priced version of
+                    this band used a client example Craig retired in July 2026. */}
                 <g className="sk-fade sk-s6">
                   <rect x="50" y="660" width="1500" height="98" rx="10"
                         fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
                         stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-                  <text x="80" y="694" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".45">SIGN 5, PRICED — ONE REAL PROJECT</text>
-                  <g fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="34">
-                    <text x="80" y="740" fill="var(--do-amber)">£150,000</text>
-                    <text x="470" y="740" fill="var(--do-amber)">18 months</text>
-                    <text x="850" y="740" fill="var(--do-amber)">125 hrs/mo</text>
-                    <text x="1240" y="740" fill="var(--do-cerulean)">£10,000</text>
+                  <text x="80" y="694" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".45">SIGN 5, THE SEQUENCE. WHY THE SOFTWARE ENDS UP GETTING BLAMED</text>
+                  <g fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="20" fill="var(--do-amber)">
+                    <text x="80" y="738">Chosen without the users</text>
+                    <text x="470" y="738">Trained on the tool</text>
+                    <text x="880" y="738">Old way back by week 3</text>
+                    <text x="1290" y="738">Blamed by month 3</text>
                   </g>
-                  <g className="p-mono" fontSize="15" opacity=".6">
-                    <text x="272" y="740">spent</text>
-                    <text x="654" y="740">of disruption</text>
-                    <text x="1035" y="740">of internal time</text>
-                    <text x="1400" y="740">the audit — 6.7%</text>
+                  <g fill="color-mix(in srgb, var(--do-off-white) 45%, transparent)" fontSize="22">
+                    <text x="420" y="738">&#8594;</text>
+                    <text x="830" y="738">&#8594;</text>
+                    <text x="1240" y="738">&#8594;</text>
                   </g>
                 </g>
               </Plate>

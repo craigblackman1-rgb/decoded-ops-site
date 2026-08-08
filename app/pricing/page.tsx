@@ -13,12 +13,12 @@ import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Pricing: Decoded Ops',
-  description: 'Plain pricing for technology consultancy and Systems work: Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+  description: 'Plain pricing for the consultancy: Clarity Audit, Deliver, Transform and Retained, plus the small business tier. No hidden day rate. App builds are scoped and quoted per business.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
     title: 'Pricing: Decoded Ops',
-    description: 'Plain pricing for technology consultancy and Systems work: Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+    description: 'Plain pricing for the consultancy: Clarity Audit, Deliver, Transform and Retained, plus the small business tier. No hidden day rate. App builds are scoped and quoted per business.',
     url: 'https://decodedops.co.uk/pricing',
   },
   twitter: {
@@ -235,7 +235,7 @@ export default function PricingPage() {
       <section className="g-off">
         <div className="container">
           <p className="eyebrow">Systems</p>
-          <h2>Three products. Published prices.</h2>
+          <h2>Three products. Scoped and quoted per business.</h2>
 
           <div className="inset" style={{ marginTop: 26 }}>
             <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
@@ -248,46 +248,22 @@ export default function PricingPage() {
             Commerce build, and waived if you&rsquo;ve had a Clarity Audit in the last six months.
           </div>
 
-          <div className="table-wrap">
-            <table className="ds-table">
-              <caption>The Decoded apps: implementation plus monthly</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Core</th>
-                  <th scope="col" className="col-star">Standard <span className="star">Recommended</span></th>
-                  <th scope="col">Extended</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Decoded Data App</th>
-                  <td><span className="price">£4,750</span><span className="price-sub">+ £450/mo</span></td>
-                  <td className="col-star"><span className="price">£9,500</span><span className="price-sub">+ £750/mo</span></td>
-                  <td><span className="price">From £15,000</span><span className="price-sub">+ from £1,200/mo</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Decoded Artwork Manager</th>
-                  <td><span className="price">£4,750</span><span className="price-sub">+ £350/mo</span></td>
-                  <td className="col-star"><span className="price">£8,500</span><span className="price-sub">+ £600/mo</span></td>
-                  <td><span className="price dash">N/A</span><span className="price-sub">no Extended tier</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Decoded Commerce</th>
-                  <td><span className="price">£4,750</span><span className="price-sub">+ £450/mo</span></td>
-                  <td className="col-star"><span className="price">£8,500–£9,500</span><span className="price-sub">+ £650–£750/mo</span></td>
-                  <td><span className="price">From £15,000</span><span className="price-sub">+ from £1,200/mo</span></td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="inset">
+            <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
+            costs depends entirely on what it has to do: how many supplier feeds, how many sales
+            channels, which machines and formats, and whether it has to talk to a platform you already
+            run. Two businesses buying the same app can be a long way apart on all four. It would not be
+            fair of me to quote a number before I know the extent of what you actually need, so the
+            scoping session comes first and the quote comes after it, written for your business.
           </div>
+
           <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms while no
-            client has taken first delivery: the rates above, the first six months of support waived, in
-            exchange for a named reference and accepting that some features arrive during the
-            engagement. Stated plainly, not a discount dressed as an offer.</p>
-          <p className="table-foot">A full custom build is never priced on this page. If nothing on the
-            market fits, that&rsquo;s a Clarity Audit conversation and a quote written for your business, not
-            a row on a table.</p>
+            client has taken first delivery: the first six months of support waived, in exchange for a
+            named reference and accepting that some features arrive during the engagement. Stated
+            plainly, not a discount dressed as an offer.</p>
+          <p className="table-foot">A full custom build is quoted the same way, and for the same reason.
+            If nothing on the market fits, that&rsquo;s a Clarity Audit conversation and a quote written for
+            your business, never a row on a table.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
             <Link className="btn btn-primary" href="/apps/data-app">See how the Data App works</Link>
