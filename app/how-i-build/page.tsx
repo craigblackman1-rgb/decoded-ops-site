@@ -135,7 +135,6 @@ export default function HowIBuildPage() {
               <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting across
                 more than one business. I&rsquo;ll show you what the gap costs to leave alone versus what it
                 costs to close with a custom layer, and let you weigh it up.</p>
-              <p>Both of my live clients chose to run this. Neither of them was told to.</p>
             </article>
 
             <article className="rung rung--last">

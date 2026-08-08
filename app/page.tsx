@@ -377,8 +377,7 @@ export default function HomePage() {
                 <h3>Buy plus a custom layer</h3>
                 <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting
                   across more than one business. I&rsquo;ll show you what the gap costs to leave alone versus
-                  what it costs to close with a custom layer, and let you weigh it up. That&rsquo;s what both of
-                  my live clients chose to run.</p>
+                  what it costs to close with a custom layer, and let you weigh it up.</p>
               </article>
 
               <article className="card rung--last">
