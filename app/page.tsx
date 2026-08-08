@@ -318,7 +318,7 @@ export default function HomePage() {
                     <text x="810" y="305" textAnchor="middle" className="p-ink"
                           fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">Buy plus</text>
                     <text x="810" y="343" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">automation</text>
+                          fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">a custom layer</text>
                     <text x="810" y="388" textAnchor="middle" className="p-accent-ink" fontSize="20">what
                       both live clients run</text>
                     <line x1="810" y1="430" x2="810" y2="500" className="p-samber" strokeWidth="1.2"
@@ -374,7 +374,7 @@ export default function HomePage() {
 
               <article className="card rung--default">
                 <span className="kicker">Rung 2 <span className="flag">The default</span></span>
-                <h3>Buy plus automation</h3>
+                <h3>Buy plus a custom layer</h3>
                 <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting
                   across more than one business. I&rsquo;ll show you what the gap costs to leave alone versus
                   what it costs to close with a custom layer, and let you weigh it up. That&rsquo;s what both of
