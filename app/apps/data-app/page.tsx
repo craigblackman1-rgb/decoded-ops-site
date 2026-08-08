@@ -35,7 +35,7 @@ export default function DataAppPage() {
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-              <Link className="btn btn--ghost btn-arrow" href="#pricing">See what it costs</Link>
+              <Link className="btn btn--ghost btn-arrow" href="/pricing">See what it costs</Link>
             </div>
           </div>
 
@@ -161,7 +161,7 @@ export default function DataAppPage() {
       {/* 4 · COMPARISON TABLE */}
       <section className="g-white" id="pricing">
         <div className="wrap">
-          <p className="eyebrow">What it costs</p>
+          <p className="eyebrow">What each tier covers</p>
           <h2>Three tiers, priced on scope.</h2>
 
           <div className="inset">
@@ -176,39 +176,26 @@ export default function DataAppPage() {
               <thead>
                 <tr>
                   <th scope="col">Tier</th>
-                  <th scope="col">Implementation</th>
-                  <th scope="col" className="col-star">Monthly</th>
                   <th scope="col">Scope</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Core</th>
-                  <td><span className="price num">£4,750</span></td>
-                  <td className="col-star"><span className="price num">£450</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Up to 3 supplier feeds, one sales channel</td>
                 </tr>
                 <tr>
                   <th scope="row">Standard <span className="star">Most take this</span></th>
-                  <td><span className="price num">£9,500</span></td>
-                  <td className="col-star"><span className="price num">£750</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Up to 10 feeds, up to 3 channels, platform integration</td>
                 </tr>
                 <tr>
                   <th scope="row">Extended</th>
-                  <td><span className="price num">From £15,000</span></td>
-                  <td className="col-star"><span className="price num">From £1,200</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Unlimited feeds, marketplace automation, multi-warehouse</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="table-foot">Every price on this page is what you&rsquo;d actually pay. I&rsquo;m not VAT
-            registered, so there&rsquo;s no VAT to add either. The full price list across every service is on
-            the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
         </div>
       </section>
 

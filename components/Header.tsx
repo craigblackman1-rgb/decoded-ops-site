@@ -91,15 +91,15 @@ const sectors: NavLink[] = [
 
 // ── "Small business" — new top-level slot, Craig's decision (2026-08-06) ──
 // Order mirrors the six products on /small-business, which lists them as peers.
-const smallBusinessPrices: (NavLink & { sub: string; price: string })[] = [
-  { label: 'Clarity Check', sub: 'A written plan, no visit needed', price: '£595', href: '/small-business' },
-  { label: 'Deliver', sub: 'I fix things, month by month', price: '£795/mo', href: '/small-business' },
-  { label: 'Transform', sub: 'Rebuild how you work', price: '£1,095/mo', href: '/small-business' },
-  { label: 'Retained', sub: 'Someone to ask, every month', price: 'from £360/mo', href: '/small-business' },
+const smallBusinessProducts: (NavLink & { sub: string })[] = [
+  { label: 'Clarity Check', sub: 'A written plan, no visit needed', href: '/small-business' },
+  { label: 'Deliver', sub: 'I fix things, month by month', href: '/small-business' },
+  { label: 'Transform', sub: 'Rebuild how you work', href: '/small-business' },
+  { label: 'Retained', sub: 'Someone to ask, every month', href: '/small-business' },
   // Named to stay distinct from the free /tools/ai-readiness-check in the
   // adjacent column — same words, different thing: this one is done for you.
-  { label: 'AI Readiness Check', sub: 'Assessed for you, not a self-test', price: '£395', href: '/small-business' },
-  { label: 'Quarterly Sprint', sub: 'One intensive look, no monthly tie-in', price: '£995', href: '/small-business' },
+  { label: 'AI Readiness Check', sub: 'Assessed for you, not a self-test', href: '/small-business' },
+  { label: 'Quarterly Sprint', sub: 'One intensive look, no monthly tie-in', href: '/small-business' },
 ];
 const smallBusinessStart: NavGroup = {
   title: 'Start free',
@@ -344,14 +344,13 @@ export function Header() {
                     <div>
                       <h3 className="text-xs font-semibold tracking-widest uppercase text-prussian-blue/50 mb-2.5 pb-2 border-b border-sky-blue/30">Fixed-price, done remotely</h3>
                       <ul className="space-y-0.5">
-                        {smallBusinessPrices.map(p => (
+                        {smallBusinessProducts.map(p => (
                           <li key={p.label}>
                             <Link href={p.href} onClick={closePanel} className="flex items-baseline justify-between gap-3 -mx-2 px-2 py-2 rounded-lg text-sm text-prussian-blue hover:bg-cerulean/10 hover:text-cerulean transition-colors">
                               <span>
                                 {p.label}
                                 <span className="block text-xs text-prussian-blue/50">{p.sub}</span>
                               </span>
-                              <span className="text-xs font-semibold text-prussian-blue/60 whitespace-nowrap">{p.price}</span>
                             </Link>
                           </li>
                         ))}
@@ -382,7 +381,7 @@ export function Header() {
               {([
                 { key: 'wrong' as PanelKey, groups: wrongGroups },
                 { key: 'industry' as PanelKey, groups: [{ title: 'Sectors', items: sectors }] },
-                { key: 'small' as PanelKey, groups: [{ title: 'Fixed-price, done remotely', items: smallBusinessPrices.map(p => ({ label: `${p.label} — ${p.price}`, sub: p.sub, href: p.href })) }, smallBusinessStart] },
+                { key: 'small' as PanelKey, groups: [{ title: 'Fixed-price, done remotely', items: smallBusinessProducts.map(p => ({ label: p.label, sub: p.sub, href: p.href })) }, smallBusinessStart] },
                 { key: 'proof' as PanelKey, groups: [proofWork, proofTools, proofGuides] },
               ]).map(({ key, groups }) => (
                 <div key={key} className="border-b border-sky-blue/20">

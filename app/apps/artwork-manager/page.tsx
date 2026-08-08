@@ -197,7 +197,7 @@ export default function ArtworkManagerPage() {
       {/* 4 · COMPARISON TABLE */}
       <section className="g-white" id="pricing">
         <div className="wrap">
-          <p className="eyebrow">What it costs</p>
+          <p className="eyebrow">What each tier covers</p>
           <h2>Two tiers. No third one hiding.</h2>
 
           <div className="inset">
@@ -211,24 +211,16 @@ export default function ArtworkManagerPage() {
               <thead>
                 <tr>
                   <th scope="col">Tier</th>
-                  <th scope="col">Implementation</th>
-                  <th scope="col" className="col-star">Monthly</th>
                   <th scope="col">Scope</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Core</th>
-                  <td><span className="price num">£4,750</span></td>
-                  <td className="col-star"><span className="price num">£350</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Vault, versioning, audit trail, thread library</td>
                 </tr>
                 <tr>
                   <th scope="row">Standard <span className="star">Most take this</span></th>
-                  <td><span className="price num">£8,500</span></td>
-                  <td className="col-star"><span className="price num">£600</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Adds the customer proofing portal and machine delivery</td>
                 </tr>
               </tbody>
@@ -237,6 +229,7 @@ export default function ArtworkManagerPage() {
           <p className="table-foot">There&rsquo;s no Extended tier for this product. If what you need is bigger
             than Standard, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
             tier list.</p>
+          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
         </div>
       </section>
 

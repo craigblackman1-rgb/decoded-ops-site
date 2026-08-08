@@ -39,7 +39,7 @@ export default function CommercePage() {
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
-              <Link className="btn btn--ghost btn-arrow" href="#pricing">See what it costs</Link>
+              <Link className="btn btn--ghost btn-arrow" href="/pricing">See what it costs</Link>
             </div>
           </div>
 
@@ -197,7 +197,7 @@ export default function CommercePage() {
       {/* 4 · COMPARISON TABLE */}
       <section className="g-white" id="pricing">
         <div className="wrap">
-          <p className="eyebrow">What it costs</p>
+          <p className="eyebrow">What each tier covers</p>
           <h2>Confirmed prices, published.</h2>
 
           <div className="inset">
@@ -211,39 +211,29 @@ export default function CommercePage() {
               <thead>
                 <tr>
                   <th scope="col">Tier</th>
-                  <th scope="col">Implementation</th>
-                  <th scope="col" className="col-star">Monthly</th>
                   <th scope="col">Scope</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Core</th>
-                  <td><span className="price num">£4,750</span></td>
-                  <td className="col-star"><span className="price num">£450</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Single storefront, catalogue, accounts, manual pricing</td>
                 </tr>
                 <tr>
                   <th scope="row">Standard <span className="star">Most take this</span></th>
-                  <td><span className="price num">£8,500&ndash;£9,500</span></td>
-                  <td className="col-star"><span className="price num">£650&ndash;£750</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Company accounts, spend limits, approval workflows, quote
                     negotiation</td>
                 </tr>
                 <tr>
                   <th scope="row">Extended</th>
-                  <td><span className="price num">From £15,000</span></td>
-                  <td className="col-star"><span className="price num">From £1,200</span>
-                    <span className="price-sub">per month</span></td>
                   <td className="scope">Multi-site, ERP integration, bespoke checkout and pricing</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="table-foot">Not VAT registered, so there&rsquo;s no VAT to add. A full rebuild like the
-            Hanicks migration isn&rsquo;t on this table on purpose. That&rsquo;s scoped separately.</p>
+          <p className="table-foot">A full rebuild like the Hanicks migration isn&rsquo;t on this table on
+            purpose. That&rsquo;s scoped separately.</p>
+          <p className="table-foot">Every tier price and monthly figure is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add to any of them.</p>
 
           <div className="notice">
             <p className="notice-tag">Founding-client terms</p>
