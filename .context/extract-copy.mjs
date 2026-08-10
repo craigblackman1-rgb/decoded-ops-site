@@ -23,8 +23,7 @@ const EXTRA_FILES = [
   'components/Footer.tsx',
   'components/ProblemPageDS.tsx',
   'components/SectorPageDS.tsx',
-  'components/ProblemPage.tsx',
-  'components/SectorPage.tsx',
+  // ProblemPage.tsx and SectorPage.tsx removed 10 Aug (confirmed dead, zero imports).
   'components/LocationPage.tsx',
   'components/CookieConsent.tsx',
   'data/locations.ts',
