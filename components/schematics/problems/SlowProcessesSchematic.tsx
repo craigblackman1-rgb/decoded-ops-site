@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "Dead time" — a job journey ORDER -> ARTWORK -> APPROVAL -> PRODUCTION ->
+ * "Dead time", a job journey ORDER -> ARTWORK -> APPROVAL -> PRODUCTION ->
  * DESPATCH, with an amber wait-state chip in each gap showing dead time.
  * Below, a summary duration bar splits touch time (thin cyan) from wait
  * time (long amber). Built on the shared schematic primitives, matching

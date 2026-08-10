@@ -8,15 +8,15 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * Personalisation as a data merge: two separate inputs — the physical
- * product and the customer's data file — converge at a single check point,
+ * Personalisation as a data merge: two separate inputs, the physical
+ * product and the customer's data file, converge at a single check point,
  * then the job forks into one-offs and batch runs before recombining into a
  * single engrave/print stage and a final despatch. A double-diamond: two
  * sources converge, one process diverges, two lanes reconverge. Different
- * topology to every other sector schematic here — none of them open with a
+ * topology to every other sector schematic here, none of them open with a
  * two-source merge.
  *
- * Layout (1240x860): PRODUCT (x=50,y=190) and DATA FILE (x=50,y=610, amber —
+ * Layout (1240x860): PRODUCT (x=50,y=190) and DATA FILE (x=50,y=610, amber,
  * the risk) converge into MERGE & CHECK (x=320,y=390-510, MID=450). Split at
  * x=560 into ONE-OFFS (x=600,y=230-320) and BATCH (x=600,y=610-700), both
  * converging into ENGRAVE/PRINT (x=860,y=390-510), then a short hop to PACK

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-// Temporary diagnostic endpoint — remove after fixing document routing
+// Temporary diagnostic endpoint, remove after fixing document routing
 // Hit: /api/debug/hub-status?clientId=tacklebag
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);

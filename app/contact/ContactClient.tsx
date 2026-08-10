@@ -223,7 +223,7 @@ export function ContactClient() {
         </div>
       </section>
 
-      {/* WHAT TO EXPECT — dark */}
+      {/* WHAT TO EXPECT, dark */}
       <section className="g-navy">
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>

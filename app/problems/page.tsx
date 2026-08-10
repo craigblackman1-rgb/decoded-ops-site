@@ -60,7 +60,7 @@ export default function ProblemsIndexPage() {
      <h2>Eighteen problems, four places they start.</h2>
      <div className="hair"></div>
      <p className="lede" style={{ marginTop: 16 }}>
-       Every problem page on the site, grouped by where the failure actually begins. Thirteen of eighteen are not technology problems — they are process problems technology was supposed to solve.
+        Every problem page on the site, grouped by where the failure actually begins. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
      </p>
 
      <div className="plate-scroll">

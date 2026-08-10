@@ -13,7 +13,7 @@ interface ProblemPageDSProps {
   howIHelp: string;
   /** Slug for breadcrumb URL (e.g. 'ai-paralysis') */
   slug?: string;
-  /** Target service for the "Get this fixed" CTA — drives internal-linking topology */
+  /** Target service for the "Get this fixed" CTA, drives internal-linking topology */
   targetService?: { href: string; label: string; anchor: string };
   /** 2-4 sibling problem pages */
   relatedProblems?: { href: string; label: string }[];
@@ -24,17 +24,17 @@ interface ProblemPageDSProps {
 /**
  * DS-classed replacement for ProblemPage.tsx, built on ds-marketing.css
  * (bound by Lane 0) rather than hardcoded Tailwind colour utilities.
- * Pattern: hero / the problem stated / what it costs / cta — matching
+ * Pattern: hero / the problem stated / what it costs / cta, matching
  * problems-erp-implementation-failure.html's structure for this page type.
  *
  * Grid/flex layout scaffolding stays Tailwind (ds-marketing.css's own
- * convention: "page-specific layout stays in that page's own <style>" —
+ * convention: "page-specific layout stays in that page's own <style>",
  * Tailwind utility classes are this codebase's equivalent). Colour,
  * type, buttons, cards and grounds all come from ds-marketing.css classes.
  *
- * Deliberately a *new* component rather than a restyle of ProblemPage.tsx:
- * ProblemPage.tsx still serves /problems/wrong-erp-software, which is out
- * of scope for this lane, so the shared component is left untouched.
+ * Deliberately a *new* component rather than a restyle of the old shared
+ * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
+ * now uses its own inline JSX.
  */
 export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading }: ProblemPageDSProps) {
   const parts = headline.split('||');
@@ -141,7 +141,7 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
         </div>
       </section>
 
-      {/* GET THIS FIXED — service routing + related problems + further reading */}
+      {/* GET THIS FIXED, service routing + related problems + further reading */}
       {(targetService || (relatedProblems && relatedProblems.length > 0) || (relatedReading && relatedReading.length > 0)) && (
         <section className="g-off">
           <div className="wrap">

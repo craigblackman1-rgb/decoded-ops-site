@@ -12,7 +12,7 @@ const sectors = [
 /**
  * Replaces the generic sector icon grid with a real photo (Field Notes
  * treatment: desaturated, grain, timestamp tag) and a sector spec-card
- * overlay — the credibility-section direction agreed 2026-07-15.
+ * overlay, the credibility-section direction agreed 2026-07-15.
  */
 export function SectorCredibilityPhoto() {
   return (

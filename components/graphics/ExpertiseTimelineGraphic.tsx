@@ -48,7 +48,7 @@ export function ExpertiseTimelineGraphic() {
         <div className="text-xs text-[#8ECAE6] leading-relaxed italic">
           &ldquo;25 years in the sector means I know what a hoop size means and why it affects your production schedule. That context is what makes the advice useful.&rdquo;
         </div>
-        <div className="mt-2 text-xs font-semibold text-[#219EBC]">— Craig Blackman</div>
+        <div className="mt-2 text-xs font-semibold text-[#219EBC]">, Craig Blackman</div>
       </div>
     </div>
   );

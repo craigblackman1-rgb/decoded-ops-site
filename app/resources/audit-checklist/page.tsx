@@ -176,7 +176,7 @@ export default function ChecklistPage() {
                 {/* turn down */}
                 <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1315 370 V410" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
 
-                {/* ══ ROW 2 — runs right to left ══ */}
+                {/* ══ ROW 2, runs right to left ══ */}
                 <g className="sk-fade sk-s4" filter="url(#chk-shadow)">
                   <rect x="1090" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
                   <rect x="585" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
@@ -213,7 +213,7 @@ export default function ChecklistPage() {
                   <text x="106" y="674" className="p-amber" fontSize="15" letterSpacing="2.4" fontWeight="600">07 · GROWTH &amp; STRATEGIC</text>
                   <text x="1514" y="674" textAnchor="end" className="p-amber" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700">4 questions</text>
                   <text x="106" y="712" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">The section you cannot answer until the other six are done</text>
-                  <text x="106" y="740" className="p-mono" fontSize="16" opacity=".62">Grow 20% next year — what would have to change? The first six tell you. Guessing does not.</text>
+                  <text x="106" y="740" className="p-mono" fontSize="16" opacity=".62">Grow 20% next year, what would have to change? The first six tell you. Guessing does not.</text>
                 </g>
               </Plate>
             </div>

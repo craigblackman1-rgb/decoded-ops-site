@@ -10,7 +10,7 @@ export function RetainedModelGraphic() {
       <svg viewBox="0 0 500 240" className="w-full max-w-[480px] mx-auto" aria-hidden="true">
         {/* Title */}
         <text x="250" y="25" fontSize="14" fontWeight="700" fill="#023047" textAnchor="middle" fontFamily="system-ui">
-          Retained Ops Leadership — Ongoing Ownership
+          Retained Ops Leadership, Ongoing Ownership
         </text>
 
         {/* Timeline */}

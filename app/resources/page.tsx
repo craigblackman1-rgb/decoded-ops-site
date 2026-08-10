@@ -79,7 +79,7 @@ export default function ResourcesPage() {
           <h2>Five free resources, one order that makes them worth anything.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            They are a sequence, not a menu. Using them out of order wastes most of them. Choosing the platform first is step five done first — which is warning sign five.
+            They are a sequence, not a menu. Using them out of order wastes most of them. Choosing the platform first is step five done first, which is warning sign five.
           </p>
 
           <div className="plate-scroll">
@@ -134,7 +134,7 @@ export default function ResourcesPage() {
                 <g className="sk-fade sk-s6">
                   <rect x="55" y="620" width="1490" height="120" rx="10" fill="url(#rsx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
                   <text x="81" y="660" className="p-amber" fontSize="14" letterSpacing="2.4" fontWeight="600">THE ORDER MATTERS</text>
-                  <text x="81" y="698" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Choosing the platform first is step five done first — which is warning sign five.</text>
+                  <text x="81" y="698" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Choosing the platform first is step five done first, which is warning sign five.</text>
                   <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The five resources are free. Doing them in this order is what makes them worth anything.</text>
                 </g>
               </Plate>

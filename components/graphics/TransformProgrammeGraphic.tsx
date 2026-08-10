@@ -23,7 +23,7 @@ export function TransformProgrammeGraphic() {
         <g>
           <rect x="40" y="50" width="400" height="45" rx="6" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
           <text x="240" y="72" fontSize="12" fontWeight="700" fill="#219EBC" textAnchor="middle" fontFamily="system-ui">
-            Discovery Phase — Before Scoping
+            Discovery Phase, Before Scoping
           </text>
           <text x="240" y="87" fontSize="9" fill="#023047" opacity="0.6" textAnchor="middle" fontFamily="system-ui">
             Assumptions are where transformations fail

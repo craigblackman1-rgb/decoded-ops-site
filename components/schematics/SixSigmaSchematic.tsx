@@ -9,7 +9,7 @@ import { fDisp, fBody, fMono, CYAN, AMBER, schematicPalette, SchematicDefs, type
  * animated. Light + dark variants, reduced-motion aware.
  *
  * Reconciled 05 Jul onto the shared primitives.tsx vocabulary (grid pattern,
- * arrowhead marker, colours, fonts) — was previously a local reimplementation
+ * arrowhead marker, colours, fonts), was previously a local reimplementation
  * that duplicated this exact styling. The sigma-scale gradient and track
  * tint are page-specific and stay local; everything else is shared.
  */

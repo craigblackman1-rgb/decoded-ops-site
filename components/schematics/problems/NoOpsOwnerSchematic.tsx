@@ -8,9 +8,9 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "The gaps" — a row of four process nodes (SALES, ARTWORK, PRODUCTION,
+ * "The gaps", a row of four process nodes (SALES, ARTWORK, PRODUCTION,
  * DESPATCH), each with a small owner chip above it. The nodes themselves are
- * fine — cyan, solidly staffed. The connecting handoff gaps between them are
+ * fine, cyan, solidly staffed. The connecting handoff gaps between them are
  * the problem: dashed amber zones with "NO OWNER" labels, and a central
  * amber annotation calling out where jobs stall. Built on the shared
  * schematic primitives, matching ManualWorkaroundsSchematic /
@@ -19,7 +19,7 @@ import type { Tone } from '../primitives';
  * Layout (1240x860): four nodes evenly spaced on a midline y=420, owner
  * chips 70px above each node top. Gap zones are dashed amber rounded rects
  * sitting exactly in the space between adjacent nodes, each with a small
- * "NO OWNER" mono label centred inside — sized to never touch the flanking
+ * "NO OWNER" mono label centred inside, sized to never touch the flanking
  * nodes. Type at ~0.46 scale: headline 46, eyebrow/zones 20, node mains
  * 24-27, mono subs 17-19, annotations 17-18, caption 25.
  */

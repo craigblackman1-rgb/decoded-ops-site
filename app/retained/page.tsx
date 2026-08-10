@@ -204,10 +204,10 @@ export default function RetainedPage() {
             <div className="panel">
               <h3>It doesn&rsquo;t fit when</h3>
               <p>You haven&rsquo;t worked out what&rsquo;s actually broken yet. Start with a Clarity Audit instead.
-                a fractional CTO relationship works best once there&rsquo;s a plan to execute, not before one
+                A fractional CTO relationship works best once there&rsquo;s a plan to execute, not before one
                 exists. I&rsquo;d rather tell you that now than take a retainer for six months of finding out.</p>
-              <p><Link href="/clarity" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>See how Discovery
-                Day works →</Link></p>
+              <p><Link href="/clarity" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>See how a
+                Clarity Audit works →</Link></p>
             </div>
           </div>
 

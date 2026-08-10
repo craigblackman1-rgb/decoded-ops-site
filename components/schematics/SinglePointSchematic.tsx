@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 /**
- * "Single point of failure" — every process routing through one person.
+ * "Single point of failure", every process routing through one person.
  * Illustrates the risk: knowledge living in one head. Built to the same
  * blueprint/editorial visual language as ThreeLayerSchematic (layered ground,
  * glass-card chips, mono eyebrow, staged entrance). Light default (for
@@ -61,7 +61,7 @@ export function SinglePointSchematic({ tone = 'light', className }: { tone?: Ton
 
   return (
     <svg viewBox="0 0 1100 840" className={className} style={{ width: '100%', height: 'auto' }}
-      role="img" aria-label="A single-point-of-failure diagram: six operational processes — Orders, Despatch, Stock, Artwork, Invoicing and Production — all routing through one person, each hiding knowledge that lives only in their head.">
+      role="img" aria-label="A single-point-of-failure diagram: six operational processes, Orders, Despatch, Stock, Artwork, Invoicing and Production, all routing through one person, each hiding knowledge that lives only in their head.">
       <defs>
         <pattern id={`sp-grid-${tone}`} width="34" height="34" patternUnits="userSpaceOnUse">
           <path d="M34 0H0V34" fill="none" stroke={c.grid} strokeWidth="0.6" />

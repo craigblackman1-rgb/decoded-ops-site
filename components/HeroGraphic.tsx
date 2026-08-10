@@ -39,7 +39,7 @@ export function HeroGraphic() {
         {/* Outer ring */}
         <circle cx={cx} cy={cy} r={r + 10} fill="none" stroke="#8ECAE6" strokeWidth="1" strokeDasharray="4 8" opacity="0.4" />
 
-        {/* Connection lines — from each node to centre */}
+        {/* Connection lines, from each node to centre */}
         {nodes.map((node, i) => {
           const pos = toXY(node.angle, r);
           return (
@@ -88,13 +88,13 @@ export function HeroGraphic() {
         <text x={cx} y={cy + 22} textAnchor="middle" fontSize="7.5" fill="#8ECAE6" fontFamily="system-ui, sans-serif">audit &amp; decode</text>
       </svg>
 
-      {/* Floating badge — 3× guarantee */}
+      {/* Floating badge, 3× guarantee */}
       <div className="absolute -bottom-4 -left-4 bg-[#F8F9FA] rounded-xl shadow-lg p-4 border border-[#8ECAE6]/40 max-w-[200px]">
         <div className="text-xs font-semibold text-[#023047] uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
-        <div className="text-xs text-[#023047]/70 leading-snug">If the report doesn&apos;t find 3× its fee in value — full refund.</div>
+        <div className="text-xs text-[#023047]/70 leading-snug">If the report doesn&apos;t find 3× its fee in value, full refund.</div>
       </div>
 
-      {/* Floating badge — 1 day */}
+      {/* Floating badge, 1 day */}
       <div className="absolute -top-2 -right-2 bg-[#219EBC] rounded-xl shadow-lg p-3 text-center">
         <div className="text-xl font-bold text-white leading-none">1</div>
         <div className="text-[10px] font-semibold text-white/80 uppercase tracking-wide leading-tight">day<br/>on site</div>

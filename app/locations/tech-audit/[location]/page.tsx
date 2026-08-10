@@ -60,7 +60,7 @@ const whatIdo = [
   'One structured day on site, talking to the people doing the work, not just the people managing it',
   'Map every system you\'re running, what it costs, and what it\'s actually being used for versus what it was bought to do',
   'Document every manual handoff and workaround. This is almost always where the cost is hiding',
-  'Identify the three to five changes that would recover the most cost or unlock the most revenue',
+   'Identify the three to five changes that would recover the most cost or release the most revenue',
   'Produce a written report within five working days: specific, costed, with independent vendor recommendations',
   'Back it with the 3× Clarity Guarantee: if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions',
 ];

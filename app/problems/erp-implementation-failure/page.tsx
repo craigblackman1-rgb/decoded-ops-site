@@ -98,7 +98,7 @@ export default function ERPImplementationFailurePage() {
      <h2>What changes when the audit comes first.</h2>
      <div className="hair" />
      <p className="lede" style={{ marginTop: 16 }}>
-       The difference between a vendor-scoped implementation and one scoped independently. Same business, same platform — opposite outcomes.
+        The difference between a vendor-scoped implementation and one scoped independently. Same business, same platform, opposite outcomes.
      </p>
 
      <div className="plate-scroll">

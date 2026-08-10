@@ -8,15 +8,15 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "Untested restore path" — a solid cyan line runs LIVE SYSTEM -> BACKUP
+ * "Untested restore path", a solid cyan line runs LIVE SYSTEM -> BACKUP
  * (the easy, proven half of the job), then a long dashed amber arc labelled
  * THE RESTORE PATH loops back toward a RECOVERED? node that's never been
  * rehearsed, with an amber X mid-arc. Below, a three-line mono checklist
  * spells out what's actually been tested. Built on the shared schematic
  * primitives, matching ManualWorkaroundsSchematic / GarmentDecorationSchematic.
  *
- * Layout (1240x860): three nodes on a midline y=340 — LIVE SYSTEM (x=90-330),
- * BACKUP (x=520-760), RECOVERED? (x=950-1190) — with the restore arc
+ * Layout (1240x860): three nodes on a midline y=340, LIVE SYSTEM (x=90-330),
+ * BACKUP (x=520-760), RECOVERED? (x=950-1190), with the restore arc
  * dropping from BACKUP down and back left-to-right beneath the midline to
  * RECOVERED?, well clear of the checklist block at y=560-720. Type at ~0.46
  * scale: headline 46, eyebrow/zones 20, node mains 24-28, mono subs 18-19,

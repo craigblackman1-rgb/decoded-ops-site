@@ -51,7 +51,7 @@ const ecommerceNotConnectedSchema = {
     {
      '@type': 'Question',
      name: 'Why is Shopify not syncing with my ERP?',
-     acceptedAnswer: { '@type': 'Answer', text: 'Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other, not because the integration itself is broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },
     },
     {
      '@type': 'Question',

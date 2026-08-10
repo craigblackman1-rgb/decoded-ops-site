@@ -46,7 +46,7 @@ interface SectorPageDSProps {
  * frame, the feature-mark icon) lives in SectorPageDS.module.css.
  *
  * The site-wide header/footer (components/Header.tsx, components/Footer.tsx)
- * are rendered globally in app/layout.tsx — this component is `<main>`
+ * are rendered globally in app/layout.tsx, this component is `<main>`
  * content only, matching every other page in the app.
  */
 export function SectorPageDS({

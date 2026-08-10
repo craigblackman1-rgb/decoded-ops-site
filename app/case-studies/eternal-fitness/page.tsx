@@ -73,7 +73,7 @@ export default function EternalFitnessCaseStudyPage() {
                        sub="Eternal Fitness · training plan tool, first draft awaiting clinical approval"
                        no="DO-ART-903" rev="01" cls="DECODED OPS · ISSUED">
 
-                  {/* ══ EXHIBIT — the screen ══ */}
+                  {/* ══ EXHIBIT, the screen ══ */}
                   <g className="sk-fade sk-s2">
                     <rect x="60" y="230" width="880" height="470" rx="12" fill="url(#ef-node)" className="p-node" strokeWidth="1.1"/>
                     <rect x="60" y="230" width="880" height="470" rx="12" fill="url(#ef-scan)" opacity=".22" style={{ mixBlendMode: 'overlay' }}/>
@@ -89,10 +89,10 @@ export default function EternalFitnessCaseStudyPage() {
                   <g className="sk-fade sk-s3">
                     <rect x="86" y="322" width="330" height="42" rx="8" fill="none" className="p-scyan" strokeWidth="1" strokeOpacity=".4"/>
                     <circle cx="108" cy="343" r="4" className="p-cyan"/>
-                    <text x="124" y="349" className="p-mono" fontSize="15" opacity=".78">Equipment — confirmed studio list</text>
+                    <text x="124" y="349" className="p-mono" fontSize="15" opacity=".78">Equipment, confirmed studio list</text>
                     <rect x="432" y="322" width="330" height="42" rx="8" fill="none" className="p-scyan" strokeWidth="1" strokeOpacity=".4"/>
                     <circle cx="454" cy="343" r="4" className="p-cyan"/>
-                    <text x="470" y="349" className="p-mono" fontSize="15" opacity=".78">Condition — on file, per client</text>
+                    <text x="470" y="349" className="p-mono" fontSize="15" opacity=".78">Condition, on file, per client</text>
                   </g>
 
                   {/* generated rows */}
@@ -124,14 +124,14 @@ export default function EternalFitnessCaseStudyPage() {
                     <rect x="86" y="622" width="828" height="52" rx="8" fill="url(#ef-amber-n)" className="p-node-a" strokeWidth="1.2"/>
                     <circle cx="116" cy="648" r="7" fill="none" className="p-samber" strokeWidth="2"/>
                     <path d="M112.5 648 l3 3 l6 -7" fill="none" className="p-samber" strokeWidth="2" strokeOpacity=".35"/>
-                    <text x="140" y="644" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">Held — awaiting clinical approval</text>
+                    <text x="140" y="644" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">Held, awaiting clinical approval</text>
                     <text x="140" y="665" className="p-mono" fontSize="15" opacity=".62">Nothing reaches a client until Esther Fair, Level 4 PT, signs it off</text>
                   </g>
 
                   {/* illustrative stamp */}
                   <g className="sk-fade sk-s6">
                     <rect x="640" y="242" width="274" height="34" rx="6" className="p-block" opacity=".85"/>
-                    <text x="658" y="264" className="p-mono" fontSize="14" letterSpacing="1.6" opacity=".75">ILLUSTRATIVE — NOT CLIENT DATA</text>
+                    <text x="658" y="264" className="p-mono" fontSize="14" letterSpacing="1.6" opacity=".75">ILLUSTRATIVE: NOT CLIENT DATA</text>
                   </g>
 
                   {/* ══ SPECIFICATION PANEL ══ */}
@@ -155,7 +155,7 @@ export default function EternalFitnessCaseStudyPage() {
 
                     <line x1="1006" y1="620" x2="1494" y2="620" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
                     <text x="1006" y="652" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">STATUS</text>
-                    <text x="1006" y="678" className="p-mono" fontSize="16" opacity=".72">In build — no outcome figure yet, so none is claimed</text>
+                    <text x="1006" y="678" className="p-mono" fontSize="16" opacity=".72">In build, no outcome figure yet, so none is claimed</text>
                   </g>
                 </Plate>
               </div>

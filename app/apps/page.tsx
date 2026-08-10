@@ -35,7 +35,7 @@ export default function AppsPage() {
       {/* 2 · LOG LIST · one row per app */}
       <section className="g-white">
         <div className="wrap">
-          <p className="eyebrow">Four of them</p>
+          <p className="eyebrow">What I build</p>
           <h2>Built for the job, then priced.</h2>
 
           <div className="log-list">

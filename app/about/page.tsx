@@ -63,7 +63,7 @@ export default function AboutPage() {
           <h2>Three vantage points, one problem that never changed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            Twenty-five years in print, embroidery, and decoration — from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
+            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
           </p>
 
           <div className="plate-scroll">
@@ -72,13 +72,13 @@ export default function AboutPage() {
                      sub="Craig Blackman · twenty-five years, three vantage points, the same problem"
                      no="DO-ART-904" rev="01" cls="DECODED OPS · ISSUED">
 
-                {/* ══ EXHIBIT — three vantage bands ══ */}
+                {/* ══ EXHIBIT, three vantage bands ══ */}
                 <g className="sk-fade sk-s2">
                   <text x="66" y="212" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">LOOKING DOWN FROM</text>
                   <text x="800" y="212" textAnchor="end" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">WHAT BECAME VISIBLE</text>
                 </g>
 
-                {/* band 3 — highest, drawn first so the stack reads bottom-up */}
+                {/* band 3, highest, drawn first so the stack reads bottom-up */}
                 <g className="sk-fade sk-s3" filter="url(#abt-shadow)">
                   <rect x="60" y="230" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
                 </g>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                   <text x="914" y="486" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">usually the start of the conversation</text>
                 </g>
 
-                {/* band 1 — the floor */}
+                {/* band 1, the floor */}
                 <g className="sk-fade sk-s5" filter="url(#abt-shadow)">
                   <rect x="60" y="534" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
                 </g>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                   <text x="914" y="638" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and that it wasn't in any document</text>
                 </g>
 
-                {/* ══ THE CONSTANT — one amber thread through all three ══ */}
+                {/* ══ THE CONSTANT, one amber thread through all three ══ */}
                 <path id="abt-thread" pathLength="1" className="sk-draw sk-s6 p-samber"
                       d="M40 660 V296" fill="none" strokeWidth="2.5" markerEnd="url(#abt-ah)"/>
                 <g className="sk-fade sk-s6">
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 <g className="sk-fade sk-s6">
                   <rect x="60" y="690" width="880" height="46" rx="8" fill="url(#abt-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
                   <circle cx="86" cy="713" r="5" className="p-amber"/>
-                  <text x="104" y="719" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="18">The constant — the gap between the process on paper and the workaround on the floor</text>
+                  <text x="104" y="719" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="18">The constant, the gap between the process on paper and the workaround on the floor</text>
                 </g>
 
                 {/* ══ SPECIFICATION PANEL ══ */}

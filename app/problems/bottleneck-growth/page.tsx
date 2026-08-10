@@ -69,7 +69,7 @@ export default function BottleneckGrowthPage() {
       <span className="eyebrow">The problem</span>
       <h1>The business stops where you stop.</h1>
       <p className="lede">Every purchase order, artwork approval, and production decision still goes
-       through you, not because you want it to, but because nobody else knows the process well
+       through you. You don&rsquo;t want it to. Nobody else knows the process well
        enough to make the call. The business has grown past the point where one person can carry
        every decision, but the operation was never documented for anyone else to run it.</p>
       <div className="hero-cta">

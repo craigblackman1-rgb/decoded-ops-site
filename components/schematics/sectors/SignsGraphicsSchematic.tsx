@@ -9,8 +9,8 @@ import type { Tone } from '../primitives';
 
 /**
  * Project pipeline, not order pipeline: survey feeds design & proof (with an
- * amber revision loop), which splits into two parallel production lanes —
- * print & cut, fabricate — that converge at install. Install carries a
+ * amber revision loop), which splits into two parallel production lanes,
+ * print & cut, fabricate, that converge at install. Install carries a
  * literal calendar/schedule motif (the fixed constraint everything plans
  * backwards from) before a short final hop to sign-off. Different topology
  * to GarmentDecorationSchematic's fan-and-converge: here the split lanes are
@@ -124,7 +124,7 @@ export function SignsGraphicsSchematic({ tone = 'dark', className }: { tone?: To
         </g>
       </GlassNode>
 
-      {/* install block with calendar/schedule motif — calendar and sub stacked with clearance */}
+      {/* install block with calendar/schedule motif, calendar and sub stacked with clearance */}
       <GlassNode x={INSTALL_X} y={320} width={200} height={220} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f4">
           <text x={INSTALL_X + 24} y={366} style={fDisp} fontWeight="800" fontSize="28" fill={c.ink}>INSTALL</text>
@@ -145,7 +145,7 @@ export function SignsGraphicsSchematic({ tone = 'dark', className }: { tone?: To
         </g>
       </GlassNode>
 
-      {/* sign-off chip — fully clear of install, to its right */}
+      {/* sign-off chip, fully clear of install, to its right */}
       <GlassNode x={SIGNOFF_X} y={MID - 45} width={110} height={90} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f4">
           <text x={SIGNOFF_X + 22} y={MID - 4} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>SIGN-</text>

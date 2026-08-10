@@ -42,8 +42,8 @@ export default function HowIBuildPage() {
           <p className="eyebrow">The ladder &middot; DO-ART-302</p>
           <h2>Three rungs, always in the same order.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Every engagement climbs the same ladder, and it starts
-            at the bottom every time. Not because the bottom rung is always right, but because you
-            should have to reject it out loud before anyone spends money on the one above.</p>
+            at the bottom every time. The bottom rung isn&rsquo;t always right. You should have to
+            reject it out loud before anyone spends money on the one above.</p>
 
           <div className="plate-scroll">
             <div className="plate-frame">

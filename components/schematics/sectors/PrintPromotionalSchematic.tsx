@@ -9,9 +9,9 @@ import type { Tone } from '../primitives';
 
 /**
  * The in-house vs drop-ship split, drawn as two clearly separated strata
- * (background bands) rather than tight parallel lanes — this sector's
+ * (background bands) rather than tight parallel lanes, this sector's
  * defining fact is that half the width of the diagram belongs to someone
- * else's operation. An order runs through a quote engine (amber — pricing
+ * else's operation. An order runs through a quote engine (amber, pricing
  * complexity is the pain point), then a routing junction sends it either up
  * into the in-house stratum or down into the supplier stratum, where a
  * dashed line visibly fades to nothing ("visibility ends here"). Both
@@ -77,7 +77,7 @@ export function PrintPromotionalSchematic({ tone = 'dark', className }: { tone?:
       </g>
       <line x1="60" y1="184" x2="1180" y2="184" stroke={c.grid} strokeWidth="1" className="sch-fade sch-f1" />
 
-      {/* stratum background bands — labels top-left inside the band, nodes centred below with clear air */}
+      {/* stratum background bands, labels top-left inside the band, nodes centred below with clear air */}
       <rect x="650" y="195" width="470" height="180" rx="10" fill={tone === 'dark' ? 'rgba(142,202,230,0.06)' : 'rgba(33,158,188,0.05)'} className="sch-fade sch-f2" />
       <text x="668" y="224" style={fMono} fontSize="19" letterSpacing="2" fill={c.mono} opacity="0.55" className="sch-fade sch-f2">IN-HOUSE STRATUM</text>
 
@@ -120,7 +120,7 @@ export function PrintPromotionalSchematic({ tone = 'dark', className }: { tone?:
         </g>
       </GlassNode>
 
-      {/* in-house lane node — centred inside its band, clear air below the band label */}
+      {/* in-house lane node, centred inside its band, clear air below the band label */}
       <GlassNode x={NODE_X} y={TOP_Y - 50} width={NODE_W} height={100} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f3">
           <text x={NODE_X + 20} y={TOP_Y - 6} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>PRINT</text>
@@ -128,7 +128,7 @@ export function PrintPromotionalSchematic({ tone = 'dark', className }: { tone?:
         </g>
       </GlassNode>
 
-      {/* supplier lane node — centred inside its band, clear air below the band label */}
+      {/* supplier lane node, centred inside its band, clear air below the band label */}
       <GlassNode x={NODE_X} y={BOT_Y - 50} width={NODE_W} height={100} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f3">
           <text x={NODE_X + 20} y={BOT_Y - 6} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>DROP-SHIP</text>
@@ -136,7 +136,7 @@ export function PrintPromotionalSchematic({ tone = 'dark', className }: { tone?:
         </g>
       </GlassNode>
 
-      {/* despatch & invoice (converge) — clear of the right canvas edge, short sub */}
+      {/* despatch & invoice (converge), clear of the right canvas edge, short sub */}
       <GlassNode x={CONV_X} y={MID - 65} width={220} height={130} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f4">
           <text x={CONV_X + 22} y={MID - 20} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>DESPATCH &amp;</text>

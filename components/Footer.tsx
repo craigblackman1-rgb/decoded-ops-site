@@ -6,7 +6,7 @@ import { LogoWordmark } from '@/components/LogoWordmark';
 // design-systems/decoded-marketing/footer-optimised.html, Direction A.
 // Structure ported faithfully; every href reconciled against the actual
 // routes on this branch (the mockup's /systems, /fractional-cto, /work,
-// /pages, /clients don't exist here — see commit message for the list).
+// /pages, /clients don't exist here, see commit message for the list).
 
 interface FooterLink {
   label: string;
@@ -49,7 +49,7 @@ const sectorChips: FooterLink[] = [
   { label: 'Labels & packaging', href: '/sectors/labels-packaging' },
 ];
 
-// A curated 7 of 18 (the mockup's own set — all verified real routes) plus
+// A curated 7 of 18 (the mockup's own set, all verified real routes) plus
 // the index. Deliberately not exhaustive; that's the whole point of the
 // drawer over the old flat 18-chip row.
 const problemChips: FooterLink[] = [
@@ -158,7 +158,7 @@ export function Footer() {
             Browse by sector, problem, guide or location
           </summary>
           {/* explicit hidden/group-open:block rather than relying only on
-              native <details> UA behaviour — belt and braces */}
+              native <details> UA behaviour, belt and braces */}
           <div className="hidden group-open:block pb-4 pt-1.5">
             <ChipRow label="Sectors" chips={sectorChips} />
             <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All 18 problems', href: '/problems' }} />

@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "Forced fit" — three small, irregularly-shaped cyan process chips (your
+ * "Forced fit", three small, irregularly-shaped cyan process chips (your
  * actual business) on the left, a large rigid ERP box drawn as a strict
  * grid with fixed slots on the right. Dashed amber mapping lines run from
  * each chip toward a slot, bending or missing outright; one chip is left
@@ -49,7 +49,7 @@ export function WrongErpSchematic({ tone = 'dark', className }: { tone?: Tone; c
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Forced-fit diagram: three differently shaped business process chips on the left try to map onto a rigid, gridded ERP template on the right — the mapping lines bend and miss, and one process has no matching slot at all.">
+      aria-label="Forced-fit diagram: three differently shaped business process chips on the left try to map onto a rigid, gridded ERP template on the right, the mapping lines bend and miss, and one process has no matching slot at all.">
       <SchematicDefs tone={tone} idPrefix={ID} />
 
       {/* backdrop */}
@@ -58,7 +58,7 @@ export function WrongErpSchematic({ tone = 'dark', className }: { tone?: Tone; c
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — FORCED FIT</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: FORCED FIT</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">The software fits someone. Not you</text>
 
       {/* zone labels */}
@@ -82,7 +82,7 @@ export function WrongErpSchematic({ tone = 'dark', className }: { tone?: Tone; c
         <text x={ERP_X + 22} y={ERP_Y + SLOT_H * 2 + SLOT_H / 2 + 6}>SLOT: LIST PRICE</text>
       </g>
 
-      {/* business process chips — varied shapes/positions to read as "not a template" */}
+      {/* business process chips, varied shapes/positions to read as "not a template" */}
       <GlassNode x={CHIP_X} y={222} width={CHIP_W} height={96} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f2">
           <text x={CHIP_X + 22} y={264} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>DECORATED</text>
@@ -103,7 +103,7 @@ export function WrongErpSchematic({ tone = 'dark', className }: { tone?: Tone; c
         </g>
       </GlassNode>
 
-      {/* mapping lines — bend, miss, or stop short */}
+      {/* mapping lines, bend, miss, or stop short */}
       <g className="sch-fade sch-f3" fill="none" strokeWidth="2.4" strokeDasharray="7 6">
         {/* decorated orders -> standard order slot: bends off-target */}
         <path d={`M${CHIP_X + CHIP_W} 270 C 480 250, 560 265, ${ERP_X} 268`} stroke={AMBER} />

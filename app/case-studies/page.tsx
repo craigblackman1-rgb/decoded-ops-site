@@ -133,7 +133,7 @@ export default function CaseStudiesPage() {
             <h2>Four engagements, two with measurable outcomes.</h2>
             <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>
-              Live client work across four different sectors. Two engagements can be measured in numbers today. Two are too new — and they say so rather than estimating.
+              Live client work across four different sectors. Two engagements can be measured in numbers today. Two are too new, and they say so rather than estimating.
             </p>
 
             <div className="plate-scroll">
@@ -183,7 +183,7 @@ export default function CaseStudiesPage() {
                     <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR · POST-AUDIT</text>
                     <line x1="80" y1="502" x2="750" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <text x="80" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">B2B ordering portal · ERP evaluation</text>
-                    <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor — a partner team builds.</text>
+                    <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor, a partner team builds.</text>
                     <g>
                       <rect x="80" y="614" width="290" height="30" rx="6" className="p-block" opacity=".8"/>
                       <text x="96" y="634" className="p-mono" fontSize="13" letterSpacing="1.6" opacity=".65">NO OUTCOME FIGURE YET</text>

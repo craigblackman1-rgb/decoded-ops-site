@@ -11,8 +11,8 @@ import type { Tone } from '../primitives';
  * Repeat-order / contract-kit logic, drawn as a stock-holding promise rather
  * than a production line. Left: a contract customer with a circular
  * repeat-order loop anchored to the node's top edge (cyan, "same kit, every
- * month"). Centre: a size-curve matrix — a mini 4x3 grid of cells standing
- * in for stock held by size, with two amber cells flagging stockout risk —
+ * month"). Centre: a size-curve matrix, a mini 4x3 grid of cells standing
+ * in for stock held by size, with two amber cells flagging stockout risk,
  * then a wearer-packs node. Right: call-off logic feeding despatch. Built on
  * the shared schematic primitives, matching GarmentDecorationSchematic /
  * ManualWorkaroundsSchematic.
@@ -70,7 +70,7 @@ export function WorkwearTeamwearSchematic({ tone = 'dark', className }: { tone?:
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — WORKWEAR &amp; TEAMWEAR</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: WORKWEAR &amp; TEAMWEAR</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Repeat orders live or die on stock</text>
 
       {/* zone bands */}

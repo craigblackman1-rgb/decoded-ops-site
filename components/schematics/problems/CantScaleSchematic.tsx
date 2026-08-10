@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "The bottleneck" — a throughput funnel: a wide intake of order chips
+ * "The bottleneck", a throughput funnel: a wide intake of order chips
  * flows right through sequential gates of decreasing width (QUOTE, ARTWORK,
  * PRODUCTION). At the narrowest gate (ARTWORK, amber) a queue backs up
  * visibly. After it, sparse chips trickle to DESPATCH. Built on the shared
@@ -66,7 +66,7 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
       <path d="M118 280 C 220 340, 260 430, 330 462" className="sch-draw sch-d2" fill="none" stroke={CYAN} strokeWidth="2" opacity="0.7" />
       <path d="M118 650 C 220 610, 260 545, 330 518" className="sch-draw sch-d2" fill="none" stroke={CYAN} strokeWidth="2" opacity="0.7" />
 
-      {/* gate 1: QUOTE — widest */}
+      {/* gate 1: QUOTE, widest */}
       <GlassNode x={330} y={MID - 100} width={190} height={200} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f2">
           <text x={356} y={MID - 30} style={fDisp} fontWeight="700" fontSize="27" fill={c.ink}>QUOTE</text>
@@ -76,7 +76,7 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
       <path d="M520 475 C 550 480, 560 483, 590 485" className="sch-draw sch-d3" fill="none" stroke={CYAN} strokeWidth="2" opacity="0.7" />
       <path d="M520 505 C 550 500, 560 497, 590 495" className="sch-draw sch-d3" fill="none" stroke={CYAN} strokeWidth="2" opacity="0.7" />
 
-      {/* gate 2: ARTWORK — narrowest gate, amber */}
+      {/* gate 2: ARTWORK, narrowest gate, amber */}
       <GlassNode x={590} y={MID - 60} width={230} height={120} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f3">
           <text x={616} y={MID - 4} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>ARTWORK</text>
@@ -84,7 +84,7 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
         </g>
       </GlassNode>
 
-      {/* queue backing up before ARTWORK — 7 chips, two visibly stacking rows */}
+      {/* queue backing up before ARTWORK, 7 chips, two visibly stacking rows */}
       <g className="sch-fade sch-f3">
         {[0, 1, 2, 3].map((i) => (
           <rect key={`q1-${i}`} x={556 + i * 32} y={572} width={24} height={24} rx="4"
@@ -100,7 +100,7 @@ export function CantScaleSchematic({ tone = 'dark', className }: { tone?: Tone; 
       <path d="M820 480 C 840 477, 848 476, 860 475" className="sch-draw sch-d4" fill="none" stroke={CYAN} strokeWidth="1.8" opacity="0.6" />
       <path d="M820 500 C 840 503, 848 504, 860 505" className="sch-draw sch-d4" fill="none" stroke={CYAN} strokeWidth="1.8" opacity="0.6" />
 
-      {/* gate 3: PRODUCTION — thin, capacity going unused */}
+      {/* gate 3: PRODUCTION, thin, capacity going unused */}
       <GlassNode x={860} y={MID - 35} width={180} height={70} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f3">
           <text x={886} y={MID + 8} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>PRODUCTION</text>

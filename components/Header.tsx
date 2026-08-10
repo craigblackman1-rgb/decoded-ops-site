@@ -7,7 +7,7 @@ import { LogoWordmark } from '@/components/LogoWordmark';
 type NavLink = { label: string; sub?: string; href: string };
 type NavGroup = { title: string; items: NavLink[] };
 
-// ── "What's going wrong" — all 18 problem pages, grouped and in plain English ──
+// ── "What's going wrong", all 18 problem pages, grouped and in plain English ──
 const wrongGroups: NavGroup[] = [
   {
     title: 'Systems & software',
@@ -43,13 +43,13 @@ const wrongGroups: NavGroup[] = [
     items: [
       { label: 'Nobody owns operations', href: '/problems/no-ops-owner' },
       { label: 'If the server died tomorrow…', href: '/problems/disaster-recovery' },
-      { label: 'Everyone says use AI — where do I start?', href: '/problems/ai-paralysis' },
+      { label: 'Everyone says use AI, where do I start?', href: '/problems/ai-paralysis' },
       { label: 'Buy it or build it?', href: '/problems/buy-vs-build' },
     ],
   },
 ];
 
-// ── "How I help" — the four-step ladder plus how Craig works ──
+// ── "How I help", the four-step ladder plus how Craig works ──
 const helpLadder: (NavLink & { sub: string; startHere?: boolean })[] = [
   { label: 'Clarity', sub: 'A day on site, then a written plan', href: '/clarity', startHere: true },
   { label: 'Deliver', sub: 'I fix the two or three worst things', href: '/deliver' },
@@ -76,7 +76,7 @@ const helpHow: NavGroup = {
   ],
 };
 
-// ── "Your industry" — all 9 sector pages ──
+// ── "Your industry", all 9 sector pages ──
 const sectors: NavLink[] = [
   { label: 'Garment decoration', href: '/sectors/garment-decoration' },
   { label: 'Print & promotional', href: '/sectors/print-promotional' },
@@ -89,7 +89,7 @@ const sectors: NavLink[] = [
   { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
 ];
 
-// ── "Small business" — new top-level slot, Craig's decision (2026-08-06) ──
+// ── "Small business", new top-level slot, Craig's decision (2026-08-06) ──
 // Order mirrors the six products on /small-business, which lists them as peers.
 const smallBusinessProducts: (NavLink & { sub: string })[] = [
   { label: 'Clarity Check', sub: 'A written plan, no visit needed', href: '/small-business' },
@@ -97,7 +97,7 @@ const smallBusinessProducts: (NavLink & { sub: string })[] = [
   { label: 'Transform', sub: 'Rebuild how you work', href: '/small-business' },
   { label: 'Retained', sub: 'Someone to ask, every month', href: '/small-business' },
   // Named to stay distinct from the free /tools/ai-readiness-check in the
-  // adjacent column — same words, different thing: this one is done for you.
+  // adjacent column, same words, different thing: this one is done for you.
   { label: 'AI Readiness Check', sub: 'Assessed for you, not a self-test', href: '/small-business' },
   { label: 'Quarterly Sprint', sub: 'One intensive look, no monthly tie-in', href: '/small-business' },
 ];
@@ -111,7 +111,7 @@ const smallBusinessStart: NavGroup = {
   ],
 };
 
-// ── "Proof & free tools" — case studies, calculators, guides ──
+// ── "Proof & free tools", case studies, calculators, guides ──
 const proofWork: NavGroup = {
   title: "Work I've done",
   items: [
@@ -237,7 +237,7 @@ export function Header() {
 
   return (
     <>
-      {/* Skip to main content — hidden until focused */}
+      {/* Skip to main content, hidden until focused */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-amber focus:text-prussian-blue focus:font-semibold focus:text-sm focus:outline-none focus:ring-2 focus:ring-prussian-blue"
@@ -312,7 +312,7 @@ export function Header() {
                 </div>
                 <GroupList group={helpBuilt} onNavigate={closePanel} />
                 <GroupList group={helpHow} onNavigate={closePanel} />
-                <Rail note="Almost everyone starts with Clarity — a day on site and a plan you own, whether you hire me after or not." ctaLabel="Book a free 60-min call" extra={{ label: 'See what each step costs', href: '/pricing' }} />
+                <Rail note="Almost everyone starts with Clarity, a day on site and a plan you own, whether you hire me after or not." ctaLabel="Book a free 60-min call" extra={{ label: 'See what each step costs', href: '/pricing' }} />
               </div>
             </div>
           )}
@@ -359,7 +359,7 @@ export function Header() {
                     <GroupList group={smallBusinessStart} onNavigate={closePanel} />
                   </div>
                 </div>
-                <Rail note="Bigger than £500k? Then the on-site work is a better fit — same steps, done in person." ctaLabel="Book a free 60-min call" extra={{ label: 'See Clarity', href: '/clarity' }} />
+                <Rail note="Bigger than £500k? Then the on-site work is a better fit, same steps, done in person." ctaLabel="Book a free 60-min call" extra={{ label: 'See Clarity', href: '/clarity' }} />
               </div>
             </div>
           )}
@@ -410,7 +410,7 @@ export function Header() {
                 </div>
               ))}
 
-              {/* "How I help" mobile accordion — ladder needs its own simple layout */}
+              {/* "How I help" mobile accordion, ladder needs its own simple layout */}
               <div className="border-b border-sky-blue/20">
                 <button
                   className="flex items-center justify-between w-full text-sm font-medium text-prussian-blue py-2"

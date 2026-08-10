@@ -8,7 +8,7 @@ import {
 import type { Tone } from './primitives';
 
 /**
- * The homepage / Discovery Day hero graphic: a real flow — a free call,
+ * The homepage / Discovery Day hero graphic: a real flow, a free call,
  * then six areas covered in one day on site, then a written plan back in
  * five working days. Built to the same left-to-right flow language as
  * GarmentDecorationSchematic (zone bands, midline flow, converge/diverge)
@@ -17,7 +17,7 @@ import type { Tone } from './primitives';
  *
  * Layout (1240x860): main flow on the midline at y=470. Discovery call on
  * the left, the six-area cluster in the middle (two rows of three, boxed
- * by a dashed zone outline — no individual connectors, since order within
+ * by a dashed zone outline, no individual connectors, since order within
  * the day doesn't matter), written plan on the right. Zone band labels sit
  * in a single row at y=170. Type sized for the ~0.46 render scale inside
  * the hero panel: headline 46, eyebrow/zones 20, node mains 26-27, mono
@@ -50,7 +50,7 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Discovery Day diagram: a free discovery call, followed by one day on site covering six areas — IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth and opportunity, and AI readiness — followed by a written plan delivered within five working days.">
+      aria-label="Discovery Day diagram: a free discovery call, followed by one day on site covering six areas, IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth and opportunity, and AI readiness, followed by a written plan delivered within five working days.">
       <SchematicDefs tone={tone} idPrefix={ID} />
 
       {/* backdrop */}
@@ -62,10 +62,10 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
       <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">DISCOVERY DAY</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">One call. One day. One clear plan.</text>
 
-      {/* zone bands — single row at y=170 */}
+      {/* zone bands, single row at y=170 */}
       <g className="sch-fade sch-f1" style={fMono} fontSize="20" letterSpacing="2.5" fill={c.mono} opacity="0.6">
         <text x="160" y="170" textAnchor="middle">BEFORE</text>
-        <text x="700" y="170" textAnchor="middle">ON SITE — ONE DAY</text>
+        <text x="700" y="170" textAnchor="middle">ON SITE: ONE DAY</text>
         <text x="1110" y="170" textAnchor="middle">AFTER</text>
       </g>
       <line x1="60" y1="184" x2="1180" y2="184" stroke={c.grid} strokeWidth="1" className="sch-fade sch-f1" />
@@ -83,7 +83,7 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
         </g>
       </GlassNode>
 
-      {/* six-area zone — dashed bounding box, no internal connectors (order doesn't matter) */}
+      {/* six-area zone, dashed bounding box, no internal connectors (order doesn't matter) */}
       <rect x="370" y="270" width="670" height="400" rx="18" fill="none" stroke={c.line} strokeOpacity="0.28" strokeWidth="1.6" strokeDasharray="7 8" className="sch-fade sch-f2" />
 
       {areas.map((n, i) => (
@@ -114,7 +114,7 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
       )}
 
       <text x="620" y="800" textAnchor="middle" style={fBody} fontStyle="italic" fontSize="25" fill={c.sub} opacity="0.85" className="sch-fade sch-f4">
-        Followed, observed, and quantified — not guessed at.
+        Followed, observed, and quantified, not guessed at.
       </text>
     </svg>
   );

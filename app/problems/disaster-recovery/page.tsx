@@ -70,7 +70,7 @@ export default function DisasterRecoveryPage() {
    <ProblemPageDS
    problem="No disaster recovery plan"
    headline="Your systems go down on a Tuesday morning. ||When do you get back up?||"
-   intro="Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. Not because they don't care, but because DR feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
+    intro="Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. They care. DR just feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
    heroGraphic={<DisasterRecoverySchematic />}
    symptoms={[
     "You don't have a written plan for what happens when critical systems go down",

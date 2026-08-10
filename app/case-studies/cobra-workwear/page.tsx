@@ -106,7 +106,7 @@ export default function CobraWorkwearCaseStudyPage() {
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-cobra-workwear">
-                <Plate tone="dark" p="cbr" title="Trade ordering — target state"
+                <Plate tone="dark" p="cbr" title="Trade ordering, target state"
                        sub="Cobra Workwear &middot; specified by Decoded Ops, built by the partner team"
                        no="DO-ART-101" rev="02" cls="DECODED OPS · ISSUED">
 
@@ -157,7 +157,7 @@ export default function CobraWorkwearCaseStudyPage() {
                     <rect x="880" y="230" width="640" height="420" rx="12" fill="url(#cbr-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".5"/>
                     <rect x="900" y="250" width="4" height="14" rx="1" className="p-amber"/>
                     <text x="914" y="262" className="p-amber" fontSize="17" letterSpacing="2.4" fontWeight="600">THE SPECIFIED SPINE</text>
-                    <text x="914" y="286" className="p-mono" fontSize="15" letterSpacing="1.4" opacity=".6">SCOPED AND OVERSEEN — BUILT BY THE PARTNER TEAM</text>
+                    <text x="914" y="286" className="p-mono" fontSize="15" letterSpacing="1.4" opacity=".6">SCOPED AND OVERSEEN: BUILT BY THE PARTNER TEAM</text>
                     <line x1="900" y1="302" x2="1500" y2="302" className="p-samber" strokeWidth=".6" strokeOpacity=".2"/>
                   </g>
                   <g className="sk-fade sk-s6" filter="url(#cbr-shadow)">
@@ -173,7 +173,7 @@ export default function CobraWorkwearCaseStudyPage() {
                       <text x="1359" y="348">Storefront</text>
                       <text x="1051" y="430">ERP evaluation</text>
                       <text x="1359" y="430">Integration architecture</text>
-                      <text x="1205" y="512">Vendor requirements — written before anyone demoed</text>
+                      <text x="1205" y="512">Vendor requirements, written before anyone demoed</text>
                     </g>
                     <g className="p-mono" fontSize="15" opacity=".62">
                       <text x="1051" y="368">Medusa v2</text>
@@ -186,7 +186,7 @@ export default function CobraWorkwearCaseStudyPage() {
 
                   <g className="sk-fade sk-s6">
                     <circle cx="86" cy="694" r="5" className="p-cyan"/>
-                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">Cobra&apos;s operation — kept and connected, not replaced</text>
+                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">Cobra&apos;s operation, kept and connected, not replaced</text>
                     <circle cx="700" cy="694" r="5" className="p-amber"/>
                     <text x="716" y="700" className="p-mono" fontSize="16" opacity=".7">Scoped and overseen by Decoded Ops &middot; built by the implementation partner</text>
                   </g>

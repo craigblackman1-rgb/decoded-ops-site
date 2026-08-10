@@ -71,7 +71,7 @@ export default function HanicksCaseStudyPage() {
             <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
             <h1>The platform stayed. The layer around it changed.</h1>
             <p className="lede">
-              Hanicks is a heating spares business, not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
+              Hanicks is a heating spares business rather than decorated goods. The underlying problem is the same: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
             </p>
           </div>
         </section>
