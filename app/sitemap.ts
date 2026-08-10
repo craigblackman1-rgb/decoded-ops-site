@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import localBlogPosts from '@/data/blog-index.json'
+import routeSlugs from '@/data/route-slugs.json'
 import { locations } from '@/data/locations'
 
 const BASE_URL = 'https://decodedops.co.uk'
@@ -18,8 +19,19 @@ async function fetchBlogPosts() {
   return localBlogPosts.items || [];
 }
 
+// Slugs are generated at BUILD time by scripts/generate-route-slugs.mjs (npm prebuild).
+//
+// Do NOT read the filesystem here. This sitemap is ISR because of the blog fetch above,
+// so it re-executes inside the running container, where `output: 'standalone'` means the
+// app/ source directory does not exist (the Dockerfile runner copies only public,
+// .next/standalone and .next/static). A readdirSync here returns nothing and silently
+// drops every problem, sector and tool URL from the sitemap.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await fetchBlogPosts();
+
+  const problemSlugs = routeSlugs.problems
+  const sectorSlugs = routeSlugs.sectors
+  const toolSlugs = routeSlugs.tools
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -56,36 +68,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
-  // Problem pages
-  const problemPages = [
-    'cant-scale-operations', 'slow-processes', 'erp-implementation-failure',
-    'ecommerce-not-connected', 'systems-dont-talk', 'wrong-erp-software',
-    'disaster-recovery', 'no-ops-owner', 'manual-workarounds', 'ai-paralysis',
-    'buy-vs-build', 'data-scattered', 'inventory-blind', 'legacy-system',
-  ].map(slug => ({
+  const problemPages = problemSlugs.map(slug => ({
     url: `${BASE_URL}/problems/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'yearly' as const,
     priority: 0.65,
   }))
 
-  // Sector pages
-  const sectorPages = [
-    'garment-decoration', 'print-promotional', 'workwear',
-    'teamwear-clubwear', 'schoolwear', 'promotional-merchandise',
-    'signs-graphics', 'awards-engraving', 'labels-packaging',
-  ].map(slug => ({
+  const sectorPages = sectorSlugs.map(slug => ({
     url: `${BASE_URL}/sectors/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'yearly' as const,
     priority: 0.7,
   }))
 
-  // Tool pages
-  const toolPages = [
-    'should-i-replace-erp', 'ai-readiness-check', 'ops-health-score',
-    'downtime-cost-calculator', 'rto-calculator', 'automation-roi-calculator',
-  ].map(slug => ({
+  const toolPages = toolSlugs.map(slug => ({
     url: `${BASE_URL}/tools/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

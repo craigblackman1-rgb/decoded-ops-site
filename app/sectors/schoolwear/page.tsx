@@ -47,7 +47,7 @@ export default function SchoolwearPage() {
           'Blazers, PE kit, and growing pupils, all needing to be right before the first week of September.',
           'The businesses that get this right have their supplier data and sizing sorted well before the rush starts.',
         ]}
-        heroSecondaryCta={{ label: 'See the Data App', href: '/apps/data-app' }}
+        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
           src: '/images/sectors/thread-spools.jpg',
           width: 1600,
@@ -133,6 +133,54 @@ export default function SchoolwearPage() {
         ]}
         ctaLead="Best had in the quiet months, not in August. An hour on what's actually going wrong, and an honest read on whether it needs software at all."
       />
+
+      {/* COMMON CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In schoolwear, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {[
+              { title: 'Supplier feeds before the peak', body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. Stale supplier data at peak season creates orders you can't fulfil." },
+              { title: 'Sizing that scales with growing pupils', body: "A school's sizing spread is wider and shifts every year. Stock management that understands that means fewer stockouts of the sizes everyone actually needs in the first week of term." },
+              { title: 'Badge and embroidery management', body: "Every school badge is a thread file before it's a garment. Managing badge specifications, embroidery requirements, and version control at scale, across dozens of school accounts, is a dedicated workflow that spreadsheets were never built for." },
+              { title: 'The parent portal gap', body: "Orders coming through parent portals that don't connect to production systems mean manual re-entry of every order. For the largest schools, that's hundreds of orders requiring individual handling." },
+            ].map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I HELP */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {[
+              'Map your entire schoolwear workflow from supplier catalogue through to parent delivery',
+              'Identify where supplier data lag is creating fulfilment risk before peak season',
+              'Audit sizing spread management and its impact on stock availability',
+              'Review badge specification management and its connection to production',
+              'Assess how parent orders flow from portal to production floor',
+              'Quantify every finding in time, stockout cost, and administrative overhead',
+            ].map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
