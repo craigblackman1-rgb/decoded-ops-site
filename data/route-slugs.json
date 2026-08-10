@@ -1,0 +1,42 @@
+{
+  "_generated": "Do not edit. Produced by scripts/generate-route-slugs.mjs via npm prebuild.",
+  "problems": [
+    "ai-paralysis",
+    "bottleneck-growth",
+    "buy-vs-build",
+    "cant-scale-operations",
+    "data-scattered",
+    "disaster-recovery",
+    "ecommerce-not-connected",
+    "erp-implementation-failure",
+    "inventory-blind",
+    "legacy-system",
+    "manual-workarounds",
+    "no-ops-owner",
+    "ops-in-owners-head",
+    "seasonal-peaks",
+    "slow-processes",
+    "spreadsheet-addiction",
+    "systems-dont-talk",
+    "wrong-erp-software"
+  ],
+  "sectors": [
+    "awards-engraving",
+    "garment-decoration",
+    "labels-packaging",
+    "print-promotional",
+    "promotional-merchandise",
+    "schoolwear",
+    "signs-graphics",
+    "teamwear-clubwear",
+    "workwear"
+  ],
+  "tools": [
+    "ai-readiness-check",
+    "automation-roi-calculator",
+    "downtime-cost-calculator",
+    "ops-health-score",
+    "rto-calculator",
+    "should-i-replace-erp"
+  ]
+}

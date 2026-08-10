@@ -47,7 +47,7 @@ export default function PromotionalMerchandisePage() {
           'Every client wants something slightly different, on a deadline, at a price point that leaves no room for error.',
           'The businesses that do this well have their product data and their production process under control. Most don\'t, and it\'s costing them.',
         ]}
-        heroSecondaryCta={{ label: 'See the Artwork Manager', href: '/apps/artwork-manager' }}
+        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
           src: '/images/sectors/cat-promo.jpg',
           width: 900,
@@ -160,6 +160,55 @@ export default function PromotionalMerchandisePage() {
         ]}
         ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking: on every order, not in the year-end numbers."
       />
+
+      {/* COMMON CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In promotional merchandise, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {[
+              { title: 'Multi-supplier catalogue management', body: "Dozens of supplier ranges, each with their own pricing, stock levels, and lead times. Matching products, managing pricing, and keeping stock current across all of them without re-keying data is the sector's defining operational challenge." },
+              { title: 'The artwork loop', body: "Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email." },
+              { title: 'Margin erosion at the order level', body: "When decoration cost, supplier lead time variation, and artwork rework aren't tracked at the individual order level, margin quietly erodes on every job. It's invisible in the P&L until the year-end numbers land." },
+              { title: 'Quote-to-order conversion costs', body: "The cost of producing quotes that don't convert is rarely measured, and the answer is usually uncomfortable. A quoting process that takes thirty minutes per prospect becomes a full-time salary at scale." },
+              { title: 'eCommerce disconnected from supply', body: "A product listed online that isn't connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume." },
+            ].map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I HELP */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {[
+              'Map your full order workflow from client enquiry through to delivery',
+              'Audit multi-supplier product data management for accuracy and currency',
+              'Review your artwork storage, proof approval, and version control process',
+              'Identify where supplier fragmentation is creating administrative overhead',
+              'Assess how margin is calculated and tracked at the individual order level',
+              'Quantify every finding in time, margin erosion, and administrative cost',
+            ].map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

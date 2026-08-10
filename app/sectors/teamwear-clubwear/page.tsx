@@ -47,7 +47,7 @@ export default function TeamwearClubwearPage() {
           'Squad numbers, sponsor logos, and a hard deadline before the first match of the season.',
           'Get the data wrong and it\'s not a quiet admin cost, it\'s kit that doesn\'t arrive in time.',
         ]}
-        heroSecondaryCta={{ label: 'See the Data App', href: '/apps/data-app' }}
+        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
           src: '/images/sectors/prod-polo.jpg',
           width: 900,
@@ -160,6 +160,55 @@ export default function TeamwearClubwearPage() {
         ]}
         ctaLead="An hour on squad data, sponsor logos, and where the proof loop is eating time before the first match."
       />
+
+      {/* COMMON CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In teamwear and clubwear, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {[
+              { title: 'Squad-level personalisation data', body: "Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order." },
+              { title: 'Seasonal deadline pressure', body: "The first match of the season is a fixed date. The tolerance for lateness is zero. Production scheduling has to work backwards from that, and most systems don't account for it." },
+              { title: 'Kit range churn', body: "Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. When it's wrong, it's the order that fails, not the system." },
+              { title: 'Sponsor logo management', body: "Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale across multiple teams and age groups is a dedicated workflow that email can't handle." },
+              { title: 'The proof and approval bottleneck', body: "When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations." },
+            ].map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I HELP */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {[
+              'Map your full order workflow from squad list through production to delivery',
+              'Identify where personalisation data is managed manually across orders',
+              'Review supplier catalogue management for kit range accuracy at scale',
+              'Audit the artwork and proof approval process for sponsor logos and numbering',
+              'Assess how seasonal deadlines are managed against production capacity',
+              'Quantify every finding in time, admin cost, and rework',
+            ].map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

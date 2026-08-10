@@ -47,7 +47,7 @@ export default function WorkwearPage() {
           'Personalised orders, decoration methods that vary by garment, and stock that has to match sizes, colours, and branding all at once.',
           'Generic tech advice gets this sector wrong from the start, because the production step sits between order and despatch, not after it.',
         ]}
-        heroSecondaryCta={{ label: 'See the Data App', href: '/apps/data-app' }}
+        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
           src: '/images/sectors/cat-workwear.jpg',
           width: 900,
@@ -160,6 +160,55 @@ export default function WorkwearPage() {
         ]}
         ctaLead="An hour on supplier data, blank stock dependency, and where your production step is creating admin work that shouldn't exist."
       />
+
+      {/* COMMON CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In workwear, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {[
+              { title: 'Supplier feed chaos', body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.' },
+              { title: 'Decoration and stock, in the same picture', body: "A plain garment isn't the same SKU as the decorated one. Systems that don't understand that force workarounds that mean data outside the system, errors, and extra admin on every order." },
+              { title: 'Blank stock dependency', body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders until the problem is already in the queue.' },
+              { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation requiring manual re-entry. Artwork files arriving separately from the order. All of this is solvable." },
+              { title: 'Replenishment that waits on you', body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing stockouts of the sizes everyone actually needs.' },
+            ].map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I HELP */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {[
+              'Map the full supplier-to-customer order workflow for workwear, including the decoration step',
+              'Identify where supplier catalogue data is being re-keyed across channels',
+              'Audit blank stock management against committed orders for supply gap risk',
+              'Review how personalisation requirements flow from order intake to production',
+              'Assess eCommerce integration with production scheduling and order management',
+              'Quantify every finding in time, headcount, and money',
+            ].map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
