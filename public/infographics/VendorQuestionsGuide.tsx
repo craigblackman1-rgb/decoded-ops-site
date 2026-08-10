@@ -11,7 +11,7 @@ export default function VendorQuestionsGuide() {
       number: '1',
       question: "Can you show me a business like ours that successfully integrated this system with our ERP?",
       keyPoint: 'Real proof, not promises',
-      insight: 'If they can\'t name a similar customer, the integration required heavy customisation—meaning you\'re paying for an expensive one-off project, not a plug-and-play feature.',
+      insight: 'If they can\'t name a similar customer, the integration required heavy customisation, so you\'re paying for an expensive one-off project rather than something that plugs in.',
       warning: 'Red flag: "We have the capability" without real examples'
     },
     {
@@ -117,7 +117,7 @@ export default function VendorQuestionsGuide() {
       <div className="mt-8 p-6 lg:p-8 bg-[#023047] text-white rounded-lg">
         <p className="text-sm uppercase tracking-wide font-semibold text-[#219EBC] mb-3">Pro Tip</p>
         <p className="text-base lg:text-lg leading-relaxed">
-          Vendors who can't answer these clearly don't fully understand your needs—or they're hiding complexity. Either way, that's a red flag. The best vendors will welcome these questions because they have good answers.
+          Vendors who can't answer these clearly don't fully understand your needs, or they're hiding complexity. Either way, that's a red flag. The best vendors will welcome these questions because they have good answers.
         </p>
       </div>
     </div>
