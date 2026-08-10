@@ -244,17 +244,13 @@ export default function PricingPage() {
               style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
           </div>
           <div className="inset">
-            <b>App Scoping Session, £750 fixed.</b> Mandatory before any Data App, Artwork Manager or
-            Commerce build, and waived if you&rsquo;ve had a Clarity Audit in the last six months.
-          </div>
-
-          <div className="inset">
             <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
             costs depends entirely on what it has to do: how many supplier feeds, how many sales
             channels, which machines and formats, and whether it has to talk to a platform you already
             run. Two businesses buying the same app can be a long way apart on all four. It would not be
-            fair of me to quote a number before I know the extent of what you actually need, so the
-            scoping session comes first and the quote comes after it, written for your business.
+            fair of me to quote a number before I know the extent of what you actually need, so a
+            conversation about your setup comes first and the quote comes after it, written for your
+            business.
           </div>
 
           <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms while no
@@ -267,7 +263,7 @@ export default function PricingPage() {
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
             <Link className="btn btn-primary" href="/apps/data-app">See how the Data App works</Link>
-            <Link className="btn btn-secondary" href="/contact">Book an App Scoping Session</Link>
+            <Link className="btn btn-secondary" href="/contact">Book a free 60 minute call</Link>
           </div>
         </div>
       </section>

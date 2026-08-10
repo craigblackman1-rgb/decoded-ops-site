@@ -201,8 +201,9 @@ export default function CommercePage() {
           <h2>Three tiers. Pick by what the business needs to do.</h2>
 
           <div className="inset">
-            <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. What you sell, who buys
-            it, and how they&rsquo;re allowed to buy it. Settled before the build is quoted.
+            <b>Which tier fits depends on your setup.</b> What you sell, who buys it, and how
+            they&rsquo;re allowed to buy it. That gets settled in conversation before the build is
+            quoted.
           </div>
 
           <div className="table-wrap">
@@ -233,7 +234,7 @@ export default function CommercePage() {
           </div>
           <p className="table-foot">A full rebuild like the Hanicks migration isn&rsquo;t on this table on
             purpose. That&rsquo;s scoped separately.</p>
-          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
 
           <div className="notice">
             <p className="notice-tag">Founding-client terms</p>

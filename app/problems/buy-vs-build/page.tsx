@@ -6,18 +6,18 @@ import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
  title: 'Buy vs build : Decoded Ops',
- description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder, buy, buy plus a custom layer, full custom as a last resort, and how an App Scoping Session settles it.",
+ description: "The question isn't buy or build. It's how much of what you need the platform actually covers, what the rest costs to close, and whether that changes how you work. Sometimes the answer is buy, and the test has to be able to say so.",
  alternates: { canonical: '/problems/buy-vs-build' },
  openGraph: {
   title: 'Buy vs build : Decoded Ops',
-  description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder, buy, buy plus a custom layer, full custom as a last resort, and how an App Scoping Session settles it.",
+  description: "The question isn't buy or build. It's how much of what you need the platform actually covers, what the rest costs to close, and whether that changes how you work.",
   url: 'https://decodedops.co.uk/problems/buy-vs-build',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
   title: 'Buy vs build : Decoded Ops',
-  description: "The question isn't buy or build. It's which platform fits, and what goes beside it. The ladder, buy, buy plus a custom layer, full custom as a last resort, and how an App Scoping Session settles it.",
+  description: "The question isn't buy or build. It's how much of what you need the platform actually covers, and what the rest costs to close.",
  },
 };
 
@@ -30,27 +30,27 @@ const buyVsBuildSchema = {
     {
      '@type': 'Question',
      name: 'Should I buy off-the-shelf software or build custom for my print or embroidery business?',
-     acceptedAnswer: { '@type': 'Answer', text: "The question is not buy or build, it is which platform fits, and what gaps a custom layer closes. Most businesses land on buying a platform plus adding a custom layer beside it. Full custom is a last resort." },
+     acceptedAnswer: { '@type': 'Answer', text: "Neither, framed as a binary. The real question is what percentage of what you actually need a platform covers. High coverage with a low cost to close the gap usually means buy. Low coverage, or a platform that forces you to change how you work, is where a purpose-built layer starts to make sense." },
     },
     {
      '@type': 'Question',
      name: 'What is the most common mistake when making a buy-vs-build technology decision?',
-     acceptedAnswer: { '@type': 'Answer', text: "Letting whoever gets to you first frame the decision on their terms. A platform vendor pitches buy. A developer pitches build. Neither works the ladder for you." },
+     acceptedAnswer: { '@type': 'Answer', text: "Treating the licence fee as the whole cost. The real comparison is coverage against the cost of closing the gap, plus what it costs to change how you work to fit the platform. Most of that never appears on a quote." },
     },
     {
      '@type': 'Question',
-     name: 'How do I know which rung I am on, buy, buy plus a custom layer, or full custom?',
-     acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session works the ladder in order: a written map of your workflow, a platform-fit assessment, and a scoped plan for what goes beside it. You get a written answer either way.' },
+     name: 'How do I work out how much a platform actually covers?',
+     acceptedAnswer: { '@type': 'Answer', text: 'Follow your processes from start to finish and note every point where the platform does not fit, in the order they happen. That list is the uncovered percentage, and it is the only reliable way to see it. A Clarity Audit does exactly this.' },
     },
     {
      '@type': 'Question',
-     name: 'How much does it cost to have the buy-vs-build decision scoped properly?',
-     acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session costs £750 fixed, waived if you have had a Clarity Audit in the last six months. It produces a written assessment you own outright, a specification you could hand to any developer.' },
+     name: 'Does buying a platform sometimes turn out to be the right answer?',
+     acceptedAnswer: { '@type': 'Answer', text: 'Often. High coverage and a low cost to change how you work means buy, clearly and quickly. The test has to be able to reach that answer, or it is not a real test.' },
     },
     {
      '@type': 'Question',
      name: 'What does buy plus a custom layer mean for a decorated-goods business?',
-     acceptedAnswer: { '@type': 'Answer', text: 'The platform is right but leaves gaps, supplier feeds, artwork, reporting across more than one business. A purpose-built layer closes those gaps without touching what the platform already does well.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'The platform is right but leaves gaps: supplier feeds, artwork, reporting across more than one business. A purpose-built layer closes those gaps without touching what the platform already does well.' },
     },
    ],
   },
@@ -71,14 +71,14 @@ export default function BuyVsBuildPage() {
    <section className="g-off">
     <div className="wrap hero-split">
      <div>
-      <span className="eyebrow">The problem</span>
-      <h1>The question isn&apos;t buy or build. It&apos;s which platform, and what goes beside it.</h1>
-      <p className="lede">Most businesses in this sector frame it as a straight choice, an
-       off-the-shelf platform, or a full custom build. That&apos;s a false binary. The real question is
-       which platform fits your decoration workflow, and where the gap it leaves needs a purpose-built
-       layer beside it, not a rip-and-replace.</p>
+      <span className="eyebrow">The real question</span>
+      <h1>It covers 25% of what you need. Do you buy it?</h1>
+      <p className="lede">This gets asked in different words most weeks, usually framed as buy
+       or build. It isn&apos;t really that question. If something covers a quarter of the job, the
+       decision isn&apos;t about the quarter. It&apos;s about the other three quarters, and what
+       closing them costs.</p>
       <div className="hero-cta">
-       <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
      </div>
      <figure className="evidence">
@@ -89,75 +89,76 @@ export default function BuyVsBuildPage() {
     </div>
    </section>
 
-   {/* ── 2 · THE LADDER · evidence ─────────────────────────────────────── */}
+   {/* ── 2 · THE THREE QUESTIONS ───────────────────────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-     <span className="eyebrow">The ladder</span>
-     <h2>Three rungs, climbed in order, never skipped.</h2>
-     <p className="lede" style={{ marginTop: 16 }}>Buy where it fits. Add a layer where it&apos;s close but
-      leaves gaps. Build from scratch only when nothing off the shelf comes close, and only after
-      saying so in writing.</p>
+     <span className="eyebrow">Before you buy anything</span>
+     <h2>Three questions that replace the binary.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>None of these require naming a platform. They
+      work for whichever one you&apos;re looking at.</p>
 
      <div className="rungs">
       <article className="rung">
-       <span className="kicker">Rung 1</span>
-       <h3>Buy</h3>
-       <p>If something on the market already fits, it goes on the table, named and priced. Track
-        is the best platform I&apos;ve worked with in this sector, and I don&apos;t sell it or earn
-        anything from recommending it. That&apos;s not a pitch, it costs me nothing to say it.</p>
+       <span className="kicker">Coverage</span>
+       <h3>What percentage does it genuinely cover?</h3>
+       <p>If the best thing on the market covers a quarter of the job, the question isn&apos;t
+        whether to buy it. It&apos;s what closes the other three quarters, and what that costs.
+        Usually nobody has priced it, so it gets treated as free. It isn&apos;t free, it&apos;s
+        just invisible.</p>
       </article>
 
-      <article className="rung rung--default">
-       <span className="kicker">Rung 2 <span className="flag">The normal answer</span></span>
-       <h3>Buy plus a custom layer</h3>
-       <p>Usually the platform is right but leaves gaps, supplier feeds, artwork, reporting
-        across more than one business. I show you what the gap costs to leave alone versus what
-        it costs to close with a purpose-built layer, and let you weigh it up.</p>
+      <article className="rung">
+       <span className="kicker">Fit</span>
+       <h3>Does it work how you work?</h3>
+       <p>Or do you rework the business to fit the software? Every platform encodes an
+        assumption about how you should operate. Fine if you agree with it. Expensive if you
+        don&apos;t, and the cost never appears on the quote.</p>
       </article>
 
-      <article className="rung rung--last">
-       <span className="kicker">Rung 3 · Last resort</span>
-       <h3>Full custom</h3>
-       <p>If nothing off the shelf fits, that option goes on the table too, priced honestly,
-        alongside everything else considered and why it didn&apos;t make the cut. Never a published
-        price for a build like this. It&apos;s scoped, or it isn&apos;t offered at all.</p>
+      <article className="rung">
+       <span className="kicker">Bloat</span>
+       <h3>How much of it will you actually use?</h3>
+       <p>Platforms are built to cover a hundred and one scenarios because they have to sell to
+        everyone. You&apos;ll use maybe a fifth of it. You pay for all of it, and you carry the
+        complexity of the rest for as long as you own it.</p>
       </article>
      </div>
     </div>
    </section>
 
-   {/* ── 3 · THE APP SCOPING SESSION · archetype 5 ──────────────────────── */}
+   {/* ── 3 · THE ARITHMETIC ────────────────────────────────────────────── */}
    <section className="g-white">
     <div className="wrap">
-     <span className="eyebrow">How the decision gets made</span>
-     <h2>A phased roadmap, not a guess.</h2>
-     <p className="lede" style={{ marginTop: 16 }}>The App Scoping Session is how you find out which rung
-      you&apos;re actually on, before any platform or build gets committed to.</p>
+     <span className="eyebrow">The arithmetic</span>
+     <h2>Three numbers, and you can work them out yourself.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Nobody needs to sell you this. Follow your own
+      processes and the numbers are already there.</p>
 
      <div className="steps">
       <article className="step">
        <p className="step-n">STEP 1</p>
-       <h3>Map the workflow</h3>
-       <p>What the business actually needs the platform to do, decoration methods, order
-        volumes, the systems it has to talk to.</p>
+       <h3>What it covers</h3>
+       <p>Follow the workflow start to finish. Every point where the platform doesn&apos;t fit is
+        part of the uncovered percentage.</p>
       </article>
       <article className="step">
        <p className="step-n">STEP 2</p>
-       <h3>Test platform fit</h3>
-       <p>Where an off-the-shelf platform like Track covers it outright, and precisely where it
-        doesn&apos;t, named gaps, not a vague sense of unease.</p>
+       <h3>What the gap costs</h3>
+       <p>Closing it with more software, or with someone&apos;s time every week. Both are real
+        costs. Price whichever one you&apos;d actually choose.</p>
       </article>
       <article className="step step--last">
        <p className="step-n">STEP 3</p>
-       <h3>Scope what goes beside it</h3>
-       <p>A written, priced plan for the layer that closes the gap, or, rarely, a case for full
-        custom, made honestly and in writing.</p>
+       <h3>What changing to fit it costs</h3>
+       <p>What you&apos;d have to rework about how the business runs to use the platform as
+        designed. That number is usually the one nobody wrote down.</p>
       </article>
      </div>
 
      <div className="inset">
-      <b>App Scoping Session, £750 fixed.</b> Waived if you&apos;ve had a Clarity Audit in the last six
-      months. This is the entry point for the systems line, not a Clarity Audit.
+      <b>Sometimes the answer is buy.</b> High coverage and a low cost to change how you work
+      means buy it, clearly and quickly. This has to be able to come out that way, or it isn&apos;t
+      a real test.
      </div>
     </div>
    </section>
@@ -165,7 +166,7 @@ export default function BuyVsBuildPage() {
    {/* ── PLATE · DO-ART-418 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">
     <div className="wrap">
-     <Plate tone="dark" no="DO-ART-418" title="False binary → right rung" rev="01" cls="DECODED OPS · ISSUED">
+     <Plate tone="dark" no="DO-ART-418" title="False binary → coverage test" rev="02" cls="DECODED OPS · ISSUED">
       <rect x="50" y="100" width="700" height="520" rx="12"
          fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
          stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
@@ -173,8 +174,8 @@ export default function BuyVsBuildPage() {
          fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
       <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
        <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Buy vs build framed as a straight choice</tspan></text>
-       <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Vendor demo sells features you&apos;ll never use</tspan></text>
-       <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Custom build: no idea of the cost</tspan></text>
+       <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The gap the platform leaves is never priced</tspan></text>
+       <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The cost of changing how you work is invisible</tspan></text>
        <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Decision based on a sales pitch</tspan></text>
       </g>
 
@@ -184,10 +185,10 @@ export default function BuyVsBuildPage() {
       <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
          fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
       <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Three rungs: buy, layer, custom, in order</tspan></text>
-       <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Named platforms tested against your workflow</tspan></text>
-       <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Written scope and price before commitment</tspan></text>
-       <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Decision based on evidence, not persuasion</tspan></text>
+       <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Three questions: coverage, fit, bloat</tspan></text>
+       <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">The gap costed, not assumed away</tspan></text>
+       <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Change cost priced before you commit</tspan></text>
+       <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Decision based on your own numbers</tspan></text>
       </g>
 
       <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
@@ -200,14 +201,14 @@ export default function BuyVsBuildPage() {
    <section className="g-navy">
     <div className="wrap">
      <span className="eyebrow eyebrow--amber">How I help</span>
-     <h2>No vendor relationships. No preferred platform. Just what fits.</h2>
+     <h2>No vendor relationships. No platform I&apos;m paid to prefer.</h2>
 
      <div className="answer">
-      <p>I don&apos;t sell Track, or any other platform. <b>I have nothing to gain from which rung you
-       end up on.</b></p>
-      <p>What I bring is the sector expertise to tell buy from buy-plus-a-layer from genuinely
-       needing custom, and the App Scoping Session to prove it in writing before you commit
-       budget to any of them.</p>
+      <p>There are several good platforms in this sector. The right one depends on your
+       business, and <b>I earn nothing from whichever you pick.</b></p>
+      <p>What I bring is the sector experience to run the coverage test properly: what a
+       platform actually handles in a decoration workflow, where it stops, and what it&apos;s
+       worth closing that gap versus living with it.</p>
      </div>
     </div>
    </section>
@@ -215,12 +216,13 @@ export default function BuyVsBuildPage() {
    {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
-     <h2>Find out which rung you&apos;re actually on.</h2>
-     <p className="lede">An App Scoping Session, £750 fixed, waived if you&apos;ve had a Clarity Audit
-      recently, settles buy vs build with a written answer, not a guess.</p>
+     <h2>You can&apos;t run these numbers without seeing the operation.</h2>
+     <p className="lede">Working out what percentage anything actually covers means following
+      your processes from start to finish first. A Clarity Audit is a day on site, then the
+      comparison in writing within five working days.</p>
      <div className="hero-cta">
-      <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-      <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+      <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+      <Link className="btn-ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
      </div>
     </div>
    </section>

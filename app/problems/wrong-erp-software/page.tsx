@@ -127,9 +127,9 @@ export default function WrongERPSoftwarePage() {
        <h3>Selected on demo, not on fit</h3>
        <p>Vendors are excellent at demos. They show you the things the software does well and
         move quickly past the things it doesn&apos;t. Without sector expertise on your side of the
-        table, you&apos;re evaluating presentation skills. Systems like OrderWise, PANTA, and
-        DecoNetwork all perform differently depending on your decoration mix and order model ,
-        the only fair evaluation is against a written brief that reflects your actual business.</p>
+        table, you&apos;re evaluating presentation skills. Sector-specific systems perform
+        differently depending on your decoration mix and order model, so the only fair evaluation
+        is against a written brief that reflects your actual business.</p>
       </article>
       <article className="card cause">
        <span className="n">02</span>

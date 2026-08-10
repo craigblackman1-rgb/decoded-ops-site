@@ -40,7 +40,7 @@ const inventoryBlindSchema = {
     {
      '@type': 'Question',
      name: 'What does a stock and feed assessment actually produce?',
-     acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session produces a written map of your current stock and feed setup, and exactly what a fix would involve, before anything gets built.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'A Clarity Audit produces a written map of your current stock and feed setup, and exactly what a fix would involve, before anything is even considered.' },
     },
     {
      '@type': 'Question',
@@ -78,7 +78,7 @@ export default function InventoryBlindPage() {
        supplier feeds, the ERP, and the warehouse floor all showing a different number for the
        same SKU, so nobody&apos;s confident enough in any of them to order against it.</p>
       <div className="hero-cta">
-       <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
      </div>
      <figure className="evidence">
@@ -193,10 +193,10 @@ export default function InventoryBlindPage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Stop guessing what&apos;s actually on the shelf.</h2>
-     <p className="lede">An App Scoping Session maps your current stock picture and what it would take
-      to make it real-time.</p>
+     <p className="lede">A Clarity Audit maps your current stock picture and what it would take to
+      make it real-time.</p>
      <div className="hero-cta">
-      <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+      <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
      </div>
     </div>

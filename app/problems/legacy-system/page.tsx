@@ -45,7 +45,7 @@ const legacySystemSchema = {
     {
      '@type': 'Question',
      name: 'How do I know what my platform needs beside it?',
-     acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session, a half-day, £750 fixed, produces a written assessment of what your current platform handles well, what it does not, and a fixed price for the layer that closes the gap.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'A Clarity Audit produces a written assessment of what your current platform handles well, what it does not, and a fixed price for the layer that closes the gap.' },
     },
     {
      '@type': 'Question',
@@ -78,7 +78,7 @@ export default function LegacySystemPage() {
        garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
        most platforms have no clean way to model it.</p>
       <div className="hero-cta">
-       <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
      </div>
      <figure className="evidence">
@@ -121,8 +121,8 @@ export default function LegacySystemPage() {
 
      <div className="layer-stack">
       <div className="layer-tier layer-tier--base">
-       <div><h3>Your platform, unchanged</h3><p>Khaos Control, Symphony, or similar, stays as
-        the system of record for orders and accounts</p></div>
+       <div><h3>Your platform, unchanged</h3><p>Whichever one you run stays as the system of
+        record for orders and accounts</p></div>
        <span className="no">Layer 1</span>
       </div>
       <div className="layer-tier layer-tier--mid">
@@ -183,7 +183,7 @@ export default function LegacySystemPage() {
       <p>I don&apos;t start from &ldquo;which new platform should you buy.&rdquo; I start from what your current
        platform already does well, and scope the layer that closes the gap, decoration BOMs,
        artwork, blank-to-finished stock, <b>without touching what already works.</b></p>
-      <p>An App Scoping Session tells you honestly whether that&apos;s a small layer, a bigger one, or
+      <p>A Clarity Audit tells you honestly whether that&apos;s a small layer, a bigger one, or
        whether the platform genuinely needs to change. Rarely the last one.</p>
      </div>
     </div>
@@ -193,10 +193,10 @@ export default function LegacySystemPage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Find out what layer your platform is actually missing.</h2>
-     <p className="lede">An App Scoping Session, £750 fixed, scopes the gap and prices the fix, before
-      anything gets ripped out.</p>
+     <p className="lede">A Clarity Audit scopes the gap and prices the fix, before anything gets
+      ripped out.</p>
      <div className="hero-cta">
-      <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+      <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
      </div>
     </div>

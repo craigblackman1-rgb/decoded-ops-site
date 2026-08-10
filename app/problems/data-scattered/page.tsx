@@ -40,7 +40,7 @@ const dataScatteredSchema = {
     {
      '@type': 'Question',
      name: 'What does a data clean-up involve before any build starts?',
-     acceptedAnswer: { '@type': 'Answer', text: 'An App Scoping Session comes first: a written assessment of exactly which feeds you have, in what state, and what a fix actually requires, before any build starts.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'A Clarity Audit comes first: a written assessment of exactly which feeds you have, in what state, and what a fix actually requires, before any build is even considered.' },
     },
     {
      '@type': 'Question',
@@ -50,7 +50,7 @@ const dataScatteredSchema = {
     {
      '@type': 'Question',
      name: 'What is the first step to fix scattered product data?',
-     acceptedAnswer: { '@type': 'Answer', text: 'A half-day App Scoping Session, £750 fixed, that produces a written map of exactly where the disconnect is, before any build starts.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'A Clarity Audit: a day on site that produces a written map of exactly where the disconnect is, before any build is even considered.' },
     },
    ],
   },
@@ -77,7 +77,7 @@ export default function DataScatteredPage() {
        different answers, depending who you ask and which spreadsheet, feed, or screen they&apos;re
        looking at. None of them are lying. They&apos;re just all out of date in a different way.</p>
       <div className="hero-cta">
-       <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
      </div>
      <figure className="evidence">
@@ -220,10 +220,10 @@ export default function DataScatteredPage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Find out what your six sources actually disagree about.</h2>
-     <p className="lede">An App Scoping Session maps every source you&apos;re running today and what it
-      would take to get them all reading from the same data.</p>
+     <p className="lede">A Clarity Audit maps every source you&apos;re running today and what it would
+      take to get them all reading from the same data.</p>
      <div className="hero-cta">
-      <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+      <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
      </div>
     </div>

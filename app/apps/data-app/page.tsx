@@ -34,8 +34,8 @@ export default function DataAppPage() {
                 sell, and keeps your catalogue current across every channel.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
-              <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
-              <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price this</Link>
+              <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
+              <Link className="btn btn--ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
             </div>
           </div>
 
@@ -165,9 +165,9 @@ export default function DataAppPage() {
           <h2>Three tiers, priced on scope.</h2>
 
           <div className="inset">
-            <b>App Scoping Session, £750 fixed.</b> Mandatory before any tier. Half a day working out
-            which feeds, which channels, and which tier actually fits, so the quote that follows is a
-            real number, not a range.
+            <b>Which tier fits depends on your setup.</b> How many feeds, how many channels, and what
+            the platform you already run needs beside it. That gets settled in conversation, so the
+            quote that follows is a real number, not a range.
           </div>
 
           <div className="table-wrap">
@@ -195,18 +195,18 @@ export default function DataAppPage() {
               </tbody>
             </table>
           </div>
-          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
       </section>
 
       {/* 5 · CTA STRIP */}
       <section className="g-off cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Book an App Scoping Session.</h2>
-          <p className="lede">£750 fixed, half a day, and a real quote at the end of it. If it turns out you
-            don&rsquo;t need this, you&rsquo;ll hear that instead.</p>
+          <h2>Talk it through first.</h2>
+          <p className="lede">No pitch. If it turns out you don&rsquo;t need this, that&rsquo;s what
+            you&rsquo;ll hear.</p>
           <div className="btn-row">
-            <Link className="btn btn--primary" href="/contact">Book an App Scoping Session</Link>
+            <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
             <Link className="btn btn--ghost btn-arrow" href="/apps">See the other systems</Link>
           </div>
         </div>

@@ -123,8 +123,8 @@ export default function HowIBuildPage() {
               <p className="kicker">Rung 1</p>
               <h3>Buy</h3>
               <p>If something on the market already fits, it goes on the table, named and priced.
-                Tracker is the best platform I&rsquo;ve worked with in this sector, and I don&rsquo;t sell it or
-                earn anything from recommending it.</p>
+                There are several good platforms in this sector, and the right one depends on your
+                business. I don&rsquo;t sell any of them, and I earn nothing from whichever you pick.</p>
               <p>That costs me nothing to say. Which is rather the point: you can weigh what I tell you
                 about it knowing there&rsquo;s nothing in it for me either way.</p>
             </article>
@@ -216,8 +216,8 @@ export default function HowIBuildPage() {
           <div className="grid grid--2" style={{ marginTop: 40, alignItems: 'start' }}>
             <div>
               <figure className="pull" style={{ marginTop: 0 }}>
-                <blockquote>Tracker is the best platform I&rsquo;ve worked with in this sector. I don&rsquo;t sell
-                  it.</blockquote>
+                <blockquote>There are several good platforms in this sector. I don&rsquo;t sell any of
+                  them, and I earn nothing from whichever you pick.</blockquote>
                 <cite>Craig Blackman &middot; Decoded Ops</cite>
               </figure>
             </div>

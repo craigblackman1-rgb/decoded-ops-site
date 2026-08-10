@@ -207,7 +207,7 @@ export default function CrmPage() {
           <p className="table-foot">If what you need is bigger than this (multiple entities, a bespoke
             integration into a platform you already run), that&apos;s a different conversation, and it
             starts with a Clarity Audit, not a price list.</p>
-          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted after the App Scoping Session rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
       </section>
 
