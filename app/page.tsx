@@ -302,7 +302,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ══════════ 6 · WHERE THE SOFTWARE CAME FROM ══════════ */}
+        {/* ══════════ 6 · WHERE THE SOFTWARE CAME FROM ══════════
+            Was four sections (why-software / ladder / evidence, ~215 lines):
+            the ladder plate now lives only on /how-i-build (DO-ART-302), the
+            evidence plate only on /apps/data-app. Collapsed to one section
+            plus the Eternal Fitness depth exhibit, per Positioning v2.0 §2
+            and §8: software is evidence of depth, not a homepage product
+            catalogue, and the ladder is an assessment discipline that
+            belongs in the how-i-build conversation, not the front door. */}
         <section className="g-white" data-od-id="why-software">
           <div className="wrap">
             <span className="eyebrow">Where the software came from</span>
@@ -315,8 +322,9 @@ export default function HomePage() {
                   platform was usually right. It just would not do one particular job, and nothing on the
                   market closed that gap at a price a business this size could justify. So I built the
                   thing that did.</p>
-                <p className="lede">That is why the apps exist. They came out of the operational work,
-                  rather than being a product line I went looking for a market for.</p>
+                <p className="lede">Because it was built by someone who does the process work, the Process
+                  Register and the SOPs are built in rather than bolted on. That is the Decoded Method
+                  running inside the software instead of sitting in a folder nobody opens.</p>
               </div>
               <div className="panel">
                 <h3>Which is why buying always gets tested first.</h3>
@@ -326,199 +334,23 @@ export default function HomePage() {
                 <p><Link href="/how-i-build">How I decide what to build</Link></p>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* ══════════ 7 · THE LADDER · DO-ART-302 ══════════ */}
-        <section className="g-off" data-od-id="ladder">
-          <div className="wrap">
-            <span className="eyebrow">Flow &middot; DO-ART-302</span>
-            <h2>The facts, the options, and the decision stays yours.</h2>
-            <div className="hair"></div>
-            <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market,
-              what it costs, and where it falls short, so whatever you decide, you decide on the
-              merits.</p>
-
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-ladder">
-                <Plate tone="dark" p="ld" title="The ladder: buy first, build only what is missing"
-                       sub="Three rungs in fixed order · every option priced"
-                       no="DO-ART-302" rev="01" cls="DECODED OPS · ISSUED">
-
-                  {/* the spine */}
-                  <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
-                        d="M140 520 H1470" fill="none" strokeWidth="2.5" markerEnd="url(#ld-ah)"/>
-
-                  {/* RUNG 1 */}
-                  <g className="sk-fade sk-s3" filter="url(#ld-shadow)">
-                    <rect x="120" y="270" width="320" height="130" rx="10" fill="url(#ld-node)"
-                          className="p-node" strokeWidth="1.4"/>
-                    <text x="280" y="325" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="28">Buy</text>
-                    <text x="280" y="362" textAnchor="middle" className="p-mono" fontSize="18"
-                          opacity=".85">off the shelf, as it is</text>
-                    <line x1="280" y1="400" x2="280" y2="504" className="p-scyan" strokeWidth="1"
-                          strokeOpacity=".3" strokeDasharray="4 5"/>
-                    <circle cx="280" cy="520" r="13" className="p-cyan"/>
-                    <text x="280" y="578" textAnchor="middle" className="p-mono" fontSize="18"
-                          letterSpacing="1.6" opacity=".7">RUNG 1 &middot; IF IT FITS</text>
-                  </g>
-
-                  {/* RUNG 2: the normal answer */}
-                  <g className="sk-fade sk-s4" filter="url(#ld-shadow)">
-                    <rect x="620" y="240" width="380" height="190" rx="12" fill="url(#ld-amber-n)"
-                          className="p-node-a" strokeWidth="1.8"/>
-                    {/* Two lines, vertically centred in the 240..430 node. Was three
-                        lines until the "both live clients" claim came out. */}
-                    <text x="810" y="324" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">Buy plus</text>
-                    <text x="810" y="362" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">a custom layer</text>
-                    <line x1="810" y1="430" x2="810" y2="500" className="p-samber" strokeWidth="1.2"
-                          strokeOpacity=".45" strokeDasharray="4 5"/>
-                    <circle cx="810" cy="520" r="18" className="p-amber"/>
-                    <text x="810" y="578" textAnchor="middle" className="p-mono" fontSize="18"
-                          letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE NORMAL ANSWER</text>
-                  </g>
-
-                  {/* RUNG 3 */}
-                  <g className="sk-fade sk-s5" filter="url(#ld-shadow)" opacity=".82">
-                    <rect x="1180" y="285" width="280" height="110" rx="9" fill="url(#ld-node)"
-                          className="p-node" strokeWidth="1.2"/>
-                    <text x="1320" y="330" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="24">Full
-                      custom</text>
-                    <text x="1320" y="362" textAnchor="middle" className="p-mono" fontSize="17"
-                          opacity=".8">only if nothing fits</text>
-                    <line x1="1320" y1="395" x2="1320" y2="508" className="p-scyan" strokeWidth="1"
-                          strokeOpacity=".3" strokeDasharray="4 5"/>
-                    <circle cx="1320" cy="520" r="10" className="p-cyan"/>
-                    <text x="1320" y="578" textAnchor="middle" className="p-mono" fontSize="18"
-                          letterSpacing="1.6" opacity=".6">RUNG 3 &middot; LAST RESORT</text>
-                  </g>
-
-                  <g className="sk-fade sk-s6">
-                    <line x1="60" y1="632" x2="1540" y2="632" className="p-scyan" strokeWidth=".6"
-                          strokeOpacity=".22"/>
-                    <text x="800" y="700" textAnchor="middle" className="p-ink"
-                          fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="26"
-                          opacity=".9">Every option priced, including the ones I did not recommend.</text>
-                  </g>
-
-                  <g className="sk-dots">
-                    <circle r="6" className="p-cyan">
-                      <animateMotion dur="5s" repeatCount="indefinite">
-                        <mpath href="#ld-spine"/>
-                      </animateMotion>
-                    </circle>
-                  </g>
-                </Plate>
-              </div>
-            </div>
-
-            <div className="rungs" data-od-id="ladder-rungs">
-              <article className="card">
-                <span className="kicker">Rung 1</span>
-                <h3>Buy</h3>
-                <p>If something on the market already fits, it goes on the table, named and priced. Tracker
-                  is the best platform I&rsquo;ve worked with in this sector, and I don&rsquo;t sell it or earn
-                  anything from recommending it. That&rsquo;s not a pitch. It costs me nothing to say it.</p>
-              </article>
-
-              <article className="card rung--default">
-                <span className="kicker">Rung 2 <span className="flag">The normal answer</span></span>
-                <h3>Buy plus a custom layer</h3>
-                <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting
-                  across more than one business. I&rsquo;ll show you what the gap costs to leave alone versus
-                  what it costs to close with a custom layer, and let you weigh it up.</p>
-              </article>
-
-              <article className="card rung--last">
-                <span className="kicker">Rung 3 &middot; Last resort</span>
-                <h3>Full custom</h3>
-                <p>If nothing off the shelf fits, that option goes on the table too, priced honestly,
-                  alongside everything else I considered and why it didn&rsquo;t make the cut. You own the
-                  decision either way. I just make sure you&rsquo;re making it with the facts in front of you,
-                  not a sales pitch.</p>
-              </article>
+            <div className="panel" style={{ marginTop: 28 }}>
+              <p className="notice-tag">Disclosure</p>
+              <h3>What that looks like at full stretch</h3>
+              <p>Eternal Fitness is my wife&rsquo;s business, so it isn&rsquo;t an arm&rsquo;s length client
+                reference and I won&rsquo;t pretend otherwise. It&rsquo;s here because it is the clearest
+                example of how far this goes, and because there was nowhere to hide if it didn&rsquo;t
+                work.</p>
+              <p>Multiple systems consolidated into one operations hub. Every procedure and process
+                documented. The mundane but important work automated. A business that can scale online
+                and offline without adding admin to do it.</p>
+              <p><Link href="/apps">See what&rsquo;s already running</Link></p>
             </div>
           </div>
         </section>
 
-        {/* ══════════ 8 · EVIDENCE · DO-ART-902 ══════════ */}
-        <section className="g-navy" data-od-id="evidence">
-          <div className="wrap">
-            <span className="eyebrow">Evidence &middot; DO-ART-902</span>
-            <h2>Rung 2, running in a real business.</h2>
-            <div className="hair"></div>
-            <p className="lede">Supplier feeds in, one clean catalogue out. The Data App alongside a
-              platform the client already owned: feeds imported, products matched, stock pushed back into
-              the system they were already paying for.</p>
-
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-evidence">
-                <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
-                       sub="Supplier feed to platform, one clean catalogue between them"
-                       no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
-
-                  <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
-
-                  {/* THE EXHIBIT */}
-                  <g className="sk-fade sk-s2">
-                    <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
-                           preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
-                    <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
-                           opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
-                    <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
-                           strokeWidth="1.1" strokeOpacity=".35"/>
-                    <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
-                    <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
-                           fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
-                  </g>
-
-                  {/* THE SPECIFICATION */}
-                  <g className="sk-fade sk-s4">
-                    <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
-                           className="p-node" strokeWidth="1.1"/>
-                    <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
-                    <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
-                           fontWeight="600">EXHIBIT</text>
-                    <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
-                           strokeOpacity=".2"/>
-
-                    <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">CLIENT</text>
-                    <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
-
-                    <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">SHOWS</text>
-                    <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
-                    <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
-                      picking alongside Symphony</text>
-
-                    <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
-                           opacity=".45">SOURCE</text>
-                    <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
-                           fontWeight="600" fontSize="22">Decoded Data App interface</text>
-
-                    <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
-                           strokeOpacity=".2"/>
-                    <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
-                      screen is not</text>
-                    <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
-                      grading it would</text>
-                    <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
-                      is evidence of.</text>
-                  </g>
-                </Plate>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════ 9 · CTA ══════════ */}
+        {/* ══════════ 7 · CTA ══════════ */}
         <section className="g-white" data-od-id="cta">
           <div className="wrap centred">
             <h2>Ready to find out what&rsquo;s really going on?</h2>
