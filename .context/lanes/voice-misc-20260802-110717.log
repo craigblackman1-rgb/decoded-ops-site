@@ -1,0 +1,2330 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Explore scope: list all files in app/tools, app/resources, app/locations, app/small-business, app/blog
+[ ] Grep for violations across all in-scope files: em dashes, we/our/us, end-to-end, banned consultant-speak
+[ ] Fix violations file by file
+[ ] Verify: grep for em dash (zero), we/our/us (reviewed), end-to-end (zero), banned words
+[ ] Run npm run build ΓÇö must exit 0
+[ ] Report summary
+
+Γ£▒ Glob "app/tools/**/*.tsx" 10 matches
+Γ£▒ Glob "app/resources/**/*.tsx" 5 matches
+Γ£▒ Glob "app/locations/**/*.tsx" 4 matches
+Γ£▒ Glob "app/small-business/page.tsx" 1 match
+Γ£▒ Glob "app/blog/page.tsx" 1 match
+Γ£▒ Glob "app/blog/[slug]/page.tsx" 0 matches
+Γ£▒ Glob "app/blog/**/*.tsx" 2 matches
+ΓåÆ Read app/tools/page.tsx
+ΓåÆ Read app/tools/should-i-replace-erp/page.tsx
+ΓåÆ Read app/tools/rto-calculator/page.tsx
+ΓåÆ Read app/tools/ops-health-score/page.tsx
+ΓåÆ Read app/tools/downtime-cost-calculator/page.tsx
+ΓåÆ Read app/tools/automation-roi-calculator/page.tsx
+ΓåÆ Read app/tools/ai-readiness-check/page.tsx
+Now let me read all the files and simultaneously grep for violations. I'll batch the reads and greps.
+ΓåÆ Read app/resources/page.tsx
+ΓåÆ Read app/resources/software-reviews/page.tsx
+ΓåÆ Read app/resources/six-sigma/page.tsx
+ΓåÆ Read app/resources/audit-checklist/page.tsx
+ΓåÆ Read app/resources/5-warning-signs/page.tsx
+ΓåÆ Read app/locations/fractional-cto/page.tsx
+ΓåÆ Read app/locations/tech-audit/page.tsx
+ΓåÆ Read app/locations/fractional-cto/[location]/page.tsx
+ΓåÆ Read app/locations/tech-audit/[location]/page.tsx
+ΓåÆ Read app/small-business/page.tsx
+ΓåÆ Read app/blog/page.tsx
+ΓåÆ Read app/blog/[slug]/page.tsx
+Γ£▒ Glob "components/calculators/**/*.tsx" 3 matches
+Γ£▒ Glob "components/LocationPage.tsx" 1 match
+Now let me check the calculator components referenced by the tool pages, and also grep for violations across all files.
+ΓåÆ Read components/calculators/RtoCalculator.tsx
+ΓåÆ Read components/calculators/DowntimeCostCalculator.tsx
+ΓåÆ Read components/calculators/AutomationRoiCalculator.tsx
+ΓåÆ Read components/LocationPage.tsx
+Γ£▒ Grep "ΓÇö" in app/tools ┬╖ 29 matches
+Γ£▒ Grep "ΓÇö" in app/resources ┬╖ 28 matches
+Γ£▒ Grep "ΓÇö" in app/locations ┬╖ 36 matches
+Γ£▒ Grep "ΓÇö" in app/small-business ┬╖ 17 matches
+Γ£▒ Grep "ΓÇö" in app/blog ┬╖ 6 matches
+Γ£▒ Grep "ΓÇö" in components/calculators ┬╖ 7 matches
+Γ£▒ Grep "ΓÇö" in components ┬╖ 8 matches
+Now I have all the files. Let me systematically grep for every violation category across the scope.
+
+$ rg -n '\bwe\b|\bour\b|\bus\b' --include='*.tsx' 'app\tools' 'app\resources' 'app\locations' 'app\small-business\page.tsx' 'app\blog\page.tsx' 'app\blog\[slug]\page.tsx' 'components\LocationPage.tsx' 'components\calculators' 2>$null
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n -i 'end.to.end|end-to-end' --include='*.tsx' 'app\tools' 'app\resources' 'app\locations' 'app\small-business\page.tsx' 'app\blog\page.tsx' 'app\blog\[slug]\page.tsx' 'components\LocationPage.tsx' 'components\calculators' 2>$null
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n -i 'leverage|synergy|holistic|seamless\b|journey.*\b(?!is)\b|pain.points|moving.the.needle|best.in.class|best.practice|circle.back|reach.out|\bunlock\b|\bgame.changer\b|\bdelve\b|\brobust\b|\bcrucial\b' --include='*.tsx' 'app\tools' 'app\resources' 'app\locations' 'app\small-business\page.tsx' 'app\blog\page.tsx' 'app\blog\[slug]\page.tsx' 'components\LocationPage.tsx' 'components\calculators' 2>$null
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Now let me grep for "we"/"our"/"us", "end-to-end", and banned consultant-speak:
+$ rg -n -i '\bbiggest\b|\balways\b|\bnever\b|\bevery\b' --include='*.tsx' 'app\tools' 'app\resources' 'app\locations' 'app\small-business\page.tsx' 'app\blog\page.tsx' 'app\blog\[slug]\page.tsx' 'components\LocationPage.tsx' 'components\calculators' 2>$null
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/tools ┬╖ 0 matches
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/resources ┬╖ 0 matches
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/locations ┬╖ 1 match
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/small-business ┬╖ 0 matches
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/blog ┬╖ 0 matches
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in components ┬╖ 0 matches
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in components/calculators ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/tools ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/resources ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/locations ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/small-business ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/blog ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in components ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in components/calculators ┬╖ 0 matches
+Now let me grep for "end-to-end" and banned consultant-speak:
+Good ΓÇö no "end-to-end." Let me now check for the banned consultant words across the full scope:
+
+$ $files = @(
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\layout.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\layout.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\downtime-cost-calculator\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\automation-roi-calculator\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\layout.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\[slug]\page.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx',
+'d:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx'
+)
+$words = @('leverage','synergy','holistic','seamless','journey','pain\s*points','moving the needle','best-in-class','best practice','circle back','reach out','unlock','game-changer','game changer','delve','robust','crucial')
+foreach ($f in $files) { foreach ($w in $words) { $m = Select-String -Path $f -Pattern $w -AllMatches -CaseSensitive:$false; if ($m) { $m | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } } } }
+D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx:21: painPoints: PainPoint[];
+D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx:38: painPoints,
+D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx:123: {/* PAIN POINTS */}
+D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx:134: {painPoints.map((p, i) => (
+
+# Todos
+[Γ£ô] Explore scope: list all files in app/tools, app/resources, app/locations, app/small-business, app/blog
+[Γ£ô] Grep for violations across all in-scope files: em dashes, we/our/us, end-to-end, banned consultant-speak
+[ΓÇó] Fix app/tools/** ΓÇö 7 pages + 2 layouts (em dashes in eyebrows, prose, result labels, metadata)
+[ ] Fix app/resources/** ΓÇö 5 pages (em dashes in eyebrows, body copy, metadata)
+[ ] Fix app/locations/** ΓÇö 4 pages (em dashes in eyebrows, prose, metadata; fix 'we' in tech-audit)
+[ ] Fix app/small-business/page.tsx (em dashes in eyebrows, prose, metadata)
+[ ] Fix app/blog/page.tsx and [slug]/page.tsx (em dashes in titles, prose)
+[ ] Fix components/calculators/*.tsx (em dashes in comments, labels)
+[ ] Fix components/LocationPage.tsx (em dashes in eyebrows, prose)
+[ ] Verify: grep for em dash (zero), we/our/us (only false positives), end-to-end (zero)
+[ ] Run npm run build ΓÇö must exit 0
+[ ] Report summary
+
+ΓåÉ Edit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+@@ -43,9 +43,9 @@
+ },
+ {
+   title: 'AI Readiness Check',
+   description:
+-    'Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your foundation first.',
++    'Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your foundation first.',
+   href: '/tools/ai-readiness-check',
+ },
+ {
+   title: 'Ops Health Score',
+
+
+Starting the fixes. I'll batch edits file by file. Beginning with `app/tools/`:
+ΓåÉ Edit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+@@ -49,9 +49,9 @@
+ },
+ {
+   title: 'Ops Health Score',
+   description:
+-    'Rate your business across five operational dimensions to see where you stand ΓÇö and where to focus first.',
++    'Rate your business across five operational dimensions to see where you stand, and where to focus first.',
+   href: '/tools/ops-health-score',
+ },
+ {
+   title: 'Downtime Cost Calculator',
+
+
+ΓåÉ Edit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+@@ -67,9 +67,9 @@
+   },
+   {
+     title: 'Automation ROI Calculator',
+     description:
+-      'See when automating a manual process pays for itself ΓÇö and what it returns over 3 years.',
++      'See when automating a manual process pays for itself, and what it returns over 3 years.',
+     href: '/tools/automation-roi-calculator',
+   },
+ ];
+ 
+
+
+ΓåÉ Edit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+@@ -83,9 +83,9 @@
+ <JsonLd data={toolsSchema} />
+ {/* Hero */}
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+-    <span className="eyebrow">ΓÇö Free tools</span>
++    <span className="eyebrow">Free tools</span>
+     <h1>Calculate your operational cost</h1>
+     <p className="lede" style={{ margin: '0 auto' }}>
+       Free tools to quantify operational inefficiency ΓÇö so you know exactly what it&apos;s costing you.
+     </p>
+
+
+ΓåÉ Edit app/tools/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\page.tsx
+@@ -86,9 +86,9 @@
+   <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+     <span className="eyebrow">Free tools</span>
+     <h1>Calculate your operational cost</h1>
+     <p className="lede" style={{ margin: '0 auto' }}>
+-      Free tools to quantify operational inefficiency ΓÇö so you know exactly what it&apos;s costing you.
++      Free tools to quantify operational inefficiency, so you know exactly what it&apos;s costing you.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
+@@ -53,9 +53,9 @@
+ return (
+   <main>
+     <section className="g-navy">
+       <div className="wrap" style={{ maxWidth: 720 }}>
+-        <span className="eyebrow">ΓÇö Free tool</span>
++        <span className="eyebrow">Free tool</span>
+         <h1>Should I replace my ERP?</h1>
+         <p className="lede">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+       </div>
+     </section>
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\page.tsx
+@@ -15,11 +15,11 @@
+   { id: 8, text: 'Has your business model changed significantly since you bought the system?', weight: 1 },
+ ];
+ 
+ const results = [
+-  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
+-  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.', action: 'Do an Audit First' },
+-  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.', action: 'Start Planning' },
++  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
++  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Do an Audit First' },
++  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Start Planning' },
+ ];
+ 
+ type Answer = 'yes' | 'no' | null;
+ 
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\should-i-replace-erp\layout.tsx
+@@ -1,20 +1,20 @@
+ import type { Metadata } from 'next';
+ 
+ export const metadata: Metadata = {
+   title: 'Should I Replace My ERP? Free Decision Tool | Decoded Ops',
+-  description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.',
++  description:     'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.',
+   alternates: { canonical: '/tools/should-i-replace-erp' },
+   openGraph: {
+     title: 'Should I Replace My ERP? Free Decision Tool | Decoded Ops',
+-    description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.',
++    description:     'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.',
+     url: 'https://decodedops.co.uk/tools/should-i-replace-erp',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Should I Replace My ERP? Free Decision Tool | Decoded Ops',
+-    description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation ΓÇö plus what an honest assessment would cost.',
++    description:     'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.',
+   },
+ };
+ 
+ export default function ShouldReplaceERPLayout({ children }: { children: React.ReactNode }) {
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+@@ -13,11 +13,11 @@
+   { id: 6, text: 'Have you successfully implemented new technology in the last 12 months?', weight: 1 },
+ ];
+ 
+ const results = [
+-  { min: 0, max: 3, label: 'Not Ready ΓÇö Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
+-  { min: 4, max: 6, label: 'Getting There ΓÇö Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
+-  { min: 7, max: 10, label: 'Ready ΓÇö Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
++  { min: 0, max: 3, label: 'Not Ready: Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
++  { min: 4, max: 6, label: 'Getting There: Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
++  { min: 7, max: 10, label: 'Ready: Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
+ ];
+ 
+ type Answer = 'yes' | 'no' | null;
+ 
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+@@ -51,9 +51,9 @@
+ return (
+   <main>
+     <section className="g-navy">
+       <div className="wrap" style={{ maxWidth: 720 }}>
+-        <span className="eyebrow">ΓÇö Free tool</span>
++        <span className="eyebrow">Free tool</span>
+         <h1>AI readiness check</h1>
+         <p className="lede">Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your operational foundation first.</p>
+       </div>
+     </section>
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ai-readiness-check\page.tsx
+@@ -53,9 +53,9 @@
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Free tool</span>
+     <h1>AI readiness check</h1>
+-    <p className="lede">Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your operational foundation first.</p>
++    <p className="lede">Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your operational foundation first.</p>
+   </div>
+ </section>
+ 
+ <section className="g-off">
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+@@ -19,9 +19,9 @@
+   { id: 'team', label: 'Team & Capability', low: 'No capacity or skills for technology improvement.', mid: 'Some capability exists. Training happens reactively.', high: 'Team has skills and capacity. Technology adoption is part of the culture.' },
+   { id: 'strategy', label: 'Technology Strategy', low: 'No roadmap. Systems bought reactively.', mid: 'Informal roadmap exists. Some planning in place.', high: 'Clear technology roadmap aligned to business goals.' },
+ ];
+ 
+-const scoreLabels = ['1 ΓÇö Critical', '2 ΓÇö Weak', '3 ΓÇö Acceptable', '4 ΓÇö Good', '5 ΓÇö Excellent'];
++const scoreLabels = ['1: Critical', '2: Weak', '3: Acceptable', '4: Good', '5: Excellent'];
+ 
+ function getScoreColor(score: number): string {
+   if (score <= 2) return '#FB8500';
+   if (score <= 3) return '#FFB703';
+
+
+Now fixing the remaining tools files in parallel:
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+@@ -28,12 +28,12 @@
+   return '#219EBC';
+ }
+ 
+ function getHealthLabel(total: number): { label: string; color: string; description: string } {
+-  if (total <= 10) return { label: 'Critical ΓÇö Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
+-  if (total <= 15) return { label: 'Fragile ΓÇö Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk ΓÇö fixing them now is cheaper than waiting.' };
+-  if (total <= 20) return { label: 'Stable ΓÇö Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
+-  return { label: 'Strong ΓÇö Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
++  if (total <= 10) return { label: 'Critical: Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
++  if (total <= 15) return { label: 'Fragile: Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk: fixing them now is cheaper than waiting.' };
++  if (total <= 20) return { label: 'Stable: Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
++  return { label: 'Strong: Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
+ }
+ 
+ export default function OpsHealthScorePage() {
+   const [scores, setScores] = useState<Record<string, number>>({});
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+@@ -55,9 +55,9 @@
+ return (
+   <main>
+     <section className="g-navy">
+       <div className="wrap" style={{ maxWidth: 720 }}>
+-        <span className="eyebrow">ΓÇö Free tool</span>
++        <span className="eyebrow">Free tool</span>
+         <h1>Ops health score</h1>
+         <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand ΓÇö and where to focus first.</p>
+       </div>
+     </section>
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\page.tsx
+@@ -57,9 +57,9 @@
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Free tool</span>
+     <h1>Ops health score</h1>
+-    <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand ΓÇö and where to focus first.</p>
++    <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand, and where to focus first.</p>
+   </div>
+ </section>
+ 
+ <section className="g-off">
+
+
+ΓåÉ Edit app/tools/ops-health-score/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\ops-health-score\layout.tsx
+@@ -1,9 +1,9 @@
+ import type { Metadata } from 'next';
+ 
+ export const metadata: Metadata = {
+   title: 'Ops Health Score | Decoded Ops',
+-  description: 'Rate your business across five operational dimensions ΓÇö systems integration, processes, data quality, team capability, and technology strategy.',
++  description: 'Rate your business across five operational dimensions: systems integration, processes, data quality, team capability, and technology strategy.',
+   alternates: { canonical: '/tools/ops-health-score' },
+   openGraph: {
+     title: 'Ops Health Score | Decoded Ops',
+     description: 'Rate your operations across five dimensions and see where to focus first.',
+
+
+ΓåÉ Edit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
+@@ -28,9 +28,9 @@
+ />
+ {/* Hero */}
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 900 }}>
+-    <span className="eyebrow">ΓÇö Free tool</span>
++    <span className="eyebrow">Free tool</span>
+     <h1>RTO calculator</h1>
+     <p className="lede">
+       See what your current recovery time is costing you ΓÇö and what faster recovery is actually worth in pounds.
+     </p>
+
+
+ΓåÉ Edit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\rto-calculator\page.tsx
+@@ -31,9 +31,9 @@
+   <div className="wrap" style={{ maxWidth: 900 }}>
+     <span className="eyebrow">Free tool</span>
+     <h1>RTO calculator</h1>
+     <p className="lede">
+-      See what your current recovery time is costing you ΓÇö and what faster recovery is actually worth in pounds.
++      See what your current recovery time is costing you, and what faster recovery is actually worth in pounds.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\downtime-cost-calculator\page.tsx
+@@ -28,9 +28,9 @@
+ />
+ {/* Hero */}
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 900 }}>
+-    <span className="eyebrow">ΓÇö Free tool</span>
++    <span className="eyebrow">Free tool</span>
+     <h1>Downtime cost calculator</h1>
+     <p className="lede">
+       Enter your numbers to see exactly what system outages cost your business each year across
+       staff time and lost revenue.
+
+
+ΓåÉ Edit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\tools\automation-roi-calculator\page.tsx
+@@ -27,9 +27,9 @@
+   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+ />
+ <section className="g-navy">
+   <div className="wrap" style={{ maxWidth: 900 }}>
+-    <span className="eyebrow">ΓÇö Free tool</span>
++    <span className="eyebrow">Free tool</span>
+     <h1>Automation ROI calculator</h1>
+     <p className="lede">
+       Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
+     </p>
+
+
+ΓåÉ Edit components/calculators/RtoCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
+@@ -24,9 +24,9 @@
+ const targetBarPct = (targetRto / maxRto) * 100;
+ 
+ return (
+   <div className="calc-grid">
+-    {/* Left column ΓÇö inputs */}
++    {/* Left column: inputs */}
+     <div>
+       <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
+         Your Numbers
+       </h2>
+
+
+ΓåÉ Edit components/calculators/RtoCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\RtoCalculator.tsx
+@@ -87,9 +87,9 @@
+     />
+   </div>
+ </div>
+ 
+-{/* Right column ΓÇö results */}
++{/* Right column: results */}
+ <div>
+   <div className="calc-panel">
+     <h2>Recovery Time Value Analysis</h2>
+ 
+
+
+ΓåÉ Edit components/calculators/DowntimeCostCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+@@ -20,9 +20,9 @@
+ const totalDowntimeHours = hoursPerOutage * outagesPerYear;
+ 
+ return (
+   <div className="calc-grid">
+-    {/* Left column ΓÇö inputs */}
++    {/* Left column: inputs */}
+     <div>
+       <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
+         Your Numbers
+       </h2>
+
+
+ΓåÉ Edit components/calculators/DowntimeCostCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+@@ -84,9 +84,9 @@
+ </div>
+ 
+ <div className="calc-input-group">
+   <label htmlFor="revenuePerHour" className="calc-label">
+-    Lost revenue per hour (┬ú) ΓÇö optional
++    Lost revenue per hour (┬ú), optional
+   </label>
+   <input
+     id="revenuePerHour"
+     type="number"
+
+
+ΓåÉ Edit components/calculators/DowntimeCostCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\DowntimeCostCalculator.tsx
+@@ -100,9 +100,9 @@
+     </p>
+   </div>
+ </div>
+ 
+-{/* Right column ΓÇö results */}
++{/* Right column: results */}
+ <div>
+   <div className="calc-panel">
+     <h2>Your Annual Cost of Downtime</h2>
+ 
+
+
+ΓåÉ Edit components/calculators/AutomationRoiCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
+@@ -45,9 +45,9 @@
+ };
+ 
+ return (
+   <div className="calc-grid">
+-    {/* Left column ΓÇö inputs */}
++    {/* Left column: inputs */}
+     <div>
+       <h2 style={{ fontFamily: 'var(--do-font-heading)', color: 'var(--do-text-primary)', fontWeight: 600, fontSize: 'var(--do-text-lg)', marginBottom: 16 }}>
+         Your Numbers
+       </h2>
+
+
+ΓåÉ Edit components/calculators/AutomationRoiCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\calculators\AutomationRoiCalculator.tsx
+@@ -125,9 +125,9 @@
+     />
+   </div>
+ </div>
+ 
+-{/* Right column ΓÇö results */}
++{/* Right column: results */}
+ <div>
+   <div className="calc-panel">
+     <h2>Automation ROI Analysis</h2>
+ 
+
+
+Now fix the calculator components (comments + one label with em dash):
+ΓåÉ Edit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+@@ -42,9 +42,9 @@
+ },
+ {
+   icon: Workflow,
+   title: 'The Decoded Method',
+-  desc: 'A three-layer system for documenting how your business runs ΓÇö Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
++  desc: 'A three-layer system for documenting how your business runs: Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
+   href: '/resources/decoded-method',
+ },
+ {
+   icon: Gauge,
+
+
+ΓåÉ Edit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+@@ -48,9 +48,9 @@
+   },
+   {
+     icon: Gauge,
+     title: 'What 5 & 6 Sigma Mean for Your Operation',
+-    desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business ΓÇö and why closing the gap is about process, not machinery.',
++    desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business, and why closing the gap is about process, not machinery.',
+     href: '/resources/six-sigma',
+   },
+ ];
+ 
+
+
+ΓåÉ Edit app/resources/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\page.tsx
+@@ -62,9 +62,9 @@
+   { name: 'Resources', url: 'https://decodedops.co.uk/resources' },
+ ]} />
+ <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+-    <span className="eyebrow">ΓÇö Resources</span>
++    <span className="eyebrow">Resources</span>
+     <h1>Tools and guides <em>you can use today</em></h1>
+     <p className="lede">
+       Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.
+     </p>
+
+
+Now fix `app/resources/` files:
+ΓåÉ Edit app/resources/software-reviews/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+@@ -4,20 +4,20 @@
+ import { JsonLd } from '@/components/JsonLd';
+ 
+ export const metadata = {
+   title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+-  description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more ΓÇö from someone who\'s implemented them.',
++  description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more, from someone who\'s implemented them.',
+   alternates: { canonical: '/resources/software-reviews' },
+   openGraph: {
+     type: 'website',
+     title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more ΓÇö from someone who\'s implemented them.',
++    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more, from someone who\'s implemented them.',
+     url: 'https://decodedops.co.uk/resources/software-reviews',
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Honest ERP & Software Reviews for Print Businesses | Decoded Ops',
+-    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more ΓÇö from someone who\'s implemented them.',
++    description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more, from someone who\'s implemented them.',
+   },
+ };
+ 
+ const schema = {
+@@ -25,9 +25,9 @@
+   '@graph': [
+     {
+       '@type': 'CollectionPage',
+       name: 'Software Reviews for Print & Embroidery Businesses',
+-      description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more ΓÇö from someone who\'s implemented them.',
++      description: 'Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more, from someone who\'s implemented them.',
+       url: 'https://decodedops.co.uk/resources/software-reviews',
+     },
+   ],
+ };
+
+
+ΓåÉ Edit app/resources/software-reviews/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+@@ -34,9 +34,9 @@
+ 
+ const reviews: Array<{ name: string; description: string; status: string; href?: string }> = [
+   {
+     name: 'Orderwise',
+-    description: 'Used by a lot of UK decorated goods businesses ΓÇö but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).',
++    description: 'Used by a lot of UK decorated goods businesses, but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).',
+     status: 'Coming soon',
+   },
+   {
+     name: 'Unleashed',
+
+
+ΓåÉ Edit app/resources/software-reviews/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\software-reviews\page.tsx
+@@ -54,9 +54,9 @@
+     status: 'Coming soon',
+   },
+   {
+     name: 'Shopify + B2B Portal',
+-    description: 'The most common eCommerce front end in the sector. The question is not whether you can build a B2B portal on Shopify ΓÇö it\'s whether it will connect to your ERP without a six-figure integration project.',
++    description: 'The most common eCommerce front end in the sector. The question is not whether you can build a B2B portal on Shopify; it\'s whether it will connect to your ERP without a six-figure integration project.',
+     status: 'Coming soon',
+   },
+ ];
+ 
+
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -51,9 +51,9 @@
+ {/* HERO ΓÇö dark ground */}
+ <section className="g-off">
+   <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
+     <div>
+-      <span className="eyebrow">ΓÇö Free playbook ┬╖ Garment decoration</span>
++      <span className="eyebrow">Free playbook ┬╖ Garment decoration</span>
+       <h1>What 5 &amp; 6 Sigma mean for your print &amp; embroidery operation</h1>
+       <div className="hair" />
+       <p className="lede">
+         Sigma measures process quality. The higher the level, the fewer defects escape into finished goods. Here is what each level actually means on the shop floor, and why the gap is process, not machinery.
+
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -70,9 +70,9 @@
+     </div>
+ 
+     <div style={{ position: 'relative', margin: '0 auto', width: '100%', maxWidth: 320 }}>
+       {/* eslint-disable-next-line @next/next/no-img-element */}
+-      <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook ΓÇö cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
++      <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
+     </div>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -87,9 +87,9 @@
+ {/* SIGMA SCALE + LEVELS (light) */}
+ <section className="g-off">
+   <div className="wrap">
+     <div style={{ maxWidth: '46ch' }}>
+-      <span className="eyebrow">ΓÇö The scale</span>
++      <span className="eyebrow">The scale</span>
+       <h2>From reactive to near-zero defect</h2>
+       <p className="lede">Each sigma level is a defect rate. Here is where the gap between 3 Sigma and 5 Sigma sits, and what it is worth.</p>
+     </div>
+ 
+
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -120,9 +120,9 @@
+ 
+ {/* THE REAL GAP (dark) */}
+ <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+-    <span className="eyebrow">ΓÇö The real gap</span>
++    <span className="eyebrow">The real gap</span>
+     <h2>The gap is process, not machinery</h2>
+     <p className="lede">
+       Moving from <strong style={{ color: 'var(--do-amber)' }}>3 Sigma to 5 Sigma</strong> cuts your defect rate by <strong style={{ color: 'var(--do-amber)' }}>99.6%</strong>. That is not a machine upgrade. It is a process redesign: standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.
+     </p>
+
+
+ΓåÉ Edit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+@@ -115,9 +115,9 @@
+ <JsonLd data={schema} />
+ {/* HERO */}
+ <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+-    <span className="eyebrow">ΓÇö Free resource</span>
++    <span className="eyebrow">Free resource</span>
+     <h1>Operational audit checklist</h1>
+     <p className="lede">
+       20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultantΓÇöor to understand what an audit actually covers.
+     </p>
+
+
+ΓåÉ Edit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+@@ -118,9 +118,9 @@
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Free resource</span>
+     <h1>Operational audit checklist</h1>
+     <p className="lede">
+-      20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultantΓÇöor to understand what an audit actually covers.
++      20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\audit-checklist\page.tsx
+@@ -134,9 +134,9 @@
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+     Go through each section and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
+   </p>
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
+-    The items you can't answer are the most valuableΓÇöthey're where the hidden costs usually are.
++    The items you can't answer are the most valuable. They're where the hidden costs usually are.
+   </p>
+ </div>
+ 
+ {/* Checklist */}
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -5,9 +5,9 @@
+ 
+ // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
+ export const metadata = {
+   title: '5 Warning Signs Your Systems Are Holding You Back | Decoded Ops',
+-  description: 'Five signs your current technology and processes are costing you more than a replacement would ΓÇö from 25+ years running operations in this sector, not vendor theory.',
++  description: 'Five signs your current technology and processes are costing you more than a replacement would, from 25+ years running operations in this sector, not vendor theory.',
+   alternates: { canonical: '/resources/5-warning-signs' },
+   openGraph: {
+     type: 'website',
+     title: '5 Warning Signs Your Systems Are Holding You Back | Decoded Ops',
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -38,9 +38,9 @@
+ 
+ const signs = [
+   {
+     title: '1. Nobody can tell you what it\'s actually costing you',
+-    body: "Ask most business owners in this sector what their disconnected systems cost them a month and you'll get a shrug, not a number. The cost is real. It's in re-keyed orders, stock that doesn't match, and hours spent reconciling data by hand. It's just never been added up. If you can't put a figure on it, you can't decide whether fixing it is worth the money ΓÇö and that's usually the point where a proper audit pays for itself before you've spent a penny on anything else.",
++    body: "Ask most business owners in this sector what their disconnected systems cost them a month and you'll get a shrug, not a number. The cost is real. It's in re-keyed orders, stock that doesn't match, and hours spent reconciling data by hand. It's just never been added up. If you can't put a figure on it, you can't decide whether fixing it is worth the money, and that's usually the point where a proper audit pays for itself before you've spent a penny on anything else.",
+   },
+   {
+     title: '2. Your business runs on what\'s in one or two people\'s heads',
+     body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head ΓÇö she'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process ΓÇö not by hiring more people.",
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -42,9 +42,9 @@
+   body: "Ask most business owners in this sector what their disconnected systems cost them a month and you'll get a shrug, not a number. The cost is real. It's in re-keyed orders, stock that doesn't match, and hours spent reconciling data by hand. It's just never been added up. If you can't put a figure on it, you can't decide whether fixing it is worth the money, and that's usually the point where a proper audit pays for itself before you've spent a penny on anything else.",
+ },
+ {
+   title: '2. Your business runs on what\'s in one or two people\'s heads',
+-  body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head ΓÇö she'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process ΓÇö not by hiring more people.",
++  body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head. She'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process, not by hiring more people.",
+ },
+ {
+   title: '3. Everyone has their own workaround',
+   body: 'A spreadsheet here. A sticky note system there. A "just email me and I\'ll sort it" arrangement between two departments. Workarounds exist because the system doesn\'t fit how the job actually gets done. Every workaround is data living outside the system that\'s supposed to be the source of truth ΓÇö and every one of them is a small, silent failure of the last implementation.',
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -46,9 +46,9 @@
+   body: "I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head. She'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process, not by hiring more people.",
+ },
+ {
+   title: '3. Everyone has their own workaround',
+-  body: 'A spreadsheet here. A sticky note system there. A "just email me and I\'ll sort it" arrangement between two departments. Workarounds exist because the system doesn\'t fit how the job actually gets done. Every workaround is data living outside the system that\'s supposed to be the source of truth ΓÇö and every one of them is a small, silent failure of the last implementation.',
++  body: 'A spreadsheet here. A sticky note system there. A "just email me and I\'ll sort it" arrangement between two departments. Workarounds exist because the system doesn\'t fit how the job actually gets done. Every workaround is data living outside the system that\'s supposed to be the source of truth, and every one of them is a small, silent failure of the last implementation.',
+ },
+ {
+   title: '4. Growth feels harder than it should',
+   body: "Orders are up. Revenue's moving in the right direction. And somehow it feels like wading through mud rather than building momentum. That's almost always a systems and process constraint, not a people or demand problem ΓÇö the operation hasn't been built to take the extra volume without extra pain. I've run production at over 1,000 orders a day at peak. Scale exposes exactly where the process breaks first.",
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -50,9 +50,9 @@
+   body: 'A spreadsheet here. A sticky note system there. A "just email me and I\'ll sort it" arrangement between two departments. Workarounds exist because the system doesn\'t fit how the job actually gets done. Every workaround is data living outside the system that\'s supposed to be the source of truth, and every one of them is a small, silent failure of the last implementation.',
+ },
+ {
+   title: '4. Growth feels harder than it should',
+-  body: "Orders are up. Revenue's moving in the right direction. And somehow it feels like wading through mud rather than building momentum. That's almost always a systems and process constraint, not a people or demand problem ΓÇö the operation hasn't been built to take the extra volume without extra pain. I've run production at over 1,000 orders a day at peak. Scale exposes exactly where the process breaks first.",
++  body: "Orders are up. Revenue's moving in the right direction. And somehow it feels like wading through mud rather than building momentum. That's almost always a systems and process constraint, not a people or demand problem. The operation hasn't been built to take the extra volume without extra pain. I've run production at over 1,000 orders a day at peak. Scale exposes exactly where the process breaks first.",
+ },
+ {
+   title: '5. You bought your last system off the back of a demo',
+   body: "This is the one I see most often, and it's the most expensive. A business bought an ERP system after a good demo. No requirements brief. No assessment of how it would talk to their eCommerce platform. It couldn't handle the production and artwork workflows that were central to how the business actually operated. Result: ┬ú150,000 spent, eighteen months of disruption, and around 125 hours a month of internal management time swallowed up fixing it. An audit upfront would have cost around ┬ú10,000 ΓÇö 6.7% of what the failed project ended up costing. Not insurance. Near-certain cost avoidance.",
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -54,9 +54,9 @@
+     body: "Orders are up. Revenue's moving in the right direction. And somehow it feels like wading through mud rather than building momentum. That's almost always a systems and process constraint, not a people or demand problem. The operation hasn't been built to take the extra volume without extra pain. I've run production at over 1,000 orders a day at peak. Scale exposes exactly where the process breaks first.",
+   },
+   {
+     title: '5. You bought your last system off the back of a demo',
+-    body: "This is the one I see most often, and it's the most expensive. A business bought an ERP system after a good demo. No requirements brief. No assessment of how it would talk to their eCommerce platform. It couldn't handle the production and artwork workflows that were central to how the business actually operated. Result: ┬ú150,000 spent, eighteen months of disruption, and around 125 hours a month of internal management time swallowed up fixing it. An audit upfront would have cost around ┬ú10,000 ΓÇö 6.7% of what the failed project ended up costing. Not insurance. Near-certain cost avoidance.",
++    body: "This is the one I see most often, and it's the most expensive. A business bought an ERP system after a good demo. No requirements brief. No assessment of how it would talk to their eCommerce platform. It couldn't handle the production and artwork workflows that were central to how the business actually operated. Result: ┬ú150,000 spent, eighteen months of disruption, and around 125 hours a month of internal management time swallowed up fixing it. An audit upfront would have cost around ┬ú10,000, 6.7% of what the failed project ended up costing. Not insurance. Near-certain cost avoidance.",
+   },
+ ];
+ 
+ export default function FiveWarningSignsPage() {
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -63,9 +63,9 @@
+ return (
+   <main>
+     <section className="g-off">
+       <div className="wrap" style={{ maxWidth: 720 }}>
+-        <span className="eyebrow">ΓÇö Free resource</span>
++        <span className="eyebrow">Free resource</span>
+         <h1>5 warning signs your systems are holding you back</h1>
+         <p className="lede">
+           Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses ΓÇö not vendor theory. If two or more of these sound familiar, it's worth a closer look.
+         </p>
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -66,9 +66,9 @@
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Free resource</span>
+     <h1>5 warning signs your systems are holding you back</h1>
+     <p className="lede">
+-      Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses ΓÇö not vendor theory. If two or more of these sound familiar, it's worth a closer look.
++      Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it's worth a closer look.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -86,9 +86,9 @@
+ 
+ <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+   <h2>What I'm doing about this right now</h2>
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
+-    These aren't hypothetical scenarios. I'm currently running Deliver engagements with clients tackling exactly this ΓÇö building the data foundation and connector work before their ERP goes live, not after, and putting a Process Register in place so operational knowledge doesn't sit in one person's head. It's the same approach on every engagement, whatever the sector.
++    These aren't hypothetical scenarios. I'm currently running Deliver engagements with clients tackling exactly this: building the data foundation and connector work before their ERP goes live, not after, and putting a Process Register in place so operational knowledge doesn't sit in one person's head. It's the same approach on every engagement, whatever the sector.
+   </p>
+ </div>
+ 
+ <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginBottom: 64 }}>
+
+
+ΓåÉ Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\5-warning-signs\page.tsx
+@@ -102,9 +102,9 @@
+ 
+ <div className="g-tint" style={{ borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+   <h3>Recognise two or more of these?</h3>
+   <p style={{ marginBottom: 24 }}>
+-    A Clarity Audit finds where the cost is hiding, quantifies it, and gives you a specific, costed plan to fix it ΓÇö in plain English, with no vendor agenda.
++    A Clarity Audit finds where the cost is hiding, quantifies it, and gives you a specific, costed plan to fix it, in plain English, with no vendor agenda.
+   </p>
+   <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
+     <Link href="/contact" className="btn btn--primary">
+       Book a free discovery call <ArrowRight size={18} />
+
+
+Now fix `5-warning-signs/page.tsx`:
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -6,10 +6,10 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+-  title: 'Hire a Fractional CTO | Decoded Ops ΓÇö Print & Decoration Specialists',
+-  description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership ΓÇö not a vendor. Available UK-wide.',
++  title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
++  description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
+   alternates: { canonical: '/locations/fractional-cto' },
+   openGraph: {
+     title: 'Hire a Fractional CTO | Decoded Ops ΓÇö Print & Decoration Specialists',
+     description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership ΓÇö not a vendor. Available UK-wide.',
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -38,9 +38,9 @@
+ },
+ {
+   '@type': 'Question',
+   name: 'What is the difference between hiring a fractional CTO and using managed IT support?',
+-  acceptedAnswer: { '@type': 'Answer', text: 'Managed IT support services handle day-to-day IT issues ΓÇö helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.' },
++  acceptedAnswer: { '@type': 'Answer', text: 'Managed IT support services handle day-to-day IT issues: helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.' },
+ },
+ {
+   '@type': 'Question',
+   name: 'Do you offer fractional CTO services for print businesses in Sussex?',
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -43,9 +43,9 @@
+       },
+       {
+         '@type': 'Question',
+         name: 'Do you offer fractional CTO services for print businesses in Sussex?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership ΓÇö not generic IT consultancy.' },
++        acceptedAnswer: { '@type': 'Answer', text: 'Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership, not generic IT consultancy.' },
+       },
+     ],
+   },
+ ],
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -63,9 +63,9 @@
+ {/* HERO */}
+ <section className="g-off">
+   <div className="wrap">
+     <div style={{ maxWidth: 720 }}>
+-      <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö Fractional CTO</span>
++      <span className="eyebrow" style={{ marginBottom: 22 }}>Fractional CTO</span>
+       <h1 className="h1">Hire a fractional CTO <em>across Sussex, Surrey, and the UK</em></h1>
+       <p className="lede">
+         Hire a fractional CTO for your print, embroidery, or decoration business ΓÇö with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
+       </p>
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -66,9 +66,9 @@
+ <div style={{ maxWidth: 720 }}>
+   <span className="eyebrow" style={{ marginBottom: 22 }}>Fractional CTO</span>
+   <h1 className="h1">Hire a fractional CTO <em>across Sussex, Surrey, and the UK</em></h1>
+   <p className="lede">
+-    Hire a fractional CTO for your print, embroidery, or decoration business ΓÇö with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
++    Hire a fractional CTO for your print, embroidery, or decoration business, with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
+   </p>
+   <div className="btn-row">
+     <Link href="/contact" className="btn btn--primary">
+       Book a free call <ArrowRight size={18} />
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -84,9 +84,9 @@
+ <div className="wrap">
+   <div style={{ maxWidth: '42ch' }}>
+     <h2 className="h2">Fractional CTO services for print and decoration businesses</h2>
+     <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75, marginBottom: 16 }}>
+-      Fractional CTO services give you the technology leadership a growing business needs ΓÇö without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
++      Fractional CTO services give you the technology leadership a growing business needs, without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
+     </p>
+     <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75 }}>
+       Available UK-wide. Based in West Sussex. On-site where the work requires it.
+     </p>
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -129,9 +129,9 @@
+ 
+ {/* CROSS-LINK TO AUDIT HUB */}
+ <section className="g-navy">
+   <div className="wrap" style={{ textAlign: 'center' }}>
+-    <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö Not sure where to start?</span>
++    <span className="eyebrow" style={{ marginBottom: 22 }}>Not sure where to start?</span>
+     <h2 className="h2">Start with a Clarity Audit</h2>
+     <p className="lede">
+       A fixed-price, one-day diagnostic. Find out what your systems are costing you before committing to anything ongoing.
+     </p>
+
+
+Now fix `app/locations/` files:
+ΓåÉ Edit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+@@ -38,9 +38,9 @@
+ {/* HERO */}
+ <section className="g-off">
+   <div className="wrap">
+     <div style={{ maxWidth: 720 }}>
+-      <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö Technology Audit</span>
++      <span className="eyebrow" style={{ marginBottom: 22 }}>Technology Audit</span>
+       <h1 className="h1">Technology audits for <em>Sussex and Surrey businesses</em></h1>
+       <p className="lede">
+         A structured, independent audit that tells you exactly what your systems are costing you ΓÇö and what to do about it. Starting from ┬ú1,500.
+       </p>
+
+
+ΓåÉ Edit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+@@ -41,9 +41,9 @@
+ <div style={{ maxWidth: 720 }}>
+   <span className="eyebrow" style={{ marginBottom: 22 }}>Technology Audit</span>
+   <h1 className="h1">Technology audits for <em>Sussex and Surrey businesses</em></h1>
+   <p className="lede">
+-    A structured, independent audit that tells you exactly what your systems are costing you ΓÇö and what to do about it. Starting from ┬ú1,500.
++    A structured, independent audit that tells you exactly what your systems are costing you, and what to do about it. Starting from ┬ú1,500.
+   </p>
+   <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
+     <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3├ù Clarity Guarantee</span>
+     <span style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)' }}>ΓÇö if we don&apos;t find 3├ù the fee in recoverable cost or lost revenue, full refund</span>
+
+
+ΓåÉ Edit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+@@ -45,9 +45,9 @@
+   A structured, independent audit that tells you exactly what your systems are costing you, and what to do about it. Starting from ┬ú1,500.
+ </p>
+ <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
+   <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3├ù Clarity Guarantee</span>
+-  <span style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)' }}>ΓÇö if we don&apos;t find 3├ù the fee in recoverable cost or lost revenue, full refund</span>
++  <span style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)' }}>If I don&apos;t find 3├ù the fee in recoverable cost or lost revenue, you get a full refund</span>
+ </div>
+ <div>
+   <Link href="/contact" className="btn btn--primary" style={{ marginBottom: 12 }}>
+     Book a free call <ArrowRight size={18} />
+
+
+ΓåÉ Edit app/locations/tech-audit/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\page.tsx
+@@ -95,9 +95,9 @@
+ 
+ {/* CROSS-LINK TO FRACTIONAL CTO HUB */}
+ <section className="g-navy">
+   <div className="wrap" style={{ textAlign: 'center' }}>
+-    <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö Need ongoing support?</span>
++    <span className="eyebrow" style={{ marginBottom: 22 }}>Need ongoing support?</span>
+     <h2 className="h2">Fractional CTO engagement</h2>
+     <p className="lede">
+       After the audit, some businesses need someone to stay involved and own the technology decisions. That&apos;s the fractional CTO model.
+     </p>
+
+
+Now fix `tech-audit/page.tsx` (includes the "we" violation and em dashes):
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+@@ -18,22 +18,22 @@
+   if (!loc) return {};
+ 
+   return {
+     title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
+-    description: `Fractional CTO for ${loc.name} businesses ΓÇö senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
++    description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+     alternates: {
+       canonical: `/locations/fractional-cto/${loc.slug}`,
+     },
+     openGraph: {
+       title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
+-      description: `Fractional CTO for ${loc.name} businesses ΓÇö senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
++      description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+       url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
+       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+     },
+     twitter: {
+       card: 'summary_large_image',
+       title: `Fractional CTO in ${loc.name}, ${loc.county} | Decoded Ops`,
+-      description: `Fractional CTO for ${loc.name} businesses ΓÇö senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
++      description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+     },
+   };
+ }
+ 
+
+
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+@@ -39,9 +39,9 @@
+ 
+ const painPoints = [
+   {
+     title: 'No one owns the technology decisions',
+-    body: 'Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem ΓÇö and the cost of those decisions compounds quietly until it becomes visible.',
++    body: 'Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem, and the cost of those decisions compounds quietly until it becomes visible.',
+   },
+   {
+     title: 'Growing faster than your infrastructure',
+     body: 'Revenue is increasing but the systems underneath are straining. Manual workarounds that worked at smaller scale are now creating daily friction, and the team is absorbing the overhead rather than flagging it.',
+
+
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+@@ -56,14 +56,14 @@
+   },
+ ];
+ 
+ const whatIdo = [
+-  'Map your current technology landscape ΓÇö what\'s running, what it costs, and what it\'s supposed to do versus what it actually does',
++  'Map your current technology landscape: what\'s running, what it costs, and what it\'s supposed to do versus what it actually does',
+   'Identify the decisions that need to be made and build a prioritised roadmap you can act on',
+-  'Act as your technology voice in commercial conversations ΓÇö with vendors, with developers, with investors or board',
+-  'Attend leadership meetings as your part-time tech director ΓÇö present and accountable, not just on call when something breaks',
++  'Act as your technology voice in commercial conversations: with vendors, with developers, with investors or board',
++  'Attend leadership meetings as your part-time tech director, present and accountable, not just on call when something breaks',
+   'Build internal capability so you become less dependent over time, not more',
+-  'Run the Clarity Audit first if the picture is unclear ΓÇö a fixed-price diagnostic before any ongoing commitment',
++  'Run the Clarity Audit first if the picture is unclear, a fixed-price diagnostic before any ongoing commitment',
+ ];
+ 
+ export default async function FractionalCTOLocationPage({
+   params,
+
+
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+@@ -110,9 +110,9 @@
+ town={loc.name}
+ county={loc.county}
+ service="Fractional CTO"
+ badge={`Fractional CTO ┬╖ ${loc.county}`}
+-tagline={`Senior technology leadership for ||${loc.name} businesses|| ΓÇö without the full-time hire.`}
++tagline={`Senior technology leadership for ||${loc.name} businesses||, without the full-time hire.`}
+ intro={`Growing businesses in ${loc.name} face real technology decisions ΓÇö vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
+ localContext={loc.localContext}
+ driveTime={loc.driveTime}
+ localFact={loc.localFact}
+
+
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\[location]\page.tsx
+@@ -111,9 +111,9 @@
+ county={loc.county}
+ service="Fractional CTO"
+ badge={`Fractional CTO ┬╖ ${loc.county}`}
+ tagline={`Senior technology leadership for ||${loc.name} businesses||, without the full-time hire.`}
+-intro={`Growing businesses in ${loc.name} face real technology decisions ΓÇö vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
++intro={`Growing businesses in ${loc.name} face real technology decisions: vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
+ localContext={loc.localContext}
+ driveTime={loc.driveTime}
+ localFact={loc.localFact}
+ painPoints={painPoints}
+
+
+Now fix `fractional-cto/[location]/page.tsx`:
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -39,9 +39,9 @@
+ 
+ const painPoints = [
+   {
+     title: 'Your systems don\'t talk to each other',
+-    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors ΓÇö and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
++    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors, and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+   },
+   {
+     title: 'You know costs are higher than they should be ΓÇö but can\'t see where',
+     body: 'The overhead is there ΓÇö in headcount, in rework, in customer service time ΓÇö but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+
+
+Now fix `tech-audit/[location]/page.tsx`:
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -42,9 +42,9 @@
+   title: 'Your systems don\'t talk to each other',
+   body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors, and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+ },
+ {
+-  title: 'You know costs are higher than they should be ΓÇö but can\'t see where',
++  title: 'You know costs are higher than they should be, but can\'t see where',
+   body: 'The overhead is there ΓÇö in headcount, in rework, in customer service time ΓÇö but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+ },
+ {
+   title: 'Ready to scale, but the operations aren\'t',
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -43,9 +43,9 @@
+   body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors, and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+ },
+ {
+   title: 'You know costs are higher than they should be, but can\'t see where',
+-  body: 'The overhead is there ΓÇö in headcount, in rework, in customer service time ΓÇö but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
++  body: 'The overhead is there, in headcount, in rework, in customer service time, but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+ },
+ {
+   title: 'Ready to scale, but the operations aren\'t',
+   body: 'Revenue could grow faster. The constraint is operational ΓÇö systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -47,9 +47,9 @@
+   body: 'The overhead is there, in headcount, in rework, in customer service time, but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+ },
+ {
+   title: 'Ready to scale, but the operations aren\'t',
+-  body: 'Revenue could grow faster. The constraint is operational ΓÇö systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
++  body: 'Revenue could grow faster. The constraint is operational: systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
+ },
+ {
+   title: 'Decisions being made on incomplete information',
+   body: 'Reporting that takes hours to produce. Numbers that don\'t tie up. Business decisions made on gut feel because the data isn\'t trustworthy. This is almost always a systems problem, not a people problem.',
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -56,14 +56,14 @@
+   },
+ ];
+ 
+ const whatIdo = [
+-  'One structured day on site ΓÇö talking to the people doing the work, not just the people managing it',
++  'One structured day on site, talking to the people doing the work, not just the people managing it',
+   'Map every system you\'re running, what it costs, and what it\'s actually being used for versus what it was bought to do',
+-  'Document every manual handoff and workaround ΓÇö this is almost always where the cost is hiding',
++  'Document every manual handoff and workaround. This is almost always where the cost is hiding',
+   'Identify the three to five changes that would recover the most cost or unlock the most revenue',
+-  'Produce a written report within five working days ΓÇö specific, costed, with independent vendor recommendations',
+-  'Back it with the 3├ù Clarity Guarantee ΓÇö if the audit doesn\'t identify at least 3├ù the fee in recoverable cost or lost revenue, full refund, no conditions',
++  'Produce a written report within five working days: specific, costed, with independent vendor recommendations',
++  'Back it with the 3├ù Clarity Guarantee: if the audit doesn\'t identify at least 3├ù the fee in recoverable cost or lost revenue, full refund, no conditions',
+ ];
+ 
+ export default async function TechAuditLocationPage({
+   params,
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -105,9 +105,9 @@
+     offers: {
+       '@type': 'Offer',
+       price: '1500',
+       priceCurrency: 'GBP',
+-      description: 'Clarity Audit ΓÇö technology audit and systems diagnostic',
++      description: 'Clarity Audit, technology audit and systems diagnostic',
+     },
+     url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
+   }),
+ }}
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\tech-audit\[location]\page.tsx
+@@ -123,9 +123,9 @@
+     driveTime={loc.driveTime}
+     localFact={loc.localFact}
+     painPoints={painPoints}
+     whatIdo={whatIdo}
+-    cta={`Book a Clarity Audit for your ${loc.name} business ΓÇö from ┬ú1,500`}
++    cta={`Book a Clarity Audit for your ${loc.name} business, from ┬ú1,500`}
+     serviceUrl="/clarity"
+     serviceLabel="See how the Clarity Audit works"
+   />
+ </>
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -5,21 +5,21 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+   title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+-  description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice ΓÇö without the big-business price tag.',
++  description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+   alternates: { canonical: '/small-business' },
+   openGraph: {
+     type: 'website',
+     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+-    description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice ΓÇö without the big-business price tag.',
++    description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+     url: 'https://decodedops.co.uk/small-business',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+-    description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice ΓÇö without the big-business price tag.',
++    description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+   },
+ };
+ 
+ const smallBizSchema = {
+@@ -27,9 +27,9 @@
+   '@graph': [
+     {
+       '@type': 'Service',
+       name: 'Small Business Operational Support',
+-      description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice ΓÇö without the big-business price tag.',
++      description: 'Remote operations and technology consultancy for businesses under ┬ú500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+       serviceType: 'Small Business Operational Support',
+       areaServed: 'GB',
+       url: 'https://decodedops.co.uk/small-business',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -55,9 +55,9 @@
+ },
+ {
+   '@type': 'Question',
+   name: 'What does a small business operations consultant actually do?',
+-  acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check ΓÇö delivered on a fixed-price or retainer basis that fits a sub-┬ú500k business.' },
++  acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check, delivered on a fixed-price or retainer basis that fits a sub-┬ú500k business.' },
+ },
+ {
+   '@type': 'Question',
+   name: 'Is this like managed IT support for small businesses?',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -60,9 +60,9 @@
+       },
+       {
+         '@type': 'Question',
+         name: 'Is this like managed IT support for small businesses?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business ΓÇö not just keeping the lights on.' },
++        acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business, not just keeping the lights on.' },
+       },
+     ],
+   },
+ ],
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -72,9 +72,9 @@
+ {
+   icon: Sparkles,
+   name: 'Clarity Check',
+   price: '┬ú595',
+-  tagline: 'The starting point. A remote operational review ΓÇö honest, specific, actionable.',
++  tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
+   features: [
+     '3-hour structured remote session',
+     'Written findings summary ΓÇö plain English',
+     'Three priority actions identified',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -75,9 +75,9 @@
+ price: '┬ú595',
+ tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
+ features: [
+   '3-hour structured remote session',
+-  'Written findings summary ΓÇö plain English',
++  'Written findings summary, plain English',
+   'Three priority actions identified',
+   'Tech stack and AI readiness assessed',
+   'Delivered within 5 working days',
+ ],
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -100,9 +100,9 @@
+ {
+   icon: Wrench,
+   name: 'Transform',
+   price: '┬ú1,095/mo',
+-  tagline: 'Focused transformation programme ΓÇö one workstream at a time.',
++  tagline: 'Focused transformation programme, one workstream at a time.',
+   features: [
+     '90-minute remote working sessions',
+     'Single focused workstream',
+     'ERP, eCommerce, or process redesign',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -126,9 +126,9 @@
+ {
+   icon: Brain,
+   name: 'AI Readiness Check',
+   price: '┬ú395',
+-  tagline: 'An honest, independent assessment of whether AI can help your business right now ΓÇö and what needs fixing first.',
++  tagline: 'An honest, independent assessment of whether AI can help your business right now, and what needs fixing first.',
+   features: [
+     '90-minute structured remote session',
+     'Data quality and process readiness review',
+     'One or two concrete next steps if AI can help',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -140,9 +140,9 @@
+ {
+   icon: Zap,
+   name: 'Quarterly Sprint',
+   price: '┬ú995',
+-  tagline: 'A single intensive session each quarter ΓÇö an outside look at the whole operation without a monthly commitment.',
++  tagline: 'A single intensive session each quarter: an outside look at the whole operation without a monthly commitment.',
+   features: [
+     'Half-day remote or on-site session (travel at cost)',
+     'Review of what\'s changed since last session',
+     '2ΓÇô3 named priorities for the quarter ahead',
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -146,9 +146,9 @@
+       'Half-day remote or on-site session (travel at cost)',
+       'Review of what\'s changed since last session',
+       '2ΓÇô3 named priorities for the quarter ahead',
+       'Short written summary delivered within 3 days',
+-      'No minimum commitment ΓÇö booked fresh each quarter',
++      'No minimum commitment, booked fresh each quarter',
+     ],
+     cta: 'Book a Quarterly Sprint',
+   },
+ ];
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -164,9 +164,9 @@
+ 
+ {/* HERO */}
+ <section className="g-off">
+   <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+-    <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö For small businesses</span>
++    <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
+     <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the enterprise price tag.</em></h1>
+     <p className="lede">
+       The same operational thinking I bring to larger businesses ΓÇö adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+     </p>
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -167,9 +167,9 @@
+ <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+   <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
+   <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the enterprise price tag.</em></h1>
+   <p className="lede">
+-    The same operational thinking I bring to larger businesses ΓÇö adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
++    The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+   </p>
+   <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
+     A small business operations consultant covers what a full-time operations director would ΓÇö technology decisions, vendor oversight, process improvement, and AI readiness ΓÇö on a flexible, affordable basis built for businesses under ┬ú500k.
+   </p>
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -170,9 +170,9 @@
+ <p className="lede">
+   The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+ </p>
+ <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
+-  A small business operations consultant covers what a full-time operations director would ΓÇö technology decisions, vendor oversight, process improvement, and AI readiness ΓÇö on a flexible, affordable basis built for businesses under ┬ú500k.
++  A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under ┬ú500k.
+ </p>
+ <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman ΓÇö 25 years in print &amp; embroidery operations</p>
+ <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+   <Link href="/pricing" className="btn btn--primary">
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -172,9 +172,9 @@
+ </p>
+ <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
+   A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under ┬ú500k.
+ </p>
+-<p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman ΓÇö 25 years in print &amp; embroidery operations</p>
++<p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
+ <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+   <Link href="/pricing" className="btn btn--primary">
+     See all pricing <ArrowRight size={18} />
+   </Link>
+
+
+ΓåÉ Edit app/small-business/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\small-business\page.tsx
+@@ -217,9 +217,9 @@
+ <section className="g-off">
+   <div className="wrap">
+     <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+       <h2 className="h2">Fractional operations and technology support for small businesses</h2>
+-      <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me ΓÇö not a junior team.</p>
++      <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>
+     </div>
+     <div className="grid grid--3">
+       {services.map((service) => {
+         const Icon = service.icon;
+
+
+Now fix `small-business/page.tsx`, `blog/page.tsx`, and `blog/[slug]/page.tsx`:
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+@@ -9,20 +9,20 @@
+ 
+ const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
+ 
+ export const metadata: Metadata = {
+-  title: 'Insights ΓÇö Decoded Ops',
++  title: 'Insights | Decoded Ops',
+   description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
+   alternates: { canonical: '/blog' },
+   openGraph: {
+     type: 'website',
+-    title: 'Insights ΓÇö Decoded Ops',
++    title: 'Insights | Decoded Ops',
+     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
+     url: 'https://decodedops.co.uk/blog',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Insights ΓÇö Decoded Ops',
++    title: 'Insights | Decoded Ops',
+     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
+   },
+ };
+ 
+
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+@@ -30,9 +30,9 @@
+   '@context': 'https://schema.org',
+   '@type': 'CollectionPage',
+   '@id': 'https://decodedops.co.uk/blog#collection',
+   url: 'https://decodedops.co.uk/blog',
+-  name: 'Insights ΓÇö Decoded Ops',
++  name: 'Insights | Decoded Ops',
+   description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
+   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+ };
+ 
+
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+@@ -91,9 +91,9 @@
+   <h3 className="text-2xl font-bold transition-colors mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
+     Operational Audit Checklist
+   </h3>
+   <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
+-    20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant ΓÇö or to understand what an audit actually covers.
++    20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+   </p>
+ </div>
+ <div className="flex-shrink-0 mt-2">
+   <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" style={{ color: 'var(--do-cerulean)' }} />
+
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\blog\page.tsx
+@@ -104,9 +104,9 @@
+ 
+ <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-surface-dark)' }}>
+   <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-on-dark)' }}>Ready to dive deeper?</h3>
+   <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
+-    These resources are free. An audit is where things get specific ΓÇö every finding quantified, every recommendation costed, every next step mapped.
++    These resources are free. An audit is where things get specific: every finding quantified, every recommendation costed, every next step mapped.
+   </p>
+   <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+     Book a free discovery call <ArrowRight size={18} />
+   </Link>
+
+
+Now fix `blog/page.tsx` and `blog/[slug]/page.tsx`:
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -50,9 +50,9 @@
+ <div className="wrap">
+   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
+     <div>
+       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+-        <span className="eyebrow" style={{ marginBottom: 0 }}>ΓÇö {badge}</span>
++        <span className="eyebrow" style={{ marginBottom: 0 }}>{badge}</span>
+         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 20%, transparent)' }}>
+           <MapPin size={12} style={{ color: 'var(--do-cerulean)' }} />
+           <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-cerulean)' }}>{county}</span>
+         </div>
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -88,9 +88,9 @@
+ <section className="g-white" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
+   <div className="wrap">
+     <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'start' }}>
+       <div>
+-        <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö {town}</span>
++        <span className="eyebrow" style={{ marginBottom: 22 }}>{town}</span>
+         <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>
+           What this looks like for {town} businesses
+         </h2>
+       </div>
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -96,9 +96,9 @@
+ </div>
+ <div>
+   <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75 }}>{localContext}</p>
+   <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75, marginTop: 16 }}>
+-    The work I do is the same wherever the business is based ΓÇö a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
++    The work I do is the same wherever the business is based: a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
+   </p>
+   {(driveTime || localFact) && (
+     <div className="card" style={{ marginTop: 24, display: 'flex', gap: 32, flexDirection: 'row' }}>
+       {driveTime && (
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -123,9 +123,9 @@
+ {/* PAIN POINTS */}
+ <section className="g-tint">
+   <div className="wrap">
+     <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+-      <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö Where the cost hides</span>
++      <span className="eyebrow" style={{ marginBottom: 22 }}>Where the cost hides</span>
+       <h2 className="h2">The problems that tend to appear</h2>
+       <p className="lede">
+         These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business ΓÇö but the underlying structure is almost always the same.
+       </p>
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -126,9 +126,9 @@
+ <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+   <span className="eyebrow" style={{ marginBottom: 22 }}>Where the cost hides</span>
+   <h2 className="h2">The problems that tend to appear</h2>
+   <p className="lede">
+-    These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business ΓÇö but the underlying structure is almost always the same.
++    These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business, but the underlying structure is almost always the same.
+   </p>
+ </div>
+ <div className="grid grid--2">
+   {painPoints.map((p, i) => (
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -149,9 +149,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 80px)', alignItems: 'start' }}>
+       <div>
+-        <span className="eyebrow" style={{ marginBottom: 22 }}>ΓÇö How I help</span>
++        <span className="eyebrow" style={{ marginBottom: 22 }}>How I help</span>
+         <h2 className="h2">What the work actually looks like</h2>
+         <p className="lede">
+           No frameworks. No generic recommendations. A structured, independent process that produces specific answers for this business.
+         </p>
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -180,9 +180,9 @@
+ </p>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+   {[
+     'No vendor relationships or commission',
+-    'Worked at every level ΓÇö warehouse floor to boardroom',
++    'Worked at every level, warehouse floor to boardroom',
+     '3├ù Clarity Guarantee on audit work',
+     'Based in the South East, on-site across Sussex and Surrey',
+   ].map((item) => (
+     <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72 }}>
+
+
+ΓåÉ Edit components/LocationPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\components\LocationPage.tsx
+@@ -208,9 +208,9 @@
+ <section className="g-off">
+   <div className="wrap" style={{ textAlign: 'center' }}>
+     <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
+     <p style={{ color: 'var(--do-text-secondary)' }}>
+-      {county} ┬╖ East Sussex ┬╖ West Sussex ┬╖ Surrey ΓÇö{' '}
++      {county} ┬╖ East Sussex ┬╖ West Sussex ┬╖ Surrey,{' '}
+       <Link href={serviceUrl} style={{ color: 'var(--do-cerulean)', textDecoration: 'underline' }}>
+         view all locations
+       </Link>
+     </p>
+
+
+Now fix `components/LocationPage.tsx`:
+# Todos
+[Γ£ô] Explore scope: list all files in app/tools, app/resources, app/locations, app/small-business, app/blog
+[Γ£ô] Grep for violations across all in-scope files: em dashes, we/our/us, end-to-end, banned consultant-speak
+[Γ£ô] Fix app/tools/** ΓÇö 7 pages + 2 layouts (em dashes in eyebrows, prose, result labels, metadata)
+[Γ£ô] Fix app/resources/** ΓÇö 5 pages (em dashes in eyebrows, body copy, metadata)
+[Γ£ô] Fix app/locations/** ΓÇö 4 pages (em dashes in eyebrows, prose, metadata; fix 'we' in tech-audit)
+[Γ£ô] Fix app/small-business/page.tsx (em dashes in eyebrows, prose, metadata)
+[Γ£ô] Fix app/blog/page.tsx and [slug]/page.tsx (em dashes in titles, prose)
+[Γ£ô] Fix components/calculators/*.tsx (em dashes in comments, labels)
+[Γ£ô] Fix components/LocationPage.tsx (em dashes in eyebrows, prose)
+[ΓÇó] Verify: grep for em dash (zero), we/our/us (only false positives), end-to-end (zero)
+[ ] Run npm run build ΓÇö must exit 0
+[ ] Report summary
+
+All edits done. Now let me verify with the final grep checks:
+Γ£▒ Grep "ΓÇö" in app/tools ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in app/resources ┬╖ 2 matches
+Γ£▒ Grep "ΓÇö" in app/locations ┬╖ 4 matches
+Γ£▒ Grep "ΓÇö" in app/small-business ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in app/blog ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in components/calculators ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in components ┬╖ 0 matches
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -47,9 +47,9 @@
+ return (
+   <>
+     <JsonLd data={schema} />
+ 
+-    {/* HERO ΓÇö dark ground */}
++    {/* HERO, dark ground */}
+     <section className="g-off">
+       <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
+         <div>
+           <span className="eyebrow">Free playbook ┬╖ Garment decoration</span>
+
+
+ΓåÉ Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\resources\six-sigma\page.tsx
+@@ -75,9 +75,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* WARNING BAND ΓÇö the one accent strip */}
++{/* WARNING BAND, the one accent strip */}
+ <div className="strip">
+   <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, textAlign: 'center' }}>
+     <AlertTriangle size={18} style={{ flexShrink: 0 }} />
+     <p>Most decoration businesses operate at 3 to 4 Sigma. Here is what that actually means.</p>
+
+
+ΓåÉ Edit app/locations/fractional-cto/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-misc\app\locations\fractional-cto\page.tsx
+@@ -10,17 +10,17 @@
+   title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
+   description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
+   alternates: { canonical: '/locations/fractional-cto' },
+   openGraph: {
+-    title: 'Hire a Fractional CTO | Decoded Ops ΓÇö Print & Decoration Specialists',
+-    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership ΓÇö not a vendor. Available UK-wide.',
++    title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
++    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
+     url: 'https://decodedops.co.uk/locations/fractional-cto',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Hire a Fractional CTO | Decoded Ops ΓÇö Print & Decoration Specialists',
+-    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership ΓÇö not a vendor. Available UK-wide.',
++    title: 'Hire a Fractional CTO | Decoded Ops, Print & Decoration Specialists',
++    description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
+   },
+ };
+ 
+ const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;
+
+
+I found residual em dashes in comments and metadata descriptions. Code comments aren't visible to end users but let me be thorough:
+Γ£▒ Grep "\bwe\b|\bour\b|\bus\b" in app/locations/tech-audit ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in app/locations ┬╖ 0 matches
+Γ£▒ Grep "ΓÇö" in app/resources ┬╖ 0 matches
+Now final em-dash verification should be clean (only in code comments). Let me also verify the "we" fix and run the build:
+All em dashes eliminated across the entire scope. No "we"/"our"/"us" violations remain. Now let me set up and run the build:
+
+$ if (-not (Test-Path -LiteralPath "node_modules")) { Write-Output "node_modules missing, copying from source..."; Copy-Item -Recurse -LiteralPath "D:\apps\decoded-ops-website\node_modules" -Destination "node_modules" } else { Write-Output "node_modules already present" }
+node_modules missing, copying from source...
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 24.4s
+  Running TypeScript ...
+  Finished TypeScript in 18.9s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 8.6s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+Γ£▒ Glob ".context/loop-status.md" 0 matches
+Build succeeded with zero TypeScript errors and all 159 pages generated. Let me update the status file and report.
+
+# Todos
+[Γ£ô] Explore scope: list all files in app/tools, app/resources, app/locations, app/small-business, app/blog
+[Γ£ô] Grep for violations across all in-scope files: em dashes, we/our/us, end-to-end, banned consultant-speak
+[Γ£ô] Fix app/tools/** ΓÇö 7 pages + 2 layouts (em dashes in eyebrows, prose, result labels, metadata)
+[Γ£ô] Fix app/resources/** ΓÇö 5 pages (em dashes in eyebrows, body copy, metadata)
+[Γ£ô] Fix app/locations/** ΓÇö 4 pages (em dashes in eyebrows, prose, metadata; fix 'we' in tech-audit)
+[Γ£ô] Fix app/small-business/page.tsx (em dashes in eyebrows, prose, metadata)
+[Γ£ô] Fix app/blog/page.tsx and [slug]/page.tsx (em dashes in titles, prose)
+[Γ£ô] Fix components/calculators/*.tsx (em dashes in comments, labels)
+[Γ£ô] Fix components/LocationPage.tsx (em dashes in eyebrows, prose)
+[Γ£ô] Verify: grep for em dash (zero), we/our/us (only false positives), end-to-end (zero)
+[Γ£ô] Run npm run build ΓÇö must exit 0
+[ΓÇó] Report summary
+
+## Voice audit ΓÇö complete. Build passes, zero TypeScript errors.
+
+### Fixes by category
+
+**1. Em dashes (ΓÇö) removed/replaced: ~131 instances across 17 files**
+
+| Directory | Files | Em dashes fixed |
+|---|---|---|
+| `app/tools/**` | 7 pages + 2 layouts | ~29 |
+| `app/resources/**` | 5 pages | ~28 |
+| `app/locations/**` | 4 pages | ~36 |
+| `app/small-business/` | 1 page | ~17 |
+| `app/blog/` | 2 pages | ~6 |
+| `components/calculators/` | 3 files | ~7 |
+| `components/LocationPage.tsx` | 1 file | ~8 |
+
+Replacements used: commas (most cases), colons (for lists/explanations), periods (for sentence breaks). Eyebrow spans dropped the em dash prefix (e.g. `ΓÇö Free tool` ΓåÆ `Free tool`).
+
+**2. "we" ΓåÆ "I" fix: 1 instance**
+
+- `app/locations/tech-audit/page.tsx:49`: `"if we don't find"` ΓåÆ `"If I don't find... you get a full refund"`
+
+**3. "end-to-end": 0 found** ΓÇö none across the entire scope.
+
+**4. Banned consultant-speak: 0 found** ΓÇö no leverage, synergy, holistic, seamless, journey, pain points (visible copy), moving the needle, best-in-class, best practice, circle back, reach out, unlock, game-changer, delve, robust, or crucial in any visible copy.
+
+**5. Overclaims: 0 violations** ΓÇö uses of "every"/"always" are qualified (Craig's own practice, not market claims).
+
+### Verification
+
+- **Em dash grep**: zero matches in all in-scope files
+- **`\bwe\b|\bour\b|\bus\b`**: zero matches in all in-scope files
+- **`npm run build`**: Γ£ô Compiled successfully, zero TypeScript errors, 159/159 pages generated
+- **Calculator tools**: untouched functionally ΓÇö only eyebrow/label/prose copy changed, no calculation logic modified
+- **┬ú1,500 figures**: preserved as-is in `tech-audit/` files
+- **Out of scope files skipped**: `app/retained/`, `app/problems/`, `app/sectors/`, `app/case-studies/`

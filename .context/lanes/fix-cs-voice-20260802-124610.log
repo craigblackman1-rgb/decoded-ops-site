@@ -1,0 +1,692 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read all 4 case study files
+[ ] Sanity-check em-dash grep pattern works
+[ ] Fix em-dashes, pronouns, banned phrases in hanicks/page.tsx
+[ ] Fix em-dashes, pronouns, banned phrases in tacklebag/page.tsx
+[ ] Fix em-dashes, pronouns, banned phrases in cobra-workwear/page.tsx
+[ ] Fix em-dashes, pronouns, banned phrases in eternal-fitness/page.tsx
+[ ] Verify zero em-dashes remain with correct grep
+[ ] Run npm run build and confirm zero errors
+
+ΓåÆ Read app/case-studies/hanicks/page.tsx
+ΓåÆ Read app/case-studies/tacklebag/page.tsx
+ΓåÆ Read app/case-studies/cobra-workwear/page.tsx
+ΓåÆ Read app/case-studies/eternal-fitness/page.tsx
+
+$ grep -n "ΓÇö" "app/case-studies/hanicks/page.tsx" | Select-Object -First 5
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ grep -n "ΓÇö" "app/case-studies/tacklebag/page.tsx" | Select-Object -First 5
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ grep -n "ΓÇö" "app/case-studies/cobra-workwear/page.tsx" | Select-Object -First 10
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ grep -n "ΓÇö" "app/case-studies/eternal-fitness/page.tsx" | Select-Object -First 10
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "ΓÇö" "app/case-studies/hanicks/page.tsx"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "ΓÇö" "app/case-studies/tacklebag/page.tsx"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "ΓÇö" "app/case-studies/cobra-workwear/page.tsx"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "ΓÇö" "app/case-studies/eternal-fitness/page.tsx"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "ΓÇö" in app/case-studies ┬╖ 28 matches
+Let me use the built-in Grep tool to find em-dashes across all 4 files:
+Γ£▒ Grep "&mdash;" in app/case-studies ┬╖ 2 matches
+Γ£▒ Grep "\b(we|our|us)\b" in app/case-studies ┬╖ 0 matches
+Γ£▒ Grep "end.to.end|end-to-end" in app/case-studies ┬╖ 0 matches
+Γ£▒ Grep "\b(leverag|synerg|holistic|seamless|journey|pain.point|moving.the.needle|best.in.class|best.practice|circle.back|reach.out|unlock|game.changer|delve|robust|crucial)\b" in app/case-studies ┬╖ 0 matches
+Γ£▒ Grep "eyebrow|&mdash;" in app/case-studies ┬╖ 12 matches
+ΓåÆ Read app/case-studies/page.tsx [limit=30]
+
+# Todos
+[Γ£ô] Read all 4 case study files
+[Γ£ô] Sanity-check em-dash grep pattern works
+[ΓÇó] Fix em-dashes in hanicks/page.tsx (8 literal + 1 &mdash;)
+[ ] Fix em-dashes in tacklebag/page.tsx (6 literal + 1 &mdash;)
+[ ] Fix em-dashes in cobra-workwear/page.tsx (6 literal)
+[ ] Fix em-dashes in eternal-fitness/page.tsx (7 literal)
+[ ] Verify zero em-dashes remain with correct grep
+[ ] Run npm run build and confirm zero errors
+
+Now I have a complete picture. No pronoun/banned-phrase violations found ΓÇö only em-dashes. Let me fix all 28 em-dash instances across the 4 files.
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -4,20 +4,20 @@
+ import { Plate } from '@/components/Plate';
+ 
+ // Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
+ export const metadata = {
+-  title: 'Hanicks ΓÇö Khaos Control ERP + Custom App | Decoded Ops',
++  title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
+   description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+   alternates: { canonical: '/case-studies/hanicks' },
+   openGraph: {
+     type: 'article',
+-    title: 'Hanicks ΓÇö Khaos Control ERP + Custom App | Decoded Ops',
++    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
+     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+     url: 'https://decodedops.co.uk/case-studies/hanicks',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Hanicks ΓÇö Khaos Control ERP + Custom App | Decoded Ops',
++    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
+     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app.',
+   },
+ };
+ 
+
+
+**hanicks/page.tsx** ΓÇö replacing all 9 em-dash instances:
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -25,9 +25,9 @@
+ '@context': 'https://schema.org',
+ '@graph': [
+   {
+     '@type': 'Article',
+-    headline: 'Hanicks ΓÇö Khaos Control ERP + Custom App',
++    headline: 'Hanicks: Khaos Control ERP + Custom App',
+     description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+     author: { '@type': 'Person', name: 'Craig Blackman' },
+     publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+     url: 'https://decodedops.co.uk/case-studies/hanicks',
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -70,9 +70,9 @@
+   <div className="wrap hero-center">
+     <span className="eyebrow">Client work ┬╖ heating spares &amp; eCommerce</span>
+     <h1>The platform stayed. The layer around it changed.</h1>
+     <p className="lede">
+-      Hanicks is a heating spares business ΓÇö not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
++      Hanicks is a heating spares business, not decorated goods, but the same underlying problem: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -78,9 +78,9 @@
+ 
+ {/* 1b. PLATE ┬╖ DO-ART-205 */}
+ <section className="g-navy">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
++    <span className="eyebrow">Measure &middot; DO-ART-205</span>
+     <h2>Not projected. Not modelled. What actually happened.</h2>
+     <div className="hair"></div>
+     <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
+ 
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -85,9 +85,9 @@
+ <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-hanicks">
+-    <Plate tone="dark" p="hs" title="Supplier catalogue ΓÇö before and after"
++    <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
+            sub="Hanicks ┬╖ 164,752 products, 77% matched on the first run"
+            no="DO-ART-205" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -159,9 +159,9 @@
+   <p className="stat-label">WooCommerce products imported</p>
+ </div>
+ <div className="stat">
+   <p className="stat-num num">127,135</p>
+-  <p className="stat-label">matched automatically ΓÇö a 77% first-run match rate</p>
++  <p className="stat-label">matched automatically, a 77% first-run match rate</p>
+ </div>
+ <div className="stat">
+   <p className="stat-num num">11,064</p>
+   <p className="stat-label">push-eligible products live to Khaos Control</p>
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\hanicks\page.tsx
+@@ -182,9 +182,9 @@
+ </p>
+ 
+ <h2>What was done</h2>
+ <p>
+-  A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well ΓÇö so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
++  A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well, so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+ </p>
+ <p>
+   The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+ </p>
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -4,20 +4,20 @@
+ import { Plate } from '@/components/Plate';
+ 
+ // Target keyword: "stock control app decorated goods" (secondary: "tacklebag decoded ops")
+ export const metadata = {
+-  title: 'TackleBag ΓÇö Clarity Audit to Stock Control Build | Decoded Ops',
++  title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
+   description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.',
+   alternates: { canonical: '/case-studies/tacklebag' },
+   openGraph: {
+     type: 'article',
+-    title: 'TackleBag ΓÇö Clarity Audit to Stock Control Build | Decoded Ops',
++    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
+     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.',
+     url: 'https://decodedops.co.uk/case-studies/tacklebag',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'TackleBag ΓÇö Clarity Audit to Stock Control Build | Decoded Ops',
++    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
+     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module.',
+   },
+ };
+ 
+
+
+**tacklebag/page.tsx:**
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -25,9 +25,9 @@
+ '@context': 'https://schema.org',
+ '@graph': [
+   {
+     '@type': 'Article',
+-    headline: 'TackleBag ΓÇö the diagnostic came before the decision',
++    headline: 'TackleBag: the diagnostic came before the decision',
+     description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.',
+     author: { '@type': 'Person', name: 'Craig Blackman' },
+     publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+     url: 'https://decodedops.co.uk/case-studies/tacklebag',
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -87,9 +87,9 @@
+ 
+ {/* 1b. PLATE ┬╖ DO-ART-206 */}
+ <section className="g-navy">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Measure &middot; DO-ART-206</span>
++    <span className="eyebrow">Measure &middot; DO-ART-206</span>
+     <h2>Before and after, paired line for line.</h2>
+     <div className="hair"></div>
+     <p className="lede">TackleBag, named with permission. Nine supplier feeds, fully automated.</p>
+ 
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -94,9 +94,9 @@
+ <p className="lede">TackleBag, named with permission. Nine supplier feeds, fully automated.</p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-tacklebag">
+-    <Plate tone="dark" p="ta" title="Supplier feeds ΓÇö before and after"
++    <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
+            sub="TackleBag ┬╖ 9 feeds automated, 20ΓÇô40 hrs/wk saved"
+            no="DO-ART-206" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <g className="sk-fade sk-s2" filter="url(#ta-shadow)">
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -197,9 +197,9 @@
+ </p>
+ 
+ <h2>What was done</h2>
+ <p>
+-  Symphony stayed as the eCommerce platform ΓÇö it was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
++  Symphony stayed as the eCommerce platform. It was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
+ </p>
+ <p>
+   Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing ΓÇö a real gap in the initial build, found and fixed live.
+ </p>
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\tacklebag\page.tsx
+@@ -200,9 +200,9 @@
+ <p>
+   Symphony stayed as the eCommerce platform. It was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
+ </p>
+ <p>
+-  Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing ΓÇö a real gap in the initial build, found and fixed live.
++  Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing, a real gap in the initial build, found and fixed live.
+ </p>
+ 
+ <div className="progress-note">
+   <h3>What&apos;s still in progress</h3>
+
+
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+@@ -3,20 +3,20 @@
+ import { JsonLd } from '@/components/JsonLd';
+ 
+ // Target keyword: "b2b ordering portal workwear" (secondary: "cobra workwear decoded ops")
+ export const metadata = {
+-  title: 'Cobra Workwear ΓÇö B2B Portal & ERP Evaluation | Decoded Ops',
++  title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
+   description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+   alternates: { canonical: '/case-studies/cobra-workwear' },
+   openGraph: {
+     type: 'article',
+-    title: 'Cobra Workwear ΓÇö B2B Portal & ERP Evaluation | Decoded Ops',
++    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
+     description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+     url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Cobra Workwear ΓÇö B2B Portal & ERP Evaluation | Decoded Ops',
++    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
+     description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+   },
+ };
+ 
+
+
+**cobra-workwear/page.tsx:**
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+@@ -24,9 +24,9 @@
+ '@context': 'https://schema.org',
+ '@graph': [
+   {
+     '@type': 'Article',
+-    headline: 'Cobra Workwear ΓÇö architect and advisor, not the builder',
++    headline: 'Cobra Workwear: architect and advisor, not the builder',
+     description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+     author: { '@type': 'Person', name: 'Craig Blackman' },
+     publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+     url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
+
+
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+@@ -119,9 +119,9 @@
+ 
+ <div style={{ maxWidth: '72ch' }}>
+   <h2 style={{ marginTop: 48 }}>The commercial shape</h2>
+   <p style={{ color: 'var(--do-text-secondary)', lineHeight: 'var(--do-leading-relaxed)' }}>
+-    Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price ΓÇö pricing detail stays out of public case studies.
++    Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price: pricing detail stays out of public case studies.
+   </p>
+ 
+   <div className="progress-note">
+     <h3>What&apos;s still in progress</h3>
+
+
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\cobra-workwear\page.tsx
+@@ -132,9 +132,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 3. CTA STRIP (navy) ΓÇö never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
++{/* 3. CTA STRIP (navy): never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
+ <section className="g-navy cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Evaluating an ERP or platform decision?</h2>
+     <p className="lede">
+
+
+ΓåÉ Edit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+@@ -4,20 +4,20 @@
+ import { JsonLd } from '@/components/JsonLd';
+ 
+ // Target keyword: "ai training plan tool" (secondary: "eternal fitness decoded ops")
+ export const metadata = {
+-  title: 'Eternal Fitness ΓÇö Full Site Build & AI Training Tool | Decoded Ops',
++  title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
+   description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
+   alternates: { canonical: '/case-studies/eternal-fitness' },
+   openGraph: {
+     type: 'article',
+-    title: 'Eternal Fitness ΓÇö Full Site Build & AI Training Tool | Decoded Ops',
++    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
+     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
+     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Eternal Fitness ΓÇö Full Site Build & AI Training Tool | Decoded Ops',
++    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
+     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
+   },
+ };
+ 
+
+
+**eternal-fitness/page.tsx:**
+ΓåÉ Edit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+@@ -25,9 +25,9 @@
+ '@context': 'https://schema.org',
+ '@graph': [
+   {
+     '@type': 'Article',
+-    headline: 'Eternal Fitness ΓÇö Full Site Build and AI Training Tool',
++    headline: 'Eternal Fitness: Full Site Build and AI Training Tool',
+     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
+     author: { '@type': 'Person', name: 'Craig Blackman' },
+     publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
+
+
+ΓåÉ Edit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+@@ -49,9 +49,9 @@
+       <p className="lede">
+         Eternal Fitness is a private, 1-to-1 personal training studio working mainly with clients managing health conditions, not a general weight-loss audience. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
+       </p>
+       <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
+-        Esther is my wife, named plainly. This is paid client work, not a favour or free build ΓÇö she pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
++        Esther is my wife, named plainly. This is paid client work, not a favour or free build. She pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
+       </p>
+     </div>
+   </div>
+ </section>
+
+
+ΓåÉ Edit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+@@ -67,9 +67,9 @@
+ 
+ <h2>What I&apos;m building</h2>
+ <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+   {[
+-    'A full site rebuild that reflects clinical framing rather than fitness-marketing convention ΓÇö no "transformation," no before-and-after, no crush-it language',
++    'A full site rebuild that reflects clinical framing rather than fitness-marketing convention, no "transformation," no before-and-after, no crush-it language',
+     'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition, with Esther reviewing and approving every output',
+     'Brand and tooling consistency across the site and the training plan output, so the two don\'t drift apart over time',
+     'A technical foundation Esther can rely on without needing to manage it herself ΓÇö she owns the clinical and brand decisions, I own the build',
+   ].map((item, i) => (
+
+
+ΓåÉ Edit app/case-studies/eternal-fitness/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-cs-voice\app\case-studies\eternal-fitness\page.tsx
+@@ -70,9 +70,9 @@
+ {[
+   'A full site rebuild that reflects clinical framing rather than fitness-marketing convention, no "transformation," no before-and-after, no crush-it language',
+   'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition, with Esther reviewing and approving every output',
+   'Brand and tooling consistency across the site and the training plan output, so the two don\'t drift apart over time',
+-  'A technical foundation Esther can rely on without needing to manage it herself ΓÇö she owns the clinical and brand decisions, I own the build',
++  'A technical foundation Esther can rely on without needing to manage it herself. She owns the clinical and brand decisions, I own the build',
+ ].map((item, i) => (
+   <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+     <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
+     <p>{item}</p>
+
+
+# Todos
+[Γ£ô] Read all 4 case study files
+[Γ£ô] Sanity-check em-dash grep pattern works
+[Γ£ô] Fix em-dashes in hanicks/page.tsx (8 literal + 1 &mdash;)
+[Γ£ô] Fix em-dashes in tacklebag/page.tsx (6 literal + 1 &mdash;)
+[Γ£ô] Fix em-dashes in cobra-workwear/page.tsx (6 literal)
+[Γ£ô] Fix em-dashes in eternal-fitness/page.tsx (7 literal)
+[ΓÇó] Verify zero em-dashes remain with correct grep
+[ ] Run npm run build and confirm zero errors
+
+All edits applied. Now verify zero em-dashes remain:
+Γ£▒ Grep "ΓÇö" in app/case-studies ┬╖ 0 matches
+Γ£▒ Grep "&mdash;" in app/case-studies ┬╖ 0 matches
+Γ£▒ Grep "Hanicks" in app/case-studies ┬╖ 11 matches
+Let me sanity-check that the grep actually works by testing a known-present string:
+Zero em-dashes confirmed. Now run the build:
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-cs-voice\node_modules"
+False
+
+$ Copy-Item -Recurse -Path "D:\apps\decoded-ops-website\node_modules" -Destination "D:\apps\worktrees\decoded-ops-website\fix-cs-voice\node_modules"
+(no output)
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 12.1s
+  Running TypeScript ...
+  Finished TypeScript in 10.9s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 8.2s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read all 4 case study files
+[Γ£ô] Sanity-check em-dash grep pattern works
+[Γ£ô] Fix em-dashes in hanicks/page.tsx (9 total)
+[Γ£ô] Fix em-dashes in tacklebag/page.tsx (7 total)
+[Γ£ô] Fix em-dashes in cobra-workwear/page.tsx (6 total)
+[Γ£ô] Fix em-dashes in eternal-fitness/page.tsx (7 total)
+[Γ£ô] Verify zero em-dashes remain
+[Γ£ô] Run npm run build and confirm zero errors
+
+Build passed ΓÇö zero errors, all four pages compiled. Let me finalize:
+**Done. 29 em-dashes removed across 4 files. Build passes clean.**
+
+| File | Em-dashes fixed | Replacements used |
+|---|---|---|
+| `hanicks/page.tsx` | 9 (8 literal + 1 `&mdash;`) | `ΓÇö` ΓåÆ `:` in metadata/headline; `ΓÇö` ΓåÆ `,` or `.` in body; `&mdash;` prefix dropped from eyebrow |
+| `tacklebag/page.tsx` | 7 (6 literal + 1 `&mdash;`) | same approach |
+| `cobra-workwear/page.tsx` | 6 (all literal) | `ΓÇö` ΓåÆ `:` in metadata/headline & code comment; `ΓÇö` ΓåÆ `:` in body |
+| `eternal-fitness/page.tsx` | 7 (all literal) | `ΓÇö` ΓåÆ `:` in metadata/headline; `ΓÇö` ΓåÆ `.` or `,` in body |
+
+**No pronoun violations** ("we"/"our"/"us") and **no banned phrases** ("end-to-end", "leverage", etc.) were found in any of the 4 files ΓÇö only em-dashes needed fixing. Client numbers and product names were left unchanged.

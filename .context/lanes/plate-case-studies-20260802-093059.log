@@ -1,0 +1,268 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read components/Plate.tsx
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/case-studies/hanicks/page.tsx
+ΓåÆ Read app/case-studies/tacklebag/page.tsx
+ΓÇó Extract DO-ART-205 plate General Agent
+ΓÇó Extract DO-ART-206 plate General Agent
+Now let me find the plate markup in the decoded-marketing HTML files.
+Γ£ô Extract DO-ART-206 plate General Agent
+Γ£ô Extract DO-ART-205 plate General Agent
+Now let me check if the plate CSS classes are available globally or need to be added to these pages.
+Γ£▒ Grep "\.plate-scroll|\.plate-frame" 7 matches
+Γ£▒ Grep "ds-plates|plate-scroll|plate-frame" in app ┬╖ 27 matches
+Γ£▒ Grep "design-system|ds-layer|globals" in app ┬╖ 5 matches
+
+# Todos
+[ΓÇó] Add DO-ART-205 plate to app/case-studies/hanicks/page.tsx
+[ ] Add DO-ART-206 plate to app/case-studies/tacklebag/page.tsx
+[ ] Run npm run build ΓÇö must exit 0
+
+Good ΓÇö `ds-plates.css` is loaded globally via `ds-layer.css` in the root layout. `.plate-scroll` and `.plate-frame` classes are available. Now I'll make both edits in parallel.
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
+@@ -1,7 +1,8 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
++import { Plate } from '@/components/Plate';
+ 
+ // Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
+ export const metadata = {
+   title: 'Hanicks ΓÇö Khaos Control ERP + Custom App | Decoded Ops',
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
+@@ -1,7 +1,8 @@
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { JsonLd } from '@/components/JsonLd';
++import { Plate } from '@/components/Plate';
+ 
+ // Target keyword: "stock control app decorated goods" (secondary: "tacklebag decoded ops")
+ export const metadata = {
+   title: 'TackleBag ΓÇö Clarity Audit to Stock Control Build | Decoded Ops',
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\hanicks\page.tsx
+@@ -75,8 +75,79 @@
+     </p>
+   </div>
+ </section>
+ 
++{/* 1b. PLATE ┬╖ DO-ART-205 */}
++<section className="g-navy">
++  <div className="wrap">
++    <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
++    <h2>Before and after, paired line for line.</h2>
++    <div className="hair"></div>
++    <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw feed rows to products live in the platform.</p>
++
++    <div className="plate-scroll">
++      <div className="plate-frame" data-od-id="plate-hanicks">
++        <Plate tone="dark" p="hs" title="Supplier catalogue ΓÇö before and after"
++               sub="Hanicks ┬╖ 164,752 products, 77% matched on the first run"
++               no="DO-ART-205" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
++            <rect x="100" y="210" width="650" height="480" rx="14" fill="url(#hs-amber-n)"
++                  className="p-node-a" strokeWidth="1.6"/>
++            <rect x="100" y="210" width="650" height="56" rx="14" className="p-amber" opacity=".92"/>
++            <rect x="100" y="252" width="650" height="14" className="p-amber" opacity=".92"/>
++            <text x="128" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
++                  letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
++          </g>
++          <g className="sk-fade sk-s3" fontSize="22">
++            <text x="140" y="332" className="p-ink">164,752 products across feeds</text>
++            <text x="140" y="402" className="p-ink">No consistent SKU</text>
++            <text x="140" y="472" className="p-ink">No reliable stock picture</text>
++            <text x="140" y="542" className="p-ink">The platform getting the blame</text>
++            <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
++              <path d="M106 319 L118 331 M118 319 L106 331"/>
++              <path d="M106 389 L118 401 M118 389 L106 401"/>
++              <path d="M106 459 L118 471 M118 459 L106 471"/>
++              <path d="M106 529 L118 541 M118 529 L106 541"/>
++            </g>
++          </g>
++
++          <path id="hs-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
++                fill="none" strokeWidth="3" markerEnd="url(#hs-ah)"/>
++
++          <g className="sk-fade sk-s4" filter="url(#hs-shadow)">
++            <rect x="850" y="210" width="650" height="480" rx="14" fill="url(#hs-node)"
++                  className="p-node" strokeWidth="1.6"/>
++            <rect x="850" y="210" width="650" height="56" rx="14" className="p-cyan" opacity=".95"/>
++            <rect x="850" y="252" width="650" height="14" className="p-cyan" opacity=".95"/>
++            <text x="878" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
++                  letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
++          </g>
++          <g className="sk-fade sk-s5" fontSize="22">
++            <text x="890" y="332" className="p-ink">127,135 matched on the first run</text>
++            <text x="890" y="402" className="p-ink">77% matched automatically</text>
++            <text x="890" y="472" className="p-ink">11,064 live at Khaos Control</text>
++            <text x="890" y="542" className="p-ink">Same platform, kept</text>
++            <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
++               strokeLinejoin="round" fill="none">
++              <path d="M856 325 L863 332 L876 318"/>
++              <path d="M856 395 L863 402 L876 388"/>
++              <path d="M856 465 L863 472 L876 458"/>
++              <path d="M856 535 L863 542 L876 528"/>
++            </g>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan">
++              <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#hs-p"/></animateMotion>
++            </circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 2. THE NUMBERS */}
+ <section className="g-navy">
+   <div className="wrap">
+     <span className="eyebrow eyebrow--amber">The numbers</span>
+
+
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-case-studies\app\case-studies\tacklebag\page.tsx
+@@ -84,8 +84,79 @@
+     </p>
+   </div>
+ </section>
+ 
++{/* 1b. PLATE ┬╖ DO-ART-206 */}
++<section className="g-navy">
++  <div className="wrap">
++    <span className="eyebrow">&mdash; Measure &middot; DO-ART-206</span>
++    <h2>Before and after, paired line for line.</h2>
++    <div className="hair"></div>
++    <p className="lede">TackleBag, named with permission. Nine supplier feeds, automated end to end.</p>
++
++    <div className="plate-scroll">
++      <div className="plate-frame" data-od-id="plate-tacklebag">
++        <Plate tone="dark" p="ta" title="Supplier feeds ΓÇö before and after"
++               sub="TackleBag ┬╖ 9 feeds automated, 20ΓÇô40 hrs/wk saved"
++               no="DO-ART-206" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s2" filter="url(#ta-shadow)">
++            <rect x="100" y="210" width="650" height="480" rx="14" fill="url(#ta-amber-n)"
++                  className="p-node-a" strokeWidth="1.6"/>
++            <rect x="100" y="210" width="650" height="56" rx="14" className="p-amber" opacity=".92"/>
++            <rect x="100" y="252" width="650" height="14" className="p-amber" opacity=".92"/>
++            <text x="128" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
++                  letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
++          </g>
++          <g className="sk-fade sk-s3" fontSize="22">
++            <text x="140" y="332" className="p-ink">Manual admin, hours every week</text>
++            <text x="140" y="402" className="p-ink">Supplier feeds disconnected from the site</text>
++            <text x="140" y="472" className="p-ink">Stock levels out of date across channels</text>
++            <text x="140" y="542" className="p-ink">Product data re-keyed into multiple systems</text>
++            <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
++              <path d="M106 319 L118 331 M118 319 L106 331"/>
++              <path d="M106 389 L118 401 M118 389 L106 401"/>
++              <path d="M106 459 L118 471 M118 459 L106 471"/>
++              <path d="M106 529 L118 541 M118 529 L106 541"/>
++            </g>
++          </g>
++
++          <path id="ta-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
++                fill="none" strokeWidth="3" markerEnd="url(#ta-ah)"/>
++
++          <g className="sk-fade sk-s4" filter="url(#ta-shadow)">
++            <rect x="850" y="210" width="650" height="480" rx="14" fill="url(#ta-node)"
++                  className="p-node" strokeWidth="1.6"/>
++            <rect x="850" y="210" width="650" height="56" rx="14" className="p-cyan" opacity=".95"/>
++            <rect x="850" y="252" width="650" height="14" className="p-cyan" opacity=".95"/>
++            <text x="878" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
++                  letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
++          </g>
++          <g className="sk-fade sk-s5" fontSize="22">
++            <text x="890" y="332" className="p-ink">9 supplier feeds automated end to end</text>
++            <text x="890" y="402" className="p-ink">20ΓÇô40 hours a week saved</text>
++            <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
++            <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
++            <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
++               strokeLinejoin="round" fill="none">
++              <path d="M856 325 L863 332 L876 318"/>
++              <path d="M856 395 L863 402 L876 388"/>
++              <path d="M856 465 L863 472 L876 458"/>
++              <path d="M856 535 L863 542 L876 528"/>
++            </g>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan">
++              <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#ta-p"/></animateMotion>
++            </circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 2. THE NUMBERS */}
+ <section className="g-navy">
+   <div className="wrap">
+     <span className="eyebrow eyebrow--amber">The numbers</span>
+
+
+Now insert the plate sections between hero and numbers on both pages.
+ΓåÆ Read app/case-studies/hanicks/page.tsx
+ΓåÆ Read app/case-studies/tacklebag/page.tsx
+Both pages edited. Let me verify the files look correct, then run the build.
+
+# Todos
+[Γ£ô] Add DO-ART-205 plate to app/case-studies/hanicks/page.tsx
+[Γ£ô] Add DO-ART-206 plate to app/case-studies/tacklebag/page.tsx
+[ΓÇó] Run npm run build ΓÇö must exit 0
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+'next' is not recognized as an internal or external command,
+operable program or batch file.
+
+$ Test-Path node_modules\.bin\next.cmd
+False
+
+Γ£▒ Glob "pnpm-lock*" in . ┬╖ 0 matches
+Γ£▒ Glob "package-lock*" in . ┬╖ 1 match
+Γ£▒ Glob "yarn.lock" in . ┬╖ 0 matches
+`node_modules` is missing ΓÇö cannot run `next build`. Install with `npm ci` and retry.
+
+---
+
+**Summary of what was done:**
+
+**Hanicks page** (`app/case-studies/hanicks/page.tsx`):
+- **Found:** a stat-card section (section 2, `g-navy`) showing the exact same numbers ΓÇö 164,752 / 127,135 / 11,064 ΓÇö with an amber eyebrow "The numbers"
+- **Integrated:** a new `DO-ART-205` plate section (`section 1b`) inserted between the hero and the existing numbers section. The plate is a "before and after" paired layout ΓÇö BEFORE side (Amber tone, red X marks) listing the pre-engagement problems, arrow transition, AFTER side (Cerulean tone, green checkmarks) showing the resolved state. The stat-card section with the same numbers was left in place ΓÇö the plate visualises the transformation story; the stat cards below it serve as a quick-reference summary.
+
+**TackleBag page** (`app/case-studies/tacklebag/page.tsx`):
+- **Found:** a stat-card section (section 2, `g-navy`) showing "9" feeds and "20ΓÇô40" hours with the feed-pill list below
+- **Integrated:** a new `DO-ART-206` plate section (`section 1b`) inserted between the hero and the existing numbers section. Same before-and-after paired layout format, ported directly from the decoded-marketing mockup. The existing stat cards and feed-list were left in place.
+
+Both plates use the exact same `<Plate>` component pattern already proven in three places on the homepage (DO-ART-902, DO-ART-202, DO-ART-302). Neither Cobra Workwear nor Eternal Fitness pages were touched.

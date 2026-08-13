@@ -1,0 +1,417 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/ds-plates.js
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/ds-plates.css
+Γ£▒ Glob "**/*.{tsx,css}" in . ┬╖ 100 matches
+ΓåÆ Read app/globals.css
+ΓåÆ Read app/layout.tsx
+ΓåÆ Read components/DsPlatesLoader.tsx
+ΓåÆ Read app/design-system/ds-plates.css
+ΓåÆ Read app/design-system/ds-layer.css
+Γ£▒ Grep "data-no="DO-ART-902"" in D:/apps/design-systems/decoded-marketing ┬╖ 2 matches
+Γ£▒ Glob "app/design-system/ds-plates.js" in . ┬╖ 1 match
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/homepage.html [offset=180, limit=200]
+ΓåÆ Read app/design-system/ds-plates.js [limit=10]
+ΓåÆ Read app/design-system/ds-marketing.css [limit=50]
+ΓåÆ Read app/design-system/colors_and_type.css [limit=120]
+ΓåÆ Read app/homepage.css
+ΓåÆ Read app/page.tsx [limit=30]
+ΓåÆ Read app/design-system/colors_and_type.css [offset=120, limit=120]
+ΓåÆ Read app/page.tsx [offset=180, limit=120]
+Γ£▒ Grep "--do-text-secondary" in . ┬╖ 75 matches
+
+# Todos
+[ ] Create components/Plate.tsx ΓÇö the React Client Component
+[ ] Remove DsPlatesLoader from app/layout.tsx (would conflict with new component)
+[ ] Update DO-ART-202 plate in homepage to use <Plate> component as end-to-end test
+[ ] Run npm run build ΓÇö zero TypeScript errors, zero CSS conflicts
+[ ] Verify plate markup appears in built output
+
+ΓåÆ Read app/page.tsx [limit=125, offset=296]
+ΓåÆ Read app/page.tsx [limit=180, offset=0]
+
+# Todos
+[ΓÇó] Create components/Plate.tsx ΓÇö the React Client Component
+[ ] Remove DsPlatesLoader from app/layout.tsx (would conflict with new component)
+[ ] Convert homepage plates (DO-ART-902, DO-ART-202, DO-ART-302) to use <Plate> component
+[ ] Run npm run build ΓÇö zero TypeScript errors, zero CSS conflicts
+[ ] Verify plate markup appears in built output
+
+Now I have the full picture. Let me build the component.
+ΓåÉ Write components/Plate.tsx
+Wrote file successfully.
+
+ΓåÉ Edit app/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+@@ -18,10 +18,10 @@
+ import { CookieConsent } from '@/components/CookieConsent';
+ import { JsonLd } from '@/components/JsonLd';
+ import { AppShell } from '@/components/AppShell';
+ import { SessionProvider } from '@/components/SessionProvider';
+-import { DsPlatesLoader } from '@/components/DsPlatesLoader';
+ 
++
+ const outfit = Outfit({
+   subsets: ['latin'],
+   weight: ['400', '500', '600', '700', '800'],
+   variable: '--font-outfit',
+
+
+ΓåÉ Edit app/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+@@ -113,9 +113,9 @@
+             <main id="main-content" className="flex-1">{children}</main>
+           </AppShell>
+         </SessionProvider>
+         <CookieConsent />
+-        <DsPlatesLoader />
++
+       </body>
+     </html>
+   );
+ }
+
+
+Now let me update `layout.tsx` to remove `DsPlatesLoader`, and update the homepage to use `<Plate>`.
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { Plate } from '@/components/Plate';
+ import './homepage.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Ops ΓÇö operations and technology consultancy for decorated goods',
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+@@ -97,67 +97,64 @@
+       feeds imported, products matched, stock pushed to the system they already own.</p>
+ 
+     <div className="plate-scroll">
+       <div className="plate-frame" data-od-id="plate-evidence">
+-        <svg className="pl" data-tone="dark" data-p="ev" viewBox="0 0 1600 900" role="img"
+-             data-title="Decoded Data App ΓÇö live deployment"
+-             data-sub="Supplier feed to platform, one clean catalogue between them"
+-             data-no="DO-ART-902" data-rev="01"
+-             data-class="DECODED OPS ┬╖ ISSUED"
+-             aria-label="Evidence plate DO-ART-902. Left, a screen from the Decoded Data App showing a pick queue of decorated-garment jobs, an activity stream of supplier feed imports and a stock export, and a data-health panel reporting supplier coverage at 82 per cent and variant matching at 43 per cent. Right, a specification panel recording the client, what the screen shows, its source, and that no photographic grade has been applied because it is an interface, not a photograph.">
++        <Plate tone="dark" p="ev" title="Decoded Data App ΓÇö live deployment"
++               sub="Supplier feed to platform, one clean catalogue between them"
++               no="DO-ART-902" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
+ 
+           {/* THE EXHIBIT */}
+           <g className="sk-fade sk-s2">
+             <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
+                    preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
+             <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
+-                  opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
++                   opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+             <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
+-                  strokeWidth="1.1" strokeOpacity=".35"/>
++                   strokeWidth="1.1" strokeOpacity=".35"/>
+             <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
+             <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
+-                  fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
++                   fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
+           </g>
+ 
+           {/* THE SPECIFICATION */}
+           <g className="sk-fade sk-s4">
+             <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
+-                  className="p-node" strokeWidth="1.1"/>
++                   className="p-node" strokeWidth="1.1"/>
+             <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
+             <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
+-                  fontWeight="600">EXHIBIT</text>
++                   fontWeight="600">EXHIBIT</text>
+             <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
+-                  strokeOpacity=".2"/>
++                   strokeOpacity=".2"/>
+ 
+             <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
+-                  opacity=".45">CLIENT</text>
++                   opacity=".45">CLIENT</text>
+             <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
+-                  fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
++                   fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
+ 
+             <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
+-                  opacity=".45">SHOWS</text>
++                   opacity=".45">SHOWS</text>
+             <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
+-                  fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
++                   fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+             <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
+               picking alongside Symphony</text>
+ 
+             <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
+-                  opacity=".45">SOURCE</text>
++                   opacity=".45">SOURCE</text>
+             <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
+-                  fontWeight="600" fontSize="22">Decoded Data App interface</text>
++                   fontWeight="600" fontSize="22">Decoded Data App interface</text>
+ 
+             <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
+-                  strokeOpacity=".2"/>
++                   strokeOpacity=".2"/>
+             <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE ΓÇö none. A
+               screen is not</text>
+             <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
+               grading it would</text>
+             <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
+               is evidence of.</text>
+           </g>
+-        </svg>
++        </Plate>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+Now convert the DO-ART-902 plate to use `<Plate>`:
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+@@ -202,14 +202,11 @@
+   feed rows to products live in the platform.</p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-measure">
+-    <svg className="pl" data-tone="dark" data-p="ms" viewBox="0 0 1600 900" role="img"
+-         data-title="Supplier catalogue ΓÇö raw to live"
+-         data-sub="Hanicks ┬╖ one import pipeline, first automated run"
+-         data-no="DO-ART-202" data-rev="01"
+-         data-class="DECODED OPS ┬╖ ISSUED"
+-         aria-label="Measure plate DO-ART-202. Three proportional bars quantifying one supplier-catalogue pipeline at Hanicks: 164,752 rows imported from supplier feeds, 127,135 of them matched automatically on the first run at 77 per cent, and 11,064 products pushed live to Khaos Control. Before the pipeline, matching was done by hand in spreadsheets with no repeatable run.">
++    <Plate tone="dark" p="ms" title="Supplier catalogue ΓÇö raw to live"
++           sub="Hanicks ┬╖ one import pipeline, first automated run"
++           no="DO-ART-202" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       {/* track guides */}
+       <g className="sk-fade sk-s1" opacity=".5">
+         <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
+@@ -269,9 +266,9 @@
+           Nobody retypes a supplier spreadsheet.</text>
+         <text x="60" y="726" className="p-mono" fontSize="17" opacity=".5">Before: matched by
+           hand, no repeatable run, no way to tell what had changed since last time.</text>
+       </g>
+-    </svg>
++    </Plate>
+   </div>
+ </div>
+ 
+ <p className="lede" style={{ marginTop: 28 }}>Same approach at TackleBag: nine supplier feeds
+
+
+Now convert DO-ART-202:
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\page.tsx
+@@ -287,14 +287,11 @@
+   merits.</p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame" data-od-id="plate-ladder">
+-    <svg className="pl" data-tone="dark" data-p="ld" viewBox="0 0 1600 900" role="img"
+-         data-title="The ladder ΓÇö buy first, build only what is missing"
+-         data-sub="Three rungs in fixed order ┬╖ every option priced"
+-         data-no="DO-ART-302" data-rev="01"
+-         data-class="DECODED OPS ┬╖ ISSUED"
+-         aria-label="Flow plate DO-ART-302. Three rungs in fixed order along a spine. Rung one: buy off the shelf where it already fits. Rung two, the default and what both live clients run: buy the platform plus a custom automation layer to close the gaps it leaves. Rung three, a last resort: full custom, only when nothing off the shelf fits, and priced alongside everything else considered.">
++    <Plate tone="dark" p="ld" title="The ladder ΓÇö buy first, build only what is missing"
++           sub="Three rungs in fixed order ┬╖ every option priced"
++           no="DO-ART-302" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       {/* the spine */}
+       <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
+             d="M140 520 H1470" fill="none" strokeWidth="2.5" markerEnd="url(#ld-ah)"/>
+@@ -361,9 +358,9 @@
+             <mpath href="#ld-spine"/>
+           </animateMotion>
+         </circle>
+       </g>
+-    </svg>
++    </Plate>
+   </div>
+ </div>
+ 
+ <div className="rungs" data-od-id="ladder-rungs">
+
+
+Now convert DO-ART-302 (ladder plate):
+# Todos
+[Γ£ô] Create components/Plate.tsx ΓÇö the React Client Component
+[Γ£ô] Remove DsPlatesLoader from app/layout.tsx (would conflict with new component)
+[Γ£ô] Convert homepage plates (DO-ART-902, DO-ART-202, DO-ART-302) to use <Plate> component
+[ΓÇó] Run npm run build ΓÇö zero TypeScript errors, zero CSS conflicts
+[ ] Verify plate markup appears in built output
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+'next' is not recognized as an internal or external command,
+operable program or batch file.
+
+ΓåÆ Read package.json [limit=20]
+
+$ Test-Path -LiteralPath "node_modules\.bin\next.cmd"
+False
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-foundation\node_modules" ; Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source ; Get-Command npx -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source
+False
+C:\nvm4w\nodejs\npm.ps1
+C:\nvm4w\nodejs\npx.ps1
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-foundation\package-lock.json" ; Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-foundation\pnpm-lock.yaml" ; Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website" -Directory | Select-Object Name
+True
+False
+
+Name
+----
+finish-website
+plate-foundation
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\finish-website\node_modules"
+False
+
+ΓåÆ Read app/layout.tsx
+ΓåÆ Read components/Plate.tsx
+
+ΓåÉ Edit app/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\app\layout.tsx
+@@ -19,9 +19,8 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { AppShell } from '@/components/AppShell';
+ import { SessionProvider } from '@/components/SessionProvider';
+ 
+-
+ const outfit = Outfit({
+   subsets: ['latin'],
+   weight: ['400', '500', '600', '700', '800'],
+   variable: '--font-outfit',
+
+
+ΓåÉ Edit components/Plate.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-foundation\components\Plate.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-foundation\components\Plate.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-foundation\components\Plate.tsx
+@@ -39,8 +39,12 @@
+   return null;
+ }
+ 
+ useEffect(() => {
++  document.documentElement.classList.add('sk-js');
++}, []);
++
++useEffect(() => {
+   const svg = svgRef.current;
+   if (!svg) return;
+ 
+   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+
+I notice the `sk-js` class was previously added by `DsPlatesLoader`. I need to add it back from the Plate component for the CSS animation gate to work. Let me also clean up the blank line.
+ΓåÆ Read app/page.tsx [offset=88, limit=30]
+ΓåÆ Read app/page.tsx [offset=280, limit=20]
+Let me verify the page.tsx looks correct after all the edits:
+Good. Let me check for the loop-status file:
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-foundation\.context\loop-status.md"
+True
+
+ΓåÆ Read .context/loop-status.md
+
+# Todos
+[Γ£ô] Create components/Plate.tsx ΓÇö the React Client Component
+[Γ£ô] Remove DsPlatesLoader from app/layout.tsx (would conflict with new component)
+[Γ£ô] Convert homepage plates (DO-ART-902, DO-ART-202, DO-ART-302) to use <Plate> component
+[ ] Run npm run build ΓÇö BLOCKED: node_modules not installed
+[ ] Verify plate markup appears in built output ΓÇö BLOCKED: cannot build
+
+Γ£ù Edit .context/loop-status.md failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+ΓåÆ Read .context/loop-status.md [offset=25]
+
+$ Add-Content -LiteralPath 'D:\apps\worktrees\decoded-ops-website\plate-foundation\.context\loop-status.md' -Value "`n28: 2026-08-02T10:45:00+01:00 | plate-foundation | PHASE 1: Plate diagram system foundation | Built components/Plate.tsx ΓÇö React Client Component, 188 lines, ported frame() + titleBlock() from ds-plates.js into JSX (grid bg, corner ticks, amber spine tab, title/sub, no/rev/cls, title block). Ported IntersectionObserver reveal-on-scroll (sk-in on intersection, SMIL pause/unpause, prefers-reduced-motion gate). Refuses to render without `no` prop. sk-js class gate added in useEffect. Updated app/layout.tsx: removed DsPlatesLoader import+usage (would duplicate-inject frames). Updated app/page.tsx: all 3 homepage plates (DO-ART-902/202/302) converted from raw SVG to <Plate>. Token gaps: NONE ΓÇö colors_and_type.css (via ds-layer.css) provides all --do-font-body/head/mono, --do-space-*, --do-text-xl, --do-tracking-wide, --do-weight-bold, --do-text-muted-on-dark, --do-text-secondary. BUILD BLOCKED: node_modules not installed. npm run build blocked."
+(no output)
+
+## Report ΓÇö Phase 1: Plate Diagram System Foundation
+
+### Build status: **BLOCKED** ΓÇö `node_modules` not installed
+
+`npm run build` fails with `'next' is not recognized`. Dependencies must be installed first. This is the same state as prior entries in `loop-status.md` (lines 25, 27).
+
+### Files created/modified
+
+| File | Change |
+|---|---|
+| `components/Plate.tsx` | **Created** ΓÇö 188-line React Client Component |
+| `app/layout.tsx` | Removed `DsPlatesLoader` import + usage |
+| `app/page.tsx` | Added `Plate` import; converted 3 plates to `<Plate>` |
+
+### `<Plate>` prop API
+
+```tsx
+<Plate
+  tone="dark"           // 'dark' | 'light' ΓÇö default 'dark'
+  p="ms"                // prefix for gradient/pattern IDs within this plate
+  title="Supplier catalogue ΓÇö raw to live"   // required
+  sub="Hanicks ┬╖ one import pipeline"        // optional, default ''
+  no="DO-ART-202"       // required ΓÇö refuses to render without it
+  rev="01"              // optional, default '01'
+  cls="DECODED OPS ┬╖ ISSUED"   // classification text, optional
+>
+  {/* children: page-specific inner SVG content (<g>, <path>, etc.) */}
+</Plate>
+```
+
+### Token gaps resolved: **none needed**
+
+`colors_and_type.css` (imported via `ds-marketing.css` ΓåÆ `ds-layer.css` ΓåÆ `layout.tsx`) already defines all tokens `ds-plates.css` references:
+`--do-font-body`, `--do-font-heading`, `--do-font-mono`, `--do-space-*` (0ΓÇô32), `--do-text-xl`, `--do-tracking-wide`, `--do-weight-bold`, `--do-text-muted-on-dark`, `--do-text-secondary`, `--do-text-xs`, `--do-text-sm`, `--do-text-base`, `--do-leading-*`, `--do-radius-full`.
+
+No changes to `globals.css` or any CSS file were needed.
+
+### What changed vs the vanilla `ds-plates.js` approach
+
+- **Before:** `DsPlatesLoader` dynamically imported `ds-plates.js`, which ran `document.querySelectorAll('svg.pl')` and injected frame HTML via `insertAdjacentHTML` ΓÇö a side-effect on React-managed DOM.
+- **After:** `Plate.tsx` renders the frame declaratively in JSX with `useRef` + `useEffect` for IntersectionObserver. No DOM injection, no conflict with React's VDOM.
+- The 3 homepage plates are all live `<Plate>` instances ΓÇö real, legitimate content on the homepage.
+
+### Test plates left in place
+
+All three homepage plates are converted and in place:
+- **DO-ART-902** (evidence plate, section 2) ΓÇö screen exhibit + specification panel
+- **DO-ART-202** (measure plate, section 4) ΓÇö bar charts quantifying supplier pipeline
+- **DO-ART-302** (ladder plate, section 5) ΓÇö three-rung buy/buy-plus/full-custom diagram with animateMotion

@@ -1,0 +1,988 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read SectorPageDS.tsx interface, target pages, mockups, and garment-decoration reference
+[ ] Check which other sector pages use SectorPageDS (backwards compat)
+[ ] Restore 5 challenges + checklist + CTA for workwear
+[ ] Restore 5 challenges + checklist + CTA for promotional-merchandise
+[ ] Restore 5 challenges + checklist + CTA for teamwear-clubwear
+[ ] Run build, verify all 9 sector pages compile clean
+
+ΓåÆ Read components/SectorPageDS.tsx
+ΓåÆ Read app/sectors/workwear/page.tsx
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx
+ΓåÆ Read app/sectors/teamwear-clubwear/page.tsx
+ΓåÆ Read app/sectors/garment-decoration/page.tsx
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/sectors-workwear.html
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/sectors-promotional-merchandise.html
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/sectors-teamwear-clubwear.html
+Γ£▒ Grep "SectorPageDS" in app/sectors ┬╖ 13 matches
+ΓåÆ Read components/SectorPageDS.module.css
+Now let me check which other sector pages use `SectorPageDS` and look at the module CSS.
+ΓåÆ Read app/sectors/schoolwear/page.tsx
+
+# Todos
+[Γ£ô] Read SectorPageDS.tsx interface, target pages, mockups, and garment-decoration reference
+[Γ£ô] Check which other sector pages use SectorPageDS (backwards compat)
+[ΓÇó] Extend SectorPageDS.tsx: flexible features array + grid--2 + optional checklist section
+[ ] Restore 5 challenges + checklist + CTA for workwear
+[ ] Restore 5 challenges + checklist + CTA for promotional-merchandise
+[ ] Restore 5 challenges + checklist + CTA for teamwear-clubwear
+[ ] Run build, verify all 9 sector pages compile clean
+
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+@@ -26,11 +26,13 @@
+   shotCaption: string;
+   /** Optional plate diagram to render between hero and features */
+   plate?: ReactNode;
+   featuresHeading: string;
+-  features: [Feature, Feature, Feature];
++  features: Feature[];
+   otherSectors: SectorLink[];
+   ctaLead: string;
++  checklistHeading?: string;
++  checklist?: string[];
+ }
+ 
+ /**
+  * Shared template for the four DS-ported sector pages (workwear,
+
+
+Now I have the full picture. Let me implement. First, the component and its CSS, then the three pages.
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+@@ -60,8 +60,10 @@
+   featuresHeading,
+   features,
+   otherSectors,
+   ctaLead,
++  checklistHeading,
++  checklist,
+ }: SectorPageDSProps) {
+   return (
+     <>
+       {/* HERO SPLIT */}
+
+
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+@@ -118,9 +118,9 @@
+   <span className="eyebrow">Where it usually breaks</span>
+   <h2>{featuresHeading}</h2>
+ </div>
+ 
+-<div className="grid grid--3">
++<div className="grid grid--2">
+   {features.map((f) => (
+     <div key={f.title} className={styles.feature}>
+       <div className={styles.featureMark} aria-hidden="true">{f.icon}</div>
+       <h3>{f.title}</h3>
+
+
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.tsx
+@@ -130,8 +130,23 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* WHAT I DO */}
++{checklist && checklist.length > 0 && (
++  <section className="g-white">
++    <div className="wrap">
++      <span className="eyebrow">What I do</span>
++      <h2>{checklistHeading ?? 'An independent audit of the whole workflow.'}</h2>
++      <ul className={styles.checklist}>
++        {checklist.map((item, i) => (
++          <li key={i}>{item}</li>
++        ))}
++      </ul>
++    </div>
++  </section>
++)}
++
+ {/* OTHER SECTORS */}
+ <section className={`g-navy ${styles.tight}`}>
+   <div className="wrap">
+     <span className="eyebrow">Other sectors</span>
+
+
+ΓåÉ Edit components/SectorPageDS.module.css
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.module.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.module.css
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\components\SectorPageDS.module.css
+@@ -78,4 +78,14 @@
+ .centred { max-width: 760px; margin-inline: auto; text-align: center; }
+ .centred .lede { margin-inline: auto; }
+ .centred .hair { margin-inline: auto; }
+ .centred .btn-row { justify-content: center; }
++
++.checklist { list-style: none; padding: 0; margin: 34px 0 0; max-width: 78ch; }
++.checklist li { display: flex; gap: 16px; padding: 16px 0; font-size: var(--do-text-base);
++  color: var(--do-text-secondary);
++  border-bottom: 1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent); }
++.checklist li:last-child { border-bottom: 0; }
++.checklist li::before { content: ''; flex: 0 0 auto; width: 19px; height: 19px; margin-top: 3px;
++  border-radius: var(--do-radius-sm);
++  border: 2px solid color-mix(in srgb, var(--do-amber) 70%, transparent);
++  background: color-mix(in srgb, var(--do-amber) 16%, transparent); }
+
+
+Now add checklist styles to the CSS module:
+# Todos
+[Γ£ô] Read SectorPageDS.tsx interface, target pages, mockups, and garment-decoration reference
+[Γ£ô] Check which other sector pages use SectorPageDS (backwards compat)
+[Γ£ô] Extend SectorPageDS.tsx: flexible features array + grid--2 + optional checklist section
+[ΓÇó] Restore 5 challenges + checklist + CTA for workwear
+[ΓÇó] Restore 5 challenges + checklist + CTA for promotional-merchandise
+[ΓÇó] Restore 5 challenges + checklist + CTA for teamwear-clubwear
+[ ] Run build, verify all 9 sector pages compile clean
+
+Component is extended. Now the three pages. Let me do all three in parallel:
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Now let me apply all three page fixes. Starting with workwear:
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=95, limit=45]
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+@@ -94,36 +94,54 @@
+       <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ww-spine"/></animateMotion></circle>
+     </g>
+   </Plate>
+ }
+-featuresHeading="Three problems, in roughly this order."
++featuresHeading="Five challenges specific to this sector."
+ features={[
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+       </svg>
+     ),
+-    title: 'Supplier feed chaos, solved',
+-    body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. The Decoded Data App keeps that current across every channel without you re-keying it by hand.',
++    title: 'Supplier feed chaos',
++    body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is the single biggest operational drag in the sector.',
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M8 4 4.5 7 6 9l2-1v12h8V8l2 1 1.5-2L16 4z" /><circle cx="12" cy="12" r="2" />
+       </svg>
+     ),
+     title: 'Decoration and stock, in the same picture',
+-    body: "A plain garment isnΓÇÖt the same SKU as the decorated one. Systems that donΓÇÖt understand that force workarounds, and workarounds mean data outside the system.",
++    body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds \u2014 and workarounds mean data outside the system, which means errors and extra admin on every order.",
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><path d="M3.3 7 12 12l8.7-5M12 22V12" />
++      </svg>
++    ),
++    title: 'Blank stock dependency',
++    body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders \u2014 until the problem is already in the queue.',
++  },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a14.8 14.8 0 0 0-3 10 14.8 14.8 0 0 0 3 10 14.8 14.8 0 0 0 3-10A14.8 14.8 0 0 0 12 2z" />
++      </svg>
++    ),
++    title: 'eCommerce disconnected from production',
++    body: 'Online orders that don\u2019t automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files arriving separately from the order. All of this is solvable.',
++  },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
+       </svg>
+     ),
+-    title: 'Replenishment that doesnΓÇÖt wait on you',
+-    body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing ΓÇ£weΓÇÖre out of mediums again.ΓÇ¥',
++    title: 'Replenishment that waits on you',
++    body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing 'we\u2019re out of mediums again.\u2019',
+   },
+ ]}
+ otherSectors={[
+   { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
+
+
+The file uses curly quotes. Let me use a smaller, more targeted edit. First, update the featuresHeading and features array:
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Now add the checklist and update ctaLead for workwear:
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=140, limit=30]
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+
+$ Get-Content -Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx" -Tail 6 | ForEach-Object { [System.Text.Encoding]::UTF8.GetBytes($_) | ForEach-Object { '{0:X2}' -f $_ } ; "|" }
+20
+20
+20
+20
+20
+20
+20
+20
+5D
+7D
+|
+20
+20
+20
+20
+20
+20
+20
+20
+63
+74
+61
+4C
+65
+61
+64
+3D
+22
+41
+6E
+20
+68
+6F
+75
+72
+20
+6F
+6E
+20
+77
+68
+61
+74
+E2
+80
+99
+73
+20
+61
+63
+74
+75
+61
+6C
+6C
+79
+20
+67
+6F
+69
+6E
+67
+20
+77
+72
+6F
+6E
+67
+20
+69
+6E
+20
+79
+6F
+75
+72
+20
+6F
+70
+65
+72
+61
+74
+69
+6F
+6E
+2C
+20
+61
+6E
+64
+20
+61
+6E
+20
+68
+6F
+6E
+65
+73
+74
+20
+72
+65
+61
+64
+20
+6F
+6E
+20
+77
+68
+65
+74
+68
+65
+72
+20
+69
+74
+20
+6E
+65
+65
+64
+73
+20
+73
+6F
+66
+74
+77
+61
+72
+65
+20
+61
+74
+20
+61
+6C
+6C
+2E
+22
+|
+20
+20
+20
+20
+20
+20
+2F
+3E
+|
+20
+20
+20
+20
+3C
+2F
+3E
+|
+20
+20
+29
+3B
+|
+7D
+|
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+@@ -142,8 +142,18 @@
+     title: 'Replenishment that waits on you',
+     body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing 'we\u2019re out of mediums again.\u2019',
+   },
+ ]}
++checklistHeading="An independent audit of the whole workwear workflow."
++checklist={[
++  'Map your order-to-despatch workflow end to end, including the decoration step',
++  'Identify where supplier catalogue data is being re-keyed or managed manually',
++  'Review your blank stock management against committed orders for supply gap risk',
++  'Audit how personalisation requirements flow from order intake to production',
++  'Assess eCommerce integration with production scheduling and order management',
++  'Review your replenishment model for repeat customer orders',
++  'Quantify every finding in time, headcount, and money',
++]}
+ otherSectors={[
+   { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
+   { label: 'Schoolwear', href: '/sectors/schoolwear' },
+   { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
+
+
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=156, limit=10]
+
+$ $content = Get-Content -Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx" -Raw; $idx = $content.IndexOf('ctaLead='); if ($idx -ge 0) { $end = $content.IndexOf("`n", $idx); if ($end -lt 0) { $end = $content.Length }; $line = $content.Substring($idx, $end - $idx); $bytes = [System.Text.Encoding]::UTF8.GetBytes($line); $hex = ($bytes | ForEach-Object { '{0:X2}' -f $_ }) -join ' '; Write-Output "HEX: $hex"; Write-Output "LEN: $($line.Length)"; Write-Output "LINE: $line" }
+HEX: 63 74 61 4C 65 61 64 3D 22 41 6E 20 68 6F 75 72 20 6F 6E 20 77 68 61 74 E2 80 99 73 20 61 63 74 75 61 6C 6C 79 20 67 6F 69 6E 67 20 77 72 6F 6E 67 20 69 6E 20 79 6F 75 72 20 6F 70 65 72 61 74 69 6F 6E 2C 20 61 6E 64 20 61 6E 20 68 6F 6E 65 73 74 20 72 65 61 64 20 6F 6E 20 77 68 65 74 68 65 72 20 69 74 20 6E 65 65 64 73 20 73 6F 66 74 77 61 72 65 20 61 74 20 61 6C 6C 2E 22 0D
+LEN: 124
+LINE: ctaLead="An hour on what's actually going wrong in your operation, and an honest read on whether it needs software at all."
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+@@ -158,8 +158,9 @@
+           { label: 'Schoolwear', href: '/sectors/schoolwear' },
+           { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
+         ]}
+         ctaLead="An hour on whatΓÇÖs actually going wrong in your operation, and an honest read on whether it needs software at all."
++        ctaLead="An hour on supplier data, blank stock dependency, and where your production step is creating admin work that shouldn't exist."
+       />
+     </>
+   );
+ }
+
+
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=159, limit=12]
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: No changes to apply: oldString and newString are identical.
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=155, limit=12]
+
+$ $file = "D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx"; $content = Get-Content $file -Raw; $content = $content -replace "        ctaLead=`"An hour on what.$" -replace "(.*)ctaLead=`"An hour on what\u2019s actually going wrong.*`"`r`n", ""; Set-Content $file -Value $content -NoNewline; Write-Output "Done"
+Done
+
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=155, limit=12]
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx [offset=96, limit=40]
+Workwear is done. Now promo page. Let me replace the features array first:
+
+$ $c = Get-Content "D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx" -Raw; $idx = $c.IndexOf("doesn"); $c.Substring($idx-2, 24)
+t doesn\'t live in email
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -94,37 +94,55 @@
+       <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pm-spine"/></animateMotion></circle>
+     </g>
+   </Plate>
+ }
+-featuresHeading="Three problems, in roughly this order."
++featuresHeading="Five challenges specific to this sector."
+ features={[
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+       </svg>
+     ),
+-    title: 'Every supplier, one clean catalogue',
+-    body: 'Promotional merchandise runs on dozens of supplier ranges. The Decoded Data App brings them into one place, matched and current, instead of a folder of spreadsheets nobody trusts.',
++    title: 'Multi-supplier catalogue management',
++    body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them \u2014 without re-keying \u2014 is the sector\u2019s defining operational challenge.',
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
+       </svg>
+     ),
+-    title: 'Artwork that doesn\'t live in email',
+-    body: 'Client logos, in every format, with version control and an audit trail. Customers approve their own proofs instead of a back-and-forth that eats a day per order.',
++    title: 'The artwork loop',
++    body: 'Client logos, in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.',
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M4 18 9.5 12l3.5 3.5L20 8" /><path d="M15.5 8H20v4.5" />
+       </svg>
+     ),
+-    title: 'Margin protected at the order level',
+-    body: 'When production sits between the order and the despatch, as it always does in this sector, a system that doesn\'t account for that quietly erodes margin on every job.',
++    title: 'Margin erosion at the order level',
++    body: 'When production sits between the order and the despatch, a system that doesn\u2019t account for decoration cost, supplier lead time variation, and artwork rework quietly erodes margin on every job.',
+   },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" />
++      </svg>
++    ),
++    title: 'Quote-to-order conversion costs',
++    body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it \u2014 and the answer is usually uncomfortable.',
++  },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a14.8 14.8 0 0 0-3 10 14.8 14.8 0 0 0 3 10 14.8 14.8 0 0 0 3-10A14.8 14.8 0 0 0 12 2z" />
++      </svg>
++    ),
++    title: 'eCommerce disconnected from supply',
++    body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.',
++  },
+ ]}
+ otherSectors={[
+   { label: 'Workwear', href: '/sectors/workwear' },
+   { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -142,14 +142,24 @@
+             title: 'eCommerce disconnected from supply',
+             body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.',
+           },
+         ]}
++        checklistHeading="An independent audit of supplier data, artwork, and margin."
++        checklist={[
++          'Map your full order workflow from client enquiry to delivery',
++          'Audit your multi-supplier product data management for accuracy and currency',
++          'Review your artwork storage, proof approval, and version control process',
++          'Identify where supplier fragmentation is creating administrative overhead',
++          'Assess how margin is calculated and tracked at the order level',
++          'Review quoting accuracy and quote-to-order conversion costs',
++          'Quantify every finding in time, margin erosion, and administrative cost',
++        ]}
+         otherSectors={[
+           { label: 'Workwear', href: '/sectors/workwear' },
+           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
+           { label: 'Schoolwear', href: '/sectors/schoolwear' },
+         ]}
+-        ctaLead="An hour on where the margin is actually going, and an honest read on whether it needs software at all."
++        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking \u2014 on every order, not in the year-end numbers."
+       />
+     </>
+   );
+ }
+
+
+Now teamwear page. Let me check the exact encoding:
+$ $c = Get-Content "D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx" -Raw; $idx = $c.IndexOf("doesn"); if ($idx -ge 0) { Write-Output $c.Substring($idx-2, 24) }; $idx2 = $c.IndexOf("what's"); if ($idx2 -ge 0) { Write-Output $c.Substring($idx2-2, 24) } else { Write-Output "what's not found" }; $idx3 = $c.IndexOf("ctaLead"); if ($idx3 -ge 0) { $eol = $c.IndexOf("`n", $idx3); Write-Output $c.Substring($idx3, $eol - $idx3) }
+t doesn\'t arrive in tim
+n what's actually going 
+ctaLead="An hour on what's actually going wrong before next season starts, and an honest read on whether it needs software at all."
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -94,37 +94,55 @@
+       <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#tw-spine"/></animateMotion></circle>
+     </g>
+   </Plate>
+ }
+-featuresHeading="Three problems, in roughly this order."
++featuresHeading="Five challenges specific to this sector."
+ features={[
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+         <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+       </svg>
+     ),
+-    title: 'Every supplier feed, one current catalogue',
+-    body: 'Kit ranges change season to season. The Decoded Data App keeps supplier data current across every channel, so what\'s on your site matches what\'s actually available to order.',
++    title: 'Squad-level personalisation data',
++    body: 'Names, numbers, sponsor logos \u2014 every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+-        <path d="M8 4 4.5 7 6 9l2-1v12h8V8l2 1 1.5-2L16 4z" /><path d="M10.5 13h3" />
++        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><path d="M16 2v4M8 2v4M3 10h18" /><circle cx="12" cy="15" r="1" />
+       </svg>
+     ),
+-    title: 'Squad-level personalisation, not one-size data',
+-    body: 'Names, numbers, sponsor logos ΓÇö every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
++    title: 'Seasonal deadline pressure',
++    body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that \u2014 and most systems don\u2019t account for it.',
+   },
+   {
+     icon: (
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+-        <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
++        <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
+       </svg>
+     ),
+-    title: 'Proven at scale in this exact sector',
+-    body: 'TackleBag runs nine automated supplier feeds and a Data App alongside their Symphony platform, projected to save 20 to 40 hours a week. That\'s teamwear and schoolwear stock, live, not a pilot.',
++    title: 'Kit range churn',
++    body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task \u2014 and when it\u2019s wrong, it\u2019s the order that fails, not the system.',
+   },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
++      </svg>
++    ),
++    title: 'Sponsor logo management',
++    body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale \u2014 across multiple teams and age groups \u2014 is a dedicated workflow that email can\u2019t handle.',
++  },
++  {
++    icon: (
++      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
++        <path d="M4 6h16M4 12h16M4 18h10" /><path d="M9 18l3-3 3 3" />
++      </svg>
++    ),
++    title: 'The proof and approval bottleneck',
++    body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is the single biggest lever in teamwear operations.',
++  },
+ ]}
+ otherSectors={[
+   { label: 'Workwear', href: '/sectors/workwear' },
+   { label: 'Schoolwear', href: '/sectors/schoolwear' },
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -142,14 +142,24 @@
+             title: 'The proof and approval bottleneck',
+             body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is the single biggest lever in teamwear operations.',
+           },
+         ]}
++        checklistHeading="An independent audit of the whole teamwear workflow."
++        checklist={[
++          'Map your full order workflow from squad list to delivery',
++          'Identify where personalisation data is being managed manually',
++          'Review your supplier catalogue management for kit range accuracy',
++          'Audit the artwork and proof approval process for sponsor logos and numbering',
++          'Assess how seasonal deadlines are managed against production capacity',
++          'Review eCommerce and order management integration',
++          'Quantify every finding in time, admin cost, and rework',
++        ]}
+         otherSectors={[
+           { label: 'Workwear', href: '/sectors/workwear' },
+           { label: 'Schoolwear', href: '/sectors/schoolwear' },
+           { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
+         ]}
+-        ctaLead="An hour on what's actually going wrong before next season starts, and an honest read on whether it needs software at all."
++        ctaLead="An hour on squad data, sponsor logos, and where the proof loop is eating time before the first match."
+       />
+     </>
+   );
+ }
+
+
+ΓåÆ Read components/SectorPageDS.tsx
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=134]
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx [offset=134]
+ΓåÆ Read app/sectors/teamwear-clubwear/page.tsx [offset=134]
+All three pages edited. Let me verify all files look correct before building:
+
+# Todos
+[Γ£ô] Read SectorPageDS.tsx interface, target pages, mockups, and garment-decoration reference
+[Γ£ô] Check which other sector pages use SectorPageDS (backwards compat)
+[Γ£ô] Extend SectorPageDS.tsx: flexible features array + grid--2 + optional checklist section
+[Γ£ô] Restore 5 challenges + checklist + CTA for workwear
+[Γ£ô] Restore 5 challenges + checklist + CTA for promotional-merchandise
+[Γ£ô] Restore 5 challenges + checklist + CTA for teamwear-clubwear
+[ΓÇó] Run build, verify all 9 sector pages compile clean
+
+Files look correct. Now let me run the build:
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules"
+False
+
+$ Test-Path "D:\apps\decoded-ops-website\node_modules"
+True
+
+$ New-Item -ItemType Junction -Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" -Target "D:\apps\decoded-ops-website\node_modules" -Force
+Directory: D:\apps\worktrees\decoded-ops-website\fix-sectors
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+l----          02/08/2026    10:51                node_modules -> D:\apps\decoded-ops-website\node_modules
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+
+-----
+FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\CRAIGB~1\AppData\Local\Temp\next-panic-86c31a7be476621b2824f06b430f3929.log.
+
+To help make Turbopack better, report this error by clicking here.
+-----
+
+
+> Build error occurred
+Error [TurbopackInternalError]: Symlink [project]/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of get_all_written_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of all_entrypoints_write_to_disk_operation failed
+- Execution of output_assets_operation failed
+- Execution of Project::get_all_endpoint_groups_with_app_route_filter failed
+- Execution of Project::entrypoints_with_app_route_filter failed
+- Execution of AppProject::routes_with_filter failed
+- Execution of directory_tree_to_entrypoints_internal failed
+- Execution of directory_tree_to_loader_tree failed
+- Execution of try_get_next_package failed
+- Execution of *ResolveResult::first_source failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules is invalid, it points out of the filesystem root
+    at ignore-listed frames {
+  type: 'TurbopackInternalError',
+  location: undefined
+}
+
+Turbopack can't handle junctions. Let me copy node_modules properly:
+$ Remove-Item -Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" -Recurse -Force && robocopy "D:\apps\decoded-ops-website\node_modules" "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" /E /NFL /NDL /NJH /NJS /nc /ns /np
+
+$ if (Test-Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules") { $item = Get-Item "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" -Force; if ($item.LinkType -eq "Junction") { Remove-Item "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" -Force }; Write-Output "Status: $($item.LinkType)" } else { Write-Output "Not found" }
+Status:
+
+$ Copy-Item -Path "D:\apps\decoded-ops-website\node_modules" -Destination "D:\apps\worktrees\decoded-ops-website\fix-sectors\node_modules" -Recurse -Force
+(no output)
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./app/sectors/workwear/page.tsx:143:175
+Invalid character in identifier
+  141 | ...
+  142 | ...
+> 143 | ...ng history means fewer calls chasing 'we\u2019re out of mediums again.\u2019',
+      |                                            ^^^^^^
+  144 | ...
+  145 | ...
+  146 | ...
+
+Parsing ecmascript source code failed
+
+
+    at <unknown> (./app/sectors/workwear/page.tsx:143:175)
+
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=142, limit=3]
+The apostrophe in the replenishment body needs escaping. Let me fix it:
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\app\sectors\workwear\page.tsx
+@@ -139,9 +139,9 @@
+         <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
+       </svg>
+     ),
+     title: 'Replenishment that waits on you',
+-    body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing 'we\u2019re out of mediums again.\u2019',
++    body: "Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing \u201cwe\u2019re out of mediums again.\u201d",
+   },
+ ]}
+ checklistHeading="An independent audit of the whole workwear workflow."
+ checklist={[
+
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 6.4s
+  Running TypeScript ...
+  Finished TypeScript in 16.4s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 8.9s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read SectorPageDS.tsx interface, target pages, mockups, and garment-decoration reference
+[Γ£ô] Check which other sector pages use SectorPageDS (backwards compat)
+[Γ£ô] Extend SectorPageDS.tsx: flexible features array + grid--2 + optional checklist section
+[Γ£ô] Restore 5 challenges + checklist + CTA for workwear
+[Γ£ô] Restore 5 challenges + checklist + CTA for promotional-merchandise
+[Γ£ô] Restore 5 challenges + checklist + CTA for teamwear-clubwear
+[Γ£ô] Run build, verify all 9 sector pages compile clean
+
+Build passes ΓÇö zero TypeScript errors, all 159 routes including all 9 sector pages compiled successfully.
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-sectors\.context\loop-status.md"
+True
+
+ΓåÆ Read .context/loop-status.md
+
+ΓåÉ Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\fix-sectors\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-sectors\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\fix-sectors\.context\loop-status.md
+@@ -50,5 +50,7 @@
+ - how-i-build: Mockup shows BOTH DO-ART-302 (the ladder) AND DO-ART-112 (platform + layer). Added both as separate sections. DO-ART-112 is tone=light (only light-tone plate in the set).
+ - DO-ART-305 reused: process-quality-system, deliver, and transform all reference DO-ART-305 with p="pq". deliver.html has an extra sk-dots animated circle that process-quality-system.html lacks ΓÇö ported the deliver variant into deliver/page.tsx, kept process-quality-system variant as-is.
+ - clarity/deliver/transform: Had existing inline .pl SVGs with data-* attributes (probably server-rendered by ds-plates.js). Replaced with <Plate> component, removed custom defs since Plate generates its own from the p prefix, kept only inner content groups.
+ 
++2026-08-02T11:15:00+01:00 | fix-sectors | Restored dropped content on 3 of 9 sector pages | workwear: expanded features 3ΓåÆ5 (added Blank stock dependency, eCommerce disconnected from production), added 7-item "What I do" checklist, restored sector-specific CTA lede. promotional-merchandise: expanded features 3ΓåÆ5 (added Quote-to-order conversion costs, eCommerce disconnected from supply), added checklist, restored CTA lede. teamwear-clubwear: replaced unapproved TackleBag feature with 5 approved challenges (Squad-level personalisation data, Seasonal deadline pressure, Kit range churn, Sponsor logo management, The proof and approval bottleneck), added checklist, restored CTA lede. SectorPageDS.tsx: widened features type from tuple [Feature,Feature,Feature] to Feature[], changed grid from grid--3 to grid--2, added optional checklistHeading + checklist props with "What I do" section. SectorPageDS.module.css: added .checklist styles from mockup. All 9 sector pages build clean (exit 0, zero TypeScript errors).
++
+ 2026-08-02T17:00:00+01:00 | plate-sectors | PHASE 2: Port plate diagrams for all 9 sector pages | Built. Mechanism: added optional `plate?: ReactNode` prop to SectorPageDS.tsx interface, rendered between hero and features in a g-navy/plate-scroll/plate-frame wrapper. For 4 delegated pages (workwear DO-ART-108, teamwear-clubwear DO-ART-109, schoolwear DO-ART-110, promotional-merchandise DO-ART-111): imported Plate, passed as `plate` prop. For 5 inline pages (garment-decoration DO-ART-107, print-promotional DO-ART-113, signs-graphics DO-ART-114, awards-engraving DO-ART-115, labels-packaging DO-ART-116): imported Plate, inserted plate section between hero and challenges in each page file. SVG content ported verbatim from decoded-marketing HTML mockups, kebab-case attrs converted to camelCase, class= to className=. All 9 sectors render distinct drawing numbers.
+
+
+All done. Here's the summary:
+
+## Changes to `components/SectorPageDS.tsx`
+- **`features` type**: widened from `[Feature, Feature, Feature]` (3-tuple) to `Feature[]` (flexible array)
+- **Feature grid**: changed from `grid grid--3` to `grid grid--2` (handles 3/5 items gracefully; schoolwear's 3 items flow 2+1)
+- **New optional props**: `checklistHeading?: string` and `checklist?: string[]` ΓÇö renders a "What I do" section between features and other-sectors when provided, ported 1:1 from the mockup HTML (`.checklist` styled in `SectorPageDS.module.css`)
+- Backwards compatible: schoolwear (the 4th consumer of `SectorPageDS`) required zero changes to its page file ΓÇö the `features` prop already satisfies `Feature[]`, and the checklist props are optional
+
+## Restored content per page
+
+| Page | Before | After |
+|---|---|---|
+| **workwear** | 3 features, no checklist, generic CTA | 5 features (added Blank stock dependency, eCommerce disconnected from production), 7-item checklist, CTA: "An hour on supplier data, blank stock dependency, and where your production step is creating admin work that shouldn't exist." |
+| **promotional-merchandise** | 3 features, no checklist, generic CTA | 5 features (added Quote-to-order conversion costs, eCommerce disconnected from supply), 7-item checklist, CTA: "An hour on supplier data, the artwork loop, and where the margin is actually leaking ΓÇö on every order, not in the year-end numbers." |
+| **teamwear-clubwear** | 3 features (3rd = unapproved TackleBag claim), no checklist, generic CTA | 5 approved features (Squad-level personalisation, Seasonal deadline pressure, Kit range churn, Sponsor logo management, Proof bottleneck ΓÇö TackleBag removed), 7-item checklist, CTA: "An hour on squad data, sponsor logos, and where the proof loop is eating time before the first match." |
+
+## Build verification
+`npm run build` ΓÇö **exit 0**, zero TypeScript errors, all 159 routes generated including all 9 sector pages.

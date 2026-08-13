@@ -1,0 +1,1861 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read components/Plate.tsx
+ΓåÆ Read app/page.tsx
+ΓÇó Read decoded-marketing HTML files Explore Agent
+ΓÇó Read target React pages Explore Agent
+Let me read all the decoded-marketing HTML files and target React pages in parallel.
+Γ£ô Read decoded-marketing HTML files Explore Agent
+Γ£ô Read target React pages Explore Agent
+
+# Todos
+[ΓÇó] Read remaining target page files (apps/data-app, apps/artwork-manager, apps/commerce, decoded-method, process-quality-system, clarity, deliver, transform)
+[ ] Port DO-ART-203 to app/pricing/page.tsx
+[ ] Port DO-ART-204 to app/retained/page.tsx
+[ ] Port DO-ART-302 and DO-ART-112 to app/how-i-build/page.tsx (replace inline SVG with Plate components)
+[ ] Port DO-ART-104 to app/apps/page.tsx
+[ ] Port DO-ART-105 to app/apps/data-app/page.tsx (replace inline SVG)
+[ ] Port DO-ART-106 to app/apps/artwork-manager/page.tsx
+[ ] Port DO-ART-103 to app/apps/commerce/page.tsx
+[ ] Port DO-ART-304 to app/decoded-method/page.tsx
+[ ] Port DO-ART-305 to app/process-quality-system/page.tsx
+[ ] Port DO-ART-306 to app/clarity/page.tsx
+[ ] Port DO-ART-305 to app/deliver/page.tsx (with extra dot animation from deliver.html)
+[ ] Port DO-ART-403 to app/transform/page.tsx
+[ ] Run npm run build and verify zero TypeScript errors
+[ ] Append progress to .context/loop-status.md
+
+ΓåÆ Read app/apps/data-app/page.tsx
+ΓåÆ Read app/apps/artwork-manager/page.tsx
+ΓåÆ Read app/apps/commerce/page.tsx
+ΓåÆ Read app/decoded-method/page.tsx
+ΓåÆ Read app/process-quality-system/page.tsx
+ΓåÆ Read app/clarity/page.tsx
+ΓåÆ Read app/deliver/page.tsx
+ΓåÆ Read app/transform/page.tsx
+Let me read the remaining target page files that were truncated.
+
+# Todos
+[Γ£ô] Read remaining target page files
+[ΓÇó] Port DO-ART-203 to app/pricing/page.tsx
+[ ] Port DO-ART-204 to app/retained/page.tsx
+[ ] Port DO-ART-302 and DO-ART-112 to app/how-i-build/page.tsx (replace inline SVG with Plate components)
+[ ] Port DO-ART-104 to app/apps/page.tsx
+[ ] Port DO-ART-105 to app/apps/data-app/page.tsx (replace inline sk SVG)
+[ ] Port DO-ART-106 to app/apps/artwork-manager/page.tsx
+[ ] Port DO-ART-103 to app/apps/commerce/page.tsx
+[ ] Port DO-ART-304 to app/decoded-method/page.tsx
+[ ] Port DO-ART-305 to app/process-quality-system/page.tsx (replace inline sk SVG)
+[ ] Convert DO-ART-306 in app/clarity/page.tsx to Plate component
+[ ] Convert DO-ART-305 in app/deliver/page.tsx to Plate component
+[ ] Convert DO-ART-403 in app/transform/page.tsx to Plate component
+[ ] Run npm run build and verify zero TypeScript errors
+[ ] Append progress to .context/loop-status.md
+
+I now have a clear picture of all files. Let me start porting systematically. I'll create the todo list and begin.
+ΓåÉ Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
+@@ -1,7 +1,8 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { Plate } from '@/components/Plate';
+ 
+ // Ported from D:\apps\design-systems\decoded-marketing\pricing.html.
+ // Every figure below is cross-checked against
+ // DO_Pricing_Architecture_v8.1.md (30 Jul 2026, canonical) ΓÇö see the
+
+
+Now let me start porting plates. First, the pages that need new plates added (no existing SVG).
+
+**1. Pricing page (DO-ART-203):**
+ΓåÆ Read app/pricing/page.tsx [offset=98, limit=20]
+ΓåÆ Read app/pricing/page.tsx [offset=138, limit=15]
+ΓåÆ Read app/pricing/page.tsx [limit=25, offset=152]
+
+ΓåÉ Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\pricing\page.tsx
+@@ -161,8 +161,67 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ GUARANTEE PLATE ┬╖ DO-ART-203 */}
++<section className="g-tint">
++  <div className="container">
++    <p className="eyebrow">Guarantee &middot; DO-ART-203</p>
++    <h2>The 3x Clarity Guarantee.</h2>
++    <p className="lead" style={{ marginTop: 16 }}>Clarity Audit, ┬ú1,500 fixed. If it doesn&rsquo;t find three
++      times the fee, it&rsquo;s refunded.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="gt" title="The 3x Clarity Guarantee"
++               sub="Clarity Audit, ┬ú1,500 fixed"
++               no="DO-ART-203" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s1" opacity=".5">
++            <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
++                  strokeOpacity=".35"/>
++          </g>
++
++          <g className="sk-fade sk-s2">
++            <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
++                  opacity=".55">THE FEE</text>
++            <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">Clarity Audit,
++              fixed</text>
++            <rect x="430" y="228" width="240" height="62" rx="6" fill="url(#gt-bar)"
++                  className="p-node" strokeWidth="1"/>
++            <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="30">┬ú1,500</text>
++          </g>
++
++          <g className="sk-fade sk-s4" filter="url(#gt-shadow)">
++            <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
++                  opacity=".55">GUARANTEE THRESHOLD</text>
++            <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">3x the fee,
++              recoverable cost or lost revenue</text>
++            <rect x="430" y="368" width="720" height="62" rx="6" fill="url(#gt-amber-b)"
++                  className="p-node-a" strokeWidth="1.4"/>
++            <text x="458" y="410" className="p-accent-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="30">┬ú4,500+</text>
++          </g>
++
++          <g className="sk-fade sk-s6">
++            <line x1="60" y1="500" x2="1540" y2="500" className="p-scyan" strokeWidth=".6"
++                  strokeOpacity=".22"/>
++            <rect x="60" y="528" width="4" height="18" rx="1" className="p-amber"/>
++            <text x="80" y="544" className="p-mono" fontSize="16" letterSpacing="2.2"
++                  opacity=".55">IF IT DOESN&apos;T CLEAR THAT BAR</text>
++            <text x="60" y="594" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="600" fontSize="26">Full refund. No conditions.
++              No questions.</text>
++            <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance ΓÇö
++              near-certain cost avoidance, priced at the fee itself.</text>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ HARD BREAK */}
+ <section className="section--tight g-navy">
+   <div className="container narrow">
+     <p className="eyebrow">A different kind of decision</p>
+
+
+Now I'll add the DO-ART-203 plate to the pricing page. I'll insert it between sections 2 and 3:
+ΓåÉ Edit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { JsonLd } from '@/components/JsonLd';
++import { Plate } from '@/components/Plate';
+ 
+ // Ported from D:\apps\design-systems\decoded-marketing\retained.html.
+ // Figures (┬ú1,440 / ┬ú2,880 / ┬ú5,760, 2/4/8 days a month, six-month
+ // minimum) cross-checked against DO_Pricing_Architecture_v8.1.md ΓÇö match
+
+
+**2. Retained page (DO-ART-204):**
+ΓåÆ Read app/retained/page.tsx [limit=10, offset=143]
+ΓåÆ Read app/retained/page.tsx [limit=15, offset=115]
+
+ΓåÉ Edit app/retained/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\retained\page.tsx
+@@ -127,8 +127,73 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ SCALE PLATE ┬╖ DO-ART-204 */}
++<section className="g-tint">
++  <div className="container">
++    <p className="eyebrow">Scale &middot; DO-ART-204</p>
++    <h2>Advisory to Programme ΓÇö the scale.</h2>
++    <p className="lead" style={{ marginTop: 16 }}>2, 4 and 8 days a month. Price scales in proportion.
++      Same price at every turnover band.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
++               sub="2, 4 and 8 days a month ΓÇö price scales in proportion"
++               no="DO-ART-204" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s1" opacity=".5">
++            <line x1="430" y1="212" x2="430" y2="700" className="p-scyan" strokeWidth=".8"
++                  strokeOpacity=".35"/>
++          </g>
++
++          <g className="sk-fade sk-s2">
++            <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
++                  opacity=".55">ADVISORY</text>
++            <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">2 days a month</text>
++            <rect x="430" y="228" width="270" height="62" rx="6" fill="url(#rt-bar)"
++                  className="p-node" strokeWidth="1"/>
++            <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="28">┬ú1,440</text>
++          </g>
++
++          <g className="sk-fade sk-s3">
++            <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
++                  opacity=".55">EMBEDDED</text>
++            <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">4 days a month</text>
++            <rect x="430" y="368" width="540" height="62" rx="6" fill="url(#rt-bar)"
++                  className="p-node" strokeWidth="1"/>
++            <text x="458" y="410" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="28">┬ú2,880</text>
++          </g>
++
++          <g className="sk-fade sk-s4" filter="url(#rt-shadow)">
++            <text x="60" y="532" className="p-mono" fontSize="17" letterSpacing="1.6"
++                  opacity=".55">PROGRAMME</text>
++            <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">8 days a
++              month</text>
++            <rect x="430" y="508" width="1080" height="62" rx="6" fill="url(#rt-amber-b)"
++                  className="p-node-a" strokeWidth="1.4"/>
++            <text x="458" y="550" className="p-accent-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="28">┬ú5,760</text>
++          </g>
++
++          <g className="sk-fade sk-s6">
++            <line x1="60" y1="640" x2="1540" y2="640" className="p-scyan" strokeWidth=".6"
++                  strokeOpacity=".22"/>
++            <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="600" fontSize="24" opacity=".9">Exact scale. Double the
++              days, double the price ΓÇö every time.</text>
++            <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
++              minimum, all three tiers. Same price at every turnover band.</text>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ WHEN IT FITS */}
+ <section className="g-navy">
+   <div className="container">
+     <p className="eyebrow">Straight answer</p>
+
+
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'The systems ΓÇö Decoded Ops',
+   description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce ΓÇö proven at real clients before they went anywhere near a price list.',
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Artwork Manager ΓÇö Decoded Ops',
+   description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor. Currently on founding-client terms.',
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Commerce ΓÇö Decoded Ops',
+   description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation ΓÇö company accounts, spend limits, approval workflows and quote negotiation.',
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
+@@ -1,7 +1,8 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { Plate } from '@/components/Plate';
+ 
+ // Ported from D:\apps\design-systems\decoded-marketing\decoded-method.html.
+ // New route ΓÇö also the target of the /resources/decoded-method redirect
+ // Lane 0 already wired in next.config.ts.
+
+
+Now let me do the remaining "add plate" pages in parallel: apps, artwork-manager, commerce, decoded-method.
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\page.tsx
+@@ -78,8 +78,84 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ THREE APPS PLATE ┬╖ DO-ART-104 */}
++<section className="g-tint">
++  <div className="wrap">
++    <p className="eyebrow">Architecture &middot; DO-ART-104</p>
++    <h2>Three apps, one platform.</h2>
++    <p className="lede" style={{ marginTop: 16 }}>Nothing replaced ΓÇö each app plugs a specific gap
++      alongside the platform you already run.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="ap" title="Three apps, one platform"
++               sub="Nothing replaced ΓÇö each app plugs a specific gap"
++               no="DO-ART-104" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s2">
++            <path id="ap-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
++                  markerEnd="url(#ap-ah)" d="M470 330 C 560 370, 600 390, 660 420"/>
++            <path id="ap-l2" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
++                  markerEnd="url(#ap-ah)" d="M1130 330 C 1040 370, 1000 390, 940 420"/>
++            <path id="ap-l3" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
++                  markerEnd="url(#ap-ah)" d="M800 620 C 800 580, 800 550, 800 512"/>
++          </g>
++
++          <g className="sk-fade sk-s3">
++            <rect x="110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Data App</text>
++            <text x="140" y="284" className="p-mono" fontSize="16" opacity=".8">Supplier feeds in,
++              clean stock out</text>
++            <text x="140" y="308" className="p-mono" fontSize="15" opacity=".55">Live ┬╖ Hanicks,
++              TackleBag</text>
++          </g>
++
++          <g className="sk-fade sk-s3">
++            <rect x="1110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="1140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Artwork Manager</text>
++            <text x="1140" y="284" className="p-mono" fontSize="16" opacity=".8">Approved,
++              machine-ready files</text>
++            <text x="1140" y="308" className="p-mono" fontSize="15" opacity=".55">Pre-release ┬╖
++              founding client terms</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="610" y="620" width="380" height="130" rx="14" fill="url(#ap-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="640" y="672" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Commerce</text>
++            <text x="640" y="704" className="p-mono" fontSize="16" opacity=".8">Clean storefront
++              orders in</text>
++            <text x="640" y="728" className="p-mono" fontSize="15" opacity=".55">Live
++              infrastructure</text>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#ap-shadow)">
++            <rect x="650" y="390" width="300" height="120" rx="16" fill="url(#ap-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="800" fontSize="26">Your platform</text>
++            <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
++                  fontWeight="600">Khaos Control ┬╖ Symphony ┬╖ yours</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#ap-l1"/></animateMotion></circle>
++            <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.4s"><mpath href="#ap-l2"/></animateMotion></circle>
++            <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s"><mpath href="#ap-l3"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ HOW THEY GET BUILT */}
+ <section className="g-navy">
+   <div className="wrap">
+     <p className="eyebrow">Before any of this</p>
+
+
+Now add the plate sections:
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\artwork-manager\page.tsx
+@@ -103,8 +103,73 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ VAULT TO FLOOR PLATE ┬╖ DO-ART-106 */}
++<section className="g-tint">
++  <div className="wrap">
++    <p className="eyebrow">Flow &middot; DO-ART-106</p>
++    <h2>Vault to floor, one tracked path.</h2>
++    <p className="lede" style={{ marginTop: 16 }}>Three connected stages ΓÇö no email chain between
++      them.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="am" title="Vault to floor, one tracked path"
++               sub="Three connected stages ΓÇö no email chain between them"
++               no="DO-ART-106" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="am-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
++                strokeWidth="2.5" markerEnd="url(#am-ah)" d="M470 460 H1130"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="110" y="330" width="360" height="260" rx="14" fill="url(#am-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="150" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">The vault</text>
++            <text x="150" y="424" className="p-mono" fontSize="16" opacity=".8">Every format, every</text>
++            <text x="150" y="448" className="p-mono" fontSize="16" opacity=".8">version, versioned</text>
++            <text x="150" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
++                  opacity=".55">STAGE 1</text>
++          </g>
++
++          <g className="sk-fade sk-s4" filter="url(#am-shadow)">
++            <rect x="620" y="300" width="360" height="320" rx="16" fill="url(#am-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="660" y="372" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="26">Customer</text>
++            <text x="660" y="404" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="26">proofing</text>
++            <text x="660" y="440" className="p-accent-ink" fontSize="16" fontWeight="600">Approved
++              against the</text>
++            <text x="660" y="462" className="p-accent-ink" fontSize="16" fontWeight="600">version
++              that was shown</text>
++            <text x="660" y="586" className="p-mono" fontSize="15" letterSpacing="1.4"
++                  opacity=".7">STAGE 2 ΓÇö NO EMAIL CHAIN</text>
++          </g>
++
++          <g className="sk-fade sk-s5">
++            <rect x="1130" y="330" width="360" height="260" rx="14" fill="url(#am-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="1170" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Machine delivery</text>
++            <text x="1170" y="424" className="p-mono" fontSize="15" opacity=".8">Tajima ┬╖ Barudan ┬╖
++              Happy</text>
++            <text x="1170" y="448" className="p-mono" fontSize="15" opacity=".8">DST fallback ┬╖
++              DTF/DTG hot folders</text>
++            <text x="1170" y="556" className="p-mono" fontSize="15" letterSpacing="1.4"
++                  opacity=".55">STAGE 3 ΓÇö TO THE FLOOR</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#am-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ FOUNDING-CLIENT TERMS */}
+ <section className="g-navy" id="terms">
+   <div className="wrap">
+     <p className="eyebrow">Said plainly</p>
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\commerce\page.tsx
+@@ -109,8 +109,67 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ CORE TO EXTENDED PLATE ┬╖ DO-ART-103 */}
++<section className="g-tint">
++  <div className="wrap">
++    <p className="eyebrow">Capability &middot; DO-ART-103</p>
++    <h2>Core to Extended, by capability.</h2>
++    <p className="lede" style={{ marginTop: 16 }}>Each tier adds what the one below doesn&rsquo;t
++      have.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="cm" title="Core to Extended, by capability"
++               sub="Each tier adds what the one below doesn't have"
++               no="DO-ART-103" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="cm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V300"
++                fill="none" strokeWidth="2.5" markerEnd="url(#cm-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="260" y="580" width="1180" height="120" rx="14" fill="url(#cm-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="310" y="632" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Core</text>
++            <text x="310" y="664" className="p-mono" fontSize="17" opacity=".85">Catalogue ┬╖
++              customer accounts ┬╖ manual pricing</text>
++            <text x="1400" y="646" textAnchor="end" className="p-mono" fontSize="16"
++                  letterSpacing="1.4" opacity=".55">SINGLE STOREFRONT</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="260" y="420" width="1180" height="130" rx="14" fill="url(#cm-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="310" y="472" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Standard</text>
++            <text x="310" y="506" className="p-mono" fontSize="17" opacity=".85">+ company accounts
++              ┬╖ spend limits ┬╖ approvals ┬╖ quote negotiation</text>
++            <text x="1400" y="486" textAnchor="end" className="p-mono" fontSize="16"
++                  letterSpacing="1.4" opacity=".7">THE B2B TRADE PORTAL SHAPE</text>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#cm-shadow)">
++            <rect x="260" y="250" width="1180" height="140" rx="16" fill="url(#cm-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="310" y="312" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Extended</text>
++            <text x="310" y="348" className="p-accent-ink" fontSize="18" fontWeight="600">+
++              multi-site ┬╖ ERP integration ┬╖ bespoke checkout &amp; pricing</text>
++            <text x="1400" y="330" textAnchor="end" className="p-mono" fontSize="16"
++                  letterSpacing="1.4" opacity=".85">MORE THAN ONE OF EVERYTHING</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#cm-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ CUSTOM WORK CALLOUT */}
+ <section className="g-navy">
+   <div className="wrap">
+     <p className="eyebrow">Off the tier list</p>
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\decoded-method\page.tsx
+@@ -103,8 +103,79 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ METHOD PLATE ┬╖ DO-ART-304 */}
++<section className="g-tint">
++  <div className="container">
++    <p className="eyebrow">The loop &middot; DO-ART-304</p>
++    <h2>Process Register to Improvement Log, then repeat.</h2>
++    <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order ΓÇö the log feeds back
++      into the register.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="dm" title="Process Register to Improvement Log, then repeat"
++               sub="Three layers in fixed order ΓÇö the log feeds back into the register"
++               no="DO-ART-304" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="dm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
++                strokeWidth="2.5" markerEnd="url(#dm-ah)" d="M340 460 H1260"/>
++          <path id="dm-return" pathLength={1} className="sk-draw sk-s6 p-samber" fill="none"
++                strokeWidth="2" strokeDasharray="2 7" markerEnd="url(#dm-ah)"
++                d="M1300 540 C 1300 680, 340 680, 340 540"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="180" y="330" width="320" height="150" rx="14" fill="url(#dm-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="220" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">01 ┬╖ Process Register</text>
++            <text x="220" y="424" className="p-mono" fontSize="16" opacity=".8">A written map of how
++              things actually work</text>
++            <text x="220" y="450" className="p-mono" fontSize="15" opacity=".55">Before anything
++              gets changed</text>
++            <circle cx="340" cy="460" r="10" className="p-cyan"/>
++          </g>
++
++          <g className="sk-fade sk-s4" filter="url(#dm-shadow)">
++            <rect x="640" y="300" width="320" height="180" rx="16" fill="url(#dm-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="680" y="368" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">02 ┬╖ SOPs</text>
++            <text x="680" y="400" className="p-accent-ink" fontSize="17" fontWeight="600">Documented,
++              not one person&apos;s head</text>
++            <text x="680" y="440" className="p-mono" fontSize="15" opacity=".7">When they&apos;re on
++              holiday, the</text>
++            <text x="680" y="460" className="p-mono" fontSize="15" opacity=".7">business doesn&apos;t
++              stop</text>
++            <circle cx="800" cy="460" r="12" className="p-amber"/>
++          </g>
++
++          <g className="sk-fade sk-s5">
++            <rect x="1100" y="330" width="320" height="150" rx="14" fill="url(#dm-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="1140" y="392" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">03 ┬╖ Improvement Log</text>
++            <text x="1140" y="424" className="p-mono" fontSize="16" opacity=".8">Change doesn&apos;t stop
++              at go-live</text>
++            <text x="1140" y="450" className="p-mono" fontSize="15" opacity=".55">Owned by you,
++              after I leave</text>
++            <circle cx="1260" cy="460" r="10" className="p-cyan"/>
++          </g>
++
++          <text x="800" y="770" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
++                letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER ΓÇö NOT A ONE-OFF
++            PROJECT</text>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#dm-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ CTA STRIP */}
+ <section className="g-navy cta-strip">
+   <div className="container" style={{ maxWidth: 760 }}>
+     <h2>See it in action.</h2>
+
+
+ΓåÆ Read app/how-i-build/page.tsx [limit=10, offset=1]
+Now let me handle the replacement cases. Starting with **how-i-build** (DO-ART-302 replacement + DO-ART-112 addition):
+ΓåÆ Read app/how-i-build/page.tsx [limit=10, offset=38]
+ΓåÆ Read app/how-i-build/page.tsx [limit=20, offset=120]
+ΓåÆ Read app/how-i-build/page.tsx [limit=90, offset=47]
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'How I build ΓÇö Decoded Ops',
+   description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short ΓÇö so whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+
+
+Now replace the how-i-build inline SVG with the Plate component for DO-ART-302 and add DO-ART-112:
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+@@ -35,101 +35,88 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2 ┬╖ THE LADDER ┬╖ archetype 5 */}
++{/* 2 ┬╖ THE LADDER ┬╖ DO-ART-302 */}
+ <section className="g-tint">
+   <div className="wrap">
+-    <p className="eyebrow">The ladder</p>
++    <p className="eyebrow">The ladder &middot; DO-ART-302</p>
+     <h2>Three rungs, always in the same order.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Every engagement climbs the same ladder, and it starts
+       at the bottom every time. Not because the bottom rung is always right, but because you
+       should have to reject it out loud before anyone spends money on the one above.</p>
+ 
+-    <div className="plate-frame">
+-      <svg className="sk" data-tone="dark" viewBox="0 0 1240 520" role="img"
+-           aria-label="Three rungs in fixed order. Rung one: buy off the shelf, as it is, if it already fits. Rung two, the default and what both live clients run: buy the platform plus a custom automation layer to close the gaps it leaves. Rung three, the last resort: full custom, only if nothing off the shelf fits, priced alongside everything else considered. Every option is priced, including the ones the client did not choose.">
+-        <defs>
+-          <pattern id="hib5-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+-            <path d="M34 0H0V34" fill="none" className="sk-gridline" strokeWidth="0.6" />
+-          </pattern>
+-          <linearGradient id="hib5-glass-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-gc0" /><stop offset="100%" className="sk-gc1" />
+-          </linearGradient>
+-          <linearGradient id="hib5-glass-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-ga0" /><stop offset="100%" className="sk-ga1" />
+-          </linearGradient>
+-          <filter id="hib5-shadow" className="sk-drop" x="-40%" y="-40%" width="180%" height="180%">
+-            <feDropShadow dx="0" dy="2" stdDeviation="3" />
+-          </filter>
+-          <marker id="hib5-ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+-            <path d="M0 0 L6 3 L0 6 Z" className="sk-amber" />
+-          </marker>
+-        </defs>
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="ld" title="The ladder ΓÇö buy first, build only what is missing"
++               sub="Three rungs in fixed order ┬╖ every option priced"
++               no="DO-ART-302" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+-        <rect width="1240" height="520" rx="16" className="sk-bg" />
+-        <rect width="1240" height="520" rx="16" fill="url(#hib5-grid)" />
+-        <rect width="1240" height="6" className="sk-amber" />
++          <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
++                d="M140 520 H1470" fill="none" strokeWidth="2.5" markerEnd="url(#ld-ah)"/>
+ 
+-        <text x="60" y="64" className="sk-fade sk-s1 sk-cyan" fontSize="20" letterSpacing="3"
+-              fontWeight="500">THE LADDER</text>
+-        <text x="60" y="118" className="sk-fade sk-s1 sk-ink" fontFamily="Outfit,sans-serif"
+-              fontWeight="800" fontSize="46">Buy first. Build only what is missing.</text>
++          <g className="sk-fade sk-s3" filter="url(#ld-shadow)">
++            <rect x="120" y="270" width="320" height="130" rx="10" fill="url(#ld-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="280" y="325" textAnchor="middle" className="p-ink"
++                  fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="28">Buy</text>
++            <text x="280" y="362" textAnchor="middle" className="p-mono" fontSize="18"
++                  opacity=".85">off the shelf, as it is</text>
++            <line x1="280" y1="400" x2="280" y2="504" className="p-scyan" strokeWidth="1"
++                  strokeOpacity=".3" strokeDasharray="4 5"/>
++            <circle cx="280" cy="520" r="13" className="p-cyan"/>
++            <text x="280" y="578" textAnchor="middle" className="p-mono" fontSize="18"
++                  letterSpacing="1.6" opacity=".7">RUNG 1 &middot; IF IT FITS</text>
++          </g>
+ 
+-        <path id="hib5-spine" pathLength={1} className="sk-draw sk-s2 sk-stroke-cyan" d="M110 366 H1132"
+-              fill="none" strokeWidth="2.5" markerEnd="url(#hib5-ah)" />
++          <g className="sk-fade sk-s4" filter="url(#ld-shadow)">
++            <rect x="620" y="240" width="380" height="190" rx="12" fill="url(#ld-amber-n)"
++                  className="p-node-a" strokeWidth="1.8"/>
++            <text x="810" y="305" textAnchor="middle" className="p-ink"
++                  fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">Buy plus</text>
++            <text x="810" y="343" textAnchor="middle" className="p-ink"
++                  fontFamily="Outfit,sans-serif" fontWeight="700" fontSize="30">automation</text>
++            <text x="810" y="388" textAnchor="middle" className="p-accent-ink" fontSize="20">what
++              both live clients run</text>
++            <line x1="810" y1="430" x2="810" y2="500" className="p-samber" strokeWidth="1.2"
++                  strokeOpacity=".45" strokeDasharray="4 5"/>
++            <circle cx="810" cy="520" r="18" className="p-amber"/>
++            <text x="810" y="578" textAnchor="middle" className="p-mono" fontSize="18"
++                  letterSpacing="1.6" opacity=".85">RUNG 2 &middot; THE DEFAULT</text>
++          </g>
+ 
+-        {/* RUNG 1 ΓÇö buy */}
+-        <g className="sk-fade sk-s3" filter="url(#hib5-shadow)">
+-          <rect x="80" y="208" width="250" height="104" rx="9.5" fill="url(#hib5-glass-cyan)"
+-                className="sk-node" strokeWidth="1.4" />
+-          <text x="205" y="254" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="600" fontSize="24">Buy</text>
+-          <text x="205" y="284" textAnchor="middle" className="sk-mono" fontSize="17"
+-                opacity=".85">off the shelf, as it is</text>
+-          <circle cx="205" cy="366" r="13" className="sk-cyan" />
+-          <text x="205" y="416" textAnchor="middle" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".7">RUNG 1 &middot; IF IT FITS</text>
+-        </g>
++          <g className="sk-fade sk-s5" filter="url(#ld-shadow)" opacity=".82">
++            <rect x="1180" y="285" width="280" height="110" rx="9" fill="url(#ld-node)"
++                  className="p-node" strokeWidth="1.2"/>
++            <text x="1320" y="330" textAnchor="middle" className="p-ink"
++                  fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="24">Full
++              custom</text>
++            <text x="1320" y="362" textAnchor="middle" className="p-mono" fontSize="17"
++                  opacity=".8">only if nothing fits</text>
++            <line x1="1320" y1="395" x2="1320" y2="508" className="p-scyan" strokeWidth="1"
++                  strokeOpacity=".3" strokeDasharray="4 5"/>
++            <circle cx="1320" cy="520" r="10" className="p-cyan"/>
++            <text x="1320" y="578" textAnchor="middle" className="p-mono" fontSize="18"
++                  letterSpacing="1.6" opacity=".6">RUNG 3 &middot; LAST RESORT</text>
++          </g>
+ 
+-        {/* RUNG 2 ΓÇö buy plus automation. The default. Amber lands once. */}
+-        <g className="sk-fade sk-s4" filter="url(#hib5-shadow)">
+-          <rect x="440" y="182" width="310" height="148" rx="11" fill="url(#hib5-glass-amber)"
+-                className="sk-node-amber" strokeWidth="1.6" />
+-          <text x="595" y="234" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="700" fontSize="26">Buy plus</text>
+-          <text x="595" y="266" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="700" fontSize="26">automation</text>
+-          <text x="595" y="302" textAnchor="middle" className="sk-accent-ink" fontSize="18">what both
+-            live clients run</text>
+-          <circle cx="595" cy="366" r="17" className="sk-amber" />
+-          <text x="595" y="416" textAnchor="middle" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".85">RUNG 2 &middot; THE NORMAL ANSWER</text>
+-        </g>
++          <g className="sk-fade sk-s6">
++            <line x1="60" y1="632" x2="1540" y2="632" className="p-scyan" strokeWidth=".6"
++                  strokeOpacity=".22"/>
++            <text x="800" y="700" textAnchor="middle" className="p-ink"
++                  fontFamily="Outfit,sans-serif" fontWeight="600" fontSize="26"
++                  opacity=".9">Every option priced, including the ones I did not recommend.</text>
++          </g>
+ 
+-        {/* RUNG 3 ΓÇö full custom. Deliberately the quietest node. */}
+-        <g className="sk-fade sk-s5" filter="url(#hib5-shadow)" opacity=".82">
+-          <rect x="900" y="224" width="212" height="80" rx="8" fill="url(#hib5-glass-cyan)"
+-                className="sk-node" strokeWidth="1.2" />
+-          <text x="1006" y="258" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-                fontWeight="600" fontSize="20">Full custom</text>
+-          <text x="1006" y="284" textAnchor="middle" className="sk-mono" fontSize="16"
+-                opacity=".8">only if nothing fits</text>
+-          <circle cx="1006" cy="366" r="10" className="sk-cyan" />
+-          <text x="1006" y="416" textAnchor="middle" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".6">RUNG 3 &middot; LAST RESORT</text>
+-        </g>
+-
+-        <text x="620" y="480" textAnchor="middle" className="sk-sub sk-fade sk-s6" fontSize="24"
+-              fontStyle="italic" opacity=".85">Every option priced, not only the one you
+-          choose.</text>
+-
+-        <g className="sk-dots">
+-          <circle r="6" className="sk-cyan">
+-            <animateMotion dur="5s" repeatCount="indefinite"><mpath href="#hib5-spine" /></animateMotion>
+-          </circle>
+-        </g>
+-      </svg>
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan">
++              <animateMotion dur="5s" repeatCount="indefinite">
++                <mpath href="#ld-spine"/>
++              </animateMotion>
++            </circle>
++          </g>
++        </Plate>
++      </div>
+     </div>
+ 
+     <div className="rungs">
+       <article className="rung">
+
+
+ΓåÆ Read app/how-i-build/page.tsx [limit=10, offset=185]
+Now add DO-ART-112 to how-i-build page between sections 2 and 3:
+ΓåÆ Read app/how-i-build/page.tsx [limit=15, offset=155]
+ΓåÆ Read app/how-i-build/page.tsx [limit=10, offset=145]
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\how-i-build\page.tsx
+@@ -148,8 +148,67 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2a ┬╖ PLATFORM PLUS LAYER ┬╖ DO-ART-112 */}
++<section className="g-white">
++  <div className="wrap">
++    <p className="eyebrow">Architecture &middot; DO-ART-112</p>
++    <h2>Platform plus layer, not platform replaced.</h2>
++    <p className="lede" style={{ marginTop: 16 }}>The gap the layer closes, named specifically.</p>
++
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="light" p="hb" title="Platform plus layer, not platform replaced"
++               sub="The gap the layer closes, named specifically"
++               no="DO-ART-112" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <g className="sk-fade sk-s2">
++            <rect x="120" y="290" width="420" height="320" rx="16" fill="url(#hb-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="330" y="440" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="800" fontSize="30">Your platform</text>
++            <text x="330" y="474" textAnchor="middle" className="p-mono" fontSize="17"
++                  opacity=".75">Unchanged. Kept.</text>
++            <text x="330" y="580" textAnchor="middle" className="p-mono" fontSize="16"
++                  letterSpacing="1.4" opacity=".55">RUNG 1 ΓÇö WHAT YOU ALREADY OWN</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <path id="hb-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
++                  markerEnd="url(#hb-ah)" d="M540 400 H1050"/>
++            <path id="hb-l2" pathLength={1} className="sk-draw p-samber" fill="none" strokeWidth="2.4"
++                  markerEnd="url(#hb-ah)" d="M1050 500 H540"/>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#hb-shadow)">
++            <rect x="1050" y="290" width="420" height="320" rx="16" fill="url(#hb-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="1260" y="380" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="800" fontSize="26">Custom layer</text>
++            <text x="1260" y="428" textAnchor="middle" className="p-accent-ink" fontSize="17"
++                  fontWeight="600">Supplier feeds</text>
++            <text x="1260" y="454" textAnchor="middle" className="p-accent-ink" fontSize="17"
++                  fontWeight="600">Artwork</text>
++            <text x="1260" y="480" textAnchor="middle" className="p-accent-ink" fontSize="17"
++                  fontWeight="600">Cross-business reporting</text>
++            <text x="1260" y="580" textAnchor="middle" className="p-mono" fontSize="16"
++                  letterSpacing="1.4" opacity=".6">RUNG 2 ΓÇö THE GAPS, NAMED</text>
++          </g>
++
++          <text x="800" y="740" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
++                letterSpacing="1.6" opacity=".55">NOTHING ON THE LEFT CHANGES</text>
++
++          <g className="sk-dots">
++            <circle r="5" className="p-cyan"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#hb-l1"/></animateMotion></circle>
++            <circle r="5" className="p-amber"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.3s"><mpath href="#hb-l2"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 ┬╖ QUOTE PULL */}
+ <section className="g-navy">
+   <div className="wrap">
+     <p className="eyebrow">Why it works this way</p>
+
+
+ΓåÉ Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'Decoded Data App ΓÇö Decoded Ops',
+   description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
+
+
+Now **data-app/page.tsx** (DO-ART-105, replace inline `.sk` SVG):
+ΓåÉ Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\apps\data-app\page.tsx
+@@ -50,86 +50,63 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2 ┬╖ LAYER STACK ┬╖ archetype 4 */}
++{/* 2 ┬╖ LAYER STACK ┬╖ DO-ART-105 */}
+ <section className="g-tint">
+   <div className="wrap">
+-    <p className="eyebrow">Not a replacement</p>
++    <p className="eyebrow">Not a replacement &middot; DO-ART-105</p>
+     <h2>Your platform stays. This sits alongside it.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Supplier feeds, data enrichment, catalogue maintenance
+       across channels &mdash; the jobs your platform was never built for. Ripping it out and starting
+       again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
+ 
+-    <div className="plate-frame">
+-      <svg className="sk" data-tone="dark" viewBox="0 0 1240 640" role="img"
+-           aria-label="Three-layer stack, read bottom-up. Layer one, the foundation that stays as it is: the platform you already own, Khaos Control, Symphony or similar. Layer two, highlighted, is the new one: the Decoded Data App, taking supplier feeds in, matching and enriching them, and keeping the catalogue current. Layer three: the channels your customers see ΓÇö website, marketplaces and trade portal. Each layer rests on the one below it.">
+-        <defs>
+-          <pattern id="da4-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+-            <path d="M34 0H0V34" fill="none" className="sk-gridline" strokeWidth="0.6" />
+-          </pattern>
+-          <linearGradient id="da4-glass-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-gc0" /><stop offset="100%" className="sk-gc1" />
+-          </linearGradient>
+-          <linearGradient id="da4-glass-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-ga0" /><stop offset="100%" className="sk-ga1" />
+-          </linearGradient>
+-          <filter id="da4-shadow" className="sk-drop" x="-40%" y="-40%" width="180%" height="180%">
+-            <feDropShadow dx="0" dy="2" stdDeviation="3" />
+-          </filter>
+-          <marker id="da4-ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+-            <path d="M0 0 L6 3 L0 6 Z" className="sk-amber" />
+-          </marker>
+-        </defs>
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="da" title="A layer, not a rip-out"
++               sub="Where the Data App sits ΓÇö three layers, read bottom-up"
++               no="DO-ART-105" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+-        <rect width="1240" height="640" rx="16" className="sk-bg" />
+-        <rect width="1240" height="640" rx="16" fill="url(#da4-grid)" />
+-        <rect width="1240" height="6" className="sk-amber" />
++          <path id="da-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V310"
++                fill="none" strokeWidth="2.5" markerEnd="url(#da-ah)"/>
+ 
+-        <text x="60" y="64" className="sk-fade sk-s1 sk-cyan" fontSize="20" letterSpacing="3"
+-              fontWeight="500">WHERE IT SITS</text>
+-        <text x="60" y="118" className="sk-fade sk-s1 sk-ink" fontFamily="Outfit,sans-serif"
+-              fontWeight="800" fontSize="46">A layer, not a rip-out.</text>
++          <g className="sk-fade sk-s3" filter="url(#da-shadow)">
++            <rect x="260" y="220" width="1180" height="120" rx="14" fill="url(#da-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="310" y="272" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Channels</text>
++            <text x="310" y="306" className="p-mono" fontSize="18" opacity=".85">website ┬╖
++              marketplaces ┬╖ trade portal ┬╖ print</text>
++            <text x="1400" y="288" textAnchor="end" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".55">LAYER 3</text>
++          </g>
+ 
+-        <path id="da4-spine" pathLength={1} className="sk-draw sk-s2 sk-stroke-cyan" d="M180 560 V236"
+-              fill="none" strokeWidth="2.5" markerEnd="url(#da4-ah)" />
++          <g className="sk-fade sk-s4" filter="url(#da-shadow)">
++            <rect x="260" y="380" width="1180" height="140" rx="16" fill="url(#da-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="310" y="436" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Decoded Data App</text>
++            <text x="310" y="470" className="p-accent-ink" fontSize="19" fontWeight="600">supplier
++              feeds in ┬╖ matched ┬╖ enriched ┬╖ kept current</text>
++            <text x="1400" y="452" textAnchor="end" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".8">THE NEW LAYER</text>
++          </g>
+ 
+-        {/* LAYER 3 ΓÇö the channels */}
+-        <g className="sk-fade sk-s5" filter="url(#da4-shadow)">
+-          <rect x="240" y="190" width="920" height="110" rx="12" fill="url(#da4-glass-cyan)"
+-                className="sk-node" strokeWidth="1.4" />
+-          <text x="288" y="238" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+-                fontSize="24">Channels</text>
+-          <text x="288" y="270" className="sk-mono" fontSize="18" opacity=".85">website &middot; marketplaces &middot; trade portal &middot; print</text>
+-          <text x="1112" y="252" textAnchor="end" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".55">LAYER 3</text>
+-        </g>
++          <g className="sk-fade sk-s5" filter="url(#da-shadow)">
++            <rect x="260" y="560" width="1180" height="120" rx="14" fill="url(#da-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">The platform you already own</text>
++            <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ┬╖
++              Symphony ┬╖ whatever you run today</text>
++            <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
++          </g>
+ 
+-        {/* LAYER 2 ΓÇö the Data App. Amber lands once, on the new thing. */}
+-        <g className="sk-fade sk-s4" filter="url(#da4-shadow)">
+-          <rect x="240" y="330" width="920" height="110" rx="12" fill="url(#da4-glass-amber)"
+-                className="sk-node-amber" strokeWidth="1.6" />
+-          <text x="288" y="378" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+-                fontSize="24">Decoded Data App</text>
+-          <text x="288" y="410" className="sk-accent-ink" fontSize="18" opacity=".9">supplier feeds in &middot; matched &middot; enriched &middot; kept current</text>
+-          <text x="1112" y="392" textAnchor="end" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".7">THE NEW LAYER</text>
+-        </g>
+-
+-        {/* LAYER 1 ΓÇö the platform they already own */}
+-        <g className="sk-fade sk-s3" filter="url(#da4-shadow)">
+-          <rect x="240" y="470" width="920" height="110" rx="12" fill="url(#da4-glass-cyan)"
+-                className="sk-node" strokeWidth="1.4" />
+-          <text x="288" y="518" className="sk-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+-                fontSize="24">The platform you already own</text>
+-          <text x="288" y="550" className="sk-mono" fontSize="18" opacity=".85">Khaos Control &middot; Symphony &middot; whatever you run today</text>
+-          <text x="1112" y="532" textAnchor="end" className="sk-mono" fontSize="17"
+-                letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
+-        </g>
+-
+-        <text x="180" y="600" textAnchor="middle" className="sk-mono sk-fade sk-s6" fontSize="17"
+-              letterSpacing="1.5" opacity=".6">BUILD ORDER</text>
+-      </svg>
++          <text x="180" y="740" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="17"
++                letterSpacing="1.5" opacity=".6">BUILD ORDER</text>
++        </Plate>
++      </div>
+     </div>
+ 
+     <div className="steps">
+       <article className="step">
+
+
+ΓåÉ Edit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
+@@ -1,14 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
++import { Plate } from '@/components/Plate';
+ 
+-// Ported from D:\apps\design-systems\decoded-marketing\process-quality-system.html.
+-// New route. The inline SVG schematic uses the .sk-* paint contract classes
+-// defined in ds-marketing.css. Without the site.js IntersectionObserver
+-// wiring, the diagram renders fully visible and static ΓÇö the DS's
+-// documented no-JS-safe fallback, not a broken state.
+-
+ export const metadata: Metadata = {
+   title: 'Process & Quality System ΓÇö Decoded Ops',
+   description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes ΓÇö built during the engagement and owned by you after it.',
+   alternates: { canonical: '/process-quality-system' },
+
+
+Now **process-quality-system/page.tsx** (DO-ART-305, replace inline `.sk` SVG):
+ΓåÆ Read app/process-quality-system/page.tsx [limit=100, offset=44]
+ΓåÆ Read app/process-quality-system/page.tsx [limit=10, offset=143]
+
+ΓåÉ Edit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\process-quality-system\page.tsx
+@@ -41,109 +41,81 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2 ┬╖ THE LOOP */}
++{/* 2 ┬╖ THE LOOP ┬╖ DO-ART-305 */}
+ <section className="g-tint">
+   <div className="container">
+-    <p className="eyebrow">The loop</p>
++    <p className="eyebrow">The loop &middot; DO-ART-305</p>
+     <h2>The same four steps, for every process that matters.</h2>
+     <p className="lead" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
+       the engagement ends, because the last step feeds the first one.</p>
+ 
+-    <div className="plate">
+-      <svg className="sk" data-tone="dark" data-sk="a1" viewBox="0 0 1240 560" role="img"
+-        aria-label="A four-step loop. One: map the process as it actually runs. Two: document it as an SOP. Three: check it is followed. Four: log what has improved. The fourth step loops back to the first, and the loop repeats for every process that matters.">
+-        <defs>
+-          <pattern id="pq1-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+-            <path d="M34 0H0V34" fill="none" className="sk-gridline" strokeWidth="0.6" />
+-          </pattern>
+-          <linearGradient id="pq1-glass-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-gc0" /><stop offset="100%" className="sk-gc1" />
+-          </linearGradient>
+-          <linearGradient id="pq1-glass-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+-            <stop offset="0%" className="sk-ga0" /><stop offset="100%" className="sk-ga1" />
+-          </linearGradient>
+-          <filter id="pq1-shadow" className="sk-drop" x="-40%" y="-40%" width="180%" height="180%">
+-            <feDropShadow dx="0" dy="2" stdDeviation="3" />
+-          </filter>
+-          <marker id="pq1-ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+-            <path d="M0 0 L6 3 L0 6 Z" className="sk-amber" />
+-          </marker>
+-          <marker id="pq1-ah-cyan" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+-            <path d="M0 0 L6 3 L0 6 Z" className="sk-cyan" />
+-          </marker>
+-        </defs>
++    <div className="plate-scroll" style={{ marginTop: 34 }}>
++      <div className="plate-frame">
++        <Plate tone="dark" p="pq" title="A loop, not a document"
++               sub="Four steps ΓÇö the fourth feeds the first"
++               no="DO-ART-305" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+-        <rect width="1240" height="560" rx="16" className="sk-bg" />
+-        <rect width="1240" height="560" rx="16" fill="url(#pq1-grid)" />
+-        <rect width="1240" height="6" className="sk-amber" />
++          <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
++                fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)"/>
+ 
+-        <text x="60" y="64" className="sk-fade sk-s1 sk-cyan" fontSize="20" letterSpacing="3"
+-          fontWeight="500">PROCESS &amp; QUALITY SYSTEM</text>
+-        <text x="60" y="118" className="sk-fade sk-s1 sk-ink" fontFamily="Outfit,sans-serif"
+-          fontWeight="800" fontSize="46">A loop, not a document.</text>
++          <g className="sk-fade sk-s3" filter="url(#pq-shadow)">
++            <rect x="100" y="250" width="310" height="140" rx="12" fill="url(#pq-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="255" y="308" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="26">Map</text>
++            <text x="255" y="342" textAnchor="middle" className="p-mono" fontSize="17"
++                  opacity=".85">how it actually runs</text>
++            <circle cx="255" cy="460" r="13" className="p-cyan"/>
++            <text x="255" y="520" textAnchor="middle" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".7">STEP 1</text>
++          </g>
+ 
+-        <path id="pq1-spine" pathLength="1" className="sk-draw sk-s2 sk-stroke-cyan" d="M120 370 H1120"
+-          fill="none" strokeWidth="2.5" markerEnd="url(#pq1-ah)" />
++          <g className="sk-fade sk-s4" filter="url(#pq-shadow)">
++            <rect x="440" y="250" width="310" height="140" rx="12" fill="url(#pq-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="595" y="308" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="26">Document</text>
++            <text x="595" y="342" textAnchor="middle" className="p-mono" fontSize="17"
++                  opacity=".85">as an SOP anyone can follow</text>
++            <circle cx="595" cy="460" r="13" className="p-cyan"/>
++            <text x="595" y="520" textAnchor="middle" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".7">STEP 2</text>
++          </g>
+ 
+-        <g className="sk-fade sk-s3" filter="url(#pq1-shadow)">
+-          <rect x="60" y="180" width="250" height="110" rx="9.5" fill="url(#pq1-glass-cyan)"
+-            className="sk-node" strokeWidth="1.4" />
+-          <text x="185" y="230" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-            fontWeight="600" fontSize="24">Map</text>
+-          <text x="185" y="262" textAnchor="middle" className="sk-mono" fontSize="17"
+-            opacity=".85">how it actually runs</text>
+-          <circle cx="185" cy="370" r="13" className="sk-cyan" />
+-          <text x="185" y="418" textAnchor="middle" className="sk-mono" fontSize="17"
+-            letterSpacing="1.5" opacity=".7">STEP 1</text>
+-        </g>
++          <g className="sk-fade sk-s5" filter="url(#pq-shadow)">
++            <rect x="780" y="250" width="310" height="140" rx="12" fill="url(#pq-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="935" y="308" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="700" fontSize="26">Check</text>
++            <text x="935" y="342" textAnchor="middle" className="p-mono" fontSize="17"
++                  opacity=".85">that it is actually followed</text>
++            <circle cx="935" cy="460" r="13" className="p-cyan"/>
++            <text x="935" y="520" textAnchor="middle" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".7">STEP 3</text>
++          </g>
+ 
+-        <g className="sk-fade sk-s4" filter="url(#pq1-shadow)">
+-          <rect x="350" y="180" width="250" height="110" rx="9.5" fill="url(#pq1-glass-cyan)"
+-            className="sk-node" strokeWidth="1.4" />
+-          <text x="475" y="230" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-            fontWeight="600" fontSize="24">Document</text>
+-          <text x="475" y="262" textAnchor="middle" className="sk-mono" fontSize="17"
+-            opacity=".85">as an SOP anyone can follow</text>
+-          <circle cx="475" cy="370" r="13" className="sk-cyan" />
+-          <text x="475" y="418" textAnchor="middle" className="sk-mono" fontSize="17"
+-            letterSpacing="1.5" opacity=".7">STEP 2</text>
+-        </g>
++          <g className="sk-fade sk-s6" filter="url(#pq-shadow)">
++            <rect x="1120" y="242" width="320" height="156" rx="14" fill="url(#pq-amber-n)"
++                  className="p-node-a" strokeWidth="1.8"/>
++            <text x="1280" y="306" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
++                  fontWeight="800" fontSize="27">Log</text>
++            <text x="1280" y="342" textAnchor="middle" className="p-accent-ink" fontSize="17"
++                  fontWeight="600">what improved ┬╖ what&apos;s next</text>
++            <circle cx="1280" cy="460" r="17" className="p-amber"/>
++            <text x="1280" y="520" textAnchor="middle" className="p-mono" fontSize="17"
++                  letterSpacing="1.5" opacity=".85">STEP 4</text>
++          </g>
+ 
+-        <g className="sk-fade sk-s5" filter="url(#pq1-shadow)">
+-          <rect x="640" y="180" width="250" height="110" rx="9.5" fill="url(#pq1-glass-cyan)"
+-            className="sk-node" strokeWidth="1.4" />
+-          <text x="765" y="230" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-            fontWeight="600" fontSize="24">Check</text>
+-          <text x="765" y="262" textAnchor="middle" className="sk-mono" fontSize="17"
+-            opacity=".85">that it is actually followed</text>
+-          <circle cx="765" cy="370" r="13" className="sk-cyan" />
+-          <text x="765" y="418" textAnchor="middle" className="sk-mono" fontSize="17"
+-            letterSpacing="1.5" opacity=".7">STEP 3</text>
+-        </g>
+-
+-        {/* the thing you keep ΓÇö amber lands once */}
+-        <g className="sk-fade sk-s6" filter="url(#pq1-shadow)">
+-          <rect x="930" y="176" width="250" height="118" rx="11" fill="url(#pq1-glass-amber)"
+-            className="sk-node-amber" strokeWidth="1.6" />
+-          <text x="1055" y="228" textAnchor="middle" className="sk-ink" fontFamily="Outfit,sans-serif"
+-            fontWeight="700" fontSize="24">Log</text>
+-          <text x="1055" y="262" textAnchor="middle" className="sk-accent-ink" fontSize="17">what
+-            improved ┬╖ what&rsquo;s next</text>
+-          <circle cx="1055" cy="370" r="17" className="sk-amber" />
+-          <text x="1055" y="418" textAnchor="middle" className="sk-mono" fontSize="17"
+-            letterSpacing="1.5" opacity=".85">STEP 4</text>
+-        </g>
+-
+-        {/* the return arc: the fourth step feeds the first */}
+-        <path id="pq1-loop" pathLength="1" className="sk-draw sk-s6 sk-stroke-cyan" fill="none"
+-          strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq1-ah-cyan)"
+-          d="M1055 440 C 1055 505, 185 505, 185 442" />
+-        <text x="620" y="540" textAnchor="middle" className="sk-sub sk-fade sk-s6" fontSize="24"
+-          fontStyle="italic" opacity=".85">Then round again ΓÇö for every process that
+-          matters.</text>
+-      </svg>
++          <path id="pq-loop" pathLength={1} className="sk-draw sk-s6 p-scyan" fill="none"
++                strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
++                d="M1280 540 C 1280 630, 255 630, 255 542"/>
++          <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
++                fontStyle="italic" opacity=".8">Then round again ΓÇö for every process that
++            matters.</text>
++        </Plate>
++      </div>
+     </div>
+ 
+     <div className="steps">
+       <article className="step">
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ import s from '@/app/deco-page.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Clarity Audit ΓÇö Decoded Ops',
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ import s from '@/app/deco-page.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Deliver ΓÇö Decoded Ops',
+
+
+ΓåÉ Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
++import { Plate } from '@/components/Plate';
+ import s from '@/app/deco-page.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Transform ΓÇö Decoded Ops',
+
+
+Now handle the three pages with inline `pl` data-attr SVGs. These need to be converted to use the `<Plate>` component:
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\clarity\page.tsx
+@@ -37,47 +37,23 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2 ┬╖ THE FOUR STEPS */}
++{/* 2 ┬╖ THE FOUR STEPS ┬╖ DO-ART-306 */}
+ <section className="g-tint" data-od-id="clarity-flow">
+   <div className="wrap">
+-    <span className="eyebrow">The Clarity Audit</span>
++    <span className="eyebrow">The Clarity Audit &middot; DO-ART-306</span>
+     <h2>One call, one day on site, one written plan.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Four steps, and you know what each one produces
+       before you commit to any of them.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className={`plate-frame ${s.plateFrame}`} data-od-id="clarity-flow-diagram">
+-        <svg className="pl" data-tone="dark" data-p="cd" viewBox="0 0 1600 900" role="img"
+-             data-title="One call. One day. One clear plan." data-sub="Four fixed steps ΓÇö you know what each one produces"
+-             data-no="DO-ART-306" data-rev="01" data-class="DECODED OPS ┬╖ ISSUED"
+-             aria-label="Flow plate DO-ART-306. Four-step linear flow. One: a free sixty-minute discovery call. Two: one full day on site, covering six areas. Three: a written report within five working days. Four: a debrief, walking the plan through with you.">
+-          <defs>
+-            <linearGradient id="cd-bg" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-bg0" />
+-              <stop offset="100%" className="p-bg1" />
+-            </linearGradient>
+-            <linearGradient id="cd-node" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-n0" />
+-              <stop offset="100%" className="p-n1" />
+-            </linearGradient>
+-            <linearGradient id="cd-amber-n" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
+-              <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
+-            </linearGradient>
+-            <filter id="cd-shadow" x="-20%" y="-20%" width="140%" height="140%">
+-              <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
+-            </filter>
+-            <marker id="cd-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+-              <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
+-            </marker>
+-          </defs>
+-          <rect width="1600" height="900" fill="url(#cd-bg)" />
+-          <line x1="0" y1="340" x2="1600" y2="340" className="p-grid" opacity=".6" />
+-          <line x1="0" y1="560" x2="1600" y2="560" className="p-grid" opacity=".6" />
++        <Plate tone="dark" p="cd" title="One call. One day. One clear plan."
++               sub="Four fixed steps ΓÇö you know what each one produces"
++               no="DO-ART-306" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+-          <path id="cd-spine" pathLength="1" className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
++          <path id="cd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+                 fill="none" strokeWidth="2.5" markerEnd="url(#cd-ah)" />
+ 
+           <g className="sk-fade sk-s3" filter="url(#cd-shadow)">
+             <rect x="100" y="250" width="310" height="140" rx="12" fill="url(#cd-node)"
+@@ -135,9 +111,9 @@
+             <circle r="6" className="p-cyan">
+               <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#cd-spine"/></animateMotion>
+             </circle>
+           </g>
+-        </svg>
++        </Plate>
+       </div>
+     </div>
+ 
+     <div className={s.steps} data-od-id="clarity-flow-cards">
+
+
+Now replace the inline SVGs. Starting with **clarity**:
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\deliver\page.tsx
+@@ -87,47 +87,23 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 3 ┬╖ THE PQS LOOP */}
++{/* 3 ┬╖ THE PQS LOOP ┬╖ DO-ART-305 */}
+ <section className="g-tint" data-od-id="deliver-loop">
+   <div className="wrap">
+-    <span className="eyebrow">How Deliver runs</span>
++    <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
+     <h2>Map, document, check, log ΓÇö then round again.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
+       the engagement ends, because the last step feeds the first one.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
+-        <svg className="pl" data-tone="dark" data-p="pq" viewBox="0 0 1600 900" role="img"
+-             data-title="A loop, not a document" data-sub="Four steps ΓÇö the fourth feeds the first"
+-             data-no="DO-ART-305" data-rev="01" data-class="DECODED OPS ┬╖ ISSUED"
+-             aria-label="Flow plate DO-ART-305. A four-step loop. One: map the process as it actually runs. Two: document it as an SOP. Three: check it is followed. Four: log what has improved. The fourth step loops back to the first, and the loop repeats for every process that matters.">
+-          <defs>
+-            <linearGradient id="pq-bg" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-bg0" />
+-              <stop offset="100%" className="p-bg1" />
+-            </linearGradient>
+-            <linearGradient id="pq-node" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-n0" />
+-              <stop offset="100%" className="p-n1" />
+-            </linearGradient>
+-            <linearGradient id="pq-amber-n" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
+-              <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
+-            </linearGradient>
+-            <filter id="pq-shadow" x="-20%" y="-20%" width="140%" height="140%">
+-              <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
+-            </filter>
+-            <marker id="pq-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+-              <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
+-            </marker>
+-          </defs>
+-          <rect width="1600" height="900" fill="url(#pq-bg)" />
+-          <line x1="0" y1="340" x2="1600" y2="340" className="p-grid" opacity=".6" />
+-          <line x1="0" y1="580" x2="1600" y2="580" className="p-grid" opacity=".6" />
++        <Plate tone="dark" p="pq" title="A loop, not a document"
++               sub="Four steps ΓÇö the fourth feeds the first"
++               no="DO-ART-305" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+-          <path id="pq-spine" pathLength="1" className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
++          <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+                 fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)" />
+ 
+           <g className="sk-fade sk-s3" filter="url(#pq-shadow)">
+             <rect x="100" y="250" width="310" height="140" rx="12" fill="url(#pq-node)"
+@@ -176,9 +152,9 @@
+             <text x="1280" y="520" textAnchor="middle" className="p-mono" fontSize="17"
+                   letterSpacing="1.5" opacity=".85">STEP 4</text>
+           </g>
+ 
+-          <path id="pq-loop" pathLength="1" className="sk-draw sk-s6 p-scyan" fill="none"
++          <path id="pq-loop" pathLength={1} className="sk-draw sk-s6 p-scyan" fill="none"
+                 strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
+                 d="M1280 540 C 1280 630, 255 630, 255 542"/>
+           <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
+                 fontStyle="italic" opacity=".8">Then round again ΓÇö for every process that
+@@ -188,9 +164,9 @@
+             <circle r="6" className="p-cyan">
+               <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#pq-spine"/></animateMotion>
+             </circle>
+           </g>
+-        </svg>
++        </Plate>
+       </div>
+     </div>
+ 
+     <div className={s.steps} data-od-id="deliver-loop-cards">
+
+
+Now **deliver** page (DO-ART-305, with extra dot animation):
+ΓåÉ Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-core-pages\app\transform\page.tsx
+@@ -36,46 +36,23 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2 ┬╖ BEFORE / AFTER */}
++{/* 2 ┬╖ BEFORE / AFTER ┬╖ DO-ART-403 */}
+ <section className="g-tint" data-od-id="transform-ba">
+   <div className="wrap">
+-    <span className="eyebrow">Two live examples</span>
++    <span className="eyebrow">Two live examples &middot; DO-ART-403</span>
+     <h2>Same approach, twice, in two different businesses.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Hanicks: 164,752 products imported and 77% matched on
+       the first run. TackleBag: nine supplier feeds automated, a projected saving of 20 to 40
+       hours a week. Same approach both times ΓÇö fix the process and the data before automating
+       anything.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className={`plate-frame ${s.plateFrame}`} data-od-id="transform-ba-diagram">
+-        <svg className="pl" data-tone="dark" data-p="tb" viewBox="0 0 1600 900" role="img"
+-             data-title="Same business. Different Tuesday." data-sub="Hanicks ΓÇö before and after, paired line for line"
+-             data-no="DO-ART-403" data-rev="01" data-class="DECODED OPS ┬╖ ISSUED"
+-             aria-label="Compare plate DO-ART-403. Before and after, paired line for line. Now: supplier data scattered across feeds, no consistent SKU, stock counted by hand, and no reliable catalogue for the website. After: one matched catalogue, 77 per cent matched automatically on the first run, stock pushed straight to the platform, and every channel reading the same data.">
+-          <defs>
+-            <linearGradient id="tb-bg" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-bg0" />
+-              <stop offset="100%" className="p-bg1" />
+-            </linearGradient>
+-            <linearGradient id="tb-node" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" className="p-n0" />
+-              <stop offset="100%" className="p-n1" />
+-            </linearGradient>
+-            <linearGradient id="tb-amber-n" x1="0" y1="0" x2="0" y2="1">
+-              <stop offset="0%" stopColor="var(--do-amber)" stopOpacity=".14" />
+-              <stop offset="100%" stopColor="var(--do-orange)" stopOpacity=".03" />
+-            </linearGradient>
+-            <filter id="tb-shadow" x="-20%" y="-20%" width="140%" height="140%">
+-              <feDropShadow className="p-shadow" dx="0" dy="8" stdDeviation="10" />
+-            </filter>
+-            <marker id="tb-ah" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+-              <path d="M0 0 L12 6 L0 12 L3 6z" className="p-cyan" />
+-            </marker>
+-          </defs>
+-          <rect width="1600" height="900" fill="url(#tb-bg)" />
+-          <line x1="0" y1="520" x2="1600" y2="520" className="p-grid" opacity=".6" />
++        <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
++               sub="Hanicks ΓÇö before and after, paired line for line"
++               no="DO-ART-403" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <g className="sk-fade sk-s2" filter="url(#tb-shadow)">
+             <rect x="100" y="200" width="650" height="500" rx="14" fill="url(#tb-amber-n)"
+                   className="p-node-a" strokeWidth="1.6"/>
+@@ -96,9 +73,9 @@
+               <path d="M106 519 L118 531 M118 519 L106 531"/>
+             </g>
+           </g>
+ 
+-          <path id="tb-p" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
++          <path id="tb-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
+                 fill="none" strokeWidth="3" markerEnd="url(#tb-ah)"/>
+ 
+           <g className="sk-fade sk-s4" filter="url(#tb-shadow)">
+             <rect x="850" y="200" width="650" height="500" rx="14" fill="url(#tb-node)"
+@@ -126,9 +103,9 @@
+             <circle r="6" className="p-cyan">
+               <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#tb-p"/></animateMotion>
+             </circle>
+           </g>
+-        </svg>
++        </Plate>
+       </div>
+     </div>
+ 
+     <div className={s.ba} data-od-id="transform-ba-cards">
+
+
+Now **transform** page (DO-ART-403):
+# Todos
+[Γ£ô] Read remaining target page files
+[Γ£ô] Port DO-ART-203 to app/pricing/page.tsx
+[Γ£ô] Port DO-ART-204 to app/retained/page.tsx
+[Γ£ô] Port DO-ART-302 and DO-ART-112 to app/how-i-build/page.tsx (replace inline SVG with Plate components)
+[Γ£ô] Port DO-ART-104 to app/apps/page.tsx
+[Γ£ô] Port DO-ART-105 to app/apps/data-app/page.tsx (replace inline sk SVG)
+[Γ£ô] Port DO-ART-106 to app/apps/artwork-manager/page.tsx
+[Γ£ô] Port DO-ART-103 to app/apps/commerce/page.tsx
+[Γ£ô] Port DO-ART-304 to app/decoded-method/page.tsx
+[Γ£ô] Port DO-ART-305 to app/process-quality-system/page.tsx (replace inline sk SVG)
+[Γ£ô] Convert DO-ART-306 in app/clarity/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-305 in app/deliver/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-403 in app/transform/page.tsx to Plate component
+[ΓÇó] Run npm run build and verify zero TypeScript errors
+[ ] Append progress to .context/loop-status.md
+
+All 11 pages updated. Let me update the todo list and run the build:
+$ Test-Path -LiteralPath "node_modules"
+False
+
+$ Test-Path -LiteralPath "package.json"
+True
+
+$ Get-Command pnpm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source; Get-Command npm -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source
+C:\nvm4w\nodejs\npm.ps1
+
+ΓåÆ Read package.json [limit=30]
+
+$ Test-Path -LiteralPath ".context/loop-status.md"
+True
+
+$ Test-Path -LiteralPath "D:\apps\decoded-ops-website\node_modules"
+True
+
+$ if (Test-Path "D:\apps\decoded-ops-website\package.json") { node -e "const p1 = require('D:/apps/decoded-ops-website/package.json'); const p2 = require('D:/apps/worktrees/decoded-ops-website/plate-core-pages/package.json'); console.log(JSON.stringify(p1.dependencies) === JSON.stringify(p2.dependencies) ? 'MATCH' : 'MISMATCH')" }
+MATCH
+
+$ New-Item -ItemType Junction -Path "node_modules" -Target "D:\apps\decoded-ops-website\node_modules" -Force
+Directory: D:\apps\worktrees\decoded-ops-website\plate-core-pages
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+l----          02/08/2026    09:45                node_modules -> D:\apps\decoded-ops-website\node_modules
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+
+-----
+FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\CRAIGB~1\AppData\Local\Temp\next-panic-5783d38b7dae0ae73f59560bb34ca318.log.
+
+To help make Turbopack better, report this error by clicking here.
+-----
+
+
+> Build error occurred
+Error [TurbopackInternalError]: Symlink [project]/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of get_all_written_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of all_entrypoints_write_to_disk_operation failed
+- Execution of output_assets_operation failed
+- Execution of Project::get_all_endpoint_groups_with_app_route_filter failed
+- Execution of Project::entrypoints_with_app_route_filter failed
+- Execution of AppProject::routes_with_filter failed
+- Execution of directory_tree_to_entrypoints_internal failed
+- Execution of directory_tree_to_loader_tree failed
+- Execution of try_get_next_package failed
+- Execution of *ResolveResult::first_source failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules is invalid, it points out of the filesystem root
+    at ignore-listed frames {
+  type: 'TurbopackInternalError',
+  location: undefined
+}
+
+$ Remove-Item -LiteralPath "node_modules" -Force
+(no output)
+
+Γ£▒ Glob "next.config.*" 1 match
+
+$ robocopy "D:\apps\decoded-ops-website\node_modules" "node_modules" /E /NJH /NJS /NP /NFL /NDL /XD .cache 2>&1 | Select-Object -Last 5
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 16.8s
+  Running TypeScript ...
+  Finished TypeScript in 19.5s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/158) ...
+  Generating static pages using 15 workers (39/158) 
+  Generating static pages using 15 workers (78/158) 
+  Generating static pages using 15 workers (118/158) 
+Γ£ô Generating static pages using 15 workers (158/158) in 8.5s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read remaining target page files
+[Γ£ô] Port DO-ART-203 to app/pricing/page.tsx
+[Γ£ô] Port DO-ART-204 to app/retained/page.tsx
+[Γ£ô] Port DO-ART-302 and DO-ART-112 to app/how-i-build/page.tsx (replace inline SVG with Plate components)
+[Γ£ô] Port DO-ART-104 to app/apps/page.tsx
+[Γ£ô] Port DO-ART-105 to app/apps/data-app/page.tsx (replace inline sk SVG)
+[Γ£ô] Port DO-ART-106 to app/apps/artwork-manager/page.tsx
+[Γ£ô] Port DO-ART-103 to app/apps/commerce/page.tsx
+[Γ£ô] Port DO-ART-304 to app/decoded-method/page.tsx
+[Γ£ô] Port DO-ART-305 to app/process-quality-system/page.tsx (replace inline sk SVG)
+[Γ£ô] Convert DO-ART-306 in app/clarity/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-305 in app/deliver/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-403 in app/transform/page.tsx to Plate component
+[Γ£ô] Run npm run build and verify zero TypeScript errors
+[ΓÇó] Append progress to .context/loop-status.md
+
+Build passed clean ΓÇö zero TypeScript errors. Let me finalize.
+ΓåÆ Read .context/loop-status.md
+Γ£ù Edit .context/loop-status.md failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+ΓåÆ Read .context/loop-status.md [offset=28]
+Γ£ù Edit .context/loop-status.md failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+
+ΓåÉ Write .context/loop-status.md
+Wrote file successfully.
+
+# Todos
+[Γ£ô] Read remaining target page files
+[Γ£ô] Port DO-ART-203 to app/pricing/page.tsx
+[Γ£ô] Port DO-ART-204 to app/retained/page.tsx
+[Γ£ô] Port DO-ART-302 and DO-ART-112 to app/how-i-build/page.tsx (replace inline SVG with Plate components)
+[Γ£ô] Port DO-ART-104 to app/apps/page.tsx
+[Γ£ô] Port DO-ART-105 to app/apps/data-app/page.tsx (replace inline sk SVG)
+[Γ£ô] Port DO-ART-106 to app/apps/artwork-manager/page.tsx
+[Γ£ô] Port DO-ART-103 to app/apps/commerce/page.tsx
+[Γ£ô] Port DO-ART-304 to app/decoded-method/page.tsx
+[Γ£ô] Port DO-ART-305 to app/process-quality-system/page.tsx (replace inline sk SVG)
+[Γ£ô] Convert DO-ART-306 in app/clarity/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-305 in app/deliver/page.tsx to Plate component
+[Γ£ô] Convert DO-ART-403 in app/transform/page.tsx to Plate component
+[Γ£ô] Run npm run build and verify zero TypeScript errors
+[Γ£ô] Append progress to .context/loop-status.md
+
+Done. Build exits 0, 158/158 pages, zero TypeScript errors.
+
+**Summary ΓÇö 12 plates across 11 pages:**
+
+| Page | Drawing No. | Action |
+|---|---|---|
+| pricing | DO-ART-203 | Added |
+| retained | DO-ART-204 | Added |
+| how-i-build | DO-ART-302 | Replaced inline `.sk` SVG with `<Plate>` |
+| how-i-build | DO-ART-112 | Added new plate (the only `tone=light`) |
+| apps | DO-ART-104 | Added |
+| apps/data-app | DO-ART-105 | Replaced inline `.sk` SVG |
+| apps/artwork-manager | DO-ART-106 | Added |
+| apps/commerce | DO-ART-103 | Added |
+| decoded-method | DO-ART-304 | Added |
+| process-quality-system | DO-ART-305 | Replaced inline `.sk` SVG |
+| clarity | DO-ART-306 | Converted inline `.pl` data-attr SVG to `<Plate>` |
+| deliver | DO-ART-305 | Converted inline `.pl` data-attr SVG to `<Plate>` (with extra dot animation from deliver.html) |
+| transform | DO-ART-403 | Converted inline `.pl` data-attr SVG to `<Plate>` |
+
+**Judgement calls:**
+- **how-i-build**: The mockup has BOTH DO-ART-302 and DO-ART-112 ΓÇö added both as separate sections.
+- **DO-ART-305 reused**: `process-quality-system.html` and `deliver.html` both reference DO-ART-305 with `p="pq"`. `deliver.html` adds a `sk-dots` animated circle that the primary source lacks ΓÇö ported the deliver variant into `app/deliver/page.tsx`, kept the primary variant in `app/process-quality-system/page.tsx` without it.

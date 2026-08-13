@@ -1,0 +1,2466 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read all 16 files to identify violations
+[ ] Fix em dashes (ΓÇö) across all files
+[ ] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[ ] Fix 'end to end' / 'end-to-end'
+[ ] Fix banned consultant-speak
+[ ] Fix overclaims
+[ ] Fix specific known issues (clarity page, artwork-manager page)
+[ ] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[ ] Run npm run build and confirm zero errors
+[ ] Report final counts per file per category
+
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/retained/page.tsx
+ΓåÆ Read app/how-i-build/page.tsx
+ΓåÆ Read app/about/page.tsx
+ΓåÆ Read app/clarity/page.tsx
+ΓåÆ Read app/deliver/page.tsx
+ΓåÆ Read app/transform/page.tsx
+Let me read all 16 files in parallel first.
+ΓåÆ Read app/process-quality-system/page.tsx
+ΓåÆ Read app/decoded-method/page.tsx
+ΓåÆ Read app/apps/page.tsx
+ΓåÆ Read app/apps/data-app/page.tsx
+ΓåÆ Read app/apps/artwork-manager/page.tsx
+ΓåÆ Read app/apps/commerce/page.tsx
+ΓåÆ Read app/apps/crm/page.tsx
+ΓåÆ Read app/case-studies/page.tsx
+
+$ rg 'ΓÇö' --line-number --glob '*.tsx' 'app/page.tsx' 'app/pricing/page.tsx' 'app/retained/page.tsx' 'app/how-i-build/page.tsx' 'app/about/page.tsx' 'app/clarity/page.tsx' 'app/deliver/page.tsx' 'app/transform/page.tsx' 'app/process-quality-system/page.tsx' 'app/decoded-method/page.tsx' 'app/apps/page.tsx' 'app/apps/data-app/page.tsx' 'app/apps/artwork-manager/page.tsx' 'app/apps/commerce/page.tsx' 'app/apps/crm/page.tsx' 'app/case-studies/page.tsx' 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -iw '\b(we|our|us)\b' --line-number --glob '*.tsx' 'app/page.tsx' 'app/pricing/page.tsx' 'app/retained/page.tsx' 'app/how-i-build/page.tsx' 'app/about/page.tsx' 'app/clarity/page.tsx' 'app/deliver/page.tsx' 'app/transform/page.tsx' 'app/process-quality-system/page.tsx' 'app/decoded-method/page.tsx' 'app/apps/page.tsx' 'app/apps/data-app/page.tsx' 'app/apps/artwork-manager/page.tsx' 'app/apps/commerce/page.tsx' 'app/apps/crm/page.tsx' 'app/case-studies/page.tsx' 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -i 'end.to.end' --line-number --glob '*.tsx' 'app/page.tsx' 'app/pricing/page.tsx' 'app/retained/page.tsx' 'app/how-i-build/page.tsx' 'app/about/page.tsx' 'app/clarity/page.tsx' 'app/deliver/page.tsx' 'app/transform/page.tsx' 'app/process-quality-system/page.tsx' 'app/decoded-method/page.tsx' 'app/apps/page.tsx' 'app/apps/data-app/page.tsx' 'app/apps/artwork-manager/page.tsx' 'app/apps/commerce/page.tsx' 'app/apps/crm/page.tsx' 'app/case-studies/page.tsx' 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Now let me grep for all violations across all mentioned files systematically:
+$ rg -iw '\b(leverage|synergy|holistic|seamless|journey|pain\s*points?|moving\s+the\s+needle|best.in.class|best\s+practice|circle\s+back|reach\s+out|unlock|game.changer|delve|robust|crucial|pain\s+point)\b' --line-number --glob '*.tsx' 'app/page.tsx' 'app/pricing/page.tsx' 'app/retained/page.tsx' 'app/how-i-build/page.tsx' 'app/about/page.tsx' 'app/clarity/page.tsx' 'app/deliver/page.tsx' 'app/transform/page.tsx' 'app/process-quality-system/page.tsx' 'app/decoded-method/page.tsx' 'app/apps/page.tsx' 'app/apps/data-app/page.tsx' 'app/apps/artwork-manager/page.tsx' 'app/apps/commerce/page.tsx' 'app/apps/crm/page.tsx' 'app/case-studies/page.tsx' 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "ΓÇö" in app ┬╖ 100 matches
+Γ£▒ Grep "\bwe\b" in app ┬╖ 36 matches
+Γ£▒ Grep "\bour\b" in app ┬╖ 26 matches
+Γ£▒ Grep "\bus\b" in app ┬╖ 14 matches
+Γ£▒ Grep "end.to.end" in app ┬╖ 18 matches
+Γ£▒ Grep "&mdash;" in app/page.tsx ┬╖ 31 matches
+Γ£▒ Grep "&mdash;" in app/how-i-build/page.tsx ┬╖ 3 matches
+Γ£▒ Grep "&mdash;" in app/apps/page.tsx ┬╖ 20 matches
+Γ£▒ Grep "&mdash;" in app/apps/commerce/page.tsx ┬╖ 7 matches
+Γ£▒ Grep "&mdash;" in app/apps/crm/page.tsx ┬╖ 6 matches
+Γ£▒ Grep "&mdash;" in app/decoded-method/page.tsx ┬╖ 0 matches
+Γ£▒ Grep "ΓÇô" in app/apps/commerce/page.tsx ┬╖ 0 matches
+Γ£▒ Grep "ΓÇô" in app/pricing/page.tsx ┬╖ 9 matches
+Let me check for en dashes and a few more patterns before I start editing.
+
+$ Select-String -Path 'D:\apps\worktrees\decoded-ops-website\voice-core\app\pricing\page.tsx' -Pattern 'ΓÇö|ΓÇô|&mdash;' | ForEach-Object { "$($_.LineNumber): $($_.Line)" }
+8: // DO_Pricing_Architecture_v8.1.md (30 Jul 2026, canonical) - see the
+15:   title: 'Pricing - Decoded Ops',
+16:   description: 'Plain pricing for technology consultancy and Systems work - Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+20:     title: 'Pricing - Decoded Ops',
+21:     description: 'Plain pricing for technology consultancy and Systems work - Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+26:     title: 'Pricing - Decoded Ops',
+63:               <caption>Consultancy - by turnover band</caption>
+68:                   <th scope="col">∩┐╜1m-∩┐╜7.5m</th>
+78:                       ∩┐╜1,500 is the floor for a single site - more sites scale up from there, scoped
+84:                   <td><span className="price">∩┐╜1,200-∩┐╜1,500<span className="num">/mo</span></span>
+86:                   <td><span className="price">∩┐╜1,400-∩┐╜2,000<span className="num">/mo</span></span>
+88:                   <td><span className="price">∩┐╜1,800-∩┐╜2,500+<span className="num">/mo</span></span>
+93:                   <td><span className="price">∩┐╜1,500-∩┐╜2,200<span className="num">/mo</span></span>
+95:                   <td><span className="price">∩┐╜2,000-∩┐╜3,200<span className="num">/mo</span></span>
+97:                   <td><span className="price">∩┐╜3,000-∩┐╜5,000+<span className="num">/mo</span></span>
+104:                     <span className="price-sub">Advisory, Embedded and Programme - 2, 4 and 8 days a month.
+114:             recommended tier within each band - the number to plan around if you want one.</p>
+122:               <caption>Retained Transformation - by turnover band</caption>
+127:                   <th scope="col">∩┐╜1m-∩┐╜7.5m</th>
+215:                   <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance -
+243:             has been ruled out in writing - <Link href="/how-i-build"
+253:               <caption>The Decoded apps - implementation plus monthly</caption>
+273:                   <td><span className="price dash">-</span><span className="price-sub">no Extended tier</span></td>
+278:                   <td className="col-star"><span className="price">∩┐╜8,500-∩┐╜9,500</span><span className="price-sub">+ ∩┐╜650-∩┐╜750/mo</span></td>
+309:               <caption>Small business - fixed prices</caption>
+360:             with no obligation - just an honest conversation about your operation.</p>
+
+# Todos
+[Γ£ô] Read all 16 files to identify violations
+[ΓÇó] Fix em dashes (ΓÇö) across all files
+[ ] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[ ] Fix 'end to end' / 'end-to-end'
+[Γ£ô] Fix banned consultant-speak
+[ ] Fix overclaims
+[ ] Fix specific known issues (clarity page, artwork-manager page)
+[ ] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[ ] Run npm run build and confirm zero errors
+[ ] Report final counts per file per category
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -27,10 +27,10 @@
+ <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+   <div className="wrap">
+     <span className="eyebrow">Clarity Audit</span>
+     <h1>One day on site. One written plan.</h1>
+-    <p className="lede">A free 60-minute call, then one full day inside your business ΓÇö six areas
+-      covered, followed end to end rather than just discussed. ┬ú1,500, and if I can&apos;t find three
++    <p className="lede">A free 60-minute call, then one full day inside your business: six areas
++      covered, followed from start to finish rather than just discussed. ┬ú1,500, and if I can&apos;t find three
+       times the fee in the first hour, the day is free. A written report within five working
+       days, walked through with you in person.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a free 60-min call</Link>
+
+
+Now let me make all edits. Starting with the files that have the most violations, beginning with `clarity/page.tsx`:
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -48,9 +48,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className={`plate-frame ${s.plateFrame}`} data-od-id="clarity-flow-diagram">
+     <Plate tone="dark" p="cd" title="One call. One day. One clear plan."
+-           sub="Four fixed steps ΓÇö you know what each one produces"
++           sub="Four fixed steps. You know what each one produces."
+            no="DO-ART-306" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="cd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+             fill="none" strokeWidth="2.5" markerEnd="url(#cd-ah)" />
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -72,9 +72,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="595" y="308" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="24">On-site day</text>
+   <text x="595" y="342" textAnchor="middle" className="p-mono" fontSize="17"
+-        opacity=".85">six areas, followed end to end</text>
++        opacity=".85">six areas, followed start to finish</text>
+   <circle cx="595" cy="460" r="13" className="p-cyan"/>
+   <text x="595" y="520" textAnchor="middle" className="p-mono" fontSize="17"
+         letterSpacing="1.5" opacity=".7">STEP 2</text>
+ </g>
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -103,9 +103,9 @@
+         letterSpacing="1.5" opacity=".85">STEP 4</text>
+ </g>
+ 
+ <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
+-      fontStyle="italic" opacity=".8">Followed, observed, and quantified ΓÇö not guessed
++      fontStyle="italic" opacity=".8">Followed, observed, and quantified. Not guessed
+   at.</text>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan">
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -137,10 +137,10 @@
+       </article>
+       <article className={`${s.step} ${s.stepLast}`}>
+         <p className={s.stepN}>STEP 4</p>
+         <h3>Debrief</h3>
+-        <p>We walk through it together, so you can push back on it while I&apos;m still in the room.
+-          Then it&apos;s yours ΓÇö to act on with me, or without me.</p>
++        <p>I walk you through it, so you can push back while I&apos;m still in the room.
++          Then it&apos;s yours: to act on with me, or without me.</p>
+       </article>
+     </div>
+   </div>
+ </section>
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -148,9 +148,9 @@
+ {/* 3 ┬╖ SIX AREAS */}
+ <section className="g-white" data-od-id="areas">
+   <div className="wrap">
+     <span className="eyebrow">What gets covered</span>
+-    <h2>Six areas, followed end to end.</h2>
++    <h2>Six areas, followed from start to finish.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. I follow the
+       actual process, in the actual place it happens.</p>
+ 
+     <div className="grid grid--3">
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -156,9 +156,9 @@
+ <div className="grid grid--3">
+   <article className="card" data-od-id="area-it">
+     <span className="kicker">01 ┬╖ Infrastructure</span>
+     <h3>IT infrastructure</h3>
+-    <p>Networks, backups, security ΓÇö and the systems nobody&apos;s looked at since the day they
++    <p>Networks, backups, security, and the systems nobody&apos;s looked at since the day they
+       were installed.</p>
+   </article>
+   <article className="card" data-od-id="area-software">
+     <span className="kicker">02 ┬╖ Software</span>
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -168,9 +168,9 @@
+ </article>
+ <article className="card" data-od-id="area-ecommerce">
+   <span className="kicker">03 ┬╖ eCommerce</span>
+   <h3>eCommerce</h3>
+-  <p>Where the website, the warehouse, and the platform agree ΓÇö and where they quietly
++  <p>Where the website, the warehouse, and the platform agree, and where they quietly
+     don&apos;t.</p>
+ </article>
+ <article className="card" data-od-id="area-operations">
+   <span className="kicker">04 ┬╖ Operations</span>
+
+
+ΓåÉ Edit app/clarity/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\clarity\page.tsx
+@@ -187,9 +187,9 @@
+       <article className="card" data-od-id="area-ai">
+         <span className="kicker">06 ┬╖ AI readiness</span>
+         <h3>AI readiness</h3>
+         <p>Whether the data and processes underneath are solid enough for automation to be worth
+-          doing yet ΓÇö most aren&apos;t.</p>
++          doing yet. Most aren&apos;t.</p>
+       </article>
+     </div>
+   </div>
+ </section>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -27,9 +27,9 @@
+ <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
+   <div className="wrap">
+     <span className="eyebrow">Deliver</span>
+     <h1>The Process &amp; Quality System. The thing you&apos;re left with.</h1>
+-    <p className="lede">Deliver is the implementation phase ΓÇö someone technical on your side of the
++    <p className="lede">Deliver is the implementation phase: someone technical on your side of the
+       table for the whole build, from brief through to handover. What you keep afterwards isn&apos;t
+       just something that works. It&apos;s a documented system for how the business runs it.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -42,9 +42,9 @@
+ <div className="wrap">
+   <span className="eyebrow">What you&apos;re left with</span>
+   <h2>Three real artifacts, not a memory of the engagement.</h2>
+   <p className="lede" style={{ marginTop: 16 }}>Every Deliver engagement builds these alongside the
+-    project itself ΓÇö so what you keep afterwards is a documented process, not just something
++    project itself, so what you keep afterwards is a documented process, not just something
+     that works and nobody can explain.</p>
+ 
+   <div className="grid grid--3">
+     <div className={s.feature} data-od-id="output-register">
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -55,9 +55,9 @@
+     </svg>
+   </div>
+   <p className={s.featureMeta}>From Map</p>
+   <h3>The Process Register</h3>
+-  <p>Every process that matters, named and described as it actually runs ΓÇö not as the org
++  <p>Every process that matters, named and described as it actually runs. Not as the org
+     chart says it should. The reference point for everything documented afterwards.</p>
+ </div>
+ <div className={s.feature} data-od-id="output-sops">
+   <div className={s.featureMark} aria-hidden="true">
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -68,9 +68,9 @@
+   </div>
+   <p className={s.featureMeta}>From Document</p>
+   <h3>Written SOPs</h3>
+   <p>So the process doesn&apos;t live in one person&apos;s head. Written so someone who doesn&apos;t
+-    already know the job can follow it ΓÇö when they&apos;re on holiday, the business doesn&apos;t
++    already know the job can follow it. When they&apos;re on holiday, the business doesn&apos;t
+     stop.</p>
+ </div>
+ <div className={s.feature} data-od-id="output-log">
+   <div className={s.featureMark} aria-hidden="true">
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -81,9 +81,9 @@
+         </div>
+         <p className={s.featureMeta}>From Check &amp; Log</p>
+         <h3>An Improvement Log</h3>
+         <p>What&apos;s been improved and what&apos;s next, owned by you and still running after I&apos;ve
+-          gone ΓÇö the thing that makes the system keep working without me.</p>
++          gone. The thing that makes the system keep working without me.</p>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -91,9 +91,9 @@
+ {/* 3 ┬╖ THE PQS LOOP ┬╖ DO-ART-305 */}
+ <section className="g-tint" data-od-id="deliver-loop">
+   <div className="wrap">
+     <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
+-    <h2>Map, document, check, log ΓÇö then round again.</h2>
++    <h2>Map, document, check, log. Then round again.</h2>
+     <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
+       the engagement ends, because the last step feeds the first one.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -98,9 +98,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
+     <Plate tone="dark" p="pq" title="A loop, not a document"
+-           sub="Four steps ΓÇö the fourth feeds the first"
++           sub="Four steps. The fourth feeds the first."
+            no="DO-ART-305" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
+             fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)" />
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -156,9 +156,9 @@
+ <path id="pq-loop" pathLength={1} className="sk-draw sk-s6 p-scyan" fill="none"
+       strokeWidth="2.2" strokeDasharray="7 8" markerEnd="url(#pq-ah)"
+       d="M1280 540 C 1280 630, 255 630, 255 542"/>
+ <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
+-      fontStyle="italic" opacity=".8">Then round again ΓÇö for every process that
++      fontStyle="italic" opacity=".8">Then round again, for every process that
+   matters.</text>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan">
+
+
+Now `deliver/page.tsx`:
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -172,9 +172,9 @@
+ <div className={s.steps} data-od-id="deliver-loop-cards">
+   <article className={s.step}>
+     <p className={s.stepN}>STEP 1</p>
+     <h3>Map</h3>
+-    <p>The process as it actually runs, watched end to end ΓÇö not as the org chart describes
++    <p>The process as it actually runs, watched from start to finish. Not as the org chart describes
+       it and not as anyone remembers it.</p>
+   </article>
+   <article className={s.step}>
+     <p className={s.stepN}>STEP 2</p>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -179,9 +179,9 @@
+ <article className={s.step}>
+   <p className={s.stepN}>STEP 2</p>
+   <h3>Document</h3>
+   <p>Written as an SOP someone who doesn&apos;t already know the job can follow. That&apos;s the
+-    test ΓÇö not whether the person who wrote it recognises it.</p>
++    test. Not whether the person who wrote it recognises it.</p>
+ </article>
+ <article className={s.step}>
+   <p className={s.stepN}>STEP 3</p>
+   <h3>Check</h3>
+
+
+ΓåÉ Edit app/deliver/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\deliver\page.tsx
+@@ -201,9 +201,9 @@
+ {/* 4 ┬╖ CTA STRIP */}
+ <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Book a Clarity Audit.</h2>
+-    <p className="lede">Every Deliver engagement starts here ΓÇö a full day on site and a written plan,
++    <p className="lede">Every Deliver engagement starts here: a full day on site and a written plan,
+       before anything gets built.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+       <Link className={`btn ${s.navyGhost} ${s.btnArrow}`} href="/process-quality-system">See the Process &amp;
+
+
+ΓåÉ Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
+@@ -4,9 +4,9 @@
+ import s from '@/app/deco-page.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Transform ΓÇö Decoded Ops',
+-  description: 'Transform is the programme that follows a Clarity Audit ΓÇö the plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds automated end to end.',
++  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds fully automated.',
+   alternates: { canonical: '/transform' },
+   openGraph: {
+     type: 'website',
+     title: 'Transform ΓÇö Decoded Ops',
+
+
+ΓåÉ Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\transform\page.tsx
+@@ -122,9 +122,9 @@
+     <h3>After</h3>
+     <ul>
+       <li>Hanicks: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
+       <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> live at Khaos Control</li>
+-      <li>TackleBag: <strong>9</strong> supplier feeds automated end to end</li>
++      <li>TackleBag: <strong>9</strong> supplier feeds fully automated</li>
+       <li>TackleBag: a projected saving of <strong>20ΓÇô40 hours</strong> a week</li>
+     </ul>
+   </div>
+ </div>
+
+
+Now `transform/page.tsx`:
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -28,9 +28,9 @@
+ <div>
+   <span className="eyebrow">About Craig</span>
+   <h1>I started on the warehouse floor.</h1>
+   <div className={s.heroBody}>
+-    <p>Twenty-five years later, I&apos;m still solving the same problems ΓÇö just from the other
++    <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
+       side of the table.</p>
+     <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought in to
+       observe ΓÇö as the person on the warehouse floor picking, packing, and despatching. As
+       the IT engineer. As the operations manager. As the one who implemented the systems,
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -31,9 +31,9 @@
+ <div className={s.heroBody}>
+   <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
+     side of the table.</p>
+   <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought in to
+-    observe ΓÇö as the person on the warehouse floor picking, packing, and despatching. As
++    observe. As the person on the warehouse floor picking, packing, and despatching. As
+     the IT engineer. As the operations manager. As the one who implemented the systems,
+     lived with the consequences, and fixed what went wrong.</p>
+   <p>That&apos;s why I know what a system needs to do for the person using it, not just the
+     person commissioning it.</p>
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -59,9 +59,9 @@
+ <section className="g-white" data-od-id="timeline">
+   <div className="wrap">
+     <span className="eyebrow">Where this comes from</span>
+     <h2>Three beats, not a straight line.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round ΓÇö
++    <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round,
+       which is most of why the audit works the way it does.</p>
+ 
+     <div className="grid grid--3">
+       <div className={s.feature} data-od-id="beat-warehouse">
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -73,9 +73,9 @@
+   </div>
+   <p className={s.featureMeta}>Warehouse floor</p>
+   <h3>Picking, packing, despatch</h3>
+   <p>Where I learned that the workaround on the floor and the process on paper are rarely
+-    the same thing ΓÇö and that the gap between them is where the cost hides.</p>
++    the same thing, and that the gap between them is where the cost hides.</p>
+ </div>
+ <div className={s.feature} data-od-id="beat-it">
+   <div className={s.featureMark} aria-hidden="true">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -96,9 +96,9 @@
+       </svg>
+     </div>
+     <p className={s.featureMeta}>Operations &amp; ERP</p>
+     <h3>Implementing the systems</h3>
+-    <p>Running the department, then choosing and implementing the platform it depends on ΓÇö
++    <p>Running the department, then choosing and implementing the platform it depends on,
+       and living with what happens when nobody scoped the business before scoping the
+       software.</p>
+   </div>
+ </div>
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -108,9 +108,9 @@
+ {/* 3 ┬╖ STAT */}
+ <section className="g-navy" data-od-id="stat">
+   <div className={`wrap ${s.centred} ${s.statSingle}`}>
+     <p className={`${s.statNum} ${s.num}`}>25 years</p>
+-    <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses ΓÇö as the
++    <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses. As the
+       person doing the job, not just the one advising on it.</p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\about\page.tsx
+@@ -117,9 +117,9 @@
+ {/* 4 ┬╖ CTA STRIP */}
+ <section className={`g-white ${s.ctaStrip}`} data-od-id="cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Want to talk it through first?</h2>
+-    <p className="lede">No pitch, no obligation ΓÇö just a conversation about whether this is the right
++    <p className="lede">No pitch, no obligation. Just a conversation about whether this is the right
+       fit before anything gets booked.</p>
+     <div className={s.heroCta}>
+       <Link className="btn btn--primary" href="/contact">Book a call</Link>
+       <Link className={`btn ${s.btnGhost} ${s.btnArrow}`} href="/clarity">See how a Clarity Audit works</Link>
+
+
+Now `about/page.tsx`:
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -8,9 +8,9 @@
+ alternates: { canonical: '/how-i-build' },
+ openGraph: {
+   type: 'website',
+   title: 'How I build ΓÇö Decoded Ops',
+-  description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short ΓÇö so whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
++description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+   url: 'https://decodedops.co.uk/how-i-build',
+ },
+ twitter: {
+   card: 'summary_large_image',
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -3,9 +3,9 @@
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+   title: 'How I build ΓÇö Decoded Ops',
+-  description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short ΓÇö so whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
++    description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+   alternates: { canonical: '/how-i-build' },
+   openGraph: {
+     type: 'website',
+     title: 'How I build ΓÇö Decoded Ops',
+
+
+Γ£ù Edit app/how-i-build/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+Γ£ù Edit app/how-i-build/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -27,9 +27,9 @@
+ <div className="wrap hero-center">
+   <p className="eyebrow">How I build</p>
+   <h1>The facts, the options, and the decision stays yours.</h1>
+   <p className="lede">I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
+-    and where it falls short &mdash; so whatever you decide, you decide on the merits, not on my
++    and where it falls short, so whatever you decide, you decide on the merits, not on my
+     say-so.</p>
+   <div className="btn-row" style={{ marginTop: 32 }}>
+     <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+   </div>
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -46,9 +46,9 @@
+   should have to reject it out loud before anyone spends money on the one above.</p>
+ 
+ <div className="plate-scroll">
+   <div className="plate-frame">
+-    <Plate tone="dark" p="ld" title="The ladder ΓÇö buy first, build only what is missing"
++     <Plate tone="dark" p="ld" title="The ladder. Buy first, build only what is missing"
+            sub="Three rungs in fixed order ┬╖ every option priced"
+            no="DO-ART-302" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -124,9 +124,9 @@
+   <h3>Buy</h3>
+   <p>If something on the market already fits, it goes on the table, named and priced.
+     Tracker is the best platform I&rsquo;ve worked with in this sector, and I don&rsquo;t sell it or
+     earn anything from recommending it.</p>
+-  <p>That costs me nothing to say. Which is rather the point &mdash; you can weigh what I tell you
++  <p>That costs me nothing to say. Which is rather the point: you can weigh what I tell you
+     about it knowing there&rsquo;s nothing in it for me either way.</p>
+ </article>
+ 
+ <article className="rung rung--default">
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -237,9 +237,9 @@
+ <section className="g-off cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Book a free discovery call.</h2>
+     <p className="lede">An hour on what&rsquo;s actually going wrong. You&rsquo;ll get an honest read on which
+-      rung you&rsquo;re on &mdash; including if the answer is that you don&rsquo;t need me at all.</p>
++      rung you&rsquo;re on, including if the answer is that you don&rsquo;t need me at all.</p>
+     <div className="btn-row">
+       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+       <Link className="btn btn--ghost btn-arrow" href="/apps">See what I&rsquo;ve built</Link>
+     </div>
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -169,9 +169,9 @@
+         fontWeight="800" fontSize="30">Your platform</text>
+   <text x="330" y="474" textAnchor="middle" className="p-mono" fontSize="17"
+         opacity=".75">Unchanged. Kept.</text>
+   <text x="330" y="580" textAnchor="middle" className="p-mono" fontSize="16"
+-        letterSpacing="1.4" opacity=".55">RUNG 1 ΓÇö WHAT YOU ALREADY OWN</text>
++         letterSpacing="1.6" opacity=".55">RUNG 1: WHAT YOU ALREADY OWN</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <path id="hb-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
+
+
+Now `how-i-build/page.tsx`:
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -2,9 +2,9 @@
+ import Link from 'next/link';
+ import { Plate } from '@/components/Plate';
+ 
+ export const metadata: Metadata = {
+-  title: 'How I build ΓÇö Decoded Ops',
++  title: 'How I build: Decoded Ops',
+     description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+   alternates: { canonical: '/how-i-build' },
+   openGraph: {
+     type: 'website',
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -7,9 +7,9 @@
+   description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+ alternates: { canonical: '/how-i-build' },
+ openGraph: {
+   type: 'website',
+-  title: 'How I build ΓÇö Decoded Ops',
++  title: 'How I build: Decoded Ops',
+ description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus automation, or full custom.",
+   url: 'https://decodedops.co.uk/how-i-build',
+ },
+ twitter: {
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -13,9 +13,9 @@
+     url: 'https://decodedops.co.uk/how-i-build',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'How I build ΓÇö Decoded Ops',
++    title: 'How I build: Decoded Ops',
+     description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short.",
+   },
+ };
+ 
+
+
+ΓåÉ Edit app/how-i-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\how-i-build\page.tsx
+@@ -191,9 +191,9 @@
+         fontWeight="600">Artwork</text>
+   <text x="1260" y="480" textAnchor="middle" className="p-accent-ink" fontSize="17"
+         fontWeight="600">Cross-business reporting</text>
+   <text x="1260" y="580" textAnchor="middle" className="p-mono" fontSize="16"
+-        letterSpacing="1.4" opacity=".6">RUNG 2 ΓÇö THE GAPS, NAMED</text>
++         letterSpacing="1.6" opacity=".6">RUNG 2: THE GAPS, NAMED</text>
+ </g>
+ 
+ <text x="800" y="740" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
+       letterSpacing="1.6" opacity=".55">NOTHING ON THE LEFT CHANGES</text>
+
+
+ΓåÉ Edit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
+@@ -120,9 +120,9 @@
+ <div className="steps">
+   <article className="step">
+     <p className="step-n">STEP 1</p>
+     <h3>Map the process</h3>
+-    <p>As it actually runs, watched end to end. Not as the org chart describes it and not as
++    <p>As it actually runs, watched from start to finish. Not as the org chart describes it and not as
+       anyone remembers it.</p>
+   </article>
+   <article className="step">
+     <p className="step-n">STEP 2</p>
+
+
+ΓåÉ Edit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\process-quality-system\page.tsx
+@@ -126,9 +126,9 @@
+ </article>
+ <article className="step">
+   <p className="step-n">STEP 2</p>
+   <h3>Document it as an SOP</h3>
+-  <p>Written so someone who doesn&rsquo;t already know the job can follow it. That&rsquo;s the test ΓÇö
++  <p>Written so someone who doesn&rsquo;t already know the job can follow it. That&rsquo;s the test:
+     not whether the person who wrote it recognises it.</p>
+ </article>
+ <article className="step">
+   <p className="step-n">STEP 3</p>
+
+
+Now `process-quality-system/page.tsx`:
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -37,9 +37,9 @@
+ <div className="container hero-center">
+   <p className="eyebrow">The Decoded Method</p>
+   <h1>The system behind every engagement.</h1>
+   <p className="lead">Every Clarity, Deliver and Transform engagement runs on the same three-layer
+-    method. Not a framework invented for the website ΓÇö it&rsquo;s how I actually run the work, and how
++    method. Not a framework invented for the website. It&rsquo;s how I actually run the work, and how
+     I run Decoded Ops itself.</p>
+   <div className="hero-cta">
+     <Link className="btn btn-primary btn-arrow" href="/clarity">See it in action</Link>
+   </div>
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -91,9 +91,9 @@
+       </svg>
+     </div>
+     <h3>Improvement Log</h3>
+     <p>Change doesn&rsquo;t stop at go-live. Every engagement leaves a running log of what&rsquo;s been
+-      improved and what&rsquo;s next, owned by you ΓÇö not filed away once I leave.</p>
++      improved and what&rsquo;s next, owned by you. Not filed away once I leave.</p>
+   </div>
+ </div>
+ 
+ <div className="inset" style={{ maxWidth: 'none' }}>
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -108,9 +108,9 @@
+ <section className="g-tint">
+   <div className="container">
+     <p className="eyebrow">The loop &middot; DO-ART-304</p>
+     <h2>Process Register to Improvement Log, then repeat.</h2>
+-    <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order ΓÇö the log feeds back
++    <p className="lead" style={{ marginTop: 16 }}>Three layers in fixed order. The log feeds back
+       into the register.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className="plate-frame">
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -114,9 +114,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className="plate-frame">
+     <Plate tone="dark" p="dm" title="Process Register to Improvement Log, then repeat"
+-           sub="Three layers in fixed order ΓÇö the log feeds back into the register"
++           sub="Three layers in fixed order. The log feeds back into the register"
+            no="DO-ART-304" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="dm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
+             strokeWidth="2.5" markerEnd="url(#dm-ah)" d="M340 460 H1260"/>
+
+
+Now `decoded-method/page.tsx`:
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+@@ -87,9 +87,9 @@
+ <section className="g-tint">
+   <div className="wrap">
+     <p className="eyebrow">Architecture &middot; DO-ART-104</p>
+     <h2>Three apps, one platform.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Nothing replaced ΓÇö each app plugs a specific gap
++    <p className="lede" style={{ marginTop: 16 }}>Nothing replaced. Each app plugs a specific gap
+       alongside the platform you already run.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className="plate-frame">
+
+
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+@@ -93,9 +93,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className="plate-frame">
+     <Plate tone="dark" p="ap" title="Three apps, one platform"
+-           sub="Nothing replaced ΓÇö each app plugs a specific gap"
++           sub="Nothing replaced. Each app plugs a specific gap"
+            no="DO-ART-104" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <g className="sk-fade sk-s2">
+         <path id="ap-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
+
+
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+@@ -64,9 +64,9 @@
+     <span className="chip chip--live">Live infrastructure</span>
+     <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
+   </div>
+   <p>Storefront build and migration. Three tiers by functionality, plus scoped custom work
+-    for a full rebuild &mdash; Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
++    for a full rebuild. Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
+     the worked example.</p>
+   <span className="go">See how it works</span>
+ </Link>
+ 
+
+
+ΓåÉ Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\page.tsx
+@@ -164,9 +164,9 @@
+ <div className="wrap">
+   <p className="eyebrow">Before any of this</p>
+   <h2>Software is the last answer, not the first.</h2>
+   <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>If a platform already on the market does
+-    the job, that&rsquo;s what goes on the table &mdash; named, priced, and with no commission in it for me.
++    the job, that&rsquo;s what goes on the table: named, priced, and with no commission in it for me.
+     These three exist because for a specific set of jobs, nothing on the market did.</p>
+   <div className="btn-row" style={{ marginTop: 32 }}>
+     <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>
+   </div>
+
+
+Now `apps/page.tsx`:
+ΓåÉ Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+@@ -62,9 +62,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className="plate-frame">
+     <Plate tone="dark" p="da" title="A layer, not a rip-out"
+-           sub="Where the Data App sits ΓÇö three layers, read bottom-up"
++           sub="Where the Data App sits. Three layers, read bottom-up"
+            no="DO-ART-105" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="da-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V310"
+             fill="none" strokeWidth="2.5" markerEnd="url(#da-ah)"/>
+
+
+ΓåÉ Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+@@ -56,9 +56,9 @@
+ <div className="wrap">
+   <p className="eyebrow">Not a replacement &middot; DO-ART-105</p>
+   <h2>Your platform stays. This sits alongside it.</h2>
+   <p className="lede" style={{ marginTop: 16 }}>Supplier feeds, data enrichment, catalogue maintenance
+-    across channels &mdash; the jobs your platform was never built for. Ripping it out and starting
++    across channels. The jobs your platform was never built for. Ripping it out and starting
+     again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
+ 
+   <div className="plate-scroll" style={{ marginTop: 34 }}>
+     <div className="plate-frame">
+
+
+ΓåÉ Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\data-app\page.tsx
+@@ -165,9 +165,9 @@
+ <h2>Three tiers, priced on scope.</h2>
+ 
+ <div className="inset">
+   <b>App Scoping Session, ┬ú750 fixed.</b> Mandatory before any tier. Half a day working out
+-  which feeds, which channels, and which tier actually fits &mdash; so the quote that follows is a
++  which feeds, which channels, and which tier actually fits, so the quote that follows is a
+   real number, not a range.
+ </div>
+ 
+ <div className="table-wrap">
+
+
+Now `apps/data-app/page.tsx`:
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -108,9 +108,9 @@
+ <section className="g-tint">
+   <div className="wrap">
+     <p className="eyebrow">Flow &middot; DO-ART-106</p>
+     <h2>Vault to floor, one tracked path.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Three connected stages ΓÇö no email chain between
++    <p className="lede" style={{ marginTop: 16 }}>Three connected stages. No email chain between
+       them.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className="plate-frame">
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -114,9 +114,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className="plate-frame">
+     <Plate tone="dark" p="am" title="Vault to floor, one tracked path"
+-           sub="Three connected stages ΓÇö no email chain between them"
++           sub="Three connected stages. No email chain between them"
+            no="DO-ART-106" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="am-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
+             strokeWidth="2.5" markerEnd="url(#am-ah)" d="M470 460 H1130"/>
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -68,9 +68,9 @@
+       <path d="M12 4v2M12 18v2" />
+     </svg>
+   </div>
+   <h3>The vault</h3>
+-  <p>Every format and every version of every logo in one place &mdash; with the thread library and
++  <p>Every format and every version of every logo in one place, with the thread library and
+     the colourways that go with it, and access for the staff who need it.</p>
+   <p>Version history means you can prove which file went to the machine, and when.</p>
+ </div>
+ 
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -181,9 +181,9 @@
+     sells on founding-client terms: full implementation pricing, the first six months of
+     support waived, in exchange for accepting that some features arrive during the engagement
+     and agreeing to be a named reference.</p>
+   <p>That&rsquo;s the whole arrangement. It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a
+-    pilot you&rsquo;re paying to be part of &mdash; you get the implementation you paid for, and I get the
++    pilot you&rsquo;re paying to be part of. You get the implementation you paid for, and I get the
+     first reference I can point at.</p>
+ </div>
+ 
+ <figure className="pull" style={{ marginTop: 44 }}>
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -201,9 +201,9 @@
+ <h2>Two tiers. No third one hiding.</h2>
+ 
+ <div className="inset">
+   <b>App Scoping Session, ┬ú750 fixed.</b> Mandatory before either tier. Which formats, which
+-  machines, how many customers proofing &mdash; worked out before anyone quotes a number.
++  machines, how many customers proofing. Worked out before anyone quotes a number.
+ </div>
+ 
+ <div className="table-wrap">
+   <table className="ds-table">
+
+
+ΓåÉ Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\artwork-manager\page.tsx
+@@ -244,9 +244,9 @@
+ <section className="g-off cta-strip">
+   <div className="wrap" style={{ maxWidth: 760 }}>
+     <h2>Talk about founding-client terms.</h2>
+     <p className="lede">An hour to work out whether being first is worth it to you. If your artwork
+-      problem is smaller than this, I&rsquo;ll tell you that and we&rsquo;ll stop there.</p>
++      problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the end of it.</p>
+     <div className="btn-row">
+       <Link className="btn btn--primary" href="/contact">Talk about founding-client terms</Link>
+       <Link className="btn btn--ghost btn-arrow" href="/apps">See the other systems</Link>
+     </div>
+
+
+Now `apps/artwork-manager/page.tsx`:
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -30,9 +30,9 @@
+ <h1>A storefront that fits how you actually sell.</h1>
+ <div className="hero-body">
+   <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
+     wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
+-  <p>It&rsquo;s built on the Medusa B2B starter &mdash; company accounts, spend limits, approval
++  <p>It&rsquo;s built on the Medusa B2B starter: company accounts, spend limits, approval
+     workflows, quote negotiation, order editing, and a full storefront and checkout, all on
+     an open-source core. Real foundations underneath, not a from-scratch build. That&rsquo;s
+     exactly why it prices where it does rather than in the ┬ú8,000&ndash;┬ú20,000 bespoke range
+     you&rsquo;ll be quoted elsewhere.</p>
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -73,9 +73,9 @@
+   </div>
+   <h3>Core</h3>
+   <p className="feature-meta">Single storefront</p>
+   <p>Product catalogue, customer accounts and logins, manual pricing tiers. No approval
+-    workflow &mdash; if nobody in your customers&rsquo; businesses needs to sign off an order, you don&rsquo;t
++    workflow. If nobody in your customers&rsquo; businesses needs to sign off an order, you don&rsquo;t
+     need to pay for the machinery that makes them.</p>
+ </div>
+ 
+ <div className="feature">
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -101,9 +101,9 @@
+       </svg>
+     </div>
+     <h3>Extended</h3>
+     <p className="feature-meta">More than one of everything</p>
+-    <p>Multi-site storefronts, ERP integration &mdash; Khaos Control sync and similar &mdash; and bespoke
++    <p>Multi-site storefronts, ERP integration (Khaos Control sync and similar), and bespoke
+       checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
+       price.</p>
+   </div>
+ </div>
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -184,9 +184,9 @@
+ </div>
+ <div className="panel">
+   <h3>How it starts</h3>
+   <p>With a Clarity Audit, the same as any rung 3 conversation. Everything on the market
+-    goes on the table first, priced, including the options I&rsquo;d expect you to reject &mdash; and
++    goes on the table first, priced, including the options I&rsquo;d expect you to reject. And
+     the decision stays yours.</p>
+   <p><Link href="/how-i-build" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>How I decide
+     what to build &rarr;</Link></p>
+ </div>
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -201,9 +201,9 @@
+ <h2>Confirmed prices, published.</h2>
+ 
+ <div className="inset">
+   <b>App Scoping Session, ┬ú750 fixed.</b> Mandatory before any tier. What you sell, who buys
+-  it, and how they&rsquo;re allowed to buy it &mdash; settled before the build is quoted.
++  it, and how they&rsquo;re allowed to buy it. Settled before the build is quoted.
+ </div>
+ 
+ <div className="table-wrap">
+   <table className="ds-table">
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -242,9 +242,9 @@
+     </tbody>
+   </table>
+ </div>
+ <p className="table-foot">Not VAT registered, so there&rsquo;s no VAT to add. A full rebuild like the
+-  Hanicks migration isn&rsquo;t on this table on purpose &mdash; that&rsquo;s scoped separately.</p>
++  Hanicks migration isn&rsquo;t on this table on purpose. That&rsquo;s scoped separately.</p>
+ 
+ <div className="notice">
+   <p className="notice-tag">Founding-client terms</p>
+   <h3>No client has taken first delivery of the packaged product yet.</h3>
+
+
+ΓåÉ Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\commerce\page.tsx
+@@ -251,9 +251,9 @@
+       <p>Cobra Workwear and the Hanicks migration are real work, but nobody has yet bought Decoded
+         Commerce as a tiered product. Until that happens it sells at the rates above with the
+         first six months of support waived, in exchange for accepting that some features arrive
+         during the engagement and agreeing to be a named reference.</p>
+-      <p>Stated plainly, because you&rsquo;d find out anyway &mdash; and you should be able to price it in
++      <p>Stated plainly, because you&rsquo;d find out anyway. And you should be able to price it in
+         before you decide, not after.</p>
+     </div>
+   </div>
+ </section>
+
+
+Now `apps/commerce/page.tsx`:
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -55,9 +55,9 @@
+ <div className="wrap">
+   <p className="eyebrow">Three parts</p>
+   <h2>Pipeline, paperwork, and the diary that ties them together.</h2>
+   <p className="lede" style={{ marginTop: 16 }}>Most of what goes wrong in sales admin isn&apos;t the
+-    selling &mdash; it&apos;s the handoff. A quote that never became an order. An invoice raised against
++    selling. It&apos;s the handoff. A quote that never became an order. An invoice raised against
+     the wrong contact. A follow-up nobody diarised.</p>
+ 
+   <div className="grid grid--3">
+     <div className="feature">
+
+
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -80,9 +80,9 @@
+       <path d="M4 7h9l3 3h4v8H4z" /><path d="M8 7V4.5h5" />
+     </svg>
+   </div>
+   <h3>Quotes, contracts, sales orders, invoices</h3>
+-  <p>The paperwork chain that follows a deal is built in, not bolted on &mdash; a quote converts to
++  <p>The paperwork chain that follows a deal is built in, not bolted on. A quote converts to
+     an order without re-keying it, and an invoice is raised against the order that actually
+     shipped.</p>
+ </div>
+ 
+
+
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -105,9 +105,9 @@
+ <section className="g-tint">
+   <div className="wrap">
+     <p className="eyebrow">Flow</p>
+     <h2>Lead to invoice, one tracked path.</h2>
+-    <p className="lede" style={{ marginTop: 16 }}>Three connected stages &mdash; nothing re-keyed between
++    <p className="lede" style={{ marginTop: 16 }}>Three connected stages. Nothing re-keyed between
+       them.</p>
+ 
+     <div className="plate-scroll" style={{ marginTop: 34 }}>
+       <div className="plate-frame">
+
+
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -111,9 +111,9 @@
+ 
+ <div className="plate-scroll" style={{ marginTop: 34 }}>
+   <div className="plate-frame">
+     <Plate tone="dark" p="crm" title="Lead to invoice, one tracked path"
+-           sub="Three connected stages ΓÇö nothing re-keyed between them"
++           sub="Three connected stages. Nothing re-keyed between them"
+            no="DO-ART-117" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+       <path id="crm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" fill="none"
+             strokeWidth="2.5" markerEnd="url(#crm-ah)" d="M470 460 H1130"/>
+
+
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -175,9 +175,9 @@
+       <p>This is built and in active use internally. Until a client has taken first delivery, it
+         sells on founding-client terms: full implementation pricing, the first six months of
+         support waived, in exchange for accepting that some features arrive during the engagement
+         and agreeing to be a named reference.</p>
+-      <p>That&apos;s the whole arrangement. It isn&apos;t a discount dressed as an offer &mdash; you get the
++      <p>That&apos;s the whole arrangement. It isn&apos;t a discount dressed as an offer. You get the
+         implementation you paid for, and I get the first reference I can point at.</p>
+     </div>
+   </div>
+ </section>
+
+
+ΓåÉ Edit app/apps/crm/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\apps\crm\page.tsx
+@@ -208,10 +208,10 @@
+           </tr>
+         </tbody>
+       </table>
+     </div>
+-    <p className="table-foot">If what you need is bigger than this &mdash; multiple entities, a bespoke
+-      integration into a platform you already run &mdash; that&apos;s a different conversation, and it
++    <p className="table-foot">If what you need is bigger than this (multiple entities, a bespoke
++      integration into a platform you already run), that&apos;s a different conversation, and it
+       starts with a Clarity Audit, not a price list.</p>
+   </div>
+ </section>
+ 
+
+
+Now `apps/crm/page.tsx`:
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -59,9 +59,9 @@
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 1 ┬╖ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-off" data-od-id="hero">
+   <div className="wrap hero">
+     <div>
+-      <span className="eyebrow">&mdash; Operations &amp; technology consultancy</span>
++      <span className="eyebrow">&amp;middot; Operations &amp; technology consultancy</span>
+       <h1>The penny drop moment.</h1>
+       <div className="hair"></div>
+       <div className="hero-body">
+         <p>You know your business is losing money somewhere. You can feel the friction. The
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -89,9 +89,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 2 ┬╖ EVIDENCE ┬╖ DO-ART-902 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-white" data-od-id="evidence">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Evidence &middot; DO-ART-902</span>
++    <span className="eyebrow">&amp;middot; Evidence &amp;middot; DO-ART-902</span>
+     <h2>Supplier feeds in. One clean catalogue out.</h2>
+     <div className="hair"></div>
+     <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform &mdash;
+       feeds imported, products matched, stock pushed to the system they already own.</p>
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -92,9 +92,9 @@
+ <div className="wrap">
+   <span className="eyebrow">&amp;middot; Evidence &amp;middot; DO-ART-902</span>
+   <h2>Supplier feeds in. One clean catalogue out.</h2>
+   <div className="hair"></div>
+-  <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform &mdash;
++  <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform:
+     feeds imported, products matched, stock pushed to the system they already own.</p>
+ 
+   <div className="plate-scroll">
+     <div className="plate-frame" data-od-id="plate-evidence">
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -161,9 +161,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 3 ┬╖ WHAT OWNERS NOTICE ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-tint" data-od-id="approach">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Why owners keep me in the room</span>
++    <span className="eyebrow">&amp;middot; Why owners keep me in the room</span>
+     <h2>Three things you notice in the first hour.</h2>
+     <div className="hair"></div>
+ 
+     <div className="grid grid--3">
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -194,9 +194,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 4 ┬╖ MEASURE ┬╖ DO-ART-202 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-navy" data-od-id="measure">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Measure &middot; DO-ART-202</span>
++    <span className="eyebrow">&amp;middot; Measure &amp;middot; DO-ART-202</span>
+     <h2>Not projected. Not modelled. What actually happened.</h2>
+     <div className="hair"></div>
+     <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw
+       feed rows to products live in the platform.</p>
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -278,9 +278,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 5 ┬╖ THE LADDER ┬╖ DO-ART-302 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-off" data-od-id="ladder">
+   <div className="wrap">
+-    <span className="eyebrow">&mdash; Flow &middot; DO-ART-302</span>
++    <span className="eyebrow">&amp;middot; Flow &amp;middot; DO-ART-302</span>
+     <h2>The facts, the options, and the decision stays yours.</h2>
+     <div className="hair"></div>
+     <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market,
+       what it costs, and where it falls short, so whatever you decide, you decide on the
+
+
+Now `app/page.tsx` (homepage):
+Let me check what the homepage file looks like now ΓÇö I may have double-escaped:
+ΓåÆ Read app/page.tsx [offset=60, limit=10]
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -59,9 +59,9 @@
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 1 ┬╖ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-off" data-od-id="hero">
+   <div className="wrap hero">
+     <div>
+-      <span className="eyebrow">&amp;middot; Operations &amp; technology consultancy</span>
++      <span className="eyebrow">Operations &amp; technology consultancy</span>
+       <h1>The penny drop moment.</h1>
+       <div className="hair"></div>
+       <div className="hero-body">
+         <p>You know your business is losing money somewhere. You can feel the friction. The
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -89,9 +89,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 2 ┬╖ EVIDENCE ┬╖ DO-ART-902 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-white" data-od-id="evidence">
+   <div className="wrap">
+-    <span className="eyebrow">&amp;middot; Evidence &amp;middot; DO-ART-902</span>
++    <span className="eyebrow">Evidence &middot; DO-ART-902</span>
+     <h2>Supplier feeds in. One clean catalogue out.</h2>
+     <div className="hair"></div>
+     <p className="lede">Not a concept. The Data App running against a live client&rsquo;s platform:
+       feeds imported, products matched, stock pushed to the system they already own.</p>
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -161,9 +161,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 3 ┬╖ WHAT OWNERS NOTICE ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-tint" data-od-id="approach">
+   <div className="wrap">
+-    <span className="eyebrow">&amp;middot; Why owners keep me in the room</span>
++    <span className="eyebrow">Why owners keep me in the room</span>
+     <h2>Three things you notice in the first hour.</h2>
+     <div className="hair"></div>
+ 
+     <div className="grid grid--3">
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -194,9 +194,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 4 ┬╖ MEASURE ┬╖ DO-ART-202 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-navy" data-od-id="measure">
+   <div className="wrap">
+-    <span className="eyebrow">&amp;middot; Measure &amp;middot; DO-ART-202</span>
++    <span className="eyebrow">Measure &middot; DO-ART-202</span>
+     <h2>Not projected. Not modelled. What actually happened.</h2>
+     <div className="hair"></div>
+     <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw
+       feed rows to products live in the platform.</p>
+
+
+ΓåÉ Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\page.tsx
+@@ -278,9 +278,9 @@
+ 
+ {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ 5 ┬╖ THE LADDER ┬╖ DO-ART-302 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+ <section className="g-off" data-od-id="ladder">
+   <div className="wrap">
+-    <span className="eyebrow">&amp;middot; Flow &amp;middot; DO-ART-302</span>
++    <span className="eyebrow">Flow &middot; DO-ART-302</span>
+     <h2>The facts, the options, and the decision stays yours.</h2>
+     <div className="hair"></div>
+     <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market,
+       what it costs, and where it falls short, so whatever you decide, you decide on the
+
+
+I see the `&amp;middot;` is wrong. Let me fix all the eyebrow dashes on the homepage ΓÇö just remove the leading dash entirely since eyebrows work without them:
+ΓåÉ Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\pricing\page.tsx
+@@ -269,9 +269,9 @@
+ <tr>
+   <th scope="row">Decoded Artwork Manager</th>
+   <td><span className="price">┬ú4,750</span><span className="price-sub">+ ┬ú350/mo</span></td>
+   <td className="col-star"><span className="price">┬ú8,500</span><span className="price-sub">+ ┬ú600/mo</span></td>
+-  <td><span className="price dash">ΓÇö</span><span className="price-sub">no Extended tier</span></td>
++  <td><span className="price dash">N/A</span><span className="price-sub">no Extended tier</span></td>
+ </tr>
+ <tr>
+   <th scope="row">Decoded Commerce</th>
+   <td><span className="price">┬ú4,750</span><span className="price-sub">+ ┬ú450/mo</span></td>
+
+
+Now `pricing/page.tsx` ΓÇö the em dash in the Artwork Manager table's "no Extended tier" cell:
+ΓåÉ Edit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+@@ -5,9 +5,9 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+   title: 'Client Work | Decoded Ops',
+-  description: 'Live engagements ΓÇö what I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
++  description: 'Live engagements. What I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
+   alternates: { canonical: '/case-studies' },
+   openGraph: {
+     type: 'website',
+     title: 'Client Work | Decoded Ops',
+
+
+Γ£ù Edit app/case-studies/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+Γ£ù Edit app/case-studies/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+Now `case-studies/page.tsx`:
+
+ΓåÉ Edit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+@@ -147,9 +147,9 @@
+ <div className="wrap">
+   <div style={{ maxWidth: '740px', margin: '0 auto' }}>
+     <h3>Want to talk about your operation?</h3>
+     <p className="lede">
+-      Every engagement above started the same way ΓÇö a Clarity Audit to find out what was actually going on before anything got built or implemented.
++      Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything got built or implemented.
+     </p>
+     <div className="btn-row">
+       <Link href="/contact" className="btn btn--primary">
+         Book a free discovery call <ArrowRight size={18} />
+
+
+ΓåÆ Read app/case-studies/page.tsx [offset=10, limit=15]
+
+ΓåÉ Edit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+@@ -10,9 +10,9 @@
+ alternates: { canonical: '/case-studies' },
+ openGraph: {
+   type: 'website',
+   title: 'Client Work | Decoded Ops',
+-  description: 'Live engagements ΓÇö what I\'m actually building right now, not hypotheticals.',
++  description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
+   url: 'https://decodedops.co.uk/case-studies',
+ },
+ twitter: {
+   card: 'summary_large_image',
+
+
+ΓåÉ Edit app/case-studies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\case-studies\page.tsx
+@@ -16,9 +16,9 @@
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Client Work | Decoded Ops',
+-    description: 'Live engagements ΓÇö what I\'m actually building right now, not hypotheticals.',
++    description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
+   },
+ };
+ 
+ const cases = [
+
+
+Now check and fix remaining em dashes in `decoded-method/page.tsx`:
+$ Select-String -Path 'D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx' -Pattern $([char]0x2014) | ForEach-Object { "$($_.LineNumber): $($_.Line)" }
+7: // New route - also the target of the /resources/decoded-method redirect
+11:   title: 'The Decoded Method - Decoded Ops',
+16:     title: 'The Decoded Method - Decoded Ops',
+22:     title: 'The Decoded Method - Decoded Ops',
+166:                       letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER - NOT A ONE-OFF
+
+ΓåÆ Read app/decoded-method/page.tsx [offset=1, limit=10]
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -3,9 +3,9 @@
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { Plate } from '@/components/Plate';
+ 
+ // Ported from D:\apps\design-systems\decoded-marketing\decoded-method.html.
+-// New route ΓÇö also the target of the /resources/decoded-method redirect
++// New route, also the target of the /resources/decoded-method redirect
+ // Lane 0 already wired in next.config.ts.
+ 
+ export const metadata: Metadata = {
+   title: 'The Decoded Method ΓÇö Decoded Ops',
+
+
+Γ£ù Edit app/decoded-method/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+Γ£ù Edit app/decoded-method/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -162,9 +162,9 @@
+   <circle cx="1260" cy="460" r="10" className="p-cyan"/>
+ </g>
+ 
+ <text x="800" y="770" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="16"
+-      letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER ΓÇö NOT A ONE-OFF
++      letterSpacing="1.6" opacity=".6">FEEDS BACK INTO THE REGISTER. NOT A ONE-OFF
+   PROJECT</text>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#dm-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -7,9 +7,9 @@
+ // New route, also the target of the /resources/decoded-method redirect
+ // Lane 0 already wired in next.config.ts.
+ 
+ export const metadata: Metadata = {
+-  title: 'The Decoded Method ΓÇö Decoded Ops',
++  title: 'The Decoded Method: Decoded Ops',
+   description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
+   alternates: { canonical: '/decoded-method' },
+   openGraph: {
+     type: 'website',
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -12,9 +12,9 @@
+ description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
+ alternates: { canonical: '/decoded-method' },
+ openGraph: {
+   type: 'website',
+-  title: 'The Decoded Method ΓÇö Decoded Ops',
++  title: 'The Decoded Method: Decoded Ops',
+   description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
+   url: 'https://decodedops.co.uk/decoded-method',
+ },
+ twitter: {
+
+
+ΓåÉ Edit app/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-core\app\decoded-method\page.tsx
+@@ -18,9 +18,9 @@
+     url: 'https://decodedops.co.uk/decoded-method',
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'The Decoded Method ΓÇö Decoded Ops',
++    title: 'The Decoded Method: Decoded Ops',
+     description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: Process Register, SOPs, Improvement Log.',
+   },
+ };
+ 
+
+
+$ $files = @(
+    'app/page.tsx',
+    'app/pricing/page.tsx',
+    'app/retained/page.tsx',
+    'app/how-i-build/page.tsx',
+    'app/about/page.tsx',
+    'app/clarity/page.tsx',
+    'app/deliver/page.tsx',
+    'app/transform/page.tsx',
+    'app/process-quality-system/page.tsx',
+    'app/decoded-method/page.tsx',
+    'app/apps/page.tsx',
+    'app/apps/data-app/page.tsx',
+    'app/apps/artwork-manager/page.tsx',
+    'app/apps/commerce/page.tsx',
+    'app/apps/crm/page.tsx',
+    'app/case-studies/page.tsx'
+)
+$emDash = [char]0x2014
+foreach ($f in $files) {
+    $fullPath = Join-Path 'D:\apps\worktrees\decoded-ops-website\voice-core' $f
+    $matches = Select-String -Path $fullPath -Pattern $emDash
+    if ($matches) {
+        foreach ($m in $matches) {
+            Write-Host "$($f):$($m.LineNumber): $($m.Line.Trim())"
+        }
+    }
+}
+Write-Host "---EM DASH COUNT---"
+$total = 0
+foreach ($f in $files) {
+    $fullPath = Join-Path 'D:\apps\worktrees\decoded-ops-website\voice-core' $f
+    $count = (Select-String -Path $fullPath -Pattern $emDash | Measure-Object).Count
+    if ($count -gt 0) {
+        Write-Host "$f`: $count"
+    }
+    $total += $count
+}
+Write-Host "TOTAL: $total"
+app/page.tsx:9: title: 'Decoded Ops - operations and technology consultancy for decorated goods',
+app/page.tsx:13: title: 'Decoded Ops - operations and technology consultancy for decorated goods',
+app/page.tsx:19: title: 'Decoded Ops - operations and technology consultancy for decorated goods',
+app/page.tsx:101: <Plate tone="dark" p="ev" title="Decoded Data App - live deployment"
+app/page.tsx:149: <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE - none. A
+app/page.tsx:206: <Plate tone="dark" p="ms" title="Supplier catalogue - raw to live"
+app/page.tsx:254: and published - within weeks</text>
+app/page.tsx:291: <Plate tone="dark" p="ld" title="The ladder - buy first, build only what is missing"
+app/page.tsx:314: {/* RUNG 2 - the default */}
+app/pricing/page.tsx:8: // DO_Pricing_Architecture_v8.1.md (30 Jul 2026, canonical) - see the
+app/pricing/page.tsx:15: title: 'Pricing - Decoded Ops',
+app/pricing/page.tsx:16: description: 'Plain pricing for technology consultancy and Systems work - Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+app/pricing/page.tsx:20: title: 'Pricing - Decoded Ops',
+app/pricing/page.tsx:21: description: 'Plain pricing for technology consultancy and Systems work - Clarity Audit, Clarity, Deliver, Transform, Retained, and the Decoded Apps line. No hidden day rate.',
+app/pricing/page.tsx:26: title: 'Pricing - Decoded Ops',
+app/pricing/page.tsx:63: <caption>Consultancy - by turnover band</caption>
+app/pricing/page.tsx:78: ∩┐╜1,500 is the floor for a single site - more sites scale up from there, scoped
+app/pricing/page.tsx:104: <span className="price-sub">Advisory, Embedded and Programme - 2, 4 and 8 days a month.
+app/pricing/page.tsx:114: recommended tier within each band - the number to plan around if you want one.</p>
+app/pricing/page.tsx:122: <caption>Retained Transformation - by turnover band</caption>
+app/pricing/page.tsx:215: <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance -
+app/pricing/page.tsx:243: has been ruled out in writing - <Link href="/how-i-build"
+app/pricing/page.tsx:253: <caption>The Decoded apps - implementation plus monthly</caption>
+app/pricing/page.tsx:309: <caption>Small business - fixed prices</caption>
+app/pricing/page.tsx:360: with no obligation - just an honest conversation about your operation.</p>
+app/retained/page.tsx:9: // minimum) cross-checked against DO_Pricing_Architecture_v8.1.md - match
+app/retained/page.tsx:13: title: 'Fractional CTO - Decoded Ops',
+app/retained/page.tsx:18: title: 'Fractional CTO - Decoded Ops',
+app/retained/page.tsx:24: title: 'Fractional CTO - Decoded Ops',
+app/retained/page.tsx:32: name: 'Retained - Fractional CTO',
+app/retained/page.tsx:135: <h2>Advisory to Programme - the scale.</h2>
+app/retained/page.tsx:142: sub="2, 4 and 8 days a month - price scales in proportion"
+app/retained/page.tsx:186: days, double the price - every time.</text>
+app/retained/page.tsx:212: <p>You haven&rsquo;t worked out what&rsquo;s actually broken yet. Start with a Clarity Audit instead -
+app/retained/page.tsx:232: <p className="lead">An hour, no obligation, and an honest answer at the end of it - including if
+app/about/page.tsx:6: title: 'About Craig - Decoded Ops',
+app/about/page.tsx:7: description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems - just from the other side of the table.',
+app/about/page.tsx:11: title: 'About Craig - Decoded Ops',
+app/about/page.tsx:17: title: 'About Craig - Decoded Ops',
+app/clarity/page.tsx:7: title: 'Clarity Audit - Decoded Ops',
+app/clarity/page.tsx:12: title: 'Clarity Audit - Decoded Ops',
+app/clarity/page.tsx:18: title: 'Clarity Audit - Decoded Ops',
+app/deliver/page.tsx:7: title: 'Deliver - Decoded Ops',
+app/deliver/page.tsx:12: title: 'Deliver - Decoded Ops',
+app/deliver/page.tsx:18: title: 'Deliver - Decoded Ops',
+app/transform/page.tsx:7: title: 'Transform - Decoded Ops',
+app/transform/page.tsx:12: title: 'Transform - Decoded Ops',
+app/transform/page.tsx:13: description: 'Transform is the programme that follows a Clarity Audit - the plan, executed. Named results at Hanicks and TackleBag.',
+app/transform/page.tsx:18: title: 'Transform - Decoded Ops',
+app/transform/page.tsx:19: description: 'Transform is the programme that follows a Clarity Audit - the plan, executed.',
+app/transform/page.tsx:31: <p className="lede">Transform isn&apos;t a separate product - it&apos;s what happens after a Clarity Audit
+app/transform/page.tsx:47: hours a week. Same approach both times - fix the process and the data before automating
+app/transform/page.tsx:53: sub="Hanicks - before and after, paired line for line"
+app/transform/page.tsx:113: <h3>Before - both businesses</h3>
+app/transform/page.tsx:132: <p className={s.tableFoot}>Both named with permission. Same approach both times - fix the process
+app/transform/page.tsx:155: <p>The Clarity Audit report becomes a phased programme - what happens first, what
+app/transform/page.tsx:169: of the table for the build - the same discipline as Deliver, run at programme scale.</p>
+app/transform/page.tsx:179: <p>Not a single workflow documented - the whole programme, so what&apos;s still running after
+app/transform/page.tsx:190: <p className="lede">Transform is scoped per engagement - there&apos;s no published price for a
+app/process-quality-system/page.tsx:7: title: 'Process & Quality System - Decoded Ops',
+app/process-quality-system/page.tsx:8: description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes - built during the engagement and owned by you after it.',
+app/process-quality-system/page.tsx:12: title: 'Process & Quality System - Decoded Ops',
+app/process-quality-system/page.tsx:13: description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes - built during the engagement and owned by you after it.',
+app/process-quality-system/page.tsx:18: title: 'Process & Quality System - Decoded Ops',
+app/process-quality-system/page.tsx:19: description: 'A working system for how the business documents, checks and improves its own processes - built during the engagement and owned by you after it.',
+app/process-quality-system/page.tsx:37: documents, checks, and improves its own processes - built during the engagement and owned by
+app/process-quality-system/page.tsx:56: sub="Four steps - the fourth feeds the first"
+app/process-quality-system/page.tsx:114: fontStyle="italic" opacity=".8">Then round again - for every process that
+app/process-quality-system/page.tsx:154: keep afterwards is a documented process - not just something that works and nobody can
+app/apps/page.tsx:6: title: 'The systems - Decoded Ops',
+app/apps/page.tsx:7: description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce - proven at real clients before they went anywhere near a price list.',
+app/apps/page.tsx:11: title: 'The systems - Decoded Ops',
+app/apps/page.tsx:12: description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce - proven at real clients before they went anywhere near a price list.',
+app/apps/page.tsx:17: title: 'The systems - Decoded Ops',
+app/apps/data-app/page.tsx:6: title: 'Decoded Data App - Decoded Ops',
+app/apps/data-app/page.tsx:11: title: 'Decoded Data App - Decoded Ops',
+app/apps/data-app/page.tsx:17: title: 'Decoded Data App - Decoded Ops',
+app/apps/artwork-manager/page.tsx:6: title: 'Decoded Artwork Manager - Decoded Ops',
+app/apps/artwork-manager/page.tsx:11: title: 'Decoded Artwork Manager - Decoded Ops',
+app/apps/artwork-manager/page.tsx:17: title: 'Decoded Artwork Manager - Decoded Ops',
+app/apps/artwork-manager/page.tsx:147: opacity=".7">STAGE 2 - NO EMAIL CHAIN</text>
+app/apps/artwork-manager/page.tsx:160: opacity=".55">STAGE 3 - TO THE FLOOR</text>
+app/apps/commerce/page.tsx:6: title: 'Decoded Commerce - Decoded Ops',
+app/apps/commerce/page.tsx:7: description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation - company accounts, spend limits, approval workflows and quote negotiation.',
+app/apps/commerce/page.tsx:11: title: 'Decoded Commerce - Decoded Ops',
+app/apps/commerce/page.tsx:17: title: 'Decoded Commerce - Decoded Ops',
+app/apps/crm/page.tsx:6: title: 'Decoded CRM - Decoded Ops',
+app/apps/crm/page.tsx:11: title: 'Decoded CRM - Decoded Ops',
+app/apps/crm/page.tsx:17: title: 'Decoded CRM - Decoded Ops',
+app/apps/crm/page.tsx:144: opacity=".7">STAGE 2 - NOTHING RE-KEYED</text>
+app/apps/crm/page.tsx:155: opacity=".55">STAGE 3 - NOTHING DROPPED</text>
+---EM DASH COUNT---
+app/page.tsx: 9
+app/pricing/page.tsx: 16
+app/retained/page.tsx: 10
+app/about/page.tsx: 4
+app/clarity/page.tsx: 3
+app/deliver/page.tsx: 3
+app/transform/page.tsx: 14
+app/process-quality-system/page.tsx: 10
+app/apps/page.tsx: 5
+app/apps/data-app/page.tsx: 3
+app/apps/artwork-manager/page.tsx: 5
+app/apps/commerce/page.tsx: 4
+app/apps/crm/page.tsx: 5
+TOTAL: 91
+
+Now let me verify. First, check for remaining em dashes (`ΓÇö` U+2014) and `&mdash;` in the target files:
+$ $files = @('app/page.tsx','app/pricing/page.tsx','app/retained/page.tsx','app/how-i-build/page.tsx','app/about/page.tsx','app/clarity/page.tsx','app/deliver/page.tsx','app/transform/page.tsx','app/process-quality-system/page.tsx','app/decoded-method/page.tsx','app/apps/page.tsx','app/apps/data-app/page.tsx','app/apps/artwork-manager/page.tsx','app/apps/commerce/page.tsx','app/apps/crm/page.tsx','app/case-studies/page.tsx')
+Write-Host "=== &mdash; CHECK ==="
+$total = 0
+foreach ($f in $files) {
+    $fullPath = Join-Path 'D:\apps\worktrees\decoded-ops-website\voice-core' $f
+    $matches = Select-String -Path $fullPath -Pattern '&mdash;'
+    $count = ($matches | Measure-Object).Count
+    if ($count -gt 0) {
+        foreach ($m in $matches) { Write-Host "$($f):$($m.LineNumber): $($m.Line.Trim())" }
+    }
+    $total += $count
+}
+Write-Host "TOTAL &mdash;: $total"
+=== &mdash; CHECK ===
+TOTAL &mdash;: 0
+
+ΓÇó Fix remaining em dashes General Agent
+I still have 91 em dashes remaining ΓÇö mostly in metadata titles and some visible copy I missed. Let me do a comprehensive fix of all remaining ones:
+Γ£ô Fix remaining em dashes General Agent
+
+# Todos
+[Γ£ô] Read all 16 files to identify violations
+[Γ£ô] Fix em dashes (ΓÇö) across all files
+[ΓÇó] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[ ] Fix 'end to end' / 'end-to-end'
+[Γ£ô] Fix banned consultant-speak
+[ ] Fix overclaims
+[Γ£ô] Fix specific known issues (clarity page, artwork-manager page)
+[ ] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[ ] Run npm run build and confirm zero errors
+[ ] Report final counts per file per category
+
+Let me verify: zero em dashes, check for remaining "we"/"our"/"us" and "end to end":
+$ $files = @('app/page.tsx','app/pricing/page.tsx','app/retained/page.tsx','app/how-i-build/page.tsx','app/about/page.tsx','app/clarity/page.tsx','app/deliver/page.tsx','app/transform/page.tsx','app/process-quality-system/page.tsx','app/decoded-method/page.tsx','app/apps/page.tsx','app/apps/data-app/page.tsx','app/apps/artwork-manager/page.tsx','app/apps/commerce/page.tsx','app/apps/crm/page.tsx','app/case-studies/page.tsx')
+$emDash = [char]0x2014
+$base = 'D:\apps\worktrees\decoded-ops-website\voice-core'
+Write-Host "=== EM DASH CHECK ==="
+$total = 0
+foreach ($f in $files) {
+    $fullPath = Join-Path $base $f
+    $count = (Select-String -Path $fullPath -Pattern $emDash | Measure-Object).Count
+    if ($count -gt 0) { Write-Host "$f`: $count" }
+    $total += $count
+}
+Write-Host "TOTAL EM DASHES: $total"
+Write-Host ""
+Write-Host "=== 'end to end' / 'end-to-end' CHECK ==="
+$total2 = 0
+foreach ($f in $files) {
+    $fullPath = Join-Path $base $f
+    $matches = Select-String -Path $fullPath -Pattern 'end.to.end' -CaseSensitive:$false
+    $count = ($matches | Measure-Object).Count
+    if ($count -gt 0) { 
+        foreach ($m in $matches) { Write-Host "$($f):$($m.LineNumber): $($m.Line.Trim())" }
+    }
+    $total2 += $count
+}
+Write-Host "TOTAL end-to-end: $total2"
+Write-Host ""
+Write-Host "=== 'we '/'We '/'our '/'Our '/'us ' CHECK (visible copy) ==="
+$total3 = 0
+foreach ($f in $files) {
+    $fullPath = Join-Path $base $f
+    $matches = Select-String -Path $fullPath -Pattern '\b(we|We|our|Our|us)\b'
+    $count = ($matches | Measure-Object).Count
+    if ($count -gt 0) { 
+        foreach ($m in $matches) { Write-Host "$($f):$($m.LineNumber): $($m.Line.Trim())" }
+    }
+    $total3 += $count
+}
+Write-Host "TOTAL we/our/us: $total3"
+=== EM DASH CHECK ===
+TOTAL EM DASHES: 0
+
+=== 'end to end' / 'end-to-end' CHECK ===
+TOTAL end-to-end: 0
+
+=== 'we '/'We '/'our '/'Our '/'us ' CHECK (visible copy) ===
+TOTAL we/our/us: 0
+
+Excellent ΓÇö all three checks pass. Now let me check for overclaims (only in the target files):
+$ $files = @('app/page.tsx','app/pricing/page.tsx','app/retained/page.tsx','app/how-i-build/page.tsx','app/about/page.tsx','app/clarity/page.tsx','app/deliver/page.tsx','app/transform/page.tsx','app/process-quality-system/page.tsx','app/decoded-method/page.tsx','app/apps/page.tsx','app/apps/data-app/page.tsx','app/apps/artwork-manager/page.tsx','app/apps/commerce/page.tsx','app/apps/crm/page.tsx','app/case-studies/page.tsx')
+$base = 'D:\apps\worktrees\decoded-ops-website\voice-core'
+foreach ($f in $files) {
+    $fullPath = Join-Path $base $f
+    $matches = Select-String -Path $fullPath -Pattern '\b(biggest|always|never|every)\b' -CaseSensitive:$false
+    if ($matches) {
+        foreach ($m in $matches) { Write-Host "$($f):$($m.LineNumber): $($m.Line.Trim())" }
+    }
+}
+app/page.tsx:285: <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market,
+app/page.tsx:292: sub="Three rungs in fixed order ∩┐╜ every option priced"
+app/page.tsx:352: opacity=".9">Every option priced, including the ones I did not recommend.</text>
+app/pricing/page.tsx:7: // Every figure below is cross-checked against
+app/pricing/page.tsx:44: <p className="lead">Every price on this page is what you&rsquo;ll actually pay. I&rsquo;m not VAT registered,
+app/pricing/page.tsx:105: Same price at every turnover band. <Link href="/retained"
+app/pricing/page.tsx:155: every six to eight weeks, travel at cost. Any app build is always a separate line, quoted
+app/pricing/page.tsx:156: after Clarity Audit, never folded into the retainer.
+app/pricing/page.tsx:288: <p className="table-foot">A full custom build is never priced on this page. If nothing on the
+app/retained/page.tsx:80: shape every month. You know what you&rsquo;re paying before the first meeting.</p>
+app/retained/page.tsx:126: you&rsquo;re not trapped in it. The price is the price at every turnover band.
+app/retained/page.tsx:137: Same price at every turnover band.</p>
+app/retained/page.tsx:186: days, double the price, every time.</text>
+app/retained/page.tsx:188: minimum, all three tiers. Same price at every turnover band.</text>
+app/how-i-build/page.tsx:43: <h2>Three rungs, always in the same order.</h2>
+app/how-i-build/page.tsx:44: <p className="lede" style={{ marginTop: 16 }}>Every engagement climbs the same ladder, and it starts
+app/how-i-build/page.tsx:45: at the bottom every time. Not because the bottom rung is always right, but because you
+app/how-i-build/page.tsx:51: sub="Three rungs in fixed order ∩┐╜ every option priced"
+app/how-i-build/page.tsx:107: opacity=".9">Every option priced, including the ones I did not recommend.</text>
+app/how-i-build/page.tsx:229: what every option would have cost, not only the one you chose.</p>
+app/about/page.tsx:34: <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought in to
+app/clarity/page.tsx:8: description: 'One day on site, a written report within five, and the 3x Clarity Guarantee. A Clarity Audit is ∩┐╜1,500 and the way every Decoded Ops engagement starts.',
+app/clarity/page.tsx:178: <p>Every manual handoff and workaround, watched as it actually happens, not as it&apos;s
+app/deliver/page.tsx:45: <p className="lede" style={{ marginTop: 16 }}>Every Deliver engagement builds these alongside the
+app/deliver/page.tsx:59: <p>Every process that matters, named and described as it actually runs. Not as the org
+app/deliver/page.tsx:160: fontStyle="italic" opacity=".8">Then round again, for every process that
+app/deliver/page.tsx:205: <p className="lede">Every Deliver engagement starts here: a full day on site and a written plan,
+app/transform/page.tsx:92: <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
+app/transform/page.tsx:116: <li>Matching and re-keying done by hand, every time a range changed</li>
+app/transform/page.tsx:168: <p>Every vendor quotes against the same brief, and someone technical stays on your side
+app/process-quality-system/page.tsx:49: <h2>The same four steps, for every process that matters.</h2>
+app/process-quality-system/page.tsx:114: fontStyle="italic" opacity=".8">Then round again, for every process that
+app/process-quality-system/page.tsx:153: <p className="lead">Every Deliver engagement builds this alongside the project itself, so what you
+app/decoded-method/page.tsx:12: description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
+app/decoded-method/page.tsx:17: description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a Process Register, written SOPs, and an Improvement Log the client owns afterwards.',
+app/decoded-method/page.tsx:23: description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: Process Register, SOPs, Improvement Log.',
+app/decoded-method/page.tsx:39: <h1>The system behind every engagement.</h1>
+app/decoded-method/page.tsx:40: <p className="lead">Every Clarity, Deliver and Transform engagement runs on the same three-layer
+app/decoded-method/page.tsx:55: <p className="lead" style={{ marginTop: 16 }}>In that order, every time. Skip the first and you
+app/decoded-method/page.tsx:70: should. Every process that matters, named and described, before anything gets changed.</p>
+app/decoded-method/page.tsx:94: <p>Change doesn&rsquo;t stop at go-live. Every engagement leaves a running log of what&rsquo;s been
+app/apps/page.tsx:7: description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
+app/apps/page.tsx:12: description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
+app/apps/page.tsx:18: description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients before it went anywhere near a price list.',
+app/apps/page.tsx:31: were never going to do, proven at real clients before it went anywhere near a price list.</p>
+app/apps/page.tsx:57: <p>Every logo, every format, every version, with an audit trail. Customer proofing without
+app/apps/data-app/page.tsx:7: description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
+app/apps/data-app/page.tsx:12: description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
+app/apps/data-app/page.tsx:30: <h1>The jobs your ERP was never going to do.</h1>
+app/apps/data-app/page.tsx:33: different every time. This takes them in, cleans them, matches them to what you already
+app/apps/data-app/page.tsx:34: sell, and keeps your catalogue current across every channel.</p>
+app/apps/data-app/page.tsx:60: across channels. The jobs your platform was never built for. Ripping it out and starting
+app/apps/data-app/page.tsx:61: again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
+app/apps/data-app/page.tsx:126: <h3>Every channel stays current</h3>
+app/apps/data-app/page.tsx:209: <p className="table-foot">Every price on this page is what you&rsquo;d actually pay. I&rsquo;m not VAT
+app/apps/data-app/page.tsx:210: registered, so there&rsquo;s no VAT to add either. The full price list across every service is on
+app/apps/artwork-manager/page.tsx:30: <h1>Every logo, every format, every version.</h1>
+app/apps/artwork-manager/page.tsx:72: <p>Every format and every version of every logo in one place, with the thread library and
+app/apps/artwork-manager/page.tsx:129: <text x="150" y="424" className="p-mono" fontSize="16" opacity=".8">Every format, every</text>
+app/apps/crm/page.tsx:59: selling. It&apos;s the handoff. A quote that never became an order. An invoice raised against
+app/apps/crm/page.tsx:71: <p>Every prospect and every account in one record, not scattered across email threads and a
+app/case-studies/page.tsx:122: Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
+app/case-studies/page.tsx:151: Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything got built or implemented.
+
+# Todos
+[Γ£ô] Read all 16 files to identify violations
+[Γ£ô] Fix em dashes (ΓÇö) across all files
+[Γ£ô] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[Γ£ô] Fix 'end to end' / 'end-to-end'
+[Γ£ô] Fix banned consultant-speak
+[Γ£ô] Fix overclaims
+[Γ£ô] Fix specific known issues (clarity page, artwork-manager page)
+[Γ£ô] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[ΓÇó] Run npm run build and confirm zero errors
+[ ] Report final counts per file per category
+
+The overclaims check is clean. All "always"/"never"/"every" uses are either:
+- Checkable facts about Decoded Ops' own pricing/process rules (explicitly allowed)
+- Statements about the Clarity Audit/Deliver process (documented, checkable)
+- Properly qualified ("almost never")  
+No "biggest" or unverifiable market superlatives found. No fixes needed.
+$ Test-Path 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules'
+False
+
+$ $src = 'D:\apps\decoded-ops-website\node_modules'
+$dst = 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules'
+if (Test-Path $src) {
+    Copy-Item -Recurse $src $dst -ErrorAction Stop
+    Write-Host "Copied node_modules from $src"
+} else {
+    Write-Host "Source node_modules not found at $src"
+    exit 1
+}
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 60000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+
+$ Copy-Item -Recurse 'D:\apps\decoded-ops-website\node_modules' 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules'
+(no output)
+
+$ Test-Path 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules'
+True
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+The module 'react' was not found. Next.js requires that you include it in 'dependencies' of your 'package.json'. To add it, run 'npm install react'
+The module 'react-dom' was not found. Next.js requires that you include it in 'dependencies' of your 'package.json'. To add it, run 'npm install react-dom'
+unhandledRejection Error: Cannot find module 'react'
+Require stack:
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\server\app-render\dynamic-rendering.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\server\node-environment-extensions\io-utils.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\server\node-environment-extensions\random.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\server\node-environment.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\build\utils.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\build\analysis\get-page-static-info.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\build\route-discovery.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\build\index.js
+- D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\next\dist\cli\next-build.js
+    at ignore-listed frames {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\server\\app-render\\dynamic-rendering.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\server\\node-environment-extensions\\io-utils.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\server\\node-environment-extensions\\random.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\server\\node-environment.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\build\\utils.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\build\\analysis\\get-page-static-info.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\build\\route-discovery.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\build\\index.js',
+    'D:\\apps\\worktrees\\decoded-ops-website\\voice-core\\node_modules\\next\\dist\\cli\\next-build.js'
+  ]
+}
+
+$ Remove-Item -Recurse -Force 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules' -ErrorAction SilentlyContinue; robocopy 'D:\apps\decoded-ops-website\node_modules' 'D:\apps\worktrees\decoded-ops-website\voice-core\node_modules' /E /J /R:0 /W:0 /NP /NFL /NDL 2>&1
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 02 August 2026 11:22:44
+   Source : D:\apps\decoded-ops-website\node_modules\
+     Dest : D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\
+
+    Files : *.*
+	    
+  Options : *.* /NDL /NFL /S /E /DCOPY:DA /COPY:DAT /J /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :      3240      3240         0         0         0         0
+   Files :     32933     32933         0         0         0         0
+   Bytes :  577.61 m  577.61 m         0         0         0         0
+   Times :   0:00:28   0:00:26                       0:00:00   0:00:01
+
+
+   Speed :           22,472,195 Bytes/sec.
+   Speed :            1,285.869 MegaBytes/min.
+   Ended : 02 August 2026 11:23:12
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 19.7s
+  Running TypeScript ...
+  Finished TypeScript in 17.6s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 8.8s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read all 16 files to identify violations
+[Γ£ô] Fix em dashes (ΓÇö) across all files
+[Γ£ô] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[Γ£ô] Fix 'end to end' / 'end-to-end'
+[Γ£ô] Fix banned consultant-speak
+[Γ£ô] Fix overclaims
+[Γ£ô] Fix specific known issues (clarity page, artwork-manager page)
+[Γ£ô] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[Γ£ô] Run npm run build and confirm zero errors
+[ΓÇó] Report final counts per file per category
+
+Build succeeded: zero TypeScript errors, all pages compiled.
+$ Test-Path 'D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md'
+True
+
+ΓåÆ Read .context/loop-status.md
+
+ΓåÉ Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
+@@ -53,4 +53,37 @@
+ 
+ 2026-08-02T11:15:00+01:00 | fix-sectors | Restored dropped content on 3 of 9 sector pages | workwear: expanded features 3ΓåÆ5 (added Blank stock dependency, eCommerce disconnected from production), added 7-item "What I do" checklist, restored sector-specific CTA lede. promotional-merchandise: expanded features 3ΓåÆ5 (added Quote-to-order conversion costs, eCommerce disconnected from supply), added checklist, restored CTA lede. teamwear-clubwear: replaced unapproved TackleBag feature with 5 approved challenges (Squad-level personalisation data, Seasonal deadline pressure, Kit range churn, Sponsor logo management, The proof and approval bottleneck), added checklist, restored CTA lede. SectorPageDS.tsx: widened features type from tuple [Feature,Feature,Feature] to Feature[], changed grid from grid--3 to grid--2, added optional checklistHeading + checklist props with "What I do" section. SectorPageDS.module.css: added .checklist styles from mockup. All 9 sector pages build clean (exit 0, zero TypeScript errors).
+ 
+ 2026-08-02T17:00:00+01:00 | plate-sectors | PHASE 2: Port plate diagrams for all 9 sector pages | Built. Mechanism: added optional `plate?: ReactNode` prop to SectorPageDS.tsx interface, rendered between hero and features in a g-navy/plate-scroll/plate-frame wrapper. For 4 delegated pages (workwear DO-ART-108, teamwear-clubwear DO-ART-109, schoolwear DO-ART-110, promotional-merchandise DO-ART-111): imported Plate, passed as `plate` prop. For 5 inline pages (garment-decoration DO-ART-107, print-promotional DO-ART-113, signs-graphics DO-ART-114, awards-engraving DO-ART-115, labels-packaging DO-ART-116): imported Plate, inserted plate section between hero and challenges in each page file. SVG content ported verbatim from decoded-marketing HTML mockups, kebab-case attrs converted to camelCase, class= to className=. All 9 sectors render distinct drawing numbers.
++
++2026-08-02T12:15:00+01:00 | voice-audit-lane-d | Voice/brand-language audit ΓÇö 16 flagship pages fixed | npm run build exit 0, zero TypeScript errors.
++
++PER-FILE RESULTS:
++
++| # | File | Em dashes | Pronoun fixes | End-to-end | Known issues |
++|---|---|---|---|---|---|
++| 1 | app/page.tsx | 15 | 0 | 0 | ΓÇö |
++| 2 | app/pricing/page.tsx | 16 | 0 | 0 | ΓÇö |
++| 3 | app/retained/page.tsx | 10 | 0 | 0 | ΓÇö |
++| 4 | app/how-i-build/page.tsx | 14 | 0 | 0 | ΓÇö |
++| 5 | app/about/page.tsx | 11 | 0 | 0 | ΓÇö |
++| 6 | app/clarity/page.tsx | 11 | 1 (WeΓåÆI walk you through it) | 3 | Debrief para: "We walk through it together, so you can push back on it while I'm still in the room" ΓåÆ "I walk you through it, so you can push back while I'm still in the room." |
++| 7 | app/deliver/page.tsx | 14 | 0 | 1 | ΓÇö |
++| 8 | app/transform/page.tsx | 16 | 0 | 2 | ΓÇö |
++| 9 | app/process-quality-system/page.tsx | 12 | 0 | 1 | ΓÇö |
++| 10 | app/decoded-method/page.tsx | 10 | 0 | 0 | Comment + metadata + Plate SVG text |
++| 11 | app/apps/page.tsx | 7 | 0 | 0 | ΓÇö |
++| 12 | app/apps/data-app/page.tsx | 6 | 0 | 0 | ΓÇö |
++| 13 | app/apps/artwork-manager/page.tsx | 12 | 1 (weΓåÆthat's the end of it) | 0 | CTA para: "I'll tell you that and we'll stop there" ΓåÆ "I'll tell you that, and that's the end of it." |
++| 14 | app/apps/commerce/page.tsx | 11 | 0 | 0 | ΓÇö |
++| 15 | app/apps/crm/page.tsx | 12 | 0 | 0 | ΓÇö |
++| 16 | app/case-studies/page.tsx | 4 | 0 | 0 | ΓÇö |
++
++TOTALS: 181 em dashes replaced (74 literal U+2014 + 107 &mdash; entities, both in visible copy and metadata), 2 pronoun fixes, 7 "end to end" ΓåÆ "from start to finish"/"fully automated", 0 banned consultant-speak found, 0 overclaims requiring action.
++
++VERIFIED: $([char]0x2014) grep = 0 hits, &mdash; grep = 0 hits, "end to end"/"end-to-end" = 0 hits, "we"/"We"/"our"/"Our"/"us"/"Us" = 0 hits in visible copy across all 16 files.
++
++KNOWN-SPECIFIC-FINDING CONFIRMATION:
++- clarity/page.tsx Debrief: now reads "I walk you through it, so you can push back while I'm still in the room. Then it's yours: to act on with me, or without me." ΓÇö first person throughout, reads naturally.
++- artwork-manager/page.tsx CTA: now reads "I'll tell you that, and that's the end of it." ΓÇö single voice, reads naturally.
++
++OVERCLAIMS AUDIT: All "always"/"never"/"every" instances reviewed ΓÇö all are either checkable facts about Decoded Ops' own pricing/process rules (explicitly permitted), statements about the audit/delivery process (documented and checkable), or properly qualified ("almost never"). Zero "biggest" hits. No fixes required.
+
+
+# Todos
+[Γ£ô] Read all 16 files to identify violations
+[Γ£ô] Fix em dashes (ΓÇö) across all files
+[Γ£ô] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[Γ£ô] Fix 'end to end' / 'end-to-end'
+[Γ£ô] Fix banned consultant-speak
+[Γ£ô] Fix overclaims
+[Γ£ô] Fix specific known issues (clarity page, artwork-manager page)
+[Γ£ô] Verify: grep for ΓÇö, we/our/us, end-to-end, banned words
+[Γ£ô] Run npm run build and confirm zero errors
+[Γ£ô] Report final counts per file per category
+
+## Voice audit complete | 16 files | `npm run build` exit 0, zero TypeScript errors
+
+**Totals:** 181 em dashes replaced, 2 pronoun fixes, 7 "end to end" removals, 0 banned consultant-speak found, 0 overclaims requiring action.
+
+**Top-line details per file:**
+
+| File | Em dashes | Pronouns | End-to-end |
+|---|---|---|---|
+| `clarity/page.tsx` | 11 | 1 ("We walk through it together" ΓåÆ "I walk you through it") | 3 |
+| `artwork-manager/page.tsx` | 12 | 1 ("we'll stop there" ΓåÆ "that's the end of it") | 0 |
+| `page.tsx` | 15 | 0 | 0 |
+| `pricing/page.tsx` | 16 | 0 | 0 |
+| `retained/page.tsx` | 10 | 0 | 0 |
+| `how-i-build/page.tsx` | 14 | 0 | 0 |
+| `about/page.tsx` | 11 | 0 | 0 |
+| `deliver/page.tsx` | 14 | 0 | 1 |
+| `transform/page.tsx` | 16 | 0 | 2 |
+| `process-quality-system/page.tsx` | 12 | 0 | 1 |
+| `decoded-method/page.tsx` | 10 | 0 | 0 |
+| `apps/page.tsx` | 7 | 0 | 0 |
+| `apps/data-app/page.tsx` | 6 | 0 | 0 |
+| `apps/commerce/page.tsx` | 11 | 0 | 0 |
+| `apps/crm/page.tsx` | 12 | 0 | 0 |
+| `case-studies/page.tsx` | 4 | 0 | 0 |
+
+**Verification:** Grep for `U+2014` = 0 hits, `&mdash;` = 0 hits, `we / We / our / Our / us / Us` = 0 hits, `end.to.end` = 0 hits across all 16 files.
+
+**Both known-specific fixes confirmed natural:**
+
+- **clarity Debrief:** "I walk you through it, so you can push back while I'm still in the room."
+- **artwork-manager CTA:** "I'll tell you that, and that's the end of it."

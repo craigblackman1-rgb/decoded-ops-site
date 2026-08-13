@@ -1,0 +1,244 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build · deepseek-v4-pro
+
+# Todos
+[•] Check finding 1: Track references in app/problems/buy-vs-build/page.tsx
+[ ] Check finding 2: Tracker reference on homepage at line 423
+[ ] Check finding 3: Tracker references in app/how-i-build/page.tsx
+[ ] Check finding 4: Discovery Day ref and broken sentence in app/retained/page.tsx
+[ ] Check finding 5: eyebrow vs title mismatch in app/apps/page.tsx
+[ ] Check finding 6: Dead code components ProblemPage.tsx and SectorPage.tsx
+[ ] Check finding 7: Em dash count in live code
+[ ] Check finding 8: not X but Y parallelism in 4 files
+[ ] Check finding 9: banned word unlock in location page
+[ ] Check finding 10: sector page secondary CTAs
+[ ] Check finding 11: sitemap slug arrays vs disk
+[ ] Check finding 12: llms.txt prices and product names
+[ ] Check finding 13: duplicate metadata in pricing and contact
+[ ] Check finding 14: h1 on pricing and contact pages
+[ ] Write report file .context/b1-rediff-2026-08-10.md
+
+→ Read app/problems/buy-vs-build/page.tsx
+→ Read app/page.tsx [offset=415, limit=20]
+→ Read app/how-i-build/page.tsx
+→ Read app/retained/page.tsx [offset=200, limit=25]
+→ Read app/apps/page.tsx
+→ Read public/llms.txt
+→ Read app/sitemap.ts
+Let me start by reading the key files in parallel.
+→ Read components/ProblemPage.tsx
+→ Read components/SectorPage.tsx
+→ Read components/ProblemPageDS.tsx [offset=30, limit=15]
+→ Read app/case-studies/hanicks/page.tsx [offset=68, limit=12]
+→ Read app/problems/bottleneck-growth/page.tsx [offset=63, limit=12]
+→ Read app/problems/disaster-recovery/page.tsx [offset=67, limit=12]
+→ Read app/how-i-build/page.tsx [offset=37, limit=10]
+→ Read app/locations/tech-audit/[location]/page.tsx [offset=54, limit=12]
+→ Read app/pricing/page.tsx [limit=30]
+✗ Read app/pricing/layout.tsx failed
+Error: File not found: D:\apps\worktrees\decoded-ops-website\lane-b1-rediff\app\pricing\layout.tsx
+→ Read app/contact/page.tsx [limit=30]
+→ Read app/contact/layout.tsx
+✱ Grep "from ['"]@/components/ProblemPage['"]|from ['"]\.\.\/components\/ProblemPage['"]|from ['"]\.\/components\/ProblemPage['"]|import ProblemPage|import SectorPage" 0 matches
+✱ Grep "<h1" in app/pricing · 1 match
+✱ Grep "<h1" in app/contact · 1 match
+
+$ rg --count '—' --include='*.tsx' --include='*.ts' --include='*.md' --glob='!node_modules/**' --glob='!.context/**' app/ components/ data/ lib/ | where { $_ -match ':\d+$' }
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ Get-ChildItem -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-b1-rediff\app\sectors" -Directory | ForEach-Object { $_.Name } | Sort-Object
+awards-engraving
+garment-decoration
+labels-packaging
+print-promotional
+promotional-merchandise
+schoolwear
+signs-graphics
+teamwear-clubwear
+workwear
+
+$ Get-ChildItem -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-b1-rediff\app\problems" -Directory | ForEach-Object { $_.Name } | Sort-Object
+ai-paralysis
+bottleneck-growth
+buy-vs-build
+cant-scale-operations
+data-scattered
+disaster-recovery
+ecommerce-not-connected
+erp-implementation-failure
+inventory-blind
+legacy-system
+manual-workarounds
+no-ops-owner
+ops-in-owners-head
+seasonal-peaks
+slow-processes
+spreadsheet-addiction
+systems-dont-talk
+wrong-erp-software
+
+$ Get-ChildItem -LiteralPath "D:\apps\worktrees\decoded-ops-website\lane-b1-rediff\app\tools" -Directory | ForEach-Object { $_.Name } | Sort-Object
+ai-readiness-check
+automation-roi-calculator
+downtime-cost-calculator
+ops-health-score
+rto-calculator
+should-i-replace-erp
+
+→ Read app/retained/page.tsx [offset=205, limit=10]
+Now let me gather the remaining data in parallel.
+✱ Grep "—" in app · 100 matches
+✱ Grep "—" in components · 100 matches
+✱ Grep "Import.*ProblemPage|from.*ProblemPage" 7 matches
+✱ Grep "Import.*SectorPage|from.*SectorPage" 10 matches
+• Read all sector page files Explore Agent
+→ Read app/pricing/page.tsx [offset=35, limit=20]
+→ Read app/contact/ContactClient.tsx [offset=70, limit=15]
+✓ Read all sector page files Explore Agent
+
+$ $dead = @('components\ProblemPage.tsx', 'components\SectorPage.tsx'); $appResults = Select-String -Path "app\**\*.tsx" -Pattern '—' -SimpleMatch | Where-Object { -not ($_.Path -match 'node_modules' -or $_.Path -match '\.context') }; $compResults = Select-String -Path "components\**\*.tsx" -Pattern '—' -SimpleMatch | Where-Object { -not ($_.Path -match 'node_modules') }; $dataResults = Select-String -Path "data\**\*.ts" -Pattern '—' -SimpleMatch | Where-Object { -not ($_.Path -match 'node_modules') }; $libResults = Select-String -Path "lib\**\*.ts" -Pattern '—' -SimpleMatch | Where-Object { -not ($_.Path -match 'node_modules') }; $allLive = @($appResults) + @($compResults) + @($dataResults) + @($libResults); $liveCount = ($allLive | Where-Object { $dead -notcontains (Split-Path $_.Path -Leaf.Replace('.tsx','').Replace('.ts','')) }).Count; Write-Output "Total em dash lines in app/components/data/lib (live code): $($allLive.Count)"; Write-Output "Lines in dead components: $(($allLive | Where-Object { $dead -contains (Split-Path $_.Path -Leaf.Replace('.tsx','').Replace('.ts','')) }).Count)"; Write-Output "Live code em dash lines: $liveCount"
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Total em dash lines in app/components/data/lib (live code): 32
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Split-Path: A positional parameter cannot be found that accepts argument '.Replace'.
+Lines in dead components: 0
+Live code em dash lines: 0
+
+✱ Grep "not .* but" in app/how-i-build · 0 matches
+
+$ $files = Select-String -LiteralPath 'app\how-i-build\page.tsx' -Pattern '—'; Write-Output "how-i-build/page.tsx em dashes: $($files.Count)"; $lines = $files | ForEach-Object { "$($_.LineNumber): $($_.Line.Trim())" }; $lines
+how-i-build/page.tsx em dashes: 0
+
+$ $allDashLines = Get-ChildItem -Path app, components, data, lib -Recurse -Include *.tsx,*.ts | Where-Object { $_.FullName -notmatch 'node_modules' } | Select-String -Pattern '—' -SimpleMatch; $deadFiles = @('ProblemPage.tsx', 'SectorPage.tsx'); $deadLines = $allDashLines | Where-Object { $deadFiles -contains (Split-Path $_.Path -Leaf) }; $liveLines = $allDashLines | Where-Object { -not ($deadFiles -contains (Split-Path $_.Path -Leaf)) }; Write-Output "Dead component lines with em dash: $($deadLines.Count)"; Write-Output "Live code lines with em dash: $($liveLines.Count)"; Write-Output "`n--- Dead component breakdown ---"; $deadLines | Group-Object { Split-Path $_.Path -Leaf } | ForEach-Object { Write-Output "  $($_.Name): $($_.Count)" }; Write-Output "`n--- Live code breakdown by file (top 20) ---"; $liveLines | Group-Object { Split-Path $_.Path -Leaf } | Sort-Object Count -Descending | Select-Object -First 20 | ForEach-Object { Write-Output "  $($_.Name): $($_.Count)" }; Write-Output "`nTotal live files with em dashes: $((($liveLines | Group-Object { $_.Path }).Name | Sort-Object -Unique).Count)"
+Dead component lines with em dash: 16
+Live code lines with em dash: 546
+
+--- Dead component breakdown ---
+  ProblemPage.tsx: 10
+  SectorPage.tsx: 6
+
+--- Live code breakdown by file (top 20) ---
+  hanicks-proposal.ts: 75
+  cobra-workwear-proposal.ts: 73
+  tacklebag-proposal-v2.ts: 65
+  scotshirts-proposal.ts: 57
+  tacklebag-proposal.ts: 56
+  cwear-proposal.ts: 47
+  page.tsx: 26
+  Header.tsx: 11
+  DiscoveryDaySchematic.tsx: 7
+  AcceptanceSection.tsx: 7
+  PrintPromotionalSchematic.tsx: 6
+  email.ts: 6
+  DemoSection.tsx: 6
+  SystemsDontTalkSchematic.tsx: 5
+  CantScaleSchematic.tsx: 5
+  RoadmapSection.tsx: 5
+  WrongErpSchematic.tsx: 5
+  AwardsEngravingSchematic.tsx: 4
+  GarmentDecorationSchematic.tsx: 4
+  ProblemPageDS.tsx: 4
+
+Total live files with em dashes: 63
+
+✱ Grep "not.{0,50}but" in app/how-i-build · 0 matches
+→ Read app/pricing/page.tsx [offset=55, limit=200]
+→ Read app/pricing/page.tsx [offset=255, limit=90]
+→ Read app/case-studies/hanicks/page.tsx [offset=70, limit=8]
+→ Read app/problems/bottleneck-growth/page.tsx [offset=66, limit=12]
+→ Read app/problems/disaster-recovery/page.tsx [offset=68, limit=10]
+
+# Todos
+[✓] Check finding 1: Track references in app/problems/buy-vs-build/page.tsx
+[✓] Check finding 2: Tracker reference on homepage at line 423
+[✓] Check finding 3: Tracker references in app/how-i-build/page.tsx
+[✓] Check finding 4: Discovery Day ref and broken sentence in app/retained/page.tsx
+[✓] Check finding 5: eyebrow vs title mismatch in app/apps/page.tsx
+[✓] Check finding 6: Dead code components ProblemPage.tsx and SectorPage.tsx
+[✓] Check finding 7: Em dash count in live code
+[✓] Check finding 8: not X but Y parallelism in 4 files
+[✓] Check finding 9: banned word unlock in location page
+[✓] Check finding 10: sector page secondary CTAs
+[✓] Check finding 11: sitemap slug arrays vs disk
+[✓] Check finding 12: llms.txt prices and product names
+[✓] Check finding 13: duplicate metadata in pricing and contact
+[✓] Check finding 14: h1 on pricing and contact pages
+[•] Write report file .context/b1-rediff-2026-08-10.md
+
+Now I have all the data. Let me compile the report.
+→ Read .context
+
+← Write .context/b1-rediff-2026-08-10.md
+Wrote file successfully.
+
+Report written to `.context/b1-rediff-2026-08-10.md`.
+
+**Summary:** 12 of 14 findings remain open. Only two are resolved:
+
+- **Finding 8** (partially): the `how-i-build:42` "not X, but Y" instance is gone
+- **Finding 14**: both `/pricing` and `/contact` now have `<h1>` elements
+
+The 12 still-open items span 6 "Track"/"Tracker" references (3 files), dead code components, a stale product name ("Discovery Day"), a sitemap missing 4 problem slugs, a misplaced eyebrow/plate count mismatch, 546 em-dash lines, and a stale `llms.txt` with 5 price discrepancies.
