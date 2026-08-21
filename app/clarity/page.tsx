@@ -29,9 +29,9 @@ export default function ClarityPage() {
           <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
           <p className="lede">A free 60-minute call, then one full day inside your business: six areas
-            covered, followed from start to finish rather than just discussed. £1,500, and if I can&apos;t find three
-            times the fee in the first hour, the day is free. A written report within five working
-            days, walked through with you in person.</p>
+            covered, followed from start to finish rather than just discussed. £1,500, covered by the
+            3&times; guarantee below: if the report doesn&apos;t find at least three times the fee, it&apos;s
+            refunded in full. A written report within five working days, walked through with you in person.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a free 60-min call</Link>
           </div>

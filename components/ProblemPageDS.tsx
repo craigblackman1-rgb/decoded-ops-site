@@ -65,9 +65,6 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
               <Link className="btn btn--primary" href="/contact">Talk about your situation</Link>
               <Link className="btn btn--outline" href="/clarity">See how the audit works</Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="underline text-sm inline-block mt-3" style={{ color: 'var(--do-text-secondary)' }}>
-              Or book a call directly
-            </a>
           </div>
           {heroGraphic && (
             <div className="plate-frame" style={{ marginTop: 0 }}>
@@ -80,8 +77,8 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       {/* THE PROBLEM STATED */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">Does this sound familiar?</span>
-          <h2>The problem stated</h2>
+          <span className="eyebrow">The symptoms</span>
+          <h2>Does this sound familiar?</h2>
           <div className="hair" />
           <div className="grid grid--2">
             {symptoms.map((s, i) => (
@@ -97,9 +94,9 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       <section className="g-tint">
         <div className="wrap">
           <span className="eyebrow">Why it happens</span>
-          <h2>What it costs</h2>
+          <h2>Where this actually comes from</h2>
           <div className="hair" />
-          <p className="lede">Understanding why the problem exists is the first step to fixing it, and knowing whether you&apos;re looking at a system problem or a process problem changes everything.</p>
+          <p className="lede">Most versions of this problem trace back to the same handful of causes. Knowing which one you have changes what fixing it costs.</p>
           <div className="grid grid--2">
             {causes.map((c, i) => (
               <article className="card" key={c.title}>

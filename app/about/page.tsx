@@ -167,8 +167,7 @@ export default function AboutPage() {
         <div className="wrap">
           <span className="eyebrow">Where this comes from</span>
           <h2>Three beats, not a straight line.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round,
-            which is most of why the audit works the way it does.</p>
+          <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round.</p>
 
           <div className="grid grid--3">
             <div className={s.feature} data-od-id="beat-warehouse">

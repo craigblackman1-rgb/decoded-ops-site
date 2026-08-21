@@ -245,21 +245,22 @@ export default function PricingPage() {
           </div>
           <div className="inset">
             <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
-            costs depends entirely on what it has to do: how many supplier feeds, how many sales
-            channels, which machines and formats, and whether it has to talk to a platform you already
-            run. Two businesses buying the same app can be a long way apart on all four. It would not be
-            fair of me to quote a number before I know the extent of what you actually need, so a
-            conversation about your setup comes first and the quote comes after it, written for your
-            business.
+            costs depends on four things:
+            <ul style={{ margin: '12px 0 12px', paddingLeft: 22 }}>
+              <li>how many supplier feeds</li>
+              <li>how many sales channels</li>
+              <li>which machines and formats</li>
+              <li>whether it talks to a platform you already run</li>
+            </ul>
+            Two businesses buying the same app can be a long way apart on all four, so the conversation
+            about your setup comes first and the quote comes after it, written for your business.
           </div>
 
-          <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms while no
-            client has taken first delivery: the first six months of support waived, in exchange for a
-            named reference and accepting that some features arrive during the engagement. Stated
-            plainly, not a discount dressed as an offer.</p>
-          <p className="table-foot">A full custom build is quoted the same way, and for the same reason.
-            If nothing on the market fits, that&rsquo;s a Clarity Audit conversation and a quote written for
-            your business, never a row on a table.</p>
+          <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms until first
+            delivery: six months of support waived, in exchange for a named reference and accepting that
+            some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
+          <p className="table-foot">A full custom build is quoted the same way. If nothing on the market
+            fits, that&rsquo;s a Clarity Audit conversation, never a row on a table.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
             <Link className="btn btn-primary" href="/apps/data-app">See how the Data App works</Link>
