@@ -96,13 +96,15 @@ export default function HomePage() {
               <div className="stage-copy">
                 <span className="eyebrow">Operations &amp; technology consultancy</span>
                 <h1>The penny drop moment.</h1>
-                <p>You know your business is losing money somewhere. You can feel the friction. The
-                  workarounds. The systems that don&rsquo;t talk to each other. 25 years inside print,
-                  embroidery and decoration businesses says the same patterns repeat, and they&rsquo;re
-                  fixable.</p>
-                <p>Independent operations and technology consultancy for UK print, embroidery, workwear
-                  and promotional merchandise businesses. A Clarity Audit gets you a full day on site and
-                  a written plan. Plain English. No jargon. No vendor agenda.</p>
+                <p>Start with a Clarity Audit. One day inside your business, six areas followed from
+                  start to finish, and within five working days a written plan that tells you what&rsquo;s
+                  broken, what it&rsquo;s costing you, which systems actually fit, and what to fix first.
+                  That&rsquo;s the penny drop: you finally see what&rsquo;s happening, why, and what to do
+                  about it.</p>
+                <p>The plan is yours to act on, with me or without me. I&rsquo;ve spent 25 years inside
+                  print, embroidery, workwear and promotional merchandise businesses, so I can usually
+                  second-guess your problems before you&rsquo;ve finished describing them. Plain English.
+                  No jargon. No vendor agenda.</p>
                 <div className="btn-row">
                   <Link className="btn btn--primary" href="/clarity">See how a Clarity Audit works</Link>
                   <Link className="btn btn--outline" href="/contact">Book a free 60 minute call</Link>
