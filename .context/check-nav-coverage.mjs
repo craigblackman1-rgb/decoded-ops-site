@@ -3,12 +3,12 @@
 // href from Header.tsx + Footer.tsx, and reports both directions:
 //   ORPHANED  — a real page nothing in the nav links to
 //   BROKEN    — a nav link pointing at a route that does not exist
-// Run: node check-nav-coverage.mjs <repo-root>
+// Run: node check-nav-coverage.mjs [repo-root]  (root defaults to the repo this file lives in)
 import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative, sep } from 'node:path';
+import { join, relative, sep, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = process.argv[2];
-if (!root) { console.error('usage: node check-nav-coverage.mjs <repo-root>'); process.exit(2); }
+const root = process.argv[2] ? resolve(process.cwd(), process.argv[2]) : resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const appDir = join(root, 'app');
 
