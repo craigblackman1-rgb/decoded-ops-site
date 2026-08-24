@@ -28,9 +28,9 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Transform</span>
           <h1>The plan, executed.</h1>
-          <p className="lede">Transform isn&apos;t a separate product. It&apos;s what happens after a Clarity Audit
-            finds something that needs proper change, not a quick fix. The same diagnostic discipline,
-            run at programme scale, over weeks rather than a day.</p>
+          <p className="lede">Transform is what happens after a Clarity Audit finds something that needs
+            proper change, not a quick fix. I take that plan and run it: ERP, eCommerce and process
+            redesign, run as one programme over weeks rather than a day.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
           </div>

@@ -32,7 +32,7 @@ export default function ProcessQualitySystemPage() {
       <section className="g-off">
         <div className="container hero-center">
           <p className="eyebrow">Process &amp; Quality System</p>
-          <h1>What you&rsquo;re actually left with.</h1>
+          <h1>How your business keeps improving after I leave.</h1>
           <p className="lead">Not a report that sits in a drawer. A working system for how the business
             documents, checks, and improves its own processes, built during the engagement and owned by
             you after it.</p>

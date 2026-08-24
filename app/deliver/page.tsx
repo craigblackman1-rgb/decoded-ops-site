@@ -27,10 +27,11 @@ export default function DeliverPage() {
       <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
         <div className="wrap">
           <span className="eyebrow">Deliver</span>
-          <h1>The Process &amp; Quality System. The thing you&apos;re left with.</h1>
-          <p className="lede">Deliver is the implementation phase: someone technical on your side of the
-            table for the whole build, from brief through to handover. What you keep afterwards isn&apos;t
-            just something that works. It&apos;s a documented system for how the business runs it.</p>
+          <h1>I get it built. And you keep the system that runs it.</h1>
+          <p className="lede">Deliver is the implementation phase after a Clarity Audit. I sit on your side
+            of the table for the whole build, from brief through to handover, and I leave behind a
+            documented Process &amp; Quality System, so the business can run what&apos;s built long after
+            I&apos;ve gone.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
           </div>

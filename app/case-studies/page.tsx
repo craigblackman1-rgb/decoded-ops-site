@@ -118,7 +118,7 @@ export default function CaseStudiesPage() {
           <div className="wrap">
             <div style={{ maxWidth: '740px', margin: '0 auto' }}>
               <span className="eyebrow">Client Work</span>
-              <h1>What I&apos;m actually building right now</h1>
+              <h1>Proof, not promises.</h1>
               <p className="lede">
                 Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
               </p>
