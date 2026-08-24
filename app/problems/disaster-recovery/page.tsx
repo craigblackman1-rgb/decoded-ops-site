@@ -70,24 +70,24 @@ export default function DisasterRecoveryPage() {
    <ProblemPageDS
    problem="No disaster recovery plan"
    headline="Your systems go down on a Tuesday morning. ||When do you get back up?||"
-    intro="Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. They care. DR just feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
+    intro="Most print, embroidery, and decoration businesses have no plan for what happens when their systems go down. They care. It just feels like something for big IT departments. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
    heroGraphic={<DisasterRecoverySchematic />}
    symptoms={[
-    "You don't have a written plan for what happens when critical systems go down",
+    "You have no written plan for what to do when your critical systems go down",
     "You assume your hosting provider or software vendor handles backup and recovery",
-    "Recovery from a previous outage took days, not hours",
-    "There are backup processes documented somewhere, but you're not sure they still work",
-    "You couldn't answer 'how long can we afford to be offline?' without guessing",
-    "Key operational data exists in only one place",
+    "Recovery from your last outage took days, not hours",
+    "There are backup processes written somewhere, but you're not sure they still work",
+    "You couldn't say how long you can afford to be offline without guessing",
+    "Key operational data lives in only one place",
     "The last time you tested a restore, it didn't work",
    ]}
    causes={[
-    { title: 'DR is postponed until it happens', body: "Disaster recovery planning always feels like a problem for next quarter. The business is running, the system is working, and there are more immediate things to fix. The cost of that deferral only becomes visible when the system stops." },
-    { title: 'Assuming the vendor handles it', body: "Most software vendors and hosting providers have uptime guarantees, but those rarely cover your specific data, your specific recovery sequence, or your specific acceptable downtime. Their backup is not your DR plan. Backup and disaster recovery are different things. A backup stores your data. A disaster recovery plan defines how you restore operations, which systems come back first, in what order, within what time target. Cloud backup is not a DR plan." },
-    { title: 'No one is accountable for recovery', body: "In businesses without a dedicated IT role, the question 'who is responsible for getting us back online?' doesn't have a clear answer. Come outage day, everyone assumes someone else is handling it." },
-    { title: 'Cost of downtime is invisible until it happens', body: "Lost orders, halted production, missed despatch deadlines, overtime to catch up, and reputational damage, none of these appear on a balance sheet until the outage is over. By then the cost has already been incurred. For a small manufacturer, the RTO (recovery time objective) and RPO (recovery point objective) are rarely defined, which means nobody knows how much downtime is acceptable until they are in the middle of it." },
+    { title: 'Disaster planning keeps getting postponed', body: "Planning for a disaster always feels like something to do later. The business is running, the systems are working, and there are more pressing things to fix. The cost of putting it off only shows up when the systems stop." },
+    { title: 'Assuming the vendor handles it', body: "Most vendors have uptime guarantees, but those rarely cover your data, your recovery order, or how long you can afford to be down. Their backup is not your recovery plan. A backup stores your data. A recovery plan says which systems come back first, in what order, and how fast." },
+    { title: 'No one is accountable for recovery', body: "In businesses without a dedicated IT person, 'who gets us back online?' has no clear answer. On outage day, everyone assumes someone else is handling it." },
+    { title: 'The cost of downtime is invisible until it happens', body: "Lost orders, halted production, missed deadlines, overtime to catch up, damaged reputation. None of it shows on a balance sheet until the outage is over, by which point the cost has already been paid. Most small businesses have never worked out how long they can afford to be down." },
    ]}
-   howIHelp="I assess your current technology stack, backup architecture, and recovery capabilities, then give you a practical DR plan built around your actual business. Not a 50-page IT document. A clear, prioritised set of actions covering what to protect first, how fast you can realistically recover each system, and what it would cost to reduce that recovery time. Plus a simple test schedule so you know the plan works before you need it."
+   howIHelp="I look at your current systems, your backups, and how you'd actually recover, then give you a practical recovery plan built around your business. Not a 50-page IT document. A clear, prioritised list covering what to protect first, how fast each system can realistically be recovered, and what it would cost to recover faster. Plus a simple test schedule so you know the plan works before you need it."
   
    slug="disaster-recovery"
    targetService={problemRouting['disaster-recovery'].targetService}

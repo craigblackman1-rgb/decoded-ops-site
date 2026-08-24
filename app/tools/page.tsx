@@ -45,25 +45,25 @@ const tools = [
   {
     title: 'AI Readiness Check',
     description:
-      'Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your foundation first.',
+      'Six quick questions to find out whether your business is ready for AI, or whether you need to fix your foundation first.',
     href: '/tools/ai-readiness-check',
   },
   {
     title: 'Ops Health Score',
     description:
-      'Rate your business across five operational dimensions to see where you stand, and where to focus first.',
+      'Rate your business across five areas to see where you stand, and where to focus first.',
     href: '/tools/ops-health-score',
   },
   {
     title: 'Downtime Cost Calculator',
     description:
-      'Calculate the annual cost of system outages across labour and lost revenue.',
+      'Work out what system outages cost you each year in staff time and lost revenue.',
     href: '/tools/downtime-cost-calculator',
   },
   {
     title: 'RTO Calculator',
     description:
-      'Understand the financial value of faster recovery from system failures.',
+      'See what faster recovery from system failures is worth in pounds.',
     href: '/tools/rto-calculator',
   },
   {
@@ -88,7 +88,7 @@ export default function ToolsPage() {
           <span className="eyebrow">Free tools</span>
           <h1>Calculate your operational cost</h1>
           <p className="lede" style={{ margin: '0 auto' }}>
-            Free tools to quantify operational inefficiency, so you know exactly what it&apos;s costing you.
+            Free tools that put a number on what your operation is costing you.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function ToolsPage() {
           <h2>Six calculators, six numbers you can actually use.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            What each tool hands back, so you can pick the one that answers your question. Every calculator is built to return a concrete number, not a vague recommendation.
+            What each tool hands back, so you can pick the one that answers your question. Every calculator returns a real number, not a vague suggestion.
           </p>
 
           <div className="plate-scroll">

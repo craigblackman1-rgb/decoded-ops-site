@@ -44,8 +44,8 @@ export default function AppsPage() {
                 <span className="chip chip--live">Live &middot; two deployments</span>
                 <h3 style={{ marginTop: 14 }}>Decoded Data App</h3>
               </div>
-              <p>Supplier feeds in, clean product data out, stock and bins on the warehouse floor.
-                Running today at Hanicks and TackleBag.</p>
+              <p>Supplier feeds in, clean product data out, stock and bins right on the warehouse floor.
+                Live today at Hanicks and TackleBag.</p>
               <span className="go">See how it works</span>
             </Link>
 
@@ -54,8 +54,8 @@ export default function AppsPage() {
                 <span className="chip chip--pre">Pre-release &middot; founding client terms</span>
                 <h3 style={{ marginTop: 14 }}>Decoded Artwork Manager</h3>
               </div>
-              <p>Every logo, every format, every version, with an audit trail. Customer proofing without
-                the email back-and-forth.</p>
+              <p>Every logo, every format, every version, with an audit trail. Customers approve their own
+                proofs, no email back-and-forth.</p>
               <span className="go">See how it works</span>
             </Link>
 
@@ -75,8 +75,8 @@ export default function AppsPage() {
                 <span className="chip chip--pre">Founding client terms</span>
                 <h3 style={{ marginTop: 14 }}>Decoded CRM</h3>
               </div>
-              <p>Leads, companies, contacts and deals through to quotes, contracts, sales orders and
-                invoices, built around how this sector actually sells.</p>
+              <p>Leads, companies, contacts and deals, through to quotes, contracts, sales orders and
+                invoices. Built around how this sector actually sells.</p>
               <span className="go">See how it works</span>
             </Link>
           </div>
@@ -165,7 +165,7 @@ export default function AppsPage() {
           <p className="eyebrow">Before any of this</p>
           <h2>Software is the last answer, not the first.</h2>
           <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>If a platform already on the market does
-            the job, that&rsquo;s what goes on the table: named, priced, and with no commission in it for me.
+            the job, that&rsquo;s what goes on the table: named, priced, no commission in it for me.
             These three exist because for a specific set of jobs, nothing on the market did.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
             <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>

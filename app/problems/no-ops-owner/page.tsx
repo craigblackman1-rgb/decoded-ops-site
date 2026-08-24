@@ -70,24 +70,24 @@ export default function NoOpsOwnerPage() {
    <ProblemPageDS
    problem="No operations owner"
    headline="Every ops decision ends up on your desk. ||Who is running the business day to day?||"
-   intro="In many growing businesses, operations has no owner. The MD handles the big decisions, department heads handle their areas, and everything in between, the processes that cross teams, the systems that connect departments, the improvements that nobody owns, falls through the cracks. A head of operations for small business does not have to be a full-time hire. Fractional operations leadership gives you the accountability and the thinking without the overhead."
+   intro="In many growing businesses, nobody owns operations. The MD handles the big decisions, department heads handle their own areas, and everything in between, the processes that cross teams, the systems that connect departments, the improvements nobody's responsible for, falls through the cracks. You don't need a full-time hire to fix that. A part-time operations lead gives you the accountability and the thinking without the overhead."
    heroGraphic={<NoOpsOwnerSchematic />}
    symptoms={[
-    "Operational decisions that affect multiple departments get made by committee or not at all",
-    "The same operational problems keep resurfacing with no permanent fix",
-    "You're the only person who understands how the full process works from order to invoice",
-    "Improvement ideas exist but nobody has time or remit to implement them",
-    "Technology projects stall because there's no operational owner to drive them",
-    "You're spending more time on operational issues than on growing the business",
-    "New systems get bought but never properly embedded into how the team works",
+    "Decisions that affect several departments get made by committee, or not at all",
+    "The same operational problems keep coming back with no permanent fix",
+    "You're the only person who understands the whole flow from order to invoice",
+    "There are good ideas for improvement but nobody has the time or remit to do them",
+    "Technology projects stall because there's no one to drive them",
+    "You're spending more time on day-to-day operations than on growing the business",
+    "New systems get bought but never properly bed in",
    ]}
    causes={[
-    { title: "Operations grew without anyone noticing", body: "When a business is small, everyone knows what everyone else is doing. As it grows, operational complexity multiplies, but nobody is given explicit ownership of the systems and processes that cross departmental lines. Sales and operations planning (S&OP) becomes impossible when no one has ownership of the operational data. Decisions get made on gut feel because there is no reliable picture of capacity, pipeline, or throughput." },
-    { title: 'The owner is still the default ops person', body: "In many owner-operated businesses, the MD grew up doing the operational work. They understand it better than anyone. But they can't both do the work and step back to improve the system, and there's no one else to hand it to." },
-    { title: 'Operations is seen as admin, not leadership', body: "Operations doesn't feel like a strategic role. It sounds like paperwork and process. So it gets delegated downward, shared around, or left to whoever shouts loudest. In reality, operations is where growth gets enabled or blocked." },
-    { title: 'No clear progression from doer to leader', body: "The person who knows the operations best is often the person doing the operational work. Promoting them means losing their hands-on contribution, and many businesses can't afford that trade-off without a plan." },
+    { title: "Operations grew without anyone noticing", body: "When a business is small, everyone knows what everyone else is doing. As it grows, things get more complicated, but nobody is given ownership of the processes that cross departments. Without one person who owns the operational numbers, decisions get made on gut feel." },
+    { title: 'The owner is still the default ops person', body: "In many owner-run businesses, the owner grew up doing the operational work and understands it better than anyone. But they can't both do the work and step back to improve the system, and there's no one else to hand it to." },
+    { title: 'Operations is seen as admin, not leadership', body: "Operations sounds like paperwork and process, so it gets passed down, shared around, or left to whoever shouts loudest. In reality, it's where growth is either enabled or blocked." },
+    { title: 'No clear step from doing the work to leading it', body: "The person who knows the operations best is usually the one doing the work. Promoting them means losing their hands-on contribution, and many businesses can't afford that trade-off without a plan." },
    ]}
-   howIHelp="I help you understand whether your business needs a dedicated operations person, a fractional operations leader, or a different structure entirely. I look at where your time is going, where the bottlenecks are, and what level of operational ownership your business can support right now. Then I give you a practical roadmap, whether that means hiring, restructuring, or stepping into a retained fractional role that gives you operational leadership without the full-time commitment. If a fractional head of operations is the right answer, someone who owns the operational agenda on a part-time basis, the Retained service provides exactly that."
+   howIHelp="I help you work out whether you need a dedicated operations person, a part-time operations lead, or a different structure altogether. I look at where your time goes, where the bottlenecks are, and what level of ownership your business can support right now. Then I give you a practical route forward, whether that's hiring, restructuring, or me stepping into a retained part-time role that gives you operational leadership without a full-time salary. If a fractional head of operations is the answer, the Retained service provides exactly that."
   
    slug="no-ops-owner"
    targetService={problemRouting['no-ops-owner'].targetService}

@@ -155,7 +155,7 @@ export default async function BlogPage() {
                     Operational Audit Checklist
                   </h3>
                   <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
-                    20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+                    20 questions to check your operations, technology, and processes. Use it before you hire a consultant, or to see what an audit actually covers.
                   </p>
                 </div>
                 <div className="flex-shrink-0 mt-2">
@@ -168,7 +168,7 @@ export default async function BlogPage() {
           <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-surface-dark)' }}>
             <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-on-dark)' }}>Ready to dive deeper?</h3>
             <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
-              These resources are free. An audit is where things get specific: every finding quantified, every recommendation costed, every next step mapped.
+              These resources are free. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
             </p>
             <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               Book a free discovery call <ArrowRight size={18} />

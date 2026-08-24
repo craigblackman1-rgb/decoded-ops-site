@@ -74,7 +74,7 @@ export default function CobraWorkwearCaseStudyPage() {
               <span className="eyebrow">Client work · workwear</span>
               <h1>Architect and advisor, not the builder.</h1>
               <p className="lede">
-                Cobra Workwear needed a B2B trade portal, ERP evaluation, and a Shopify replacement. A Clarity Audit, followed by Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+                Cobra Workwear needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
               </p>
               <div className="hero-cta">
                 <Link href="/contact" className="btn btn--primary">
@@ -101,7 +101,7 @@ export default function CobraWorkwearCaseStudyPage() {
             <h2>Trade ordering, target state.</h2>
             <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>
-              Cobra&rsquo;s customer-facing, business-systems and production zones, feeding into a specified spine: scoped and overseen by Decoded Ops, built by the implementation partner.
+              Cobra&rsquo;s customer-facing, business-systems and production zones feed into one specified spine. I scope and oversee it. The implementation partner builds it.
             </p>
 
             <div className="plate-scroll">
@@ -212,24 +212,24 @@ export default function CobraWorkwearCaseStudyPage() {
               <article className="card">
                 <span className="kicker">01 &middot; Vendor selection</span>
                 <h3>Choosing the implementation partner</h3>
-                <p>Evaluating who actually builds it. The stack, Medusa v2 and Next.js, was chosen deliberately as a flagship reference build, not a one-off, and the third-party team was selected against that brief.</p>
+                <p>I evaluate who actually builds it. The stack, Medusa v2 and Next.js, was chosen deliberately as a flagship reference build, not a one-off. The third-party team was selected against that brief.</p>
               </article>
               <article className="card">
                 <span className="kicker">02 &middot; Process design</span>
                 <h3>Vendor requirements and procurement</h3>
-                <p>Writing the requirements the trade portal and ERP evaluation actually needed to answer, then running the procurement process against them, rather than accepting the first plausible platform.</p>
+                <p>I write the requirements the trade portal and ERP evaluation actually need to answer, then run procurement against them, rather than accepting the first plausible platform.</p>
               </article>
               <article className="card">
                 <span className="kicker">03 &middot; Implementation oversight</span>
                 <h3>Integration architecture, ongoing</h3>
-                <p>Weekly involvement across the build, checking the integration architecture holds as the implementation partner delivers, not a one-off sign-off at the start.</p>
+                <p>I stay involved weekly across the build, checking the integration architecture holds as the implementation partner delivers. Not a one-off sign-off at the start.</p>
               </article>
             </div>
 
             <div style={{ maxWidth: '72ch' }}>
               <h2 style={{ marginTop: 48 }}>The commercial shape</h2>
               <p style={{ color: 'var(--do-text-secondary)', lineHeight: 'var(--do-leading-relaxed)' }}>
-                Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price: pricing detail stays out of public case studies.
+                Restructured from an initial six-month framing to a twelve-month minimum retainer: the full build across the first four months, then ongoing weekly involvement. I name it here only as a shape, not a price. Pricing detail stays out of public case studies.
               </p>
 
               <div className="progress-note">

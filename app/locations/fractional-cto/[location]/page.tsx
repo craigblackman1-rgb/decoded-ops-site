@@ -40,26 +40,26 @@ export async function generateMetadata({
 const painPoints = [
   {
     title: 'No one owns the technology decisions',
-    body: 'Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem, and the cost of those decisions compounds quietly until it becomes visible.',
+    body: 'Vendor choices and system changes get made without a plan. Every short-term fix creates a bigger problem later, and the cost quietly grows until it shows up.',
   },
   {
     title: 'Growing faster than your infrastructure',
-    body: 'Revenue is increasing but the systems underneath are straining. Manual workarounds that worked at smaller scale are now creating daily friction, and the team is absorbing the overhead rather than flagging it.',
+    body: 'Revenue is growing, but your systems are straining. Manual workarounds that worked when you were smaller now create daily friction, and your team quietly absorbs the extra work.',
   },
   {
     title: 'Translating between your business and your technology',
-    body: 'Business owners shouldn\'t need to become technical to get the right outcomes from their systems. But without someone who bridges both worlds, critical things get lost between what you asked for and what got built.',
+    body: 'You shouldn\'t have to become technical to get the right outcomes from your systems. Without someone who bridges both worlds, things get lost between what you asked for and what got built.',
   },
   {
     title: 'Vendor decisions made without independent advice',
-    body: 'Software salespeople are good at their job. Without someone on your side who understands what you actually need, you end up with tools that solve the vendor\'s revenue problem rather than yours.',
+    body: 'Software salespeople are good at their job. Without someone on your side who knows what you actually need, you end up with tools that solve the vendor\'s problem, not yours.',
   },
 ];
 
 const whatIdo = [
-  'Map your current technology landscape: what\'s running, what it costs, and what it\'s supposed to do versus what it actually does',
-  'Identify the decisions that need to be made and build a prioritised roadmap you can act on',
-  'Act as your technology voice in commercial conversations: with vendors, with developers, with investors or board',
+  'Map your technology: what\'s running, what it costs, and what it should do versus what it actually does',
+  'Identify the decisions that need making and build a prioritised roadmap you can act on',
+  'Be your technology voice with vendors, developers, investors, and your board',
   'Attend leadership meetings as your part-time tech director, present and accountable, not just on call when something breaks',
   'Build internal capability so you become less dependent over time, not more',
   'Run the Clarity Audit first if the picture is unclear, a fixed-price diagnostic before any ongoing commitment',
@@ -112,7 +112,7 @@ export default async function FractionalCTOLocationPage({
         service="Fractional CTO"
         badge={`Fractional CTO · ${loc.county}`}
         tagline={`Senior technology leadership for ||${loc.name} businesses||, without the full-time hire.`}
-        intro={`Growing businesses in ${loc.name} face real technology decisions: vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.`}
+        intro={`Growing businesses in ${loc.name} face real technology decisions: which vendor to pick, which systems to integrate, which platform to choose. Without someone senior owning those decisions, the cost quietly adds up.`}
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}

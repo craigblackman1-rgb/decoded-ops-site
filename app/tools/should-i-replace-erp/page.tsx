@@ -56,7 +56,7 @@ export default function ShouldIReplaceErpPage() {
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">Free tool</span>
           <h1>Should I replace my ERP?</h1>
-          <p className="lede">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+          <p className="lede">Eight yes/no questions to help you decide whether to fix your current system or plan an exit.</p>
         </div>
       </section>
 

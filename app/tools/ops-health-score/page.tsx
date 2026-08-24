@@ -58,7 +58,7 @@ export default function OpsHealthScorePage() {
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">Free tool</span>
           <h1>Ops health score</h1>
-          <p className="lede">Rate your business across five operational dimensions to get a clear picture of where you stand, and where to focus first.</p>
+          <p className="lede">Rate your business across five areas to see where you stand, and where to focus first.</p>
         </div>
       </section>
 

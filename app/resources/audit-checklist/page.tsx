@@ -132,7 +132,7 @@ export default function ChecklistPage() {
           <h2>Six areas you can check today, and the seventh only the checking answers.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            The audit checklist as a sequence: what you can go and check today in your business, and the strategic section that the first six make possible.
+            The checklist as a sequence: what you can check today, and the strategic section the first six make possible.
           </p>
 
           <div className="plate-scroll">
@@ -296,7 +296,7 @@ export default function ChecklistPage() {
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>
             <h3>Once you've worked through this checklist...</h3>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
-              The real value is in understanding what you don't know. If there are gaps, an audit identifies them formally, quantifies them, and gives you a roadmap to fix them.
+              The real value is in seeing what you don't know. If there are gaps, an audit finds them, puts a number on them, and gives you a plan to fix them.
             </p>
             <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
               <Link href="/contact" className="btn btn--primary">

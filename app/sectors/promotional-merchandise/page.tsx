@@ -104,7 +104,7 @@ export default function PromotionalMerchandisePage() {
               </svg>
             ),
             title: 'Multi-supplier catalogue management',
-            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them, without re-keying, is the sector\u2019s defining operational challenge.',
+            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them, without re-keying, is the single biggest challenge in the sector.',
           },
           {
             icon: (
@@ -122,7 +122,7 @@ export default function PromotionalMerchandisePage() {
               </svg>
             ),
             title: 'Margin erosion at the order level',
-            body: 'When production sits between the order and the despatch, a system that doesn\u2019t account for decoration cost, supplier lead time variation, and artwork rework quietly erodes margin on every job.',
+            body: 'If decoration cost, supplier lead times, and artwork rework aren\u2019t tracked per job, margin quietly erodes on every order.',
           },
           {
             icon: (
@@ -145,13 +145,13 @@ export default function PromotionalMerchandisePage() {
         ]}
         checklistHeading="An independent audit of supplier data, artwork, and margin."
         checklist={[
-          'Map your full order workflow from client enquiry to delivery',
-          'Audit your multi-supplier product data management for accuracy and currency',
-          'Review your artwork storage, proof approval, and version control process',
-          'Identify where supplier fragmentation is creating administrative overhead',
-          'Assess how margin is calculated and tracked at the order level',
-          'Review quoting accuracy and quote-to-order conversion costs',
-          'Quantify every finding in time, margin erosion, and administrative cost',
+          'Map your full workflow, from client enquiry to delivery',
+          'Audit multi-supplier product data for accuracy and currency',
+          'Review how artwork is stored, approved, and versioned',
+          'Find where supplier fragmentation creates admin work',
+          'See how margin is calculated and tracked per order',
+          'Review quoting accuracy and quote-to-order costs',
+          'Put a number on every finding in time, margin, and admin cost',
         ]}
         otherSectors={[
           { label: 'Workwear', href: '/sectors/workwear' },
@@ -194,12 +194,12 @@ export default function PromotionalMerchandisePage() {
           <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {[
-              'Map your full order workflow from client enquiry through to delivery',
-              'Audit multi-supplier product data management for accuracy and currency',
-              'Review your artwork storage, proof approval, and version control process',
-              'Identify where supplier fragmentation is creating administrative overhead',
-              'Assess how margin is calculated and tracked at the individual order level',
-              'Quantify every finding in time, margin erosion, and administrative cost',
+              'Map your full workflow, from client enquiry to delivery',
+              'Audit multi-supplier product data for accuracy and currency',
+              'Review how artwork is stored, approved, and versioned',
+              'Find where supplier fragmentation creates admin work',
+              'See how margin is calculated and tracked per order',
+              'Put a number on every finding in time, margin, and admin cost',
             ].map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>

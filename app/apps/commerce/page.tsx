@@ -33,8 +33,8 @@ export default function CommercePage() {
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
               <p>It&rsquo;s built on the Medusa B2B starter: company accounts, spend limits, approval
                 workflows, quote negotiation, order editing, and a full storefront and checkout, all on
-                an open-source core. Real foundations underneath, not a from-scratch build. That&rsquo;s
-                exactly why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
+                an open-source core. Real foundations, not a from-scratch build. That&rsquo;s
+                why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
                 quoted elsewhere for the same thing.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>

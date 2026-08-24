@@ -77,7 +77,7 @@ const services = [
       '3-hour structured remote session',
       'Written findings summary, plain English',
       'Three priority actions identified',
-      'Tech stack and AI readiness assessed',
+      'The systems you use and AI readiness assessed',
       'Delivered within 5 working days',
     ],
     cta: 'Book your Clarity Check',
@@ -88,22 +88,22 @@ const services = [
     tagline: 'Keep a project moving with remote project delivery and vendor management.',
     features: [
       '90-minute remote working sessions',
-      'Vendor management and procurement support',
-      'Project oversight and milestone tracking',
+      'Vendor management and buying support',
+      'Keeping the project on track',
       'Written progress summaries',
-      'Practical tools and frameworks',
+      'Practical tools and checklists',
     ],
     cta: 'Book a discovery call',
   },
   {
     icon: Wrench,
     name: 'Transform',
-    tagline: 'Focused transformation programme, one workstream at a time.',
+    tagline: 'Focused transformation programme, one project at a time.',
     features: [
       '90-minute remote working sessions',
-      'Single focused workstream',
+      'One project at a time',
       'ERP, eCommerce, or process redesign',
-      'Vendor selection and oversight',
+      'Choosing vendors and keeping them honest',
       'Milestone-based delivery',
     ],
     cta: 'Request a proposal',
@@ -125,7 +125,7 @@ const services = [
     tagline: 'An honest, independent assessment of whether AI can help your business right now, and what needs fixing first.',
     features: [
       '90-minute structured remote session',
-      'Data quality and process readiness review',
+      'A review of your data and processes',
       'One or two concrete next steps if AI can help',
       'Explicitly includes "not yet" as a valid outcome',
       'Written assessment delivered within 3 working days',
@@ -160,12 +160,12 @@ export default function SmallBusinessPage() {
       <section className="g-off">
         <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
           <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
-          <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the enterprise price tag.</em></h1>
+          <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the big-business price tag.</em></h1>
           <p className="lede">
             The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
-            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
+            A small business operations consultant covers what a full-time operations director would: technology decisions, keeping vendors honest, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>

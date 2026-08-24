@@ -78,10 +78,10 @@ export default function WrongERPSoftwarePage() {
      <div>
       <span className="eyebrow">The problem</span>
       <h1>The ERP looked right in the demo. It doesn&apos;t fit how your business works.</h1>
-      <p className="lede">Selecting the wrong ERP for a small business is one of the most expensive
-       mistakes in this sector. The cost isn&apos;t just the software. It&apos;s the implementation, the
-       disruption, the workarounds that accumulate, and the productivity you never recover. In
-       most cases it was avoidable with an independent evaluation before the contracts were
+      <p className="lede">Buying the wrong ERP is one of the most expensive mistakes you can make in
+       this sector. The cost isn&apos;t just the software. It&apos;s the setup, the disruption, the
+       workarounds that pile up, and the productivity you never get back. Most of the time it
+       was avoidable, if someone independent had checked the fit before the contracts were
        signed.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
@@ -104,12 +104,12 @@ export default function WrongERPSoftwarePage() {
       usually isn&apos;t your team. It&apos;s what got signed off before anyone on your side wrote a brief.</p>
 
      <ul className="symptoms">
-      <li>The system can&apos;t handle decoration method-specific workflows without heavy customisation</li>
-      <li>You&apos;re maintaining manual processes alongside the system because it can&apos;t replace them</li>
+      <li>The system can&apos;t handle how you actually decorate without heavy customisation</li>
+      <li>You&apos;re running manual processes alongside the system because it can&apos;t replace them</li>
       <li>The vendor keeps telling you it&apos;s a configuration issue, not a software limitation</li>
       <li>Your team have found ways around the system rather than working within it</li>
-      <li>Customisation costs have exceeded the original software licence</li>
-      <li>You selected based on a demo that showed a different kind of business</li>
+      <li>Customisation costs have passed the original software licence</li>
+      <li>You chose it based on a demo that showed a different kind of business</li>
       <li>The vendor&apos;s support team doesn&apos;t understand your industry</li>
      </ul>
     </div>
@@ -125,32 +125,30 @@ export default function WrongERPSoftwarePage() {
       <article className="card cause">
        <span className="n">01</span>
        <h3>Selected on demo, not on fit</h3>
-       <p>Vendors are excellent at demos. They show you the things the software does well and
-        move quickly past the things it doesn&apos;t. Without sector expertise on your side of the
-        table, you&apos;re evaluating presentation skills. Sector-specific systems perform
-        differently depending on your decoration mix and order model, so the only fair evaluation
-        is against a written brief that reflects your actual business.</p>
+       <p>Vendors are excellent at demos. They show you what the software does well and move
+        quickly past what it doesn&apos;t. Without someone on your side who knows the sector, you&apos;re
+        judging presentation skills, not fit. The only fair test is against a written brief that
+        describes your actual business.</p>
       </article>
       <article className="card cause">
        <span className="n">02</span>
        <h3>No independent specification written first</h3>
-       <p>A vendor brief, written by someone who understands your business model before you talk
-        to any vendor, changes the selection process entirely. Without it, you&apos;re being sold to
-        rather than making an informed choice.</p>
+       <p>A brief written by someone who understands your business before you talk to any vendor
+        changes everything. Without it, you&apos;re being sold to rather than making a choice.</p>
       </article>
       <article className="card cause">
        <span className="n">03</span>
        <h3>Reference sites in a different sector</h3>
-       <p>Generic ERP vendors often have good reference sites in manufacturing or distribution.
-        Those references don&apos;t tell you how the software performs in a decoration business with
-        mixed methods, variable artwork, and short-run personalisation.</p>
+       <p>Generic vendors often have great references in manufacturing or distribution. Those
+        don&apos;t tell you how the software handles decoration: mixed methods, changing artwork, and
+        short runs with personalisation.</p>
       </article>
       <article className="card cause">
        <span className="n">04</span>
        <h3>The total cost wasn&apos;t modelled</h3>
-       <p>Implementation, training, customisation, integration, ongoing support. The total cost of
-        ownership for an ERP is often two to three times the headline licence cost. That
-        comparison rarely happens before selection.</p>
+       <p>Setup, training, customisation, integration, ongoing support. The full cost of an ERP is
+        often two to three times the licence fee. That comparison rarely happens before you
+        sign.</p>
       </article>
      </div>
     </div>
@@ -197,9 +195,9 @@ export default function WrongERPSoftwarePage() {
      <h2>An honest read on stay or move, then a brief that doesn&apos;t repeat the mistake.</h2>
 
      <div className="answer">
-      <p>If you&apos;re in a system that doesn&apos;t fit, I give you an honest assessment of what your
-       options are. Sometimes there&apos;s more capability in the existing system than you&apos;re using ,
-       the implementation was poor, not the software. Sometimes the software genuinely isn&apos;t right
+      <p>If you&apos;re in a system that doesn&apos;t fit, I give you an honest assessment of your
+       options. Sometimes there&apos;s more in the existing system than you&apos;re using, and the
+       implementation was poor, not the software. Sometimes the software genuinely isn&apos;t right
        and you need to plan a managed exit.</p>
       <p>Either way, I help you understand <b>the real cost of staying versus moving</b>, and if
        you&apos;re moving, I write the independent vendor brief that makes sure the next ERP is chosen
@@ -212,7 +210,7 @@ export default function WrongERPSoftwarePage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Book a free discovery call.</h2>
-     <p className="lede">An hour on what&apos;s actually going wrong with the system you&apos;re running today ,
+     <p className="lede">An hour on what&apos;s actually going wrong with the system you&apos;re running today,
       and whether the fix is process, configuration, or a managed move to something that fits.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>

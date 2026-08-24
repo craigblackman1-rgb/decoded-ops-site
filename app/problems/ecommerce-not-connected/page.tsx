@@ -70,24 +70,24 @@ export default function EcommerceNotConnectedPage() {
    <ProblemPageDS
    problem="eCommerce not connected to production"
    headline="Your online store is live. ||Your production system doesn't know it exists.||"
-   intro="eCommerce integration for small business is one of the most common and most costly problems in the print and decoration sector. Every order taken online that has to be manually re-entered into the production system. Every day. The cost in labour, errors, and missed despatch windows adds up fast, and most businesses have stopped noticing it."
+   intro="Every order taken online has to be typed into your production system by hand. Every day. The cost in time, mistakes, and missed deadlines adds up fast, and most businesses have stopped noticing it."
    heroGraphic={<EcommerceNotConnectedSchematic />}
    symptoms={[
-    "Online orders are being manually re-entered into your ERP or MIS",
-    "There's a delay between order placed and order in production",
-    "Personalisation details are arriving separately from the order",
-    "Customers are chasing order status because you can't see it easily",
-    "Your eCommerce manager and your production manager are in constant conflict",
+    "Online orders are typed into your production system by hand",
+    "There's a gap between an order being placed and it reaching production",
+    "Personalisation details arrive separately from the order",
+    "Customers keep chasing their order because you can't see where it is",
+    "Your web team and your production team are always arguing",
     "Stock sold online doesn't update in real time",
-    "You have two sources of truth for order data",
+    "You have two different records for every order",
    ]}
    causes={[
-    { title: 'Integration not scoped before platform selection', body: "The eCommerce platform was chosen on features and price, with the integration question answered by both vendors saying 'yes, we can integrate'. That's not a specification. It's a conversation starter." },
-    { title: 'API limitations discovered post-purchase', body: "Many ERP and MIS systems in this sector have API capability that only covers certain modules, certain versions, or certain data types. You find out after the contracts are signed." },
-    { title: 'Personalisation data structure mismatch', body: "The way personalisation data is captured on the front end rarely matches the way it needs to be structured for production. Bridging that gap requires both systems to be flexible. Often one of them isn't. This is a structural problem with most generic eCommerce platforms, they were not built for B2B order management or for products that vary by decoration method." },
-    { title: 'The wrong platform for the business model', body: "Generic eCommerce platforms weren't designed for businesses that decorate, personalise, or produce to order. The data model doesn't fit, and that limits what any integration can achieve. If the wholesale order system or eCommerce platform cannot represent your product data accurately, no integration will fix the underlying mismatch." },
+    { title: 'The connection was never planned before the platform was picked', body: "The website was chosen on features and price. Both vendors said 'yes, we can connect them', and that was treated as a plan. It isn't. It's a conversation starter." },
+    { title: 'The connection only works for part of the system', body: "Many systems in this sector only connect for certain modules, versions, or data. You find that out after the contracts are signed." },
+    { title: 'Personalisation data does not line up', body: "The way the website captures names and logos rarely matches the way production needs them. Bridging that gap needs both systems to bend. Usually one of them won't." },
+    { title: 'The platform does not fit the business model', body: "Most websites are built for businesses that sell finished stock, not ones that decorate and personalise to order. If the platform can't describe your products properly, no connection will fix it." },
    ]}
-   howIHelp="I assess the specific integration problem, both systems, both data models, and the gap between them. Then I give you an independent view of what the realistic options are. That might be a proper integration using the APIs that exist. It might mean a middleware solution. It might mean acknowledging that the current eCommerce platform isn't the right one for your business model and helping you select a replacement. You get a clear view of costs, timescales, and risks for each option, not a sales pitch."
+   howIHelp="I look at both systems, both sets of data, and the gap between them. Then I tell you what your options really are: a proper connection using what's already there, a middle layer to translate between the two, or accepting that the website platform is wrong for your business and finding a better fit. You get a clear view of cost, time, and risk for each option. Not a sales pitch."
   
    slug="ecommerce-not-connected"
    targetService={problemRouting['ecommerce-not-connected'].targetService}

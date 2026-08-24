@@ -63,21 +63,21 @@ const tagline = 'Garment decoration business systems ||were never built for how 
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures. All managed in systems that don't account for the difference." },
-  { title: 'The artwork loop', body: "Artwork sign-off is one of the most common sources of delay in garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop. But only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
-  { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders. Until the problem is already in the queue." },
-  { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
-  { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will typically require manual workarounds." },
+  { title: 'Decoration method mix', body: "Run embroidery, screen print, and DTG under one roof and you're running three production processes, three lead times, and three cost structures. Most systems treat them all the same." },
+  { title: 'The artwork loop', body: "Artwork sign-off causes more delay than almost anything else in this sector. Every manual chase and email thread is time and money that shows up nowhere. Artwork software can automate sign-off, but only if it connects to your order system. Most businesses still approve artwork by email." },
+  { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock against committed orders, until the problem is already in the queue." },
+  { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that needs manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+  { title: 'Embroidery production workflow versus other methods', body: "Embroidery scheduling is not the same as screen print or DTF. Machine capacity, stitch count, digitisation time, and thread changes all affect the schedule in ways generic software ignores. A system that can't represent embroidery accurately just means manual workarounds." },
 ];
 
 const whatIdo = [
-  'Map your current decoration workflows in full, from order intake to despatch',
-  'Identify where the artwork loop is creating delay and cost',
-  'Assess artwork management software options and integration with your order management system',
-  'Assess your blank sourcing model and the dependency risks within it',
-  'Review your technology stack for gaps between eCommerce, order management, and production',
-  'Produce an independent vendor brief if new software is recommended',
-  'Quantify every finding in time, headcount, and money',
+  'Map your whole workflow, from order intake to despatch',
+  'Find where the artwork loop is causing delay and cost',
+  'Assess artwork software and how it connects to your order system',
+  'Review how you source blanks and where that leaves you exposed',
+  'Check for gaps between your online shop, order system, and production',
+  'Write an independent vendor brief if new software is needed',
+  'Put a number on every finding in time, headcount, and money',
 ];
 
 const route = sectorRouting['garment-decoration'];
@@ -104,7 +104,7 @@ export default function GarmentDecorationPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management. Your systems should reflect that difference.</p>
+              <p>Embroidery, screen print, DTF, and DTG each work in their own way. But the ERP and MIS systems sold to decoration businesses rarely account for that. Embroidery is not the same as screen print. Your systems should match how you actually work.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

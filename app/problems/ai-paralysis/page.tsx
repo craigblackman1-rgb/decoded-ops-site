@@ -130,7 +130,7 @@ export default function AiParalysisPage() {
      <span className="eyebrow">The right order</span>
      <h2>You can&apos;t automate what hasn&apos;t been documented.</h2>
      <p className="lede" style={{ marginTop: 16 }}>AI is the top layer. It rests on everything underneath
-      it. Most businesses are being sold the top layer while the bottom two are still missing ,
+      it. Most businesses are being sold the top layer while the bottom two are still missing,
       which is why the results disappoint and the cynicism deepens.</p>
 
      <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: 14, marginTop: 36, maxWidth: 820 }}>
@@ -235,7 +235,7 @@ export default function AiParalysisPage() {
       <article className="card cause">
        <span className="n">04</span>
        <h3>Fear of missing out is driving decisions</h3>
-       <p>The fear that competitors will adopt AI and pull ahead creates pressure to do something ,
+       <p>The fear that competitors will adopt AI and pull ahead creates pressure to do something,
         anything. That pressure leads to buying AI tools without a clear use case, which wastes
         investment and reinforces the cynicism that stopped the business engaging in the first
         place.</p>

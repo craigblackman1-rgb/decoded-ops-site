@@ -200,7 +200,7 @@ export default function BottleneckGrowthPage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Find out what&apos;s still sitting on your desk that shouldn&apos;t be.</h2>
-     <p className="lede">A Clarity Audit identifies every decision bottleneck in your operation ,
+     <p className="lede">A Clarity Audit identifies every decision bottleneck in your operation,
       and the written plan tells you which one to move first.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>

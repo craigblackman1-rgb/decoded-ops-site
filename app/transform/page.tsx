@@ -140,8 +140,8 @@ export default function TransformPage() {
           <span className="eyebrow">What a Transform engagement covers</span>
           <h2>Three dimensions, run together.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Transform is the Clarity Audit plan, turned into a
-            programme. The same vendor-neutral discipline as Deliver, applied across more than one
-            system or department at once.</p>
+            programme. The same discipline as Deliver: I don&apos;t sell software, so I don&apos;t care which
+            one you choose. Applied across several systems or departments at once.</p>
 
           <div className="grid grid--3">
             <div className={s.feature} data-od-id="dimension-plan">
@@ -164,9 +164,9 @@ export default function TransformPage() {
                   <path d="M17 9.5h4M17 13.5h4"/>
                 </svg>
               </div>
-              <h3>Vendor-neutral delivery</h3>
-              <p>Every vendor quotes against the same brief, and someone technical stays on your side
-                of the table for the build, the same discipline as Deliver, run at programme scale.</p>
+              <h3>I don&apos;t sell software</h3>
+              <p>Every vendor quotes against the same brief, and I stay on your side of the table
+                for the build. I don&apos;t sell software, so I don&apos;t care which one you choose.</p>
             </div>
             <div className={s.feature} data-od-id="dimension-embed">
               <div className={s.featureMark} aria-hidden="true">
@@ -176,7 +176,7 @@ export default function TransformPage() {
                 </svg>
               </div>
               <h3>Embed the Process &amp; Quality System</h3>
-              <p>Not a single workflow documented: the whole programme, so what&apos;s still running after
+              <p>Not one process documented: the whole programme. So what&apos;s still running after
                 I&apos;ve gone is a system the business owns, not a memory of a project.</p>
             </div>
           </div>

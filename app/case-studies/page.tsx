@@ -26,7 +26,7 @@ const cases = [
   {
     name: 'Hanicks',
     sector: 'Heating spares & eCommerce',
-    desc: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+    desc: 'I\'m leading a Khaos Control ERP implementation, with a custom app for supplier data, Amazon FBA, and channel automation.',
     href: '/case-studies/hanicks',
     status: 'Live engagement',
     pull: '164,752 imported, 77% matched, 11,064 live',
@@ -34,7 +34,7 @@ const cases = [
   {
     name: 'TackleBag',
     sector: 'Branded apparel & decoration',
-    desc: 'Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data straight into their ERP implementation.',
+    desc: 'A Clarity Audit into a Deliver build. I\'m building a Stock Control module that feeds clean data straight into their ERP.',
     href: '/case-studies/tacklebag',
     status: 'In Deliver',
     pull: '9 supplier feeds automated, projected 20–40 hrs/week saved',
@@ -42,7 +42,7 @@ const cases = [
   {
     name: 'Cobra Workwear',
     sector: 'Workwear',
-    desc: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+    desc: 'Clarity Audit done. I scoped a B2B ordering portal and ERP evaluation, and I\'m now planning the delivery build.',
     href: '/case-studies/cobra-workwear',
     status: 'Post-audit',
     pull: 'B2B ordering portal and ERP evaluation, architecture and vendor brief',
@@ -50,7 +50,7 @@ const cases = [
   {
     name: 'Eternal Fitness',
     sector: 'Health & fitness (clinical populations)',
-    desc: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for a 1-to-1 personal training studio.',
+    desc: 'I\'m technical lead on a full site rebuild and an AI-assisted training plan tool for a 1-to-1 personal training studio.',
     href: '/case-studies/eternal-fitness',
     status: 'In build',
     pull: 'Full site rebuild and an AI-assisted training plan tool',
@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
               <span className="eyebrow">Client Work</span>
               <h1>Proof, not promises.</h1>
               <p className="lede">
-                Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
+                These are real, live engagements, not hypothetical case studies. Four businesses, named with permission, across four sectors. Same approach every time: fix the process and the data before you automate anything.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function CaseStudiesPage() {
             <h2>Four engagements, two with measurable outcomes.</h2>
             <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>
-              Live client work across four different sectors. Two engagements can be measured in numbers today. Two are too new, and they say so rather than estimating.
+              Live client work across four sectors. Two can be measured in numbers today. The other two are too new, and they say so rather than guessing.
             </p>
 
             <div className="plate-scroll">
@@ -238,7 +238,7 @@ export default function CaseStudiesPage() {
             <div style={{ maxWidth: '740px', margin: '0 auto' }}>
               <h3>Want to talk about your operation?</h3>
               <p className="lede">
-                Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything got built or implemented.
+                Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything was built.
               </p>
               <div className="btn-row">
                 <Link href="/contact" className="btn btn--primary">

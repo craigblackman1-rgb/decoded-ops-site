@@ -74,9 +74,9 @@ export default function LegacySystemPage() {
       <span className="eyebrow">The problem</span>
       <h1>The platform you bought ten years ago wasn&apos;t built for decoration.</h1>
       <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
-       same thing they hold in the warehouse. Decoration doesn&apos;t work like that, a blank
+       same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
        garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
-       most platforms have no clean way to model it.</p>
+       most platforms have no clean way to model that.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
@@ -102,7 +102,7 @@ export default function LegacySystemPage() {
       <li>Decoration BOMs are tracked in a spreadsheet because the platform can&apos;t model them</li>
       <li>Blank and finished stock get confused, or tracked as if they&apos;re the same item</li>
       <li>Supplier artwork lives in email threads, not attached to the order it belongs to</li>
-      <li>Every decoration method, print, embroidery, heat-press, needs its own workaround</li>
+      <li>Print, embroidery, heat-press: every method needs its own workaround</li>
       <li>The vendor&apos;s support team asks what &ldquo;decoration BOM&rdquo; even means</li>
       <li>Customisation costs have exceeded what the licence was supposed to save you</li>
       <li>You&apos;ve quietly accepted this is &ldquo;just how the software is&rdquo; rather than fixable</li>
@@ -180,9 +180,9 @@ export default function LegacySystemPage() {
      <h2>No rip-and-replace. Just the layer that was missing.</h2>
 
      <div className="answer">
-      <p>I don&apos;t start from &ldquo;which new platform should you buy.&rdquo; I start from what your current
-       platform already does well, and scope the layer that closes the gap, decoration BOMs,
-       artwork, blank-to-finished stock, <b>without touching what already works.</b></p>
+      <p>I don&apos;t start by asking which new platform to buy. I start with what your current
+       platform already does well, then build the layer that fills the gap: decoration BOMs,
+       artwork, blank-to-finished stock. <b>Without touching what already works.</b></p>
       <p>A Clarity Audit tells you honestly whether that&apos;s a small layer, a bigger one, or
        whether the platform genuinely needs to change. Rarely the last one.</p>
      </div>

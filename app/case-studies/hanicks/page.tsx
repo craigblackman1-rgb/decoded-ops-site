@@ -71,7 +71,7 @@ export default function HanicksCaseStudyPage() {
             <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
             <h1>The platform stayed. The layer around it changed.</h1>
             <p className="lede">
-              Hanicks is a heating spares business rather than decorated goods. The underlying problem is the same: a large product catalogue arriving from multiple suppliers in inconsistent formats, needing to be clean and current across every channel it sells on.
+              Hanicks is a heating spares business, not a decorated-goods one. The underlying problem is the same: a large product catalogue arriving from many suppliers in inconsistent formats, needing to be clean and current on every channel it sells on.
             </p>
           </div>
         </section>
@@ -178,15 +178,15 @@ export default function HanicksCaseStudyPage() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Product data was scattered across supplier feeds, no consistent SKU matching, no reliable way to know what was actually in stock or where. The business needed a proper ERP, but going into that with dirty data would have meant paying to migrate a mess.
+              Product data was scattered across supplier feeds. No consistent SKU matching. No reliable way to know what was in stock, or where. The business needed a proper ERP, but starting that with dirty data would have meant paying to migrate a mess.
             </p>
 
             <h2>What was done</h2>
             <p>
-              A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well, so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+              A Clarity Audit picked the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not handle supplier feed ingestion, data enrichment, or catalogue maintenance across channels well. So the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how I work: keep the platform that fits, build the layer it does not do.
             </p>
             <p>
-              The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+              The Data App took in every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
             </p>
 
             <div className="progress-note">
@@ -203,7 +203,7 @@ export default function HanicksCaseStudyPage() {
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
             <p className="lede">
-              This is a Systems (rung 2) example. For a diagnosis of what your own data actually looks like, book a Clarity Audit.
+              This is a Systems (rung 2) example. To find out what your own data looks like, book a Clarity Audit.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn--primary">

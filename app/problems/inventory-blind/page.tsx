@@ -74,7 +74,7 @@ export default function InventoryBlindPage() {
       <span className="eyebrow">The problem</span>
       <h1>You&apos;re ordering stock you already have, and running out of stock you didn&apos;t know you
        needed.</h1>
-      <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem ,
+      <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem,
        supplier feeds, the ERP, and the warehouse floor all showing a different number for the
        same SKU, so nobody&apos;s confident enough in any of them to order against it.</p>
       <div className="hero-cta">

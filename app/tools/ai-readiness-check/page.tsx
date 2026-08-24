@@ -54,7 +54,7 @@ export default function AiReadinessCheckPage() {
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">Free tool</span>
           <h1>AI readiness check</h1>
-          <p className="lede">Six quick questions to find out whether your business is ready to adopt AI, or whether you need to fix your operational foundation first.</p>
+          <p className="lede">Six quick questions to find out whether your business is ready for AI, or whether you need to fix your operations first.</p>
         </div>
       </section>
 

@@ -30,7 +30,7 @@ export default function DataAppPage() {
             <h1>The jobs your ERP was never going to do.</h1>
             <div className="hero-body">
               <p>Supplier feeds arrive as a mess. Thousands of rows, no consistent SKU, no usable images,
-                different every time. This takes them in, cleans them, matches them to what you already
+                different every time. The Data App takes them in, cleans them, matches them to what you already
                 sell, and keeps your catalogue current across every channel.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>

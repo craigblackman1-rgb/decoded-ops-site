@@ -32,7 +32,7 @@ export default function DowntimeCostCalculatorPage() {
           <span className="eyebrow">Free tool</span>
           <h1>Downtime cost calculator</h1>
           <p className="lede">
-            Enter your numbers to see exactly what system outages cost your business each year across
+            Enter your numbers to see exactly what system outages cost you each year in
             staff time and lost revenue.
           </p>
         </div>

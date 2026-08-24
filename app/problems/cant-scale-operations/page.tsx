@@ -110,37 +110,37 @@ export default function CantScaleOperationsPage() {
    <ProblemPageDS
     problem="Operations that can't keep up with growth"
     headline="Your business is growing. ||Your operations aren't scaling with it.||"
-    intro="Scaling operations in a small business is not just about doing more of the same, it is about rebuilding the systems and processes that were designed for half your current volume before they become the ceiling on your growth. More orders. More staff. More pressure. But not more profit, and not more confidence that tomorrow is going to be better than today. That's an operations problem. When a business grows faster than its processes, the cracks appear in predictable places and get wider every time you take on more volume. I help businesses like yours build the operational foundations that let you scale without the chaos."
+    intro="More orders. More staff. More pressure. But not more profit, and not more confidence that tomorrow will be better than today. That's an operations problem. Your systems and processes were built for half your current size, and now they're becoming the ceiling on your growth. I help businesses like yours build the operational foundations that let you grow without the chaos."
     heroGraphic={<CantScaleSchematic />}
     symptoms={[
-     "You're taking on more work but profitability per order is falling",
-     "Senior people are spending their days doing admin that should sit further down the team",
-     "Quality is inconsistent, it depends who did the job, not what the process says",
-     "There are one or two people everything flows through, and if they're off, everything slows",
-     "You've hired more staff but it doesn't seem to have made things faster",
-     "Month-end is a reconciliation nightmare because nobody trusts the data",
-     "You know there's a problem but can't pinpoint exactly where it lives",
-     "A new contract or product line sounds exciting but you're not sure your operation could handle it",
+     "You're taking on more work but making less profit per order",
+     "Your senior people spend their days on admin that should sit further down the team",
+     "Quality is inconsistent. It depends who did the job, not what the process says.",
+     "Everything flows through one or two people, and if they're off, everything slows",
+     "You've hired more staff but it hasn't made anything faster",
+     "Month-end is a nightmare because nobody trusts the numbers",
+     "You know something's wrong but can't pin down exactly where",
+     "A new contract sounds exciting but you're not sure your operation could handle it",
     ]}
     causes={[
      {
-      title: "The informal coordination that worked at half the size doesn't scale",
-      body: "When the team was smaller, communication happened in the room. Everyone knew what was going on. As the business grows, that breaks down, but the systems and habits don't change to compensate. The same processes that worked at £500k a year start to fail at £1.5m.",
+      title: "The informal setup that worked at half the size doesn't scale",
+      body: "When the team was small, everyone knew what was going on. As you grow, that breaks down, but the systems and habits don't change with it. The same processes that worked at £500k a year start failing at £1.5m.",
      },
      {
-      title: "Processes are undocumented and owned by individuals, not the business",
-      body: "Key knowledge lives in the heads of key people. When the business was small, that was fine. As it grows, those people become bottlenecks, and the business can't move faster than they can. And if they leave, the process leaves with them.",
+      title: "Processes aren't written down and belong to individuals, not the business",
+      body: "Key knowledge lives in the heads of key people. That was fine when the business was small. As it grows, those people become bottlenecks, and the business can only move as fast as they can. If they leave, the process leaves with them.",
      },
      {
       title: "Growth happened before the operational foundation was ready",
-      body: "It's easy to take on new contracts, new product lines, or new markets without asking whether the operation is ready for them. The revenue looks good on paper. The margin doesn't, because the cost of running a stretched operation is hidden in re-work, errors, and overtime.",
+      body: "It's easy to take on new contracts, products, or markets without asking whether the operation is ready. The revenue looks good on paper. The margin doesn't, because the cost of a stretched operation hides in rework, mistakes, and overtime.",
      },
      {
-      title: 'No one owns the operational picture from order to invoice',
-      body: "In a growing business, people own their function, but nobody owns the whole flow from order in to invoice out. Problems at the handoff points between teams are nobody's specific problem to fix, so they persist and compound.",
+      title: 'No one owns the whole flow from order to invoice',
+      body: "People own their own department, but nobody owns the full journey from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
      },
     ]}
-    howIHelp="I come on site and follow how work moves through your business, the whole flow, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, identify what's missing, and quantify the cost in time, margin, and risk. Within five days you have a written report with every finding documented and every recommendation prioritised. Quick wins are separated from structural changes, so you know what to do this week and what to plan for properly. If you need help implementing the changes, not just identifying them, I run a structured Deliver engagement to do that work with you. And for businesses at a growth inflection point who need ongoing operational leadership, there's a retained option: monthly strategic and operational support without the cost of a full-time hire."
+    howIHelp="I come on site and follow how work moves through your business, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, spot what's missing, and put a cost on it in time, margin, and risk. Within five days you get a written report with every finding and every fix prioritised. Quick wins are separated from bigger changes, so you know what to do this week and what to plan for. If you need help making the changes, I run a structured Deliver engagement to do the work with you. And if you're at a growth point and need ongoing operational leadership, there's a retained option: monthly support without the cost of a full-time hire."
    
    slug="cant-scale-operations"
    targetService={problemRouting['cant-scale-operations'].targetService}

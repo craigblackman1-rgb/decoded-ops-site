@@ -203,7 +203,7 @@ export default function SpreadsheetAddictionPage() {
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Find out what&apos;s actually living in your spreadsheets.</h2>
-     <p className="lede">A Clarity Audit maps every process that currently depends on a spreadsheet ,
+     <p className="lede">A Clarity Audit maps every process that currently depends on a spreadsheet,
       and the written plan tells you which ones to move first, before the file that runs the
       business stops opening.</p>
      <div className="hero-cta">

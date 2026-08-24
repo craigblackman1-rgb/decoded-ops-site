@@ -60,24 +60,24 @@ export default function SystemsDontTalkPage() {
    <ProblemPageDS
    problem="Systems don't talk to each other"
    headline="You have five systems. ||None of them know what the others are doing.||"
-   intro="The average decoration or print business has between four and seven separate software systems. Order management, ERP, accounts, artwork, eCommerce, despatch. Each one is an island. The bridges between them are people, spreadsheets, and emails."
+   intro="Most decoration and print businesses run four to seven separate systems. Order management, accounts, artwork, the website, despatch. Each one is an island. The only bridges between them are people typing the same data in again, spreadsheets, and emails."
    heroGraphic={<SystemsDontTalkSchematic />}
    symptoms={[
-    "Data is being entered manually into more than one system",
-    "You can't get a complete picture of an order without checking multiple places",
-    "Reporting requires someone to pull data from several systems and combine it",
-    "Mistakes happen when data is transferred between systems",
-    "Different departments are working from different versions of the same information",
-    "You've normalised a level of administrative overhead that shouldn't exist",
-    "Every time you add a system, the administration gets worse not better",
+    "You type the same data into more than one system",
+    "You can't see the whole order without checking three different places",
+    "Getting a report means pulling data out of several systems and stitching it together",
+    "Mistakes creep in every time data moves between systems",
+    "Different teams are working from different versions of the same information",
+    "You've accepted admin work that shouldn't need doing",
+    "Every time you add a system, the admin gets worse, not better",
    ]}
    causes={[
-    { title: 'Systems selected in isolation', body: "Each system was chosen to solve a specific problem, without asking how it would connect to everything else. The integration question was deferred and never properly answered." },
-    { title: 'No integration architecture', body: "Without a view of the whole technology ecosystem, you can't make good decisions about individual components. Systems accumulate. Complexity compounds." },
-    { title: 'Vendor lock-in and API limitations', body: "Some systems in this sector have limited or proprietary APIs that make integration technically difficult or commercially prohibitive. That constraint is rarely disclosed at the point of sale." },
-    { title: 'The cost of the workaround is invisible', body: "The cost of manual data re-entry, reporting overhead, and error correction doesn't appear on any invoice. It's buried in staff time that gets attributed to everything except the real cause." },
+    { title: 'Each system was bought on its own', body: "Each system was picked to solve one problem, without asking how it would connect to the rest. The 'how will this talk to everything else?' question got put off and never answered." },
+    { title: 'No plan for how the systems connect', body: "Nobody ever looked at the whole picture. Systems piled up one at a time, and each new one made the last one harder to fit." },
+    { title: 'Software that is hard to connect to anything else', body: "Some systems in this sector won't connect to others without expensive, fiddly work. You're rarely told that at the point of sale." },
+    { title: 'You never see what the workarounds cost', body: "Typing the same data in twice, fixing errors, and pulling reports by hand never shows up on an invoice. It's hidden in staff time that gets blamed on everything except the real cause." },
    ]}
-   howIHelp="I map your entire technology ecosystem, every system, every data flow, every manual bridge, and give you a clear view of what it's actually costing you. Then I give you independent options: integration where it's practical, consolidation where it makes more sense, and replacement where the current stack is the problem. No vendor relationships. No preferred solutions. Just a clear picture and a practical path forward."
+   howIHelp="I map every system you use, every bit of data that moves between them, and every manual bridge your team has built to paper over the gaps. Then I show you what it's actually costing you. After that, I give you independent options: connect systems where it makes sense, merge them where that's cheaper, or replace the ones that are the problem. No vendor relationships. No preferred solutions. Just a clear picture and a practical way forward."
   
    slug="systems-dont-talk"
    targetService={problemRouting['systems-dont-talk'].targetService}

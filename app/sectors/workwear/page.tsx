@@ -145,13 +145,13 @@ export default function WorkwearPage() {
         ]}
         checklistHeading="An independent audit of the whole workwear workflow."
         checklist={[
-          'Map your order-to-despatch workflow in full, including the decoration step',
-          'Identify where supplier catalogue data is being re-keyed or managed manually',
-          'Review your blank stock management against committed orders for supply gap risk',
-          'Audit how personalisation requirements flow from order intake to production',
-          'Assess eCommerce integration with production scheduling and order management',
-          'Review your replenishment model for repeat customer orders',
-          'Quantify every finding in time, headcount, and money',
+          'Map your whole order-to-despatch workflow, including decoration',
+          'Find where supplier catalogue data is being re-keyed by hand',
+          'Check blank stock against committed orders for supply gaps',
+          'See how personalisation flows from order to production',
+          'Assess how your online shop connects to production',
+          'Review how you reorder for repeat customers',
+          'Put a number on every finding in time, headcount, and money',
         ]}
         otherSectors={[
           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
@@ -194,12 +194,12 @@ export default function WorkwearPage() {
           <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {[
-              'Map the full supplier-to-customer order workflow for workwear, including the decoration step',
-              'Identify where supplier catalogue data is being re-keyed across channels',
-              'Audit blank stock management against committed orders for supply gap risk',
-              'Review how personalisation requirements flow from order intake to production',
-              'Assess eCommerce integration with production scheduling and order management',
-              'Quantify every finding in time, headcount, and money',
+              'Map the full supplier-to-customer workflow, including decoration',
+              'Find where supplier catalogue data is being re-keyed by hand',
+              'Check blank stock against committed orders for supply gaps',
+              'See how personalisation flows from order to production',
+              'Assess how your online shop connects to production',
+              'Put a number on every finding in time, headcount, and money',
             ].map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>

@@ -145,13 +145,13 @@ export default function TeamwearClubwearPage() {
         ]}
         checklistHeading="An independent audit of the whole teamwear workflow."
         checklist={[
-          'Map your full order workflow from squad list to delivery',
-          'Identify where personalisation data is being managed manually',
-          'Review your supplier catalogue management for kit range accuracy',
-          'Audit the artwork and proof approval process for sponsor logos and numbering',
-          'Assess how seasonal deadlines are managed against production capacity',
-          'Review eCommerce and order management integration',
-          'Quantify every finding in time, admin cost, and rework',
+          'Map your full workflow, from squad list to delivery',
+          'Find where personalisation data is managed by hand',
+          'Check supplier catalogue data for kit range accuracy',
+          'Audit proof approval for sponsor logos and numbering',
+          'See how seasonal deadlines sit against production capacity',
+          'Review how your online shop connects to your order system',
+          'Put a number on every finding in time, admin cost, and rework',
         ]}
         otherSectors={[
           { label: 'Workwear', href: '/sectors/workwear' },
@@ -194,12 +194,12 @@ export default function TeamwearClubwearPage() {
           <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {[
-              'Map your full order workflow from squad list through production to delivery',
-              'Identify where personalisation data is managed manually across orders',
-              'Review supplier catalogue management for kit range accuracy at scale',
-              'Audit the artwork and proof approval process for sponsor logos and numbering',
-              'Assess how seasonal deadlines are managed against production capacity',
-              'Quantify every finding in time, admin cost, and rework',
+              'Map your full workflow, from squad list to delivery',
+              'Find where personalisation data is managed by hand',
+              'Check supplier catalogue data for kit range accuracy',
+              'Audit proof approval for sponsor logos and numbering',
+              'See how seasonal deadlines sit against production capacity',
+              'Put a number on every finding in time, admin cost, and rework',
             ].map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>

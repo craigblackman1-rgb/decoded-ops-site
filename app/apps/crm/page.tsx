@@ -30,8 +30,8 @@ export default function CrmPage() {
             <h1>Leads to invoices, built for how this sector actually sells.</h1>
             <div className="hero-body">
               <p>A generic CRM assumes a sales process that doesn&apos;t match decorated goods. Decoded CRM
-                doesn&apos;t: companies, contacts and deals through to quotes, contracts, sales orders,
-                invoices and the diary, in one place, built around the way orders and re-orders actually
+                doesn&apos;t. Companies, contacts and deals, through to quotes, contracts, sales orders,
+                invoices and the diary, in one place, built around how orders and re-orders actually
                 move through this sector.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>

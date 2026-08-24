@@ -67,7 +67,7 @@ export default function ResourcesPage() {
           <span className="eyebrow">Resources</span>
           <h1>Tools and guides <em>you can use today</em></h1>
           <p className="lede">
-            Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.
+            Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No sign-up tricks. Just useful stuff.
           </p>
         </div>
       </section>

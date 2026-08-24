@@ -82,9 +82,9 @@ export default function ERPImplementationFailurePage() {
       <span className="eyebrow">The problem</span>
      <h1>What happens when the audit doesn&apos;t come first.</h1>
      <div className="hair mx-auto" />
-     <p className="lede mx-auto">ERP implementations that skip an independent audit routinely run over budget and
-      behind schedule, because nobody scoped the business before scoping the software. The fix
-      isn&apos;t a bigger budget. It&apos;s doing the diagnostic work before any platform gets chosen.</p>
+     <p className="lede mx-auto">ERP projects that skip an independent audit routinely run over budget and
+      late, because nobody looked at the business before picking the software. The fix isn&apos;t a
+      bigger budget. It&apos;s doing the checking first, before any platform gets chosen.</p>
      <div className="btn-row justify-center">
       <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
      </div>

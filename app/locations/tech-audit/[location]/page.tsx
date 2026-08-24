@@ -40,19 +40,19 @@ export async function generateMetadata({
 const painPoints = [
   {
     title: 'Your systems don\'t talk to each other',
-    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors, and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+    body: 'Data moves manually between platforms. Orders get processed twice. Stock figures don\'t match. Every disconnection costs time and creates errors, and most businesses have stopped noticing how much it costs.',
   },
   {
     title: 'You know costs are higher than they should be, but can\'t see where',
-    body: 'The overhead is there, in headcount, in rework, in customer service time, but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+    body: 'The cost is there, in headcount, rework, and customer service time, but no one has mapped where it actually comes from. The Clarity Audit finds it and costs it accurately.',
   },
   {
     title: 'Ready to scale, but the operations aren\'t',
-    body: 'Revenue could grow faster. The constraint is operational: systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
+    body: 'Revenue could grow faster. The constraint is operational: systems, process, and people doing jobs that should be automated. Finding the bottleneck is the first step to removing it.',
   },
   {
     title: 'Decisions being made on incomplete information',
-    body: 'Reporting that takes hours to produce. Numbers that don\'t tie up. Business decisions made on gut feel because the data isn\'t trustworthy. This is almost always a systems problem, not a people problem.',
+    body: 'Reports take hours to produce. Numbers don\'t tie up. Decisions get made on gut feel because the data isn\'t trustworthy. This is almost always a systems problem, not a people problem.',
   },
 ];
 
@@ -61,8 +61,8 @@ const whatIdo = [
   'Map every system you\'re running, what it costs, and what it\'s actually being used for versus what it was bought to do',
   'Document every manual handoff and workaround. This is almost always where the cost is hiding',
    'Identify the three to five changes that would recover the most cost or release the most revenue',
-  'Produce a written report within five working days: specific, costed, with independent vendor recommendations',
-  'Back it with the 3× Clarity Guarantee: if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions',
+  'Write a report within five working days: specific, costed, with independent vendor recommendations',
+  'Back it with the 3× Clarity Guarantee: if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, you get a full refund, no conditions',
 ];
 
 export default async function TechAuditLocationPage({
@@ -118,7 +118,7 @@ export default async function TechAuditLocationPage({
         service="Technology Audit"
         badge={`Technology Audit · ${loc.county}`}
         tagline={`Find out exactly what your systems are ||costing your ${loc.name} business.||`}
-        intro={`Most ${loc.name} businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is a structured, independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.`}
+        intro={`Most ${loc.name} businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is an independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.`}
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}

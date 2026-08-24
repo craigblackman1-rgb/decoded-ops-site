@@ -70,24 +70,24 @@ export default function ManualWorkaroundsPage() {
    <ProblemPageDS
    problem="Manual workarounds and shadow systems"
    headline="Your team has built a second system. ||It lives in spreadsheets.||"
-   intro="Almost every business in this sector has shadow systems, spreadsheets, manual logs, sticky notes, and workarounds that exist alongside the official software. They keep the business running. They also hide the real cost of operational inefficiency. Business process automation for small businesses in this sector is not about replacing people, it is about eliminating the manual re-entry, duplicate data, and shadow spreadsheets that slow every team down."
+   intro="Almost every business in this sector has a second system running quietly alongside the official one. Spreadsheets, manual logs, sticky notes, workarounds. They keep the business moving, but they hide the real cost. This isn't about replacing people. It's about removing the double-typing, duplicate data, and shadow spreadsheets that slow every team down."
    heroGraphic={<ManualWorkaroundsSchematic />}
    symptoms={[
-    "Spreadsheets are acting as databases for core operational data",
-    "Data is being entered into the same system more than once",
-    "You have a 'master spreadsheet' that someone updates manually each day",
-    "When that person is on holiday, nobody knows how the spreadsheet works",
-    "Reconciliation between systems takes hours every week",
-    "You've built custom Access databases or Google Sheets that have become critical infrastructure",
-    "Every month-end requires a manual data pull and manipulation effort",
+    "Spreadsheets are acting as the real database for your core data",
+    "The same data is being typed into the same system more than once",
+    "There's a 'master spreadsheet' someone updates by hand every day",
+    "When that person's on holiday, nobody knows how the spreadsheet works",
+    "Checking one system against another takes hours every week",
+    "You've built custom spreadsheets or databases that are now critical to running the place",
+    "Every month-end needs a manual data pull and a lot of fiddling",
    ]}
    causes={[
-    { title: 'The system was implemented to a template, not your workflow', body: "Most software implementations follow the vendor's standard process. When that process doesn't match how your business actually works, the team builds workarounds. Those workarounds become the real operating model, supported by the official system only where it fits." },
-    { title: 'Integration gaps that were never closed', body: "When two systems don't talk to each other, the bridge is a person with a spreadsheet. That person becomes a critical dependency, and the business doesn't realise until they're not available." },
-    { title: 'No one has measured the hidden labour cost', body: "The cost of manual workarounds doesn't appear on any invoice. It's buried in staff time that is attributed to 'order processing' or 'administration'. Without measuring it, there is no business case to fix it. Standard operating procedures document what should happen. When SOPs don't exist, the manual workaround is the SOP, and measuring the real cost of that is the first step towards fixing it." },
-    { title: 'Workarounds become institutionalised', body: "After enough time, the workaround isn't seen as a workaround, it's seen as how things are done. New starters are trained on the shadow system as if it were official. The original software investment becomes a sunk cost that nobody wants to admit hasn't delivered." },
+    { title: 'The system was set up to a template, not your workflow', body: "Most software is set up following the vendor's standard process. When that doesn't match how your business actually works, your team builds workarounds. Those workarounds become the real way things get done." },
+    { title: 'The gaps between systems were never closed', body: "When two systems can't talk to each other, the bridge is a person with a spreadsheet. That person becomes essential, and the business doesn't realise until they're away." },
+    { title: 'Nobody has measured the hidden labour cost', body: "The cost of workarounds never appears on an invoice. It's buried in staff time labelled 'order processing' or 'admin'. Until it's measured, there's no case for fixing it. If nobody has written down how things should work, the workaround is the process." },
+    { title: 'The workaround becomes the official way', body: "After a while, the workaround stops looking like a workaround. It's just how things are done. New starters are trained on it as if it were official, and nobody wants to admit the original software didn't deliver." },
    ]}
-   howIHelp="I audit your actual operational workflows, not the documented ones, the ones your team actually use. I identify every workaround, every spreadsheet, every manual bridge between systems, and I calculate what they're costing you in time, errors, and risk. Then I give you a prioritised plan to eliminate them: quick wins that pay for themselves, integration fixes that close the gaps, and the honest conversation about whether the current system can ever work for your business model. The outcome is a business process automation roadmap, not a technology wish list, but a prioritised set of changes (some immediate, some longer term) that eliminate the manual work your team has been carrying for years."
+   howIHelp="I audit how work actually gets done, not how it's supposed to. I find every workaround, every spreadsheet, every manual bridge between systems, and I work out what they're costing you in time, mistakes, and risk. Then I give you a prioritised plan to remove them: quick wins that pay for themselves, connection fixes that close the gaps, and an honest view of whether your current system can ever work for your business. The result is a practical, prioritised list of changes that takes the manual work off your team."
   
    slug="manual-workarounds"
    targetService={problemRouting['manual-workarounds'].targetService}

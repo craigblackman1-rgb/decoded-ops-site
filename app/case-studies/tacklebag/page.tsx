@@ -80,7 +80,7 @@ export default function TackleBagCaseStudyPage() {
             <span className="eyebrow">Client work · branded apparel &amp; decoration</span>
             <h1>The diagnostic came before the decision.</h1>
             <p className="lede">
-              TackleBag sells teamwear and schoolwear. Multiple suppliers, decorated and plain stock side by side, and an eCommerce platform, Symphony, that needed to reflect live stock accurately across nine supplier feeds at once.
+              TackleBag sells teamwear and schoolwear. It runs multiple suppliers with decorated and plain stock side by side. Its eCommerce platform, Symphony, needed to show live stock accurately across nine supplier feeds at once.
             </p>
           </div>
         </section>
@@ -193,21 +193,21 @@ export default function TackleBagCaseStudyPage() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Manual admin around stock, supplier feeds, and getting products live on Symphony was eating hours every week that should have gone into running the business.
+              Stock, supplier feeds, and getting products live on Symphony meant hours of manual admin every week. Time that should have gone into running the business.
             </p>
 
             <h2>What was done</h2>
             <p>
-              Symphony stayed as the eCommerce platform. It was the right tool for that job. The Data App was built alongside it to automate the parts Symphony was never going to do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including newly added variants on an existing product.
+              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
             </p>
             <p>
-              Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing, a real gap in the initial build, found and fixed live.
+              Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing. That was a real gap in the first build, found and fixed live.
             </p>
 
             <div className="progress-note">
               <h3>What&apos;s still in progress</h3>
               <p>
-                The Data App continues to expand: warehouse floor tooling and further supplier automation are active, ongoing work, not a finished state being presented as complete.
+                The Data App keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.
               </p>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function TackleBagCaseStudyPage() {
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
             <p className="lede">
-              This is a Systems (rung 2) example. For a diagnosis of what your own operation actually needs, book a Clarity Audit.
+              This is a Systems (rung 2) example. To find out what your own operation needs, book a Clarity Audit.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn--primary">

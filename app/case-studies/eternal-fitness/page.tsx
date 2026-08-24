@@ -48,7 +48,7 @@ export default function EternalFitnessCaseStudyPage() {
               <span className="eyebrow">In Build · Health &amp; Fitness</span>
               <h1>Eternal Fitness: technical lead for a clinical-population training studio</h1>
               <p className="lede">
-                Eternal Fitness is a private, 1-to-1 personal training studio working mainly with clients managing health conditions, not a general weight-loss audience. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
+                Eternal Fitness is a private, 1-to-1 personal training studio. Most of its clients manage health conditions, rather than general weight loss. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
               </p>
               <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
                 Esther is my wife, named plainly. This is paid client work, not a favour or free build. She pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
@@ -169,14 +169,14 @@ export default function EternalFitnessCaseStudyPage() {
 
               <h2>The problem</h2>
               <p>
-                A studio working with clinical populations needs a site and a set of tools that reflect that seriously, not generic fitness-marketing language or before-and-after framing. Training plans for clients managing health conditions can&apos;t be templated the usual way either. They need to be built around confirmed studio equipment and each client&apos;s specific situation, with Esther approving every plan and every piece of client-facing content.
+                A studio working with clinical populations needs a site and tools that take that seriously. No generic fitness-marketing language. No before-and-after framing. Training plans for clients managing health conditions can&apos;t be templated the usual way either. Each plan is built around confirmed studio equipment and that client&apos;s specific situation, with Esther approving every plan and every piece of client-facing content.
               </p>
 
               <h2>What I&apos;m building</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
                 {[
-                  'A full site rebuild that reflects clinical framing rather than fitness-marketing convention, no "transformation," no before-and-after, no crush-it language',
-                  'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition, with Esther reviewing and approving every output',
+                  'A full site rebuild with clinical framing, not fitness-marketing convention. No "transformation," no before-and-after, no crush-it language',
+                  'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition. Esther reviews and approves every output',
                   'Brand and tooling consistency across the site and the training plan output, so the two don\'t drift apart over time',
                   'A technical foundation Esther can rely on without needing to manage it herself. She owns the clinical and brand decisions, I own the build',
                 ].map((item, i) => (

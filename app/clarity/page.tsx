@@ -28,8 +28,8 @@ export default function ClarityPage() {
         <div className="wrap">
           <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
-          <p className="lede">A free 60-minute call, then one full day inside your business: six areas
-            covered, followed from start to finish rather than just discussed. £1,500, covered by the
+          <p className="lede">A free 60-minute call, then one full day inside your business. I follow six
+            areas from start to finish, rather than just discussing them. £1,500, covered by the
             3&times; guarantee below: if the report doesn&apos;t find at least three times the fee, it&apos;s
             refunded in full. A written report within five working days, walked through with you in person.</p>
           <div className={s.heroCta}>
@@ -120,8 +120,8 @@ export default function ClarityPage() {
             <article className={s.step}>
               <p className={s.stepN}>STEP 1</p>
               <h3>Discovery call</h3>
-              <p>Free, an hour, no obligation. Enough to work out whether a full day on site would tell
-                you anything you don&apos;t already know.</p>
+              <p>Free, an hour, no obligation. Enough to decide whether a full day on site is worth
+                it.</p>
             </article>
             <article className={s.step}>
               <p className={s.stepN}>STEP 2</p>

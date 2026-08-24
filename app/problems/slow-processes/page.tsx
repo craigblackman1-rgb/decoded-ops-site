@@ -111,37 +111,37 @@ export default function SlowProcessesPage() {
    <ProblemPageDS
     problem="Slow, inefficient processes"
     headline="The bottleneck isn't always ||a software problem.||"
-    intro="Most businesses I work with assume they have a technology problem. Buy better software, they think, and the friction goes away. Sometimes they're right. Often they're not. Slow turnaround, jobs that take twice as long as they should, the team constantly firefighting, that's usually a process problem. And no amount of new software fixes a process that was broken to begin with."
+    intro="Most businesses I meet assume they have a software problem. Buy better software, they think, and the friction disappears. Sometimes they're right. Often they're not. Slow turnaround, jobs taking twice as long as they should, the team always firefighting: that's usually a process problem. And new software won't fix a process that was broken to begin with."
     heroGraphic={<SlowProcessesSchematic />}
     symptoms={[
      "Jobs move smoothly to a point, then sit waiting for the next person or step",
-     "Re-work is happening at the same stage, repeatedly, with no clearly understood reason",
-     "Different operators do the same task differently, producing inconsistent results",
-     "Rush jobs constantly jump the queue and ripple through everything else",
-     "Jobs arrive at production without everything they need, stock, files, instructions",
-     "Experienced people are spending time on tasks that don't need their experience",
-     "New starters take months to get up to speed because the process lives in someone's head",
-     "The same questions are asked every day because nobody has written down how it works",
+     "The same mistakes keep happening at the same stage, and nobody knows why",
+     "Different people do the same job differently, with different results",
+     "Rush jobs keep jumping the queue and knocking everything else off course",
+     "Jobs reach production without everything they need: stock, files, instructions",
+     "Your most experienced people are stuck doing work that doesn't need their experience",
+     "New starters take months to get useful because the process lives in someone's head",
+     "The same questions get asked every day because nobody has written down how it works",
     ]}
     causes={[
      {
-      title: "The process was never documented, it lives in people's heads",
-      body: "When a process exists only in the memory of the people who do it, it varies every time. Different operators, different results. And when that person is off sick or leaves, the knowledge goes with them.",
+      title: "The process was never written down",
+      body: "When a process lives only in people's heads, it changes every time it's done. Different people, different results. And when that person is off sick or leaves, the knowledge leaves with them.",
      },
      {
       title: 'Problems are caught at the end, not where they start',
-      body: "If a quality check only happens at despatch, every error gets the full production treatment before anyone notices it. The fix costs ten times what it would have cost if the check had happened earlier, or before the job was even started.",
+      body: "If the quality check only happens at despatch, every mistake gets the full production treatment before anyone spots it. Catching it earlier costs a fraction of fixing it at the end.",
      },
      {
-      title: "Growth without process redesign",
-      body: "What worked at half the volume often doesn't work now. The informal coordination that kept things moving when the team was small breaks down as the business grows. The process didn't scale, because nobody redesigned it.",
+      title: "Growth without rethinking the process",
+      body: "What worked at half the volume often doesn't work now. The informal way the team stayed in sync breaks down as you grow. The process didn't scale because nobody redesigned it.",
      },
      {
-      title: "No visibility of where jobs are and what they're waiting for",
-      body: "Without a simple, shared view of the job queue, people work on what's in front of them, not what's most urgent. Work piles up at some stages and moves too fast through others. The bottleneck is invisible until it's a crisis.",
+      title: "No one can see where jobs are stuck",
+      body: "Without a simple shared view of the queue, people work on whatever's in front of them, not what's urgent. Work piles up in some places and races through others. The bottleneck is invisible until it becomes a crisis.",
      },
     ]}
-    howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work, watching an order move from intake to despatch, timing steps, noting where things pause, talking to the people doing the work because they already know where the problems are. By the end of the day I have a clear map of every step in your key processes, the specific points where time is being lost, and a sense of which problems are habit, which are design, and which are fixable this week. Within five working days you have a written report: every finding documented, every issue quantified in hours per week and pounds per year, recommendations prioritised by impact. This is the process improvement consultancy approach, observe first, quantify second, recommend third. No workshops. No questionnaires. A day in your business and a written report within five working days."
+    howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work, watching an order move from start to despatch. I time each step, note where things stall, and talk to the people doing the work, because they already know where the problems are. By the end of the day I have a map of every step, the exact points where time is being lost, and which problems are habit, which are design, and which you can fix this week. Within five working days you get a written report: every finding set out, every issue counted in hours per week and pounds per year, every fix prioritised by impact."
    
    slug="slow-processes"
    targetService={problemRouting['slow-processes'].targetService}

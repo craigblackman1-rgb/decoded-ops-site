@@ -42,7 +42,7 @@ export default function TechAuditLocationsHub() {
             <span className="eyebrow" style={{ marginBottom: 22 }}>Technology Audit</span>
             <h1 className="h1">Technology audits for <em>Sussex and Surrey businesses</em></h1>
             <p className="lede">
-              A structured, independent audit that tells you exactly what your systems are costing you, and what to do about it. Starting from £1,500.
+              An independent audit that tells you exactly what your systems are costing you, and what to do about it. From £1,500.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
               <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3× Clarity Guarantee</span>
@@ -99,7 +99,7 @@ export default function TechAuditLocationsHub() {
           <span className="eyebrow" style={{ marginBottom: 22 }}>Need ongoing support?</span>
           <h2 className="h2">Fractional CTO engagement</h2>
           <p className="lede">
-            After the audit, some businesses need someone to stay involved and own the technology decisions. That&apos;s the fractional CTO model.
+            After the audit, some businesses need me to stay involved and own the technology decisions. That&apos;s the fractional CTO model.
           </p>
           <div className="btn-row" style={{ justifyContent: 'center', marginTop: 32 }}>
             <Link href="/locations/fractional-cto" className="btn btn--outline">

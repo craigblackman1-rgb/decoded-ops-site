@@ -42,10 +42,10 @@ export default function DeliverPage() {
       <section className="g-white" data-od-id="outputs">
         <div className="wrap">
           <span className="eyebrow">What you&apos;re left with</span>
-          <h2>Three real artifacts, not a memory of the engagement.</h2>
+          <h2>Three things you keep, not a memory of the work.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Every Deliver engagement builds these alongside the
-            project itself, so what you keep afterwards is a documented process, not just something
-            that works and nobody can explain.</p>
+            project. What you keep afterwards is a documented process, not something that works and
+            nobody can explain.</p>
 
           <div className="grid grid--3">
             <div className={s.feature} data-od-id="output-register">
@@ -58,7 +58,7 @@ export default function DeliverPage() {
               <p className={s.featureMeta}>From Map</p>
               <h3>The Process Register</h3>
               <p>Every process that matters, named and described as it actually runs. Not as the org
-                chart says it should. The reference point for everything documented afterwards.</p>
+                chart says it should. Everything else gets documented against it.</p>
             </div>
             <div className={s.feature} data-od-id="output-sops">
               <div className={s.featureMark} aria-hidden="true">

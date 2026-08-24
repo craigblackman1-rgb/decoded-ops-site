@@ -35,23 +35,23 @@ const sectorSchema = {
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
-const tagline = 'Large format and signage businesses run on ||tight margins and complex survey-to-fit workflows.||';
+const tagline = 'Signs and graphics businesses run on ||tight margins, and every job starts with a site survey.||';
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed. It starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
-  { title: 'Substrate and finish complexity', body: "The number of variables in a signage job: substrate, finish, size, fixing method, installation requirements. It makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
-  { title: 'Installation scheduling', body: "Coordinating installation teams, site access, third-party contractors, and delivery of materials is a logistics challenge that most job management systems don't handle well." },
-  { title: 'Artwork and proof management', body: "Client approval of artwork before production is critical in this sector. Managing that process outside of the production system creates delay, rework, and missed deadlines." },
+  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed. It starts with a site survey. Most systems can't track a job from survey, through design, production, and installation, to sign-off as one connected flow." },
+  { title: 'Substrate and finish complexity', body: "Substrate, finish, size, fixing method, installation. Every job is different, which makes costing difficult. Cost it by hand and margin leaks on every complex job." },
+  { title: 'Installation scheduling', body: "Scheduling installation teams, site access, contractors, and material deliveries is a logistics problem most job systems handle poorly." },
+  { title: 'Artwork and proof management', body: "Artwork has to be approved before production. Run that approval outside your production system and you get delay, rework, and missed deadlines." },
 ];
 
 const whatIdo = [
-  'Map your full workflow from enquiry through survey, design, production, installation and sign-off',
-  'Identify where jobs fall between system gaps and into manual processes',
-  'Review your job costing model for margin leakage on complex projects',
-  'Assess your installation scheduling approach and its connection to production',
-  'Audit your artwork and proof management process',
-  'Recommend technology suited to the specific operational model of a signs and graphics business',
+  'Map your full workflow, from enquiry to survey, design, production, installation, and sign-off',
+  'Find where jobs fall through system gaps into manual processes',
+  'Review how you cost jobs, and where margin leaks on complex work',
+  'Look at installation scheduling and how it connects to production',
+  'Audit your artwork and proof approval process',
+  'Recommend systems that fit the way a signs and graphics business actually runs',
 ];
 
 const route = sectorRouting['signs-graphics'];
@@ -78,7 +78,7 @@ export default function SignsGraphicsPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Signs and graphics businesses have production processes that generic ERP systems struggle to model. The result is usually spreadsheets, whiteboards, and people carrying information in their heads.</p>
+              <p>Signs and graphics jobs don't fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

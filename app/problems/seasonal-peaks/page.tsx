@@ -70,8 +70,8 @@ export default function SeasonalPeaksPage() {
       <h1>Your busiest month is four times your quietest, and your systems can&apos;t flex.</h1>
       <p className="lede">In decorated goods, demand isn&apos;t flat. Schoolwear peaks in July and August.
        Promotional merchandise spikes in November and December. Teamwear surges in spring. If your
-       systems can&apos;t scale up and down with those rhythms, you&apos;re either burning staff out in the
-       peak or carrying idle capacity in the trough, and neither is sustainable.</p>
+       systems can&apos;t stretch and shrink with those rhythms, you&apos;re either burning staff out in
+       the peak or paying idle staff in the quiet months. Neither is sustainable.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
@@ -108,7 +108,7 @@ export default function SeasonalPeaksPage() {
       </article>
       <article className="card">
        <h3>Teamwear, March to June</h3>
-       <p>New season kits, club orders, tournament merchandise. Every order is personalised ,
+       <p>New season kits, club orders, tournament merchandise. Every order is personalised,
         names, numbers, sponsor logos, and every one of them needs to land before the first
         fixture.</p>
       </article>
@@ -139,17 +139,17 @@ export default function SeasonalPeaksPage() {
       </article>
       <article className="card cause">
        <span className="n">03</span>
-       <h3>Supplier data doesn&apos;t keep up with demand velocity</h3>
+       <h3>Supplier data can&apos;t keep up with demand</h3>
        <p>When you&apos;re ordering ten times the stock in half the time, supplier feeds that update
         weekly aren&apos;t good enough. The gap between what&apos;s available and what&apos;s on screen widens
         exactly when it hurts most.</p>
       </article>
       <article className="card cause">
        <span className="n">04</span>
-       <h3>Idle capacity in the trough eats the peak&apos;s margin</h3>
+       <h3>Idle staff in the quiet months eat the peak&apos;s profit</h3>
        <p>Staff you hired for the peak are still on the payroll in February, doing half the work
-        for the same cost. The seasonal business model only works if you can flex up and down
-        without carrying fixed overhead through the quiet months.</p>
+        for the same cost. The seasonal model only works if you can flex up and down without
+        paying for staff you don&apos;t need through the quiet months.</p>
       </article>
      </div>
     </div>
@@ -196,7 +196,7 @@ export default function SeasonalPeaksPage() {
      <h2>Systems that scale, so your staffing doesn&apos;t have to.</h2>
 
      <div className="answer">
-      <p>A Clarity Audit maps your actual seasonal demand curves against your current capacity ,
+      <p>A Clarity Audit maps your actual seasonal demand curves against your current capacity,
        and the written plan tells you which processes to automate first so the business can handle
        the peak without burning out the people. <b>Ten times the orders shouldn&apos;t mean ten times
        the staff.</b></p>

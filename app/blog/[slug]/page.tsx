@@ -204,7 +204,7 @@ export default async function BlogPost({ params }: PageProps) {
           <div className="post-cta" data-od-id="post-cta">
             <h3 className="h3">Plain English. No jargon. No vendor agenda.</h3>
             <p>
-              A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
+              A Clarity Audit maps your operations, finds the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
             </p>
             <Link href="/clarity" className="btn btn--primary">
               See Clarity <ArrowRight size={18} />

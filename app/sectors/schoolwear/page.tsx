@@ -166,12 +166,12 @@ export default function SchoolwearPage() {
           <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {[
-              'Map your entire schoolwear workflow from supplier catalogue through to parent delivery',
-              'Identify where supplier data lag is creating fulfilment risk before peak season',
-              'Audit sizing spread management and its impact on stock availability',
-              'Review badge specification management and its connection to production',
-              'Assess how parent orders flow from portal to production floor',
-              'Quantify every finding in time, stockout cost, and administrative overhead',
+              'Map your whole schoolwear workflow, from supplier catalogue to parent delivery',
+              'Find where supplier data lag creates orders you cannot fulfil before peak season',
+              'Audit sizing spread and its impact on stock availability',
+              'Review badge specifications and how they connect to production',
+              'See how parent orders flow from portal to production floor',
+              'Put a number on every finding in time, stockout cost, and admin overhead',
             ].map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>

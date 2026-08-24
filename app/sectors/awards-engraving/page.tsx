@@ -35,23 +35,23 @@ const sectorSchema = {
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
-const tagline = 'Personalisation at scale is operationally complex. ||Most awards businesses are still solving it manually.||';
+const tagline = 'Personalisation at scale is hard. ||Most awards businesses still do it by hand.||';
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Variable data management', body: "Every award is different. Managing the variable data: names, titles, dates, messages. From customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
-  { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that, and most systems don't." },
-  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic. Each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
-  { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
+  { title: 'Variable data management', body: "Every award is different. Names, titles, dates, messages, each one needing to move from the customer to the engraving or print without a single error. Most businesses in this sector don't have the systems for that." },
+  { title: 'Event deadline pressure', body: "Awards are nearly always for a specific event, so there's no room for lateness. Production has to schedule backwards from the date, and most systems don't." },
+  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic. Each needs its own engraving method, its own minimum order, and its own supplier lead time. Keeping all of that straight is a constant challenge." },
+  { title: 'Proof and approval at volume', body: "When one order has 50 personalised items and each needs a client-approved proof, the approval process can easily take longer than making them." },
 ];
 
 const whatIdo = [
-  "Audit your variable data intake and verification process in full",
-  'Review your production scheduling approach for event-deadline management',
-  'Map the proof and approval workflow and identify where it\'s creating bottlenecks',
-  'Assess your supplier and product data management for the range you carry',
-  'Identify technology solutions built for variable data personalisation workflows',
-  'Quantify the cost of current manual processes and proof-related rework',
+  'Audit how variable data comes in and gets checked',
+  'Review production scheduling against event deadlines',
+  'Map the proof and approval workflow and find the bottlenecks',
+  'Assess your supplier and product data for the range you carry',
+  'Find software built for variable-data personalisation',
+  'Put a cost on the manual processes and proof rework',
 ];
 
 const route = sectorRouting['awards-engraving'];
@@ -78,7 +78,7 @@ export default function AwardsEngravingPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Variable data, bespoke personalisation, and tight event deadlines make awards and engraving one of the most operationally demanding niches in the decorated products sector.</p>
+              <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

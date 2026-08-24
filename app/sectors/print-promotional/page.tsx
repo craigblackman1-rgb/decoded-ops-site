@@ -54,25 +54,25 @@ const sectorSchema = {
   ],
 };
 
-const tagline = 'Print shop operations management ||starts with understanding what your current process actually costs.||';
+const tagline = 'Print shop operations ||start with knowing what your current process actually costs.||';
 const parts = tagline.split('||');
 
 const challenges = [
-  { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
-  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
-  { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+  { title: 'Product complexity at volume', body: "One client order can run to 40 different product lines, each with its own supplier, spec, and lead time. Manage that by hand and margin quietly leaks on every job." },
+  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The admin of chasing incoming goods rarely shows in the P&L, but it's real." },
+  { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step you can't measure or improve." },
   { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
-  { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow, from brief through proof to sign-off, typically reduces production delays by 20-40% without any change to the print process itself." },
-  { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience. That works until volume grows beyond what one person can hold in their head." },
+  { title: 'Artwork approval workflow', body: "Artwork approval is where most print shop schedules break down. Every unapproved job stuck in an email thread is a press slot you can't plan. Automating approval, from brief to proof to sign-off, typically cuts production delays by 20-40% with no change to the print process." },
+  { title: 'Print production scheduling and capacity planning', body: "Scheduling software that ignores substrate, print method, drying time, and finishing can't produce a realistic schedule. Most print shops schedule by eye and experience. That works until volume outgrows what one person can hold in their head." },
 ];
 
 const whatIdo = [
-  'Audit your order intake and quote process for hidden time cost',
-  'Map the full supplier management workflow from order to receipt',
-  'Identify where sample and approval processes are creating delay',
-  'Review your product data management and supplier pricing model',
-  'Assess your technology stack for integration gaps and manual workarounds',
-  'Quantify the real cost of every inefficiency found',
+  'Audit your order intake and quoting for hidden time cost',
+  'Map the full supplier workflow, from order to receipt',
+  'Find where samples and approvals are creating delay',
+  'Review your product data and supplier pricing',
+  'Check your systems for gaps and manual workarounds',
+  'Put a real cost on every inefficiency found',
 ];
 
 const route = sectorRouting['print-promotional'];
@@ -99,7 +99,7 @@ export default function PrintPromotionalPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints, even when the team is working hard.</p>
+              <p>Print and promotional businesses run short jobs on tight deadlines, with artwork approvals that eat time and scheduling software built for longer runs. The result is missed deadlines, rework, and complaints, even when the team is working hard.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
