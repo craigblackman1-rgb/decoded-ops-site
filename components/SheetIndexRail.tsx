@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const SHEETS = [
-  { id: 's1', no: '01', label: 'Penny drop' },
+  { id: 's1', no: '01', label: 'What I do' },
   { id: 's2', no: '02', label: 'The cost' },
   { id: 's3', no: '03', label: 'How I help' },
   { id: 's4', no: '04', label: 'The guarantee' },

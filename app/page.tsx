@@ -95,12 +95,13 @@ export default function HomePage() {
             <div className="stage-grid">
               <div className="stage-copy">
                 <span className="eyebrow">Operations &amp; technology consultancy</span>
-                <h1>The penny drop moment.</h1>
-                <p>Start with a Clarity Audit. One day inside your business, six areas followed from
-                  start to finish, and within five working days a written plan that tells you what&rsquo;s
-                  broken, what it&rsquo;s costing you, which systems actually fit, and what to fix first.
-                  That&rsquo;s the penny drop: you finally see what&rsquo;s happening, why, and what to do
-                  about it.</p>
+                <h1>I find what&rsquo;s quietly costing you money.</h1>
+                <p>I help owners of print, embroidery, workwear and promotional merchandise businesses
+                  fix the systems that are holding them back. Start with a Clarity Audit: a day inside your
+                  business, six areas followed from start to finish, and within five working days a written
+                  plan that tells you what&rsquo;s broken, what it&rsquo;s costing you, which software actually
+                  fits how you work, and what to fix first. That&rsquo;s the penny drop: you finally see
+                  what&rsquo;s happening, why, and what to do about it.</p>
                 <p>The plan is yours to act on, with me or without me. I&rsquo;ve spent 25 years inside
                   print, embroidery, workwear and promotional merchandise businesses, so I can usually
                   second-guess your problems before you&rsquo;ve finished describing them. Plain English.
