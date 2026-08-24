@@ -158,21 +158,17 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
       </div>
 
       {!isSignable ? null : isSigned && doc.client_signature ? (
-        <div style={{
-          maxWidth: 560,
-          margin: '0 auto',
-          padding: '32px 24px',
-        }}>
+        <div style={{ padding: '0 24px 16px' }}>
           <div style={{
-            padding: '20px 24px',
+            padding: '10px 16px',
             border: '1px solid #d4e8f0',
-            borderRadius: 12,
+            borderRadius: 8,
             background: '#fff',
             fontSize: 13,
             color: '#023047',
             display: 'flex',
             alignItems: 'center',
-            gap: 10,
+            gap: 8,
           }}>
             <svg
               width="18"
