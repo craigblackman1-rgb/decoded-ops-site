@@ -4,18 +4,18 @@ import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'The systems: Decoded Ops',
-  description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
+  description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients.',
   alternates: { canonical: '/apps' },
   openGraph: {
     type: 'website',
     title: 'The systems: Decoded Ops',
-    description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients before they went anywhere near a price list.',
+    description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients.',
     url: 'https://decodedops.co.uk/apps',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The systems: Decoded Ops',
-    description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients before it went anywhere near a price list.',
+    description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients.',
   },
 };
 
@@ -28,7 +28,7 @@ export default function AppsPage() {
           <p className="eyebrow">The systems</p>
           <h1>What&rsquo;s already running.</h1>
           <p className="lede">Not a product catalogue. Software built for jobs the platforms in this sector
-            were never going to do, proven at real clients before it went anywhere near a price list.</p>
+            were never going to do, proven at real clients.</p>
         </div>
       </section>
 
@@ -36,7 +36,7 @@ export default function AppsPage() {
       <section className="g-white">
         <div className="wrap">
           <p className="eyebrow">What I build</p>
-          <h2>Built for the job, then priced.</h2>
+          <h2>Built for the job.</h2>
 
           <div className="log-list">
             <Link className="log-row" href="/apps/data-app">
@@ -64,8 +64,8 @@ export default function AppsPage() {
                 <span className="chip chip--live">Live infrastructure</span>
                 <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
               </div>
-              <p>Storefront build and migration. Three tiers by functionality, plus scoped custom work
-                for a full rebuild. Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
+              <p>Storefront build and migration, scoped to what your customers actually need.
+                Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
                 the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
@@ -165,7 +165,7 @@ export default function AppsPage() {
           <p className="eyebrow">Before any of this</p>
           <h2>Software is the last answer, not the first.</h2>
           <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>If a platform already on the market does
-            the job, that&rsquo;s what goes on the table: named, priced, no commission in it for me.
+            the job, that&rsquo;s what goes on the table: named, no commission in it for me.
             These three exist because for a specific set of jobs, nothing on the market did.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
             <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>
@@ -176,12 +176,12 @@ export default function AppsPage() {
       {/* 4 · CTA STRIP */}
       <section className="g-off cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Talk about what you need.</h2>
-          <p className="lede">Start with the problem, not the product. If one of these fits, I&rsquo;ll say so. If
-            something you can already buy fits better, I&rsquo;ll say that instead.</p>
+          <h2>Start with what you need.</h2>
+          <p className="lede">Not sure which of these fits? A Clarity Audit maps your operations in a day
+            and tells you exactly where software helps &mdash; and where it doesn&rsquo;t.</p>
           <div className="btn-row">
-            <Link className="btn btn--primary" href="/contact">Talk about what you need</Link>
-            <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price them</Link>
+            <Link className="btn btn--primary" href="/clarity">Book a Clarity Audit</Link>
+            <Link className="btn btn--ghost btn-arrow" href="/how-i-build">How I decide what to build</Link>
           </div>
         </div>
       </section>
