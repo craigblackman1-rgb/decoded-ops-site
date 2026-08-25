@@ -1,0 +1,628 @@
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read .context/check-nav-coverage.mjs
+ΓåÆ Read package.json
+ΓåÆ Read CLAUDE.md
+I'll start by exploring the current state of the relevant files.
+
+$ git status && git branch --show-current && git log --oneline -5
+On branch chore/premerge-gates
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+chore/premerge-gates
+7ef16d4 fix(client-portal): resolve docs via client-scoped list after hub token gate
+3a1f18e chore: remove closed work-order and lane briefing docs from .context
+4d35a58 logs
+e19539e Rebuild the downtime calculator around what an hour actually costs
+4495eb7 feat(client-portal): render the evidence trail on each task card
+
+$ Get-ChildItem -Recurse -Path ".context" -File | Select-Object -ExpandProperty FullName
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\backlog.md
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\loop-status.md
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\mockup-vs-app.mjs
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\plate-audit.mjs
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\slot-audit.mjs
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\b1-rediff-20260810-140710.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\b7b9-fixes-voice-20260810-140712.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\b8b10-cta-seo-20260810-140715.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\fix-case-studies-20260802-104318.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\fix-cs-voice-20260802-124610.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\fix-schematics-voice-20260802-124611.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\fix-sectors-20260802-104316.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-batch-2026-08-07-20260807-084619.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-case-studies-20260802-093059.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-core-pages-20260802-093055.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-foundation-20260802-091030.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-problems-20260802-093058.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\plate-sectors-20260802-093057.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\price-removal-20260808-100213.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-core-20260802-110713.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-core-20260802-120204.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-legal-20260802-110715.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-legal-20260802-120205.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-misc-20260802-110717.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-problems-20260802-110709.log
+D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\lanes\voice-sectors-20260802-110711.log
+
+$ Get-ChildItem -Path "app" -Recurse -Filter "page.tsx" | Select-Object -ExpandProperty FullName
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\about\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\blog\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\blog\[slug]\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\case-studies\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\case-studies\cobra-workwear\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\case-studies\eternal-fitness\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\case-studies\hanicks\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\case-studies\tacklebag\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clarity\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\dashboard\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\documents\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\documents\view\[id]\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\login\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\project\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\clients\[clientId]\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\contact\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\cookies\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\decoded-data-app\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\deliver\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\locations\fractional-cto\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\locations\fractional-cto\[location]\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\locations\tech-audit\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\locations\tech-audit\[location]\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\pricing\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\privacy\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\ai-paralysis\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\cant-scale-operations\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\disaster-recovery\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\ecommerce-not-connected\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\erp-implementation-failure\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\manual-workarounds\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\no-ops-owner\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\slow-processes\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\systems-dont-talk\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\problems\wrong-erp-software\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\5-warning-signs\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\audit-checklist\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\decoded-method\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\six-sigma\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\resources\software-reviews\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\retained\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\awards-engraving\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\garment-decoration\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\labels-packaging\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\print-promotional\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\signs-graphics\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\sectors\workwear-teamwear\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\small-business\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\ai-readiness-check\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\automation-roi-calculator\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\downtime-cost-calculator\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\ops-health-score\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\rto-calculator\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\tools\should-i-replace-erp\page.tsx
+D:\apps\worktrees\decoded-ops-website\premerge-gates\app\transform\page.tsx
+
+$ Get-ChildItem -Path "app" -Recurse -Filter "*.tsx" | Measure-Object | Select-Object -ExpandProperty Count; Get-ChildItem -Path "components" -Recurse -Filter "*.tsx" | Measure-Object | Select-Object -ExpandProperty Count
+84
+50
+
+ΓåÆ Read .context/plate-audit.mjs
+ΓåÆ Read .context/slot-audit.mjs
+ΓåÆ Read .context/mockup-vs-app.mjs
+
+$ rg -n "┬ú" app components --glob "*.tsx" --glob "!app/pricing/**" | Measure-Object -Line | Select-Object -ExpandProperty Lines
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "┬ú" app components --glob "*.tsx" --glob "!app/pricing/**"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "┬ú" in . ┬╖ 97 matches
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/about/page.tsx
+
+$ node .context/check-nav-coverage.mjs; Write-Output "EXIT=$LASTEXITCODE"
+usage: node check-nav-coverage.mjs <repo-root>
+EXIT=2
+
+$ node .context/check-nav-coverage.mjs .; Write-Output "EXIT=$LASTEXITCODE"
+pages on disk (public, static): 48
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (3):
+  /locations/fractional-cto/brighton
+  /locations/fractional-cto/chichester
+  /locations/fractional-cto/guildford
+EXIT=1
+
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/problems/systems-dont-talk/page.tsx
+ΓåÆ Read app/tools/downtime-cost-calculator/page.tsx
+
+ΓåÉ Write .context/price-audit.mjs
+Wrote file successfully.
+
+Now I understand the structure. Let me write the two new scripts and make the necessary edits.
+ΓåÉ Write .context/extract-copy.mjs
+Wrote file successfully.
+
+ΓåÉ Edit .context/check-nav-coverage.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
+@@ -4,12 +4,12 @@
+ //   ORPHANED  ΓÇö a real page nothing in the nav links to
+ //   BROKEN    ΓÇö a nav link pointing at a route that does not exist
+ // Run: node check-nav-coverage.mjs <repo-root>
+ import { readFileSync, readdirSync, statSync } from 'node:fs';
+-import { join, relative, sep } from 'node:path';
++import { join, relative, sep, dirname, resolve } from 'node:path';
++import { fileURLToPath } from 'node:url';
+ 
+-const root = process.argv[2];
+-if (!root) { console.error('usage: node check-nav-coverage.mjs <repo-root>'); process.exit(2); }
++const root = process.argv[2] ? resolve(process.cwd(), process.argv[2]) : resolve(dirname(fileURLToPath(import.meta.url)), '..');
+ 
+ const appDir = join(root, 'app');
+ 
+ // ΓöÇΓöÇ 1. every routable page, computed from disk ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+
+ΓåÉ Edit package.json
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\package.json
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\package.json
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\package.json
+@@ -5,9 +5,13 @@
+ "scripts": {
+   "dev": "next dev -p 8765",
+   "build": "next build",
+   "start": "next start",
+-  "lint": "eslint"
++  "lint": "eslint",
++  "check:nav": "node .context/check-nav-coverage.mjs",
++  "check:price": "node .context/price-audit.mjs",
++  "copy:extract": "node .context/extract-copy.mjs",
++  "check:premerge": "npm run check:nav && npm run check:price"
+ },
+ "dependencies": {
+   "resend": "^6.12.3",
+   "@supabase/supabase-js": "^2.107.0",
+
+
+ΓåÉ Edit CLAUDE.md
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\CLAUDE.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\CLAUDE.md
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\CLAUDE.md
+@@ -26,8 +26,14 @@
+ Website pins explicit weights (400/500/600/700/800 for Outfit, 400/500/700 for DM Sans).
+ 
+ **Production URL:** https://decodedops.co.uk
+ 
++## Deployments
++
++- **Production** ΓÇö branch `main`.
++- **Staging** ΓÇö branch `staging`, Coolify app uuid `ax1yi6hyl54gfj8w8adhq55d`.
++- Marketing copy work lands on `staging` first and is promoted to `main` only with Craig's sign-off.
++
+ ## Build / Dev commands
+ 
+ ```
+ npm run dev      # Next.js dev server on port 8765
+
+
+$ node .context/check-nav-coverage.mjs; Write-Output "EXIT=$LASTEXITCODE"
+pages on disk (public, static): 48
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (3):
+  /locations/fractional-cto/brighton
+  /locations/fractional-cto/chichester
+  /locations/fractional-cto/guildford
+EXIT=1
+
+Now let me run the verification steps.
+$ node .context/price-audit.mjs; Write-Output "EXIT=$LASTEXITCODE"
+app/clients/[clientId]/components/AcceptanceSection.tsx:34: ┬ú1,500
+app/clients/[clientId]/components/AcceptanceSection.tsx:35: ┬ú1,400
+app/clients/[clientId]/components/AcceptanceSection.tsx:36: ┬ú1,800
+app/clients/[clientId]/components/PortalMockupSection.tsx:137: ┬ú250
+app/deliver/page.tsx:37: ┬ú1,050
+app/deliver/page.tsx:280: ┬ú80,000
+app/deliver/page.tsx:280: ┬ú150,000
+app/locations/tech-audit/[location]/page.tsx:22: ┬ú395
+app/locations/tech-audit/[location]/page.tsx:28: ┬ú395
+app/locations/tech-audit/[location]/page.tsx:35: ┬ú395
+app/locations/tech-audit/[location]/page.tsx:127: ┬ú395
+app/locations/tech-audit/page.tsx:11: ┬ú395
+app/locations/tech-audit/page.tsx:16: ┬ú395
+app/locations/tech-audit/page.tsx:24: ┬ú395
+app/locations/tech-audit/page.tsx:49: ┬ú395
+app/locations/tech-audit/page.tsx:89: ┬ú395
+app/opengraph-image.tsx:99: ┬ú395
+app/problems/cant-scale-operations/page.tsx:81: ┬ú500k
+app/problems/cant-scale-operations/page.tsx:81: ┬ú1m
+app/problems/cant-scale-operations/page.tsx:127: ┬ú500k
+app/problems/cant-scale-operations/page.tsx:127: ┬ú1.5m
+app/problems/slow-processes/page.tsx:91: ┬ú5m
+app/resources/5-warning-signs/page.tsx:58: ┬ú150,000
+app/resources/5-warning-signs/page.tsx:58: ┬ú10,000
+app/retained/page.tsx:37: ┬ú1,440
+app/retained/page.tsx:50: ┬ú80,000
+app/retained/page.tsx:65: ┬ú5m
+app/retained/page.tsx:78: ┬ú80k
+app/retained/page.tsx:124: ┬ú80,000
+app/small-business/page.tsx:9: ┬ú500k
+app/small-business/page.tsx:14: ┬ú500k
+app/small-business/page.tsx:21: ┬ú500k
+app/small-business/page.tsx:31: ┬ú500k
+app/small-business/page.tsx:47: ┬ú500k
+app/small-business/page.tsx:58: ┬ú500k
+app/small-business/page.tsx:74: ┬ú395
+app/small-business/page.tsx:88: ┬ú550
+app/small-business/page.tsx:102: ┬ú770
+app/small-business/page.tsx:116: ┬ú395
+app/small-business/page.tsx:119: ┬ú395
+app/small-business/page.tsx:120: ┬ú695
+app/small-business/page.tsx:121: ┬ú995
+app/small-business/page.tsx:148: ┬ú500k
+app/small-business/page.tsx:166: ┬ú395
+app/small-business/page.tsx:172: ┬ú550
+app/small-business/page.tsx:178: ┬ú770
+app/small-business/page.tsx:184: ┬ú395
+app/transform/page.tsx:37: ┬ú1,500
+
+48 price figures outside /pricing.
+EXIT=1
+
+$ node .context/extract-copy.mjs; Write-Output "EXIT=$LASTEXITCODE"
+Extracted 58 routes (2730 lines) ΓåÆ .context/copy-snapshot.md
+EXIT=0
+
+$ node .context/extract-copy.mjs; git diff --stat .context/copy-snapshot.md; Write-Output "DIFF_EXIT=$LASTEXITCODE"
+Extracted 58 routes (2730 lines) ΓåÆ .context/copy-snapshot.md
+DIFF_EXIT=0
+
+$ $h1 = (Get-FileHash .context/copy-snapshot.md -Algorithm SHA256).Hash; node .context/extract-copy.mjs; $h2 = (Get-FileHash .context/copy-snapshot.md -Algorithm SHA256).Hash; Write-Output "RUN1=$h1"; Write-Output "RUN2=$h2"; if ($h1 -eq $h2) { Write-Output "DETERMINISTIC: identical" } else { Write-Output "MISMATCH" }
+Extracted 58 routes (2730 lines) ΓåÆ .context/copy-snapshot.md
+RUN1=30C0F1EB42E51EE452486C751886AA6FFA4B767CBBC3CCF89113312EB97AD6C7
+RUN2=30C0F1EB42E51EE452486C751886AA6FFA4B767CBBC3CCF89113312EB97AD6C7
+DETERMINISTIC: identical
+
+ΓåÆ Read .context/copy-snapshot.md [limit=80]
+Γ£▒ Grep "export default|return \(|=> \(" in app ┬╖ 100 matches
+ΓåÆ Read app/locations/tech-audit/[location]/page.tsx
+
+ΓåÉ Edit .context/extract-copy.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+@@ -99,11 +99,13 @@
+ }
+ 
+ function extractJsxText(src) {
+   const out = [];
++  const startIdx = Math.max(0, src.indexOf('export default'));
+   let depth = 0;
+   let inTag = false;
+   let inStr = null;
++  let started = false;
+   let buf = '';
+   let bufStart = -1;
+ 
+   const flush = () => {
+@@ -112,13 +114,14 @@
+     buf = '';
+     bufStart = -1;
+   };
+   const append = (ch, idx) => {
++    if (!started) return;
+     if (bufStart < 0) bufStart = idx;
+     buf += ch;
+   };
+ 
+-  let i = 0;
++  let i = startIdx;
+   while (i < src.length) {
+     const c = src[i];
+ 
+     if (inStr) {
+
+
+The extraction works but leaks JS scaffolding before the JSX return. Let me fix the JSX text extractor to start at `export default` and only capture after the first `return`.
+ΓåÉ Edit .context/extract-copy.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+@@ -132,8 +132,9 @@
+ if (c === '"' || c === "'" || c === '`') { inStr = c; i++; continue; }
+ 
+ if (c === 'r' && src.startsWith('return', i) && (i === 0 || !/[A-Za-z0-9_$]/.test(src[i - 1]))) {
+   depth = 0;
++  started = true;
+   i += 6;
+   while (i < src.length && /\s/.test(src[i])) i++;
+   if (src[i] === '(') i++;
+   continue;
+
+
+$ node .context/extract-copy.mjs; Write-Output "EXIT=$LASTEXITCODE"
+Extracted 58 routes (2470 lines) ΓåÆ .context/copy-snapshot.md
+EXIT=0
+
+ΓåÆ Read .context/copy-snapshot.md [limit=60]
+
+ΓåÉ Edit .context/extract-copy.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+@@ -72,10 +72,10 @@
+ const STRING_RE = /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|`(?:[^`\\]|\\.)*`/g;
+ 
+ function precedingKey(src, idx) {
+   const before = src.slice(Math.max(0, idx - 100), idx);
+-  const m = before.match(/([A-Za-z_$@][A-Za-z0-9_$-]*)\s*[:=]\s*$/);
+-  return m ? m[1].toLowerCase() : null;
++  const m = before.match(/(?:([A-Za-z_$@][A-Za-z0-9_$-]*)|['"]([^'"]+)['"])\s*[:=]\s*$/);
++  return m ? (m[1] || m[2] || '').toLowerCase() : null;
+ }
+ 
+ function extractStrings(src) {
+   const out = [];
+
+
+The schema `@type` values (WebPage, ItemList, etc.) leak because JSON-LD keys are quoted (`'@type': ...`). Let me fix key detection to handle quoted keys.
+$ node .context/extract-copy.mjs; Write-Output "EXIT=$LASTEXITCODE"
+Extracted 58 routes (2316 lines) ΓåÆ .context/copy-snapshot.md
+EXIT=0
+
+ΓåÆ Read .context/copy-snapshot.md [limit=40]
+
+$ node -e "const s=require('fs').readFileSync('.context/copy-snapshot.md','utf8'); const bad=s.split('\n').filter(l=>/^\- (export |const |;|\}\}|=> |return |function |import |\);\}?$)/.test(l)); console.log('suspicious lines:', bad.length); bad.slice(0,40).forEach(l=>console.log(l));"
+suspicious lines: 2
+- const ids = clientId === ? ALL_CLIENT_IDS : [clientId] const lists = await Promise.all( ids.map(id => fetch(,
+- const isSignable = doc.signable === true const isSigned = isSignable && doc.status === const clientName = session.user?.name ?? undefined
+
+ΓåÆ Read app/clients/documents/page.tsx
+ΓåÆ Read app/clients/documents/view/[id]/page.tsx
+Γ£▒ Grep "return\s*<" in app ┬╖ 6 matches
+
+ΓåÉ Edit .context/extract-copy.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\extract-copy.mjs
+@@ -131,14 +131,16 @@
+ }
+ if (c === '"' || c === "'" || c === '`') { inStr = c; i++; continue; }
+ 
+ if (c === 'r' && src.startsWith('return', i) && (i === 0 || !/[A-Za-z0-9_$]/.test(src[i - 1]))) {
+-  depth = 0;
+-  started = true;
+-  i += 6;
+-  while (i < src.length && /\s/.test(src[i])) i++;
+-  if (src[i] === '(') i++;
+-  continue;
++  let j = i + 6;
++  while (j < src.length && /\s/.test(src[j])) j++;
++  if (src[j] === '(') {
++    depth = 0;
++    started = true;
++    i = j + 1;
++    continue;
++  }
+ }
+ 
+ if (c === '<' && depth === 0) { inTag = true; flush(); i++; continue; }
+ if (inTag) { if (c === '>') inTag = false; i++; continue; }
+
+
+$ node .context/extract-copy.mjs; node -e "const s=require('fs').readFileSync('.context/copy-snapshot.md','utf8'); const bad=s.split('\n').filter(l=>/^\- (export |const |;|\}\}|=> |return |function |import |\);\}?$)/.test(l)); console.log('suspicious lines:', bad.length); bad.forEach(l=>console.log(l));"
+Extracted 58 routes (2311 lines) ΓåÆ .context/copy-snapshot.md
+suspicious lines: 0
+
+$ node -e "const s=require('fs').readFileSync('.context/copy-snapshot.md','utf8'); for (const q of ['Why do business systems get selected','What does an hour of downtime actually cost you','From ┬ú2,500','If the report doesn']) { console.log(q+':', s.includes(q) ? 'PRESENT' : 'MISSING'); }"
+Why do business systems get selected: PRESENT
+What does an hour of downtime actually cost you: PRESENT
+From ┬ú2,500: MISSING
+If the report doesn: PRESENT
+
+$ $h1 = (Get-FileHash .context/copy-snapshot.md -Algorithm SHA256).Hash; node .context/extract-copy.mjs; $h2 = (Get-FileHash .context/copy-snapshot.md -Algorithm SHA256).Hash; Write-Output "DETERMINISTIC=$($h1 -eq $h2)"
+Extracted 58 routes (2311 lines) ΓåÆ .context/copy-snapshot.md
+DETERMINISTIC=True
+
+$ git status --short; Write-Output "----DIFF STAT----"; git diff --stat
+M .context/check-nav-coverage.mjs
+ M CLAUDE.md
+ M package.json
+?? .context/copy-snapshot.md
+?? .context/extract-copy.mjs
+?? .context/price-audit.mjs
+----DIFF STAT----
+ .context/check-nav-coverage.mjs | 6 +++---
+ CLAUDE.md                       | 6 ++++++
+ package.json                    | 6 +++++-
+ 3 files changed, 14 insertions(+), 4 deletions(-)
+
+$ git diff .context/check-nav-coverage.mjs package.json CLAUDE.md
+diff --git a/.context/check-nav-coverage.mjs b/.context/check-nav-coverage.mjs
+index b70723d..d75429a 100644
+--- a/.context/check-nav-coverage.mjs
++++ b/.context/check-nav-coverage.mjs
+@@ -5,10 +5,10 @@
+ //   BROKEN    ΓÇö a nav link pointing at a route that does not exist
+ // Run: node check-nav-coverage.mjs <repo-root>
+ import { readFileSync, readdirSync, statSync } from 'node:fs';
+-import { join, relative, sep } from 'node:path';
++import { join, relative, sep, dirname, resolve } from 'node:path';
++import { fileURLToPath } from 'node:url';
+ 
+-const root = process.argv[2];
+-if (!root) { console.error('usage: node check-nav-coverage.mjs <repo-root>'); process.exit(2); }
++const root = process.argv[2] ? resolve(process.cwd(), process.argv[2]) : resolve(dirname(fileURLToPath(import.meta.url)), '..');
+ 
+ const appDir = join(root, 'app');
+ 
+diff --git a/CLAUDE.md b/CLAUDE.md
+index 6d66c4e..0152be7 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -27,6 +27,12 @@ Website pins explicit weights (400/500/600/700/800 for Outfit, 400/500/700 for D
+ 
+ **Production URL:** https://decodedops.co.uk
+ 
++## Deployments
++
++- **Production** ΓÇö branch `main`.
++- **Staging** ΓÇö branch `staging`, Coolify app uuid `ax1yi6hyl54gfj8w8adhq55d`.
++- Marketing copy work lands on `staging` first and is promoted to `main` only with Craig's sign-off.
++
+ ## Build / Dev commands
+ 
+ ```
+diff --git a/package.json b/package.json
+index 4f0eaea..424f7db 100644
+--- a/package.json
++++ b/package.json
+@@ -6,7 +6,11 @@
+     "dev": "next dev -p 8765",
+     "build": "next build",
+     "start": "next start",
+-    "lint": "eslint"
++    "lint": "eslint",
++    "check:nav": "node .context/check-nav-coverage.mjs",
++    "check:price": "node .context/price-audit.mjs",
++    "copy:extract": "node .context/extract-copy.mjs",
++    "check:premerge": "npm run check:nav && npm run check:price"
+   },
+   "dependencies": {
+     "resend": "^6.12.3",
+
+ΓåÉ Edit .context/check-nav-coverage.mjs
+Index: D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
++++ D:\apps\worktrees\decoded-ops-website\premerge-gates\.context\check-nav-coverage.mjs
+@@ -2,9 +2,9 @@
+ // Enumerates every routable public page from disk at run time, extracts every
+ // href from Header.tsx + Footer.tsx, and reports both directions:
+ //   ORPHANED  ΓÇö a real page nothing in the nav links to
+ //   BROKEN    ΓÇö a nav link pointing at a route that does not exist
+-// Run: node check-nav-coverage.mjs <repo-root>
++// Run: node check-nav-coverage.mjs [repo-root]  (root defaults to the repo this file lives in)
+ import { readFileSync, readdirSync, statSync } from 'node:fs';
+ import { join, relative, sep, dirname, resolve } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ 
+
+
+$ node -e "const s=require('fs').readFileSync('.context/copy-snapshot.md','utf8'); const m=s.match(/## \/pricing\n([\s\S]*?)(?=\n## |\n?$)/); console.log(m ? m[0] : 'no pricing section');"
+## /pricing
+
+- Consultancy Pricing ΓÇö Clarity, Deliver, Transform | Decoded Ops
+- Transparent pricing for operational and technology consultancy. Clarity audit from ┬ú395. Project delivery, transformation programmes, and retained engagements.
+- Transparent pricing for operational and technology consultancy. Clarity audit from ┬ú395.
+- Home
+- Pricing
+- Indicative pricing by business size
+- No VAT ΓÇö Craig is not VAT registered. Vendor and software costs are separate, confirmed once a brief exists.
+
+$ git add -A && git status --short
+warning: in the working copy of '.context/copy-snapshot.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/extract-copy.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.context/price-audit.mjs', LF will be replaced by CRLF the next time Git touches it
+M  .context/check-nav-coverage.mjs
+A  .context/copy-snapshot.md
+A  .context/extract-copy.mjs
+A  .context/price-audit.mjs
+M  CLAUDE.md
+M  package.json
+
+$ git commit -m "chore: wire pre-merge gates (price audit + copy extractor)" && git log --oneline -1
+[chore/premerge-gates 87eadd5] chore: wire pre-merge gates (price audit + copy extractor)
+ 6 files changed, 2554 insertions(+), 5 deletions(-)
+ create mode 100644 .context/copy-snapshot.md
+ create mode 100644 .context/extract-copy.mjs
+ create mode 100644 .context/price-audit.mjs
+87eadd5 chore: wire pre-merge gates (price audit + copy extractor)
+
+Done. Committed as `87eadd5` on `chore/premerge-gates` (not pushed).
+
+## Result
+
+**1. Price-audit hit list (headline finding ΓÇö 48 breaches, exit 1)**
+
+The `small-business` page is effectively a second pricing page (18 figures), plus pricing leaks in JSON-LD offers, location pages, client proposals, and narrative copy:
+
+```
+app/clients/[clientId]/components/AcceptanceSection.tsx:34 ┬ú1,500 ┬╖ :35 ┬ú1,400 ┬╖ :36 ┬ú1,800
+app/clients/[clientId]/components/PortalMockupSection.tsx:137 ┬ú250
+app/deliver/page.tsx:37 ┬ú1,050 ┬╖ :280 ┬ú80,000 ┬╖ :280 ┬ú150,000
+app/locations/tech-audit/[location]/page.tsx:22,28,35,127 ┬ú395
+app/locations/tech-audit/page.tsx:11,16,24,49,89 ┬ú395
+app/opengraph-image.tsx:99 ┬ú395
+app/problems/cant-scale-operations/page.tsx:81 ┬ú500k ┬╖ :81 ┬ú1m ┬╖ :127 ┬ú500k ┬╖ :127 ┬ú1.5m
+app/problems/slow-processes/page.tsx:91 ┬ú5m
+app/resources/5-warning-signs/page.tsx:58 ┬ú150,000 ┬╖ :58 ┬ú10,000
+app/retained/page.tsx:37 ┬ú1,440 ┬╖ :50 ┬ú80,000 ┬╖ :65 ┬ú5m ┬╖ :78 ┬ú80k ┬╖ :124 ┬ú80,000
+app/small-business/page.tsx:9,14,21,31,47,58,148 ┬ú500k ┬╖ :74,116,119,166,184 ┬ú395 ┬╖ :88,172 ┬ú550 ┬╖ :102,178 ┬ú770 ┬╖ :120 ┬ú695 ┬╖ :121 ┬ú995
+app/transform/page.tsx:37 ┬ú1,500
+```
+
+None of these pages were edited ΓÇö they are findings for Craig.
+
+**2. Copy extractor:** 58 routes, 2311 lines ΓåÆ `.context/copy-snapshot.md` (deterministic ΓÇö two runs produced byte-identical hashes).
+
+**3. check-nav (exit 1):** 48 static pages, 38 nav hrefs ΓåÆ 14 orphaned pages, 3 broken links (`/locations/fractional-cto/{brighton,chichester,guildford}`). Reported as-is, not fixed.
+
+## What I had to do beyond the letter of the spec
+
+- **Edited the existing `.context/check-nav-coverage.mjs`** (a ~3-line change). The committed script required a `<repo-root>` argument and exited 2 without it, but the specified wiring `node .context/check-nav-coverage.mjs` passes no argument. I made the root default to the script's own location so `check:nav` actually runs. This means the diff includes that one pre-existing file in addition to the "new files only" list.
+
+## Notes / limitations
+
+- **Pricing page copy is thin in the snapshot.** `/pricing/page.tsx` is a wrapper; the real pricing figures live in the sibling `app/pricing/PricingClient.tsx`, which is not a `page.tsx`, so the extractor (scoped to `app/**/page.tsx` per spec) only captures the page-level wrapper copy. Problem/location pages are fine because their copy is passed as props (string literals) in the page file.
+- `public/infographics/*.tsx` contain `┬ú` figures but are outside the audit's `app/**` + `components/**` scope, so they are not flagged.

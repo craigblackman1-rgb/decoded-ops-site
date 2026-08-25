@@ -1,0 +1,2246 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read all target files (9 sector pages, 3 component files)
+[ ] Fix em dashes across all files
+[ ] Fix first-person violations (we/our/us ΓåÆ I/my/me)
+[ ] Fix banned phrases: end-to-end, consultant-speak
+[ ] Fix overclaims (biggest/always/never/every)
+[ ] Verify: grep for ΓÇö, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Check if SectorPage.tsx is live or dead code
+[ ] Report summary
+
+Γ£▒ Glob "app/sectors/**/page.tsx" 9 matches
+Γ£▒ Glob "components/SectorPage*.tsx" 2 matches
+Γ£▒ Glob "components/SectorPage*.module.css" 1 match
+ΓåÆ Read components/SectorPageDS.tsx
+ΓåÆ Read components/SectorPage.tsx
+ΓåÆ Read components/SectorPageDS.module.css
+ΓåÆ Read app/sectors/workwear/page.tsx
+ΓåÆ Read app/sectors/teamwear-clubwear/page.tsx
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx
+ΓåÆ Read app/sectors/schoolwear/page.tsx
+ΓåÆ Read app/sectors/signs-graphics/page.tsx
+ΓåÆ Read app/sectors/print-promotional/page.tsx
+ΓåÆ Read app/sectors/garment-decoration/page.tsx
+ΓåÆ Read app/sectors/awards-engraving/page.tsx
+ΓåÆ Read app/sectors/labels-packaging/page.tsx
+Γ£▒ Grep "SectorPage[^D]" in . ┬╖ 2 matches
+Γ£▒ Grep "from.*SectorPage" in . ┬╖ 10 matches
+Γ£▒ Grep "import SectorPage" in . ┬╖ 0 matches
+Γ£▒ Grep "\bend.to.end\b|end-to-end" in . ┬╖ 18 matches
+Γ£▒ Grep "\u2014" in . ┬╖ 100 matches
+Γ£▒ Grep "\bwe\s|\bWe\s|\bour\s|\bOur\s|\bus\s|\bUs\s" in . ┬╖ 85 matches
+Γ£▒ Grep "leverage|synergy|holistic|seamless|journey|pain points|moving the needle|best-in-class|best practice|circle back|reach out|unlock|game-changer|delve|robust|crucial|biggest|always|never|every\b" in app/sectors ┬╖ 28 matches
+Now I have a clear picture. The old `SectorPage.tsx` is **dead code** ΓÇö zero imports from any live route. I'll note that but skip edits to it. Let me now do comprehensive greps to find all violations.
+Now let me do a focused grep for em dashes only within the in-scope files:
+
+$ rg -n "\u2014" "app/sectors" --include "*.tsx" 2>$null; rg -n "\u2014" "components/SectorPageDS.tsx" "components/SectorPage.tsx" 2>$null
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ Get-ChildItem -Recurse "app/sectors" -Filter "*.tsx" | ForEach-Object { Select-String -Path $_.FullName -Pattern "`u2014" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } }; Get-ChildItem "components" -Filter "SectorPage*.tsx" | ForEach-Object { Select-String -Path $_.FullName -Pattern "`u2014" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } }
+ParserError: 
+Line |
+   1 |  . ForEach-Object { Select-String -Path $_.FullName -Pattern "`u2014" -A .
+     |                                                               ~~
+     | The Unicode escape sequence is not valid. A valid sequence is `u{ followed by one to six hex digits and a
+     | closing '}'.
+
+$ $em = [char]0x2014; Get-ChildItem -Recurse "app/sectors" -Filter "*.tsx" | ForEach-Object { Select-String -Path $_.FullName -Pattern $em -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } }; Get-ChildItem "components" -Filter "SectorPage*.tsx" | ForEach-Object { Select-String -Path $_.FullName -Pattern $em -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } }
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:42: { title: 'Variable data management', body: "Every award is different. Managing the variable data - names, titles, dates, messages - from customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:43: { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that - and most systems don't." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:44: { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic - each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:99: <Plate tone="dark" p="ae" title="Awards & engraving - variable data to delivered awards"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:112: dates ∩┐╜ messages - verified before production, not during it</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:121: fifty approvals - a workflow that doesn&apos;t consume more time than production itself</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:130: crystal ∩┐╜ metal ∩┐╜ wood - method-matched engraving, scheduled to the event date</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx:166: <p className="lede">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:13: description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow - for businesses doing embroidery, screen print, DTF, and DTG.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:17: description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow - for businesses doing embroidery, screen print, DTF, and DTG.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:24: description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow - for businesses doing embroidery, screen print, DTF, and DTG.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:50: acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management - none of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:55: acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP - the right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Sector-specific systems like PANTA, DecoNetwork, and OrderWise are all used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:66: { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures - all managed in systems that don't account for the difference." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:67: { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop - but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:68: { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders - until the problem is already in the queue." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:74: 'Map your current decoration workflows end to end - from order intake to despatch',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:107: <p>Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management - and your systems should reflect that difference.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:125: <Plate tone="dark" p="gd" title="Garment decoration - order intake to despatched garment"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:138: artwork files ∩┐╜ personalisation data - all arriving together, not separately</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:147: screen print ∩┐╜ DTF ∩┐╜ DTG - method mix scheduling that accounts for blank stock</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:156: garment ∩┐╜ correct decoration ∩┐╜ right address - data carried through from order to door</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx:192: <p className="lede">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:42: { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs - and ensuring the right version is always in production - is a critical operational challenge." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:44: { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration - and doing it without errors - requires product data management that most businesses manage in spreadsheets." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:45: { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up - and maintaining it - is a specialist operational challenge." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:81: <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain - with zero tolerance for error and constant pressure on turnaround times.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:99: <Plate tone="dark" p="lp" title="Labels & packaging - specification to compliant delivery"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:112: SKUs ∩┐╜ version management ∩┐╜ compliance data - right version, every time</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:121: high-variation ∩┐╜ substrate matched to press - workflow built for the job, not generic</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:130: spec ∩┐╜ correct substrate ∩┐╜ EDI integration - delivered right first time</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx:166: <p className="lede">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:50: acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current approval process step by step - from artwork received to sign-off confirmed. Most print shops lose 2-3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.' },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:61: { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually - or in a system not built for it - is a permanent drag on margin." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:62: { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L - but it's real." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:64: { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it - and the answer is usually uncomfortable." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:65: { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow - from brief through proof to sign-off - typically reduces production delays by 20-40% without any change to the print process itself." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:66: { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience - which works until volume grows beyond what one person can hold in their head." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:102: <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints - even when the team is working hard.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:120: <Plate tone="dark" p="pp" title="Print & promotional - quote to delivered print run"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:142: multiple portals - one consolidated view of what is ordered and when it arrives</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:151: with audit trail - not an email thread per job</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:160: ∩┐╜ print method ∩┐╜ drying time ∩┐╜ finishing - a schedule that reflects the real job</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx:196: <p className="lede">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:8: title: 'Promotional merchandise - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:12: title: 'Promotional merchandise - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:19: title: 'Promotional merchandise - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:29: name: 'Promotional merchandise - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:59: <Plate tone="dark" p="pm" title="Promotional merchandise - supplier range to delivered order"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:72: live pricing ∩┐╜ live stock - not a folder of spreadsheets nobody trusts</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:81: versioning ∩┐╜ proof approval ∩┐╜ audit trail - not an email thread per order</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx:90: cost ∩┐╜ supplier lead times ∩┐╜ margin trackable per job - not estimated after delivery</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:8: title: 'Schoolwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:12: title: 'Schoolwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:19: title: 'Schoolwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:29: name: 'Schoolwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:57: shotCaption="Every school badge is a thread file before it's a garment - and the size curve behind it changes every September."
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:59: <Plate tone="dark" p="sw" title="Schoolwear - supplier range to parent delivery"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:72: accessories - live data before the August rush, not during it</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx:81: embroidery spec ∩┐╜ version control - not an email thread</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:42: { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed - it starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:43: { title: 'Substrate and finish complexity', body: "The number of variables in a signage job - substrate, finish, size, fixing method, installation requirements - makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:99: <Plate tone="dark" p="sg" title="Signs & graphics - site survey to sign-off"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:112: access ∩┐╜ fixing requirements - the data the whole job depends on</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:130: size ∩┐╜ fixing method - job costed accurately, not estimated</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx:175: <p className="lede">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:8: title: 'Teamwear & Clubwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:9: description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match - proven at TackleBag.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:12: title: 'Teamwear & Clubwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:13: description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match - proven at TackleBag.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:19: title: 'Teamwear & Clubwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:20: description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match - proven at TackleBag.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:29: name: 'Teamwear & Clubwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:30: description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match - proven at TackleBag.',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:59: <Plate tone="dark" p="tw" title="Teamwear - squad list to kitted-out"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:72: colourways - live across every channel a team orders through</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx:81: size per player ∩┐╜ sponsor logo per age group - not a spreadsheet</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:8: title: 'Workwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:12: title: 'Workwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:19: title: 'Workwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:29: name: 'Workwear - Decoded Ops',
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:59: <Plate tone="dark" p="ww" title="Workwear - supplier to branded garment"
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:72: colourways ∩┐╜ stock availability - current, not copy-pasted</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx:81: mix ∩┐╜ blank stock ∩┐╜ personalisation - the step generic systems skip</text>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:43: <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- {sector}</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:84: <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- Common challenges</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:101: {/* HOW I HELP - dark */}
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:107: <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">- How I help</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:110: <p className="text-[#8ECAE6] text-lg mb-8">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:144: {/* SECTOR CROSS-LINKS - target service + 3 relevant problems */}
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPageDS.tsx:49: * are rendered globally in app/layout.tsx - this component is `<main>`
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[ΓÇó] Fix em dashes and voice issues: workwear/page.tsx
+[ ] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[ ] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[ ] Fix em dashes and voice issues: schoolwear/page.tsx
+[ ] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[ ] Fix SectorPage.tsx line 162 (The problems we see most often)
+[ ] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Report summary
+
+Now I have a comprehensive picture of all violations. Let me organize and fix them systematically. `SectorPage.tsx` is dead code (zero live imports), but I'll fix the specific line 162 per the user's request. `SectorPageDS.module.css` has no visible text ΓÇö no changes needed.
+Γ£ù Edit app/sectors/workwear/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+Starting with **workwear/page.tsx** ΓÇö metadata titles, Plate text, feature body em dashes, overclaim, and "end to end":
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -4,13 +4,13 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+-  title: 'Workwear ΓÇö Decoded Ops',
++  title: 'Workwear | Decoded Ops',
+   description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+   alternates: { canonical: '/sectors/workwear' },
+   openGraph: {
+-    title: 'Workwear ΓÇö Decoded Ops',
++    title: 'Workwear | Decoded Ops',
+     description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+     url: 'https://decodedops.co.uk/sectors/workwear',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -15,9 +15,9 @@
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Workwear ΓÇö Decoded Ops',
++    title: 'Workwear | Decoded Ops',
+     description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+   },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -25,9 +25,9 @@
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
+   url: 'https://decodedops.co.uk/sectors/workwear',
+-  name: 'Workwear ΓÇö Decoded Ops',
++  name: 'Workwear | Decoded Ops',
+   description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -55,9 +55,9 @@
+   alt: 'A fanned stack of work shirts in a dozen colourways, collars and button plackets showing, on a plain studio background.',
+ }}
+ shotCaption="One garment, a dozen colourways, three decoration methods, and a size curve behind every one of them."
+ plate={
+-  <Plate tone="dark" p="ww" title="Workwear ΓÇö supplier to branded garment"
++  <Plate tone="dark" p="ww" title="Workwear: supplier to branded garment"
+          sub="Three systems that have to connect: supplier catalogue, production floor, customer portal"
+          no="DO-ART-108" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+     <path id="ww-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -68,9 +68,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Supplier catalogue</text>
+   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Ranges ┬╖ sizing ┬╖
+-    colourways ┬╖ stock availability ΓÇö current, not copy-pasted</text>
++    colourways ┬╖ stock availability: current, not copy-pasted</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ww-node)"
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -77,9 +77,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Production floor</text>
+   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Decoration method
+-    mix ┬╖ blank stock ┬╖ personalisation ΓÇö the step generic systems skip</text>
++    mix ┬╖ blank stock ┬╖ personalisation: the step generic systems skip</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#ww-shadow)">
+   <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ww-amber-n)"
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -103,9 +103,9 @@
+       <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+     </svg>
+   ),
+   title: 'Supplier feed chaos',
+-  body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is the single biggest operational drag in the sector.',
++  body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -112,9 +112,9 @@
+       <path d="M8 4 4.5 7 6 9l2-1v12h8V8l2 1 1.5-2L16 4z" /><circle cx="12" cy="12" r="2" />
+     </svg>
+   ),
+   title: 'Decoration and stock, in the same picture',
+-  body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds \u2014 and workarounds mean data outside the system, which means errors and extra admin on every order.",
++  body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds. And workarounds mean data outside the system, which means errors and extra admin on every order.",
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -121,9 +121,9 @@
+       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><path d="M3.3 7 12 12l8.7-5M12 22V12" />
+     </svg>
+   ),
+   title: 'Blank stock dependency',
+-  body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders \u2014 until the problem is already in the queue.',
++  body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders. Until the problem is already in the queue.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\workwear\page.tsx
+@@ -144,9 +144,9 @@
+   },
+ ]}
+ checklistHeading="An independent audit of the whole workwear workflow."
+ checklist={[
+-  'Map your order-to-despatch workflow end to end, including the decoration step',
++  'Map your order-to-despatch workflow in full, including the decoration step',
+   'Identify where supplier catalogue data is being re-keyed or managed manually',
+   'Review your blank stock management against committed orders for supply gap risk',
+   'Audit how personalisation requirements flow from order intake to production',
+   'Assess eCommerce integration with production scheduling and order management',
+
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[ΓÇó] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[ ] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[ ] Fix em dashes and voice issues: schoolwear/page.tsx
+[ ] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[ ] Fix SectorPage.tsx line 162 (The problems we see most often)
+[ ] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Report summary
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -4,14 +4,14 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+-  title: 'Teamwear & Clubwear ΓÇö Decoded Ops',
+-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match ΓÇö proven at TackleBag.',
++  title: 'Teamwear & Clubwear | Decoded Ops',
++  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+   alternates: { canonical: '/sectors/teamwear-clubwear' },
+   openGraph: {
+-    title: 'Teamwear & Clubwear ΓÇö Decoded Ops',
+-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match ΓÇö proven at TackleBag.',
++    title: 'Teamwear & Clubwear | Decoded Ops',
++    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+     url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+
+
+Now **teamwear-clubwear/page.tsx**:
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -15,10 +15,10 @@
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Teamwear & Clubwear ΓÇö Decoded Ops',
+-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match ΓÇö proven at TackleBag.',
++    title: 'Teamwear & Clubwear | Decoded Ops',
++    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+   },
+ };
+ 
+ const sectorSchema = {
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -25,10 +25,10 @@
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   '@id': 'https://decodedops.co.uk/sectors/teamwear-clubwear#webpage',
+   url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
+-  name: 'Teamwear & Clubwear ΓÇö Decoded Ops',
+-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match ΓÇö proven at TackleBag.',
++  name: 'Teamwear & Clubwear | Decoded Ops',
++  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+ };
+ 
+ export default function TeamwearClubwearPage() {
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -55,9 +55,9 @@
+   alt: 'A folded zip-neck polo shirt in cream and sand panels, photographed flat on a plain grey surface.',
+ }}
+ shotCaption="One base garment. Twenty-four names, twenty-four numbers, and one sponsor logo that has to sit in the same place on every one."
+ plate={
+-  <Plate tone="dark" p="tw" title="Teamwear ΓÇö squad list to kitted-out"
++  <Plate tone="dark" p="tw" title="Teamwear: squad list to kitted-out"
+          sub="Four connected stages: kit range data, squad list, personalisation proofs, production"
+          no="DO-ART-109" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+     <path id="tw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -68,9 +68,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Supplier kit range catalogue</text>
+   <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Ranges ┬╖ sizes ┬╖
+-    colourways ΓÇö live across every channel a team orders through</text>
++    colourways: live across every channel a team orders through</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#tw-node)"
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -77,9 +77,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Squad list management</text>
+   <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Name ┬╖ number ┬╖
+-    size per player ┬╖ sponsor logo per age group ΓÇö not a spreadsheet</text>
++    size per player ┬╖ sponsor logo per age group: not a spreadsheet</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#tw-shadow)">
+   <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#tw-amber-n)"
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -103,9 +103,9 @@
+       <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+     </svg>
+   ),
+   title: 'Squad-level personalisation data',
+-  body: 'Names, numbers, sponsor logos \u2014 every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
++  body: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -112,9 +112,9 @@
+       <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><path d="M16 2v4M8 2v4M3 10h18" /><circle cx="12" cy="15" r="1" />
+     </svg>
+   ),
+   title: 'Seasonal deadline pressure',
+-  body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that \u2014 and most systems don\u2019t account for it.',
++  body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that, and most systems don\u2019t account for it.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -121,9 +121,9 @@
+       <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
+     </svg>
+   ),
+   title: 'Kit range churn',
+-  body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task \u2014 and when it\u2019s wrong, it\u2019s the order that fails, not the system.',
++  body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. And when it\u2019s wrong, it\u2019s the order that fails, not the system.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -130,9 +130,9 @@
+       <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
+     </svg>
+   ),
+   title: 'Sponsor logo management',
+-  body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale \u2014 across multiple teams and age groups \u2014 is a dedicated workflow that email can\u2019t handle.',
++  body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale, across multiple teams and age groups, is a dedicated workflow that email can\u2019t handle.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -139,9 +139,9 @@
+         <path d="M4 6h16M4 12h16M4 18h10" /><path d="M9 18l3-3 3 3" />
+       </svg>
+     ),
+     title: 'The proof and approval bottleneck',
+-    body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is the single biggest lever in teamwear operations.',
++    body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations.',
+   },
+ ]}
+ checklistHeading="An independent audit of the whole teamwear workflow."
+ checklist={[
+
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[ΓÇó] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[ ] Fix em dashes and voice issues: schoolwear/page.tsx
+[ ] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[ ] Fix SectorPage.tsx line 162 (The problems we see most often)
+[ ] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Report summary
+
+Now **promotional-merchandise/page.tsx**:
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -4,9 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+-  title: 'Promotional merchandise ΓÇö Decoded Ops',
++  title: 'Promotional merchandise | Decoded Ops',
+   description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+   alternates: { canonical: '/sectors/promotional-merchandise' },
+   openGraph: {
+     title: 'Promotional merchandise ΓÇö Decoded Ops',
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -8,16 +8,16 @@
+   title: 'Promotional merchandise | Decoded Ops',
+   description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+   alternates: { canonical: '/sectors/promotional-merchandise' },
+   openGraph: {
+-    title: 'Promotional merchandise ΓÇö Decoded Ops',
++    title: 'Promotional merchandise | Decoded Ops',
+     description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+     url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Promotional merchandise ΓÇö Decoded Ops',
++    title: 'Promotional merchandise | Decoded Ops',
+     description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+   },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -25,9 +25,9 @@
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
+   url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
+-  name: 'Promotional merchandise ΓÇö Decoded Ops',
++  name: 'Promotional merchandise | Decoded Ops',
+   description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -55,9 +55,9 @@
+   alt: 'An assortment of branded promotional items grouped on a plain surface, the kind of mixed order a merchandise supplier fulfils from several different supplier ranges at once.',
+ }}
+ shotCaption="One order, four supplier ranges, four different lead times, and one logo that has to work on all of them."
+ plate={
+-  <Plate tone="dark" p="pm" title="Promotional merchandise ΓÇö supplier range to delivered order"
++  <Plate tone="dark" p="pm" title="Promotional merchandise: supplier range to delivered order"
+          sub="Three connected systems: multi-supplier catalogue, artwork management, order fulfilment"
+          no="DO-ART-111" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+     <path id="pm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -68,9 +68,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Multi-supplier catalogue</text>
+   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Dozens of ranges ┬╖
+-    live pricing ┬╖ live stock ΓÇö not a folder of spreadsheets nobody trusts</text>
++    live pricing ┬╖ live stock: not a folder of spreadsheets nobody trusts</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#pm-node)"
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -77,9 +77,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Artwork management</text>
+   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Client logo
+-    versioning ┬╖ proof approval ┬╖ audit trail ΓÇö not an email thread per order</text>
++    versioning ┬╖ proof approval ┬╖ audit trail: not an email thread per order</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#pm-shadow)">
+   <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#pm-amber-n)"
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -86,9 +86,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+         fontSize="28">Order fulfilment</text>
+   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Decoration
+-    cost ┬╖ supplier lead times ┬╖ margin trackable per job ΓÇö not estimated after delivery</text>
++    cost ┬╖ supplier lead times ┬╖ margin trackable per job: not estimated after delivery</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pm-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -103,9 +103,9 @@
+       <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
+     </svg>
+   ),
+   title: 'Multi-supplier catalogue management',
+-  body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them \u2014 without re-keying \u2014 is the sector\u2019s defining operational challenge.',
++  body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them, without re-keying, is the sector\u2019s defining operational challenge.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -130,9 +130,9 @@
+       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" />
+     </svg>
+   ),
+   title: 'Quote-to-order conversion costs',
+-  body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it \u2014 and the answer is usually uncomfortable.',
++  body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
+ },
+ {
+   icon: (
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -157,9 +157,9 @@
+           { label: 'Workwear', href: '/sectors/workwear' },
+           { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
+           { label: 'Schoolwear', href: '/sectors/schoolwear' },
+         ]}
+-        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking \u2014 on every order, not in the year-end numbers."
++        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking: on every order, not in the year-end numbers."
+       />
+     </>
+   );
+ }
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -4,9 +4,9 @@
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+-  title: 'Schoolwear ΓÇö Decoded Ops',
++  title: 'Schoolwear | Decoded Ops',
+   description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+   alternates: { canonical: '/sectors/schoolwear' },
+   openGraph: {
+     title: 'Schoolwear ΓÇö Decoded Ops',
+
+
+Now **schoolwear/page.tsx**:
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -8,16 +8,16 @@
+   title: 'Schoolwear | Decoded Ops',
+   description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+   alternates: { canonical: '/sectors/schoolwear' },
+   openGraph: {
+-    title: 'Schoolwear ΓÇö Decoded Ops',
++    title: 'Schoolwear | Decoded Ops',
+     description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+     url: 'https://decodedops.co.uk/sectors/schoolwear',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+-    title: 'Schoolwear ΓÇö Decoded Ops',
++    title: 'Schoolwear | Decoded Ops',
+     description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+   },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -25,9 +25,9 @@
+   '@context': 'https://schema.org',
+   '@type': 'WebPage',
+   '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
+   url: 'https://decodedops.co.uk/sectors/schoolwear',
+-  name: 'Schoolwear ΓÇö Decoded Ops',
++  name: 'Schoolwear | Decoded Ops',
+   description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+ };
+ 
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -53,9 +53,9 @@
+   width: 1600,
+   height: 1067,
+   alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
+ }}
+-shotCaption="Every school badge is a thread file before it's a garment ΓÇö and the size curve behind it changes every September."
++shotCaption="Every school badge is a thread file before it's a garment. And the size curve behind it changes every September."
+ plate={
+   <Plate tone="dark" p="sw" title="Schoolwear ΓÇö supplier range to parent delivery"
+          sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
+          no="DO-ART-110" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -55,9 +55,9 @@
+   alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
+ }}
+ shotCaption="Every school badge is a thread file before it's a garment. And the size curve behind it changes every September."
+ plate={
+-  <Plate tone="dark" p="sw" title="Schoolwear ΓÇö supplier range to parent delivery"
++  <Plate tone="dark" p="sw" title="Schoolwear: supplier range to parent delivery"
+          sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
+          no="DO-ART-110" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+     <path id="sw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -68,9 +68,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Supplier kit range catalogue</text>
+   <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Blazers ┬╖ PE kit ┬╖
+-    accessories ΓÇö live data before the August rush, not during it</text>
++    accessories: live data before the August rush, not during it</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#sw-node)"
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\schoolwear\page.tsx
+@@ -77,9 +77,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">School badge management</text>
+   <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Badge per school ┬╖
+-    embroidery spec ┬╖ version control ΓÇö not an email thread</text>
++    embroidery spec ┬╖ version control: not an email thread</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#sw-shadow)">
+   <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#sw-amber-n)"
+
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[Γ£ô] Fix em dashes and voice issues: schoolwear/page.tsx
+[ΓÇó] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[ ] Fix SectorPage.tsx line 162 (The problems we see most often)
+[ ] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Report summary
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -38,9 +38,9 @@
+ const tagline = 'Large format and signage businesses run on ||tight margins and complex survey-to-fit workflows.||';
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+-  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed ΓÇö it starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
++  { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed. It starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
+   { title: 'Substrate and finish complexity', body: "The number of variables in a signage job ΓÇö substrate, finish, size, fixing method, installation requirements ΓÇö makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
+   { title: 'Installation scheduling', body: "Coordinating installation teams, site access, third-party contractors, and delivery of materials is a logistics challenge that most job management systems don't handle well." },
+   { title: 'Artwork and proof management', body: "Client approval of artwork before production is critical in this sector. Managing that process outside of the production system creates delay, rework, and missed deadlines." },
+ ];
+
+
+Now **signs-graphics/page.tsx** ΓÇö challenges, Plate, CTA strip, "The problems we see most often":
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -39,9 +39,9 @@
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+   { title: 'Survey-to-installation workflow', body: "The job doesn't start when the order is placed. It starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow." },
+-  { title: 'Substrate and finish complexity', body: "The number of variables in a signage job ΓÇö substrate, finish, size, fixing method, installation requirements ΓÇö makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
++  { title: 'Substrate and finish complexity', body: "The number of variables in a signage job: substrate, finish, size, fixing method, installation requirements. It makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job." },
+   { title: 'Installation scheduling', body: "Coordinating installation teams, site access, third-party contractors, and delivery of materials is a logistics challenge that most job management systems don't handle well." },
+   { title: 'Artwork and proof management', body: "Client approval of artwork before production is critical in this sector. Managing that process outside of the production system creates delay, rework, and missed deadlines." },
+ ];
+ 
+
+
+Γ£ù Edit app/sectors/signs-graphics/page.tsx failed
+Error: Could not find oldString in the file. It must match exactly, including whitespace, indentation, and line endings.
+ΓåÆ Read app/sectors/signs-graphics/page.tsx [offset=97, limit=5]
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -95,9 +95,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div className="plate-scroll">
+       <div className="plate-frame">
+-        <Plate tone="dark" p="sg" title="Signs & graphics ΓÇö site survey to sign-off"
++        <Plate tone="dark" p="sg" title="Signs & graphics: site survey to sign-off"
+                sub="Four connected systems: survey, design, production, installation"
+                no="DO-ART-114" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <path id="sg-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
+
+
+ΓåÆ Read app/sectors/signs-graphics/page.tsx [offset=110, limit=3]
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -108,9 +108,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Site survey</text>
+   <text x="840" y="658" className="p-mono" fontSize="17" opacity=".85">Measurements ┬╖
+-    access ┬╖ fixing requirements ΓÇö the data the whole job depends on</text>
++    access ┬╖ fixing requirements: the data the whole job depends on</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#sg-node)"
+
+
+ΓåÆ Read app/sectors/signs-graphics/page.tsx [limit=3, offset=128]
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -126,9 +126,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Production</text>
+   <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Substrate ┬╖ finish ┬╖
+-    size ┬╖ fixing method ΓÇö job costed accurately, not estimated</text>
++    size ┬╖ fixing method: job costed accurately, not estimated</text>
+ </g>
+ 
+ <g className="sk-fade sk-s6" filter="url(#sg-shadow)">
+   <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#sg-amber-n)"
+
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -171,9 +171,9 @@
+ <div className="wrap">
+   <span className="eyebrow">How I help</span>
+   <h2>What the work actually looks like</h2>
+   <div className="hair" />
+-  <p className="lede">A structured audit followed by specific, costed recommendations ΓÇö no vague frameworks, no generic advice.</p>
++  <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+   <div className="grid grid--2" style={{ marginTop: '32px' }}>
+     {whatIdo.map((item, i) => (
+       <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+         <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\signs-graphics\page.tsx
+@@ -201,9 +201,9 @@
+ )}
+ {route.relatedProblems && route.relatedProblems.length > 0 && (
+   <div className="card">
+     <span className="kicker">Most common in signs & graphics</span>
+-    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
++    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+       {route.relatedProblems.map((p) => (
+         <li key={p.href} style={{ marginBottom: '10px' }}>
+           <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -46,9 +46,9 @@
+       },
+       {
+         '@type': 'Question',
+         name: 'How do I improve my print shop\'s artwork approval workflow?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current approval process step by step ΓÇö from artwork received to sign-off confirmed. Most print shops lose 2ΓÇô3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.' },
++        acceptedAnswer: { '@type': 'Answer', text: 'Start by mapping the current approval process step by step: from artwork received to sign-off confirmed. Most print shops lose 2-3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.' },
+       },
+     ],
+   },
+ ],
+
+
+Now **print-promotional/page.tsx**:
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -57,9 +57,9 @@
+ const tagline = 'Print shop operations management ||starts with understanding what your current process actually costs.||';
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+-  { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually ΓÇö or in a system not built for it ΓÇö is a permanent drag on margin." },
++  { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
+   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L ΓÇö but it's real." },
+   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+   { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it ΓÇö and the answer is usually uncomfortable." },
+   { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow ΓÇö from brief through proof to sign-off ΓÇö typically reduces production delays by 20ΓÇô40% without any change to the print process itself." },
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -58,9 +58,9 @@
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+   { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
+-  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L ΓÇö but it's real." },
++  { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
+   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+   { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it ΓÇö and the answer is usually uncomfortable." },
+   { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow ΓÇö from brief through proof to sign-off ΓÇö typically reduces production delays by 20ΓÇô40% without any change to the print process itself." },
+   { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience ΓÇö which works until volume grows beyond what one person can hold in their head." },
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -60,9 +60,9 @@
+ const challenges = [
+   { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
+   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
+   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+-  { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it ΓÇö and the answer is usually uncomfortable." },
++  { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
+   { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow ΓÇö from brief through proof to sign-off ΓÇö typically reduces production delays by 20ΓÇô40% without any change to the print process itself." },
+   { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience ΓÇö which works until volume grows beyond what one person can hold in their head." },
+ ];
+ 
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -61,9 +61,9 @@
+   { title: 'Product complexity at volume', body: "A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually, or in a system not built for it, is a permanent drag on margin." },
+   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
+   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+   { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
+-  { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow ΓÇö from brief through proof to sign-off ΓÇö typically reduces production delays by 20ΓÇô40% without any change to the print process itself." },
++  { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow, from brief through proof to sign-off, typically reduces production delays by 20-40% without any change to the print process itself." },
+   { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience ΓÇö which works until volume grows beyond what one person can hold in their head." },
+ ];
+ 
+ const whatIdo = [
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -62,9 +62,9 @@
+   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L, but it's real." },
+   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised." },
+   { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
+   { title: 'Artwork approval workflow', body: "The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow, from brief through proof to sign-off, typically reduces production delays by 20-40% without any change to the print process itself." },
+-  { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience ΓÇö which works until volume grows beyond what one person can hold in their head." },
++  { title: 'Print production scheduling and capacity planning', body: "Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience. That works until volume grows beyond what one person can hold in their head." },
+ ];
+ 
+ const whatIdo = [
+   'Audit your order intake and quote process for hidden time cost',
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -98,9 +98,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints ΓÇö even when the team is working hard.</p>
++  <p>Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints, even when the team is working hard.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+
+ΓåÆ Read app/sectors/print-promotional/page.tsx [limit=3, offset=118]
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -116,9 +116,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div className="plate-scroll">
+       <div className="plate-frame">
+-        <Plate tone="dark" p="pp" title="Print & promotional ΓÇö quote to delivered print run"
++        <Plate tone="dark" p="pp" title="Print & promotional: quote to delivered print run"
+                sub="Four connected systems: quoting, supplier management, artwork approval, production scheduling"
+                no="DO-ART-113" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <path id="pp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
+
+
+ΓåÆ Read app/sectors/print-promotional/page.tsx [limit=5, offset=140]
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -138,9 +138,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Supplier management</text>
+   <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Multiple suppliers ┬╖
+-    multiple portals ΓÇö one consolidated view of what is ordered and when it arrives</text>
++    multiple portals: one consolidated view of what is ordered and when it arrives</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5">
+   <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#pp-node)"
+
+
+ΓåÆ Read app/sectors/print-promotional/page.tsx [limit=5, offset=149]
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -147,9 +147,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Artwork approval</text>
+   <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Proof management
+-    with audit trail ΓÇö not an email thread per job</text>
++    with audit trail: not an email thread per job</text>
+ </g>
+ 
+ <g className="sk-fade sk-s6" filter="url(#pp-shadow)">
+   <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#pp-amber-n)"
+
+
+ΓåÆ Read app/sectors/print-promotional/page.tsx [limit=5, offset=157]
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -156,9 +156,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+         fontSize="28">Production scheduling</text>
+   <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Substrate
+-    ┬╖ print method ┬╖ drying time ┬╖ finishing ΓÇö a schedule that reflects the real job</text>
++    ┬╖ print method ┬╖ drying time ┬╖ finishing: a schedule that reflects the real job</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pp-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -192,9 +192,9 @@
+ <div className="wrap">
+   <span className="eyebrow">How I help</span>
+   <h2>What the work actually looks like</h2>
+   <div className="hair" />
+-  <p className="lede">A structured audit followed by specific, costed recommendations ΓÇö no vague frameworks, no generic advice.</p>
++  <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+   <div className="grid grid--2" style={{ marginTop: '32px' }}>
+     {whatIdo.map((item, i) => (
+       <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+         <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\print-promotional\page.tsx
+@@ -222,9 +222,9 @@
+ )}
+ {route.relatedProblems && route.relatedProblems.length > 0 && (
+   <div className="card">
+     <span className="kicker">Most common in print & promotional</span>
+-    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
++    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+       {route.relatedProblems.map((p) => (
+         <li key={p.href} style={{ marginBottom: '10px' }}>
+           <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -9,20 +9,20 @@
+ import styles from '@/components/SectorPageDS.module.css';
+ 
+ export const metadata: Metadata = {
+   title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+-  description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow ΓÇö for businesses doing embroidery, screen print, DTF, and DTG.',
++  description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+   alternates: { canonical: '/sectors/garment-decoration' },
+   openGraph: {
+     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow ΓÇö for businesses doing embroidery, screen print, DTF, and DTG.',
++    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+     url: 'https://decodedops.co.uk/sectors/garment-decoration',
+     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+   },
+   twitter: {
+     card: 'summary_large_image',
+     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow ΓÇö for businesses doing embroidery, screen print, DTF, and DTG.',
++    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+   },
+ };
+ 
+ const sectorSchema = {
+
+
+Now **garment-decoration/page.tsx**:
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -46,9 +46,9 @@
+ },
+ {
+   '@type': 'Question',
+   name: 'How is embroidery business management different from other decoration methods?',
+-  acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management ΓÇö none of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
++  acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management. None of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
+ },
+ {
+   '@type': 'Question',
+   name: 'What is the best ERP for a garment decoration business in the UK?',
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -51,9 +51,9 @@
+       },
+       {
+         '@type': 'Question',
+         name: 'What is the best ERP for a garment decoration business in the UK?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP ΓÇö the right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Sector-specific systems like PANTA, DecoNetwork, and OrderWise are all used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
++        acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Sector-specific systems like PANTA, DecoNetwork, and OrderWise are all used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
+       },
+     ],
+   },
+ ],
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -62,9 +62,9 @@
+ const tagline = 'Garment decoration business systems ||were never built for how you actually work.||';
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+-  { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures ΓÇö all managed in systems that don't account for the difference." },
++  { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures. All managed in systems that don't account for the difference." },
+   { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop ΓÇö but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
+   { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders ΓÇö until the problem is already in the queue." },
+   { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+   { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds." },
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -63,9 +63,9 @@
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+   { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures. All managed in systems that don't account for the difference." },
+-  { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop ΓÇö but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
++  { title: 'The artwork loop', body: "Artwork sign-off is one of the most common sources of delay in garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop. But only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
+   { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders ΓÇö until the problem is already in the queue." },
+   { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+   { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds." },
+ ];
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -64,9 +64,9 @@
+ 
+ const challenges = [
+   { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures. All managed in systems that don't account for the difference." },
+   { title: 'The artwork loop', body: "Artwork sign-off is one of the most common sources of delay in garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop. But only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
+-  { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders ΓÇö until the problem is already in the queue." },
++  { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders. Until the problem is already in the queue." },
+   { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+   { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds." },
+ ];
+ 
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -66,9 +66,9 @@
+   { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures. All managed in systems that don't account for the difference." },
+   { title: 'The artwork loop', body: "Artwork sign-off is one of the most common sources of delay in garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop. But only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
+   { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders. Until the problem is already in the queue." },
+   { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+-  { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds." },
++  { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will typically require manual workarounds." },
+ ];
+ 
+ const whatIdo = [
+   'Map your current decoration workflows end to end ΓÇö from order intake to despatch',
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -70,9 +70,9 @@
+   { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will typically require manual workarounds." },
+ ];
+ 
+ const whatIdo = [
+-  'Map your current decoration workflows end to end ΓÇö from order intake to despatch',
++  'Map your current decoration workflows in full, from order intake to despatch',
+   'Identify where the artwork loop is creating delay and cost',
+   'Assess artwork management software options and integration with your order management system',
+   'Assess your blank sourcing model and the dependency risks within it',
+   'Review your technology stack for gaps between eCommerce, order management, and production',
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -103,9 +103,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management ΓÇö and your systems should reflect that difference.</p>
++  <p>Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management. Your systems should reflect that difference.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -121,9 +121,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div className="plate-scroll">
+       <div className="plate-frame">
+-        <Plate tone="dark" p="gd" title="Garment decoration ΓÇö order intake to despatched garment"
++        <Plate tone="dark" p="gd" title="Garment decoration: order intake to despatched garment"
+                sub="Three connected systems: order + artwork intake, blank stock + decoration scheduling, delivery"
+                no="DO-ART-107" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <path id="gd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÆ Read app/sectors/garment-decoration/page.tsx [limit=3, offset=136]
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -134,9 +134,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Order intake + artwork</text>
+   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Order details ┬╖
+-    artwork files ┬╖ personalisation data ΓÇö all arriving together, not separately</text>
++    artwork files ┬╖ personalisation data: all arriving together, not separately</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#gd-node)"
+
+
+ΓåÆ Read app/sectors/garment-decoration/page.tsx [limit=3, offset=145]
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -143,9 +143,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Production floor</text>
+   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Embroidery ┬╖
+-    screen print ┬╖ DTF ┬╖ DTG ΓÇö method mix scheduling that accounts for blank stock</text>
++    screen print ┬╖ DTF ┬╖ DTG: method mix scheduling that accounts for blank stock</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#gd-shadow)">
+   <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#gd-amber-n)"
+
+
+ΓåÆ Read app/sectors/garment-decoration/page.tsx [limit=3, offset=154]
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -152,9 +152,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+         fontSize="28">Despatch</text>
+   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Finished
+-    garment ┬╖ correct decoration ┬╖ right address ΓÇö data carried through from order to door</text>
++    garment ┬╖ correct decoration ┬╖ right address: data carried through from order to door</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#gd-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -188,9 +188,9 @@
+ <div className="wrap">
+   <span className="eyebrow">How I help</span>
+   <h2>What the work actually looks like</h2>
+   <div className="hair" />
+-  <p className="lede">A structured audit followed by specific, costed recommendations ΓÇö no vague frameworks, no generic advice.</p>
++  <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+   <div className="grid grid--2" style={{ marginTop: '32px' }}>
+     {whatIdo.map((item, i) => (
+       <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+         <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\garment-decoration\page.tsx
+@@ -218,9 +218,9 @@
+ )}
+ {route.relatedProblems && route.relatedProblems.length > 0 && (
+   <div className="card">
+     <span className="kicker">Most common in garment decoration</span>
+-    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
++    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+       {route.relatedProblems.map((p) => (
+         <li key={p.href} style={{ marginBottom: '10px' }}>
+           <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -38,9 +38,9 @@
+ const tagline = 'Personalisation at scale is operationally complex. ||Most awards businesses are still solving it manually.||';
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+-  { title: 'Variable data management', body: "Every award is different. Managing the variable data ΓÇö names, titles, dates, messages ΓÇö from customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
++  { title: 'Variable data management', body: "Every award is different. Managing the variable data: names, titles, dates, messages. From customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
+   { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that ΓÇö and most systems don't." },
+   { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic ΓÇö each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
+   { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
+ ];
+
+
+Now **awards-engraving/page.tsx**:
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -39,9 +39,9 @@
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+   { title: 'Variable data management', body: "Every award is different. Managing the variable data: names, titles, dates, messages. From customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
+-  { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that ΓÇö and most systems don't." },
++  { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that, and most systems don't." },
+   { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic ΓÇö each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
+   { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
+ ];
+ 
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -40,9 +40,9 @@
+ 
+ const challenges = [
+   { title: 'Variable data management', body: "Every award is different. Managing the variable data: names, titles, dates, messages. From customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have." },
+   { title: 'Event deadline pressure', body: "Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that, and most systems don't." },
+-  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic ΓÇö each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
++  { title: 'Product range complexity', body: "Glass, crystal, metal, wood, acrylic. Each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge." },
+   { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
+ ];
+ 
+ const whatIdo = [
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -45,9 +45,9 @@
+   { title: 'Proof and approval at volume', body: "When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself." },
+ ];
+ 
+ const whatIdo = [
+-  "Audit your variable data intake and verification process end to end",
++  "Audit your variable data intake and verification process in full",
+   'Review your production scheduling approach for event-deadline management',
+   'Map the proof and approval workflow and identify where it\'s creating bottlenecks',
+   'Assess your supplier and product data management for the range you carry',
+   'Identify technology solutions built for variable data personalisation workflows',
+
+
+ΓåÆ Read app/sectors/awards-engraving/page.tsx [limit=3, offset=97]
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -95,9 +95,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div className="plate-scroll">
+       <div className="plate-frame">
+-        <Plate tone="dark" p="ae" title="Awards & engraving ΓÇö variable data to delivered awards"
++        <Plate tone="dark" p="ae" title="Awards & engraving: variable data to delivered awards"
+                sub="Three connected systems: data intake, proof management, production"
+                no="DO-ART-115" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <path id="ae-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÆ Read app/sectors/awards-engraving/page.tsx [limit=3, offset=110]
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -108,9 +108,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Variable data intake</text>
+   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Names ┬╖ titles ┬╖
+-    dates ┬╖ messages ΓÇö verified before production, not during it</text>
++    dates ┬╖ messages: verified before production, not during it</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ae-node)"
+
+
+ΓåÆ Read app/sectors/awards-engraving/page.tsx [limit=3, offset=119]
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -117,9 +117,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Proof approval at volume</text>
+   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Fifty proofs ┬╖
+-    fifty approvals ΓÇö a workflow that doesn&apos;t consume more time than production itself</text>
++    fifty approvals: a workflow that doesn&apos;t consume more time than production itself</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#ae-shadow)">
+   <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ae-amber-n)"
+
+
+ΓåÆ Read app/sectors/awards-engraving/page.tsx [limit=3, offset=128]
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -126,9 +126,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+         fontSize="28">Production + deadline delivery</text>
+   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Glass ┬╖
+-    crystal ┬╖ metal ┬╖ wood ΓÇö method-matched engraving, scheduled to the event date</text>
++    crystal ┬╖ metal ┬╖ wood: method-matched engraving, scheduled to the event date</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ae-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -162,9 +162,9 @@
+ <div className="wrap">
+   <span className="eyebrow">How I help</span>
+   <h2>What the work actually looks like</h2>
+   <div className="hair" />
+-  <p className="lede">A structured audit followed by specific, costed recommendations ΓÇö no vague frameworks, no generic advice.</p>
++  <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+   <div className="grid grid--2" style={{ marginTop: '32px' }}>
+     {whatIdo.map((item, i) => (
+       <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+         <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\awards-engraving\page.tsx
+@@ -192,9 +192,9 @@
+ )}
+ {route.relatedProblems && route.relatedProblems.length > 0 && (
+   <div className="card">
+     <span className="kicker">Most common in awards & engraving</span>
+-    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
++    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+       {route.relatedProblems.map((p) => (
+         <li key={p.href} style={{ marginBottom: '10px' }}>
+           <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -38,9 +38,9 @@
+ const tagline = 'Variable data printing and compliance labelling ||requires operational precision most systems can\'t deliver.||';
+ const parts = tagline.split('||');
+ 
+ const challenges = [
+-  { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs ΓÇö and ensuring the right version is always in production ΓÇö is a critical operational challenge." },
++  { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs, and ensuring the right version is always in production, is a critical operational challenge." },
+   { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
+   { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration ΓÇö and doing it without errors ΓÇö requires product data management that most businesses manage in spreadsheets." },
+   { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up ΓÇö and maintaining it ΓÇö is a specialist operational challenge." },
+ ];
+
+
+Now **labels-packaging/page.tsx**:
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -40,9 +40,9 @@
+ 
+ const challenges = [
+   { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs, and ensuring the right version is always in production, is a critical operational challenge." },
+   { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
+-  { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration ΓÇö and doing it without errors ΓÇö requires product data management that most businesses manage in spreadsheets." },
++  { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration, and doing it without errors, requires product data management that most businesses manage in spreadsheets." },
+   { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up ΓÇö and maintaining it ΓÇö is a specialist operational challenge." },
+ ];
+ 
+ const whatIdo = [
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -41,9 +41,9 @@
+ const challenges = [
+   { title: 'Compliance and specification management', body: "Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs, and ensuring the right version is always in production, is a critical operational challenge." },
+   { title: 'Variable data at speed', body: "Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive." },
+   { title: 'Substrate and press matching', body: "Matching the right substrate, adhesive, and finish specification to the right press configuration, and doing it without errors, requires product data management that most businesses manage in spreadsheets." },
+-  { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up ΓÇö and maintaining it ΓÇö is a specialist operational challenge." },
++  { title: 'Customer integration and EDI', body: "Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up, and maintaining it, is a specialist operational challenge." },
+ ];
+ 
+ const whatIdo = [
+   'Audit your specification and version management process across your label SKU range',
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -77,9 +77,9 @@
+       : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+   )}
+ </h1>
+ <div className={styles.heroBody}>
+-  <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain ΓÇö with zero tolerance for error and constant pressure on turnaround times.</p>
++  <p>Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain. With zero tolerance for error and constant pressure on turnaround times.</p>
+ </div>
+ <div className="btn-row">
+   <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+   <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+
+
+ΓåÆ Read app/sectors/labels-packaging/page.tsx [limit=3, offset=97]
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -95,9 +95,9 @@
+ <section className="g-navy">
+   <div className="wrap">
+     <div className="plate-scroll">
+       <div className="plate-frame">
+-        <Plate tone="dark" p="lp" title="Labels & packaging ΓÇö specification to compliant delivery"
++        <Plate tone="dark" p="lp" title="Labels & packaging: specification to compliant delivery"
+                sub="Three connected systems: specification control, variable data printing, delivery"
+                no="DO-ART-116" rev="01" cls="DECODED OPS ┬╖ ISSUED">
+ 
+           <path id="lp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+
+
+ΓåÆ Read app/sectors/labels-packaging/page.tsx [limit=3, offset=110]
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -108,9 +108,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Specification control</text>
+   <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Hundreds of label
+-    SKUs ┬╖ version management ┬╖ compliance data ΓÇö right version, every time</text>
++    SKUs ┬╖ version management ┬╖ compliance data: right version, every time</text>
+ </g>
+ 
+ <g className="sk-fade sk-s4">
+   <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#lp-node)"
+
+
+ΓåÆ Read app/sectors/labels-packaging/page.tsx [limit=3, offset=119]
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -117,9 +117,9 @@
+         className="p-node" strokeWidth="1.4"/>
+   <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+         fontSize="26">Variable data printing</text>
+   <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Short-run ┬╖
+-    high-variation ┬╖ substrate matched to press ΓÇö workflow built for the job, not generic</text>
++    high-variation ┬╖ substrate matched to press: workflow built for the job, not generic</text>
+ </g>
+ 
+ <g className="sk-fade sk-s5" filter="url(#lp-shadow)">
+   <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#lp-amber-n)"
+
+
+ΓåÆ Read app/sectors/labels-packaging/page.tsx [limit=3, offset=128]
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -126,9 +126,9 @@
+         className="p-node-a" strokeWidth="2"/>
+   <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+         fontSize="28">Compliance delivery</text>
+   <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Correct
+-    spec ┬╖ correct substrate ┬╖ EDI integration ΓÇö delivered right first time</text>
++    spec ┬╖ correct substrate ┬╖ EDI integration: delivered right first time</text>
+ </g>
+ 
+ <g className="sk-dots">
+   <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#lp-spine"/></animateMotion></circle>
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -162,9 +162,9 @@
+ <div className="wrap">
+   <span className="eyebrow">How I help</span>
+   <h2>What the work actually looks like</h2>
+   <div className="hair" />
+-  <p className="lede">A structured audit followed by specific, costed recommendations ΓÇö no vague frameworks, no generic advice.</p>
++  <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+   <div className="grid grid--2" style={{ marginTop: '32px' }}>
+     {whatIdo.map((item, i) => (
+       <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+         <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\app\sectors\labels-packaging\page.tsx
+@@ -192,9 +192,9 @@
+ )}
+ {route.relatedProblems && route.relatedProblems.length > 0 && (
+   <div className="card">
+     <span className="kicker">Most common in labels & packaging</span>
+-    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems we see most often</h3>
++    <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+       {route.relatedProblems.map((p) => (
+         <li key={p.href} style={{ marginBottom: '10px' }}>
+           <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+
+
+ΓåÉ Edit components/SectorPage.tsx
+Index: D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx
++++ D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx
+@@ -158,9 +158,9 @@
+ )}
+ {relatedProblems && relatedProblems.length > 0 && (
+   <div className="rounded-2xl bg-white border border-[#023047]/10 p-8">
+     <div className="text-xs font-semibold tracking-wider uppercase text-[#023047]/60 mb-3">Most common in {sector.toLowerCase()}</div>
+-    <h3 className="text-lg font-bold text-[#023047] mb-4">The problems we see most often</h3>
++    <h3 className="text-lg font-bold text-[#023047] mb-4">The problems I see most often</h3>
+     <ul className="space-y-3">
+       {relatedProblems.map(p => (
+         <li key={p.href}>
+           <Link href={p.href} className="text-[#023047] hover:text-[#219EBC] flex items-start gap-2 text-sm leading-snug">
+
+
+Now fix the specific finding in **SectorPage.tsx** (dead code, but user explicitly requested this fix):
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[Γ£ô] Fix em dashes and voice issues: schoolwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[Γ£ô] Fix SectorPage.tsx line 162 (The problems we see most often)
+[ΓÇó] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ ] Build verification: npm run build must exit 0
+[ ] Report summary
+
+Now let me verify all fixes with systematic greps:
+$ $em = [char]0x2014; Write-Host "=== EM DASHES in app/sectors/ ==="; Get-ChildItem -Recurse "app/sectors" -Filter "*.tsx" | ForEach-Object { $m = Select-String -Path $_.FullName -Pattern $em -AllMatches; if ($m) { $m | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } } }; $ct = 0; Get-ChildItem -Recurse "app/sectors" -Filter "*.tsx" | ForEach-Object { $ct += (Select-String -Path $_.FullName -Pattern $em -AllMatches).Matches.Count }; Write-Host "`nTotal em dashes: $ct"
+=== EM DASHES in app/sectors/ ===
+
+Total em dashes: 0
+
+$ $em = [char]0x2014; Write-Host "=== EM DASHES in SectorPage components ==="; Get-ChildItem "components" -Filter "SectorPage*.tsx" | ForEach-Object { Select-String -Path $_.FullName -Pattern $em -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" } }; $ct = 0; Get-ChildItem "components" -Filter "SectorPage*.tsx" | ForEach-Object { $ct += (Select-String -Path $_.FullName -Pattern $em -AllMatches).Matches.Count }; Write-Host "`nTotal em dashes in SectorPage components: $ct"
+=== EM DASHES in SectorPage components ===
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:43: <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- {sector}</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:84: <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- Common challenges</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:101: {/* HOW I HELP - dark */}
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:107: <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">- How I help</span>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:110: <p className="text-[#8ECAE6] text-lg mb-8">A structured audit followed by specific, costed recommendations - no vague frameworks, no generic advice.</p>
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPage.tsx:144: {/* SECTOR CROSS-LINKS - target service + 3 relevant problems */}
+D:\apps\worktrees\decoded-ops-website\voice-sectors\components\SectorPageDS.tsx:49: * are rendered globally in app/layout.tsx - this component is `<main>`
+
+Total em dashes in SectorPage components: 7
+
+$ Write-Host "=== 'end to end' / 'end-to-end' in app/sectors/ ==="; Select-String -Path "app/sectors/*/page.tsx","app/sectors/*/*/page.tsx" -Pattern "end.to.end|end-to-end" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+=== 'end to end' / 'end-to-end' in app/sectors/ ===
+
+$ Write-Host "=== 'we '/our '/us ' in app/sectors/ ==="; Select-String -Path "app/sectors/*/page.tsx","app/sectors/*/*/page.tsx" -Pattern "\bwe\s|\bWe\s|\bour\s|\bOur\s" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+=== 'we '/our '/us ' in app/sectors/ ===
+
+$ Write-Host "=== Banned consultant-speak in app/sectors/ ==="; Select-String -Path "app/sectors/*/page.tsx","app/sectors/*/*/page.tsx" -Pattern "\bleverage\b|\bsynergy\b|\bholistic\b|\bseamless\b|\bpain\s*points\b|\bbest.in.class\b|\bbest\s*practice\b|\bcircle\s*back\b|\breach\s*out\b|\bunlock\b|\bgame.changer\b|\bdelve\b|\brobust\b" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+=== Banned consultant-speak in app/sectors/ ===
+
+$ Write-Host "=== Overclaims in app/sectors/ ==="; Select-String -Path "app/sectors/*/page.tsx","app/sectors/*/*/page.tsx" -Pattern "\bbiggest\b" -AllMatches | ForEach-Object { "$($_.Path):$($_.LineNumber): $($_.Line.Trim())" }
+=== Overclaims in app/sectors/ ===
+
+$ Test-Path "D:\apps\decoded-ops-website\node_modules"
+True
+
+$ Test-Path "node_modules"
+False
+
+$ Copy-Item -Recurse "D:\apps\decoded-ops-website\node_modules" "D:\apps\worktrees\decoded-ops-website\voice-sectors\node_modules" -Force
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 300000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+
+$ robocopy "D:\apps\decoded-ops-website\node_modules" "D:\apps\worktrees\decoded-ops-website\voice-sectors\node_modules" /E /NJH /NJS /NP /NS /NFL /NDL >$null
+(no output)
+
+$ if (Test-Path "node_modules\.bin\next.cmd") { "node_modules ready" } else { "node_modules missing" }
+node_modules ready
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[Γ£ô] Fix em dashes and voice issues: schoolwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[Γ£ô] Fix SectorPage.tsx line 162 (The problems we see most often)
+[Γ£ô] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[ΓÇó] Build verification: npm run build must exit 0
+[ ] Report summary
+
+$ npx next build 2>&1
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 19.8s
+  Running TypeScript ...
+  Finished TypeScript in 19.1s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 9.1s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[Γ£ô] Fix em dashes and voice issues: schoolwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[Γ£ô] Fix SectorPage.tsx line 162 (The problems we see most often)
+[Γ£ô] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[Γ£ô] Build verification: npm run build must exit 0
+[ΓÇó] Report summary
+
+Γ£▒ Glob ".context/loop-status.md" 0 matches
+
+# Todos
+[Γ£ô] Read all target files (9 sector pages, 3 component files)
+[Γ£ô] Fix em dashes and voice issues: workwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: teamwear-clubwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: promotional-merchandise/page.tsx
+[Γ£ô] Fix em dashes and voice issues: schoolwear/page.tsx
+[Γ£ô] Fix em dashes and voice issues: signs-graphics, print-promotional, garment-decoration, awards-engraving, labels-packaging
+[Γ£ô] Fix SectorPage.tsx line 162 (The problems we see most often)
+[Γ£ô] Verify: grep for em dash, we/our/us, end-to-end, banned terms
+[Γ£ô] Build verification: npm run build must exit 0
+[Γ£ô] Report summary
+
+Build passed: `Γ£ô Compiled successfully`, `Γ£ô Finished TypeScript`, all 9 sector pages in route output with zero errors.
+
+## Summary
+
+**10 files edited** across `app/sectors/**` + `components/SectorPage.tsx` (line 162 only).
+
+### Em dashes (ΓÇö / U+2014): ~75 removed
+Every em dash in visible copy across all 9 sector pages eliminated. Replacements: colons for list/explanation pairs, periods for sentence breaks, commas for parentheticals, pipes for metadata titles. Zero remain in `app/sectors/`.
+
+### First-person ("The problems we see most often"): 6 fixed
+- `components/SectorPage.tsx:162` (dead component, but user-flagged)
+- `app/sectors/signs-graphics/page.tsx:205`
+- `app/sectors/print-promotional/page.tsx:226`
+- `app/sectors/garment-decoration/page.tsx:222`
+- `app/sectors/awards-engraving/page.tsx:196`
+- `app/sectors/labels-packaging/page.tsx:196`
+
+All ΓåÆ `"The problems I see most often"`. Zero remaining "we"/"our"/"us" in any sector page.
+
+### "end to end" / "end-to-end": 3 removed
+- `workwear/page.tsx`: `end to end` ΓåÆ `in full`
+- `garment-decoration/page.tsx`: `end to end ΓÇö from` ΓåÆ `in full, from`
+- `awards-engraving/page.tsx`: `end to end` ΓåÆ `in full`
+
+Zero remaining in sector pages.
+
+### Overclaims: 4 softened
+- `workwear`: `single biggest operational drag` ΓåÆ `one of the most common operational drags`
+- `teamwear-clubwear`: `single biggest lever` ΓåÆ `one of the most impactful levers`
+- `garment-decoration`: `single biggest source of delay` ΓåÆ `one of the most common sources of delay`
+- `garment-decoration`: `always require manual workarounds` ΓåÆ `typically require manual workarounds`
+
+### Banned consultant-speak: 0 found / 0 needed
+No instances of leverage, synergy, holistic, seamless, journey, pain points, best-in-class, best practice, circle back, reach out, unlock, game-changer, delve, robust, or crucial in any sector page content.
+
+### `SectorPage.tsx` status
+**Dead code.** Zero imports from any live route. All 9 sector pages use `SectorPageDS` (the newer component). The specific line 162 fix was applied per your request; remaining em dashes in that file (eyebrow decoration `ΓÇö {sector}`, etc.) are unreachable code.
+
+### `SectorPageDS.module.css`
+No visible text ΓÇö zero changes needed.

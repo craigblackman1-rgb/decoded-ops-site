@@ -1,0 +1,347 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read all listed files to identify violations
+[ ] Fix app/clarity/page.tsx - known voice switch
+[ ] Fix app/apps/artwork-manager/page.tsx - known voice switch
+[ ] Fix em dashes across all files
+[ ] Fix we/our/us -> I/my/me across all files
+[ ] Fix end-to-end/end to end across all files
+[ ] Fix banned consultant-speak across all files
+[ ] Fix overclaims across all files
+[ ] Verify: grep for em dashes (zero results)
+[ ] Verify: grep for we/our/us violations
+[ ] Verify: grep for end-to-end/end to end
+[ ] Run npm run build - must exit 0
+[ ] Report fixes per category per file
+
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/retained/page.tsx
+ΓåÆ Read app/how-i-build/page.tsx
+ΓåÆ Read app/about/page.tsx
+ΓåÆ Read app/clarity/page.tsx
+ΓåÆ Read app/deliver/page.tsx
+ΓåÆ Read app/transform/page.tsx
+ΓåÆ Read app/process-quality-system/page.tsx
+ΓåÆ Read app/decoded-method/page.tsx
+ΓåÆ Read app/apps/page.tsx
+ΓåÆ Read app/apps/data-app/page.tsx
+ΓåÆ Read app/apps/artwork-manager/page.tsx
+ΓåÆ Read app/apps/commerce/page.tsx
+ΓåÆ Read app/apps/crm/page.tsx
+ΓåÆ Read app/case-studies/page.tsx
+Let me read all the files first.
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && rg '\x{2014}' app/page.tsx app/pricing/page.tsx app/retained/page.tsx app/how-i-build/page.tsx app/about/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/process-quality-system/page.tsx app/decoded-method/page.tsx app/apps/page.tsx "app/apps/data-app/page.tsx" "app/apps/artwork-manager/page.tsx" "app/apps/commerce/page.tsx" "app/apps/crm/page.tsx" "app/case-studies/page.tsx" --line-number
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && rg -i '\bend.to.end\b' app/page.tsx app/pricing/page.tsx app/retained/page.tsx app/how-i-build/page.tsx app/about/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/process-quality-system/page.tsx app/decoded-method/page.tsx app/apps/page.tsx "app/apps/data-app/page.tsx" "app/apps/artwork-manager/page.tsx" "app/apps/commerce/page.tsx" "app/apps/crm/page.tsx" "app/case-studies/page.tsx" --line-number
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && rg -n '\b(we|our|us)\b' app/page.tsx app/pricing/page.tsx app/retained/page.tsx app/how-i-build/page.tsx app/about/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/process-quality-system/page.tsx app/decoded-method/page.tsx app/apps/page.tsx "app/apps/data-app/page.tsx" "app/apps/artwork-manager/page.tsx" "app/apps/commerce/page.tsx" "app/apps/crm/page.tsx" "app/case-studies/page.tsx" -i
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && rg -n 'leverage|synergy|holistic|seamless|journey|pain.points|moving.the.needle|best.in.class|best.practice|circle.back|reach.out|\bunlock\b|game.changer|delve|\brobust\b|\bcrucial\b' app/page.tsx app/pricing/page.tsx app/retained/page.tsx app/how-i-build/page.tsx app/about/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/process-quality-system/page.tsx app/decoded-method/page.tsx app/apps/page.tsx "app/apps/data-app/page.tsx" "app/apps/artwork-manager/page.tsx" "app/apps/commerce/page.tsx" "app/apps/crm/page.tsx" "app/case-studies/page.tsx" -i
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Now let me run the grep searches to identify all violations systematically.
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && rg -n '\bbiggest\b' app/page.tsx app/pricing/page.tsx app/retained/page.tsx app/how-i-build/page.tsx app/about/page.tsx app/clarity/page.tsx app/deliver/page.tsx app/transform/page.tsx app/process-quality-system/page.tsx app/decoded-method/page.tsx app/apps/page.tsx "app/apps/data-app/page.tsx" "app/apps/artwork-manager/page.tsx" "app/apps/commerce/page.tsx" "app/apps/crm/page.tsx" "app/case-studies/page.tsx" -i
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern '\u2014' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern 'end.to.end' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern '\b(we|We|our|Our|us)\b' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx | Select-Object Filename,LineNumber,Line
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern 'leverage|synergy|holistic|seamless|journey|moving.the.needle|best.in.class|best.practice|circle.back|reach.out|game.changer|delve|robust|crucial|pain.points' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx -CaseSensitive:$false | Select-Object Filename,LineNumber,Line
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern 'biggest|always|never|every' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx -CaseSensitive:$false | Select-Object Filename,LineNumber,Line
+Filename LineNumber Line
+-------- ---------- ----
+page.tsx        188                   makes everyone stop. People adopt the result because they built it. That&rsquo;s.
+page.tsx        285             <p className="lede">I&rsquo;m never going to tell you what to buy. I&rsquo;ll show you.
+page.tsx        292                        sub="Three rungs in fixed order ∩┐╜ every option priced"
+page.tsx        352                           opacity=".9">Every option priced, including the ones I did not recommend.
+page.tsx        388                   alongside everything else I considered and why it didn&rsquo;t make the cut. You.
+page.tsx          7 // Every figure below is cross-checked against
+page.tsx         44           <p className="lead">Every price on this page is what you&rsquo;ll actually pay. I&rsquo;.
+page.tsx         59             scales with it. Clarity Audit is the entry point into everything below it.</p>
+page.tsx         79                       after the first call. The entry point into everything else.</span>
+page.tsx        105                       Same price at every turnover band. <Link href="/retained"
+page.tsx        155             every six to eight weeks, travel at cost. Any app build is always a separate line, quo.
+page.tsx        156             after Clarity Audit, never folded into the retainer.
+page.tsx        228           <h2>Everything above is diagnosis and delivery. What follows is software.</h2>
+page.tsx        288           <p className="table-foot">A full custom build is never priced on this page. If nothing o.
+page.tsx         80               shape every month. You know what you&rsquo;re paying before the first meeting.</p>
+page.tsx        126             you&rsquo;re not trapped in it. The price is the price at every turnover band.
+page.tsx        137             Same price at every turnover band.</p>
+page.tsx        186                     days, double the price, every time.</text>
+page.tsx        188                     minimum, all three tiers. Same price at every turnover band.</text>
+page.tsx         43           <h2>Three rungs, always in the same order.</h2>
+page.tsx         44           <p className="lede" style={{ marginTop: 16 }}>Every engagement climbs the same ladder, a.
+page.tsx         45             at the bottom every time. Not because the bottom rung is always right, but because you
+page.tsx         51                      sub="Three rungs in fixed order ∩┐╜ every option priced"
+page.tsx        107                         opacity=".9">Every option priced, including the ones I did not recommend.<.
+page.tsx        145                 alongside everything else considered and why it didn&rsquo;t make the cut.</p>
+page.tsx        229                 what every option would have cost, not only the one you chose.</p>
+page.tsx         34               <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought .
+page.tsx          8   description: 'One day on site, a written report within five, and the 3x Clarity Guarantee. A Cla.
+page.tsx        178               <p>Every manual handoff and workaround, watched as it actually happens, not as it&ap.
+page.tsx         45           <p className="lede" style={{ marginTop: 16 }}>Every Deliver engagement builds these alon.
+page.tsx         59               <p>Every process that matters, named and described as it actually runs. Not as the o.
+page.tsx         60                 chart says it should. The reference point for everything documented afterwards.</p>
+page.tsx        160                       fontStyle="italic" opacity=".8">Then round again, for every process that
+page.tsx        205           <p className="lede">Every Deliver engagement starts here: a full day on site and a writt.
+page.tsx         92                   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
+page.tsx        116                 <li>Matching and re-keying done by hand, every time a range changed</li>
+page.tsx        168               <p>Every vendor quotes against the same brief, and someone technical stays on your s.
+page.tsx        191             programme this size, and there won&apos;t be. It starts the same way everything does: .
+page.tsx         49           <h2>The same four steps, for every process that matters.</h2>
+page.tsx        114                       fontStyle="italic" opacity=".8">Then round again, for every process that
+page.tsx        153           <p className="lead">Every Deliver engagement builds this alongside the project itself, s.
+page.tsx         12   description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a P.
+page.tsx         17     description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: a.
+page.tsx         23     description: 'Every Clarity, Deliver and Transform engagement runs on the same three layers: P.
+page.tsx         39           <h1>The system behind every engagement.</h1>
+page.tsx         40           <p className="lead">Every Clarity, Deliver and Transform engagement runs on the same thr.
+page.tsx         55             <p className="lead" style={{ marginTop: 16 }}>In that order, every time. Skip the firs.
+page.tsx         70                 should. Every process that matters, named and described, before anything gets chan.
+page.tsx         82                 person&rsquo;s head. When the person who knows everything goes on holiday, the bus.
+page.tsx         94               <p>Change doesn&rsquo;t stop at go-live. Every engagement leaves a running log of wh.
+page.tsx          7   description: 'Software built for jobs the platforms in this sector were never going to do. The D.
+page.tsx         12     description: 'Software built for jobs the platforms in this sector were never going to do. The.
+page.tsx         18     description: 'Software built for jobs the platforms in this sector were never going to do, pro.
+page.tsx         31             were never going to do, proven at real clients before it went anywhere near a price li.
+page.tsx         57               <p>Every logo, every format, every version, with an audit trail. Customer proofing w.
+page.tsx          7   description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside th.
+page.tsx         12     description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside .
+page.tsx         30             <h1>The jobs your ERP was never going to do.</h1>
+page.tsx         33                 different every time. This takes them in, cleans them, matches them to what you al.
+page.tsx         34                 sell, and keeps your catalogue current across every channel.</p>
+page.tsx         60             across channels. The jobs your platform was never built for. Ripping it out and starti.
+page.tsx         61             again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.
+page.tsx        126               <h3>Every channel stays current</h3>
+page.tsx        209           <p className="table-foot">Every price on this page is what you&rsquo;d actually pay. I&r.
+page.tsx        210             registered, so there&rsquo;s no VAT to add either. The full price list across every se.
+page.tsx         30             <h1>Every logo, every format, every version.</h1>
+page.tsx         72               <p>Every format and every version of every logo in one place, with the thread librar.
+page.tsx        129                   <text x="150" y="424" className="p-mono" fontSize="16" opacity=".8">Every format.
+page.tsx        104               <p className="feature-meta">More than one of everything</p>
+page.tsx        160                         letterSpacing="1.4" opacity=".85">MORE THAN ONE OF EVERYTHING</text>
+page.tsx        187               <p>With a Clarity Audit, the same as any rung 3 conversation. Everything on the mark.
+page.tsx         59             selling. It&apos;s the handoff. A quote that never became an order. An invoice raised .
+page.tsx         71               <p>Every prospect and every account in one record, not scattered across email thread.
+page.tsx        122                 Not case studies about businesses like yours. These are live engagements, named wi.
+page.tsx        151                 Every engagement above started the same way: a Clarity Audit to find out what was .
+
+Let me also check for HTML entity em dashes and verify the known findings more precisely.
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern 'mdash' -Path app/page.tsx, app/pricing/page.tsx, app/retained/page.tsx, app/how-i-build/page.tsx, app/about/page.tsx, app/clarity/page.tsx, app/deliver/page.tsx, app/transform/page.tsx, app/process-quality-system/page.tsx, app/decoded-method/page.tsx, app/apps/page.tsx, app/apps/data-app/page.tsx, app/apps/artwork-manager/page.tsx, app/apps/commerce/page.tsx, app/apps/crm/page.tsx, app/case-studies/page.tsx
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && Select-String -Pattern 'We | our | us ' -Path app/clarity/page.tsx, app/apps/artwork-manager/page.tsx | Select-Object Filename,LineNumber,Line
+(no output)
+
+$ cd D:\apps\worktrees\decoded-ops-website\voice-core && (Get-Content app/clarity/page.tsx -Raw).IndexOfAny(@([char]0x2014, [char]0x2013, [char]0x2015))
+-1
+
+All searches returned zero violations. The known findings are also already fixed. Let me verify by re-reading the specific lines in both known-finding files, then run the build.
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\voice-core\node_modules\.package-lock.json"
+True
+
+ΓåÆ Read app/clarity/page.tsx [offset=139, limit=5]
+ΓåÆ Read app/apps/artwork-manager/page.tsx [offset=246, limit=5]
+Both known findings confirmed fixed. All searches returned zero violations. Let me run the build now.
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 37.1s
+  Running TypeScript ...
+  Finished TypeScript in 18.0s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 9.3s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+Build passed ΓÇö zero TypeScript errors, all 159 pages compiled. Let me check for `.context/loop-status.md`.
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md"
+True
+
+ΓåÆ Read .context/loop-status.md
+
+# Todos
+[Γ£ô] Read all listed files to identify violations
+[Γ£ô] Fix app/clarity/page.tsx - known voice switch
+[Γ£ô] Fix app/apps/artwork-manager/page.tsx - known voice switch
+[Γ£ô] Fix em dashes across all files
+[Γ£ô] Fix we/our/us -> I/my/me across all files
+[Γ£ô] Fix end-to-end/end to end across all files
+[Γ£ô] Fix banned consultant-speak across all files
+[Γ£ô] Fix overclaims across all files
+[Γ£ô] Verify: grep for em dashes (zero results)
+[Γ£ô] Verify: grep for we/our/us violations
+[Γ£ô] Verify: grep for end-to-end/end to end
+[Γ£ô] Run npm run build - must exit 0
+[Γ£ô] Report fixes per category per file
+
+ΓåÉ Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\voice-core\.context\loop-status.md
+@@ -86,4 +86,12 @@
+ - clarity/page.tsx Debrief: now reads "I walk you through it, so you can push back while I'm still in the room. Then it's yours: to act on with me, or without me." ΓÇö first person throughout, reads naturally.
+ - artwork-manager/page.tsx CTA: now reads "I'll tell you that, and that's the end of it." ΓÇö single voice, reads naturally.
+ 
+ OVERCLAIMS AUDIT: All "always"/"never"/"every" instances reviewed ΓÇö all are either checkable facts about Decoded Ops' own pricing/process rules (explicitly permitted), statements about the audit/delivery process (documented and checkable), or properly qualified ("almost never"). Zero "biggest" hits. No fixes required.
++
++2026-08-02T19:30:00+01:00 | voice-audit-verify | Verification pass ΓÇö all 16 files confirmed clean | Ran this lane's full audit against all 16 listed files. Searches performed: em dashes (U+2014) = 0, &mdash; HTML entities = 0, "end to end"/"end-to-end" = 0, "we "/"our "/"us " in visible copy = 0, banned consultant-speak (leverage/synergy/holistic/seamless/journey/pain points/moving the needle/best-in-class/best practice/circle back/reach out/unlock/game-changer/delve/robust/crucial) = 0, overclaims audit reviewed all always/never/every hits = 0 requiring action. npm run build exit 0, zero TypeScript errors, 159/159 pages.
++
++KNOWN-SPECIFIC-FINDING VERIFICATION (re-confirmed):
++- clarity/page.tsx:141: "I walk you through it, so you can push back while I'm still in the room." ΓÇö first person, reads naturally.
++- artwork-manager/page.tsx:248: "I'll tell you that, and that's the end of it." ΓÇö single voice, reads naturally.
++
+Now let me append to loop-status.md.
++RESULT: Zero new fixes needed. voice-audit-lane-d's prior pass (line 58) covered all violations. This verification lane confirms the 16 files are fully compliant against all 5 rule categories.
+
+
+**Audit complete ΓÇö all 16 files are clean.** A prior lane (`voice-audit-lane-d`) already applied all fixes. My verification pass confirms:
+
+- **Em dashes**: 0 found (U+2014 and `&mdash;` both zero)
+- **"we"/"our"/"us"**: 0 in visible copy
+- **"end-to-end"/"end to end"**: 0
+- **Banned consultant-speak**: 0
+- **Overclaims**: all "always"/"never"/"every" hits are checkable facts about Decoded Ops' own process/pricing (explicitly permitted) ΓÇö zero require action
+
+**Known findings confirmed fixed:**
+- `clarity/page.tsx:141` ΓåÆ `"I walk you through it, so you can push back while I'm still in the room."` ΓÇö first person throughout
+- `artwork-manager/page.tsx:248` ΓåÆ `"I'll tell you that, and that's the end of it."` ΓÇö single voice
+
+**Build**: `npm run build` exit 0, 159/159 pages, zero TypeScript errors. Appended to `.context/loop-status.md`.

@@ -1,0 +1,527 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+# Todos
+[ΓÇó] Read all 3 mockup files + 3 case-study pages + pricing page for naming reference
+[ ] TackleBag: Add missing 3rd stat card, change grid from 2-col to 3-col
+[ ] Hanicks: Restore plate section headline/lede to approved copy
+[ ] Hanicks + Cobra: Rename Discovery Day ΓåÆ Clarity Audit
+[ ] Cobra: Restore shape-card sidebar in hero + 3-card 'What the engagement covers' section
+[ ] Build and verify zero errors
+
+ΓåÆ Read app/case-studies/tacklebag/page.tsx
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/case-studies-tacklebag.html
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/case-studies-hanicks.html
+ΓåÆ Read D:/apps/design-systems/decoded-marketing/case-studies-cobra-workwear.html
+ΓåÆ Read app/case-studies/hanicks/page.tsx
+ΓåÆ Read app/case-studies/cobra-workwear/page.tsx
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/case-studies
+Γ£▒ Grep "\.grid--3|\.card\s*\{|\.kicker" in . ┬╖ 9 matches
+Let me check what global CSS classes are available (grid, card, kicker).
+Γ£▒ Grep "Discovery Day" in app ┬╖ 52 matches
+
+# Todos
+[Γ£ô] Read all 3 mockup files + 3 case-study pages + pricing page for naming reference
+[ΓÇó] TackleBag: Add missing 3rd stat card, change grid from 2-col to 3-col
+[ ] Hanicks: Restore plate section headline/lede to approved copy
+[ ] Hanicks + Cobra: Rename Discovery Day to Clarity Audit
+[ ] Cobra: Restore shape-card sidebar in hero + 3-card 'What the engagement covers' section
+[ ] Build and verify zero errors
+
+Now I have all the context. Let me apply all fixes. Starting with the 4 changes across 3 files.
+ΓåÉ Edit app/case-studies/tacklebag/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\tacklebag\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\tacklebag\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\tacklebag\page.tsx
+@@ -161,17 +161,21 @@
+ <div className="wrap">
+   <span className="eyebrow eyebrow--amber">The numbers</span>
+   <h2 style={{ marginTop: 14 }}>Nine feeds, automated end to end.</h2>
+ 
+-  <div className="grid grid--2" style={{ marginTop: 40, maxWidth: 640 }}>
++  <div className="grid grid--3" style={{ marginTop: 40, maxWidth: 820 }}>
+     <div className="stat">
+       <p className="stat-num num">9</p>
+       <p className="stat-label">supplier feeds running automated stock sync</p>
+     </div>
+     <div className="stat">
+       <p className="stat-num num">20ΓÇô40</p>
+       <p className="stat-label">hours a week of admin time projected saved</p>
+     </div>
++    <div className="stat">
++      <p className="stat-num num">Live</p>
++      <p className="stat-label">project underway, Symphony integration proven in production</p>
++    </div>
+   </div>
+ 
+   <p className="lede" style={{ marginTop: 32, color: 'var(--do-text-muted-on-dark)' }}>
+     Supplier feeds automated:
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
+@@ -79,11 +79,11 @@
+ {/* 1b. PLATE ┬╖ DO-ART-205 */}
+ <section className="g-navy">
+   <div className="wrap">
+     <span className="eyebrow">&mdash; Measure &middot; DO-ART-205</span>
+-    <h2>Before and after, paired line for line.</h2>
++    <h2>Not projected. Not modelled. What actually happened.</h2>
+     <div className="hair"></div>
+-    <p className="lede">Hanicks, named with permission. One supplier-catalogue pipeline, from raw feed rows to products live in the platform.</p>
++    <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
+ 
+     <div className="plate-scroll">
+       <div className="plate-frame" data-od-id="plate-hanicks">
+         <Plate tone="dark" p="hs" title="Supplier catalogue ΓÇö before and after"
+
+
+ΓåÉ Edit app/case-studies/hanicks/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\hanicks\page.tsx
+@@ -182,9 +182,9 @@
+ </p>
+ 
+ <h2>What was done</h2>
+ <p>
+-  Discovery Day identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well ΓÇö so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
++  A Clarity Audit identified the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not do supplier feed ingestion, data enrichment, or catalogue maintenance across channels well ΓÇö so the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how Decoded Ops works: keep the platform that fits, build the layer it does not do.
+ </p>
+ <p>
+   The Data App ingested every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+ </p>
+
+
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+@@ -64,9 +64,9 @@
+   <div className="wrap hero-center">
+     <span className="eyebrow">Client work ┬╖ workwear</span>
+     <h1>Architect and advisor, not the builder.</h1>
+     <p className="lede">
+-      Cobra Workwear needed a B2B trade portal, ERP evaluation, and a Shopify replacement. Discovery Day, followed by Deliver Consultancy: vendor requirements, procurement, and integration architecture.
++      Cobra Workwear needed a B2B trade portal, ERP evaluation, and a Shopify replacement. A Clarity Audit, followed by Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+     </p>
+   </div>
+ </section>
+ 
+
+
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+@@ -37,12 +37,19 @@
+ export default function CobraWorkwearCaseStudyPage() {
+   return (
+     <>
+       <style>{`
+-        .hero-center{ text-align:center; max-width:760px; margin-inline:auto }
+-        .hero-center h1{ max-width:none; margin-inline:auto }
+-        .hero-center .lede{ margin:18px auto 0 }
+-        .hero-center .eyebrow{ margin-inline:auto }
++        .hero-split{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center }
++        @media(max-width:980px){ .hero-split{ grid-template-columns:1fr; gap:32px } }
++        .hero-split .lede{ margin:18px 0 0 }
++        .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px }
++        .shape-card{ background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
++          border-radius:var(--do-radius-2xl); padding:28px }
++        .shape-card h3{ font-size:var(--do-text-sm); text-transform:uppercase; letter-spacing:.06em;
++          color:var(--do-text-muted); margin-bottom:16px }
++        .shape-card dl{ margin:0; display:grid; gap:14px }
++        .shape-card dt{ font-size:var(--do-text-xs); color:var(--do-text-muted); margin-bottom:3px }
++        .shape-card dd{ margin:0; font-weight:600; color:var(--do-text-primary) }
+         .prose{ max-width:72ch; margin-inline:auto }
+         .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
+         .prose h2:first-child{ margin-top:0 }
+         .prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:14px }
+@@ -53,9 +60,9 @@
+         .progress-note p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm) }
+         .cta-strip{ text-align:center }
+         .cta-strip h2{ max-width:none; margin-inline:auto }
+         .cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
+-        .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center }
++        .cta-strip .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:0 }
+       `}</style>
+       <main>
+         <JsonLd data={schema} />
+ 
+
+
+Now the Cobra Workwear restructuring. First, add the hero-split and shape-card CSS, then restructure the hero and add the 3-card section.
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+@@ -67,14 +67,30 @@
+ <JsonLd data={schema} />
+ 
+ {/* 1. HERO */}
+ <section className="g-off">
+-  <div className="wrap hero-center">
+-    <span className="eyebrow">Client work ┬╖ workwear</span>
+-    <h1>Architect and advisor, not the builder.</h1>
+-    <p className="lede">
+-      Cobra Workwear needed a B2B trade portal, ERP evaluation, and a Shopify replacement. A Clarity Audit, followed by Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+-    </p>
++  <div className="wrap hero-split">
++    <div>
++      <span className="eyebrow">Client work ┬╖ workwear</span>
++      <h1>Architect and advisor, not the builder.</h1>
++      <p className="lede">
++        Cobra Workwear needed a B2B trade portal, ERP evaluation, and a Shopify replacement. A Clarity Audit, followed by Deliver Consultancy: vendor requirements, procurement, and integration architecture.
++      </p>
++      <div className="hero-cta">
++        <Link href="/contact" className="btn btn--primary">
++          Book a free discovery call <ArrowRight size={18} />
++        </Link>
++      </div>
++    </div>
++    <div className="shape-card">
++      <h3>The engagement shape</h3>
++      <dl>
++        <div><dt>Role</dt><dd>Architect and advisor. Third-party team builds.</dd></div>
++        <div><dt>Stack</dt><dd>Medusa v2 and Next.js</dd></div>
++        <div><dt>Structure</dt><dd>12-month minimum retainer</dd></div>
++        <div><dt>Status</dt><dd>Live and ongoing</dd></div>
++      </dl>
++    </div>
+   </div>
+ </section>
+ 
+ {/* 2. STORY */}
+
+
+Now restructure the Cobra hero from centered to split layout with shape-card sidebar:
+ΓåÉ Edit app/case-studies/cobra-workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-case-studies\app\case-studies\cobra-workwear\page.tsx
+@@ -92,29 +92,44 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* 2. STORY */}
++{/* 2. WHAT THE ENGAGEMENT COVERS */}
+ <section className="g-white">
+-  <div className="wrap prose">
+-    <h2>What was done</h2>
+-    <p>
+-      The eCommerce build itself is being delivered by a third party on Medusa v2 and Next.js, with Craig acting as architect and advisor rather than builder. This is Shape A: advisory and oversight, where the client&apos;s implementation partner does the build.
+-    </p>
+-    <p>
+-      The stack was chosen deliberately as a flagship, repeatable reference build rather than a one-off ΓÇö the same architecture is reused where it fits future clients.
+-    </p>
++  <div className="wrap">
++    <span className="eyebrow">What the engagement covers</span>
++    <h2>Three dimensions of an advisory-only build.</h2>
+ 
+-    <h2>The commercial shape</h2>
+-    <p>
+-      Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price ΓÇö pricing detail stays out of public case studies.
+-    </p>
++    <div className="grid grid--3" style={{ marginTop: 34 }}>
++      <article className="card">
++        <span className="kicker">01 &middot; Vendor selection</span>
++        <h3>Choosing the implementation partner</h3>
++        <p>Evaluating who actually builds it. The stack, Medusa v2 and Next.js, was chosen deliberately as a flagship reference build, not a one-off, and the third-party team was selected against that brief.</p>
++      </article>
++      <article className="card">
++        <span className="kicker">02 &middot; Process design</span>
++        <h3>Vendor requirements and procurement</h3>
++        <p>Writing the requirements the trade portal and ERP evaluation actually needed to answer, then running the procurement process against them, rather than accepting the first plausible platform.</p>
++      </article>
++      <article className="card">
++        <span className="kicker">03 &middot; Implementation oversight</span>
++        <h3>Integration architecture, ongoing</h3>
++        <p>Weekly involvement across the build, checking the integration architecture holds as the implementation partner delivers, not a one-off sign-off at the start.</p>
++      </article>
++    </div>
+ 
+-    <div className="progress-note">
+-      <h3>What&apos;s still in progress</h3>
+-      <p>
+-        The engagement is live and ongoing, not a completed, closed project.
++    <div style={{ maxWidth: '72ch' }}>
++      <h2 style={{ marginTop: 48 }}>The commercial shape</h2>
++      <p style={{ color: 'var(--do-text-secondary)', lineHeight: 'var(--do-leading-relaxed)' }}>
++        Restructured from an initial six-month framing to a twelve-month minimum retainer covering the full build across the first four months, then ongoing weekly involvement. Named here only as a shape, not a price ΓÇö pricing detail stays out of public case studies.
+       </p>
++
++      <div className="progress-note">
++        <h3>What&apos;s still in progress</h3>
++        <p>
++          The engagement is live and ongoing, not a completed, closed project.
++        </p>
++      </div>
+     </div>
+   </div>
+ </section>
+ 
+
+
+Now replace the story section with the 3-card "What the engagement covers" section, keeping the commercial shape paragraph:
+ΓåÆ Read app/case-studies/tacklebag/page.tsx [offset=158, limit=30]
+ΓåÆ Read app/case-studies/hanicks/page.tsx [offset=78, limit=20]
+ΓåÆ Read app/case-studies/cobra-workwear/page.tsx
+All edits applied. Let me verify the final state of all 3 files, then build.
+All 3 files look correct. Let me check for node_modules and build.
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules"
+False
+
+$ Test-Path "D:\apps\decoded-ops-website\node_modules"
+True
+
+$ Copy-Item -LiteralPath "D:\apps\decoded-ops-website\node_modules" -Destination "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" -Recurse
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 120000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+
+$ New-Item -ItemType Junction -Path "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" -Target "D:\apps\decoded-ops-website\node_modules"
+New-Item: Directory D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules cannot be removed because it is not empty.
+
+$ Remove-Item -LiteralPath "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" -Recurse -Force; New-Item -ItemType Junction -Path "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" -Target "D:\apps\decoded-ops-website\node_modules"
+Directory: D:\apps\worktrees\decoded-ops-website\fix-case-studies
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+l----          02/08/2026    10:48                node_modules -> D:\apps\decoded-ops-website\node_modules
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+
+-----
+FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\CRAIGB~1\AppData\Local\Temp\next-panic-372a6dbdfdbec44a0867006e68c92dd6.log.
+
+To help make Turbopack better, report this error by clicking here.
+-----
+
+
+> Build error occurred
+Error [TurbopackInternalError]: Symlink [project]/node_modules is invalid, it points out of the filesystem root
+
+Debug info:
+- Execution of get_all_written_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of all_entrypoints_write_to_disk_operation failed
+- Execution of output_assets_operation failed
+- Execution of Project::get_all_endpoint_groups_with_app_route_filter failed
+- Execution of Project::entrypoints_with_app_route_filter failed
+- Execution of AppProject::routes_with_filter failed
+- Execution of directory_tree_to_entrypoints_internal failed
+- Execution of directory_tree_to_loader_tree failed
+- Execution of try_get_next_package failed
+- Execution of *ResolveResult::first_source failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of find_package failed
+- Symlink [project]/node_modules is invalid, it points out of the filesystem root
+    at ignore-listed frames {
+  type: 'TurbopackInternalError',
+  location: undefined
+}
+
+Turbopack can't handle the junction. Let me copy node_modules properly with robocopy for speed.
+$ Remove-Item -LiteralPath "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" -Force; robocopy "D:\apps\decoded-ops-website\node_modules" "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules" /E /MT:8 /NFL /NDL /NJH /NJS
+0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%  
+  0%
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-case-studies\node_modules\next\package.json"
+True
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 24.0s
+  Running TypeScript ...
+  Finished TypeScript in 19.9s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 10.2s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+# Todos
+[Γ£ô] Read all 3 mockup files + 3 case-study pages + pricing page for naming reference
+[Γ£ô] TackleBag: Add missing 3rd stat card, change grid from 2-col to 3-col
+[Γ£ô] Hanicks: Restore plate section headline/lede to approved copy
+[Γ£ô] Hanicks + Cobra: Rename Discovery Day to Clarity Audit
+[Γ£ô] Cobra: Restore shape-card sidebar in hero + 3-card 'What the engagement covers' section
+[Γ£ô] Build and verify zero errors
+
+Build passed with zero TypeScript errors. Let me check for the loop-status file.
+All 4 fixes applied, `npm run build` exits 0. Here's what changed:
+
+## TackleBag (`app/case-studies/tacklebag/page.tsx`)
+- **Added 3rd stat card** ΓÇö `Live` / "project underway, Symphony integration proven in production" ΓÇö after the existing 9 and 20ΓÇô40 stat cards
+- **Grid changed** from `grid--2` (maxWidth 640) to `grid--3` (maxWidth 820) to accommodate the third column
+
+## Hanicks (`app/case-studies/hanicks/page.tsx`)
+- **Plate headline** restored from "Before and after, paired line for line." ΓåÆ "Not projected. Not modelled. What actually happened."
+- **Plate lede** restored from "Hanicks, named with permissionΓÇª" ΓåÆ the approved 164,752/127,135/77%/11,064 sentence, with `marginTop: 16` and the em dash replaced with a comma per the no-em-dash rule
+- **Discovery Day ΓåÆ A Clarity Audit** on line 186 ("A Clarity Audit identified the platform firstΓÇª")
+
+## Cobra Workwear (`app/case-studies/cobra-workwear/page.tsx`)
+- **Hero restructured** from centered single-column to `hero-split` layout with a **shape-card sidebar** showing Role / Stack / Structure / Status as a definition list
+- **Added 3-card "What the engagement covers" section** ΓÇö 01 Vendor selection, 02 Process design, 03 Implementation oversight ΓÇö matching the mockup cards verbatim
+- **Retained** the "The commercial shape" paragraph (six-to-twelve-month restructure claim) as-is
+- **Discovery Day ΓåÆ A Clarity Audit** in the hero lede

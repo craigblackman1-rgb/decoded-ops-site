@@ -7,7 +7,11 @@
     "prebuild": "node scripts/generate-route-slugs.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:nav": "node .context/check-nav-coverage.mjs",
+    "check:price": "node .context/price-audit.mjs",
+    "copy:extract": "node .context/extract-copy.mjs",
+    "check:premerge": "npm run check:nav && npm run check:price"
   },
   "dependencies": {
     "resend": "^6.12.3",

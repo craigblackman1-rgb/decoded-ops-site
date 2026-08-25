@@ -1,0 +1,212 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read app/privacy/page.tsx
+ΓåÆ Read app/cookies/page.tsx
+ΓåÆ Read components/CookieConsent.tsx
+ΓåÆ Read app/contact/actions.ts
+
+# Todos
+[ΓÇó] Rewrite app/privacy/page.tsx ΓÇö replace we/our/us with I/my/me
+[ ] Rewrite app/cookies/page.tsx ΓÇö replace we/our/us with I/my/me, remove em dashes from meta
+[ ] Rewrite components/CookieConsent.tsx ΓÇö replace we/our/us
+[ ] Rewrite app/contact/actions.ts ΓÇö replace we/our/us, remove em dash, remove 'reach out'
+[ ] Grep all 4 files for remaining we/our/us and em dashes
+[ ] npm run build ΓÇö verify zero TypeScript errors
+
+ΓåÉ Write app/privacy/page.tsx
+Wrote file successfully.
+
+Γ£ù Invalid Tool
+The arguments provided to the tool are invalid: Invalid input for tool write: JSON parsing failed: Text: {"filePath": "D:\\apps\\worktrees\\decoded-ops-website\\voice-legal\\app\\cookies\\page.tsx", "content": "import type { Metadata } from 'next';\n\nexport const metadata: Metadata = {\n  title: 'Cookie Policy | Decoded Ops',\n  description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',\n  alternates: { canonical: '/cookies' },\n  openGraph: {\n    type: 'website',\n    title: 'Cookie Policy | Decoded Ops',\n    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',\n    url: 'https://decodedops.co.uk/cookies',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Cookie Policy | Decoded Ops',\n    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',\n  },\n};\n\nconst sectionH2 = { fontSize: 'var(--do-text-2xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 16 } as const;\nconst sectionH3 = { fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)', marginBottom: 8 } as const;\nconst bodyText = { fontSize: 'var(--do-text-base)', color: 'var(--do-text-secondary)', lineHeight: 1.75, marginBottom: 16 } as const;\nconst smallText = { fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', lineHeight: 1.75, marginTop: 8 } as const;\n\nexport default function CookiesPage() {\n  return (\n    <>\n      {/* HERO */}\n      <section className=\"g-off\">\n        <div className=\"wrap\" style={{ maxWidth: 720 }}>\n          <h1 className=\"h1\">Cookie Policy</h1>\n          <p className=\"lede\">Last updated: {new Date().getFullYear()}</p>\n        </div>\n      </section>\n\n      {/* CONTENT */}\n      <section className=\"g-off\">\n        <div className=\"wrap\" style={{ maxWidth: 720 }}>\n          <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>\n\n            {/* Introduction */}\n            <div>\n              <h2 style={sectionH2}>What are cookies?</h2>\n              <p style={bodyText}>\n                Cookies are small text files that are placed on your browser when you visit a website. They help websites remember information about your visit, such as your preferences and login details. Cookies can be stored on your device for varying lengths of time.\n              </p>\n            </div>\n\n            {/* Why I use cookies */}\n            <div>\n              <h2 style={sectionH2}>Why I use cookies</h2>\n              <p style={bodyText}>\n                I use cookies to:\n              </p>\n              <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>\n                <li><strong>Remember your preferences:</strong> I save your cookie consent choice so I don&apos;t ask again</li>\n                <li><strong>Improve your experience:</strong> Cookies help me understand how you navigate the site</li>\n                <li><strong>Measure analytics:</strong> I use cookies to count visitors and track which pages are most popular</li>\n                <li><strong>Security:</strong> Cookies help protect your data and prevent unauthorised access</li>\n                <li><strong>Marketing:</strong> I may use cookies to show you relevant content across the web</li>\n              </ul>\n            </div>\n\n            {/* Types of cookies */}\n            <div>\n              <h2 style={sectionH2}>Types of cookies I use</h2>\n\n              <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>\n                <div>\n                  <h3 style={sectionH3}>Essential cookies</h3>\n                  <p style={bodyText}>\n                    These cookies are necessary for the website to function properly. They enable core functionality like navigation and access to secure areas. Without these cookies, services you&apos;ve asked for cannot be provided. These cannot be disabled.\n                  </p>\n                  <p style={smallText}>Examples: Cookie consent preference, session tokens, security settings</p>\n                </div>\n\n                <div>\n                  <h3 style={sectionH3}>Performance cookies</h3>\n                  <p style={bodyText}>\n                    These cookies allow me to count visits and traffic sources so I can measure and improve the performance of the website. They help me understand which pages are most popular and how visitors navigate the site.\n                  </p>\n                  <p style={smallText}>Examples: Google Analytics, page view tracking</p>\n                </div>\n\n                <div>\n                  <h3 style={sectionH3}>Functional cookies</h3>\n                  <p style={bodyText}>\n                    These cookies enable enhanced functionality and personalisation. They remember choices you&apos;ve made (such as your preferences) and can be used to provide services you&apos;ve requested.\n                  </p>\n                  <p style={smallText}>Examples: Preference remembering, form data</p>\n                </div>\n\n                <div>\n                  <h3 style={sectionH3}>Marketing cookies</h3>\n                  <p style={bodyText}>\n                    These cookies are used to track your activity across the web so I can show you relevant content and advertising. They may be set by advertising networks with my permission.\n                  </p>\n                  <p style={smallText}>Examples: Advertising tracking, remarketing pixels</p>\n                </div>\n              </div>\n            </div>\n\n            {/* Managing cookies */}\n            <div>\n              <h2 style={sectionH2}>Managing your cookie preferences</h2>\n              <p style={bodyText}>\n                You have the right to choose whether to accept or decline cookies (except essential cookies which cannot be disabled). You can manage your preferences in several ways:\n              </p>\n              <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>\n                <li><strong>Cookie banner:</strong> Use the cookie preference banner that appears when you first visit the site</li>\n                <li><strong>Browser settings:</strong> You can configure your browser to refuse cookies or alert you when a cookie is being sent. Each browser is different, so check your browser&apos;s help menu for instructions</li>\n                <li><strong>Third-party tools:</strong> You can visit sites like Your Online Choices to manage cookies from advertising networks</li>\n              </ul>\n            </div>\n\n            {/* Third-party cookies */}\n            <div>\n              <h2 style={sectionH2}>Third-party cookies</h2>\n              <p style={bodyText}>\n                Some cookies on this site are set by third parties, including:\n              </p>\n              <ul style={{ color: 'var(--do-text-secondary)', lineHeight: 1.75, paddingLeft: 24, marginBottom: 16 }}>\n                <li><strong>Google Analytics:</strong> For measuring website traffic and user behaviour</li>\n                <li><strong>Social media platforms:</strong> For social sharing and tracking</li>\n                <li><strong>Advertising networks:</strong> For targeted advertising and remarketing</li>\n              </ul>\n              <p style={bodyText}>\n                These third parties have their own privacy policies and are responsible for their own cookie practices. I recommend reviewing their policies if you want to understand how they use cookies.\n              </p>\n            </div>\n\n            {/* Security and data */}\n            <div>\n              <h2 style={sectionH2}>Security and data protection</h2>\n              <p style={bodyText}>\n                I take your privacy seriously. Cookies cannot be used to run programmes, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. I use security measures to protect cookie data from unauthorised access and misuse.\n              </p>\n            </div>\n\n            {/* Changes to policy */}\n            <div>\n              <h2 style={sectionH2}>Changes to this policy</h2>\n              <p style={bodyText}>\n                I may update this cookie policy from time to time to reflect changes in my practices, technology, legal requirements, and other factors. I encourage you to review this policy periodically to stay informed about how I use cookies.\n              </p>\n            </div>\n\n            {/* Contact */}\n            <div>\n              <h2 style={sectionH2}>Contact me</h2>\n              <p style={bodyText}>\n                If you have questions about my use of cookies or this policy,.
+Error message: JSON Parse error: Unterminated string
+
+ΓåÉ Write app/cookies/page.tsx
+Wrote file successfully.
+
+ΓåÉ Write components/CookieConsent.tsx
+Wrote file successfully.
+
+ΓåÉ Write app/contact/actions.ts
+Wrote file successfully.
+
+ΓåÉ Write app/contact/actions.ts
+Wrote file successfully.
+
+# Todos
+[Γ£ô] Rewrite app/privacy/page.tsx ΓÇö replace we/our/us with I/my/me
+[Γ£ô] Rewrite app/cookies/page.tsx ΓÇö replace we/our/us with I/my/me, remove em dashes from meta
+[Γ£ô] Rewrite components/CookieConsent.tsx ΓÇö replace we/our/us
+[Γ£ô] Rewrite app/contact/actions.ts ΓÇö replace we/our/us, remove em dash, remove 'reach out'
+[ΓÇó] Grep all 4 files for remaining we/our/us and em dashes
+[ ] npm run build ΓÇö verify zero TypeScript errors
+
+Γ£▒ Grep "\b[Ww]e\b|\b[Oo]ur\b|\b[Uu]s\b" in . ┬╖ 34 matches
+Γ£▒ Grep "ΓÇö" in . ┬╖ 100 matches
+Now let me verify with greps and fix any remaining issues:
+Γ£▒ Grep "&mdash;" in . ┬╖ 32 matches
+
+ΓåÉ Edit app/contact/actions.ts
+Index: D:\apps\worktrees\decoded-ops-website\voice-legal\app\contact\actions.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\voice-legal\app\contact\actions.ts
++++ D:\apps\worktrees\decoded-ops-website\voice-legal\app\contact\actions.ts
+@@ -112,9 +112,9 @@
+ 
+     <hr style="border: none; border-top: 1px solid #8ECAE6; margin: 32px 0;" />
+ 
+     <p style="color: #8ECAE6; font-size: 12px; margin: 0;">
+-      <strong>Decoded Ops</strong> &mdash; Systems Operations &amp; Implementation<br />
++      <strong>Decoded Ops</strong>, Systems Operations &amp; Implementation<br />
+       <a href="https://decodedops.co.uk" style="color: #219EBC; text-decoration: none;">decodedops.co.uk</a>
+     </p>
+   </div>
+ `,
+
+
+The 4 target files are clean for `we`/`our`/`us`. But `actions.ts` still has `&mdash;` in the email footer HTML. Let me fix that:
+# Todos
+[Γ£ô] Rewrite app/privacy/page.tsx ΓÇö replace we/our/us with I/my/me
+[Γ£ô] Rewrite app/cookies/page.tsx ΓÇö replace we/our/us with I/my/me, remove em dashes from meta
+[Γ£ô] Rewrite components/CookieConsent.tsx ΓÇö replace we/our/us
+[Γ£ô] Rewrite app/contact/actions.ts ΓÇö replace we/our/us, remove em dash, remove 'reach out'
+[Γ£ô] Grep all 4 files for remaining we/our/us and em dashes
+[ΓÇó] npm run build ΓÇö verify zero TypeScript errors
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\voice-legal\node_modules"
+False
+
+$ Test-Path -LiteralPath "D:\apps\decoded-ops-website\node_modules"
+True
+
+$ robocopy "D:\apps\decoded-ops-website\node_modules" "D:\apps\worktrees\decoded-ops-website\voice-legal\node_modules" /E /NFL /NDL /NJH /NJS /R:2 /W:1
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\voice-legal\node_modules"
+True
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.2 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 29.6s
+  Running TypeScript ...
+  Finished TypeScript in 28.5s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/159) ...
+  Generating static pages using 15 workers (39/159) 
+  Generating static pages using 15 workers (79/159) 
+  Generating static pages using 15 workers (119/159) 
+Γ£ô Generating static pages using 15 workers (159/159) in 9.4s
+  Finalizing page optimization ...
+
+Route (app)                                      Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/contact
+Γö£ ╞Æ /api/debug/hub-status
+Γö£ Γùï /apps
+Γö£ Γùï /apps/artwork-manager
+Γö£ Γùï /apps/commerce
+Γö£ Γùï /apps/crm
+Γö£ Γùï /apps/data-app
+Γö£ Γùï /blog                                                5m      1y
+Γö£ ΓùÅ /blog/[slug]                                         5m      1y
+Γöé Γö£ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-method
+Γö£ Γùï /deliver
+Γö£ Γùï /how-i-build
+Γö£ Γùï /locations/fractional-cto
+Γö£ ΓùÅ /locations/fractional-cto/[location]
+Γöé Γö£ /locations/fractional-cto/chichester
+Γöé Γö£ /locations/fractional-cto/worthing
+Γöé Γö£ /locations/fractional-cto/horsham
+Γöé Γöö [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£ ΓùÅ /locations/tech-audit/[location]
+Γöé Γö£ /locations/tech-audit/chichester
+Γöé Γö£ /locations/tech-audit/worthing
+Γöé Γö£ /locations/tech-audit/horsham
+Γöé Γöö [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/bottleneck-growth
+Γö£ Γùï /problems/buy-vs-build
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/data-scattered
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/inventory-blind
+Γö£ Γùï /problems/legacy-system
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/ops-in-owners-head
+Γö£ Γùï /problems/seasonal-peaks
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/spreadsheet-addiction
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /process-quality-system
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/promotional-merchandise
+Γö£ Γùï /sectors/schoolwear
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/teamwear-clubwear
+Γö£ Γùï /sectors/workwear
+Γö£ Γùï /sitemap.xml                                         5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+

@@ -1,5 +1,5 @@
 import { auth } from '@/auth'
-import { redirect, notFound } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { SignPanel } from './SignPanel'
 
@@ -14,11 +14,15 @@ interface HubDoc {
   html_content?: string
   title?: string
   doc_number?: string
+  doc_type?: string
+  description?: string | null
   status?: string
   client_signature?: string
   client_signed_date?: string
   signable?: boolean
 }
+
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts']
 
 function formatDate(dateStr: string): string {
   try {
@@ -43,16 +47,22 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   const hubUrl = process.env.HUB_API_URL
   if (!hubUrl) return <div className="empty">Hub not configured</div>
 
-  const res = await fetch(`${hubUrl}/api/public/client-docs/${decoded}`, {
-    cache: 'no-store',
-  })
+  // The hub's single-doc route requires a per-document access_token (added for
+  // secure public sharing, hub commit 903097a) which the portal never holds.
+  // The list route is scoped to the signed-in client, so fetch that and find the
+  // document by number instead. This also enforces that a client can only view
+  // their own published documents.
+  const ids = clientId === 'admin' ? ALL_CLIENT_IDS : [clientId]
+  const lists = await Promise.all(
+    ids.map(id =>
+      fetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+        .then(r => (r.ok ? r.json() : []))
+        .catch(() => [])
+    )
+  )
+  const docs: HubDoc[] = lists.flat()
 
-  if (!res.ok) {
-    if (res.status === 404) return <div className="empty">Document not found</div>
-    return <div className="empty">Failed to load document</div>
-  }
-
-  const doc: HubDoc = await res.json()
+  const doc = docs.find(d => d.doc_number === decoded)
 
   if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
 
@@ -148,21 +158,17 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
       </div>
 
       {!isSignable ? null : isSigned && doc.client_signature ? (
-        <div style={{
-          maxWidth: 560,
-          margin: '0 auto',
-          padding: '32px 24px',
-        }}>
+        <div style={{ padding: '0 24px 16px' }}>
           <div style={{
-            padding: '20px 24px',
+            padding: '10px 16px',
             border: '1px solid #d4e8f0',
-            borderRadius: 12,
+            borderRadius: 8,
             background: '#fff',
             fontSize: 13,
             color: '#023047',
             display: 'flex',
             alignItems: 'center',
-            gap: 10,
+            gap: 8,
           }}>
             <svg
               width="18"

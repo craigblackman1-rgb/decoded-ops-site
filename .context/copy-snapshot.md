@@ -1,0 +1,2311 @@
+# Copy snapshot
+
+## /
+
+- Print, Embroidery & Decoration Technology Consultant | Decoded Ops
+- Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Discovery Day — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.
+- Print & Embroidery Technology Consultant | Decoded Ops
+- Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Written report in five days. 3x guarantee.
+- Operations and technology consultancy for print, embroidery, and decoration businesses.
+- Decoded Ops | Print & Embroidery Technology Consultant
+- Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.
+- Discovery Day
+- Deliver
+- Transform
+- Retained
+- On-Site Audit & Written Plan
+- A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.
+- Start here
+- Project Delivery & Vendor Management
+- Independent vendor brief, procurement, and project oversight. One point of contact. The vendor delivers what your business actually needs.
+- Digital Transformation Programme
+- Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first. Discovery required before scoping.
+- Fractional CTO / Head of Operations
+- Monthly strategic and operational leadership. Roadmap ownership. Vendor management. A direct line to Craig.
+- 3–6 hrs
+- Lost to manual re-keying between disconnected systems
+- 3–5%
+- Of inbound stock at risk from disconnected inventory
+- 2–4 hrs
+- Spent on manual invoicing and reconciliation
+- 1–3%
+- Of orders affected by picking and despatch errors
+- The Translation Gift
+- I take what you're trying to convey — often half-formed, vague, hard to articulate — and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven't been before.
+- Out-of-the-Box Problem Solving
+- When a system can't do something, I don't accept the limitation. I find a different way — connecting things not designed to connect, reframing the problem so the existing tool handles it differently.
+- The Facilitation Gift
+- In a mixed group — directors, warehouse staff, office teams — I ask the question that makes everyone stop. People adopt the result because they built it. That's how change actually sticks.
+- Garment decoration
+- Print & promotional
+- Workwear & teamwear
+- Signs & graphics
+- Awards & engraving
+- Labels & packaging
+- — Operations & Technology Consultancy
+- The penny drop
+- moment.
+- You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don't talk to each other.
+- 25 years inside print, embroidery, and decoration businesses
+- says the same patterns repeat — and they're fixable.
+- Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
+- See how Discovery Day works
+- Book a free 60-min call
+- 25+
+- Years in the sector
+- 3×
+- Clarity guarantee
+- 100%
+- No vendor agenda
+- I work with
+- "If I spent a day in your business looking at your systems, your processes, and your technology — how
+- confident
+- are you that I wouldn't find anything costing you money you don't know about?"
+- That question is worth sitting with. Most owners can't answer it honestly.
+- — The cost of standing still
+- What disconnected systems actually cost you
+- These are the numbers I see in businesses like yours, every week. Not hypothetical. Not worst-case. Just the quiet cost of systems that don't talk to each other.
+- Read about
+- what it looks like when your systems don't talk
+- why eCommerce disconnect costs more than you think
+- , and
+- how ERP implementations go wrong
+- — About Craig Blackman
+- Someone from the industry.
+- Not parachuting in.
+- I've spent 25 years working inside the businesses I now advise — print, embroidery, workwear, promotional merchandise, and branded apparel. I've been through what you're going through. I know where the money disappears and why the systems don't connect.
+- Most technology advice fails businesses like yours because it comes from people who've never processed a decorated order in their life. I built Decoded Ops because product-based businesses with a decoration service deserve someone who genuinely understands their operation from the inside.
+- Start with a free 60-min call
+- Or book a call directly
+- — The four services
+- Each standalone. Each a natural next step.
+- The audit is the door, not the business. Every service works on its own — and connects to the next when the time is right.
+- Learn more
+- The 3× Clarity Guarantee
+- If the report doesn't identify at least three times the fee in recoverable cost or lost revenue — the fee is refunded in full. No conditions. No questions.
+- What the right technology does
+- Published ERP implementation benchmarks, 2024.
+- ↓23%
+- Operational costs
+- ↓22%
+- Admin costs
+- +24%
+- On-time delivery
+- 91%
+- Improved stock accuracy within 12 months
+- What I'm doing right now
+- Not hypothetical. Live engagements, named with permission.
+- Four different sectors, same approach every time: fix the process and the data before you automate anything.
+- Hanicks
+- Project-leading a Khaos Control ERP implementation plus a custom supplier and Amazon FBA app.
+- TackleBag
+- Clarity Audit into a Deliver engagement, building a Stock Control module ahead of their ERP.
+- Cobra Workwear
+- Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping delivery.
+- Eternal Fitness
+- Technical lead on a full site rebuild and an AI-assisted training plan tool.
+- See all client work
+- A pattern I see repeatedly
+- What happens when the audit doesn't come first.
+- ERP implementations that skip an independent audit routinely run over budget and behind schedule — because nobody scoped the business before scoping the software.
+- See what went wrong
+- Ready to find out what's really going on?
+- The discovery call is free, takes 60 minutes, and comes with no obligation. Just an honest conversation about your operation.
+- Book a free discovery call
+- See engagement options & pricing
+
+## /about
+
+- About Craig Blackman | Decoded Ops
+- 25+ years inside print, embroidery, and decoration businesses. Independent technology consultant. No vendor relationships, no referral fees.
+- 25+ years inside print, embroidery, and decoration businesses. Independent technology consultant.
+- Independence
+- No referral fees. No vendor relationships. No commission. Every recommendation is made on merit alone — and I'll tell you when the answer is to change nothing.
+- Plain English
+- Technology is often explained in a way that keeps you dependent on the person explaining it. I don't do that. You should be able to make your own informed decisions.
+- Honesty
+- If the audit finds nothing significant, I'll tell you that. If the problem is harder than you think, I'll tell you that too. The value is in the truth, not in the finding.
+- Specificity
+- Every finding is quantified. Every recommendation is costed. You don't get a slide deck of observations — you get a clear statement of what each problem is costing you.
+- Craig Blackman
+- Founder & Principal Consultant
+- Technology and operations consultant with 25+ years of experience in print, embroidery, workwear, and promotional merchandise businesses.
+- Decoded Ops
+- print technology
+- embroidery operations
+- ERP systems
+- eCommerce integration
+- operations management
+- technology consulting
+- Worthing
+- West Sussex
+- GB
+- Home
+- About
+- — About Craig Blackman
+- 25+ years inside
+- product-based
+- businesses
+- Craig has worked at every level in print, embroidery, and promotional merchandise businesses. Not as a consultant brought in to observe. As the person on the warehouse floor picking and packing. As the IT engineer. As the operations manager. As the one who implemented the systems, lived with the consequences, and fixed what went wrong. That is why he knows what a system needs to do for the person using it — not just the person commissioning it.
+- Book a free discovery call
+- See Clarity
+- Or book a call directly
+- 25+
+- Years in print & embroidery
+- 0
+- Vendor relationships
+- 100%
+- Independent
+- — The background
+- Where this comes from
+- I've spent 25 years working in and around the print, embroidery, workwear, and promotional merchandise sector. Not as a consultant who found it interesting — as someone who has lived the operational complexity firsthand.
+- I understand what a hoop size means and why it affects your production schedule. I've managed the artwork sign-off loop. I know what happens when your blank supplier runs out of stock on a Friday afternoon before a Monday delivery.
+- That sector knowledge is the thing that makes everything else possible. When I sit across the table from a software vendor, I know what questions to ask and when the answers don't add up. When I walk your production floor, I know what I'm looking at.
+- Decoded Ops was built on one principle: that business owners in this sector deserve honest, independent advice from someone who actually understands their world.
+- — What makes the difference
+- Three things that change how this works
+- Translation Gift
+- Takes half-formed frustrations, reflects back a clear path. Business owners feel understood.
+- Out-of-the-box Problem Solving
+- Never accepts a system's stated limitation. Finds another way.
+- Facilitation Gift
+- In a mixed group, asks the question that makes everyone stop. People adopt the result because they built it.
+- — Proven impact
+- What ERP implementations deliver
+- Real outcomes from the sector. When the implementation is done right.
+- −23%
+- Operational costs
+- −22%
+- Admin costs
+- 91%
+- Better stock control within 12m
+- +24%
+- On-time delivery
+- 58%
+- ROI within 2 years
+- — Not just advice
+- I build the systems too.
+- Most technology consultants hand over a report and leave. When a client needs a real tool — an eCommerce sync, a pick-and-pack queue, a stock connector — I build it myself and keep it running.
+- This is a live queue from a client's order sync, running in production today.
+- Order Sync Queue
+- Polo shirt, navy / L
+- Pushed
+- Polo shirt, navy / XL
+- Verifying
+- Training shorts, black
+- Training shorts, navy
+- Queued
+- — How I work
+- The things I won't compromise on
+- These aren't marketing principles. They're the reason I built Decoded Ops independently.
+- Ready to have the honest conversation?
+- Start with a free 60-minute call. No sales pitch. Just a conversation about what's happening in your business.
+
+## /blog
+
+- Insights — Decoded Ops
+- Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.
+- Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.
+- Home
+- Insights
+- 1px solid var(--do-prussian-blue)/0.15
+- Things I've learned the hard way
+- Plain-English writing on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.
+- Free Resources
+- 1px solid var(--do-cerulean)/0.3
+- Checklist
+- Operational Audit Checklist
+- 20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant — or to understand what an audit actually covers.
+- Ready to dive deeper?
+- These resources are free. An audit is where things get specific — every finding quantified, every recommendation costed, every next step mapped.
+- Book a free discovery call
+- Or book a call directly
+
+## /blog/[slug]
+
+- Craig Blackman
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Operations
+- Blog Post Not Found
+- | Decoded Ops
+- en-GB
+- Home
+- Insights
+- Back to Insights
+- 1px solid var(--do-cerulean)/0.2
+- min read
+- 1px solid var(--do-border-subtle)
+- Plain English. No jargon. No vendor agenda.
+- A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you'll never read. No recommendations you can't implement.
+- See Clarity
+
+## /case-studies
+
+- Client Work | Decoded Ops
+- Live engagements — what I'm actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.
+- Live engagements — what I'm actually building right now, not hypotheticals.
+- Hanicks
+- Heating spares & eCommerce
+- Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.
+- Live engagement
+- TackleBag
+- Branded apparel & decoration
+- Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data straight into their ERP implementation.
+- In Deliver
+- Cobra Workwear
+- Workwear
+- Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.
+- Post-audit
+- Eternal Fitness
+- Health & fitness (clinical populations)
+- Technical lead on a full site rebuild and an AI-assisted training plan tool for a 1-to-1 personal training studio.
+- In build
+- Home
+- Client Work
+- — Client Work
+- What I'm actually building right now
+- Not case studies about businesses like yours. These are live engagements, named with permission, across four different sectors. Same approach every time: fix the process and the data before you automate anything.
+- Read more
+- Want to talk about your operation?
+- Every engagement above started the same way — a Clarity Audit to find out what was actually going on before anything got built or implemented.
+- Book a free discovery call
+- Or book a call directly
+
+## /case-studies/cobra-workwear
+
+- Cobra Workwear — B2B Portal & ERP Evaluation | Decoded Ops
+- Independent Clarity Audit and ERP evaluation for Cobra Workwear ahead of a B2B customer ordering portal build.
+- Independent Clarity Audit and ERP evaluation ahead of a B2B customer ordering portal build.
+- Independent Clarity Audit and ERP evaluation for a B2B ordering portal build.
+- Cobra Workwear — B2B Portal and ERP Evaluation
+- Craig Blackman
+- Decoded Ops
+- — Post-Audit · Workwear
+- Cobra Workwear: an independent view before the ERP decision, not after
+- Cobra Workwear needed a B2B customer ordering portal — logins, custom ranges per customer, credit terms, multi-site, Xero integration — plus an ERP that could actually support it. The Clarity Audit came first, before anything got built or signed off.
+- The problem
+- Cobra were evaluating an ERP platform without an independent view on whether it actually fit their operation, running alongside Shopify with a B2B portal still to be scoped and built. Getting the platform choice wrong here doesns not a decision to make off the back of a vendor demo.
+- t just cost money on the software, it shapes the next 12 to 18 months of how the whole ordering and fulfilment process works. That
+- What I did
+- Ran a Clarity Audit against Cobra's actual, documented requirements, not the vendor's pitch
+- Evaluated the ERP platform on the table independently, with no vendor relationship or referral fee riding on the outcome
+- Scoped what the B2B portal actually needs to do: logins, custom ranges per customer, credit terms, multi-site support, and a clean Xero integration
+- Positioned Decoded Ops as architect and project manager for the build, not the builder — a vetted third-party partner delivers the portal, keeping cost sensitive and avoiding a build-line markup
+- Why the audit came before the build
+- A B2B portal that doesnre choosing an ERP or scoping a customer portal and want an independent view before anythings exactly what a Clarity Audit is for.
+- t talk to the right ERP, chosen without an independent check, is exactly how a business ends up rebuilding the same thing twice. The audit exists to catch that before contracts are signed, not to write a report nobody acts on. </p> </div> <h2 className="text-2xl font-bold text-[#023047] mb-4">Status</h2> <p className="text-[#023047]/80 leading-relaxed mb-8"> Clarity Audit complete. Now negotiating the Deliver and Transform engagement to take the portal and ERP work from scope into build. </p> <div className="p-8 rounded-2xl bg-[#023047]"> <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Weighing up a similar decision?</h3> <p className="text-[#8ECAE6] leading-relaxed mb-6"> If you
+- s signed, that
+- Book a free discovery call
+- See other client work
+- Or book a call directly
+
+## /case-studies/eternal-fitness
+
+- Eternal Fitness — Full Site Build & AI Training Tool | Decoded Ops
+- Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.
+- Technical lead on a full site rebuild and an AI-assisted training plan tool.
+- Eternal Fitness — Full Site Build and AI Training Tool
+- Craig Blackman
+- Decoded Ops
+- — In Build · Health & Fitness
+- Eternal Fitness: technical lead for a clinical-population training studio
+- Eternal Fitness is a private, 1-to-1 personal training studio working mainly with clients managing health conditions, not a general weight-loss audience. Is Level 4 PT and clinical lead.
+- m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio
+- The problem
+- A studio working with clinical populations needs a site and a set of tools that reflect that seriously, not generic fitness-marketing language or before-and-after framing. Training plans for clients managing health conditions cans specific situation, with Esther approving every plan and every piece of client-facing content.
+- t be templated the usual way either. They need to be built around confirmed studio equipment and each client
+- What IA full site rebuild that reflects clinical framing rather than fitness-marketing convention — no no before-and-after, no crush-it languageA training plan tool that generates session plans against a confirmed equipment list and each client\, , , ].map((item, i) => (
+- m building</h2> <div className="space-y-4 mb-8"> {[
+- transformation,
+- s condition, with Esther reviewing and approving every output
+- Brand and tooling consistency across the site and the training plan output, so the two don't drift apart over time
+- A technical foundation Esther can rely on without needing to manage it herself — she owns the clinical and brand decisions, I own the build
+- Why the AI tool doesnt decide whats the same principle behind every AI-adjacent piece of work I do: the tool handles the groundwork, the person with the actual expertise makes the call.
+- t replace the trainer</h3> <p className="text-[#023047]/80 leading-relaxed"> The training plan tool speeds up building a first draft against real constraints. It doesn
+- s safe for a client managing a health condition. Esther does. That
+- Status
+- In build. Site rebuild and training plan tool are both in progress, working toward a scheduled launch.
+- Building something similar?
+- If you need a technical lead who
+
+## /case-studies/hanicks
+
+- Hanicks — Khaos Control ERP + Custom App | Decoded Ops
+- Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.
+- Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.
+- Project-leading a Khaos Control ERP implementation alongside a custom app.
+- Hanicks — Khaos Control ERP + Custom App
+- Craig Blackman
+- Decoded Ops
+- — Live Engagement · Heating Spares & eCommerce
+- Hanicks: ERP implementation, run as one project, not three
+- Hanicks sell heating spares through their own website, direct, and Amazon FBA. Theyt behave like a normal marketplace channel. Supplier data needed enriching and standardising before it could feed the new system properly. And without someone coordinating the ERP setup, the app build, and the channel automation as one piece of work, this was heading toward three separate projects quietly working against each other.
+- d already chosen Khaos Control as their ERP. What they needed was someone to run the whole thing as a single, coordinated project rather than a set of disconnected workstreams. </p> </div> </section> <section className="py-16 lg:py-20"> <div className="max-w-3xl mx-auto px-6 lg:px-8"> <h2 className="text-2xl font-bold text-[#023047] mb-4">The problem</h2> <p className="text-[#023047]/80 leading-relaxed mb-8"> Khaos Control was the right ERP choice, but choosing the software was never the hard part. Amazon FBA has its own inventory and shipping confirmation flows that don
+- What IActing as project lead across the whole engagement — Khaos Control implementation, the custom app build, and channel automation all run as one plan, not threeBuilding the IBasis App: a custom application that interfaces with suppliers, the ERP, and Amazon, plus reporting that draws directly from accountsDesigning the requirements document first, before implementation starts — it protects the project and gives Khaos Control a clear brief to build againstCovering Amazon FBA\, ].map((item, i) => (
+- m doing</h2> <div className="space-y-4 mb-8"> {[
+- s inventory and shipping confirmation flows explicitly in the automation design, rather than treating it like every other channel
+- Why the app comes first, not the ERP
+- The instinct is always to wait until the ERP is fully implemented before touching the data problem. Thatt get replaced when Khaos Control goes live, it keeps running the feeds and connections the ERP was never designed to handle. Data enriched and automated now is worth more than anything even the best ERP can produce from messy source data later.
+- s backwards. The app doesn
+- Status
+- Live engagement, in progress. Khaos Control implementation and the IBasis App build are running in parallel, coordinated against a single requirements document.
+- Facing something similar?
+- If you
+
+## /case-studies/tacklebag
+
+- TackleBag — Clarity Audit to Stock Control Build | Decoded Ops
+- A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.
+- A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.
+- A Clarity Audit into a Deliver engagement, building a Stock Control module.
+- TackleBag — Clarity Audit to Stock Control Build
+- Craig Blackman
+- Decoded Ops
+- — In Deliver · Branded Apparel & Decoration
+- TackleBag: building the data foundation before the ERP goes in
+- TackleBag came in for a Clarity Audit. What it found moved straight into a Deliver engagement, with a Stock Control module now doing the groundwork their eventual Khaos Control implementation would otherwise have to do the hard way.
+- The problem
+- Stock and SKU data was spread across spreadsheets and manual processes, with no single source of truth for bin locations or supplier feeds. Thats exactly the kind of mess that gets carried straight into a new ERP if nobody deals with it first. Khaos Control implementation typically starts once the softwarere building
+- s a normal starting point for a decorated goods business at this scale, but it
+- s in, with data prep left to the client to sort out on the way. </p> <h2 className="text-2xl font-bold text-[#023047] mb-4">What we
+- A Stock Control module with SKU standards and bin locations built in, so the data has a proper home before the ERP arrives
+- Direct data ports from the module into Khaos Control once implementation starts — no manual re-entry, no re-cleaning the same data twice
+- Supplier feed sanitisation built into the module, replacing spreadsheets that were never designed to hold this much detail reliably
+- A module that keeps running after Khaos Control goes live — the ERP doesn't clean incoming supplier data on its own, this does
+- Why this order matters
+- Khaos Control implementation is where the real project cost sits. Every hour spent cleaning and standardising data before that starts is an hour that doesnt a stopgap that gets thrown away when the ERP lands. Its designed to feed.
+- t get spent firefighting during implementation. The module isn
+- s the thing doing the job the ERP was never going to do well on its own. </p> </div> <h2 className="text-2xl font-bold text-[#023047] mb-4">Status</h2> <p className="text-[#023047]/80 leading-relaxed mb-8"> Active Deliver engagement, following a completed Clarity Audit. The Stock Control module is in build, ahead of the Khaos Control implementation it
+- Recognise this pattern?
+- If your stock data is spread across spreadsheets and yous actually going on before you commit to anything.
+- re eyeing an ERP, a Clarity Audit is the fastest way to find out what
+- Book a free discovery call
+- See other client work
+- Or book a call directly
+
+## /clarity
+
+- Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops
+- A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.
+- 01
+- IT Infrastructure
+- Security posture, connectivity, identity management, and IT costs. Every risk identified, costed, and prioritised. Licensing waste surfaced and eliminated.
+- 02
+- Software & Systems
+- Every tool in use assessed — what it costs, what it does, whether it's right. ERP, MIS, and management platforms assessed or selected. Independent vendor brief on your terms.
+- 03
+- eCommerce & Digital
+- Platform, UX, integrations, B2B capability, decoration tools. Customer journey mapped end to end. WCAG accessibility review included.
+- 04
+- Processes & Operations
+- Every process mapped from order in to invoice out. Stock, fulfilment, and despatch reviewed. Quick wins separated from bigger projects. This is where the operations audit finds the friction that software alone cannot fix — undocumented steps, manual bridges, and processes that have never been questioned.
+- 05
+- Growth & Opportunity
+- Revenue lines with most potential identified. New channels and markets assessed. Technology roadmap built for where you're going, not where you've been.
+- 06
+- AI Readiness
+- The AI readiness assessment within the audit covers where AI could genuinely help your specific operation. What needs to be in place first. An honest view — not a tool sale.
+- Free u00B7 60 minutes
+- Discovery call
+- A 60-minute call before I arrive. I learn enough to make the day on site as useful as possible.
+- On-site
+- One day in your business
+- I follow your processes — not interview people about them. Six areas. Every system touched. Every step observed.
+- 5 working days
+- Written report
+- Every finding documented. Every issue quantified in time and cost. Prioritised by impact, not alphabetically.
+- Included
+- Debrief call
+- We walk through the findings together. You ask everything. I give you the unfiltered version.
+- A written audit report (not a slide deck)
+- Every issue quantified in time and money
+- Prioritised recommendations — quick wins first
+- An independent vendor brief if new software is needed
+- A debrief call to walk through everything
+- Follow-up support for 30 days after delivery
+- Deliver
+- A fixed-scope project to implement the highest-impact recommendations from your Discovery Day report.
+- Transform
+- A longer engagement to overhaul systems, processes, and technology across the business.
+- Retained
+- Monthly strategic and operational leadership — roadmap ownership, vendor management, ongoing.
+- Discovery Day
+- A one-day on-site technology and operations audit for print, embroidery, and decoration businesses. Written assessment within 5 working days.
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Operational and Technology Audit
+- How Discovery Day Works
+- A one-day on-site technology and operations audit for print, embroidery, and decoration businesses, delivering a written assessment within 5 working days.
+- A free 60-minute call before the on-site day. Craig learns enough about your business to make the day as useful as possible.
+- Craig follows your processes — not interviews people about them. Six areas. Every system touched. Every step observed.
+- Written assessment
+- Every finding documented. Every issue quantified in time and cost. Prioritised by impact, delivered within 5 working days.
+- A call to walk through the findings together. Every question answered. The unfiltered version.
+- What does Discovery Day cover?
+- Discovery Day covers six areas: IT infrastructure (security, connectivity, identity management, and IT costs), software and systems (every tool in use assessed), eCommerce and digital (platform, UX, integrations, and B2B capability), processes and operations (every process mapped from order to invoice), growth and opportunity (revenue lines with most potential, new channels, technology roadmap), and AI readiness (where AI could genuinely help your specific operation).
+- How much does Discovery Day cost?
+- Discovery Day is a single fixed fee, invoiced 50% on booking and 50% on delivery of the written assessment — get in touch and Craig will give you the exact figure on the first call. If it does not deliver something you can act on, there is no obligation to proceed to anything further. Discovery Day is always billed as its own standalone fee, never credited or discounted against a later Deliver, Transform, or Retained engagement.
+- How long does Discovery Day take?
+- The audit itself takes one day on site. You then receive a written assessment within 5 working days, followed by a debrief call included in the fee. A free 60-minute discovery call happens before the on-site day.
+- What do I receive at the end of Discovery Day?
+- You receive a written assessment (not a slide deck) with every issue quantified in time and money, prioritised recommendations with quick wins first, an independent vendor brief if new software is needed, a debrief call to walk through everything, and 30 days of follow-up support after delivery.
+- What is included in a one-day technology audit?
+- Discovery Day covers IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth opportunity, and AI readiness. Every area is assessed on site in a single day. You receive a written assessment within 5 working days with every finding quantified in time and money.
+- Is this an IT audit, a software audit, or an operations audit?
+- It is all three. Discovery Day is a combined IT audit, software audit, and operations audit delivered in a single day. The reason for covering all three together is that the problems rarely live in just one area — technology choices affect process efficiency, and process gaps drive software decisions.
+- Can a technology audit help with eCommerce integration problems?
+- Yes. eCommerce is one of the six areas covered in every Discovery Day. The audit assesses your eCommerce platform, how it connects to your ERP or order management system, where the gaps are, and what a realistic fix looks like — with costs.
+- Home
+- If the written assessment doesn't give you something you can act on, you're not obligated to go any further. No conditions. No questions.
+- — Discovery Day &middot; On-Site Audit & Written Plan
+- One day. A complete technology audit.
+- Everything it costs you
+- in writing within five working days.
+- A structured technology audit and operations review — independent, on site, and delivered in writing. Not a workshop. Not a proposal. A real audit — followed, observed, and quantified.
+- One fixed fee, no surprises.
+- By Craig Blackman — 25 years in print & embroidery operations
+- Book your Discovery Day call
+- Or book a call directly
+- — What gets audited
+- Six areas. Every time.
+- The same six areas are covered in every audit — because in this sector, the problems always live in the same places.
+- — The process
+- What happens, step by step
+- From your first call through to the debrief — what to expect at every stage.
+- Ready to find the right engagement?
+- Answer four quick questions and we'll point you to the most relevant option for your business.
+- See pricing options
+- — What you get
+- The deliverables
+- DISCOVERY DAY REPORT
+- TOTAL RECOVERABLE VALUE
+- &pound;47,200
+- 5 DAY
+- turnaround
+- — What comes next
+- What happens after Discovery Day?
+- The audit gives you the full picture. These are the three ways to act on it.
+- Learn more
+
+## /clients/[clientId]
+
+- use client
+- tacklebag-v2
+- cobra-workwear
+- Portal
+- Demo
+- Challenge
+- Roadmap
+- Investment
+- Accept
+- fixed top-0 left-0 right-0 z-[100] px-10 py-4 flex justify-between items-center transition-all duration-300
+- Proposal not found
+- No proposal exists for .
+- Decoded
+- Ops
+- Prepared exclusively for
+- · May 2026 · Confidential
+- craig@decodedops.co.uk · 07735 620 603
+
+## /clients/dashboard
+
+- TackleBag
+- cobra-workwear
+- Cobra Workwear
+- Hanicks Ltd
+- Corporatewear UK (Cwear)
+- ScotShirts
+- Decoded Ops
+- bg-[#219EBC]/10 text-[#023047] border-[#219EBC]/30
+- bg-[#FFB703]/15 text-[#023047] border-[#FFB703]/40
+- bg-[#8ECAE6]/15 text-[#023047] border-[#8ECAE6]/30
+- bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30
+- text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border
+- en-GB
+- no-store
+- Decoded
+- Ops
+- Welcome,
+- Client
+- portal — documents, proposals, and project resources.
+- Your Project
+- Phases, milestones, and actions needed from you.
+- View project plan
+- Document Library
+- Browse all documents, proposals, invoices and reports.
+- Browse documents
+
+## /clients/documents
+
+- bg-[#219EBC]/10 text-[#023047] border-[#219EBC]/30
+- bg-[#FFB703]/15 text-[#023047] border-[#FFB703]/40
+- bg-[#8ECAE6]/15 text-[#023047] border-[#8ECAE6]/30
+- bg-[#5a7d8f]/10 text-[#023047] border-[#5a7d8f]/30
+- text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border
+- en-GB
+- cobra-workwear
+- no-store
+- Back to dashboard
+- Document Library
+- Documents and resources from Decoded Ops.
+
+## /clients/documents/view/[id]
+
+- cobra-workwear
+- en-GB
+- no-store
+- 100vh
+- 1px solid #d4e8f0
+- 12px 24px
+- space-between
+- ← Back to Documents
+- inline-block
+- 1px solid rgba(34,197,94,.2)
+- 3px 10px
+- 1px solid rgba(142,202,230,.3)
+- min(80vh, 760px)
+- 0 auto
+- 32px 24px
+- 20px 24px
+
+## /clients/login
+
+- use client
+- callbackUrl
+- Content-Type
+- Too many attempts. Please wait before trying again.
+- Invalid email or password.
+- Something went wrong. Please try again.
+- Your password
+- current-password
+- text-sm rounded-lg px-4 py-2.5
+- Signing in...
+- Sign in
+- Decoded
+- Ops
+- Loading...
+
+## /clients/project
+
+- no-store
+- Back to dashboard
+- Project Plan
+- No project found. Contact Craig if you think this is an error.
+- ); const hubPublicUrl = process.env.NEXT_PUBLIC_HUB_API_URL || process.env.HUB_API_URL || ;
+
+## /contact
+
+- Book a Free Discovery Call | Decoded Ops
+- Book a free 60-minute discovery call with Craig Blackman. Technology and operations consultancy for print, embroidery, and decoration businesses. No commitment, no pitch.
+- Book a free 60-minute discovery call with Craig Blackman. Technology and operations consultancy for print, embroidery, and decoration businesses.
+- Get in touch with Craig Blackman for operational and technology consultancy. Free 60-minute discovery call. Based in Worthing, serving the UK.
+- Home
+- Contact
+
+## /cookies
+
+- Cookie Policy | Decoded Ops
+- How Decoded Ops uses cookies — what we set, why we set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.
+- Cookie Policy
+- Last updated:
+- What are cookies?
+- Cookies are small text files that are placed on your browser when you visit a website. They help websites remember information about your visit, such as your preferences and login details. Cookies can be stored on your device for varying lengths of time.
+- Why we use cookies
+- At Decoded Ops, we use cookies to:
+- Remember your preferences:
+- We save your cookie consent choice so we donve asked for cannot be provided. These cannot be disabled.
+- t ask again</li> <li><strong>Improve your experience:</strong> Cookies help us understand how you navigate our site</li> <li><strong>Measure analytics:</strong> We use cookies to count visitors and track which pages are most popular</li> <li><strong>Security:</strong> Cookies help protect your account and prevent unauthorized access</li> <li><strong>Marketing:</strong> We may use cookies to show you relevant content across the web</li> </ul> </section> { } <section> <h2 className="text-2xl font-bold mb-4">Types of cookies we use</h2> <div className="space-y-6"> { } <div> <h3 className="text-xl font-semibold mb-2">Essential cookies</h3> <p className="text-base leading-relaxed"> These cookies are necessary for our website to function properly. They enable core functionality like navigation and access to secure areas. Without these cookies, services you
+- Examples: Cookie consent preference, session tokens, security settings
+- Performance cookies
+- These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our website. They help us understand which pages are most popular and how visitors navigate the site.
+- Examples: Google Analytics, page view tracking
+- Functional cookies
+- These cookies enable enhanced functionality and personalisation. They remember choices youve requested.
+- ve made (such as your preferences) and can be used to provide services you
+- Examples: Preference remembering, form data
+- Marketing cookies
+- These cookies are used to track your activity across the web so we can show you relevant content and advertising. They may be set by advertising networks with our permission.
+- Examples: Advertising tracking, remarketing pixels
+- Managing your cookie preferences
+- You have the right to choose whether to accept or decline cookies (except essential cookies which cannot be disabled). You can manage your preferences in several ways:
+- Cookie banner:
+- Use the cookie preference banner that appears when you first visit our site
+- Browser settings:
+- You can configure your browser to refuse cookies or alert you when a cookie is being sent. Each browser is different, so check your browser
+- s help menu for instructions</li> <li><strong>Third-party tools:</strong> You can visit sites like Your Online Choices to manage cookies from advertising networks</li> </ul> </section> { } <section> <h2 className="text-2xl font-bold mb-4">Third-party cookies</h2> <p className="text-base leading-relaxed"> Some cookies on our site are set by third parties, including: </p> <ul className="list-disc list-inside space-y-2 text-base"> <li><strong>Google Analytics:</strong> For measuring website traffic and user behavior</li> <li><strong>Social media platforms:</strong> For social sharing and tracking</li> <li><strong>Advertising networks:</strong> For targeted advertising and remarketing</li> </ul> <p className="text-base leading-relaxed mt-4"> These third parties have their own privacy policies and are responsible for their own cookie practices. We recommend reviewing their policies if you want to understand how they use cookies. </p> </section> { } <section> <h2 className="text-2xl font-bold mb-4">Security and data protection</h2> <p className="text-base leading-relaxed"> We take your privacy seriously. Cookies cannot be used to run programmes, deliver viruses, or directly access your hard drive. They cannot identify you personally unless you explicitly log in. We use security measures to protect cookie data from unauthorised access and misuse. </p> </section> { } <section> <h2 className="text-2xl font-bold mb-4">Changes to this policy</h2> <p className="text-base leading-relaxed"> We may update this cookie policy from time to time to reflect changes in our practices, technology, legal requirements, and other factors. We encourage you to review this policy periodically to stay informed about how we use cookies. </p> </section> { } <section> <h2 className="text-2xl font-bold mb-4">Contact us</h2> <p className="text-base leading-relaxed"> If you have questions about our use of cookies or this policy, please{
+
+## /decoded-data-app
+
+- Decoded Data App — Supplier Feeds, Stock & ERP Integration | Decoded Ops
+- A custom-built data layer for decorated goods and multi-channel businesses — supplier feed sanitisation, SKU standardisation, and clean ERP integration. Built per client, not sold off the shelf.
+- A custom-built data layer for decorated goods and multi-channel businesses — supplier feed sanitisation, SKU standardisation, and clean ERP integration.
+- Decoded Data App
+- A custom-built data layer for print, decoration, and multi-channel eCommerce businesses — supplier feed sanitisation, SKU and stock standardisation, and direct ERP integration. Priced and built per client, not sold as off-the-shelf software.
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Product Data Management and ERP Integration
+- Is the Decoded Data App an off-the-shelf product?
+- No. It is built per client as part of a Deliver or Transform engagement — the module is scoped to your suppliers, channels, and target ERP, not a generic SaaS tool you sign up for. Get in touch to discuss what a build would look like for your data.
+- Does this replace my ERP?
+- No — it does the job most ERPs assume is already done before implementation starts: standardising SKUs and stock data, sanitising supplier feeds, and handling channel-specific quirks like Amazon FBA. It feeds clean data into the ERP and keeps running after go-live.
+- When should this be built — before or after the ERP goes in?
+- Before, wherever possible. Data prep left until ERP implementation starts is the single biggest source of avoidable project cost — every hour spent cleaning and standardising data ahead of time is an hour not spent firefighting mid-implementation.
+- SKU and stock standardisation
+- Bin locations, SKU conventions, and stock data get a proper home before an ERP arrives — not retrofitted around whatever the software expects.
+- Supplier feed sanitisation
+- Feeds that were never designed to hold this much detail reliably get cleaned and normalised automatically, replacing spreadsheets and manual re-keying.
+- Channel-aware automation
+- Marketplace channels with their own rules — Amazon FBA's inventory and shipping confirmation flows, for example — get handled explicitly, not bolted on as an afterthought.
+- Home
+- — Decoded Data App
+- The data layer your ERP was never going to build for you
+- Most ERP implementations assume the data prep is already done. It never is. The Decoded Data App is a custom-built module — standardising SKUs and stock, sanitising supplier feeds, and handling channel quirks like Amazon FBA — built into a Deliver or Transform engagement, not bought off a pricing page.
+- Why this exists
+- Choosing the right ERP is rarely the hard part. What breaks projects is everything around it — stock and SKU data spread across spreadsheets with no single source of truth, supplier feeds that were never designed to hold this much detail, and marketplace channels that dons problem to sort out on the way. This module exists to do that work first, properly, and keep doing it after go-live.
+- t behave like a normal sales channel. Data prep left until implementation starts becomes the client
+- What it covers
+- Why it comes before the ERP, not after
+- The instinct is always to wait until the ERP is fully implemented before touching the data problem. Thatt get spent firefighting during it — and the module doesnScoped to your suppliers, channels, and target ERP — not a generic tool you configure yourselfPriced as a standalone build within a Deliver or Transform engagement, never as a subscriptionDesigned to keep running after your ERP goes live, not replaced by itre eyeing an ERP, a Clarity Audit is the fastest way to find out what
+- s backwards. Every hour spent cleaning and standardising data before implementation starts is an hour that doesn
+- t get thrown away once the ERP lands. It keeps running the feeds and connections most ERPs were never designed to handle on their own. </p> </div> <h2 className="text-2xl font-bold text-[#023047] mb-4">Built per client, not sold off the shelf</h2> <div className="space-y-4 mb-8"> {[
+- , ].map((item, i) => ( <div key={i} className="flex gap-3 items-start"> <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" /> <p className="text-[#023047]/80 leading-relaxed">{item}</p> </div> ))} </div> <h2 className="text-2xl font-bold text-[#023047] mb-4">Live examples</h2> <p className="text-[#023047]/80 leading-relaxed mb-4"> Two client engagements currently run a version of this module — proof, not a pitch deck. </p> <div className="grid sm:grid-cols-2 gap-4 mb-8"> <Link href="/case-studies/tacklebag" className="block p-6 rounded-2xl border border-[#023047]/15 hover:border-[#219EBC]/50 transition-colors"> <p className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">TackleBag</p> <p className="text-sm text-[#023047]/80 leading-relaxed">A Stock Control module with SKU standards and bin locations built in, feeding a Khaos Control implementation still in progress.</p> <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#023047] mt-3">Read the case study <ArrowRight size={14} /></span> </Link> <Link href="/case-studies/hanicks" className="block p-6 rounded-2xl border border-[#023047]/15 hover:border-[#219EBC]/50 transition-colors"> <p className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">Hanicks</p> <p className="text-sm text-[#023047]/80 leading-relaxed">The IBasis App — interfacing with suppliers, Khaos Control, and Amazon FBA, plus reporting drawn directly from accounts.</p> <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#023047] mt-3">Read the case study <ArrowRight size={14} /></span> </Link> </div> <div className="p-8 rounded-2xl bg-[#023047]"> <h3 className="text-lg font-bold text-[#F8F9FA] mb-3">Recognise this pattern?</h3> <p className="text-[#8ECAE6] leading-relaxed mb-6"> If your stock and supplier data is spread across spreadsheets and you
+
+## /deliver
+
+- ERP & Technology Implementation Consultant | Decoded Ops
+- Independent vendor briefing, procurement, and project oversight for ERP and technology implementations in print, embroidery, and decoration businesses.
+- Deliver — Project Delivery and Vendor Management
+- Independent vendor management, procurement support, and project oversight for technology implementations in print and decoration businesses.
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Project Delivery and Vendor Management
+- 1050
+- From £1,050/month
+- What is the Deliver service?
+- Deliver is independent vendor management for technology implementations. Craig writes the vendor brief based on your requirements, approaches vendors on your behalf, manages the procurement process as a single point of contact, and oversees the project through to final handover — ensuring milestones are signed off before payments are released.
+- How does Deliver protect against overspending on software projects?
+- Milestones are signed off before payments are released. Vendors are held to the brief, changes are challenged, and Craig acts as your independent representative throughout. The brief comes before the vendor — separating what you actually need from what a vendor wants to sell you.
+- Do I need to do the Clarity Audit before Deliver?
+- You don't have to, but Clarity produces the vendor brief that Deliver uses. Starting with the Clarity Audit means the vendor brief reflects what your business actually needs — rather than assumptions made at the start of a project.
+- What does an independent ERP implementation consultant do?
+- An independent ERP implementation consultant writes the requirements brief, approaches vendors on your behalf, manages the procurement process, and oversees the project through to handover — without being tied to any vendor or earning commission on any sale. Their job is to get the right outcome for your business, not to place a software sale.
+- Do I need an ERP implementation consultant for a small business?
+- If you are selecting or implementing manufacturing ERP software without sector-specific experience on your side of the table, yes. ERP procurement support for small business is not about managing complexity for its own sake — it is about avoiding the most common and most expensive mistakes that happen when businesses go to vendors unprepared.
+- 01
+- Brief
+- I write the vendor brief based on your Clarity report or existing requirements. Your needs, not the vendoru2019s sales pitch. An independent ERP implementation consultant writes the brief before approaching any vendor — not after seeing a demo.
+- 02
+- Procure
+- I go to market on your behalf. Vendors are approached, managed, and compared on a like-for-like basis. No commitment until youu2019ve reviewed all options.
+- 03
+- Manage
+- I act as your single point of contact. Vendors are held to the brief. Changes are challenged. Progress is reviewed and documented.
+- 04
+- Deliver
+- Milestones are signed off before payments are released. Final handover review and acceptance. The project is done when it works, not when the vendor says itu2019s done.
+- Independent vendor brief written on your terms
+- Vendors approached and managed on your behalf
+- Competitive like-for-like quotes secured
+- Vendor comparison and recommendation
+- Single point of contact across all vendors
+- Structured progress reviews and written summaries
+- Milestone sign-off before payments released
+- Final handover review and acceptance
+- Home
+- ERP & Technology Implementation
+- — Deliver &middot; ERP Implementation & Vendor Management
+- Independent ERP implementation consultant.
+- The brief first. The vendor second.
+- Independent ERP implementation support — from vendor brief through to go-live sign-off. No vendor ties. No commissions. Just the outcome your business actually needs.
+- By Craig Blackman — 25 years in print & embroidery operations
+- Talk about your ERP project
+- Start with Clarity first
+- Or book a call directly
+- YOU
+- THE BRIEF
+- Your requirements
+- 2,3
+- CONTROL &
+- OVERSIGHT
+- DELIVERED
+- 4,4
+- VENDOR
+- THE BUILD
+- Their execution
+- 3,3
+- "The most expensive technology decisions in this sector are made in the first meeting with a vendor — before anyone has written a brief."
+- That is why Deliver exists. The brief comes first. The vendor comes second.
+- — The process
+- How an independent ERP implementation consultant works
+- — What's included
+- What independent ERP implementation consultancy includes
+- Manufacturing ERP software selection is one of the highest-stakes decisions in this sector. A single implementation without independent oversight can cost £80,000–£150,000 more than it should. Independent ERP solutions consultancy separates what you need from what a vendor wants to sell you.
+- Ready to get the brief right?
+- Book a free discovery call
+
+## /locations/fractional-cto
+
+- Hire a Fractional CTO | Decoded Ops — Print & Decoration Specialists
+- Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership — not a vendor. Available UK-wide.
+- West Sussex
+- East Sussex
+- Surrey
+- Where does the fractional CTO service cover?
+- Based in West Sussex, the fractional CTO service covers businesses across Sussex, Surrey, and the wider UK. On-site days are available throughout the UK for businesses that need hands-on involvement.
+- What is the difference between hiring a fractional CTO and using managed IT support?
+- Managed IT support services handle day-to-day IT issues — helpdesk, hardware, network. A fractional CTO provides strategic technology leadership: ERP selection, system architecture, vendor management, and technology roadmap ownership. Fractional CTO services address the decisions that determine where the business is going; managed IT support keeps the current setup running.
+- Do you offer fractional CTO services for print businesses in Sussex?
+- Yes. Fractional CTO for print and decoration businesses in West Sussex and across the South East is a core offering. The service combines sector-specific experience in print, embroidery, and decorated goods with technology leadership — not generic IT consultancy.
+- Home
+- Fractional CTO Locations
+- — Fractional CTO
+- Hire a fractional CTO
+- across Sussex, Surrey, and the UK
+- Hire a fractional CTO for your print, embroidery, or decoration business — with 25+ years of sector-specific experience and no vendor ties. Technology leadership without the full-time cost. Based in West Sussex, on-site wherever you need it across the UK.
+- Book a free call
+- Or book a call directly
+- Fractional CTO services for print and decoration businesses
+- Fractional CTO services give you the technology leadership a growing business needs — without recruiting for a role your business may not yet be ready to support full-time. Vendor oversight, technology roadmap ownership, and a direct line to someone who understands ERP for small business in the print and decoration sector.
+- Available UK-wide. Based in West Sussex. On-site where the work requires it.
+- Not sure where to start?
+- Start with a Clarity Audit
+- A fixed-price, one-day diagnostic. Find out what your systems are costing you before committing to anything ongoing.
+- View audit locations
+
+## /locations/fractional-cto/[location]
+
+- Fractional CTO in , | Decoded Ops
+- Fractional CTO for businesses — senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.
+- No one owns the technology decisions
+- Vendor choices, platform decisions, and system changes are made without a strategic view. Every short-term fix creates a longer-term problem — and the cost of those decisions compounds quietly until it becomes visible.
+- Growing faster than your infrastructure
+- Revenue is increasing but the systems underneath are straining. Manual workarounds that worked at smaller scale are now creating daily friction, and the team is absorbing the overhead rather than flagging it.
+- Translating between your business and your technology
+- Business owners shouldn't need to become technical to get the right outcomes from their systems. But without someone who bridges both worlds, critical things get lost between what you asked for and what got built.
+- Vendor decisions made without independent advice
+- Software salespeople are good at their job. Without someone on your side who understands what you actually need, you end up with tools that solve the vendor's revenue problem rather than yours.
+- Map your current technology landscape — what's running, what it costs, and what it's supposed to do versus what it actually does
+- Identify the decisions that need to be made and build a prioritised roadmap you can act on
+- Act as your technology voice in commercial conversations — with vendors, with developers, with investors or board
+- Attend leadership meetings as your part-time tech director — present and accountable, not just on call when something breaks
+- Build internal capability so you become less dependent over time, not more
+- Run the Clarity Audit first if the picture is unclear — a fixed-price diagnostic before any ongoing commitment
+- Home
+- Fractional CTO Locations
+- Decoded Ops
+- Fractional CTO services for businesses in ,
+- Worthing
+- West Sussex
+- GB
+- 07735 620 603
+- Within 2 hours of Worthing
+- Fractional CTO
+- Fractional CTO ·
+- Senior technology leadership for || businesses|| — without the full-time hire.
+- Growing businesses in face real technology decisions — vendors to evaluate, systems to integrate, platforms to choose. Without someone senior to own those decisions, the cost accumulates in ways that don't always show up clearly on a balance sheet.
+- Find out if a fractional CTO is right for your business
+- See how fractional CTO works
+
+## /locations/tech-audit
+
+- Technology Audit for Sussex & Surrey SMEs | Decoded Ops
+- Independent technology audits for SMEs across Sussex and Surrey. From £395. 3× Clarity Guarantee. Find your nearest location.
+- West Sussex
+- East Sussex
+- Surrey
+- Home
+- Tech Audit Locations
+- — Technology Audit
+- Technology audits for
+- Sussex and Surrey businesses
+- A structured, independent audit that tells you exactly what your systems are costing you — and what to do about it. Starting from £395.
+- 3× Clarity Guarantee
+- — if we don't find 3× the fee in recoverable cost or lost revenue, full refund
+- Book a free call
+- Or book a call directly
+- Need ongoing support?
+- Fractional CTO engagement
+- After the audit, some businesses need someone to stay involved and own the technology decisions. That's the fractional CTO model.
+- View fractional CTO locations
+
+## /locations/tech-audit/[location]
+
+- Technology Audit for Businesses | Decoded Ops
+- Independent technology audit for SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.
+- Your systems don't talk to each other
+- Data moving manually between platforms. Orders processed twice. Stock figures that don't match. Every disconnection costs time and creates errors — and most businesses have normalised this so thoroughly they've stopped noticing how much it costs.
+- You know costs are higher than they should be — but can't see where
+- The overhead is there — in headcount, in rework, in customer service time — but no one has mapped where it's actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.
+- Ready to scale, but the operations aren't
+- Revenue could grow faster. The constraint is operational — systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.
+- Decisions being made on incomplete information
+- Reporting that takes hours to produce. Numbers that don't tie up. Business decisions made on gut feel because the data isn't trustworthy. This is almost always a systems problem, not a people problem.
+- One structured day on site — talking to the people doing the work, not just the people managing it
+- Map every system you're running, what it costs, and what it's actually being used for versus what it was bought to do
+- Document every manual handoff and workaround — this is almost always where the cost is hiding
+- Identify the three to five changes that would recover the most cost or unlock the most revenue
+- Produce a written report within five working days — specific, costed, with independent vendor recommendations
+- Back it with the 3× Clarity Guarantee — if the audit doesn't identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions
+- Home
+- Tech Audit Locations
+- Decoded Ops
+- Technology audit services for small businesses in ,
+- Worthing
+- West Sussex
+- GB
+- 07735 620 603
+- Within 2 hours of Worthing
+- Technology Audit
+- 395
+- Clarity Check — small business technology audit
+- Technology Audit ·
+- Find out exactly what your systems are ||costing your business.||
+- Most businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is a structured, independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.
+- Book a Clarity Audit for your business — from £395
+- See how the Clarity Audit works
+
+## /pricing
+
+- Consultancy Pricing — Clarity, Deliver, Transform | Decoded Ops
+- Transparent pricing for operational and technology consultancy. Clarity audit from £395. Project delivery, transformation programmes, and retained engagements.
+- Transparent pricing for operational and technology consultancy. Clarity audit from £395.
+- Home
+- Pricing
+- Indicative pricing by business size
+- No VAT — Craig is not VAT registered. Vendor and software costs are separate, confirmed once a brief exists.
+
+## /privacy
+
+- Privacy Policy | Decoded Ops
+- How Decoded Ops collects, uses, and protects your personal data. Read our full privacy policy for details of your rights and how to contact us.
+- Privacy Policy
+- Last updated: April 2026
+- 1. Introduction
+- Decoded Ops ("we," "us," or "our") operates the decodedops.co.uk website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+- Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our website.
+- 2. Information We Collect
+- Information You Provide Directly
+- We collect information you voluntarily provide when you:
+- Complete contact forms on our website
+- Request a discovery call or consultation
+- Send us emails or messages
+- Participate in calls, meetings, or video conferences
+- This information typically includes: name, email address, phone number, company name, industry, and details about your business needs and operations.
+- Automatically Collected Information
+- When you visit our website, we automatically collect:
+- Device information (browser type, operating system, IP address)
+- Usage data (pages visited, time spent, links clicked)
+- Referral source (where you came from)
+- We use cookies and similar tracking technologies to collect this information. You can control cookies through your browser settings.
+- 3. How We Use Your Information
+- We use the information we collect for:
+- Responding to your inquiries and providing the services you request
+- Scheduling and conducting discovery calls and consultations
+- Sending you relevant information about our services (only with your consent)
+- Improving our website and services based on how you use them
+- Complying with legal obligations
+- Analyzing trends and usage patterns to better serve our customers
+- Protecting against fraud and securing our systems
+- 4. Legal Basis for Processing (GDPR/UK)
+- If you are located in the EU or UK, we process your personal data under the following legal bases:
+- Consent:
+- When you provide information through contact forms or agree to receive communications
+- Legitimate interest:
+- To operate our website, respond to inquiries, and improve our services
+- Performance of contract:
+- To provide services you have requested
+- Legal obligation:
+- To comply with applicable laws
+- 5. How We Share Your Information
+- We do not sell, trade, or rent your personal information. We only share your data with:
+- Service providers:
+- Third parties who help us operate our website and provide services (e.g., email, scheduling, analytics) — only under strict confidentiality agreements
+- Legal requirement:
+- When required by law or court order
+- We do not share your information with vendors or third parties for marketing purposes without your explicit consent.
+- 6. How Long We Keep Your Data
+- We retain your personal information for as long as necessary to:
+- Provide the services you requested
+- Fulfill our legal and contractual obligations
+- Resolve disputes and enforce our agreements
+- If you request deletion or if you no longer wish to receive communications, we will delete or anonymize your data within 30 days, except where we are required to retain it by law.
+- 7. Your Rights
+- Depending on your location, you may have the following rights:
+- Right to access:
+- You can request a copy of the personal data we hold about you
+- Right to rectification:
+- You can request that we correct inaccurate data
+- Right to erasure:
+- You can request deletion of your data ()
+- right to be forgotten
+- Right to restrict processing:
+- You can ask us to limit how we use your data
+- Right to data portability:
+- You can request your data in a structured, portable format
+- Right to opt-out:
+- You can unsubscribe from marketing communications at any time
+- Right to withdraw consent:
+- You can withdraw consent at any time where we rely on it
+- To exercise any of these rights, contact us at the details below.
+- 8. Data Security
+- We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+- 9. Third-Party Links
+- Our website may contain links to third-party websites. This Privacy Policy does not apply to those sites, and we are not responsible for their privacy practices. We encourage you to review the privacy policies of any third-party websites before providing your information.
+- 10. Cookies
+- Our website uses cookies to enhance your experience. You can control cookie settings in your browser. Disabling cookies may affect some functionality of our website.
+- 11. Contact Us
+- If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:
+- Decoded Ops
+- Email:
+- craig@decodedops.co.uk
+- Website:
+- decodedops.co.uk
+- 12. Changes to This Privacy Policy
+- We may update this Privacy Policy from time to time. We will notify you of material changes by updating the date at the top of this page. Your continued use of our website following the posting of changes constitutes your acceptance of those changes.
+
+## /problems/ai-paralysis
+
+- AI Paralysis: Why Most Small Businesses Are Stuck on AI | Decoded Ops
+- Everyone says you need AI. Nobody says what to fix first. Here's an honest view of AI readiness for print, decoration, and workwear businesses — what's worth doing now, and what isn't.
+- Why are small and medium print businesses struggling with AI adoption?
+- AI is being sold as a magic solution, but most businesses in this sector don't have the process foundation, data quality, or digital infrastructure to make AI work. The real opportunity is in fixing what's broken first.
+- Do I need AI to stay competitive in the decorated goods industry?
+- In most cases, no — not yet. What will make you uncompetitive is continuing with broken processes and disconnected systems while pretending the problem is that you haven't adopted AI.
+- What should I do before investing in AI tools?
+- Get your data in order, stabilise your core systems, document your processes, and identify the specific operational problems AI might actually help with — rather than buying AI and looking for a problem to apply it to.
+- How do I separate genuine AI opportunities from vendor hype?
+- Ask any AI vendor: what specific operational problem does this solve in a print or embroidery business? If they can't answer clearly and concretely, it is hype — regardless of how impressive the technology looks.
+- How do I know if my business is ready for AI?
+- AI readiness for small business depends on three things: whether your core processes are documented and consistent, whether your data is clean and accessible in a structured format, and whether you have identified a specific operational problem that AI might help with. An AI readiness assessment answers all three questions for your specific business — not in general terms.
+- Should a small print or embroidery business be using AI tools?
+- In most cases, not yet — and that is not the same as never. The businesses that get value from AI are the ones that fix their processes and data foundations first. AI tools for embroidery or print businesses are most useful when the underlying operational system is stable. If orders, production, and despatch are running on spreadsheets and manual workarounds, AI will amplify the chaos rather than reduce it.
+- AI paralysis
+- Everyone is talking about AI. ||No one can tell you what it means for your business.||
+- AI readiness for small business is a question most owners can't honestly answer — not because they haven't thought about it, but because every vendor, consultant, and conference has a different version of the answer. Every software vendor is adding AI features. Every conference talk is about AI. But when you ask what AI actually means for a print, embroidery, or decoration business, the answers are vague, generic, or non-existent.
+- symptoms=
+- You feel pressure to 'have an AI strategy' but don't know where to start
+- Vendors are selling AI features you didn't ask for and can't see the value of
+- You've been told AI will transform your business — but nobody can say how
+- You're worried about being left behind but don't want to invest in hype
+- Your team are experimenting with ChatGPT but there's no coherent approach
+- You suspect AI could help somewhere, but you don't know where
+- Every article you read contradicts the last one
+- causes=
+- AI is being sold as magic, not as a tool
+- The AI narrative in the technology industry is built on transformational stories that rarely translate to operational reality. A business that prints and despatches physical products needs practical answers, not visionary promises.
+- No process foundation to apply AI to
+- AI works best when applied to well-defined, well-documented processes with clean data. Most businesses in this sector have undocumented processes, inconsistent data, and systems that don't talk to each other. An AI readiness assessment will tell you whether your data and processes are in a state where AI can deliver value — or whether there are foundational fixes needed first. You cannot automate what hasn't been documented.
+- The wrong question is being asked
+- 'How do we adopt AI?' is the wrong question. The right question is 'What specific operational problems do we have that AI might help solve?' Without that reframing, AI adoption becomes a solution in search of a problem.
+- Fear of missing out is driving decisions
+- The fear that competitors will adopt AI and pull ahead creates pressure to do something — anything. That pressure leads to buying AI tools without a clear use case, which leads to wasted investment and reinforces the cynicism that stopped the business from engaging in the first place.
+- howIHelp= slug= targetService=
+- I give you an honest, grounded assessment of where AI can actually help your business right now. I am not here to sell you an AI tool. I look at your current processes, your data quality, your technology stack, and your team's capability — and I tell you what needs to be in place before AI can deliver value, where the real AI opportunities are in your specific operation, and what is noise that you can safely ignore. No hype. No vendor agenda. Just a clear answer. Think of it as an AI readiness check built specifically for businesses in the print, embroidery, and decoration sector — not a generic AI strategy that could apply to any industry.
+- ai-paralysis
+- relatedProblems=
+- relatedReading=
+
+## /problems/cant-scale-operations
+
+- Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops
+- Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.
+- Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly.
+- Is Decoded Ops a technology consultancy or an operations consultancy?
+- Both. Decoded Ops covers the full picture — processes, people, and technology. The Clarity Audit identifies whether the scaling problem is operational (undocumented processes, unclear ownership, inconsistent quality controls) or technological (systems that can't handle the volume, unreliable data) — usually both.
+- My business is already profitable. Do I still need an operations review?
+- Profitability at your current size does not guarantee profitability at the next size. Businesses hit a ceiling when the operational model that got them here cannot scale to the next stage. The right time to build operational foundations is before they are needed.
+- Can you help with just one area of the operation rather than overhauling everything?
+- Yes. The Clarity Audit gives a full picture, but recommendations are prioritised. You choose what to act on. Many businesses start with two or three targeted changes and see significant results before committing to anything larger.
+- How long does the Clarity Audit and implementation process take?
+- The Clarity Audit takes one day on site, with a written report delivered within five working days. Quick wins can be implemented in days. A structured Deliver engagement typically runs over six to twelve weeks. Retained support is ongoing.
+- I have used consultants before and it did not help. Why would this be different?
+- Most consultancy fails because it produces a report that sits on a shelf. Decoded Ops builds recommendations around what is actually implementable in your business — not theoretical best practice. If implementation support is needed, the Deliver service provides structured project management to act on the findings.
+- Why does scaling a small business feel harder than growing it?
+- Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at £500k becomes a bottleneck at £1m. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it — not after.
+- What are the signs that my operations are not keeping up with growth?
+- The most common signs: despatch lead times are creeping up despite no change in production capacity; the same operational bottlenecks keep reappearing; customer complaints are increasing proportionally faster than order volume; you are hiring but the output per person is falling; and the business owner is spending more time on operational firefighting than on the business itself.
+- How do I scale a print or decoration business operationally?
+- Start with an honest assessment of where the current bottlenecks are — not where they were six months ago, but where they are right now. Scaling operations in a print or decoration business typically involves three stages: documenting and stabilising current processes, connecting systems so information flows without manual intervention, and building the management visibility to make operational decisions on data rather than gut feel.
+- Small team
+- Informal
+- Growing
+- Stretched
+- Scaling
+- Breaking
+- Foundation
+- Built right
+- Operations that can't keep up with growth
+- Your business is growing. ||Your operations aren't scaling with it.||
+- Scaling operations in a small business is not just about doing more of the same — it is about rebuilding the systems and processes that were designed for half your current volume before they become the ceiling on your growth. More orders. More staff. More pressure. But not more profit — and not more confidence that tomorrow is going to be better than today. That's an operations problem. When a business grows faster than its processes, the cracks appear in predictable places and get wider every time you take on more volume. I help businesses like yours build the operational foundations that let you scale without the chaos.
+- symptoms=
+- You're taking on more work but profitability per order is falling
+- Senior people are spending their days doing admin that should sit further down the team
+- Quality is inconsistent — it depends who did the job, not what the process says
+- There are one or two people everything flows through, and if they're off, everything slows
+- You've hired more staff but it doesn't seem to have made things faster
+- Month-end is a reconciliation nightmare because nobody trusts the data
+- You know there's a problem but can't pinpoint exactly where it lives
+- A new contract or product line sounds exciting but you're not sure your operation could handle it
+- causes=
+- The informal coordination that worked at half the size doesn't scale
+- When the team was smaller, communication happened in the room. Everyone knew what was going on. As the business grows, that breaks down — but the systems and habits don't change to compensate. The same processes that worked at £500k a year start to fail at £1.5m.
+- Processes are undocumented and owned by individuals, not the business
+- Key knowledge lives in the heads of key people. When the business was small, that was fine. As it grows, those people become bottlenecks — and the business can't move faster than they can. And if they leave, the process leaves with them.
+- Growth happened before the operational foundation was ready
+- It's easy to take on new contracts, new product lines, or new markets without asking whether the operation is ready for them. The revenue looks good on paper. The margin doesn't — because the cost of running a stretched operation is hidden in re-work, errors, and overtime.
+- No one owns the operational picture end to end
+- In a growing business, people own their function — but nobody owns the whole flow from order in to invoice out. Problems at the handoff points between teams are nobody's specific problem to fix, so they persist and compound.
+- howIHelp= slug= targetService=
+- I come on site and follow how work moves through your business — the whole flow, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, identify what's missing, and quantify the cost in time, margin, and risk. Within five days you have a written report with every finding documented and every recommendation prioritised. Quick wins are separated from structural changes, so you know what to do this week and what to plan for properly. If you need help implementing the changes — not just identifying them — I run a structured Deliver engagement to do that work with you. And for businesses at a growth inflection point who need ongoing operational leadership, there's a retained option: monthly strategic and operational support without the cost of a full-time hire.
+- cant-scale-operations
+- relatedProblems=
+- relatedReading=
+
+## /problems/disaster-recovery
+
+- Business Continuity & Disaster Recovery for Print Operations | Decoded Ops
+- What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.
+- Why don't small and medium print businesses have a disaster recovery plan?
+- DR planning feels like something for enterprise businesses with dedicated IT teams. Most smaller businesses assume their hosting provider handles it, or that it won't happen to them — until it does.
+- How much does an hour of system downtime actually cost?
+- Lost orders, halted production, staff idle, missed despatch deadlines, overtime to catch up, and reputational damage with customers. For most businesses in this sector, the real cost is two to three times what they estimate.
+- What is a realistic recovery time objective for a small business?
+- For critical systems like order management and production scheduling, a recovery time of under four hours is achievable with the right architecture. Many businesses are currently looking at days or weeks without knowing it.
+- Can cloud software eliminate the need for a DR plan?
+- Cloud software reduces some risks but introduces others — internet dependency, provider outages, data egress limitations, and complex multi-system recovery sequences. A DR plan is still essential.
+- What is a realistic recovery time objective for a small manufacturing business?
+- For critical systems like order management and production scheduling, a recovery time objective (RTO) of under four hours is achievable with the right architecture. Many small businesses in print, embroidery, and decoration are currently looking at days or weeks without knowing it — because nobody has written a disaster recovery plan or tested a restore.
+- Does cloud software replace the need for a business continuity plan?
+- No. Cloud backup reduces some risks but introduces others — internet dependency, provider outages, data egress limitations, and complex multi-system recovery sequences. A business continuity disaster recovery plan is still essential, even for businesses running entirely on cloud software. The plan addresses what happens when any part of that stack fails.
+- No disaster recovery plan
+- Your systems go down on a Tuesday morning. ||When do you get back up?||
+- Most print, embroidery, and decoration businesses don't have a business continuity disaster recovery plan. Not because they don't care — but because DR feels like something for enterprise IT teams. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly.
+- symptoms=
+- You don't have a written plan for what happens when critical systems go down
+- You assume your hosting provider or software vendor handles backup and recovery
+- Recovery from a previous outage took days, not hours
+- There are backup processes documented somewhere — but you're not sure they still work
+- You couldn't answer 'how long can we afford to be offline?' without guessing
+- Key operational data exists in only one place
+- The last time you tested a restore, it didn't work
+- causes=
+- DR is postponed until it happens
+- Disaster recovery planning always feels like a problem for next quarter. The business is running, the system is working, and there are more immediate things to fix. The cost of that deferral only becomes visible when the system stops.
+- Assuming the vendor handles it
+- Most software vendors and hosting providers have uptime guarantees — but those rarely cover your specific data, your specific recovery sequence, or your specific acceptable downtime. Their backup is not your DR plan. Backup and disaster recovery are different things. A backup stores your data. A disaster recovery plan defines how you restore operations — which systems come back first, in what order, within what time target. Cloud backup is not a DR plan.
+- No one is accountable for recovery
+- In businesses without a dedicated IT role, the question 'who is responsible for getting us back online?' doesn't have a clear answer. Come outage day, everyone assumes someone else is handling it.
+- Cost of downtime is invisible until it happens
+- Lost orders, halted production, missed despatch deadlines, overtime to catch up, and reputational damage — none of these appear on a balance sheet until the outage is over. By then the cost has already been incurred. For a small manufacturer, the RTO (recovery time objective) and RPO (recovery point objective) are rarely defined — which means nobody knows how much downtime is acceptable until they are in the middle of it.
+- howIHelp= slug= targetService=
+- I assess your current technology stack, backup architecture, and recovery capabilities — then give you a practical DR plan built around your actual business. Not a 50-page IT document. A clear, prioritised set of actions covering what to protect first, how fast you can realistically recover each system, and what it would cost to reduce that recovery time. Plus a simple test schedule so you know the plan works before you need it.
+- disaster-recovery
+- relatedProblems=
+- relatedReading=
+
+## /problems/ecommerce-not-connected
+
+- eCommerce Not Connected to Your Operations? Here's the Fix | Decoded Ops
+- Your Shopify orders come in but your stock doesn't update, your ERP doesn't know, and your invoicing is manual. Here's how to fix eCommerce integration for print and decoration businesses.
+- What happens when eCommerce integration is not scoped before platform selection?
+- The eCommerce platform was chosen on features and price — with the integration question answered by both vendors saying they can integrate. That is not a specification. It is a conversation starter.
+- Why are API limitations with ERP systems often discovered after purchase?
+- Many ERP and MIS systems in this sector have API capability that only covers certain modules, certain versions, or certain data types. You find out after the contracts are signed.
+- How does personalisation data structure affect eCommerce integration?
+- The way personalisation data is captured on the front end rarely matches the way it needs to be structured for production. Bridging that gap requires both systems to be flexible. Often one of them is not.
+- Can a generic eCommerce platform work for a decoration business?
+- Generic eCommerce platforms were not designed for businesses that decorate, personalise, or produce to order. The data model does not fit — and that limits what any integration can achieve.
+- Why is Shopify not syncing with my ERP?
+- Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other — not because the integration itself is broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.
+- Can WooCommerce integrate with a decoration business ERP?
+- WooCommerce can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether WooCommerce can capture your personalisation data in a format the ERP can process. WooCommerce ERP integration for print businesses is a common engagement — and the answer is rarely "yes, it integrates" and more often "it depends on what data you need to move and how fast."
+- eCommerce not connected to production
+- Your online store is live. ||Your production system doesn't know it exists.||
+- eCommerce integration for small business is one of the most common and most costly problems in the print and decoration sector. Every order taken online that has to be manually re-entered into the production system. Every day. The cost in labour, errors, and missed despatch windows adds up fast — and most businesses have stopped noticing it.
+- symptoms=
+- Online orders are being manually re-entered into your ERP or MIS
+- There's a delay between order placed and order in production
+- Personalisation details are arriving separately from the order
+- Customers are chasing order status because you can't see it easily
+- Your eCommerce manager and your production manager are in constant conflict
+- Stock sold online doesn't update in real time
+- You have two sources of truth for order data
+- causes=
+- Integration not scoped before platform selection
+- The eCommerce platform was chosen on features and price — with the integration question answered by both vendors saying 'yes, we can integrate'. That's not a specification. It's a conversation starter.
+- API limitations discovered post-purchase
+- Personalisation data structure mismatch
+- The way personalisation data is captured on the front end rarely matches the way it needs to be structured for production. Bridging that gap requires both systems to be flexible. Often one of them isn't. This is a structural problem with most generic eCommerce platforms — they were not built for B2B order management or for products that vary by decoration method.
+- The wrong platform for the business model
+- Generic eCommerce platforms weren't designed for businesses that decorate, personalise, or produce to order. The data model doesn't fit — and that limits what any integration can achieve. If the wholesale order system or eCommerce platform cannot represent your product data accurately, no integration will fix the underlying mismatch.
+- howIHelp= slug= targetService=
+- I assess the specific integration problem — both systems, both data models, and the gap between them. Then I give you an independent view of what the realistic options are. That might be a proper integration using the APIs that exist. It might mean a middleware solution. It might mean acknowledging that the current eCommerce platform isn't the right one for your business model and helping you select a replacement. You get a clear view of costs, timescales, and risks for each option — not a sales pitch.
+- ecommerce-not-connected
+- relatedProblems=
+- relatedReading=
+
+## /problems/erp-implementation-failure
+
+- ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops
+- Most ERP projects in print, embroidery, and decoration businesses go over budget and under-deliver. Here's why — and how to avoid it.
+- What happens when the vendor scopes their own ERP implementation?
+- When the vendor scopes their own implementation, they scope for the software — not for your business. The gaps only become visible after go-live.
+- Why do ERP implementations fail without independent oversight?
+- Without someone in your corner who understands both the sector and the software, there is no one to hold the vendor to account when they miss requirements or cut corners.
+- How does data quality affect ERP implementation success?
+- Most implementation failures trace back to data quality. Clean data migration is unglamorous work that vendors underprice and businesses underestimate.
+- Can the wrong ERP software cause implementation failure?
+- Sometimes the implementation fails because the software was the wrong choice from the start — selected on demo, not on fit.
+- What are the most common causes of ERP implementation failure in decorated goods businesses?
+- The five most common causes are: no independent vendor brief written before vendor selection; the implementation scoped by the vendor rather than the business; data quality problems that were underestimated; no one independently accountable for outcomes; and wrong ERP software selected based on a demo in a different sector.
+- My ERP implementation went over budget — what should I do?
+- An ERP implementation cost overrun is almost always a scoping failure. The first step is an independent review of what the original specification covered versus what the vendor has delivered — or is claiming to have delivered. That assessment tells you whether the overrun is legitimate, whether the vendor is at fault, and what the realistic options are.
+- ERP implementation failure
+- Your ERP implementation has gone wrong. ||Here's what to do next.||
+- ERP implementation failure in this sector is more common than vendors will admit. Usually not because the software is bad — but because the implementation wasn't designed around how decoration and print businesses actually work. The wrong manufacturing ERP for your specific workflows. The right ERP, implemented without proper oversight. Both end the same way.
+- symptoms=
+- The system went live but the team are still using spreadsheets alongside it
+- You went live late, over budget, or both
+- The vendor is still on-site months after the planned go-live
+- Key processes still can't be done in the system
+- You're paying for a system you're only using 40% of
+- Your team have lost confidence in the data
+- You're thinking about starting the selection process again
+- causes=
+- Scoping done by the vendor
+- No independent oversight
+- Without someone in your corner who understands both the sector and the software, there's no one to hold the vendor to account when they miss requirements or cut corners. An ERP implementation consultant working independently — not appointed by the vendor — is the single most effective way to prevent this.
+- Data not prepared
+- Wrong software for the business model
+- Wrong ERP for small business operations
+- Sometimes the implementation fails because the ERP for small business was selected on demo, not on fit. A system that performs well for a distribution company can be a poor fit for a decorated goods business with mixed methods, variable artwork, and short-run personalisation.
+- howIHelp= slug= targetService=
+- I come in after a failed or struggling implementation and give you an honest assessment of where it is, why it went wrong, and what the options are. Sometimes that means getting more out of the existing system. Sometimes it means a recovery plan. Sometimes it means acknowledging the sunk cost and starting over — with a proper independent brief this time. Either way, you get a clear picture and a practical path forward.
+- erp-implementation-failure
+- relatedProblems=
+- relatedReading=
+
+## /problems/manual-workarounds
+
+- Manual Workarounds Are Costing You More Than You Think | Decoded Ops
+- If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds — you're paying for a system that isn't working. Here's the real cost.
+- Why do manual workarounds develop in businesses that have invested in software?
+- Because the software was implemented to fit the vendor's template, not the business's actual workflows. When the system doesn't do what the team needs, they build workarounds. Those workarounds become the real operating model.
+- How much do manual workarounds actually cost a business?
+- Data re-entry, error correction, reconciliation, and the overhead of maintaining shadow systems typically add 10–20 hours per employee per week in businesses with significant workaround cultures. The cost is invisible because it is buried in everyone's job description.
+- Why are shadow systems dangerous for data integrity?
+- Shadow systems run outside IT governance. They are not backed up, not secured, and not integrated. When the person who built them leaves, the knowledge of how they work leaves with them.
+- How do manual workarounds affect growth and scalability?
+- Every manual workaround adds friction. As order volumes grow, the friction multiplies. Businesses that scale successfully eliminate workarounds before they scale — not after.
+- How much time do manual workarounds cost a print or embroidery business?
+- Manual re-entry, reconciliation, and shadow-system maintenance typically add 10–20 hours per employee per week in businesses with significant workaround cultures. Eliminating manual data entry through business process automation typically delivers 15–25% efficiency gains in order processing — without adding headcount.
+- Should I fix my processes or buy new software first?
+- Fix the processes first — or at least document them. New software implemented on top of broken processes inherits the same problems in a more expensive wrapper. Business process automation works best when the process is understood, mapped, and then automated — not when automation is applied to something nobody has looked at critically.
+- Manual workarounds and shadow systems
+- Your team has built a second system. ||It lives in spreadsheets.||
+- Almost every business in this sector has shadow systems — spreadsheets, manual logs, sticky notes, and workarounds that exist alongside the official software. They keep the business running. They also hide the real cost of operational inefficiency. Business process automation for small businesses in this sector is not about replacing people — it is about eliminating the manual re-entry, duplicate data, and shadow spreadsheets that slow every team down.
+- symptoms=
+- Spreadsheets are acting as databases for core operational data
+- Data is being entered into the same system more than once
+- You have a 'master spreadsheet' that someone updates manually each day
+- When that person is on holiday, nobody knows how the spreadsheet works
+- Reconciliation between systems takes hours every week
+- You've built custom Access databases or Google Sheets that have become critical infrastructure
+- Every month-end requires a manual data pull and manipulation effort
+- causes=
+- The system was implemented to a template, not your workflow
+- Most software implementations follow the vendor's standard process. When that process doesn't match how your business actually works, the team builds workarounds. Those workarounds become the real operating model — supported by the official system only where it fits.
+- Integration gaps that were never closed
+- When two systems don't talk to each other, the bridge is a person with a spreadsheet. That person becomes a critical dependency — and the business doesn't realise until they're not available.
+- No one has measured the hidden labour cost
+- The cost of manual workarounds doesn't appear on any invoice. It's buried in staff time that is attributed to 'order processing' or 'administration'. Without measuring it, there is no business case to fix it. Standard operating procedures document what should happen. When SOPs don't exist, the manual workaround is the SOP — and measuring the real cost of that is the first step towards fixing it.
+- Workarounds become institutionalised
+- After enough time, the workaround isn't seen as a workaround — it's seen as how things are done. New starters are trained on the shadow system as if it were official. The original software investment becomes a sunk cost that nobody wants to admit hasn't delivered.
+- howIHelp= slug= targetService=
+- I audit your actual operational workflows — not the documented ones, the ones your team actually use. I identify every workaround, every spreadsheet, every manual bridge between systems, and I calculate what they're costing you in time, errors, and risk. Then I give you a prioritised plan to eliminate them: quick wins that pay for themselves, integration fixes that close the gaps, and the honest conversation about whether the current system can ever work for your business model. The outcome is a business process automation roadmap — not a technology wish list, but a prioritised set of changes (some immediate, some longer term) that eliminate the manual work your team has been carrying for years.
+- manual-workarounds
+- relatedProblems=
+- relatedReading=
+
+## /problems/no-ops-owner
+
+- No Operations Owner? Here's What That Costs You | Decoded Ops
+- When no one owns operations in a growing business, the same problems repeat — until someone owns it. Here's what an ops lead actually does, and how to get one without a full-time hire.
+- What happens when no one owns operations in a growing business?
+- Operational decisions get made by whoever happens to be in the room. Problems get addressed reactively rather than systematically. The same issues resurface week after week because no one has the remit to fix them permanently.
+- Why do business owners end up as de facto ops managers?
+- In most owner-operated businesses in this sector, the founder grew up doing the operational work. They understand it better than anyone. The problem is they cannot both do the work and step back to improve the system — but there is no one else to hand it to.
+- How does a lack of operations leadership affect technology projects?
+- Technology projects fail or underdeliver in part because there is no operational owner capable of bridging the gap between what the software does and how the business actually works.
+- What is the cost of not having dedicated operations leadership?
+- The cost shows up in slower growth, repeated mistakes, missed improvements, and owner burnout. Every operational issue that has to be escalated to the owner costs ten times what it would if someone owned operations day-to-day.
+- What does a fractional head of operations do for a small business?
+- A fractional head of operations owns the operational agenda on a part-time basis — technology decisions, process improvement, vendor oversight, and cross-department coordination. They provide the sales and operations planning (S&OP) thinking a growing business needs without the cost of a full-time operations director.
+- Is a fractional operations director the same as managed IT support?
+- No. Managed IT support handles day-to-day IT issues. A fractional operations director owns the wider operational agenda — systems strategy, process improvement, technology decision-making, and the management of improvement projects that cross departmental lines. IT support is a component of that; it is not a substitute for it.
+- No operations owner
+- Every ops decision ends up on your desk. ||Who is running the business day to day?||
+- In many growing businesses, operations has no owner. The MD handles the big decisions, department heads handle their areas, and everything in between — the processes that cross teams, the systems that connect departments, the improvements that nobody owns — falls through the cracks. A head of operations for small business does not have to be a full-time hire. Fractional operations leadership gives you the accountability and the thinking without the overhead.
+- symptoms=
+- Operational decisions that affect multiple departments get made by committee or not at all
+- The same operational problems keep resurfacing with no permanent fix
+- You're the only person who understands how the end-to-end process works
+- Improvement ideas exist but nobody has time or remit to implement them
+- Technology projects stall because there's no operational owner to drive them
+- You're spending more time on operational issues than on growing the business
+- New systems get bought but never properly embedded into how the team works
+- causes=
+- Operations grew without anyone noticing
+- When a business is small, everyone knows what everyone else is doing. As it grows, operational complexity multiplies — but nobody is given explicit ownership of the systems and processes that cross departmental lines. Sales and operations planning (S&OP) becomes impossible when no one has ownership of the operational data. Decisions get made on gut feel because there is no reliable picture of capacity, pipeline, or throughput.
+- The owner is still the default ops person
+- In many owner-operated businesses, the MD grew up doing the operational work. They understand it better than anyone. But they can't both do the work and step back to improve the system — and there's no one else to hand it to.
+- Operations is seen as admin, not leadership
+- Operations doesn't feel like a strategic role. It sounds like paperwork and process. So it gets delegated downward, shared around, or left to whoever shouts loudest. In reality, operations is where growth gets enabled or blocked.
+- No clear progression from doer to leader
+- The person who knows the operations best is often the person doing the operational work. Promoting them means losing their hands-on contribution — and many businesses can't afford that trade-off without a plan.
+- howIHelp= slug= targetService=
+- I help you understand whether your business needs a dedicated operations person, a fractional operations leader, or a different structure entirely. We look at where your time is going, where the bottlenecks are, and what level of operational ownership your business can support right now. Then I give you a practical roadmap — whether that means hiring, restructuring, or stepping into a retained fractional role that gives you operational leadership without the full-time commitment. If a fractional head of operations is the right answer — someone who owns the operational agenda on a part-time basis — the Retained service provides exactly that.
+- no-ops-owner
+- relatedProblems=
+- relatedReading=
+
+## /problems/slow-processes
+
+- Slow Processes Costing You Time and Money | Decoded Ops
+- Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.
+- Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix.
+- Is process improvement consulting just for businesses with technology problems?
+- No. The majority of operational improvements delivered by Decoded Ops are process-led, not technology-led. Craig maps how work moves through your business, finds where time and money are being lost, and helps you fix the root cause — which is often a process, a habit, or a missing bit of structure, not a software gap.
+- What is the difference between a process improvement consultant and a management consultant?
+- Craig Blackman has spent 25 years working inside print, embroidery, workwear, and promotional merchandise businesses. He brings sector-specific knowledge of where these operations typically slow down and why — not a generic framework applied from the outside.
+- Do I need to prepare anything before the on-site visit?
+- No preparation is needed beyond a 60-minute discovery call beforehand. The most valuable thing is to let the day run as normally as possible — the on-site observation needs to reflect how the operation actually works, not how it works when someone is watching.
+- How long does it take to see results from a process improvement engagement?
+- Quick wins identified in the Clarity Audit report are typically implementable within days to weeks. Most businesses begin making changes before the report is even delivered — the day on site tends to be clarifying enough that the team already knows what needs to change.
+- Does the audit cover just processes or the whole business?
+- The Clarity Audit covers six areas across the whole operation — including processes and workflow, IT infrastructure, software, eCommerce, growth opportunity, and AI readiness. If a focused process review is preferred, that can be discussed separately.
+- What does a process improvement consultant do for a print or decoration business?
+- A process improvement consultant observes your actual workflows — not the documented ones — and identifies where time, money, and quality are being lost. In the print and embroidery sector, this typically covers the order intake to despatch cycle, artwork approval loops, production scheduling, and the handoffs between departments. The output is a prioritised improvement plan with every finding quantified in hours per week and pounds per year.
+- How do I improve production efficiency in a small manufacturing or decoration business?
+- Start by mapping the current process end to end — from the moment an order arrives to the moment it leaves the building. Time each step. Identify where jobs pause, where information is missing, and where work is being done twice. Process bottleneck analysis tells you where to focus improvement effort first. The biggest gains are almost always in the handoffs between steps, not in the steps themselves.
+- Is process improvement the same as lean manufacturing?
+- Lean process improvement principles apply to print, embroidery, and decoration businesses — but the terminology and complexity of a full lean implementation is often overkill for a business under £5m. The practical goal is the same: eliminate the steps that do not add value, reduce waiting time between steps, and make the workflow visible and manageable.
+- Order in
+- Intake
+- Artwork
+- Approval
+- Production
+- Queue
+- Quality
+- Check
+- Despatch
+- Invoice
+- Slow, inefficient processes
+- The bottleneck isn't always ||a software problem.||
+- Most businesses I work with assume they have a technology problem. Buy better software, they think, and the friction goes away. Sometimes they're right. Often they're not. Slow turnaround, jobs that take twice as long as they should, the team constantly firefighting — that's usually a process problem. And no amount of new software fixes a process that was broken to begin with.
+- symptoms=
+- Jobs move smoothly to a point — then sit waiting for the next person or step
+- Re-work is happening at the same stage, repeatedly, with no clearly understood reason
+- Different operators do the same task differently, producing inconsistent results
+- Rush jobs constantly jump the queue and ripple through everything else
+- Jobs arrive at production without everything they need — stock, files, instructions
+- Experienced people are spending time on tasks that don't need their experience
+- New starters take months to get up to speed because the process lives in someone's head
+- The same questions are asked every day because nobody has written down how it works
+- causes=
+- The process was never documented — it lives in people's heads
+- When a process exists only in the memory of the people who do it, it varies every time. Different operators, different results. And when that person is off sick or leaves, the knowledge goes with them.
+- Problems are caught at the end, not where they start
+- If a quality check only happens at despatch, every error gets the full production treatment before anyone notices it. The fix costs ten times what it would have cost if the check had happened earlier — or before the job was even started.
+- Growth without process redesign
+- What worked at half the volume often doesn't work now. The informal coordination that kept things moving when the team was small breaks down as the business grows. The process didn't scale — because nobody redesigned it.
+- No visibility of where jobs are and what they're waiting for
+- Without a simple, shared view of the job queue, people work on what's in front of them — not what's most urgent. Work piles up at some stages and moves too fast through others. The bottleneck is invisible until it's a crisis.
+- howIHelp= slug= targetService=
+- I don't run workshops or send you a questionnaire. I come to your site and follow your work — watching an order move from intake to despatch, timing steps, noting where things pause, talking to the people doing the work because they already know where the problems are. By the end of the day I have a clear map of every step in your key processes, the specific points where time is being lost, and a sense of which problems are habit, which are design, and which are fixable this week. Within five working days you have a written report: every finding documented, every issue quantified in hours per week and pounds per year, recommendations prioritised by impact. This is the process improvement consultancy approach — observe first, quantify second, recommend third. No workshops. No questionnaires. A day in your business and a written report within five working days.
+- slow-processes
+- relatedProblems=
+- relatedReading=
+
+## /problems/systems-dont-talk
+
+- When Your Systems Don't Talk to Each Other | Decoded Ops
+- Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what your disconnected software stack is actually costing you each week.
+- Why do business systems get selected without considering integration?
+- Each system was chosen to solve a specific problem — without asking how it would connect to everything else. The integration question was deferred and never properly answered.
+- What happens when there is no integration architecture?
+- Without a view of the whole technology ecosystem, you cannot make good decisions about individual components. Systems accumulate. Complexity compounds.
+- How do API limitations affect system integration?
+- Some systems in this sector have limited or proprietary APIs that make integration technically difficult or commercially prohibitive. That constraint is rarely disclosed at the point of sale.
+- Why is the cost of manual workarounds invisible to business owners?
+- The cost of manual data re-entry, reporting overhead, and error correction does not appear on any invoice. It is buried in staff time that gets attributed to everything except the real cause.
+- Systems don't talk to each other
+- You have five systems. ||None of them know what the others are doing.||
+- The average decoration or print business has between four and seven separate software systems. Order management, ERP, accounts, artwork, eCommerce, despatch. Each one is an island. The bridges between them are people, spreadsheets, and emails.
+- symptoms=
+- Data is being entered manually into more than one system
+- You can't get a complete picture of an order without checking multiple places
+- Reporting requires someone to pull data from several systems and combine it
+- Mistakes happen when data is transferred between systems
+- Different departments are working from different versions of the same information
+- You've normalised a level of administrative overhead that shouldn't exist
+- Every time you add a system, the administration gets worse not better
+- causes=
+- Systems selected in isolation
+- No integration architecture
+- Without a view of the whole technology ecosystem, you can't make good decisions about individual components. Systems accumulate. Complexity compounds.
+- Vendor lock-in and API limitations
+- The cost of the workaround is invisible
+- The cost of manual data re-entry, reporting overhead, and error correction doesn't appear on any invoice. It's buried in staff time that gets attributed to everything except the real cause.
+- howIHelp= slug= targetService=
+- I map your entire technology ecosystem — every system, every data flow, every manual bridge — and give you a clear view of what it's actually costing you. Then I give you independent options: integration where it's practical, consolidation where it makes more sense, and replacement where the current stack is the problem. No vendor relationships. No preferred solutions. Just a clear picture and a practical path forward.
+- systems-dont-talk
+- relatedProblems=
+- relatedReading=
+
+## /problems/wrong-erp-software
+
+- Wrong ERP Software: How to Choose the Right System | Decoded Ops
+- Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses — without the vendor bias.
+- Why does selecting ERP software based on a demo lead to problems?
+- Vendors are excellent at demos. They show you the things the software does well and move quickly past the things it does not. Without sector expertise on your side of the table, you are evaluating presentation skills.
+- Why should you write an independent vendor brief before selecting ERP?
+- A vendor brief — written by someone who understands your business model before you talk to any vendor — changes the selection process entirely. Without it, you are being sold to rather than making an informed choice.
+- Why are ERP reference sites in other sectors misleading?
+- Generic ERP vendors often have good reference sites in manufacturing or distribution. Those references do not tell you how the software performs in a decoration business with mixed methods, variable artwork, and short-run personalisation.
+- What is the total cost of ownership for an ERP system?
+- Implementation, training, customisation, integration, ongoing support. The total cost of ownership for an ERP is often two to three times the headline licence cost. That comparison rarely happens before selection.
+- How do I choose the right ERP for a print or embroidery business?
+- Write the requirements brief before you speak to any vendor. The brief should document your actual workflows — decoration methods, artwork approval process, B2B ordering, eCommerce integration requirements, and how you manage blanks inventory. Once the brief exists, you can evaluate ERP solutions for manufacturing and decoration on a like-for-like basis.
+- What ERP works with Shopify for an embroidery or decoration business?
+- Several ERPs in this sector can integrate with Shopify, but the quality of that integration varies significantly. The questions to ask are: does the integration handle personalisation data, not just order totals? Does stock sync in real time? And is the integration maintained by the ERP vendor or reliant on a third-party connector that could break? An independent ERP evaluation covers all of these.
+- Wrong ERP software
+- The ERP for small business looked right in the demo. ||It doesn't fit how your business works.||
+- Selecting the wrong ERP for small business is one of the most expensive mistakes in this sector. The cost isn't just the software — it's the implementation, the disruption, the workarounds that accumulate, and the productivity you never recover. And in most cases, it was avoidable with an independent evaluation before the contracts were signed.
+- symptoms=
+- The system can't handle decoration method-specific workflows without heavy customisation
+- You're maintaining manual processes alongside the system because it can't replace them
+- The vendor keeps telling you it's a configuration issue, not a software limitation
+- Your team have found ways around the system rather than working within it
+- Customisation costs have exceeded the original software licence
+- You selected based on a demo that showed a different kind of business
+- The vendor's support team doesn't understand your industry
+- causes=
+- Selected on demo, not on fit
+- Vendors are excellent at demos. They show you the things the software does well and move quickly past the things it doesn't. Without sector expertise on your side of the table, you're evaluating presentation skills. Systems like OrderWise, PANTA, and DecoNetwork all perform differently depending on your decoration mix and order model. The only way to evaluate them fairly is against a written brief that reflects your actual business.
+- No independent specification written first
+- A vendor brief — written by someone who understands your business model before you talk to any vendor — changes the selection process entirely. Without it, you're being sold to rather than making an informed choice.
+- Reference sites in a different sector
+- Generic ERP vendors often have good reference sites in manufacturing or distribution. Those references don't tell you how the software performs in a decoration business with mixed methods, variable artwork, and short-run personalisation.
+- The total cost wasn't modelled
+- howIHelp= slug= targetService=
+- If you're in a system that doesn't fit, I give you an honest assessment of what your options are. Sometimes there's more capability in the existing system than you're using — the implementation was poor, not the software. Sometimes the software genuinely isn't right and you need to plan a managed exit. Either way, I help you understand the real cost of staying versus moving — and if you're moving, I write the independent vendor brief that makes sure you don't end up in the same situation again. And if you're moving, I write the independent vendor brief that makes sure the next ERP for your small business is chosen on fit — not on how good the demo looked.
+- wrong-erp-software
+- relatedProblems=
+- relatedReading=
+
+## /resources
+
+- Free Resources for Print & Embroidery Businesses | Decoded Ops
+- Free operational resources for print, embroidery, and decoration businesses. Audit checklist, warning signs guide, and independent software reviews.
+- Free Resources | Decoded Ops
+- Free operational resources for print and decoration businesses. Audit checklists, warning signs, and software reviews.
+- Free operational resources for print and decoration businesses.
+- Operational Audit Checklist
+- A practical checklist to evaluate your operations, technology, and processes. Use this before you hire a consultant.
+- 5 Warning Signs Your Systems Are Holding You Back
+- Five signs that your current technology is costing you more than a replacement would. Practical and straight-talking.
+- Software Reviews
+- Honest, independent reviews of ERP, eCommerce, and production software used in this sector. No affiliate links. No sponsors.
+- The Decoded Method
+- A three-layer system for documenting how your business runs — Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.
+- What 5 & 6 Sigma Mean for Your Operation
+- What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business — and why closing the gap is about process, not machinery.
+- Home
+- Resources
+- — Resources
+- Tools and guides
+- you can use today
+- Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No lead-gen tricks. Just useful stuff.
+- Read more
+
+## /resources/5-warning-signs
+
+- 5 Warning Signs Your Systems Are Holding You Back | Decoded Ops
+- Five signs your current technology and processes are costing you more than a replacement would — from 25+ years running operations in this sector, not vendor theory.
+- Five signs your current technology and processes are costing you more than a replacement would.
+- 5 Warning Signs Your Systems Are Holding You Back
+- Craig Blackman
+- Decoded Ops
+- 1. Nobody can tell you what it's actually costing you
+- Ask most business owners in this sector what their disconnected systems cost them a month and you'll get a shrug, not a number. The cost is real. It's in re-keyed orders, stock that doesn't match, and hours spent reconciling data by hand. It's just never been added up. If you can't put a figure on it, you can't decide whether fixing it is worth the money — and that's usually the point where a proper audit pays for itself before you've spent a penny on anything else.
+- 2. Your business runs on what's in one or two people's heads
+- I've seen this at every scale, not just small operations. One business I spoke to had their entire production schedule sitting in their office manager's head — she'd been there sixteen years. Nothing written down. When she was off, the business was exposed. If losing one person for a fortnight would genuinely hurt, that's not a people problem. It's an operational risk, and it's fixable with documentation and process — not by hiring more people.
+- 3. Everyone has their own workaround
+- A spreadsheet here. A sticky note system there. A "just email me and I'll sort it" arrangement between two departments. Workarounds exist because the system doesn't fit how the job actually gets done. Every workaround is data living outside the system that's supposed to be the source of truth — and every one of them is a small, silent failure of the last implementation.
+- 4. Growth feels harder than it should
+- Orders are up. Revenue's moving in the right direction. And somehow it feels like wading through mud rather than building momentum. That's almost always a systems and process constraint, not a people or demand problem — the operation hasn't been built to take the extra volume without extra pain. I've run production at over 1,000 orders a day at peak. Scale exposes exactly where the process breaks first.
+- 5. You bought your last system off the back of a demo
+- This is the one I see most often, and it's the most expensive. A business bought an ERP system after a good demo. No requirements brief. No assessment of how it would talk to their eCommerce platform. It couldn't handle the production and artwork workflows that were central to how the business actually operated. Result: £150,000 spent, eighteen months of disruption, and around 125 hours a month of internal management time swallowed up fixing it. An audit upfront would have cost around £10,000 — 6.7% of what the failed project ended up costing. Not insurance. Near-certain cost avoidance.
+- — Free Resource
+- Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses — not vendor theory. If two or more of these sound familiar, itm doing about this right now
+- s worth a closer look. </p> </div> </section> <section className="py-16 lg:py-20"> <div className="max-w-3xl mx-auto px-6 lg:px-8"> <div className="space-y-12 mb-16"> {signs.map((sign, i) => ( <div key={i}> <h2 className="text-2xl font-bold text-[#023047] mb-4">{sign.title}</h2> <p className="text-[#023047]/80 leading-relaxed">{sign.body}</p> </div> ))} </div> <div className="p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25 mb-16"> <h2 className="text-xl font-bold text-[#023047] mb-4">What I
+- These arenm currently running Deliver engagements with clients tackling exactly this — building the data foundation and connector work before their ERP goes live, not after, and putting a Process Register in place so operational knowledge doesns head. Itt identify at least 3× the fee in recoverable cost or lost revenue, you get a full refund. No conditions. No questions.
+- t hypothetical scenarios. I
+- t sit in one person
+- s the same approach on every engagement, whatever the sector. </p> </div> <div className="p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30 mb-16"> <div className="flex gap-4 items-start mb-4"> <CheckCircle2 size={22} className="flex-shrink-0 mt-1 text-[#FB8500]" /> <p className="text-[#023047]/80 leading-relaxed"> <strong className="text-[#023047]">The 3× Clarity Guarantee:</strong> if a Clarity Audit doesn
+- Recognise two or more of these?
+- A Clarity Audit finds where the cost is hiding, quantifies it, and gives you a specific, costed plan to fix it — in plain English, with no vendor agenda.
+- Book a free discovery call
+- See what a Clarity Audit covers
+- Or book a call directly
+
+## /resources/audit-checklist
+
+- Operational Audit Checklist
+- A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses.
+- Craig Blackman
+- Decoded Ops
+- Free Technology & Operations Audit Checklist | Decoded Ops
+- A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.
+- IT Infrastructure & Security
+- Do you know what happens to your data if a key team member leaves?
+- Are backups automated, and do you test them quarterly?
+- Do you have a password policy (not all passwords are the same across systems)?
+- Who has access to your financial systems, and is it reviewed annually?
+- Are you paying for software licenses you no longer use?
+- Do you know what IT costs you annually (licenses, hardware, support)?
+- Systems & Software
+- List every system you use: ERP, eCommerce, accounting, CRM, MIS, etc. Do they integrate?
+- For each system, do you know: cost per month, how many people use it, and when it was last updated?
+- Are there manual workarounds in your workflow that are actually compensating for system limitations?
+- Have you outgrown your current system, or are you making it work through effort?
+- Is your ERP still being actively supported by the vendor, or are you on old versions?
+- eCommerce & Digital Sales
+- If you sell online, does your eCommerce platform talk to your ERP automatically?
+- Can customers upload custom artwork, and can the system validate it?
+- Is inventory in your eCommerce platform synced in real-time with your warehouse?
+- Do you manually re-key orders from your website into your ERP?
+- Are you losing orders or customers because your online process is broken?
+- Processes & Operations
+- Map your main workflows: order to invoice, stock to despatch, artwork to production. Are they documented?
+- For each workflow, what are the manual steps that shouldn't be manual?
+- How much time per week is spent on re-keying data, re-entering information, or manually reconciling systems?
+- Do you have duplicate data entry anywhere (same information entered into two systems)?
+- What process takes the longest, and why?
+- If a key person leaves, would someone else know how their workflow actually works?
+- Inventory & Stock
+- How often do you do physical stock counts? How often do the numbers not match your system?
+- Do you know the cost of holding excess inventory?
+- Are there stock items you never use?
+- How many orders are affected by stock-outs or inaccurate inventory each month?
+- Is your inventory in one system or spread across multiple places (spreadsheets, warehouse notes, system)?
+- Costs & Financial
+- What are your total technology costs (software, licenses, hosting, support, IT staff)?
+- Are you billing your customers accurately and capturing all billable work?
+- Do you know your actual cost-per-order (including labor, materials, overhead)?
+- Are there revenue leaks (jobs underpriced, orders not invoiced, discounts not tracked)?
+- How long does it take from invoice to cash (days sales outstanding)?
+- Growth & Strategic
+- If you want to grow 20% next year, what technology or processes would need to change?
+- Are there revenue lines (new products, new channels, new markets) you can't pursue with your current setup?
+- What do your fastest-growing competitors do differently operationally?
+- Are you ready to hire new staff, and would they be able to learn your workflows?
+- — Free Resource
+- 20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant—or to understand what an audit actually covers.
+- How to use this checklist
+- Go through each section and answer the questions honestly. You dont answer are the most valuable—theyt answer 5+ questions, you probably have a bigger operational problem than you realize.
+- t need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties. </p> <p className="text-[#023047]/80 leading-relaxed"> The items you can
+- re where the hidden costs usually are. </p> </div> { } <div className="space-y-12"> {checklist.map((section, sectionIndex) => ( <div key={sectionIndex}> <h2 className="text-2xl font-bold text-[#023047] mb-6 pb-4 border-b border-[#8ECAE6]/30"> {section.section} </h2> <div className="space-y-4"> {section.items.map((item, itemIndex) => ( <div key={itemIndex} className="flex gap-4 items-start p-4 rounded-lg bg-[#F8F9FA] hover:bg-[#F8F9FA]/80 transition-colors"> <div className="flex-shrink-0 mt-1"> <div className="w-5 h-5 rounded-full border-2 border-[#219EBC] flex items-center justify-center"> <div className="w-2 h-2 rounded-full bg-[#219EBC]/30" /> </div> </div> <p className="text-[#023047]/80 leading-relaxed"> {item} </p> </div> ))} </div> </div> ))} </div> { } <div className="mt-16 p-8 rounded-2xl bg-[#023047]"> <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key Takeaways</h2> <div className="space-y-4 text-[#8ECAE6]"> <div className="flex gap-4 items-start"> <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" /> <p className="leading-relaxed"> If you can
+- The items about and are where the money is hiding.
+- manual work
+- re-keying
+- If your systems donre paying 3-5% of revenue in manual workarounds.
+- t integrate, you
+- Inventory accuracy problems typically cost 1-3% of stock value per year.
+- Once yout know. If there are gaps, an audit identifies them formally, quantifies them, and gives you a roadmap to fix them.
+- ve worked through this checklist...</h3> <p className="text-[#023047]/80 leading-relaxed mb-6"> The real value is in understanding what you don
+- Book a free discovery call
+- See what an audit covers
+- Or book a call directly
+
+## /resources/decoded-method
+
+- The Decoded Method
+- Craig Blackman
+- Decoded Ops
+- The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops
+- A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.
+- Plain English. If the least experienced person can't follow it without asking, it's still a draft.
+- One page per process. If it needs more than a page, split it.
+- Owner on everything. One named person. Not a team.
+- Reviewed regularly. Quarterly for most; at each milestone for active builds.
+- Delivery-linked. Every system handed over ships with its process pack. Handover is never verbal-only.
+- ISO-ready, not ISO-burdened. Maps to ISO 9001 principles, without the certification weight.
+- DO-PR-001
+- Discovery Day Delivery
+- DO-PR-002
+- Clarity Audit & Report
+- DO-PR-003
+- New Client Onboarding
+- DO-PR-004
+- Proposal Build & Sign-off
+- DO-PR-005
+- App Requirements Capture
+- DO-PR-006
+- ERP/eCommerce Integration Scoping
+- DO-PR-007
+- Monthly Retained Review
+- DO-PR-008
+- Invoice & Billing Cycle
+- DO-PR-009
+- Client Handover & Sign-off
+- DO-PR-010
+- Process Pack Production
+- DO-PR-011
+- LinkedIn Content Publishing
+- DO-PR-012
+- Sub-contractor Engagement
+- 01
+- The Process Register
+- The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.
+- Ref
+- a short code, e.g. TB-PR-001
+- Owner
+- one named person, never "the team"
+- Category
+- Delivery, Sales, Admin, Finance, Marketing, or Tech
+- Status
+- active, draft, review, or archived
+- Last reviewed
+- the month it was last checked
+- 02
+- The SOPs
+- The how-to layer. One page per process, a hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.
+- What this process does
+- one sentence: what it produces and why it exists
+- Trigger
+- the specific event that starts it, never "when needed"
+- Steps
+- numbered, plain English, actionable
+- What good looks like
+- a measurable outcome, so you know it worked
+- AI skills
+- which tools to reach for, and in what order
+- 03
+- The Improvement Log
+- The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.
+- What broke
+- what was failing, inconsistent, or slow
+- What changed
+- what you actually altered
+- Result
+- what improved, and how you know
+- bg-[#219EBC] text-white
+- bg-[#8ECAE6] text-[#023047]
+- bg-[#FFB703] text-[#023047]
+- linear-gradient(#0a3d5c 1px, transparent 1px), linear-gradient(90deg, #0a3d5c 1px, transparent 1px)
+- 40px 40px
+- Free Playbook
+- The Decoded
+- Method
+- A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one persons head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+- s head. </p> <div className="mt-9 flex flex-col sm:flex-row gap-4"> <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors"> <Download size={18} /> Download the playbook </a> <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors"> See what Clarity covers <ArrowRight size={18} /> </Link> </div> <p className="mt-4 text-sm text-white/40">7-page PDF · no email required</p> </div> <div className="relative mx-auto lg:ml-auto w-full max-w-[300px] lg:max-w-[360px]"> <div className="absolute -inset-6 rounded-3xl bg-[#219EBC]/10 blur-2xl" /> { } <img src="/images/decoded-method-cover.png" alt="The Decoded Method Playbook — cover" width={1075} height={1521} className="relative w-full rounded-lg shadow-2xl ring-1 ring-white/10 rotate-[-2.5deg] transition-transform" /> </div> </div> </section> { } <section className="py-20 lg:py-24 bg-[#F8F9FA]"> <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 items-center"> <div> <Eyebrow>The problem</Eyebrow> <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2> <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" /> <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed"> Most businesses keep their processes in one place: someone
+- The usual fix is a giant quality manual. That fails for the opposite reason: its stale nobody trusts it.
+- s too long to keep up to date, so it goes stale, and once it
+- The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
+- The system
+- Three layers, each with a job
+- Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.
+- inset 4px 0 0
+- The rules
+- The six principles
+- A worked example
+- The register we run Decoded Ops on
+- Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time theybg-[#F8F9FA]bg-white
+- ve seen their whole operation on one page. </p> <div className="mt-10 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg"> <table className="w-full text-sm"> <thead> <tr className="bg-[#023047] text-white"> <th className="text-left font-semibold px-5 py-3.5 w-32">Ref</th> <th className="text-left font-semibold px-5 py-3.5">Process</th> <th className="text-left font-semibold px-5 py-3.5 w-28">Status</th> </tr> </thead> <tbody> {processRegister.map((row, i) => ( <tr key={i} className={i % 2 ?
+- px-2.5 py-1 rounded-full text-[11px] font-semibold
+- The Decoded Method Playbook
+
+## /resources/six-sigma
+
+- What 5 & 6 Sigma Mean for Your Print & Embroidery Operation
+- Craig Blackman
+- Decoded Ops
+- What 5 & 6 Sigma Mean for Your Print & Embroidery Operation | Decoded Ops
+- Sigma measures process quality. The higher the level, the fewer defects per million. Here's what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.
+- 3σ
+- Industry Baseline
+- Roughly 1 in 15 garments has a detectable defect. Misregistration, thread breaks, ink spread. Common when processes rely on operator feel over standard procedure.
+- 66,807
+- 4σ
+- Controlled
+- Around 6 defects per 1,000 garments. Equipment calibration is routine. Operators follow standardised settings for heat, pressure, dwell time, thread tension.
+- 6,210
+- 5σ
+- High Performance
+- Only 233 defects per million. Artwork approvals locked. Stitch density standardised by fabric type. Heat press profiles stored per substrate. Statistical sampling replaces end-of-run checking.
+- 233
+- 6σ
+- World Class
+- Just 3.4 defects per million. Full process capability studies per decoration type. Real-time machine monitoring. Achievable in high-volume workwear and teamwear with the right infrastructure.
+- linear-gradient(#0a3d5c 1px, transparent 1px), linear-gradient(90deg, #0a3d5c 1px, transparent 1px)
+- 40px 40px
+- Free Playbook · Garment Decoration
+- What
+- 5 & 6 Sigma
+- mean for your print & embroidery operation
+- Sigma measures process quality. The higher the level, the fewer defects escape into finished goods. Here is what each level actually means on the shop floor, and why the gap is process, not machinery.
+- Download the playbook
+- See what Clarity covers
+- 7-page PDF · no email required
+- The 5 & 6 Sigma Decoration Playbook — cover
+- Most decoration businesses operate at 3 to 4 Sigma. Here is what that actually means.
+- The scale
+- From reactive to near-zero defect
+- Each sigma level is a defect rate. Here is where the gap between 3 Sigma and 5 Sigma sits, and what it is worth.
+- p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 shadow-sm flex gap-5 items-start
+- flex-shrink-0 w-16 h-14 rounded-lg flex items-center justify-center
+- The real gap
+- The gap is process, not machinery
+- Moving from
+- 3 Sigma to 5 Sigma
+- cuts your defect rate by
+- 99.6%
+- . That is not a machine upgrade. It is a process redesign: standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.
+- If your defect rate feels stuck, the fix usually is not new equipment. It is documenting and standardising what your best operator already does. That is exactly what a Clarity engagement maps.
+- The 5 & 6 Sigma Decoration Playbook
+- Take it with you
+- Get the full playbook, free
+- Seven pages: the sigma scale in decoration terms, the six process areas where the gap is widest, and a self-assessment scorecard to see where your operation stands right now. No email required.
+- Book a discovery call
+- Or book a call directly
+
+## /resources/software-reviews
+
+- Honest ERP & Software Reviews for Print Businesses | Decoded Ops
+- Independent, vendor-free software reviews for print, embroidery, decoration, and workwear businesses. OrderWise, Panta ERP, DecoNetwork, ShirtWorks, and more — from someone who's implemented them.
+- Software Reviews for Print & Embroidery Businesses
+- Orderwise
+- Used by a lot of UK decorated goods businesses — but is it the right fit for yours? Covers what OrderWise actually handles well (wholesale distribution) and where the gaps appear (mixed decoration methods, B2B portals).
+- Coming soon
+- Unleashed
+- A popular cloud-based inventory and manufacturing platform. Works well for straightforward stock management, but the limitations for decoration-specific workflows and multi-site production scheduling are rarely discussed at demo stage.
+- Printavo
+- US-based MIS built for screen printers. Growing UK adoption, but the accounting integration and multi-currency gaps create workarounds for British businesses. Worth evaluating for the right operation profile.
+- Cin7
+- Positioned as an all-in-one inventory and order management platform. Strong for product-based businesses, but the implementation complexity and API limitations for decorated goods workflows need a careful look before committing.
+- Shopify + B2B Portal
+- The most common eCommerce front end in the sector. The question is not whether you can build a B2B portal on Shopify — it's whether it will connect to your ERP without a six-figure integration project.
+- Software Reviews
+- Independent, honest reviews of the software platforms used in print, embroidery, and decoration businesses. Each review covers what the vendor promises, what the reality is for businesses in this sector, what the implementation actually costs, and where the hidden issues are.
+- Need a review before you decide?
+- If you
+
+## /retained
+
+- Fractional CTO for Print & Decoration Businesses | Decoded Ops
+- Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.
+- Retained — Fractional CTO and Head of Operations
+- Monthly strategic and operational technology leadership for print and decoration businesses. Fractional CTO without the full-time cost.
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Fractional CTO and Operations Leadership
+- 1440
+- From £1,440/month
+- What does the Retained service include?
+- The Retained service provides a defined number of days per month (agreed in advance), attendance at leadership and operations meetings, ownership of specific projects or workstreams, vendor management and technology procurement oversight, technology roadmap ownership, team coaching and process documentation, and a direct line to Craig Blackman — not a team of junior consultants.
+- When does the Retained model make sense?
+- Retained suits four situations: post-audit implementation (you have the findings, now need someone to drive the fixes without a full-time hire); ERP or technology transitions (you need someone who understands the sector, the vendors, and can hold everyone accountable); scaling without chaos (revenue is growing but systems are not keeping up); or covering an ops gap (ops director has left, or you have never had one and need senior operational thinking without an £80,000+ salary commitment).
+- How is Retained different from hiring a full-time CTO?
+- Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 6 months for core engagements, with 30 days written notice after.
+- Is a fractional CTO the same as managed IT support?
+- No. Managed IT support handles day-to-day IT issues — helpdesk, hardware, connectivity. A fractional CTO provides strategic and operational technology leadership: roadmap ownership, vendor selection, ERP oversight, and technology decision-making. The two are complementary, not interchangeable.
+- Do I need a full-time CTO or will part-time CTO services work for a small business?
+- For most print, embroidery, and decoration businesses under £5m revenue, a part-time or fractional CTO is more appropriate than a full-time hire. You get the thinking and the oversight without carrying a full-time salary before the business is ready to support it.
+- Post-audit implementation
+- The audit found the issues. Now you need someone to drive the fixes. Retained gives you the hands-on delivery without a full-time hire.
+- ERP or technology transition
+- You're implementing new software. You need someone who understands the sector, the vendors, and your business — and can hold everyone accountable. A fractional CTO without vendor ties is the most effective way to hold an implementation to account.
+- Scaling without chaos
+- Revenue is growing but the systems aren't keeping up. You need operational infrastructure built around how your business actually works.
+- Covering a gap
+- Your ops director has left, or you've never had a dedicated IT or operations lead. Fractional CTO services give you senior operational thinking without the £80k+ salary commitment.
+- A defined number of days per month — agreed in advance
+- Attendance at leadership and operations meetings
+- Ownership of specific projects or workstreams
+- Vendor management and technology procurement oversight
+- Technology roadmap ownership
+- Team coaching and process documentation
+- A direct line to Craig — not a team of junior consultants
+- Clarity
+- Deliver
+- Transform
+- Retained
+- Home
+- Fractional CTO & Retained
+- — Retained &middot; Fractional CTO / Head of Operations
+- Your fractional CTO.
+- Without the full-time cost.
+- Six months without anyone owning the technology decisions and the same questions are still being asked in the same Monday meeting. The vendors are still circling. The roadmap is still a whiteboard.
+- Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management.
+- 25 years inside the sector
+- , on retainer.
+- Fractional CTO services give you the technology leadership and vendor oversight a growing business needs — without recruiting for a role that will cost £80,000+ before it has delivered value.
+- By Craig Blackman — 25 years in print & embroidery operations
+- Talk about fractional CTO support
+- Start with Clarity
+- Or book a call directly
+- Fixed days
+- Agreed at the start
+- 6 months
+- Minimum engagement
+- 30 days
+- Notice after minimum
+- inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-colors
+- — When it fits
+- Four situations where a fractional CTO makes sense
+- Not every business needs a full-time ops director. But every business needs the thinking.
+- — What's included
+- What fractional CTO services actually look like
+- Let's talk about what you need
+- How it's structured
+- Fixed days per month. Agreed at the start of the engagement. Minimum 6 months.
+- Days are used flexibly across meetings, project work, vendor oversight, and team support — based on what your business needs that month.
+- No lock-in after minimum
+- 30 days notice either side after the 6-month minimum. No penalties. No conditions.
+- — Get started
+- Retained engagements are structured around your specific situation. The first call is free and takes 60 minutes.
+- Book a free call
+- See full pricing
+
+## /sectors/awards-engraving
+
+- Awards & Engraving Technology | Decoded Ops
+- Technology and operations consultancy for awards and engraving businesses. Systems audit, project delivery, and fractional CTO support.
+- Awards & engraving
+- Personalisation at scale is operationally complex. ||Most awards businesses are still solving it manually.||
+- Variable data, bespoke personalisation, and tight event deadlines make awards and engraving one of the most operationally demanding niches in the decorated products sector.
+- challenges=
+- Variable data management
+- Every award is different. Managing the variable data — names, titles, dates, messages — from customer submission through to engraving or print without errors requires systems and processes that most businesses in this sector don't have.
+- Event deadline pressure
+- Awards are almost always needed for a specific event. The tolerance for lateness is zero. Production scheduling has to account for that — and most systems don't.
+- Product range complexity
+- Glass, crystal, metal, wood, acrylic — each with its own engraving method, its own minimum order requirements, and its own lead time from suppliers. Managing that complexity accurately is a constant challenge.
+- Proof and approval at volume
+- When an order contains 50 personalised items and each one needs a client-approved proof, the proof management process can easily consume more time than the production itself.
+- whatIdo=
+- Audit your variable data intake and verification process end to end
+- Review your production scheduling approach for event-deadline management
+- Map the proof and approval workflow and identify where it's creating bottlenecks
+- Assess your supplier and product data management for the range you carry
+- Identify technology solutions built for variable data personalisation workflows
+- Quantify the cost of current manual processes and proof-related rework
+- cta= slug= targetService=
+- Find out what your personalisation workflow is really costing you
+- awards-engraving
+- relatedProblems=
+
+## /sectors/garment-decoration
+
+- Garment Decoration Operations & Systems Consultant | Decoded Ops
+- Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.
+- Garment Decoration Business Systems & Operations Consultant | Decoded Ops
+- Technology and operations consultancy for garment decoration businesses.
+- What systems does a garment decoration business need?
+- A garment decoration business typically needs: an order management or ERP system that handles decoration method-specific workflows; artwork management software for sign-off and file storage; production scheduling software that accounts for machine capacity and method lead times; eCommerce integration if you sell online; and B2B ordering capability if you serve corporate or wholesale customers.
+- How is embroidery business management different from other decoration methods?
+- Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management — none of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method's production logic independently.
+- What is the best ERP for a garment decoration business in the UK?
+- There is no single best ERP — the right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Sector-specific systems like PANTA, DecoNetwork, and OrderWise are all used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.
+- Home
+- Sectors
+- Garment Decoration
+- Garment decoration
+- Garment decoration business systems ||were never built for how you actually work.||
+- Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management — and your systems should reflect that difference.
+- challenges=
+- Decoration method mix
+- Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures — all managed in systems that don't account for the difference.
+- The artwork loop
+- Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop — but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email.
+- Blank dependency
+- Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders — until the problem is already in the queue.
+- eCommerce disconnected from production
+- Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable.
+- Embroidery production workflow versus other methods
+- Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds.
+- whatIdo=
+- Map your current decoration workflows end to end — from order intake to despatch
+- Identify where the artwork loop is creating delay and cost
+- Assess artwork management software options and integration with your order management system
+- Assess your blank sourcing model and the dependency risks within it
+- Review your technology stack for gaps between eCommerce, order management, and production
+- Produce an independent vendor brief if new software is recommended
+- Quantify every finding in time, headcount, and money
+- cta= slug= targetService=
+- Find out what your decoration workflow is really costing you
+- garment-decoration
+- relatedProblems=
+
+## /sectors/labels-packaging
+
+- Labels & Packaging Technology | Decoded Ops
+- Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.
+- Labels & packaging
+- Variable data printing and compliance labelling ||requires operational precision most systems can't deliver.||
+- Labels and packaging businesses operate at the intersection of print technology, compliance requirements, and supply chain — with zero tolerance for error and constant pressure on turnaround times.
+- challenges=
+- Compliance and specification management
+- Label specifications change. Compliance requirements change. Managing version control across hundreds of label SKUs — and ensuring the right version is always in production — is a critical operational challenge.
+- Variable data at speed
+- Short-run, high-variation variable data jobs require print systems and production workflows that most generic MIS platforms weren't designed for. The workarounds are expensive.
+- Substrate and press matching
+- Matching the right substrate, adhesive, and finish specification to the right press configuration — and doing it without errors — requires product data management that most businesses manage in spreadsheets.
+- Customer integration and EDI
+- Larger label customers often expect EDI ordering, automated reorder triggers, or direct system integration. Setting that up — and maintaining it — is a specialist operational challenge.
+- whatIdo=
+- Audit your specification and version management process across your label SKU range
+- Review your variable data workflow from file intake through to press-ready output
+- Map substrate and press configuration management for accuracy and efficiency
+- Assess your customer integration capability and EDI readiness
+- Identify where compliance risk is sitting in your current processes
+- Recommend systems suited to the specific demands of short-run variable data label production
+- cta= slug= targetService=
+- Understand the operational risk and cost in your labels business
+- labels-packaging
+- relatedProblems=
+
+## /sectors/print-promotional
+
+- Print & Promotional Merchandise Operations | Decoded Ops
+- Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.
+- Print Shop Operations Management & Systems Consultant | Decoded Ops
+- Technology and operations consultancy for print shops and promotional merchandise businesses.
+- What software does a print shop need for operations management?
+- A print shop typically needs: production scheduling software that accounts for method and substrate; artwork management and approval software; an order management or MIS system; eCommerce integration if selling online; and invoicing connected to production. The specific system depends on your print methods, run lengths, and customer mix.
+- How do I improve my print shop's artwork approval workflow?
+- Start by mapping the current approval process step by step — from artwork received to sign-off confirmed. Most print shops lose 2–3 days per job in the approval loop because it relies on email and manual chasing. Artwork management software that automates proof delivery, revision tracking, and sign-off confirmation can reduce that loop to hours without changing the production process.
+- Print & promotional
+- Print shop operations management ||starts with understanding what your current process actually costs.||
+- Print and promotional merchandise businesses face a specific combination of challenges: short run lengths, rapid turnaround expectations, complex artwork approval workflows, and production scheduling software that was designed for longer runs. The result is operational friction that shows up as missed deadlines, re-work, and customer complaints — even when the team is working hard.
+- challenges=
+- Product complexity at volume
+- A single client order can contain 40 different product lines, each with its own supplier, specification, and lead time. Managing that manually — or in a system not built for it — is a permanent drag on margin.
+- Supplier fragmentation
+- Multiple suppliers, multiple portals, multiple confirmation processes. The administrative overhead of managing incoming goods is often invisible in the P&L — but it's real.
+- The sample and approval cycle
+- Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step that can't be measured, tracked, or optimised.
+- Quote-to-order conversion costs
+- How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it — and the answer is usually uncomfortable.
+- Artwork approval workflow
+- The artwork approval process is where most print shop production schedules break down. Every unapproved job sitting in an email thread is a slot on the press that cannot be planned. Automating the artwork approval workflow — from brief through proof to sign-off — typically reduces production delays by 20–40% without any change to the print process itself.
+- Print production scheduling and capacity planning
+- Print production scheduling software that cannot account for substrate, print method, drying time, and finishing dependencies cannot produce a realistic schedule. Most print shops are scheduling by eye and experience — which works until volume grows beyond what one person can hold in their head.
+- whatIdo=
+- Audit your order intake and quote process for hidden time cost
+- Map the full supplier management workflow from order to receipt
+- Identify where sample and approval processes are creating delay
+- Review your product data management and supplier pricing model
+- Assess your technology stack for integration gaps and manual workarounds
+- Quantify the real cost of every inefficiency found
+- cta= slug= targetService=
+- Find out where your margin is going
+- print-promotional
+- relatedProblems=
+
+## /sectors/signs-graphics
+
+- Signs & Graphics Technology | Decoded Ops
+- Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.
+- Signs & graphics
+- Large format and signage businesses run on ||tight margins and complex survey-to-fit workflows.||
+- Signs and graphics businesses have production processes that generic ERP systems struggle to model. The result is usually spreadsheets, whiteboards, and people carrying information in their heads.
+- challenges=
+- Survey-to-installation workflow
+- The job doesn't start when the order is placed — it starts with a site survey. Most systems can't track a job from survey through design, production, installation, and sign-off as a single connected workflow.
+- Substrate and finish complexity
+- The number of variables in a signage job — substrate, finish, size, fixing method, installation requirements — makes job costing genuinely difficult. Manual approaches mean margin leakage on every complex job.
+- Installation scheduling
+- Coordinating installation teams, site access, third-party contractors, and delivery of materials is a logistics challenge that most job management systems don't handle well.
+- Artwork and proof management
+- Client approval of artwork before production is critical in this sector. Managing that process outside of the production system creates delay, rework, and missed deadlines.
+- whatIdo=
+- Map your full workflow from enquiry through survey, design, production, installation and sign-off
+- Identify where jobs fall between system gaps and into manual processes
+- Review your job costing model for margin leakage on complex projects
+- Assess your installation scheduling approach and its connection to production
+- Audit your artwork and proof management process
+- Recommend technology suited to the specific operational model of a signs and graphics business
+- cta= slug= targetService=
+- Understand where your signs business is losing time and margin
+- signs-graphics
+- relatedProblems=
+
+## /sectors/workwear-teamwear
+
+- Workwear & Teamwear Supplier Operations | Decoded Ops
+- Operations and technology consultancy for workwear and teamwear businesses. B2B customer portals, ERP selection, stock management, and multi-site operations — independent advice, no vendor agenda.
+- Workwear Supplier Operations & Systems Consultant | Decoded Ops
+- Technology and operations consultancy for workwear and teamwear suppliers. B2B order management, multi-location inventory, and wholesale order systems.
+- What systems does a workwear supplier need?
+- A workwear supplier typically needs a B2B ordering portal for corporate customers, a wholesale order management system integrated with production, multi-location inventory management, contract pricing management, and ERP integration that handles split shipments and account invoicing. The specific stack depends on volume, customer mix, and decoration methods used.
+- How do I set up a B2B portal for a workwear business?
+- A workwear B2B portal implementation starts with understanding the customer journey — how accounts order, what they need to see, and how the portal connects to your production and despatch workflow. Platforms like OrderWise, PANTA, and bespoke solutions all offer B2B capability, but the integration with your back-end is what determines whether it actually reduces admin or just adds another system to manage.
+- Workwear & teamwear
+- Workwear supplier operations ||need systems built for B2B, not B2C.||
+- Workwear and teamwear suppliers operate in a fundamentally different mode from retail decoration businesses. B2B order management, multi-location delivery, contract pricing, and account portals are the norm — not the exception. Most generic eCommerce and ERP systems were not designed for this. The operational complexity of a workwear supplier requires systems that understand B2B.
+- challenges=
+- Managed account complexity
+- Each managed account has its own pricing, its own approved products, its own approval hierarchy, and its own delivery rules. Managing that at scale requires systems specifically built for it — not workarounds in a generic platform.
+- The uniform specification problem
+- Keeping embroidery specifications, sizing matrices, and decoration requirements accurate across hundreds of SKUs per client is an enormous data management challenge. One wrong spec means a rerun.
+- Online shop management
+- Corporate online shops promise efficiency but often create more administration than they save — if the backend isn't connected to your production and despatch systems properly.
+- Re-order and replenishment
+- Repeat orders should be the simplest part of the workwear business. They're often the most error-prone — because the original order data isn't held in a way that makes re-ordering reliable.
+- B2B customer portal and wholesale order system
+- Corporate and contract customers expect to order online, manage their account, and track their orders without calling you. A wholesale order system that integrates with your production and ERP is what makes this possible at scale. Without it, your account management team is doing manually what a portal would handle automatically.
+- Multi-location inventory and despatch
+- Workwear for large corporate accounts often means multiple delivery locations, different size runs per site, and complex split-shipment logistics. Multi-location inventory management has to be part of your system design — not a workaround built in spreadsheets.
+- whatIdo=
+- Audit your managed account setup process and ongoing administration burden
+- Review your product data and specification management across client accounts
+- Assess your online shop infrastructure and back-end integration
+- Map the re-order and replenishment process for inefficiencies
+- Identify where client-specific pricing and approval rules are creating manual overhead
+- Produce independent recommendations for technology that actually supports this model
+- cta= slug= targetService=
+- Find out what your managed accounts are really costing you to run
+- workwear-teamwear
+- relatedProblems=
+
+## /small-business
+
+- Operations & Technology Consultant for Small Businesses | Decoded Ops
+- Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.
+- Small Business Operational Support
+- Decoded Ops
+- GB
+- Clarity Check
+- 395
+- Monthly Advisory
+- Quarterly Sprint
+- 995
+- Is this right for businesses under £500k turnover?
+- Yes. Every product on this page is specifically designed for smaller businesses. Remote delivery. Fixed prices. No minimum commitment on the Clarity Check.
+- Do I need to commit to anything upfront?
+- No. The Clarity Check is a one-off fixed fee with no commitment. Monthly and sprint options have a 3-month minimum with 30 days written notice after.
+- What does a small business operations consultant actually do?
+- A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check — delivered on a fixed-price or retainer basis that fits a sub-£500k business.
+- Is this like managed IT support for small businesses?
+- No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business — not just keeping the lights on.
+- £395
+- The starting point. A remote operational review — honest, specific, actionable.
+- 3-hour structured remote session
+- Written findings summary — plain English
+- Three priority actions identified
+- Tech stack and AI readiness assessed
+- Delivered within 5 working days
+- Book your Clarity Check
+- Deliver
+- Keep a project moving with remote project delivery and vendor management.
+- 90-minute remote working sessions
+- Vendor management and procurement support
+- Project oversight and milestone tracking
+- Written progress summaries
+- Practical tools and frameworks
+- Book a discovery call
+- Transform
+- Focused transformation programme — one workstream at a time.
+- Single focused workstream
+- ERP, eCommerce, or process redesign
+- Vendor selection and oversight
+- Milestone-based delivery
+- Request a proposal
+- Retained
+- From £395/mo
+- Ongoing technology and operations support. Flexible days. Direct line to Craig.
+- Entry
+- 2 × 4hr sessions
+- Mid
+- 4 × 4hr sessions
+- Full
+- 6 × 4hr sessions
+- Let's talk about what you need
+- Home
+- Small Business Consulting
+- — For small businesses
+- Small business operations consultant.
+- Technology and systems support without the enterprise price tag.
+- The same operational thinking I bring to larger businesses — adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+- A small business operations consultant covers what a full-time operations director would — technology decisions, vendor oversight, process improvement, and AI readiness — on a flexible, affordable basis built for businesses under £500k.
+- By Craig Blackman — 25 years in print & embroidery operations
+- See all pricing
+- CLARITY
+- DELIVER
+- £550/mo
+- TRANSFORM
+- £770/mo
+- RETAINED
+- £395+
+- Fractional operations and technology support for small businesses
+- Each designed for a different situation. All delivered remotely. All with a direct line to me — not a junior team.
+- Not sure which is right for you?
+- Answer two quick questions and I'll point you to the most relevant option.
+- Take the pricing questionnaire
+
+## /tools
+
+- Free Operational Tools | Decoded Ops
+- Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.
+- Free Tools | Decoded Ops
+- Should I Replace My ERP?
+- Eight yes/no questions to help you decide whether your system is fixable or it's time to plan an exit.
+- AI Readiness Check
+- Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your foundation first.
+- Ops Health Score
+- Rate your business across five operational dimensions to see where you stand — and where to focus first.
+- Downtime Cost Calculator
+- Calculate the annual cost of system outages across labour and lost revenue.
+- RTO Calculator
+- Understand the financial value of faster recovery from system failures.
+- Automation ROI Calculator
+- See when automating a manual process pays for itself — and what it returns over 3 years.
+- Home
+- Tools
+- Calculate Your Operational Cost
+- Free tools to quantify operational inefficiency — so you know exactly what it's costing you.
+
+## /tools/ai-readiness-check
+
+- use client
+- Are your core business processes documented and followed consistently?
+- Is your customer, order, and product data clean and consistent across systems?
+- Do your key systems (ERP, eCommerce, accounts) talk to each other without manual intervention?
+- Do you have a specific operational problem you believe AI could help solve?
+- Does your team have the capacity to learn and adopt new tools?
+- Have you successfully implemented new technology in the last 12 months?
+- Not Ready — Fix Your Foundations
+- Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.
+- Getting There — Proceed Carefully
+- Ready — Evaluate with Confidence
+- Free Tool
+- AI Readiness Check
+- Six quick questions to find out whether your business is ready to adopt AI — or whether you need to fix your operational foundation first.
+- 20
+- 40
+- mt-0.5 font-bold
+- Yes
+- No
+
+## /tools/automation-roi-calculator
+
+- Automation ROI Calculator
+- Calculate when automating a manual process pays for itself and what the 3-year return looks like.
+- 0
+- Automation ROI Calculator | Decoded Ops
+- Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.
+- Free Tool
+- Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
+
+## /tools/downtime-cost-calculator
+
+- Downtime Cost Calculator
+- Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost. Built for print, embroidery and decorated goods.
+- 0
+- What is an overhead recovery rate?
+- It is what every productive hour has to earn towards the costs that do not change job by job, before materials and before profit. Annual overhead divided by the productive hours you actually have.
+- Why does downtime cost more than the wages of idle staff?
+- Because the overhead keeps running. Rent, finance, salaries and subscriptions are all still being paid during an outage, but no hour of production is happening to recover them. The wages of idle staff are on top of that, not instead of it.
+- How do I work out realistic utilisation?
+- Take the hours your machines are theoretically available and subtract setup, changeover, maintenance, reruns and hours with nothing booked in. Most decoration businesses land well below the 100% they assume when pricing.
+- Downtime Cost Calculator | Decoded Ops
+- Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost you. Free tool for UK print, embroidery, workwear and decorated goods businesses.
+- Free Tool
+- What does an hour of downtime actually cost you?
+- Work out what an hour of your operation costs to run, then what you lose every time it stops. Two minutes, no signup, and the number is yours to keep.
+- Most calculators ask you for a number nobody has
+- They want your lost revenue per hour. Almost nobody can state that, so the field gets left at zero and the answer comes out meaninglessly low.
+- This one builds it up instead. First it works out what an hour of your operation costs to have available at all, which is a number worth knowing on its own. Then it works out what you lose when that hour produces nothing.
+- The part that surprises people is that the overhead does not stop when the machines do. Rent, machine finance, subscriptions and salaries all keep running through an outage. You just have no production to recover them against.
+- What to do with the recovery rate
+- The recovery rate is the more useful of the two numbers, and most businesses have never calculated it. It tells you what each productive hour has to earn towards your overhead before you have paid for a single garment or a gram of thread.
+- Take it into your quoting. If a job needs thirty minutes of machine time, it has to clear half your hourly rate in contribution above its materials just to break even. Quote below that often enough and you will be busy and unprofitable at the same time.
+- That is the answer to a question I get asked a lot: we are flat out, every job makes money, so why is there nothing in the bank? Margin is earned per job. Overhead is incurred per hour. If you are recovering less per hour than the hour costs, more volume makes it worse rather than better.
+- Watch the utilisation slider too. Pricing off theoretical hours rather than real ones is the most common way to arrive at a rate that looks fine and does not cover the business.
+- Why downtime costs more in decoration than most places
+- The deadline does not move. A distributor can ship a day late and apologise. You cannot. The match is Saturday, the event is Friday, and a box of shirts nobody wore is scrap rather than stock.
+- It is also worth being honest about what counts as an outage. It is not only the server being down. If the internet drops and your phones run over it, you cannot take an order. If the artwork system is unreachable, production stops even though every machine is working perfectly. If nobody can see what is in stock, picking stops.
+- A useful test, and it costs nothing: pick a quiet hour, pull the internet, and write down what still works. Most owners find the machines keep running and everything around them stops.
+- If the number was higher than you expected
+- That is the finding, and it is usually a process and systems problem rather than an IT spending problem. A Clarity Audit is a full day on site working through where the hours and the money are actually going, with everything it costs you in writing within five working days.
+- Book a free 60 minute call
+- See how a Clarity Audit works
+
+## /tools/ops-health-score
+
+- use client
+- Systems Integration
+- Systems don't talk to each other. Data is re-entered manually.
+- Some systems connected. Gaps exist but are known.
+- Systems integrated. Data flows automatically between platforms.
+- Process Documentation
+- No documented processes. Everyone does things differently.
+- Key processes documented but not consistently followed.
+- Processes documented, followed, and regularly reviewed.
+- Data Quality
+- Data is inconsistent, duplicated, and incomplete.
+- Most data is clean. Some areas need attention.
+- Data is clean, consistent, and governed.
+- Team & Capability
+- No capacity or skills for technology improvement.
+- Some capability exists. Training happens reactively.
+- Team has skills and capacity. Technology adoption is part of the culture.
+- Technology Strategy
+- No roadmap. Systems bought reactively.
+- Informal roadmap exists. Some planning in place.
+- Clear technology roadmap aligned to business goals.
+- 1 — Critical
+- 2 — Weak
+- 3 — Acceptable
+- 4 — Good
+- 5 — Excellent
+- Critical — Needs Immediate Attention
+- Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.
+- Fragile — Some Areas Need Work
+- You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk — fixing them now is cheaper than waiting.
+- Stable — Room to Improve
+- Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.
+- Strong — Well Run Operation
+- Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.
+- Free Tool
+- Ops Health Score
+- Rate your business across five operational dimensions to get a clear picture of where you stand — and where to focus first.
+- w-9 h-9 rounded-lg text-xs font-bold transition-all
+- Score for
+- w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)]
+- See Your Score
+- Rate all dimensions to continue ( remaining)
+- 20
+- 40
+- /5
+
+## /tools/rto-calculator
+
+- RTO Calculator
+- Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.
+- 0
+- RTO Calculator | Decoded Ops
+- Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.
+- Free Tool
+- See what your current recovery time is costing you — and what faster recovery is actually worth in pounds.
+
+## /tools/should-i-replace-erp
+
+- use client
+- Is your current system unable to handle your core business processes without significant workarounds?
+- Have you had to build extensive customisations or manual processes to make the system work?
+- Does your team actively avoid using the system, preferring spreadsheets instead?
+- Is the cost of maintaining the current system increasing year on year?
+- Is your vendor no longer investing in the platform or roadmap?
+- Are you missing out on capabilities your competitors have (eCommerce, mobile, integrations)?
+- Has the implementation stalled, failed, or been abandoned?
+- Has your business model changed significantly since you bought the system?
+- Stay and Optimise
+- Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.
+- Proceed with Caution
+- Plan Your Exit
+- Free Tool
+- Should I Replace My ERP?
+- Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.
+- 20
+- 40
+- mt-0.5 font-bold
+- Yes
+- No
+
+## /transform
+
+- ERP & Technology Transformation Programme | Decoded Ops
+- Full implementation oversight, vendor management, and systems build for print, embroidery, and decoration businesses going through a major technology change.
+- Transform — Digital Transformation Programme
+- Multi-workstream digital transformation for print and decoration businesses covering ERP, eCommerce, process redesign, and change management.
+- Decoded Ops
+- Worthing
+- West Sussex
+- GB
+- Digital Transformation Programme
+- 1500
+- From £1,500/month
+- What does the Transform programme include?
+- Transform covers multi-workstream digital transformation including ERP and core systems selection and implementation, eCommerce and digital channel connectivity, process redesign from order to invoice, people and change management, integration and data (connecting systems and eliminating manual workarounds), and reporting and visibility. Discovery is required before scoping.
+- Why do digital transformation projects fail in print and embroidery businesses?
+- The most common pattern: system selected without users involved, training on how it works rather than how it fits the job, reversion by week three, system blamed by month three. Employee buy-in is the single biggest project risk. Transform addresses this by hearing people before any decision is made and making the system work for the user — not just the person commissioning it.
+- How is Transform different from a standard IT project?
+- Transform is process-led and people-first. Craig maps actual working practices before any system decision is made, manages change across all workstreams simultaneously, and holds vendors accountable across the programme. It is a coordinated programme with milestone governance — not a collection of separate projects.
+- What is the difference between ERP implementation and an ERP transformation programme?
+- ERP implementation is the process of configuring, migrating, and going live with a single ERP system. A transformation programme covers the full technology and systems architecture — multiple systems, integrations, eCommerce, B2B portals, and the processes that connect them. Transform is for businesses where the scope goes beyond a single software project.
+- Can you support an eCommerce ERP integration as part of Transform?
+- Yes. eCommerce to ERP integration is one of the most common scopes within a Transform engagement. The implementation covers both systems — the eCommerce platform and the ERP or MIS — plus the integration layer between them, ensuring that orders flow from checkout to production without manual re-entry.
+- ERP & Core Systems
+- Selection, implementation, migration, and integration of your core business system. Built around how your business actually operates.
+- eCommerce & Digital
+- Platform selection, B2B/B2C integration, decoration tools, and production workflow connectivity. Not just a website u2014 a connected sales channel.
+- Process Redesign
+- End-to-end process mapping and redesign. From order in to invoice out. Fixing the process before automating it.
+- People & Change
+- Employee buy-in is the single biggest hurdle. Hearing people before any decision. Making the system work for the user, not just the commissioner.
+- Integration & Data
+- Connecting systems that need to talk to each other. Clean data migration. Eliminating manual re-keying and workarounds.
+- Reporting & Visibility
+- Building the dashboards and reports that give leadership real-time visibility into what matters.
+- Full discovery phase before scoping u2014 no assumptions
+- Multi-workstream programme management
+- Process-led people-first approach
+- Change management and employee buy-in built into every workstream
+- Vendor selection and management across all workstreams
+- Structured milestone governance and reporting
+- Regular written progress reporting to leadership
+- Roadmap ownership through to completion
+- Clarity
+- Deliver
+- Transform
+- Retained
+- Home
+- Transformation Programme
+- — Transform &middot; Digital Transformation Programme
+- A full ERP implementation programme.
+- Designed around how your business works.
+- For businesses that need a coordinated transformation across multiple workstreams — ERP, eCommerce, process redesign, and more. Discovery required before scoping, because assumptions are where transformations fail.
+- By Craig Blackman — 25 years in print & embroidery operations
+- Talk about your transformation
+- Start with Clarity first
+- Or book a call directly
+- — Why transformations fail
+- The pattern I see every time
+- System selected without users involved. Training delivered on how it works, not how it fits their job. Reversion by week three. System blamed by month three.
+- Transform exists to break that pattern. I hear people before any decision is made. I map actual working practices. I make the system work for the user — not just the person commissioning it.
+- Employee buy-in is not an HR issue. It is the single biggest project risk.
+- Transform is the right engagement when the work goes beyond a single vendor or project. An ERP implementation programme for a print, embroidery, or decoration business typically involves multiple systems — order management, eCommerce, production scheduling, and B2B portals — that need to work as an integrated whole. That is what Transform is built for.
+- — Workstreams
+- ERP implementation for manufacturing and decoration businesses
+- — What's included
+- A coordinated programme, not a collection of projects
+- Where Transform fits
+- inline-flex items-center px-5 py-2.5 rounded-full font-semibold text-sm transition-colors
+- Ready to talk about transformation?
+- Book a free discovery call
+

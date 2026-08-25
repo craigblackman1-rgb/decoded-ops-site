@@ -1,0 +1,1015 @@
+[claude-mem] OpenCode plugin loading (project: opencode)
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read components/Plate.tsx
+ΓåÆ Read app/page.tsx
+ΓåÆ Read components/SectorPageDS.tsx
+ΓÇó Explore sector pages and designs Explore Agent
+ΓÇó Read decoded-marketing plate SVGs Explore Agent
+Γ£ô Explore sector pages and designs Explore Agent
+Γ£ô Read decoded-marketing plate SVGs Explore Agent
+ΓåÆ Read app/sectors/workwear/page.tsx
+ΓåÆ Read app/sectors/garment-decoration/page.tsx
+Now I need to read the existing sector pages to understand both patterns (delegated and inline), then plan the implementation.
+
+# Todos
+[ ] Add `plate` prop to SectorPageDS.tsx and render plate section between hero and features
+[ ] Wire plate into workwear page (DO-ART-108)
+[ ] Wire plate into teamwear-clubwear page (DO-ART-109)
+[ ] Wire plate into schoolwear page (DO-ART-110)
+[ ] Wire plate into promotional-merchandise page (DO-ART-111)
+[ ] Wire plate into garment-decoration page (DO-ART-107)
+[ ] Wire plate into print-promotional page (DO-ART-113)
+[ ] Wire plate into signs-graphics page (DO-ART-114)
+[ ] Wire plate into awards-engraving page (DO-ART-115)
+[ ] Wire plate into labels-packaging page (DO-ART-116)
+[ ] Run npm run build and verify zero errors
+
+ΓåÆ Read app/sectors/awards-engraving/page.tsx
+ΓåÆ Read app/sectors/labels-packaging/page.tsx
+ΓåÆ Read app/sectors/print-promotional/page.tsx
+ΓåÆ Read app/sectors/signs-graphics/page.tsx
+First, let me read the remaining inline pages so I know where to insert the plate section.
+
+# Todos
+[ΓÇó] Add `plate` prop to SectorPageDS.tsx and render plate section between hero and features
+[ ] Wire plate into workwear page (DO-ART-108)
+[ ] Wire plate into teamwear-clubwear page (DO-ART-109)
+[ ] Wire plate into schoolwear page (DO-ART-110)
+[ ] Wire plate into promotional-merchandise page (DO-ART-111)
+[ ] Wire plate into garment-decoration page (DO-ART-107)
+[ ] Wire plate into print-promotional page (DO-ART-113)
+[ ] Wire plate into signs-graphics page (DO-ART-114)
+[ ] Wire plate into awards-engraving page (DO-ART-115)
+[ ] Wire plate into labels-packaging page (DO-ART-116)
+[ ] Run npm run build and verify zero errors
+
+Now I have the full picture. Let me implement. The architecture is clear:
+
+- **SectorPageDS** gets a new optional `plate` prop (ReactNode), rendered between hero and features
+- **4 delegated pages** pass `<Plate>` as the `plate` prop
+- **5 inline pages** get a plate section added directly
+
+Let me start with `SectorPageDS.tsx` and the 4 delegated pages in parallel.
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+@@ -23,8 +23,10 @@
+ introParagraphs: [string, string];
+ heroSecondaryCta: SectorLink;
+ heroImage: { src: string; width: number; height: number; alt: string };
+ shotCaption: string;
++/** Optional plate diagram to render between hero and features */
++plate?: ReactNode;
+ featuresHeading: string;
+ features: [Feature, Feature, Feature];
+ otherSectors: SectorLink[];
+ ctaLead: string;
+
+
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+@@ -53,8 +53,9 @@
+ introParagraphs,
+ heroSecondaryCta,
+ heroImage,
+ shotCaption,
++plate,
+ featuresHeading,
+ features,
+ otherSectors,
+ ctaLead,
+
+
+ΓåÉ Edit components/SectorPageDS.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\components\SectorPageDS.tsx
+@@ -93,8 +93,21 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM */}
++{plate && (
++  <section className="g-navy">
++    <div className="wrap">
++      <div className="plate-scroll">
++        <div className="plate-frame">
++          {plate}
++        </div>
++      </div>
++    </div>
++  </section>
++)}
++
+ {/* FEATURES TRIPLET */}
+ <section className="g-white">
+   <div className="wrap">
+     <div className={styles.featuresIntro}>
+
+
+ΓåÆ Read app/sectors/teamwear-clubwear/page.tsx [limit=10]
+ΓåÆ Read app/sectors/schoolwear/page.tsx [limit=10]
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx [limit=10]
+
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import { SectorPageDS } from '@/components/SectorPageDS';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+
+
+Now I'll wire all 4 delegated pages. Starting with workwear (DO-ART-108):
+ΓåÉ Edit app/sectors/workwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\workwear\page.tsx
+@@ -54,8 +54,48 @@
+   height: 596,
+   alt: 'A fanned stack of work shirts in a dozen colourways, collars and button plackets showing, on a plain studio background.',
+ }}
+ shotCaption="One garment, a dozen colourways, three decoration methods, and a size curve behind every one of them."
++plate={
++  <Plate tone="dark" p="ww" title="Workwear ΓÇö supplier to branded garment"
++         sub="Three systems that have to connect: supplier catalogue, production floor, customer portal"
++         no="DO-ART-108" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++    <path id="ww-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++          fill="none" strokeWidth="2.5" markerEnd="url(#ww-ah)"/>
++
++    <g className="sk-fade sk-s3">
++      <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#ww-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Supplier catalogue</text>
++      <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Ranges ┬╖ sizing ┬╖
++        colourways ┬╖ stock availability ΓÇö current, not copy-pasted</text>
++    </g>
++
++    <g className="sk-fade sk-s4">
++      <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ww-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Production floor</text>
++      <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Decoration method
++        mix ┬╖ blank stock ┬╖ personalisation ΓÇö the step generic systems skip</text>
++    </g>
++
++    <g className="sk-fade sk-s5" filter="url(#ww-shadow)">
++      <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ww-amber-n)"
++            className="p-node-a" strokeWidth="2"/>
++      <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++            fontSize="28">Customer-facing channels</text>
++      <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">eCommerce
++        ┬╖ B2B trade portal ┬╖ automated replenishment ┬╖ size-history-driven reorders</text>
++    </g>
++
++    <g className="sk-dots">
++      <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ww-spine"/></animateMotion></circle>
++    </g>
++  </Plate>
++}
+ featuresHeading="Three problems, in roughly this order."
+ features={[
+   {
+     icon: (
+
+
+ΓåÆ Read app/sectors/teamwear-clubwear/page.tsx
+ΓåÆ Read app/sectors/schoolwear/page.tsx
+ΓåÆ Read app/sectors/promotional-merchandise/page.tsx
+Now teamwear-clubwear (DO-ART-109). Let me read the full file to find the exact insertion points:
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import { SectorPageDS } from '@/components/SectorPageDS';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import { SectorPageDS } from '@/components/SectorPageDS';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -1,6 +1,7 @@
+ import type { Metadata } from 'next';
+ import { SectorPageDS } from '@/components/SectorPageDS';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ 
+ export const metadata: Metadata = {
+
+
+ΓåÉ Edit app/sectors/teamwear-clubwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\teamwear-clubwear\page.tsx
+@@ -54,8 +54,48 @@
+   height: 1125,
+   alt: 'A folded zip-neck polo shirt in cream and sand panels, photographed flat on a plain grey surface.',
+ }}
+ shotCaption="One base garment. Twenty-four names, twenty-four numbers, and one sponsor logo that has to sit in the same place on every one."
++plate={
++  <Plate tone="dark" p="tw" title="Teamwear ΓÇö squad list to kitted-out"
++         sub="Four connected stages: kit range data, squad list, personalisation proofs, production"
++         no="DO-ART-109" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++    <path id="tw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++          fill="none" strokeWidth="2.5" markerEnd="url(#tw-ah)"/>
++
++    <g className="sk-fade sk-s3">
++      <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#tw-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Supplier kit range catalogue</text>
++      <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Ranges ┬╖ sizes ┬╖
++        colourways ΓÇö live across every channel a team orders through</text>
++    </g>
++
++    <g className="sk-fade sk-s4">
++      <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#tw-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Squad list management</text>
++      <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Name ┬╖ number ┬╖
++        size per player ┬╖ sponsor logo per age group ΓÇö not a spreadsheet</text>
++    </g>
++
++    <g className="sk-fade sk-s5" filter="url(#tw-shadow)">
++      <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#tw-amber-n)"
++            className="p-node-a" strokeWidth="2"/>
++      <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++            fontSize="28">Personalisation + proof</text>
++      <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Proof per
++        kit ┬╖ sponsor logo approval ┬╖ production-ready data that doesn&apos;t need re-keying</text>
++    </g>
++
++    <g className="sk-dots">
++      <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#tw-spine"/></animateMotion></circle>
++    </g>
++  </Plate>
++}
+ featuresHeading="Three problems, in roughly this order."
+ features={[
+   {
+     icon: (
+
+
+ΓåÉ Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\schoolwear\page.tsx
+@@ -54,8 +54,49 @@
+   height: 1067,
+   alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
+ }}
+ shotCaption="Every school badge is a thread file before it's a garment ΓÇö and the size curve behind it changes every September."
++plate={
++  <Plate tone="dark" p="sw" title="Schoolwear ΓÇö supplier range to parent delivery"
++         sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
++         no="DO-ART-110" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++    <path id="sw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++          fill="none" strokeWidth="2.5" markerEnd="url(#sw-ah)"/>
++
++    <g className="sk-fade sk-s3">
++      <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#sw-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Supplier kit range catalogue</text>
++      <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Blazers ┬╖ PE kit ┬╖
++        accessories ΓÇö live data before the August rush, not during it</text>
++    </g>
++
++    <g className="sk-fade sk-s4">
++      <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#sw-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">School badge management</text>
++      <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Badge per school ┬╖
++        embroidery spec ┬╖ version control ΓÇö not an email thread</text>
++    </g>
++
++    <g className="sk-fade sk-s5" filter="url(#sw-shadow)">
++      <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#sw-amber-n)"
++            className="p-node-a" strokeWidth="2"/>
++      <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++            fontSize="28">Parent portal + production</text>
++      <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Order
++        routes to correct school ┬╖ badge applied correctly ┬╖ production scheduled from live
++        demand</text>
++    </g>
++
++    <g className="sk-dots">
++      <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sw-spine"/></animateMotion></circle>
++    </g>
++  </Plate>
++}
+ featuresHeading="Three problems, all of them worse in August."
+ features={[
+   {
+     icon: (
+
+
+ΓåÉ Edit app/sectors/promotional-merchandise/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\promotional-merchandise\page.tsx
+@@ -54,8 +54,48 @@
+   height: 600,
+   alt: 'An assortment of branded promotional items grouped on a plain surface, the kind of mixed order a merchandise supplier fulfils from several different supplier ranges at once.',
+ }}
+ shotCaption="One order, four supplier ranges, four different lead times, and one logo that has to work on all of them."
++plate={
++  <Plate tone="dark" p="pm" title="Promotional merchandise ΓÇö supplier range to delivered order"
++         sub="Three connected systems: multi-supplier catalogue, artwork management, order fulfilment"
++         no="DO-ART-111" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++    <path id="pm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++          fill="none" strokeWidth="2.5" markerEnd="url(#pm-ah)"/>
++
++    <g className="sk-fade sk-s3">
++      <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#pm-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Multi-supplier catalogue</text>
++      <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Dozens of ranges ┬╖
++        live pricing ┬╖ live stock ΓÇö not a folder of spreadsheets nobody trusts</text>
++    </g>
++
++    <g className="sk-fade sk-s4">
++      <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#pm-node)"
++            className="p-node" strokeWidth="1.4"/>
++      <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++            fontSize="26">Artwork management</text>
++      <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Client logo
++        versioning ┬╖ proof approval ┬╖ audit trail ΓÇö not an email thread per order</text>
++    </g>
++
++    <g className="sk-fade sk-s5" filter="url(#pm-shadow)">
++      <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#pm-amber-n)"
++            className="p-node-a" strokeWidth="2"/>
++      <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++            fontSize="28">Order fulfilment</text>
++      <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Decoration
++        cost ┬╖ supplier lead times ┬╖ margin trackable per job ΓÇö not estimated after delivery</text>
++    </g>
++
++    <g className="sk-dots">
++      <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pm-spine"/></animateMotion></circle>
++    </g>
++  </Plate>
++}
+ featuresHeading="Three problems, in roughly this order."
+ features={[
+   {
+     icon: (
+
+
+Now add the plate prop to all three:
+# Todos
+[Γ£ô] Add `plate` prop to SectorPageDS.tsx and render plate section between hero and features
+[Γ£ô] Wire plate into workwear page (DO-ART-108)
+[Γ£ô] Wire plate into teamwear-clubwear page (DO-ART-109)
+[Γ£ô] Wire plate into schoolwear page (DO-ART-110)
+[Γ£ô] Wire plate into promotional-merchandise page (DO-ART-111)
+[ΓÇó] Wire plate into garment-decoration page (DO-ART-107)
+[ ] Wire plate into print-promotional page (DO-ART-113)
+[ ] Wire plate into signs-graphics page (DO-ART-114)
+[ ] Wire plate into awards-engraving page (DO-ART-115)
+[ ] Wire plate into labels-packaging page (DO-ART-116)
+[ ] Run npm run build and verify zero errors
+
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { GarmentDecorationSchematic } from '@/components/schematics/sectors/GarmentDecorationSchematic';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { PrintPromotionalSchematic } from '@/components/schematics/sectors/PrintPromotionalSchematic';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { SignsGraphicsSchematic } from '@/components/schematics/sectors/SignsGraphicsSchematic';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { AwardsEngravingSchematic } from '@/components/schematics/sectors/AwardsEngravingSchematic';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
+@@ -1,8 +1,9 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { ArrowRight } from 'lucide-react';
+ import { LabelsPackagingSchematic } from '@/components/schematics/sectors/LabelsPackagingSchematic';
++import { Plate } from '@/components/Plate';
+ import { JsonLd } from '@/components/JsonLd';
+ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+ import { sectorRouting } from '@/data/sector-routing';
+ import styles from '@/components/SectorPageDS.module.css';
+
+
+Now the 5 inline pages ΓÇö all in parallel:
+ΓåÉ Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\garment-decoration\page.tsx
+@@ -116,8 +116,56 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM ┬╖ DO-ART-107 */}
++<section className="g-navy">
++  <div className="wrap">
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="gd" title="Garment decoration ΓÇö order intake to despatched garment"
++               sub="Three connected systems: order + artwork intake, blank stock + decoration scheduling, delivery"
++               no="DO-ART-107" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="gd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++                fill="none" strokeWidth="2.5" markerEnd="url(#gd-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#gd-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Order intake + artwork</text>
++            <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Order details ┬╖
++              artwork files ┬╖ personalisation data ΓÇö all arriving together, not separately</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#gd-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Production floor</text>
++            <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Embroidery ┬╖
++              screen print ┬╖ DTF ┬╖ DTG ΓÇö method mix scheduling that accounts for blank stock</text>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#gd-shadow)">
++            <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#gd-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Despatch</text>
++            <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Finished
++              garment ┬╖ correct decoration ┬╖ right address ΓÇö data carried through from order to door</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#gd-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+
+ΓåÉ Edit app/sectors/print-promotional/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\print-promotional\page.tsx
+@@ -111,8 +111,65 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM ┬╖ DO-ART-113 */}
++<section className="g-navy">
++  <div className="wrap">
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="pp" title="Print & promotional ΓÇö quote to delivered print run"
++               sub="Four connected systems: quoting, supplier management, artwork approval, production scheduling"
++               no="DO-ART-113" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="pp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
++                fill="none" strokeWidth="2.5" markerEnd="url(#pp-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#pp-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Quoting &amp; order intake</text>
++            <text x="940" y="658" className="p-mono" fontSize="17" opacity=".85">Cost modelled
++              accurately before the order is priced</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#pp-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Supplier management</text>
++            <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Multiple suppliers ┬╖
++              multiple portals ΓÇö one consolidated view of what is ordered and when it arrives</text>
++          </g>
++
++          <g className="sk-fade sk-s5">
++            <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#pp-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Artwork approval</text>
++            <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Proof management
++              with audit trail ΓÇö not an email thread per job</text>
++          </g>
++
++          <g className="sk-fade sk-s6" filter="url(#pp-shadow)">
++            <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#pp-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Production scheduling</text>
++            <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Substrate
++              ┬╖ print method ┬╖ drying time ┬╖ finishing ΓÇö a schedule that reflects the real job</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pp-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+
+ΓåÉ Edit app/sectors/signs-graphics/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\signs-graphics\page.tsx
+@@ -90,8 +90,65 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM ┬╖ DO-ART-114 */}
++<section className="g-navy">
++  <div className="wrap">
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="sg" title="Signs & graphics ΓÇö site survey to sign-off"
++               sub="Four connected systems: survey, design, production, installation"
++               no="DO-ART-114" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="sg-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
++                fill="none" strokeWidth="2.5" markerEnd="url(#sg-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#sg-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Site survey</text>
++            <text x="840" y="658" className="p-mono" fontSize="17" opacity=".85">Measurements ┬╖
++              access ┬╖ fixing requirements ΓÇö the data the whole job depends on</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#sg-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Design &amp; artwork proof</text>
++            <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Client approval
++              before production ┬╖ version control ┬╖ not managed in email</text>
++          </g>
++
++          <g className="sk-fade sk-s5">
++            <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#sg-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Production</text>
++            <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Substrate ┬╖ finish ┬╖
++              size ┬╖ fixing method ΓÇö job costed accurately, not estimated</text>
++          </g>
++
++          <g className="sk-fade sk-s6" filter="url(#sg-shadow)">
++            <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#sg-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Installation &amp; sign-off</text>
++            <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Team
++              scheduling ┬╖ site access ┬╖ third-party contractors ┬╖ final sign-off captured</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sg-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+
+ΓåÉ Edit app/sectors/awards-engraving/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\awards-engraving\page.tsx
+@@ -90,8 +90,56 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM ┬╖ DO-ART-115 */}
++<section className="g-navy">
++  <div className="wrap">
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="ae" title="Awards & engraving ΓÇö variable data to delivered awards"
++               sub="Three connected systems: data intake, proof management, production"
++               no="DO-ART-115" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="ae-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++                fill="none" strokeWidth="2.5" markerEnd="url(#ae-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#ae-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Variable data intake</text>
++            <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Names ┬╖ titles ┬╖
++              dates ┬╖ messages ΓÇö verified before production, not during it</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ae-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Proof approval at volume</text>
++            <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Fifty proofs ┬╖
++              fifty approvals ΓÇö a workflow that doesn&apos;t consume more time than production itself</text>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#ae-shadow)">
++            <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ae-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Production + deadline delivery</text>
++            <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Glass ┬╖
++              crystal ┬╖ metal ┬╖ wood ΓÇö method-matched engraving, scheduled to the event date</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ae-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+
+ΓåÉ Edit app/sectors/labels-packaging/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\app\sectors\labels-packaging\page.tsx
+@@ -90,8 +90,56 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* PLATE DIAGRAM ┬╖ DO-ART-116 */}
++<section className="g-navy">
++  <div className="wrap">
++    <div className="plate-scroll">
++      <div className="plate-frame">
++        <Plate tone="dark" p="lp" title="Labels & packaging ΓÇö specification to compliant delivery"
++               sub="Three connected systems: specification control, variable data printing, delivery"
++               no="DO-ART-116" rev="01" cls="DECODED OPS ┬╖ ISSUED">
++
++          <path id="lp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
++                fill="none" strokeWidth="2.5" markerEnd="url(#lp-ah)"/>
++
++          <g className="sk-fade sk-s3">
++            <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#lp-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Specification control</text>
++            <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Hundreds of label
++              SKUs ┬╖ version management ┬╖ compliance data ΓÇö right version, every time</text>
++          </g>
++
++          <g className="sk-fade sk-s4">
++            <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#lp-node)"
++                  className="p-node" strokeWidth="1.4"/>
++            <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
++                  fontSize="26">Variable data printing</text>
++            <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Short-run ┬╖
++              high-variation ┬╖ substrate matched to press ΓÇö workflow built for the job, not generic</text>
++          </g>
++
++          <g className="sk-fade sk-s5" filter="url(#lp-shadow)">
++            <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#lp-amber-n)"
++                  className="p-node-a" strokeWidth="2"/>
++            <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
++                  fontSize="28">Compliance delivery</text>
++            <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Correct
++              spec ┬╖ correct substrate ┬╖ EDI integration ΓÇö delivered right first time</text>
++          </g>
++
++          <g className="sk-dots">
++            <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#lp-spine"/></animateMotion></circle>
++          </g>
++        </Plate>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* CHALLENGES */}
+ <section className="g-white">
+   <div className="wrap">
+     <span className="eyebrow">Common challenges</span>
+
+
+Now add the plate sections. For each inline page, the plate goes between the hero `</section>` and `{/* CHALLENGES */}`:
+All 9 sector pages wired. Now let me run the build.
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules\.package-lock.json" 2>$null; if ($?) { "node_modules exists" } else { "node_modules MISSING" }
+False
+node_modules exists
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+'next' is not recognized as an internal or external command,
+operable program or batch file.
+
+$ Get-Item -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules\.bin\next.cmd" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName; if (-not $?) { Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules\.bin" -ErrorAction SilentlyContinue | Select-Object -First 5 Name }
+(no output)
+
+$ npx next build 2>&1
+Γû▓ Next.js 16.2.12 (Turbopack)
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./app
+Error: Next.js inferred your workspace root, but it may not be correct.
+    We couldn't find the Next.js package (next/package.json) from the project directory: D:\apps\worktrees\decoded-ops-website\plate-sectors\app
+     To fix this, set turbopack.root in your Next.js config, or ensure the Next.js package is resolvable from this directory.
+    Note: For security and performance reasons, files outside of the project directory will not be compiled.
+    See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+
+    at ignore-listed frames
+
+$ npx next build --no-turbopack 2>&1
+error: unknown option '--no-turbopack'
+(Did you mean --turbopack?)
+
+Γ£▒ Glob "next.config.*" 1 match
+ΓåÆ Read next.config.ts
+
+$ npx tsc --noEmit 2>&1
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules\next\package.json"
+False
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules" -Directory -Depth 0 | Select-Object -First 10 Name
+(no output)
+
+$ Test-Path -LiteralPath "D:\apps\worktrees\decoded-ops-website\node_modules\next\package.json"
+False
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website" -Directory -Depth 0 | Select-Object Name
+Name
+----
+finish-website
+plate-case-studies
+plate-core-pages
+plate-problems
+plate-sectors
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors" -Directory -Depth 0 | Select-Object Name
+Name
+----
+.claude
+.context
+.next
+app
+components
+data
+docs
+lib
+public
+scripts
+supabase
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors\.context" -ErrorAction SilentlyContinue | Select-Object Name
+Name
+----
+tools
+backlog.md
+brief-esignature-lane-c-2026-07-24.md
+lane-new-problems-prompt.md
+lane-new-problems-report.md
+lane-prompt-finish-website.md
+lane-prompt-plate-foundation.md
+lane-prompt-plate-sectors.md
+lane-prompt.md
+loop-status.md
+workorder-ds-implementation-2026-07-31.md
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules" -Directory -Depth 0 -ErrorAction SilentlyContinue | Select-Object -First 20 Name; Write-Host "---"; Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors\node_modules\next" -Directory -Depth 0 -ErrorAction SilentlyContinue | Select-Object -First 5 Name
+---
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\plate-sectors" -File | Select-Object Name | Where-Object { $_.Name -match 'lock|package.json' }
+Name
+----
+package-lock.json
+package.json
+
+ΓåÆ Read components/SectorPageDS.tsx
+The `node_modules` directory exists but contains no installed packages ΓÇö Next.js (and all dependencies) are missing. Per the user's rule, I'll report rather than install. Let me do a final verification of the key files to confirm the code is correct before reporting.
+ΓåÆ Read app/sectors/workwear/page.tsx [offset=1, limit=5]
+ΓåÆ Read app/sectors/garment-decoration/page.tsx [offset=1, limit=10]
+Let me verify a couple of the completed pages:
+ΓåÆ Read .context/loop-status.md
+
+ΓåÉ Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\plate-sectors\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\plate-sectors\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\plate-sectors\.context\loop-status.md
+@@ -27,4 +27,5 @@
+ 2026-08-02T08:34:00+01:00 | finish-website | JOB 2: Discovery Day ΓåÆ Clarity Audit rename | Renamed in chrome/CTA labels across 14 files. Changed files: components/Header.tsx (nav menu label), components/Footer.tsx (diagnoseLinks label), app/page.tsx (meta desc, schema, hero body CTA), app/clarity/page.tsx (full page: meta title/desc, OG, Twitter, eyebrow, section heading ΓÇö product page is now "Clarity Audit" throughout), app/about/page.tsx (CTA link text), app/deliver/page.tsx (meta descs + "Book a Discovery Day" CTAs), app/transform/page.tsx (meta descs + CTAs + all in-body product references), app/problems/wrong-erp-software/page.tsx (CTA link text), app/problems/ai-paralysis/page.tsx (CTA link text), app/problems/buy-vs-build/page.tsx (pricing rule description references), app/resources/six-sigma/page.tsx (CTA body text), components/SectorPageDS.tsx (CTA link text), app/case-studies/tacklebag/page.tsx (CTA text), app/case-studies/hanicks/page.tsx (CTA text), app/case-studies/cobra-workwear/page.tsx (CTA text). LEFT UNCHANGED (historical/narrative): all client proposal data files (app/clients/[clientId]/data/*.ts), AcceptanceSection.tsx, case study narrative paragraphs describing past engagements, HeroVisual.tsx comment, DiscoveryDaySchematic.tsx, ThreeLayerSchematic.tsx. BUILD BLOCKED: node_modules not installed in worktree; npm run build fails with "next not found". Zero "Discovery Day" chrome/CTA occurrences remain in app/ or components/.
+ 
+ 28: 2026-08-02T10:45:00+01:00 | plate-foundation | PHASE 1: Plate diagram system foundation | Built components/Plate.tsx ΓÇö React Client Component, 188 lines, ported frame() + titleBlock() from ds-plates.js into JSX (grid bg, corner ticks, amber spine tab, title/sub, no/rev/cls, title block). Ported IntersectionObserver reveal-on-scroll (sk-in on intersection, SMIL pause/unpause, prefers-reduced-motion gate). Refuses to render without 
+ o prop. sk-js class gate added in useEffect. Updated app/layout.tsx: removed DsPlatesLoader import+usage (would duplicate-inject frames). Updated app/page.tsx: all 3 homepage plates (DO-ART-902/202/302) converted from raw SVG to <Plate>. Token gaps: NONE ΓÇö colors_and_type.css (via ds-layer.css) provides all --do-font-body/head/mono, --do-space-*, --do-text-xl, --do-tracking-wide, --do-weight-bold, --do-text-muted-on-dark, --do-text-secondary. BUILD BLOCKED: node_modules not installed. npm run build blocked.
++2026-08-02T17:00:00+01:00 | plate-sectors | PHASE 2: Port plate diagrams for all 9 sector pages | Built. Mechanism: added optional `plate?: ReactNode` prop to SectorPageDS.tsx interface, rendered between hero and features in a g-navy/plate-scroll/plate-frame wrapper. For 4 delegated pages (workwear DO-ART-108, teamwear-clubwear DO-ART-109, schoolwear DO-ART-110, promotional-merchandise DO-ART-111): imported Plate, passed as `plate` prop. For 5 inline pages (garment-decoration DO-ART-107, print-promotional DO-ART-113, signs-graphics DO-ART-114, awards-engraving DO-ART-115, labels-packaging DO-ART-116): imported Plate, inserted plate section between hero and challenges in each page file. SVG content ported verbatim from decoded-marketing HTML mockups, kebab-case attrs converted to camelCase, class= to className=. All 9 sectors render distinct drawing numbers. BUILD BLOCKED: node_modules not installed ΓÇö same issue as previous lanes.
+
+
+# Todos
+[Γ£ô] Add `plate` prop to SectorPageDS.tsx and render plate section between hero and features
+[Γ£ô] Wire plate into workwear page (DO-ART-108)
+[Γ£ô] Wire plate into teamwear-clubwear page (DO-ART-109)
+[Γ£ô] Wire plate into schoolwear page (DO-ART-110)
+[Γ£ô] Wire plate into promotional-merchandise page (DO-ART-111)
+[Γ£ô] Wire plate into garment-decoration page (DO-ART-107)
+[Γ£ô] Wire plate into print-promotional page (DO-ART-113)
+[Γ£ô] Wire plate into signs-graphics page (DO-ART-114)
+[Γ£ô] Wire plate into awards-engraving page (DO-ART-115)
+[Γ£ô] Wire plate into labels-packaging page (DO-ART-116)
+[ ] Run npm run build and verify zero errors
+
+All 9 sector plate diagrams are wired. Here's the summary:
+
+## Mechanism
+Added optional `plate?: ReactNode` prop to `SectorPageDS.tsx`. The component renders it between the hero and features sections inside `g-navy > wrap > plate-scroll > plate-frame` ΓÇö the same wrapper pattern used by the homepage plates.
+
+## How each sector receives its plate
+
+| Sector | Drawing No. | Method |
+|---|---|---|
+| Garment decoration | DO-ART-107 | Inline page ΓÇö plate section inserted directly |
+| Workwear | DO-ART-108 | Delegated page ΓÇö passed as `plate` prop |
+| Teamwear & clubwear | DO-ART-109 | Delegated page ΓÇö passed as `plate` prop |
+| Schoolwear | DO-ART-110 | Delegated page ΓÇö passed as `plate` prop |
+| Promotional merchandise | DO-ART-111 | Delegated page ΓÇö passed as `plate` prop |
+| Print & promotional | DO-ART-113 | Inline page ΓÇö plate section inserted directly |
+| Signs & graphics | DO-ART-114 | Inline page ΓÇö plate section inserted directly |
+| Awards & engraving | DO-ART-115 | Inline page ΓÇö plate section inserted directly |
+| Labels & packaging | DO-ART-116 | Inline page ΓÇö plate section inserted directly |
+
+## SVG conversion
+All kebab-case SVG attributes converted to camelCase (`stroke-width` ΓåÆ `strokeWidth`, `font-family` ΓåÆ `fontFamily`, etc.), `class=` ΓåÆ `className=`. Content verbatim from decoded-marketing. Every plate uses `tone="dark"` and `rev="01"`.
+
+## Build blocked
+`node_modules` exists as a directory but contains no installed packages ΓÇö `next` and all dependencies are missing. Same issue recorded in loop-status for lanes plate-foundation, port-direction-a, and finish-website. Progress appended to `.context/loop-status.md`.
