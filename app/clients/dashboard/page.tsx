@@ -28,6 +28,7 @@ const clientNames: Record<string, string> = {
   hanicks: 'Hanicks Ltd',
   cwear: 'Corporatewear UK (Cwear)',
   scotshirts: 'ScotShirts',
+  'key-supplies': 'Key Supplies',
   admin: 'Decoded Ops',
 }
 
@@ -65,7 +66,7 @@ function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts']
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
 
 async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
   const hubUrl = process.env.HUB_API_URL

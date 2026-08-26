@@ -22,7 +22,7 @@ interface HubDoc {
   signable?: boolean
 }
 
-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts']
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
 
 function formatDate(dateStr: string): string {
   try {
