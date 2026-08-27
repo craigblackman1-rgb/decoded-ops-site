@@ -54,7 +54,7 @@ export default function ShouldIReplaceErpPage() {
     <main>
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Should I Replace My ERP?</h1>
           <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
         </div>
@@ -66,52 +66,52 @@ export default function ShouldIReplaceErpPage() {
             <div>
               {/* Progress */}
               <div className="mb-8">
-                <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
+                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
                   <span>Question {currentQ + 1} of {questions.length}</span>
                   <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
-                  <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+                <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
+                  <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
                 </div>
               </div>
 
               {/* Question card */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
-                <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
-                <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
                 <div className="flex gap-4">
-                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
-                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
                 </div>
               </div>
             </div>
           ) : (
             <div>
               {/* Results */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
                   <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
                 </div>
                 <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
                     {result.action} <ArrowRight size={18} />
                   </Link>
-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
                     <RotateCcw size={16} /> Try again
                   </button>
                 </div>
               </div>
 
               {/* Answer summary */}
-              <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
-                <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
+              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
                 <div className="mt-4 space-y-2">
                   {questions.map((q, i) => (
                     <div key={q.id} className="flex items-start gap-3 text-sm">
-                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
-                      <span className="text-[#023047]/70">{q.text}</span>
+                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+                      <span className="text-prussian-blue/70">{q.text}</span>
                     </div>
                   ))}
                 </div>

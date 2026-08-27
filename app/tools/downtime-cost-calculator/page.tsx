@@ -61,7 +61,7 @@ export default function DowntimeCostCalculatorPage() {
       {/* Hero */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
             Free Tool
           </p>
           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
@@ -77,7 +77,7 @@ export default function DowntimeCostCalculatorPage() {
       {/* Why this is hard to answer */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
             Most calculators ask you for a number nobody has
           </h2>
           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
@@ -109,7 +109,7 @@ export default function DowntimeCostCalculatorPage() {
       {/* What the number means */}
       <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
             What to do with the recovery rate
           </h2>
           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
@@ -141,7 +141,7 @@ export default function DowntimeCostCalculatorPage() {
       {/* Sector framing */}
       <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
             Why downtime costs more in decoration than most places
           </h2>
           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
@@ -180,7 +180,7 @@ export default function DowntimeCostCalculatorPage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-[#FFB703] text-[#023047] font-[family-name:var(--font-dm-sans)]"
+              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-amber text-prussian-blue font-[family-name:var(--font-dm-sans)]"
             >
               Book a free 60 minute call
             </Link>
