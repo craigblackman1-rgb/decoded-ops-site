@@ -143,7 +143,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
         </div>
       </div>
       {doc.doc_type === 'questionnaire' ? (
-        <QuestionnaireForm docNumber={decoded} />
+        <QuestionnaireForm docNumber={decoded} title={doc.title} />
       ) : (
         <>
           <div
