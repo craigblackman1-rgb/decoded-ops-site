@@ -178,7 +178,7 @@ export default function HanicksCaseStudyPage() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Product data was scattered across supplier feeds. No consistent SKU matching. No reliable way to know what was in stock, or where. The business needed a proper ERP, but starting that with dirty data would have meant paying to migrate a mess.
+              Product data was scattered across supplier feeds, with no consistent SKU matching and no reliable way to know what was actually in stock or where. The business needed a proper ERP, but starting that with dirty data would have meant paying to migrate a mess.
             </p>
 
             <h2>What was done</h2>

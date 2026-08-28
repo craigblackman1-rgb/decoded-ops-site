@@ -45,7 +45,7 @@ const resources = [
     icon: Workflow,
     title: 'The Decoded Method',
     desc: 'A three-layer system for documenting how your business runs: Process Register, one-page SOPs, and an Improvement Log. Plain English, built to hand over.',
-    href: '/resources/decoded-method',
+    href: '/decoded-method',
   },
   {
     icon: Gauge,

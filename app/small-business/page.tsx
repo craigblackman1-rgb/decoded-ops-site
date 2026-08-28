@@ -103,7 +103,7 @@ const services = [
       '90-minute remote working sessions',
       'One project at a time',
       'ERP, eCommerce, or process redesign',
-      'Choosing vendors and keeping them honest',
+      'Vendor selection, with no vendor agenda',
       'Milestone-based delivery',
     ],
     cta: 'Request a proposal',
@@ -165,7 +165,7 @@ export default function SmallBusinessPage() {
             The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
-            A small business operations consultant covers what a full-time operations director would: technology decisions, keeping vendors honest, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
+            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>

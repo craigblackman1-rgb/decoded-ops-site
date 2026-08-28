@@ -99,7 +99,7 @@ const smallBusinessProducts: (NavLink & { sub: string })[] = [
 const smallBusinessStart: NavGroup = {
   title: 'Start free',
   items: [
-    { label: 'Ops health score', sub: 'Two minutes, twelve questions', href: '/tools/ops-health-score' },
+    { label: 'Ops health score', sub: 'Five areas, two minutes', href: '/tools/ops-health-score' },
     { label: 'AI readiness check', sub: 'Free two-minute self-test', href: '/tools/ai-readiness-check' },
     { label: 'The audit checklist', sub: 'Run it on yourself', href: '/resources/audit-checklist' },
     { label: 'Read the whole thing', sub: "What's included, what isn't", href: '/small-business' },

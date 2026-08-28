@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Inventory blind spots : Decoded Ops',
+ title: 'Inventory blind spots: Decoded Ops',
  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
  alternates: { canonical: '/problems/inventory-blind' },
  openGraph: {
-  title: 'Inventory blind spots : Decoded Ops',
+  title: 'Inventory blind spots: Decoded Ops',
   description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
   url: 'https://decodedops.co.uk/problems/inventory-blind',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Inventory blind spots : Decoded Ops',
+  title: 'Inventory blind spots: Decoded Ops',
   description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
  },
 };
@@ -74,7 +74,7 @@ export default function InventoryBlindPage() {
       <span className="eyebrow">The problem</span>
       <h1>You&apos;re ordering stock you already have, and running out of stock you didn&apos;t know you
        needed.</h1>
-      <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem,
+      <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem:
        supplier feeds, the ERP, and the warehouse floor all showing a different number for the
        same SKU, so nobody&apos;s confident enough in any of them to order against it.</p>
       <div className="hero-cta">
@@ -181,8 +181,8 @@ export default function InventoryBlindPage() {
      <h2>Stock you can order against, not stock you have to double-check.</h2>
 
      <div className="answer">
-      <p>I map where your stock picture actually breaks down, which feeds, which manual steps,
-       which system nobody quite trusts, and build the Data App layer that fixes it.</p>
+      <p>I map where your stock picture actually breaks down: which feeds, which manual steps,
+       which system nobody quite trusts. Then I build the Data App layer that fixes it.</p>
       <p><b>No more guesswork stock checks before a big order.</b> The number on screen becomes
        the number worth ordering against.</p>
      </div>

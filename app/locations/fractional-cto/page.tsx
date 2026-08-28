@@ -67,7 +67,7 @@ export default function FractionalCTOLocationsHub() {
             <span className="eyebrow" style={{ marginBottom: 22 }}>Fractional CTO</span>
             <h1 className="h1">Hire a fractional CTO <em>across Sussex, Surrey, and the UK</em></h1>
             <p className="lede">
-              I&apos;m a fractional CTO for print, embroidery, and decoration businesses. 25+ years in the sector, no vendor ties. You get senior technology leadership without the full-time cost. Based in West Sussex, on-site across the UK.
+              I&apos;m a fractional CTO for print, embroidery, and decoration businesses, with 25+ years in the sector and no vendor ties. You get senior technology leadership without the full-time cost. Based in West Sussex, on-site across the UK.
             </p>
             <div className="btn-row">
               <Link href="/contact" className="btn btn--primary">
@@ -85,7 +85,7 @@ export default function FractionalCTOLocationsHub() {
           <div style={{ maxWidth: '42ch' }}>
             <h2 className="h2">Fractional CTO services for print and decoration businesses</h2>
             <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75, marginBottom: 16 }}>
-              I give you the technology leadership a growing business needs, without you hiring a full-time role. I oversee your vendors and own your technology roadmap. I understand ERP for small business in the print and decoration sector.
+              I give you the technology leadership a growing business needs, without you hiring a full-time role: vendor oversight, ownership of the technology roadmap, and someone who understands ERP for small business in the print and decoration sector.
             </p>
             <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-base)', lineHeight: 1.75 }}>
               Available UK-wide. Based in West Sussex. On-site where the work requires it.

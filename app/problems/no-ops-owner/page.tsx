@@ -70,7 +70,7 @@ export default function NoOpsOwnerPage() {
    <ProblemPageDS
    problem="No operations owner"
    headline="Every ops decision ends up on your desk. ||Who is running the business day to day?||"
-   intro="In many growing businesses, nobody owns operations. The MD handles the big decisions, department heads handle their own areas, and everything in between, the processes that cross teams, the systems that connect departments, the improvements nobody's responsible for, falls through the cracks. You don't need a full-time hire to fix that. A part-time operations lead gives you the accountability and the thinking without the overhead."
+   intro="In many growing businesses, nobody owns operations. The MD handles the big decisions, department heads handle their own areas, and everything in between falls through the cracks: the processes that cross teams, the systems that connect departments, the improvements nobody's responsible for. You don't need a full-time hire to fix that. A part-time operations lead gives you the accountability and the thinking without the overhead."
    heroGraphic={<NoOpsOwnerSchematic />}
    symptoms={[
     "Decisions that affect several departments get made by committee, or not at all",

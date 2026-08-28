@@ -131,7 +131,7 @@ export default function OpsInOwnersHeadPage() {
       <article className="card cause">
        <span className="n">03</span>
        <h3>Improvement Log, every failure makes the process better</h3>
-       <p>When something goes wrong, it goes in the log, what happened, why, what changed. Over
+       <p>When something goes wrong, it goes in the log: what happened, why, what changed. Over
         time, the process becomes the sum of everything the business has learned, not just what
         one person remembers.</p>
       </article>
@@ -190,8 +190,8 @@ export default function OpsInOwnersHeadPage() {
        tells you which ones to document first, in what order, at what level of detail. <b>Not a
        generic template. Your actual business, captured while you&apos;re still in the room to
        explain it.</b></p>
-      <p>From there, the Decoded Method builds a living system, Process Register, SOPs,
-       Improvement Log, that keeps the documentation current without you having to do it all
+      <p>From there, the Decoded Method builds a living system (Process Register, SOPs,
+       Improvement Log) that keeps the documentation current without you having to do it all
        yourself.</p>
      </div>
     </div>

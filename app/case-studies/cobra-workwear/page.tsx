@@ -6,18 +6,18 @@ import { Plate } from '@/components/Plate';
 // Target keyword: "b2b ordering portal workwear" (secondary: "cobra workwear decoded ops")
 export const metadata = {
   title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-  description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
   alternates: { canonical: '/case-studies/cobra-workwear' },
   openGraph: {
     type: 'article',
     title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
     url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
   },
 };
 
@@ -27,7 +27,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'Cobra Workwear: architect and advisor, not the builder',
-      description: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping the delivery engagement.',
+      description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
       url: 'https://decodedops.co.uk/case-studies/cobra-workwear',

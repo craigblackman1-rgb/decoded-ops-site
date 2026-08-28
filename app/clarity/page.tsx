@@ -120,8 +120,8 @@ export default function ClarityPage() {
             <article className={s.step}>
               <p className={s.stepN}>STEP 1</p>
               <h3>Discovery call</h3>
-              <p>Free, an hour, no obligation. Enough to decide whether a full day on site is worth
-                it.</p>
+              <p>Free, an hour, no obligation. Enough to work out whether a full day on site would
+                tell you anything you don&apos;t already know.</p>
             </article>
             <article className={s.step}>
               <p className={s.stepN}>STEP 2</p>

@@ -178,7 +178,7 @@ export default function AppsPage() {
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Start with what you need.</h2>
           <p className="lede">Not sure which of these fits? A Clarity Audit maps your operations in a day
-            and tells you exactly where software helps &mdash; and where it doesn&rsquo;t.</p>
+            and tells you exactly where software would help, and where it wouldn&rsquo;t.</p>
           <div className="btn-row">
             <Link className="btn btn--primary" href="/clarity">Book a Clarity Audit</Link>
             <Link className="btn btn--ghost btn-arrow" href="/how-i-build">How I decide what to build</Link>

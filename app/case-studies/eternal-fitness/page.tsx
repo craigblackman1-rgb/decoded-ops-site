@@ -169,7 +169,7 @@ export default function EternalFitnessCaseStudyPage() {
 
               <h2>The problem</h2>
               <p>
-                A studio working with clinical populations needs a site and tools that take that seriously. No generic fitness-marketing language. No before-and-after framing. Training plans for clients managing health conditions can&apos;t be templated the usual way either. Each plan is built around confirmed studio equipment and that client&apos;s specific situation, with Esther approving every plan and every piece of client-facing content.
+                A studio working with clinical populations needs a site and tools that take that seriously: no generic fitness-marketing language, no before-and-after framing. Training plans for clients managing health conditions can&apos;t be templated the usual way either. Each plan is built around confirmed studio equipment and that client&apos;s specific situation, with Esther approving every plan and every piece of client-facing content.
               </p>
 
               <h2>What I&apos;m building</h2>

@@ -67,7 +67,7 @@ const services = [
 
 const notes = [
   { no: '01 · Translation', h: 'I say it back to you clearly.',
-    p: 'I take what you’re trying to convey, often half-formed, vague, hard to articulate, and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven’t been before.' },
+    p: 'I take what you’re trying to convey (often half-formed, vague, hard to articulate) and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven’t been before.' },
   { no: '02 · Problem solving', h: 'When you tell me the system can’t do that.',
     p: 'That’s usually where the conversation starts rather than where it stops. I find a different way, connecting things that were never designed to connect, or reframing the problem so the tool you already own handles it differently.' },
   { no: '03 · Facilitation', h: 'People adopt what they helped build.',

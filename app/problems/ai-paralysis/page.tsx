@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'AI paralysis : Decoded Ops',
+ title: 'AI paralysis: Decoded Ops',
  description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
  alternates: { canonical: '/problems/ai-paralysis' },
  openGraph: {
-  title: 'AI paralysis : Decoded Ops',
+  title: 'AI paralysis: Decoded Ops',
   description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
   url: 'https://decodedops.co.uk/problems/ai-paralysis',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'AI paralysis : Decoded Ops',
+  title: 'AI paralysis: Decoded Ops',
   description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
  },
 };

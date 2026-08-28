@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Seasonal peaks : Decoded Ops',
+ title: 'Seasonal peaks: Decoded Ops',
  description: "Your busiest month is four times your quietest, and your systems can't flex. Why seasonal peaks break decorated-goods operations, and how automation means ten times the orders doesn't mean ten times the staff.",
  alternates: { canonical: '/problems/seasonal-peaks' },
  openGraph: {
-  title: 'Seasonal peaks : Decoded Ops',
+  title: 'Seasonal peaks: Decoded Ops',
   description: "Your busiest month is four times your quietest, and your systems can't flex. Why seasonal peaks break decorated-goods operations.",
   url: 'https://decodedops.co.uk/problems/seasonal-peaks',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Seasonal peaks : Decoded Ops',
+  title: 'Seasonal peaks: Decoded Ops',
   description: "Your busiest month is four times your quietest, and your systems can't flex.",
  },
 };
@@ -200,8 +200,8 @@ export default function SeasonalPeaksPage() {
        and the written plan tells you which processes to automate first so the business can handle
        the peak without burning out the people. <b>Ten times the orders shouldn&apos;t mean ten times
        the staff.</b></p>
-      <p>Where automation fits, supplier feeds into the Data App, artwork approval workflows,
-       order-to-production routing, the system absorbs the volume spike instead of the team
+      <p>Where automation fits (supplier feeds into the Data App, artwork approval workflows,
+       order-to-production routing), the system absorbs the volume spike instead of the team
        absorbing the overtime.</p>
      </div>
     </div>

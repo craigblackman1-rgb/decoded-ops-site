@@ -50,7 +50,7 @@ export const locations: LocationData[] = [
     name: 'Bognor Regis',
     county: 'West Sussex',
     localContext:
-      'Bognor Regis has a mix of hospitality, retail, and light manufacturing businesses, many of which are owner-operated and have grown organically over many years. The systems challenge here is usually the same: the tools that got the business to its current size are now the biggest obstacle to going further, and no one inside the business has the time or the perspective to redesign them.',
+      'Bognor Regis has a mix of hospitality, retail, and light manufacturing businesses, many of which are owner-operated and have grown organically over many years. The systems challenge here is usually the same: the tools that got the business to its current size are now the main obstacle to going further, and no one inside the business has the time or the perspective to redesign them.',
     driveTime: 'Under 30 minutes',
     localFact: 'Butlin\'s flagship post-war holiday camp opened here in 1960, continuing a brand presence in the town dating back to 1932.',
   },
@@ -105,7 +105,7 @@ export const locations: LocationData[] = [
     name: 'Hove',
     county: 'East Sussex',
     localContext:
-      'Hove\'s business base leans heavily toward professional services, independent retail, and hospitality. Many businesses here are well-established but face the same operational challenge: systems that work individually but don\'t talk to each other, creating manual overhead that costs time and money every single day and grows quietly as the business scales.',
+      'Hove\'s business base leans heavily toward professional services, independent retail, and hospitality. Many businesses here are well-established but face the same operational challenge: systems that work individually but don\'t talk to each other, creating manual overhead that costs time and money every day and grows quietly as the business scales.',
     driveTime: 'Around 30–40 minutes',
     localFact: 'The County Ground on Eaton Road has been home to Sussex County Cricket Club since 1872, the county\'s oldest continuously used sporting venue.',
   },

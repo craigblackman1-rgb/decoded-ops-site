@@ -104,7 +104,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'Squad-level personalisation data',
-            body: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order.',
+            body: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every order.',
           },
           {
             icon: (
@@ -170,7 +170,7 @@ export default function TeamwearClubwearPage() {
           <p className="lede">In teamwear and clubwear, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           <div className="grid grid--2">
             {[
-              { title: 'Squad-level personalisation data', body: "Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every single order." },
+              { title: 'Squad-level personalisation data', body: "Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every order." },
               { title: 'Seasonal deadline pressure', body: "The first match of the season is a fixed date. The tolerance for lateness is zero. Production scheduling has to work backwards from that, and most systems don't account for it." },
               { title: 'Kit range churn', body: "Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. When it's wrong, it's the order that fails, not the system." },
               { title: 'Sponsor logo management', body: "Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale across multiple teams and age groups is a dedicated workflow that email can't handle." },

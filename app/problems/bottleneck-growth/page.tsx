@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Growth bottleneck : Decoded Ops',
+ title: 'Growth bottleneck: Decoded Ops',
  description: "The business stops where you stop. When every decision still goes through the owner, purchase orders, artwork approvals, production scheduling, growth hits a hard ceiling. The fix is documented process that means the business runs without you in the room.",
  alternates: { canonical: '/problems/bottleneck-growth' },
  openGraph: {
-  title: 'Growth bottleneck : Decoded Ops',
+  title: 'Growth bottleneck: Decoded Ops',
   description: "The business stops where you stop. When every decision still goes through the owner, growth hits a hard ceiling. The fix is documented process that means the business runs without you in the room.",
   url: 'https://decodedops.co.uk/problems/bottleneck-growth',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Growth bottleneck : Decoded Ops',
+  title: 'Growth bottleneck: Decoded Ops',
   description: "The business stops where you stop. When every decision still goes through the owner, growth hits a hard ceiling.",
  },
 };
@@ -117,7 +117,7 @@ export default function BottleneckGrowthPage() {
       <article className="card cause">
        <span className="n">01</span>
        <h3>Map every decision that&apos;s still on your desk</h3>
-       <p>Before you can delegate, you have to see the full picture, every approval, every sign-off,
+       <p>Before you can delegate, you have to see the full picture: every approval, every sign-off,
         every moment the business stops until you say yes. Mapping it is the first step to moving
         it off your plate.</p>
       </article>

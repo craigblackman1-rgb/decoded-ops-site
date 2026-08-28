@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Legacy system, decoration workflows : Decoded Ops',
+ title: 'Legacy system, decoration workflows: Decoded Ops',
  description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
  alternates: { canonical: '/problems/legacy-system' },
  openGraph: {
-  title: 'Legacy system, decoration workflows : Decoded Ops',
+  title: 'Legacy system, decoration workflows: Decoded Ops',
   description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
   url: 'https://decodedops.co.uk/problems/legacy-system',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Legacy system, decoration workflows : Decoded Ops',
+  title: 'Legacy system, decoration workflows: Decoded Ops',
   description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
  },
 };

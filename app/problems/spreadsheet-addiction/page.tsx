@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Spreadsheet addiction : Decoded Ops',
+ title: 'Spreadsheet addiction: Decoded Ops',
  description: "The spreadsheet that runs your business is one corrupted file away from disaster. Why decorated-goods businesses depend on spreadsheets they've outgrown, and how documented process replaces a single point of failure with something everyone can trust.",
  alternates: { canonical: '/problems/spreadsheet-addiction' },
  openGraph: {
-  title: 'Spreadsheet addiction : Decoded Ops',
+  title: 'Spreadsheet addiction: Decoded Ops',
   description: "The spreadsheet that runs your business is one corrupted file away from disaster. Why decorated-goods businesses depend on spreadsheets they've outgrown.",
   url: 'https://decodedops.co.uk/problems/spreadsheet-addiction',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Spreadsheet addiction : Decoded Ops',
+  title: 'Spreadsheet addiction: Decoded Ops',
   description: "The spreadsheet that runs your business is one corrupted file away from disaster.",
  },
 };
@@ -191,8 +191,8 @@ export default function SpreadsheetAddictionPage() {
        documented processes that live outside anyone&apos;s laptop. <b>The order log becomes a named
        process with a documented workflow, not a file that only opens on one version of
        Excel.</b></p>
-      <p>Where the spreadsheet was actually doing something useful, tracking orders, managing
-       supplier prices, routing artwork approvals, a Clarity Audit finds the right tool to
+      <p>Where the spreadsheet was actually doing something useful (tracking orders, managing
+       supplier prices, routing artwork approvals), a Clarity Audit finds the right tool to
        replace it, whether that&apos;s a small system, a Data App layer, or a properly-structured
        process document that doesn&apos;t rely on one person&apos;s macros.</p>
      </div>

@@ -42,9 +42,9 @@ const cases = [
   {
     name: 'Cobra Workwear',
     sector: 'Workwear',
-    desc: 'Clarity Audit done. I scoped a B2B ordering portal and ERP evaluation, and I\'m now planning the delivery build.',
+    desc: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a B2B ordering portal, with a partner team building.',
     href: '/case-studies/cobra-workwear',
-    status: 'Post-audit',
+    status: 'In Deliver',
     pull: 'B2B ordering portal and ERP evaluation, architecture and vendor brief',
   },
   {
@@ -118,9 +118,9 @@ export default function CaseStudiesPage() {
           <div className="wrap">
             <div style={{ maxWidth: '740px', margin: '0 auto' }}>
               <span className="eyebrow">Client Work</span>
-              <h1>Proof, not promises.</h1>
+              <h1>What I&apos;m actually building right now</h1>
               <p className="lede">
-                These are real, live engagements, not hypothetical case studies. Four businesses, named with permission, across four sectors. Same approach every time: fix the process and the data before you automate anything.
+                Live engagements, named with permission, across four sectors. Same approach every time: fix the process and the data before you automate anything.
               </p>
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function CaseStudiesPage() {
                   <g className="sk-fade sk-s4">
                     <rect x="50" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
                     <text x="80" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Cobra Workwear</text>
-                    <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR · POST-AUDIT</text>
+                    <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR · IN DELIVER</text>
                     <line x1="80" y1="502" x2="750" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <text x="80" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">B2B ordering portal · ERP evaluation</text>
                     <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor, a partner team builds.</text>

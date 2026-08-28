@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Your data is scattered : Decoded Ops',
+ title: 'Your data is scattered: Decoded Ops',
  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
  alternates: { canonical: '/problems/data-scattered' },
  openGraph: {
-  title: 'Your data is scattered : Decoded Ops',
+  title: 'Your data is scattered: Decoded Ops',
   description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
   url: 'https://decodedops.co.uk/problems/data-scattered',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Your data is scattered : Decoded Ops',
+  title: 'Your data is scattered: Decoded Ops',
   description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
  },
 };
@@ -207,7 +207,7 @@ export default function DataScatteredPage() {
 
      <div className="answer">
       <p>The Decoded Data App takes every supplier feed in, matches it against your existing
-       catalogue, and becomes <b>the single source every other system reads from</b>, the ERP,
+       catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
        the website, the warehouse.</p>
       <p>At Hanicks, 164,752 products went in and 127,135 matched automatically on the first run,
        a 77% match rate, with 11,064 pushed live to Khaos Control within weeks. Same principle,

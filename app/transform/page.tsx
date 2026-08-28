@@ -140,8 +140,8 @@ export default function TransformPage() {
           <span className="eyebrow">What a Transform engagement covers</span>
           <h2>Three dimensions, run together.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Transform is the Clarity Audit plan, turned into a
-            programme. The same discipline as Deliver: I don&apos;t sell software, so I don&apos;t care which
-            one you choose. Applied across several systems or departments at once.</p>
+            programme. The same discipline as Deliver, applied across several systems or departments
+            at once.</p>
 
           <div className="grid grid--3">
             <div className={s.feature} data-od-id="dimension-plan">
@@ -166,7 +166,7 @@ export default function TransformPage() {
               </div>
               <h3>I don&apos;t sell software</h3>
               <p>Every vendor quotes against the same brief, and I stay on your side of the table
-                for the build. I don&apos;t sell software, so I don&apos;t care which one you choose.</p>
+                for the build. There&apos;s no commission in it for me, whichever platform you choose.</p>
             </div>
             <div className={s.feature} data-od-id="dimension-embed">
               <div className={s.featureMark} aria-hidden="true">

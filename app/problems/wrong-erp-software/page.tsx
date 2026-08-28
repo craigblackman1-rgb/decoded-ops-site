@@ -5,18 +5,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Wrong ERP software : Decoded Ops',
+ title: 'Wrong ERP software: Decoded Ops',
  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
  alternates: { canonical: '/problems/wrong-erp-software' },
  openGraph: {
-  title: 'Wrong ERP software : Decoded Ops',
+  title: 'Wrong ERP software: Decoded Ops',
   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
   url: 'https://decodedops.co.uk/problems/wrong-erp-software',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Wrong ERP software : Decoded Ops',
+  title: 'Wrong ERP software: Decoded Ops',
   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
  },
 };
