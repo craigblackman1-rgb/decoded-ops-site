@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { SignPanel } from './SignPanel'
 import { QuestionnaireForm } from './QuestionnaireForm'
+import { hubFetch } from '@/lib/hub-fetch'
 
 interface SessionUser {
   clientId?: string
@@ -56,7 +57,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   const ids = clientId === 'admin' ? ALL_CLIENT_IDS : [clientId]
   const lists = await Promise.all(
     ids.map(id =>
-      fetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+      hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
         .then(r => (r.ok ? r.json() : []))
         .catch(() => [])
     )

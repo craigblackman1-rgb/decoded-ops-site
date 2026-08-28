@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { hubFetch } from '@/lib/hub-fetch';
 
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
@@ -12,7 +13,7 @@ interface RelatedPost {
 
 async function fetchPublishedPosts(): Promise<RelatedPost[]> {
   try {
-    const res = await fetch(`${HUB_API}/api/content/index`, {
+    const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (!res.ok) return [];

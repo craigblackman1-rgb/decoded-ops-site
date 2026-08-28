@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import ProjectView, { Phase, UploadRecord } from './ProjectView';
+import { hubFetch } from '@/lib/hub-fetch';
 
 interface SessionUser {
   name?: string | null;
@@ -15,7 +16,7 @@ async function fetchProjectData(clientId: string) {
   const hubUrl = process.env.HUB_API_URL;
   if (!hubUrl) return null;
   try {
-    const res = await fetch(`${hubUrl}/api/public/client-project?clientId=${clientId}`, { cache: 'no-store' });
+    const res = await hubFetch(`${hubUrl}/api/public/client-project?clientId=${clientId}`, { cache: 'no-store' });
     if (!res.ok) return null;
     return res.json();
   } catch {
@@ -27,7 +28,7 @@ async function fetchUploads(clientId: string): Promise<UploadRecord[]> {
   const hubUrl = process.env.HUB_API_URL;
   if (!hubUrl) return [];
   try {
-    const res = await fetch(`${hubUrl}/api/public/client-uploads?clientId=${clientId}`, { cache: 'no-store' });
+    const res = await hubFetch(`${hubUrl}/api/public/client-uploads?clientId=${clientId}`, { cache: 'no-store' });
     if (!res.ok) return [];
     return res.json();
   } catch {

@@ -6,6 +6,7 @@ import RelatedPosts from '@/components/RelatedPosts';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
+import { hubFetch } from '@/lib/hub-fetch';
 
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
@@ -60,7 +61,7 @@ function buildArticleSchema(item: any, slug: string, pubDate: string) {
 
 async function fetchBlogPost(slug: string) {
   try {
-    const res = await fetch(`${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}`, {
+    const res = await hubFetch(`${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}`, {
       next: { revalidate: 300 },
     });
     if (!res.ok) return null;
@@ -73,7 +74,7 @@ async function fetchBlogPost(slug: string) {
 
 export async function generateStaticParams() {
   try {
-    const res = await fetch(`${HUB_API}/api/content/index`, {
+    const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (res.ok) {

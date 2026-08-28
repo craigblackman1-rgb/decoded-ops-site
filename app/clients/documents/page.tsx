@@ -2,6 +2,7 @@ import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, FileText, FileSpreadsheet, FileBarChart } from 'lucide-react'
+import { hubFetch } from '@/lib/hub-fetch'
 
 interface SessionUser {
   name?: string | null
@@ -82,7 +83,7 @@ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
   try {
     const results = await Promise.all(
       ids.map(id =>
-        fetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+        hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
           .then(r => r.ok ? r.json() : [])
           .catch(() => [])
       )

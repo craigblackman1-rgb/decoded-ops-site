@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { NextResponse } from "next/server";
+import { hubFetch } from "@/lib/hub-fetch";
 
 async function requireSession() {
   const session = await auth();
@@ -25,7 +26,7 @@ export async function GET(
   }
 
   try {
-    const res = await fetch(
+    const res = await hubFetch(
       `${hubUrl}/api/public/client-docs/${encodeURIComponent(docNumber)}/questionnaire?clientId=${encodeURIComponent(session!.clientId)}`,
       { cache: "no-store" }
     );
@@ -74,7 +75,7 @@ export async function POST(
   }
 
   try {
-    const res = await fetch(
+    const res = await hubFetch(
       `${hubUrl}/api/public/client-docs/${encodeURIComponent(docNumber)}/questionnaire`,
       {
         method: "POST",
