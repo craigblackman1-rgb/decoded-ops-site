@@ -14,7 +14,7 @@ export function PrintDownloadButton({
     <a
       href={pdfHref}
       download
-      className="print:hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors"
+      className="print:hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors"
     >
       <Download size={18} /> {label}
     </a>

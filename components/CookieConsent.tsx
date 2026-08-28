@@ -31,7 +31,7 @@ export function CookieConsent() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 p-4 sm:p-6">
-      <div className="max-w-4xl mx-auto bg-[#023047] text-white rounded-2xl shadow-2xl p-6 sm:p-8 border border-[#219EBC]/30">
+      <div className="max-w-4xl mx-auto bg-prussian-blue text-white rounded-2xl shadow-2xl p-6 sm:p-8 border border-cerulean/30">
         {/* Close button */}
         <button
           onClick={handleDecline}
@@ -52,7 +52,7 @@ export function CookieConsent() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
             <Link
               href="/cookies"
-              className="text-sm text-[#FFB703] hover:text-[#FB8500] transition-colors font-medium underline"
+              className="text-sm text-amber hover:text-orange-brand transition-colors font-medium underline"
             >
               Read our cookie policy
             </Link>
@@ -66,7 +66,7 @@ export function CookieConsent() {
               </button>
               <button
                 onClick={handleAccept}
-                className="px-6 py-2.5 text-sm font-semibold bg-[#FFB703] text-[#023047] rounded-full hover:bg-[#FB8500] transition-colors text-center"
+                className="px-6 py-2.5 text-sm font-semibold bg-amber text-prussian-blue rounded-full hover:bg-orange-brand transition-colors text-center"
               >
                 Accept cookies
               </button>

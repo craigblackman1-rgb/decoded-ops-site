@@ -46,45 +46,45 @@ export function LocationPage({
   return (
     <>
       {/* HERO */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
+      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-off-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— {badge}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-prussian-blue/10 border border-prussian-blue/20">
+                <span className="text-xs font-semibold text-prussian-blue tracking-wider uppercase">— {badge}</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#219EBC]/10 border border-[#219EBC]/20">
-                <MapPin size={12} className="text-[#219EBC]" />
-                <span className="text-xs font-semibold text-[#219EBC] tracking-wider uppercase">{county}</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cerulean/10 border border-cerulean/20">
+                <MapPin size={12} className="text-cerulean" />
+                <span className="text-xs font-semibold text-cerulean tracking-wider uppercase">{county}</span>
               </div>
             </div>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-prussian-blue leading-tight mb-6">
               {parts.map((part, i) =>
                 i % 2 === 0
                   ? <span key={i}>{part}</span>
-                  : <span key={i} className="text-[#219EBC]">{part}</span>
+                  : <span key={i} className="text-cerulean">{part}</span>
               )}
             </h1>
-            <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-2xl">{intro}</p>
+            <p className="text-lg text-prussian-blue/70 leading-relaxed mb-8 max-w-2xl">{intro}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors"
               >
                 Book a free call <ArrowRight size={18} />
               </Link>
               <Link
                 href={serviceUrl}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors"
               >
                 {serviceLabel}
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-cerulean hover:text-prussian-blue font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
           <div className="flex items-center justify-center">
-            <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+            <div className="w-full rounded-2xl overflow-hidden ring-1 ring-prussian-blue/10 shadow-lg">
               <SystemsDisconnectedGraphic connected variant="light" />
             </div>
           </div>
@@ -93,34 +93,34 @@ export function LocationPage({
       </section>
 
       {/* LOCAL CONTEXT */}
-      <section className="py-16 lg:py-20 bg-white border-b border-[#8ECAE6]/20">
+      <section className="py-16 lg:py-20 bg-white border-b border-sky-blue/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-10 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— {town}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-prussian-blue/10 border border-prussian-blue/20 mb-4">
+                <span className="text-xs font-semibold text-prussian-blue tracking-wider uppercase">— {town}</span>
               </div>
-              <h2 className="text-2xl lg:text-3xl font-bold text-[#023047]">
+              <h2 className="text-2xl lg:text-3xl font-bold text-prussian-blue">
                 What this looks like for {town} businesses
               </h2>
             </div>
             <div className="lg:col-span-2">
-              <p className="text-[#023047]/70 text-lg leading-relaxed">{localContext}</p>
-              <p className="text-[#023047]/70 text-lg leading-relaxed mt-4">
+              <p className="text-prussian-blue/70 text-lg leading-relaxed">{localContext}</p>
+              <p className="text-prussian-blue/70 text-lg leading-relaxed mt-4">
                 The work I do is the same wherever the business is based — a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
               </p>
               {(driveTime || localFact) && (
-                <div className="mt-6 p-5 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                <div className="mt-6 p-5 rounded-xl bg-off-white border border-sky-blue/30 flex flex-col sm:flex-row gap-4 sm:gap-8">
                   {driveTime && (
                     <div>
-                      <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wide mb-1">From Worthing</div>
-                      <div className="text-sm text-[#023047]/80">{driveTime}</div>
+                      <div className="text-xs font-semibold text-cerulean uppercase tracking-wide mb-1">From Worthing</div>
+                      <div className="text-sm text-prussian-blue/80">{driveTime}</div>
                     </div>
                   )}
                   {localFact && (
                     <div className="flex-1">
-                      <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wide mb-1">{town}</div>
-                      <div className="text-sm text-[#023047]/80">{localFact}</div>
+                      <div className="text-xs font-semibold text-cerulean uppercase tracking-wide mb-1">{town}</div>
+                      <div className="text-sm text-prussian-blue/80">{localFact}</div>
                     </div>
                   )}
                 </div>
@@ -131,16 +131,16 @@ export function LocationPage({
       </section>
 
       {/* PAIN POINTS */}
-      <section className="py-20 lg:py-28 bg-[#023047]/5">
+      <section className="py-20 lg:py-28 bg-prussian-blue/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Where the cost hides</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-prussian-blue/10 border border-prussian-blue/20 mb-4">
+              <span className="text-xs font-semibold text-prussian-blue tracking-wider uppercase">— Where the cost hides</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-prussian-blue mb-4">
               The problems that tend to appear
             </h2>
-            <p className="text-[#023047]/70 text-lg">
+            <p className="text-prussian-blue/70 text-lg">
               These are the patterns I see most often in {service.toLowerCase()} engagements. They look different in every business — but the underlying structure is almost always the same.
             </p>
           </div>
@@ -148,11 +148,11 @@ export function LocationPage({
             {painPoints.map((p, i) => (
               <div
                 key={p.title}
-                className="group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300"
+                className="group p-6 rounded-2xl border border-sky-blue/40 bg-off-white hover:border-cerulean/40 hover:shadow-md transition-all duration-300"
               >
-                <div className="text-3xl font-bold text-[#8ECAE6] mb-4">{String(i + 1).padStart(2, '0')}</div>
-                <h3 className="text-lg font-bold text-[#023047] mb-2">{p.title}</h3>
-                <p className="text-sm text-[#023047]/70 leading-relaxed">{p.body}</p>
+                <div className="text-3xl font-bold text-sky-blue mb-4">{String(i + 1).padStart(2, '0')}</div>
+                <h3 className="text-lg font-bold text-prussian-blue mb-2">{p.title}</h3>
+                <p className="text-sm text-prussian-blue/70 leading-relaxed">{p.body}</p>
               </div>
             ))}
           </div>
@@ -160,29 +160,29 @@ export function LocationPage({
       </section>
 
       {/* HOW I HELP */}
-      <section className="py-20 lg:py-28 bg-[#023047]">
+      <section className="py-20 lg:py-28 bg-prussian-blue">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-                <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">— How I help</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cerulean/20 border border-cerulean/30 mb-4">
+                <span className="text-xs font-semibold text-sky-blue tracking-wider uppercase">— How I help</span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-off-white mb-4">
                 What the work actually looks like
               </h2>
-              <p className="text-[#8ECAE6] text-lg mb-8">
+              <p className="text-sky-blue text-lg mb-8">
                 No frameworks. No generic recommendations. A structured, independent process that produces specific answers for this business.
               </p>
               <div className="space-y-4">
                 {whatIdo.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-off-white/5 border border-off-white/10"
                   >
-                    <div className="w-7 h-7 rounded-full bg-[#219EBC]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-[#219EBC]">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="w-7 h-7 rounded-full bg-cerulean/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-cerulean">{String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <p className="text-sm text-[#8ECAE6] leading-relaxed">{item}</p>
+                    <p className="text-sm text-sky-blue leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -190,9 +190,9 @@ export function LocationPage({
 
             {/* STICKY CTA CARD */}
             <div className="lg:sticky lg:top-28">
-              <div className="p-8 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-                <div className="text-2xl font-bold text-[#F8F9FA] mb-2">{cta}</div>
-                <p className="text-[#8ECAE6] text-sm mb-6 leading-relaxed">
+              <div className="p-8 rounded-2xl bg-off-white/5 border border-off-white/10">
+                <div className="text-2xl font-bold text-off-white mb-2">{cta}</div>
+                <p className="text-sky-blue text-sm mb-6 leading-relaxed">
                   The first conversation is free and there&apos;s no obligation. Just a call about what&apos;s happening in your business and whether I can help.
                 </p>
                 <div className="space-y-3 mb-8">
@@ -202,20 +202,20 @@ export function LocationPage({
                     '3× Clarity Guarantee on audit work',
                     'Based in the South East, on-site across Sussex and Surrey',
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-2 text-sm text-[#8ECAE6]">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#219EBC] mt-1.5 flex-shrink-0" />
+                    <div key={item} className="flex items-start gap-2 text-sm text-sky-blue">
+                      <div className="w-1.5 h-1.5 rounded-full bg-cerulean mt-1.5 flex-shrink-0" />
                       {item}
                     </div>
                   ))}
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors"
+                  className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors"
                 >
                   Book a free call <ArrowRight size={18} />
                 </Link>
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3 text-center justify-center w-full">Or book a call directly <ArrowRight size={14} /></a>
-                <p className="text-xs text-[#8ECAE6]/60 text-center mt-4">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-blue hover:text-white font-medium inline-flex items-center gap-1 mt-3 text-center justify-center w-full">Or book a call directly <ArrowRight size={14} /></a>
+                <p className="text-xs text-sky-blue/60 text-center mt-4">
                   Serving {town} and across {county}
                 </p>
               </div>
@@ -225,12 +225,12 @@ export function LocationPage({
       </section>
 
       {/* NEARBY LOCATIONS */}
-      <section className="py-16 lg:py-20 bg-[#F8F9FA]">
+      <section className="py-16 lg:py-20 bg-off-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-sm text-[#023047]/50 font-medium tracking-wider uppercase mb-2">Also serving</p>
-          <p className="text-[#023047]/70">
+          <p className="text-sm text-prussian-blue/50 font-medium tracking-wider uppercase mb-2">Also serving</p>
+          <p className="text-prussian-blue/70">
             {county} · East Sussex · West Sussex · Surrey —{' '}
-            <Link href={serviceUrl} className="text-[#219EBC] hover:underline">
+            <Link href={serviceUrl} className="text-cerulean hover:underline">
               view all locations
             </Link>
           </p>

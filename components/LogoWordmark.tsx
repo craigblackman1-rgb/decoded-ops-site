@@ -7,8 +7,8 @@ interface LogoWordmarkProps {
 
 export function LogoWordmark({ variant = 'header', className = '' }: LogoWordmarkProps) {
   const isFooter = variant === 'footer';
-  const decodedColor = isFooter ? 'text-white' : 'text-[#023047]';
-  const opsColor = isFooter ? 'text-[#FFB703]' : 'text-[#219EBC]';
+  const decodedColor = isFooter ? 'text-white' : 'text-prussian-blue';
+  const opsColor = isFooter ? 'text-amber' : 'text-cerulean';
 
   return (
     <Link

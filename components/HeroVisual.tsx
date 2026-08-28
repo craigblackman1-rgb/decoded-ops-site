@@ -25,13 +25,13 @@ export function HeroVisual() {
       <div className="absolute -bottom-2 -right-2 w-[260px] sm:w-[280px]">
         <ScreenshotFrame url="hub.decodedops.co.uk/sprints" live rotate={-2}>
           <div className="p-3.5 space-y-1.5">
-            <p className="text-[11px] font-bold text-[#023047] mb-1.5">Order Sync Queue</p>
+            <p className="text-[11px] font-bold text-prussian-blue mb-1.5">Order Sync Queue</p>
             {[
               { label: 'Polo, navy / L', tone: '#219EBC' },
               { label: 'Polo, navy / XL', tone: '#FFB703' },
               { label: 'Shorts, black', tone: '#219EBC' },
             ].map(row => (
-              <div key={row.label} className="flex items-center gap-2 text-[10px] text-[#023047]/70">
+              <div key={row.label} className="flex items-center gap-2 text-[10px] text-prussian-blue/70">
                 <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: row.tone }} aria-hidden="true" />
                 <span className="truncate">{row.label}</span>
               </div>
@@ -40,7 +40,7 @@ export function HeroVisual() {
         </ScreenshotFrame>
       </div>
 
-      <div className="absolute -top-3 -left-3 bg-[#023047] rounded-xl shadow-lg px-4 py-3">
+      <div className="absolute -top-3 -left-3 bg-prussian-blue rounded-xl shadow-lg px-4 py-3">
         <div className="text-xl font-bold text-white leading-none">25+</div>
         <div className="text-[10px] font-semibold text-white/70 uppercase tracking-wide">years in the sector</div>
       </div>

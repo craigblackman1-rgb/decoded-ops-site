@@ -89,13 +89,13 @@ export function HeroGraphic() {
       </svg>
 
       {/* Floating badge — 3× guarantee */}
-      <div className="absolute -bottom-4 -left-4 bg-[#F8F9FA] rounded-xl shadow-lg p-4 border border-[#8ECAE6]/40 max-w-[200px]">
-        <div className="text-xs font-semibold text-[#023047] uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
-        <div className="text-xs text-[#023047]/70 leading-snug">If the report doesn&apos;t find 3× its fee in value — full refund.</div>
+      <div className="absolute -bottom-4 -left-4 bg-off-white rounded-xl shadow-lg p-4 border border-sky-blue/40 max-w-[200px]">
+        <div className="text-xs font-semibold text-prussian-blue uppercase tracking-wider mb-1">3× Clarity Guarantee</div>
+        <div className="text-xs text-prussian-blue/70 leading-snug">If the report doesn&apos;t find 3× its fee in value — full refund.</div>
       </div>
 
       {/* Floating badge — 1 day */}
-      <div className="absolute -top-2 -right-2 bg-[#219EBC] rounded-xl shadow-lg p-3 text-center">
+      <div className="absolute -top-2 -right-2 bg-cerulean rounded-xl shadow-lg p-3 text-center">
         <div className="text-xl font-bold text-white leading-none">1</div>
         <div className="text-[10px] font-semibold text-white/80 uppercase tracking-wide leading-tight">day<br/>on site</div>
       </div>
