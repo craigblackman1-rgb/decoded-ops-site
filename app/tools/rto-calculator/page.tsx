@@ -29,7 +29,7 @@ export default function RtoCalculatorPage() {
       {/* Hero */}
       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
             Free Tool
           </p>
           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
