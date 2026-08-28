@@ -3,7 +3,7 @@
 
 ## Consultancy
 - [Clarity Audit](https://decodedops.co.uk/clarity): Operational and technology audit. From £1,500. One day on site, a written plan within five working days. 3x Clarity Guarantee.
-- [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. Pricing by turnover band; three-month minimum.
+- [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. Pricing by turnover band; six-month minimum (three for advisory-only scope).
 - [Transform](https://decodedops.co.uk/transform): Multi-workstream digital transformation. Milestone-based minimum.
 - [Retained](https://decodedops.co.uk/retained): Fractional CTO / Head of Operations. Advisory, Embedded, and Programme tiers; six-month minimum.
 - [Pricing](https://decodedops.co.uk/pricing): Full pricing table. Plain pricing with no hidden day rate.
