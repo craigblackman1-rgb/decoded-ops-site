@@ -30,7 +30,10 @@ Website pins explicit weights (400/500/600/700/800 for Outfit, 400/500/700 for D
 ## Deployments
 
 - **Production** — branch `main`.
-- **Staging** — branch `staging`, Coolify app uuid `ax1yi6hyl54gfj8w8adhq55d`.
+- **Staging** — branch `staging`, https://staging.decodedops.co.uk (behind Cloudflare Access),
+  Coolify app `decoded-ops-site-staging` uuid `lqu4iagowv3crifpzueue6ut` (the old uuid
+  `ax1yi6hyl54gfj8w8adhq55d` is dead — app was recreated 2026-08-26 on server coolify-staging).
+  Auto-deploy on push to `staging` is enabled.
 - Marketing copy work lands on `staging` first and is promoted to `main` only with Craig's sign-off.
 
 ## Build / Dev commands
