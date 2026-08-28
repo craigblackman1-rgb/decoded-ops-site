@@ -9,3 +9,4 @@
 2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
 2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
 2026-08-28T11:06:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/page.tsx | updated: branches on doc_type='questionnaire' to render QuestionnaireForm instead of iframe, all other doc_types unchanged
+2026-08-28T11:10:00+01:00 | lane-website-questionnaire-save | .context/handoff.md | written: full summary of built files, verification steps, and hub-side dependency
