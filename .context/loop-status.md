@@ -7,3 +7,4 @@
 1 lane dispatched (OpenCode / deepseek-v4-pro, unpushed):
 - `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
 2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
+2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
