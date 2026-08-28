@@ -3,6 +3,12 @@
 One door for changes (DO-SDLC-Pipeline-v1). A change that isn't a CR doesn't exist.
 Format: CR-WEB-NNN · raised → approved → briefed → built → verified.
 
+> **Frozen 2026-08-28 — source of truth is now the hub DB.** All rows below
+> were migrated into `change_requests` (project `decoded-ops-website`,
+> prefix `WEB`). Raise new CRs via `wo cr new decoded-ops-website --title
+> "..."`, not by hand-editing this file. A live view will render in the hub
+> UI once Lane 3 (CR list/detail page) ships.
+
 | CR | Date | Raised by | Change | Surface | Status |
 |---|---|---|---|---|---|
 | CR-WEB-001 | 2026-08-21 | Craig (chat) | Homepage hero copy reworked to lead with the Clarity Audit outcome (what you get, the penny drop, why buy) followed by the first-person insider paragraph; replaces the third-person category paragraph. Direction triggered by Dave Ray's newsletter articulation. | app/page.tsx hero (staging) | built |
