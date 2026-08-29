@@ -62,8 +62,6 @@ export default async function ClientProjectPage() {
     );
   }
 
-  const hubPublicUrl = process.env.NEXT_PUBLIC_HUB_API_URL || process.env.HUB_API_URL || '';
-
   return (
     <ProjectView
       projectName={data.project.name}
@@ -72,8 +70,6 @@ export default async function ClientProjectPage() {
       endDate={data.project.end_date}
       phases={data.phases as Phase[]}
       initialUploads={uploads}
-      clientId={clientId}
-      hubUrl={hubPublicUrl}
     />
   );
 }
