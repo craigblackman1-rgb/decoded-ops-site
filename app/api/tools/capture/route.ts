@@ -165,7 +165,7 @@ export async function POST(req: NextRequest) {
           `Answers:`,
           answerLines,
           ``,
-          `View in CRM: ${process.env.HUB_API_URL}/leads`,
+          `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
         ].join('\n'),
       });
     } catch (emailError) {
