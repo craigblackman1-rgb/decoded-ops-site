@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
 
 interface ToolLeadCaptureProps {
   tool: string;
@@ -57,10 +58,13 @@ export function ToolLeadCapture({ tool, resultSummary, answers }: ToolLeadCaptur
       <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center">
         <CheckCircle size={32} className="mx-auto mb-3" style={{ color: '#22c55e' }} />
         <p className="text-prussian-blue font-semibold mb-1 font-[family-name:var(--font-outfit)]">
-          Check your inbox
+          Got it.
         </p>
         <p className="text-prussian-blue/60 text-sm font-[family-name:var(--font-dm-sans)]">
-          We&apos;ve sent your detailed results to {email}. If it doesn&apos;t arrive within a couple of minutes, check your spam folder.
+          I&apos;ve got your results and I&apos;ll be in touch. If you&apos;d rather talk sooner,{' '}
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-cerulean hover:underline">
+            book a call
+          </a>.
         </p>
       </div>
     );
@@ -69,10 +73,10 @@ export function ToolLeadCapture({ tool, resultSummary, answers }: ToolLeadCaptur
   return (
     <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
       <p className="text-prussian-blue font-semibold mb-1 font-[family-name:var(--font-outfit)]">
-        Get your detailed results by email
+        Want to go deeper?
       </p>
       <p className="text-prussian-blue/60 text-sm mb-6 font-[family-name:var(--font-dm-sans)]">
-        We&apos;ll send a copy of your results plus tailored recommendations for your next steps.
+        Drop your details and I&apos;ll follow up with tailored recommendations for your next steps.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -148,7 +152,7 @@ export function ToolLeadCapture({ tool, resultSummary, answers }: ToolLeadCaptur
             'Sending...'
           ) : (
             <>
-              Send me my results <Send size={16} />
+              Get in touch <Send size={16} />
             </>
           )}
         </button>
