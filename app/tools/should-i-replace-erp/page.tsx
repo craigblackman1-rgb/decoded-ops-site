@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw } from 'lucide-react';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 
 const questions = [
   { id: 1, text: 'Is your current system unable to handle your core business processes without significant workarounds?', weight: 2 },
@@ -103,6 +104,12 @@ export default function ShouldIReplaceErpPage() {
                   </button>
                 </div>
               </div>
+
+              <ToolLeadCapture
+                tool="should-i-replace-erp"
+                resultSummary={`${score}/${questions.reduce((s, q) => s + q.weight, 0)} — ${result.label}`}
+                answers={Object.fromEntries(answers.map((a, i) => [`q${i + 1}`, a]))}
+              />
 
               {/* Answer summary */}
               <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">

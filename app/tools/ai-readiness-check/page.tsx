@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw } from 'lucide-react';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 
 const questions = [
   { id: 1, text: 'Are your core business processes documented and followed consistently?', weight: 2 },
@@ -98,6 +99,12 @@ export default function AiReadinessCheckPage() {
                   </button>
                 </div>
               </div>
+
+              <ToolLeadCapture
+                tool="ai-readiness-check"
+                resultSummary={`${score}/10 — ${result.label}`}
+                answers={Object.fromEntries(answers.map((a, i) => [`q${i + 1}`, a]))}
+              />
 
               <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
                 <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 import './calculators.css';
 
 const gbp = (n: number) =>
@@ -278,6 +279,14 @@ export function DowntimeCostCalculator() {
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
             Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
           </a>
+
+          <div style={{ marginTop: 24 }}>
+            <ToolLeadCapture
+              tool="downtime-cost-calculator"
+              resultSummary={`${gbp(costPerHourDown)}/hr downtime cost — ${gbp(totalAnnual)} annual`}
+              answers={{ annualOverhead, resources, hoursPerDay, daysPerWeek, weeksPerYear, utilisation, outagesPerYear, hoursPerOutage, peopleIdle, labourRate, jobsLost, avgJobValue }}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -30,3 +30,13 @@ export const contactRatelimit = () => {
     prefix: 'contact',
   })
 }
+
+export const toolCaptureRatelimit = () => {
+  const redis = getRedis()
+  if (!redis) return null
+  return new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(5, '1 h'),
+    prefix: 'tool-capture',
+  })
+}

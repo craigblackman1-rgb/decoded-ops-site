@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 import './calculators.css';
 
 export function RtoCalculator() {
@@ -151,6 +152,14 @@ export function RtoCalculator() {
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
             Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
           </a>
+
+          <div style={{ marginTop: 24 }}>
+            <ToolLeadCapture
+              tool="rto-calculator"
+              resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving — £${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
+              answers={{ revenuePerHour, currentRto, targetRto, incidentsPerYear }}
+            />
+          </div>
         </div>
       </div>
     </div>

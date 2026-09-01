@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 import './calculators.css';
 
 export function AutomationRoiCalculator() {
@@ -182,6 +183,14 @@ export function AutomationRoiCalculator() {
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
             Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
           </a>
+
+          <div style={{ marginTop: 24 }}>
+            <ToolLeadCapture
+              tool="automation-roi-calculator"
+              resultSummary={`${roiPercent}% 3-year ROI — break-even ${breakEvenMonths !== null ? `${breakEvenMonths} months` : 'not achievable'}`}
+              answers={{ hoursPerWeek, staffCount, hourlyRate, setupCost, monthlyMaintenance }}
+            />
+          </div>
         </div>
       </div>
     </div>
