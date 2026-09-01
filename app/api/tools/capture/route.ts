@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 import { toolCaptureRatelimit } from '@/lib/rate-limit';
 import { hubFetch } from '@/lib/hub-fetch';
 
@@ -114,6 +115,61 @@ export async function POST(req: NextRequest) {
         { error: 'Failed to save your details. Please try again.' },
         { status: 502 }
       );
+    }
+
+    try {
+      const toolNames: Record<string, string> = {
+        'ops-health-score': 'Ops Health Score',
+        'downtime-cost-calculator': 'Downtime Cost Calculator',
+        'rto-calculator': 'RTO Calculator',
+        'should-i-replace-erp': 'Should I Replace My ERP',
+        'ai-readiness-check': 'AI Readiness Check',
+        'automation-roi-calculator': 'Automation ROI Calculator',
+      };
+      const readableTool = toolNames[tool] || tool;
+
+      const answerLines = Object.entries(answers)
+        .map(([key, value]) => {
+          const label = key
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/^./, (s) => s.toUpperCase());
+          return `${label}: ${String(value)}`;
+        })
+        .join('\n');
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT) || 587,
+        secure: process.env.SMTP_PORT === '465',
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
+
+      await transporter.sendMail({
+        from: process.env.SMTP_FROM || 'noreply@decodedops.co.uk',
+        replyTo: sanitizedEmail,
+        to: process.env.CONTACT_EMAIL,
+        subject: `New lead — ${readableTool} — ${sanitizedName}`,
+        text: [
+          `New lead from the ${readableTool} tool.`,
+          ``,
+          `Name: ${sanitizedName}`,
+          `Email: ${sanitizedEmail}`,
+          `Company: ${sanitizedCompany || 'not given'}`,
+          ``,
+          `Result:`,
+          sanitizedSummary,
+          ``,
+          `Answers:`,
+          answerLines,
+          ``,
+          `View in CRM: ${process.env.HUB_API_URL}/leads`,
+        ].join('\n'),
+      });
+    } catch (emailError) {
+      console.error('Lead alert email failed:', emailError);
     }
 
     return NextResponse.json({ ok: true });
