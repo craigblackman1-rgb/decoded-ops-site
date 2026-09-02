@@ -17,3 +17,11 @@ DO-ART-308 `app/resources/page.tsx` — inserted after hero, before resource car
 
 Build: `npx next build` exits 0, zero TypeScript errors, 159/159 pages generated.
 One source fix: DO-ART-903 had `style="mix-blend-mode:overlay"` (kebab-case string) which TypeScript rejects on SVG; converted to `style={{ mixBlendMode: 'overlay' }}`.
+
+## 2026-08-24 08:16 — dispatcher (scheduled task)
+1 lane dispatched (OpenCode / deepseek-v4-pro, unpushed):
+- `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
+2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
+2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
+2026-08-28T11:06:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/page.tsx | updated: branches on doc_type='questionnaire' to render QuestionnaireForm instead of iframe, all other doc_types unchanged
+2026-08-28T11:10:00+01:00 | lane-website-questionnaire-save | .context/handoff.md | written: full summary of built files, verification steps, and hub-side dependency

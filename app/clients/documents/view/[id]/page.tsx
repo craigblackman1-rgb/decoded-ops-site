@@ -2,6 +2,8 @@ import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { SignPanel } from './SignPanel'
+import { QuestionnaireForm } from './QuestionnaireForm'
+import { hubFetch } from '@/lib/hub-fetch'
 
 interface SessionUser {
   clientId?: string
@@ -22,7 +24,7 @@ interface HubDoc {
   signable?: boolean
 }
 
-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts']
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
 
 function formatDate(dateStr: string): string {
   try {
@@ -55,7 +57,7 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   const ids = clientId === 'admin' ? ALL_CLIENT_IDS : [clientId]
   const lists = await Promise.all(
     ids.map(id =>
-      fetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+      hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
         .then(r => (r.ok ? r.json() : []))
         .catch(() => [])
     )
@@ -64,7 +66,8 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
 
   const doc = docs.find(d => d.doc_number === decoded)
 
-  if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
+  if (!doc) return <div className="empty">Document not found</div>
+  if (doc.doc_type !== 'questionnaire' && !doc.html_content) return <div className="empty">Document not found</div>
 
   // Signing is only wired up for quotes and contracts; the hub marks those
   // `signable`. Anything else (meeting notes, invoices, terms uploaded as plain
@@ -139,61 +142,63 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
           </span>
         </div>
       </div>
-      <div
-        style={{
-          flex: 1,
-          position: 'relative',
-          // Without a floor here the panel below claims the height it needs out
-          // of this flex child, squashing the document to a couple of hundred
-          // pixels on a laptop with no way to scroll. Keeping a floor pushes the
-          // panel below the fold instead, so the page scrolls to reach it.
-          minHeight: isSignable ? 'min(80vh, 760px)' : undefined,
-        }}
-      >
-        <iframe
-          srcDoc={doc.html_content}
-          style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
-          title={doc.title}
-        />
-      </div>
-
-      {!isSignable ? null : isSigned && doc.client_signature ? (
-        <div style={{ padding: '0 24px 16px' }}>
-          <div style={{
-            padding: '10px 16px',
-            border: '1px solid #d4e8f0',
-            borderRadius: 8,
-            background: '#fff',
-            fontSize: 13,
-            color: '#023047',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-          }}>
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-              style={{ flexShrink: 0 }}
-            >
-              <path d="M5 13l4 4L19 7" />
-            </svg>
-            <span>
-              Signed by <strong>{doc.client_signature}</strong>
-              {doc.client_signed_date && (
-                <> on {formatDate(doc.client_signed_date)}</>
-              )}
-            </span>
-          </div>
-        </div>
+      {doc.doc_type === 'questionnaire' ? (
+        <QuestionnaireForm docNumber={decoded} title={doc.title} />
       ) : (
-        <SignPanel docNumber={decoded} clientName={clientName} />
+        <>
+          <div
+            style={{
+              flex: 1,
+              position: 'relative',
+              minHeight: isSignable ? 'min(80vh, 760px)' : undefined,
+            }}
+          >
+            <iframe
+              srcDoc={doc.html_content}
+              style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+              title={doc.title}
+            />
+          </div>
+
+          {!isSignable ? null : isSigned && doc.client_signature ? (
+            <div style={{ padding: '0 24px 16px' }}>
+              <div style={{
+                padding: '10px 16px',
+                border: '1px solid #d4e8f0',
+                borderRadius: 8,
+                background: '#fff',
+                fontSize: 13,
+                color: '#023047',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 8,
+              }}>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#22c55e"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0 }}
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span>
+                  Signed by <strong>{doc.client_signature}</strong>
+                  {doc.client_signed_date && (
+                    <> on {formatDate(doc.client_signed_date)}</>
+                  )}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <SignPanel docNumber={decoded} clientName={clientName} />
+          )}
+        </>
       )}
     </main>
   )

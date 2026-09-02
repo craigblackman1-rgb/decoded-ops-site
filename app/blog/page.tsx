@@ -7,6 +7,7 @@ import BlogList from '@/components/BlogList';
 import { Plate } from '@/components/Plate';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
+import { hubFetch } from '@/lib/hub-fetch';
 
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
@@ -39,7 +40,7 @@ const blogSchema = {
 
 async function fetchBlogIndex() {
   try {
-    const res = await fetch(`${HUB_API}/api/content/index`, {
+    const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (res.ok) {

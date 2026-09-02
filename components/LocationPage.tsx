@@ -209,8 +209,8 @@ export function LocationPage({
         <div className="wrap" style={{ textAlign: 'center' }}>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
           <p style={{ color: 'var(--do-text-secondary)' }}>
-            {county} · East Sussex · West Sussex · Surrey,{' '}
-            <Link href={serviceUrl} style={{ color: 'var(--do-cerulean)', textDecoration: 'underline' }}>
+            {county} · East Sussex · West Sussex · Surrey —{' '}
+            <Link href={serviceUrl} className="text-cerulean hover:underline">
               view all locations
             </Link>
           </p>

@@ -54,8 +54,6 @@ interface Props {
   endDate: string;
   phases: Phase[];
   initialUploads: UploadRecord[];
-  clientId: string;
-  hubUrl: string;
 }
 
 const PHASE_STATUS: Record<string, { label: string; color: string; bg: string }> = {
@@ -83,7 +81,7 @@ function fmtBytes(n: number | null) {
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-export default function ProjectView({ projectName, projectId, startDate, endDate, phases, initialUploads, clientId, hubUrl }: Props) {
+export default function ProjectView({ projectName, projectId, startDate, endDate, phases, initialUploads }: Props) {
   const activePhase = phases.find(p => p.status === 'active');
   const [expanded, setExpanded] = useState<Record<string, boolean>>(
     activePhase ? { [activePhase.id]: true } : {}
@@ -100,8 +98,11 @@ export default function ProjectView({ projectName, projectId, startDate, endDate
     try {
       const body = new FormData();
       body.append('file', file);
+      // Same-origin proxy: the website route auth-gates this and derives the
+      // clientId from the session, then forwards to the hub with the shared
+      // secret. The browser never sees the hub key or supplies its own clientId.
       const res = await fetch(
-        `${hubUrl}/api/public/client-uploads?clientId=${clientId}&projectId=${projectId}&taskId=${taskId}`,
+        `/api/clients/uploads?projectId=${projectId}&taskId=${taskId}`,
         { method: 'POST', body }
       );
       if (!res.ok) throw new Error();

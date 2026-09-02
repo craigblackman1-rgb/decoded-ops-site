@@ -44,11 +44,11 @@ export function ExpertiseTimelineGraphic() {
       </div>
 
       {/* Quote */}
-      <div className="mt-2 p-4 rounded-xl border border-[#219EBC]/30 bg-[#219EBC]/10">
-        <div className="text-xs text-[#8ECAE6] leading-relaxed italic">
+      <div className="mt-2 p-4 rounded-xl border border-cerulean/30 bg-cerulean/10">
+        <div className="text-xs text-sky-blue leading-relaxed italic">
           &ldquo;25 years in the sector means I know what a hoop size means and why it affects your production schedule. That context is what makes the advice useful.&rdquo;
         </div>
-        <div className="mt-2 text-xs font-semibold text-[#219EBC]">, Craig Blackman</div>
+        <div className="mt-2 text-xs font-semibold text-cerulean">— Craig Blackman</div>
       </div>
     </div>
   );

@@ -2,13 +2,14 @@ import { MetadataRoute } from 'next'
 import localBlogPosts from '@/data/blog-index.json'
 import routeSlugs from '@/data/route-slugs.json'
 import { locations } from '@/data/locations'
+import { hubFetch } from '@/lib/hub-fetch'
 
 const BASE_URL = 'https://decodedops.co.uk'
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000'
 
 async function fetchBlogPosts() {
   try {
-    const res = await fetch(`${HUB_API}/api/content/index`, {
+    const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (res.ok) {

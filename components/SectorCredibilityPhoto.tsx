@@ -30,24 +30,24 @@ export function SectorCredibilityPhoto() {
           className="absolute inset-0 opacity-40 mix-blend-overlay"
           style={{ backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 3px)' }}
         />
-        <span className="absolute left-3.5 bottom-3.5 text-[10px] font-mono tracking-wider text-[#FFB703] bg-[#023047]/80 px-2.5 py-1 rounded">
+        <span className="absolute left-3.5 bottom-3.5 text-[10px] font-mono tracking-wider text-amber bg-prussian-blue/80 px-2.5 py-1 rounded">
           25+ YEARS · SIX SECTORS
         </span>
       </div>
 
-      <div className="absolute -right-3 -bottom-2 sm:right-0 sm:-bottom-4 w-[240px] bg-white rounded-xl shadow-2xl px-4 pt-4 pb-3.5 border-t-[3px] border-[#219EBC]">
-        <h3 className="text-[11px] font-bold uppercase tracking-wide text-[#023047] mb-2.5 pb-2 border-b border-[#023047]/10">
+      <div className="absolute -right-3 -bottom-2 sm:right-0 sm:-bottom-4 w-[240px] bg-white rounded-xl shadow-2xl px-4 pt-4 pb-3.5 border-t-[3px] border-cerulean">
+        <h3 className="text-[11px] font-bold uppercase tracking-wide text-prussian-blue mb-2.5 pb-2 border-b border-prussian-blue/10">
           Sectors covered
         </h3>
         <ul className="space-y-1">
           {sectors.map(s => (
-            <li key={s} className="flex items-center gap-2 text-xs text-[#023047]/75">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#219EBC] shrink-0" aria-hidden="true" />
+            <li key={s} className="flex items-center gap-2 text-xs text-prussian-blue/75">
+              <span className="w-1.5 h-1.5 rounded-full bg-cerulean shrink-0" aria-hidden="true" />
               {s}
             </li>
           ))}
         </ul>
-        <p className="mt-2.5 pt-2 border-t border-[#023047]/10 text-[9.5px] uppercase tracking-wide text-[#FB8500] font-bold">
+        <p className="mt-2.5 pt-2 border-t border-prussian-blue/10 text-[9.5px] uppercase tracking-wide text-orange-brand font-bold">
           6 sectors &middot; 0 vendor ties
         </p>
       </div>

@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { NextResponse } from "next/server";
+import { hubFetch } from "@/lib/hub-fetch";
 
 export async function POST(
   request: Request,
@@ -40,7 +41,7 @@ export async function POST(
   }
 
   try {
-    const res = await fetch(
+    const res = await hubFetch(
       `${hubUrl}/api/public/client-docs/${encodeURIComponent(docNumber)}/sign`,
       {
         method: "POST",

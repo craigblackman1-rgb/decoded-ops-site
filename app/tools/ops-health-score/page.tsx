@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw, Info } from 'lucide-react';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 
 interface Dimension {
   id: string;
@@ -128,6 +129,12 @@ export default function OpsHealthScorePage() {
                   </button>
                 </div>
               </div>
+
+              <ToolLeadCapture
+                tool="ops-health-score"
+                resultSummary={`${total}/25 — ${result.label}`}
+                answers={scores}
+              />
 
               {/* Dimension breakdown */}
               <div className="card">
