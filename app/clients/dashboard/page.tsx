@@ -67,7 +67,7 @@ function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
 
 async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
   const hubUrl = process.env.HUB_API_URL
@@ -77,7 +77,10 @@ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
     const results = await Promise.all(
       ids.map(id =>
         hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
-          .then(r => r.ok ? r.json() : [])
+          .then(r => {
+            if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
+            return r.json();
+          })
           .catch(() => [])
       )
     )

@@ -24,7 +24,7 @@ interface HubDoc {
   signable?: boolean
 }
 
-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
+const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
 
 function formatDate(dateStr: string): string {
   try {
@@ -58,7 +58,10 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
   const lists = await Promise.all(
     ids.map(id =>
       hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
-        .then(r => (r.ok ? r.json() : []))
+        .then(r => {
+          if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
+          return r.json();
+        })
         .catch(() => [])
     )
   )
