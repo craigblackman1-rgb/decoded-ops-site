@@ -20,7 +20,7 @@ import { hanicksProposal } from './data/hanicks-proposal';
 import { cwearProposal } from './data/cwear-proposal';
 import { scotshirtsProposal } from './data/scotshirts-proposal';
 
-// Populated after migration — doc IDs from Supabase
+// Populated after the 2026 database migration (legacy doc IDs)
 // e.g. 'tacklebag': 'uuid-from-client_documents',
 const LEGACY_PROPOSAL_REDIRECTS: Record<string, string> = {
   // 'tacklebag': '',

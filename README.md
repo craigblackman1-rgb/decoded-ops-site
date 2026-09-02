@@ -31,4 +31,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deployment
 
-This project is deployed via [Coolify](https://coolify.io) (self-hosted, Docker-based) — **not** Vercel. The repo ships a `Dockerfile` and reads `DATABASE_URL` (plain Postgres, not Supabase) at runtime. See `.env.example` for the required environment variables.
+This project is deployed via [Coolify](https://coolify.io) (self-hosted, Docker-based) — **not** Vercel. The repo ships a `Dockerfile` and reads `DATABASE_URL` (plain Postgres) at runtime. See `.env.example` for the required environment variables.

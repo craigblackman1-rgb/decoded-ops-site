@@ -117,23 +117,21 @@ data/                 # Static data
   locations.ts        # Location page data
   problem-routing.ts  # Problem page routing data
   sector-routing.ts   # Sector page routing data
-supabase/             # SQL schema files (NOT Supabase — plain Postgres table definitions)
+supabase/             # SQL schema files for the client-portal tables (historic folder name; paste-by-hand, nothing executes it)
 scripts/              # Utility scripts (hash-password, create-client-accounts, content-audit, etc.)
 .context/             # Project notes (backlog, e-signature brief, loop-status log)
 docs/                 # content-audit.md — full site content audit (2131 lines)
 ```
 
-## Data Layer — `lib/supabase.ts` (plain Postgres, NOT Supabase)
+## Data Layer — `lib/supabase.ts`
 
-Despite the filename, `lib/supabase.ts` is a plain `pg` Pool. It exports `getDb()`
-and types `DbUser` / `AuthAuditEvent`. This is the same pattern as the hub's
-`supabase-pg.ts` shim. The tables (`client_users`, `auth_audit_log`) were designed
-with Supabase-compatible DDL but the runtime connection is direct Postgres.
+A plain `pg` Pool over `DATABASE_URL` exporting `getDb()` and types `DbUser` /
+`AuthAuditEvent`. Consumed by `auth.ts` for the client-portal tables (`client_users`,
+`auth_audit_log`). The filename is historic and the file is not renamed.
 
 - Connection string: `DATABASE_URL` env var
 - SSL: `rejectUnauthorized: false`
 - Used by `auth.ts` for credential verification, audit logging, lockout tracking
-- Does NOT use Supabase JS SDK — there is no `@supabase/ssr` in this repo
 
 Required env vars:
 ```
@@ -205,15 +203,10 @@ HTML body from hub, fall back to local fields in blog-index.json.
 
 ## Real Gotchas
 
-- **`lib/supabase.ts` is NOT Supabase.** It's a plain `pg` Pool. Grepping for
-  "supabase" in this repo only turns up the filename and SQL file references.
 - **The README is stale `create-next-app` boilerplate.** Ignore it.
 - **Two styling approaches coexist.** Marketing pages use Tailwind utilities with
   brand hex values. Client portal pages use inline `style={{}}` objects — same
   colours, different delivery. Do not try to unify these unless asked.
-- **`.env.example` line 19:** `lib/supabase.ts` is named for the client-portal
-  tables it reads but is a plain `pg` Pool, same pattern as the hub's
-  `supabase-pg.ts` shim.
 - **Content honesty rule** (from `.context/backlog.md`): Never invent numbers or
   client details. All stats on case studies and service pages must trace to real
   client results or published, cited industry benchmarks. The `/about` page's
