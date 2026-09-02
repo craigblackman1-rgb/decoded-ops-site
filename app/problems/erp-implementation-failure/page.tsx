@@ -170,7 +170,7 @@ export default function ERPImplementationFailurePage() {
         {[
          <><b>127,135</b> matched automatically on the first run</>,
          <>A <b>77%</b> match rate, without anyone re-keying a row</>,
-         <><b>11,064</b> pushed live to Khaos Control within weeks</>,
+         <><b>11,064</b> matched and prepared for the Khaos Control catalogue within weeks</>,
          'The platform stayed. The layer around it changed.',
         ].map((item, i) => (
          <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>

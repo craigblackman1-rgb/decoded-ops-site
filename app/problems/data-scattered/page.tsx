@@ -210,7 +210,7 @@ export default function DataScatteredPage() {
        catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
        the website, the warehouse.</p>
       <p>At Hanicks, 164,752 products went in and 127,135 matched automatically on the first run,
-       a 77% match rate, with 11,064 pushed live to Khaos Control within weeks. Same principle,
+       a 77% match rate, with 11,064 matched and prepared for the Khaos Control catalogue within weeks. Same principle,
        any supplier mix.</p>
      </div>
     </div>

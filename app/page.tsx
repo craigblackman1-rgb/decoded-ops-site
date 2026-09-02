@@ -288,7 +288,7 @@ export default function HomePage() {
                     {/* 3 · live. Amber lands once, on the figure that is the point. */}
                     <g className="sk-fade sk-s4">
                       <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">PUSHED LIVE</text>
+                            opacity=".55">PREPARED</text>
                       <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to Khaos
                         Control</text>
                       <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"

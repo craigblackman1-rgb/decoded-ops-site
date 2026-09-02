@@ -88,7 +88,7 @@ export default function TransformPage() {
                 <g className="sk-fade sk-s5" fontSize="22">
                   <text x="890" y="322" className="p-ink">127,135 matched on the first run</text>
                   <text x="890" y="392" className="p-ink">77% matched automatically</text>
-                  <text x="890" y="462" className="p-ink">11,064 live at Khaos Control</text>
+                   <text x="890" y="462" className="p-ink">11,064 prepared for Khaos Control</text>
                   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
                   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                      strokeLinejoin="round" fill="none">
@@ -122,7 +122,7 @@ export default function TransformPage() {
               <h3>After</h3>
               <ul>
                 <li>Hanicks: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
-                <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> live at Khaos Control</li>
+                 <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
                 <li>TackleBag: <strong>9</strong> supplier feeds fully automated</li>
                 <li>TackleBag: a projected saving of <strong>20–40 hours</strong> a week</li>
               </ul>
