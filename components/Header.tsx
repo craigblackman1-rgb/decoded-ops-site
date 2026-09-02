@@ -133,6 +133,10 @@ const proofGuides: NavGroup = {
   items: [
     { label: 'The ops audit checklist', href: '/resources/audit-checklist' },
     { label: '5 signs your systems are failing', href: '/resources/5-warning-signs' },
+    { label: 'SOP template for decoration businesses', href: '/resources/sop-template' },
+    { label: 'ERP selection guide', href: '/resources/erp-selection-playbook' },
+    { label: 'Artwork approval playbook', href: '/resources/artwork-approval-playbook' },
+    { label: 'The Decoded Method', href: '/resources/decoded-method' },
     { label: 'Six Sigma, explained simply', href: '/resources/six-sigma' },
     { label: 'Building a quality system', href: '/process-quality-system' },
 

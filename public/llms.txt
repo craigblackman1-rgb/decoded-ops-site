@@ -15,6 +15,10 @@ Decoded Ops builds production-grade software for the decorated-goods sector: pro
 - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
 - [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
 - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
+- [Free SOP Template](https://decodedops.co.uk/resources/sop-template): A free SOP template with a 7-step writing method, Process Register, and Improvement Log for decoration businesses.
+- [ERP Selection Guide](https://decodedops.co.uk/resources/erp-selection-playbook): A plain-English guide to ERP for decorated goods: what it is, when you need it, how to choose.
+- [Artwork Approval Playbook](https://decodedops.co.uk/resources/artwork-approval-playbook): A 5-step workflow to take artwork approval from brief to sign-off in 24 hours.
+- [The Decoded Method](https://decodedops.co.uk/resources/decoded-method): A three-layer process system: Process Register, one-page SOPs, and Improvement Log.
 
 
 ## Tools
