@@ -10,18 +10,18 @@ import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
   title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-  description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+  description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   alternates: { canonical: '/sectors/garment-decoration' },
   openGraph: {
     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
     url: 'https://decodedops.co.uk/sectors/garment-decoration',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow, for businesses doing embroidery, screen print, DTF, and DTG.',
+    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   },
 };
 
@@ -33,7 +33,7 @@ const sectorSchema = {
       '@id': 'https://decodedops.co.uk/sectors/garment-decoration#webpage',
       url: 'https://decodedops.co.uk/sectors/garment-decoration',
       name: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
-      description: 'Technology and operations consultancy for garment decoration businesses.',
+      description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {
@@ -47,7 +47,7 @@ const sectorSchema = {
         {
           '@type': 'Question',
           name: 'How is embroidery business management different from other decoration methods?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management. None of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitising, stitch count estimation, machine capacity planning, and thread management. None of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
         },
         {
           '@type': 'Question',
@@ -67,7 +67,7 @@ const challenges = [
   { title: 'The artwork loop', body: "Artwork sign-off causes more delay than almost anything else in this sector. Every manual chase and email thread is time and money that shows up nowhere. Artwork software can automate sign-off, but only if it connects to your order system. Most businesses still approve artwork by email." },
   { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock against committed orders, until the problem is already in the queue." },
   { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that needs manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
-  { title: 'Embroidery production workflow versus other methods', body: "Embroidery scheduling is not the same as screen print or DTF. Machine capacity, stitch count, digitisation time, and thread changes all affect the schedule in ways generic software ignores. A system that can't represent embroidery accurately just means manual workarounds." },
+  { title: 'Embroidery production workflow versus other methods', body: "Embroidery scheduling is not the same as screen print or DTF. Machine capacity, stitch count, digitising time, and thread changes all affect the schedule in ways generic software ignores. A system that can't represent embroidery accurately just means manual workarounds." },
 ];
 
 const whatIdo = [

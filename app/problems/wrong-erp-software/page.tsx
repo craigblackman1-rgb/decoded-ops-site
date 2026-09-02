@@ -50,7 +50,7 @@ const wrongErpSchema = {
     {
      '@type': 'Question',
      name: 'How do I choose the right ERP for a print or embroidery business?',
-     acceptedAnswer: { '@type': 'Answer', text: 'Write the requirements brief before you speak to any vendor. The brief should document your actual workflows, decoration methods, artwork approval process, B2B ordering, eCommerce integration requirements, and how you manage blanks inventory. Once the brief exists, you can evaluate ERP solutions for manufacturing and decoration on a like-for-like basis.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'Write the requirements brief before you speak to any vendor. The brief should document your actual workflows, decoration methods, artwork approval process, B2B ordering, eCommerce integration requirements, and how you manage blanks inventory. Once the brief exists, you can compare the systems on a like-for-like basis.' },
     },
     {
      '@type': 'Question',

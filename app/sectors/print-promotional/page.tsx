@@ -33,7 +33,7 @@ const sectorSchema = {
       '@id': 'https://decodedops.co.uk/sectors/print-promotional#webpage',
       url: 'https://decodedops.co.uk/sectors/print-promotional',
       name: 'Print Shop Operations Management & Systems Consultant | Decoded Ops',
-      description: 'Technology and operations consultancy for print shops and promotional merchandise businesses.',
+      description: 'Production scheduling that accounts for method and substrate, artwork approval that doesn\'t live in email, and order management that connects to your shop.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {
@@ -61,7 +61,7 @@ const challenges = [
   { title: 'Product complexity at volume', body: "One client order can run to 40 different product lines, each with its own supplier, spec, and lead time. Manage that by hand and margin quietly leaks on every job." },
   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The admin of chasing incoming goods rarely shows in the P&L, but it's real." },
   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step you can't measure or improve." },
-  { title: 'Quote-to-order conversion costs', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
+  { title: 'What quoting actually costs you', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
   { title: 'Artwork approval workflow', body: "Artwork approval is where most print shop schedules break down. Every unapproved job stuck in an email thread is a press slot you can't plan. Automating approval, from brief to proof to sign-off, typically cuts production delays by 20-40% with no change to the print process." },
   { title: 'Print production scheduling and capacity planning', body: "Scheduling software that ignores substrate, print method, drying time, and finishing can't produce a realistic schedule. Most print shops schedule by eye and experience. That works until volume outgrows what one person can hold in their head." },
 ];

@@ -9,17 +9,17 @@ import './homepage.css';
 
 export const metadata: Metadata = {
   title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-  description: 'Independent operations and technology consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
+  description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-    description: 'Independent operations and technology consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
+    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-    description: 'Independent operations and technology consultancy for UK print, embroidery, workwear and promotional merchandise businesses.',
+    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers.',
   },
 };
 
@@ -31,7 +31,7 @@ const homepageSchema = {
       '@id': 'https://decodedops.co.uk/#webpage',
       url: 'https://decodedops.co.uk',
       name: 'Decoded Ops | operations and technology consultancy for decorated goods',
-      description: 'Independent operations and technology consultancy for UK print, embroidery, workwear and promotional merchandise businesses. A Clarity Audit gets you a full day on site and a written plan.',
+      description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {

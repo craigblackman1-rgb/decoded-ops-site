@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Schoolwear | Decoded Ops',
-  description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+  description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
   alternates: { canonical: '/sectors/schoolwear' },
   openGraph: {
     title: 'Schoolwear | Decoded Ops',
-    description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+    description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
     url: 'https://decodedops.co.uk/sectors/schoolwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Schoolwear | Decoded Ops',
-    description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+    description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
   },
 };
 
@@ -27,7 +27,7 @@ const sectorSchema = {
   '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
   url: 'https://decodedops.co.uk/sectors/schoolwear',
   name: 'Schoolwear | Decoded Ops',
-  description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
+  description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 

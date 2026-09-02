@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Labels & Packaging Technology | Decoded Ops',
-  description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+  title: 'Software & Systems for Label & Packaging Printers | Decoded Ops',
+  description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
   alternates: { canonical: '/sectors/labels-packaging' },
   openGraph: {
-    title: 'Labels & Packaging Technology | Decoded Ops',
-    description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+    title: 'Software & Systems for Label & Packaging Printers | Decoded Ops',
+    description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
     url: 'https://decodedops.co.uk/sectors/labels-packaging',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Labels & Packaging Technology | Decoded Ops',
-    description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+    title: 'Software & Systems for Label & Packaging Printers | Decoded Ops',
+    description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
   },
 };
 
@@ -30,8 +30,8 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/labels-packaging#webpage',
   url: 'https://decodedops.co.uk/sectors/labels-packaging',
-  name: 'Labels & Packaging Technology | Decoded Ops',
-  description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
+  name: 'Software & Systems for Label & Packaging Printers | Decoded Ops',
+  description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 

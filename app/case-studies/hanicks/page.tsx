@@ -82,7 +82,7 @@ export default function HanicksCaseStudyPage() {
             <span className="eyebrow">Measure &middot; DO-ART-205</span>
             <h2>Not projected. Not modelled. What actually happened.</h2>
             <div className="hair"></div>
-            <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 pushed live to Khaos Control within weeks.</p>
+            <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-hanicks">
@@ -125,7 +125,7 @@ export default function HanicksCaseStudyPage() {
                   <g className="sk-fade sk-s5" fontSize="22">
                     <text x="890" y="332" className="p-ink">127,135 matched on the first run</text>
                     <text x="890" y="402" className="p-ink">77% matched automatically</text>
-                    <text x="890" y="472" className="p-ink">11,064 live at Khaos Control</text>
+                    <text x="890" y="472" className="p-ink">11,064 matched and prepared for the catalogue</text>
                     <text x="890" y="542" className="p-ink">Same platform, kept</text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">
@@ -164,7 +164,7 @@ export default function HanicksCaseStudyPage() {
               </div>
               <div className="stat">
                 <p className="stat-num num">11,064</p>
-                <p className="stat-label">push-eligible products live to Khaos Control</p>
+                <p className="stat-label">products matched and prepared for the Khaos Control catalogue</p>
               </div>
             </div>
             <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>
@@ -186,7 +186,7 @@ export default function HanicksCaseStudyPage() {
               A Clarity Audit picked the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not handle supplier feed ingestion, data enrichment, or catalogue maintenance across channels well. So the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how I work: keep the platform that fits, build the layer it does not do.
             </p>
             <p>
-              The Data App took in every supplier catalogue, matched it against what Hanicks already sold, and pushed the clean result live to Khaos Control.
+              The Data App took in every supplier catalogue, matched it against what Hanicks already sold, and prepared the clean result for the Khaos Control catalogue.
             </p>
 
             <div className="progress-note">

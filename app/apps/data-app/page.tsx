@@ -148,7 +148,7 @@ export default function DataAppPage() {
             </div>
             <div className="stat">
               <p className="stat-num num">11,064</p>
-              <p className="stat-label">pushed live to Khaos Control within weeks</p>
+              <p className="stat-label">matched and prepared for the Khaos Control catalogue within weeks</p>
             </div>
           </div>
 

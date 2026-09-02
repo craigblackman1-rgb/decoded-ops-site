@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Teamwear & Clubwear | Decoded Ops',
-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+  description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
   alternates: { canonical: '/sectors/teamwear-clubwear' },
   openGraph: {
     title: 'Teamwear & Clubwear | Decoded Ops',
-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+    description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
     url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Teamwear & Clubwear | Decoded Ops',
-    description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+    description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
   },
 };
 
@@ -27,7 +27,7 @@ const sectorSchema = {
   '@id': 'https://decodedops.co.uk/sectors/teamwear-clubwear#webpage',
   url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
   name: 'Teamwear & Clubwear | Decoded Ops',
-  description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
+  description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
@@ -140,7 +140,7 @@ export default function TeamwearClubwearPage() {
               </svg>
             ),
             title: 'The proof and approval bottleneck',
-            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations.',
+            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Fix that loop and you win back more time than anywhere else in the job.',
           },
         ]}
         checklistHeading="An independent audit of the whole teamwear workflow."
@@ -174,7 +174,7 @@ export default function TeamwearClubwearPage() {
               { title: 'Seasonal deadline pressure', body: "The first match of the season is a fixed date. The tolerance for lateness is zero. Production scheduling has to work backwards from that, and most systems don't account for it." },
               { title: 'Kit range churn', body: "Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. When it's wrong, it's the order that fails, not the system." },
               { title: 'Sponsor logo management', body: "Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale across multiple teams and age groups is a dedicated workflow that email can't handle." },
-              { title: 'The proof and approval bottleneck', body: "When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations." },
+              { title: 'The proof and approval bottleneck', body: "When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Fix that loop and you win back more time than anywhere else in the job." },
             ].map((c, i) => (
               <article key={i} className="card">
                 <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>

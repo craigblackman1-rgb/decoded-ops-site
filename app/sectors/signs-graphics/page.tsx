@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Signs & Graphics Technology | Decoded Ops',
-  description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+  title: 'Software & Systems for Sign Makers | Decoded Ops',
+  description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
   alternates: { canonical: '/sectors/signs-graphics' },
   openGraph: {
-    title: 'Signs & Graphics Technology | Decoded Ops',
-    description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+    title: 'Software & Systems for Sign Makers | Decoded Ops',
+    description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
     url: 'https://decodedops.co.uk/sectors/signs-graphics',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Signs & Graphics Technology | Decoded Ops',
-    description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+    title: 'Software & Systems for Sign Makers | Decoded Ops',
+    description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
   },
 };
 
@@ -30,8 +30,8 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
   url: 'https://decodedops.co.uk/sectors/signs-graphics',
-  name: 'Signs & Graphics Technology | Decoded Ops',
-  description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
+  name: 'Software & Systems for Sign Makers | Decoded Ops',
+  description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 

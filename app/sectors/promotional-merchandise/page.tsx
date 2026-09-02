@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Promotional merchandise | Decoded Ops',
-  description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+  description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   alternates: { canonical: '/sectors/promotional-merchandise' },
   openGraph: {
     title: 'Promotional merchandise | Decoded Ops',
-    description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+    description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
     url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Promotional merchandise | Decoded Ops',
-    description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+    description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   },
 };
 
@@ -27,7 +27,7 @@ const sectorSchema = {
   '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
   url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
   name: 'Promotional merchandise | Decoded Ops',
-  description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+  description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
@@ -130,7 +130,7 @@ export default function PromotionalMerchandisePage() {
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" />
               </svg>
             ),
-            title: 'Quote-to-order conversion costs',
+            title: 'What quoting actually costs you',
             body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
           },
           {
@@ -170,10 +170,10 @@ export default function PromotionalMerchandisePage() {
           <p className="lede">In promotional merchandise, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           <div className="grid grid--2">
             {[
-              { title: 'Multi-supplier catalogue management', body: "Dozens of supplier ranges, each with their own pricing, stock levels, and lead times. Matching products, managing pricing, and keeping stock current across all of them without re-keying data is the sector's defining operational challenge." },
+              { title: 'Multi-supplier catalogue management', body: "Dozens of supplier ranges, each with their own pricing, stock levels, and lead times. Matching products, managing pricing, and keeping stock current across all of them without re-keying data eats more admin hours than anything else in this trade." },
               { title: 'The artwork loop', body: "Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email." },
               { title: 'Margin erosion at the order level', body: "When decoration cost, supplier lead time variation, and artwork rework aren't tracked at the individual order level, margin quietly erodes on every job. It's invisible in the P&L until the year-end numbers land." },
-              { title: 'Quote-to-order conversion costs', body: "The cost of producing quotes that don't convert is rarely measured, and the answer is usually uncomfortable. A quoting process that takes thirty minutes per prospect becomes a full-time salary at scale." },
+              { title: 'What quoting actually costs you', body: "The cost of producing quotes that don't convert is rarely measured, and the answer is usually uncomfortable. A quoting process that takes thirty minutes per prospect becomes a full-time salary at scale." },
               { title: 'eCommerce disconnected from supply', body: "A product listed online that isn't connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume." },
             ].map((c, i) => (
               <article key={i} className="card">

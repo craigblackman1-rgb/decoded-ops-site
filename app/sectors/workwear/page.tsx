@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Workwear | Decoded Ops',
-  description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+  description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   alternates: { canonical: '/sectors/workwear' },
   openGraph: {
     title: 'Workwear | Decoded Ops',
-    description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+    description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
     url: 'https://decodedops.co.uk/sectors/workwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Workwear | Decoded Ops',
-    description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+    description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   },
 };
 
@@ -27,7 +27,7 @@ const sectorSchema = {
   '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
   url: 'https://decodedops.co.uk/sectors/workwear',
   name: 'Workwear | Decoded Ops',
-  description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+  description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
 
@@ -104,7 +104,7 @@ export default function WorkwearPage() {
               </svg>
             ),
             title: 'Supplier feed chaos',
-            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.',
+            body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand eats more admin hours than anything else in this trade.',
           },
           {
             icon: (
@@ -170,7 +170,7 @@ export default function WorkwearPage() {
           <p className="lede">In workwear, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           <div className="grid grid--2">
             {[
-              { title: 'Supplier feed chaos', body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.' },
+              { title: 'Supplier feed chaos', body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand eats more admin hours than anything else in this trade.' },
               { title: 'Decoration and stock, in the same picture', body: "A plain garment isn't the same SKU as the decorated one. Systems that don't understand that force workarounds that mean data outside the system, errors, and extra admin on every order." },
               { title: 'Blank stock dependency', body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders until the problem is already in the queue.' },
               { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation requiring manual re-entry. Artwork files arriving separately from the order. All of this is solvable." },
