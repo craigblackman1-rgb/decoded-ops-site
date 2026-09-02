@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       // Targets don't exist yet — that's expected, the other lanes build
       // them; the redirect just needs to be ready ahead of that landing.
       { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
-      { source: '/resources/decoded-method', destination: '/decoded-method', permanent: true },
+      { source: '/resources/software-reviews', destination: '/resources', permanent: true },
       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
     ];
   },

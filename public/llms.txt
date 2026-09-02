@@ -15,7 +15,7 @@ Decoded Ops builds production-grade software for the decorated-goods sector: pro
 - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
 - [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
 - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
-- [Software Reviews](https://decodedops.co.uk/resources/software-reviews): Independent ERP and eCommerce reviews.
+
 
 ## Tools
 - [Automation ROI Calculator](https://decodedops.co.uk/tools/automation-roi-calculator)

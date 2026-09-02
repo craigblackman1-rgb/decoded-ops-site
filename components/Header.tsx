@@ -135,7 +135,7 @@ const proofGuides: NavGroup = {
     { label: '5 signs your systems are failing', href: '/resources/5-warning-signs' },
     { label: 'Six Sigma, explained simply', href: '/resources/six-sigma' },
     { label: 'Building a quality system', href: '/process-quality-system' },
-    { label: 'Software reviews', href: '/resources/software-reviews' },
+
     { label: 'The blog', href: '/blog' },
   ],
 };
