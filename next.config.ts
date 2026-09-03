@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       // them; the redirect just needs to be ready ahead of that landing.
       { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+      { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
     ];
   },
