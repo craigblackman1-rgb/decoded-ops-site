@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
       { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+      { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+      { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
+      { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
     ];
   },
   async headers() {

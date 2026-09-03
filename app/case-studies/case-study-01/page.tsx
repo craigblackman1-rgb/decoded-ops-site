@@ -3,20 +3,20 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 
-// Target keyword: "erp implementation project lead" (secondary: "hanicks decoded ops")
+// Target keyword: "erp implementation project lead" (secondary: "case study 01 decoded ops")
 export const metadata = {
-  title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
-  description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
-  alternates: { canonical: '/case-studies/hanicks' },
+  title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
+  description: 'Project-leading a Khaos Control ERP implementation for a heating spares & eCommerce retailer alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+  alternates: { canonical: '/case-studies/case-study-01' },
   openGraph: {
     type: 'article',
-    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
+    title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
-    url: 'https://decodedops.co.uk/case-studies/hanicks',
+    url: 'https://decodedops.co.uk/case-studies/case-study-01',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hanicks: Khaos Control ERP + Custom App | Decoded Ops',
+    title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
     description: 'Project-leading a Khaos Control ERP implementation alongside a custom app.',
   },
 };
@@ -26,16 +26,16 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Hanicks: Khaos Control ERP + Custom App',
-      description: 'Project-leading a Khaos Control ERP implementation for Hanicks alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+      headline: 'Case study 01: Khaos Control ERP + Custom App',
+      description: 'Project-leading a Khaos Control ERP implementation for a heating spares & eCommerce retailer alongside a custom app for supplier data, Amazon FBA, and channel automation.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
-      url: 'https://decodedops.co.uk/case-studies/hanicks',
+      url: 'https://decodedops.co.uk/case-studies/case-study-01',
     },
   ],
 };
 
-export default function HanicksCaseStudyPage() {
+export default function CaseStudy01Page() {
   return (
     <>
       <style>{`
@@ -71,7 +71,7 @@ export default function HanicksCaseStudyPage() {
             <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
             <h1>The platform stayed. The layer around it changed.</h1>
             <p className="lede">
-              Hanicks is a heating spares business, not a decorated-goods one. The underlying problem is the same: a large product catalogue arriving from many suppliers in inconsistent formats, needing to be clean and current on every channel it sells on.
+              This is a heating spares &amp; eCommerce retailer, not a decorated-goods one. The underlying problem is the same: a large product catalogue arriving from many suppliers in inconsistent formats, needing to be clean and current on every channel it sells on.
             </p>
           </div>
         </section>
@@ -87,7 +87,7 @@ export default function HanicksCaseStudyPage() {
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-hanicks">
                 <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
-                       sub="Hanicks · 164,752 products, 77% matched on the first run"
+                       sub="Case study 01 · 164,752 products, 77% matched on the first run"
                        no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
 
                   <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
@@ -186,7 +186,7 @@ export default function HanicksCaseStudyPage() {
               A Clarity Audit picked the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not handle supplier feed ingestion, data enrichment, or catalogue maintenance across channels well. So the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how I work: keep the platform that fits, build the layer it does not do.
             </p>
             <p>
-              The Data App took in every supplier catalogue, matched it against what Hanicks already sold, and prepared the clean result for the Khaos Control catalogue.
+              The Data App took in every supplier catalogue, matched it against what the business already sold, and prepared the clean result for the Khaos Control catalogue.
             </p>
 
             <div className="progress-note">

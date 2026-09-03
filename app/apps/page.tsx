@@ -45,7 +45,7 @@ export default function AppsPage() {
                 <h3 style={{ marginTop: 14 }}>Decoded Data App</h3>
               </div>
               <p>Supplier feeds in, clean product data out, stock and bins right on the warehouse floor.
-                Live today at Hanicks and TackleBag.</p>
+                Live today at two client deployments.</p>
               <span className="go">See how it works</span>
             </Link>
 
@@ -65,8 +65,8 @@ export default function AppsPage() {
                 <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
               </div>
               <p>Storefront build and migration, scoped to what your customers actually need.
-                Hanicks&rsquo; migration off WooCommerce and back into Khaos Control is
-                the worked example.</p>
+                A full migration off WooCommerce, a new storefront, and reintegration back
+                into Khaos Control is the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
 
@@ -113,8 +113,8 @@ export default function AppsPage() {
                         fontSize="26">Data App</text>
                   <text x="140" y="284" className="p-mono" fontSize="16" opacity=".8">Supplier feeds in,
                     clean stock out</text>
-                  <text x="140" y="308" className="p-mono" fontSize="15" opacity=".55">Live · Hanicks,
-                    TackleBag</text>
+                  <text x="140" y="308" className="p-mono" fontSize="15" opacity=".55">Live · two
+                    client deployments</text>
                 </g>
 
                 <g className="sk-fade sk-s3">

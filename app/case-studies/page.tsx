@@ -24,26 +24,26 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    name: 'Hanicks',
+    name: 'Case study 01',
     sector: 'Heating spares & eCommerce',
     desc: 'I\'m leading a Khaos Control ERP implementation, with a custom app for supplier data, Amazon FBA, and channel automation.',
-    href: '/case-studies/hanicks',
+    href: '/case-studies/case-study-01',
     status: 'Live engagement',
     pull: '164,752 imported, 77% matched, 11,064 live',
   },
   {
-    name: 'TackleBag',
+    name: 'Case study 02',
     sector: 'Branded apparel & decoration',
     desc: 'A Clarity Audit into a Deliver build. I\'m building a Stock Control module that feeds clean data straight into their ERP.',
-    href: '/case-studies/tacklebag',
+    href: '/case-studies/case-study-02',
     status: 'In Deliver',
     pull: '9 supplier feeds automated, projected 20–40 hrs/week saved',
   },
   {
-    name: 'Cobra Workwear',
-    sector: 'Workwear',
+    name: 'Case study 03',
+    sector: 'Workwear B2B distributor',
     desc: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a B2B ordering portal, with a partner team building.',
-    href: '/case-studies/cobra-workwear',
+    href: '/case-studies/case-study-03',
     status: 'In Deliver',
     pull: 'B2B ordering portal and ERP evaluation, architecture and vendor brief',
   },
@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
               <span className="eyebrow">Client Work</span>
               <h1>What I&apos;m actually building right now</h1>
               <p className="lede">
-                Live engagements, named with permission, across four sectors. Same approach every time: fix the process and the data before you automate anything.
+                Live engagements across four sectors. Same approach every time: fix the process and the data before you automate anything.
               </p>
             </div>
           </div>
@@ -147,8 +147,8 @@ export default function CaseStudiesPage() {
                     <rect x="50" y="180" width="730" height="230" rx="10"
                           fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
                           stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-                    <text x="80" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Hanicks</text>
-                    <text x="750" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEATING SPARES · LIVE ENGAGEMENT</text>
+                    <text x="80" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 01</text>
+                    <text x="750" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEATING SPARES &amp; ECOMMERCE · LIVE ENGAGEMENT</text>
                     <line x1="80" y1="242" x2="750" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
                       <text x="80" y="306">164,752</text><text x="330" y="306">77%</text><text x="510" y="306">11,064</text>
@@ -164,7 +164,7 @@ export default function CaseStudiesPage() {
                     <rect x="820" y="180" width="730" height="230" rx="10"
                           fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
                           stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-                    <text x="850" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">TackleBag</text>
+                    <text x="850" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 02</text>
                     <text x="1520" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">BRANDED APPAREL · IN DELIVER</text>
                     <line x1="850" y1="242" x2="1520" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
@@ -179,8 +179,8 @@ export default function CaseStudiesPage() {
                   {/* Cobra */}
                   <g className="sk-fade sk-s4">
                     <rect x="50" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
-                    <text x="80" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Cobra Workwear</text>
-                    <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR · IN DELIVER</text>
+                    <text x="80" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 03</text>
+                    <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR B2B · IN DELIVER</text>
                     <line x1="80" y1="502" x2="750" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <text x="80" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">B2B ordering portal · ERP evaluation</text>
                     <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor, a partner team builds.</text>

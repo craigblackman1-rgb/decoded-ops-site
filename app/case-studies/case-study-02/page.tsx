@@ -3,20 +3,20 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 
-// Target keyword: "stock control app decorated goods" (secondary: "tacklebag decoded ops")
+// Target keyword: "stock control app decorated goods" (secondary: "case study 02 decoded ops")
 export const metadata = {
-  title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
-  description: 'A Clarity Audit into a Deliver engagement for TackleBag, building a Stock Control module that feeds clean data into their ERP implementation.',
-  alternates: { canonical: '/case-studies/tacklebag' },
+  title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
+  description: 'A Clarity Audit into a Deliver engagement for a branded apparel & decoration retailer, building a Stock Control module that feeds clean data into their ERP implementation.',
+  alternates: { canonical: '/case-studies/case-study-02' },
   openGraph: {
     type: 'article',
-    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
+    title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.',
-    url: 'https://decodedops.co.uk/case-studies/tacklebag',
+    url: 'https://decodedops.co.uk/case-studies/case-study-02',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TackleBag: Clarity Audit to Stock Control Build | Decoded Ops',
+    title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module.',
   },
 };
@@ -26,21 +26,21 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'TackleBag: the diagnostic came before the decision',
+      headline: 'Case study 02: the diagnostic came before the decision',
       description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
-      url: 'https://decodedops.co.uk/case-studies/tacklebag',
+      url: 'https://decodedops.co.uk/case-studies/case-study-02',
     },
   ],
 };
 
 const supplierFeeds = [
-  'Joma', 'Speedo', 'Canterbury', 'Mizuno', 'Adidas',
-  'Banner', 'Chadwick', 'Reydon', 'Surridge',
+  'Teamwear brand', 'Swimwear brand', 'Rugby brand', 'Football brand', 'Cricket brand',
+  'Workwear brand', 'Schoolwear brand', 'Leisure brand', 'Outdoor brand',
 ];
 
-export default function TackleBagCaseStudyPage() {
+export default function CaseStudy02Page() {
   return (
     <>
       <style>{`
@@ -80,7 +80,7 @@ export default function TackleBagCaseStudyPage() {
             <span className="eyebrow">Client work · branded apparel &amp; decoration</span>
             <h1>The diagnostic came before the decision.</h1>
             <p className="lede">
-              TackleBag sells teamwear and schoolwear. It runs multiple suppliers with decorated and plain stock side by side. Its eCommerce platform, Symphony, needed to show live stock accurately across nine supplier feeds at once.
+              A branded apparel and decoration retailer sells teamwear and schoolwear. It runs multiple suppliers with decorated and plain stock side by side. Its eCommerce platform, Symphony, needed to show live stock accurately across nine supplier feeds at once.
             </p>
           </div>
         </section>
@@ -91,12 +91,12 @@ export default function TackleBagCaseStudyPage() {
             <span className="eyebrow">Measure &middot; DO-ART-206</span>
             <h2>Before and after, paired line for line.</h2>
             <div className="hair"></div>
-            <p className="lede">TackleBag, named with permission. Nine supplier feeds, fully automated.</p>
+            <p className="lede">Case study 02, real production numbers. Nine supplier feeds, fully automated.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-tacklebag">
                 <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
-                       sub="TackleBag · 9 feeds automated, 20–40 hrs/wk saved"
+                       sub="Case study 02 · 9 feeds automated, 20–40 hrs/wk saved"
                        no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
 
                   <g className="sk-fade sk-s2" filter="url(#ta-shadow)">

@@ -142,7 +142,7 @@ export default function ERPImplementationFailurePage() {
    {/* ── 2 · BEFORE / AFTER, Hanicks ──────────────────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-      <span className="eyebrow">Hanicks · named with permission</span>
+      <span className="eyebrow">Case study 01 · real production numbers</span>
      <h2>The platform stayed. The layer around it changed.</h2>
      <div className="hair" />
      <p className="lede">Nobody ripped out an ERP here. The diagnostic came
@@ -186,7 +186,7 @@ export default function ERPImplementationFailurePage() {
    {/* ── 3 · SUPPORTING STAT, TackleBag ───────────────────────────────── */}
    <section className="g-navy">
     <div className="wrap">
-      <span className="eyebrow">TackleBag · the same pattern</span>
+      <span className="eyebrow">Case study 02 · the same pattern</span>
      <h2>Different business, ahead of the decision rather than after it.</h2>
      <div className="hair" />
 

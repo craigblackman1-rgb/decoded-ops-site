@@ -123,7 +123,7 @@ export default function SchoolwearPage() {
               </svg>
             ),
             title: 'Proven at a real teamwear-and-schoolwear retailer',
-            body: 'TackleBag runs the Decoded Data App alongside Symphony, handling both their teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+            body: 'The Decoded Data App runs alongside the existing platform, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
           },
         ]}
         otherSectors={[

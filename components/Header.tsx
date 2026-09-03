@@ -110,9 +110,9 @@ const smallBusinessStart: NavGroup = {
 const proofWork: NavGroup = {
   title: "Work I've done",
   items: [
-    { label: 'Cobra Workwear', href: '/case-studies/cobra-workwear' },
-    { label: 'Hanicks', href: '/case-studies/hanicks' },
-    { label: 'TackleBag', href: '/case-studies/tacklebag' },
+    { label: 'Case study 01', href: '/case-studies/case-study-01' },
+    { label: 'Case study 02', href: '/case-studies/case-study-02' },
+    { label: 'Case study 03', href: '/case-studies/case-study-03' },
     { label: 'Eternal Fitness', href: '/case-studies/eternal-fitness' },
     { label: 'All case studies', href: '/case-studies' },
   ],
