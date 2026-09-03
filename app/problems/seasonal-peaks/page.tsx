@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
+import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
  title: 'Seasonal peaks: Decoded Ops',
@@ -159,32 +160,20 @@ export default function SeasonalPeaksPage() {
    <section className="g-white" data-od-id="plate">
     <div className="wrap">
      <Plate tone="dark" no="DO-ART-415" title="Peak demand breaks manual processes" rev="01" cls="DECODED OPS · ISSUED">
-      <rect x="50" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="80" y="150" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">40 orders/day is the manual ceiling</tspan></text>
-       <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Temp staff need constant hand-holding</tspan></text>
-       <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Supplier data out of date when it matters</tspan></text>
-       <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Staff idle in trough, burnt out in peak</tspan></text>
-      </g>
-
-      <rect x="850" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="880" y="150" className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Automation handles volume spikes</tspan></text>
-       <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Documented process = temps productive day one</tspan></text>
-       <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Supplier feeds refresh in real time</tspan></text>
-       <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Systems flex up/down with demand</tspan></text>
-      </g>
-
-      <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
-      <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+       <NowAfterPlate
+        now={[
+          '40 orders/day is the manual ceiling',
+          'Temp staff need constant hand-holding',
+          'Supplier data out of date when it matters',
+          'Staff idle in trough, burnt out in peak',
+        ]}
+        after={[
+          'Automation handles volume spikes',
+          'Documented process = temps productive day one',
+          'Supplier feeds refresh in real time',
+          'Systems flex up/down with demand',
+        ]}
+       />
      </Plate>
     </div>
    </section>

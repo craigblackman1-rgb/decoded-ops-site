@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
+import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
  title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
@@ -107,32 +108,20 @@ export default function ERPImplementationFailurePage() {
               sub=""
               no="DO-ART-412" rev="01" cls="DECODED OPS · ISSUED">
 
-        <rect x="50" y="100" width="700" height="520" rx="12"
-              fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-              stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-        <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-              fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
-        <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-          <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Platform picked from a demo, not an audit</tspan></text>
-          <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Scoped by the vendor, not by the business</tspan></text>
-          <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Data quality becomes a crisis at go-live</tspan></text>
-          <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Budget signed off before the floor was seen</tspan></text>
-        </g>
-
-        <rect x="850" y="100" width="700" height="520" rx="12"
-              fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-              stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-        <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-              fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
-        <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-          <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Independent audit before the shortlist</tspan></text>
-          <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Scoped for how the floor actually works</tspan></text>
-          <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Data quality fixed before go-live, not after</tspan></text>
-          <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Budget set against a real scope, not a demo</tspan></text>
-        </g>
-
-        <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
-        <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+         <NowAfterPlate
+          now={[
+            'Platform picked from a demo, not an audit',
+            'Scoped by the vendor, not by the business',
+            'Data quality becomes a crisis at go-live',
+            'Budget signed off before the floor was seen',
+          ]}
+          after={[
+            'Independent audit before the shortlist',
+            'Scoped for how the floor actually works',
+            'Data quality fixed before go-live, not after',
+            'Budget set against a real scope, not a demo',
+          ]}
+         />
        </Plate>
       </div>
      </div>
