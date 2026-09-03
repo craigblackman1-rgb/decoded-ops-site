@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
+import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
  title: 'Inventory blind spots: Decoded Ops',
@@ -144,32 +145,20 @@ export default function InventoryBlindPage() {
    <section className="g-white" data-od-id="plate">
     <div className="wrap">
      <Plate tone="dark" no="DO-ART-420" title="Guesswork → real-time stock picture" rev="01" cls="DECODED OPS · ISSUED">
-      <rect x="50" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Ordering stock you already have</tspan></text>
-       <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Running out with no warning mid-run</tspan></text>
-       <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Website says in stock, warehouse says sold out</tspan></text>
-       <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Nobody trusts the ERP&apos;s stock figure</tspan></text>
-      </g>
-
-      <rect x="850" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Supplier feeds + warehouse movement = one number</tspan></text>
-       <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Real-time stock, not reconciled weekly</tspan></text>
-       <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Every screen shows the same live figure</tspan></text>
-       <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Order against the number, not a guess</tspan></text>
-      </g>
-
-      <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
-      <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+       <NowAfterPlate
+        now={[
+          'Ordering stock you already have',
+          'Running out with no warning mid-run',
+          'Website says in stock, warehouse says sold out',
+          "Nobody trusts the ERP's stock figure",
+        ]}
+        after={[
+          'Supplier feeds + warehouse movement = one number',
+          'Real-time stock, not reconciled weekly',
+          'Every screen shows the same live figure',
+          'Order against the number, not a guess',
+        ]}
+       />
      </Plate>
     </div>
    </section>

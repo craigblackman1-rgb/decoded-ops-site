@@ -4,6 +4,7 @@ import { ManualWorkaroundsSchematic } from '@/components/schematics/problems/Man
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 import { Plate } from '@/components/Plate';
+import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
  title: 'Manual Workarounds Are Costing You More Than You Think | Decoded Ops',
@@ -98,32 +99,20 @@ export default function ManualWorkaroundsPage() {
    <section className="g-white" data-od-id="plate">
     <div className="wrap">
      <Plate tone="dark" no="DO-ART-407" title="Workarounds → documented process" rev="01" cls="DECODED OPS · ISSUED">
-      <rect x="50" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Export to CSV, import to Excel, re-key to ERP</tspan></text>
-       <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Three systems, two manual steps between each</tspan></text>
-       <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Workarounds known to one person only</tspan></text>
-       <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Every manual step is a failure point</tspan></text>
-      </g>
-
-      <rect x="850" y="100" width="700" height="520" rx="12"
-         fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-         stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-      <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-         fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
-      <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-       <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Automated feeds replace re-keying</tspan></text>
-       <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Systems talk directly, no manual bridge</tspan></text>
-       <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Process documented, anyone can run it</tspan></text>
-       <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Failure points eliminated by automation</tspan></text>
-      </g>
-
-      <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
-      <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
+       <NowAfterPlate
+        now={[
+          'Export to CSV, import to Excel, re-key to ERP',
+          'Three systems, two manual steps between each',
+          'Workarounds known to one person only',
+          'Every manual step is a failure point',
+        ]}
+        after={[
+          'Automated feeds replace re-keying',
+          'Systems talk directly, no manual bridge',
+          'Process documented, anyone can run it',
+          'Failure points eliminated by automation',
+        ]}
+       />
      </Plate>
     </div>
    </section>
