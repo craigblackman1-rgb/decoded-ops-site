@@ -27,7 +27,6 @@ const appsLinks: FooterLink[] = [
   { label: 'Data App', href: '/apps/data-app' },
   { label: 'Artwork Manager', href: '/apps/artwork-manager' },
   { label: 'Trade store', href: '/apps/commerce' },
-  { label: 'Decoded CRM', href: '/apps/crm' },
   { label: 'All apps', href: '/apps' },
 ];
 
