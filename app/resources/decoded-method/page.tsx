@@ -123,7 +123,7 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <h2>Why most process documentation fails</h2>
           <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
@@ -141,7 +141,7 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap">
           <div style={{ maxWidth: 720 }}>
             <h2>Three layers, each with a job</h2>
@@ -199,7 +199,7 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <h2>The register we run Decoded Ops on</h2>
           <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
@@ -230,7 +230,7 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
             <h3>Get the whole playbook, free</h3>

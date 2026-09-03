@@ -192,7 +192,7 @@ export default function SixSigmaPage() {
       </div>
 
       {/* SIGMA SCALE + LEVELS (light) */}
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap">
           <div style={{ maxWidth: '46ch' }}>
             <span className="eyebrow">The scale</span>
@@ -226,7 +226,7 @@ export default function SixSigmaPage() {
       </section>
 
       {/* THE REAL GAP (dark) */}
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">The real gap</span>
           <h2>The gap is process, not machinery</h2>
