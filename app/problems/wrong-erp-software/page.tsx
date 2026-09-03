@@ -195,7 +195,38 @@ export default function WrongERPSoftwarePage() {
     </div>
    </section>
 
-   {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
+   {/* ── 5 · RELATED READING ──────────────────────────────────────────── */}
+   <section className="g-off">
+    <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Further reading</span>
+     <h2>Read the full guide</h2>
+     <div className="hair" />
+     <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+      <li style={{ marginBottom: 12 }}>
+       <Link href="/resources/erp-selection-playbook" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        The ERP selection playbook
+       </Link>
+      </li>
+      <li style={{ marginBottom: 12 }}>
+       <Link href="/problems/buy-vs-build" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        Should you build or buy your next system?
+       </Link>
+      </li>
+      <li style={{ marginBottom: 12 }}>
+       <Link href="/blog/5-questions-vendors-wont-like" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        5 questions ERP vendors won&apos;t like
+       </Link>
+      </li>
+      <li>
+       <Link href="/blog/the-real-cost-of-a-failed-erp-project" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        The real cost of a failed ERP project
+       </Link>
+      </li>
+     </ul>
+    </div>
+   </section>
+
+   {/* ── 6 · CTA STRIP ──────────────────────────────────────────────────── */}
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Book a free discovery call.</h2>

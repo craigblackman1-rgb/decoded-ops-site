@@ -22,6 +22,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
     ],
     relatedReading: [
+      { href: '/resources/erp-selection-playbook', label: 'The ERP selection playbook' },
       { href: '/blog/the-real-cost-of-a-failed-erp-project', label: 'The real cost of a failed ERP project' },
       { href: '/blog/5-questions-vendors-wont-like', label: '5 questions ERP vendors won\'t like' },
     ],
@@ -38,6 +39,8 @@ export const problemRouting: Record<string, ProblemRoute> = {
       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
     ],
     relatedReading: [
+      { href: '/resources/erp-selection-playbook', label: 'The ERP selection playbook' },
+      { href: '/problems/buy-vs-build', label: 'Should you build or buy your next system?' },
       { href: '/blog/5-questions-vendors-wont-like', label: '5 questions ERP vendors won\'t like' },
       { href: '/blog/the-real-cost-of-a-failed-erp-project', label: 'The real cost of a failed ERP project' },
     ],

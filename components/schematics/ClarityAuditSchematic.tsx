@@ -8,7 +8,7 @@ import {
 import type { Tone } from './primitives';
 
 /**
- * The homepage / Discovery Day hero graphic: a real flow, a free call,
+ * The Clarity Audit schematic: a real flow, a free call,
  * then six areas covered in one day on site, then a written plan back in
  * five working days. Built to the same left-to-right flow language as
  * GarmentDecorationSchematic (zone bands, midline flow, converge/diverge)
@@ -35,7 +35,7 @@ const areas = [
   { x: 930, y: 590, label: 'AI Readiness',         sub: 'honest assessment' },
 ];
 
-export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Tone; className?: string }) {
+export function ClarityAuditSchematic({ tone = 'dark', className }: { tone?: Tone; className?: string }) {
   const [motion, setMotion] = useState(true);
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -50,7 +50,7 @@ export function DiscoveryDaySchematic({ tone = 'dark', className }: { tone?: Ton
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Discovery Day diagram: a free discovery call, followed by one day on site covering six areas, IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth and opportunity, and AI readiness, followed by a written plan delivered within five working days.">
+      aria-label="Clarity Audit diagram: a free discovery call, followed by one day on site covering six areas, IT infrastructure, software and systems, eCommerce and digital, processes and operations, growth and opportunity, and AI readiness, followed by a written plan delivered within five working days.">
       <SchematicDefs tone={tone} idPrefix={ID} />
 
       {/* backdrop */}
