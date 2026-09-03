@@ -80,7 +80,7 @@ export default function SopTemplatePage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
 
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>

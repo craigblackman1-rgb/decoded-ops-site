@@ -141,7 +141,7 @@ export default function FiveWarningSignsPage() {
         </div>
       </section>
 
-      <section className="g-off">
+      <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48, marginBottom: 64 }}>
