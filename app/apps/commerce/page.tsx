@@ -110,6 +110,17 @@ export default function CommercePage() {
         </div>
       </section>
 
+      {/* 2b · PRODUCT PAGE SCREEN */}
+      <section className="g-tint">
+        <div className="wrap" style={{ maxWidth: 900 }}>
+          <div className="evidence evidence--screen">
+            <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
+                 alt="Product page with trade pricing and decoration options" loading="lazy" />
+            <span className="stamp">decoded commerce &middot; product page</span>
+          </div>
+        </div>
+      </section>
+
       {/* 2a · CORE TO EXTENDED PLATE · DO-ART-103 */}
       <section className="g-tint">
         <div className="wrap">

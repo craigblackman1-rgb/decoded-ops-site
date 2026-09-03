@@ -41,11 +41,11 @@ export default function ArtworkManagerPage() {
 
           <div className="hero-shot">
             <div className="evidence">
-              <img src="/images/apps/artwork-manager-hero.jpg" width={1600} height={2397}
-                   alt="Two multi-head embroidery machines part-way through a run, threaded up with garments hooped on the beds and cones of thread racked behind them." />
+              <img src="/images/apps/artwork-approval.png" width={3200} height={2000}
+                   alt="Artwork approval screen — stitch file preview and sign-off" />
             </div>
-            <p className="shot-caption">The end of the chain is a machine, not a folder. Files arrive in the
-              format the machine actually takes.</p>
+            <p className="shot-caption">Customers approve their own proofs against the exact version
+              that was shown. No email chain, no lost approvals.</p>
           </div>
         </div>
       </section>

@@ -41,7 +41,7 @@ export default function DataAppPage() {
 
           <div className="hero-shot">
             <div className="evidence evidence--screen">
-              <img src="/images/apps/data-app-dashboard.png" width={2160} height={2300}
+               <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
                    alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue pushing product records to the client&rsquo;s platform." />
               <span className="stamp">Case study 01 &middot; Data App</span>
             </div>
@@ -127,6 +127,30 @@ export default function DataAppPage() {
               <p>Website, marketplaces, trade portal. They all read from one catalogue, so they stop
                 disagreeing with each other and with the warehouse.</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* 2b · SCREENS */}
+      <section className="g-white">
+        <div className="wrap">
+          <p className="eyebrow">The screens</p>
+          <h2>What it looks like in practice.</h2>
+          <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
+            <div>
+              <div className="evidence evidence--screen">
+                <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}
+                     alt="Parent products catalogue in the Data App" loading="lazy" />
+                <span className="stamp">Catalogue view</span>
+              </div>
+            </div>
+            <div>
+              <div className="evidence evidence--screen">
+                <img src="/images/apps/data-app-supplier-import.png" width={3200} height={2000}
+                     alt="Supplier CSV import screen" loading="lazy" />
+                <span className="stamp">Supplier import</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
