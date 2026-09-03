@@ -289,8 +289,7 @@ export default function HomePage() {
                     <g className="sk-fade sk-s4">
                       <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
                             opacity=".55">PREPARED</text>
-                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to Khaos
-                        Control</text>
+                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
                       <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
                             className="p-node-a" strokeWidth="1.4"/>
                       <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
@@ -376,7 +375,7 @@ export default function HomePage() {
                             opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
                       <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
                             strokeWidth="1.1" strokeOpacity=".35"/>
-                      <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
+                      <rect x="86" y="648" width="470" height="44" rx="6" className="p-block" opacity=".85"/>
                       <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
                             fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
                     </g>
