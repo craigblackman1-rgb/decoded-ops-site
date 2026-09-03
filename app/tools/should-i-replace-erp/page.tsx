@@ -111,6 +111,12 @@ export default function ShouldIReplaceErpPage() {
                 answers={Object.fromEntries(answers.map((a, i) => [`q${i + 1}`, a]))}
               />
 
+              <p style={{ marginTop: 24, fontSize: 'var(--do-text-sm)', textAlign: 'center' }}>
+                <Link href="/resources/erp-selection-playbook" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)' }}>
+                  Read the ERP selection playbook <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+                </Link>
+              </p>
+
               {/* Answer summary */}
               <details className="card">
                 <summary style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', cursor: 'pointer' }}>View your answers</summary>

@@ -207,7 +207,33 @@ export default function ERPImplementationFailurePage() {
     </div>
    </section>
 
-   {/* ── 4 · CTA STRIP ──────────────────────────────────────────────────── */}
+   {/* ── 4 · RELATED READING ──────────────────────────────────────────── */}
+   <section className="g-off">
+    <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">Further reading</span>
+     <h2>Read the full guide</h2>
+     <div className="hair" />
+     <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+      <li style={{ marginBottom: 12 }}>
+       <Link href="/resources/erp-selection-playbook" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        The ERP selection playbook
+       </Link>
+      </li>
+      <li style={{ marginBottom: 12 }}>
+       <Link href="/blog/the-real-cost-of-a-failed-erp-project" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        The real cost of a failed ERP project
+       </Link>
+      </li>
+      <li>
+       <Link href="/blog/5-questions-vendors-wont-like" className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+        5 questions ERP vendors won&apos;t like
+       </Link>
+      </li>
+     </ul>
+    </div>
+   </section>
+
+   {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
    <section className="g-white">
     <div className="wrap max-w-2xl mx-auto text-center">
      <h2>Book a free discovery call.</h2>
