@@ -45,7 +45,7 @@ const principles = [
 ];
 
 const processRegister = [
-  { ref: 'DO-PR-001', process: 'Discovery Day Delivery', status: 'active' },
+  { ref: 'DO-PR-001', process: 'Clarity Audit', status: 'active' },
   { ref: 'DO-PR-002', process: 'Clarity Audit & Report', status: 'active' },
   { ref: 'DO-PR-003', process: 'New Client Onboarding', status: 'active' },
   { ref: 'DO-PR-004', process: 'Proposal Build & Sign-off', status: 'active' },
