@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full antialiased ${outfit.variable} ${dmSans.variable}`}>
-      <body className="min-h-full flex flex-col bg-[#F8F9FA] text-[#023047]" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
+      <body className="min-h-full flex flex-col bg-off-white text-prussian-blue" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SN2Z3J31CZ"
           strategy="afterInteractive"

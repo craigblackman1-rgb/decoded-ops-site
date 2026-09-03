@@ -174,7 +174,7 @@ export default async function BlogPage() {
             <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               Book a free discovery call <ArrowRight size={18} />
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-blue hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
           </div>
         </div>
       </section>
