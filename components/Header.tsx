@@ -60,7 +60,6 @@ const helpBuilt: NavGroup = {
     { label: 'Data App', sub: 'Supplier feeds into one clean catalogue', href: '/apps/data-app' },
     { label: 'Artwork Manager', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },
     { label: 'Trade store', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
-    { label: 'Decoded CRM', sub: 'Pipeline and client records', href: '/apps/crm' },
     { label: 'All apps', sub: "What's ready to buy today", href: '/apps' },
   ],
 };

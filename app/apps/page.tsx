@@ -69,17 +69,10 @@ export default function AppsPage() {
                 into Khaos Control is the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
-
-            <Link className="log-row" href="/apps/crm">
-              <div>
-                <span className="chip chip--pre">Founding client terms</span>
-                <h3 style={{ marginTop: 14 }}>Decoded CRM</h3>
-              </div>
-              <p>Leads, companies, contacts and deals, through to quotes, contracts, sales orders and
-                invoices. Built around how this sector actually sells.</p>
-              <span className="go">See how it works</span>
-            </Link>
           </div>
+
+          <p style={{ marginTop: 32, maxWidth: '68ch' }}>Pipeline and client records (CRM) are built into
+            the ERP solution, and included with the Artwork Manager when bought standalone.</p>
         </div>
       </section>
 

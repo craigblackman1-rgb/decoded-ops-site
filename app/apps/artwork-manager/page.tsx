@@ -101,6 +101,10 @@ export default function ArtworkManagerPage() {
                 convert first.</p>
             </div>
           </div>
+
+          <p style={{ marginTop: 24, maxWidth: '68ch' }}>When bought standalone, the Artwork Manager also
+            includes an embedded CRM &mdash; pipeline and client records, built around how this sector
+            actually sells.</p>
         </div>
       </section>
 
