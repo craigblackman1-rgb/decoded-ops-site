@@ -59,7 +59,13 @@ export default function PricingPage() {
             scales with it. Clarity Audit is the entry point into everything below it.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '26%' }} />
+              </colgroup>
               <caption>Consultancy: by turnover band</caption>
               <thead>
                 <tr>
@@ -82,20 +88,20 @@ export default function PricingPage() {
                 <tr>
                   <th scope="row">Deliver</th>
                   <td><span className="price">£1,200–£1,500<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £1,400</span></td>
+                    <span className="price-sub">typically £1,400</span></td>
                   <td><span className="price">£1,400–£2,000<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £1,800</span></td>
+                    <span className="price-sub">typically £1,800</span></td>
                   <td><span className="price">£1,800–£2,500+<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £2,200</span></td>
+                    <span className="price-sub">typically £2,200</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Transform</th>
                   <td><span className="price">£1,500–£2,200<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £1,800</span></td>
+                    <span className="price-sub">typically £1,800</span></td>
                   <td><span className="price">£2,000–£3,200<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £2,500</span></td>
+                    <span className="price-sub">typically £2,500</span></td>
                   <td><span className="price">£3,000–£5,000+<span className="num">/mo</span></span>
-                    <span className="price-sub">anchor £4,000</span></td>
+                    <span className="price-sub">typically £4,000</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Retained</th>
@@ -110,15 +116,21 @@ export default function PricingPage() {
               </tbody>
             </table>
           </div>
-          <p className="table-foot">Ranges reflect scope, not negotiation. The anchor figure is the
-            recommended tier within each band, the number to plan around if you want one.</p>
+          <p className="table-foot">Ranges reflect scope, not negotiation. The typical figure is where most
+            engagements in that band land, the number to plan around if you want one.</p>
 
           <h3 style={{ marginTop: 56, fontSize: '1.5rem' }}>Retained Transformation</h3>
           <p className="lead" style={{ marginTop: 12 }}>Ongoing programme delivery rather than advice. A
             longer commitment, and priced as one.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '26%' }} />
+              </colgroup>
               <caption>Retained Transformation: by turnover band</caption>
               <thead>
                 <tr>
@@ -278,7 +290,12 @@ export default function PricingPage() {
             make on your own without a board behind you.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '50%' }} />
+              </colgroup>
               <caption>Small business: fixed prices</caption>
               <thead>
                 <tr>
