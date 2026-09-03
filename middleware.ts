@@ -6,16 +6,6 @@ import { NextResponse } from 'next/server'
 // a native Node module that cannot load on the Edge runtime).
 const { auth } = NextAuth(authConfig)
 
-// Proposal slugs that are publicly accessible (no login required)
-const PUBLIC_PROPOSALS = [
-  '/clients/tacklebag',
-  '/clients/tacklebag-v2',
-  '/clients/cobra-workwear',
-  '/clients/hanicks',
-  '/clients/cwear',
-  '/clients/scotshirts',
-]
-
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
@@ -44,13 +34,6 @@ export default auth((req) => {
     if (user?.role !== 'admin') {
       return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
     }
-  }
-
-  // Public proposal URLs — no auth required
-  if (PUBLIC_PROPOSALS.includes(nextUrl.pathname)) {
-    const response = NextResponse.next()
-    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
-    return response
   }
 
   // Not logged in and visiting a protected client route → login
