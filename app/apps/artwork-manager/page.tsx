@@ -102,9 +102,8 @@ export default function ArtworkManagerPage() {
             </div>
           </div>
 
-          <p style={{ marginTop: 24, maxWidth: '68ch' }}>When bought standalone, the Artwork Manager also
-            includes an embedded CRM &mdash; pipeline and client records, built around how this sector
-            actually sells.</p>
+          <p style={{ marginTop: 24, maxWidth: '68ch' }}>Bought standalone, the Artwork Manager also
+            includes an embedded CRM: pipeline and client records, in the same place as the artwork.</p>
         </div>
       </section>
 
