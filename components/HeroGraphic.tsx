@@ -39,7 +39,7 @@ export function HeroGraphic() {
         {/* Outer ring */}
         <circle cx={cx} cy={cy} r={r + 10} fill="none" stroke="#8ECAE6" strokeWidth="1" strokeDasharray="4 8" opacity="0.4" />
 
-        {/* Connection lines — from each node to centre */}
+        {/* Connection lines, from each node to centre */}
         {nodes.map((node, i) => {
           const pos = toXY(node.angle, r);
           return (

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Download } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
 
 // Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
 const schema = {
@@ -114,51 +115,143 @@ export default function ChecklistPage() {
     <>
       <JsonLd data={schema} />
       {/* HERO */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— Free Resource</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
-            Operational Audit Checklist
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
-            20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant—or to understand what an audit actually covers.
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">Free resource</span>
+          <h1>Operational audit checklist</h1>
+          <p className="lede">
+            20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
           </p>
         </div>
       </section>
 
+      {/* PLATE · DO-ART-307 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">Audit structure &middot; DO-ART-307</span>
+          <h2>Six areas you can check today, and the seventh only the checking answers.</h2>
+          <div className="hair"></div>
+          <p className="lede" style={{ marginTop: 16 }}>
+            The checklist as a sequence: what you can check today, and the strategic section the first six make possible.
+          </p>
+
+          <div className="plate-scroll">
+            <div className="plate-frame" data-od-id="plate-audit-checklist">
+              <Plate tone="dark" p="chk" title="Six areas, then the seventh"
+                     sub="The audit checklist as a sequence · what you can check today, and what only the checking answers"
+                     no="DO-ART-307" rev="01" cls="DECODED OPS · ISSUED">
+
+                <g className="sk-fade sk-s2">
+                  <text x="80" y="180" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">WHAT YOU CAN GO AND CHECK TODAY</text>
+                </g>
+
+                {/* ══ ROW 1 ══ */}
+                <g className="sk-fade sk-s3" filter="url(#chk-shadow)">
+                  <rect x="80" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="585" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="1090" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                </g>
+                <g className="sk-fade sk-s3">
+                  <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
+                    <text x="106" y="234">01</text><text x="611" y="234">02</text><text x="1116" y="234">03</text>
+                  </g>
+                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
+                    <text x="504" y="234">6 questions</text><text x="1009" y="234">5 questions</text><text x="1514" y="234">5 questions</text>
+                  </g>
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
+                    <text x="106" y="286">IT &amp; security</text>
+                    <text x="611" y="286">Systems &amp; software</text>
+                    <text x="1116" y="286">eCommerce</text>
+                  </g>
+                  <g className="p-mono" fontSize="16" opacity=".6">
+                    <text x="106" y="322">Backups, access, and what IT costs</text>
+                    <text x="611" y="322">Every system, and whether they talk</text>
+                    <text x="1116" y="322">Does the website talk to the ERP</text>
+                  </g>
+                </g>
+
+                {/* row 1 connectors */}
+                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M534 281 H578" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1039 281 H1083" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+                {/* turn down */}
+                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1315 370 V410" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+
+                {/* ══ ROW 2, runs right to left ══ */}
+                <g className="sk-fade sk-s4" filter="url(#chk-shadow)">
+                  <rect x="1090" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="585" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                  <rect x="80" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
+                </g>
+                <g className="sk-fade sk-s4">
+                  <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
+                    <text x="1116" y="454">04</text><text x="611" y="454">05</text><text x="106" y="454">06</text>
+                  </g>
+                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
+                    <text x="1514" y="454">6 questions</text><text x="1009" y="454">5 questions</text><text x="504" y="454">5 questions</text>
+                  </g>
+                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
+                    <text x="1116" y="506">Processes &amp; operations</text>
+                    <text x="611" y="506">Inventory &amp; stock</text>
+                    <text x="106" y="506">Costs &amp; financial</text>
+                  </g>
+                  <g className="p-mono" fontSize="16" opacity=".6">
+                    <text x="1116" y="542">Order to invoice, stock to despatch</text>
+                    <text x="611" y="542">Whether the count matches the system</text>
+                    <text x="106" y="542">Cost per order, and where revenue leaks</text>
+                  </g>
+                </g>
+
+                {/* row 2 connectors, pointing left */}
+                <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M1083 501 H1039" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+                <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M578 501 H534" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
+                {/* down into the outcome */}
+                <path pathLength="1" className="sk-draw sk-s5 p-samber" d="M305 590 V630" fill="none" strokeWidth="2.5" markerEnd="url(#chk-ah)"/>
+
+                {/* ══ THE SEVENTH ══ */}
+                <g className="sk-fade sk-s6">
+                  <rect x="80" y="636" width="1460" height="118" rx="10" fill="url(#chk-amber)" className="p-samber" strokeWidth="1.2" strokeOpacity=".5"/>
+                  <text x="106" y="674" className="p-amber" fontSize="15" letterSpacing="2.4" fontWeight="600">07 · GROWTH &amp; STRATEGIC</text>
+                  <text x="1514" y="674" textAnchor="end" className="p-amber" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700">4 questions</text>
+                  <text x="106" y="712" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">The section you cannot answer until the other six are done</text>
+                  <text x="106" y="740" className="p-mono" fontSize="16" opacity=".62">Grow 20% next year, what would have to change? The first six tell you. Guessing does not.</text>
+                </g>
+              </Plate>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTENT */}
-      <section className="py-16 lg:py-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off section--tight">
+        <div className="wrap" style={{ maxWidth: 720 }}>
 
           {/* Intro */}
-          <div className="mb-16 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
-            <h2 className="text-xl font-bold text-[#023047] mb-4">How to use this checklist</h2>
-            <p className="text-[#023047]/80 leading-relaxed mb-4">
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+            <h2>How to use this checklist</h2>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
               Go through each section and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
             </p>
-            <p className="text-[#023047]/80 leading-relaxed">
-              The items you can't answer are the most valuable—they're where the hidden costs usually are.
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
+              The items you can't answer are the most valuable. They're where the hidden costs usually are.
             </p>
           </div>
 
           {/* Checklist */}
-          <div className="space-y-12">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
             {checklist.map((section, sectionIndex) => (
               <div key={sectionIndex}>
-                <h2 className="text-2xl font-bold text-[#023047] mb-6 pb-4 border-b border-[#8ECAE6]/30">
+                <h2 style={{ paddingBottom: 16, marginBottom: 24, borderBottom: '1px solid var(--do-border-subtle)' }}>
                   {section.section}
                 </h2>
-                <div className="space-y-4">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {section.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex gap-4 items-start p-4 rounded-lg bg-[#F8F9FA] hover:bg-[#F8F9FA]/80 transition-colors">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-5 h-5 rounded-full border-2 border-[#219EBC] flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-[#219EBC]/30" />
+                    <div key={itemIndex} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: 16, borderRadius: 'var(--do-radius-lg)', background: 'var(--do-off-white)' }}>
+                      <div style={{ flexShrink: 0, marginTop: 4 }}>
+                        <div style={{ width: 20, height: 20, borderRadius: '50%', border: '2px solid var(--do-cerulean)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 30%, transparent)' }} />
                         </div>
                       </div>
-                      <p className="text-[#023047]/80 leading-relaxed">
+                      <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
                         {item}
                       </p>
                     </div>
@@ -169,30 +262,30 @@ export default function ChecklistPage() {
           </div>
 
           {/* Key Takeaways */}
-          <div className="mt-16 p-8 rounded-2xl bg-[#023047]">
-            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key Takeaways</h2>
-            <div className="space-y-4 text-[#8ECAE6]">
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+          <div className="g-tint" style={{ marginTop: 64, borderRadius: 'var(--do-radius-2xl)', padding: 32 }}>
+            <h2>Key takeaways</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   If you can't answer 5+ questions, you probably have a bigger operational problem than you realize.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   The items about "manual work" and "re-keying" are where the money is hiding.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   If your systems don't integrate, you're paying 3-5% of revenue in manual workarounds.
                 </p>
               </div>
-              <div className="flex gap-4 items-start">
-                <CheckCircle2 size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
-                <p className="leading-relaxed">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <p style={{ marginBottom: 0 }}>
                   Inventory accuracy problems typically cost 1-3% of stock value per year.
                 </p>
               </div>
@@ -200,20 +293,20 @@ export default function ChecklistPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
-            <h3 className="text-lg font-bold text-[#023047] mb-3">Once you've worked through this checklist...</h3>
-            <p className="text-[#023047]/80 leading-relaxed mb-6">
-              The real value is in understanding what you don't know. If there are gaps, an audit identifies them formally, quantifies them, and gives you a roadmap to fix them.
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>
+            <h3>Once you've worked through this checklist...</h3>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
+              The real value is in seeing what you don't know. If there are gaps, an audit finds them, puts a number on them, and gives you a plan to fix them.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
+              <Link href="/contact" className="btn btn--primary">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+              <Link href="/clarity" className="btn btn--outline">
                 See what an audit covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

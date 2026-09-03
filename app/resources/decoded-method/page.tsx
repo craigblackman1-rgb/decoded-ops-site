@@ -45,7 +45,7 @@ const principles = [
 ];
 
 const processRegister = [
-  { ref: 'DO-PR-001', process: 'Discovery Day Delivery', status: 'active' },
+  { ref: 'DO-PR-001', process: 'Clarity Audit', status: 'active' },
   { ref: 'DO-PR-002', process: 'Clarity Audit & Report', status: 'active' },
   { ref: 'DO-PR-003', process: 'New Client Onboarding', status: 'active' },
   { ref: 'DO-PR-004', process: 'Proposal Build & Sign-off', status: 'active' },
@@ -99,137 +99,98 @@ const statusStyle: Record<string, string> = {
   review: 'bg-[#FFB703] text-[#023047]',
 };
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
-}
-
 export default function DecodedMethodPage() {
   return (
     <>
       <JsonLd data={schema} />
 
-      {/* HERO — premium dark, playbook cover language */}
-      <section className="relative overflow-hidden bg-[#023047] pt-28 pb-20 lg:pt-40 lg:pb-28">
-        <div className="absolute inset-x-0 top-0 h-1.5 bg-[#FFB703]" />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-50"
-          style={{ backgroundImage: 'linear-gradient(#0a3d5c 1px, transparent 1px), linear-gradient(90deg, #0a3d5c 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-        />
-        <div className="pointer-events-none absolute -top-24 right-0 h-[440px] w-[440px] rounded-full bg-[#219EBC]/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -left-10 h-[380px] w-[380px] rounded-full bg-[#FFB703]/5 blur-3xl" />
-
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-          <div>
-            <Eyebrow>Free Playbook</Eyebrow>
-            <h1 className="mt-5 text-4xl lg:text-6xl font-extrabold text-white leading-[1.03]">
-              The Decoded <span className="text-[#FFB703]">Method</span>
-            </h1>
-            <div className="mt-6 h-1 w-16 rounded-full bg-[#219EBC]" />
-            <p className="mt-6 text-lg text-[#8ECAE6] leading-relaxed max-w-xl">
-              A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person's head.
-            </p>
-            <div className="mt-9 flex flex-col sm:flex-row gap-4">
-              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                <Download size={18} /> Download the playbook
-              </a>
-              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
-                See what Clarity covers <ArrowRight size={18} />
-              </Link>
-            </div>
-            <p className="mt-4 text-sm text-white/40">7-page PDF · no email required</p>
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">Free playbook</span>
+          <h1>The Decoded Method</h1>
+          <p className="lede">
+            A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person&apos;s head.
+          </p>
+          <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
+            <a href="/downloads/decoded-method.pdf" download className="btn btn--primary">
+              <Download size={18} /> Download the playbook
+            </a>
+            <Link href="/clarity" className="btn btn--outline">
+              See what Clarity covers
+            </Link>
           </div>
-
-          <div className="relative mx-auto lg:ml-auto w-full max-w-[300px] lg:max-w-[360px]">
-            <div className="absolute -inset-6 rounded-3xl bg-[#219EBC]/10 blur-2xl" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/decoded-method-cover.png"
-              alt="The Decoded Method Playbook — cover"
-              width={1075}
-              height={1521}
-              className="relative w-full rounded-lg shadow-2xl ring-1 ring-white/10 rotate-[-2.5deg] transition-transform"
-            />
-          </div>
+          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 12 }}>7-page PDF. No email required.</p>
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 items-center">
-          <div>
-            <Eyebrow>The problem</Eyebrow>
-            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
-            <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" />
-            <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed">
-              Most businesses keep their processes in one place: someone's head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
-            </p>
-            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
-              The usual fix is a giant quality manual. That fails for the opposite reason: it's too long to keep up to date, so it goes stale, and once it's stale nobody trusts it.
-            </p>
-            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
-              The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
-            </p>
-          </div>
-          <div className="rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg bg-white">
+      <section className="g-off section--tight">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <h2>Why most process documentation fails</h2>
+          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+            Most businesses keep their processes in one place: someone&apos;s head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+          </p>
+          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+            The usual fix is a giant quality manual. That fails for the opposite reason: it&apos;s too long to keep up to date, so it goes stale, and once it&apos;s stale nobody trusts it.
+          </p>
+          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+            The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
+          </p>
+          <div style={{ marginTop: 32, borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', border: '1px solid var(--do-border-subtle)' }}>
             <SinglePointSchematic tone="light" />
           </div>
         </div>
       </section>
 
-      {/* THREE LAYERS */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <Eyebrow>The system</Eyebrow>
-            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Three layers, each with a job</h2>
-            <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed">Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.</p>
+      <section className="g-off section--tight">
+        <div className="wrap">
+          <div style={{ maxWidth: 720 }}>
+            <h2>Three layers, each with a job</h2>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>
+              Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.
+            </p>
           </div>
 
-          {/* Live operations schematic */}
-          <div className="mt-12 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-xl">
+          <div style={{ marginTop: 48, borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', border: '1px solid var(--do-border-subtle)' }}>
             <ThreeLayerSchematic tone="dark" />
           </div>
 
-          {/* The three layers, explained */}
-          <div className="mt-16 grid md:grid-cols-3 gap-10">
+          <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 40 }}>
             {layers.map((layer) => (
               <div key={layer.n}>
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#023047] text-white font-extrabold" style={{ boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
-                  <h3 className="text-xl font-bold text-[#023047]">{layer.name}</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 44, height: 44, borderRadius: 'var(--do-radius-xl)', background: 'var(--do-prussian-blue)', color: 'white', fontWeight: 800, boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
+                  <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 700, color: 'var(--do-text-primary)' }}>{layer.name}</h3>
                 </div>
-                <p className="mt-4 text-sm text-[#023047]/75 leading-relaxed">{layer.blurb}</p>
-                <ul className="mt-5 space-y-2">
+                <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 75%, transparent)', marginTop: 16 }}>{layer.blurb}</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 20 }}>
                   {layer.fields.map(([k, v]) => (
-                    <li key={k} className="flex gap-2.5 text-sm text-[#023047]/80">
-                      <Check size={16} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
-                      <span><strong className="text-[#023047]">{k}</strong> — {v}</span>
-                    </li>
+                    <div key={k} style={{ display: 'flex', gap: 10, fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+                      <span><strong style={{ color: 'var(--do-text-primary)' }}>{k}</strong> - {v}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SIX PRINCIPLES */}
-      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <Eyebrow>The rules</Eyebrow>
-          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The six principles</h2>
-          <div className="mt-10 grid md:grid-cols-2 gap-5">
+      <section className="g-tint">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <h2>The six principles</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20, marginTop: 40 }}>
             {principles.map((p, i) => {
               const [head, ...rest] = p.split('. ');
               const Icon = [Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck][i];
               return (
-                <div key={i} className="p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 border-l-[#219EBC] shadow-sm flex gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-[#219EBC]/10 flex items-center justify-center">
-                    <Icon size={20} className="text-[#219EBC]" />
+                <div key={i} style={{ padding: 24, borderRadius: 'var(--do-radius-xl)', background: 'white', borderLeft: '4px solid var(--do-cerulean)', border: '1px solid var(--do-border-subtle)', borderLeftWidth: 4, borderLeftColor: 'var(--do-cerulean)', display: 'flex', gap: 16 }}>
+                  <div style={{ flexShrink: 0, width: 44, height: 44, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={20} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#023047]">{head}.</h3>
-                    <p className="mt-1.5 text-sm text-[#023047]/70 leading-relaxed">{rest.join('. ')}</p>
+                    <h3 style={{ fontWeight: 700, color: 'var(--do-text-primary)', margin: 0 }}>{head}.</h3>
+                    <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginTop: 6 }}>{rest.join('. ')}</p>
                   </div>
                 </div>
               );
@@ -238,30 +199,28 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      {/* WORKED EXAMPLE */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <Eyebrow>A worked example</Eyebrow>
-          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The register we run Decoded Ops on</h2>
-          <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed max-w-2xl">
-            Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they've seen their whole operation on one page.
+      <section className="g-off section--tight">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <h2>The register we run Decoded Ops on</h2>
+          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
+            Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they&apos;ve seen their whole operation on one page.
           </p>
-          <div className="mt-10 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
-            <table className="w-full text-sm">
+          <div style={{ borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', border: '1px solid var(--do-border-subtle)' }}>
+            <table style={{ width: '100%', fontSize: 'var(--do-text-sm)', borderCollapse: 'collapse' }}>
               <thead>
-                <tr className="bg-[#023047] text-white">
-                  <th className="text-left font-semibold px-5 py-3.5 w-32">Ref</th>
-                  <th className="text-left font-semibold px-5 py-3.5">Process</th>
-                  <th className="text-left font-semibold px-5 py-3.5 w-28">Status</th>
+                <tr style={{ background: 'var(--do-prussian-blue)', color: 'white' }}>
+                  <th style={{ textAlign: 'left', fontWeight: 600, padding: '14px 20px', width: 128 }}>Ref</th>
+                  <th style={{ textAlign: 'left', fontWeight: 600, padding: '14px 20px' }}>Process</th>
+                  <th style={{ textAlign: 'left', fontWeight: 600, padding: '14px 20px', width: 112 }}>Status</th>
                 </tr>
               </thead>
               <tbody>
                 {processRegister.map((row, i) => (
-                  <tr key={i} className={i % 2 ? 'bg-[#F8F9FA]' : 'bg-white'}>
-                    <td className="px-5 py-3 font-semibold text-[#023047]">{row.ref}</td>
-                    <td className="px-5 py-3 text-[#023047]/80">{row.process}</td>
-                    <td className="px-5 py-3">
-                      <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${statusStyle[row.status]}`}>{row.status}</span>
+                  <tr key={i} style={{ background: i % 2 ? 'var(--do-off-white)' : 'white' }}>
+                    <td style={{ padding: '12px 20px', fontWeight: 600, color: 'var(--do-text-primary)' }}>{row.ref}</td>
+                    <td style={{ padding: '12px 20px', color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>{row.process}</td>
+                    <td style={{ padding: '12px 20px' }}>
+                      <span className={statusStyle[row.status]} style={{ padding: '4px 10px', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>{row.status}</span>
                     </td>
                   </tr>
                 ))}
@@ -271,30 +230,23 @@ export default function DecodedMethodPage() {
         </div>
       </section>
 
-      {/* DOWNLOAD + CLARITY BAND */}
-      <section className="relative overflow-hidden bg-[#023047] py-20 lg:py-24">
-        <div className="pointer-events-none absolute -top-20 right-10 h-[360px] w-[360px] rounded-full bg-[#219EBC]/10 blur-3xl" />
-        <div className="relative max-w-5xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
-          <div className="relative mx-auto w-full max-w-[240px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/decoded-method-cover.png" alt="The Decoded Method Playbook" width={1075} height={1521} className="w-full rounded-lg shadow-2xl ring-1 ring-white/10" />
-          </div>
-          <div>
-            <Eyebrow>Take it with you</Eyebrow>
-            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-white leading-tight">Get the whole playbook, free</h2>
-            <p className="mt-5 text-[#8ECAE6] leading-relaxed">
+      <section className="g-off section--tight">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
+            <h3>Get the whole playbook, free</h3>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
               Seven pages: the three layers with worked examples, the six principles, and a self-assessment scorecard to see where your operation stands right now. No email required.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 12 }}>
+              <a href="/downloads/decoded-method.pdf" download className="btn btn--primary">
                 <Download size={18} /> Download the playbook
               </a>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
-                Book a discovery call <ArrowRight size={18} />
+              <Link href="/contact" className="btn btn--outline">
+                Book a discovery call
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-4">Or book a call directly <ArrowRight size={14} /></a>
-            <p className="mt-6 text-sm text-white/50 leading-relaxed">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', marginTop: 20, marginBottom: 0 }}>
               Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>
           </div>

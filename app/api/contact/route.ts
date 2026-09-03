@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
       from: process.env.SMTP_FROM || 'noreply@decodedops.co.uk',
       replyTo: sanitizedEmail,
       to: process.env.CONTACT_EMAIL,
-      subject: `Contact form submission — ${sanitizedName}`,
+      subject: `Contact form submission: ${sanitizedName}`,
       text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}`,
     });
 

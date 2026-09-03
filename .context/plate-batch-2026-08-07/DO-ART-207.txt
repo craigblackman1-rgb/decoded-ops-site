@@ -1,0 +1,78 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'csx',
+  title: 'Four engagements, two with numbers',
+  sub: 'Live client work across four sectors · what each one has proved so far',
+  no: 'DO-ART-207',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+{/* Hanicks */}
+    <g className="sk-fade sk-s2">
+      <rect x="50" y="180" width="730" height="230" rx="10"
+            fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+            stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+      <text x="80" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Hanicks</text>
+      <text x="750" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEATING SPARES · LIVE ENGAGEMENT</text>
+      <line x1="80" y1="242" x2="750" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
+      <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
+        <text x="80" y="306">164,752</text><text x="330" y="306">77%</text><text x="510" y="306">11,064</text>
+      </g>
+      <g className="p-mono" fontSize="15" opacity=".55">
+        <text x="80" y="336">products imported</text><text x="330" y="336">matched</text><text x="510" y="336">live on channel</text>
+      </g>
+      <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Khaos Control ERP, plus a custom app for supplier data and channel automation</text>
+    </g>
+
+    {/* TackleBag */}
+    <g className="sk-fade sk-s3">
+      <rect x="820" y="180" width="730" height="230" rx="10"
+            fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
+            stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
+      <text x="850" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">TackleBag</text>
+      <text x="1520" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">BRANDED APPAREL · IN DELIVER</text>
+      <line x1="850" y1="242" x2="1520" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
+      <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
+        <text x="850" y="306">9</text><text x="1010" y="306">20–40</text>
+      </g>
+      <g className="p-mono" fontSize="15" opacity=".55">
+        <text x="884" y="306">supplier feeds automated</text><text x="1180" y="306">hrs/week saved, projected</text>
+      </g>
+      <text x="850" y="382" className="p-mono" fontSize="16" opacity=".62">Stock Control module feeding clean data into their ERP implementation</text>
+    </g>
+
+    {/* Cobra */}
+    <g className="sk-fade sk-s4">
+      <rect x="50" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
+      <text x="80" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Cobra Workwear</text>
+      <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR · POST-AUDIT</text>
+      <line x1="80" y1="502" x2="750" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
+      <text x="80" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">B2B ordering portal · ERP evaluation</text>
+      <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor — a partner team builds.</text>
+      <g>
+        <rect x="80" y="614" width="290" height="30" rx="6" className="p-block" opacity=".8"/>
+        <text x="96" y="634" className="p-mono" fontSize="13" letterSpacing="1.6" opacity=".65">NO OUTCOME FIGURE YET</text>
+      </g>
+    </g>
+
+    {/* Eternal Fitness */}
+    <g className="sk-fade sk-s5">
+      <rect x="820" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
+      <text x="850" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Eternal Fitness</text>
+      <text x="1520" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEALTH &amp; FITNESS · IN BUILD</text>
+      <line x1="850" y1="502" x2="1520" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
+      <text x="850" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">Site rebuild · AI training plan tool</text>
+      <text x="850" y="586" className="p-mono" fontSize="16" opacity=".62">Technical lead. The tool drafts; the clinician signs off every plan.</text>
+      <g>
+        <rect x="850" y="614" width="290" height="30" rx="6" className="p-block" opacity=".8"/>
+        <text x="866" y="634" className="p-mono" fontSize="13" letterSpacing="1.6" opacity=".65">NO OUTCOME FIGURE YET</text>
+      </g>
+    </g>
+
+    {/* footer */}
+    <g className="sk-fade sk-s6">
+      <rect x="50" y="700" width="1500" height="70" rx="10" fill="url(#csx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+      <text x="80" y="744" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="23">Two of four can be measured today. The other two say so rather than estimating.</text>
+    </g>

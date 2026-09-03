@@ -33,7 +33,7 @@ export const cobraWorkwearProposal = {
       {
         title: 'No fit-for-purpose ERP system',
         description: 'Pantha ERP is under consideration but is new and unproven. Without a documented requirements brief, selecting the wrong ERP is the single most expensive mistake a business this size can make. The wrong platform choice costs far more than the software — it costs time, data, and operational momentum.',
-        stat: 'High risk: wrong ERP selection without a requirements brief is a £150k+ risk',
+        stat: 'High risk: without a requirements brief, the wrong ERP is the most expensive mistake available at this size',
         icon: '🖧',
         borderColor: 'border-[#C62828]',
         bgColor: 'bg-[rgba(198,40,40,0.1)]',
@@ -288,11 +288,6 @@ export const cobraWorkwearProposal = {
       },
     ],
     caseStudies: [
-      {
-        title: 'ERP consolidation — garment decorator, SE England',
-        description: 'Three legacy systems (ecommerce, stock management, embellishment) consolidated into a single ERP. 18-month engagement covering requirements, vendor selection, implementation management, and go-live.',
-        result: '40% reduction in order processing time · Stock holding down by a third · Programme value: £150,000',
-      },
       {
         title: 'Ecommerce B2B portal — workwear supplier',
         description: 'Requirements brief, vendor selection, and implementation oversight for a B2B trade portal with customer-specific pricing, credit terms, and Xero integration.',

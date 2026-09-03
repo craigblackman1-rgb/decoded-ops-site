@@ -3,8 +3,8 @@
 import type { ReactNode } from 'react';
 
 /**
- * Shared schematic vocabulary — grid backdrop, glass-card nodes, broken-link
- * motif — built to the visual language established by ThreeLayerSchematic
+ * Shared schematic vocabulary, grid backdrop, glass-card nodes, broken-link
+ * motif, built to the visual language established by ThreeLayerSchematic
  * and SinglePointSchematic (layered navy/off-white ground, cyan/amber accent,
  * mono eyebrow, glass gradient chips with feDropShadow). Every page-specific
  * schematic in the sector/problem rollout should compose from these rather
@@ -98,7 +98,7 @@ export function GlassNode({
 }
 
 /**
- * Dashed sky connector with an amber X at the midpoint — the "broken wire"
+ * Dashed sky connector with an amber X at the midpoint, the "broken wire"
  * motif for paths that don't actually work.
  */
 export function BrokenLink({
@@ -119,7 +119,7 @@ export function BrokenLink({
   );
 }
 
-/** Mono micro-label — small caps-style annotation used for lane times, zone bands, etc. */
+/** Mono micro-label, small caps-style annotation used for lane times, zone bands, etc. */
 export function MonoLabel({
   x, y, tone, children, size = 11, opacity = 0.85, color, anchor = 'start',
 }: {

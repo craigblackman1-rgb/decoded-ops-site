@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "The go-live cliff" — a left-to-right timeline with three project-phase
+ * "The go-live cliff", a left-to-right timeline with three project-phase
  * nodes (SCOPE, BUILD, TRAINING), then an amber vertical cliff line at
  * GO-LIVE. After the cliff, the line fragments: dashed drops to two amber
  * chips (SPREADSHEETS RETURN, WORKAROUNDS) while a faint cyan "what was
@@ -59,7 +59,7 @@ export function ErpImplementationFailureSchematic({ tone = 'dark', className }: 
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — THE GO-LIVE CLIFF</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: THE GO-LIVE CLIFF</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">The project ended. The problems started</text>
 
       {/* timeline with month ticks */}
@@ -74,7 +74,7 @@ export function ErpImplementationFailureSchematic({ tone = 'dark', className }: 
         );
       })}
 
-      {/* what was promised — continues past the cliff, fades */}
+      {/* what was promised, continues past the cliff, fades */}
       <line x1={CLIFF_X} y1={MID} x2="1180" y2={MID} stroke={`url(#${ID}-fade-${tone})`} strokeWidth="2.6" strokeDasharray="2 6" className="sch-fade sch-f4" />
       <text x="1080" y={MID - 20} textAnchor="middle" style={fMono} fontSize="17" fill={CYAN} opacity="0.55" className="sch-fade sch-f4">what was promised</text>
 
@@ -102,7 +102,7 @@ export function ErpImplementationFailureSchematic({ tone = 'dark', className }: 
         </g>
       </GlassNode>
 
-      {/* post go-live fragments — dashed drops to amber chips, well below the timeline */}
+      {/* post go-live fragments, dashed drops to amber chips, well below the timeline */}
       <path id={`${ID}-p-drop1-${tone}`} className="sch-draw sch-d4" d={`M${CLIFF_X + 20} ${MID + 20} C ${CLIFF_X - 40} 480, 900 560, 850 600`} fill="none" stroke={AMBER} strokeWidth="2.2" strokeDasharray="6 6" markerEnd={`url(#${ID}-ah-${tone})`} />
       <path id={`${ID}-p-drop2-${tone}`} className="sch-draw sch-d4" d={`M${CLIFF_X + 60} ${MID + 20} C ${CLIFF_X + 120} 500, 1140 560, 1090 600`} fill="none" stroke={AMBER} strokeWidth="2.2" strokeDasharray="6 6" markerEnd={`url(#${ID}-ah-${tone})`} />
 

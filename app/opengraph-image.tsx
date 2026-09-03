@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Decoded Ops — Technology for Print & Embroidery Businesses';
+export const alt = 'Decoded Ops, technology for print & embroidery businesses';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -96,7 +96,7 @@ export default function Image() {
             </div>
             <div style={{ display: 'flex', width: 1, height: 50, backgroundColor: '#023047', opacity: 0.15 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: '#023047' }}>£395</div>
+              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: '#023047' }}>From £1,500</div>
               <div style={{ display: 'flex', fontSize: 13, color: '#023047', opacity: 0.5 }}>Clarity Audit</div>
             </div>
             <div style={{ display: 'flex', width: 1, height: 50, backgroundColor: '#023047', opacity: 0.15 }} />

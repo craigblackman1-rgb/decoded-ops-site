@@ -2,7 +2,7 @@ import { Download } from 'lucide-react';
 
 // Links the static PDF pre-rendered from the live page with headless Chrome
 // into /public/downloads/<slug>.pdf (see scripts/generate-playbook-pdfs.sh).
-// Server component — no client JS needed.
+// Server component, no client JS needed.
 export function PrintDownloadButton({
   label = 'Download PDF',
   pdfHref,

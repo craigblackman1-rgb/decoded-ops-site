@@ -1,24 +1,25 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Phone, Shield, Wrench, Brain, MessageCircle, Search, FileText, Layers, Users, Package, ShoppingBag, Dumbbell } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
-import { HeroVisual } from '@/components/HeroVisual';
-import { SectorCredibilityPhoto } from '@/components/SectorCredibilityPhoto';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { Plate } from '@/components/Plate';
+import { SheetIndexRail } from '@/components/SheetIndexRail';
+import './homepage.css';
 
 export const metadata: Metadata = {
-  title: 'Print, Embroidery & Decoration Technology Consultant | Decoded Ops',
-  description: 'Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Discovery Day — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.',
+  title: 'Decoded Ops: operations and technology consultancy for decorated goods',
+  description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Print & Embroidery Technology Consultant | Decoded Ops',
-    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Written report in five days. 3x guarantee.',
+    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
+    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
-    title: 'Print & Embroidery Technology Consultant | Decoded Ops',
-    description: 'Operations and technology consultancy for print, embroidery, and decoration businesses.',
+    card: 'summary_large_image',
+    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
+    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers.',
   },
 };
 
@@ -29,14 +30,14 @@ const homepageSchema = {
       '@type': 'WebPage',
       '@id': 'https://decodedops.co.uk/#webpage',
       url: 'https://decodedops.co.uk',
-      name: 'Decoded Ops | Print & Embroidery Technology Consultant',
-      description: 'Operations and technology consultancy for print, embroidery, and decoration businesses. One day on site. Everything it costs you in writing within five days.',
+      name: 'Decoded Ops | operations and technology consultancy for decorated goods',
+      description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Discovery Day', url: 'https://decodedops.co.uk/clarity' } },
+        { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Clarity Audit', url: 'https://decodedops.co.uk/clarity' } },
         { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Deliver', url: 'https://decodedops.co.uk/deliver' } },
         { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Transform', url: 'https://decodedops.co.uk/transform' } },
         { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Retained', url: 'https://decodedops.co.uk/retained' } },
@@ -45,368 +46,407 @@ const homepageSchema = {
   ],
 };
 
-/* ─── DATA ─────────────────────────────────────────────────────────────────── */
+const costLedger = [
+  { value: '3–6', unit: 'hrs a week', desc: 'Lost to manual re-keying between systems that don’t talk to each other', tag: 'Re-keying' },
+  { value: '2–4', unit: 'hrs a week', desc: 'Spent on manual invoicing and reconciliation', tag: 'Finance' },
+  { value: '3–5', unit: 'per cent', desc: 'Of inbound stock at risk where inventory is disconnected', tag: 'Inventory' },
+  { value: '1–3', unit: 'per cent', desc: 'Of orders affected by picking and despatch errors', tag: 'Despatch' },
+];
 
 const services = [
-  { icon: Search,   name: 'Discovery Day', subtitle: 'On-Site Audit & Written Plan',       desc: "A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.", href: '/clarity',   badge: 'Start here' as string | null },
-  { icon: FileText, name: 'Deliver',   subtitle: 'Project Delivery & Vendor Management', desc: 'Independent vendor brief, procurement, and project oversight. One point of contact. The vendor delivers what your business actually needs.', href: '/deliver',   badge: null as string | null },
-  { icon: Layers,   name: 'Transform', subtitle: 'Digital Transformation Programme',     desc: 'Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first. Discovery required before scoping.', href: '/transform', badge: null as string | null },
-  { icon: Users,    name: 'Retained',  subtitle: 'Fractional CTO / Head of Operations',  desc: 'Monthly strategic and operational leadership. Roadmap ownership. Vendor management. A direct line to Craig.', href: '/retained',  badge: null as string | null },
+  { no: '01', name: 'Clarity Audit', role: 'On-site audit and written plan', lead: true,
+    desc: 'A full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days.',
+    go: { href: '/clarity', label: 'Start here' } },
+  { no: '02', name: 'Deliver', role: 'Delivery and vendor management', lead: false,
+    desc: 'Independent vendor brief, procurement and project oversight. One point of contact, and someone technical sitting on your side of the table.' },
+  { no: '03', name: 'Transform', role: 'Multi-workstream programme', lead: false,
+    desc: 'ERP, eCommerce and process redesign run together as one programme. Process led and people first, and scoped only once an audit has shown what it needs to cover.' },
+  { no: '04', name: 'Retained', role: 'Fractional CTO', lead: false,
+    desc: 'Monthly strategic and operational leadership. Roadmap ownership, vendor management, and a direct line to me.' },
 ];
 
-const statusQuoCosts = [
-  { value: '3–6 hrs',  per: '/week', label: 'Lost to manual re-keying between disconnected systems' },
-  { value: '3–5%',     per: '',       label: 'Of inbound stock at risk from disconnected inventory' },
-  { value: '2–4 hrs',  per: '/week', label: 'Spent on manual invoicing and reconciliation' },
-  { value: '1–3%',     per: '',       label: 'Of orders affected by picking and despatch errors' },
+const notes = [
+  { no: '01 · Translation', h: 'I say it back to you clearly.',
+    p: 'I take what you’re trying to convey (often half-formed, vague, hard to articulate) and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven’t been before.' },
+  { no: '02 · Problem solving', h: 'When you tell me the system can’t do that.',
+    p: 'That’s usually where the conversation starts rather than where it stops. I find a different way, connecting things that were never designed to connect, or reframing the problem so the tool you already own handles it differently.' },
+  { no: '03 · Facilitation', h: 'People adopt what they helped build.',
+    p: 'In a mixed group of directors, warehouse staff and office teams, I ask the question that makes everyone stop. They adopt the result because they built it. That’s how change actually sticks.' },
 ];
-
-const differentiators = [
-  { icon: Brain,          title: 'The Translation Gift',           desc: "I take what you're trying to convey — often half-formed, vague, hard to articulate — and reflect it back as a solution or a clear path forward. Business owners feel understood in a way they often haven't been before." },
-  { icon: Wrench,         title: 'Out-of-the-Box Problem Solving', desc: "When a system can't do something, I don't accept the limitation. I find a different way — connecting things not designed to connect, reframing the problem so the existing tool handles it differently." },
-  { icon: MessageCircle,  title: 'The Facilitation Gift',          desc: "In a mixed group — directors, warehouse staff, office teams — I ask the question that makes everyone stop. People adopt the result because they built it. That's how change actually sticks." },
-];
-
-const sectors = [
-  { emoji: '🧵', name: 'Garment decoration',  href: '/sectors/garment-decoration' },
-  { emoji: '🖨️', name: 'Print & promotional', href: '/sectors/print-promotional' },
-  { emoji: '👕', name: 'Workwear & teamwear', href: '/sectors/workwear-teamwear' },
-  { emoji: '🧩', name: 'Signs & graphics',    href: '/sectors/signs-graphics' },
-  { emoji: '🏆', name: 'Awards & engraving',  href: '/sectors/awards-engraving' },
-  { emoji: '📦', name: 'Labels & packaging',  href: '/sectors/labels-packaging' },
-];
-
-/* ─── PAGE ──────────────────────────────────────────────────────────────────── */
 
 export default function HomePage() {
   return (
     <>
       <JsonLd data={homepageSchema} />
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://decodedops.co.uk/' },
+      ]} />
 
-            {/* Left column */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">
-                  &mdash; Operations &amp; Technology Consultancy
-                </span>
+      <a className="skip" href="#content">Skip to content</a>
+
+      <SheetIndexRail />
+
+      <main id="content">
+
+        {/* ══════════ REGION A · 01 · THE STAGE ══════════ */}
+        <section className="g-navy stage" id="s1" data-od-id="hero">
+          <div className="do-dot-grid" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+          <div className="wrap">
+            <div className="stage-grid">
+              <div className="stage-copy">
+                <span className="eyebrow">Operations &amp; technology consultancy</span>
+                <h1>I find what&rsquo;s quietly costing you money.</h1>
+                <p>I help owners of print, embroidery, workwear and promotional merchandise businesses
+                  fix the systems that are holding them back. Start with a Clarity Audit: a day inside your
+                  business, six areas followed from start to finish, and within five working days a written
+                  plan that tells you what&rsquo;s broken, what it&rsquo;s costing you, which software actually
+                  fits how you work, and what to fix first. That&rsquo;s the penny drop: you finally see
+                  what&rsquo;s happening, why, and what to do about it.</p>
+                <p>The plan is yours to act on, with me or without me. I&rsquo;ve spent 25 years inside
+                  print, embroidery, workwear and promotional merchandise businesses, so I can usually
+                  second-guess your problems before you&rsquo;ve finished describing them. Plain English.
+                  No jargon. No vendor agenda.</p>
+                <div className="btn-row">
+                  <Link className="btn btn--primary" href="/clarity">See how a Clarity Audit works</Link>
+                  <Link className="btn btn--outline" href="/contact">Book a free 60 minute call</Link>
+                </div>
               </div>
 
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                The penny drop<span className="text-[#219EBC]"> moment.</span>
-              </h1>
+              <figure className="shot" data-od-id="hero-photo">
+                <Image className="p-photo" src="/images/hero-craft.jpg" fill sizes="(max-width: 1040px) 100vw, 45vw"
+                  style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
+                  alt="Two multi-head embroidery machines running garments on a decoration floor." />
+                <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
+              </figure>
+            </div>
 
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don&apos;t talk to each other. <strong className="text-[#023047]">25 years inside print, embroidery, and decoration businesses</strong> says the same patterns repeat &mdash; and they&apos;re fixable.
-              </p>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
-              </p>
+            <figure className="ask" data-od-id="hero-question">
+              <span className="qm" aria-hidden="true">&ldquo;</span>
+              <div>
+                <blockquote>If I spent a day in your business looking at your systems, your processes
+                  and your technology, how confident are you that I wouldn&rsquo;t find anything costing you
+                  money you don&rsquo;t know about?</blockquote>
+                <cite>Craig Blackman &middot; Decoded Ops</cite>
+              </div>
+            </figure>
+          </div>
+        </section>
 
-              <div className="flex flex-wrap gap-4 mb-10">
-                <Link href="/clarity" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  See how Discovery Day works <ArrowRight size={18} />
-                </Link>
-                <Link href="/contact" className="whitespace-nowrap inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                  <Phone size={18} /> Book a free 60-min call
-                </Link>
+        {/* ══════════ 02 · THE LEDGER ══════════ */}
+        <section className="g-navy ledger-sec" id="s2" data-od-id="cost">
+          <div className="do-dot-grid" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+          <div className="wrap">
+            <div className="ledger-head">
+              <div>
+                <span className="eyebrow">The cost of standing still</span>
+                <h2>What disconnected systems actually cost you.</h2>
+              </div>
+              <p className="lede">These are the numbers I see in businesses like yours most weeks. Not
+                hypothetical, and not worst case. Just the quiet cost of systems that don&rsquo;t talk to each
+                other.</p>
+            </div>
+
+            <ol className="ledger" data-od-id="cost-ledger">
+              {costLedger.map(item => (
+                <li key={item.tag}>
+                  <p className="fig">{item.value}<small>{item.unit}</small></p>
+                  <p className="desc">{item.desc}</p>
+                  <span className="tag">{item.tag}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ══════════ REGION B · 03 · HOW I HELP ══════════ */}
+        <section className="g-off" id="s3" data-od-id="how-i-help">
+          <div className="wrap">
+            <span className="eyebrow">How I help</span>
+            <h2>A day on site, a written plan, then as much or as little as you need.</h2>
+            <p className="lede">Four services. Each one stands on its own, and each is a natural next step
+              from the one before it. Almost everyone starts with a Clarity Audit, because until somebody
+              has followed your processes from start to finish, everything after that is guesswork.</p>
+
+            <figure className="band" data-od-id="help-photo">
+              <Image src="/images/sectors/thread-spools.jpg" fill sizes="1200px" className="p-photo"
+                style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
+                alt="A row of coloured thread cones loaded on an embroidery machine head." />
+              <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
+            </figure>
+
+            <ol className="idx" data-od-id="services-index">
+              {services.map(s => (
+                <li key={s.no} className={s.lead ? 'is-lead' : ''} data-od-id={`service-${s.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <span className="no">{s.no}</span>
+                  <div>
+                    <h3>{s.name}</h3>
+                    <span className="role">{s.role}</span>
+                  </div>
+                  <div>
+                    <p>{s.desc}</p>
+                    {s.go && <Link className="go" href={s.go.href}>{s.go.label}</Link>}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ══════════ 04 · THE SEAL ══════════ */}
+        <section className="g-white" id="s4" data-od-id="guarantee">
+          <div className="wrap">
+            <div className="seal" data-od-id="guarantee-seal">
+              <p className="seal-x">3&times;</p>
+              <div>
+                <span className="seal-tag">Decoded Ops &middot; Clarity Audit &middot; the guarantee</span>
+                <h2>Three times the fee, or you don&rsquo;t pay it.</h2>
+                <p>If the report doesn&rsquo;t identify at least three times the fee in recoverable cost or
+                  lost revenue, it&rsquo;s refunded in full. No conditions. No questions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════ 05 · THE FIRST HOUR ══════════ */}
+        <section className="g-tint" id="s5" data-od-id="approach">
+          <div className="wrap">
+            <span className="eyebrow">What you notice on the day</span>
+            <h2>Three things you notice on the day I&rsquo;m on site.</h2>
+
+            <div className="notes" data-od-id="notes">
+              {notes.map(n => (
+                <article className="note" key={n.no} data-od-id={`note-${n.no.slice(3).toLowerCase()}`}>
+                  <span className="no">{n.no}</span>
+                  <h3>{n.h}</h3>
+                  <p>{n.p}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════ REGION C · 06 · WHAT IT TURNS UP ══════════ */}
+        <section className="g-navy set" id="s6" data-od-id="turns-up">
+          <div className="do-dot-grid" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
+          <div className="wrap">
+            <article className="sheet" data-od-id="sheet-measure">
+              <div className="docket">
+                <span>DO-ART-202 &middot; Measure</span>
+                <span>Rev 01</span>
+                <span className="issued">Issued</span>
               </div>
 
-              {/* Stats strip */}
-              <div className="grid grid-cols-3 max-w-xl">
+              <div className="masthead">
                 <div>
-                  <div className="text-2xl font-bold text-[#023047]">25+</div>
-                  <div className="text-sm text-[#023047]/70">Years in the sector</div>
+                  <span className="eyebrow">What it turns up</span>
+                  <h2>Nobody retypes a supplier spreadsheet.</h2>
                 </div>
-                <div className="border-l border-[#8ECAE6] pl-6">
-                  <div className="text-2xl font-bold text-[#023047]">3×</div>
-                  <div className="text-sm text-[#023047]/70">Clarity guarantee</div>
+                <p className="lede">Case study 01, real production numbers. One import pipeline, run to a schedule,
+                  doing a job that used to be done by hand every time a supplier changed a range. Not
+                  projected and not modelled. This is what actually happened.</p>
+              </div>
+
+              <div className="plate-scroll">
+                <div className="plate-frame" data-od-id="plate-measure">
+                  <Plate tone="dark" p="ms" title="Supplier catalogue: raw to live"
+                         sub="Case study 01 · one import pipeline, first automated run"
+                         no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
+
+                    {/* track guides */}
+                    <g className="sk-fade sk-s1" opacity=".5">
+                      <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
+                            strokeOpacity=".35"/>
+                      <line x1="1510" y1="212" x2="1510" y2="560" className="p-scyan" strokeWidth=".8"
+                            strokeOpacity=".2"/>
+                    </g>
+
+                    {/* 1 · rows imported */}
+                    <g className="sk-fade sk-s2">
+                      <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+                            opacity=".55">ROWS IMPORTED</text>
+                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">supplier feeds</text>
+                      <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
+                            className="p-node" strokeWidth="1"/>
+                      <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="700" fontSize="30">164,752</text>
+                    </g>
+
+                    {/* 2 · matched automatically */}
+                    <g className="sk-fade sk-s3">
+                      <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
+                            opacity=".55">MATCHED AUTOMATICALLY</text>
+                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">first run, no
+                        hand-matching</text>
+                      <rect x="430" y="348" width="833" height="62" rx="6" fill="url(#ms-bar)"
+                            className="p-node" strokeWidth="1"/>
+                      <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="700" fontSize="30">127,135</text>
+                      <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="700" fontSize="30">77%</text>
+                    </g>
+
+                    {/* 3 · live. Amber lands once, on the figure that is the point. */}
+                    <g className="sk-fade sk-s4">
+                      <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+                            opacity=".55">PREPARED</text>
+                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
+                      <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+                            className="p-node-a" strokeWidth="1.4"/>
+                      <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="700" fontSize="30">11,064</text>
+                      <text x="700" y="510" className="p-mono" fontSize="17" opacity=".5">in range, priced
+                        and published, within weeks</text>
+                    </g>
+
+                    {/* the lever */}
+                    <g className="sk-fade sk-s5">
+                      <line x1="60" y1="596" x2="1540" y2="596" className="p-scyan" strokeWidth=".6"
+                            strokeOpacity=".22"/>
+                      <rect x="60" y="624" width="4" height="18" rx="1" className="p-amber"/>
+                      <text x="80" y="640" className="p-mono" fontSize="16" letterSpacing="2.2"
+                            opacity=".55">THE LEVER</text>
+                      <text x="60" y="690" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="600" fontSize="26">One import pipeline, run to a schedule.
+                        Nobody retypes a supplier spreadsheet.</text>
+                      <text x="60" y="726" className="p-mono" fontSize="17" opacity=".5">Before: matched by
+                        hand, no repeatable run, and no way to tell what had changed since last time.</text>
+                    </g>
+                  </Plate>
                 </div>
-                <div className="border-l border-[#8ECAE6] pl-6">
-                  <div className="text-2xl font-bold text-[#023047]">100%</div>
-                  <div className="text-sm text-[#023047]/70">No vendor agenda</div>
+              </div>
+
+              <p className="sheet-foot">Same approach at Case study 02, real production numbers: nine supplier
+                feeds automated, and a projected saving of 20 to 40 hours a week.</p>
+            </article>
+          </div>
+        </section>
+
+        {/* ══════════ REGION D · 07 · WHERE THE SOFTWARE CAME FROM ══════════ */}
+        <section className="g-white origin" id="s7" data-od-id="origin">
+          <div className="wrap">
+            <div className="origin-lead" data-od-id="origin-lead">
+              <span className="eyebrow">Where the software came from</span>
+              <h2>I didn&rsquo;t set out to build software.</h2>
+              <p>I kept meeting the same gap in businesses I was already fixing. The platform was
+                usually right. It just would not do one particular job, and nothing on the market closed
+                that gap at a price a business this size could justify. So I built the thing that
+                did.</p>
+              <p>Because it was built by someone who does the process work, the Process Register and the
+                SOPs are built in rather than bolted on. That is the Decoded Method running inside the
+                software instead of sitting in a folder nobody opens.</p>
+            </div>
+
+            <div className="origin-case" data-od-id="origin-case">
+              <div>
+                <h3>What that looks like at full stretch</h3>
+                <span className="disclose">Disclosure</span>
+                <p>Eternal Fitness is my wife&rsquo;s business, so it isn&rsquo;t an arm&rsquo;s length client reference
+                  and I won&rsquo;t pretend otherwise. It&rsquo;s here because it is the clearest example of how far
+                  this goes, and because there was nowhere to hide if it didn&rsquo;t work.</p>
+              </div>
+              <ul className="outcomes" data-od-id="origin-outcomes">
+                <li>Multiple systems consolidated into one operations hub.</li>
+                <li>Every procedure and process documented.</li>
+                <li>The mundane but important work automated.</li>
+                <li>A business that can scale online and offline without adding admin to do it.</li>
+              </ul>
+            </div>
+
+            <div className="origin-exhibit" data-od-id="origin-exhibit">
+              <div className="docket">
+                <span>DO-ART-902 &middot; Evidence</span>
+                <span>Rev 01</span>
+                <span className="issued">Issued</span>
+              </div>
+
+              <div className="plate-scroll">
+                <div className="plate-frame" data-od-id="plate-evidence">
+                  <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
+                         sub="Supplier feed to platform, one clean catalogue between them"
+                         no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
+
+                    <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
+
+                    {/* THE EXHIBIT. A screen, not a photograph — no grade. */}
+                    <g className="sk-fade sk-s2">
+                      <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
+                             preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
+                      <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
+                            opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+                      <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
+                            strokeWidth="1.1" strokeOpacity=".35"/>
+                      <rect x="86" y="648" width="470" height="44" rx="6" className="p-block" opacity=".85"/>
+                      <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
+                            fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
+                    </g>
+
+                    {/* THE SPECIFICATION. What the exhibit proves. */}
+                    <g className="sk-fade sk-s4">
+                      <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
+                            className="p-node" strokeWidth="1.1"/>
+                      <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
+                      <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
+                            fontWeight="600">EXHIBIT</text>
+                      <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
+                            strokeOpacity=".2"/>
+
+                      <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
+                            opacity=".45">CLIENT</text>
+                      <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="600" fontSize="22">Case study 02 · real production numbers</text>
+
+                      <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
+                            opacity=".45">SHOWS</text>
+                      <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+                      <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
+                        picking alongside Symphony</text>
+
+                      <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
+                            opacity=".45">SOURCE</text>
+                      <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
+                            fontWeight="600" fontSize="22">Decoded Data App interface</text>
+
+                      <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
+                            strokeOpacity=".2"/>
+                      <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
+                        screen is not</text>
+                      <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
+                        grading it would</text>
+                      <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
+                        is evidence of.</text>
+                    </g>
+                  </Plate>
                 </div>
               </div>
             </div>
 
-            {/* Right column — hero photo + live software card */}
-            <div className="hidden lg:flex items-center justify-center w-full">
-              <HeroVisual />
+            <div className="origin-links" data-od-id="origin-links">
+              <Link className="go" href="/apps">See what&rsquo;s already running</Link>
+              <Link className="go" href="/how-i-build">How I decide what to build</Link>
             </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── SECTOR PILLS STRIP ───────────────────────────────────────────────── */}
-      <div className="bg-[#023047] py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
-          <span className="text-xs font-semibold tracking-wider uppercase text-[#F8F9FA]/90 whitespace-nowrap">I work with</span>
-          {sectors.map(s => (
-            <Link key={s.href} href={s.href} className="text-xs font-medium text-[#F8F9FA]/80 border border-[#F8F9FA]/20 px-3 py-1.5 rounded-full hover:bg-[#FFB703] hover:border-[#FFB703] hover:text-[#023047] transition-all">
-              {s.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* ── HOOK QUOTE ───────────────────────────────────────────────────────── */}
-      <div className="bg-[#023047] py-16 px-6 text-center border-t border-[#F8F9FA]/10">
-        <blockquote className="text-xl lg:text-2xl font-semibold text-[#F8F9FA] max-w-3xl mx-auto leading-relaxed mb-4">
-          &ldquo;If I spent a day in your business looking at your systems, your processes, and your technology &mdash; how{' '}
-          <span className="text-[#219EBC]">confident</span>{' '}are you that I wouldn&apos;t find anything costing you money you don&apos;t know about?&rdquo;
-        </blockquote>
-        <p className="text-sm text-[#F8F9FA]/70">That question is worth sitting with. Most owners can&apos;t answer it honestly.</p>
-      </div>
-
-      {/* ── THE COST OF STANDING STILL ───────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 bg-[#023047] overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="hidden lg:block absolute inset-y-0 left-[58%] w-[3px] bg-gradient-to-b from-[#FFB703] to-[#219EBC] opacity-50 -skew-x-12"
-        />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FFB703]/10 border border-[#FFB703]/30 mb-4">
-              <span className="text-xs font-semibold text-[#FFB703] tracking-wider uppercase">&mdash; The cost of standing still</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">What disconnected systems actually cost you</h2>
-            <p className="text-[#F8F9FA]/70 text-lg mb-6">These are the numbers I see in businesses like yours, every week. Not hypothetical. Not worst-case. Just the quiet cost of systems that don&apos;t talk to each other.</p>
-            <p className="text-sm text-[#F8F9FA]/60">Read about <Link href="/problems/systems-dont-talk" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">what it looks like when your systems don&apos;t talk</Link>, <Link href="/problems/ecommerce-not-connected" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">why eCommerce disconnect costs more than you think</Link>, and <Link href="/problems/erp-implementation-failure" className="text-[#8ECAE6] hover:text-white underline transition-colors font-medium">how ERP implementations go wrong</Link>.</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {statusQuoCosts.map(item => (
-              <div key={item.label} className="p-5 rounded-2xl bg-white/[0.04] border border-[#8ECAE6]/20">
-                <div className="whitespace-nowrap text-2xl lg:text-3xl font-bold text-[#FFB703] mb-1.5 leading-none">
-                  {item.value}<span className="text-sm font-semibold text-[#FFB703]/60">{item.per}</span>
-                </div>
-                <p className="text-xs text-[#F8F9FA]/65 leading-relaxed">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ABOUT / WHY DECODED OPS ──────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#023047]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-
-            {/* Left — sector credibility photo */}
-            <div className="order-2 lg:order-1">
-              <SectorCredibilityPhoto />
-            </div>
-
-            {/* Right — content */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; About Craig Blackman</span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-6">
-                Someone from the industry.<br />Not parachuting in.
-              </h2>
-              <p className="text-[#023047]/70 text-lg leading-relaxed mb-4">
-                I&apos;ve spent 25 years working inside the businesses I now advise &mdash; print, embroidery, workwear, promotional merchandise, and branded apparel. I&apos;ve been through what you&apos;re going through. I know where the money disappears and why the systems don&apos;t connect.
-              </p>
-              <p className="text-[#023047]/70 leading-relaxed mb-8">
-                Most technology advice fails businesses like yours because it comes from people who&apos;ve never processed a decorated order in their life. I built Decoded Ops because product-based businesses with a decoration service deserve someone who genuinely understands their operation from the inside.
-              </p>
-              <Link href="/contact" className="inline-flex items-center px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                Start with a free 60-min call
-              </Link>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-full border border-[#219EBC]/30 text-[#219EBC] hover:border-[#219EBC] hover:bg-[#219EBC]/5 text-sm font-medium transition-colors">Or book a call directly <ArrowRight size={14} /></a>
-            </div>
-
-          </div>
-
-          {/* Three differentiators */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {differentiators.map(d => {
-              const Icon = d.icon;
-              return (
-                <div key={d.title} className="p-6 rounded-2xl bg-[#F8F9FA] border border-[#8ECAE6]/40 text-center md:text-left">
-                  <div className="w-14 h-14 rounded-full bg-[#219EBC]/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    <Icon size={26} className="text-[#219EBC]" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#023047] mb-2">{d.title}</h3>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed">{d.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOUR SERVICES ────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-[#023047]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-              <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; The four services</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">Each standalone. Each a natural next step.</h2>
-            <p className="text-[#8ECAE6] text-lg">The audit is the door, not the business. Every service works on its own &mdash; and connects to the next when the time is right.</p>
-          </div>
-
-          {/* Service connection flow */}
-          <div className="flex flex-wrap items-center justify-start gap-2 mb-12">
-            {services.map((s, i) => (
-              <div key={s.name} className="flex items-center gap-2">
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#F8F9FA]/10 border border-[#F8F9FA]/20 text-sm font-semibold text-[#F8F9FA]">
-                  {s.name}
-                </span>
-                {i < services.length - 1 && (
-                  <ArrowRight size={16} className="text-[#219EBC] flex-shrink-0" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {services.map(s => {
-              const Icon = s.icon;
-              return (
-                <Link key={s.name} href={s.href} className="group relative p-6 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10 hover:bg-white/[0.08] transition-colors">
-                  {s.badge && (
-                    <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-[#FFB703] text-[#023047] text-xs font-bold uppercase tracking-wider">
-                      {s.badge}
-                    </div>
-                  )}
-                  <div className="w-10 h-10 rounded-xl bg-[#219EBC]/20 flex items-center justify-center mb-4">
-                    <Icon size={20} className="text-[#219EBC]" />
-                  </div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-[#219EBC] mb-1">{s.name}</div>
-                  <div className="text-sm font-medium text-[#8ECAE6] mb-3">{s.subtitle}</div>
-                  <p className="text-sm text-[#8ECAE6]/80 leading-relaxed mb-4">{s.desc}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#FFB703] group-hover:text-[#FB8500] transition-colors">
-                    Learn more <ArrowRight size={15} />
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Guarantee */}
-          <div className="mt-12 flex items-start gap-3 p-6 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/20 max-w-2xl">
-            <Shield size={20} className="text-[#219EBC] flex-shrink-0 mt-0.5" />
+        {/* ══════════ REGION D · 08 · THE CLOSER ══════════ */}
+        <section className="g-off closer" id="s8" data-od-id="cta">
+          <div className="wrap closer-grid">
             <div>
-              <div className="text-sm font-bold text-[#F8F9FA] mb-1">The 3× Clarity Guarantee</div>
-              <p className="text-sm text-[#8ECAE6] leading-relaxed">If the report doesn&apos;t identify at least three times the fee in recoverable cost or lost revenue &mdash; the fee is refunded in full. No conditions. No questions.</p>
+              <span className="eyebrow">Start here</span>
+              <h2>Ready to find out what&rsquo;s really going on?</h2>
+            </div>
+            <div>
+              <p className="lede">The discovery call is free, takes 60 minutes, and comes with no obligation.
+                Just an honest conversation about your operation.</p>
+              <div className="btn-row">
+                <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+                <Link className="btn btn--outline" href="/pricing">See engagement options and pricing</Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── INDUSTRY STATS — dark with dot-grid ──────────────────────────────── */}
-      <section className="relative py-16 bg-[#023047] overflow-hidden border-t border-[#F8F9FA]/10">
-        {/* SVG dot grid */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#219EBC" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dots)" />
-        </svg>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-2">What the right technology does</h2>
-            <p className="text-sm text-[#8ECAE6]">Published ERP implementation benchmarks, 2024.</p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {[
-              { value: '↓23%', label: 'Operational costs' },
-              { value: '↓22%', label: 'Admin costs' },
-              { value: '+24%',     label: 'On-time delivery' },
-              { value: '91%',      label: 'Improved stock accuracy within 12 months' },
-            ].map(stat => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-[#219EBC] mb-2">{stat.value}</div>
-                <div className="text-sm text-[#8ECAE6]">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CURRENT WORK — live named engagements ──────────────────────────────── */}
-      <section className="py-20 bg-white border-t border-[#8ECAE6]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#219EBC] mb-2">What I&apos;m doing right now</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Not hypothetical. Live engagements, named with permission.</h2>
-            <p className="text-[#023047]/70 text-lg">Four different sectors, same approach every time: fix the process and the data before you automate anything.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Wrench, name: 'Hanicks', desc: 'Project-leading a Khaos Control ERP implementation plus a custom supplier and Amazon FBA app.', href: '/case-studies/hanicks' },
-              { icon: Package, name: 'TackleBag', desc: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of their ERP.', href: '/case-studies/tacklebag' },
-              { icon: ShoppingBag, name: 'Cobra Workwear', desc: 'Clarity Audit complete on a B2B ordering portal and ERP evaluation, now scoping delivery.', href: '/case-studies/cobra-workwear' },
-              { icon: Dumbbell, name: 'Eternal Fitness', desc: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.', href: '/case-studies/eternal-fitness' },
-            ].map(c => {
-              const Icon = c.icon;
-              return (
-                <Link key={c.href} href={c.href} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 hover:border-[#219EBC]/40 hover:shadow-lg transition-all duration-300">
-                  <div className="w-10 h-10 rounded-lg bg-[#219EBC]/10 flex items-center justify-center mb-4 group-hover:bg-[#219EBC]/20 transition-colors">
-                    <Icon size={20} className="text-[#219EBC]" />
-                  </div>
-                  <h3 className="font-bold text-[#023047] mb-2 group-hover:text-[#219EBC] transition-colors">{c.name}</h3>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed">{c.desc}</p>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
-              See all client work <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CASE STUDY TEASER — supporting evidence ──────────────────────────── */}
-      <section className="py-16 bg-[#023047]/5 border-t border-[#8ECAE6]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8">
-          <div className="relative w-full md:w-48 aspect-[4/3] rounded-xl overflow-hidden shadow-md shrink-0">
-            <Image
-              src="/images/real-example.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 192px"
-              className="object-cover [filter:grayscale(0.55)_sepia(0.15)_contrast(1.08)_brightness(0.9)]"
-            />
-          </div>
-          <div className="flex-1">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#023047] mb-2">A pattern I see repeatedly</p>
-            <h3 className="text-xl font-bold text-[#023047] mb-2">What happens when the audit doesn&apos;t come first.</h3>
-            <p className="text-sm text-[#023047]/70">ERP implementations that skip an independent audit routinely run over budget and behind schedule &mdash; because nobody scoped the business before scoping the software.</p>
-          </div>
-          <Link href="/problems/erp-implementation-failure" className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#023047] text-[#F8F9FA] text-sm font-semibold hover:bg-[#023047]/90 transition-colors">
-            See what went wrong <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Ready to find out what&apos;s really going on?</h2>
-          <p className="text-[#023047]/70 text-lg max-w-xl mx-auto mb-8">The discovery call is free, takes 60 minutes, and comes with no obligation. Just an honest conversation about your operation.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-              Book a free discovery call <ArrowRight size={18} />
-            </Link>
-            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-              See engagement options &amp; pricing
-            </Link>
-          </div>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
-        </div>
-      </section>
+      </main>
     </>
   );
 }

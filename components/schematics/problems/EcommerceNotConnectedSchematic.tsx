@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "Orphaned storefront" — a webstore node sits above a stack of queued
+ * "Orphaned storefront", a webstore node sits above a stack of queued
  * orders, disconnected by a BrokenLink from a back-office stratum (ERP,
  * STOCK, DESPATCH) that is solidly wired to itself. An amber person-chip
  * carries orders across the break by hand. Built on the shared schematic
@@ -50,7 +50,7 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — ORPHANED STOREFRONT</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: ORPHANED STOREFRONT</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Your webstore doesn&apos;t know what&apos;s in the warehouse</text>
 
       {/* webstore node */}
@@ -74,12 +74,12 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
         <text x="620" y="404" textAnchor="middle" style={fMono} fontSize="17" fill={c.mono} opacity="0.7">orders queuing</text>
       </g>
 
-      {/* broken link — webstore/queue down to back office */}
+      {/* broken link, webstore/queue down to back office */}
       <g className="sch-fade sch-f3">
         <BrokenLink x1={620} y1={430} x2={620} y2={560} tone={tone} />
       </g>
 
-      {/* back office stratum — label offset right so it stays clear of the BrokenLink X-mark */}
+      {/* back office stratum, label offset right so it stays clear of the BrokenLink X-mark */}
       <text x="1015" y="522" textAnchor="middle" style={fMono} fontSize="20" letterSpacing="3" fill={c.mono} opacity="0.6" className="sch-fade sch-f3">BACK OFFICE</text>
       <line x1="60" y1="534" x2="1180" y2="534" stroke={c.grid} strokeWidth="1" className="sch-fade sch-f3" />
 
@@ -95,7 +95,7 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
       <GlassNode x={520} y={570} width={290} height={120} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f4">
           <text x={546} y={624} style={fDisp} fontWeight="700" fontSize="26" fill={c.ink}>STOCK</text>
-          <text x={546} y={652} style={fMono} fontSize="17" fill={AMBER} opacity="0.9">shows in stock — isn&apos;t</text>
+          <text x={546} y={652} style={fMono} fontSize="17" fill={AMBER} opacity="0.9">shows in stock, isn&apos;t</text>
         </g>
       </GlassNode>
       <GlassNode x={900} y={570} width={230} height={120} tone={tone} idPrefix={ID} accent="cyan">
@@ -105,7 +105,7 @@ export function EcommerceNotConnectedSchematic({ tone = 'dark', className }: { t
         </g>
       </GlassNode>
 
-      {/* amber bypass carrier — sits left of the break, clear of the X-mark */}
+      {/* amber bypass carrier, sits left of the break, clear of the X-mark */}
       <GlassNode x={80} y={425} width={230} height={100} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f3">
           <text x={106} y={461} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>COPY &amp; PASTE</text>

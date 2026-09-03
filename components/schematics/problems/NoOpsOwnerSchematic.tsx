@@ -8,9 +8,9 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "The gaps" — a row of four process nodes (SALES, ARTWORK, PRODUCTION,
+ * "The gaps", a row of four process nodes (SALES, ARTWORK, PRODUCTION,
  * DESPATCH), each with a small owner chip above it. The nodes themselves are
- * fine — cyan, solidly staffed. The connecting handoff gaps between them are
+ * fine, cyan, solidly staffed. The connecting handoff gaps between them are
  * the problem: dashed amber zones with "NO OWNER" labels, and a central
  * amber annotation calling out where jobs stall. Built on the shared
  * schematic primitives, matching ManualWorkaroundsSchematic /
@@ -19,7 +19,7 @@ import type { Tone } from '../primitives';
  * Layout (1240x860): four nodes evenly spaced on a midline y=420, owner
  * chips 70px above each node top. Gap zones are dashed amber rounded rects
  * sitting exactly in the space between adjacent nodes, each with a small
- * "NO OWNER" mono label centred inside — sized to never touch the flanking
+ * "NO OWNER" mono label centred inside, sized to never touch the flanking
  * nodes. Type at ~0.46 scale: headline 46, eyebrow/zones 20, node mains
  * 24-27, mono subs 17-19, annotations 17-18, caption 25.
  */
@@ -62,7 +62,7 @@ export function NoOpsOwnerSchematic({ tone = 'dark', className }: { tone?: Tone;
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — THE GAPS</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: THE GAPS</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Everyone owns a step. Nobody owns the flow</text>
 
       {/* process nodes + owner chips + gap zones */}
@@ -96,7 +96,7 @@ export function NoOpsOwnerSchematic({ tone = 'dark', className }: { tone?: Tone;
           </g>
         );
       })}
-      <text x="620" y={MID + 100} textAnchor="middle" style={fMono} fontSize="19" letterSpacing="2" fill={AMBER} opacity="0.9" className="sch-fade sch-f3">NO OWNER — WHERE JOBS STALL</text>
+      <text x="620" y={MID + 100} textAnchor="middle" style={fMono} fontSize="19" letterSpacing="2" fill={AMBER} opacity="0.9" className="sch-fade sch-f3">NO OWNER: WHERE JOBS STALL</text>
       {[0, 1, 2].map((i) => {
         const gx = START_X + (i + 1) * NODE_W + i * GAP_W + GAP_W / 2;
         return (

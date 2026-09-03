@@ -1,0 +1,336 @@
+/* ══════════════════════════════════════════════════════════════════════
+   ds-nav.css — mega navigation, helper strip, scrim and finder
+   Decoded Ops · split for implementation, 10 Aug 2026
+   System-level. Every page gets this. Loads AFTER ds-marketing.css, whose
+   older .site-head--paths rules it is written to override by specificity.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ══ NAVIGATION — mega menu, ported from nav-mega-menu.html ═════════════
+   The prototype ships its own token block (--fg/--muted/--accent/--action).
+   Those are translated to --do-* here; nothing new is declared.
+
+   Header rules are scoped to .site-head--mega so they beat ds-marketing.css's
+   "Three Paths" rules by specificity rather than by source order — the old
+   .site-nav / .nav-toggle / mobile rules are still in the stylesheet and
+   still apply to 70 other pages.
+
+   Two changes from the prototype, both forced by the system's own rules:
+   · every hover that read color:var(--accent) is dropped. Cerulean on a
+     light ground is 3.11:1, and the accent is a border/icon/indicator
+     colour, never text. Hovers now move the ground and hold the foreground.
+   · the header's "Book a free call" is outline, not primary, so the one
+     Amber CTA per view stays with the page body.
+
+   This was page-scoped while it lived inside homepage-v2.html. It is a
+   real stylesheet now, which is what lets it go on all 70 pages without
+   being copied into each one.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* the header's own container: .wrap's metrics without inheriting
+   ds-marketing's ".site-head .wrap" height:76px rule */
+.container{ max-width:1200px; margin-inline:auto; padding-inline:24px }
+
+.helper-strip{ position:relative; z-index:1; font-size:var(--do-text-sm);
+  background:var(--do-prussian-blue); color:var(--do-off-white) }
+.helper-strip .container{ display:flex; align-items:center; justify-content:center;
+  gap:10px; padding-block:9px; flex-wrap:wrap; text-align:center }
+.helper-strip strong{ font-weight:var(--do-weight-medium) }
+.helper-strip .strip-link{ padding-bottom:1px; text-decoration:none;
+  font-weight:var(--do-weight-medium); color:var(--do-sky-blue);
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 40%, transparent) }
+.helper-strip .strip-link:hover{ color:var(--do-white); border-bottom-color:var(--do-white) }
+.helper-strip .strip-link:focus-visible{ outline:2px solid var(--do-sky-blue);
+  outline-offset:3px; border-radius:var(--do-radius-sm) }
+
+.site-head--mega{ background:color-mix(in srgb, var(--do-off-white) 94%, transparent);
+  backdrop-filter:blur(12px); border-bottom:1px solid var(--do-border-subtle) }
+.site-head--mega .head-inner{ display:flex; align-items:center; gap:20px;
+  min-height:var(--do-header-h) }
+.site-head--mega .logo{ font-size:19px }
+
+.site-head--mega .nav-toggle{ display:none; margin-left:auto; width:46px; height:46px;
+  align-items:center; justify-content:center; cursor:pointer; background:transparent;
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg);
+  color:var(--do-text-primary) }
+.site-head--mega .nav-toggle svg{ width:22px; height:22px }
+
+.site-head--mega .site-nav{ display:flex; align-items:center; gap:2px; margin-left:auto }
+.site-head--mega .nav-item{ position:static }
+.site-head--mega .nav-trigger,
+.site-head--mega .nav-flat{ display:inline-flex; align-items:center; gap:6px; margin:0;
+  padding:10px 12px; min-height:44px; cursor:pointer; white-space:nowrap;
+  background:transparent; border:0; border-radius:var(--do-radius-lg);
+  font-family:var(--do-font-body); font-size:15px;
+  font-weight:var(--do-weight-medium); color:var(--do-text-primary);
+  text-decoration:none }
+.site-head--mega .nav-trigger:hover,
+.site-head--mega .nav-flat:hover{ color:var(--do-text-primary);
+  background:color-mix(in srgb, var(--do-cerulean) 10%, transparent) }
+.site-head--mega .nav-trigger[aria-expanded="true"]{ color:var(--do-text-primary);
+  background:color-mix(in srgb, var(--do-cerulean) 14%, transparent) }
+.site-head--mega .nav-trigger:focus-visible,
+.site-head--mega .nav-flat:focus-visible{ outline:2px solid var(--do-focus-ring);
+  outline-offset:2px }
+.site-head--mega .nav-chev{ width:15px; height:15px; opacity:.65;
+  transition:transform var(--do-duration-normal) var(--do-ease-default) }
+.site-head--mega .nav-trigger[aria-expanded="true"] .nav-chev{ transform:rotate(180deg) }
+
+.site-head--mega .nav-tools{ display:flex; align-items:center; gap:10px; margin-left:10px }
+/* ds-marketing's ".site-nav a" repaints link text muted at .875rem. On a
+   solid button that lands at 3.9:1, so the button colours are restated. */
+.site-head--mega .site-nav .btn{ font-size:var(--do-text-sm) }
+.site-head--mega .site-nav .btn--primary{ color:var(--do-action-primary-text) }
+.site-head--mega .site-nav .btn--outline{ color:var(--do-text-primary) }
+.site-head--mega .site-nav .btn--ghost{ color:var(--do-text-primary) }
+.btn--sm{ padding:8px 14px; min-height:38px; font-size:var(--do-text-sm) }
+.btn--ghost{ background:transparent; color:var(--do-text-primary);
+  border-color:var(--do-border-default) }
+.btn--ghost:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean);
+  background:color-mix(in srgb, var(--do-cerulean) 10%, transparent) }
+
+/* the mega panel */
+.site-head--mega .mega{ position:absolute; left:0; right:0; top:100%;
+  background:var(--do-surface-raised); box-shadow:var(--do-shadow-xl);
+  border-top:1px solid var(--do-border-subtle);
+  border-bottom:1px solid var(--do-border-subtle) }
+.site-head--mega .mega[hidden]{ display:none }
+.site-head--mega .mega-inner{ display:grid; gap:32px; padding-block:32px;
+  grid-template-columns:repeat(4,minmax(0,1fr)) 260px }
+.site-head--mega .mega-inner.cols-3{ grid-template-columns:repeat(3,minmax(0,1fr)) 260px }
+.site-head--mega .mega-inner.cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)) 260px }
+
+.site-head--mega .mega-group h3{ margin:0 0 10px; padding-bottom:8px;
+  font-family:var(--do-font-body); font-size:var(--do-text-xs);
+  font-weight:var(--do-weight-bold); letter-spacing:var(--do-tracking-wider);
+  text-transform:uppercase; color:var(--do-text-muted);
+  border-bottom:1px solid var(--do-border-subtle) }
+.site-head--mega .mega-list{ list-style:none; margin:0; padding:0 }
+.site-head--mega .mega-list a{ display:block; margin:0 0 0 -10px; padding:8px 10px;
+  border-radius:var(--do-radius-lg); font-size:15px; line-height:1.35;
+  color:var(--do-text-primary); text-decoration:none; border:0 }
+.site-head--mega .mega-list a small{ display:block; margin-top:2px; font-size:13px;
+  color:var(--do-text-muted) }
+.site-head--mega .mega-list a:hover{ color:var(--do-text-primary);
+  background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+.site-head--mega .mega-list a:focus-visible{ outline:2px solid var(--do-focus-ring);
+  outline-offset:-2px }
+
+/* numbered service ladder */
+.site-head--mega .ladder{ list-style:none; margin:0; padding:0; counter-reset:step-rung }
+.site-head--mega .ladder a{ display:grid; grid-template-columns:26px 1fr; gap:10px;
+  align-items:start; margin:0 0 0 -10px; padding:9px 10px;
+  border-radius:var(--do-radius-lg); color:var(--do-text-primary);
+  text-decoration:none; border:0 }
+.site-head--mega .ladder a:hover{ background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+.site-head--mega .ladder a:focus-visible{ outline:2px solid var(--do-focus-ring);
+  outline-offset:-2px }
+.site-head--mega .ladder .step-rung{ counter-increment:step-rung; width:24px; height:24px;
+  display:grid; place-items:center; border-radius:var(--do-radius-full);
+  border:1px solid var(--do-border-subtle); background:var(--do-surface-page);
+  font-size:12px; font-weight:var(--do-weight-bold); color:var(--do-text-muted);
+  font-variant-numeric:tabular-nums }
+.site-head--mega .ladder .step-rung::before{ content:counter(step-rung) }
+.site-head--mega .ladder strong{ display:block; font-size:15px;
+  font-weight:var(--do-weight-semibold) }
+.site-head--mega .ladder small{ display:block; margin-top:1px; font-size:13px;
+  color:var(--do-text-muted) }
+.site-head--mega .ladder .start-here{ display:inline-block; margin-top:4px;
+  padding:2px 8px; border-radius:var(--do-radius-full);
+  background:color-mix(in srgb, var(--do-amber) 22%, transparent);
+  color:var(--do-text-primary); font-size:11px; font-weight:var(--do-weight-bold);
+  letter-spacing:var(--do-tracking-wide); text-transform:uppercase }
+
+/* the "not sure" rail — repeated in every panel */
+.site-head--mega .mega-rail{ align-self:start; padding:20px;
+  background:var(--do-surface-page); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-xl) }
+.site-head--mega .mega-rail h3{ margin:0 0 6px; padding:0; border:0;
+  font-family:var(--do-font-heading); font-size:16px;
+  font-weight:var(--do-weight-bold); letter-spacing:0; text-transform:none;
+  color:var(--do-text-primary) }
+.site-head--mega .mega-rail p{ margin:0 0 14px; font-size:var(--do-text-sm);
+  color:var(--do-text-muted) }
+.site-head--mega .mega-rail .btn{ width:100%; margin-bottom:8px }
+.site-head--mega .mega-rail .rail-all{ display:inline-flex; align-items:center; gap:6px;
+  margin:4px 0 0; font-size:13px; color:var(--do-text-muted); text-decoration:none }
+.site-head--mega .mega-rail .rail-all:hover{ color:var(--do-text-primary);
+  text-decoration:underline; text-underline-offset:3px }
+
+/* sector grid inside its panel */
+.site-head--mega .sector-grid{ grid-column:1 / -2; display:grid; gap:10px;
+  grid-template-columns:repeat(3,minmax(0,1fr)) }
+.site-head--mega .sector-grid a{ display:flex; align-items:center; gap:10px; margin:0;
+  padding:12px 14px; min-height:56px; background:var(--do-surface-raised);
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg);
+  font-size:15px; font-weight:var(--do-weight-medium); line-height:1.25;
+  color:var(--do-text-primary); text-decoration:none }
+.site-head--mega .sector-grid a:hover{ color:var(--do-text-primary);
+  border-color:var(--do-cerulean);
+  background:color-mix(in srgb, var(--do-cerulean) 7%, transparent) }
+.site-head--mega .sector-grid a:focus-visible{ outline:2px solid var(--do-focus-ring);
+  outline-offset:2px }
+.site-head--mega .sector-grid svg{ width:20px; height:20px; flex:none;
+  color:var(--do-cerulean); stroke-width:1.6 }
+
+/* price rows inside the small-business panel */
+.site-head--mega .price-list{ list-style:none; margin:0; padding:0 }
+.site-head--mega .price-list a{ display:flex; justify-content:space-between;
+  align-items:baseline; gap:12px; margin:0 0 0 -10px; padding:10px;
+  border-radius:var(--do-radius-lg); font-size:15px; color:var(--do-text-primary);
+  text-decoration:none; border:0 }
+.site-head--mega .price-list a:hover{ background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+.site-head--mega .price-list a small{ display:block; font-size:13px;
+  color:var(--do-text-muted) }
+.site-head--mega .price-list .price{ font-size:var(--do-text-sm);
+  font-weight:var(--do-weight-semibold); color:var(--do-text-muted);
+  font-variant-numeric:tabular-nums; white-space:nowrap }
+.site-head--mega .panel-note{ grid-column:1 / -2; align-self:start; margin:0 0 4px; padding:12px 16px;
+  border-radius:var(--do-radius-lg); font-size:var(--do-text-sm);
+  color:var(--do-text-primary);
+  background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+.site-head--mega .price-list-group{ grid-column:1/-2 }
+.site-head--mega .price-list-group .price-list{ display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 32px }
+.site-head--mega .price-list-group .price-list a{ margin-left:0 }
+
+/* smallbiz "Bigger than £500k?" — compact horizontal band, not a tall card */
+.site-head--mega .smallbiz-cta-band{ grid-column:1/-2; display:flex;
+  align-items:center; justify-content:space-between; gap:20px;
+  padding:16px 20px; background:color-mix(in srgb,var(--do-cerulean) 7%,transparent);
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
+.site-head--mega .smallbiz-cta-band h3{ margin:0 0 2px;
+  font-family:var(--do-font-heading); font-size:16px;
+  font-weight:var(--do-weight-bold); letter-spacing:0; text-transform:none;
+  color:var(--do-text-primary) }
+.site-head--mega .smallbiz-cta-band p{ margin:0; font-size:var(--do-text-sm);
+  color:var(--do-text-muted) }
+.site-head--mega .smallbiz-cta-band .band-actions{ display:flex;
+  align-items:center; gap:12px; flex-shrink:0 }
+.site-head--mega .smallbiz-cta-band .band-actions .btn{ margin-bottom:0 }
+.site-head--mega .smallbiz-cta-band .band-actions .rail-all{ display:inline-flex;
+  align-items:center; gap:6px; font-size:13px; color:var(--do-text-muted);
+  text-decoration:none }
+.site-head--mega .smallbiz-cta-band .band-actions .rail-all:hover{
+  color:var(--do-text-primary); text-decoration:underline;
+  text-underline-offset:3px }
+
+/* the scrim sits under the header but over the page — and over the rail */
+.scrim{ position:fixed; inset:var(--do-header-h) 0 0;
+  z-index:calc(var(--do-z-dropdown) + 1);
+  background:color-mix(in srgb, var(--do-prussian-blue) 28%, transparent) }
+.scrim[hidden]{ display:none }
+
+/* ── mobile nav ────────────────────────────────────────────────────── */
+@media(max-width:1100px){
+  .site-head--mega .nav-toggle{ display:inline-flex }
+  .site-head--mega .site-nav{ display:none; position:fixed;
+    inset:var(--do-header-h) 0 0; flex-direction:column; align-items:stretch;
+    gap:0; margin:0; padding:24px 24px 64px; overflow-y:auto;
+    background:var(--do-surface-raised); border:0; box-shadow:none;
+    z-index:var(--do-z-sticky) }
+  .site-head--mega .site-nav.is-open{ display:flex }
+  .site-head--mega .nav-trigger,
+  .site-head--mega .nav-flat{ width:100%; justify-content:space-between;
+    padding:16px 4px; min-height:56px; font-size:17px;
+    font-weight:var(--do-weight-semibold); border-radius:0;
+    border-bottom:1px solid var(--do-border-subtle) }
+  .site-head--mega .nav-trigger:hover,
+  .site-head--mega .nav-flat:hover,
+  .site-head--mega .nav-trigger[aria-expanded="true"]{ background:transparent }
+  .site-head--mega .mega{ position:static; background:transparent;
+    border:0; box-shadow:none;
+    height:calc(100vh - var(--do-header-h) - 48px); overflow:hidden }
+  .site-head--mega .mega-inner,
+  .site-head--mega .mega-inner.cols-3,
+  .site-head--mega .mega-inner.cols-2{ grid-template-columns:1fr; gap:20px;
+    padding-block:20px 32px; padding-inline:0; max-width:none;
+    overflow-y:auto; height:100% }
+  .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
+  .site-head--mega .sector-grid,
+  .site-head--mega .panel-note,
+  .site-head--mega .price-list-group,
+  .site-head--mega .smallbiz-cta-band{ grid-column:auto }
+  .site-head--mega .smallbiz-cta-band{ flex-direction:column; align-items:stretch;
+    gap:12px }
+  .site-head--mega .smallbiz-cta-band .band-actions{ justify-content:flex-start }
+  .site-head--mega .sector-grid{ grid-template-columns:1fr 1fr }
+  .site-head--mega .nav-tools{ flex-direction:column; align-items:stretch;
+    margin:20px 0 0; order:-1; gap:8px }
+  .site-head--mega .nav-tools .btn{ width:100% }
+  .scrim{ display:none }
+}
+@media(max-width:520px){
+  .site-head--mega .sector-grid{ grid-template-columns:1fr }
+}
+
+/* ── the finder · guided three-question overlay ─────────────────────── */
+.finder-backdrop{ position:fixed; inset:0; z-index:var(--do-z-modal);
+  display:grid; place-items:center; padding:20px; overflow-y:auto;
+  background:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.finder-backdrop[hidden]{ display:none }
+.finder{ width:min(680px,100%); margin-block:auto; padding:28px;
+  background:var(--do-surface-raised); border-radius:var(--do-radius-xl);
+  box-shadow:var(--do-shadow-xl) }
+.finder-head{ display:flex; justify-content:space-between; align-items:flex-start;
+  gap:16px; margin-bottom:6px }
+.finder-head h2{ margin:0; font-size:var(--do-text-2xl) }
+.finder-close{ width:40px; height:40px; flex:none; display:grid; place-items:center;
+  cursor:pointer; background:transparent; color:var(--do-text-primary);
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
+.finder-close:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean) }
+.finder-close:focus-visible{ outline:2px solid var(--do-focus-ring); outline-offset:2px }
+.finder-close svg{ width:18px; height:18px }
+.finder-progress{ display:flex; gap:6px; margin:18px 0 22px }
+.finder-progress span{ height:4px; flex:1; border-radius:var(--do-radius-full);
+  background:var(--do-border-subtle) }
+.finder-progress span.done{ background:var(--do-cerulean) }
+.finder-q{ margin:0 0 16px; font-family:var(--do-font-heading); font-size:22px;
+  font-weight:var(--do-weight-semibold); line-height:1.25 }
+.finder-options{ display:grid; gap:10px }
+.finder-options button{ display:block; width:100%; text-align:left; cursor:pointer;
+  padding:15px 18px; min-height:56px; background:var(--do-surface-raised);
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg);
+  font-family:var(--do-font-body); font-size:16px;
+  font-weight:var(--do-weight-medium); color:var(--do-text-primary);
+  transition:border-color var(--do-duration-fast) var(--do-ease-default),
+             background var(--do-duration-fast) var(--do-ease-default) }
+.finder-options button:hover{ color:var(--do-text-primary);
+  border-color:var(--do-cerulean);
+  background:color-mix(in srgb, var(--do-cerulean) 8%, transparent) }
+.finder-options button:focus-visible{ outline:2px solid var(--do-focus-ring);
+  outline-offset:2px }
+.finder-options button small{ display:block; margin-top:2px; font-size:13px;
+  font-weight:var(--do-weight-regular); color:var(--do-text-muted) }
+.finder-foot{ display:flex; justify-content:space-between; align-items:center;
+  gap:12px; margin-top:20px; flex-wrap:wrap }
+.finder-back{ padding:8px 0; background:transparent; border:0; cursor:pointer;
+  font-family:var(--do-font-body); font-size:var(--do-text-sm);
+  color:var(--do-text-muted) }
+.finder-back:hover{ color:var(--do-text-primary) }
+.finder-back:focus-visible{ outline:2px solid var(--do-focus-ring); outline-offset:2px }
+.finder-skip{ font-size:var(--do-text-sm); color:var(--do-text-muted);
+  text-decoration:none }
+.finder-skip:hover{ color:var(--do-text-primary); text-decoration:underline;
+  text-underline-offset:3px }
+.finder .meta{ margin:0 0 10px; font-size:13px; color:var(--do-text-muted) }
+
+.result-card{ margin-bottom:16px; padding:22px; border:1px solid var(--do-cerulean);
+  border-radius:var(--do-radius-xl);
+  background:color-mix(in srgb, var(--do-cerulean) 7%, transparent) }
+/* the prototype set this pill Off-White on Cerulean — 2.98:1 at 11px bold */
+.result-card .pill{ display:inline-block; margin-bottom:10px; padding:3px 10px;
+  border-radius:var(--do-radius-full); background:var(--do-prussian-blue);
+  color:var(--do-off-white); font-size:11px; font-weight:var(--do-weight-bold);
+  letter-spacing:var(--do-tracking-wide); text-transform:uppercase }
+.result-card h3{ margin-bottom:6px; font-size:22px }
+.result-card p{ margin:0 0 16px; font-size:15px; color:var(--do-text-secondary) }
+.result-alts{ list-style:none; margin:0; padding:0; display:grid; gap:8px }
+.result-alts a{ display:flex; justify-content:space-between; align-items:center;
+  gap:12px; padding:13px 16px; min-height:48px; font-size:15px;
+  color:var(--do-text-primary); text-decoration:none;
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
+.result-alts a:hover{ color:var(--do-text-primary); border-color:var(--do-cerulean);
+  background:color-mix(in srgb, var(--do-cerulean) 6%, transparent) }
+.result-alts a:focus-visible{ outline:2px solid var(--do-focus-ring); outline-offset:2px }
+.result-alts .kind{ font-size:12px; color:var(--do-text-muted);
+  text-transform:uppercase; letter-spacing:var(--do-tracking-wide); white-space:nowrap }

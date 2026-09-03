@@ -1,0 +1,51 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'blx',
+  title: '28 posts, seven subjects',
+  sub: 'Where the writing actually goes · counted from the index, not estimated',
+  no: 'DO-ART-211',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+<g className="sk-fade sk-s2">
+      <text x="80" y="196" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">POSTS BY SUBJECT</text>
+    </g>
+
+    <g className="sk-fade sk-s3">
+      <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="22" textAnchor="end">
+        <text x="370" y="256">Operations</text>
+        <text x="370" y="326">Technology</text>
+        <text x="370" y="396">ERP</text>
+        <text x="370" y="466">Integration</text>
+        <text x="370" y="536">Workflow</text>
+        <text x="370" y="606">Quality</text>
+        <text x="370" y="676">Marketing</text>
+      </g>
+    </g>
+
+    {/* bars: 100px per post */}
+    <g className="sk-fade sk-s4">
+      <rect x="400" y="234" width="900" height="30" rx="4" fill="var(--do-cerulean)" opacity=".85"/>
+      <rect x="400" y="304" width="800" height="30" rx="4" fill="var(--do-cerulean)" opacity=".78"/>
+      <rect x="400" y="374" width="400" height="30" rx="4" fill="var(--do-cerulean)" opacity=".68"/>
+      <rect x="400" y="444" width="300" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".6"/>
+      <rect x="400" y="514" width="200" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".5"/>
+      <rect x="400" y="584" width="100" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".42"/>
+      <rect x="400" y="654" width="100" height="30" rx="4" fill="var(--do-sky-blue)" opacity=".42"/>
+    </g>
+    <g className="sk-fade sk-s5" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="26" fill="var(--do-off-white)">
+      <text x="1324" y="258">9</text><text x="1224" y="328">8</text><text x="824" y="398">4</text>
+      <text x="724" y="468">3</text><text x="624" y="538">2</text><text x="524" y="608">1</text><text x="524" y="678">1</text>
+    </g>
+
+    {/* gridline at the top count */}
+    <g className="sk-fade sk-s5">
+      <line x1="400" y1="222" x2="400" y2="696" className="p-scyan" strokeWidth=".8" strokeOpacity=".3"/>
+    </g>
+
+    <g className="sk-fade sk-s6">
+      <rect x="80" y="716" width="1460" height="60" rx="10" fill="url(#blx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+      <text x="106" y="754" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="22">Two thirds of it is operations and technology. Every post lands on the same rule: process and data before automation.</text>
+    </g>

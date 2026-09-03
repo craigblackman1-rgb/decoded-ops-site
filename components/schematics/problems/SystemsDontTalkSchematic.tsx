@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "Data islands" — four systems (ERP, ECOMMERCE, ACCOUNTS, WAREHOUSE) each
+ * "Data islands", four systems (ERP, ECOMMERCE, ACCOUNTS, WAREHOUSE) each
  * sit inside their own faint boundary box, with broken links criss-crossing
  * every pair that should talk. A single amber person-chip sits at the centre
  * doing the bridging by hand, with small amber annotations describing how
@@ -65,10 +65,10 @@ export function SystemsDontTalkSchematic({ tone = 'dark', className }: { tone?: 
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — DATA ISLANDS</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: DATA ISLANDS</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Four systems, zero conversations</text>
 
-      {/* island boundary boxes — faint, drawn before links */}
+      {/* island boundary boxes, faint, drawn before links */}
       <g className="sch-fade sch-f1" fill="none" stroke={c.grid} strokeWidth="1.4" strokeDasharray="3 5">
         <rect x={TL_X - 20} y={TL_Y - 20} width={IW + 40} height={IH + 40} rx="14" />
         <rect x={TR_X - 20} y={TR_Y - 20} width={IW + 40} height={IH + 40} rx="14" />
@@ -82,7 +82,7 @@ export function SystemsDontTalkSchematic({ tone = 'dark', className }: { tone?: 
         <text x={BR_X - 20} y={BR_Y - 32}>ISLAND</text>
       </g>
 
-      {/* broken links between adjacent pairs — routed around the centre chip */}
+      {/* broken links between adjacent pairs, routed around the centre chip */}
       <g className="sch-fade sch-f2">
         <BrokenLink x1={tl.cx} y1={tl.cy} x2={tr.cx} y2={tr.cy} tone={tone} />
         <BrokenLink x1={bl.cx} y1={bl.cy} x2={br.cx} y2={br.cy} tone={tone} />
@@ -116,14 +116,14 @@ export function SystemsDontTalkSchematic({ tone = 'dark', className }: { tone?: 
         </g>
       </GlassNode>
 
-      {/* gap annotations — sit in gutters, clear of nodes and X-marks */}
+      {/* gap annotations, sit in gutters, clear of nodes and X-marks */}
       <g className="sch-fade sch-f3" style={fMono} fontSize="18" fill={AMBER} opacity="0.9">
         <text x="620" y="288" textAnchor="middle">re-keyed</text>
         <text x="620" y="700" textAnchor="middle">csv export</text>
         <text x="272" y="450">printed and typed in</text>
       </g>
 
-      {/* centre re-entry chip — the human bridge */}
+      {/* centre re-entry chip, the human bridge */}
       <GlassNode x={520} y={445} width={200} height={90} tone={tone} idPrefix={ID} accent="amber">
         <g className="sch-fade sch-f4">
           <text x={546} y={485} style={fDisp} fontWeight="700" fontSize="24" fill={c.ink}>RE-ENTRY</text>

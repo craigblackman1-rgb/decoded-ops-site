@@ -8,8 +8,8 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * Spec-driven production drawn as a single straight chain — no split, no
- * converge — because the point of this sector is that everything is
+ * Spec-driven production drawn as a single straight chain, no split, no
+ * converge, because the point of this sector is that everything is
  * sequential and gated: spec, then a tolerance sign-off loop, then
  * scheduling, then finishing, then ship. The scheduling node carries a
  * literal mini-gantt motif (three stacked bars of different lengths, one
@@ -43,7 +43,7 @@ export function LabelsPackagingSchematic({ tone = 'dark', className }: { tone?: 
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Labels and packaging production schematic: a spec feeds a die-line proof with a tolerance sign-off loop, then a press scheduling node shown as a mini gantt chart of run length versus changeover, then finishing and ship — a single linear chain."
+      aria-label="Labels and packaging production schematic: a spec feeds a die-line proof with a tolerance sign-off loop, then a press scheduling node shown as a mini gantt chart of run length versus changeover, then finishing and ship, a single linear chain."
     >
       <SchematicDefs tone={tone} idPrefix={ID} />
 
@@ -53,7 +53,7 @@ export function LabelsPackagingSchematic({ tone = 'dark', className }: { tone?: 
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — LABELS &amp; PACKAGING</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: LABELS &amp; PACKAGING</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">Margins live in the changeover</text>
 
       {/* zone bands */}
@@ -90,7 +90,7 @@ export function LabelsPackagingSchematic({ tone = 'dark', className }: { tone?: 
         </g>
       </GlassNode>
 
-      {/* press scheduling — mini gantt motif */}
+      {/* press scheduling, mini gantt motif */}
       <GlassNode x={540} y={MID - 90} width={280} height={180} tone={tone} idPrefix={ID} accent="cyan">
         <g className="sch-fade sch-f3">
           <text x={564} y={MID - 48} style={fDisp} fontWeight="700" fontSize="25" fill={c.ink}>PRESS SCHEDULING</text>

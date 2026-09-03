@@ -11,7 +11,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/transform',
       label: 'Garment decoration ERP and systems',
-      anchor: 'ERP, eCommerce integration, artwork management, and production workflow — built around how decorators actually work, not how generic ERPs assume you work.',
+      anchor: 'ERP, eCommerce integration, artwork management, and production workflow, built around how decorators actually work, not how generic ERPs assume you work.',
     },
     relatedProblems: [
       { href: '/problems/ecommerce-not-connected', label: 'Your eCommerce isn\'t connected to operations' },
@@ -23,7 +23,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/transform',
       label: 'Workwear B2B portal and ERP',
-      anchor: 'Corporate account ordering, managed-account complexity, multi-location despatch, and a B2B portal that connects end-to-end with production and stock.',
+      anchor: 'Corporate account ordering, managed-account complexity, multi-location despatch, and a B2B portal that connects directly with production and stock.',
     },
     relatedProblems: [
       { href: '/problems/ecommerce-not-connected', label: 'Your B2B portal isn\'t connected to operations' },
@@ -47,7 +47,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Operations audit for signs & graphics',
-      anchor: 'A one-day audit that looks at your job-to-cash flow, supplier integration, file management, and production planning — and tells you what to fix first.',
+      anchor: 'A one-day audit that looks at your job-to-cash flow, supplier integration, file management, and production planning, and tells you what to fix first.',
     },
     relatedProblems: [
       { href: '/problems/ai-paralysis', label: 'AI hype vs what would actually help' },
@@ -59,7 +59,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Operations audit for labels & packaging',
-      anchor: 'Independent review of your prepress, MIS, despatch, and customer ordering — looking at where the time and cost are leaking.',
+      anchor: 'Independent review of your prepress, MIS, despatch, and customer ordering, looking at where the time and cost are leaking.',
     },
     relatedProblems: [
       { href: '/problems/ai-paralysis', label: 'AI hype vs what would actually help' },
@@ -71,7 +71,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Operations audit for awards & engraving',
-      anchor: 'A structured one-day audit of order intake, artwork, production, and despatch — built for the specific reality of mixed-method, short-run, personalised production.',
+      anchor: 'A structured one-day audit of order intake, artwork, production, and despatch, built for the specific reality of mixed-method, short-run, personalised production.',
     },
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Manual order processing and artwork checks' },

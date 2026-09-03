@@ -1,24 +1,27 @@
 import type { Metadata } from 'next';
-import { SectorPage } from '@/components/SectorPage';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { GarmentDecorationSchematic } from '@/components/schematics/sectors/GarmentDecorationSchematic';
+import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
+import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
   title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-  description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
+  description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   alternates: { canonical: '/sectors/garment-decoration' },
   openGraph: {
     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
+    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
     url: 'https://decodedops.co.uk/sectors/garment-decoration',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
-    description: 'Technology and operations consultancy for garment decoration businesses. Artwork management, ERP selection, eCommerce integration, and production workflow — for businesses doing embroidery, screen print, DTF, and DTG.',
+    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   },
 };
 
@@ -30,7 +33,7 @@ const sectorSchema = {
       '@id': 'https://decodedops.co.uk/sectors/garment-decoration#webpage',
       url: 'https://decodedops.co.uk/sectors/garment-decoration',
       name: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
-      description: 'Technology and operations consultancy for garment decoration businesses.',
+      description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },
     {
@@ -44,17 +47,40 @@ const sectorSchema = {
         {
           '@type': 'Question',
           name: 'How is embroidery business management different from other decoration methods?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitisation, stitch count estimation, machine capacity planning, and thread management — none of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Embroidery business management involves digitising, stitch count estimation, machine capacity planning, and thread management. None of which are native to generic ERP or MIS systems. Businesses running embroidery alongside screen print or DTF need systems that can represent each method\'s production logic independently.' },
         },
         {
           '@type': 'Question',
           name: 'What is the best ERP for a garment decoration business in the UK?',
-          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP — the right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Sector-specific systems like PANTA, DecoNetwork, and OrderWise are all used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
         },
       ],
     },
   ],
 };
+
+const tagline = 'Garment decoration business systems ||were never built for how you actually work.||';
+const parts = tagline.split('||');
+
+const challenges = [
+  { title: 'Decoration method mix', body: "Run embroidery, screen print, and DTG under one roof and you're running three production processes, three lead times, and three cost structures. Most systems treat them all the same." },
+  { title: 'The artwork loop', body: "Artwork sign-off causes more delay than almost anything else in this sector. Every manual chase and email thread is time and money that shows up nowhere. Artwork software can automate sign-off, but only if it connects to your order system. Most businesses still approve artwork by email." },
+  { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock against committed orders, until the problem is already in the queue." },
+  { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that needs manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
+  { title: 'Embroidery production workflow versus other methods', body: "Embroidery scheduling is not the same as screen print or DTF. Machine capacity, stitch count, digitising time, and thread changes all affect the schedule in ways generic software ignores. A system that can't represent embroidery accurately just means manual workarounds." },
+];
+
+const whatIdo = [
+  'Map your whole workflow, from order intake to despatch',
+  'Find where the artwork loop is causing delay and cost',
+  'Assess artwork software and how it connects to your order system',
+  'Review how you source blanks and where that leaves you exposed',
+  'Check for gaps between your online shop, order system, and production',
+  'Write an independent vendor brief if new software is needed',
+  'Put a number on every finding in time, headcount, and money',
+];
+
+const route = sectorRouting['garment-decoration'];
 
 export default function GarmentDecorationPage() {
   return (
@@ -65,33 +91,164 @@ export default function GarmentDecorationPage() {
         { name: 'Sectors', url: 'https://decodedops.co.uk/#sectors' },
         { name: 'Garment Decoration', url: 'https://decodedops.co.uk/sectors/garment-decoration' },
       ]} />
-      <SectorPage
-      sector="Garment decoration"
-      tagline="Garment decoration business systems ||were never built for how you actually work.||"
-      intro="Every decoration method has its own production logic, its own constraints, and its own failure modes. The ERP and MIS systems marketed to garment decoration businesses rarely account for that. Embroidery business management looks different from screen print management — and your systems should reflect that difference."
-      heroGraphic={<GarmentDecorationSchematic />}
-      challenges={[
-        { title: 'Decoration method mix', body: "Running embroidery, screen print, and DTG in the same business means three different production workflows, three different lead times, and three different cost structures — all managed in systems that don't account for the difference." },
-        { title: 'The artwork loop', body: "Artwork sign-off is the single biggest source of delay in most garment decoration businesses. Every manual chase, every email thread, every approval held in someone's inbox is time and cost that doesn't show up anywhere. Artwork management software can automate the sign-off loop — but only if it is properly integrated with the order management system. Most businesses in this sector are still managing artwork approval by email." },
-        { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock vs committed orders — until the problem is already in the queue." },
-        { title: 'eCommerce disconnected from production', body: "Online orders that don't automatically flow into the production schedule. Personalisation that requires manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
-        { title: 'Embroidery production workflow versus other methods', body: "Embroidery production scheduling is fundamentally different from screen print or DTF. Machine capacity, stitch count, digitisation time, and thread colour changes all affect the schedule in ways that generic production scheduling software does not account for. A system that cannot represent embroidery production accurately will always require manual workarounds." },
-      ]}
-      whatIdo={[
-        'Map your current decoration workflows end to end — from order intake to despatch',
-        'Identify where the artwork loop is creating delay and cost',
-        'Assess artwork management software options and integration with your order management system',
-        'Assess your blank sourcing model and the dependency risks within it',
-        'Review your technology stack for gaps between eCommerce, order management, and production',
-        'Produce an independent vendor brief if new software is recommended',
-        'Quantify every finding in time, headcount, and money',
-      ]}
-      cta="Find out what your decoration workflow is really costing you"
-    
-      slug="garment-decoration"
-      targetService={sectorRouting['garment-decoration'].targetService}
-      relatedProblems={sectorRouting['garment-decoration'].relatedProblems}
-    />
+      {/* HERO SPLIT */}
+      <section className={`g-off ${styles.heroSection}`}>
+        <div className={`wrap ${styles.heroSplit}`}>
+          <div>
+            <span className="eyebrow">Sector · garment decoration</span>
+            <h1>
+              {parts.map((p, i) =>
+                i % 2 === 0
+                  ? <span key={i}>{p}</span>
+                  : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+              )}
+            </h1>
+            <div className={styles.heroBody}>
+              <p>Embroidery, screen print, DTF, and DTG each work in their own way. But the ERP and MIS systems sold to decoration businesses rarely account for that. Embroidery is not the same as screen print. Your systems should match how you actually work.</p>
+            </div>
+            <div className="btn-row">
+              <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
+            <GarmentDecorationSchematic />
+          </div>
+        </div>
+      </section>
+
+      {/* PLATE DIAGRAM · DO-ART-107 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div className="plate-scroll">
+            <div className="plate-frame">
+              <Plate tone="dark" p="gd" title="Garment decoration: order intake to despatched garment"
+                     sub="Three connected systems: order + artwork intake, blank stock + decoration scheduling, delivery"
+                     no="DO-ART-107" rev="01" cls="DECODED OPS · ISSUED">
+
+                <path id="gd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
+                      fill="none" strokeWidth="2.5" markerEnd="url(#gd-ah)"/>
+
+                <g className="sk-fade sk-s3">
+                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#gd-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Order intake + artwork</text>
+                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Order details ·
+                    artwork files · personalisation data: all arriving together, not separately</text>
+                </g>
+
+                <g className="sk-fade sk-s4">
+                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#gd-node)"
+                        className="p-node" strokeWidth="1.4"/>
+                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
+                        fontSize="26">Production floor</text>
+                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Embroidery ·
+                    screen print · DTF · DTG: method mix scheduling that accounts for blank stock</text>
+                </g>
+
+                <g className="sk-fade sk-s5" filter="url(#gd-shadow)">
+                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#gd-amber-n)"
+                        className="p-node-a" strokeWidth="2"/>
+                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
+                        fontSize="28">Despatch</text>
+                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Finished
+                    garment · correct decoration · right address: data carried through from order to door</text>
+                </g>
+
+                <g className="sk-dots">
+                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#gd-spine"/></animateMotion></circle>
+                </g>
+              </Plate>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CHALLENGES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Common challenges</span>
+          <h2>Where the problems tend to live</h2>
+          <div className="hair" />
+          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <div className="grid grid--2">
+            {challenges.map((c, i) => (
+              <article key={i} className="card">
+                <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
+                <p>{c.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT I DO */}
+      <section className="g-navy">
+        <div className="wrap">
+          <span className="eyebrow">How I help</span>
+          <h2>What the work actually looks like</h2>
+          <div className="hair" />
+          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {whatIdo.map((item, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CROSS-LINKS */}
+      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0)) && (
+        <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+          <div className="wrap">
+            <div className="grid grid--2">
+              {route.targetService && (
+                <div className="card" style={{ background: 'var(--do-surface-dark)', color: 'var(--do-text-on-dark)' }}>
+                  <span className="kicker" style={{ color: 'var(--do-amber)' }}>The work in this sector</span>
+                  <h3 style={{ fontSize: 'var(--do-text-xl)', margin: '8px 0' }}>{route.targetService.label}</h3>
+                  <p style={{ marginBottom: '20px' }}>{route.targetService.anchor}</p>
+                  <Link href={route.targetService.href} style={{ color: 'var(--do-amber)', fontWeight: 'var(--do-weight-semibold)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    See how it works <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                </div>
+              )}
+              {route.relatedProblems && route.relatedProblems.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Most common in garment decoration</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>The problems I see most often</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedProblems.map((p) => (
+                      <li key={p.href} style={{ marginBottom: '10px' }}>
+                        <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA STRIP */}
+      <section className="g-off">
+        <div className={`wrap ${styles.centred}`}>
+          <h2>Book a free discovery call.</h2>
+          <div className="hair" />
+          <p className="lede">The audit starts with a free 60-minute call. No obligation. Just a conversation about what&apos;s happening in your business.</p>
+          <div className="btn-row">
+            <Link className="btn btn--primary" href="/contact">Book a free discovery call <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link className="btn btn--outline" href="/clarity">See how a Clarity Audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,275 +1,234 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Clock, Users, Wrench, TrendingUp } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
-import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { JsonLd } from '@/components/JsonLd';
+import { Plate } from '@/components/Plate';
+
+// Ported from D:\apps\design-systems\decoded-marketing\retained.html.
+// Day counts (2/4/8 days a month, six-month minimum) cross-checked against
+// DO_Pricing_Architecture_v8.1.md: match exactly, no changes. Replaces the
+// previous Tailwind implementation.
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
-  description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
+  title: 'Fractional CTO: Decoded Ops',
+  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
-    title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
-    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
+    title: 'Fractional CTO: Decoded Ops',
+    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
     url: 'https://decodedops.co.uk/retained',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional CTO for Print & Decoration Businesses | Decoded Ops',
-    description: 'Fractional CTO and Head of Operations for print, embroidery, and decoration businesses. Monthly strategic leadership, vendor oversight, and a direct line to Craig — without the full-time salary.',
+    title: 'Fractional CTO: Decoded Ops',
+    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire.',
   },
 };
 
 const retainedSchema = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Service',
-      name: 'Retained — Fractional CTO and Head of Operations',
-      description: 'Monthly strategic and operational technology leadership for print and decoration businesses. Fractional CTO without the full-time cost.',
-      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk', address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' } },
-      serviceType: 'Fractional CTO and Operations Leadership',
-      areaServed: 'GB',
-      url: 'https://decodedops.co.uk/retained',
-      offers: { '@type': 'Offer', price: '1440', priceCurrency: 'GBP', priceRange: 'From £1,440/month' },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'What does the Retained service include?',
-          acceptedAnswer: { '@type': 'Answer', text: 'The Retained service provides a defined number of days per month (agreed in advance), attendance at leadership and operations meetings, ownership of specific projects or workstreams, vendor management and technology procurement oversight, technology roadmap ownership, team coaching and process documentation, and a direct line to Craig Blackman — not a team of junior consultants.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'When does the Retained model make sense?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Retained suits four situations: post-audit implementation (you have the findings, now need someone to drive the fixes without a full-time hire); ERP or technology transitions (you need someone who understands the sector, the vendors, and can hold everyone accountable); scaling without chaos (revenue is growing but systems are not keeping up); or covering an ops gap (ops director has left, or you have never had one and need senior operational thinking without an £80,000+ salary commitment).' },
-        },
-        {
-          '@type': 'Question',
-          name: 'How is Retained different from hiring a full-time CTO?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Retained gives you fractional technology and operations leadership at a fraction of the cost of a full-time hire. You get a defined number of days per month, a direct line to Craig (not a junior team), and the flexibility to scale involvement up or down. The minimum commitment is 6 months for core engagements, with 30 days written notice after.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Is a fractional CTO the same as managed IT support?',
-          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support handles day-to-day IT issues — helpdesk, hardware, connectivity. A fractional CTO provides strategic and operational technology leadership: roadmap ownership, vendor selection, ERP oversight, and technology decision-making. The two are complementary, not interchangeable.' },
-        },
-        {
-          '@type': 'Question',
-          name: 'Do I need a full-time CTO or will part-time CTO services work for a small business?',
-          acceptedAnswer: { '@type': 'Answer', text: 'For most print, embroidery, and decoration businesses under £5m revenue, a part-time or fractional CTO is more appropriate than a full-time hire. You get the thinking and the oversight without carrying a full-time salary before the business is ready to support it.' },
-        },
-      ],
-    },
+  '@type': 'Service',
+  name: 'Retained: Fractional CTO',
+  description: 'Ongoing technology leadership for decorated-goods businesses. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Decoded Ops',
+    url: 'https://decodedops.co.uk',
+    address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
+  },
+  serviceType: 'Fractional CTO',
+  areaServed: 'GB',
+  url: 'https://decodedops.co.uk/retained',
+  offers: [
+    { '@type': 'Offer', name: 'Advisory', price: '1440', priceCurrency: 'GBP' },
+    { '@type': 'Offer', name: 'Embedded', price: '2880', priceCurrency: 'GBP' },
+    { '@type': 'Offer', name: 'Programme', price: '5760', priceCurrency: 'GBP' },
   ],
 };
-
-import { RetainedModelGraphic } from '@/components/graphics/RetainedModelGraphic';
-
-const whenItFits = [
-  { icon: Wrench,     title: 'Post-audit implementation',   desc: "The audit found the issues. Now you need someone to drive the fixes. Retained gives you the hands-on delivery without a full-time hire." },
-  { icon: TrendingUp, title: 'ERP or technology transition', desc: "You're implementing new software. You need someone who understands the sector, the vendors, and your business — and can hold everyone accountable. A fractional CTO without vendor ties is the most effective way to hold an implementation to account." },
-  { icon: Users,      title: 'Scaling without chaos',        desc: "Revenue is growing but the systems aren't keeping up. You need operational infrastructure built around how your business actually works." },
-  { icon: Clock,      title: 'Covering a gap',               desc: "Your ops director has left, or you've never had a dedicated IT or operations lead. Fractional CTO services give you senior operational thinking without the £80k+ salary commitment." },
-];
-
-const whatItIncludes = [
-  'A defined number of days per month — agreed in advance',
-  'Attendance at leadership and operations meetings',
-  'Ownership of specific projects or workstreams',
-  'Vendor management and technology procurement oversight',
-  'Technology roadmap ownership',
-  'Team coaching and process documentation',
-  'A direct line to Craig — not a team of junior consultants',
-];
-
-const serviceJourney = [
-  { label: 'Clarity',   href: '/clarity',   highlighted: false },
-  { label: 'Deliver',   href: '/deliver',   highlighted: false },
-  { label: 'Transform', href: '/transform', highlighted: false },
-  { label: 'Retained',  href: '/retained',  highlighted: true },
-];
 
 export default function RetainedPage() {
   return (
     <>
+      <JsonLd data={retainedSchema} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://decodedops.co.uk/' },
-        { name: 'Fractional CTO & Retained', url: 'https://decodedops.co.uk/retained' },
+        { name: 'Fractional CTO', url: 'https://decodedops.co.uk/retained' },
       ]} />
-      <JsonLd data={retainedSchema} />
-      {/* HERO */}
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Retained &middot; Fractional CTO / Head of Operations</span>
+
+      {/* 1 · HERO CENTRE */}
+      <section className="g-off">
+        <div className="container hero-center">
+          <p className="eyebrow">Fractional CTO</p>
+          <h1>Fractional CTO. Not a project. A standing decision-maker.</h1>
+          <p className="lead">Ongoing technology leadership, without the cost of a full-time hire. Fixed days
+            a month, agreed at the start.</p>
+          <div className="hero-cta">
+            <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 · FEATURES TRIPLET · the three tiers */}
+      {/* Day-count language is allowed here and only here, per pricing v8.1. */}
+      <section className="g-white">
+        <div className="container stack" style={{ gap: 48 }}>
+          <div>
+            <p className="eyebrow">Three ways to run it</p>
+            <h2>Fixed days a month. Fixed price.</h2>
+            <p className="lead" style={{ marginTop: 16 }}>No day rate to argue over, no invoice that changes
+              shape every month. You know what you&rsquo;re paying before the first meeting.</p>
+          </div>
+
+          <div className="grid-3">
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                  strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 5.5h16M4 12h16M4 18.5h9" />
+                </svg>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
-                Your fractional CTO. <span className="text-[#219EBC]">Without the full-time cost.</span>
-              </h1>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
-                Six months without anyone owning the technology decisions and the same questions are still being asked in the same Monday meeting. The vendors are still circling. The roadmap is still a whiteboard.
-              </p>
-              <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-xl">
-                Monthly strategic and operational leadership for businesses that need the thinking without a full-time hire. Roadmap ownership. Vendor management. <strong className="text-[#023047]">25 years inside the sector</strong>, on retainer.
-              </p>
-              <p className="text-sm text-[#023047]/60 leading-relaxed mb-4 max-w-xl">
-                Fractional CTO services give you the technology leadership and vendor oversight a growing business needs — without recruiting for a role that will cost £80,000+ before it has delivered value.
-              </p>
-              <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Talk about fractional CTO support <ArrowRight size={18} />
-                </Link>
-                <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-                  Start with Clarity
-                </Link>
-              </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
-              <div className="flex flex-wrap gap-8">
-                <div>
-                  <div className="text-2xl font-bold text-[#023047]">Fixed days</div>
-                  <div className="text-sm text-[#023047]/70">Agreed at the start</div>
-                </div>
-                <div className="w-px bg-[#8ECAE6]" />
-                <div>
-                  <div className="text-2xl font-bold text-[#023047]">6 months</div>
-                  <div className="text-sm text-[#023047]/70">Minimum engagement</div>
-                </div>
-                <div className="w-px bg-[#8ECAE6]" />
-                <div>
-                  <div className="text-2xl font-bold text-[#023047]">30 days</div>
-                  <div className="text-sm text-[#023047]/70">Notice after minimum</div>
-                </div>
-              </div>
+              <h3>Advisory</h3>
+              <p className="feature-meta">2 days a month</p>
+              <p>A standing line to me for the decisions as they come up. Vendor calls, platform
+                questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>
             </div>
-            <div className="hidden lg:flex items-center justify-center p-6 rounded-2xl bg-[#023047]/5 border border-[#8ECAE6]/30">
-              <RetainedModelGraphic />
+
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                  strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2.5" /><path d="M3 9.5h18M9 9.5V20" />
+                </svg>
+              </div>
+              <h3>Embedded</h3>
+              <p className="feature-meta">4 days a month</p>
+              <p>Closer to the operation, with more of the roadmap owned directly. On site regularly
+                enough that your team stops saving things up for me.</p>
+            </div>
+
+            <div className="feature">
+              <div className="feature-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
+                  strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+                </svg>
+              </div>
+              <h3>Programme</h3>
+              <p className="feature-meta">8 days a month</p>
+              <p>Near full-time strategic and operational leadership, for a business mid-way through
+                something big enough that it needs one person holding it.</p>
+            </div>
+          </div>
+
+          <div className="inset" style={{ maxWidth: 'none' }}>
+            <b>Six-month minimum on all three tiers.</b> Long enough to be useful, short enough that
+            you&rsquo;re not trapped in it. The price is the price at every turnover band.
+          </div>
+        </div>
+      </section>
+
+      {/* 2a · SCALE PLATE · DO-ART-204 */}
+      <section className="g-tint">
+        <div className="container">
+          <p className="eyebrow">Scale &middot; DO-ART-204</p>
+          <h2>Advisory to Programme: the scale.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>2, 4 and 8 days a month. Price scales in proportion.
+            Same price at every turnover band.</p>
+
+          <div className="plate-scroll" style={{ marginTop: 34 }}>
+            <div className="plate-frame">
+              <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
+                     sub="2, 4 and 8 days a month, price scales in proportion"
+                     no="DO-ART-204" rev="01" cls="DECODED OPS · ISSUED">
+
+                <g className="sk-fade sk-s1" opacity=".5">
+                  <line x1="430" y1="212" x2="430" y2="700" className="p-scyan" strokeWidth=".8"
+                        strokeOpacity=".35"/>
+                </g>
+
+                <g className="sk-fade sk-s2">
+                  <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">ADVISORY</text>
+                  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">2 days a month</text>
+                  <rect x="430" y="228" width="270" height="62" rx="6" fill="url(#rt-bar)"
+                        className="p-node" strokeWidth="1"/>
+                </g>
+
+                <g className="sk-fade sk-s3">
+                  <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">EMBEDDED</text>
+                  <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">4 days a month</text>
+                  <rect x="430" y="368" width="540" height="62" rx="6" fill="url(#rt-bar)"
+                        className="p-node" strokeWidth="1"/>
+                </g>
+
+                <g className="sk-fade sk-s4" filter="url(#rt-shadow)">
+                  <text x="60" y="532" className="p-mono" fontSize="17" letterSpacing="1.6"
+                        opacity=".55">PROGRAMME</text>
+                  <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">8 days a
+                    month</text>
+                  <rect x="430" y="508" width="1080" height="62" rx="6" fill="url(#rt-amber-b)"
+                        className="p-node-a" strokeWidth="1.4"/>
+                </g>
+
+                <g className="sk-fade sk-s6">
+                  <line x1="60" y1="640" x2="1540" y2="640" className="p-scyan" strokeWidth=".6"
+                        strokeOpacity=".22"/>
+                  <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
+                        fontWeight="600" fontSize="24" opacity=".9">Exact scale. Double the
+                    days, double the price, every time.</text>
+                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
+                    minimum, all three tiers. Same price at every turnover band.</text>
+                </g>
+              </Plate>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SERVICE CONNECTIONS */}
-      <section className="py-12 bg-[#F8F9FA] border-t border-[#8ECAE6]/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-center flex-wrap gap-3">
-            {serviceJourney.map((step, i) => (
-              <div key={step.label} className="flex items-center gap-3">
-                <Link
-                  href={step.href}
-                  className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                    step.highlighted
-                      ? 'bg-[#219EBC] text-[#F8F9FA]'
-                      : 'bg-[#023047]/10 text-[#023047] hover:bg-[#023047]/20'
-                  }`}
-                >
-                  {step.label}
-                </Link>
-                {i < serviceJourney.length - 1 && (
-                  <ArrowRight size={16} className="text-[#8ECAE6]" />
-                )}
-              </div>
-            ))}
+      {/* 3 · WHEN IT FITS */}
+      <section className="g-navy">
+        <div className="container">
+          <p className="eyebrow">Straight answer</p>
+          <h2>When it fits, and when it doesn&rsquo;t.</h2>
+
+          <div className="grid-2" style={{ marginTop: 40 }}>
+            <div className="panel">
+              <h3>It fits when</h3>
+              <p>You&rsquo;ve just finished an audit and need someone to own the roadmap that came out of it.
+                You&rsquo;re mid-way through a platform change and need one person keeping vendors honest.
+                You&rsquo;re scaling, and the systems that got you here won&rsquo;t get you further. Or you&rsquo;ve lost
+                the person who held all of this in their head, and you don&rsquo;t want that to happen twice.</p>
+            </div>
+            <div className="panel">
+              <h3>It doesn&rsquo;t fit when</h3>
+              <p>You haven&rsquo;t worked out what&rsquo;s actually broken yet. Start with a Clarity Audit instead.
+                A fractional CTO relationship works best once there&rsquo;s a plan to execute, not before one
+                exists. I&rsquo;d rather tell you that now than take a retainer for six months of finding out.</p>
+              <p><Link href="/clarity" style={{ color: 'var(--do-sky-blue)', fontWeight: 600 }}>See how a
+                Clarity Audit works →</Link></p>
+            </div>
           </div>
+
+          <figure className="pull" style={{ marginTop: 48 }}>
+            <blockquote>I&rsquo;m not going to tell you what to buy. I&rsquo;ll show you what&rsquo;s on the market, what
+              it costs, and where it falls short, so whatever you decide, you decide on the merits.</blockquote>
+            <cite>Craig Blackman · Decoded Ops</cite>
+          </figure>
         </div>
       </section>
 
-      {/* WHEN IT FITS */}
-      <section className="py-20 lg:py-28 bg-[#023047]/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-              <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; When it fits</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Four situations where a fractional CTO makes sense</h2>
-            <p className="text-[#023047]/70 text-lg">Not every business needs a full-time ops director. But every business needs the thinking.</p>
+      {/* 4 · CTA STRIP */}
+      <section className="g-white cta-strip">
+        <div className="container" style={{ maxWidth: 760 }}>
+          <h2>Let&rsquo;s talk about whether this suits you.</h2>
+          <p className="lead">An hour, no obligation, and an honest answer at the end of it, including if
+            the answer is that you don&rsquo;t need this yet.</p>
+          <div className="hero-cta">
+            <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
+            <Link className="btn btn-ghost btn-arrow" href="/pricing">See the full price list</Link>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {whenItFits.map(item => {
-              const Icon = item.icon;
-              return (
-                <div key={item.title} className="group p-6 rounded-2xl border border-[#8ECAE6]/40 bg-[#F8F9FA] hover:border-[#219EBC]/40 hover:shadow-md transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-[#219EBC]/10 flex items-center justify-center mb-4">
-                    <Icon size={20} className="text-[#219EBC]" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#023047] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#023047]/70 leading-relaxed">{item.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT IT INCLUDES — dark */}
-      <section className="py-20 lg:py-28 bg-[#023047]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
-                <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">&mdash; What&apos;s included</span>
-              </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-8">What fractional CTO services actually look like</h2>
-              <div className="space-y-4">
-                {whatItIncludes.map(item => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-[#219EBC] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#8ECAE6]">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-10">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-                  Let&apos;s talk about what you need <ArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-            <div className="p-8 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-              <div className="text-xs font-semibold text-[#8ECAE6] uppercase tracking-wider mb-6">How it&apos;s structured</div>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-sm text-[#8ECAE6]">Fixed days per month. Agreed at the start of the engagement. Minimum 6 months.</div>
-                </div>
-                <div className="border-t border-[#F8F9FA]/10 pt-6">
-                  <div className="text-sm text-[#8ECAE6] leading-relaxed">
-                    Days are used flexibly across meetings, project work, vendor oversight, and team support — based on what your business needs that month.
-                  </div>
-                </div>
-                <div className="border-t border-[#F8F9FA]/10 pt-6">
-                  <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-2">No lock-in after minimum</div>
-                  <div className="text-sm text-[#8ECAE6]">30 days notice either side after the 6-month minimum. No penalties. No conditions.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-4">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Get started</span>
-          </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Let&apos;s talk about what you need</h2>
-          <p className="text-[#023047]/70 text-lg max-w-xl mx-auto mb-8">Retained engagements are structured around your specific situation. The first call is free and takes 60 minutes.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-              Book a free call <ArrowRight size={18} />
-            </Link>
-            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
-              See full pricing
-            </Link>
-          </div>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
         </div>
       </section>
     </>

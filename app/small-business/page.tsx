@@ -1,24 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock, Brain, Zap } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   },
 };
 
@@ -28,15 +28,16 @@ const smallBizSchema = {
     {
       '@type': 'Service',
       name: 'Small Business Operational Support',
-      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice — without the big-business price tag.',
+      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
       serviceType: 'Small Business Operational Support',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/small-business',
       offers: [
-        { '@type': 'Offer', name: 'Clarity Check', price: '395', priceCurrency: 'GBP' },
-        { '@type': 'Offer', name: 'Monthly Advisory', price: '395', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: 'Clarity Check', price: '595', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: 'Retained', price: '360', priceCurrency: 'GBP' },
         { '@type': 'Offer', name: 'Quarterly Sprint', price: '995', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: 'AI Readiness Check', price: '395', priceCurrency: 'GBP' },
       ],
     },
     {
@@ -55,12 +56,12 @@ const smallBizSchema = {
         {
           '@type': 'Question',
           name: 'What does a small business operations consultant actually do?',
-          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check — delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check, delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
         },
         {
           '@type': 'Question',
           name: 'Is this like managed IT support for small businesses?',
-          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business — not just keeping the lights on.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business, not just keeping the lights on.' },
         },
       ],
     },
@@ -71,13 +72,12 @@ const services = [
   {
     icon: Sparkles,
     name: 'Clarity Check',
-    price: '£395',
-    tagline: 'The starting point. A remote operational review — honest, specific, actionable.',
+    tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
     features: [
       '3-hour structured remote session',
-      'Written findings summary — plain English',
+      'Written findings summary, plain English',
       'Three priority actions identified',
-      'Tech stack and AI readiness assessed',
+      'The systems you use and AI readiness assessed',
       'Delivered within 5 working days',
     ],
     cta: 'Book your Clarity Check',
@@ -85,27 +85,25 @@ const services = [
   {
     icon: TrendingUp,
     name: 'Deliver',
-    price: '£550/mo',
     tagline: 'Keep a project moving with remote project delivery and vendor management.',
     features: [
       '90-minute remote working sessions',
-      'Vendor management and procurement support',
-      'Project oversight and milestone tracking',
+      'Vendor management and buying support',
+      'Keeping the project on track',
       'Written progress summaries',
-      'Practical tools and frameworks',
+      'Practical tools and checklists',
     ],
     cta: 'Book a discovery call',
   },
   {
     icon: Wrench,
     name: 'Transform',
-    price: '£770/mo',
-    tagline: 'Focused transformation programme — one workstream at a time.',
+    tagline: 'Focused transformation programme, one project at a time.',
     features: [
       '90-minute remote working sessions',
-      'Single focused workstream',
+      'One project at a time',
       'ERP, eCommerce, or process redesign',
-      'Vendor selection and oversight',
+      'Vendor selection, with no vendor agenda',
       'Milestone-based delivery',
     ],
     cta: 'Request a proposal',
@@ -113,14 +111,39 @@ const services = [
   {
     icon: Clock,
     name: 'Retained',
-    price: 'From £395/mo',
     tagline: 'Ongoing technology and operations support. Flexible days. Direct line to Craig.',
     tiers: [
-      { name: 'Entry', price: '£395/mo', sessions: '2 × 4hr sessions' },
-      { name: 'Mid', price: '£695/mo', sessions: '4 × 4hr sessions' },
-      { name: 'Full', price: '£995/mo', sessions: '6 × 4hr sessions' },
+      { name: 'Entry', sessions: '2 × 4hr sessions' },
+      { name: 'Mid', sessions: '4 × 4hr sessions' },
+      { name: 'Full', sessions: '6 × 4hr sessions' },
     ],
     cta: 'Let\'s talk about what you need',
+  },
+  {
+    icon: Brain,
+    name: 'AI Readiness Check',
+    tagline: 'An honest, independent assessment of whether AI can help your business right now, and what needs fixing first.',
+    features: [
+      '90-minute structured remote session',
+      'A review of your data and processes',
+      'One or two concrete next steps if AI can help',
+      'Explicitly includes "not yet" as a valid outcome',
+      'Written assessment delivered within 3 working days',
+    ],
+    cta: 'Book an AI Readiness Check',
+  },
+  {
+    icon: Zap,
+    name: 'Quarterly Sprint',
+    tagline: 'A single intensive session each quarter: an outside look at the whole operation without a monthly commitment.',
+    features: [
+      'Half-day remote or on-site session (travel at cost)',
+      'Review of what\'s changed since last session',
+      '2–3 named priorities for the quarter ahead',
+      'Short written summary delivered within 3 days',
+      'No minimum commitment, booked fresh each quarter',
+    ],
+    cta: 'Book a Quarterly Sprint',
   },
 ];
 
@@ -132,24 +155,21 @@ export default function SmallBusinessPage() {
         { name: 'Small Business Consulting', url: 'https://decodedops.co.uk/small-business' },
       ]} />
       <JsonLd data={smallBizSchema} />
-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
-            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">— For small businesses</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6 max-w-3xl mx-auto">
-            Small business operations consultant. <span className="text-[#219EBC]">Technology and systems support without the enterprise price tag.</span>
-          </h1>
-          <p className="text-lg text-[#023047]/70 leading-relaxed mb-8 max-w-2xl mx-auto">
-            The same operational thinking I bring to larger businesses — adapted for smaller ones. Remote delivery. 
-            Fixed prices. No jargon. No vendor agenda.
+
+      {/* HERO */}
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
+          <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
+          <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the big-business price tag.</em></h1>
+          <p className="lede">
+            The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
-          <p className="text-sm text-[#023047]/60 leading-relaxed mb-4 max-w-2xl mx-auto">
-            A small business operations consultant covers what a full-time operations director would — technology decisions, vendor oversight, process improvement, and AI readiness — on a flexible, affordable basis built for businesses under £500k.
+          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
+            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
           </p>
-          <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman — 25 years in print &amp; embroidery operations</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <Link href="/pricing" className="btn btn--primary">
               See all pricing <ArrowRight size={18} />
             </Link>
           </div>
@@ -157,79 +177,70 @@ export default function SmallBusinessPage() {
       </section>
 
       {/* Small business visual strip */}
-      <section className="py-8 bg-[#023047] border-t border-[#F8F9FA]/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto p-4 rounded-2xl bg-[#F8F9FA]/5 border border-[#F8F9FA]/10">
-            <svg viewBox="0 0 500 80" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="20" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
-              <text x="70" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">CLARITY</text>
-              <text x="70" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£395</text>
+      <section className="g-navy" style={{ padding: '32px 0' }}>
+        <div className="wrap">
+          <div style={{ maxWidth: 600, margin: '0 auto', padding: 16, borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-off-white) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-off-white) 10%, transparent)' }}>
+            <svg viewBox="0 0 500 80" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ display: 'block', width: '100%' }}>
+              <rect x="20" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
+              <text x="70" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">CLARITY</text>
 
-              <text x="140" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+              <text x="140" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
 
-              <rect x="160" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
-              <text x="210" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">DELIVER</text>
-              <text x="210" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£550/mo</text>
+              <rect x="160" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
+              <text x="210" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">DELIVER</text>
 
-              <text x="280" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+              <text x="280" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
 
-              <rect x="300" y="15" width="100" height="50" rx="8" fill="#219EBC" opacity="0.15" stroke="#219EBC" strokeWidth="1.5" />
-              <text x="350" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="#219EBC">TRANSFORM</text>
-              <text x="350" y="52" textAnchor="middle" fontSize="8" fill="#8ECAE6">£770/mo</text>
+              <rect x="300" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
+              <text x="350" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">TRANSFORM</text>
 
-              <text x="420" y="44" textAnchor="middle" fontSize="16" fill="#219EBC" opacity="0.5">→</text>
+              <text x="420" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
 
-              <rect x="440" y="15" width="40" height="50" rx="8" fill="#FFB703" opacity="0.15" stroke="#FFB703" strokeWidth="1.5" />
-              <text x="460" y="38" textAnchor="middle" fontSize="7" fontWeight="700" fill="#FFB703">RETAINED</text>
-              <text x="460" y="52" textAnchor="middle" fontSize="7" fill="#8ECAE6">£395+</text>
+              <rect x="440" y="15" width="40" height="50" rx="8" fill="color-mix(in srgb, var(--do-amber) 15%, transparent)" stroke="var(--do-amber)" strokeWidth="1.5" />
+              <text x="460" y="38" textAnchor="middle" fontSize="7" fontWeight="700" fill="var(--do-amber)">RETAINED</text>
             </svg>
           </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#023047] mb-4">Fractional operations and technology support for small businesses</h2>
-            <p className="text-[#023047]/70 text-lg">Each designed for a different situation. All delivered remotely. All with a direct line to me — not a junior team.</p>
+      {/* SERVICE CARDS */}
+      <section className="g-off">
+        <div className="wrap">
+          <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
+            <h2 className="h2">Fractional operations and technology support for small businesses</h2>
+            <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid--3">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <div key={service.name} className="p-8 rounded-2xl border border-[#8ECAE6]/40 bg-white hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-[#219EBC]/10 flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-[#219EBC]" />
+                <div key={service.name} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
-                  <div className="flex items-baseline justify-between mb-4">
-                    <h3 className="text-xl font-bold text-[#023047]">{service.name}</h3>
-                    <span className="text-2xl font-bold text-[#219EBC]">{service.price}</span>
-                  </div>
-                  <p className="text-[#023047]/70 mb-6">{service.tagline}</p>
+                  <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 16 }}>{service.name}</h3>
+                  <p style={{ color: 'var(--do-text-muted)', fontSize: 'var(--do-text-sm)', marginBottom: 24, lineHeight: 1.75 }}>{service.tagline}</p>
                   {'features' in service && (
-                    <ul className="space-y-2 mb-6">
+                    <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24, flex: 1, padding: 0, listStyle: 'none' }}>
                       {service.features!.map(f => (
-                        <li key={f} className="flex items-start gap-2 text-sm text-[#023047]/70">
-                          <CheckCircle2 size={16} className="text-[#219EBC] mt-0.5 flex-shrink-0" />
+                        <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>
+                          <CheckCircle2 size={16} style={{ color: 'var(--do-cerulean)', marginTop: 2, flexShrink: 0 }} />
                           {f}
                         </li>
                       ))}
                     </ul>
                   )}
                   {'tiers' in service && service.tiers && (
-                    <div className="space-y-2 mb-6">
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
                       {service.tiers.map(tier => (
-                        <div key={tier.name} className="flex items-center justify-between p-3 rounded-xl bg-[#023047]/5">
-                          <span className="text-sm font-semibold text-[#023047]">{tier.name}</span>
-                          <div className="text-right">
-                            <div className="text-sm font-bold text-[#219EBC]">{tier.price}</div>
-                            <div className="text-xs text-[#023047]/50">{tier.sessions}</div>
-                          </div>
+                        <div key={tier.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 12, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)' }}>
+                          <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>{tier.name}</span>
+                          <span style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)' }}>{tier.sessions}</span>
                         </div>
                       ))}
                     </div>
                   )}
-                  <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
+                  <Link href="/contact" className="btn btn--outline" style={{ alignSelf: 'flex-start' }}>
                     {service.cta} <ArrowRight size={14} />
                   </Link>
                 </div>
@@ -239,13 +250,16 @@ export default function SmallBusinessPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#023047]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">Not sure which is right for you?</h2>
-          <p className="text-[#8ECAE6] text-lg max-w-xl mx-auto mb-8">Answer two quick questions and I&apos;ll point you to the most relevant option.</p>
-          <Link href="/pricing" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
-            Take the pricing questionnaire <ArrowRight size={18} />
-          </Link>
+      {/* CTA */}
+      <section className="g-navy">
+        <div className="wrap" style={{ textAlign: 'center' }}>
+          <h2 className="h2">Not sure which is right for you?</h2>
+          <p className="lede">Answer two quick questions and I&apos;ll point you to the most relevant option.</p>
+          <div className="btn-row" style={{ justifyContent: 'center', marginTop: 32 }}>
+            <Link href="/pricing" className="btn btn--primary">
+              Take the pricing questionnaire <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
       </section>
     </>

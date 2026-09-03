@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "No fuel" — a large AI node on the right with three dashed input pipes
+ * "No fuel", a large AI node on the right with three dashed input pipes
  * arriving from broken data sources on the left (SPREADSHEETS, PAPER, ERP),
  * each pipe carrying an amber X. Below, a cyan "FIX THE DATA FIRST" note.
  * Built on the shared schematic primitives, matching
@@ -58,7 +58,7 @@ export function AiParalysisSchematic({ tone = 'dark', className }: { tone?: Tone
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — NO FUEL</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: NO FUEL</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">AI can&apos;t read your paper job bags</text>
 
       {/* pipes: source -> AI, each broken with an amber X, staggered */}

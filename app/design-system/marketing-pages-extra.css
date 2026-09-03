@@ -1,0 +1,305 @@
+/* ══════════════════════════════════════════════════════════════════════
+   MARKETING PAGES — EXTRA COMPONENTS (Lane A addition, 2026-07-31)
+
+   NOT part of the Lane 0 DS binding (ds-marketing.css / ds-plates.css /
+   colors_and_type.css) — those files are owned by that lane and are not
+   edited here. This file supplies component classes that the ported
+   System pages need but ds-marketing.css does not yet define (log list,
+   pricing tables, stat rows, notice/panel blocks, the buy-ladder rungs,
+   and the legacy hand-drawn "sk" plate diagrams carried over unchanged
+   from the decoded-marketing mockups). Every value below derives from a
+   --do-* token already declared in colors_and_type.css — no new hex,
+   no page-local token reinvention.
+
+   Imported only by the pages under app/apps/ and app/how-i-build/ — it
+   is not referenced from app/layout.tsx, so it has no effect on any
+   other route.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── buttons: ghost variant + arrow suffix (ds-marketing.css defines
+   .btn--primary/.btn--outline only) ── */
+.btn--ghost{ background:transparent; color:var(--do-text-primary); border-color:transparent; padding-inline:10px }
+.btn--ghost:hover{ color:var(--do-cerulean) }
+.g-navy .btn--ghost{ color:var(--do-sky-blue) }
+.g-navy .btn--ghost:hover{ color:var(--do-text-on-dark) }
+.btn-arrow::after{ content:'\2192'; display:inline-block; margin-left:2px; transition:transform var(--do-duration-normal) }
+.btn-arrow:hover::after{ transform:translateX(3px) }
+
+/* ── hero layouts (page-local per ds-marketing.css's own convention —
+   "page-specific layout stays in that page's own <style>") ── */
+.hero-split{ display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center }
+@media(max-width:980px){ .hero-split{ grid-template-columns:1fr; gap:40px } }
+.hero-center{ text-align:center; max-width:820px; margin-inline:auto }
+.hero-center h1{ max-width:none; margin-inline:auto }
+.hero-center .lede{ margin:22px auto 0; max-width:58ch }
+.hero-center .eyebrow{ margin-inline:auto }
+.hero-center .btn-row{ justify-content:center; margin-top:32px }
+.hero-body{ margin-top:22px }
+.hero-body p{ color:var(--do-text-secondary); font-size:var(--do-text-lg); line-height:var(--do-leading-relaxed); max-width:54ch }
+.hero-shot .shot-caption{ margin:14px 0 0; font-size:var(--do-text-xs); color:var(--do-text-secondary); max-width:46ch }
+
+/* ── feature triplet (vault / proofing / delivery; tier cards) ── */
+.feature .feature-mark{ width:42px; height:42px; display:grid; place-items:center;
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 55%, transparent);
+  border-radius:var(--do-radius-lg); color:var(--do-cerulean); margin-bottom:20px;
+  background:color-mix(in srgb, var(--do-cerulean) 7%, transparent) }
+.feature .feature-mark svg{ width:20px; height:20px }
+.feature h3{ margin-bottom:8px }
+.feature p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm) }
+.feature p+p{ margin-top:10px }
+.feature .feature-meta{ margin-top:14px; font-family:var(--do-font-heading); font-weight:var(--do-weight-bold);
+  font-size:1.05rem; font-variant-numeric:tabular-nums }
+.g-navy .feature p{ color:color-mix(in srgb, var(--do-off-white) 78%, transparent) }
+.g-navy .feature .feature-mark{ color:var(--do-sky-blue);
+  border-color:color-mix(in srgb, var(--do-sky-blue) 40%, transparent);
+  background:color-mix(in srgb, var(--do-sky-blue) 12%, transparent) }
+
+/* ── stat row (Hanicks numbers) ── */
+.stat .stat-num{ font-family:var(--do-font-heading); font-weight:var(--do-weight-extrabold);
+  font-size:clamp(2.6rem,4.6vw,3.9rem); line-height:1; letter-spacing:-0.035em;
+  color:var(--do-amber); font-variant-numeric:tabular-nums }
+.stat .stat-label{ margin:12px 0 0; color:var(--do-sky-blue); font-size:var(--do-text-sm); max-width:26ch }
+.stat-caption{ margin:44px 0 0; padding-top:24px;
+  border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent);
+  font-size:var(--do-text-lg); color:color-mix(in srgb, var(--do-off-white) 78%, transparent); max-width:64ch }
+
+/* ── comparison / pricing table ── */
+.table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+  box-shadow:var(--do-shadow-sm) }
+.ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
+.ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading);
+  font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+.ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+.ds-table th:first-child{ min-width:180px }
+.ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-text-on-dark);
+  font-family:var(--do-font-heading); font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm);
+  white-space:nowrap }
+.ds-table tbody th{ font-family:var(--do-font-heading); font-weight:var(--do-weight-bold); font-size:var(--do-text-base);
+  color:var(--do-text-primary); white-space:nowrap }
+.ds-table tbody tr+tr th,.ds-table tbody tr+tr td{ border-top:1px solid var(--do-border-subtle) }
+.ds-table tbody tr:hover td,.ds-table tbody tr:hover th{
+  background:color-mix(in srgb, var(--do-cerulean) 4%, transparent) }
+.ds-table .price{ display:block; font-family:var(--do-font-heading); font-weight:var(--do-weight-bold);
+  font-size:1.0625rem; font-variant-numeric:tabular-nums; letter-spacing:-0.01em }
+.ds-table .price-sub{ display:block; margin-top:5px; font-size:var(--do-text-xs); color:var(--do-text-secondary) }
+.ds-table .scope{ color:var(--do-text-secondary); white-space:normal; min-width:22ch }
+.ds-table th.col-star,.ds-table td.col-star{
+  background:color-mix(in srgb, var(--do-amber) 9%, transparent) }
+.ds-table thead th.col-star{ background:var(--do-prussian-blue);
+  box-shadow:inset 0 -4px 0 0 var(--do-amber) }
+.ds-table tbody tr:hover td.col-star{
+  background:color-mix(in srgb, var(--do-amber) 14%, transparent) }
+.star{ display:inline-block; margin-left:7px; padding:2px 8px; border-radius:var(--do-radius-full);
+  background:var(--do-amber); color:var(--do-prussian-blue); font-family:var(--do-font-body);
+  font-weight:var(--do-weight-bold); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase;
+  vertical-align:2px }
+.ds-table .full{ color:var(--do-text-secondary) }
+.ds-table .full .price{ color:var(--do-text-primary) }
+.ds-table .dash{ color:var(--do-text-secondary) }
+.table-foot{ margin:16px 0 0; font-size:var(--do-text-xs); color:var(--do-text-secondary); max-width:80ch }
+.table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch }
+.table-wrap::after{ content:''; display:block; height:0 }
+@media (max-width:720px){
+  .table-wrap::after{ content:'Scroll to see the full table →';
+    margin-top:10px; font-size:var(--do-text-xs); color:var(--do-text-secondary) }
+}
+
+/* ── inset fact line above a table (entry-point note) ── */
+.inset{ margin-top:20px; padding:18px 22px; border-radius:var(--do-radius-lg);
+  background:color-mix(in srgb, var(--do-prussian-blue) 5%, transparent);
+  border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  font-size:var(--do-text-sm); color:var(--do-text-secondary); max-width:78ch }
+.inset b{ color:var(--do-text-primary); font-weight:var(--do-weight-bold) }
+
+/* ── log list — one row per system on the /apps index ── */
+.log-list{ margin-top:32px; border-top:1px solid var(--do-border-subtle) }
+.log-row{ display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) auto;
+  gap:32px; align-items:start; padding:30px 4px; border-bottom:1px solid var(--do-border-subtle);
+  transition:background var(--do-duration-normal) }
+.log-row:hover{ background:color-mix(in srgb, var(--do-cerulean) 4%, transparent) }
+.log-row h3{ font-size:1.375rem; letter-spacing:-0.015em; margin-bottom:10px }
+.log-row:hover h3{ color:var(--do-cerulean) }
+.log-row p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm); max-width:56ch }
+.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); color:var(--do-cerulean);
+  white-space:nowrap }
+.log-row .go::after{ content:'\2192'; display:inline-block; margin-left:7px; transition:transform var(--do-duration-normal) }
+.log-row:hover .go::after{ transform:translateX(3px) }
+@media(max-width:820px){ .log-row{ grid-template-columns:1fr; gap:14px } }
+.chip{ display:inline-flex; align-items:center; gap:7px; padding:4px 11px;
+  border-radius:var(--do-radius-full); font-size:0.6875rem; font-weight:var(--do-weight-bold);
+  letter-spacing:0.1em; text-transform:uppercase }
+.chip::before{ content:''; width:6px; height:6px; border-radius:50%; background:currentColor }
+.chip--live{ background:color-mix(in srgb, var(--do-cerulean) 14%, transparent);
+  color:var(--do-text-primary); border:1px solid color-mix(in srgb, var(--do-cerulean) 35%, transparent) }
+.chip--pre{ background:color-mix(in srgb, var(--do-amber) 20%, transparent);
+  color:var(--do-text-primary); border:1px solid color-mix(in srgb, var(--do-amber) 45%, transparent) }
+
+/* ── notice panel (founding-client terms, stated plainly) ── */
+.notice{ margin-top:32px; background:var(--do-white); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); padding:30px 32px; box-shadow:var(--do-shadow-sm); max-width:78ch }
+.notice-tag{ display:inline-flex; padding:5px 12px; margin-bottom:16px;
+  border-radius:var(--do-radius-full); background:color-mix(in srgb, var(--do-amber) 22%, transparent);
+  color:var(--do-text-primary); font-size:0.6875rem; font-weight:var(--do-weight-bold); letter-spacing:0.1em; text-transform:uppercase }
+.notice p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm); line-height:1.65 }
+.notice p+p{ margin-top:12px }
+.notice h3{ margin-bottom:12px; font-size:1.25rem }
+
+/* ── panel — lifted surface on a navy ground ── */
+.panel{ background:color-mix(in srgb, var(--do-sky-blue) 9%, transparent);
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 25%, transparent);
+  border-radius:var(--do-radius-2xl); padding:32px 34px }
+.panel h3{ margin-bottom:12px; font-size:1.25rem; color:var(--do-text-on-dark) }
+.panel p{ margin:0; color:color-mix(in srgb, var(--do-off-white) 80%, transparent); font-size:var(--do-text-sm) }
+.panel p+p{ margin-top:12px }
+.panel a{ text-decoration:none }
+
+/* ── pull quote (the system's one flourish, reused from home/hero pattern) ── */
+.pull{ margin:34px 0 0; padding:24px 0 4px 26px; border-left:3px solid var(--do-cerulean) }
+.pull blockquote{ margin:0; font-family:var(--do-font-heading); font-weight:var(--do-weight-semibold);
+  font-size:clamp(1.15rem,1.6vw,1.375rem); line-height:1.4; letter-spacing:-0.015em; max-width:40ch }
+.pull cite{ display:block; margin-top:14px; font-style:normal; font-size:var(--do-text-xs);
+  letter-spacing:0.08em; text-transform:uppercase; color:var(--do-text-secondary) }
+.g-navy .pull{ border-left-color:var(--do-amber) }
+.g-navy .pull cite{ color:var(--do-sky-blue) }
+
+/* ── the buy-ladder rungs (how-i-build) ── */
+.rungs{ display:grid; grid-template-columns:1fr 1.15fr 1fr; gap:20px; margin-top:32px }
+@media(max-width:920px){ .rungs{ grid-template-columns:1fr } }
+.rung{ background:var(--do-white); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); padding:26px; box-shadow:var(--do-shadow-sm) }
+.rung--default{ border-color:color-mix(in srgb, var(--do-amber) 45%, transparent);
+  box-shadow:var(--do-shadow-md) }
+.rung .kicker{ display:flex; align-items:center; flex-wrap:wrap; gap:8px 10px; margin-bottom:12px;
+  font-size:0.6875rem; font-weight:var(--do-weight-bold); letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--do-text-secondary) }
+.rung--default .kicker{ color:var(--do-text-primary) }
+.rung .flag{ padding:3px 9px; border-radius:var(--do-radius-full);
+  background:color-mix(in srgb, var(--do-amber) 22%, transparent); color:var(--do-text-primary);
+  letter-spacing:0.08em }
+.rung h3{ margin-bottom:10px; font-size:1.25rem }
+.rung p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm) }
+.rung p+p{ margin-top:10px }
+.rung--last{ background:transparent; box-shadow:none;
+  border-style:dashed; border-color:color-mix(in srgb, var(--do-prussian-blue) 18%, transparent) }
+
+/* ── cta strip — centred close ── */
+.cta-strip{ text-align:center }
+.cta-strip h2{ max-width:none; margin-inline:auto }
+.cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
+.cta-strip .btn-row{ justify-content:center }
+
+/* ── legacy hand-drawn "sk" plate diagrams, carried over unchanged from the
+   decoded-marketing mockups (apps-data-app.html layer stack, how-i-build.html
+   ladder). These predate the new .pl / ds-plates.css frame system and are
+   NOT being re-authored onto it here — per the source design-system repo's
+   own reskin work order, bespoke plate coordinate-authoring is explicitly
+   out of scope for automated porting. ds-marketing.css already supplies the
+   shared .sk sizing rule and the .sk-fade/.sk-draw/.sk-s1-6/.sk-dots/.sk-js
+   animation utilities (identical class names, same behaviour); only the
+   colour/gradient classes below are new, and every one derives from a
+   --do-* token exactly as the mockup's own site.css did. */
+.sk[data-tone="dark"]{
+  --sk-bg:var(--do-prussian-blue);
+  --sk-grid:color-mix(in srgb, var(--do-sky-blue) 13%, var(--do-prussian-blue));
+  --sk-ink:var(--do-off-white);
+  --sk-mono:var(--do-sky-blue);
+  --sk-sub:var(--do-sky-blue);
+  --sk-drop:var(--do-prussian-blue); --sk-drop-op:.55;
+  --sk-gc0:var(--do-sky-blue); --sk-gc0o:.16; --sk-gc1:var(--do-cerulean); --sk-gc1o:.03;
+  --sk-ga0:var(--do-amber);    --sk-ga0o:.14; --sk-ga1:var(--do-orange);   --sk-ga1o:.03;
+  --sk-accent-text:var(--do-amber);
+  --sk-card-stroke:color-mix(in srgb, var(--do-sky-blue) 35%, transparent);
+}
+.sk-bg{ fill:var(--sk-bg) }
+.sk-gridline{ stroke:var(--sk-grid) }
+.sk-ink{ fill:var(--sk-ink) }
+.sk-mono{ fill:var(--sk-mono) }
+.sk-sub{ fill:var(--sk-sub) }
+.sk-accent-ink{ fill:var(--sk-accent-text) }
+.sk-cyan{ fill:var(--do-cerulean) }
+.sk-amber{ fill:var(--do-amber) }
+.sk-stroke-cyan{ stroke:var(--do-cerulean) }
+.sk-node{ stroke:var(--sk-card-stroke) }
+.sk-node-amber{ stroke:color-mix(in srgb, var(--do-amber) 45%, transparent) }
+.sk-drop feDropShadow{ flood-color:var(--sk-drop); flood-opacity:var(--sk-drop-op) }
+.sk-gc0{ stop-color:var(--sk-gc0); stop-opacity:var(--sk-gc0o) }
+.sk-gc1{ stop-color:var(--sk-gc1); stop-opacity:var(--sk-gc1o) }
+.sk-ga0{ stop-color:var(--sk-ga0); stop-opacity:var(--sk-ga0o) }
+.sk-ga1{ stop-color:var(--sk-ga1); stop-opacity:var(--sk-ga1o) }
+
+/* ── problem-page shared components (buy-vs-build, data-scattered,
+   inventory-blind, legacy-system — Lane D addition, 2026-07-31) ── */
+
+/* cause cards — numbered kickers */
+.cause{ position:relative }
+.cause .n{ display:block; font-family:var(--do-font-heading); font-size:var(--do-text-sm);
+  font-weight:800; color:var(--do-text-primary); opacity:.55; margin-bottom:6px }
+
+/* answer box on navy ground */
+.answer{ background:color-mix(in srgb, var(--do-off-white) 6%, transparent);
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 18%, transparent);
+  border-left:4px solid var(--do-amber); border-radius:var(--do-radius-2xl);
+  padding:36px; margin-top:32px; max-width:78ch }
+.answer p{ font-size:var(--do-text-lg); line-height:var(--do-leading-relaxed);
+  color:color-mix(in srgb, var(--do-off-white) 84%, transparent) }
+.answer p:last-child{ margin-bottom:0 }
+.answer b{ color:var(--do-off-white) }
+
+/* symptom checklist — two-column list with amber marker dots */
+.symptoms{ list-style:none; padding:0; margin:34px 0 0;
+  display:grid; grid-template-columns:1fr 1fr; gap:0 34px }
+@media(max-width:820px){ .symptoms{ grid-template-columns:1fr } }
+.symptoms li{ display:flex; gap:14px; padding:15px 0; font-size:var(--do-text-base);
+  color:var(--do-text-secondary);
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.symptoms li::before{ content:''; flex:0 0 auto; width:18px; height:18px; margin-top:4px;
+  border-radius:var(--do-radius-sm);
+  border:2px solid color-mix(in srgb, var(--do-amber) 70%, transparent);
+  background:color-mix(in srgb, var(--do-amber) 16%, transparent) }
+
+/* ── sources grid — disconnected-systems picture, /problems/data-scattered ── */
+.sources{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:34px }
+@media(max-width:820px){ .sources{ grid-template-columns:1fr 1fr } }
+@media(max-width:560px){ .sources{ grid-template-columns:1fr } }
+.source{ background:var(--do-white); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); padding:24px; box-shadow:var(--do-shadow-sm);
+  position:relative }
+.source::before{ content:'\2715'; position:absolute; top:20px; right:22px; font-weight:700;
+  color:var(--do-orange) }
+.source h3{ margin:0 0 8px; font-size:1.0625rem; padding-right:24px }
+.source p{ margin:0; color:var(--do-text-secondary); font-size:0.9375rem }
+
+/* ── stock picture diagram — /problems/inventory-blind ── */
+.picture{ display:grid; grid-template-columns:1fr auto 1fr; gap:24px; align-items:center;
+  margin-top:36px; max-width:900px }
+@media(max-width:760px){ .picture{ grid-template-columns:1fr; text-align:center } }
+.picture .arrow{ font-size:1.6rem; color:var(--do-amber); font-weight:700 }
+@media(max-width:760px){ .picture .arrow{ transform:rotate(90deg) } }
+.picture .card{ height:100% }
+.picture .card h3{ margin-bottom:8px }
+.picture .card p{ margin:0; color:var(--do-text-secondary); font-size:0.9375rem }
+.card--result{ border-color:color-mix(in srgb, var(--do-amber) 45%, transparent);
+  box-shadow:var(--do-shadow-md) }
+
+/* ── layer stack — archetype 4, read bottom-up, /problems/legacy-system ── */
+.layer-stack{ display:flex; flex-direction:column-reverse; gap:14px; margin-top:36px; max-width:820px }
+.layer-tier{ display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:22px 26px; border-radius:var(--do-radius-xl);
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.layer-tier h3{ margin:0 0 4px; font-family:var(--do-font-heading); font-weight:700;
+  font-size:var(--do-text-xl) }
+.layer-tier p{ margin:0; font-size:var(--do-text-sm); opacity:.85 }
+.layer-tier .no{ flex:0 0 auto; font-size:var(--do-text-xs); letter-spacing:var(--do-tracking-wider);
+  text-transform:uppercase; opacity:.6 }
+.layer-tier--base{ background:color-mix(in srgb, var(--do-amber) 14%, transparent);
+  border-color:color-mix(in srgb, var(--do-amber) 45%, transparent) }
+.layer-tier--mid{ background:var(--do-surface-raised) }
+.layer-tier--top{ background:color-mix(in srgb, var(--do-amber) 14%, transparent);
+  border-color:color-mix(in srgb, var(--do-amber) 45%, transparent) }
+
+/* diagrams render fully visible (no scroll-in animation) without the
+   page-local JS the mockups used to add .sk-in on intersection — see
+   loop-status.md for the reasoning. This keeps .sk-fade content visible
+   by default because ds-marketing.css scopes that opacity:0 rule to
+   .sk-js, which nothing sets on <html> here. */

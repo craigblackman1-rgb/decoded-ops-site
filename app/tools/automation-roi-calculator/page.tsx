@@ -26,28 +26,22 @@ export default function AutomationRoiCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section
-        className="pt-24 pb-12 lg:pt-32 lg:pb-16"
-        style={{ backgroundColor: '#023047' }}
-      >
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
-            Free Tool
-          </p>
-          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
-            Automation ROI Calculator
-          </h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 900 }}>
+          <span className="eyebrow">Free tool</span>
+          <h1>Automation ROI calculator</h1>
+          <p className="lede">
             Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
           </p>
         </div>
       </section>
 
-      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 900 }}>
           <AutomationRoiCalculator />
         </div>
       </section>
+
     </main>
   );
 }

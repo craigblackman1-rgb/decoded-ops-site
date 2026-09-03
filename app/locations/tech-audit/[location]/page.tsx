@@ -19,20 +19,20 @@ export async function generateMetadata({
 
   return {
     title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+    description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     alternates: {
       canonical: `/locations/tech-audit/${loc.slug}`,
     },
     openGraph: {
       title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `Technology Audit for ${loc.name} Businesses | Decoded Ops`,
-      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £395 with a 3× Clarity Guarantee.`,
+      description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     },
   };
 }
@@ -40,29 +40,29 @@ export async function generateMetadata({
 const painPoints = [
   {
     title: 'Your systems don\'t talk to each other',
-    body: 'Data moving manually between platforms. Orders processed twice. Stock figures that don\'t match. Every disconnection costs time and creates errors — and most businesses have normalised this so thoroughly they\'ve stopped noticing how much it costs.',
+    body: 'Data moves manually between platforms. Orders get processed twice. Stock figures don\'t match. Every disconnection costs time and creates errors, and most businesses have stopped noticing how much it costs.',
   },
   {
-    title: 'You know costs are higher than they should be — but can\'t see where',
-    body: 'The overhead is there — in headcount, in rework, in customer service time — but no one has mapped where it\'s actually coming from. The Clarity Audit exists specifically to find this and cost it accurately.',
+    title: 'You know costs are higher than they should be, but can\'t see where',
+    body: 'The cost is there, in headcount, rework, and customer service time, but no one has mapped where it actually comes from. The Clarity Audit finds it and costs it accurately.',
   },
   {
     title: 'Ready to scale, but the operations aren\'t',
-    body: 'Revenue could grow faster. The constraint is operational — systems, process, people doing jobs that should be automated. Knowing where the bottleneck is, specifically and quantifiably, is the first step to removing it.',
+    body: 'Revenue could grow faster. The constraint is operational: systems, process, and people doing jobs that should be automated. Finding the bottleneck is the first step to removing it.',
   },
   {
     title: 'Decisions being made on incomplete information',
-    body: 'Reporting that takes hours to produce. Numbers that don\'t tie up. Business decisions made on gut feel because the data isn\'t trustworthy. This is almost always a systems problem, not a people problem.',
+    body: 'Reports take hours to produce. Numbers don\'t tie up. Decisions get made on gut feel because the data isn\'t trustworthy. This is almost always a systems problem, not a people problem.',
   },
 ];
 
 const whatIdo = [
-  'One structured day on site — talking to the people doing the work, not just the people managing it',
+  'One structured day on site, talking to the people doing the work, not just the people managing it',
   'Map every system you\'re running, what it costs, and what it\'s actually being used for versus what it was bought to do',
-  'Document every manual handoff and workaround — this is almost always where the cost is hiding',
-  'Identify the three to five changes that would recover the most cost or unlock the most revenue',
-  'Produce a written report within five working days — specific, costed, with independent vendor recommendations',
-  'Back it with the 3× Clarity Guarantee — if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, full refund, no conditions',
+  'Document every manual handoff and workaround. This is almost always where the cost is hiding',
+   'Identify the three to five changes that would recover the most cost or release the most revenue',
+  'Write a report within five working days: specific, costed, with independent vendor recommendations',
+  'Back it with the 3× Clarity Guarantee: if the audit doesn\'t identify at least 3× the fee in recoverable cost or lost revenue, you get a full refund, no conditions',
 ];
 
 export default async function TechAuditLocationPage({
@@ -104,9 +104,9 @@ export default async function TechAuditLocationPage({
             serviceType: 'Technology Audit',
             offers: {
               '@type': 'Offer',
-              price: '395',
+              price: '1500',
               priceCurrency: 'GBP',
-              description: 'Clarity Check — small business technology audit',
+              description: 'Clarity Audit, technology audit and systems diagnostic',
             },
             url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
           }),
@@ -118,13 +118,13 @@ export default async function TechAuditLocationPage({
         service="Technology Audit"
         badge={`Technology Audit · ${loc.county}`}
         tagline={`Find out exactly what your systems are ||costing your ${loc.name} business.||`}
-        intro={`Most ${loc.name} businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is a structured, independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.`}
+        intro={`Most ${loc.name} businesses running manual workarounds, disconnected systems, or patched-together technology are losing more than they realise. The Clarity Audit is an independent diagnostic that finds where the cost is hiding and tells you exactly what to do about it.`}
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}
         painPoints={painPoints}
         whatIdo={whatIdo}
-        cta={`Book a Clarity Audit for your ${loc.name} business — from £395`}
+        cta={`Book a Clarity Audit for your ${loc.name} business, from £1,500`}
         serviceUrl="/clarity"
         serviceLabel="See how the Clarity Audit works"
       />

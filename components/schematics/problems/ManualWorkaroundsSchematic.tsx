@@ -8,7 +8,7 @@ import {
 import type { Tone } from '../primitives';
 
 /**
- * "The second system" — the official ERP/MIS is wired to Orders, Stock and
+ * "The second system", the official ERP/MIS is wired to Orders, Stock and
  * Invoicing by broken links (paths that don't actually work), while a shadow
  * layer of spreadsheets, an Access database and a paper notebook carries the
  * same feeds via solid amber bypass routes that dodge the official system
@@ -49,7 +49,7 @@ export function ManualWorkaroundsSchematic({ tone = 'dark', className }: { tone?
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC — SHADOW SYSTEMS</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">PROBLEM SCHEMATIC: SHADOW SYSTEMS</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">The second system your team built</text>
 
       {/* zone: official system */}
@@ -96,7 +96,7 @@ export function ManualWorkaroundsSchematic({ tone = 'dark', className }: { tone?
       <path id={`${ID}-p-ds-${tone}`} className="sch-draw sch-d3" d="M470 630 C 400 570 380 450 420 350 C 440 300 540 280 615 272" fill="none" stroke={AMBER} strokeWidth="2.6" markerEnd={`url(#${ID}-ah-${tone})`} />
       <path id={`${ID}-p-ni-${tone}`} className="sch-draw sch-d3" d="M900 630 C 970 560 995 430 1005 340 C 1008 310 1009 288 1010 272" fill="none" stroke={AMBER} strokeWidth="2.6" markerEnd={`url(#${ID}-ah-${tone})`} />
 
-      {/* zone: shadow system — label sits in the gutter between bypass routes */}
+      {/* zone: shadow system, label sits in the gutter between bypass routes */}
       <g className="sch-fade sch-f3" fill={AMBER} opacity="0.85">
         <text x="710" y="578" textAnchor="middle" style={fMono} fontSize="20" letterSpacing="2">THE SHADOW SYSTEM</text>
         <text x="710" y="604" textAnchor="middle" style={fMono} fontSize="17" letterSpacing="1.5">(WHERE WORK ACTUALLY HAPPENS)</text>
@@ -124,7 +124,7 @@ export function ManualWorkaroundsSchematic({ tone = 'dark', className }: { tone?
         </g>
       </GlassNode>
 
-      {/* flowing data — only through the shadow routes */}
+      {/* flowing data, only through the shadow routes */}
       {motion && (
         <g>
           <circle r="6.5" fill={AMBER}><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href={`#${ID}-p-so-${tone}`} /></animateMotion></circle>

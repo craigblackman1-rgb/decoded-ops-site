@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ScreenshotFrame } from '@/components/ScreenshotFrame';
 
 /**
- * Homepage hero visual — replaces the Discovery Day audit-flow schematic.
+ * Homepage hero visual, replaces the Discovery Day audit-flow schematic.
  * Craig's read (2026-07-15): that schematic represented the audit product,
  * not what he does day to day. This pairs a real industry photo with a
  * live-software card, so the hero says "I work in this world AND I build

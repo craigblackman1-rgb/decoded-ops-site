@@ -17,9 +17,9 @@ const questions = [
 ];
 
 const results = [
-  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
-  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Do an Audit First' },
-  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation — plus what an honest assessment would cost.', action: 'Start Planning' },
+  { min: 0, max: 3, label: 'Stay and Optimise', color: '#219EBC', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Book a Clarity Audit' },
+  { min: 4, max: 7, label: 'Proceed with Caution', color: '#FFB703', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Do an Audit First' },
+  { min: 8, max: 13, label: 'Plan Your Exit', color: '#FB8500', description: 'Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.', action: 'Start Planning' },
 ];
 
 type Answer = 'yes' | 'no' | null;
@@ -53,53 +53,53 @@ export default function ShouldIReplaceErpPage() {
 
   return (
     <main>
-      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
-          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Should I Replace My ERP?</h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">Free tool</span>
+          <h1>Should I replace my ERP?</h1>
+          <p className="lede">Eight yes/no questions to help you decide whether to fix your current system or plan an exit.</p>
         </div>
       </section>
 
-      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 720 }}>
           {!showResults ? (
             <div>
               {/* Progress */}
-              <div className="mb-8">
-                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+              <div style={{ marginBottom: 32 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 8 }}>
                   <span>Question {currentQ + 1} of {questions.length}</span>
                   <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
                 </div>
-                <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
-                  <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+                <div style={{ height: 8, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-sky-blue) 30%, transparent)', overflow: 'hidden' }}>
+                  <div style={{ height: '100%', borderRadius: 'var(--do-radius-full)', transition: 'all var(--do-duration-normal)', width: `${(answeredCount / questions.length) * 100}%`, background: 'var(--do-cerulean)' }} />
                 </div>
               </div>
 
               {/* Question card */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
-                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
-                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
-                <div className="flex gap-4">
-                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
-                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+              <div className="card">
+                <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 16 }}>Question {currentQ + 1}</div>
+                <h2 style={{ marginBottom: 32 }}>{questions[currentQ].text}</h2>
+                <div style={{ display: 'flex', gap: 16 }}>
+                  <button onClick={() => handleAnswer('yes')} className="btn" style={{ flex: 1, background: 'var(--do-prussian-blue)', color: 'var(--do-text-on-dark)' }}>Yes</button>
+                  <button onClick={() => handleAnswer('no')} className="btn btn--outline" style={{ flex: 1, borderColor: 'var(--do-prussian-blue)', color: 'var(--do-text-primary)' }}>No</button>
                 </div>
               </div>
             </div>
           ) : (
             <div>
               {/* Results */}
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
-                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+              <div className="card" style={{ textAlign: 'center', marginBottom: 32 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', marginBottom: 24, backgroundColor: `${result.color}20`, border: `1px solid ${result.color}40` }}>
+                  <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', color: result.color }}>{result.label}</span>
                 </div>
-                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
-                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+                <div style={{ fontSize: 'var(--do-text-5xl)', fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-bold)', marginBottom: 16, color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+                <p className="lede" style={{ margin: '0 auto 32px', maxWidth: '38ch', color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>{result.description}</p>
+                <div className="btn-row" style={{ justifyContent: 'center', margin: 0 }}>
+                  <Link href="/contact" className="btn btn--primary">
                     {result.action} <ArrowRight size={18} />
                   </Link>
-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                  <button onClick={reset} className="btn btn--outline">
                     <RotateCcw size={16} /> Try again
                   </button>
                 </div>
@@ -111,14 +111,20 @@ export default function ShouldIReplaceErpPage() {
                 answers={Object.fromEntries(answers.map((a, i) => [`q${i + 1}`, a]))}
               />
 
+              <p style={{ marginTop: 24, fontSize: 'var(--do-text-sm)', textAlign: 'center' }}>
+                <Link href="/resources/erp-selection-playbook" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)' }}>
+                  Read the ERP selection playbook <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+                </Link>
+              </p>
+
               {/* Answer summary */}
-              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
-                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
-                <div className="mt-4 space-y-2">
+              <details className="card">
+                <summary style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', cursor: 'pointer' }}>View your answers</summary>
+                <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {questions.map((q, i) => (
-                    <div key={q.id} className="flex items-start gap-3 text-sm">
-                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
-                      <span className="text-prussian-blue/70">{q.text}</span>
+                    <div key={q.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 'var(--do-text-sm)' }}>
+                      <span style={{ marginTop: 2, fontWeight: 'var(--do-weight-bold)', color: answers[i] === 'yes' ? 'var(--do-orange)' : 'var(--do-cerulean)' }}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+                      <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>{q.text}</span>
                     </div>
                   ))}
                 </div>

@@ -30,7 +30,10 @@ Website pins explicit weights (400/500/600/700/800 for Outfit, 400/500/700 for D
 ## Deployments
 
 - **Production** — branch `main`.
-- **Staging** — branch `staging`, Coolify app uuid `ax1yi6hyl54gfj8w8adhq55d`.
+- **Staging** — branch `staging`, https://staging.decodedops.co.uk (behind Cloudflare Access),
+  Coolify app `decoded-ops-site-staging` uuid `lqu4iagowv3crifpzueue6ut` (the old uuid
+  `ax1yi6hyl54gfj8w8adhq55d` is dead — app was recreated 2026-08-26 on server coolify-staging).
+  Auto-deploy on push to `staging` is enabled.
 - Marketing copy work lands on `staging` first and is promoted to `main` only with Craig's sign-off.
 
 ## Build / Dev commands
@@ -53,6 +56,37 @@ Six brand colours only, never a seventh: Prussian Blue `#023047`, Cerulean
 wired into Tailwind's `@theme` block at `globals.css:65-76`. The marketing pages
 use Tailwind utilities directly; client-portal pages use inline style objects
 (same brand hex values — not reusable components from the hub).
+
+## Pricing policy — enforced, do not "restore" prices from a mockup
+
+Craig's rule, 8 August 2026: **Decoded Ops prices appear on `/pricing` and nowhere
+else.** App build prices appear nowhere at all, including `/pricing`, because what a
+build costs is specific to the client and the requirement. Two figures are deliberate
+exceptions and may appear anywhere they already do:
+
+- **£1,500** — the Clarity Audit entry anchor. Load-bearing in the location-page meta
+  descriptions and the site-wide OG card.
+- **£750** — the App Scoping Session, the fixed entry step for the systems line.
+
+Turnover bands (`£500k`, `£1m`, `£7.5m`), a client's own costs, the `£80k` salary
+comparison and competitors' market ranges are not Decoded Ops prices and are fine.
+
+```bash
+node .context/price-audit.mjs --check
+```
+
+Exits non-zero and prints `file:line` for any disallowed price. Run it before any push
+that touches copy.
+
+**The `decoded-marketing` mockups are deliberately stale on this.** They still carry
+every removed price, including a `small-business.html` plate built around the day rate
+(which the brand rules say is never published). If you are porting a page from a mockup,
+port the layout and ignore its prices. `mockup-vs-app.mjs` only reports missing artwork,
+so it will not flag this for you: the `--check` above is what catches it.
+
+Related: the £150,000 ERP case study was retired on 30 July 2026 (`decoded-ops/
+references/stats.md`) and removed from this repo on 8 August. Do not reintroduce it from
+an older mockup or proposal.
 
 ## Key Directories
 
@@ -83,23 +117,21 @@ data/                 # Static data
   locations.ts        # Location page data
   problem-routing.ts  # Problem page routing data
   sector-routing.ts   # Sector page routing data
-supabase/             # SQL schema files (NOT Supabase — plain Postgres table definitions)
+supabase/             # SQL schema files for the client-portal tables (historic folder name; paste-by-hand, nothing executes it)
 scripts/              # Utility scripts (hash-password, create-client-accounts, content-audit, etc.)
 .context/             # Project notes (backlog, e-signature brief, loop-status log)
 docs/                 # content-audit.md — full site content audit (2131 lines)
 ```
 
-## Data Layer — `lib/supabase.ts` (plain Postgres, NOT Supabase)
+## Data Layer — `lib/supabase.ts`
 
-Despite the filename, `lib/supabase.ts` is a plain `pg` Pool. It exports `getDb()`
-and types `DbUser` / `AuthAuditEvent`. This is the same pattern as the hub's
-`supabase-pg.ts` shim. The tables (`client_users`, `auth_audit_log`) were designed
-with Supabase-compatible DDL but the runtime connection is direct Postgres.
+A plain `pg` Pool over `DATABASE_URL` exporting `getDb()` and types `DbUser` /
+`AuthAuditEvent`. Consumed by `auth.ts` for the client-portal tables (`client_users`,
+`auth_audit_log`). The filename is historic and the file is not renamed.
 
 - Connection string: `DATABASE_URL` env var
 - SSL: `rejectUnauthorized: false`
 - Used by `auth.ts` for credential verification, audit logging, lockout tracking
-- Does NOT use Supabase JS SDK — there is no `@supabase/ssr` in this repo
 
 Required env vars:
 ```
@@ -171,15 +203,10 @@ HTML body from hub, fall back to local fields in blog-index.json.
 
 ## Real Gotchas
 
-- **`lib/supabase.ts` is NOT Supabase.** It's a plain `pg` Pool. Grepping for
-  "supabase" in this repo only turns up the filename and SQL file references.
 - **The README is stale `create-next-app` boilerplate.** Ignore it.
 - **Two styling approaches coexist.** Marketing pages use Tailwind utilities with
   brand hex values. Client portal pages use inline `style={{}}` objects — same
   colours, different delivery. Do not try to unify these unless asked.
-- **`.env.example` line 19:** `lib/supabase.ts` is named for the client-portal
-  tables it reads but is a plain `pg` Pool, same pattern as the hub's
-  `supabase-pg.ts` shim.
 - **Content honesty rule** (from `.context/backlog.md`): Never invent numbers or
   client details. All stats on case studies and service pages must trace to real
   client results or published, cited industry benchmarks. The `/about` page's

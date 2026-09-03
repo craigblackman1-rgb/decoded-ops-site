@@ -147,27 +147,17 @@ export default async function BlogPost({ params }: PageProps) {
       ]} />
 
       {/* Article header */}
-      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: 'var(--do-surface-page)' }}>
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-8 hover:underline" style={{ color: 'var(--do-cerulean)' }}>
+      <section className="g-off" data-od-id="header">
+        <div className="wrap post-header">
+          <Link href="/blog" className="back-link">
             <ArrowLeft size={16} /> Back to Insights
           </Link>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: 'var(--do-cerulean)/0.1', border: '1px solid var(--do-cerulean)/0.2' }}>
-            <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>{item.category || 'Insights'}</span>
-          </div>
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-            {item.title}
-          </h1>
-          {item.excerpt && (
-            <p className="text-lg leading-relaxed mb-6" style={{ color: 'var(--do-text-muted)' }}>
-              {item.excerpt}
-            </p>
-          )}
-          <div className="flex items-center gap-4 text-sm" style={{ color: 'var(--do-text-muted)', opacity: 0.7 }}>
+          <span className="eyebrow">{item.category || 'Insights'}</span>
+          <h1 className="h1">{item.title}</h1>
+          {item.excerpt && <p className="lede">{item.excerpt}</p>}
+          <div className="post-meta" data-od-id="post-meta">
             <span>Craig Blackman</span>
-            <span>·</span>
             <span>{displayDate}</span>
-            <span>·</span>
             <span>{readTime} min read</span>
           </div>
         </div>
@@ -175,12 +165,13 @@ export default async function BlogPost({ params }: PageProps) {
 
       {/* Inline image 1 */}
       {item.images?.[0] && (
-        <section className="py-8">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <section className="g-white">
+          <div className="wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.images[0]}
               alt=""
-              className="w-full rounded-2xl shadow-sm"
+              className="rounded-2xl shadow-sm w-full"
               style={{ border: '1px solid var(--do-border-subtle)' }}
               loading="lazy"
             />
@@ -189,8 +180,8 @@ export default async function BlogPost({ params }: PageProps) {
       )}
 
       {/* Article body */}
-      <section className="pt-4 pb-16 lg:pb-20">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="g-white" data-od-id="article">
+        <div className="wrap prose">
           <div
             className="do-blog-prose"
             dangerouslySetInnerHTML={{ __html: item.html || '' }}
@@ -199,6 +190,7 @@ export default async function BlogPost({ params }: PageProps) {
           {/* Inline image 2 */}
           {item.images?.[1] && (
             <div className="mt-12">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.images[1]}
                 alt=""
@@ -210,14 +202,12 @@ export default async function BlogPost({ params }: PageProps) {
           )}
 
           {/* CTA box */}
-          <div className="mt-12 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-cerulean)/0.08', border: '1px solid var(--do-cerulean)/0.2' }}>
-            <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
-              Plain English. No jargon. No vendor agenda.
-            </h3>
-            <p className="leading-relaxed mb-6" style={{ color: 'var(--do-text-muted)' }}>
-              A Clarity Audit maps your actual operations, identifies the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
+          <div className="post-cta" data-od-id="post-cta">
+            <h3 className="h3">Plain English. No jargon. No vendor agenda.</h3>
+            <p>
+              A Clarity Audit maps your operations, finds the changes that will make the biggest difference, and gives you a plan you can act on. No reports you&apos;ll never read. No recommendations you can&apos;t implement.
             </p>
-            <Link href="/clarity" className="blog-cta-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+            <Link href="/clarity" className="btn btn--primary">
               See Clarity <ArrowRight size={18} />
             </Link>
           </div>

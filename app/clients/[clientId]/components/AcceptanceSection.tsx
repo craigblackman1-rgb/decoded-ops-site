@@ -31,7 +31,7 @@ interface AcceptanceData {
 }
 
 const DEFAULT_OPTIONS = [
-  { id: 'C', name: 'Tier 1 — Discovery Day', desc: 'Structured on-site audit + written assessment + specifications', price: '£1,500 fixed' },
+  { id: 'C', name: 'Tier 1 — Clarity Audit', desc: 'Structured on-site audit + written assessment + specifications', price: '£1,500 fixed' },
   { id: 'B', name: 'Tier 2 — Deliver Consultancy ⭐', desc: 'Full consultancy programme — vendor selection, requirements, integration architecture (Recommended)', price: 'from £1,400/month' },
   { id: 'A', name: 'Tier 3 — Transform Programme', desc: 'Full implementation oversight + (optional) productised build line', price: 'from £1,800/month' },
 ];

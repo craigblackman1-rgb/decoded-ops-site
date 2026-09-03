@@ -1,3 +1,18 @@
+/* Register cascade layer order explicitly.
+   `ds` sits AFTER base, BEFORE utilities:
+   - After base: Tailwind's own preflight (@layer base) resets margin/etc
+     to 0 on every element via `*`. DS component classes like .wrap
+     (margin:0 auto) and .log-row need to beat that reset -- putting `ds`
+     before `base`, as the first version of this fix did, meant Tailwind's
+     blanket reset silently overrode every DS component rule regardless of
+     specificity (cascade layers ignore specificity across layers). That
+     broke the .wrap centering on every DS-ported page even after the nav
+     fix landed (2026-07-31, second pass).
+   - Before utilities: so Tailwind utility classes (space-x-6, gap-*, etc,
+     used by the shared Header/Footer) still always win over anything in
+     `ds` -- that's what the nav spacing fix actually depends on. */
+@layer theme, base, ds, components, utilities;
+
 @import "tailwindcss";
 
 /**
@@ -136,6 +151,56 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ── Blog post template (/blog/[slug]) ── */
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--do-text-sm); font-weight: 700;
+  color: var(--do-text-primary); text-decoration: none; margin-bottom: 26px;
+}
+.back-link:hover { color: var(--do-cerulean); }
+
+.post-header { max-width: 72ch; }
+.post-header .lede { margin: 18px 0 0; max-width: 60ch; }
+
+.post-meta {
+  display: flex; gap: 10px; align-items: center;
+  font-size: var(--do-text-sm); color: var(--do-text-muted); margin-top: 22px;
+}
+.post-meta span:not(:last-child)::after { content: '·'; margin-left: 10px; opacity: .5; }
+
+.prose { max-width: 72ch; margin-inline: auto; }
+
+.post-cta {
+  border-radius: var(--do-radius-2xl); padding: 32px;
+  background: color-mix(in srgb, var(--do-cerulean) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--do-cerulean) 22%, transparent);
+  margin-top: 44px;
+}
+.post-cta h3 { font-size: var(--do-text-lg); margin-bottom: 10px; }
+.post-cta p {
+  color: var(--do-text-secondary); line-height: var(--do-leading-relaxed);
+  margin-bottom: 18px;
+}
+
+.related { margin-top: 48px; }
+.related h3 {
+  font-size: var(--do-text-base); margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--do-border-subtle);
+}
+.related-list a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 14px 0; text-decoration: none; font-size: var(--do-text-sm);
+  font-weight: 600; color: var(--do-text-primary);
+  border-bottom: 1px solid var(--do-border-subtle);
+}
+.related-list a:last-child { border-bottom: 0; }
+.related-list a:hover { color: var(--do-cerulean); }
+.related-list .tag {
+  font-size: var(--do-text-xs); font-weight: 500; color: var(--do-text-subtle);
+}
+
+.blurb { font-size: var(--do-text-sm); max-width: 34ch; margin-top: 16px; }
+
 /* ── Blog card hover ── */
 .blog-card { transition: border-color var(--do-duration-normal) var(--do-ease-default); }
 .blog-card:hover { border-color: var(--do-cerulean) !important; }
@@ -269,4 +334,16 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   border-top: 1px solid var(--do-border-subtle);
   margin: 2rem 0;
+}
+
+/* Footer "browse by" drawer chevron. Plain descendant selector rather than
+   Tailwind's group-open: variant — that variant did not visibly rotate the
+   lucide ChevronDown svg in testing (content reveal via hidden/group-open:
+   worked correctly; the rotate transform alone did not), so this sidesteps
+   whatever the mismatch is instead of debugging it further. */
+.footer-drawer[open] .footer-drawer-chevron {
+  transform: rotate(180deg);
+}
+.footer-drawer-chevron {
+  transition: transform 200ms ease;
 }

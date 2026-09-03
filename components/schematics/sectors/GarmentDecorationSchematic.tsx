@@ -11,7 +11,7 @@ import type { Tone } from '../primitives';
  * The garment decoration production flow as a real routing diagram: one
  * order splits across three decoration methods, each with its own lead
  * time, before converging back into a single despatch. The artwork
- * sign-off loop — the sector's biggest source of delay — is drawn as a
+ * sign-off loop, the sector's biggest source of delay, is drawn as a
  * literal loop-back arc. Built on the shared schematic primitives, matching
  * the visual language of ThreeLayerSchematic / SinglePointSchematic.
  *
@@ -25,7 +25,7 @@ import type { Tone } from '../primitives';
  */
 const ID = 'gd';
 
-// Geometry — midline + lane grid
+// Geometry, midline + lane grid
 const MID = 470;        // main flow centreline (~55% of 860)
 const LANE_TOP = 300;   // embroidery lane centre
 const LANE_BOT = 640;   // screen print lane centre
@@ -49,7 +49,7 @@ export function GarmentDecorationSchematic({ tone = 'dark', className }: { tone?
   return (
     <svg viewBox="0 0 1240 860" className={className} style={{ width: '100%', height: 'auto' }}
       role="img"
-      aria-label="Garment decoration production flow: an order moves from intake through artwork sign-off and blank sourcing, splits across embroidery, DTG and screen print — each with a different lead time — then converges into quality control and despatch.">
+      aria-label="Garment decoration production flow: an order moves from intake through artwork sign-off and blank sourcing, splits across embroidery, DTG and screen print, each with a different lead time, then converges into quality control and despatch.">
       <SchematicDefs tone={tone} idPrefix={ID} />
 
       {/* backdrop */}
@@ -58,10 +58,10 @@ export function GarmentDecorationSchematic({ tone = 'dark', className }: { tone?
       <rect x="0" y="0" width="1240" height="6" fill={AMBER} />
 
       {/* eyebrow + headline */}
-      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC — GARMENT DECORATION</text>
+      <text x="60" y="64" style={fMono} fontSize="20" letterSpacing="3" fill={CYAN} className="sch-fade sch-f1">SECTOR SCHEMATIC: GARMENT DECORATION</text>
       <text x="60" y="118" style={fDisp} fontWeight="800" fontSize="46" fill={c.ink} className="sch-fade sch-f1">One order, three production realities</text>
 
-      {/* zone bands — single row at y=170; topmost node edge is y=250, no collisions */}
+      {/* zone bands, single row at y=170; topmost node edge is y=250, no collisions */}
       <g className="sch-fade sch-f1" style={fMono} fontSize="20" letterSpacing="2.5" fill={c.mono} opacity="0.6">
         <text x="150" y="170" textAnchor="middle">FRONT OF HOUSE</text>
         <text x="410" y="170" textAnchor="middle">STUDIO</text>
@@ -88,7 +88,7 @@ export function GarmentDecorationSchematic({ tone = 'dark', className }: { tone?
       <path id={`${ID}-p-dq-${tone}`} className="sch-draw sch-d4" d={`M${LANE_X + LANE_W} ${MID} H${QC_X}`} fill="none" stroke={CYAN} strokeWidth="2.2" strokeOpacity="0.8" markerEnd={`url(#${ID}-ah-${tone})`} />
       <path id={`${ID}-p-pq-${tone}`} className="sch-draw sch-d4" d={`M${LANE_X + LANE_W} ${LANE_BOT} C 1050 ${LANE_BOT} 1052 540 ${QC_X} 502`} fill="none" stroke={CYAN} strokeWidth="2.2" strokeOpacity="0.8" markerEnd={`url(#${ID}-ah-${tone})`} />
 
-      {/* artwork sign-off loop — arc above the approval node, clear of the zone band */}
+      {/* artwork sign-off loop, arc above the approval node, clear of the zone band */}
       <path id={`${ID}-p-loop-${tone}`} className="sch-draw sch-d3" d="M340 410 C 310 280 490 280 460 410" fill="none" stroke={AMBER} strokeWidth="2.5" strokeDasharray="6 7" strokeOpacity="0.85" markerEnd={`url(#${ID}-ah-${tone})`} />
       <text x="400" y="270" textAnchor="middle" style={fMono} fontSize="19" letterSpacing="1.5" fill={AMBER} opacity="0.9" className="sch-fade sch-f3">THE SIGN-OFF LOOP</text>
 

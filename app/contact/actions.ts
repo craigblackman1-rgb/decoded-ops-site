@@ -84,20 +84,20 @@ Reply to this email to respond to the inquiry.
       };
     }
 
-    // Send confirmation email to user (best-effort — form already succeeded above)
+    // Send confirmation email to user (best-effort, form already succeeded above)
     const confirmationResult = await sendEmail({
       to: validatedData.email,
-      subject: 'We received your message — Decoded Ops',
+      subject: `I've received your message - Decoded Ops`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #023047; margin-bottom: 16px;">Thanks for reaching out</h2>
+          <h2 style="color: #023047; margin-bottom: 16px;">Thanks for getting in touch</h2>
 
           <p style="color: #023047; line-height: 1.6; margin-bottom: 16px;">
             Hi ${escapeHtml(validatedData.name)},
           </p>
 
           <p style="color: #023047; line-height: 1.6; margin-bottom: 16px;">
-            We received your message and Craig will get back to you shortly. He typically responds within 24 hours.
+            I've received your message and will get back to you shortly. I typically respond within 24 hours.
           </p>
 
           <p style="color: #023047; line-height: 1.6; margin-bottom: 24px;">
@@ -113,17 +113,17 @@ Reply to this email to respond to the inquiry.
           <hr style="border: none; border-top: 1px solid #8ECAE6; margin: 32px 0;" />
 
           <p style="color: #8ECAE6; font-size: 12px; margin: 0;">
-            <strong>Decoded Ops</strong> — Systems Operations & Implementation<br />
+            <strong>Decoded Ops</strong>, Systems Operations &amp; Implementation<br />
             <a href="https://decodedops.co.uk" style="color: #219EBC; text-decoration: none;">decodedops.co.uk</a>
           </p>
         </div>
       `,
       text: `
-Thanks for reaching out
+Thanks for getting in touch
 
 Hi ${validatedData.name},
 
-We received your message and Craig will get back to you shortly. He typically responds within 24 hours.
+I've received your message and will get back to you shortly. I typically respond within 24 hours.
 
 In the meantime, feel free to call on 07735 620 603 if you'd like to discuss anything immediately.
 
@@ -132,7 +132,7 @@ Craig Blackman
 Decoded Ops
 
 ---
-Decoded Ops — Systems Operations & Implementation
+Decoded Ops, Systems Operations & Implementation
 https://decodedops.co.uk
       `,
     });
@@ -143,7 +143,7 @@ https://decodedops.co.uk
 
     return {
       success: true,
-      message: 'Message sent successfully! We\'ll be in touch shortly.',
+      message: "Message sent successfully! I'll be in touch shortly.",
     };
   } catch (error) {
     if (error instanceof z.ZodError) {

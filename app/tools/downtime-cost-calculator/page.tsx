@@ -8,68 +8,33 @@ const jsonLd = {
   name: 'Downtime Cost Calculator',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description:
-    'Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost. Built for print, embroidery and decorated goods.',
+  description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
   url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
-};
-
-const faqLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is an overhead recovery rate?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'It is what every productive hour has to earn towards the costs that do not change job by job, before materials and before profit. Annual overhead divided by the productive hours you actually have.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Why does downtime cost more than the wages of idle staff?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Because the overhead keeps running. Rent, finance, salaries and subscriptions are all still being paid during an outage, but no hour of production is happening to recover them. The wages of idle staff are on top of that, not instead of it.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I work out realistic utilisation?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Take the hours your machines are theoretically available and subtract setup, changeover, maintenance, reruns and hours with nothing booked in. Most decoration businesses land well below the 100% they assume when pricing.',
-      },
-    },
-  ],
 };
 
 export const metadata: Metadata = {
   title: 'Downtime Cost Calculator | Decoded Ops',
   description:
-    'Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost you. Free tool for UK print, embroidery, workwear and decorated goods businesses.',
+    'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
   alternates: { canonical: '/tools/downtime-cost-calculator' },
 };
 
 export default function DowntimeCostCalculatorPage() {
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
-      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
-            Free Tool
-          </p>
-          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
-            What does an hour of downtime actually cost you?
-          </h1>
-          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
-            Work out what an hour of your operation costs to run, then what you lose every time it
-            stops. Two minutes, no signup, and the number is yours to keep.
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 900 }}>
+          <span className="eyebrow">Free tool</span>
+          <h1>Downtime cost calculator</h1>
+          <p className="lede">
+            Enter your numbers to see exactly what system outages cost you each year in
+            staff time and lost revenue.
           </p>
         </div>
       </section>
@@ -100,8 +65,8 @@ export default function DowntimeCostCalculatorPage() {
       </section>
 
       {/* Calculator */}
-      <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <section className="g-off">
+        <div className="wrap" style={{ maxWidth: 900 }}>
           <DowntimeCostCalculator />
         </div>
       </section>

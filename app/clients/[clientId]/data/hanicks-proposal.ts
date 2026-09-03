@@ -306,11 +306,6 @@ export const hanicksProposal = {
     ],
     caseStudies: [
       {
-        title: 'ERP consolidation — garment decorator, SE England',
-        description: 'Three legacy systems (ecommerce, stock management, embellishment job management) consolidated into a single ERP. 18-month engagement covering requirements, vendor selection, implementation management, and go-live.',
-        result: '40% reduction in order processing time · Stock holding down by a third · Programme value: £150,000',
-      },
-      {
         title: 'Supplier data consolidation — eCommerce parts distributor',
         description: 'Bespoke application built to ingest and normalise supplier product data from multiple sources, feeding a central product master connected to ERP and ecommerce platform.',
         result: 'Product data management reduced from 15+ hrs/week to fully automated · Zero manual channel updates',

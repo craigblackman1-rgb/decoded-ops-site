@@ -1,0 +1,77 @@
+/* ══════════════════════════════════════════════════════════════════════
+   ds-footer.css — footer, Direction A "three columns and a drawer"
+   Decoded Ops · split for implementation, 10 Aug 2026
+   System-level. Every page gets this. Loads AFTER ds-marketing.css.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ══ FOOTER — Direction A, "three columns and a drawer" ════════════════
+   Ported verbatim from footer-optimised.html, which marks it recommended
+   and was already written against the --do-* tokens. Replaces the
+   .foot-grid footer and the page-scoped repair it needed.
+   ══════════════════════════════════════════════════════════════════════ */
+footer.f-tight{ padding:48px 0 20px }
+
+.f-top{ display:grid; grid-template-columns:1.7fr 1fr 1fr 1fr; gap:34px; align-items:start }
+@media(max-width:900px){ .f-top{ grid-template-columns:1fr 1fr }
+  .f-top .f-brand{ grid-column:1 / -1 } }
+@media(max-width:560px){ .f-top{ grid-template-columns:1fr } }
+
+.f-brand .logo{ font-size:var(--do-text-xl) }
+.f-brand .f-blurb{ font-size:var(--do-text-sm); max-width:38ch; margin:12px 0 0;
+  line-height:var(--do-leading-snug);
+  color:color-mix(in srgb, var(--do-off-white) 72%, transparent) }
+.f-reach{ margin-top:18px }
+.f-contact{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; margin-top:14px }
+.f-reach a, .f-contact a{ display:inline-flex; align-items:center; margin:0;
+  font-size:var(--do-text-sm); color:var(--do-text-muted-on-dark); text-decoration:none }
+.f-reach a:hover, .f-contact a:hover{ color:var(--do-off-white) }
+.f-contact .sep{ color:color-mix(in srgb, var(--do-off-white) 35%, transparent) }
+.f-reach .f-cta{ padding:9px 16px; border-radius:var(--do-radius-md);
+  border:1px solid color-mix(in srgb, var(--do-sky-blue) 55%, transparent);
+  color:var(--do-text-on-dark); font-weight:var(--do-weight-semibold);
+  transition:background var(--do-duration-fast) var(--do-ease-default),
+             border-color var(--do-duration-fast) var(--do-ease-default) }
+.f-reach .f-cta:hover{ background:color-mix(in srgb, var(--do-sky-blue) 14%, transparent);
+  border-color:var(--do-sky-blue); color:var(--do-off-white) }
+.f-reach .f-cta:focus-visible, .f-contact a:focus-visible{ outline:2px solid var(--do-sky-blue);
+  outline-offset:3px; border-radius:var(--do-radius-sm) }
+
+footer.f-tight h4{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
+  letter-spacing:var(--do-tracking-wider); text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-off-white) 58%, transparent); margin:0 0 12px }
+footer.f-tight .f-col a{ display:block; font-size:var(--do-text-sm); text-decoration:none;
+  margin:0 0 8px; color:var(--do-text-muted-on-dark) }
+footer.f-tight .f-col a:hover{ color:var(--do-off-white) }
+
+/* the drawer — the whole long-tail mesh, present in the DOM, collapsed at rest */
+.f-more{ border-top:1px solid color-mix(in srgb, var(--do-off-white) 12%, transparent);
+  margin-top:32px; padding-top:8px }
+.f-more > summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px;
+  padding:12px 0; font-size:var(--do-text-sm); font-weight:var(--do-weight-medium);
+  color:var(--do-text-muted-on-dark); user-select:none }
+.f-more > summary::-webkit-details-marker{ display:none }
+.f-more > summary:hover{ color:var(--do-off-white) }
+.f-more > summary:focus-visible{ outline:2px solid var(--do-sky-blue); outline-offset:3px;
+  border-radius:var(--do-radius-sm) }
+.f-more .chev{ width:16px; height:16px; flex:none;
+  transition:transform var(--do-duration-normal) var(--do-ease-default) }
+.f-more[open] .chev{ transform:rotate(180deg) }
+.f-more-body{ padding:6px 0 18px }
+.f-row{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 14px; margin-bottom:12px }
+.f-row-lbl{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
+  letter-spacing:var(--do-tracking-wider); text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-off-white) 45%, transparent); min-width:76px }
+.f-chips a{ display:inline-block; font-size:var(--do-text-sm); text-decoration:none;
+  color:var(--do-text-muted-on-dark); margin:0 14px 4px 0 }
+.f-chips a:hover{ color:var(--do-off-white) }
+.f-chips a.f-all{ color:var(--do-off-white); font-weight:var(--do-weight-semibold) }
+
+.f-base{ border-top:1px solid color-mix(in srgb, var(--do-off-white) 12%, transparent);
+  padding-top:18px; display:flex; flex-wrap:wrap; align-items:center;
+  justify-content:space-between; gap:8px 20px;
+  font-size:var(--do-text-xs);
+  color:color-mix(in srgb, var(--do-off-white) 55%, transparent) }
+.f-base nav{ display:flex; flex-wrap:wrap; gap:8px 16px }
+.f-base a{ display:inline; margin:0; font-size:var(--do-text-xs); text-decoration:none;
+  color:color-mix(in srgb, var(--do-off-white) 55%, transparent) }
+.f-base a:hover{ color:var(--do-off-white) }

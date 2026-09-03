@@ -1,0 +1,21 @@
+# decoded-ops-website — Change Request Register
+
+One door for changes (DO-SDLC-Pipeline-v1). A change that isn't a CR doesn't exist.
+Format: CR-WEB-NNN · raised → approved → briefed → built → verified.
+
+> **Frozen 2026-08-28 — source of truth is now the hub DB.** All rows below
+> were migrated into `change_requests` (project `decoded-ops-website`,
+> prefix `WEB`). Raise new CRs via `wo cr new decoded-ops-website --title
+> "..."`, not by hand-editing this file. A live view will render in the hub
+> UI once Lane 3 (CR list/detail page) ships.
+
+| CR | Date | Raised by | Change | Surface | Status |
+|---|---|---|---|---|---|
+| CR-WEB-001 | 2026-08-21 | Craig (chat) | Homepage hero copy reworked to lead with the Clarity Audit outcome (what you get, the penny drop, why buy) followed by the first-person insider paragraph; replaces the third-person category paragraph. Direction triggered by Dave Ray's newsletter articulation. | app/page.tsx hero (staging) | built |
+| CR-WEB-002 | 2026-08-21 | Craig (chat) | Structured copy pass round 1: guarantee wording aligned to canonical report-based 3× refund on /clarity hero (removed non-canonical "first hour, day free" variant); /pricing Systems section restructured from four dense paragraphs to bold-lead + bullet list + tightened footnotes; problem-page template (all 18 pages) header fixes (symptoms/causes sections), generic filler lede replaced, duplicate hero booking link removed; /about repeated clause deduped. | app/clarity, app/pricing, components/ProblemPageDS.tsx, app/about (staging) | built |
+| CR-WEB-003 | 2026-08-24 | Craig (chat) | Homepage hero copy made owner-first and explicit about what Craig does: h1 changed from "The penny drop moment" to "I find what's quietly costing you money"; lead reframed to first-person "I help owners of print, embroidery, workwear and promotional merchandise businesses fix the systems that are holding them back"; "which systems actually fit" corrected to "which software actually fits how you work". SheetIndexRail s1 label "Penny drop" → "What I do". | app/page.tsx hero, components/SheetIndexRail.tsx (staging) | built |
+| CR-WEB-004 | 2026-08-24 | Craig (chat) | Full-site copy review against the "simplistic and obvious" voice. Findings: the site was already overwhelmingly aligned (all problem, sector, app, tool, resource, location and most service pages lead with plain, symptom-first, first-person copy). Four heroes fixed to state what the page does outright: /deliver h1 "The Process & Quality System. The thing you're left with" → "I get it built. And you keep the system that runs it" (lede now leads with "I sit on your side of the table"); /transform lede now leads with "I take that plan and run it"; /process-quality-system h1 → "How your business keeps improving after I leave"; /case-studies h1 "What I'm actually building right now" → "Proof, not promises". | app/deliver, app/transform, app/process-quality-system, app/case-studies (staging) | built |
+| CR-WEB-005 | 2026-08-24 | Craig (chat) | Full-body copy simplification across every marketing page (not just heroes). All 18 problem pages, 9 sector pages, 5 app pages, 5 case-study pages, tools + resources, locations + blog, and the core service pages rewritten for plain, first-person, short-sentence copy. Jargon replaced (integration architecture → how your systems connect, procurement → buying, multi-workstream → several projects at once, vendor-neutral → I don't sell software). All facts, prices, numbers, client names, links and metadata left untouched; "vendor" retained for software vendors (reverted a few erroneous vendor→supplier substitutions). tsc --noEmit passes. | ~51 app/* pages (staging) | built |
+
+Notes:
+- CR-WEB-001 diverges from the `homepage-v2.html` mockup copy (design-systems/decoded-marketing, Open Design export). Layout untouched, copy only. Mockup copy sync deferred — see registry deferred item under wo-marketing-sales-consolidated-2026-08-20.

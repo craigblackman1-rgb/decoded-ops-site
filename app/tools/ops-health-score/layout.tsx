@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Ops Health Score | Decoded Ops',
-  description: 'Rate your business across five operational dimensions — systems integration, processes, data quality, team capability, and technology strategy.',
+  description: 'Rate your business across five operational dimensions: systems integration, processes, data quality, team capability, and technology strategy.',
   alternates: { canonical: '/tools/ops-health-score' },
   openGraph: {
     title: 'Ops Health Score | Decoded Ops',

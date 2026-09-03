@@ -1,0 +1,77 @@
+--- ATTRS ---
+{
+  tone: 'dark',
+  p: 'pix',
+  title: 'Eighteen problems, four places they start',
+  sub: 'Every problem page on the site, grouped by where the failure actually begins',
+  no: 'DO-ART-118',
+  rev: '01',
+  cls: 'DECODED OPS · ISSUED'
+}
+--- JSX CHILDREN ---
+<g className="sk-fade sk-s2" filter="url(#pix-shadow)">
+      <rect x="60" y="180" width="325" height="460" rx="10" fill="url(#pix-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="445" y="180" width="325" height="460" rx="10" fill="url(#pix-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="830" y="180" width="325" height="460" rx="10" fill="url(#pix-node)" className="p-node" strokeWidth="1.1"/>
+      <rect x="1215" y="180" width="325" height="460" rx="10" fill="url(#pix-node)" className="p-node" strokeWidth="1.1"/>
+    </g>
+
+    {/* headers */}
+    <g className="sk-fade sk-s3">
+      <g className="p-mono" fontSize="15" letterSpacing="2.6" fontWeight="600" opacity=".7">
+        <text x="86" y="222">DATA</text><text x="471" y="222">PROCESS</text>
+        <text x="856" y="222">PLATFORM</text><text x="1241" y="222">PEOPLE</text>
+      </g>
+      <g className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="52">
+        <text x="86" y="292">5</text><text x="471" y="292">4</text>
+        <text x="856" y="292">5</text><text x="1241" y="292">4</text>
+      </g>
+      <g className="p-mono" fontSize="15" opacity=".5">
+        <text x="126" y="292">problems</text><text x="504" y="292">problems</text>
+        <text x="896" y="292">problems</text><text x="1274" y="292">problems</text>
+      </g>
+      <g className="p-scyan" strokeWidth=".6" strokeOpacity=".25">
+        <line x1="86" y1="318" x2="359" y2="318"/><line x1="471" y1="318" x2="744" y2="318"/>
+        <line x1="856" y1="318" x2="1129" y2="318"/><line x1="1241" y1="318" x2="1514" y2="318"/>
+      </g>
+    </g>
+
+    {/* items */}
+    <g className="sk-fade sk-s4" fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 80%, transparent)">
+      <text x="86" y="366">Data scattered</text>
+      <text x="86" y="410">Systems don't talk</text>
+      <text x="86" y="454">Inventory blind</text>
+      <text x="86" y="498">Spreadsheet addiction</text>
+      <text x="86" y="542">eCommerce not connected</text>
+
+      <text x="471" y="366">Manual workarounds</text>
+      <text x="471" y="410">Slow processes</text>
+      <text x="471" y="454">Can't scale operations</text>
+      <text x="471" y="498">Seasonal peaks</text>
+
+      <text x="856" y="366">Wrong ERP software</text>
+      <text x="856" y="410">Legacy system</text>
+      <text x="856" y="454">ERP implementation failure</text>
+      <text x="856" y="498">Buy vs build</text>
+      <text x="856" y="542">Disaster recovery</text>
+
+      <text x="1241" y="366">Ops in the owner's head</text>
+      <text x="1241" y="410">No ops owner</text>
+      <text x="1241" y="454">Growth bottleneck</text>
+      <text x="1241" y="498">AI paralysis</text>
+    </g>
+
+    {/* the only technology group */}
+    <g className="sk-fade sk-s5">
+      <rect x="830" y="180" width="325" height="460" rx="10" fill="none"
+            stroke="color-mix(in srgb, var(--do-amber) 45%, transparent)" strokeWidth="2"/>
+      <rect x="856" y="592" width="200" height="30" rx="6" className="p-block" opacity=".8"/>
+      <text x="872" y="612" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="13" letterSpacing="1.8">THE TECHNOLOGY ONE</text>
+    </g>
+
+    {/* footer */}
+    <g className="sk-fade sk-s6">
+      <rect x="60" y="676" width="1480" height="90" rx="10" fill="url(#pix-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
+      <text x="86" y="714" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Thirteen of eighteen are not technology problems.</text>
+      <text x="86" y="746" className="p-mono" fontSize="17" opacity=".65">They are process problems technology was supposed to solve, and did not. Which is why the audit comes first.</text>
+    </g>
