@@ -277,7 +277,7 @@ export default function PricingPage() {
           <div className="inset">
             <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
             costs depends on four things:
-            <ul style={{ margin: '12px 0 12px', paddingLeft: 22 }}>
+            <ul className="inset-list">
               <li>how many supplier feeds</li>
               <li>how many sales channels</li>
               <li>which machines and formats</li>

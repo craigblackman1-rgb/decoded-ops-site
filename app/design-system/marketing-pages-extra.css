@@ -114,6 +114,8 @@
   border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:var(--do-text-sm); color:var(--do-text-secondary); max-width:78ch }
 .inset b{ color:var(--do-text-primary); font-weight:var(--do-weight-bold) }
+.inset .inset-list{ list-style:disc; padding-left:20px; margin:10px 0 0 }
+.inset .inset-list li{ margin-top:6px }
 
 /* ── log list — one row per system on the /apps index ── */
 .log-list{ margin-top:32px; border-top:1px solid var(--do-border-subtle) }
