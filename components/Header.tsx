@@ -181,6 +181,7 @@ export function Header() {
   const [openPanel, setOpenPanel] = useState<PanelKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const lastClickRef = useRef<PanelKey | null>(null);
   const isMobile = () => typeof window !== 'undefined' && window.matchMedia('(max-width:1100px)').matches;
 
   useEffect(() => {
@@ -203,9 +204,14 @@ export function Header() {
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
-  const openViaClick = (key: PanelKey) => setOpenPanel(p => (p === key ? null : key));
+  const openViaClick = (key: PanelKey) => {
+    lastClickRef.current = key;
+    setOpenPanel(p => (p === key ? null : key));
+    setTimeout(() => { lastClickRef.current = null; }, 200);
+  };
   const openViaHover = (key: PanelKey) => {
     if (isMobile()) return;
+    if (lastClickRef.current !== null) return;
     setOpenPanel(p => (p !== null && p !== key ? key : p));
   };
   const closePanel = () => setOpenPanel(null);
@@ -270,7 +276,7 @@ export function Header() {
                       {helpLadder.map(step => (
                         <li key={step.href}>
                           <Link href={step.href} onClick={() => { closePanel(); setMobileOpen(false); }}>
-                            <span className="rung" aria-hidden="true" />
+                            <span className="step-rung" aria-hidden="true" />
                             <span>
                               <strong>{step.label}</strong>
                               <small>{step.sub}</small>
@@ -322,7 +328,7 @@ export function Header() {
               <div className="mega" id="mega-small" hidden={openPanel !== 'small'}>
                 <div className="container mega-inner cols-2">
                   <p className="panel-note">Turning over under &pound;500k and running it yourself? This is the same work, done remotely, at a price that fits.</p>
-                  <div className="mega-group">
+                  <div className="mega-group price-list-group">
                     <h3>Fixed-price, done remotely</h3>
                     <ul className="price-list">
                       {smallBusinessProducts.map(p => (
