@@ -381,40 +381,6 @@ footer a:hover{ color:var(--do-off-white) }
 .inset b{ color:var(--do-text-primary); font-weight:700 }
 .inset+.inset{ margin-top:10px }
 
-/* ── data tables (pricing.html) ── */
-.table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
-  border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
-  box-shadow:var(--do-shadow-sm) }
-.ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:0.9375rem }
-.ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading);
-  font-weight:700; font-size:1.15rem; color:var(--do-text-primary) }
-.ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
-.ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-off-white);
-  font-family:var(--do-font-heading); font-weight:600; font-size:0.875rem; letter-spacing:0.01em;
-  white-space:nowrap }
-.ds-table tbody th{ font-family:var(--do-font-heading); font-weight:700; font-size:1rem;
-  color:var(--do-text-primary); white-space:nowrap }
-.ds-table tbody tr+tr th,.ds-table tbody tr+tr td{ border-top:1px solid var(--do-border-subtle) }
-.ds-table tbody tr:hover td,.ds-table tbody tr:hover th{
-  background:color-mix(in srgb, var(--do-cerulean) 4%, transparent) }
-.ds-table .price{ display:block; font-family:var(--do-font-heading); font-weight:700;
-  font-size:1.0625rem; font-variant-numeric:tabular-nums; letter-spacing:-0.01em }
-.ds-table .price-sub{ display:block; margin-top:5px; font-size:0.8125rem; color:var(--do-text-secondary) }
-.ds-table .scope{ color:var(--do-text-secondary); white-space:normal; min-width:22ch }
-.ds-table .full{ color:var(--do-text-secondary) }
-.ds-table .full .price{ color:var(--do-text-primary) }
-.ds-table th.col-star,.ds-table td.col-star{
-  background:color-mix(in srgb, var(--do-amber) 9%, transparent) }
-.ds-table thead th.col-star{ background:var(--do-prussian-blue);
-  box-shadow:inset 0 -4px 0 0 var(--do-amber) }
-.ds-table tbody tr:hover td.col-star{ background:color-mix(in srgb, var(--do-amber) 14%, transparent) }
-.star{ display:inline-block; margin-left:7px; padding:2px 8px; border-radius:var(--do-radius-full);
-  background:var(--do-amber); color:var(--do-prussian-blue); font-family:var(--do-font-body);
-  font-weight:700; font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase;
-  vertical-align:2px }
-.ds-table .dash{ color:var(--do-text-secondary) }
-.table-foot{ margin:16px 0 0; font-size:0.8125rem; color:var(--do-text-secondary); max-width:80ch }
-
 /* ── numbered step cards (process-quality-system.html) ── */
 .steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:20px; margin-top:32px }
 .step{ background:var(--do-white); border:1px solid var(--do-border-subtle);
