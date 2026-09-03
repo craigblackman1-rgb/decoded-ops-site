@@ -116,7 +116,7 @@
   outline-offset:-2px }
 
 /* numbered service ladder */
-.site-head--mega .ladder{ list-style:none; margin:0; padding:0; counter-reset:rung }
+.site-head--mega .ladder{ list-style:none; margin:0; padding:0; counter-reset:step-rung }
 .site-head--mega .ladder a{ display:grid; grid-template-columns:26px 1fr; gap:10px;
   align-items:start; margin:0 0 0 -10px; padding:9px 10px;
   border-radius:var(--do-radius-lg); color:var(--do-text-primary);
@@ -124,12 +124,12 @@
 .site-head--mega .ladder a:hover{ background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
 .site-head--mega .ladder a:focus-visible{ outline:2px solid var(--do-focus-ring);
   outline-offset:-2px }
-.site-head--mega .ladder .rung{ counter-increment:rung; width:24px; height:24px;
+.site-head--mega .ladder .step-rung{ counter-increment:step-rung; width:24px; height:24px;
   display:grid; place-items:center; border-radius:var(--do-radius-full);
   border:1px solid var(--do-border-subtle); background:var(--do-surface-page);
   font-size:12px; font-weight:var(--do-weight-bold); color:var(--do-text-muted);
   font-variant-numeric:tabular-nums }
-.site-head--mega .ladder .rung::before{ content:counter(rung) }
+.site-head--mega .ladder .step-rung::before{ content:counter(step-rung) }
 .site-head--mega .ladder strong{ display:block; font-size:15px;
   font-weight:var(--do-weight-semibold) }
 .site-head--mega .ladder small{ display:block; margin-top:1px; font-size:13px;
@@ -184,10 +184,11 @@
 .site-head--mega .price-list .price{ font-size:var(--do-text-sm);
   font-weight:var(--do-weight-semibold); color:var(--do-text-muted);
   font-variant-numeric:tabular-nums; white-space:nowrap }
-.site-head--mega .panel-note{ grid-column:1 / -2; margin:0 0 4px; padding:12px 16px;
+.site-head--mega .panel-note{ grid-column:1 / -2; align-self:start; margin:0 0 4px; padding:12px 16px;
   border-radius:var(--do-radius-lg); font-size:var(--do-text-sm);
   color:var(--do-text-primary);
   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+.site-head--mega .price-list-group{ grid-column:1/-2 }
 
 /* the scrim sits under the header but over the page — and over the rail */
 .scrim{ position:fixed; inset:var(--do-header-h) 0 0;
@@ -213,11 +214,13 @@
   .site-head--mega .nav-flat:hover,
   .site-head--mega .nav-trigger[aria-expanded="true"]{ background:transparent }
   .site-head--mega .mega{ position:static; background:transparent;
-    border:0; box-shadow:none }
+    border:0; box-shadow:none;
+    height:calc(100vh - var(--do-header-h) - 48px); overflow:hidden }
   .site-head--mega .mega-inner,
   .site-head--mega .mega-inner.cols-3,
   .site-head--mega .mega-inner.cols-2{ grid-template-columns:1fr; gap:20px;
-    padding-block:20px 32px; padding-inline:0; max-width:none }
+    padding-block:20px 32px; padding-inline:0; max-width:none;
+    overflow-y:auto; height:100% }
   .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
   .site-head--mega .sector-grid,
   .site-head--mega .panel-note{ grid-column:auto }
