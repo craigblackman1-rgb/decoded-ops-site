@@ -155,7 +155,7 @@ export default function ProcessQualitySystemPage() {
             explain.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/deliver">See how this fits into Deliver</Link>
-            <Link className="btn btn-secondary btn-arrow" href="/decoded-method">The Decoded Method</Link>
+            <Link className="btn btn-secondary btn-arrow" href="/resources/decoded-method">The Decoded Method</Link>
           </div>
         </div>
       </section>

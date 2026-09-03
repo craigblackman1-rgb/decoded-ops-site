@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       // them; the redirect just needs to be ready ahead of that landing.
       { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+      { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
     ];
   },
@@ -35,7 +36,7 @@ const nextConfig: NextConfig = {
             // uses eval for HMR and source maps, and without this React never hydrates locally,
             // which makes every interactive component look broken while testing. Production
             // headers are unchanged.
-            value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://analytics.ahrefs.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
+            value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://analytics.ahrefs.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
           },
         ],
       },

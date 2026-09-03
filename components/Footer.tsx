@@ -64,7 +64,7 @@ const problemChips: FooterLink[] = [
 ];
 
 const guideChips: FooterLink[] = [
-  { label: 'The Decoded Method', href: '/decoded-method' },
+  { label: 'The Decoded Method', href: '/resources/decoded-method' },
   { label: 'Audit checklist', href: '/resources/audit-checklist' },
   { label: '5 warning signs', href: '/resources/5-warning-signs' },
   { label: 'Six Sigma explained', href: '/resources/six-sigma' },

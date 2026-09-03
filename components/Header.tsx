@@ -67,7 +67,7 @@ const helpBuilt: NavGroup = {
 const helpHow: NavGroup = {
   title: 'How I work',
   items: [
-    { label: 'The Decoded Method', href: '/decoded-method' },
+    { label: 'The Decoded Method', href: '/resources/decoded-method' },
     { label: 'How I build software', href: '/how-i-build' },
     { label: 'Prices, in plain numbers', href: '/pricing' },
     { label: 'About Craig', href: '/about' },

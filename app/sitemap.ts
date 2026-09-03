@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE_URL}/apps/crm`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE_URL}/how-i-build`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/decoded-method`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+
     { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/problems`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.65 },
