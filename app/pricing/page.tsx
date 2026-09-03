@@ -59,7 +59,13 @@ export default function PricingPage() {
             scales with it. Clarity Audit is the entry point into everything below it.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '26%' }} />
+              </colgroup>
               <caption>Consultancy: by turnover band</caption>
               <thead>
                 <tr>
@@ -118,7 +124,13 @@ export default function PricingPage() {
             longer commitment, and priced as one.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '26%' }} />
+              </colgroup>
               <caption>Retained Transformation: by turnover band</caption>
               <thead>
                 <tr>
@@ -278,7 +290,12 @@ export default function PricingPage() {
             make on your own without a board behind you.</p>
 
           <div className="table-wrap">
-            <table className="ds-table">
+            <table className="ds-table ds-table--fixed">
+              <colgroup>
+                <col style={{ width: '26%' }} />
+                <col style={{ width: '24%' }} />
+                <col style={{ width: '50%' }} />
+              </colgroup>
               <caption>Small business: fixed prices</caption>
               <thead>
                 <tr>
