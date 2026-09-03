@@ -85,7 +85,7 @@ export default function CaseStudy01Page() {
             <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
 
             <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-hanicks">
+              <div className="plate-frame" data-od-id="plate-cs01">
                 <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
                        sub="Case study 01 · 164,752 products, 77% matched on the first run"
                        no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">

@@ -94,7 +94,7 @@ export default function CaseStudy02Page() {
             <p className="lede">Case study 02, real production numbers. Nine supplier feeds, fully automated.</p>
 
             <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-tacklebag">
+              <div className="plate-frame" data-od-id="plate-cs02">
                 <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
                        sub="Case study 02 · 9 feeds automated, 20–40 hrs/wk saved"
                        no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
