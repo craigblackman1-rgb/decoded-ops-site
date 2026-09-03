@@ -189,6 +189,30 @@
   color:var(--do-text-primary);
   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
 .site-head--mega .price-list-group{ grid-column:1/-2 }
+.site-head--mega .price-list-group .price-list{ display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 32px }
+.site-head--mega .price-list-group .price-list a{ margin-left:0 }
+
+/* smallbiz "Bigger than £500k?" — compact horizontal band, not a tall card */
+.site-head--mega .smallbiz-cta-band{ grid-column:1/-2; display:flex;
+  align-items:center; justify-content:space-between; gap:20px;
+  padding:16px 20px; background:color-mix(in srgb,var(--do-cerulean) 7%,transparent);
+  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
+.site-head--mega .smallbiz-cta-band h3{ margin:0 0 2px;
+  font-family:var(--do-font-heading); font-size:16px;
+  font-weight:var(--do-weight-bold); letter-spacing:0; text-transform:none;
+  color:var(--do-text-primary) }
+.site-head--mega .smallbiz-cta-band p{ margin:0; font-size:var(--do-text-sm);
+  color:var(--do-text-muted) }
+.site-head--mega .smallbiz-cta-band .band-actions{ display:flex;
+  align-items:center; gap:12px; flex-shrink:0 }
+.site-head--mega .smallbiz-cta-band .band-actions .btn{ margin-bottom:0 }
+.site-head--mega .smallbiz-cta-band .band-actions .rail-all{ display:inline-flex;
+  align-items:center; gap:6px; font-size:13px; color:var(--do-text-muted);
+  text-decoration:none }
+.site-head--mega .smallbiz-cta-band .band-actions .rail-all:hover{
+  color:var(--do-text-primary); text-decoration:underline;
+  text-underline-offset:3px }
 
 /* the scrim sits under the header but over the page — and over the rail */
 .scrim{ position:fixed; inset:var(--do-header-h) 0 0;
@@ -223,7 +247,12 @@
     overflow-y:auto; height:100% }
   .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
   .site-head--mega .sector-grid,
-  .site-head--mega .panel-note{ grid-column:auto }
+  .site-head--mega .panel-note,
+  .site-head--mega .price-list-group,
+  .site-head--mega .smallbiz-cta-band{ grid-column:auto }
+  .site-head--mega .smallbiz-cta-band{ flex-direction:column; align-items:stretch;
+    gap:12px }
+  .site-head--mega .smallbiz-cta-band .band-actions{ justify-content:flex-start }
   .site-head--mega .sector-grid{ grid-template-columns:1fr 1fr }
   .site-head--mega .nav-tools{ flex-direction:column; align-items:stretch;
     margin:20px 0 0; order:-1; gap:8px }

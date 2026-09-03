@@ -340,8 +340,16 @@ export function Header() {
                     </ul>
                   </div>
                   <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
-                  <MegaRail heading="Bigger than £500k?" note="Then the on-site work is a better fit, same steps, done in person."
-                    ctaLabel="Book a free 60-min call" extra={{ label: 'See Clarity', href: '/clarity' }} />
+                  <div className="smallbiz-cta-band">
+                    <div className="band-text">
+                      <h3>Bigger than £500k?</h3>
+                      <p>Then the on-site work is a better fit, same steps, done in person.</p>
+                    </div>
+                    <div className="band-actions">
+                      <Link className="btn btn--primary btn--sm" href="/contact" onClick={() => { closePanel(); setMobileOpen(false); }}>Book a free 60-min call</Link>
+                      <Link className="rail-all" href="/clarity" onClick={() => { closePanel(); setMobileOpen(false); }}>See Clarity</Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
