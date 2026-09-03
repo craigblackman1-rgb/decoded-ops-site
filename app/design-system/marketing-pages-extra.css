@@ -71,7 +71,7 @@
 .ds-table thead tr th:last-child{ border-top-right-radius:10px }
 .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
 .ds-table--fixed{ table-layout:fixed }
-.ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading);
+.ds-table caption{ text-align:left; padding:12px 22px 14px; font-family:var(--do-font-heading);
   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
 .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
 .ds-table th:first-child{ min-width:180px }
