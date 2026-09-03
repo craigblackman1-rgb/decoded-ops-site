@@ -4,18 +4,18 @@ import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Decoded Data App: Decoded Ops',
-  description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
+  description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at two client deployments.',
   alternates: { canonical: '/apps/data-app' },
   openGraph: {
     type: 'website',
     title: 'Decoded Data App: Decoded Ops',
-    description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at Hanicks and TackleBag.',
+    description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at two client deployments.',
     url: 'https://decodedops.co.uk/apps/data-app',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Data App: Decoded Ops',
-    description: 'Supplier feeds in, one clean catalogue out. Live at Hanicks and TackleBag.',
+    description: 'Supplier feeds in, one clean catalogue out. Live at two client deployments.',
   },
 };
 
@@ -43,7 +43,7 @@ export default function DataAppPage() {
             <div className="evidence evidence--screen">
               <img src="/images/apps/data-app-dashboard.png" width={2160} height={2300}
                    alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue pushing product records to the client&rsquo;s platform." />
-              <span className="stamp">hanicks &middot; Data App</span>
+              <span className="stamp">Case study 01 &middot; Data App</span>
             </div>
             <p className="shot-caption">A live client system. Feeds in on the left, one clean catalogue out
               on the right, and the platform they already own kept up to date automatically.</p>
@@ -134,7 +134,7 @@ export default function DataAppPage() {
       {/* 3 · STAT ROW */}
       <section className="g-navy">
         <div className="wrap">
-          <p className="eyebrow">Hanicks &middot; first run</p>
+          <p className="eyebrow">Case study 01 &middot; first run</p>
           <h2>Real numbers from a real deployment.</h2>
 
           <div className="grid grid--3" style={{ marginTop: 44 }}>
@@ -152,7 +152,7 @@ export default function DataAppPage() {
             </div>
           </div>
 
-          <p className="stat-caption">Hanicks, named with permission. The platform didn&rsquo;t change. The layer
+          <p className="stat-caption">Case study 01, real production numbers. The platform didn&rsquo;t change. The layer
             around it did, and the catalogue went from something nobody trusted to something the
             warehouse and the website could both work from.</p>
         </div>

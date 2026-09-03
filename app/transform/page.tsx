@@ -5,12 +5,12 @@ import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
   title: 'Transform: Decoded Ops',
-  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds fully automated.',
+  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine supplier feeds fully automated.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
     title: 'Transform: Decoded Ops',
-    description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Named results at Hanicks and TackleBag.',
+    description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Measured results across two deployments.',
     url: 'https://decodedops.co.uk/transform',
   },
   twitter: {
@@ -42,15 +42,15 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Two live examples &middot; DO-ART-403</span>
           <h2>Same approach, twice, in two different businesses.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Hanicks: 164,752 products imported and 77% matched on
-            the first run. TackleBag: nine supplier feeds automated, a projected saving of 20 to 40
+          <p className="lede" style={{ marginTop: 16 }}>Case study 01: 164,752 products imported and 77% matched on
+            the first run. Case study 02: nine supplier feeds automated, a projected saving of 20 to 40
             hours a week. Same approach both times: fix the process and the data before automating
             anything.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="transform-ba-diagram">
-              <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
-                     sub="Hanicks: before and after, paired line for line"
+               <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
+                      sub="Case study 01: before and after, paired line for line"
                      no="DO-ART-403" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2" filter="url(#tb-shadow)">
@@ -121,15 +121,15 @@ export default function TransformPage() {
             <div className={`${s.baCol} ${s.baColAfter}`} data-od-id="ba-after">
               <h3>After</h3>
               <ul>
-                <li>Hanicks: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
-                 <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
-                <li>TackleBag: <strong>9</strong> supplier feeds fully automated</li>
-                <li>TackleBag: a projected saving of <strong>20–40 hours</strong> a week</li>
+                <li>Case study 01: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
+                 <li>Case study 01: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
+                <li>Case study 02: <strong>9</strong> supplier feeds fully automated</li>
+                <li>Case study 02: a projected saving of <strong>20–40 hours</strong> a week</li>
               </ul>
             </div>
           </div>
 
-          <p className={s.tableFoot}>Both named with permission. Same approach both times: fix the process
+          <p className={s.tableFoot}>Both real deployments. Same approach both times: fix the process
             and the data before automating anything.</p>
         </div>
       </section>

@@ -178,7 +178,7 @@ export default function CommercePage() {
           <div className="grid grid--2" style={{ marginTop: 40 }}>
             <div className="panel">
               <h3>The worked example</h3>
-              <p>Hanicks: a full migration off WooCommerce, a new storefront, and reintegration back
+              <p>A full migration off WooCommerce, a new storefront, and reintegration back
                 into Khaos Control. That&rsquo;s scoped and quoted like any other full custom build, not read
                 off a tier list.</p>
             </div>
@@ -232,14 +232,14 @@ export default function CommercePage() {
               </tbody>
             </table>
           </div>
-          <p className="table-foot">A full rebuild like the Hanicks migration isn&rsquo;t on this table on
+          <p className="table-foot">A full rebuild, like a migration off an existing platform, isn&rsquo;t on this table on
             purpose. That&rsquo;s scoped separately.</p>
           <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
 
           <div className="notice">
             <p className="notice-tag">Founding-client terms</p>
             <h3>No client has taken first delivery of the packaged product yet.</h3>
-            <p>Cobra Workwear and the Hanicks migration are real work, but nobody has yet bought Decoded
+            <p>Real work has been scoped and quoted, but nobody has yet bought Decoded
               Commerce as a tiered product. Until that happens it sells at the rates above with the
               first six months of support waived, in exchange for accepting that some features arrive
               during the engagement and agreeing to be a named reference.</p>

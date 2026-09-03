@@ -3,21 +3,21 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 
-// Target keyword: "b2b ordering portal workwear" (secondary: "cobra workwear decoded ops")
+// Target keyword: "b2b ordering portal workwear" (secondary: "case study 03 decoded ops")
 export const metadata = {
-  title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
-  alternates: { canonical: '/case-studies/cobra-workwear' },
+  title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
+  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+  alternates: { canonical: '/case-studies/case-study-03' },
   openGraph: {
     type: 'article',
-    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
-    url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
+    title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+    url: 'https://decodedops.co.uk/case-studies/case-study-03',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cobra Workwear: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
+    title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
   },
 };
 
@@ -26,16 +26,16 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Cobra Workwear: architect and advisor, not the builder',
-      description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for Cobra Workwear\'s B2B ordering portal.',
+      headline: 'Case study 03: architect and advisor, not the builder',
+      description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
-      url: 'https://decodedops.co.uk/case-studies/cobra-workwear',
+      url: 'https://decodedops.co.uk/case-studies/case-study-03',
     },
   ],
 };
 
-export default function CobraWorkwearCaseStudyPage() {
+export default function CaseStudy03Page() {
   return (
     <>
       <style>{`
@@ -74,7 +74,7 @@ export default function CobraWorkwearCaseStudyPage() {
               <span className="eyebrow">Client work · workwear</span>
               <h1>Architect and advisor, not the builder.</h1>
               <p className="lede">
-                Cobra Workwear needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+                A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
               </p>
               <div className="hero-cta">
                 <Link href="/contact" className="btn btn--primary">
@@ -107,7 +107,7 @@ export default function CobraWorkwearCaseStudyPage() {
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-cobra-workwear">
                 <Plate tone="dark" p="cbr" title="Trade ordering, target state"
-                       sub="Cobra Workwear &middot; specified by Decoded Ops, built by the partner team"
+                       sub="Case study 03 &middot; specified by Decoded Ops, built by the partner team"
                        no="DO-ART-101" rev="02" cls="DECODED OPS · ISSUED">
 
                   {/* ── client zones ── */}
@@ -186,7 +186,7 @@ export default function CobraWorkwearCaseStudyPage() {
 
                   <g className="sk-fade sk-s6">
                     <circle cx="86" cy="694" r="5" className="p-cyan"/>
-                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">Cobra&apos;s operation, kept and connected, not replaced</text>
+                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">The client&apos;s operation, kept and connected, not replaced</text>
                     <circle cx="700" cy="694" r="5" className="p-amber"/>
                     <text x="716" y="700" className="p-mono" fontSize="16" opacity=".7">Scoped and overseen by Decoded Ops &middot; built by the implementation partner</text>
                   </g>

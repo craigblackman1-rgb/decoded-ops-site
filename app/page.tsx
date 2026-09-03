@@ -241,7 +241,7 @@ export default function HomePage() {
                   <span className="eyebrow">What it turns up</span>
                   <h2>Nobody retypes a supplier spreadsheet.</h2>
                 </div>
-                <p className="lede">Hanicks, named with permission. One import pipeline, run to a schedule,
+                <p className="lede">Case study 01, real production numbers. One import pipeline, run to a schedule,
                   doing a job that used to be done by hand every time a supplier changed a range. Not
                   projected and not modelled. This is what actually happened.</p>
               </div>
@@ -249,7 +249,7 @@ export default function HomePage() {
               <div className="plate-scroll">
                 <div className="plate-frame" data-od-id="plate-measure">
                   <Plate tone="dark" p="ms" title="Supplier catalogue: raw to live"
-                         sub="Hanicks · one import pipeline, first automated run"
+                         sub="Case study 01 · one import pipeline, first automated run"
                          no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
 
                     {/* track guides */}
@@ -316,7 +316,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p className="sheet-foot">Same approach at TackleBag, also named with permission: nine supplier
+              <p className="sheet-foot">Same approach at Case study 02, real production numbers: nine supplier
                 feeds automated, and a projected saving of 20 to 40 hours a week.</p>
             </article>
           </div>
@@ -378,7 +378,7 @@ export default function HomePage() {
                             strokeWidth="1.1" strokeOpacity=".35"/>
                       <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
                       <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
-                            fontWeight="600">LIVE DEPLOYMENT &middot; TACKLEBAG</text>
+                            fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
                     </g>
 
                     {/* THE SPECIFICATION. What the exhibit proves. */}
@@ -394,7 +394,7 @@ export default function HomePage() {
                       <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
                             opacity=".45">CLIENT</text>
                       <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">TackleBag &middot; named with permission</text>
+                            fontWeight="600" fontSize="22">Case study 02 · real production numbers</text>
 
                       <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
                             opacity=".45">SHOWS</text>
