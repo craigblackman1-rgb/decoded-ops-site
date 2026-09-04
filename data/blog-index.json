@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "slug": "orderwise-what-it-does-well-what-it-doesn-t",
+      "title": "Orderwise: What It Does Well, What It Doesn't",
+      "excerpt": "An honest look at what Orderwise handles well and where it falls short for decorated-goods businesses.",
+      "date": "2026-06-15",
+      "category": "Technology"
+    },
+    {
       "slug": "the-real-cost-of-a-failed-erp-project",
       "title": "The Real Cost of a Failed ERP Project",
       "excerpt": "How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project.",

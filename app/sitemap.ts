@@ -14,7 +14,12 @@ async function fetchBlogPosts() {
     });
     if (res.ok) {
       const data = await res.json();
-      return data.items || [];
+      const hubItems = data.items || [];
+      // BUG-WEB-018: merge local fallback posts not present in hub index
+      // (hub may exclude drafts that are still live and indexed by Google)
+      const hubSlugs = new Set(hubItems.map((p: any) => p.slug));
+      const extraLocal = (localBlogPosts.items || []).filter((p: any) => !hubSlugs.has(p.slug));
+      return [...hubItems, ...extraLocal];
     }
   } catch {}
   return localBlogPosts.items || [];

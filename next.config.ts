@@ -20,6 +20,9 @@ const nextConfig: NextConfig = {
       { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
       { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
       { source: '/apps/crm', destination: '/apps', permanent: true },
+      // BUG-WEB-017: blog slugs renamed during relaunch — preserve Search Console equity
+      { source: '/blog/artwork-approval-process', destination: '/blog/artwork-approval-workflow-brief-to-sign-off-24-hours', permanent: true },
+      { source: '/blog/embroidery-quality-standards', destination: '/blog/embroidery-quality-standards-stitch-density-thread-durability', permanent: true },
     ];
   },
   async headers() {
