@@ -59,7 +59,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     ],
     relatedReading: [
       { href: '/blog/ecommerce-integration-trap', label: 'The eCommerce integration trap' },
-      { href: '/blog/ralawise-integration', label: 'Ralawise integration: automating wholesale orders' },
+      { href: '/blog/ralawise-integration-bulk-orders-stock-management', label: 'Ralawise integration: automating wholesale orders' },
     ],
   },
 

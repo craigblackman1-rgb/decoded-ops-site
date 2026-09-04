@@ -119,7 +119,7 @@ export function Footer() {
               <a href="tel:+447735620603">07735 620603</a>
             </div>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/decodedops"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Craig Blackman on LinkedIn (opens in new tab)"

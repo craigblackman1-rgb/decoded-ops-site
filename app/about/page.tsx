@@ -47,7 +47,7 @@ export default function AboutPage() {
 
           <div className={s.heroShot}>
             <div className={s.photo} data-od-id="about-visual">
-              <img src="/assets/commerce/thread-spools.jpg" width="1600" height="1067"
+              <img src="/images/sectors/thread-spools.jpg" width="1600" height="1067"
                    alt="A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor." />
             </div>
             <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
