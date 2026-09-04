@@ -91,10 +91,10 @@ export default function CapacityPlannerPage() {
           </h2>
           <div style={{ fontFamily: 'var(--do-font-body)', color: 'var(--do-text-secondary)', fontSize: '17px', lineHeight: 1.7 }}>
             <p style={{ marginBottom: 16 }}>
-              The spec sheet says your heat press runs 200 transfers an hour. That assumes one operator, one design, no changeovers, no breaks, and no downtime. In practice, every changeover costs you three to five minutes, an operator needs a break, and the press needs cleaning between jobs. The real throughput is usually 60 to 75 percent of the theoretical.
+              The spec sheet says your heat press runs 200 transfers an hour. That assumes one operator, one design, no changeovers, no breaks, and no downtime. In practice, changeovers eat into every job, operators need breaks, and presses need cleaning between runs. Enter your own downtime allowance in the calculator above to see what your real throughput looks like.
             </p>
             <p style={{ marginBottom: 16 }}>
-              That matters because quoting is based on capacity. If you think you can do 400 jobs a week but can actually do 280, you will either over-quote (and lose work) or under-quote (and be buried).
+              That matters because quoting is based on capacity. If your quoted capacity is higher than your real capacity, you will either over-quote (and lose work) or under-quote (and be buried).
             </p>
             <p style={{ marginBottom: 0 }}>
               This calculator gives you the honest number. Use it before you commit to a deadline or price a volume job.
