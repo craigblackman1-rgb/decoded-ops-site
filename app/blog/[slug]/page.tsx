@@ -16,17 +16,24 @@ interface PageProps {
 
 function extractFaqSchema(html: string) {
   const h2Regex = /<h2[^>]*>([\s\S]*?)<\/h2>/g;
-  const matches: string[] = [];
+  const headings: { text: string; index: number; end: number }[] = [];
   let match;
   while ((match = h2Regex.exec(html)) !== null) {
-    matches.push(match[0]);
+    headings.push({
+      text: match[0].replace(/<[^>]+>/g, '').trim(),
+      index: match.index,
+      end: match.index + match[0].length,
+    });
   }
-  const entries = matches.slice(0, 6).map(h2 => {
-    const q = h2.replace(/<[^>]+>/g, '').trim();
+  const entries = headings.slice(0, 6).map((h, i) => {
+    const q = h.text;
+    const nextStart = i + 1 < headings.length ? headings[i + 1].index : html.length;
+    const answerHtml = html.slice(h.end, nextStart);
+    const text = answerHtml.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
     return {
       '@type': 'Question',
       name: q.endsWith('?') ? q : q + '?',
-      acceptedAnswer: { '@type': 'Answer', text: q },
+      acceptedAnswer: { '@type': 'Answer', text },
     };
   });
   if (entries.length < 2) return null;
@@ -34,17 +41,19 @@ function extractFaqSchema(html: string) {
 }
 
 function buildArticleSchema(item: any, slug: string, pubDate: string) {
+  const headline = (item.seo?.title || item.title || '').replace(/ \| Decoded Ops$/, '');
   return {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'BlogPosting',
-        headline: item.seo?.title || item.title,
+        headline,
         datePublished: pubDate,
         dateModified: pubDate,
         author: { '@type': 'Person', name: 'Craig Blackman', url: 'https://decodedops.co.uk/about' },
         publisher: {
           '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk',
+          logo: { '@type': 'ImageObject', url: 'https://decodedops.co.uk/logo.png', width: 512, height: 512 },
           address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
         },
         image: item.featuredImage ? `https://decodedops.co.uk${item.featuredImage}` : 'https://decodedops.co.uk/opengraph-image',
