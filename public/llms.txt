@@ -1,5 +1,5 @@
 # Decoded Ops
-> Independent operations and technology consultancy for print, embroidery, workwear, and promotional merchandise businesses. Plain English. No jargon. No vendor agenda.
+> Independent operations and technology consultancy for print, embroidery, workwear, and promotional merchandise businesses. Plain English. No jargon. Every recommendation scored against a written brief, including my own software.
 
 ## Consultancy
 - [Clarity Audit](https://decodedops.co.uk/clarity): Operational and technology audit. From £1,500. One day on site, a written plan within five working days. 3x Clarity Guarantee.
@@ -9,7 +9,7 @@
 - [Pricing](https://decodedops.co.uk/pricing): Full pricing table. Plain pricing with no hidden day rate.
 
 ## Software as evidence of capability
-Decoded Ops builds production-grade software for the decorated-goods sector: product data apps, artwork managers, B2B commerce platforms, and supplier feed integration. Every build starts with a Clarity Audit; the software serves the operational need the audit identifies, never the other way round. What a build costs depends entirely on what it has to do, which is why prices appear on `/pricing` and nowhere else.
+Decoded Ops builds production-grade software for the decorated-goods sector: artwork managers, B2B commerce platforms, and the Data App, a full operations system covering catalogue, orders, purchasing, stock, production and despatch. It started as a tool to clean supplier feeds that nothing off the shelf handled, and grew from there into a system that can run alongside your existing platform or replace it. Every build starts with a Clarity Audit; the software serves the operational need the audit identifies, never the other way round. What a build costs depends entirely on what it has to do, which is why prices appear on `/pricing` and nowhere else.
 
 ## Resources
 - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
@@ -17,7 +17,7 @@ Decoded Ops builds production-grade software for the decorated-goods sector: pro
 - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
 - [Free SOP Template](https://decodedops.co.uk/resources/sop-template): A free SOP template with a 7-step writing method, Process Register, and Improvement Log for decoration businesses.
 - [ERP Selection Guide](https://decodedops.co.uk/resources/erp-selection-playbook): A plain-English guide to ERP for decorated goods: what it is, when you need it, how to choose.
-- [Six Sigma for Decorated Goods](https://decodedops.co.uk/resources/six-sigma): Lean and Six Sigma applied to decoration businesses — not the factory playbook.
+- [Six Sigma for Decorated Goods](https://decodedops.co.uk/resources/six-sigma): Lean and Six Sigma applied to decoration businesses, not the factory playbook.
 - [Artwork Approval Playbook](https://decodedops.co.uk/resources/artwork-approval-playbook): A 5-step workflow to take artwork approval from brief to sign-off in 24 hours.
 - [The Decoded Method](https://decodedops.co.uk/resources/decoded-method): A three-layer process system: Process Register, one-page SOPs, and Improvement Log.
 
