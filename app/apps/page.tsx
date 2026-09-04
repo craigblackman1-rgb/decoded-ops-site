@@ -81,13 +81,13 @@ export default function AppsPage() {
         <div className="wrap">
           <p className="eyebrow">Architecture &middot; DO-ART-104</p>
           <h2>Three apps, one platform.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Nothing replaced. Each app plugs a specific gap
-            alongside the platform you already run.</p>
+          <p className="lede" style={{ marginTop: 16 }}>Each one started as a gap nothing off the shelf covered.
+            The Data App has since grown into a full system in its own right.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="ap" title="Three apps, one platform"
-                     sub="Nothing replaced. Each app plugs a specific gap"
+                     sub="Each started as a gap nothing covered. The Data App grew into a full system."
                      no="DO-ART-104" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2">
@@ -138,7 +138,7 @@ export default function AppsPage() {
                   <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="800" fontSize="26">Your platform</text>
                   <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
-                        fontWeight="600">Khaos Control · Symphony · yours</text>
+                        fontWeight="600">Khaos Control · Symphony · yours · or the Data App itself</text>
                 </g>
 
                 <g className="sk-dots">

@@ -4,18 +4,18 @@ import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Decoded Data App: Decoded Ops',
-  description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at two client deployments.',
+  description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',
   alternates: { canonical: '/apps/data-app' },
   openGraph: {
     type: 'website',
     title: 'Decoded Data App: Decoded Ops',
-    description: 'Supplier feeds in, one clean catalogue out. The Decoded Data App sits alongside the platform you already run and does the jobs it was never built for. Live at two client deployments.',
+    description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',
     url: 'https://decodedops.co.uk/apps/data-app',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Data App: Decoded Ops',
-    description: 'Supplier feeds in, one clean catalogue out. Live at two client deployments.',
+    description: 'A full operations system built from client gaps. Catalogue, orders, stock, production and despatch.',
   },
 };
 
@@ -27,11 +27,13 @@ export default function DataAppPage() {
         <div className="wrap hero-split">
           <div>
             <p className="eyebrow">Decoded Data App &middot; live</p>
-            <h1>The jobs your ERP was never going to do.</h1>
+            <h1>The system I couldn&rsquo;t buy for my clients.</h1>
             <div className="hero-body">
-              <p>Supplier feeds arrive as a mess. Thousands of rows, no consistent SKU, no usable images,
-                different every time. The Data App takes them in, cleans them, matches them to what you already
-                sell, and keeps your catalogue current across every channel.</p>
+              <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back with nothing
+                on the market to cover them: supplier feeds, decoration data, blank-to-finished mapping. So I built
+                the missing piece. Engagement by engagement it grew, and today it runs catalogue, orders, purchasing,
+                stock, production and despatch. It still plays both ways. Alongside the
+                platform you already own, or as the system itself.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
@@ -54,15 +56,15 @@ export default function DataAppPage() {
       {/* 2 · LAYER STACK · DO-ART-105 */}
       <section className="g-tint">
         <div className="wrap">
-          <p className="eyebrow">Not a replacement &middot; DO-ART-105</p>
-          <h2>Your platform stays. This sits alongside it.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Supplier feeds, data enrichment, catalogue maintenance
-            across channels. The jobs your platform was never built for. Ripping it out and starting
-            again is almost never the right answer. Adding the layer it&rsquo;s missing usually is.</p>
+          <p className="eyebrow">DO-ART-105</p>
+          <h2>Keep your platform, or let this become it.</h2>
+          <p className="lede" style={{ marginTop: 16 }}>The Data App started as the missing layer: supplier feeds,
+            data enrichment, catalogue maintenance across channels. It has grown into a full system. You can run
+            it alongside the platform you already own, or let it replace it.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Plate tone="dark" p="da" title="A layer, not a rip-out"
+              <Plate tone="dark" p="da" title="Starts as a layer. Grows as far as you need."
                      sub="Where the Data App sits. Three layers, read bottom-up"
                      no="DO-ART-105" rev="01" cls="DECODED OPS · ISSUED">
 
@@ -95,9 +97,9 @@ export default function DataAppPage() {
                   <rect x="260" y="560" width="1180" height="120" rx="14" fill="url(#da-node)"
                         className="p-node" strokeWidth="1.4"/>
                   <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">The platform you already own</text>
+                        fontSize="26">The platform you run today</text>
                   <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ·
-                    Symphony · whatever you run today</text>
+                    Symphony · or this system, once it has earned it</text>
                   <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
                         letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
                 </g>
