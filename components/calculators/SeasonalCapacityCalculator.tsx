@@ -9,12 +9,12 @@ import './calculators.css';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const DEFAULT_DEMAND_PCT = [60, 55, 70, 85, 100, 110, 115, 90, 105, 100, 80, 65];
+const FLAT_DEMAND_PCT = Array(12).fill(100);
 
 export function SeasonalCapacityCalculator() {
   const [baselineJobs, setBaselineJobs] = useState<number>(200);
   const [baseCapacity, setBaseCapacity] = useState<number>(220);
-  const [demandPct, setDemandPct] = useState<number[]>(DEFAULT_DEMAND_PCT);
+  const [demandPct, setDemandPct] = useState<number[]>(FLAT_DEMAND_PCT);
 
   const demandVsCapacity = useMemo(() => {
     return MONTHS.map((m, i) => {
@@ -37,7 +37,7 @@ export function SeasonalCapacityCalculator() {
     setDemandPct(next);
   };
 
-  const resetToDefault = () => setDemandPct(DEFAULT_DEMAND_PCT);
+  const resetToDefault = () => setDemandPct(FLAT_DEMAND_PCT);
 
   const barMax = Math.max(baseCapacity, peakDemand, 1);
 
@@ -76,7 +76,7 @@ export function SeasonalCapacityCalculator() {
             onChange={(e) => setBaselineJobs(Math.max(1, Number(e.target.value) || 1))}
             className="calc-input"
           />
-          <p className="calc-hint">Your typical output in a normal month. Seasonal percentages are applied to this.</p>
+          <p className="calc-hint">Your output in a normal month. All months start at 100% (flat) — adjust each month to match your seasonal pattern.</p>
         </div>
 
         <div style={{ marginTop: 24 }}>
@@ -91,7 +91,7 @@ export function SeasonalCapacityCalculator() {
                 border: 'none', cursor: 'pointer', fontWeight: 500, textDecoration: 'underline',
               }}
             >
-              Reset to default
+              Reset to flat
             </button>
           </div>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginBottom: 16 }}>

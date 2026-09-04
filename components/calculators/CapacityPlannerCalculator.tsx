@@ -107,7 +107,7 @@ export function CapacityPlannerCalculator() {
             onChange={(e) => setDowntimePct(Math.max(0, Math.min(100, Number(e.target.value) || 0)))}
             className="calc-input"
           />
-          <p className="calc-hint">Changeovers, cleaning, breaks, minor breakdowns. 10–20% is typical.</p>
+          <p className="calc-hint">Changeovers, cleaning, breaks, minor breakdowns.</p>
         </div>
       </div>
 
