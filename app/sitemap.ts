@@ -8,21 +8,24 @@ const BASE_URL = 'https://decodedops.co.uk'
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000'
 
 async function fetchBlogPosts() {
+  let hubItems: any[] = [];
   try {
     const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (res.ok) {
       const data = await res.json();
-      const hubItems = data.items || [];
-      // BUG-WEB-018: merge local fallback posts not present in hub index
-      // (hub may exclude drafts that are still live and indexed by Google)
-      const hubSlugs = new Set(hubItems.map((p: any) => p.slug));
-      const extraLocal = (localBlogPosts.items || []).filter((p: any) => !hubSlugs.has(p.slug));
-      return [...hubItems, ...extraLocal];
+      hubItems = data.items || [];
     }
   } catch {}
-  return localBlogPosts.items || [];
+
+  // Merge with local blog-index.json so posts present locally but missing
+  // from the hub API index (e.g. orderwise — BUG-WEB-018) still appear.
+  const hubSlugs = new Set(hubItems.map((p: any) => p.slug));
+  const localOnly = (localBlogPosts.items || []).filter(
+    (p: any) => !hubSlugs.has(p.slug)
+  );
+  return [...hubItems, ...localOnly];
 }
 
 // Slugs are generated at BUILD time by scripts/generate-route-slugs.mjs (npm prebuild).

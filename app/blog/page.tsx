@@ -39,16 +39,22 @@ const blogSchema = {
 };
 
 async function fetchBlogIndex() {
+  let hubItems: any[] = [];
   try {
     const res = await hubFetch(`${HUB_API}/api/content/index`, {
       next: { revalidate: 300 },
     });
     if (res.ok) {
       const data = await res.json();
-      return data.items || [];
+      hubItems = data.items || [];
     }
   } catch {}
-  return localBlogPosts.items || [];
+
+  const hubSlugs = new Set(hubItems.map((p: any) => p.slug));
+  const localOnly = (localBlogPosts.items || []).filter(
+    (p: any) => !hubSlugs.has(p.slug)
+  );
+  return [...hubItems, ...localOnly];
 }
 
 export default async function BlogPage() {
