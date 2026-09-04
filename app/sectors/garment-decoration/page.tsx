@@ -52,7 +52,7 @@ const sectorSchema = {
         {
           '@type': 'Question',
           name: 'What is the best ERP for a garment decoration business in the UK?',
-          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. A written brief and a scored evaluation against it is the only way to choose correctly.' },
         },
       ],
     },
