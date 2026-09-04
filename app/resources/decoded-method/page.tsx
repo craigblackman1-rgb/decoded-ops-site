@@ -94,9 +94,9 @@ const layers = [
 ];
 
 const statusStyle: Record<string, string> = {
-  active: 'bg-[#219EBC] text-white',
-  draft: 'bg-[#8ECAE6] text-[#023047]',
-  review: 'bg-[#FFB703] text-[#023047]',
+  active: 'bg-cerulean text-white',
+  draft: 'bg-sky-blue text-prussian-blue',
+  review: 'bg-amber text-prussian-blue',
 };
 
 export default function DecodedMethodPage() {
