@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, ClipboardCheck, AlertTriangle, Star, Workflow, Gauge, FileText, Palette, ListChecks } from 'lucide-react';
+import { ArrowRight, ClipboardCheck, AlertTriangle, Star, Workflow, Gauge, FileText, Palette, ListChecks, Calculator } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
@@ -64,6 +64,18 @@ const resources = [
     title: 'What 5 & 6 Sigma Mean for Your Operation',
     desc: 'What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery business, and why closing the gap is about process, not machinery.',
     href: '/resources/six-sigma',
+  },
+  {
+    icon: Calculator,
+    title: 'Capacity Planning Calculator',
+    desc: 'Work out how many jobs your machines can actually produce per week — real throughput, not the spec sheet number.',
+    href: '/resources/capacity-planner',
+  },
+  {
+    icon: Calculator,
+    title: 'Seasonal Capacity Calculator',
+    desc: 'See where your capacity gap or surplus lands across the year by plotting seasonal demand against your real output.',
+    href: '/resources/seasonal-capacity',
   },
 ];
 
