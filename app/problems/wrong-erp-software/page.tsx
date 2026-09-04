@@ -7,19 +7,19 @@ import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
  title: 'Wrong ERP software: Decoded Ops',
- description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
- alternates: { canonical: '/problems/wrong-erp-software' },
- openGraph: {
-  title: 'Wrong ERP software: Decoded Ops',
-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
-  url: 'https://decodedops.co.uk/problems/wrong-erp-software',
-  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
- },
- twitter: {
-  card: 'summary_large_image',
-  title: 'Wrong ERP software: Decoded Ops',
-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
- },
+  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+  alternates: { canonical: '/problems/wrong-erp-software' },
+  openGraph: {
+   title: 'Wrong ERP software: Decoded Ops',
+   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+   url: 'https://decodedops.co.uk/problems/wrong-erp-software',
+   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+   card: 'summary_large_image',
+   title: 'Wrong ERP software: Decoded Ops',
+   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+  },
 };
 
 const wrongErpSchema = {
@@ -188,9 +188,10 @@ export default function WrongERPSoftwarePage() {
        options. Sometimes there&apos;s more in the existing system than you&apos;re using, and the
        implementation was poor, not the software. Sometimes the software genuinely isn&apos;t right
        and you need to plan a managed exit.</p>
-      <p>Either way, I help you understand <b>the real cost of staying versus moving</b>, and if
-       you&apos;re moving, I write the independent vendor brief that makes sure the next ERP is chosen
-       on fit, not on how good the demo looked.</p>
+       <p>Either way, I help you understand <b>the real cost of staying versus moving</b>, and if
+        you&apos;re moving, I write the vendor brief from your operation, and every candidate gets
+        scored against it. That includes software I have built myself, which is exactly why the
+        brief is written down. Fit decides, and you can see the scoring.</p>
      </div>
     </div>
    </section>

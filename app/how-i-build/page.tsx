@@ -122,11 +122,8 @@ export default function HowIBuildPage() {
             <article className="rung">
               <p className="kicker">Rung 1</p>
               <h3>Buy</h3>
-              <p>If something on the market already fits, it goes on the table, named and priced.
-                There are several good platforms in this sector, and the right one depends on your
-                business. I don&rsquo;t sell any of them, and I earn nothing from whichever you pick.</p>
-              <p>That costs me nothing to say. Which is rather the point: you can weigh what I tell you
-                about it knowing there&rsquo;s nothing in it for me either way.</p>
+              <p>If something on the market already fits, it goes on the table, named and priced. There are several good platforms in this sector, and the right one depends on your business. I don&rsquo;t resell any of them, and no vendor pays me for a recommendation.</p>
+              <p>Being upfront: I build software too, so I&rsquo;m not a bystander in this decision. That is exactly why the scoring is written down. You can check the recommendation against your own brief, mine included.</p>
             </article>
 
             <article className="rung rung--default">
@@ -211,13 +208,13 @@ export default function HowIBuildPage() {
       <section className="g-navy">
         <div className="wrap">
           <p className="eyebrow">Why it works this way</p>
-          <h2>I earn nothing from what you buy.</h2>
+          <h2>No vendor pays me for a recommendation.</h2>
 
           <div className="grid grid--2" style={{ marginTop: 40, alignItems: 'start' }}>
             <div>
               <figure className="pull" style={{ marginTop: 0 }}>
-                <blockquote>There are several good platforms in this sector. I don&rsquo;t sell any of
-                  them, and I earn nothing from whichever you pick.</blockquote>
+                <blockquote>There are several good platforms in this sector. I don&rsquo;t resell any of
+                  them, and no one pays me for naming them. My own software gets scored the same way, in writing.</blockquote>
                 <cite>Craig Blackman &middot; Decoded Ops</cite>
               </figure>
             </div>
@@ -226,7 +223,7 @@ export default function HowIBuildPage() {
               <p>I&rsquo;m not on anyone&rsquo;s partner list, so there&rsquo;s no version of this where the platform I
                 name pays me for naming it. If your own choice lands on rung 2 or rung 3, you&rsquo;ll see
                 what every option would have cost, not only the one you chose.</p>
-              <p>That&rsquo;s the whole arrangement, and it&rsquo;s why the recommendation is worth something.</p>
+              <p>The interest I do have is my own software. It sits on the same table, scored against the same brief, and if another platform covers you better, the report says so. That is the whole arrangement, and it is why the recommendation is worth something.</p>
             </div>
           </div>
         </div>

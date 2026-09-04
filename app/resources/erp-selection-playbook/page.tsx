@@ -251,6 +251,13 @@ export default function ErpSelectionPlaybookPage() {
           </div>
 
           <div style={{ marginBottom: 64 }}>
+            <h2>Where I stand</h2>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+              One thing this playbook should say plainly: I build one of the systems in this market. The Data App grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: 64 }}>
             <h2>Common pitfalls specific to garment decoration</h2>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
               ERP selection in the garment decoration sector has pitfalls that do not appear in other industries. Knowing them in advance saves months of wasted evaluation.

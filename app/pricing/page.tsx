@@ -249,7 +249,26 @@ export default function PricingPage() {
           <p className="eyebrow">Systems</p>
           <h2>Three products. Scoped and quoted per business.</h2>
 
-          <div className="inset" style={{ marginTop: 26 }}>
+          <div className="grid grid--3" style={{ marginTop: 28 }}>
+            <Link className="card" href="/apps/data-app">
+              <span className="kicker">Data App</span>
+              <h3>Supplier feeds into one clean catalogue</h3>
+            </Link>
+            <Link className="card" href="/apps/artwork-manager">
+              <span className="kicker">Artwork Manager</span>
+              <h3>Versions, approvals and delivery</h3>
+            </Link>
+            <Link className="card" href="/apps/commerce">
+              <span className="kicker">Trade store</span>
+              <h3>B2B ordering for your customers</h3>
+            </Link>
+          </div>
+
+          <p className="table-foot" style={{ marginTop: 28 }}>Artwork Manager and Commerce sell on founding-client terms until first
+            delivery: six months of support waived, in exchange for a named reference and accepting that
+            some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
+
+          <div className="inset" style={{ marginTop: 20 }}>
             <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
             extra cost.</b> Nothing separate to buy. Building something only makes sense once buying
             has been ruled out in writing, <Link href="/how-i-build"
@@ -258,7 +277,7 @@ export default function PricingPage() {
           <div className="inset">
             <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
             costs depends on four things:
-            <ul style={{ margin: '12px 0 12px', paddingLeft: 22 }}>
+            <ul className="inset-list">
               <li>how many supplier feeds</li>
               <li>how many sales channels</li>
               <li>which machines and formats</li>
@@ -268,14 +287,11 @@ export default function PricingPage() {
             about your setup comes first and the quote comes after it, written for your business.
           </div>
 
-          <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms until first
-            delivery: six months of support waived, in exchange for a named reference and accepting that
-            some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
           <p className="table-foot">A full custom build is quoted the same way. If nothing on the market
             fits, that&rsquo;s a Clarity Audit conversation, never a row on a table.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
-            <Link className="btn btn-primary" href="/apps/data-app">See how the Data App works</Link>
+            <Link className="btn btn-primary" href="/apps">See all three apps</Link>
             <Link className="btn btn-secondary" href="/contact">Book a free 60 minute call</Link>
           </div>
         </div>

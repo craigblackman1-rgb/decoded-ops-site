@@ -190,15 +190,17 @@ export default function BuyVsBuildPage() {
    <section className="g-navy">
     <div className="wrap">
      <span className="eyebrow eyebrow--amber">How I help</span>
-     <h2>No vendor relationships. No platform I&apos;m paid to prefer.</h2>
+      <h2>Being upfront about where I stand.</h2>
 
-     <div className="answer">
-      <p>There are several good platforms in this sector. The right one depends on your
-       business, and <b>I earn nothing from whichever you pick.</b></p>
-      <p>What I bring is the sector experience to run the coverage test properly: what a
-       platform actually handles in a decoration workflow, where it stops, and what it&apos;s
-       worth closing that gap versus living with it.</p>
-     </div>
+      <div className="answer">
+       <p>I build software too. The Data App started life plugging gaps nothing on the market
+        covered, and it has grown into a full system. So I am not a neutral bystander, and I will
+        not pretend to be one.</p>
+       <p>What I will do is put every option through the same coverage test, in writing, mine
+        included. If an off-the-shelf platform covers what you need, that is what the report
+        will say. A recommendation you can check against your own brief beats one you have to
+        take on trust.</p>
+      </div>
     </div>
    </section>
 
