@@ -6,10 +6,10 @@
 - [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. Pricing by turnover band; six-month minimum (three for advisory-only scope).
 - [Transform](https://decodedops.co.uk/transform): Multi-workstream digital transformation. Milestone-based minimum.
 - [Retained](https://decodedops.co.uk/retained): Fractional CTO / Head of Operations. Advisory, Embedded, and Programme tiers; six-month minimum.
-- [Pricing](https://decodedops.co.uk/pricing): Full pricing table. Plain pricing with no hidden day rate.
+- [Pricing](https://decodedops.co.uk/pricing): The Clarity Audit has a fixed price. Everything else is quoted after a conversation.
 
 ## Software as evidence of capability
-Decoded Ops builds production-grade software for the decorated-goods sector: artwork managers, B2B commerce platforms, and the Data App, a full operations system covering catalogue, orders, purchasing, stock, production and despatch. It started as a tool to clean supplier feeds that nothing off the shelf handled, and grew from there into a system that can run alongside your existing platform or replace it. Every build starts with a Clarity Audit; the software serves the operational need the audit identifies, never the other way round. What a build costs depends entirely on what it has to do, which is why prices appear on `/pricing` and nowhere else.
+Decoded Ops builds production-grade software for the decorated-goods sector: artwork managers, B2B commerce platforms, and the Data App, a full operations system covering catalogue, orders, purchasing, stock, production and despatch. It started as a tool to clean supplier feeds that nothing off the shelf handled, and grew from there into a system that can run alongside your existing platform or replace it. Every build starts with a Clarity Audit; the software serves the operational need the audit identifies, never the other way round. What a build costs depends entirely on what it has to do, which is why app builds are scoped and quoted per business.
 
 ## Resources
 - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.

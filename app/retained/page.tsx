@@ -4,19 +4,14 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 
-// Ported from D:\apps\design-systems\decoded-marketing\retained.html.
-// Day counts (2/4/8 days a month, six-month minimum) cross-checked against
-// DO_Pricing_Architecture_v8.1.md: match exactly, no changes. Replaces the
-// previous Tailwind implementation.
-
 export const metadata: Metadata = {
   title: 'Fractional CTO: Decoded Ops',
-  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
+  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
     title: 'Fractional CTO: Decoded Ops',
-    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
+    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',
     url: 'https://decodedops.co.uk/retained',
   },
   twitter: {
@@ -30,7 +25,7 @@ const retainedSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Retained: Fractional CTO',
-  description: 'Ongoing technology leadership for decorated-goods businesses. Fixed days a month, agreed at the start. Advisory, Embedded and Programme tiers.',
+  description: 'Ongoing technology leadership for decorated-goods businesses. Advisory, Embedded and Programme tiers.',
   provider: {
     '@type': 'Organization',
     name: 'Decoded Ops',
@@ -40,11 +35,6 @@ const retainedSchema = {
   serviceType: 'Fractional CTO',
   areaServed: 'GB',
   url: 'https://decodedops.co.uk/retained',
-  offers: [
-    { '@type': 'Offer', name: 'Advisory', price: '1440', priceCurrency: 'GBP' },
-    { '@type': 'Offer', name: 'Embedded', price: '2880', priceCurrency: 'GBP' },
-    { '@type': 'Offer', name: 'Programme', price: '5760', priceCurrency: 'GBP' },
-  ],
 };
 
 export default function RetainedPage() {
@@ -61,8 +51,8 @@ export default function RetainedPage() {
         <div className="container hero-center">
           <p className="eyebrow">Fractional CTO</p>
           <h1>Fractional CTO. Not a project. A standing decision-maker.</h1>
-          <p className="lead">Ongoing technology leadership, without the cost of a full-time hire. Fixed days
-            a month, agreed at the start.</p>
+          <p className="lead">Ongoing technology leadership, without the cost of a full-time hire.
+            The scope and cadence are agreed at the start.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
           </div>
@@ -70,14 +60,13 @@ export default function RetainedPage() {
       </section>
 
       {/* 2 · FEATURES TRIPLET · the three tiers */}
-      {/* Day-count language is allowed here and only here, per pricing v8.1. */}
       <section className="g-white">
         <div className="container stack" style={{ gap: 48 }}>
           <div>
             <p className="eyebrow">Three ways to run it</p>
-            <h2>Fixed days a month. Fixed price.</h2>
-            <p className="lead" style={{ marginTop: 16 }}>No day rate to argue over, no invoice that changes
-              shape every month. You know what you&rsquo;re paying before the first meeting.</p>
+            <h2>Advisory, Embedded and Programme.</h2>
+            <p className="lead" style={{ marginTop: 16 }}>Each tier covers a different level of involvement.
+              You pick the one that fits, and the scope is fixed at the start.</p>
           </div>
 
           <div className="grid-3">
@@ -89,9 +78,8 @@ export default function RetainedPage() {
                 </svg>
               </div>
               <h3>Advisory</h3>
-              <p className="feature-meta">2 days a month</p>
-              <p>A standing line to me for the decisions as they come up. Vendor calls, platform
-                questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>
+              <p className="feature-meta">A standing line for decisions as they come up</p>
+              <p>Vendor calls, platform questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>
             </div>
 
             <div className="feature">
@@ -102,9 +90,8 @@ export default function RetainedPage() {
                 </svg>
               </div>
               <h3>Embedded</h3>
-              <p className="feature-meta">4 days a month</p>
-              <p>Closer to the operation, with more of the roadmap owned directly. On site regularly
-                enough that your team stops saving things up for me.</p>
+              <p className="feature-meta">Closer to the operation, roadmap owned directly</p>
+              <p>On site regularly enough that your team stops saving things up for me.</p>
             </div>
 
             <div className="feature">
@@ -115,15 +102,15 @@ export default function RetainedPage() {
                 </svg>
               </div>
               <h3>Programme</h3>
-              <p className="feature-meta">8 days a month</p>
-              <p>Near full-time strategic and operational leadership, for a business mid-way through
-                something big enough that it needs one person holding it.</p>
+              <p className="feature-meta">Near full-time strategic and operational leadership</p>
+              <p>For a business mid-way through something big enough that it needs one person holding it.</p>
             </div>
           </div>
 
           <div className="inset" style={{ maxWidth: 'none' }}>
             <b>Six-month minimum on all three tiers.</b> Long enough to be useful, short enough that
-            you&rsquo;re not trapped in it. The price is the price at every turnover band.
+            you&rsquo;re not trapped in it. The scope is agreed at the start and the price is the price
+            at every turnover band.
           </div>
         </div>
       </section>
@@ -133,13 +120,13 @@ export default function RetainedPage() {
         <div className="container">
           <p className="eyebrow">Scale &middot; DO-ART-204</p>
           <h2>Advisory to Programme: the scale.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>2, 4 and 8 days a month. Price scales in proportion.
-            Same price at every turnover band.</p>
+          <p className="lead" style={{ marginTop: 16 }}>Each tier covers a wider scope and a deeper level
+            of involvement. Same price at every turnover band.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
-                     sub="2, 4 and 8 days a month, price scales in proportion"
+                     sub="Three tiers, each covering a wider scope"
                      no="DO-ART-204" rev="01" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
@@ -150,7 +137,8 @@ export default function RetainedPage() {
                 <g className="sk-fade sk-s2">
                   <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
                         opacity=".55">ADVISORY</text>
-                  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">2 days a month</text>
+                  <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">Standing line for
+                    decisions</text>
                   <rect x="430" y="228" width="270" height="62" rx="6" fill="url(#rt-bar)"
                         className="p-node" strokeWidth="1"/>
                 </g>
@@ -158,7 +146,8 @@ export default function RetainedPage() {
                 <g className="sk-fade sk-s3">
                   <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
                         opacity=".55">EMBEDDED</text>
-                  <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">4 days a month</text>
+                  <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">Closer to the
+                    operation</text>
                   <rect x="430" y="368" width="540" height="62" rx="6" fill="url(#rt-bar)"
                         className="p-node" strokeWidth="1"/>
                 </g>
@@ -166,8 +155,8 @@ export default function RetainedPage() {
                 <g className="sk-fade sk-s4" filter="url(#rt-shadow)">
                   <text x="60" y="532" className="p-mono" fontSize="17" letterSpacing="1.6"
                         opacity=".55">PROGRAMME</text>
-                  <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">8 days a
-                    month</text>
+                  <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">Full strategic and
+                    operational leadership</text>
                   <rect x="430" y="508" width="1080" height="62" rx="6" fill="url(#rt-amber-b)"
                         className="p-node-a" strokeWidth="1.4"/>
                 </g>
@@ -176,10 +165,10 @@ export default function RetainedPage() {
                   <line x1="60" y1="640" x2="1540" y2="640" className="p-scyan" strokeWidth=".6"
                         strokeOpacity=".22"/>
                   <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
-                        fontWeight="600" fontSize="24" opacity=".9">Exact scale. Double the
-                    days, double the price, every time.</text>
+                        fontWeight="600" fontSize="24" opacity=".9">Each tier covers a wider scope.
+                    Same price at every turnover band.</text>
                   <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
-                    minimum, all three tiers. Same price at every turnover band.</text>
+                    minimum, all three tiers.</text>
                 </g>
               </Plate>
             </div>
