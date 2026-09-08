@@ -9,18 +9,18 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Software & Systems for Awards & Engraving | Decoded Ops',
+  title: 'Software & Systems for Awards & Engraving : Decoded Ops',
   description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
   alternates: { canonical: '/sectors/awards-engraving' },
   openGraph: {
-    title: 'Software & Systems for Awards & Engraving | Decoded Ops',
+    title: 'Software & Systems for Awards & Engraving : Decoded Ops',
     description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
     url: 'https://decodedops.co.uk/sectors/awards-engraving',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software & Systems for Awards & Engraving | Decoded Ops',
+    title: 'Software & Systems for Awards & Engraving : Decoded Ops',
     description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
   },
 };
@@ -30,7 +30,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
   url: 'https://decodedops.co.uk/sectors/awards-engraving',
-  name: 'Software & Systems for Awards & Engraving | Decoded Ops',
+  name: 'Software & Systems for Awards & Engraving : Decoded Ops',
   description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };

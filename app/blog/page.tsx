@@ -12,18 +12,18 @@ import { hubFetch } from '@/lib/hub-fetch';
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  title: 'Insights | Decoded Ops',
+  title: 'Insights : Decoded Ops',
   description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
   alternates: { canonical: '/blog' },
   openGraph: {
     type: 'website',
-    title: 'Insights | Decoded Ops',
+    title: 'Insights : Decoded Ops',
     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
     url: 'https://decodedops.co.uk/blog',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Insights | Decoded Ops',
+    title: 'Insights : Decoded Ops',
     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
   },
 };
@@ -33,7 +33,7 @@ const blogSchema = {
   '@type': 'CollectionPage',
   '@id': 'https://decodedops.co.uk/blog#collection',
   url: 'https://decodedops.co.uk/blog',
-  name: 'Insights | Decoded Ops',
+  name: 'Insights : Decoded Ops',
   description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };

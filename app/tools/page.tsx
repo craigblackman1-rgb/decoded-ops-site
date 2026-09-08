@@ -6,20 +6,20 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Free Operational Tools | Decoded Ops',
+  title: 'Free Operational Tools : Decoded Ops',
   description:
     'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
   alternates: { canonical: '/tools' },
   openGraph: {
     type: 'website',
-    title: 'Free Operational Tools | Decoded Ops',
+    title: 'Free Operational Tools : Decoded Ops',
     description:
       'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
     url: 'https://decodedops.co.uk/tools',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Operational Tools | Decoded Ops',
+    title: 'Free Operational Tools : Decoded Ops',
     description:
       'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
   },
@@ -30,7 +30,7 @@ const toolsSchema = {
   '@type': 'CollectionPage',
   '@id': 'https://decodedops.co.uk/tools#collection',
   url: 'https://decodedops.co.uk/tools',
-  name: 'Free Tools | Decoded Ops',
+  name: 'Free Tools : Decoded Ops',
   description: 'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };

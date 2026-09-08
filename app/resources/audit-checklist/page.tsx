@@ -20,18 +20,18 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Free Technology & Operations Audit Checklist | Decoded Ops',
+  title: 'Free Technology & Operations Audit Checklist : Decoded Ops',
   description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
   alternates: { canonical: '/resources/audit-checklist' },
   openGraph: {
     type: 'website',
-    title: 'Free Technology & Operations Audit Checklist | Decoded Ops',
+    title: 'Free Technology & Operations Audit Checklist : Decoded Ops',
     description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
     url: 'https://decodedops.co.uk/resources/audit-checklist',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Technology & Operations Audit Checklist | Decoded Ops',
+    title: 'Free Technology & Operations Audit Checklist : Decoded Ops',
     description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
   },
 };

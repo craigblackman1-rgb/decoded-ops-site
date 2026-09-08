@@ -5,19 +5,19 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Free Resources for Print & Embroidery Businesses | Decoded Ops',
+  title: 'Free Resources for Print & Embroidery Businesses : Decoded Ops',
   description: 'Free operational resources for print, embroidery, and decoration businesses. Audit checklist, warning signs, SOP templates, and process guides.',
   alternates: { canonical: '/resources' },
   openGraph: {
     type: 'website',
-    title: 'Free Resources | Decoded Ops',
+    title: 'Free Resources : Decoded Ops',
     description: 'Free operational resources for print and decoration businesses. Audit checklists, warning signs, SOP templates, and process guides.',
     url: 'https://decodedops.co.uk/resources',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Resources | Decoded Ops',
+    title: 'Free Resources : Decoded Ops',
     description: 'Free operational resources for print and decoration businesses.',
   },
 };

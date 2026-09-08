@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Promotional merchandise | Decoded Ops',
+  title: 'Promotional merchandise : Decoded Ops',
   description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   alternates: { canonical: '/sectors/promotional-merchandise' },
   openGraph: {
-    title: 'Promotional merchandise | Decoded Ops',
+    title: 'Promotional merchandise : Decoded Ops',
     description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
     url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Promotional merchandise | Decoded Ops',
+    title: 'Promotional merchandise : Decoded Ops',
     description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   },
 };
@@ -26,7 +26,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
   url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
-  name: 'Promotional merchandise | Decoded Ops',
+  name: 'Promotional merchandise : Decoded Ops',
   description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };

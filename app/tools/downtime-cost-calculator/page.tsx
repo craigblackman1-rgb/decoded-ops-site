@@ -14,7 +14,7 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Downtime Cost Calculator | Decoded Ops',
+  title: 'Downtime Cost Calculator : Decoded Ops',
   description:
     'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
   alternates: { canonical: '/tools/downtime-cost-calculator' },

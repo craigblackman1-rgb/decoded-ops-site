@@ -16,19 +16,19 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Capacity Planning Calculator | Decoded Ops',
+  title: 'Capacity Planning Calculator : Decoded Ops',
   description:
     'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
   alternates: { canonical: '/resources/capacity-planner' },
   openGraph: {
     type: 'website',
-    title: 'Capacity Planning Calculator | Decoded Ops',
+    title: 'Capacity Planning Calculator : Decoded Ops',
     description: 'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
     url: 'https://decodedops.co.uk/resources/capacity-planner',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Capacity Planning Calculator | Decoded Ops',
+    title: 'Capacity Planning Calculator : Decoded Ops',
     description: 'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
   },
 };

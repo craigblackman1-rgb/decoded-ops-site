@@ -5,19 +5,19 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+  title: 'Operations & Technology Consultant for Small Businesses : Decoded Ops',
   description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
-    title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+    title: 'Operations & Technology Consultant for Small Businesses : Decoded Ops',
     description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations & Technology Consultant for Small Businesses | Decoded Ops',
+    title: 'Operations & Technology Consultant for Small Businesses : Decoded Ops',
     description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   },
 };

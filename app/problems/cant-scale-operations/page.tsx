@@ -7,18 +7,18 @@ import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
- title: "Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops",
+ title: "Your Business Is Growing. Your Operations Aren't Keeping Up. : Decoded Ops",
  description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.",
  alternates: { canonical: '/problems/cant-scale-operations' },
  openGraph: {
-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops",
+  title: "Your Business Is Growing. Your Operations Aren't Keeping Up. : Decoded Ops",
   description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.",
   url: 'https://decodedops.co.uk/problems/cant-scale-operations',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops",
+  title: "Your Business Is Growing. Your Operations Aren't Keeping Up. : Decoded Ops",
   description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly.",
  },
 };
@@ -30,7 +30,7 @@ const cantScaleSchema = {
    '@type': 'WebPage',
    '@id': 'https://decodedops.co.uk/problems/cant-scale-operations',
    url: 'https://decodedops.co.uk/problems/cant-scale-operations',
-   name: "Your Business Is Growing. Your Operations Aren't Keeping Up. | Decoded Ops",
+   name: "Your Business Is Growing. Your Operations Aren't Keeping Up. : Decoded Ops",
    description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.",
    isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
   },

@@ -9,18 +9,18 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+  title: 'Garment Decoration Operations & Systems Consultant : Decoded Ops',
   description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   alternates: { canonical: '/sectors/garment-decoration' },
   openGraph: {
-    title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+    title: 'Garment Decoration Operations & Systems Consultant : Decoded Ops',
     description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
     url: 'https://decodedops.co.uk/sectors/garment-decoration',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Garment Decoration Operations & Systems Consultant | Decoded Ops',
+    title: 'Garment Decoration Operations & Systems Consultant : Decoded Ops',
     description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
   },
 };
@@ -32,7 +32,7 @@ const sectorSchema = {
       '@type': 'WebPage',
       '@id': 'https://decodedops.co.uk/sectors/garment-decoration#webpage',
       url: 'https://decodedops.co.uk/sectors/garment-decoration',
-      name: 'Garment Decoration Business Systems & Operations Consultant | Decoded Ops',
+      name: 'Garment Decoration Business Systems & Operations Consultant : Decoded Ops',
       description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },

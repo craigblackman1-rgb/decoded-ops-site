@@ -41,7 +41,7 @@ function extractFaqSchema(html: string) {
 }
 
 function buildArticleSchema(item: any, slug: string, pubDate: string) {
-  const headline = (item.seo?.title || item.title || '').replace(/ \| Decoded Ops$/, '');
+  const headline = (item.seo?.title || item.title || '').replace(/ \| Decoded Ops$|: Decoded Ops$/, '');
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -100,7 +100,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!item) return { title: 'Blog Post Not Found' };
 
   const pubDate = item.publishedDate ? new Date(item.publishedDate).toISOString() : new Date().toISOString();
-  const title = item.seo?.title || `${item.title} | Decoded Ops`;
+  const title = item.seo?.title || `${item.title}: Decoded Ops`;
   const description = item.seo?.description || item.excerpt || item.title;
 
   return {

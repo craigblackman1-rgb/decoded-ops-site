@@ -6,12 +6,12 @@ import { locations } from '@/data/locations';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
+  title: 'Technology Audit for Sussex & Surrey SMEs : Decoded Ops',
   description:
     'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
   alternates: { canonical: '/locations/tech-audit' },
   openGraph: {
-    title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
+    title: 'Technology Audit for Sussex & Surrey SMEs : Decoded Ops',
     description:
       'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
     url: 'https://decodedops.co.uk/locations/tech-audit',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology Audit for Sussex & Surrey SMEs | Decoded Ops',
+    title: 'Technology Audit for Sussex & Surrey SMEs : Decoded Ops',
     description:
       'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
   },

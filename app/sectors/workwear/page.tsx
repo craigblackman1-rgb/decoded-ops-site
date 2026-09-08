@@ -5,18 +5,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Workwear | Decoded Ops',
+  title: 'Workwear : Decoded Ops',
   description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   alternates: { canonical: '/sectors/workwear' },
   openGraph: {
-    title: 'Workwear | Decoded Ops',
+    title: 'Workwear : Decoded Ops',
     description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
     url: 'https://decodedops.co.uk/sectors/workwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Workwear | Decoded Ops',
+    title: 'Workwear : Decoded Ops',
     description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   },
 };
@@ -26,7 +26,7 @@ const sectorSchema = {
   '@type': 'WebPage',
   '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
   url: 'https://decodedops.co.uk/sectors/workwear',
-  name: 'Workwear | Decoded Ops',
+  name: 'Workwear : Decoded Ops',
   description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
   isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
 };
