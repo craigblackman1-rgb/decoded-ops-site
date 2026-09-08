@@ -6,6 +6,8 @@ import { NextResponse } from 'next/server'
 // a native Node module that cannot load on the Edge runtime).
 const { auth } = NextAuth(authConfig)
 
+const PRODUCTION_HOST = 'decodedops.co.uk';
+
 export default auth((req) => {
   const { nextUrl } = req
   const isLoggedIn = !!req.auth
@@ -44,10 +46,25 @@ export default auth((req) => {
   }
 
   const response = NextResponse.next()
-  response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+
+  // Block search engines on non-production hosts.
+  // robots.txt prevents crawling; this header removes already-indexed pages.
+  const host = req.headers.get('host') || '';
+  const isProduction = host === PRODUCTION_HOST || host === `www.${PRODUCTION_HOST}`;
+  if (!isProduction) {
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  }
+
   return response
 })
 
 export const config = {
-  matcher: ['/clients/:path*', '/admin/:path*', '/client-docs/:path*'],
+  matcher: [
+    /*
+     * Match all request paths except static files and Next.js internals.
+     * The noindex header must reach every HTML page; static assets do not
+     * need it and the auth checks never apply to them.
+     */
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js|woff|woff2|ttf|eot)$).*)',
+  ],
 }

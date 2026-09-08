@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 import localBlogPosts from '@/data/blog-index.json'
 import routeSlugs from '@/data/route-slugs.json'
 import { locations } from '@/data/locations'
@@ -36,6 +37,13 @@ async function fetchBlogPosts() {
 // .next/standalone and .next/static). A readdirSync here returns nothing and silently
 // drops every problem, sector and tool URL from the sitemap.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const hdrs = await headers();
+  const host = hdrs.get('host') ?? '';
+  // Return empty sitemap on non-production hosts to prevent indexing.
+  if (host !== 'decodedops.co.uk' && host !== 'www.decodedops.co.uk') {
+    return [];
+  }
+
   const posts = await fetchBlogPosts();
 
   const problemSlugs = routeSlugs.problems
