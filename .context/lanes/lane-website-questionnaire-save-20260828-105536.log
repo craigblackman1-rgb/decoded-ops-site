@@ -1,0 +1,351 @@
+
+> build · mimo-v2.5
+
+→ Read D:/apps/infrastructure/.context/workorder-questionnaire-save-feature-2026-08-28.md
+→ Read app/clients/documents/view/[id]/SignPanel.tsx
+→ Read app/clients/documents/view/[id]/page.tsx
+→ Read app/api/clients/documents/[id]/sign/route.ts
+
+# Todos
+[ ] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[ ] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[ ] Update page.tsx to branch on doc_type === 'questionnaire'
+[ ] Update loop-status.md after each unit
+[ ] Commit work locally on questionnaire-save-feature branch
+[ ] Write final summary to handoff.md
+
+# Todos
+[•] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[ ] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[ ] Update page.tsx to branch on doc_type === 'questionnaire'
+[ ] Update loop-status.md after each unit
+[ ] Commit work locally on questionnaire-save-feature branch
+[ ] Write final summary to handoff.md
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context"
+True
+
+Now I'll build Unit 1 — the questionnaire proxy API route, mirroring `sign/route.ts` exactly.
+$ New-Item -ItemType Directory -Force -Path "D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\api\clients\documents\[id]\questionnaire"
+Directory: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\api\clients\documents\[id]
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          28/08/2026    10:56                questionnaire
+
+← Write app/api/clients/documents/[id]/questionnaire/route.ts
+Wrote file successfully.
+
+$ if (!(Test-Path "D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md")) { New-Item -ItemType File -Force -Path "D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md" }
+(no output)
+
+→ Read .context/loop-status.md
+
+← Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+@@ -5,4 +5,5 @@
+ 
+ ## 2026-08-24 08:16 — dispatcher (scheduled task)
+ 1 lane dispatched (OpenCode / deepseek-v4-pro, unpushed):
+ - `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
++2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
+
+
+$ git add app/api/clients/documents/\[id\]/questionnaire/route.ts .context/loop-status.md && git commit -m "feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts"
+fatal: pathspec 'app/api/clients/documents/\[id\]/questionnaire/route.ts' did not match any files
+
+$ git add "app/api/clients/documents/[id]/questionnaire/route.ts" ".context/loop-status.md" && git commit -m "feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts"
+warning: in the working copy of 'app/api/clients/documents/[id]/questionnaire/route.ts', LF will be replaced by CRLF the next time Git touches it
+[questionnaire-save-feature 5690c30] feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts
+ 2 files changed, 103 insertions(+)
+ create mode 100644 app/api/clients/documents/[id]/questionnaire/route.ts
+
+# Todos
+[✓] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[•] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[ ] Update page.tsx to branch on doc_type === 'questionnaire'
+[ ] Update loop-status.md after each unit
+[ ] Commit work locally on questionnaire-save-feature branch
+[ ] Write final summary to handoff.md
+
+← Write app/clients/documents/view/[id]/QuestionnaireForm.tsx
+Wrote file successfully.
+
+← Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+@@ -6,4 +6,5 @@
+ ## 2026-08-24 08:16 — dispatcher (scheduled task)
+ 1 lane dispatched (OpenCode / deepseek-v4-pro, unpushed):
+ - `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
+ 2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
++2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
+
+
+$ git add "app/clients/documents/view/[id]/QuestionnaireForm.tsx" ".context/loop-status.md" && git commit -m "feat: add QuestionnaireForm component, renders fillable form from hub questions"
+warning: in the working copy of 'app/clients/documents/view/[id]/QuestionnaireForm.tsx', LF will be replaced by CRLF the next time Git touches it
+[questionnaire-save-feature 011a9db] feat: add QuestionnaireForm component, renders fillable form from hub questions
+ 2 files changed, 256 insertions(+)
+ create mode 100644 app/clients/documents/view/[id]/QuestionnaireForm.tsx
+
+# Todos
+[✓] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[✓] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[•] Update page.tsx to branch on doc_type === 'questionnaire'
+[✓] Update loop-status.md after each unit
+[ ] Commit work locally on questionnaire-save-feature branch
+[ ] Write final summary to handoff.md
+
+← Edit app/clients/documents/view/[id]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+@@ -1,8 +1,9 @@
+ import { auth } from '@/auth'
+ import { redirect } from 'next/navigation'
+ import Link from 'next/link'
+ import { SignPanel } from './SignPanel'
++import { QuestionnaireForm } from './QuestionnaireForm'
+ 
+ interface SessionUser {
+   clientId?: string
+   name?: string | null
+
+
+Now updating `page.tsx` to branch on `doc_type`. I need to:
+1. Import QuestionnaireForm
+2. Relax the `html_content` check for questionnaires
+3. Render QuestionnaireForm instead of the iframe when `doc_type === 'questionnaire'`
+← Edit app/clients/documents/view/[id]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+@@ -64,9 +64,10 @@
+ const docs: HubDoc[] = lists.flat()
+ 
+ const doc = docs.find(d => d.doc_number === decoded)
+ 
+-if (!doc || !doc.html_content) return <div className="empty">Document not found</div>
++if (!doc) return <div className="empty">Document not found</div>
++if (doc.doc_type !== 'questionnaire' && !doc.html_content) return <div className="empty">Document not found</div>
+ 
+ // Signing is only wired up for quotes and contracts; the hub marks those
+ // `signable`. Anything else (meeting notes, invoices, terms uploaded as plain
+ // documents) has no sign endpoint behind it, so it gets no panel and no
+
+
+← Edit app/clients/documents/view/[id]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\app\clients\documents\view\[id]\page.tsx
+@@ -140,63 +140,65 @@
+             {doc.doc_number}
+           </span>
+         </div>
+       </div>
+-      <div
+-        style={{
+-          flex: 1,
+-          position: 'relative',
+-          // Without a floor here the panel below claims the height it needs out
+-          // of this flex child, squashing the document to a couple of hundred
+-          // pixels on a laptop with no way to scroll. Keeping a floor pushes the
+-          // panel below the fold instead, so the page scrolls to reach it.
+-          minHeight: isSignable ? 'min(80vh, 760px)' : undefined,
+-        }}
+-      >
+-        <iframe
+-          srcDoc={doc.html_content}
+-          style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
+-          title={doc.title}
+-        />
+-      </div>
+-
+-      {!isSignable ? null : isSigned && doc.client_signature ? (
+-        <div style={{ padding: '0 24px 16px' }}>
+-          <div style={{
+-            padding: '10px 16px',
+-            border: '1px solid #d4e8f0',
+-            borderRadius: 8,
+-            background: '#fff',
+-            fontSize: 13,
+-            color: '#023047',
+-            display: 'flex',
+-            alignItems: 'center',
+-            gap: 8,
+-          }}>
+-            <svg
+-              width="18"
+-              height="18"
+-              viewBox="0 0 24 24"
+-              fill="none"
+-              stroke="#22c55e"
+-              strokeWidth={2}
+-              strokeLinecap="round"
+-              strokeLinejoin="round"
+-              aria-hidden="true"
+-              style={{ flexShrink: 0 }}
+-            >
+-              <path d="M5 13l4 4L19 7" />
+-            </svg>
+-            <span>
+-              Signed by <strong>{doc.client_signature}</strong>
+-              {doc.client_signed_date && (
+-                <> on {formatDate(doc.client_signed_date)}</>
+-              )}
+-            </span>
+-          </div>
+-        </div>
++      {doc.doc_type === 'questionnaire' ? (
++        <QuestionnaireForm docNumber={decoded} />
+       ) : (
+-        <SignPanel docNumber={decoded} clientName={clientName} />
++        <>
++          <div
++            style={{
++              flex: 1,
++              position: 'relative',
++              minHeight: isSignable ? 'min(80vh, 760px)' : undefined,
++            }}
++          >
++            <iframe
++              srcDoc={doc.html_content}
++              style={{ width: '100%', height: '100%', border: 'none', position: 'absolute', inset: 0 }}
++              title={doc.title}
++            />
++          </div>
++
++          {!isSignable ? null : isSigned && doc.client_signature ? (
++            <div style={{ padding: '0 24px 16px' }}>
++              <div style={{
++                padding: '10px 16px',
++                border: '1px solid #d4e8f0',
++                borderRadius: 8,
++                background: '#fff',
++                fontSize: 13,
++                color: '#023047',
++                display: 'flex',
++                alignItems: 'center',
++                gap: 8,
++              }}>
++                <svg
++                  width="18"
++                  height="18"
++                  viewBox="0 0 24 24"
++                  fill="none"
++                  stroke="#22c55e"
++                  strokeWidth={2}
++                  strokeLinecap="round"
++                  strokeLinejoin="round"
++                  aria-hidden="true"
++                  style={{ flexShrink: 0 }}
++                >
++                  <path d="M5 13l4 4L19 7" />
++                </svg>
++                <span>
++                  Signed by <strong>{doc.client_signature}</strong>
++                  {doc.client_signed_date && (
++                    <> on {formatDate(doc.client_signed_date)}</>
++                  )}
++                </span>
++              </div>
++            </div>
++          ) : (
++            <SignPanel docNumber={decoded} clientName={clientName} />
++          )}
++        </>
+       )}
+     </main>
+   )
+ }
+
+
+Now I need to branch the body content. I'll wrap the iframe + SignPanel section with a conditional and add the QuestionnaireForm branch.
+→ Read app/clients/documents/view/[id]/page.tsx
+
+← Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+@@ -7,4 +7,5 @@
+ 1 lane dispatched (OpenCode / deepseek-v4-pro, unpushed):
+ - `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
+ 2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
+ 2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
++2026-08-28T11:06:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/page.tsx | updated: branches on doc_type='questionnaire' to render QuestionnaireForm instead of iframe, all other doc_types unchanged
+
+
+Looks correct. The questionnaire branch renders QuestionnaireForm; all other doc_types keep the existing iframe + SignPanel behavior unchanged. Now committing Unit 3.
+$ git add "app/clients/documents/view/[id]/page.tsx" ".context/loop-status.md" && git commit -m "feat: branch document view on doc_type, render QuestionnaireForm for questionnaires"
+[questionnaire-save-feature b5ce3e2] feat: branch document view on doc_type, render QuestionnaireForm for questionnaires
+ 2 files changed, 60 insertions(+), 55 deletions(-)
+
+# Todos
+[✓] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[✓] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[✓] Update page.tsx to branch on doc_type === 'questionnaire'
+[✓] Update loop-status.md after each unit
+[✓] Commit work locally on questionnaire-save-feature branch
+[•] Write final summary to handoff.md
+
+← Write .context/handoff.md
+Wrote file successfully.
+
+← Edit .context/loop-status.md
+Index: D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
++++ D:\apps\worktrees\decoded-ops-website\questionnaire-save-feature\.context\loop-status.md
+@@ -8,4 +8,5 @@
+ - `chore/premerge-gates` @ D:\apps\worktrees\decoded-ops-website\premerge-gates — wo-marketing-sales Phase B: new .context/price-audit.mjs + .context/extract-copy.mjs, check-nav-coverage wired into package.json, staging (uuid ax1yi6hyl54gfj8w8adhq55d, branch staging) documented in CLAUDE.md. Resolves dmshorvvs0z + dmsk4z8zz5l. Tooling only — no app/ or components/ changes.
+ 2026-08-28T10:57:00+01:00 | lane-website-questionnaire-save | app/api/clients/documents/[id]/questionnaire/route.ts | built: GET+POST proxy route, auth-gated, mirrors sign/route.ts pattern exactly
+ 2026-08-28T11:02:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/QuestionnaireForm.tsx | built: client component, fetches questions on mount, renders grouped sections with textareas, save button, success/error states
+ 2026-08-28T11:06:00+01:00 | lane-website-questionnaire-save | app/clients/documents/view/[id]/page.tsx | updated: branches on doc_type='questionnaire' to render QuestionnaireForm instead of iframe, all other doc_types unchanged
++2026-08-28T11:10:00+01:00 | lane-website-questionnaire-save | .context/handoff.md | written: full summary of built files, verification steps, and hub-side dependency
+
+
+$ git add ".context/handoff.md" ".context/loop-status.md" && git commit -m "docs: add handoff summary for questionnaire save feature"
+warning: in the working copy of '.context/handoff.md', LF will be replaced by CRLF the next time Git touches it
+[questionnaire-save-feature 05beb8a] docs: add handoff summary for questionnaire save feature
+ 2 files changed, 54 insertions(+)
+ create mode 100644 .context/handoff.md
+
+$ git log --oneline -5
+05beb8a docs: add handoff summary for questionnaire save feature
+b5ce3e2 feat: branch document view on doc_type, render QuestionnaireForm for questionnaires
+011a9db feat: add QuestionnaireForm component, renders fillable form from hub questions
+5690c30 feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts
+5a46727 refactor(tools): swap hardcoded hex colour classes for DS tokens
+
+$ git status
+On branch questionnaire-save-feature
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+# Todos
+[✓] Build app/api/clients/documents/[id]/questionnaire/route.ts (GET + POST proxy)
+[✓] Build app/clients/documents/view/[id]/QuestionnaireForm.tsx
+[✓] Update page.tsx to branch on doc_type === 'questionnaire'
+[✓] Update loop-status.md after each unit
+[✓] Commit work locally on questionnaire-save-feature branch
+[✓] Write final summary to handoff.md
+
+Lane B complete. 4 commits on `questionnaire-save-feature`, all local, working tree clean.
+
+**Files built:**
+- `app/api/clients/documents/[id]/questionnaire/route.ts` — GET+POST proxy, auth-gated, mirrors `sign/route.ts` exactly
+- `app/clients/documents/view/[id]/QuestionnaireForm.tsx` — client component, fetches questions on mount, grouped sections with textareas, save button, success/error states
+- `app/clients/documents/view/[id]/page.tsx` — branches on `doc_type === 'questionnaire'` to render QuestionnaireForm instead of iframe; all other doc_types unchanged
+
+**Cannot verify live** — hub route (`GET/POST /api/public/client-docs/{docNumber}/questionnaire`) is being built in Lane A in parallel. End-to-end testing needs both lanes done. Full verification steps in `.context/handoff.md`.

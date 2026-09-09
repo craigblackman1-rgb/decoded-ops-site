@@ -1,0 +1,129 @@
+
+> build · mimo-v2.5
+
+→ Read app/pricing/page.tsx
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+@@ -87,22 +87,22 @@
+ </tr>
+ <tr>
+   <th scope="row">Deliver</th>
+   <td><span className="price">£1,200–£1,500<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £1,400</span></td>
++    <span className="price-sub">typically £1,400</span></td>
+   <td><span className="price">£1,400–£2,000<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £1,800</span></td>
++    <span className="price-sub">typically £1,800</span></td>
+   <td><span className="price">£1,800–£2,500+<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £2,200</span></td>
++    <span className="price-sub">typically £2,200</span></td>
+ </tr>
+ <tr>
+   <th scope="row">Transform</th>
+   <td><span className="price">£1,500–£2,200<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £1,800</span></td>
++    <span className="price-sub">typically £1,800</span></td>
+   <td><span className="price">£2,000–£3,200<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £2,500</span></td>
++    <span className="price-sub">typically £2,500</span></td>
+   <td><span className="price">£3,000–£5,000+<span className="num">/mo</span></span>
+-    <span className="price-sub">anchor £4,000</span></td>
++    <span className="price-sub">typically £4,000</span></td>
+ </tr>
+ <tr>
+   <th scope="row">Retained</th>
+   <td className="full" colSpan={3}>
+
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+@@ -115,10 +115,10 @@
+       </tr>
+     </tbody>
+   </table>
+ </div>
+-<p className="table-foot">Ranges reflect scope, not negotiation. The anchor figure is the
+-  recommended tier within each band, the number to plan around if you want one.</p>
++<p className="table-foot">Ranges reflect scope, not negotiation. The typical figure is where most
++  engagements in that band land, the number to plan around if you want one.</p>
+ 
+ <h3 style={{ marginTop: 56, fontSize: '1.5rem' }}>Retained Transformation</h3>
+ <p className="lead" style={{ marginTop: 12 }}>Ongoing programme delivery rather than advice. A
+   longer commitment, and priced as one.</p>
+
+
+✱ Grep "(?i)anchor" in app/pricing · 0 matches
+
+$ cd "D:\apps\worktrees\decoded-ops-website\pricing-tables" && git add app/pricing/page.tsx && git commit -m "BUG-WEB-011: reword scope note — internal 'anchor' vocabulary removed
+
+Replace six price-sub spans from 'anchor £X' to 'typically £X' and
+rewrite the footnote to remove internal pricing language. Craig 2026-09-03."
+[fix/pricing-table-polish f788243] BUG-WEB-011: reword scope note — internal 'anchor' vocabulary removed
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+$ cd "D:\apps\worktrees\decoded-ops-website\pricing-tables" && git diff HEAD~1 -- app/pricing/page.tsx
+diff --git a/app/pricing/page.tsx b/app/pricing/page.tsx
+index 31e294c..97a53d9 100644
+--- a/app/pricing/page.tsx
++++ b/app/pricing/page.tsx
+@@ -88,20 +88,20 @@ export default function PricingPage() {
+                 <tr>
+                   <th scope="row">Deliver</th>
+                   <td><span className="price">£1,200–£1,500<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £1,400</span></td>
++                    <span className="price-sub">typically £1,400</span></td>
+                   <td><span className="price">£1,400–£2,000<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £1,800</span></td>
++                    <span className="price-sub">typically £1,800</span></td>
+                   <td><span className="price">£1,800–£2,500+<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £2,200</span></td>
++                    <span className="price-sub">typically £2,200</span></td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Transform</th>
+                   <td><span className="price">£1,500–£2,200<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £1,800</span></td>
++                    <span className="price-sub">typically £1,800</span></td>
+                   <td><span className="price">£2,000–£3,200<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £2,500</span></td>
++                    <span className="price-sub">typically £2,500</span></td>
+                   <td><span className="price">£3,000–£5,000+<span className="num">/mo</span></span>
+-                    <span className="price-sub">anchor £4,000</span></td>
++                    <span className="price-sub">typically £4,000</span></td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Retained</th>
+@@ -116,8 +116,8 @@ export default function PricingPage() {
+               </tbody>
+             </table>
+           </div>
+-          <p className="table-foot">Ranges reflect scope, not negotiation. The anchor figure is the
+-            recommended tier within each band, the number to plan around if you want one.</p>
++          <p className="table-foot">Ranges reflect scope, not negotiation. The typical figure is where most
++            engagements in that band land, the number to plan around if you want one.</p>
+ 
+           <h3 style={{ marginTop: 56, fontSize: '1.5rem' }}>Retained Transformation</h3>
+           <p className="lead" style={{ marginTop: 12 }}>Ongoing programme delivery rather than advice. A
+
+Committed `f788243`. Before/after summary:
+
+**Six price-sub spans (lines 91–104):**
+- `anchor £1,400` → `typically £1,400`
+- `anchor £1,800` → `typically £1,800`
+- `anchor £2,200` → `typically £2,200`
+- `anchor £1,800` → `typically £1,800`
+- `anchor £2,500` → `typically £2,500`
+- `anchor £4,000` → `typically £4,000`
+
+**Footnote (lines 119–120):**
+- Before: "Ranges reflect scope, not negotiation. The anchor figure is the recommended tier within each band, the number to plan around if you want one."
+- After: "Ranges reflect scope, not negotiation. The typical figure is where most engagements in that band land, the number to plan around if you want one."
+
+**Grep for other "anchor" occurrences:** none found. The only occurrences were the six price-sub spans and the footnote — all now replaced. No HTML `id="anchor"` or `<a name="anchor">` patterns present.

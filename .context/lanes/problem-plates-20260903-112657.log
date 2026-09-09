@@ -1,0 +1,171 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read canonical problem page and Plate component to understand current SVG structure
+[ ] Create shared NowAfterPlate sub-component with proper geometry
+[ ] Replace inline SVGs in all 18 problem pages
+[ ] Commit with BUG-WEB-005 message
+
+→ Read app/problems/wrong-erp-software/page.tsx [limit=60, offset=140]
+→ Read components/Plate.tsx
+→ Read components
+Let me read a few more problem pages to confirm the pattern is consistent.
+✱ Glob "app/problems/*/page.tsx" 18 matches
+• Extract SVG patterns from all 18 problem pages General Agent
+✓ Extract SVG patterns from all 18 problem pages General Agent
+✗ Read app/problems/systems-dont-talk/page.tsx failed [limit=40, offset=155]
+Error: Offset 155 is out of range for this file (122 lines)
+→ Read app/problems/seasonal-peaks/page.tsx [limit=40, offset=155]
+Good, all 18 confirmed with identical SVG structure. Let me read two more to verify the SVG elements are byte-identical in structure.
+
+# Todos
+[✓] Read canonical problem page and Plate component to understand current SVG structure
+[•] Create shared NowAfterPlate sub-component with proper geometry
+[ ] Replace inline SVGs in all 18 problem pages
+[ ] Commit with BUG-WEB-005 message
+
+Pattern confirmed identical. Now I'll create the shared component and commit it first.
+← Write components/NowAfterPlate.tsx
+Wrote file successfully.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\problem-plates" && git add components/NowAfterPlate.tsx && git commit -m "feat(BUG-WEB-005): add NowAfterPlate shared sub-component
+
+Extracts the duplicated NOW/AFTER comparison SVG into a single component
+with props: { now: string[], after: string[], nowLabel?, afterLabel? }.
+
+Geometry fixes the half-empty panel and dead horizontal band:
+- Panel: y=160, height=560 (bottom at y=720, 70px gap to title block)
+- Labels: y=215
+- Items: y=290/410/530/650 (120px spacing, fills panel vertically)
+- Connector arrow: y=410 (centered between items 2 and 3)
+- Last item padding: 70px below text baseline to panel bottom
+
+Previously panels were y=100 height=520 with content only to y=350,
+leaving ~270px empty inside each panel and ~170px dead band below."
+warning: in the working copy of 'components/NowAfterPlate.tsx', LF will be replaced by CRLF the next time Git touches it
+[fix/problem-plates d3a98fc] feat(BUG-WEB-005): add NowAfterPlate shared sub-component
+ 1 file changed, 99 insertions(+)
+ create mode 100644 components/NowAfterPlate.tsx
+
+# Todos
+[✓] Read canonical problem page and Plate component to understand current SVG structure
+[✓] Create shared NowAfterPlate sub-component with proper geometry
+[•] Replace inline SVGs in all 18 problem pages
+[ ] Commit with BUG-WEB-005 message
+
+• Replace SVGs in 18 problem pages batch 1 General Agent
+• Replace SVGs in 18 problem pages batch 2 General Agent
+• Replace SVGs in 18 problem pages batch 3 General Agent
+Let me read all 18 files to get the exact Plate sections for replacement.
+✓ Replace SVGs in 18 problem pages batch 3 General Agent
+✓ Replace SVGs in 18 problem pages batch 1 General Agent
+✓ Replace SVGs in 18 problem pages batch 2 General Agent
+→ Read app/problems/wrong-erp-software/page.tsx [limit=30, offset=155]
+→ Read app/problems/buy-vs-build/page.tsx [limit=30, offset=155]
+✗ Read app/problems/manual-workarounds/page.tsx failed [limit=30, offset=140]
+Error: Offset 140 is out of range for this file (121 lines)
+All 18 files edited. Let me verify a few to confirm correctness.
+→ Read app/problems/manual-workarounds/page.tsx [limit=15, offset=0]
+→ Read app/problems/manual-workarounds/page.tsx [limit=30, offset=90]
+→ Read app/problems/seasonal-peaks/page.tsx [limit=8, offset=0]
+All verified. Let me also check a file from batch 2 to confirm the import was added correctly.
+✱ Grep "NowAfterPlate" 36 matches
+Let me verify no old inline SVGs remain and all 18 pages have the import.
+✱ Grep "rect x="50" y="100" width="700"" 0 matches
+
+# Todos
+[✓] Read canonical problem page and Plate component to understand current SVG structure
+[✓] Create shared NowAfterPlate sub-component with proper geometry
+[✓] Replace inline SVGs in all 18 problem pages
+[•] Commit with BUG-WEB-005 message
+
+All 18 pages converted, zero old inline SVGs remaining. Now commit the changes.
+$ cd "D:\apps\worktrees\decoded-ops-website\problem-plates" && git status --short
+M app/problems/ai-paralysis/page.tsx
+ M app/problems/bottleneck-growth/page.tsx
+ M app/problems/buy-vs-build/page.tsx
+ M app/problems/cant-scale-operations/page.tsx
+ M app/problems/data-scattered/page.tsx
+ M app/problems/disaster-recovery/page.tsx
+ M app/problems/ecommerce-not-connected/page.tsx
+ M app/problems/erp-implementation-failure/page.tsx
+ M app/problems/inventory-blind/page.tsx
+ M app/problems/legacy-system/page.tsx
+ M app/problems/manual-workarounds/page.tsx
+ M app/problems/no-ops-owner/page.tsx
+ M app/problems/ops-in-owners-head/page.tsx
+ M app/problems/seasonal-peaks/page.tsx
+ M app/problems/slow-processes/page.tsx
+ M app/problems/spreadsheet-addiction/page.tsx
+ M app/problems/systems-dont-talk/page.tsx
+ M app/problems/wrong-erp-software/page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\problem-plates" && git add app/problems/*/page.tsx && git commit -m "fix(BUG-WEB-005): replace inline SVGs with NowAfterPlate in all 18 problem pages
+
+All 18 app/problems/*/page.tsx files now use the shared NowAfterPlate
+component instead of hand-authored inline SVG children inside Plate.
+
+Text content is verbatim — no copy changes. Each page retains its own
+Plate title, drawing number, and revision.
+
+Pages converted:
+- ai-paralysis (DO-ART-417)
+- bottleneck-growth (DO-ART-413)
+- buy-vs-build (DO-ART-418)
+- cant-scale-operations (DO-ART-404)
+- data-scattered (DO-ART-419)
+- disaster-recovery (DO-ART-405)
+- ecommerce-not-connected (DO-ART-406)
+- erp-implementation-failure (DO-ART-412)
+- inventory-blind (DO-ART-420)
+- legacy-system (DO-ART-421)
+- manual-workarounds (DO-ART-407)
+- no-ops-owner (DO-ART-408)
+- ops-in-owners-head (DO-ART-414)
+- seasonal-peaks (DO-ART-415)
+- slow-processes (DO-ART-409)
+- spreadsheet-addiction (DO-ART-416)
+- systems-dont-talk (DO-ART-410)
+- wrong-erp-software (DO-ART-411)"
+warning: in the working copy of 'app/problems/ai-paralysis/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/bottleneck-growth/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/buy-vs-build/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/data-scattered/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/erp-implementation-failure/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/inventory-blind/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/legacy-system/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/ops-in-owners-head/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/seasonal-peaks/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/spreadsheet-addiction/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/problems/wrong-erp-software/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[fix/problem-plates 4175792] fix(BUG-WEB-005): replace inline SVGs with NowAfterPlate in all 18 problem pages
+ 18 files changed, 282 insertions(+), 480 deletions(-)
+
+# Todos
+[✓] Read canonical problem page and Plate component to understand current SVG structure
+[✓] Create shared NowAfterPlate sub-component with proper geometry
+[✓] Replace inline SVGs in all 18 problem pages
+[✓] Commit with BUG-WEB-005 message
+
+Done. Two commits on `fix/problem-plates`:
+
+**Commit 1:** `components/NowAfterPlate.tsx` — shared sub-component
+**Commit 2:** 18 problem pages converted
+
+## Geometry choices
+
+| Element | Old (broken) | New | Rationale |
+|---|---|---|---|
+| Panel y | 100 | **160** | Below Plate header divider (y=140) |
+| Panel height | 520 (bottom y=620) | **560** (bottom y=720) | 70px gap to title block at y=790 |
+| Label y | 150 | **215** | 55px below panel top |
+| Item start y | 200 | **290** | 75px below label, balanced top padding |
+| Item spacing | 50px | **120px** | Fills panel vertically (last item at y=650) |
+| Last item → panel bottom | 270px empty | **70px** padding | Tight, no dead space |
+| Connector arrow y | 320 | **410** | Centered vertically between items 2 and 3 |
+| Dead band below panels | 170px | **70px** | Closed |
+
+## Pages converted (18/18)
+
+ai-paralysis, bottleneck-growth, buy-vs-build, cant-scale-operations, data-scattered, disaster-recovery, ecommerce-not-connected, erp-implementation-failure, inventory-blind, legacy-system, manual-workarounds, no-ops-owner, ops-in-owners-head, seasonal-peaks, slow-processes, spreadsheet-addiction, systems-dont-talk, wrong-erp-software. All text copied verbatim; no Plate.tsx changes.

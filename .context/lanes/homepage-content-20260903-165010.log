@@ -1,0 +1,69 @@
+
+> build · mimo-v2.5
+
+→ Read app/page.tsx [offset=285, limit=15]
+→ Read app/page.tsx [offset=372, limit=15]
+
+← Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
+@@ -288,10 +288,9 @@
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+   <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+         opacity=".55">PREPARED</text>
+-  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to Khaos
+-    Control</text>
++  <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
+   <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+         className="p-node-a" strokeWidth="1.4"/>
+   <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
+         fontWeight="700" fontSize="30">11,064</text>
+
+
+← Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\content-fixes\app\page.tsx
+@@ -374,9 +374,9 @@
+   <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
+         opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
+   <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
+         strokeWidth="1.1" strokeOpacity=".35"/>
+-  <rect x="86" y="648" width="332" height="44" rx="6" className="p-block" opacity=".85"/>
++  <rect x="86" y="648" width="470" height="44" rx="6" className="p-block" opacity=".85"/>
+   <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
+         fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
+ </g>
+ 
+
+
+Both edits applied. Let me verify and commit.
+$ git -C "D:\apps\worktrees\decoded-ops-website\content-fixes" diff --stat
+app/page.tsx | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+$ git -C "D:\apps\worktrees\decoded-ops-website\content-fixes" add app/page.tsx && git -C "D:\apps\worktrees\decoded-ops-website\content-fixes" commit -m "homepage content fixes (Craig 2026-09-03)
+
+- Replace 'to Khaos Control' with 'to their ERP' in DO-ART-202 SVG
+- Widen LIVE DEPLOYMENT badge rect from 332px to 470px to fit lengthened text"
+[fix/homepage-content aa8e5e4] homepage content fixes (Craig 2026-09-03)
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+→ Read app/page.tsx [limit=8, offset=288]
+→ Read app/page.tsx [limit=5, offset=377]
+Committed as `aa8e5e4`. Let me verify both elements in their final state:
+Done. Both edits verified:
+
+**Edit 1 — Khaos Control removal:**
+- Before: `<text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to Khaos\nControl</text>`
+- After: `<text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>`
+
+**Edit 2 — Badge rect widening:**
+- Before: `<rect x="86" y="648" width="332" height="44" ...`
+- After: `<rect x="86" y="648" width="470" height="44" ...`
+
+Rect ends at x=556 — no collision with siblings (group ends at line 381, no elements to the right) or image bounds (image spans x=60..960). Commit `aa8e5e4` on branch `fix/homepage-content`.

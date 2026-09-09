@@ -1,0 +1,51 @@
+
+> build · mimo-v2.5
+
+→ Read app/api/tools/capture/route.ts
+
+← Edit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+@@ -164,9 +164,9 @@
+       ``,
+       `Answers:`,
+       answerLines,
+       ``,
+-      `View in CRM: ${process.env.HUB_API_URL}/leads`,
++      `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
+     ].join('\n'),
+   });
+ } catch (emailError) {
+   console.error('Lead alert email failed:', emailError);
+
+
+Need to install deps before running tsc.
+$ npm install
+up to date, audited 410 packages in 792ms
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: (install scripts present))
+npm warn allow-scripts   unrs-resolver@1.12.2 (install: (install scripts present))
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+146 packages are looking for funding
+  run `npm fund` for details
+
+2 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+$ npx tsc --noEmit
+(no output)
+
+$ git add app/api/tools/capture/route.ts && git commit -m "Fix wrong CRM link in lead alert email — /leads → /admin/leads"
+[lane-lead-alert d45350e] Fix wrong CRM link in lead alert email — /leads → /admin/leads
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Done. Changed `${process.env.HUB_API_URL}/leads` → `${process.env.HUB_API_URL}/admin/leads` on line 168. `tsc --noEmit` clean. Committed as `d45350e`.

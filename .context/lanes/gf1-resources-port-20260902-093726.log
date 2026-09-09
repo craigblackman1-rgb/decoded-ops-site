@@ -1,0 +1,1620 @@
+
+> build · mimo-v2.5
+
+→ Read D:/apps/decoded-ops-website/.context/briefs/BRIEF-staging-resources-port.md
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git branch --show-current
+lane/gf1-resources-port-2026-09-02
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && ls node_modules/.package-lock.json 2>$null; if ($LASTEXITCODE -ne 0) { echo "MISSING node_modules" } else { echo "node_modules exists" }
+MISSING node_modules
+
+→ Read app/resources/audit-checklist/page.tsx
+→ Read app/resources/5-warning-signs/page.tsx
+→ Read app/resources/page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && npm ci --legacy-peer-deps 2>&1 | Select-Object -Last 5
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git show lane/give-first-magnets:app/resources/sop-template/page.tsx 2>&1
+import Link from 'next/link';
+import { ArrowRight, Check, FileText } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
+import { JsonLd } from '@/components/JsonLd';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Standard Operating Procedures for Decorated Goods Businesses',
+      author: { '@type': 'Person', name: 'Craig Blackman' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+      url: 'https://decodedops.co.uk/resources/sop-template',
+    },
+  ],
+};
+
+export const metadata = {
+  title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+  description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+  alternates: { canonical: '/resources/sop-template' },
+  openGraph: {
+    type: 'website',
+    title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+    description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+    url: 'https://decodedops.co.uk/resources/sop-template',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+    description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+  },
+};
+
+const layers = [
+  {
+    n: '01', name: 'The Process Register', accent: '#219EBC',
+    blurb: 'A map of every process in your business. Not the detailed steps, just what exists and how the processes connect. Order intake feeds into artwork approval, which feeds into production scheduling, which feeds into decoration, which feeds into QC and despatch.',
+  },
+  {
+    n: '02', name: 'The SOPs', accent: '#8ECAE6',
+    blurb: 'Detailed instructions for each process in the register. How to take an order. How to approve artwork. How to set up the heat press for a specific garment type. Each SOP is a standalone document someone can pick up and follow.',
+  },
+  {
+    n: '03', name: 'The Improvement Log', accent: '#FFB703',
+    blurb: 'Where you track changes. When someone finds a better way to do something, they update the SOP and log it here, so the system stays current instead of turning into a museum piece that gets outdated and ignored.',
+  },
+];
+
+const steps = [
+  { n: '1', title: 'Pick the right process to start with', body: 'Do not try to document everything at once. Pick the process that would cause the most damage if the person who does it was unavailable. For most businesses, that is order intake or production scheduling. Start there.' },
+  { n: '2', title: 'Watch someone do it', body: 'Sit with the person who does the task. Watch them do it from start to finish. Do not ask them to explain it while they work, just watch. Then ask them to talk through it while you take notes. You will catch things in the watching that they forget to mention in the explaining.' },
+  { n: '3', title: 'Write the steps in order', body: 'Write down every step in the sequence it happens. Do not assume anything is obvious. If they check a specific field in the system before proceeding, that is a step. If they call a supplier to confirm stock before placing an order, that is a step.' },
+  { n: '4', title: 'Note the exceptions', body: 'Every process has exceptions. What happens if the customer requests a decoration method the shop does not offer? What happens if the stock is not available? What happens if the artwork file is the wrong format? Document these branches. They are where most errors happen.' },
+  { n: '5', title: 'Review with the team', body: 'Show the draft SOP to the person who does the job and ask: is this right? Then show it to someone who does not do the job and ask: could you follow this? If the answer to either is no, revise it. The goal is accuracy and clarity, not perfection.' },
+  { n: '6', title: 'Test it in production', body: 'The next time the task comes up, have someone who is not the usual person follow the SOP. If they can complete the task correctly using only the document, it works. If they get stuck, revise the SOP based on where they got stuck.' },
+  { n: '7', title: 'Set a review date', body: 'An SOP that is not reviewed becomes outdated. Set a 6-month review cycle. When the process changes, update the SOP and log it in the Improvement Log. This keeps the system alive.' },
+];
+
+const templateContents = [
+  'A structured document with sections for process name, owner, inputs, step-by-step procedure, exception handling, and review date.',
+  'Prompts and examples filled in for the most common processes: order intake, artwork approval, heat press setup, embroidery machine setup, quality control inspection, and despatch.',
+  'A one-page Process Register template to map your overall operation.',
+  'An Improvement Log template to track changes over time.',
+];
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
+}
+
+export default function SopTemplatePage() {
+  return (
+    <>
+      <JsonLd data={schema} />
+
+      {/* HERO */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- Free Resource</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+            SOP Template for Decorated Goods Businesses
+          </h1>
+          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
+            A free template and 7-step method for writing Standard Operating Procedures that your team can actually follow. Built for garment decoration, print, and embroidery businesses.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+
+          {/* What the template includes */}
+          <div className="mb-16 p-8 rounded-2xl bg-[#219EBC]/10 border border-[#219EBC]/25">
+            <h2 className="text-xl font-bold text-[#023047] mb-4">What the template includes</h2>
+            <ul className="space-y-3">
+              {templateContents.map((item, i) => (
+                <li key={i} className="flex gap-3 text-[#023047]/80 leading-relaxed">
+                  <Check size={18} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-[#023047]/60">
+              The template takes about 30 minutes to fill in for your first process. Subsequent processes take less time because you are reusing the structure.
+            </p>
+          </div>
+
+          {/* What an SOP is */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              What an SOP actually is
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              A Standard Operating Procedure is a written document that tells someone exactly how to do a specific task, in the right order, every time.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Not a textbook definition, not a quality manual gathering dust on a shelf. A working document someone on your team can pick up and follow, even when the person who normally does the job is off sick.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              An SOP answers three questions: Who does this task? What do they need before they start? What do they do, step by step? If your SOP answers all three, it works.
+            </p>
+          </div>
+
+          {/* Why decorated goods businesses need them */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              Why decorated goods businesses specifically need SOPs
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Every order in garment decoration, print, and embroidery is potentially different. The customer wants a specific garment, a specific decoration method, a specific placement, a specific thread colour, a specific delivery date. Production sits between order and despatch. That middle section is where things go wrong.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Generic technology advice or off-the-shelf procedures do not help here because your operation is not generic. It is built around the specific combination of machines, materials, supplier relationships, and customer expectations that make your business work.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              I worked with a decorated goods business where the entire production schedule lived in the office manager&apos;s head. That person had been there 18 years. When they went on holiday, production slowed by 40%. Nobody knew why. The knowledge was not documented anywhere. The cost of that single undocumented role showed up every time they took leave. The cost of documenting the key processes was about two days of my time.
+            </p>
+          </div>
+
+          {/* Three-layer system */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              The three documents that matter
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              An SOP does not exist in isolation. It is part of a three-layer system I call the Decoded Method. Every engagement I run builds this system.
+            </p>
+            <div className="space-y-6">
+              {layers.map((layer) => (
+                <div key={layer.n} className="p-6 rounded-xl bg-[#F8F9FA] border-l-4" style={{ borderLeftColor: layer.accent }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#023047] text-white text-sm font-extrabold">{layer.n}</span>
+                    <h3 className="text-lg font-bold text-[#023047]">{layer.name}</h3>
+                  </div>
+                  <p className="text-sm text-[#023047]/75 leading-relaxed">{layer.blurb}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-[#023047]/80 leading-relaxed">
+              The order matters. You cannot write good SOPs until you know what processes you have. You cannot improve processes until they are documented. Document what exists, then improve it, then maintain it.
+            </p>
+          </div>
+
+          {/* 7-step method */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              How to write an SOP: step by step
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              Here is the practical method I use with every client. It works for any process in a decorated goods business.
+            </p>
+            <div className="space-y-6">
+              {steps.map((step) => (
+                <div key={step.n} className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#219EBC] text-white flex items-center justify-center font-bold text-sm">{step.n}</div>
+                  <div>
+                    <h3 className="font-bold text-[#023047] mb-1">{step.title}</h3>
+                    <p className="text-sm text-[#023047]/75 leading-relaxed">{step.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Why this matters */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              Why this matters more than ever
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              The businesses that will get the most value from AI, automation, and new systems in the next few years are the ones doing the boring stuff now. Documenting their processes. Cleaning their data. Connecting their systems.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              AI amplifies whatever is already there. Feed it undocumented processes held together by one or two people, and it just makes the chaos faster. Feed it documented, structured operations, and it makes those better and faster too.
+            </p>
+          </div>
+
+          {/* Key Takeaways */}
+          <div className="p-8 rounded-2xl bg-[#023047]">
+            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key takeaways</h2>
+            <div className="space-y-4 text-[#8ECAE6]">
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Start with the process that would cause the most damage if the person who does it was unavailable. That is where the risk is.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  One page per process. If it needs more than a page, split it into two processes.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Test every SOP with someone who does not normally do the job. If they get stuck, the SOP is the problem, not the person.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Set a 6-month review cycle. An SOP that is not reviewed becomes outdated and ignored.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA + Opt-in */}
+          <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
+            <h3 className="text-lg font-bold text-[#023047] mb-3">Once you have your first SOPs written...</h3>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              The real value comes when every process in your business is documented, owned, and reviewed regularly. A Clarity engagement builds the full three-layer system with you, mapping what you do, who owns it, and where the gaps are.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                Book a free discovery call <ArrowRight size={18} />
+              </Link>
+              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                See what Clarity covers
+              </Link>
+            </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+          </div>
+
+          {/* Opt-in block */}
+          <div className="mt-12 p-6 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30">
+            <p className="text-sm text-[#023047]/70 leading-relaxed mb-3">
+              The Ops Briefing: one email a month on running a decorated-goods business properly. No spam ever.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-1 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
+              Want a hand applying this? Get in touch. <ArrowRight size={14} />
+            </Link>
+            {/* TODO: wire Ops Briefing opt-in when capture endpoint exists */}
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
+}
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git show lane/give-first-magnets:app/resources/erp-selection-playbook/page.tsx 2>&1
+import Link from 'next/link';
+import { ArrowRight, Check, AlertTriangle } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
+import { JsonLd } from '@/components/JsonLd';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'ERP Selection for Decorated Goods: A Plain-English Buying Guide',
+      author: { '@type': 'Person', name: 'Craig Blackman' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+      url: 'https://decodedops.co.uk/resources/erp-selection-playbook',
+    },
+  ],
+};
+
+export const metadata = {
+  title: 'ERP Selection Guide for Decorated Goods | Decoded Ops',
+  description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
+  alternates: { canonical: '/resources/erp-selection-playbook' },
+  openGraph: {
+    type: 'website',
+    title: 'ERP Selection Guide for Decorated Goods | Decoded Ops',
+    description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
+    url: 'https://decodedops.co.uk/resources/erp-selection-playbook',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ERP Selection Guide for Decorated Goods | Decoded Ops',
+    description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
+  },
+};
+
+const erpCapabilities = [
+  'Stock is checked and reserved automatically',
+  'Production is scheduled based on available capacity',
+  'Purchase orders are raised if materials need ordering',
+  'The customer gets a delivery date based on real data',
+  'Invoicing happens from the same order record',
+];
+
+const dontNeed = [
+  'You process fewer than 20 orders per day',
+  'Your product range is small enough that one person can hold it in their head',
+  'Your current setup (spreadsheets + accounting software + a basic website) is not causing errors or delays',
+  'You are not planning significant growth',
+];
+
+const doNeed = [
+  'Orders are being re-keyed between systems',
+  'Stock accuracy is below 90%',
+  'You cannot give customers accurate delivery dates',
+  'Month-end takes days of manual reconciliation',
+  'You are adding staff but not increasing output per person',
+  'You want to grow but the current operation cannot handle more volume',
+];
+
+const warningSigns = [
+  { label: 'Buying an ERP before an audit', detail: 'You need to understand your current operation before you can specify what a new system needs to do.' },
+  { label: 'Letting the vendor scope their own implementation', detail: 'They will scope for the software, not for your business.' },
+  { label: 'Choosing based on a demo', detail: 'Demos show what the software does well, not where the gaps are for your specific business model.' },
+  { label: 'Underestimating data migration', detail: 'Most implementation failures trace back to data quality, not software capability.' },
+];
+
+const systems = [
+  { name: 'OrderWise', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
+  { name: 'Panta ERP', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
+  { name: 'DecoNetwork', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
+  { name: 'ShirtWorks', strength: 'Sector-specific MIS, strong on screen print workflow', weakness: '' },
+  { name: 'Cin7', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
+];
+
+const selectionSteps = [
+  { n: '1', title: 'Audit first', body: 'Understand your current processes and costs before specifying requirements.' },
+  { n: '2', title: 'Write the brief', body: 'Your requirements, structured for vendor evaluation. Your order types, decoration methods, production workflows, integration requirements, and data volumes.' },
+  { n: '3', title: 'Approach vendors', body: 'Manage the process, not the other way around.' },
+  { n: '4', title: 'Evaluate on a like-for-like basis', body: 'Compare responses against your written brief.' },
+  { n: '5', title: 'Negotiate with independent support', body: 'Pricing, scope, and commercial terms reviewed by someone who has done it before.' },
+];
+
+const pitfalls = [
+  {
+    title: 'Buying a system designed for the wrong decoration mix',
+    body: 'An ERP that works brilliantly for a screen print shop will fail in a business that runs embroidery and DTG alongside screen printing - because the production workflow, costing logic, and scheduling constraints are fundamentally different for each method. Some of the most expensive ERP mistakes I have seen came from businesses that bought a system optimised for one decoration method while running three.',
+  },
+  {
+    title: 'Assuming the system handles artwork management',
+    body: 'Most general ERPs do not. They might store a file attachment against an order, but they will not manage the approval loop, the revision history, or the handoff between customer sign-off and production. If you process more than 20 artwork files per day, an ERP without artwork workflow will create a manual overhead that erodes every efficiency gain the system was supposed to deliver.',
+  },
+  {
+    title: 'Ignoring the B2B portal requirement',
+    body: 'If your wholesale or corporate customers place orders through a portal, the ERP must either include a portal or integrate cleanly with one. Post-selection portal integration is expensive, brittle, and often delayed. The portal question should be on the vendor brief, not discovered after the contract is signed.',
+  },
+  {
+    title: 'Confusing stock management with supply chain visibility',
+    body: 'An ERP that tracks finished goods inventory does not automatically give you visibility of incoming blank stock, work-in-progress, or supplier lead times. For a garment decoration business, the gap between what is on order and what is on the shelf is where the operational risk lives.',
+  },
+];
+
+const preparation = [
+  {
+    title: 'Get your data clean',
+    body: 'Your current stock records, product codes, customer lists, and supplier terms are the foundation your ERP will be built on. If the data in your spreadsheets is inconsistent, incomplete, or duplicated, the ERP will inherit those problems - and amplify them. Data migration is the single most common cause of ERP implementation delays and budget overruns. Clean it before you move it.',
+  },
+  {
+    title: 'Document your processes as they actually run',
+    body: 'Not as the procedure manual says they should run. Map each order from intake to invoice: who touches it, what systems it passes through, where the delays happen, where the errors get introduced. This process map becomes the spec your ERP vendor will build to. If you give them an idealised version instead of the real one, the system will be configured for a business that does not exist.',
+  },
+  {
+    title: 'Assign internal ownership',
+    body: 'An ERP implementation needs a named person inside the business who owns the project from the business side - not the vendor\'s project manager, not an external consultant, but someone who lives with the outcome every day. This person does not need to be technical. They need to understand the operations, have authority to make decisions, and be available for the duration of the project.',
+  },
+];
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
+}
+
+export default function ErpSelectionPlaybookPage() {
+  return (
+    <>
+      <JsonLd data={schema} />
+
+      {/* HERO */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- Free Resource</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+            ERP Selection Playbook for Decorated Goods
+          </h1>
+          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
+            A plain-English guide to ERP for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+
+          {/* What ERP is */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              What ERP actually means
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              ERP stands for Enterprise Resource Planning. That is the formal name. What it actually means is a system that connects the different parts of your business - orders, stock, production, purchasing, accounts - so they all work from the same data.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Without an ERP, a typical decorated goods business runs on: an accounting package for the finances, a spreadsheet for stock, another spreadsheet for production scheduling, email for artwork approval, and a separate eCommerce platform for online orders. None of them talk to each other. Someone - often several people - spends hours every day manually moving data between them.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              An ERP creates a single source of truth. When a customer order comes in:
+            </p>
+            <ul className="space-y-3 mb-5">
+              {erpCapabilities.map((item, i) => (
+                <li key={i} className="flex gap-3 items-start text-[#023047]/80 leading-relaxed">
+                  <Check size={18} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[#023047]/80 leading-relaxed">
+              Every department works from the same information. No manual re-entry. No reconciliation between systems. No &quot;which version of the order is the right one?&quot; conversations.
+            </p>
+          </div>
+
+          {/* Do you need one */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              Does your business need one?
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              Not every business needs an ERP. Here is how to tell.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="p-6 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30">
+                <h3 className="font-bold text-[#023047] mb-4">You probably do not need one if</h3>
+                <ul className="space-y-3">
+                  {dontNeed.map((item, i) => (
+                    <li key={i} className="flex gap-3 items-start text-sm text-[#023047]/75 leading-relaxed">
+                      <span className="flex-shrink-0 mt-0.5 text-[#219EBC]">-</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-6 rounded-xl bg-[#FFB703]/10 border border-[#FFB703]/30">
+                <h3 className="font-bold text-[#023047] mb-4">You probably do need one if</h3>
+                <ul className="space-y-3">
+                  {doNeed.map((item, i) => (
+                    <li key={i} className="flex gap-3 items-start text-sm text-[#023047]/75 leading-relaxed">
+                      <Check size={16} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Warning signs */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              The warning signs
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              If you are considering an ERP, watch out for these patterns:
+            </p>
+            <div className="space-y-4">
+              {warningSigns.map((item, i) => (
+                <div key={i} className="flex gap-4 items-start p-4 rounded-lg bg-[#F8F9FA]">
+                  <AlertTriangle size={18} className="flex-shrink-0 mt-0.5 text-[#FB8500]" />
+                  <div>
+                    <span className="font-semibold text-[#023047]">{item.label}</span>
+                    <span className="text-[#023047]/70"> - {item.detail}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* The honest view */}
+          <div className="mb-16 p-8 rounded-2xl bg-[#023047]">
+            <h2 className="text-xl font-bold text-[#F8F9FA] mb-4">The honest view</h2>
+            <p className="text-[#8ECAE6] leading-relaxed mb-4">
+              Most businesses I work with do not need a new ERP. They need to use their current system properly, fix their processes, and connect the systems they already have. An ERP implementation is expensive, disruptive, and risky. It should only be the answer when the current setup genuinely cannot be fixed.
+            </p>
+            <p className="text-[#8ECAE6] leading-relaxed">
+              A Clarity Audit will tell you whether your problem is the system, the implementation, or the process - and what the most cost-effective next step actually is.
+            </p>
+          </div>
+
+          {/* Systems worth considering */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              The systems worth considering
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              The ERP landscape for decorated goods businesses in the UK includes:
+            </p>
+            <div className="space-y-3">
+              {systems.map((sys) => (
+                <div key={sys.name} className="p-5 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/20">
+                  <h3 className="font-bold text-[#023047] mb-1">{sys.name}</h3>
+                  <p className="text-sm text-[#023047]/75">
+                    <span className="text-[#219EBC]">{sys.strength}</span>
+                    {sys.weakness && <span> - {sys.weakness}</span>}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-[#023047]/80 leading-relaxed">
+              Each has strengths and weaknesses. The right one depends on your business model, your decoration mix, and your growth trajectory. There is no universally correct answer - which is why the brief has to come first.
+            </p>
+          </div>
+
+          {/* Selection process */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              The process that works
+            </h2>
+            <div className="space-y-6">
+              {selectionSteps.map((step) => (
+                <div key={step.n} className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#219EBC] text-white flex items-center justify-center font-bold text-sm">{step.n}</div>
+                  <div>
+                    <h3 className="font-bold text-[#023047] mb-1">{step.title}</h3>
+                    <p className="text-sm text-[#023047]/75 leading-relaxed">{step.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Pitfalls */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              Common pitfalls specific to garment decoration
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              ERP selection in the garment decoration sector has pitfalls that do not appear in other industries. Knowing them in advance saves months of wasted evaluation.
+            </p>
+            <div className="space-y-6">
+              {pitfalls.map((pitfall, i) => (
+                <div key={i}>
+                  <h3 className="font-bold text-[#023047] mb-2">{pitfall.title}</h3>
+                  <p className="text-[#023047]/80 leading-relaxed">{pitfall.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Preparation */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              How to prepare before you buy
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              If the honest assessment lands on &quot;we do need an ERP&quot;, do not start shopping. Start preparing. The businesses that get the best outcomes do three things before they ever talk to a vendor.
+            </p>
+            <div className="space-y-6">
+              {preparation.map((item, i) => (
+                <div key={i}>
+                  <h3 className="font-bold text-[#023047] mb-2">{item.title}</h3>
+                  <p className="text-[#023047]/80 leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Takeaways */}
+          <div className="p-8 rounded-2xl bg-[#023047]">
+            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key takeaways</h2>
+            <div className="space-y-4 text-[#8ECAE6]">
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Most businesses do not need a new ERP. They need to use what they have properly and fix their processes first.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Write the vendor brief before you talk to any vendor. Without it, every demo looks impressive because the vendor controls what they show you.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  A Clarity Audit identifies what you actually need before you spend anything on software.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Clean your data and document your real processes before you start talking to vendors. The ERP will inherit whatever you give it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA + Opt-in */}
+          <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
+            <h3 className="text-lg font-bold text-[#023047] mb-3">Not sure whether you need an ERP?</h3>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From GBP 1,500.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                Book a free discovery call <ArrowRight size={18} />
+              </Link>
+              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                See what an audit covers
+              </Link>
+            </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+          </div>
+
+          {/* Opt-in block */}
+          <div className="mt-12 p-6 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30">
+            <p className="text-sm text-[#023047]/70 leading-relaxed mb-3">
+              The Ops Briefing: one email a month on running a decorated-goods business properly. No spam ever.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-1 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
+              Want a hand applying this? Get in touch. <ArrowRight size={14} />
+            </Link>
+            {/* TODO: wire Ops Briefing opt-in when capture endpoint exists */}
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
+}
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git show lane/give-first-magnets:app/resources/artwork-approval-playbook/page.tsx 2>&1
+import Link from 'next/link';
+import { ArrowRight, Check, Palette } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
+import { JsonLd } from '@/components/JsonLd';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Artwork Approval Workflow: From Brief to Sign-Off in 24 Hours',
+      author: { '@type': 'Person', name: 'Craig Blackman' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+      url: 'https://decodedops.co.uk/resources/artwork-approval-playbook',
+    },
+  ],
+};
+
+export const metadata = {
+  title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
+  description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+  alternates: { canonical: '/resources/artwork-approval-playbook' },
+  openGraph: {
+    type: 'website',
+    title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
+    description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+    url: 'https://decodedops.co.uk/resources/artwork-approval-playbook',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
+    description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+  },
+};
+
+const briefFields = [
+  { label: 'Logo file', detail: 'Vector preferred. If they only have a JPEG or PNG, note the resolution and flag if rework will be needed.' },
+  { label: 'Colours', detail: 'Pantone references where possible. "Blue" is not a colour specification.' },
+  { label: 'Size', detail: 'Exact dimensions or a size code from your standard sizing guide.' },
+  { label: 'Position', detail: 'Left chest, centre back, sleeve - with your standard placement reference to remove ambiguity.' },
+  { label: 'Garment details', detail: 'Colour, fabric, any features near the print area (pockets, seams, buttons).' },
+  { label: 'Decoration method', detail: 'Embroidery, screen print, heat transfer, DTG - confirmed, not assumed.' },
+];
+
+const proofItems = [
+  'The design as it will appear on the garment - correct size, position, and colour',
+  'The garment colour and style confirmed',
+  'A measurement reference if size is part of the specification',
+  'A clear approval request with a deadline: "Please approve or request changes by [date]. We cannot proceed to production without written confirmation."',
+  'Two clear options: approve as shown, or request specific changes',
+];
+
+const faqs = [
+  {
+    q: 'Why does artwork approval take so long?',
+    a: 'Almost always because the brief at the start was incomplete. When colours, file format, placement, or sizing are not confirmed before artwork is created, the revision cycle begins. A brief template that collects all requirements upfront reduces revision rounds from 3-5 to 1 in most cases.',
+  },
+  {
+    q: 'What should an artwork approval proof include?',
+    a: 'The design as it will appear on the garment, a clear approval request with a deadline, and two simple actions: approve as shown, or request specific changes. Ambiguous proofs generate ambiguous responses.',
+  },
+  {
+    q: 'Can artwork approval be automated?',
+    a: 'Yes. Production management platforms include proof delivery and tracked sign-off. The customer approves via a link; the sign-off is recorded and production is triggered automatically. For businesses processing 20+ jobs per week, this is worth implementing.',
+  },
+];
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
+}
+
+export default function ArtworkApprovalPlaybookPage() {
+  return (
+    <>
+      <JsonLd data={schema} />
+
+      {/* HERO */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-20 bg-[#F8F9FA]">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border border-[#023047]/20 mb-6">
+            <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">- Free Resource</span>
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#023047] leading-tight mb-6">
+            Artwork Approval Playbook
+          </h1>
+          <p className="text-lg text-[#023047]/70 leading-relaxed mb-6">
+            A 5-step workflow to take artwork approval from brief to sign-off in 24 hours. Structured brief, proof standard, automated chase, and production release.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+
+          {/* The problem */}
+          <div className="mb-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
+            <h2 className="text-xl font-bold text-[#023047] mb-4">Where the time actually goes</h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Artwork approval is the single biggest schedule killer in most decoration businesses. Not because customers are difficult. Not because the artwork is complicated. Because the process starts without enough information, and every gap in that information adds a round trip to a process that should be linear.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              The time is going in the gaps between rounds - not in the artwork creation itself. And most of those rounds exist because the requirements were not confirmed before work started.
+            </p>
+          </div>
+
+          {/* Step 1: Brief */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#219EBC] text-white font-bold text-sm">1</span>
+              <h2 className="text-2xl font-bold text-[#023047]">The artwork brief</h2>
+            </div>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              The brief is where most of the time is saved or lost. If you start artwork without a completed brief, you are accepting the revision cycle as an inevitable part of the process. It is not.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              A brief template that every order passes through before artwork is started should capture:
+            </p>
+            <div className="space-y-3">
+              {briefFields.map((field) => (
+                <div key={field.label} className="flex gap-3 items-start p-4 rounded-lg bg-[#F8F9FA]">
+                  <Check size={18} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                  <div>
+                    <span className="font-semibold text-[#023047]">{field.label}</span>
+                    <span className="text-[#023047]/70"> - {field.detail}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-[#023047]/80 leading-relaxed font-medium">
+              If any of these are missing, the brief goes back before artwork is started. Not after.
+            </p>
+          </div>
+
+          {/* Step 2: Artwork creation */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#219EBC] text-white font-bold text-sm">2</span>
+              <h2 className="text-2xl font-bold text-[#023047]">Artwork creation with a standard</h2>
+            </div>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Once the brief is complete, artwork is created against a documented standard - not to whatever the individual artist thinks looks right.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              That standard includes: the templates you use for each garment type, the font rules if the design includes text, how you represent the garment in the proof (flat render, photographic mock-up, or simple line drawing), and what the proof document itself should contain before it is sent.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              Without a standard, two people creating proofs for the same type of job will produce different-looking documents. Customers who have seen one format get confused by another. Consistency reduces the customer&apos;s cognitive load and speeds sign-off.
+            </p>
+          </div>
+
+          {/* Step 3: The proof */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#219EBC] text-white font-bold text-sm">3</span>
+              <h2 className="text-2xl font-bold text-[#023047]">The proof</h2>
+            </div>
+            <p className="text-[#023047]/80 leading-relaxed mb-5">
+              A proof that gets signed off quickly is one that leaves nothing open to interpretation. It should show:
+            </p>
+            <ul className="space-y-3 mb-5">
+              {proofItems.map((item, i) => (
+                <li key={i} className="flex gap-3 items-start text-[#023047]/80 leading-relaxed">
+                  <Check size={18} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[#023047]/80 leading-relaxed">
+              The deadline is important. Proofs sent without a deadline have no urgency. Proofs sent with &quot;please confirm by 5pm tomorrow&quot; get responses faster - because the customer understands what happens if they do not.
+            </p>
+          </div>
+
+          {/* Step 4: Managing the response */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#219EBC] text-white font-bold text-sm">4</span>
+              <h2 className="text-2xl font-bold text-[#023047]">Managing the response</h2>
+            </div>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              The most common failure point in approval workflows is what happens after the proof is sent. The ball is in the customer&apos;s court - and nobody is tracking whether it comes back.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Your system should flag a proof as awaiting sign-off the moment it is sent, and trigger an automatic chase if no response is received within a defined window - typically 24 hours. That chase is a reminder, not a complaint: &quot;Just checking you have received the artwork for your order - please let us know if you have any questions.&quot;
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              The alternative - relying on someone to remember to chase - produces inconsistent results and lost days when people are busy.
+            </p>
+          </div>
+
+          {/* Step 5: Sign-off to production */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#219EBC] text-white font-bold text-sm">5</span>
+              <h2 className="text-2xl font-bold text-[#023047]">Sign-off to production release</h2>
+            </div>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              When sign-off arrives, the job should move to production without an additional decision point. Sign-off is the trigger - not a signal for someone to manually review the approval and decide whether to release the job.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              In a properly structured workflow, sign-off updates the order status automatically, the production queue is updated, and the relevant team is notified. The customer&apos;s reply to a proof email is not the end of the process - it is the start of the production process.
+            </p>
+          </div>
+
+          {/* Automation */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-4 pb-4 border-b border-[#8ECAE6]/30">
+              Automating the workflow
+            </h2>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              Several production management platforms include proof delivery and sign-off tracking as standard features. The customer receives a link, views the proof on a web page, and clicks to approve or request changes. The sign-off is recorded with a timestamp. Production can be triggered automatically.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed mb-4">
+              This eliminates the email thread, creates an audit trail, and removes the manual step of checking whether a proof has been approved before releasing a job. For businesses processing more than 20-30 jobs per week, it is worth implementing.
+            </p>
+            <p className="text-[#023047]/80 leading-relaxed">
+              For smaller operations, a structured email template with a clear approval link and a tracked chase sequence achieves most of the same result without a platform investment.
+            </p>
+          </div>
+
+          {/* FAQs */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-[#023047] mb-6 pb-4 border-b border-[#8ECAE6]/30">
+              Common questions
+            </h2>
+            <div className="space-y-6">
+              {faqs.map((faq, i) => (
+                <div key={i}>
+                  <h3 className="font-bold text-[#023047] mb-2">{faq.q}</h3>
+                  <p className="text-[#023047]/80 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Takeaways */}
+          <div className="p-8 rounded-2xl bg-[#023047]">
+            <h2 className="text-2xl font-bold text-[#F8F9FA] mb-6">Key takeaways</h2>
+            <div className="space-y-4 text-[#8ECAE6]">
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  The brief is where most time is saved or lost. Never start artwork without a completed brief.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Proofs need a deadline and two clear options: approve or request changes. Ambiguous proofs generate ambiguous responses.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Chase automatically if no response within 24 hours. Relying on memory produces inconsistent results.
+                </p>
+              </div>
+              <div className="flex gap-4 items-start">
+                <Check size={20} className="flex-shrink-0 mt-1 text-[#219EBC]" />
+                <p className="leading-relaxed">
+                  Sign-off should trigger production automatically. No second decision point.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA + Opt-in */}
+          <div className="mt-16 p-8 rounded-2xl bg-[#FFB703]/10 border border-[#FFB703]/30">
+            <h3 className="text-lg font-bold text-[#023047] mb-3">Once your artwork workflow is structured...</h3>
+            <p className="text-[#023047]/80 leading-relaxed mb-6">
+              The real value comes when artwork approval connects to production scheduling, costing, and despatch without manual handoffs. That is what a Clarity engagement maps out across your whole operation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                Book a free discovery call <ArrowRight size={18} />
+              </Link>
+              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+                See what an audit covers
+              </Link>
+            </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+          </div>
+
+          {/* Opt-in block */}
+          <div className="mt-12 p-6 rounded-xl bg-[#F8F9FA] border border-[#8ECAE6]/30">
+            <p className="text-sm text-[#023047]/70 leading-relaxed mb-3">
+              The Ops Briefing: one email a month on running a decorated-goods business properly. No spam ever.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-1 text-sm font-semibold text-[#219EBC] hover:text-[#023047] transition-colors">
+              Want a hand applying this? Get in touch. <ArrowRight size={14} />
+            </Link>
+            {/* TODO: wire Ops Briefing opt-in when capture endpoint exists */}
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
+}
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git show origin/main:app/resources/decoded-method/page.tsx 2>&1
+import Link from 'next/link';
+import { ArrowRight, Download, Check, Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
+import { JsonLd } from '@/components/JsonLd';
+import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
+import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'The Decoded Method',
+      author: { '@type': 'Person', name: 'Craig Blackman' },
+      publisher: { '@type': 'Organization', name: 'Decoded Ops' },
+      url: 'https://decodedops.co.uk/resources/decoded-method',
+    },
+  ],
+};
+
+export const metadata = {
+  title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
+  description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+  alternates: { canonical: '/resources/decoded-method' },
+  openGraph: {
+    type: 'website',
+    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
+    description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+    url: 'https://decodedops.co.uk/resources/decoded-method',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
+    description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+  },
+};
+
+const principles = [
+  'Plain English. If the least experienced person can\'t follow it without asking, it\'s still a draft.',
+  'One page per process. If it needs more than a page, split it.',
+  'Owner on everything. One named person. Not a team.',
+  'Reviewed regularly. Quarterly for most; at each milestone for active builds.',
+  'Delivery-linked. Every system handed over ships with its process pack. Handover is never verbal-only.',
+  'ISO-ready, not ISO-burdened. Maps to ISO 9001 principles, without the certification weight.',
+];
+
+const processRegister = [
+  { ref: 'DO-PR-001', process: 'Discovery Day Delivery', status: 'active' },
+  { ref: 'DO-PR-002', process: 'Clarity Audit & Report', status: 'active' },
+  { ref: 'DO-PR-003', process: 'New Client Onboarding', status: 'active' },
+  { ref: 'DO-PR-004', process: 'Proposal Build & Sign-off', status: 'active' },
+  { ref: 'DO-PR-005', process: 'App Requirements Capture', status: 'active' },
+  { ref: 'DO-PR-006', process: 'ERP/eCommerce Integration Scoping', status: 'active' },
+  { ref: 'DO-PR-007', process: 'Monthly Retained Review', status: 'active' },
+  { ref: 'DO-PR-008', process: 'Invoice & Billing Cycle', status: 'active' },
+  { ref: 'DO-PR-009', process: 'Client Handover & Sign-off', status: 'draft' },
+  { ref: 'DO-PR-010', process: 'Process Pack Production', status: 'draft' },
+  { ref: 'DO-PR-011', process: 'LinkedIn Content Publishing', status: 'review' },
+  { ref: 'DO-PR-012', process: 'Sub-contractor Engagement', status: 'draft' },
+];
+
+const layers = [
+  {
+    n: '01', name: 'The Process Register', accent: '#219EBC',
+    blurb: "The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.",
+    fields: [
+      ['Ref', 'a short code, e.g. TB-PR-001'],
+      ['Owner', 'one named person, never "the team"'],
+      ['Category', 'Delivery, Sales, Admin, Finance, Marketing, or Tech'],
+      ['Status', 'active, draft, review, or archived'],
+      ['Last reviewed', 'the month it was last checked'],
+    ],
+  },
+  {
+    n: '02', name: 'The SOPs', accent: '#8ECAE6',
+    blurb: "The how-to layer. One page per process, a hard limit. If it needs more than a page, it's two processes, not one. Five sections, no more, no fewer.",
+    fields: [
+      ['What this process does', 'one sentence: what it produces and why it exists'],
+      ['Trigger', 'the specific event that starts it, never "when needed"'],
+      ['Steps', 'numbered, plain English, actionable'],
+      ['What good looks like', 'a measurable outcome, so you know it worked'],
+      ['AI skills', 'which tools to reach for, and in what order'],
+    ],
+  },
+  {
+    n: '03', name: 'The Improvement Log', accent: '#FFB703',
+    blurb: "The Kaizen layer. When something breaks or gets better, you log it in three fields, nothing more. Every entry points back to the process it changed, so the register stays honest over time.",
+    fields: [
+      ['What broke', 'what was failing, inconsistent, or slow'],
+      ['What changed', 'what you actually altered'],
+      ['Result', 'what improved, and how you know'],
+    ],
+  },
+];
+
+const statusStyle: Record<string, string> = {
+  active: 'bg-[#219EBC] text-white',
+  draft: 'bg-[#8ECAE6] text-[#023047]',
+  review: 'bg-[#FFB703] text-[#023047]',
+};
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#219EBC]">{children}</span>;
+}
+
+export default function DecodedMethodPage() {
+  return (
+    <>
+      <JsonLd data={schema} />
+
+      {/* HERO — premium dark, playbook cover language */}
+      <section className="relative overflow-hidden bg-[#023047] pt-28 pb-20 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-x-0 top-0 h-1.5 bg-[#FFB703]" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{ backgroundImage: 'linear-gradient(#0a3d5c 1px, transparent 1px), linear-gradient(90deg, #0a3d5c 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+        />
+        <div className="pointer-events-none absolute -top-24 right-0 h-[440px] w-[440px] rounded-full bg-[#219EBC]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-10 h-[380px] w-[380px] rounded-full bg-[#FFB703]/5 blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <Eyebrow>Free Playbook</Eyebrow>
+            <h1 className="mt-5 text-4xl lg:text-6xl font-extrabold text-white leading-[1.03]">
+              The Decoded <span className="text-[#FFB703]">Method</span>
+            </h1>
+            <div className="mt-6 h-1 w-16 rounded-full bg-[#219EBC]" />
+            <p className="mt-6 text-lg text-[#8ECAE6] leading-relaxed max-w-xl">
+              A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person's head.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-4">
+              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <Download size={18} /> Download the playbook
+              </a>
+              <Link href="/clarity" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
+                See what Clarity covers <ArrowRight size={18} />
+              </Link>
+            </div>
+            <p className="mt-4 text-sm text-white/40">7-page PDF · no email required</p>
+          </div>
+
+          <div className="relative mx-auto lg:ml-auto w-full max-w-[300px] lg:max-w-[360px]">
+            <div className="absolute -inset-6 rounded-3xl bg-[#219EBC]/10 blur-2xl" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/decoded-method-cover.png"
+              alt="The Decoded Method Playbook — cover"
+              width={1075}
+              height={1521}
+              className="relative w-full rounded-lg shadow-2xl ring-1 ring-white/10 rotate-[-2.5deg] transition-transform"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 items-center">
+          <div>
+            <Eyebrow>The problem</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Why most process documentation fails</h2>
+            <div className="mt-3 h-1 w-14 rounded-full bg-[#8ECAE6]" />
+            <p className="mt-8 text-lg text-[#023047]/80 leading-relaxed">
+              Most businesses keep their processes in one place: someone's head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+            </p>
+            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+              The usual fix is a giant quality manual. That fails for the opposite reason: it's too long to keep up to date, so it goes stale, and once it's stale nobody trusts it.
+            </p>
+            <p className="mt-5 text-lg text-[#023047]/80 leading-relaxed">
+              The Decoded Method is the middle path. ISO 9001 principles without the ISO overhead. A continuous improvement habit without the ceremony. Lean enough to actually keep alive.
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg bg-white">
+            <SinglePointSchematic tone="light" />
+          </div>
+        </div>
+      </section>
+
+      {/* THREE LAYERS */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <Eyebrow>The system</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047] leading-tight">Three layers, each with a job</h2>
+            <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed">Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.</p>
+          </div>
+
+          {/* Live operations schematic */}
+          <div className="mt-12 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-xl">
+            <ThreeLayerSchematic tone="dark" />
+          </div>
+
+          {/* The three layers, explained */}
+          <div className="mt-16 grid md:grid-cols-3 gap-10">
+            {layers.map((layer) => (
+              <div key={layer.n}>
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-[#023047] text-white font-extrabold" style={{ boxShadow: `inset 4px 0 0 ${layer.accent}` }}>{layer.n}</span>
+                  <h3 className="text-xl font-bold text-[#023047]">{layer.name}</h3>
+                </div>
+                <p className="mt-4 text-sm text-[#023047]/75 leading-relaxed">{layer.blurb}</p>
+                <ul className="mt-5 space-y-2">
+                  {layer.fields.map(([k, v]) => (
+                    <li key={k} className="flex gap-2.5 text-sm text-[#023047]/80">
+                      <Check size={16} className="flex-shrink-0 mt-0.5 text-[#219EBC]" />
+                      <span><strong className="text-[#023047]">{k}</strong> — {v}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SIX PRINCIPLES */}
+      <section className="py-20 lg:py-24 bg-[#F8F9FA]">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <Eyebrow>The rules</Eyebrow>
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The six principles</h2>
+          <div className="mt-10 grid md:grid-cols-2 gap-5">
+            {principles.map((p, i) => {
+              const [head, ...rest] = p.split('. ');
+              const Icon = [Languages, FileText, UserCheck, CalendarClock, PackageCheck, ShieldCheck][i];
+              return (
+                <div key={i} className="p-6 rounded-xl bg-white border border-[#8ECAE6]/40 border-l-4 border-l-[#219EBC] shadow-sm flex gap-4">
+                  <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-[#219EBC]/10 flex items-center justify-center">
+                    <Icon size={20} className="text-[#219EBC]" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#023047]">{head}.</h3>
+                    <p className="mt-1.5 text-sm text-[#023047]/70 leading-relaxed">{rest.join('. ')}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WORKED EXAMPLE */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <Eyebrow>A worked example</Eyebrow>
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#023047]">The register we run Decoded Ops on</h2>
+          <p className="mt-5 text-lg text-[#023047]/70 leading-relaxed max-w-2xl">
+            Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they've seen their whole operation on one page.
+          </p>
+          <div className="mt-10 rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#023047] text-white">
+                  <th className="text-left font-semibold px-5 py-3.5 w-32">Ref</th>
+                  <th className="text-left font-semibold px-5 py-3.5">Process</th>
+                  <th className="text-left font-semibold px-5 py-3.5 w-28">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {processRegister.map((row, i) => (
+                  <tr key={i} className={i % 2 ? 'bg-[#F8F9FA]' : 'bg-white'}>
+                    <td className="px-5 py-3 font-semibold text-[#023047]">{row.ref}</td>
+                    <td className="px-5 py-3 text-[#023047]/80">{row.process}</td>
+                    <td className="px-5 py-3">
+                      <span className={`px-2.5 py-1 rounded-full text-[11px] font-semibold ${statusStyle[row.status]}`}>{row.status}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* DOWNLOAD + CLARITY BAND */}
+      <section className="relative overflow-hidden bg-[#023047] py-20 lg:py-24">
+        <div className="pointer-events-none absolute -top-20 right-10 h-[360px] w-[360px] rounded-full bg-[#219EBC]/10 blur-3xl" />
+        <div className="relative max-w-5xl mx-auto px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
+          <div className="relative mx-auto w-full max-w-[240px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/decoded-method-cover.png" alt="The Decoded Method Playbook" width={1075} height={1521} className="w-full rounded-lg shadow-2xl ring-1 ring-white/10" />
+          </div>
+          <div>
+            <Eyebrow>Take it with you</Eyebrow>
+            <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-white leading-tight">Get the whole playbook, free</h2>
+            <p className="mt-5 text-[#8ECAE6] leading-relaxed">
+              Seven pages: the three layers with worked examples, the six principles, and a self-assessment scorecard to see where your operation stands right now. No email required.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="/downloads/decoded-method.pdf" download className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
+                <Download size={18} /> Download the playbook
+              </a>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white font-semibold hover:bg-white/5 transition-colors">
+                Book a discovery call <ArrowRight size={18} />
+              </Link>
+            </div>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-4">Or book a call directly <ArrowRight size={14} /></a>
+            <p className="mt-6 text-sm text-white/50 leading-relaxed">
+              Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+→ Read components/Header.tsx [offset=130, limit=20]
+→ Read app/sitemap.ts
+→ Read public/llms.txt
+→ Read next.config.ts
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && ls components/schematics/ 2>$null
+Directory: D:\apps\worktrees\decoded-ops-website\resources-port\components\schematics
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          02/09/2026    09:37                problems
+d----          02/09/2026    09:37                sectors
+-a---          02/09/2026    09:37           6884 DiscoveryDaySchematic.tsx
+-a---          02/09/2026    09:37           6336 primitives.tsx
+-a---          02/09/2026    09:37           7979 SinglePointSchematic.tsx
+-a---          02/09/2026    09:37           5785 SixSigmaSchematic.tsx
+-a---          02/09/2026    09:37          11376 ThreeLayerSchematic.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && ls app/resources/software-reviews/ 2>$null
+Directory: D:\apps\worktrees\decoded-ops-website\resources-port\app\resources\software-reviews
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          02/09/2026    09:37           6342 page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && Test-Path "public/images/decoded-method-cover.png"
+True
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && Test-Path "public/downloads/decoded-method.pdf"
+True
+
+# Todos
+[•] Port sop-template page (give-first-magnets -> staging pattern)
+[ ] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[ ] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[ ] Restore decoded-method page (origin/main -> staging pattern)
+[ ] Update resources index page (add 4 new, remove software-reviews)
+[ ] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[ ] Run next build and verify
+[ ] Commit and report
+
+← Write app/resources/sop-template/page.tsx
+Wrote file successfully.
+
+Now I'll write all four pages and the index in parallel. Starting with the three give-first pages and decoded-method, all converted to staging's pattern.
+← Write app/resources/erp-selection-playbook/page.tsx
+Wrote file successfully.
+
+← Write app/resources/artwork-approval-playbook/page.tsx
+Wrote file successfully.
+
+# Todos
+[✓] Port sop-template page (give-first-magnets -> staging pattern)
+[✓] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[✓] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[•] Restore decoded-method page (origin/main -> staging pattern)
+[ ] Update resources index page (add 4 new, remove software-reviews)
+[ ] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[ ] Run next build and verify
+[ ] Commit and report
+
+← Write app/resources/decoded-method/page.tsx
+Wrote file successfully.
+
+← Write app/resources/page.tsx
+Wrote file successfully.
+
+Now updating the resources index page:
+# Todos
+[✓] Port sop-template page (give-first-magnets -> staging pattern)
+[✓] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[✓] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[✓] Restore decoded-method page (origin/main -> staging pattern)
+[✓] Update resources index page (add 4 new, remove software-reviews)
+[•] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[ ] Run next build and verify
+[ ] Commit and report
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && Remove-Item -Recurse -Force "app/resources/software-reviews"
+(no output)
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\resources-port\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-port\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\resources-port\components\Header.tsx
+@@ -134,9 +134,9 @@
+     { label: 'The ops audit checklist', href: '/resources/audit-checklist' },
+     { label: '5 signs your systems are failing', href: '/resources/5-warning-signs' },
+     { label: 'Six Sigma, explained simply', href: '/resources/six-sigma' },
+     { label: 'Building a quality system', href: '/process-quality-system' },
+-    { label: 'Software reviews', href: '/resources/software-reviews' },
++
+     { label: 'The blog', href: '/blog' },
+   ],
+ };
+ 
+
+
+← Edit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\resources-port\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-port\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\resources-port\app\sitemap.ts
+@@ -57,9 +57,9 @@
+ { url: `${BASE_URL}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+ { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+ { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+-{ url: `${BASE_URL}/resources/software-reviews`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
++
+ { url: `${BASE_URL}/retained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/small-business`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/transform`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/tools`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+
+
+← Edit public/llms.txt
+Index: D:\apps\worktrees\decoded-ops-website\resources-port\public\llms.txt
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-port\public\llms.txt
++++ D:\apps\worktrees\decoded-ops-website\resources-port\public\llms.txt
+@@ -14,10 +14,10 @@
+ ## Resources
+ - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
+ - [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
+ - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
+-- [Software Reviews](https://decodedops.co.uk/resources/software-reviews): Independent ERP and eCommerce reviews.
+ 
++
+ ## Tools
+ - [Automation ROI Calculator](https://decodedops.co.uk/tools/automation-roi-calculator)
+ - [RTO Calculator](https://decodedops.co.uk/tools/rto-calculator)
+ - [Downtime Cost Calculator](https://decodedops.co.uk/tools/downtime-cost-calculator)
+
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\resources-port\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-port\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\resources-port\next.config.ts
+@@ -12,9 +12,9 @@
+     // retired in favour of new DS-ported routes built by later lanes.
+     // Targets don't exist yet — that's expected, the other lanes build
+     // them; the redirect just needs to be ready ahead of that landing.
+     { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
+-    { source: '/resources/decoded-method', destination: '/decoded-method', permanent: true },
++    { source: '/resources/software-reviews', destination: '/resources', permanent: true },
+     { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+   ];
+ },
+ async headers() {
+
+
+# Todos
+[✓] Port sop-template page (give-first-magnets -> staging pattern)
+[✓] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[✓] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[✓] Restore decoded-method page (origin/main -> staging pattern)
+[✓] Update resources index page (add 4 new, remove software-reviews)
+[✓] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[•] Run next build and verify
+[ ] Commit and report
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && npx next build 2>&1 | Select-Object -Last 40
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ○ /sitemap.xml                                           5m      1y
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git diff origin/staging..HEAD --stat
+(no output)
+
+Build passed. Let me verify the diff stat:
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git log --oneline origin/staging..HEAD
+(no output)
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git status --short
+M app/resources/page.tsx
+ D app/resources/software-reviews/page.tsx
+ M app/sitemap.ts
+ M components/Header.tsx
+ M next.config.ts
+ M public/llms.txt
+?? app/resources/artwork-approval-playbook/
+?? app/resources/decoded-method/
+?? app/resources/erp-selection-playbook/
+?? app/resources/sop-template/
+
+Changes are staged and ready. Now committing in three chunks as the brief requires.
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git add app/resources/sop-template/ app/resources/erp-selection-playbook/ app/resources/artwork-approval-playbook/ app/resources/page.tsx && git commit -m "Port three give-first resource pages to staging pattern
+
+sop-template, erp-selection-playbook, artwork-approval-playbook ported
+from lane/give-first-magnets (commit 20bea5d) to staging's resource-page
+pattern. Text, headings, and metadata verbatim from source. Structure
+rebuilt using g-off/g-navy sections, wrap, eyebrow, card, g-tint,
+btn btn--primary/outline as audit-checklist and 5-warning-signs use.
+
+Resources index updated: added all four new pages, removed
+software-reviews entry, updated plate to show seven resources."
+warning: in the working copy of 'app/resources/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/artwork-approval-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/erp-selection-playbook/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/resources/sop-template/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[lane/gf1-resources-port-2026-09-02 98f2e74] Port three give-first resource pages to staging pattern
+ 4 files changed, 887 insertions(+), 41 deletions(-)
+ create mode 100644 app/resources/artwork-approval-playbook/page.tsx
+ create mode 100644 app/resources/erp-selection-playbook/page.tsx
+ create mode 100644 app/resources/sop-template/page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git add app/resources/decoded-method/ && git commit -m "Restore Decoded Method resource page in staging pattern
+
+Recovered from origin/main (commit prior to staging deletion). Content
+rebuilt using staging's resource-page pattern with g-off/g-navy sections,
+wrap, eyebrow, card, g-tint. Kept ThreeLayerSchematic and
+SinglePointSchematic components which exist in this repo. Craig: this
+page stays."
+warning: in the working copy of 'app/resources/decoded-method/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[lane/gf1-resources-port-2026-09-02 e8edf66] Restore Decoded Method resource page in staging pattern
+ 1 file changed, 257 insertions(+)
+ create mode 100644 app/resources/decoded-method/page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git add app/resources/software-reviews/ components/Header.tsx app/sitemap.ts public/llms.txt next.config.ts && git commit -m "Retire /resources/software-reviews (B12, GF6 triage)
+
+Deleted app/resources/software-reviews/. Removed link from Header.tsx
+navigation. Removed from sitemap.ts. Removed from llms.txt. Added
+permanent redirect /resources/software-reviews -> /resources in
+next.config.ts. Also removed stale /resources/decoded-method redirect
+(now that decoded-method lives at /resources/decoded-method)."
+[lane/gf1-resources-port-2026-09-02 2ade73f] Retire /resources/software-reviews (B12, GF6 triage)
+ 5 files changed, 4 insertions(+), 114 deletions(-)
+ delete mode 100644 app/resources/software-reviews/page.tsx
+
+# Todos
+[✓] Port sop-template page (give-first-magnets -> staging pattern)
+[✓] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[✓] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[✓] Restore decoded-method page (origin/main -> staging pattern)
+[✓] Update resources index page (add 4 new, remove software-reviews)
+[✓] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[✓] Run next build and verify
+[•] Commit and report
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git log --oneline origin/staging..HEAD
+2ade73f Retire /resources/software-reviews (B12, GF6 triage)
+e8edf66 Restore Decoded Method resource page in staging pattern
+98f2e74 Port three give-first resource pages to staging pattern
+
+$ cd "D:\apps\worktrees\decoded-ops-website\resources-port" && git diff --stat origin/staging..HEAD
+app/resources/artwork-approval-playbook/page.tsx | 263 ++++++++++++++++++
+ app/resources/decoded-method/page.tsx            | 257 +++++++++++++++++
+ app/resources/erp-selection-playbook/page.tsx    | 333 +++++++++++++++++++++++
+ app/resources/page.tsx                           | 104 ++++---
+ app/resources/software-reviews/page.tsx          | 110 --------
+ app/resources/sop-template/page.tsx              | 228 ++++++++++++++++
+ app/sitemap.ts                                   |   2 +-
+ components/Header.tsx                            |   2 +-
+ next.config.ts                                   |   2 +-
+ public/llms.txt                                  |   2 +-
+ 10 files changed, 1148 insertions(+), 155 deletions(-)
+
+# Todos
+[✓] Port sop-template page (give-first-magnets -> staging pattern)
+[✓] Port erp-selection-playbook page (give-first-magnets -> staging pattern)
+[✓] Port artwork-approval-playbook page (give-first-magnets -> staging pattern)
+[✓] Restore decoded-method page (origin/main -> staging pattern)
+[✓] Update resources index page (add 4 new, remove software-reviews)
+[✓] Retire software-reviews: delete dir, remove Header link, remove from sitemap, remove from llms.txt, add redirect
+[✓] Run next build and verify
+[✓] Commit and report
+
+## Report
+
+**Branch:** `lane/gf1-resources-port-2026-09-02`
+
+### Commits
+```
+2ade73f Retire /resources/software-reviews (B12, GF6 triage)
+e8edf66 Restore Decoded Method resource page in staging pattern
+98f2e74 Port three give-first resource pages to staging pattern
+```
+
+### Diff stat (origin/staging..HEAD)
+```
+app/resources/artwork-approval-playbook/page.tsx | 263 ++++++++++++++++++
+app/resources/decoded-method/page.tsx            | 257 +++++++++++++++++
+app/resources/erp-selection-playbook/page.tsx    | 333 +++++++++++++++++++++++
+app/resources/page.tsx                           | 104 ++++---
+app/resources/software-reviews/page.tsx          | 110 --------
+app/resources/sop-template/page.tsx              | 228 ++++++++++++++++
+app/sitemap.ts                                   |   2 +-
+components/Header.tsx                            |   2 +-
+next.config.ts                                   |   2 +-
+public/llms.txt                                  |   2 +-
+```
+
+### Build
+`npx next build` passed. All four new routes present in output. `/resources/software-reviews` absent.
+
+### What was done
+1. **Ported 3 give-first pages** from `lane/give-first-magnets` (commit 20bea5d) to staging's resource-page pattern. Text, headings, metadata verbatim. Structure rebuilt to match `audit-checklist` and `5-warning-signs` (g-off/g-navy sections, wrap, eyebrow, card, g-tint, btn btn--primary/outline). Fully ungated.
+2. **Restored Decoded Method** from `origin/main`. Rebuilt in staging's pattern. Kept `ThreeLayerSchematic` and `SinglePointSchematic` which exist in this repo.
+3. **Updated resources index**: added all 4 new pages, removed software-reviews, updated plate text to "seven resources".
+4. **Retired software-reviews**: deleted directory, removed from Header.tsx nav, sitemap.ts, llms.txt, added permanent redirect in next.config.ts. Removed stale `/resources/decoded-method` redirect (now lives at `/resources/decoded-method`).
+
+### Nothing I could not do
+All tasks completed as specified. No push performed per instructions.

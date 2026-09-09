@@ -1,0 +1,218 @@
+
+> build · mimo-v2.5
+
+→ Read app/clients/documents/page.tsx
+→ Read app/clients/documents/view/[id]/page.tsx
+→ Read app/clients/dashboard/page.tsx
+
+← Edit app/clients/documents/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
+@@ -83,9 +83,12 @@
+ try {
+   const results = await Promise.all(
+     ids.map(id =>
+       hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-        .then(r => r.ok ? r.json() : [])
++        .then(r => {
++          if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++          return r.json();
++        })
+         .catch(() => [])
+     )
+   )
+   return results.flat().sort((a: HubDoc, b: HubDoc) =>
+
+
+← Edit app/clients/documents/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\page.tsx
+@@ -73,9 +73,9 @@
+ function formatDate(dateStr: string): string {
+   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+   const hubUrl = process.env.HUB_API_URL
+   if (!hubUrl) return []
+
+
+← Edit app/clients/documents/view/[id]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
+@@ -57,9 +57,12 @@
+ const ids = clientId === 'admin' ? ALL_CLIENT_IDS : [clientId]
+ const lists = await Promise.all(
+   ids.map(id =>
+     hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-      .then(r => (r.ok ? r.json() : []))
++      .then(r => {
++        if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++        return r.json();
++      })
+       .catch(() => [])
+   )
+ )
+ const docs: HubDoc[] = lists.flat()
+
+
+← Edit app/clients/documents/view/[id]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\documents\view\[id]\page.tsx
+@@ -23,9 +23,9 @@
+   client_signed_date?: string
+   signable?: boolean
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ function formatDate(dateStr: string): string {
+   try {
+     return new Date(dateStr).toLocaleDateString('en-GB', {
+
+
+← Edit app/clients/dashboard/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
+@@ -66,9 +66,9 @@
+ function formatDate(dateStr: string): string {
+   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+   const hubUrl = process.env.HUB_API_URL
+   if (!hubUrl) return []
+
+
+Now I'll make all the edits across the three files.
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && npm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+'eslint' is not recognized as an internal or external command,
+operable program or batch file.
+
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && git diff --stat
+app/clients/dashboard/page.tsx           | 7 +++++--
+ app/clients/documents/page.tsx           | 7 +++++--
+ app/clients/documents/view/[id]/page.tsx | 7 +++++--
+ 3 files changed, 15 insertions(+), 6 deletions(-)
+
+No `node_modules` installed in this worktree — lint and tsc aren't available. Let me verify the edits are correct by reviewing the changed lines, then commit.
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && git diff
+diff --git a/app/clients/dashboard/page.tsx b/app/clients/dashboard/page.tsx
+index 5300285..6cb3343 100644
+--- a/app/clients/dashboard/page.tsx
++++ b/app/clients/dashboard/page.tsx
+@@ -67,7 +67,7 @@ function formatDate(dateStr: string): string {
+   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+   const hubUrl = process.env.HUB_API_URL
+@@ -77,7 +77,10 @@ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+     const results = await Promise.all(
+       ids.map(id =>
+         hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-          .then(r => r.ok ? r.json() : [])
++          .then(r => {
++            if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++            return r.json();
++          })
+           .catch(() => [])
+       )
+     )
+diff --git a/app/clients/documents/page.tsx b/app/clients/documents/page.tsx
+index 167df1f..50adcef 100644
+--- a/app/clients/documents/page.tsx
++++ b/app/clients/documents/page.tsx
+@@ -74,7 +74,7 @@ function formatDate(dateStr: string): string {
+   return new Date(dateStr).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+   const hubUrl = process.env.HUB_API_URL
+@@ -84,7 +84,10 @@ async function fetchHubDocs(clientId: string): Promise<HubDoc[]> {
+     const results = await Promise.all(
+       ids.map(id =>
+         hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-          .then(r => r.ok ? r.json() : [])
++          .then(r => {
++            if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++            return r.json();
++          })
+           .catch(() => [])
+       )
+     )
+diff --git a/app/clients/documents/view/[id]/page.tsx b/app/clients/documents/view/[id]/page.tsx
+index 61b66df..502f5ce 100644
+--- a/app/clients/documents/view/[id]/page.tsx
++++ b/app/clients/documents/view/[id]/page.tsx
+@@ -24,7 +24,7 @@ interface HubDoc {
+   signable?: boolean
+ }
+ 
+-const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies']
++const ALL_CLIENT_IDS = ['tacklebag', 'cobra-workwear', 'hanicks', 'cwear', 'scotshirts', 'key-supplies', 'david-sharp']
+ 
+ function formatDate(dateStr: string): string {
+   try {
+@@ -58,7 +58,10 @@ export default async function DocumentViewPage({ params }: { params: Promise<{ i
+   const lists = await Promise.all(
+     ids.map(id =>
+       hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-        .then(r => (r.ok ? r.json() : []))
++        .then(r => {
++          if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++          return r.json();
++        })
+         .catch(() => [])
+     )
+   )
+
+All three files changed correctly — error logging added in documents and view pages, `david-sharp` appended in all three. Now committing.
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && git add app/clients/dashboard/page.tsx app/clients/documents/page.tsx "app/clients/documents/view/[id]/page.tsx" && git commit -m "Surface hub fetch failures; add david-sharp to portal client list"
+[lane/portal-hub-key ec1f4a9] Surface hub fetch failures; add david-sharp to portal client list
+ 3 files changed, 15 insertions(+), 6 deletions(-)
+
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && git log --oneline -3
+ec1f4a9 Surface hub fetch failures; add david-sharp to portal client list
+d45350e Fix wrong CRM link in lead alert email — /leads → /admin/leads
+2ab97c9 Add lead alert email to tool capture route
+
+$ cd D:\apps\worktrees\decoded-ops-website\portal-hub-key && git status
+On branch lane/portal-hub-key
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Done. Commit `ec1f4a9` on `lane/portal-hub-key`:
+
+- **Error logging** added to `documents/page.tsx` and `documents/view/[id]/page.tsx` — hub failures now log `[hub] {status} fetching docs for {id}` instead of silently returning `[]`. The existing `.catch(() => [])` is preserved in both.
+- **`'david-sharp'`** appended to `ALL_CLIENT_IDS` in all three files.
+- Typecheck/lint not run — `node_modules` absent in this worktree.
+- Not pushed.

@@ -1,0 +1,421 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read app/sitemap.ts and understand current resource entries
+[ ] Read public/llms.txt for current resources section
+[ ] Read the four new resource page files for metadata
+[ ] Read components/Header.tsx to check resource menu
+[ ] Edit sitemap.ts with four new entries
+[ ] Edit public/llms.txt with four new entries
+[ ] Edit Header.tsx if needed
+[ ] Install deps and verify build
+[ ] Commit and report
+
+→ Read app/sitemap.ts
+→ Read public/llms.txt
+✱ Glob "app/resources/*/page.tsx" in . · 7 matches
+→ Read components/Header.tsx
+→ Read app/resources/sop-template/page.tsx
+→ Read app/resources/erp-selection-playbook/page.tsx
+→ Read app/resources/artwork-approval-playbook/page.tsx
+→ Read app/resources/decoded-method/page.tsx
+Now let me read the four new resource pages for their metadata:
+
+# Todos
+[✓] Read app/sitemap.ts and understand current resource entries
+[✓] Read public/llms.txt for current resources section
+[✓] Read the four new resource page files for metadata
+[✓] Read components/Header.tsx to check resource menu
+[•] Edit sitemap.ts with four new entries
+[ ] Edit public/llms.txt with four new entries
+[ ] Edit Header.tsx with four new guide entries
+[ ] Install deps and verify build
+[ ] Commit and report
+
+← Edit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\resources-discovery\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-discovery\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\resources-discovery\app\sitemap.ts
+@@ -57,8 +57,12 @@
+ { url: `${BASE_URL}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+ { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+ { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
++{ url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++{ url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++{ url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++{ url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+ 
+ { url: `${BASE_URL}/retained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/small-business`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/transform`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+
+
+← Edit public/llms.txt
+Index: D:\apps\worktrees\decoded-ops-website\resources-discovery\public\llms.txt
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-discovery\public\llms.txt
++++ D:\apps\worktrees\decoded-ops-website\resources-discovery\public\llms.txt
+@@ -14,8 +14,12 @@
+ ## Resources
+ - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
+ - [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
+ - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
++- [Free SOP Template](https://decodedops.co.uk/resources/sop-template): A free SOP template with a 7-step writing method, Process Register, and Improvement Log for decoration businesses.
++- [ERP Selection Guide](https://decodedops.co.uk/resources/erp-selection-playbook): A plain-English guide to ERP for decorated goods: what it is, when you need it, how to choose.
++- [Artwork Approval Playbook](https://decodedops.co.uk/resources/artwork-approval-playbook): A 5-step workflow to take artwork approval from brief to sign-off in 24 hours.
++- [The Decoded Method](https://decodedops.co.uk/resources/decoded-method): A three-layer process system: Process Register, one-page SOPs, and Improvement Log.
+ 
+ 
+ ## Tools
+ - [Automation ROI Calculator](https://decodedops.co.uk/tools/automation-roi-calculator)
+
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\resources-discovery\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\resources-discovery\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\resources-discovery\components\Header.tsx
+@@ -132,8 +132,12 @@
+ title: 'Guides & writing',
+ items: [
+   { label: 'The ops audit checklist', href: '/resources/audit-checklist' },
+   { label: '5 signs your systems are failing', href: '/resources/5-warning-signs' },
++  { label: 'SOP template for decoration businesses', href: '/resources/sop-template' },
++  { label: 'ERP selection guide', href: '/resources/erp-selection-playbook' },
++  { label: 'Artwork approval playbook', href: '/resources/artwork-approval-playbook' },
++  { label: 'The Decoded Method', href: '/resources/decoded-method' },
+   { label: 'Six Sigma, explained simply', href: '/resources/six-sigma' },
+   { label: 'Building a quality system', href: '/process-quality-system' },
+ 
+   { label: 'The blog', href: '/blog' },
+
+
+Now I'll make all three edits:
+# Todos
+[✓] Read app/sitemap.ts and understand current resource entries
+[✓] Read public/llms.txt for current resources section
+[✓] Read the four new resource page files for metadata
+[✓] Read components/Header.tsx to check resource menu
+[✓] Edit sitemap.ts with four new entries
+[✓] Edit public/llms.txt with four new entries
+[✓] Edit Header.tsx with four new guide entries
+[•] Install deps and verify build
+[ ] Commit and report
+
+$ if (Test-Path "node_modules") { "node_modules exists" } else { "node_modules missing" }
+node_modules missing
+
+$ npm ci --legacy-peer-deps
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 414 packages, and audited 415 packages in 20s
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npm run build 2>&1
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 9 sectors, 6 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 47ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 18.0s
+  Running TypeScript ...
+  Finished TypeScript in 15.5s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/163) ...
+  Generating static pages using 15 workers (40/163) 
+  Generating static pages using 15 workers (81/163) 
+  Generating static pages using 15 workers (122/163) 
+✓ Generating static pages using 15 workers (163/163) in 5.9s
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/crm
+├ ○ /apps/data-app
+├ ○ /blog                                                  5m      1y
+├   /blog/[slug]
+│ ├ ● /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+│ ├ ● /blog/5-questions-vendors-wont-like                  5m      1y
+│ ├ ● /blog/why-systems-dont-talk                          5m      1y
+│ └ ● [+25 more paths]
+├ ○ /case-studies
+├ ○ /case-studies/cobra-workwear
+├ ○ /case-studies/eternal-fitness
+├ ○ /case-studies/hanicks
+├ ○ /case-studies/tacklebag
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /decoded-method
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+24 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+24 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ○ /sitemap.xml                                           5m      1y
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+Build passed. Now let me verify the diff and commit:
+$ git diff origin/staging..HEAD --stat
+(no output)
+
+$ git diff origin/staging..HEAD
+(no output)
+
+$ git status
+On branch lane/gf1b-resources-discovery-2026-09-02
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/sitemap.ts
+	modified:   components/Header.tsx
+	modified:   data/route-slugs.json
+	modified:   public/llms.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff data/route-slugs.json
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+
+No content diff on `route-slugs.json`, just line ending normalization. Let me check the actual diff for the three files I changed:
+$ git diff app/sitemap.ts public/llms.txt components/Header.tsx
+diff --git a/app/sitemap.ts b/app/sitemap.ts
+index 347382f..a7f15a4 100644
+--- a/app/sitemap.ts
++++ b/app/sitemap.ts
+@@ -58,6 +58,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+     { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+     { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+     { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
++    { url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++    { url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++    { url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
++    { url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+ 
+     { url: `${BASE_URL}/retained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+     { url: `${BASE_URL}/small-business`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+diff --git a/components/Header.tsx b/components/Header.tsx
+index 05ca1f9..5beab79 100644
+--- a/components/Header.tsx
++++ b/components/Header.tsx
+@@ -133,6 +133,10 @@ const proofGuides: NavGroup = {
+   items: [
+     { label: 'The ops audit checklist', href: '/resources/audit-checklist' },
+     { label: '5 signs your systems are failing', href: '/resources/5-warning-signs' },
++    { label: 'SOP template for decoration businesses', href: '/resources/sop-template' },
++    { label: 'ERP selection guide', href: '/resources/erp-selection-playbook' },
++    { label: 'Artwork approval playbook', href: '/resources/artwork-approval-playbook' },
++    { label: 'The Decoded Method', href: '/resources/decoded-method' },
+     { label: 'Six Sigma, explained simply', href: '/resources/six-sigma' },
+     { label: 'Building a quality system', href: '/process-quality-system' },
+ 
+diff --git a/public/llms.txt b/public/llms.txt
+index 0db67de..cee0510 100644
+--- a/public/llms.txt
++++ b/public/llms.txt
+@@ -15,6 +15,10 @@ Decoded Ops builds production-grade software for the decorated-goods sector: pro
+ - [Blog](https://decodedops.co.uk/blog): Insights on operations, technology, and systems integration.
+ - [Operational Audit Checklist](https://decodedops.co.uk/resources/audit-checklist): Self-assessment checklist.
+ - [5 Warning Signs](https://decodedops.co.uk/resources/5-warning-signs): Signs your technology is costing you.
++- [Free SOP Template](https://decodedops.co.uk/resources/sop-template): A free SOP template with a 7-step writing method, Process Register, and Improvement Log for decoration businesses.
++- [ERP Selection Guide](https://decodedops.co.uk/resources/erp-selection-playbook): A plain-English guide to ERP for decorated goods: what it is, when you need it, how to choose.
++- [Artwork Approval Playbook](https://decodedops.co.uk/resources/artwork-approval-playbook): A 5-step workflow to take artwork approval from brief to sign-off in 24 hours.
++- [The Decoded Method](https://decodedops.co.uk/resources/decoded-method): A three-layer process system: Process Register, one-page SOPs, and Improvement Log.
+ 
+ 
+ ## Tools
+
+Diff is clean — only the three intended files. Now commit (excluding the line-ending-only `route-slugs.json`):
+$ git add app/sitemap.ts public/llms.txt components/Header.tsx && git commit -m "Add four resource pages to sitemap, llms.txt, and header nav
+
+Add /resources/sop-template, /resources/erp-selection-playbook,
+/resources/artwork-approval-playbook, and /resources/decoded-method to:
+- app/sitemap.ts (yearly changeFrequency, 0.7 priority)
+- public/llms.txt under ## Resources with real page metadata
+- components/Header.tsx proofGuides menu (already listed resources)"
+[lane/gf1b-resources-discovery-2026-09-02 458bbc4] Add four resource pages to sitemap, llms.txt, and header nav
+ 3 files changed, 12 insertions(+)
+
+# Todos
+[✓] Read app/sitemap.ts and understand current resource entries
+[✓] Read public/llms.txt for current resources section
+[✓] Read the four new resource page files for metadata
+[✓] Read components/Header.tsx to check resource menu
+[✓] Edit sitemap.ts with four new entries
+[✓] Edit public/llms.txt with four new entries
+[✓] Edit Header.tsx with four new guide entries
+[✓] Install deps and verify build
+[•] Commit and report
+
+$ git log --oneline origin/staging..HEAD
+458bbc4 Add four resource pages to sitemap, llms.txt, and header nav
+
+$ git diff --stat origin/staging..HEAD
+app/sitemap.ts        | 4 ++++
+ components/Header.tsx | 4 ++++
+ public/llms.txt       | 4 ++++
+ 3 files changed, 12 insertions(+)
+
+→ Read public/llms.txt [offset=14, limit=10]
+
+# Todos
+[✓] Read app/sitemap.ts and understand current resource entries
+[✓] Read public/llms.txt for current resources section
+[✓] Read the four new resource page files for metadata
+[✓] Read components/Header.tsx to check resource menu
+[✓] Edit sitemap.ts with four new entries
+[✓] Edit public/llms.txt with four new entries
+[✓] Edit Header.tsx with four new guide entries
+[✓] Install deps and verify build
+[✓] Commit and report
+
+Done. Here's the report:
+
+---
+
+## REPORT
+
+### Commit
+```
+458bbc4 Add four resource pages to sitemap, llms.txt, and header nav
+```
+
+### Diff stat
+```
+ app/sitemap.ts        | 4 ++++
+ components/Header.tsx | 4 ++++
+ public/llms.txt       | 4 ++++
+ 3 files changed, 12 insertions(+)
+```
+
+### Build
+`next build` passed — 163 static pages generated, 0 errors. All four new resource routes confirmed in output (`/resources/sop-template`, `/resources/artwork-approval-playbook`, `/resources/decoded-method`, `/resources/erp-selection-playbook`).
+
+### llms.txt lines added (lines 18-21)
+```
+- [Free SOP Template](https://decodedops.co.uk/resources/sop-template): A free SOP template with a 7-step writing method, Process Register, and Improvement Log for decoration businesses.
+- [ERP Selection Guide](https://decodedops.co.uk/resources/erp-selection-playbook): A plain-English guide to ERP for decorated goods: what it is, when you need it, how to choose.
+- [Artwork Approval Playbook](https://decodedops.co.uk/resources/artwork-approval-playbook): A 5-step workflow to take artwork approval from brief to sign-off in 24 hours.
+- [The Decoded Method](https://decodedops.co.uk/resources/decoded-method): A three-layer process system: Process Register, one-page SOPs, and Improvement Log.
+```
+
+### What changed where
+- **`app/sitemap.ts`**: 4 new entries added after `5-warning-signs`, all `changeFrequency: 'yearly'`, `priority: 0.7`
+- **`public/llms.txt`**: 4 lines under `## Resources` using real page metadata descriptions
+- **`components/Header.tsx`**: 4 entries added to `proofGuides` nav group (between the existing guides and Six Sigma)
+
+### No push
+No push performed. One commit on branch `lane/gf1b-resources-discovery-2026-09-02`.

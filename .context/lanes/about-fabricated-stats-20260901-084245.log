@@ -1,0 +1,251 @@
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read app/about/page.tsx
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\about-fabricated-stats\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\about-fabricated-stats\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\about-fabricated-stats\app\about\page.tsx
+@@ -159,43 +159,8 @@
+     </div>
+   </div>
+ </section>
+ 
+-{/* ERP ROI BENCHMARKS */}
+-<section className="py-20 lg:py-28 bg-[#023047]">
+-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+-    <div className="max-w-2xl mb-16">
+-      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#219EBC]/20 border border-[#219EBC]/30 mb-4">
+-        <span className="text-xs font-semibold text-[#8ECAE6] tracking-wider uppercase">ΓÇö Proven impact</span>
+-      </div>
+-      <h2 className="text-3xl lg:text-4xl font-bold text-[#F8F9FA] mb-4">What ERP implementations deliver</h2>
+-      <p className="text-[#8ECAE6] text-lg">Real outcomes from the sector. When the implementation is done right.</p>
+-    </div>
+-    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+-      <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+-        <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">ΓêÆ23%</div>
+-        <p className="text-sm text-[#8ECAE6]">Operational costs</p>
+-      </div>
+-      <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+-        <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">ΓêÆ22%</div>
+-        <p className="text-sm text-[#8ECAE6]">Admin costs</p>
+-      </div>
+-      <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+-        <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">91%</div>
+-        <p className="text-sm text-[#8ECAE6]">Better stock control within 12m</p>
+-      </div>
+-      <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+-        <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">+24%</div>
+-        <p className="text-sm text-[#8ECAE6]">On-time delivery</p>
+-      </div>
+-      <div className="p-6 rounded-2xl border border-[#219EBC]/30 bg-[#023047]/50">
+-        <div className="text-3xl lg:text-4xl font-bold text-[#FFB703] mb-2">58%</div>
+-        <p className="text-sm text-[#8ECAE6]">ROI within 2 years</p>
+-      </div>
+-    </div>
+-  </div>
+-</section>
+-
+ {/* PROOF OF WORK ΓÇö real product, not another diagram */}
+ <section className="py-20 lg:py-28 bg-white">
+   <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+     <div>
+
+
+$ grep -n -E "ERP ROI BENCHMARKS|Proven impact|Real outcomes from the sector|ΓêÆ23%|-23%|ΓêÆ22%|-22%|91%|\+24%|58%" app/about/page.tsx
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Now let me run the verification steps.
+$ grep -c "25+" app/about/page.tsx
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ Select-String -Path "app/about/page.tsx" -Pattern "ERP ROI BENCHMARKS|Proven impact|Real outcomes from the sector|ΓêÆ23%|-23%|ΓêÆ22%|-22%|91%|\+24%|58%"
+(no output)
+
+$ (Select-String -Path "app/about/page.tsx" -Pattern "25\+").Count
+6
+
+No matches for fabricated stats. 6 instances of "25+" remain. Now checking no imports became unused, then running tsc and build.
+$ npx tsc --noEmit
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ npm install
+added 409 packages, and audited 410 packages in 26s
+
+146 packages are looking for funding
+  run `npm fund` for details
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+2 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+$ npx tsc --noEmit
+(no output)
+
+$ npm run build
+> decoded-ops-next@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.3.3 (Turbopack)
+Γ£ô Running next.config.ts took 66ms
+
+ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+ΓÜá The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 51s
+  Running TypeScript ...
+  Finished TypeScript in 6.5s ...
+  Collecting page data using 15 workers ...
+ΓÜá Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/141) ...
+  Generating static pages using 15 workers (35/141) 
+  Generating static pages using 15 workers (70/141) 
+  Generating static pages using 15 workers (105/141) 
+Γ£ô Generating static pages using 15 workers (141/141) in 4.6s
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+Γöî Γùï /
+Γö£ Γùï /_not-found
+Γö£ Γùï /about
+Γö£ ╞Æ /api/auth/[...nextauth]
+Γö£ ╞Æ /api/auth/login
+Γö£ ╞Æ /api/clients/documents/[id]/questionnaire
+Γö£ ╞Æ /api/clients/documents/[id]/sign
+Γö£ ╞Æ /api/clients/uploads
+Γö£ ╞Æ /api/contact
+Γö£ Γùï /blog                                                  5m      1y
+Γö£   /blog/[slug]
+Γöé Γö£ ΓùÅ /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+Γöé Γö£ ΓùÅ /blog/5-questions-vendors-wont-like                  5m      1y
+Γöé Γö£ ΓùÅ /blog/why-systems-dont-talk                          5m      1y
+Γöé Γöö ΓùÅ [+25 more paths]
+Γö£ Γùï /case-studies
+Γö£ Γùï /case-studies/cobra-workwear
+Γö£ Γùï /case-studies/eternal-fitness
+Γö£ Γùï /case-studies/hanicks
+Γö£ Γùï /case-studies/tacklebag
+Γö£ Γùï /clarity
+Γö£ ╞Æ /clients/[clientId]
+Γö£ ╞Æ /clients/dashboard
+Γö£ ╞Æ /clients/documents
+Γö£ ╞Æ /clients/documents/view/[id]
+Γö£ Γùï /clients/login
+Γö£ ╞Æ /clients/project
+Γö£ Γùï /contact
+Γö£ Γùï /cookies
+Γö£ Γùï /decoded-data-app
+Γö£ Γùï /deliver
+Γö£ Γùï /locations/fractional-cto
+Γö£   /locations/fractional-cto/[location]
+Γöé Γö£ ΓùÅ /locations/fractional-cto/chichester
+Γöé Γö£ ΓùÅ /locations/fractional-cto/worthing
+Γöé Γö£ ΓùÅ /locations/fractional-cto/horsham
+Γöé Γöö ΓùÅ [+24 more paths]
+Γö£ Γùï /locations/tech-audit
+Γö£   /locations/tech-audit/[location]
+Γöé Γö£ ΓùÅ /locations/tech-audit/chichester
+Γöé Γö£ ΓùÅ /locations/tech-audit/worthing
+Γöé Γö£ ΓùÅ /locations/tech-audit/horsham
+Γöé Γöö ΓùÅ [+24 more paths]
+Γö£ ╞Æ /opengraph-image
+Γö£ Γùï /pricing
+Γö£ Γùï /privacy
+Γö£ Γùï /problems/ai-paralysis
+Γö£ Γùï /problems/cant-scale-operations
+Γö£ Γùï /problems/disaster-recovery
+Γö£ Γùï /problems/ecommerce-not-connected
+Γö£ Γùï /problems/erp-implementation-failure
+Γö£ Γùï /problems/manual-workarounds
+Γö£ Γùï /problems/no-ops-owner
+Γö£ Γùï /problems/slow-processes
+Γö£ Γùï /problems/systems-dont-talk
+Γö£ Γùï /problems/wrong-erp-software
+Γö£ Γùï /resources
+Γö£ Γùï /resources/5-warning-signs
+Γö£ Γùï /resources/audit-checklist
+Γö£ Γùï /resources/decoded-method
+Γö£ Γùï /resources/six-sigma
+Γö£ Γùï /resources/software-reviews
+Γö£ Γùï /retained
+Γö£ Γùï /sectors/awards-engraving
+Γö£ Γùï /sectors/garment-decoration
+Γö£ Γùï /sectors/labels-packaging
+Γö£ Γùï /sectors/print-promotional
+Γö£ Γùï /sectors/signs-graphics
+Γö£ Γùï /sectors/workwear-teamwear
+Γö£ Γùï /sitemap.xml                                           5m      1y
+Γö£ Γùï /small-business
+Γö£ Γùï /tools
+Γö£ Γùï /tools/ai-readiness-check
+Γö£ Γùï /tools/automation-roi-calculator
+Γö£ Γùï /tools/downtime-cost-calculator
+Γö£ Γùï /tools/ops-health-score
+Γö£ Γùï /tools/rto-calculator
+Γö£ Γùï /tools/should-i-replace-erp
+Γöö Γùï /transform
+
+
+╞Æ Proxy (Middleware)
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+Build succeeded. Now committing and verifying.
+$ git add app/about/page.tsx && git commit -m "content: remove unsourced ERP ROI benchmark stats from /about"
+[task/about-fabricated-stats-2026-09-01 ddfc025] content: remove unsourced ERP ROI benchmark stats from /about
+ 1 file changed, 35 deletions(-)
+
+$ git show --stat HEAD
+commit ddfc025e57c8ce756300f7e449833077fba37ee2
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Tue Sep 1 08:46:34 2026 +0100
+
+    content: remove unsourced ERP ROI benchmark stats from /about
+
+ app/about/page.tsx | 35 -----------------------------------
+ 1 file changed, 35 deletions(-)
+
+$ git status --short
+(no output)
+
+All verifications pass:
+
+| Check | Result |
+|---|---|
+| `grep` for fabricated stats | No matches |
+| `grep -c "25+"` | 6 (credential figures intact) |
+| `npx tsc --noEmit` | Exit 0 |
+| `npm run build` | Success |
+| `git show --stat HEAD` | 1 file changed, `app/about/page.tsx` |
+| `git status --short` | Empty |
+
+No imports became unused ΓÇö all icons are consumed by the `values` array.
+
+**Background note:** Removing the dark ERP ROI section leaves two consecutive light-background sections adjacent ΓÇö `THREE DIFFERENTIATORS` (`bg-[#F8F9FA]`) immediately before `PROOF OF WORK` (`bg-white`). Both are near-white so the visual break is subtle, but they are not the same hex. Left as-is per instructions.

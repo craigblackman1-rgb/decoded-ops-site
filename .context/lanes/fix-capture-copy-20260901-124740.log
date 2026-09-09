@@ -1,0 +1,164 @@
+
+> build · mimo-v2.5
+
+→ Read components/ToolLeadCapture.tsx
+→ Read lib/constants.ts
+
+← Edit components/ToolLeadCapture.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+@@ -1,8 +1,9 @@
+ 'use client';
+ 
+ import { useState, FormEvent } from 'react';
+ import { Send, CheckCircle } from 'lucide-react';
++import { BOOKING_URL } from '@/lib/constants';
+ 
+ interface ToolLeadCaptureProps {
+   tool: string;
+   resultSummary: string;
+
+
+← Edit components/ToolLeadCapture.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+@@ -57,12 +57,15 @@
+   return (
+     <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center">
+       <CheckCircle size={32} className="mx-auto mb-3" style={{ color: '#22c55e' }} />
+       <p className="text-prussian-blue font-semibold mb-1 font-[family-name:var(--font-outfit)]">
+-        Check your inbox
++        Got it.
+       </p>
+       <p className="text-prussian-blue/60 text-sm font-[family-name:var(--font-dm-sans)]">
+-        We&apos;ve sent your detailed results to {email}. If it doesn&apos;t arrive within a couple of minutes, check your spam folder.
++        I&apos;ve got your results and I&apos;ll be in touch. If you&apos;d rather talk sooner,{' '}
++        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-cerulean hover:underline">
++          book a call
++        </a>.
+       </p>
+     </div>
+   );
+ }
+
+
+← Edit components/ToolLeadCapture.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+@@ -72,12 +72,12 @@
+ 
+ return (
+   <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+     <p className="text-prussian-blue font-semibold mb-1 font-[family-name:var(--font-outfit)]">
+-      Get your detailed results by email
++      Want to go deeper?
+     </p>
+     <p className="text-prussian-blue/60 text-sm mb-6 font-[family-name:var(--font-dm-sans)]">
+-      We&apos;ll send a copy of your results plus tailored recommendations for your next steps.
++      Drop your details and I&apos;ll follow up with tailored recommendations for your next steps.
+     </p>
+ 
+     <form onSubmit={handleSubmit} className="space-y-4">
+       <div>
+
+
+← Edit components/ToolLeadCapture.tsx
+Index: D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
++++ D:\apps\worktrees\decoded-ops-website\lane-tool-lead-capture\components\ToolLeadCapture.tsx
+@@ -151,9 +151,9 @@
+     {status === 'loading' ? (
+       'Sending...'
+     ) : (
+       <>
+-        Send me my results <Send size={16} />
++        Get in touch <Send size={16} />
+       </>
+     )}
+   </button>
+ </form>
+
+
+$ npx tsc --noEmit 2>&1 | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+Tsc clean. Let me verify the final state of the file:
+→ Read components/ToolLeadCapture.tsx [limit=20]
+→ Read components/ToolLeadCapture.tsx [offset=55, limit=25]
+
+$ git status
+On branch lane-tool-lead-capture
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .claude/launch.json
+	modified:   components/ToolLeadCapture.tsx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	BRIEF.md
+	FIX-BRIEF.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add components/ToolLeadCapture.tsx && git commit -m "fix: remove false email promise from tool lead capture
+
+The success confirmation claimed an email was sent and blamed spam folders
+for non-delivery. No email is sent — the route is DB-only.
+
+Success copy now says Craig will follow up and offers a booking link
+(constant from lib/constants.ts). Form heading changed from
+\"Get your detailed results by email\" to \"Want to go deeper?\" with
+copy that promises follow-up, not delivery. Button text changed from
+\"Send me my results\" to \"Get in touch\".
+
+tsc --noEmit clean."
+warning: in the working copy of 'components/ToolLeadCapture.tsx', LF will be replaced by CRLF the next time Git touches it
+error: pathspec 'Get' did not match any file(s) known to git
+error: pathspec 'your' did not match any file(s) known to git
+error: pathspec 'detailed' did not match any file(s) known to git
+error: pathspec 'results' did not match any file(s) known to git
+error: pathspec 'by' did not match any file(s) known to git
+error: pathspec 'email\ to \Want' did not match any file(s) known to git
+error: pathspec 'to' did not match any file(s) known to git
+error: pathspec 'go' did not match any file(s) known to git
+error: pathspec 'deeper?\ with
+copy that promises follow-up, not delivery. Button text changed from
+\Send' did not match any file(s) known to git
+error: pathspec 'me' did not match any file(s) known to git
+error: pathspec 'my' did not match any file(s) known to git
+error: pathspec 'results\ to \Get' did not match any file(s) known to git
+error: pathspec 'in' did not match any file(s) known to git
+error: pathspec 'touch\.
+
+tsc --noEmit clean.' did not match any file(s) known to git
+
+$ git commit -m "fix: remove false email promise from tool lead capture"
+[lane-tool-lead-capture c5f3157] fix: remove false email promise from tool lead capture
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+**Done.** Fix 1 committed on `lane-tool-lead-capture`.
+
+Changes to `components/ToolLeadCapture.tsx`:
+- **Success message**: removed false "Check your inbox" claim. Now says "Got it. I've got your results and I'll be in touch" with a `book a call` link to the existing `BOOKING_URL` constant.
+- **Form heading**: "Get your detailed results by email" → "Want to go deeper?"
+- **Form sub-line**: "We'll send a copy..." → "Drop your details and I'll follow up with tailored recommendations for your next steps."
+- **Button**: "Send me my results" → "Get in touch"
+
+No email claims anywhere in the component. `tsc --noEmit` clean.
+
+Fix 2 (hub error message hardening) is for the hub worktree — dispatched separately per the brief.

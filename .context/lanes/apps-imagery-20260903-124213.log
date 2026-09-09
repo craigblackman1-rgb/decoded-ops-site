@@ -1,0 +1,229 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read all relevant page files and design mockups
+[ ] Fix data-app page: update dashboard img dimensions, add catalogue + supplier import images
+[ ] Fix artwork-manager page: replace stock hero with artwork-approval.png
+[ ] Fix commerce page: add commerce-pdp.png alongside existing PLP
+[ ] Check apps index page for stock artwork photo
+[ ] Commit changes referencing CR-WEB-019 and BUG-WEB-010
+
+→ Read app/apps/data-app/page.tsx
+→ Read app/apps/artwork-manager/page.tsx
+→ Read app/apps/commerce/page.tsx
+→ Read app/apps/page.tsx
+→ Read D:/apps/design-systems/decoded-marketing/apps-data-app.html
+→ Read D:/apps/design-systems/decoded-marketing/apps-artwork-manager.html
+→ Read D:/apps/design-systems/decoded-marketing/apps-commerce.html
+✱ Grep "evidence|evidence--screen" in app · 7 matches
+Let me check the CSS classes used for image framing to match the pattern.
+✱ Grep "\.evidence" in app/globals.css · 7 matches
+
+# Todos
+[✓] Read all relevant page files and design mockups
+[•] Fix data-app page: update dashboard img dimensions, add catalogue + supplier import images
+[ ] Fix artwork-manager page: replace stock hero with artwork-approval.png
+[ ] Fix commerce page: add commerce-pdp.png alongside existing PLP
+[✓] Check apps index page for stock artwork photo
+[ ] Commit changes referencing CR-WEB-019 and BUG-WEB-010
+
+← Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
+@@ -40,9 +40,9 @@
+ </div>
+ 
+ <div className="hero-shot">
+   <div className="evidence evidence--screen">
+-    <img src="/images/apps/data-app-dashboard.png" width={2160} height={2300}
++     <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
+          alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue pushing product records to the client&rsquo;s platform." />
+     <span className="stamp">Case study 01 &middot; Data App</span>
+   </div>
+   <p className="shot-caption">A live client system. Feeds in on the left, one clean catalogue out
+
+
+Now I'll make all four page edits. Starting with data-app (fix dimensions + add two new images), artwork-manager (swap hero), commerce (add PDP image).
+← Edit app/apps/data-app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\data-app\page.tsx
+@@ -130,8 +130,32 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2b · SCREENS */}
++<section className="g-white">
++  <div className="wrap">
++    <p className="eyebrow">The screens</p>
++    <h2>What it looks like in practice.</h2>
++    <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
++      <div>
++        <div className="evidence evidence--screen">
++          <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}
++               alt="Parent products catalogue in the Data App" loading="lazy" />
++          <span className="stamp">Catalogue view</span>
++        </div>
++      </div>
++      <div>
++        <div className="evidence evidence--screen">
++          <img src="/images/apps/data-app-supplier-import.png" width={3200} height={2000}
++               alt="Supplier CSV import screen" loading="lazy" />
++          <span className="stamp">Supplier import</span>
++        </div>
++      </div>
++    </div>
++  </div>
++</section>
++
+ {/* 3 · STAT ROW */}
+ <section className="g-navy">
+   <div className="wrap">
+     <p className="eyebrow">Case study 01 &middot; first run</p>
+
+
+Now adding the two new data-app images between the layer stack and stat row sections:
+✱ Grep "grid--2" in app · 2 matches
+Let me check if `grid--2` exists in the CSS:
+
+← Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
+@@ -40,10 +40,10 @@
+ </div>
+ 
+ <div className="hero-shot">
+   <div className="evidence">
+-    <img src="/images/apps/artwork-manager-hero.jpg" width={1600} height={2397}
+-         alt="Two multi-head embroidery machines part-way through a run, threaded up with garments hooped on the beds and cones of thread racked behind them." />
++    <img src="/images/apps/artwork-approval.png" width={3200} height={2000}
++         alt="Artwork approval screen — stitch file preview and sign-off" />
+   </div>
+   <p className="shot-caption">The end of the chain is a machine, not a folder. Files arrive in the
+     format the machine actually takes.</p>
+ </div>
+
+
+Good, `grid--2` is defined. Now the artwork-manager hero swap:
+Update the artwork-manager caption to match the new screenshot:
+← Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\artwork-manager\page.tsx
+@@ -43,10 +43,10 @@
+       <div className="evidence">
+         <img src="/images/apps/artwork-approval.png" width={3200} height={2000}
+              alt="Artwork approval screen — stitch file preview and sign-off" />
+       </div>
+-      <p className="shot-caption">The end of the chain is a machine, not a folder. Files arrive in the
+-        format the machine actually takes.</p>
++      <p className="shot-caption">Customers approve their own proofs against the exact version
++        that was shown. No email chain, no lost approvals.</p>
+     </div>
+   </div>
+ </section>
+ 
+
+
+← Edit app/apps/commerce/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\commerce\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\commerce\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\apps-imagery\app\apps\commerce\page.tsx
+@@ -109,8 +109,19 @@
+     </div>
+   </div>
+ </section>
+ 
++{/* 2b · PRODUCT PAGE SCREEN */}
++<section className="g-tint">
++  <div className="wrap" style={{ maxWidth: 900 }}>
++    <div className="evidence evidence--screen">
++      <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
++           alt="Product page with trade pricing and decoration options" loading="lazy" />
++      <span className="stamp">decoded commerce &middot; product page</span>
++    </div>
++  </div>
++</section>
++
+ {/* 2a · CORE TO EXTENDED PLATE · DO-ART-103 */}
+ <section className="g-tint">
+   <div className="wrap">
+     <p className="eyebrow">Capability &middot; DO-ART-103</p>
+
+
+Now the commerce page — adding the PDP image after the features triplet:
+→ Read app/apps/data-app/page.tsx [offset=42, limit=5]
+→ Read app/apps/data-app/page.tsx [offset=132, limit=25]
+→ Read app/apps/artwork-manager/page.tsx [offset=42, limit=10]
+→ Read app/apps/commerce/page.tsx [offset=111, limit=20]
+Let me verify the edits are correct:
+
+# Todos
+[✓] Read all relevant page files and design mockups
+[✓] Fix data-app page: update dashboard img dimensions, add catalogue + supplier import images
+[✓] Fix artwork-manager page: replace stock hero with artwork-approval.png
+[✓] Fix commerce page: add commerce-pdp.png alongside existing PLP
+[✓] Check apps index page for stock artwork photo
+[•] Commit changes referencing CR-WEB-019 and BUG-WEB-010
+
+All edits look correct. Now committing:
+$ git status
+On branch cr/apps-imagery
+Your branch is ahead of 'origin/staging' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/apps/artwork-manager/page.tsx
+	modified:   app/apps/commerce/page.tsx
+	modified:   app/apps/data-app/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add app/apps/artwork-manager/page.tsx app/apps/commerce/page.tsx app/apps/data-app/page.tsx && git commit -m "Wire real product screenshots into apps pages (CR-WEB-019, BUG-WEB-010)
+
+- data-app: fix dashboard img dimensions to match actual file (3200x3072),
+  add catalogue and supplier import screens in new section below layer stack
+- artwork-manager: replace stock embroidery machine photo with actual
+  artwork-approval.png screenshot (3200x2000), update caption
+- commerce: add commerce-pdp.png product page screenshot (3200x2000) in
+  new tint section between features and architecture plate
+
+All new images use loading='lazy' and evidence--screen framing to match
+existing page patterns. Stock artwork-manager-hero.jpg kept in repo."
+warning: in the working copy of 'app/apps/data-app/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[cr/apps-imagery b8d35b6] Wire real product screenshots into apps pages (CR-WEB-019, BUG-WEB-010)
+ 3 files changed, 40 insertions(+), 5 deletions(-)
+
+# Todos
+[✓] Read all relevant page files and design mockups
+[✓] Fix data-app page: update dashboard img dimensions, add catalogue + supplier import images
+[✓] Fix artwork-manager page: replace stock hero with artwork-approval.png
+[✓] Fix commerce page: add commerce-pdp.png alongside existing PLP
+[✓] Check apps index page for stock artwork photo
+[✓] Commit changes referencing CR-WEB-019 and BUG-WEB-010
+
+Committed as `b8d35b6` on `cr/apps-imagery`. Here's the post-change layout for each page:
+
+**`/apps/data-app`** — 3 images total
+1. Hero: `data-app-dashboard.png` (3200×3072, dimensions fixed from 2160×2300)
+2. New section "The screens" below the layer stack: `data-app-catalogue.png` (3200×2000) and `data-app-supplier-import.png` (3200×2000) side by side in a `grid--2`, each in `evidence evidence--screen` frame with stamp labels. Both `loading="lazy"`.
+
+**`/apps/artwork-manager`** — 1 image (swapped)
+1. Hero: `artwork-approval.png` (3200×2000) replaces the stock embroidery machine photo. Caption updated to reference the proofing workflow. Stock `.jpg` kept in repo unused.
+
+**`/apps/commerce`** — 2 images total
+1. Hero: `commerce-plp.png` (2160×3816, unchanged)
+2. New tint section between features and architecture plate: `commerce-pdp.png` (3200×2000) in `evidence evidence--screen` frame, `loading="lazy"`, capped at 900px width.
+
+**`/apps` index** — no screenshots, no stock photo found. Left as-is.

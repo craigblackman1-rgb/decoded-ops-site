@@ -1,0 +1,309 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Read and fix 6 occurrences in the 2 bracket-route files
+[ ] Bracket-safe re-scan of all app/**/*.tsx/.ts for ` : Decoded Ops`
+[ ] Verify | Decoded Ops count unchanged (22)
+[ ] Run npx tsc --noEmit
+[ ] Commit on top of c45423d
+[ ] Append Pass 2 section to LANE-NOTES.md
+
+ΓåÆ Read app/locations/fractional-cto/[location]/page.tsx
+ΓåÆ Read app/locations/tech-audit/[location]/page.tsx
+
+ΓåÉ Edit app/locations/fractional-cto/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\fractional-cto\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\fractional-cto\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\fractional-cto\[location]\page.tsx
+@@ -17,22 +17,22 @@
+   const loc = getLocation(location);
+   if (!loc) return {};
+ 
+   return {
+-    title: `Fractional CTO in ${loc.name}, ${loc.county} : Decoded Ops`,
++    title: `Fractional CTO in ${loc.name}, ${loc.county}: Decoded Ops`,
+     description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+     alternates: {
+       canonical: `/locations/fractional-cto/${loc.slug}`,
+     },
+     openGraph: {
+-      title: `Fractional CTO in ${loc.name}, ${loc.county} : Decoded Ops`,
++      title: `Fractional CTO in ${loc.name}, ${loc.county}: Decoded Ops`,
+       description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+       url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
+       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+     },
+     twitter: {
+       card: 'summary_large_image',
+-      title: `Fractional CTO in ${loc.name}, ${loc.county} : Decoded Ops`,
++      title: `Fractional CTO in ${loc.name}, ${loc.county}: Decoded Ops`,
+       description: `Fractional CTO for ${loc.name} businesses, senior tech leadership without the full-time hire. Strategy, oversight and plain-English advice.`,
+     },
+   };
+ }
+
+
+ΓåÉ Edit app/locations/tech-audit/[location]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\tech-audit\[location]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\tech-audit\[location]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\tech-audit\[location]\page.tsx
+@@ -17,22 +17,22 @@
+   const loc = getLocation(location);
+   if (!loc) return {};
+ 
+   return {
+-    title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
++    title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+     description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From ┬ú1,500 with a 3├ù Clarity Guarantee.`,
+     alternates: {
+       canonical: `/locations/tech-audit/${loc.slug}`,
+     },
+     openGraph: {
+-      title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
++      title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+       description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From ┬ú1,500 with a 3├ù Clarity Guarantee.`,
+       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
+       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+     },
+     twitter: {
+       card: 'summary_large_image',
+-      title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
++      title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
+       description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From ┬ú1,500 with a 3├ù Clarity Guarantee.`,
+     },
+   };
+ }
+
+
+# Todos
+[Γ£ô] Read and fix 6 occurrences in the 2 bracket-route files
+[ΓÇó] Bracket-safe re-scan of all app/**/*.tsx/.ts for ` : Decoded Ops`
+[ ] Verify | Decoded Ops count unchanged (22)
+[ ] Run npx tsc --noEmit
+[ ] Commit on top of c45423d
+[ ] Append Pass 2 section to LANE-NOTES.md
+
+$ rg --no-heading -n " : Decoded Ops" "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" --include "*.tsx" --include "*.ts"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg --no-heading -n "\| Decoded Ops" "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" --include "*.tsx" --include "*.ts"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg --no-heading -n "" "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\blog\[slug]\page.tsx" --include "*.tsx" | Select-String "Decoded Ops"
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep " : Decoded Ops" in app ┬╖ 0 matches
+Γ£▒ Grep "\| Decoded Ops" in app ┬╖ 22 matches
+Γ£▒ Grep "Decoded Ops" in app/blog/[slug] ┬╖ 3 matches
+Γ£▒ Grep " : Decoded Ops" in app ┬╖ 0 matches
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" -Recurse -Include "*.tsx","*.ts" | Measure-Object | Select-Object -ExpandProperty Count
+121
+
+$ Get-ChildItem -Path "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" -Recurse -Include "*.tsx","*.ts" -LiteralPath "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" | Where-Object { $_.FullName -match '\[' } | ForEach-Object { $_.FullName }
+Get-ChildItem: Parameter set cannot be resolved using the specified named parameters. One or more parameters issued cannot be used together or an insufficient number of parameters were provided.
+
+$ Get-ChildItem -LiteralPath "D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app" -Recurse -Include "*.tsx","*.ts" | Where-Object { $_.FullName -match '\[' } | ForEach-Object { $_.FullName }
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\api\auth\[...nextauth]\route.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\api\clients\documents\[id]\questionnaire\route.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\api\clients\documents\[id]\sign\route.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\blog\[slug]\page.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\AcceptanceSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\ChallengeSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\DemoSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\JourneySection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\NextStepsSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\PortalMockupSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\PricingSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\ProposalHero.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\QuickWinsSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\RoadmapSection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\SystemsDiagram.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\components\WhySection.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\cobra-workwear-proposal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\cwear-proposal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\hanicks-proposal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\scotshirts-proposal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\tacklebag-proposal-v2.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\data\tacklebag-proposal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\hooks\useScrollReveal.ts
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\layout.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\[clientId]\page.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\documents\view\[id]\page.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\documents\view\[id]\QuestionnaireForm.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\clients\documents\view\[id]\SignPanel.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\fractional-cto\[location]\page.tsx
+D:\apps\worktrees\decoded-ops-website\meta-title-spacing\app\locations\tech-audit\[location]\page.tsx
+
+# Todos
+[Γ£ô] Read and fix 6 occurrences in the 2 bracket-route files
+[Γ£ô] Bracket-safe re-scan of all app/**/*.tsx/.ts for ` : Decoded Ops`
+[Γ£ô] Verify | Decoded Ops count unchanged (22)
+[ΓÇó] Run npx tsc --noEmit
+[ ] Commit on top of c45423d
+[ ] Append Pass 2 section to LANE-NOTES.md
+
+$ npx tsc --noEmit
+(no output)
+
+# Todos
+[Γ£ô] Read and fix 6 occurrences in the 2 bracket-route files
+[Γ£ô] Bracket-safe re-scan of all app/**/*.tsx/.ts for ` : Decoded Ops`
+[Γ£ô] Verify | Decoded Ops count unchanged (22)
+[Γ£ô] Run npx tsc --noEmit
+[ΓÇó] Commit on top of c45423d
+[ ] Append Pass 2 section to LANE-NOTES.md
+
+$ git status --porcelain
+M app/locations/fractional-cto/[location]/page.tsx
+ M app/locations/tech-audit/[location]/page.tsx
+
+ΓåÆ Read LANE-NOTES.md
+
+ΓåÉ Edit LANE-NOTES.md
+Index: D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
++++ D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
+@@ -6,9 +6,9 @@
+ ## What changed
+ Removed the stray space before the colon in the site-name separator across all meta title strings. ` : Decoded Ops` ΓåÆ `: Decoded Ops`.
+ 
+ ## Strings changed
+-**127 title strings** across **40 files**.
++**133 title strings** across **42 files** (see Pass 2 below).
+ 
+ ## Blog regex (app/blog/[slug]/page.tsx:44)
+ The regex was already correct and required no change:
+ ```
+
+
+Now I'll update LANE-NOTES.md and then commit everything.
+ΓåÉ Edit LANE-NOTES.md
+Index: D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
++++ D:\apps\worktrees\decoded-ops-website\meta-title-spacing\LANE-NOTES.md
+@@ -46,4 +46,63 @@
+ ### git status --porcelain
+ ```
+ (empty ΓÇö clean)
+ ```
++
++---
++
++## Pass 2 ΓÇö 6 missed titles in 2 bracket-route files
++
++### What pass 1 missed
++6 occurrences of ` : Decoded Ops` across 2 files under dynamic `[location]` route directories:
++- `app/locations/fractional-cto/[location]/page.tsx` ΓÇö lines 21, 27, 34
++- `app/locations/tech-audit/[location]/page.tsx` ΓÇö lines 21, 27, 34
++
++### Why pass 1 missed them
++PowerShell `Get-ChildItem -Path ... -Include` treats `[` and `]` as wildcard metacharacters.
++Directories named `[location]` and `[slug]` silently matched nothing, so the scan never
++saw files inside them. The grep tool (regex-based, not path-pattern-based) finds them
++correctly, which is why the post-fix verification confirms zero.
++
++### What changed
++Removed the single space before the colon: ` : Decoded Ops` ΓåÆ `: Decoded Ops`.
++No other text, interpolation, or structure changed. Template literals left intact.
++
++### File scan counts
++- Pass 1 scan (PowerShell `-Path`/`-Include`): **91 files** (bracket directories dropped)
++- Pass 2 scan (grep tool + `Get-ChildItem -LiteralPath`): **121 files** (all bracket directories included)
++- 30 bracket-path files were invisible to pass 1; 2 of them contained the target string.
++
++### Verification
++
++#### Grep: ` : Decoded Ops` across app/ (all .tsx and .ts, bracket paths included)
++```
++0 matches
++```
++
++#### Grep: `| Decoded Ops` across app/
++```
++22 matches ΓÇö 21 title strings across 7 exception files + 1 regex literal in app/blog/[slug]/page.tsx
++```
++Exception files (unchanged):
++- app/case-studies/case-study-01/page.tsx (3 titles)
++- app/case-studies/case-study-02/page.tsx (3 titles)
++- app/case-studies/case-study-03/page.tsx (3 titles)
++- app/case-studies/eternal-fitness/page.tsx (3 titles)
++- app/problems/erp-implementation-failure/page.tsx (3 titles)
++- app/resources/artwork-approval-playbook/page.tsx (3 titles)
++- app/resources/decoded-method/page.tsx (3 titles)
++
++#### blog/[slug]/page.tsx bracket-path visibility confirmed
++```
++grep found 3 matches in app/blog/[slug]/page.tsx (regex at :44, organization name at :55, fallback title at :103)
++```
++
++#### npx tsc --noEmit
++```
++(no output ΓÇö clean)
++```
++
++#### git status --porcelain
++```
++(empty ΓÇö clean)
++```
+
+
+$ git add app/locations/fractional-cto/[location]/page.tsx app/locations/tech-audit/[location]/page.tsx LANE-NOTES.md && git commit -m "fix: remove stray space before colon in 6 missed meta titles (pass 2)
+
+Pass 1 missed 6 occurrences of ' : Decoded Ops' in 2 files under
+dynamic [location] routes because PowerShell's -Path/-Include treats
+square brackets as wildcards. Fixed with bracket-safe grep scan.
+
+Files changed:
+- app/locations/fractional-cto/[location]/page.tsx (3 titles)
+- app/locations/tech-audit/[location]/page.tsx (3 titles)
+- LANE-NOTES.md (Pass 2 section appended)
+
+Verified: 0 occurrences of ' : Decoded Ops' remain under app/.
+| Decoded Ops count unchanged at 22. tsc clean."
+warning: in the working copy of 'LANE-NOTES.md', LF will be replaced by CRLF the next time Git touches it
+[lane/meta-title-spacing 53da79d] fix: remove stray space before colon in 6 missed meta titles (pass 2)
+ 3 files changed, 66 insertions(+), 7 deletions(-)
+
+$ git status --porcelain
+(no output)
+
+$ git log --oneline -3
+53da79d fix: remove stray space before colon in 6 missed meta titles (pass 2)
+c45423d docs: add LANE-NOTES.md for meta-title-spacing lane
+acd5c4f fix: remove space before colon in meta title separator
+
+Γ£▒ Grep " : Decoded Ops" in app ┬╖ 0 matches
+
+# Todos
+[Γ£ô] Read and fix 6 occurrences in the 2 bracket-route files
+[Γ£ô] Bracket-safe re-scan of all app/**/*.tsx/.ts for ` : Decoded Ops`
+[Γ£ô] Verify | Decoded Ops count unchanged (22)
+[Γ£ô] Run npx tsc --noEmit
+[Γ£ô] Commit on top of c45423d
+[Γ£ô] Append Pass 2 section to LANE-NOTES.md
+
+## Pass 2 complete
+
+**Commit:** `53da79d` ΓÇö on top of `c45423d`, not amended.
+
+**What changed:**
+- `app/locations/fractional-cto/[location]/page.tsx` ΓÇö 3 titles fixed (lines 21, 27, 34)
+- `app/locations/tech-audit/[location]/page.tsx` ΓÇö 3 titles fixed (lines 21, 27, 34)
+- `LANE-NOTES.md` ΓÇö Pass 2 section appended
+
+**Why pass 1 missed them:** PowerShell's `-Path`/`-Include` treats `[` and `]` as wildcard metacharacters. Directories named `[location]` silently matched nothing. Bracket-safe scan (grep tool + `Get-ChildItem -LiteralPath`) sees all 121 files (vs 91 in pass 1).
+
+**Verification:**
+- ` : Decoded Ops` under `app/`: **0 matches** (all bracket paths included)
+- `| Decoded Ops` under `app/`: **22 matches** (unchanged)
+- `npx tsc --noEmit`: clean
+- `git status --porcelain`: empty

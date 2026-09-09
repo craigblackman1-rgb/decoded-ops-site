@@ -1,0 +1,258 @@
+
+> build · mimo-v2.5
+
+→ Read app/pricing/page.tsx
+→ Read app/design-system/marketing-pages-extra.css
+
+# Todos
+[•] Fix 1 — Caption alignment padding
+[ ] Fix 2 — Header band corners + wrap inset
+[ ] Fix 3 — table-layout:fixed + colgroups in markup
+[ ] Verify colspan rows, commit as BUG-WEB-011
+
+Now I have the full picture. Let me make all three fixes.
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+@@ -67,9 +67,9 @@
+ .table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
+   border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+   box-shadow:var(--do-shadow-sm) }
+ .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
+-.ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading);
++.ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+ .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+ .ds-table th:first-child{ min-width:180px }
+ .ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-text-on-dark);
+
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+@@ -63,11 +63,13 @@
+   border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent);
+   font-size:var(--do-text-lg); color:color-mix(in srgb, var(--do-off-white) 78%, transparent); max-width:64ch }
+ 
+ /* ── comparison / pricing table ── */
+-.table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
++.table-wrap{ margin-top:32px; padding:0 10px 10px; border:1px solid var(--do-border-subtle);
+   border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+   box-shadow:var(--do-shadow-sm) }
++.ds-table thead tr th:first-child{ border-top-left-radius:10px }
++.ds-table thead tr th:last-child{ border-top-right-radius:10px }
+ .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
+ .ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+ .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+@@ -69,8 +69,9 @@
+   box-shadow:var(--do-shadow-sm) }
+ .ds-table thead tr th:first-child{ border-top-left-radius:10px }
+ .ds-table thead tr th:last-child{ border-top-right-radius:10px }
+ .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
++.ds-table--fixed{ table-layout:fixed }
+ .ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+ .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+ .ds-table th:first-child{ min-width:180px }
+
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+@@ -58,9 +58,15 @@
+ <p className="lead" style={{ marginTop: 16 }}>Priced by the size of the business, because the work
+   scales with it. Clarity Audit is the entry point into everything below it.</p>
+ 
+ <div className="table-wrap">
+-  <table className="ds-table">
++  <table className="ds-table ds-table--fixed">
++    <colgroup>
++      <col style={{ width: '26%' }} />
++      <col style={{ width: '24%' }} />
++      <col style={{ width: '24%' }} />
++      <col style={{ width: '26%' }} />
++    </colgroup>
+     <caption>Consultancy: by turnover band</caption>
+     <thead>
+       <tr>
+         <th scope="col">Product</th>
+
+
+Now the markup. Adding colgroups and `.ds-table--fixed` to all three tables:
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+@@ -123,9 +123,15 @@
+ <p className="lead" style={{ marginTop: 12 }}>Ongoing programme delivery rather than advice. A
+   longer commitment, and priced as one.</p>
+ 
+ <div className="table-wrap">
+-  <table className="ds-table">
++  <table className="ds-table ds-table--fixed">
++    <colgroup>
++      <col style={{ width: '26%' }} />
++      <col style={{ width: '24%' }} />
++      <col style={{ width: '24%' }} />
++      <col style={{ width: '26%' }} />
++    </colgroup>
+     <caption>Retained Transformation: by turnover band</caption>
+     <thead>
+       <tr>
+         <th scope="col">Tier</th>
+
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\pricing\page.tsx
+@@ -289,9 +289,14 @@
+ <p className="lead" style={{ marginTop: 16 }}>Remote, shorter, and priced so it&rsquo;s a decision you can
+   make on your own without a board behind you.</p>
+ 
+ <div className="table-wrap">
+-  <table className="ds-table">
++  <table className="ds-table ds-table--fixed">
++    <colgroup>
++      <col style={{ width: '26%' }} />
++      <col style={{ width: '24%' }} />
++      <col style={{ width: '50%' }} />
++    </colgroup>
+     <caption>Small business: fixed prices</caption>
+     <thead>
+       <tr>
+         <th scope="col">Product</th>
+
+
+# Todos
+[✓] Fix 1 — Caption alignment padding
+[✓] Fix 2 — Header band corners + wrap inset
+[✓] Fix 3 — table-layout:fixed + colgroups in markup
+[•] Verify colspan rows, commit as BUG-WEB-011
+
+→ Read app/pricing/page.tsx [offset=60, limit=110]
+→ Read app/design-system/marketing-pages-extra.css [offset=66, limit=45]
+→ Read app/pricing/page.tsx [limit=50, offset=285]
+Everything checks out. Colgroup counts match column counts across all three tables. Colspan rows (Clarity Audit, Retained) span 3 data columns out of 4 total — correct with `table-layout:fixed`.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\pricing-tables" && git status
+On branch fix/pricing-table-polish
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/design-system/marketing-pages-extra.css
+	modified:   app/pricing/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ cd "D:\apps\worktrees\decoded-ops-website\pricing-tables" && git add app/design-system/marketing-pages-extra.css app/pricing/page.tsx && git commit -m "fix: pricing table polish — BUG-WEB-011
+
+- Caption padding aligned to cell column (22px → 12px + 10px wrap)
+- Header band gets border-radius:10px on first/last th
+- Table wrapper inset 10px on sides/bottom for visual containment
+- table-layout:fixed via .ds-table--fixed on all three pricing tables
+- Colgroups added: consultancy 26/24/24/26, retained 26/24/24/26,
+  small business 26/24/50
+
+Verified: colspan rows (Clarity Audit, Retained) span 3 data columns
+correctly under fixed layout. Colgroup counts match real column counts."
+[fix/pricing-table-polish 412c633] fix: pricing table polish — BUG-WEB-011
+ 2 files changed, 25 insertions(+), 5 deletions(-)
+
+# Todos
+[✓] Fix 1 — Caption alignment padding
+[✓] Fix 2 — Header band corners + wrap inset
+[✓] Fix 3 — table-layout:fixed + colgroups in markup
+[✓] Verify colspan rows, commit as BUG-WEB-011
+
+Committed `412c633` on `fix/pricing-table-polish`.
+
+---
+
+## Before/After
+
+### CSS — `marketing-pages-extra.css`
+
+**`.table-wrap`** (line 67):
+```css
+/* BEFORE */
+.table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+  box-shadow:var(--do-shadow-sm) }
+
+/* AFTER */
+.table-wrap{ margin-top:32px; padding:0 10px 10px; border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+  box-shadow:var(--do-shadow-sm) }
+```
+
+**New rules** (lines 70–71):
+```css
+/* ADDED */
+.ds-table thead tr th:first-child{ border-top-left-radius:10px }
+.ds-table thead tr th:last-child{ border-top-right-radius:10px }
+```
+
+**`.ds-table--fixed`** (line 73):
+```css
+/* ADDED */
+.ds-table--fixed{ table-layout:fixed }
+```
+
+**`.ds-table caption`** (line 74):
+```css
+/* BEFORE */
+.ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading); ... }
+
+/* AFTER */
+.ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading); ... }
+```
+
+### Markup — `page.tsx` colgroups
+
+**Consultancy table** (4 cols):
+```html
+<colgroup>
+  <col style={{ width: '26%' }} />
+  <col style={{ width: '24%' }} />
+  <col style={{ width: '24%' }} />
+  <col style={{ width: '26%' }} />
+</colgroup>
+```
+
+**Retained Transformation table** (4 cols):
+```html
+<colgroup>
+  <col style={{ width: '26%' }} />
+  <col style={{ width: '24%' }} />
+  <col style={{ width: '24%' }} />
+  <col style={{ width: '26%' }} />
+</colgroup>
+```
+
+**Small business table** (3 cols):
+```html
+<colgroup>
+  <col style={{ width: '26%' }} />
+  <col style={{ width: '24%' }} />
+  <col style={{ width: '50%' }} />
+</colgroup>
+```

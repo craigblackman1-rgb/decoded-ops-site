@@ -1,0 +1,280 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read Header.tsx smallbiz panel (~lines 322-345) and ds-nav.css smallbiz rules
+[ ] Implement 2-column price list grid in ds-nav.css
+[ ] Convert Bigger than £500k card to horizontal band
+[ ] Add mobile stacking for horizontal band
+[ ] Verify CSS changes are correct and commit
+
+→ Read app/design-system/ds-nav.css
+→ Read components/Header.tsx [offset=310, limit=65]
+✱ Grep "function MegaGroup|function MegaRail|const MegaGroup|const MegaRail" in components · 2 matches
+Now let me look at the MegaGroup and MegaRail components:
+✱ Grep "smallBusinessProducts" in components/Header.tsx · 2 matches
+→ Read components/Header.tsx [limit=50, offset=149]
+→ Read components/Header.tsx [limit=55, offset=88]
+→ Read components/Header.tsx [limit=15, offset=167]
+Let me check how the MegaRail component passes through className:
+
+# Todos
+[✓] Read Header.tsx smallbiz panel (~lines 322-345) and ds-nav.css smallbiz rules
+[•] Implement 2-column price list grid in ds-nav.css
+[ ] Convert Bigger than £500k card to horizontal band
+[ ] Add mobile stacking for horizontal band
+[ ] Verify CSS changes are correct and commit
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
+@@ -188,9 +188,33 @@
+   border-radius:var(--do-radius-lg); font-size:var(--do-text-sm);
+   color:var(--do-text-primary);
+   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+ .site-head--mega .price-list-group{ grid-column:1/-2 }
++.site-head--mega .price-list-group .price-list{ display:grid;
++  grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 32px }
++.site-head--mega .price-list-group .price-list a{ margin-left:0 }
+ 
++/* smallbiz "Bigger than £500k?" — compact horizontal band, not a tall card */
++.site-head--mega .smallbiz-cta-band{ grid-column:1/-2; display:flex;
++  align-items:center; justify-content:space-between; gap:20px;
++  padding:16px 20px; background:color-mix(in srgb,var(--do-cerulean) 7%,transparent);
++  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
++.site-head--mega .smallbiz-cta-band h3{ margin:0 0 2px;
++  font-family:var(--do-font-heading); font-size:16px;
++  font-weight:var(--do-weight-bold); letter-spacing:0; text-transform:none;
++  color:var(--do-text-primary) }
++.site-head--mega .smallbiz-cta-band p{ margin:0; font-size:var(--do-text-sm);
++  color:var(--do-text-muted) }
++.site-head--mega .smallbiz-cta-band .band-actions{ display:flex;
++  align-items:center; gap:12px; flex-shrink:0 }
++.site-head--mega .smallbiz-cta-band .band-actions .btn{ margin-bottom:0 }
++.site-head--mega .smallbiz-cta-band .band-actions .rail-all{ display:inline-flex;
++  align-items:center; gap:6px; font-size:13px; color:var(--do-text-muted);
++  text-decoration:none }
++.site-head--mega .smallbiz-cta-band .band-actions .rail-all:hover{
++  color:var(--do-text-primary); text-decoration:underline;
++  text-underline-offset:3px }
++
+ /* the scrim sits under the header but over the page — and over the rail */
+ .scrim{ position:fixed; inset:var(--do-header-h) 0 0;
+   z-index:calc(var(--do-z-dropdown) + 1);
+   background:color-mix(in srgb, var(--do-prussian-blue) 28%, transparent) }
+
+
+Good. I now understand the full layout. The smallbiz panel uses `cols-2` (3 columns: 2fr + 260px rail). The `price-list-group` spans `1/-2` (cols 1-2), MegaGroup goes to the rail column, and MegaRail sits below.
+
+Plan:
+1. **CSS**: Add 2-column grid to `.price-list-group .price-list`, add `.smallbiz-cta-band` horizontal band class
+2. **Header.tsx**: Replace `<MegaRail>` with inline band markup (MegaRail's card layout doesn't suit a horizontal band)
+3. **CSS mobile**: Add stacking rules for the new band
+
+Let me start with the CSS:
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\smallbiz-menu\app\design-system\ds-nav.css
+@@ -246,9 +246,14 @@
+   padding-block:20px 32px; padding-inline:0; max-width:none;
+   overflow-y:auto; height:100% }
+ .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
+ .site-head--mega .sector-grid,
+-.site-head--mega .panel-note{ grid-column:auto }
++.site-head--mega .panel-note,
++.site-head--mega .price-list-group,
++.site-head--mega .smallbiz-cta-band{ grid-column:auto }
++.site-head--mega .smallbiz-cta-band{ flex-direction:column; align-items:stretch;
++  gap:12px }
++.site-head--mega .smallbiz-cta-band .band-actions{ justify-content:flex-start }
+ .site-head--mega .sector-grid{ grid-template-columns:1fr 1fr }
+ .site-head--mega .nav-tools{ flex-direction:column; align-items:stretch;
+   margin:20px 0 0; order:-1; gap:8px }
+ .site-head--mega .nav-tools .btn{ width:100% }
+
+
+Now update the mobile media query to handle the new elements:
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\smallbiz-menu\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\smallbiz-menu\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\smallbiz-menu\components\Header.tsx
+@@ -340,10 +340,18 @@
+           ))}
+         </ul>
+       </div>
+       <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
+-      <MegaRail heading="Bigger than £500k?" note="Then the on-site work is a better fit, same steps, done in person."
+-        ctaLabel="Book a free 60-min call" extra={{ label: 'See Clarity', href: '/clarity' }} />
++      <div className="smallbiz-cta-band">
++        <div className="band-text">
++          <h3>Bigger than £500k?</h3>
++          <p>Then the on-site work is a better fit, same steps, done in person.</p>
++        </div>
++        <div className="band-actions">
++          <Link className="btn btn--primary btn--sm" href="/contact" onClick={() => { closePanel(); setMobileOpen(false); }}>Book a free 60-min call</Link>
++          <Link className="rail-all" href="/clarity" onClick={() => { closePanel(); setMobileOpen(false); }}>See Clarity</Link>
++        </div>
++      </div>
+     </div>
+   </div>
+ </div>
+ 
+
+
+Now update the Header.tsx — replace the MegaRail with inline band markup:
+# Todos
+[✓] Read Header.tsx smallbiz panel (~lines 322-345) and ds-nav.css smallbiz rules
+[✓] Implement 2-column price list grid in ds-nav.css
+[✓] Convert Bigger than £500k card to horizontal band
+[✓] Add mobile stacking for horizontal band
+[•] Verify CSS changes are correct and commit
+
+→ Read app/design-system/ds-nav.css [limit=60, offset=188]
+→ Read components/Header.tsx [limit=30, offset=329]
+→ Read app/design-system/ds-nav.css [limit=30, offset=248]
+Let me check the mobile section:
+Everything looks correct. Let me verify there are no other issues and run lint:
+
+$ git diff --stat
+app/design-system/ds-nav.css | 31 ++++++++++++++++++++++++++++++-
+ components/Header.tsx        | 12 ++++++++++--
+ 2 files changed, 40 insertions(+), 3 deletions(-)
+
+$ npm run lint 2>&1 | head -20
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npm run lint 2>&1
+> decoded-ops-next@0.1.0 lint
+> eslint
+
+'eslint' is not recognized as an internal or external command,
+operable program or batch file.
+
+No node_modules in this worktree (expected per CLAUDE.md). Let me verify the full diff and commit:
+$ git diff
+diff --git a/app/design-system/ds-nav.css b/app/design-system/ds-nav.css
+index 40619d8..5e44f14 100644
+--- a/app/design-system/ds-nav.css
++++ b/app/design-system/ds-nav.css
+@@ -189,6 +189,30 @@
+   color:var(--do-text-primary);
+   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+ .site-head--mega .price-list-group{ grid-column:1/-2 }
++.site-head--mega .price-list-group .price-list{ display:grid;
++  grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 32px }
++.site-head--mega .price-list-group .price-list a{ margin-left:0 }
++
++/* smallbiz "Bigger than £500k?" — compact horizontal band, not a tall card */
++.site-head--mega .smallbiz-cta-band{ grid-column:1/-2; display:flex;
++  align-items:center; justify-content:space-between; gap:20px;
++  padding:16px 20px; background:color-mix(in srgb,var(--do-cerulean) 7%,transparent);
++  border:1px solid var(--do-border-subtle); border-radius:var(--do-radius-lg) }
++.site-head--mega .smallbiz-cta-band h3{ margin:0 0 2px;
++  font-family:var(--do-font-heading); font-size:16px;
++  font-weight:var(--do-weight-bold); letter-spacing:0; text-transform:none;
++  color:var(--do-text-primary) }
++.site-head--mega .smallbiz-cta-band p{ margin:0; font-size:var(--do-text-sm);
++  color:var(--do-text-muted) }
++.site-head--mega .smallbiz-cta-band .band-actions{ display:flex;
++  align-items:center; gap:12px; flex-shrink:0 }
++.site-head--mega .smallbiz-cta-band .band-actions .btn{ margin-bottom:0 }
++.site-head--mega .smallbiz-cta-band .band-actions .rail-all{ display:inline-flex;
++  align-items:center; gap:6px; font-size:13px; color:var(--do-text-muted);
++  text-decoration:none }
++.site-head--mega .smallbiz-cta-band .band-actions .rail-all:hover{
++  color:var(--do-text-primary); text-decoration:underline;
++  text-underline-offset:3px }
+ 
+ /* the scrim sits under the header but over the page — and over the rail */
+ .scrim{ position:fixed; inset:var(--do-header-h) 0 0;
+@@ -223,7 +247,12 @@
+     overflow-y:auto; height:100% }
+   .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
+   .site-head--mega .sector-grid,
+-  .site-head--mega .panel-note{ grid-column:auto }
++  .site-head--mega .panel-note,
++  .site-head--mega .price-list-group,
++  .site-head--mega .smallbiz-cta-band{ grid-column:auto }
++  .site-head--mega .smallbiz-cta-band{ flex-direction:column; align-items:stretch;
++    gap:12px }
++  .site-head--mega .smallbiz-cta-band .band-actions{ justify-content:flex-start }
+   .site-head--mega .sector-grid{ grid-template-columns:1fr 1fr }
+   .site-head--mega .nav-tools{ flex-direction:column; align-items:stretch;
+     margin:20px 0 0; order:-1; gap:8px }
+diff --git a/components/Header.tsx b/components/Header.tsx
+index fea1e31..cba6155 100644
+--- a/components/Header.tsx
++++ b/components/Header.tsx
+@@ -341,8 +341,16 @@ export function Header() {
+                     </ul>
+                   </div>
+                   <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
+-                  <MegaRail heading="Bigger than £500k?" note="Then the on-site work is a better fit, same steps, done in person."
+-                    ctaLabel="Book a free 60-min call" extra={{ label: 'See Clarity', href: '/clarity' }} />
++                  <div className="smallbiz-cta-band">
++                    <div className="band-text">
++                      <h3>Bigger than £500k?</h3>
++                      <p>Then the on-site work is a better fit, same steps, done in person.</p>
++                    </div>
++                    <div className="band-actions">
++                      <Link className="btn btn--primary btn--sm" href="/contact" onClick={() => { closePanel(); setMobileOpen(false); }}>Book a free 60-min call</Link>
++                      <Link className="rail-all" href="/clarity" onClick={() => { closePanel(); setMobileOpen(false); }}>See Clarity</Link>
++                    </div>
++                  </div>
+                 </div>
+               </div>
+             </div>
+
+Diff looks clean. Commit:
+$ git add app/design-system/ds-nav.css components/Header.tsx && git commit -m "CR-WEB-017: smallbiz mega menu — 2-col price list + compact CTA band
+
+Price list: lay out 6 products in 2 columns (3 rows) inside
+.price-list-group using display:grid with repeat(2, 1fr) and
+gap:4px 32px. Neutralise the negative left margin on anchors
+so items don't overlap grid cell boundaries.
+
+'Bigger than £500k?': replace MegaRail (tall card in the rail
+column) with a compact horizontal band (.smallbiz-cta-band)
+spanning columns 1/-2 below the price list. Flex row, vertically
+centred, heading+text on left, amber CTA + See Clarity link on
+right. Scoped class — no changes to MegaRail component or other
+panels.
+
+Mobile (<=1100px): both .price-list-group and .smallbiz-cta-band
+set to grid-column:auto so they stack in the single-column
+layout. The CTA band switches to flex-direction:column for
+vertical stacking."
+[cr/smallbiz-menu-layout 537fc4e] CR-WEB-017: smallbiz mega menu — 2-col price list + compact CTA band
+ 2 files changed, 40 insertions(+), 3 deletions(-)
+
+$ git log --oneline -3
+537fc4e CR-WEB-017: smallbiz mega menu — 2-col price list + compact CTA band
+8a52d08 merge: anonymise client names across marketing surfaces (CR-WEB-011)
+5d15180 fix(CR-WEB-011): anonymise data-od-id plate attributes
+
+# Todos
+[✓] Read Header.tsx smallbiz panel (~lines 322-345) and ds-nav.css smallbiz rules
+[✓] Implement 2-column price list grid in ds-nav.css
+[✓] Convert Bigger than £500k card to horizontal band
+[✓] Add mobile stacking for horizontal band
+[✓] Verify CSS changes are correct and commit
+
+Done. Commit `537fc4e` on `cr/smallbiz-menu-layout`.
+
+## Summary of changes
+
+**`ds-nav.css`** — 31 lines added:
+- **2-column price list**: `.price-list-group .price-list` gets `display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 32px`. The6 items lay out in 2 columns × 3 rows. Neutralised the negative left margin on anchors so items don't overlap grid cell edges.
+- **Horizontal CTA band**: `.smallbiz-cta-band` — `grid-column:1/-2`, flex row, vertically centred, heading+text on left, amber CTA + "See Clarity" link on right. Overrides MegaRail's card styling for this instance only (scoped class).
+- **Mobile (≤1100px)**: `.price-list-group` and `.smallbiz-cta-band` set to `grid-column:auto` for single-column stacking. CTA band switches to `flex-direction:column`.
+
+**`Header.tsx`** — 12 lines added/changed:
+- Replaced `<MegaRail>` for the smallbiz panel with inline `<div className="smallbiz-cta-band">` containing the same wording (heading, note, amber CTA, See Clarity link) in a horizontal flex layout. MegaRail component itself untouched.
+
+**Net effect**: The panel should close up to ~420-500px on desktop with no large empty regions. The "Bigger than £500k?" block is now a compact horizontal band instead of a tall card with dead space. No other panels affected.

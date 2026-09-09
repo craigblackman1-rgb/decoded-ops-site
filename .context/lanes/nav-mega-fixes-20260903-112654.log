@@ -1,0 +1,313 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read Header.tsx and ds-nav.css to understand current state
+[ ] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[ ] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[ ] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[ ] Check mobile menu panel clipping
+[ ] Commit all fixes
+
+→ Read components/Header.tsx
+→ Read app/design-system/ds-nav.css
+
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[•] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[ ] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[ ] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[ ] Check mobile menu panel clipping
+[ ] Commit all fixes
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+@@ -269,9 +269,9 @@
+ <ul className="ladder">
+   {helpLadder.map(step => (
+     <li key={step.href}>
+       <Link href={step.href} onClick={() => { closePanel(); setMobileOpen(false); }}>
+-        <span className="rung" aria-hidden="true" />
++        <span className="step-rung" aria-hidden="true" />
+         <span>
+           <strong>{step.label}</strong>
+           <small>{step.sub}</small>
+           {step.startHere && <span className="start-here">Most people start here</span>}
+
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -115,9 +115,9 @@
+ .site-head--mega .mega-list a:focus-visible{ outline:2px solid var(--do-focus-ring);
+   outline-offset:-2px }
+ 
+ /* numbered service ladder */
+-.site-head--mega .ladder{ list-style:none; margin:0; padding:0; counter-reset:rung }
++.site-head--mega .ladder{ list-style:none; margin:0; padding:0; counter-reset:step-rung }
+ .site-head--mega .ladder a{ display:grid; grid-template-columns:26px 1fr; gap:10px;
+   align-items:start; margin:0 0 0 -10px; padding:9px 10px;
+   border-radius:var(--do-radius-lg); color:var(--do-text-primary);
+   text-decoration:none; border:0 }
+
+
+**Fix 1 — BUG-WEB-002:** Rename nav `rung` class to `step-rung`.
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -123,9 +123,9 @@
+   text-decoration:none; border:0 }
+ .site-head--mega .ladder a:hover{ background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+ .site-head--mega .ladder a:focus-visible{ outline:2px solid var(--do-focus-ring);
+   outline-offset:-2px }
+-.site-head--mega .ladder .rung{ counter-increment:rung; width:24px; height:24px;
++.site-head--mega .ladder .step-rung{ counter-increment:step-rung; width:24px; height:24px;
+   display:grid; place-items:center; border-radius:var(--do-radius-full);
+   border:1px solid var(--do-border-subtle); background:var(--do-surface-page);
+   font-size:12px; font-weight:var(--do-weight-bold); color:var(--do-text-muted);
+   font-variant-numeric:tabular-nums }
+
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -128,9 +128,9 @@
+   display:grid; place-items:center; border-radius:var(--do-radius-full);
+   border:1px solid var(--do-border-subtle); background:var(--do-surface-page);
+   font-size:12px; font-weight:var(--do-weight-bold); color:var(--do-text-muted);
+   font-variant-numeric:tabular-nums }
+-.site-head--mega .ladder .rung::before{ content:counter(rung) }
++.site-head--mega .ladder .step-rung::before{ content:counter(step-rung) }
+ .site-head--mega .ladder strong{ display:block; font-size:15px;
+   font-weight:var(--do-weight-semibold) }
+ .site-head--mega .ladder small{ display:block; margin-top:1px; font-size:13px;
+   color:var(--do-text-muted) }
+
+
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[✓] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[•] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[ ] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[ ] Check mobile menu panel clipping
+[ ] Commit all fixes
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+@@ -321,9 +321,9 @@
+ </button>
+ <div className="mega" id="mega-small" hidden={openPanel !== 'small'}>
+   <div className="container mega-inner cols-2">
+     <p className="panel-note">Turning over under &pound;500k and running it yourself? This is the same work, done remotely, at a price that fits.</p>
+-    <div className="mega-group">
++    <div className="mega-group price-list-group">
+       <h3>Fixed-price, done remotely</h3>
+       <ul className="price-list">
+         {smallBusinessProducts.map(p => (
+           <li key={p.label}>
+
+
+**Fix 2 — BUG-WEB-003:** Add `grid-column: 1/-2` to the Small business price list group and `align-self: start` to `.panel-note`.
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -183,9 +183,9 @@
+   color:var(--do-text-muted) }
+ .site-head--mega .price-list .price{ font-size:var(--do-text-sm);
+   font-weight:var(--do-weight-semibold); color:var(--do-text-muted);
+   font-variant-numeric:tabular-nums; white-space:nowrap }
+-.site-head--mega .panel-note{ grid-column:1 / -2; margin:0 0 4px; padding:12px 16px;
++.site-head--mega .panel-note{ grid-column:1 / -2; align-self:start; margin:0 0 4px; padding:12px 16px;
+   border-radius:var(--do-radius-lg); font-size:var(--do-text-sm);
+   color:var(--do-text-primary);
+   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
+ 
+
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -187,8 +187,9 @@
+ .site-head--mega .panel-note{ grid-column:1 / -2; align-self:start; margin:0 0 4px; padding:12px 16px;
+   border-radius:var(--do-radius-lg); font-size:var(--do-text-sm);
+   color:var(--do-text-primary);
+   background:color-mix(in srgb, var(--do-cerulean) 9%, transparent) }
++.site-head--mega .price-list-group{ grid-column:1/-2 }
+ 
+ /* the scrim sits under the header but over the page — and over the rail */
+ .scrim{ position:fixed; inset:var(--do-header-h) 0 0;
+   z-index:calc(var(--do-z-dropdown) + 1);
+
+
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[✓] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[✓] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[•] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[ ] Check mobile menu panel clipping
+[ ] Commit all fixes
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+@@ -180,8 +180,9 @@
+ export function Header() {
+   const [openPanel, setOpenPanel] = useState<PanelKey | null>(null);
+   const [mobileOpen, setMobileOpen] = useState(false);
+   const headerRef = useRef<HTMLElement>(null);
++  const lastClickRef = useRef<PanelKey | null>(null);
+   const isMobile = () => typeof window !== 'undefined' && window.matchMedia('(max-width:1100px)').matches;
+ 
+   useEffect(() => {
+     function onDocClick(e: MouseEvent) {
+
+
+**Fix 3 — BUG-WEB-004:** Fix dropdown switching so clicking nav button B while menu A is open opens B in one click.
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\components\Header.tsx
+@@ -203,11 +203,16 @@
+   document.body.style.overflow = mobileOpen ? 'hidden' : '';
+   return () => { document.body.style.overflow = ''; };
+ }, [mobileOpen]);
+ 
+-const openViaClick = (key: PanelKey) => setOpenPanel(p => (p === key ? null : key));
++const openViaClick = (key: PanelKey) => {
++  lastClickRef.current = key;
++  setOpenPanel(p => (p === key ? null : key));
++  setTimeout(() => { lastClickRef.current = null; }, 200);
++};
+ const openViaHover = (key: PanelKey) => {
+   if (isMobile()) return;
++  if (lastClickRef.current !== null) return;
+   setOpenPanel(p => (p !== null && p !== key ? key : p));
+ };
+ const closePanel = () => setOpenPanel(null);
+ 
+
+
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[✓] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[✓] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[✓] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[•] Check mobile menu panel clipping
+[ ] Commit all fixes
+
+→ Read app/design-system/ds-nav.css [offset=198, limit=35]
+Now checking mobile menu clipping. Let me re-read the mobile section carefully.
+
+← Edit app/design-system/ds-nav.css
+Index: D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
++++ D:\apps\worktrees\decoded-ops-website\nav-mega-fixes\app\design-system\ds-nav.css
+@@ -213,13 +213,15 @@
+ .site-head--mega .nav-trigger:hover,
+ .site-head--mega .nav-flat:hover,
+ .site-head--mega .nav-trigger[aria-expanded="true"]{ background:transparent }
+ .site-head--mega .mega{ position:static; background:transparent;
+-  border:0; box-shadow:none }
++  border:0; box-shadow:none;
++  height:calc(100vh - var(--do-header-h) - 48px); overflow:hidden }
+ .site-head--mega .mega-inner,
+ .site-head--mega .mega-inner.cols-3,
+ .site-head--mega .mega-inner.cols-2{ grid-template-columns:1fr; gap:20px;
+-  padding-block:20px 32px; padding-inline:0; max-width:none }
++  padding-block:20px 32px; padding-inline:0; max-width:none;
++  overflow-y:auto; height:100% }
+ .site-head--mega .mega-list a{ padding:12px 10px; min-height:48px }
+ .site-head--mega .sector-grid,
+ .site-head--mega .panel-note{ grid-column:auto }
+ .site-head--mega .sector-grid{ grid-template-columns:1fr 1fr }
+
+
+The mobile menu clips because `.mega` is `position:static` inside a fixed `site-nav` with `overflow-y:auto` — the mega panel doesn't fill the available height, so content gets clipped. Fix: make `.mega` fill the viewport below the header on mobile, and let `.mega-inner` scroll.
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[✓] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[✓] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[✓] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[✓] Check mobile menu panel clipping
+[•] Commit all fixes
+
+Now let me verify all edits are correct before committing.
+→ Read components/Header.tsx [limit=20, offset=180]
+→ Read components/Header.tsx [limit=10, offset=270]
+→ Read components/Header.tsx [limit=10, offset=322]
+→ Read app/design-system/ds-nav.css [limit=20, offset=118]
+→ Read app/design-system/ds-nav.css [limit=10, offset=186]
+→ Read app/design-system/ds-nav.css [limit=15, offset=215]
+→ Read components/Header.tsx [limit=15, offset=206]
+All edits verified. Committing.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-mega-fixes" && git add components/Header.tsx app/design-system/ds-nav.css && git commit -m "fix: nav mega menu bugs BUG-WEB-002/003/004
+
+BUG-WEB-002: Rename nav .rung class to .step-rung to avoid collision
+with global .rung in marketing-pages-extra.css. Counter name updated
+to match. The /how-i-build ladder cards are untouched.
+
+BUG-WEB-003: Small business mega menu — price-list-group now has
+grid-column:1/-2 so it spans the full grid width instead of landing
+in the 260px rail column. panel-note gets align-self:start to
+prevent stretching in tall rows.
+
+BUG-WEB-004: Clicking nav button B while menu A is open now opens B
+in one click. Added lastClickRef flag to suppress hover-driven panel
+switches for 200ms after a click, preventing the hover-then-click
+race that toggled the new panel closed.
+
+Mobile: mega panel now fills viewport below header on mobile with
+overflow:hidden, and mega-inner scrolls within it — fixes the
+~300px clipping issue."
+[fix/nav-mega-menu 98e6eec] fix: nav mega menu bugs BUG-WEB-002/003/004
+ 2 files changed, 18 insertions(+), 9 deletions(-)
+
+# Todos
+[✓] Read Header.tsx and ds-nav.css to understand current state
+[✓] Fix 1 (BUG-WEB-002): Rename nav rung class to step-rung
+[✓] Fix 2 (BUG-WEB-003): Fix Small business mega menu grid layout
+[✓] Fix 3 (BUG-WEB-004): Fix dropdown switching (close/open in one click)
+[✓] Check mobile menu panel clipping
+[✓] Commit all fixes
+
+Committed `98e6eec` on `fix/nav-mega-menu`. Summary of exact changes:
+
+**BUG-WEB-002 (ladder numbers overlap text):**
+- `Header.tsx:279` — `<span className="rung">` → `<span className="step-rung">`
+- `ds-nav.css:119` — `counter-reset:rung` → `counter-reset:step-rung`
+- `ds-nav.css:127` — `.ladder .rung` → `.ladder .step-rung`, `counter-increment:rung` → `counter-increment:step-rung`
+- `ds-nav.css:132` — `.rung::before` → `.step-rung::before`, `counter(rung)` → `counter(step-rung)`
+- /how-i-build `.rung` cards untouched
+
+**BUG-WEB-003 (Small business giant empty intro box):**
+- `Header.tsx:331` — added `price-list-group` class to the Small business price-list `.mega-group`
+- `ds-nav.css:191` — new rule `.site-head--mega .price-list-group{ grid-column:1/-2 }`
+- `ds-nav.css:187` — added `align-self:start` to `.panel-note`
+
+**BUG-WEB-004 (can't switch directly between dropdowns):**
+- `Header.tsx:184` — added `lastClickRef` ref
+- `Header.tsx:207-216` — `openViaClick` sets the flag + clears after 200ms; `openViaHover` returns early if flag is set. This prevents the hover→click race where hover switches the panel and the click toggles the new one closed.
+
+**Mobile clipping:**
+- `ds-nav.css:216-223` — `.mega` gets `height:calc(100vh - var(--do-header-h) - 48px); overflow:hidden`; `.mega-inner` gets `overflow-y:auto; height:100%` so mega content scrolls within the panel instead of being clipped by the site-nav overflow.

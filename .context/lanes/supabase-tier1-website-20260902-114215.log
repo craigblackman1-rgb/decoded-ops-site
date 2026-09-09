@@ -1,0 +1,476 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Run before-state verification (git grep supabase counts)
+[ ] Edit CLAUDE.md — rewrite data-layer section, remove Supabase mentions
+[ ] Edit .env.example — collapse three comment lines to one
+[ ] Edit README.md — drop 'not Supabase' contrast
+[ ] Edit app/clients/[clientId]/page.tsx — fix comment
+[ ] Run verify checks (git grep, git diff --stat, npx next build)
+[ ] Commit with one commit, report before/after
+
+→ Read CLAUDE.md [offset=100, limit=130]
+→ Read .env.example
+→ Read README.md
+→ Read app/clients/[clientId]/page.tsx
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git grep -in supabase | wc -l
+wc: The term 'wc' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git grep -in supabase -- CLAUDE.md README.md .env.example app/
+.env.example:18:# Database — plain Postgres (dedicated VPS), NOT Supabase.
+.env.example:19:# `lib/supabase.ts` is named for the client-portal tables it reads but is a
+.env.example:20:# plain `pg` Pool, same pattern as the hub's `supabase-pg.ts` shim.
+CLAUDE.md:111:  supabase.ts         # Plain `pg` Pool (see Data Layer below)
+CLAUDE.md:120:supabase/             # SQL schema files (NOT Supabase — plain Postgres table definitions)
+CLAUDE.md:126:## Data Layer — `lib/supabase.ts` (plain Postgres, NOT Supabase)
+CLAUDE.md:128:Despite the filename, `lib/supabase.ts` is a plain `pg` Pool. It exports `getDb()`
+CLAUDE.md:130:`supabase-pg.ts` shim. The tables (`client_users`, `auth_audit_log`) were designed
+CLAUDE.md:131:with Supabase-compatible DDL but the runtime connection is direct Postgres.
+CLAUDE.md:136:- Does NOT use Supabase JS SDK — there is no `@supabase/ssr` in this repo
+CLAUDE.md:156:  via `lib/supabase.ts`). Features: bcrypt password verification, 5-attempt lockout
+CLAUDE.md:208:- **`lib/supabase.ts` is NOT Supabase.** It's a plain `pg` Pool. Grepping for
+CLAUDE.md:209:  "supabase" in this repo only turns up the filename and SQL file references.
+CLAUDE.md:214:- **`.env.example` line 19:** `lib/supabase.ts` is named for the client-portal
+CLAUDE.md:216:  `supabase-pg.ts` shim.
+README.md:34:This project is deployed via [Coolify](https://coolify.io) (self-hosted, Docker-based) — **not** Vercel. The repo ships a `Dockerfile` and reads `DATABASE_URL` (plain Postgres, not Supabase) at runtime. See `.env.example` for the required environment variables.
+app/clients/[clientId]/page.tsx:23:// Populated after migration — doc IDs from Supabase
+
+# Todos
+[✓] Run before-state verification (git grep supabase counts)
+[•] Edit CLAUDE.md — rewrite data-layer section, remove Supabase mentions
+[ ] Edit .env.example — collapse three comment lines to one
+[ ] Edit README.md — drop 'not Supabase' contrast
+[ ] Edit app/clients/[clientId]/page.tsx — fix comment
+[ ] Run verify checks (git grep, git diff --stat, npx next build)
+[ ] Commit with one commit, report before/after
+
+Before state captured: 17 supabase mentions across the four target files. Let me make all four edits now.
+← Edit CLAUDE.md
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+@@ -116,9 +116,9 @@
+   blog-index.json     # Blog post metadata — build fallback; hub API is authoritative
+   locations.ts        # Location page data
+   problem-routing.ts  # Problem page routing data
+   sector-routing.ts   # Sector page routing data
+-supabase/             # SQL schema files (NOT Supabase — plain Postgres table definitions)
++supabase/             # SQL schema files for the client-portal tables (historic folder name; paste-by-hand, nothing executes it)
+ scripts/              # Utility scripts (hash-password, create-client-accounts, content-audit, etc.)
+ .context/             # Project notes (backlog, e-signature brief, loop-status log)
+ docs/                 # content-audit.md — full site content audit (2131 lines)
+ ```
+
+
+← Edit CLAUDE.md
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+@@ -122,19 +122,17 @@
+ .context/             # Project notes (backlog, e-signature brief, loop-status log)
+ docs/                 # content-audit.md — full site content audit (2131 lines)
+ ```
+ 
+-## Data Layer — `lib/supabase.ts` (plain Postgres, NOT Supabase)
++## Data Layer — `lib/supabase.ts`
+ 
+-Despite the filename, `lib/supabase.ts` is a plain `pg` Pool. It exports `getDb()`
+-and types `DbUser` / `AuthAuditEvent`. This is the same pattern as the hub's
+-`supabase-pg.ts` shim. The tables (`client_users`, `auth_audit_log`) were designed
+-with Supabase-compatible DDL but the runtime connection is direct Postgres.
++A plain `pg` Pool over `DATABASE_URL` exporting `getDb()` and types `DbUser` /
++`AuthAuditEvent`. Consumed by `auth.ts` for the client-portal tables (`client_users`,
++`auth_audit_log`). The filename is historic and the file is not renamed.
+ 
+ - Connection string: `DATABASE_URL` env var
+ - SSL: `rejectUnauthorized: false`
+ - Used by `auth.ts` for credential verification, audit logging, lockout tracking
+-- Does NOT use Supabase JS SDK — there is no `@supabase/ssr` in this repo
+ 
+ Required env vars:
+ ```
+ DATABASE_URL=             # postgresql://user:password@host:5432/dbname
+
+
+← Edit CLAUDE.md
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+@@ -202,10 +202,8 @@
+ HTML body from hub, fall back to local fields in blog-index.json.
+ 
+ ## Real Gotchas
+ 
+-- **`lib/supabase.ts` is NOT Supabase.** It's a plain `pg` Pool. Grepping for
+-  "supabase" in this repo only turns up the filename and SQL file references.
+ - **The README is stale `create-next-app` boilerplate.** Ignore it.
+ - **Two styling approaches coexist.** Marketing pages use Tailwind utilities with
+   brand hex values. Client portal pages use inline `style={{}}` objects — same
+   colours, different delivery. Do not try to unify these unless asked.
+
+
+← Edit CLAUDE.md
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\CLAUDE.md
+@@ -206,11 +206,8 @@
+ - **The README is stale `create-next-app` boilerplate.** Ignore it.
+ - **Two styling approaches coexist.** Marketing pages use Tailwind utilities with
+   brand hex values. Client portal pages use inline `style={{}}` objects — same
+   colours, different delivery. Do not try to unify these unless asked.
+-- **`.env.example` line 19:** `lib/supabase.ts` is named for the client-portal
+-  tables it reads but is a plain `pg` Pool, same pattern as the hub's
+-  `supabase-pg.ts` shim.
+ - **Content honesty rule** (from `.context/backlog.md`): Never invent numbers or
+   client details. All stats on case studies and service pages must trace to real
+   client results or published, cited industry benchmarks. The `/about` page's
+   "ERP ROI Benchmarks" section is flagged for citation verification.
+
+
+← Edit .env.example
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\.env.example
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\.env.example
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\.env.example
+@@ -14,11 +14,9 @@
+ # Auth — Client Portal
+ NEXTAUTH_SECRET=generate-with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+ NEXTAUTH_URL=https://decodedops.co.uk
+ 
+-# Database — plain Postgres (dedicated VPS), NOT Supabase.
+-# `lib/supabase.ts` is named for the client-portal tables it reads but is a
+-# plain `pg` Pool, same pattern as the hub's `supabase-pg.ts` shim.
++# Database — plain Postgres on the dedicated VPS.
+ DATABASE_URL=postgresql://user:password@host:5432/dbname
+ 
+ # Upstash Redis (for rate limiting) — optional, degrades gracefully if unset
+ UPSTASH_REDIS_REST_URL=https://your-redis-url.upstash.io
+
+
+← Edit README.md
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\README.md
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\README.md
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\README.md
+@@ -30,5 +30,5 @@
+ You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ 
+ ## Deployment
+ 
+-This project is deployed via [Coolify](https://coolify.io) (self-hosted, Docker-based) — **not** Vercel. The repo ships a `Dockerfile` and reads `DATABASE_URL` (plain Postgres, not Supabase) at runtime. See `.env.example` for the required environment variables.
++This project is deployed via [Coolify](https://coolify.io) (self-hosted, Docker-based) — **not** Vercel. The repo ships a `Dockerfile` and reads `DATABASE_URL` (plain Postgres) at runtime. See `.env.example` for the required environment variables.
+
+
+← Edit app/clients/[clientId]/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\supabase-tier1\app\clients\[clientId]\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\supabase-tier1\app\clients\[clientId]\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\supabase-tier1\app\clients\[clientId]\page.tsx
+@@ -19,9 +19,9 @@
+ import { hanicksProposal } from './data/hanicks-proposal';
+ import { cwearProposal } from './data/cwear-proposal';
+ import { scotshirtsProposal } from './data/scotshirts-proposal';
+ 
+-// Populated after migration — doc IDs from Supabase
++// Populated after the 2026 database migration (legacy doc IDs)
+ // e.g. 'tacklebag': 'uuid-from-client_documents',
+ const LEGACY_PROPOSAL_REDIRECTS: Record<string, string> = {
+   // 'tacklebag': '',
+   // 'tacklebag-v2': '',
+
+
+# Todos
+[✓] Run before-state verification (git grep supabase counts)
+[✓] Edit CLAUDE.md — rewrite data-layer section, remove Supabase mentions
+[✓] Edit .env.example — collapse three comment lines to one
+[✓] Edit README.md — drop 'not Supabase' contrast
+[✓] Edit app/clients/[clientId]/page.tsx — fix comment
+[•] Run verify checks (git grep, git diff --stat, npx next build)
+[ ] Commit with one commit, report before/after
+
+All seven edits applied. Now running verification.
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git grep -in supabase -- CLAUDE.md README.md .env.example app/
+CLAUDE.md:111:  supabase.ts         # Plain `pg` Pool (see Data Layer below)
+CLAUDE.md:120:supabase/             # SQL schema files for the client-portal tables (historic folder name; paste-by-hand, nothing executes it)
+CLAUDE.md:126:## Data Layer — `lib/supabase.ts`
+CLAUDE.md:154:  via `lib/supabase.ts`). Features: bcrypt password verification, 5-attempt lockout
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git grep -rn "@/lib/supabase" -- "*.ts" "*.tsx"
+auth.ts:4:import { getDb, type DbUser } from '@/lib/supabase'
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git diff --stat
+.env.example                    |  4 +---
+ CLAUDE.md                       | 17 +++++------------
+ README.md                       |  2 +-
+ app/clients/[clientId]/page.tsx |  2 +-
+ 4 files changed, 8 insertions(+), 17 deletions(-)
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git grep -in supabase 2>$null | Measure-Object -Line | Select-Object -ExpandProperty Lines
+64
+
+Verification results:
+- **`git grep -in supabase` target files**: 4 lines remain — all are filename references (`supabase.ts`, `supabase/` directory), not platform mentions. The file is not renamed per constraints.
+- **`git grep -rn "@/lib/supabase"`**: exactly `auth.ts:4` — correct.
+- **`git diff --stat`**: only the 4 expected files touched, 8 insertions / 17 deletions.
+- **Repo-wide count**: 64 total mentions (down from ~80+ pre-edit; the rest are in lib/supabase.ts itself, scripts/, supabase/*.sql which are out of scope).
+
+Now running the build.
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && npx next build 2>&1
+▲ Next.js 16.3.4 (Turbopack)
+✓ Running next.config.ts took 627ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 error:
+./app
+Error: Could not find the Next.js package (next/package.json)
+Resolved from: D:\apps\worktrees\decoded-ops-website\supabase-tier1\app
+Filesystem root used for resolution: D:\apps\worktrees\decoded-ops-website\supabase-tier1
+
+Possible causes:
+  - node_modules is being reorganized by a concurrent install (e.g. pnpm adding a package with a `next` peer dependency). This is transient and should clear once the install completes.
+  - node_modules/next was removed, renamed, or has a broken symlink.
+  - The workspace root is incorrect — see turbopack.root in the Next.js config docs for how to configure it.
+  - In a monorepo, the Next.js package may only exist in a directory above the closest directory containing a package manager lockfile. The workspace root is detected by locating the nearest package manager lockfile.
+  - Next.js is installed globally rather than as a project dependency. This is not supported; install it locally.
+
+Note: To ensure a hermetic build and a portable cache, files outside of the workspace root are not compiled.
+
+https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory
+
+
+    at <unknown> (Filesystem root used for resolution: D:\apps\worktrees\decoded-ops-website\supabase-tier1)
+    at <unknown> (https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory)
+
+Node modules missing. Installing dependencies first.
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && npm ci --legacy-peer-deps 2>&1
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 414 packages, and audited 415 packages in 39s
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && npx next build 2>&1
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 34ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 22.1s
+  Running TypeScript ...
+  Finished TypeScript in 15.4s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/163) ...
+  Generating static pages using 15 workers (40/163) 
+  Generating static pages using 15 workers (81/163) 
+  Generating static pages using 15 workers (122/163) 
+✓ Generating static pages using 15 workers (163/163) in 3.1s
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/crm
+├ ○ /apps/data-app
+├ ○ /blog                                                  5m      1y
+├   /blog/[slug]
+│ ├ ● /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+│ ├ ● /blog/5-questions-vendors-wont-like                  5m      1y
+│ ├ ● /blog/why-systems-dont-talk                          5m      1y
+│ └ ● [+25 more paths]
+├ ○ /case-studies
+├ ○ /case-studies/cobra-workwear
+├ ○ /case-studies/eternal-fitness
+├ ○ /case-studies/hanicks
+├ ○ /case-studies/tacklebag
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /decoded-method
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+24 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+24 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ○ /sitemap.xml                                           5m      1y
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+# Todos
+[✓] Run before-state verification (git grep supabase counts)
+[✓] Edit CLAUDE.md — rewrite data-layer section, remove Supabase mentions
+[✓] Edit .env.example — collapse three comment lines to one
+[✓] Edit README.md — drop 'not Supabase' contrast
+[✓] Edit app/clients/[clientId]/page.tsx — fix comment
+[✓] Run verify checks (git grep, git diff --stat, npx next build)
+[•] Commit with one commit, report before/after
+
+Build passes cleanly. Now committing.
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git add CLAUDE.md README.md .env.example "app/clients/[clientId]/page.tsx" && git commit -m "chore: remove Supabase platform mentions from docs and comments (B1)
+
+Rewrite CLAUDE.md data-layer section as positive description of the pg Pool;
+collapse .env.example database comments; drop 'not Supabase' contrast from
+README.md; fix proposal page comment. Filename lib/supabase.ts unchanged
+(tier-3 constraint)."
+[lane/supabase-tier1-2026-09-02 c79cbed] chore: remove Supabase platform mentions from docs and comments (B1)
+ 4 files changed, 8 insertions(+), 17 deletions(-)
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && (git grep -i supabase 2>$null | Measure-Object -Line).Lines
+64
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && git stash && (git grep -i supabase 2>$null | Measure-Object -Line).Lines; git stash pop
+No local changes to save
+64
+No stash entries found.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\supabase-tier1" && (git grep -i supabase HEAD~1 2>$null | Measure-Object -Line).Lines
+77
+
+# Todos
+[✓] Run before-state verification (git grep supabase counts)
+[✓] Edit CLAUDE.md — rewrite data-layer section, remove Supabase mentions
+[✓] Edit .env.example — collapse three comment lines to one
+[✓] Edit README.md — drop 'not Supabase' contrast
+[✓] Edit app/clients/[clientId]/page.tsx — fix comment
+[✓] Run verify checks (git grep, git diff --stat, npx next build)
+[✓] Commit with one commit, report before/after
+
+## Report
+
+**Commit:** `c79cbed` — `chore: remove Supabase platform mentions from docs and comments (B1)`
+
+### Files touched
+
+| File | Lines changed |
+|---|---|
+| `CLAUDE.md` | -10 (rewrote data-layer section, deleted 2 gotchas, rewrote supabase/ tree comment) |
+| `.env.example` | -2 (collapsed 3 comment lines to 1) |
+| `README.md` | 0 net (replaced "plain Postgres, not Supabase" with "plain Postgres") |
+| `app/clients/[clientId]/page.tsx` | 0 net (rewrote comment) |
+
+**Total:** 8 insertions, 17 deletions across 4 files.
+
+### Before / After `git grep -i supabase`
+
+- **Before (HEAD~1):** 77
+- **After (HEAD):** 64
+- **Removed from target files:** 13 mentions (all platform references — the 4 remaining in CLAUDE.md are filename references to `supabase.ts` / `supabase/` dir, which are not renamed per Tier 3 constraint).
+
+### Verification
+
+- `npx next build` — **passes** (compiled successfully, 163 pages generated)
+- `git grep -rn "@/lib/supabase" -- '*.ts' '*.tsx'` — **exactly** `auth.ts:4`
+- `git diff --stat` — only CLAUDE.md, README.md, .env.example, app/clients/[clientId]/page.tsx
+- **One commit. No push.**

@@ -1,0 +1,158 @@
+
+> build · mimo-v2.5
+
+→ Read app/api/contact/route.ts
+→ Read app/api/tools/capture/route.ts
+
+← Edit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+@@ -1,5 +1,6 @@
+ import { NextRequest, NextResponse } from 'next/server';
++import nodemailer from 'nodemailer';
+ import { toolCaptureRatelimit } from '@/lib/rate-limit';
+ import { hubFetch } from '@/lib/hub-fetch';
+ 
+ const ALLOWED_ORIGINS = [
+
+
+Now I have both files. I'll add the email alert to the capture route, following the contact route's pattern exactly.
+← Edit app/api/tools/capture/route.ts
+Index: D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
++++ D:\apps\worktrees\decoded-ops-website\lane-lead-alert\app\api\tools\capture\route.ts
+@@ -116,8 +116,63 @@
+       { status: 502 }
+     );
+   }
+ 
++  try {
++    const toolNames: Record<string, string> = {
++      'ops-health-score': 'Ops Health Score',
++      'downtime-cost-calculator': 'Downtime Cost Calculator',
++      'rto-calculator': 'RTO Calculator',
++      'should-i-replace-erp': 'Should I Replace My ERP',
++      'ai-readiness-check': 'AI Readiness Check',
++      'automation-roi-calculator': 'Automation ROI Calculator',
++    };
++    const readableTool = toolNames[tool] || tool;
++
++    const answerLines = Object.entries(answers)
++      .map(([key, value]) => {
++        const label = key
++          .replace(/([A-Z])/g, ' $1')
++          .replace(/^./, (s) => s.toUpperCase());
++        return `${label}: ${String(value)}`;
++      })
++      .join('\n');
++
++    const transporter = nodemailer.createTransport({
++      host: process.env.SMTP_HOST,
++      port: Number(process.env.SMTP_PORT) || 587,
++      secure: process.env.SMTP_PORT === '465',
++      auth: {
++        user: process.env.SMTP_USER,
++        pass: process.env.SMTP_PASS,
++      },
++    });
++
++    await transporter.sendMail({
++      from: process.env.SMTP_FROM || 'noreply@decodedops.co.uk',
++      replyTo: sanitizedEmail,
++      to: process.env.CONTACT_EMAIL,
++      subject: `New lead — ${readableTool} — ${sanitizedName}`,
++      text: [
++        `New lead from the ${readableTool} tool.`,
++        ``,
++        `Name: ${sanitizedName}`,
++        `Email: ${sanitizedEmail}`,
++        `Company: ${sanitizedCompany || 'not given'}`,
++        ``,
++        `Result:`,
++        sanitizedSummary,
++        ``,
++        `Answers:`,
++        answerLines,
++        ``,
++        `View in CRM: ${process.env.HUB_API_URL}/leads`,
++      ].join('\n'),
++    });
++  } catch (emailError) {
++    console.error('Lead alert email failed:', emailError);
++  }
++
+   return NextResponse.json({ ok: true });
+ } catch (error) {
+   console.error('Tool lead capture error:', error);
+   return NextResponse.json(
+
+
+Now let me verify the typecheck passes.
+$ npx tsc --noEmit 2>&1
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ npm install 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npm install 2>&1
+added 409 packages, and audited 410 packages in 18s
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+146 packages are looking for funding
+  run `npm fund` for details
+
+2 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+Typecheck clean. Now let me commit.
+$ git add app/api/tools/capture/route.ts && git diff --cached --stat
+app/api/tools/capture/route.ts | 56 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+$ git commit -m "Add lead alert email to tool capture route
+
+After a lead is successfully saved to the CRM via hub, send Craig a
+plain-text email notification with the tool name, lead details, and
+result summary. Email failures are caught and logged without breaking
+the capture response - the lead is always returned as ok: true.
+
+Uses the same nodemailer/SMTP pattern as the contact form route.
+replyTo set to the lead's email so Craig can reply directly from inbox."
+[lane-lead-alert 2ab97c9] Add lead alert email to tool capture route
+ 1 file changed, 56 insertions(+)
+
+→ Read app/api/tools/capture/route.ts
+Done. Committed `2ab97c9` on `lane-lead-alert`.
+
+**What changed** — `app/api/tools/capture/route.ts` only:
+- Added `nodemailer` import and a lead alert email block (lines 120-173) that fires after the hub call succeeds
+- Email is in its own `try/catch` — SMTP failure logs via `console.error` and still returns `{ ok: true }`
+- Hub failure skips the email entirely (email block is after the hub ok check)
+- Subject: `New lead — Ops Health Score — Jane Smith` format with readable tool names
+- Body: plain text with tool name, person, email, company, result summary, answers rendered as labelled lines, and a CRM link
+- `replyTo` set to the lead's email so Craig can reply directly
+- No lead email logged on the success path
+- `npx tsc --noEmit` clean

@@ -1,0 +1,18 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Explore existing resource pages pattern (layout, metadata, rendering)
+[ ] Read DB connection details from hub .env
+[ ] Dump 5 lead magnet bodies from DB to local files
+[ ] Create 5 resource page.tsx files under app/resources/
+[ ] Update resources index page.tsx with new entries
+[ ] Add opt-in blocks to each page
+[ ] Run npm run build and fix errors
+[ ] Commit on lane/give-first-magnets
+
+• Explore existing resource pages Explore Agent
+! permission requested: read (..\..\..\decoded-ops-hub\.env); auto-rejecting
+✗ Read D:/apps/decoded-ops-hub/.env failed
+Error: The user rejected permission to use this specific tool call.
+✓ Explore existing resource pages Explore Agent

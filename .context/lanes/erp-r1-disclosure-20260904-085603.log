@@ -1,0 +1,249 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read .context/lane-prompt-voice-core.md
+[ ] Read erp-positioning-brief-pack-2026-09-03.md (Global rules + R1 sections)
+[ ] Identify the four R1 files in this worktree
+[ ] Edit four R1 files — integrate drafted passages verbatim, minimal-touch rest
+[ ] Run extract-copy.mjs if present + voice-lint check
+[ ] Grep for 'earn nothing', 'vendor bias', 'No platform I'm paid' — must be gone
+[ ] Commit referencing CR-WEB-021
+[ ] Per-page before/after summary
+
+→ Read .context/lane-prompt-voice-core.md
+→ Read D:/apps/worktrees/decoded-ops-website/decoded-ops-seo-content-review-9727b8/.context/erp-positioning-brief-pack-2026-09-03.md
+
+# Todos
+[✓] Read .context/lane-prompt-voice-core.md
+[✓] Read erp-positioning-brief-pack-2026-09-03.md (Global rules + R1 sections)
+[•] Identify the four R1 files in this worktree
+[ ] Edit four R1 files — integrate drafted passages verbatim, minimal-touch rest
+[ ] Run extract-copy.mjs if present + voice-lint check
+[ ] Grep for 'earn nothing', 'vendor bias', 'No platform I'm paid' — must be gone
+[ ] Commit referencing CR-WEB-021
+[ ] Per-page before/after summary
+
+→ Read app/problems/buy-vs-build/page.tsx
+→ Read app/problems/wrong-erp-software/page.tsx
+→ Read app/problems/erp-implementation-failure/page.tsx
+→ Read app/resources/erp-selection-playbook/page.tsx
+
+# Todos
+[✓] Read .context/lane-prompt-voice-core.md
+[✓] Read erp-positioning-brief-pack-2026-09-03.md (Global rules + R1 sections)
+[✓] Identify the four R1 files in this worktree
+[•] Edit four R1 files — integrate drafted passages verbatim, minimal-touch rest
+[ ] Run extract-copy.mjs if present + voice-lint check
+[ ] Grep for 'earn nothing', 'vendor bias', 'No platform I'm paid' — must be gone
+[ ] Commit referencing CR-WEB-021
+[ ] Per-page before/after summary
+
+$ git status --short
+(no output)
+
+$ git log --oneline -5
+c66dd08 fix(pricing): add visible bullets to app cost-factor list in inset [CR-WEB-020]
+3416522 CR-WEB-020: restructure Systems section on /pricing
+c557a00 fix: align caption horizontal padding with cell padding (BUG-WEB-011)
+f788243 BUG-WEB-011: reword scope note — internal 'anchor' vocabulary removed
+412c633 fix: pricing table polish — BUG-WEB-011
+
+← Edit app/problems/buy-vs-build/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\buy-vs-build\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\buy-vs-build\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\buy-vs-build\page.tsx
+@@ -189,17 +189,19 @@
+ {/* ── 4 · HOW I HELP ─────────────────────────────────────────────────── */}
+ <section className="g-navy">
+  <div className="wrap">
+   <span className="eyebrow eyebrow--amber">How I help</span>
+-  <h2>No vendor relationships. No platform I&apos;m paid to prefer.</h2>
++   <h2>Being upfront about where I stand.</h2>
+ 
+-  <div className="answer">
+-   <p>There are several good platforms in this sector. The right one depends on your
+-    business, and <b>I earn nothing from whichever you pick.</b></p>
+-   <p>What I bring is the sector experience to run the coverage test properly: what a
+-    platform actually handles in a decoration workflow, where it stops, and what it&apos;s
+-    worth closing that gap versus living with it.</p>
+-  </div>
++   <div className="answer">
++    <p>I build software too. The Data App started life plugging gaps nothing on the market
++     covered, and it has grown into a full system. So I am not a neutral bystander, and I will
++     not pretend to be one.</p>
++    <p>What I will do is put every option through the same coverage test, in writing, mine
++     included. If an off-the-shelf platform covers what you need, that is what the report
++     will say. A recommendation you can check against your own brief beats one you have to
++     take on trust.</p>
++   </div>
+  </div>
+ </section>
+ 
+ {/* ── 5 · CTA STRIP ──────────────────────────────────────────────────── */}
+
+
+Clean tree at the right base. Now making all four edits.
+
+**File 1: buy-vs-build** — replace the neutrality h2 + answer block (L193-201).
+← Edit app/problems/wrong-erp-software/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
+@@ -6,21 +6,21 @@
+ import { NowAfterPlate } from '@/components/NowAfterPlate';
+ 
+ export const metadata: Metadata = {
+  title: 'Wrong ERP software: Decoded Ops',
+- description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
+- alternates: { canonical: '/problems/wrong-erp-software' },
+- openGraph: {
+-  title: 'Wrong ERP software: Decoded Ops',
+-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
+-  url: 'https://decodedops.co.uk/problems/wrong-erp-software',
+-  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+- },
+- twitter: {
+-  card: 'summary_large_image',
+-  title: 'Wrong ERP software: Decoded Ops',
+-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, without the vendor bias.",
+- },
++  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
++  alternates: { canonical: '/problems/wrong-erp-software' },
++  openGraph: {
++   title: 'Wrong ERP software: Decoded Ops',
++   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
++   url: 'https://decodedops.co.uk/problems/wrong-erp-software',
++   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
++  },
++  twitter: {
++   card: 'summary_large_image',
++   title: 'Wrong ERP software: Decoded Ops',
++   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
++  },
+ };
+ 
+ const wrongErpSchema = {
+  '@context': 'https://schema.org',
+
+
+**File 2: wrong-erp-software** — metadata changes (3 instances of "vendor bias") + h2/answer block.
+← Edit app/problems/wrong-erp-software/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\wrong-erp-software\page.tsx
+@@ -187,11 +187,12 @@
+    <p>If you&apos;re in a system that doesn&apos;t fit, I give you an honest assessment of your
+     options. Sometimes there&apos;s more in the existing system than you&apos;re using, and the
+     implementation was poor, not the software. Sometimes the software genuinely isn&apos;t right
+     and you need to plan a managed exit.</p>
+-   <p>Either way, I help you understand <b>the real cost of staying versus moving</b>, and if
+-    you&apos;re moving, I write the independent vendor brief that makes sure the next ERP is chosen
+-    on fit, not on how good the demo looked.</p>
++    <p>Either way, I help you understand <b>the real cost of staying versus moving</b>, and if
++     you&apos;re moving, I write the vendor brief from your operation, and every candidate gets
++     scored against it. That includes software I have built myself, which is exactly why the
++     brief is written down. Fit decides, and you can see the scoring.</p>
+   </div>
+  </div>
+ </section>
+ 
+
+
+← Edit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\problems\erp-implementation-failure\page.tsx
+@@ -82,11 +82,13 @@
+ <div className="wrap max-w-3xl mx-auto text-center">
+   <span className="eyebrow">The problem</span>
+  <h1>What happens when the audit doesn&apos;t come first.</h1>
+  <div className="hair mx-auto" />
+- <p className="lede mx-auto">ERP projects that skip an independent audit routinely run over budget and
+-  late, because nobody looked at the business before picking the software. The fix isn&apos;t a
+-  bigger budget. It&apos;s doing the checking first, before any platform gets chosen.</p>
++  <p className="lede mx-auto">ERP projects that skip an independent audit routinely run over budget and
++   late, because nobody looked at the business before picking the software. The fix isn&apos;t a
++   bigger budget. It&apos;s doing the checking first, before any platform gets chosen. And where
++   the answer turns out to be software I build, the same rule applies: scope in writing
++   before anything is signed.</p>
+  <div className="btn-row justify-center">
+   <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
+  </div>
+ </div>
+
+
+**File 3: erp-implementation-failure** — add one disclosure sentence in the hero (the natural spot for Craig's role + audit-first framing).
+← Edit app/resources/erp-selection-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\resources\erp-selection-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\resources\erp-selection-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-disclosure\app\resources\erp-selection-playbook\page.tsx
+@@ -250,8 +250,15 @@
+   </div>
+ </div>
+ 
+ <div style={{ marginBottom: 64 }}>
++  <h2>Where I stand</h2>
++  <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
++    One thing this playbook should say plainly: I build one of the systems in this market. The Data App grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
++  </p>
++</div>
++
++<div style={{ marginBottom: 64 }}>
+   <h2>Common pitfalls specific to garment decoration</h2>
+   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
+     ERP selection in the garment decoration sector has pitfalls that do not appear in other industries. Knowing them in advance saves months of wasted evaluation.
+   </p>
+
+
+**File 4: erp-selection-playbook** — insert "Where I stand" section between the selection steps and pitfalls.
+# Todos
+[✓] Read .context/lane-prompt-voice-core.md
+[✓] Read erp-positioning-brief-pack-2026-09-03.md (Global rules + R1 sections)
+[✓] Identify the four R1 files in this worktree
+[✓] Edit four R1 files — integrate drafted passages verbatim, minimal-touch rest
+[ ] Run extract-copy.mjs if present + voice-lint check
+[•] Grep for 'earn nothing', 'vendor bias', 'No platform I'm paid' — must be gone
+[ ] Commit referencing CR-WEB-021
+[ ] Per-page before/after summary
+
+All four edits done. Now running the mandatory greps.
+✱ Grep "earn nothing|vendor bias|No platform I'm paid" in app/problems · 0 matches
+✱ Grep "earn nothing|vendor bias|No platform I'm paid" in app/resources/erp-selection-playbook · 0 matches
+✱ Grep "independent" in app/problems/buy-vs-build/page.tsx · 0 matches
+✱ Grep "independent|neutral|neutrality|unbiased" in app/problems/buy-vs-build/page.tsx · 1 match
+✱ Grep "independent|neutral|neutrality|unbiased|vendor bias" in app/problems/wrong-erp-software/page.tsx · 4 matches
+✱ Grep "independent|neutral|neutrality|unbiased|vendor bias" in app/problems/erp-implementation-failure/page.tsx · 6 matches
+Three banned phrases all gone. The one "neutral" hit is the canonical drafted passage (correct). Let me check the other files for stray absolute-neutrality wording.
+✱ Grep "independent|neutral|neutrality|unbiased|vendor bias" in app/resources/erp-selection-playbook/page.tsx · 1 match
+✱ Grep "Being upfront" in app/problems · 1 match
+All "independent" hits are third-party language (correct for the disclosure position). Let me also scan for "Being upfront" to verify it appears at most once per page per the global rules.
+✱ Grep "Being upfront" in app/resources/erp-selection-playbook · 0 matches
+✱ Glob "**/*extract-copy*" in . · 0 matches
+"Being upfront" once on buy-vs-build, zero on the others. Compliant with global rules. Now checking for extract-copy.mjs and voice-lint.
+✱ Glob "**/*voice-lint*" in . · 0 matches
+→ Read app/problems/buy-vs-build/page.tsx [offset=185, limit=40]
+Neither script exists in this worktree. Skipping per brief instruction ("if present"). Let me do the brief's additional scan of buy-vs-build for any other absolute-neutrality wording.
+→ Read app/problems/wrong-erp-software/page.tsx [limit=25, offset=8]
+→ Read app/problems/wrong-erp-software/page.tsx [limit=15, offset=185]
+No other absolute-neutrality wording in buy-vs-build. Let me verify the wrong-erp-software metadata change looks right.
+→ Read app/problems/erp-implementation-failure/page.tsx [limit=10, offset=85]
+→ Read app/resources/erp-selection-playbook/page.tsx [limit=20, offset=251]
+Both look correct. Let me verify the erp-implementation-failure hero and erp-selection-playbook new section.
+
+# Todos
+[✓] Read .context/lane-prompt-voice-core.md
+[✓] Read erp-positioning-brief-pack-2026-09-03.md (Global rules + R1 sections)
+[✓] Identify the four R1 files in this worktree
+[✓] Edit four R1 files — integrate drafted passages verbatim, minimal-touch rest
+[✓] Run extract-copy.mjs if present + voice-lint check
+[✓] Grep for 'earn nothing', 'vendor bias', 'No platform I'm paid' — must be gone
+[•] Commit referencing CR-WEB-021
+[ ] Per-page before/after summary
+
+All four edits verified. Now committing.

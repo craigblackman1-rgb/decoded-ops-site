@@ -1,0 +1,314 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Read all 14 files and identify hex color classes to replace
+[ ] Apply replacements across all 14 files
+[ ] Run VERIFY steps and commit
+
+ΓåÆ Read app/pricing/PricingClient.tsx
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/clarity/page.tsx
+ΓåÆ Read app/retained/page.tsx
+ΓåÆ Read app/privacy/page.tsx
+ΓåÆ Read app/transform/page.tsx
+ΓåÆ Read app/contact/ContactClient.tsx
+ΓåÆ Read app/deliver/page.tsx
+ΓåÆ Read app/decoded-data-app/page.tsx
+ΓåÆ Read app/small-business/page.tsx
+ΓåÆ Read app/cookies/page.tsx
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/layout.tsx
+ΓåÆ Read app/blog/page.tsx
+
+# Todos
+[Γ£ô] Read all 14 files and identify hex color classes to replace
+[ΓÇó] Write PowerShell script to apply all replacements
+[ ] Run VERIFY steps and commit
+
+I need to write a PowerShell script to systematically replace all Tailwind hex classes. The 14 files have hundreds of instances. Let me write and run the script.
+$ pwsh -Command '
+$files = @(
+  "app/pricing/PricingClient.tsx",
+  "app/page.tsx",
+  "app/clarity/page.tsx",
+  "app/retained/page.tsx",
+  "app/privacy/page.tsx",
+  "app/transform/page.tsx",
+  "app/contact/ContactClient.tsx",
+  "app/deliver/page.tsx",
+  "app/decoded-data-app/page.tsx",
+  "app/small-business/page.tsx",
+  "app/cookies/page.tsx",
+  "app/pricing/page.tsx",
+  "app/layout.tsx",
+  "app/blog/page.tsx"
+)
+
+$map = @{
+  "023047" = "prussian-blue"
+  "219EBC" = "cerulean"
+  "8ECAE6" = "sky-blue"
+  "FFB703" = "amber"
+  "FB8500" = "orange-brand"
+  "F8F9FA" = "off-white"
+}
+
+$totalReplacements = 0
+
+foreach ($file in $files) {
+  $content = Get-Content -Path $file -Raw
+  $original = $content
+  $fileCount = 0
+  
+  foreach ($hex in $map.Keys) {
+    $token = $map[$hex]
+    $before = $content
+    # Match [#HEX] or [#HEX]/digits inside bracket notation
+    # Lookbehind: [ prefix  Lookahead: ] or /digits
+    $content = $content -replace "(?<=\[)#$hex(?=\](?:\/\d)?)", $token
+    $diff = ([regex]::Matches($before, "(?<=\[)#$hex(?=\](?:\/\d)?)")).Count
+    $fileCount += $diff
+  }
+  
+  if ($content -ne $original) {
+    Set-Content -Path $file -Value $content -NoNewline
+  }
+  
+  if ($fileCount -gt 0) {
+    Write-Output "$file : $fileCount replacements"
+    $totalReplacements += $fileCount
+  }
+}
+
+Write-Output "`nTotal replacements: $totalReplacements"
+'
+app/pricing/PricingClient.tsx : 146 replacements
+app/page.tsx : 135 replacements
+app/clarity/page.tsx : 78 replacements
+app/retained/page.tsx : 83 replacements
+app/privacy/page.tsx : 48 replacements
+app/transform/page.tsx : 64 replacements
+app/contact/ContactClient.tsx : 66 replacements
+app/deliver/page.tsx : 52 replacements
+app/decoded-data-app/page.tsx : 43 replacements
+app/small-business/page.tsx : 39 replacements
+app/cookies/page.tsx : 13 replacements
+app/pricing/page.tsx : 3 replacements
+app/layout.tsx : 2 replacements
+app/blog/page.tsx : 1 replacements
+
+Total replacements: 773
+
+# Todos
+[Γ£ô] Read all 14 files and identify hex color classes to replace
+[Γ£ô] Write PowerShell script to apply all replacements
+[ΓÇó] Run VERIFY steps and commit
+
+773 replacements made. Now let me run the verification checks.
+$ npx tsc --noEmit 2>&1
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+$ git diff --stat
+app/blog/page.tsx             |   2 +-
+ app/clarity/page.tsx          | 120 ++++++++++++-------------
+ app/contact/ContactClient.tsx |  76 ++++++++--------
+ app/cookies/page.tsx          |  20 ++---
+ app/decoded-data-app/page.tsx |  68 +++++++-------
+ app/deliver/page.tsx          |  74 ++++++++--------
+ app/layout.tsx                |   2 +-
+ app/page.tsx                  | 186 +++++++++++++++++++-------------------
+ app/pricing/PricingClient.tsx | 202 +++++++++++++++++++++---------------------
+ app/pricing/page.tsx          |   6 +-
+ app/privacy/page.tsx          |  94 ++++++++++----------
+ app/retained/page.tsx         | 118 ++++++++++++------------
+ app/small-business/page.tsx   |  62 ++++++-------
+ app/transform/page.tsx        |  88 +++++++++---------
+ 14 files changed, 559 insertions(+), 559 deletions(-)
+
+$ rg -iIn "\-\[#(023047|219EBC|8ECAE6|FFB703|FB8500|F8F9FA)\]" app/pricing/PricingClient.tsx app/page.tsx app/clarity/page.tsx app/retained/page.tsx app/privacy/page.tsx app/transform/page.tsx app/contact/ContactClient.tsx app/deliver/page.tsx app/decoded-data-app/page.tsx app/small-business/page.tsx app/cookies/page.tsx app/pricing/page.tsx app/layout.tsx app/blog/page.tsx 2>&1
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+`git diff --stat` looks correct: 14 files, 559 insertions = 559 deletions (pure per-line swap). Let me install deps and run tsc, plus the leftover check with a different tool.
+$ npm install 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ npm install 2>&1
+added 409 packages, and audited 410 packages in 48s
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+146 packages are looking for funding
+  run `npm fund` for details
+
+2 high severity vulnerabilities
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+$ npx tsc --noEmit 2>&1
+(no output)
+
+`tsc --noEmit` passes (exit 0). Now the leftover check:
+$ pwsh -Command '
+$files = @(
+  "app/pricing/PricingClient.tsx",
+  "app/page.tsx",
+  "app/clarity/page.tsx",
+  "app/retained/page.tsx",
+  "app/privacy/page.tsx",
+  "app/transform/page.tsx",
+  "app/contact/ContactClient.tsx",
+  "app/deliver/page.tsx",
+  "app/decoded-data-app/page.tsx",
+  "app/small-business/page.tsx",
+  "app/cookies/page.tsx",
+  "app/pricing/page.tsx",
+  "app/layout.tsx",
+  "app/blog/page.tsx"
+)
+$hexes = "023047|219EBC|8ECAE6|FFB703|FB8500|F8F9FA"
+$pattern = "\-\[#($hexes)\]"
+$found = $false
+foreach ($f in $files) {
+  $lines = Select-String -Path $f -Pattern $pattern -CaseSensitive:$false
+  foreach ($line in $lines) {
+    Write-Output "$($line.Filename):$($line.LineNumber): $($line.Line.Trim())"
+    $found = $true
+  }
+}
+if (-not $found) {
+  Write-Output "No leftover hex classes found."
+}
+'
+No leftover hex classes found.
+
+No leftover hex classes. Now the spot-check:
+$ git diff -U0 -- "app/pricing/PricingClient.tsx" "app/page.tsx" "app/clarity/page.tsx" "app/retained/page.tsx" "app/privacy/page.tsx" "app/transform/page.tsx" "app/contact/ContactClient.tsx" "app/deliver/page.tsx" "app/decoded-data-app/page.tsx" "app/small-business/page.tsx" "app/cookies/page.tsx" "app/pricing/page.tsx" "app/layout.tsx" "app/blog/page.tsx" 2>&1 | pwsh -Command '$input | Select-String "^[-+]" | Select-String -NotMatch "^[-+][-+]" | Select-Object -First 30'
+-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] 
+hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
++            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[sky-blue] 
+hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+-      <section className="py-6 bg-[#219EBC]">
++      <section className="py-6 bg-[cerulean]">
+-            <blockquote className="italic text-lg lg:text-xl text-[#023047] font-medium">
++            <blockquote className="italic text-lg lg:text-xl text-[prussian-blue] font-medium">
+-      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[#F8F9FA]">
++      <section className="pt-24 pb-20 lg:pt-32 lg:pb-28 bg-[off-white]">
+-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#023047]/10 border 
+border-[#023047]/20 mb-6">
+-                <span className="text-xs font-semibold text-[#023047] tracking-wider uppercase">&mdash; Discovery Day 
+&middot; On-Site Audit &amp; Written Plan</span>
++              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[prussian-blue]/10 border 
+border-[prussian-blue]/20 mb-6">
++                <span className="text-xs font-semibold text-[prussian-blue] tracking-wider uppercase">&mdash; 
+Discovery Day &middot; On-Site Audit &amp; Written Plan</span>
+-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#023047] leading-tight mb-6">
+-                  One day. A complete technology audit. <span className="text-[#219EBC]">Everything it costs 
+you</span> in writing within five working days.
++                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[prussian-blue] leading-tight mb-6">
++                  One day. A complete technology audit. <span className="text-[cerulean]">Everything it costs 
+you</span> in writing within five working days.
+-                <p className="text-lg text-[#023047]/70 leading-relaxed mb-4 max-w-xl">
+-                  A structured technology audit and operations review ╬ô├ç├╢ independent, on site, and delivered in 
+writing. Not a workshop. Not a proposal. A real audit ╬ô├ç├╢ followed, observed, and quantified. <strong 
+className="text-[#023047]">One fixed fee, no surprises.</strong>
++                <p className="text-lg text-[prussian-blue]/70 leading-relaxed mb-4 max-w-xl">
++                  A structured technology audit and operations review ╬ô├ç├╢ independent, on site, and delivered in 
+writing. Not a workshop. Not a proposal. A real audit ╬ô├ç├╢ followed, observed, and quantified. <strong 
+className="text-[prussian-blue]">One fixed fee, no surprises.</strong>
+-                <p className="text-sm text-[#023047]/50 mb-8">By Craig Blackman ╬ô├ç├╢ 25 years in print &amp; 
+embroidery operations</p>
++                <p className="text-sm text-[prussian-blue]/50 mb-8">By Craig Blackman ╬ô├ç├╢ 25 years in print &amp; 
+embroidery operations</p>
+-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 
+rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 
+rounded-full bg-[amber] text-[prussian-blue] font-semibold hover:bg-[orange-brand] transition-colors">
+-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#219EBC] 
+hover:text-[#023047] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} 
+/></a>
++              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[cerulean] 
+hover:text-[prussian-blue] font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight 
+size={14} /></a>
+-              <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[#023047]/10 shadow-lg">
++              <div className="w-full rounded-2xl overflow-hidden ring-1 ring-[prussian-blue]/10 shadow-lg">
+-      <section className="py-20 lg:py-28 bg-[#F8F9FA]">
++      <section className="py-20 lg:py-28 bg-[off-white]">
+
+Spot-check looks clean ΓÇö every `-` line has a matching `+` line differing only in the colour class. Now let me commit:
+$ git add app/pricing/PricingClient.tsx app/page.tsx app/clarity/page.tsx app/retained/page.tsx app/privacy/page.tsx app/transform/page.tsx app/contact/ContactClient.tsx app/deliver/page.tsx app/decoded-data-app/page.tsx app/small-business/page.tsx app/cookies/page.tsx app/pricing/page.tsx app/layout.tsx app/blog/page.tsx && git commit -m "chore: replace Tailwind hex colour classes with design-system tokens in core marketing pages"
+[task/hex-tokens-core-2026-09-01 eff1165] chore: replace Tailwind hex colour classes with design-system tokens in core marketing pages
+ 14 files changed, 559 insertions(+), 559 deletions(-)
+
+$ git log --oneline -3
+eff1165 chore: replace Tailwind hex colour classes with design-system tokens in core marketing pages
+d45350e Fix wrong CRM link in lead alert email ΓÇö /leads ΓåÆ /admin/leads
+2ab97c9 Add lead alert email to tool capture route
+
+# Todos
+[Γ£ô] Read all 14 files and identify hex color classes to replace
+[Γ£ô] Write PowerShell script to apply all replacements
+[Γ£ô] Run VERIFY steps and commit
+
+Done. Commit `eff1165` on branch `task/hex-tokens-core-2026-09-01`.
+
+---
+
+## Per-file replacement counts
+
+| File | Replacements |
+|------|-------------|
+| `app/pricing/PricingClient.tsx` | 146 |
+| `app/page.tsx` | 135 |
+| `app/retained/page.tsx` | 83 |
+| `app/clarity/page.tsx` | 78 |
+| `app/contact/ContactClient.tsx` | 66 |
+| `app/transform/page.tsx` | 64 |
+| `app/small-business/page.tsx` | 39 |
+| `app/deliver/page.tsx` | 52 |
+| `app/decoded-data-app/page.tsx` | 43 |
+| `app/privacy/page.tsx` | 48 |
+| `app/cookies/page.tsx` | 13 |
+| `app/pricing/page.tsx` | 3 |
+| `app/layout.tsx` | 2 |
+| `app/blog/page.tsx` | 1 |
+| **Total** | **773** |
+
+## Mapping table
+
+| Old class | New class | Hex |
+|-----------|-----------|-----|
+| `[#023047]` | `[prussian-blue]` | `#023047` |
+| `[#219EBC]` | `[cerulean]` | `#219EBC` |
+| `[#8ECAE6]` | `[sky-blue]` | `#8ECAE6` |
+| `[#FFB703]` | `[amber]` | `#FFB703` |
+| `[#FB8500]` | `[orange-brand]` | `#FB8500` |
+| `[#F8F9FA]` | `[off-white]` | `#F8F9FA` |
+
+Case-insensitive variants handled (e.g. `#ffb703` ΓåÆ `amber`).
+
+## VERIFY output
+
+**1. `npx tsc --noEmit`** ΓÇö exit 0 (no errors)
+
+**2. Leftover check** ΓÇö `No leftover hex classes found.`
+
+**3. `git diff --stat`** ΓÇö 14 files, 559 insertions(+), 559 deletions(-). Pure per-line swap.
+
+**4. Spot-check** ΓÇö every `-` line has a matching `+` line differing only in the colour class token. Verified on sample of 30+ lines across multiple files.

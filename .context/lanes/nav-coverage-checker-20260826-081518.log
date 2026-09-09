@@ -1,0 +1,153 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Copy check-nav-coverage.mjs from shared checkout into worktree
+[ ] Read the script and verify it runs (node .context/check-nav-coverage.mjs)
+[ ] Find existing pre-merge gate wiring (commit ea0233a pattern)
+[ ] Wire nav checker into existing pre-merge check
+[ ] Verify exit codes and git diff --stat
+[ ] Commit and summarize
+
+$ Test-Path "D:\apps\decoded-ops-website\.context\check-nav-coverage.mjs"
+True
+
+$ git log --oneline ea0233a -1 2>$null; git show ea0233a --stat 2>$null
+ea0233a chore: wire pre-merge gates (price audit + copy extractor)
+commit ea0233ad212229b955b20012776ed8ab011fae6d
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Mon Aug 24 08:42:13 2026 +0100
+
+    chore: wire pre-merge gates (price audit + copy extractor)
+
+ .context/check-nav-coverage.mjs |    8 +-
+ .context/copy-snapshot.md       | 2311 +++++++++++++++++++++++++++++++++++++++
+ .context/extract-copy.mjs       |  182 +++
+ .context/price-audit.mjs        |   46 +
+ CLAUDE.md                       |    6 +
+ package.json                    |    6 +-
+ 6 files changed, 2554 insertions(+), 5 deletions(-)
+
+Γ£▒ Glob "package.json" in . ┬╖ 1 match
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\nav-coverage-checker\.context\check-nav-coverage.mjs"
+True
+
+ΓåÆ Read D:/apps/decoded-ops-website/.context/check-nav-coverage.mjs
+
+$ Get-Content "D:\apps\worktrees\decoded-ops-website\nav-coverage-checker\package.json" | ConvertFrom-Json | Select-Object -ExpandProperty scripts | ConvertTo-Json
+{
+  "dev": "next dev -p 8765",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "check:nav": "node .context/check-nav-coverage.mjs",
+  "check:price": "node .context/price-audit.mjs",
+  "copy:extract": "node .context/extract-copy.mjs",
+  "check:premerge": "npm run check:nav && npm run check:price"
+}
+
+ΓåÆ Read .context/check-nav-coverage.mjs
+
+$ git log --oneline -5
+ea0233a chore: wire pre-merge gates (price audit + copy extractor)
+cb82067 Compact sign panel bar for unsigned document view
+4744b95 merge
+7ef16d4 fix(client-portal): resolve docs via client-scoped list after hub token gate
+3a1f18e chore: remove closed work-order and lane briefing docs from .context
+
+$ git status --short
+(no output)
+
+# Todos
+[Γ£ô] Copy check-nav-coverage.mjs from shared checkout into worktree
+[ΓÇó] Read the script and verify it runs (node .context/check-nav-coverage.mjs)
+[Γ£ô] Find existing pre-merge gate wiring (commit ea0233a pattern)
+[Γ£ô] Wire nav checker into existing pre-merge check
+[ ] Verify exit codes and git diff --stat
+[ ] Commit and summarize
+
+$ fc.exe "D:\apps\decoded-ops-website\.context\check-nav-coverage.mjs" "D:\apps\worktrees\decoded-ops-website\nav-coverage-checker\.context\check-nav-coverage.mjs"
+Comparing files D:\APPS\DECODED-OPS-WEBSITE\.CONTEXT\check-nav-coverage.mjs and D:\APPS\WORKTREES\DECODED-OPS-WEBSITE\NAV-COVERAGE-CHECKER\.CONTEXT\CHECK-NAV-COVERAGE.MJS
+***** D:\APPS\DECODED-OPS-WEBSITE\.CONTEXT\check-nav-coverage.mjs
+//   BROKEN    G∩┐╜∩┐╜ a nav link pointing at a route that does not exist
+// Run: node check-nav-coverage.mjs <repo-root>
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, relative, sep } from 'node:path';
+
+const root = process.argv[2];
+if (!root) { console.error('usage: node check-nav-coverage.mjs <repo-root>'); process.exit(2); }
+
+***** D:\APPS\WORKTREES\DECODED-OPS-WEBSITE\NAV-COVERAGE-CHECKER\.CONTEXT\CHECK-NAV-COVERAGE.MJS
+//   BROKEN    G∩┐╜∩┐╜ a nav link pointing at a route that does not exist
+// Run: node check-nav-coverage.mjs [repo-root]  (root defaults to the repo this file lives in)
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, relative, sep, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = process.argv[2] ? resolve(process.cwd(), process.argv[2]) : resolve(dirname(fileURLToPath(import.meta.url)), '..')
+;
+
+*****
+
+$ node .context/check-nav-coverage.mjs
+pages on disk (public, static): 48
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (3):
+  /locations/fractional-cto/brighton
+  /locations/fractional-cto/chichester
+  /locations/fractional-cto/guildford
+
+$ npm run check:premerge 2>&1; echo "EXIT CODE: $LASTEXITCODE"
+> decoded-ops-next@0.1.0 check:premerge
+> npm run check:nav && npm run check:price
+
+
+> decoded-ops-next@0.1.0 check:nav
+> node .context/check-nav-coverage.mjs
+
+pages on disk (public, static): 48
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (3):
+  /locations/fractional-cto/brighton
+  /locations/fractional-cto/chichester
+  /locations/fractional-cto/guildford
+EXIT CODE: 1
+
+$ git diff --stat HEAD
+(no output)
+

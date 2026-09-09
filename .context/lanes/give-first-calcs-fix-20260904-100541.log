@@ -1,0 +1,147 @@
+
+> build · mimo-v2.5
+
+→ Read components/calculators/SeasonalCapacityCalculator.tsx
+→ Read components/calculators/CapacityPlannerCalculator.tsx
+
+← Edit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -8,9 +8,9 @@
+ import './calculators.css';
+ 
+ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+ 
+-const DEFAULT_DEMAND_PCT = [60, 55, 70, 85, 100, 110, 115, 90, 105, 100, 80, 65];
++const FLAT_DEMAND_PCT = Array(12).fill(100);
+ 
+ export function SeasonalCapacityCalculator() {
+   const [baselineJobs, setBaselineJobs] = useState<number>(200);
+   const [baseCapacity, setBaseCapacity] = useState<number>(220);
+
+
+Found the issues. Both are clear.
+
+**SeasonalCapacityCalculator.tsx**: Hardcoded `DEFAULT_DEMAND_PCT` with a seasonal curve. Fix: all months start at 100% (neutral flat), reset button becomes "Reset to flat".
+
+**CapacityPlannerCalculator.tsx**: `downtimePct` hint says "10–20% is typical" — implied industry benchmark. Fix: remove that sentence.
+← Edit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -13,9 +13,9 @@
+ 
+ export function SeasonalCapacityCalculator() {
+   const [baselineJobs, setBaselineJobs] = useState<number>(200);
+   const [baseCapacity, setBaseCapacity] = useState<number>(220);
+-  const [demandPct, setDemandPct] = useState<number[]>(DEFAULT_DEMAND_PCT);
++  const [demandPct, setDemandPct] = useState<number[]>(FLAT_DEMAND_PCT);
+ 
+   const demandVsCapacity = useMemo(() => {
+     return MONTHS.map((m, i) => {
+       const demand = Math.round((baselineJobs * demandPct[i]) / 100);
+
+
+← Edit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -36,9 +36,9 @@
+   next[index] = Math.max(0, Math.min(200, value || 0));
+   setDemandPct(next);
+ };
+ 
+-const resetToDefault = () => setDemandPct(DEFAULT_DEMAND_PCT);
++const resetToDefault = () => setDemandPct(FLAT_DEMAND_PCT);
+ 
+ const barMax = Math.max(baseCapacity, peakDemand, 1);
+ 
+ return (
+
+
+← Edit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -90,9 +90,9 @@
+       fontSize: 'var(--do-text-xs)', color: 'var(--do-cerulean)', background: 'none',
+       border: 'none', cursor: 'pointer', fontWeight: 500, textDecoration: 'underline',
+     }}
+   >
+-    Reset to default
++    Reset to flat
+   </button>
+ </div>
+ <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginBottom: 16 }}>
+   100% = your baseline. Drag up for peak months, down for quiet ones.
+
+
+← Edit components/calculators/SeasonalCapacityCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\SeasonalCapacityCalculator.tsx
+@@ -75,9 +75,9 @@
+     value={baselineJobs}
+     onChange={(e) => setBaselineJobs(Math.max(1, Number(e.target.value) || 1))}
+     className="calc-input"
+   />
+-  <p className="calc-hint">Your typical output in a normal month. Seasonal percentages are applied to this.</p>
++  <p className="calc-hint">Your output in a normal month. All months start at 100% (flat) — adjust each month to match your seasonal pattern.</p>
+ </div>
+ 
+ <div style={{ marginTop: 24 }}>
+   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+
+
+← Edit components/calculators/CapacityPlannerCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\CapacityPlannerCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\CapacityPlannerCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\components\calculators\CapacityPlannerCalculator.tsx
+@@ -106,9 +106,9 @@
+       value={downtimePct}
+       onChange={(e) => setDowntimePct(Math.max(0, Math.min(100, Number(e.target.value) || 0)))}
+       className="calc-input"
+     />
+-    <p className="calc-hint">Changeovers, cleaning, breaks, minor breakdowns. 10–20% is typical.</p>
++    <p className="calc-hint">Changeovers, cleaning, breaks, minor breakdowns.</p>
+   </div>
+ </div>
+ 
+ {/* Right column: results */}
+
+
+→ Read components/calculators/SeasonalCapacityCalculator.tsx [limit=50]
+→ Read components/calculators/CapacityPlannerCalculator.tsx [limit=15, offset=96]
+→ Read components/calculators/SeasonalCapacityCalculator.tsx [limit=20, offset=76]
+All edits verified. Committing now.
+
+$ git add components/calculators/SeasonalCapacityCalculator.tsx components/calculators/CapacityPlannerCalculator.tsx && git commit -m "fix: remove implied industry benchmarks from calculator defaults
+
+SeasonalCapacityCalculator:
+- Replace hardcoded DEFAULT_DEMAND_PCT curve [60,55,70,85,100,110,115,90,105,100,80,65]
+  with FLAT_DEMAND_PCT (all months at 100%). No implied seasonal pattern.
+- Rename 'Reset to default' button to 'Reset to flat'
+- Update baseline hint to explain 100% = flat, user adjusts per month
+
+CapacityPlannerCalculator:
+- Remove '10-20% is typical' from downtime hint (implied industry benchmark)
+- Default value (15) stays as a neutral starting point, not a claimed norm"
+warning: in the working copy of 'components/calculators/CapacityPlannerCalculator.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/calculators/SeasonalCapacityCalculator.tsx', LF will be replaced by CRLF the next time Git touches it
+[task/give-first-calcs-2026-09-04 9256633] fix: remove implied industry benchmarks from calculator defaults
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+Committed as `9256633`.
+
+**What changed:**
+
+**SeasonalCapacityCalculator.tsx** — `DEFAULT_DEMAND_PCT` (`[60, 55, 70, 85, 100, 110, 115, 90, 105, 100, 80, 65]`) removed entirely. Replaced with `FLAT_DEMAND_PCT` (`Array(12).fill(100)`) — every month starts at 100%, a neutral flat line with no implied seasonal pattern. "Reset to default" button renamed to "Reset to flat". Baseline hint updated to explain the flat starting state.
+
+**CapacityPlannerCalculator.tsx** — Removed "10–20% is typical" from the downtime hint (`CapacityPlannerCalculator.tsx:110`). The default value of 15 stays as a neutral starting point; the text no longer frames it as an industry norm. No other benchmark-flavoured defaults found — the remaining defaults (4 machines, 8 hours, 5 days, 30 min/job) are neutral operational inputs, not claimed industry figures.

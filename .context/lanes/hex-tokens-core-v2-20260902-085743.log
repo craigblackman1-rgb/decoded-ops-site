@@ -1,0 +1,90 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Read all 14 files and identify hardcoded hex colour classes
+[ ] Replace all mapped hex classes with bare token utilities
+[ ] Run verification checks (tsc, grep, git)
+[ ] Commit changes
+
+ΓåÆ Read app/blog/page.tsx
+ΓåÆ Read app/clarity/page.tsx
+ΓåÆ Read app/contact/ContactClient.tsx
+ΓåÆ Read app/cookies/page.tsx
+ΓåÆ Read app/decoded-data-app/page.tsx
+ΓåÆ Read app/deliver/page.tsx
+ΓåÆ Read app/layout.tsx
+ΓåÆ Read app/page.tsx
+ΓåÆ Read app/pricing/PricingClient.tsx
+ΓåÆ Read app/pricing/page.tsx
+ΓåÆ Read app/privacy/page.tsx
+ΓåÆ Read app/retained/page.tsx
+ΓåÆ Read app/small-business/page.tsx
+ΓåÆ Read app/transform/page.tsx
+Now let me search for all the hex patterns that need replacing across the 14 files.
+Γ£▒ Grep "\[#(023047|219EBC|8ECAE6|FFB703|FB8500|F8F9FA)\]" in app ┬╖ 100 matches
+
+# Todos
+[Γ£ô] Read all 14 files and identify hardcoded hex colour classes
+[ΓÇó] Replace all mapped hex classes with bare token utilities
+[ ] Run verification checks (tsc, grep, git)
+[ ] Commit changes
+
+There are many matches. Let me use task agents to do the replacements in parallel across all files.
+ΓåÉ Edit app/layout.tsx
+Index: D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\layout.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\layout.tsx
++++ D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\layout.tsx
+@@ -55,9 +55,9 @@
+ 
+ export default function RootLayout({ children }: { children: React.ReactNode }) {
+   return (
+     <html lang="en" className={`h-full antialiased ${outfit.variable} ${dmSans.variable}`}>
+-      <body className="min-h-full flex flex-col bg-[#F8F9FA] text-[#023047]" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
++      <body className="min-h-full flex flex-col bg-off-white text-prussian-blue" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
+         <Script
+           src="https://www.googletagmanager.com/gtag/js?id=G-SN2Z3J31CZ"
+           strategy="afterInteractive"
+         />
+
+
+ΓåÉ Edit app/blog/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\blog\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\blog\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\blog\page.tsx
+@@ -110,9 +110,9 @@
+         </p>
+         <Link href="/contact" className="blog-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
+           Book a free discovery call <ArrowRight size={18} />
+         </Link>
+-        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-[#8ECAE6] hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
++        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm text-sky-blue hover:text-white font-medium inline-flex items-center gap-1 mt-3">Or book a call directly <ArrowRight size={14} /></a>
+       </div>
+     </div>
+   </section>
+ </>
+
+
+ΓåÉ Edit app/cookies/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\cookies\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\cookies\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\hex-tokens-core-v2\app\cookies\page.tsx
+@@ -18,9 +18,9 @@
+ };
+ 
+ export default function CookiesPage() {
+   return (
+-    <div className="min-h-screen bg-[#F8F9FA] text-[#023047] pt-32 pb-16">
++    <div className="min-h-screen bg-off-white text-prussian-blue pt-32 pb-16">
+       <div className="max-w-3xl mx-auto px-6 lg:px-8">
+         {/* Header */}
+         <div className="mb-12">
+           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Cookie Policy</h1>
+
+
+Γ£ù Edit app/privacy/page.tsx failed
+Error: Found multiple matches for oldString. Provide more surrounding context to make the match unique.
+I'll do the replacements file by file using `replaceAll`. Let me start with the simpler files first, then tackle the larger ones.

@@ -1,0 +1,195 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] BUG-WEB-012: Fix broken hero image on /about page
+[ ] BUG-WEB-013: Fix broken Ralawise blog link on /problems/ecommerce-not-connected
+[ ] BUG-WEB-014: Fix bare LinkedIn href in footer
+[ ] Verify all three fixes
+
+Γ£▒ Grep "linkedin\.com" 2 matches
+Γ£▒ Grep "thread-spools" 8 matches
+Γ£▒ Grep "ralawise-integration" 6 matches
+Γ£▒ Grep "assets/commerce" 3 matches
+ΓåÆ Read app/about/page.tsx [offset=45, limit=15]
+ΓåÆ Read data/problem-routing.ts [offset=58, limit=10]
+ΓåÆ Read components/Footer.tsx [offset=118, limit=10]
+All three bugs identified. Let me read the relevant lines and fix them.
+Γ£▒ Grep "thread-spools|preload.*thread" 1 match
+Let me also check for a preload link in the about page.
+Γ£▒ Grep "thread-spools.*preload|preload.*thread-spools" 1 match
+Γ£▒ Grep "preload.*assets/commerce|assets/commerce.*preload" 1 match
+Γ£▒ Glob "public/assets/commerce/**" 0 matches
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-links-images\public\images\sectors\thread-spools.jpg"
+True
+
+ΓåÉ Edit app/about/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-links-images\app\about\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-links-images\app\about\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-links-images\app\about\page.tsx
+@@ -46,9 +46,9 @@
+ </div>
+ 
+ <div className={s.heroShot}>
+   <div className={s.photo} data-od-id="about-visual">
+-    <img src="/assets/commerce/thread-spools.jpg" width="1600" height="1067"
++    <img src="/images/sectors/thread-spools.jpg" width="1600" height="1067"
+          alt="A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor." />
+   </div>
+   <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
+     system that runs them.</p>
+
+
+ΓåÉ Edit data/problem-routing.ts
+Index: D:\apps\worktrees\decoded-ops-website\fix-links-images\data\problem-routing.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-links-images\data\problem-routing.ts
++++ D:\apps\worktrees\decoded-ops-website\fix-links-images\data\problem-routing.ts
+@@ -58,9 +58,9 @@
+     { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
+   ],
+   relatedReading: [
+     { href: '/blog/ecommerce-integration-trap', label: 'The eCommerce integration trap' },
+-    { href: '/blog/ralawise-integration', label: 'Ralawise integration: automating wholesale orders' },
++    { href: '/blog/ralawise-integration-bulk-orders-stock-management', label: 'Ralawise integration: automating wholesale orders' },
+   ],
+ },
+ 
+ 'disaster-recovery': {
+
+
+ΓåÉ Edit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\fix-links-images\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\fix-links-images\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\fix-links-images\components\Footer.tsx
+@@ -118,9 +118,9 @@
+   <span className="sep" aria-hidden="true">&middot;</span>
+   <a href="tel:+447735620603">07735 620603</a>
+ </div>
+ <a
+-  href="https://linkedin.com"
++  href="https://www.linkedin.com/company/decodedops"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Craig Blackman on LinkedIn (opens in new tab)"
+   style={{ marginTop: 14 }}
+
+
+The `/assets/commerce/` directory doesn't exist at all. The convention is `/images/sectors/`. All three fixes are clear. Making them now.
+# Todos
+[Γ£ô] BUG-WEB-012: Fix broken hero image on /about page
+[Γ£ô] BUG-WEB-013: Fix broken Ralawise blog link on /problems/ecommerce-not-connected
+[Γ£ô] BUG-WEB-014: Fix bare LinkedIn href in footer
+[ΓÇó] Verify all three fixes
+
+Now verifying all three fixes.
+Γ£▒ Grep "href="https://linkedin\.com"" 0 matches
+
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/images/sectors/thread-spools.jpg
+000
+
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:8765/blog/ralawise-integration-bulk-orders-stock-management
+000
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\fix-links-images\public\images\sectors\thread-spools.jpg"
+True
+
+Γ£▒ Grep "ralawise-integration-bulk-orders-stock-management" 4 matches
+Dev server isn't running. Let me verify by checking the filesystem directly.
+
+$ npm run build 2>&1 | Select-Object -Last 20
+> decoded-ops-next@0.1.0 prebuild
+> node scripts/generate-route-slugs.mjs
+
+[route-slugs] 18 problems, 9 sectors, 6 tools
+
+> decoded-ops-next@0.1.0 build
+> next build
+
+'next' is not recognized as an internal or external command,
+operable program or batch file.
+
+ΓåÆ Read app/about/page.tsx [limit=3, offset=49]
+ΓåÆ Read data/problem-routing.ts [limit=3, offset=61]
+ΓåÆ Read components/Footer.tsx [limit=3, offset=121]
+No `node_modules` installed in this worktree ΓÇö that's expected per CLAUDE.md. Let me verify the edits directly.
+Let me also do a broader check for bare linkedin.com references across all file types.
+Γ£▒ Grep "href="https://linkedin\.com"" 0 matches
+All three fixes verified. Committing now.
+
+$ git add app/about/page.tsx data/problem-routing.ts components/Footer.tsx && git commit -m "fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+
+- BUG-WEB-012: /about hero image pointed to /assets/commerce/thread-spools.jpg
+  (404 ΓÇö directory doesn't exist). Changed to /images/sectors/thread-spools.jpg
+  which matches the convention used by homepage, sector, and problem pages.
+- BUG-WEB-013: Related article link in problem-routing pointed to
+  /blog/ralawise-integration (404). Corrected to full slug
+  /blog/ralawise-integration-bulk-orders-stock-management.
+- BUG-WEB-014: Footer LinkedIn icon linked to bare https://linkedin.com.
+  Changed to https://www.linkedin.com/company/decodedops matching the
+  site's own schema.org sameAs field."
+[bug-web-012-013-014-links-images 441ee7e] fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+# Todos
+[Γ£ô] BUG-WEB-012: Fix broken hero image on /about page
+[Γ£ô] BUG-WEB-013: Fix broken Ralawise blog link on /problems/ecommerce-not-connected
+[Γ£ô] BUG-WEB-014: Fix bare LinkedIn href in footer
+[Γ£ô] Verify all three fixes
+
+All three fixes committed as `441ee7e`:
+
+- **BUG-WEB-012**: Changed `/about` hero image from `/assets/commerce/thread-spools.jpg` (404 ΓÇö no such directory) to `/images/sectors/thread-spools.jpg` (exists, matches all other pages).
+- **BUG-WEB-013**: Corrected Ralawise related article href from `/blog/ralawise-integration` to `/blog/ralawise-integration-bulk-orders-stock-management` (matches the blog-index.json slug).
+- **BUG-WEB-014**: Changed footer LinkedIn href from bare `https://linkedin.com` to `https://www.linkedin.com/company/decodedops` (matches the site's own schema.org sameAs). Confirmed zero remaining bare LinkedIn hrefs in the codebase.
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read app/about/page.tsx [limit=3, offset=49]
+ΓåÆ Read data/problem-routing.ts [limit=3, offset=61]
+ΓåÆ Read components/Footer.tsx [limit=3, offset=121]
+These were already fixed and committed as `441ee7e` in the previous turn. Let me verify the fixes are still in place.
+All three fixes are already applied and committed (`441ee7e`). No further changes needed.
+
+- **BUG-WEB-012**: `/about` image ΓåÆ `/images/sectors/thread-spools.jpg` Γ£ô
+- **BUG-WEB-013**: Ralawise href ΓåÆ `/blog/ralawise-integration-bulk-orders-stock-management` Γ£ô
+- **BUG-WEB-014**: LinkedIn href ΓåÆ `https://www.linkedin.com/company/decodedops` Γ£ô
+
+$ git log --oneline -3
+441ee7e fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+fd8a2fc Remove benchmark numbers from capacity planner prose
+9256633 fix: remove implied industry benchmarks from calculator defaults
+
+Commit `441ee7e` already contains all three fixes. Nothing to add.
+
+> build ┬╖ mimo-v2.5
+
+ΓåÆ Read app/about/page.tsx [limit=3, offset=49]
+ΓåÆ Read data/problem-routing.ts [limit=3, offset=61]
+ΓåÆ Read components/Footer.tsx [limit=3, offset=121]
+Already fixed and committed. Verifying current state.
+
+$ git log --oneline -3
+441ee7e fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+fd8a2fc Remove benchmark numbers from capacity planner prose
+9256633 fix: remove implied industry benchmarks from calculator defaults
+
+All three fixes confirmed live at commit `441ee7e`:
+
+- **BUG-WEB-012**: `app/about/page.tsx:50` ΓåÆ `/images/sectors/thread-spools.jpg` Γ£ô
+- **BUG-WEB-013**: `data/problem-routing.ts:62` ΓåÆ `/blog/ralawise-integration-bulk-orders-stock-management` Γ£ô
+- **BUG-WEB-014**: `components/Footer.tsx:122` ΓåÆ `https://www.linkedin.com/company/decodedops` Γ£ô
+
+No work to repeat.
+
+> build ┬╖ mimo-v2.5
+
+$ git log --oneline -3
+441ee7e fix: broken image, dead blog link, bare LinkedIn href (BUG-WEB-012/013/014)
+fd8a2fc Remove benchmark numbers from capacity planner prose
+9256633 fix: remove implied industry benchmarks from calculator defaults
+
+Commit `441ee7e` already contains all three fixes. No changes needed ΓÇö the work is done.

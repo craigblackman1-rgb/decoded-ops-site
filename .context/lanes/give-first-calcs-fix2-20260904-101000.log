@@ -1,0 +1,78 @@
+
+> build · mimo-v2.5
+
+→ Read app/resources/capacity-planner/page.tsx [offset=80, limit=40]
+→ Read app/resources/seasonal-capacity/page.tsx
+→ Read app/resources/capacity-planner/page.tsx [offset=0, limit=80]
+→ Read app/resources/capacity-planner/page.tsx [offset=119, limit=10]
+Found the violation at line 94. The seasonal-capacity page has no numeric benchmark claims. Making the fix:
+
+← Edit app/resources/capacity-planner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
+@@ -90,9 +90,9 @@
+   Why your real capacity is lower than you think
+ </h2>
+ <div style={{ fontFamily: 'var(--do-font-body)', color: 'var(--do-text-secondary)', fontSize: '17px', lineHeight: 1.7 }}>
+   <p style={{ marginBottom: 16 }}>
+-    The spec sheet says your heat press runs 200 transfers an hour. That assumes one operator, one design, no changeovers, no breaks, and no downtime. In practice, every changeover costs you three to five minutes, an operator needs a break, and the press needs cleaning between jobs. The real throughput is usually 60 to 75 percent of the theoretical.
++    The spec sheet says your heat press runs 200 transfers an hour. That assumes one operator, one design, no changeovers, no breaks, and no downtime. In practice, changeovers eat into every job, operators need breaks, and presses need cleaning between runs. Enter your own downtime allowance in the calculator above to see what your real throughput looks like.
+   </p>
+   <p style={{ marginBottom: 16 }}>
+     That matters because quoting is based on capacity. If you think you can do 400 jobs a week but can actually do 280, you will either over-quote (and lose work) or under-quote (and be buried).
+   </p>
+
+
+→ Read app/resources/capacity-planner/page.tsx [offset=92, limit=12]
+Let me also check line 97 — those numbers "400 jobs a week but can actually do 280" are specific numeric claims too.
+
+← Edit app/resources/capacity-planner/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04\app\resources\capacity-planner\page.tsx
+@@ -93,9 +93,9 @@
+ <p style={{ marginBottom: 16 }}>
+   The spec sheet says your heat press runs 200 transfers an hour. That assumes one operator, one design, no changeovers, no breaks, and no downtime. In practice, changeovers eat into every job, operators need breaks, and presses need cleaning between runs. Enter your own downtime allowance in the calculator above to see what your real throughput looks like.
+ </p>
+ <p style={{ marginBottom: 16 }}>
+-  That matters because quoting is based on capacity. If you think you can do 400 jobs a week but can actually do 280, you will either over-quote (and lose work) or under-quote (and be buried).
++  That matters because quoting is based on capacity. If your quoted capacity is higher than your real capacity, you will either over-quote (and lose work) or under-quote (and be buried).
+ </p>
+ <p style={{ marginBottom: 0 }}>
+   This calculator gives you the honest number. Use it before you commit to a deadline or price a volume job.
+ </p>
+
+
+The "400 jobs a week but can actually do 280" on line 97 is a hypothetical, but still a specific numeric example. Let me make it generic too:
+Now commit, then verify:
+$ cd "D:\apps\worktrees\decoded-ops-website\give-first-calcs-2026-09-04" && git add app/resources/capacity-planner/page.tsx && git commit -m "Remove benchmark numbers from capacity planner prose
+
+Line 94: replaced specific numeric claims ('three to five minutes', '60 to 75 percent') with qualitative description pointing the reader at the calculator's own downtime input.
+
+Line 97: replaced illustrative numbers ('400 jobs a week but can actually do 280') with generic phrasing — 'if your quoted capacity is higher than your real capacity'.
+
+seasonal-capacity/page.tsx: no numeric benchmark claims found, no changes needed."
+warning: in the working copy of 'app/resources/capacity-planner/page.tsx', LF will be replaced by CRLF the next time Git touches it
+[task/give-first-calcs-2026-09-04 fd8a2fc] Remove benchmark numbers from capacity planner prose
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+→ Read app/resources/capacity-planner/page.tsx [offset=90, limit=14]
+✱ Grep "\d+\s*(to|–|-|percent|%|minutes?|hours?|seconds?)" in app/resources/capacity-planner/page.tsx · 2 matches
+Let me also grep both files for any remaining numeric benchmark patterns to be thorough:
+✱ Grep "\d+\s*(to|–|-|percent|%|minutes?|hours?|seconds?)" in app/resources/seasonal-capacity/page.tsx · 4 matches
+All remaining matches are CSS values (65%, 10%, 30%) and the "100% = baseline" UI instruction — not benchmark claims. Clean.
+
+**Changes made (commit `fd8a2fc`):**
+
+**Change 1 — `capacity-planner/page.tsx` line 94:**
+- Before: `...In practice, every changeover costs you three to five minutes, an operator needs a break, and the press needs cleaning between jobs. The real throughput is usually 60 to 75 percent of the theoretical.`
+- After: `...In practice, changeovers eat into every job, operators need breaks, and presses need cleaning between runs. Enter your own downtime allowance in the calculator above to see what your real throughput looks like.`
+
+**Change 2 — `capacity-planner/page.tsx` line 97:**
+- Before: `If you think you can do 400 jobs a week but can actually do 280, you will either over-quote (and lose work) or under-quote (and be buried).`
+- After: `If your quoted capacity is higher than your real capacity, you will either over-quote (and lose work) or under-quote (and be buried).`
+
+**`seasonal-capacity/page.tsx`** — no numeric benchmark claims found, no changes needed.

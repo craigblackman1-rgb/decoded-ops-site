@@ -1,0 +1,253 @@
+
+> build · mimo-v2.5
+
+# Todos
+[ ] Remove Decoded CRM from Header.tsx nav group
+[ ] Remove Decoded CRM from Footer.tsx appsLinks
+[ ] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[ ] Add CRM mention to artwork-manager/page.tsx
+[ ] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[ ] Remove /apps/crm from sitemap.ts
+[ ] Grep for other /apps/crm or Decoded CRM references
+[ ] Commit all changes referencing CR-WEB-018
+
+→ Read components/Header.tsx
+→ Read components/Footer.tsx
+→ Read app/apps/page.tsx
+→ Read app/apps/artwork-manager/page.tsx
+→ Read app/sitemap.ts
+→ Read next.config.ts
+✱ Glob "app/apps/crm/**/*" in . · 1 match
+✱ Grep "/apps/crm|Decoded CRM" in app · 11 matches
+✱ Grep "/apps/crm|Decoded CRM" in components · 2 matches
+Now let me check for the CRM page directory and other references.
+✱ Grep "/apps/crm|Decoded CRM" in public · 0 matches
+✱ Glob "public/llms.txt" in . · 1 match
+✱ Grep "crm|CRM" in . · 0 matches
+✱ Grep "/apps/crm|Decoded CRM" in . · 13 matches
+
+# Todos
+[•] Remove Decoded CRM from Header.tsx nav group
+[ ] Remove Decoded CRM from Footer.tsx appsLinks
+[ ] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[ ] Add CRM mention to artwork-manager/page.tsx
+[ ] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[ ] Remove /apps/crm from sitemap.ts
+[✓] Grep for other /apps/crm or Decoded CRM references
+[ ] Commit all changes referencing CR-WEB-018
+
+All references confirmed. No CRM references in `llms.txt`. Now I'll make all the changes.
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Header.tsx
+@@ -59,9 +59,8 @@
+   items: [
+     { label: 'Data App', sub: 'Supplier feeds into one clean catalogue', href: '/apps/data-app' },
+     { label: 'Artwork Manager', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },
+     { label: 'Trade store', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
+-    { label: 'Decoded CRM', sub: 'Pipeline and client records', href: '/apps/crm' },
+     { label: 'All apps', sub: "What's ready to buy today", href: '/apps' },
+   ],
+ };
+ const helpHow: NavGroup = {
+
+
+← Edit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\components\Footer.tsx
+@@ -26,9 +26,8 @@
+ const appsLinks: FooterLink[] = [
+   { label: 'Data App', href: '/apps/data-app' },
+   { label: 'Artwork Manager', href: '/apps/artwork-manager' },
+   { label: 'Trade store', href: '/apps/commerce' },
+-  { label: 'Decoded CRM', href: '/apps/crm' },
+   { label: 'All apps', href: '/apps' },
+ ];
+ 
+ const companyLinks: FooterLink[] = [
+
+
+← Edit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\app\sitemap.ts
+@@ -46,9 +46,8 @@
+ { url: `${BASE_URL}/apps`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/apps/data-app`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+ { url: `${BASE_URL}/apps/artwork-manager`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+-{ url: `${BASE_URL}/apps/crm`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/how-i-build`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ 
+ { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ { url: `${BASE_URL}/problems`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+
+
+# Todos
+[✓] Remove Decoded CRM from Header.tsx nav group
+[✓] Remove Decoded CRM from Footer.tsx appsLinks
+[•] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[ ] Add CRM mention to artwork-manager/page.tsx
+[ ] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[✓] Remove /apps/crm from sitemap.ts
+[✓] Grep for other /apps/crm or Decoded CRM references
+[ ] Commit all changes referencing CR-WEB-018
+
+← Edit app/apps/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\page.tsx
+@@ -68,19 +68,12 @@
+           A full migration off WooCommerce, a new storefront, and reintegration back
+           into Khaos Control is the worked example.</p>
+         <span className="go">See how it works</span>
+       </Link>
+-
+-      <Link className="log-row" href="/apps/crm">
+-        <div>
+-          <span className="chip chip--pre">Founding client terms</span>
+-          <h3 style={{ marginTop: 14 }}>Decoded CRM</h3>
+-        </div>
+-        <p>Leads, companies, contacts and deals, through to quotes, contracts, sales orders and
+-          invoices. Built around how this sector actually sells.</p>
+-        <span className="go">See how it works</span>
+-      </Link>
+     </div>
++
++    <p style={{ marginTop: 32, maxWidth: '68ch' }}>Pipeline and client records (CRM) are built into
++      the ERP solution, and included with the Artwork Manager when bought standalone.</p>
+   </div>
+ </section>
+ 
+ {/* 2a · THREE APPS PLATE · DO-ART-104 */}
+
+
+✗ Edit app/apps/page.tsx failed
+Error: No changes to apply: oldString and newString are identical.
+Now update the metadata description to remove CRM mention:
+
+← Edit app/apps/artwork-manager/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\artwork-manager\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\artwork-manager\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\artwork-manager\page.tsx
+@@ -100,8 +100,12 @@
+         <p>The file the floor gets is the file the machine wants, not something a person has to
+           convert first.</p>
+       </div>
+     </div>
++
++    <p style={{ marginTop: 24, maxWidth: '68ch' }}>When bought standalone, the Artwork Manager also
++      includes an embedded CRM &mdash; pipeline and client records, built around how this sector
++      actually sells.</p>
+   </div>
+ </section>
+ 
+ {/* 2a · VAULT TO FLOOR PLATE · DO-ART-106 */}
+
+
+# Todos
+[✓] Remove Decoded CRM from Header.tsx nav group
+[✓] Remove Decoded CRM from Footer.tsx appsLinks
+[✓] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[✓] Add CRM mention to artwork-manager/page.tsx
+[•] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[✓] Remove /apps/crm from sitemap.ts
+[✓] Grep for other /apps/crm or Decoded CRM references
+[ ] Commit all changes referencing CR-WEB-018
+
+$ Remove-Item -Path "D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\crm\page.tsx" -Force
+(no output)
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\crm-architecture\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\crm-architecture\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\crm-architecture\next.config.ts
+@@ -18,8 +18,9 @@
+     { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+     { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
+     { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
+     { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
++    { source: '/apps/crm', destination: '/apps', permanent: true },
+   ];
+ },
+ async headers() {
+   return [
+
+
+$ Remove-Item -Path "D:\apps\worktrees\decoded-ops-website\crm-architecture\app\apps\crm" -Force -ErrorAction SilentlyContinue
+(no output)
+
+✱ Grep "/apps/crm|Decoded CRM" in . · 1 match
+
+# Todos
+[✓] Remove Decoded CRM from Header.tsx nav group
+[✓] Remove Decoded CRM from Footer.tsx appsLinks
+[✓] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[✓] Add CRM mention to artwork-manager/page.tsx
+[✓] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[✓] Remove /apps/crm from sitemap.ts
+[✓] Grep for other /apps/crm or Decoded CRM references
+[•] Commit all changes referencing CR-WEB-018
+
+All references cleaned. The only remaining `/apps/crm` string is the redirect itself. Now commit.
+$ git status
+On branch cr/apps-product-architecture
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/apps/artwork-manager/page.tsx
+	deleted:    app/apps/crm/page.tsx
+	modified:   app/apps/page.tsx
+	modified:   app/sitemap.ts
+	modified:   components/Footer.tsx
+	modified:   components/Header.tsx
+	modified:   next.config.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add app/apps/artwork-manager/page.tsx app/apps/crm/page.tsx app/apps/page.tsx app/sitemap.ts components/Footer.tsx components/Header.tsx next.config.ts && git commit -m "CR-WEB-018: Retire Decoded CRM as standalone app
+
+CRM is now part of the ERP solution and embedded in Artwork Manager
+when bought standalone. Remove standalone CRM from site navigation,
+apps listing, sitemap, and delete the CRM page. Add permanent redirect
+from /apps/crm to /apps. Add factual CRM notes to apps page and
+Artwork Manager page."
+[cr/apps-product-architecture 0c7807b] CR-WEB-018: Retire Decoded CRM as standalone app
+ 7 files changed, 8 insertions(+), 241 deletions(-)
+ delete mode 100644 app/apps/crm/page.tsx
+
+# Todos
+[✓] Remove Decoded CRM from Header.tsx nav group
+[✓] Remove Decoded CRM from Footer.tsx appsLinks
+[✓] Remove CRM card from apps/page.tsx + add ERP/Artwork note
+[✓] Add CRM mention to artwork-manager/page.tsx
+[✓] Delete app/apps/crm/page.tsx + add redirect in next.config.ts
+[✓] Remove /apps/crm from sitemap.ts
+[✓] Grep for other /apps/crm or Decoded CRM references
+[✓] Commit all changes referencing CR-WEB-018
+
+Done. Committed `0c7807b` on `cr/apps-product-architecture`. Seven files changed, 8 insertions, 241 deletions.
+
+**References changed/removed:**
+
+| File | Change |
+|---|---|
+| `components/Header.tsx:63` | Removed `Decoded CRM` from `helpBuilt` nav group |
+| `components/Footer.tsx:30` | Removed `Decoded CRM` from `appsLinks` |
+| `app/apps/page.tsx:73-81` | Removed CRM product card; added one-line note that CRM is built into ERP and included with Artwork Manager standalone |
+| `app/apps/artwork-manager/page.tsx:103` | Added factual line about embedded CRM when bought standalone |
+| `app/apps/crm/page.tsx` | Deleted (entire file + directory) |
+| `next.config.ts:22` | Added permanent redirect `/apps/crm` → `/apps` |
+| `app/sitemap.ts:50` | Removed `/apps/crm` entry |
+
+**No references found in:** `public/llms.txt`, any other `app/` or `components/` files.

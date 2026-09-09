@@ -1,0 +1,442 @@
+
+> build · mimo-v2.5
+
+→ Skill "decoded-ops"
+→ Skill "gate"
+
+# Todos
+[•] Read the 7 resource playbook page files to identify section patterns
+[ ] Read ds-marketing.css to understand .section--tight
+[ ] Apply section--tight to all post-hero sections on each page
+[ ] Commit all changes referencing BUG-WEB-009
+[ ] Summarise per-page section changes
+
+→ Read app/design-system/ds-marketing.css [limit=20, offset=25]
+✱ Grep "section--tight" in app/design-system/ds-marketing.css · 1 match
+→ Read app/resources/erp-selection-playbook/page.tsx
+→ Read app/resources/artwork-approval-playbook/page.tsx
+→ Read app/resources/sop-template/page.tsx
+→ Read app/resources/audit-checklist/page.tsx
+→ Read app/resources/5-warning-signs/page.tsx
+→ Read app/resources/six-sigma/page.tsx
+→ Read app/resources/decoded-method/page.tsx
+
+# Todos
+[✓] Read the 7 resource playbook page files to identify section patterns
+[✓] Read ds-marketing.css to understand .section--tight
+[•] Apply section--tight to all post-hero sections on each page
+[ ] Commit all changes referencing BUG-WEB-009
+[ ] Summarise per-page section changes
+
+Now I have the full picture. Let me confirm the CSS rule and then apply fixes across all 7 pages.
+← Edit app/resources/erp-selection-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\erp-selection-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\erp-selection-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\erp-selection-playbook\page.tsx
+@@ -128,9 +128,9 @@
+     </p>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+     <div style={{ marginBottom: 64 }}>
+       <h2>What ERP actually means</h2>
+
+
+← Edit app/resources/artwork-approval-playbook/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\artwork-approval-playbook\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\artwork-approval-playbook\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\artwork-approval-playbook\page.tsx
+@@ -79,9 +79,9 @@
+     </p>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+     <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginBottom: 64 }}>
+       <h2>Where the time actually goes</h2>
+
+
+← Edit app/resources/sop-template/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\sop-template\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\sop-template\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\sop-template\page.tsx
+@@ -79,9 +79,9 @@
+     </p>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+     <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+       <h2>What the template includes</h2>
+
+
+← Edit app/resources/audit-checklist/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\audit-checklist\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\audit-checklist\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\audit-checklist\page.tsx
+@@ -221,9 +221,9 @@
+   </div>
+ </section>
+ 
+ {/* CONTENT */}
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+     {/* Intro */}
+     <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+
+
+← Edit app/resources/5-warning-signs/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\5-warning-signs\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\5-warning-signs\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\5-warning-signs\page.tsx
+@@ -140,9 +140,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+     <div style={{ display: 'flex', flexDirection: 'column', gap: 48, marginBottom: 64 }}>
+       {signs.map((sign, i) => (
+
+
+← Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
+@@ -191,9 +191,9 @@
+   </div>
+ </div>
+ 
+ {/* SIGMA SCALE + LEVELS (light) */}
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap">
+     <div style={{ maxWidth: '46ch' }}>
+       <span className="eyebrow">The scale</span>
+       <h2>From reactive to near-zero defect</h2>
+
+
+← Edit app/resources/six-sigma/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\six-sigma\page.tsx
+@@ -225,9 +225,9 @@
+   </div>
+ </section>
+ 
+ {/* THE REAL GAP (dark) */}
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <span className="eyebrow">The real gap</span>
+     <h2>The gap is process, not machinery</h2>
+     <p className="lede">
+
+
+← Edit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+@@ -122,9 +122,9 @@
+     <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 12 }}>7-page PDF. No email required.</p>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <h2>Why most process documentation fails</h2>
+     <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+       Most businesses keep their processes in one place: someone&apos;s head. It works, right up until that person is on holiday, off sick, or leaves. Then the process leaves with them, and everyone else is guessing.
+
+
+← Edit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+@@ -140,9 +140,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap">
+     <div style={{ maxWidth: 720 }}>
+       <h2>Three layers, each with a job</h2>
+       <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>
+
+
+← Edit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+@@ -198,9 +198,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <h2>The register we run Decoded Ops on</h2>
+     <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
+       Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they&apos;ve seen their whole operation on one page.
+
+
+← Edit app/resources/decoded-method/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\playbook-gap\app\resources\decoded-method\page.tsx
+@@ -229,9 +229,9 @@
+     </div>
+   </div>
+ </section>
+ 
+-<section className="g-off">
++<section className="g-off section--tight">
+   <div className="wrap" style={{ maxWidth: 720 }}>
+     <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
+       <h3>Get the whole playbook, free</h3>
+       <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+
+
+All 7 pages follow the same pattern: a hero `<section className="g-off">` followed by one or more `<section className="g-off">` blocks. I need to add `section--tight` to every post-hero `g-off` section.
+All edits applied. Let me verify the changes and commit.
+$ git diff --stat
+app/resources/5-warning-signs/page.tsx           | 2 +-
+ app/resources/artwork-approval-playbook/page.tsx | 2 +-
+ app/resources/audit-checklist/page.tsx           | 2 +-
+ app/resources/decoded-method/page.tsx            | 8 ++++----
+ app/resources/erp-selection-playbook/page.tsx    | 2 +-
+ app/resources/six-sigma/page.tsx                 | 4 ++--
+ app/resources/sop-template/page.tsx              | 2 +-
+ 7 files changed, 11 insertions(+), 11 deletions(-)
+
+$ git diff
+diff --git a/app/resources/5-warning-signs/page.tsx b/app/resources/5-warning-signs/page.tsx
+index 8ce4eed..da6176a 100644
+--- a/app/resources/5-warning-signs/page.tsx
++++ b/app/resources/5-warning-signs/page.tsx
+@@ -141,7 +141,7 @@ export default function FiveWarningSignsPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+           <div style={{ display: 'flex', flexDirection: 'column', gap: 48, marginBottom: 64 }}>
+diff --git a/app/resources/artwork-approval-playbook/page.tsx b/app/resources/artwork-approval-playbook/page.tsx
+index f74e91d..f722318 100644
+--- a/app/resources/artwork-approval-playbook/page.tsx
++++ b/app/resources/artwork-approval-playbook/page.tsx
+@@ -80,7 +80,7 @@ export default function ArtworkApprovalPlaybookPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginBottom: 64 }}>
+diff --git a/app/resources/audit-checklist/page.tsx b/app/resources/audit-checklist/page.tsx
+index 31ddda5..5abad75 100644
+--- a/app/resources/audit-checklist/page.tsx
++++ b/app/resources/audit-checklist/page.tsx
+@@ -222,7 +222,7 @@ export default function ChecklistPage() {
+       </section>
+ 
+       {/* CONTENT */}
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+           {/* Intro */}
+diff --git a/app/resources/decoded-method/page.tsx b/app/resources/decoded-method/page.tsx
+index c146f3d..85ecf10 100644
+--- a/app/resources/decoded-method/page.tsx
++++ b/app/resources/decoded-method/page.tsx
+@@ -123,7 +123,7 @@ export default function DecodedMethodPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+           <h2>Why most process documentation fails</h2>
+           <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
+@@ -141,7 +141,7 @@ export default function DecodedMethodPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap">
+           <div style={{ maxWidth: 720 }}>
+             <h2>Three layers, each with a job</h2>
+@@ -199,7 +199,7 @@ export default function DecodedMethodPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+           <h2>The register we run Decoded Ops on</h2>
+           <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
+@@ -230,7 +230,7 @@ export default function DecodedMethodPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
+             <h3>Get the whole playbook, free</h3>
+diff --git a/app/resources/erp-selection-playbook/page.tsx b/app/resources/erp-selection-playbook/page.tsx
+index 016cf02..b736096 100644
+--- a/app/resources/erp-selection-playbook/page.tsx
++++ b/app/resources/erp-selection-playbook/page.tsx
+@@ -129,7 +129,7 @@ export default function ErpSelectionPlaybookPage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+           <div style={{ marginBottom: 64 }}>
+diff --git a/app/resources/six-sigma/page.tsx b/app/resources/six-sigma/page.tsx
+index 63c1a6a..f60e13e 100644
+--- a/app/resources/six-sigma/page.tsx
++++ b/app/resources/six-sigma/page.tsx
+@@ -192,7 +192,7 @@ export default function SixSigmaPage() {
+       </div>
+ 
+       {/* SIGMA SCALE + LEVELS (light) */}
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap">
+           <div style={{ maxWidth: '46ch' }}>
+             <span className="eyebrow">The scale</span>
+@@ -226,7 +226,7 @@ export default function SixSigmaPage() {
+       </section>
+ 
+       {/* THE REAL GAP (dark) */}
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+           <span className="eyebrow">The real gap</span>
+           <h2>The gap is process, not machinery</h2>
+diff --git a/app/resources/sop-template/page.tsx b/app/resources/sop-template/page.tsx
+index a465bb9..e3a97f6 100644
+--- a/app/resources/sop-template/page.tsx
++++ b/app/resources/sop-template/page.tsx
+@@ -80,7 +80,7 @@ export default function SopTemplatePage() {
+         </div>
+       </section>
+ 
+-      <section className="g-off">
++      <section className="g-off section--tight">
+         <div className="wrap" style={{ maxWidth: 720 }}>
+ 
+           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
+
+# Todos
+[✓] Read the 7 resource playbook page files to identify section patterns
+[✓] Read ds-marketing.css to understand .section--tight
+[✓] Apply section--tight to all post-hero sections on each page
+[•] Commit all changes referencing BUG-WEB-009
+[ ] Summarise per-page section changes
+
+Diff is clean — exactly 11 post-hero `g-off` sections got `section--tight` added. No copy or structural changes.
+$ git add app/resources/5-warning-signs/page.tsx app/resources/artwork-approval-playbook/page.tsx app/resources/audit-checklist/page.tsx app/resources/decoded-method/page.tsx app/resources/erp-selection-playbook/page.tsx app/resources/six-sigma/page.tsx app/resources/sop-template/page.tsx && git commit -m "fix: tighten post-hero section padding on resource pages (BUG-WEB-009)
+
+Resource article pages used consecutive <section className=\"g-off\"> blocks
+that stacked 176px of empty space between them (88px top + 88px bottom from
+ds-marketing.css:27). Added the existing .section--tight utility (clamp
+40-60px) to every post-hero g-off section on all 7 resource pages.
+
+Sections touched per page:
+- erp-selection-playbook: 1 section (article content block)
+- artwork-approval-playbook: 1 section (article content block)
+- sop-template: 1 section (article content block)
+- audit-checklist: 1 section (content block after navy plate)
+- 5-warning-signs: 1 section (content block after navy plate)
+- six-sigma: 2 sections (sigma scale + real gap sections after navy plate)
+- decoded-method: 4 sections (why fails, three layers, register, CTA card)
+
+No hero sections modified. No copy changes."
+error: pathspec 'g-off\> blocks
+that stacked 176px of empty space between them (88px top + 88px bottom from
+ds-marketing.css:27). Added the existing .section--tight utility (clamp
+40-60px) to every post-hero g-off section on all 7 resource pages.
+
+Sections touched per page:
+- erp-selection-playbook: 1 section (article content block)
+- artwork-approval-playbook: 1 section (article content block)
+- sop-template: 1 section (article content block)
+- audit-checklist: 1 section (content block after navy plate)
+- 5-warning-signs: 1 section (content block after navy plate)
+- six-sigma: 2 sections (sigma scale + real gap sections after navy plate)
+- decoded-method: 4 sections (why fails, three layers, register, CTA card)
+
+No hero sections modified. No copy changes.' did not match any file(s) known to git
+
+$ git commit -m "fix: tighten post-hero section padding on resource pages (BUG-WEB-009)" -m "Resource article pages used consecutive <section> blocks that stacked 176px of empty space. Added .section--tight (clamp 40-60px) to every post-hero g-off section on all 7 resource pages. 11 sections total. No hero sections modified. No copy changes."
+[fix/playbook-gap 808176c] fix: tighten post-hero section padding on resource pages (BUG-WEB-009)
+ 7 files changed, 11 insertions(+), 11 deletions(-)
+
+$ git log --oneline -3
+808176c fix: tighten post-hero section padding on resource pages (BUG-WEB-009)
+8a52d08 merge: anonymise client names across marketing surfaces (CR-WEB-011)
+5d15180 fix(CR-WEB-011): anonymise data-od-id plate attributes
+
+# Todos
+[✓] Read the 7 resource playbook page files to identify section patterns
+[✓] Read ds-marketing.css to understand .section--tight
+[✓] Apply section--tight to all post-hero sections on each page
+[✓] Commit all changes referencing BUG-WEB-009
+[✓] Summarise per-page section changes
+
+**Commit:** `808176c` on `fix/playbook-gap` — 7 files, 11 sections changed.
+
+**Per-page sections changed:**
+
+| Page | Sections touched | What changed |
+|---|---|---|
+| `erp-selection-playbook` | 1 | Article content block (What ERP means through Key takeaways) |
+| `artwork-approval-playbook` | 1 | Article content block (Where time goes through FAQs) |
+| `sop-template` | 1 | Article content block (What template includes through Why this matters) |
+| `audit-checklist` | 1 | Content block after navy plate (How to use through CTA) |
+| `5-warning-signs` | 1 | Content block after navy plate (5 signs through CTA) |
+| `six-sigma` | 2 | Sigma scale block + "The real gap" block (both after navy plate) |
+| `decoded-method` | 4 | "Why most process documentation fails" + "Three layers" + register table + CTA card |
+
+Hero sections untouched. No copy changes. No `.section--tight` removed. The global `section` rule (`ds-marketing.css:27`) was not modified.

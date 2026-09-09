@@ -1,0 +1,62 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Find all hub /api/public/* call sites
+[ ] Add x-hub-key header to each fetch (skip client components)
+[ ] Add console.error logging on failed responses
+[ ] Add 'david-sharp' to ALL_CLIENT_IDS
+[ ] Run typecheck
+[ ] Commit on lane/portal-hub-key
+
+✱ Grep "api/public/" 11 matches
+✱ Grep "hubFetch|hubUrl|HUB_API_URL" 59 matches
+→ Read lib/hub-fetch.ts
+→ Read app/clients/dashboard/page.tsx
+→ Read app/clients/documents/page.tsx
+→ Read app/clients/documents/view/[id]/page.tsx
+→ Read app/clients/project/page.tsx
+→ Read app/api/clients/documents/[id]/sign/route.ts
+✗ Read app/api/debug/hub-status/route.ts failed
+Error: File not found: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\api\debug\hub-status\route.ts
+→ Read app/clients/project/ProjectView.tsx
+Good. There are more call sites than the task listed. Let me first read the central `hubFetch` utility, then all affected files.
+
+# Todos
+[✓] Find all hub /api/public/* call sites
+[✓] Add x-hub-key header to each fetch (skip client components)
+[•] Add console.error logging on failed responses
+[ ] Add 'david-sharp' to ALL_CLIENT_IDS
+[ ] Run typecheck
+[ ] Commit on lane/portal-hub-key
+
+Good news: **`lib/hub-fetch.ts` already sends `x-hub-key`** (lines 23-28). All server-side calls go through this utility and will work once the env var is present. The real bug was the silent 401 swallowed by `.then(r => r.ok ? r.json() : [])`. `ProjectView.tsx` is a client component calling local `/api/clients/uploads` — no hub secret needed. The `app/api/debug/hub-status/route.ts` file doesn't exist.
+→ Read app/api/clients/uploads/route.ts
+→ Read app/api/clients/documents/[id]/questionnaire/route.ts
+→ Read app/api/tools/capture/route.ts
+Let me also read the files the task didn't mention but that call hub `/api/public/*` endpoints, to check their error handling:
+
+← Edit app/clients/dashboard/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\portal-hub-key\app\clients\dashboard\page.tsx
+@@ -76,9 +76,12 @@
+ try {
+   const results = await Promise.all(
+     ids.map(id =>
+       hubFetch(`${hubUrl}/api/public/client-docs?clientId=${id}`, { cache: 'no-store' })
+-        .then(r => r.ok ? r.json() : [])
++        .then(r => {
++          if (!r.ok) { console.error(`[hub] ${r.status} fetching docs for ${id}`); return []; }
++          return r.json();
++        })
+         .catch(() => [])
+     )
+   )
+   return results.flat().sort((a: HubDoc, b: HubDoc) =>
+
+
+`lib/hub-fetch.ts` already sends the `x-hub-key` header centrally. The `app/api/debug/hub-status/route.ts` file doesn't exist. `ProjectView.tsx` is client-side and calls a local proxy, not the hub directly.
+
+The real fix is the silent-failure pattern. Now I'll add error logging and `david-sharp`.

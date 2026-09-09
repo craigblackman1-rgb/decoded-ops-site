@@ -1,0 +1,1377 @@
+
+> build · mimo-v2.5
+
+$ git status && git log --oneline -3
+On branch lane/sr0-staging-sync-2026-09-02
+Your branch is up to date with 'origin/staging'.
+
+nothing to commit, working tree clean
+8445923 security: patch critical Auth.js vulnerabilities on client portal
+36289f3 docs: fix stale staging Coolify uuid in CLAUDE.md
+aca061f Fix llms.txt: Deliver minimum is six months, not three
+
+$ git log --oneline origin/staging..origin/main | head -30
+head: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ git log --oneline origin/staging..origin/main
+d45350e Fix wrong CRM link in lead alert email — /leads → /admin/leads
+2ab97c9 Add lead alert email to tool capture route
+c5f3157 fix: remove false email promise from tool lead capture
+e112d7b feat: add lead capture to all six interactive tools
+2c9030f chore: replace Tailwind hex colour classes with design-system tokens in components/
+815ad37 fix(deploy): npm ci --legacy-peer-deps in Dockerfile
+90cd3da fix(deploy): add .npmrc legacy-peer-deps for nodemailer 9 vs next-auth peer
+5a01b3f security: bump next 16.3.3, nodemailer 9, drop unused vercel dep
+9a77cca security: send hub shared secret + proxy client uploads
+308d3a8 security: patch critical Auth.js vulnerabilities on client portal
+b3dd829 Restore Decoded Ops branding on the questionnaire form
+586c602 Fix every server-to-server hub fetch getting blocked by Cloudflare
+a1a4f61 Replace arbitrary hex color classes with DS token in /tools pages
+05beb8a docs: add handoff summary for questionnaire save feature
+b5ce3e2 feat: branch document view on doc_type, render QuestionnaireForm for questionnaires
+011a9db feat: add QuestionnaireForm component, renders fillable form from hub questions
+5690c30 feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts
+5a46727 refactor(tools): swap hardcoded hex colour classes for DS tokens
+2059eb5 fix(nav-check): expand dynamic route segments to stop false broken links
+daede84 Add Key Supplies to client portal ID lists
+
+$ git merge origin/main --no-edit
+Auto-merging .context/loop-status.md
+CONFLICT (content): Merge conflict in .context/loop-status.md
+CONFLICT (modify/delete): app/api/debug/hub-status/route.ts deleted in origin/main and modified in HEAD.  Version HEAD of app/api/debug/hub-status/route.ts left in tree.
+Auto-merging app/blog/[slug]/page.tsx
+Auto-merging app/blog/page.tsx
+Auto-merging app/sitemap.ts
+Auto-merging app/tools/ai-readiness-check/page.tsx
+CONFLICT (content): Merge conflict in app/tools/ai-readiness-check/page.tsx
+Auto-merging app/tools/automation-roi-calculator/page.tsx
+CONFLICT (content): Merge conflict in app/tools/automation-roi-calculator/page.tsx
+Auto-merging app/tools/downtime-cost-calculator/page.tsx
+CONFLICT (content): Merge conflict in app/tools/downtime-cost-calculator/page.tsx
+Auto-merging app/tools/ops-health-score/page.tsx
+CONFLICT (content): Merge conflict in app/tools/ops-health-score/page.tsx
+Auto-merging app/tools/rto-calculator/page.tsx
+CONFLICT (content): Merge conflict in app/tools/rto-calculator/page.tsx
+Auto-merging app/tools/should-i-replace-erp/page.tsx
+CONFLICT (content): Merge conflict in app/tools/should-i-replace-erp/page.tsx
+Auto-merging components/CookieConsent.tsx
+Auto-merging components/HeroGraphic.tsx
+CONFLICT (content): Merge conflict in components/HeroGraphic.tsx
+Auto-merging components/HeroVisual.tsx
+Auto-merging components/LocationPage.tsx
+CONFLICT (content): Merge conflict in components/LocationPage.tsx
+CONFLICT (modify/delete): components/LogoWordmark.tsx deleted in HEAD and modified in origin/main.  Version origin/main of components/LogoWordmark.tsx left in tree.
+Auto-merging components/PrintDownloadButton.tsx
+CONFLICT (modify/delete): components/ProblemPage.tsx deleted in HEAD and modified in origin/main.  Version origin/main of components/ProblemPage.tsx left in tree.
+Auto-merging components/RelatedPosts.tsx
+Auto-merging components/SectorCredibilityPhoto.tsx
+CONFLICT (modify/delete): components/SectorPage.tsx deleted in HEAD and modified in origin/main.  Version origin/main of components/SectorPage.tsx left in tree.
+Auto-merging components/calculators/AutomationRoiCalculator.tsx
+Auto-merging components/calculators/DowntimeCostCalculator.tsx
+Auto-merging components/calculators/RtoCalculator.tsx
+Auto-merging components/graphics/ExpertiseTimelineGraphic.tsx
+CONFLICT (content): Merge conflict in components/graphics/ExpertiseTimelineGraphic.tsx
+Auto-merging package-lock.json
+CONFLICT (content): Merge conflict in package-lock.json
+Auto-merging package.json
+CONFLICT (content): Merge conflict in package.json
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git diff --name-only --diff-filter=U
+.context/loop-status.md
+app/api/debug/hub-status/route.ts
+app/tools/ai-readiness-check/page.tsx
+app/tools/automation-roi-calculator/page.tsx
+app/tools/downtime-cost-calculator/page.tsx
+app/tools/ops-health-score/page.tsx
+app/tools/rto-calculator/page.tsx
+app/tools/should-i-replace-erp/page.tsx
+components/HeroGraphic.tsx
+components/LocationPage.tsx
+components/LogoWordmark.tsx
+components/ProblemPage.tsx
+components/SectorPage.tsx
+components/graphics/ExpertiseTimelineGraphic.tsx
+package-lock.json
+package.json
+
+$ git status --short
+M  .context/check-nav-coverage.mjs
+A  .context/handoff.md
+UU .context/loop-status.md
+M  .env.example
+A  .npmrc
+M  Dockerfile
+A  app/api/clients/documents/[id]/questionnaire/route.ts
+M  app/api/clients/documents/[id]/sign/route.ts
+A  app/api/clients/uploads/route.ts
+UD app/api/debug/hub-status/route.ts
+A  app/api/tools/capture/route.ts
+M  app/blog/[slug]/page.tsx
+M  app/blog/page.tsx
+M  app/clients/dashboard/page.tsx
+M  app/clients/documents/page.tsx
+A  app/clients/documents/view/[id]/QuestionnaireForm.tsx
+M  app/clients/documents/view/[id]/page.tsx
+M  app/clients/project/ProjectView.tsx
+M  app/clients/project/page.tsx
+M  app/sitemap.ts
+UU app/tools/ai-readiness-check/page.tsx
+UU app/tools/automation-roi-calculator/page.tsx
+UU app/tools/downtime-cost-calculator/page.tsx
+UU app/tools/ops-health-score/page.tsx
+UU app/tools/rto-calculator/page.tsx
+UU app/tools/should-i-replace-erp/page.tsx
+M  components/CookieConsent.tsx
+UU components/HeroGraphic.tsx
+M  components/HeroVisual.tsx
+UU components/LocationPage.tsx
+DU components/LogoWordmark.tsx
+M  components/PrintDownloadButton.tsx
+DU components/ProblemPage.tsx
+M  components/RelatedPosts.tsx
+M  components/ScreenshotFrame.tsx
+M  components/SectorCredibilityPhoto.tsx
+DU components/SectorPage.tsx
+M  components/SignOutButton.tsx
+A  components/ToolLeadCapture.tsx
+M  components/calculators/AutomationRoiCalculator.tsx
+M  components/calculators/DowntimeCostCalculator.tsx
+M  components/calculators/RtoCalculator.tsx
+M  components/graphics/CredentialsGraphic.tsx
+UU components/graphics/ExpertiseTimelineGraphic.tsx
+A  lib/hub-fetch.ts
+M  lib/rate-limit.ts
+UU package-lock.json
+UU package.json
+
+# Todos
+[•] Resolve tool page conflicts (6 files) — staging visual wins, main lead capture added
+[ ] Resolve component conflicts (HeroGraphic, LocationPage, ExpertiseTimelineGraphic)
+[ ] Resolve modify/delete conflicts (hub-status, LogoWordmark, ProblemPage, SectorPage)
+[ ] Resolve .context/loop-status.md conflict
+[ ] Resolve package.json and package-lock.json conflicts
+[ ] Install deps and run next build
+[ ] Commit merge and report
+
+• Resolve 6 tool page conflicts General Agent
+• Resolve component conflicts General Agent
+• Resolve delete conflicts General Agent
+Let me read the conflicted tool pages in parallel to understand what main added vs staging redesigned.
+✓ Resolve delete conflicts General Agent
+✓ Resolve 6 tool page conflicts General Agent
+✓ Resolve component conflicts General Agent
+
+# Todos
+[✓] Resolve tool page conflicts (6 files) — staging visual wins, main lead capture added
+[✓] Resolve component conflicts (HeroGraphic, LocationPage, ExpertiseTimelineGraphic)
+[✓] Resolve modify/delete conflicts (hub-status, LogoWordmark, ProblemPage, SectorPage)
+[•] Resolve .context/loop-status.md conflict
+[ ] Resolve package.json and package-lock.json conflicts
+[ ] Install deps and run next build
+[ ] Commit merge and report
+
+$ rg -n "<<<<<<" .context/loop-status.md
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ rg -n "<<<<<<" package.json
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+✱ Grep "&lt;&lt;&lt;&lt;&lt;&lt;&lt;" in package.json · 0 matches
+✱ Grep "&lt;&lt;&lt;&lt;&lt;&lt;&lt;" in .context/loop-status.md · 0 matches
+→ Read .context/loop-status.md
+→ Read package.json
+
+$ Select-String -Path "app/tools/ai-readiness-check/page.tsx","app/tools/automation-roi-calculator/page.tsx","app/tools/downtime-cost-calculator/page.tsx","app/tools/ops-health-score/page.tsx","app/tools/rto-calculator/page.tsx","app/tools/should-i-replace-erp/page.tsx","components/HeroGraphic.tsx","components/LocationPage.tsx","components/graphics/ExpertiseTimelineGraphic.tsx" -Pattern "<<<<<<|======|>>>>>>" | Select-Object Filename,LineNumber
+(no output)
+
+← Write .context/loop-status.md
+Wrote file successfully.
+
+← Write package.json
+Wrote file successfully.
+
+Good, all conflict markers cleared from the resolved files. Now resolve the remaining three.
+Now resolve package-lock.json by regenerating from the resolved package.json.
+$ git rm package-lock.json
+rm 'package-lock.json'
+
+$ git add .context/loop-status.md package.json app/tools/ai-readiness-check/page.tsx app/tools/automation-roi-calculator/page.tsx app/tools/downtime-cost-calculator/page.tsx app/tools/ops-health-score/page.tsx app/tools/rto-calculator/page.tsx app/tools/should-i-replace-erp/page.tsx components/HeroGraphic.tsx components/LocationPage.tsx components/graphics/ExpertiseTimelineGraphic.tsx
+warning: in the working copy of '.context/loop-status.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/ai-readiness-check/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/automation-roi-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/downtime-cost-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/ops-health-score/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/rto-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/should-i-replace-erp/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+
+$ git status --short | Select-String "^(UU|UD|DU|AA)"
+(no output)
+
+# Todos
+[✓] Resolve tool page conflicts (6 files) — staging visual wins, main lead capture added
+[✓] Resolve component conflicts (HeroGraphic, LocationPage, ExpertiseTimelineGraphic)
+[✓] Resolve modify/delete conflicts (hub-status, LogoWordmark, ProblemPage, SectorPage)
+[✓] Resolve .context/loop-status.md conflict
+[✓] Resolve package.json and package-lock.json conflicts
+[•] Install deps and run next build
+[ ] Commit merge and report
+
+All conflicts resolved. Now install deps and build.
+$ Test-Path node_modules
+False
+
+$ npm install --legacy-peer-deps
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+added 414 packages, and audited 415 packages in 41s
+npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts   cpu-features@0.0.10 (install: node buildcheck.js > buildcheck.gypi && node-gyp rebuild)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+150 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+$ npx next build 2>&1
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 41ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 20.0s
+  Running TypeScript ...
+app/tools/automation-roi-calculator/page.tsx(46,8): error TS2739: Type '{ tool: string; }' is missing the following properties from type 'ToolLeadCaptureProps': resultSummary, answers
+app/tools/downtime-cost-calculator/page.tsx(134,8): error TS2739: Type '{ tool: string; }' is missing the following properties from type 'ToolLeadCaptureProps': resultSummary, answers
+app/tools/rto-calculator/page.tsx(48,8): error TS2739: Type '{ tool: string; }' is missing the following properties from type 'ToolLeadCaptureProps': resultSummary, answers
+components/calculators/DowntimeCostCalculator.tsx(148,33): error TS2304: Cannot find name 'gbp'.
+components/calculators/DowntimeCostCalculator.tsx(148,37): error TS2304: Cannot find name 'costPerHourDown'.
+components/calculators/DowntimeCostCalculator.tsx(148,76): error TS2304: Cannot find name 'gbp'.
+components/calculators/DowntimeCostCalculator.tsx(148,80): error TS2304: Cannot find name 'totalAnnual'.
+components/calculators/DowntimeCostCalculator.tsx(149,26): error TS18004: No value exists in scope for the shorthand property 'annualOverhead'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,42): error TS18004: No value exists in scope for the shorthand property 'resources'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,53): error TS18004: No value exists in scope for the shorthand property 'hoursPerDay'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,66): error TS18004: No value exists in scope for the shorthand property 'daysPerWeek'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,79): error TS18004: No value exists in scope for the shorthand property 'weeksPerYear'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,93): error TS18004: No value exists in scope for the shorthand property 'utilisation'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,138): error TS18004: No value exists in scope for the shorthand property 'peopleIdle'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,150): error TS18004: No value exists in scope for the shorthand property 'labourRate'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,162): error TS18004: No value exists in scope for the shorthand property 'jobsLost'. Either declare one or provide an initializer.
+components/calculators/DowntimeCostCalculator.tsx(149,172): error TS18004: No value exists in scope for the shorthand property 'avgJobValue'. Either declare one or provide an initializer.
+Failed to type check.
+
+Build has TypeScript errors. Let me fix them.
+→ Read components/ToolLeadCapture.tsx
+→ Read app/tools/automation-roi-calculator/page.tsx
+→ Read components/calculators/DowntimeCostCalculator.tsx
+→ Read app/tools/rto-calculator/page.tsx
+→ Read app/tools/downtime-cost-calculator/page.tsx
+
+$ git show origin/main:components/calculators/DowntimeCostCalculator.tsx
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { BOOKING_URL } from '@/lib/constants';
+import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+import './calculators.css';
+
+const gbp = (n: number) =>
+  '£' + Math.round(n).toLocaleString('en-GB');
+
+export function DowntimeCostCalculator() {
+  // Step 1: what an hour of your operation actually costs
+  const [annualOverhead, setAnnualOverhead] = useState<number>(180000);
+  const [resources, setResources] = useState<number>(4);
+  const [hoursPerDay, setHoursPerDay] = useState<number>(8);
+  const [daysPerWeek, setDaysPerWeek] = useState<number>(5);
+  const [weeksPerYear, setWeeksPerYear] = useState<number>(46);
+  const [utilisation, setUtilisation] = useState<number>(65);
+
+  // Step 2: what you lose when it stops
+  const [outagesPerYear, setOutagesPerYear] = useState<number>(12);
+  const [hoursPerOutage, setHoursPerOutage] = useState<number>(2);
+  const [peopleIdle, setPeopleIdle] = useState<number>(6);
+  const [labourRate, setLabourRate] = useState<number>(18);
+  const [jobsLost, setJobsLost] = useState<number>(0);
+  const [avgJobValue, setAvgJobValue] = useState<number>(450);
+
+  const theoreticalHours = resources * hoursPerDay * daysPerWeek * weeksPerYear;
+  const productiveHours = theoreticalHours * (utilisation / 100);
+  const recoveryRate = productiveHours > 0 ? annualOverhead / productiveHours : 0;
+
+  const hoursLost = outagesPerYear * hoursPerOutage;
+  const unrecoveredOverhead = hoursLost * recoveryRate;
+  const idleLabour = hoursLost * peopleIdle * labourRate;
+  const lostWork = jobsLost * avgJobValue;
+  const totalAnnual = unrecoveredOverhead + idleLabour + lostWork;
+
+  const costPerHourDown = recoveryRate + peopleIdle * labourRate;
+  const costPerDayDown = costPerHourDown * hoursPerDay;
+  const pctOfOverhead = annualOverhead > 0 ? (totalAnnual / annualOverhead) * 100 : 0;
+
+  return (
+    <div className="calc-grid">
+      {/* ── Inputs ─────────────────────────────────────────────── */}
+      <div>
+        <div className="calc-section">
+          <p className="calc-step">Step 1</p>
+          <h2 className="calc-section-h">What an hour of your operation costs</h2>
+          <p className="calc-section-note">
+            Most people can&apos;t answer this off the top of their head, which is why the cost of
+            losing an hour never gets worked out. Build it up here first.
+          </p>
+
+          <div className="calc-input-group">
+            <label htmlFor="annualOverhead" className="calc-label">
+              Annual overhead (£)
+            </label>
+            <input
+              id="annualOverhead" type="number" min={0} value={annualOverhead}
+              onChange={(e) => setAnnualOverhead(Number(e.target.value) || 0)}
+              className="calc-input"
+            />
+            <details className="calc-details">
+              <summary>What counts as overhead, and the bits people leave out</summary>
+              <p>
+                Everything that doesn&apos;t change job by job. Rent and rates. Utilities. Insurance.
+                Machine finance, leases and depreciation. Software subscriptions. Admin, management
+                and your own salary. Vehicles and fuel. Accountancy and professional fees.
+                Maintenance contracts.
+              </p>
+              <p>
+                It does not include the garment, the thread, the film, the ink or the transfer.
+                Those are direct costs and they belong to the job, not the hour.
+              </p>
+              <p>
+                The three most commonly missed: your own salary, machine depreciation, and the
+                software you forgot you were paying monthly for.
+              </p>
+            </details>
+          </div>
+
+          <div className="calc-row">
+            <div className="calc-input-group">
+              <label htmlFor="resources" className="calc-label">Production resources</label>
+              <input
+                id="resources" type="number" min={0} value={resources}
+                onChange={(e) => setResources(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+              <p className="calc-hint">Machines or stations that can run work</p>
+            </div>
+            <div className="calc-input-group">
+              <label htmlFor="hoursPerDay" className="calc-label">Hours per day</label>
+              <input
+                id="hoursPerDay" type="number" min={0} value={hoursPerDay}
+                onChange={(e) => setHoursPerDay(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="calc-row">
+            <div className="calc-input-group">
+              <label htmlFor="daysPerWeek" className="calc-label">Days per week</label>
+              <input
+                id="daysPerWeek" type="number" min={0} value={daysPerWeek}
+                onChange={(e) => setDaysPerWeek(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+            <div className="calc-input-group">
+              <label htmlFor="weeksPerYear" className="calc-label">Working weeks a year</label>
+              <input
+                id="weeksPerYear" type="number" min={0} value={weeksPerYear}
+                onChange={(e) => setWeeksPerYear(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+              <p className="calc-hint">52 less holidays and shutdown</p>
+            </div>
+          </div>
+
+          <div className="calc-input-group">
+            <label htmlFor="utilisation" className="calc-label">
+              Realistic utilisation: {utilisation}%
+            </label>
+            <input
+              id="utilisation" type="range" min={10} max={100} step={5} value={utilisation}
+              onChange={(e) => setUtilisation(Number(e.target.value) || 0)}
+              className="calc-range"
+            />
+            <p className="calc-hint">
+              The share of available hours actually spent producing, after setup, changeover,
+              maintenance, reruns and hours with nothing booked in. This is the number that gets
+              assumed at 100%, and it is the single biggest reason businesses underprice.
+            </p>
+          </div>
+
+          <div className="calc-derived">
+            <div>
+              <span className="calc-derived-label">Productive hours a year</span>
+              <span className="calc-derived-value">
+                {Math.round(productiveHours).toLocaleString('en-GB')}
+              </span>
+            </div>
+            <p className="calc-derived-note">
+              Out of {Math.round(theoreticalHours).toLocaleString('en-GB')} theoretical hours. The
+              gap is the part nobody prices.
+            </p>
+          </div>
+        </div>
+
+        <div className="calc-section">
+          <p className="calc-step">Step 2</p>
+          <h2 className="calc-section-h">What happens when it stops</h2>
+
+          <div className="calc-row">
+            <div className="calc-input-group">
+              <label htmlFor="outagesPerYear" className="calc-label">Outages a year</label>
+              <input
+                id="outagesPerYear" type="number" min={0} value={outagesPerYear}
+                onChange={(e) => setOutagesPerYear(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+            <div className="calc-input-group">
+              <label htmlFor="hoursPerOutage" className="calc-label">Average hours each</label>
+              <input
+                id="hoursPerOutage" type="number" min={0} value={hoursPerOutage}
+                onChange={(e) => setHoursPerOutage(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+
+          <div className="calc-row">
+            <div className="calc-input-group">
+              <label htmlFor="peopleIdle" className="calc-label">People stood idle</label>
+              <input
+                id="peopleIdle" type="number" min={0} value={peopleIdle}
+                onChange={(e) => setPeopleIdle(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+            <div className="calc-input-group">
+              <label htmlFor="labourRate" className="calc-label">Cost per person / hr (£)</label>
+              <input
+                id="labourRate" type="number" min={0} value={labourRate}
+                onChange={(e) => setLabourRate(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+              <p className="calc-hint">Wage plus NI and pension</p>
+            </div>
+          </div>
+
+          <div className="calc-row">
+            <div className="calc-input-group">
+              <label htmlFor="jobsLost" className="calc-label">Jobs scrapped or missed a year</label>
+              <input
+                id="jobsLost" type="number" min={0} value={jobsLost}
+                onChange={(e) => setJobsLost(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+            <div className="calc-input-group">
+              <label htmlFor="avgJobValue" className="calc-label">Average job value (£)</label>
+              <input
+                id="avgJobValue" type="number" min={0} value={avgJobValue}
+                onChange={(e) => setAvgJobValue(Number(e.target.value) || 0)}
+                className="calc-input"
+              />
+            </div>
+          </div>
+          <p className="calc-hint" style={{ marginTop: -8 }}>
+            In this sector the deadline doesn&apos;t move. Kit needed Friday for a Saturday match is
+            worth nothing on Monday, so a missed deadline is a scrapped job rather than a late one.
+          </p>
+        </div>
+      </div>
+
+      {/* ── Results ────────────────────────────────────────────── */}
+      <div>
+        <div className="calc-panel">
+          <h2>Your numbers</h2>
+
+          <div className="calc-stat">
+            <p className="calc-stat-label">Overhead recovery rate</p>
+            <p className="calc-stat-value calc-stat-value--large calc-stat-value--amber">
+              {gbp(recoveryRate)}<span style={{ fontSize: 'var(--do-text-base)' }}> / productive hour</span>
+            </p>
+            <p className="calc-stat-sub">
+              What every productive hour has to earn before materials and before any profit.
+            </p>
+          </div>
+
+          <hr className="calc-divider" />
+
+          <div className="calc-stat">
+            <p className="calc-stat-label">One hour down costs</p>
+            <p className="calc-stat-value">{gbp(costPerHourDown)}</p>
+          </div>
+
+          <div className="calc-stat">
+            <p className="calc-stat-label">One full day down costs</p>
+            <p className="calc-stat-value">{gbp(costPerDayDown)}</p>
+          </div>
+
+          <hr className="calc-divider" />
+
+          <table className="calc-table">
+            <thead>
+              <tr><th>At {hoursLost.toLocaleString('en-GB')} hours lost a year</th><th>Cost</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Overhead you still paid but never recovered</td><td>{gbp(unrecoveredOverhead)}</td></tr>
+              <tr><td>Wages for people who couldn&apos;t work</td><td>{gbp(idleLabour)}</td></tr>
+              <tr>
+                <td>Work scrapped or missed</td>
+                <td>{jobsLost === 0 ? <span className="calc-stat-value--muted">Not included</span> : gbp(lostWork)}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="calc-block-divider">
+            <p className="calc-stat-label">TOTAL ANNUAL COST OF DOWNTIME</p>
+            <p className="calc-stat-value calc-stat-value--large">{gbp(totalAnnual)}</p>
+            {totalAnnual > 0 && annualOverhead > 0 && (
+              <p className="calc-stat-sub">
+                That is {pctOfOverhead.toFixed(1)}% of your annual overhead, spent on hours that
+                produced nothing.
+              </p>
+            )}
+          </div>
+
+          <Link href="/contact" className="calc-cta">
+            Talk to Craig about reducing this →
+          </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="calc-secondary-link">
+            Or book a call directly <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+          </a>
+
+          <div style={{ marginTop: 24 }}>
+            <ToolLeadCapture
+              tool="downtime-cost-calculator"
+              resultSummary={`${gbp(costPerHourDown)}/hr downtime cost — ${gbp(totalAnnual)} annual`}
+              answers={{ annualOverhead, resources, hoursPerDay, daysPerWeek, weeksPerYear, utilisation, outagesPerYear, hoursPerOutage, peopleIdle, labourRate, jobsLost, avgJobValue }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+$ git show origin/main:app/tools/rto-calculator/page.tsx
+import type { Metadata } from 'next';
+import { RtoCalculator } from '@/components/calculators/RtoCalculator';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'RTO Calculator',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+  url: 'https://decodedops.co.uk/tools/rto-calculator',
+};
+
+export const metadata: Metadata = {
+  title: 'RTO Calculator | Decoded Ops',
+  description:
+    'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
+  alternates: { canonical: '/tools/rto-calculator' },
+};
+
+export default function RtoCalculatorPage() {
+  return (
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* Hero */}
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+            Free Tool
+          </p>
+          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+            RTO Calculator
+          </h1>
+          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+            See what your current recovery time is costing you — and what faster recovery is actually worth in pounds.
+          </p>
+        </div>
+      </section>
+
+      {/* Calculator */}
+      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <RtoCalculator />
+        </div>
+      </section>
+    </main>
+  );
+}
+
+$ git show origin/main:app/tools/automation-roi-calculator/page.tsx
+import type { Metadata } from 'next';
+import { AutomationRoiCalculator } from '@/components/calculators/AutomationRoiCalculator';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Automation ROI Calculator',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+  url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
+};
+
+export const metadata: Metadata = {
+  title: 'Automation ROI Calculator | Decoded Ops',
+  description:
+    'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+  alternates: { canonical: '/tools/automation-roi-calculator' },
+};
+
+export default function AutomationRoiCalculatorPage() {
+  return (
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section
+        className="pt-24 pb-12 lg:pt-32 lg:pb-16"
+        style={{ backgroundColor: '#023047' }}
+      >
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+            Free Tool
+          </p>
+          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+            Automation ROI Calculator
+          </h1>
+          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+            Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12 lg:py-20" style={{ backgroundColor: '#F8F9FA' }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <AutomationRoiCalculator />
+        </div>
+      </section>
+    </main>
+  );
+}
+
+$ git show origin/main:app/tools/downtime-cost-calculator/page.tsx
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { DowntimeCostCalculator } from '@/components/calculators/DowntimeCostCalculator';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Downtime Cost Calculator',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description:
+    'Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost. Built for print, embroidery and decorated goods.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+  url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an overhead recovery rate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It is what every productive hour has to earn towards the costs that do not change job by job, before materials and before profit. Annual overhead divided by the productive hours you actually have.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does downtime cost more than the wages of idle staff?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because the overhead keeps running. Rent, finance, salaries and subscriptions are all still being paid during an outage, but no hour of production is happening to recover them. The wages of idle staff are on top of that, not instead of it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I work out realistic utilisation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Take the hours your machines are theoretically available and subtract setup, changeover, maintenance, reruns and hours with nothing booked in. Most decoration businesses land well below the 100% they assume when pricing.',
+      },
+    },
+  ],
+};
+
+export const metadata: Metadata = {
+  title: 'Downtime Cost Calculator | Decoded Ops',
+  description:
+    'Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost you. Free tool for UK print, embroidery, workwear and decorated goods businesses.',
+  alternates: { canonical: '/tools/downtime-cost-calculator' },
+};
+
+export default function DowntimeCostCalculatorPage() {
+  return (
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+
+      {/* Hero */}
+      <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+            Free Tool
+          </p>
+          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+            What does an hour of downtime actually cost you?
+          </h1>
+          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+            Work out what an hour of your operation costs to run, then what you lose every time it
+            stops. Two minutes, no signup, and the number is yours to keep.
+          </p>
+        </div>
+      </section>
+
+      {/* Why this is hard to answer */}
+      <section className="py-12 lg:py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+            Most calculators ask you for a number nobody has
+          </h2>
+          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+            <p>
+              They want your lost revenue per hour. Almost nobody can state that, so the field gets
+              left at zero and the answer comes out meaninglessly low.
+            </p>
+            <p>
+              This one builds it up instead. First it works out what an hour of your operation costs
+              to have available at all, which is a number worth knowing on its own. Then it works
+              out what you lose when that hour produces nothing.
+            </p>
+            <p>
+              The part that surprises people is that the overhead does not stop when the machines
+              do. Rent, machine finance, subscriptions and salaries all keep running through an
+              outage. You just have no production to recover them against.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator */}
+      <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <DowntimeCostCalculator />
+        </div>
+      </section>
+
+      {/* What the number means */}
+      <section className="py-12 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+            What to do with the recovery rate
+          </h2>
+          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+            <p>
+              The recovery rate is the more useful of the two numbers, and most businesses have
+              never calculated it. It tells you what each productive hour has to earn towards your
+              overhead before you have paid for a single garment or a gram of thread.
+            </p>
+            <p>
+              Take it into your quoting. If a job needs thirty minutes of machine time, it has to
+              clear half your hourly rate in contribution above its materials just to break even.
+              Quote below that often enough and you will be busy and unprofitable at the same time.
+            </p>
+            <p>
+              That is the answer to a question I get asked a lot: we are flat out, every job makes
+              money, so why is there nothing in the bank? Margin is earned per job. Overhead is
+              incurred per hour. If you are recovering less per hour than the hour costs, more
+              volume makes it worse rather than better.
+            </p>
+            <p>
+              Watch the utilisation slider too. Pricing off theoretical hours rather than real ones
+              is the most common way to arrive at a rate that looks fine and does not cover the
+              business.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Sector framing */}
+      <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+            Why downtime costs more in decoration than most places
+          </h2>
+          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+            <p>
+              The deadline does not move. A distributor can ship a day late and apologise. You
+              cannot. The match is Saturday, the event is Friday, and a box of shirts nobody wore is
+              scrap rather than stock.
+            </p>
+            <p>
+              It is also worth being honest about what counts as an outage. It is not only the
+              server being down. If the internet drops and your phones run over it, you cannot take
+              an order. If the artwork system is unreachable, production stops even though every
+              machine is working perfectly. If nobody can see what is in stock, picking stops.
+            </p>
+            <p>
+              A useful test, and it costs nothing: pick a quiet hour, pull the internet, and write
+              down what still works. Most owners find the machines keep running and everything
+              around them stops.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14 lg:py-20" style={{ backgroundColor: '#023047' }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-white mb-4">
+            If the number was higher than you expected
+          </h2>
+          <p className="font-[family-name:var(--font-dm-sans)] text-white/80 text-[17px] leading-relaxed mb-8">
+            That is the finding, and it is usually a process and systems problem rather than an IT
+            spending problem. A Clarity Audit is a full day on site working through where the hours
+            and the money are actually going, with everything it costs you in writing within five
+            working days.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/contact"
+              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-amber text-prussian-blue font-[family-name:var(--font-dm-sans)]"
+            >
+              Book a free 60 minute call
+            </Link>
+            <Link
+              href="/clarity"
+              className="inline-block px-7 py-3.5 rounded-lg font-semibold border-2 border-white/30 text-white font-[family-name:var(--font-dm-sans)]"
+            >
+              See how a Clarity Audit works
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+$ git show e112d7b --stat
+commit e112d7b4dcb3c125404cbf835caab3346a7c5166
+Author: craigblackman1-rgb <craig.blackman1@gmail.com>
+Date:   Tue Sep 1 12:14:54 2026 +0100
+
+    feat: add lead capture to all six interactive tools
+    
+    - New server route: app/api/tools/capture/route.ts
+      Mirrors the hardening from the contact form: origin check, content-type
+      validation, IP extraction, rate limiting (5/hr via Upstash Redis,
+      degrades gracefully), honeypot field, required-field and type validation.
+      Forwards validated data to HUB_API_URL/api/public/leads with
+      HUB_PUBLIC_API_KEY server-side only (via hubFetch). Never exposes the
+      key to the browser.
+    
+    - New component: components/ToolLeadCapture.tsx
+      Client component with name, email, optional company, hidden honeypot,
+      and submit button. Shows confirmation on success, error state on
+      failure, loading state during submission. Result is never gated behind
+      the form — capture sits below the result.
+    
+    - Wired into all six tools:
+      - ops-health-score: summary = score/25 + health label
+      - ai-readiness-check: summary = score/10 + result label
+      - automation-roi-calculator: summary = ROI% + break-even
+      - downtime-cost-calculator: summary = hourly cost + annual total
+      - rto-calculator: summary = annual saving + 3-year saving
+      - should-i-replace-erp: summary = score + recommendation label
+    
+    - Added toolCaptureRatelimit to lib/rate-limit.ts
+    - Added HUB_PUBLIC_API_KEY to .env.example
+    
+    TypeScript compiles clean (npx tsc --noEmit). No new dependencies.
+
+ .env.example                                       |   4 +
+ app/api/tools/capture/route.ts                     | 127 +++++++++++++++++
+ app/tools/ai-readiness-check/page.tsx              |   7 +
+ app/tools/ops-health-score/page.tsx                |   7 +
+ app/tools/should-i-replace-erp/page.tsx            |   7 +
+ components/ToolLeadCapture.tsx                     | 158 +++++++++++++++++++++
+ components/calculators/AutomationRoiCalculator.tsx |   9 ++
+ components/calculators/DowntimeCostCalculator.tsx  |   9 ++
+ components/calculators/RtoCalculator.tsx           |   9 ++
+ lib/rate-limit.ts                                  |  10 ++
+ 10 files changed, 347 insertions(+)
+
+$ git show origin/main:components/calculators/RtoCalculator.tsx | Select-String -Pattern "ToolLeadCapture" -Context 0,5
+> import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+  import './calculators.css';
+  
+  export function RtoCalculator() {
+    const [revenuePerHour, setRevenuePerHour] = useState<number>(1000);
+    const [currentRto, setCurrentRto] = useState<number>(8);
+>             <ToolLeadCapture
+                tool="rto-calculator"
+                resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving — 
+£${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
+                answers={{ revenuePerHour, currentRto, targetRto, incidentsPerYear }}
+              />
+            </div>
+
+$ git show origin/main:components/calculators/AutomationRoiCalculator.tsx | Select-String -Pattern "ToolLeadCapture" -Context 0,5
+> import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+  import './calculators.css';
+  
+  export function AutomationRoiCalculator() {
+    const [hoursPerWeek, setHoursPerWeek] = useState<number>(5);
+    const [staffCount, setStaffCount] = useState<number>(2);
+>             <ToolLeadCapture
+                tool="automation-roi-calculator"
+                resultSummary={`${roiPercent}% 3-year ROI — break-even ${breakEvenMonths !== null ? 
+`${breakEvenMonths} months` : 'not achievable'}`}
+                answers={{ hoursPerWeek, staffCount, hourlyRate, setupCost, monthlyMaintenance }}
+              />
+            </div>
+
+$ git show origin/main:components/calculators/DowntimeCostCalculator.tsx | Select-String -Pattern "ToolLeadCapture" -Context 0,5
+> import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+  import './calculators.css';
+  
+  const gbp = (n: number) =>
+    '£' + Math.round(n).toLocaleString('en-GB');
+  
+>             <ToolLeadCapture
+                tool="downtime-cost-calculator"
+                resultSummary={`${gbp(costPerHourDown)}/hr downtime cost — ${gbp(totalAnnual)} annual`}
+                answers={{ annualOverhead, resources, hoursPerDay, daysPerWeek, weeksPerYear, utilisation, 
+outagesPerYear, hoursPerOutage, peopleIdle, labourRate, jobsLost, avgJobValue }}
+              />
+            </div>
+
+→ Read app/tools/ops-health-score/page.tsx
+→ Read app/tools/ai-readiness-check/page.tsx
+→ Read app/tools/should-i-replace-erp/page.tsx
+The quiz tools look correct. Now fix the calculator tools — ToolLeadCapture belongs inside the components, not the pages.
+→ Read components/calculators/AutomationRoiCalculator.tsx
+→ Read components/calculators/RtoCalculator.tsx
+Good — AutomationRoiCalculator and RtoCalculator already have correct ToolLeadCapture. Now fix the three calculator pages and the DowntimeCostCalculator component.
+
+← Edit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
+@@ -1,7 +1,6 @@
+ import type { Metadata } from 'next';
+ import { AutomationRoiCalculator } from '@/components/calculators/AutomationRoiCalculator';
+-import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+
+← Edit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
+@@ -1,7 +1,6 @@
+ import type { Metadata } from 'next';
+ import { RtoCalculator } from '@/components/calculators/RtoCalculator';
+-import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+
+← Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
+@@ -1,8 +1,7 @@
+ import type { Metadata } from 'next';
+ import Link from 'next/link';
+ import { DowntimeCostCalculator } from '@/components/calculators/DowntimeCostCalculator';
+-import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+ 
+ const jsonLd = {
+   '@context': 'https://schema.org',
+   '@type': 'WebApplication',
+
+
+← Edit app/tools/automation-roi-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\automation-roi-calculator\page.tsx
+@@ -41,8 +41,7 @@
+           <AutomationRoiCalculator />
+         </div>
+       </section>
+ 
+-      <ToolLeadCapture tool="automation-roi-calculator" />
+     </main>
+   );
+ }
+
+
+← Edit app/tools/rto-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\rto-calculator\page.tsx
+@@ -43,8 +43,7 @@
+           <RtoCalculator />
+         </div>
+       </section>
+ 
+-      <ToolLeadCapture tool="rto-calculator" />
+     </main>
+   );
+ }
+
+
+← Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\app\tools\downtime-cost-calculator\page.tsx
+@@ -129,10 +129,8 @@
+     </div>
+   </div>
+ </section>
+ 
+-<ToolLeadCapture tool="downtime-cost-calculator" />
+-
+ {/* CTA */}
+ <section className="py-14 lg:py-20" style={{ backgroundColor: '#023047' }}>
+   <div className="max-w-3xl mx-auto px-6 lg:px-8">
+     <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-white mb-4">
+
+
+Now fix the DowntimeCostCalculator component's ToolLeadCapture to use the correct variables.
+← Edit components/calculators/DowntimeCostCalculator.tsx
+Index: D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\components\calculators\DowntimeCostCalculator.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\components\calculators\DowntimeCostCalculator.tsx
++++ D:\apps\worktrees\decoded-ops-website\sr0-staging-sync\components\calculators\DowntimeCostCalculator.tsx
+@@ -144,10 +144,10 @@
+ 
+     <div style={{ marginTop: 24 }}>
+       <ToolLeadCapture
+         tool="downtime-cost-calculator"
+-        resultSummary={`${gbp(costPerHourDown)}/hr downtime cost — ${gbp(totalAnnual)} annual`}
+-        answers={{ annualOverhead, resources, hoursPerDay, daysPerWeek, weeksPerYear, utilisation, outagesPerYear, hoursPerOutage, peopleIdle, labourRate, jobsLost, avgJobValue }}
++        resultSummary={`£${totalAnnualCost.toLocaleString('en-GB')} annual downtime cost — ${totalDowntimeHours} hours lost`}
++        answers={{ employees, hourlySalary, outagesPerYear, hoursPerOutage, revenuePerHour }}
+       />
+     </div>
+   </div>
+ </div>
+
+
+$ npx next build 2>&1
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 27ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.0s
+  Running TypeScript ...
+  Finished TypeScript in 1761ms ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/160) ...
+  Generating static pages using 15 workers (40/160) 
+  Generating static pages using 15 workers (80/160) 
+  Generating static pages using 15 workers (120/160) 
+✓ Generating static pages using 15 workers (160/160) in 3.3s
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/crm
+├ ○ /apps/data-app
+├ ○ /blog                                                  5m      1y
+├   /blog/[slug]
+│ ├ ● /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+│ ├ ● /blog/5-questions-vendors-wont-like                  5m      1y
+│ ├ ● /blog/why-systems-dont-talk                          5m      1y
+│ └ ● [+25 more paths]
+├ ○ /case-studies
+├ ○ /case-studies/cobra-workwear
+├ ○ /case-studies/eternal-fitness
+├ ○ /case-studies/hanicks
+├ ○ /case-studies/tacklebag
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /decoded-method
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+24 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+24 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/audit-checklist
+├ ○ /resources/six-sigma
+├ ○ /resources/software-reviews
+├ ○ /retained
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ○ /sitemap.xml                                           5m      1y
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+# Todos
+[✓] Resolve tool page conflicts (6 files) — staging visual wins, main lead capture added
+[✓] Resolve component conflicts (HeroGraphic, LocationPage, ExpertiseTimelineGraphic)
+[✓] Resolve modify/delete conflicts (hub-status, LogoWordmark, ProblemPage, SectorPage)
+[✓] Resolve .context/loop-status.md conflict
+[✓] Resolve package.json and package-lock.json conflicts
+[✓] Install deps and run next build
+[•] Commit merge and report
+
+Build passes — 160/160 pages, zero errors. Now commit.
+$ git add -A
+warning: in the working copy of 'app/tools/automation-roi-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/downtime-cost-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/tools/rto-calculator/page.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+
+$ git commit -m "merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+
+Merge origin/main (d45350e) into lane/sr0-staging-sync-2026-09-02 (8445923).
+Staging visual designs are canonical; main functional additions preserved.
+
+Conflicted files and resolutions:
+
+app/tools/ai-readiness-check/page.tsx — KEPT STAGING visuals, ADDED main ToolLeadCapture
+app/tools/automation-roi-calculator/page.tsx — KEPT STAGING visuals, REMOVED misplaced ToolLeadCapture (belongs in component)
+app/tools/downtime-cost-calculator/page.tsx — KEPT STAGING visuals, ADDED main editorial sections (why it's hard, recovery rate, sector framing, CTA), REMOVED misplaced ToolLeadCapture
+app/tools/ops-health-score/page.tsx — KEPT STAGING visuals, ADDED main ToolLeadCapture
+app/tools/rto-calculator/page.tsx — KEPT STAGING visuals, REMOVED misplaced ToolLeadCapture (belongs in component)
+app/tools/should-i-replace-erp/page.tsx — KEPT STAGING visuals, ADDED main ToolLeadCapture
+components/HeroGraphic.tsx — KEPT STAGING structure, APPLIED main token swaps (hex→design tokens)
+components/LocationPage.tsx — KEPT STAGING visual architecture (g-off/g-navy sections, wrap, eyebrow, inline styles), no token swaps needed
+components/graphics/ExpertiseTimelineGraphic.tsx — KEPT STAGING markup, APPLIED main token swap + punctuation fix
+components/LogoWordmark.tsx — DELETED (staging removed, main modified)
+components/ProblemPage.tsx — DELETED (staging removed, main modified)
+components/SectorPage.tsx — DELETED (staging removed, main modified)
+app/api/debug/hub-status/route.ts — DELETED (main removed, staging modified)
+.context/loop-status.md — KEPT BOTH sections (plate-batch + dispatcher log)
+package.json — KEPT staging scripts (prebuild, generate-route-slugs), TOOK main dep upgrades (next 16.3.3, nodemailer 9, eslint-config-next 16.3.3), DROPPED unused vercel dep
+package-lock.json — REGENERATED from resolved package.json
+
+Post-merge fixes:
+- Removed ToolLeadCapture from 3 calculator page files (automation-roi, rto, downtime-cost) — lead capture belongs inside the calculator components, not the page wrappers
+- Fixed DowntimeCostCalculator.tsx ToolLeadCapture to use correct variables from staging's simplified version (annualLabourCost, annualRevenueLoss, totalAnnualCost, totalDowntimeHours)
+
+npx next build: PASS (160/160 pages, zero TypeScript errors)"
+[lane/sr0-staging-sync-2026-09-02 2e731c3] merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+
+$ git log --oneline origin/staging..HEAD
+2e731c3 merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+d45350e Fix wrong CRM link in lead alert email — /leads → /admin/leads
+2ab97c9 Add lead alert email to tool capture route
+c5f3157 fix: remove false email promise from tool lead capture
+e112d7b feat: add lead capture to all six interactive tools
+2c9030f chore: replace Tailwind hex colour classes with design-system tokens in components/
+815ad37 fix(deploy): npm ci --legacy-peer-deps in Dockerfile
+90cd3da fix(deploy): add .npmrc legacy-peer-deps for nodemailer 9 vs next-auth peer
+5a01b3f security: bump next 16.3.3, nodemailer 9, drop unused vercel dep
+9a77cca security: send hub shared secret + proxy client uploads
+308d3a8 security: patch critical Auth.js vulnerabilities on client portal
+b3dd829 Restore Decoded Ops branding on the questionnaire form
+586c602 Fix every server-to-server hub fetch getting blocked by Cloudflare
+a1a4f61 Replace arbitrary hex color classes with DS token in /tools pages
+05beb8a docs: add handoff summary for questionnaire save feature
+b5ce3e2 feat: branch document view on doc_type, render QuestionnaireForm for questionnaires
+011a9db feat: add QuestionnaireForm component, renders fillable form from hub questions
+5690c30 feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts
+5a46727 refactor(tools): swap hardcoded hex colour classes for DS tokens
+2059eb5 fix(nav-check): expand dynamic route segments to stop false broken links
+daede84 Add Key Supplies to client portal ID lists
+
+$ git diff --stat origin/staging..HEAD | Select-Object -Last 3
+package-lock.json                                  | 18367 ++++++++-----------
+ package.json                                       |   103 +-
+ 45 files changed, 8937 insertions(+), 11092 deletions(-)
+
+# Todos
+[✓] Resolve tool page conflicts (6 files) — staging visual wins, main lead capture added
+[✓] Resolve component conflicts (HeroGraphic, LocationPage, ExpertiseTimelineGraphic)
+[✓] Resolve modify/delete conflicts (hub-status, LogoWordmark, ProblemPage, SectorPage)
+[✓] Resolve .context/loop-status.md conflict
+[✓] Resolve package.json and package-lock.json conflicts
+[✓] Install deps and run next build
+[✓] Commit merge and report
+
+## Report
+
+### Commits ahead of staging
+```
+2e731c3 merge: origin/main into sr0-staging-sync — resolve 16 conflicts
+d45350e Fix wrong CRM link in lead alert email — /leads → /admin/leads
+2ab97c9 Add lead alert email to tool capture route
+c5f3157 fix: remove false email promise from tool lead capture
+e112d7b feat: add lead capture to all six interactive tools
+2c9030f chore: replace Tailwind hex colour classes with design-system tokens in components/
+815ad37 fix(deploy): npm ci --legacy-peer-deps in Dockerfile
+90cd3da fix(deploy): add .npmrc legacy-peer-deps for nodemailer 9 vs next-auth peer
+5a01b3f security: bump next 16.3.3, nodemailer 9, drop unused vercel dep
+9a77cca security: send hub shared secret + proxy client uploads
+308d3a8 security: patch critical Auth.js vulnerabilities on client portal
+b3dd829 Restore Decoded Ops branding on the questionnaire form
+586c602 Fix every server-to-server hub fetch getting blocked by Cloudflare
+a1a4f61 Replace arbitrary hex color classes with DS token in /tools pages
+05beb8a docs: add handoff summary for questionnaire save feature
+b5ce3e2 feat: branch document view on doc_type, render QuestionnaireForm for questionnaires
+011a9db feat: add QuestionnaireForm component, renders fillable form from hub questions
+5690c30 feat: add questionnaire proxy API route (GET+POST), mirrors sign/route.ts
+5a46727 refactor(tools): swap hardcoded hex colour classes for DS tokens
+2059eb5 fix(nav-check): expand dynamic route segments to stop false broken links
+daede84 Add Key Supplies to client portal ID lists
+```
+
+### Conflicted files and resolution
+
+| File | Choice |
+|---|---|
+| `app/tools/ai-readiness-check/page.tsx` | **Staging visuals + main ToolLeadCapture** |
+| `app/tools/automation-roi-calculator/page.tsx` | **Staging visuals only** — ToolLeadCapture removed from page (already in component) |
+| `app/tools/downtime-cost-calculator/page.tsx` | **Staging visuals + main editorial sections** — ToolLeadCapture removed from page |
+| `app/tools/ops-health-score/page.tsx` | **Staging visuals + main ToolLeadCapture** |
+| `app/tools/rto-calculator/page.tsx` | **Staging visuals only** — ToolLeadCapture removed from page (already in component) |
+| `app/tools/should-i-replace-erp/page.tsx` | **Staging visuals + main ToolLeadCapture** |
+| `components/HeroGraphic.tsx` | **Staging structure + main token swaps** (hex→design tokens) |
+| `components/LocationPage.tsx` | **Staging visual architecture** — no token swaps needed |
+| `components/graphics/ExpertiseTimelineGraphic.tsx` | **Staging markup + main token swap + punctuation** |
+| `components/LogoWordmark.tsx` | **Deleted** (staging removed) |
+| `components/ProblemPage.tsx` | **Deleted** (staging removed) |
+| `components/SectorPage.tsx` | **Deleted** (staging removed) |
+| `app/api/debug/hub-status/route.ts` | **Deleted** (main removed) |
+| `.context/loop-status.md` | **Kept both sections** |
+| `package.json` | **Staging scripts + main dep upgrades** (next 16.3.3, nodemailer 9) |
+| `package-lock.json` | **Regenerated** |
+
+### Diff stat
+```
+ 45 files changed, 8937 insertions(+), 11092 deletions(-)
+```
+
+### Build result: PASS
+```
+✓ Generating static pages using 15 workers (160/160) in 3.3s
+```
+Zero TypeScript errors, 160/160 pages generated.

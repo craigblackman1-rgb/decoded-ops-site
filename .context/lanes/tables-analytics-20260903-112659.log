@@ -1,0 +1,320 @@
+
+> build · mimo-v2.5
+
+# Todos
+[ ] Fix 1 (BUG-WEB-006): Diff + delete ds-table duplication, add min-width, add scroll affordance
+[ ] Fix 2 (BUG-WEB-007): Add *.analytics.google.com and stats.g.doubleclick.net to CSP connect-src
+[ ] Fix 3 (BUG-WEB-008): Consolidate /decoded-method → /resources/decoded-method, redirect, update links, sitemap
+
+→ Read app/design-system/ds-marketing.css [offset=380, limit=50]
+→ Read app/design-system/marketing-pages-extra.css [offset=60, limit=50]
+→ Read app/design-system/ds-plates.css [offset=155, limit=25]
+→ Read next.config.ts [offset=30, limit=30]
+
+# Todos
+[•] Fix 1 (BUG-WEB-006): Diff + delete ds-table duplication, add min-width, add scroll affordance
+[ ] Fix 2 (BUG-WEB-007): Add *.analytics.google.com and stats.g.doubleclick.net to CSP connect-src
+[ ] Fix 3 (BUG-WEB-008): Consolidate /decoded-method → /resources/decoded-method, redirect, update links, sitemap
+
+→ Read app/decoded-method/page.tsx
+→ Read app/resources/decoded-method/page.tsx
+→ Read app/sitemap.ts
+→ Read app/pricing/page.tsx
+✱ Grep "/decoded-method" in . · 100 matches
+→ Read components/Footer.tsx [offset=60, limit=15]
+→ Read components/Header.tsx [offset=63, limit=15]
+→ Read app/process-quality-system/page.tsx [offset=153, limit=10]
+→ Read next.config.ts
+Now let me read the Footer and Header to see the exact link contexts, plus the next.config.ts redirects section.
+→ Read app/design-system/ds-marketing.css [offset=383, limit=35]
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
+@@ -92,9 +92,18 @@
+ .star{ display:inline-block; margin-left:7px; padding:2px 8px; border-radius:var(--do-radius-full);
+   background:var(--do-amber); color:var(--do-prussian-blue); font-family:var(--do-font-body);
+   font-weight:var(--do-weight-bold); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase;
+   vertical-align:2px }
++.ds-table .full{ color:var(--do-text-secondary) }
++.ds-table .full .price{ color:var(--do-text-primary) }
++.ds-table .dash{ color:var(--do-text-secondary) }
+ .table-foot{ margin:16px 0 0; font-size:var(--do-text-xs); color:var(--do-text-secondary); max-width:80ch }
++.table-wrap{ overflow-x:auto; -webkit-overflow-scrolling:touch }
++.table-wrap::after{ content:''; display:block; height:0 }
++@media (max-width:720px){
++  .table-wrap::after{ content:'Scroll to see the full table →';
++    margin-top:10px; font-size:var(--do-text-xs); color:var(--do-text-secondary) }
++}
+ 
+ /* ── inset fact line above a table (entry-point note) ── */
+ .inset{ margin-top:20px; padding:18px 22px; border-radius:var(--do-radius-lg);
+   background:color-mix(in srgb, var(--do-prussian-blue) 5%, transparent);
+
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\marketing-pages-extra.css
+@@ -70,8 +70,9 @@
+ .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
+ .ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+ .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
++.ds-table th:first-child{ min-width:180px }
+ .ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-text-on-dark);
+   font-family:var(--do-font-heading); font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm);
+   white-space:nowrap }
+ .ds-table tbody th{ font-family:var(--do-font-heading); font-weight:var(--do-weight-bold); font-size:var(--do-text-base);
+
+
+← Edit app/design-system/ds-marketing.css
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\ds-marketing.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\ds-marketing.css
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\app\design-system\ds-marketing.css
+@@ -380,42 +380,8 @@
+   font-size:0.9375rem; color:var(--do-text-secondary); max-width:78ch }
+ .inset b{ color:var(--do-text-primary); font-weight:700 }
+ .inset+.inset{ margin-top:10px }
+ 
+-/* ── data tables (pricing.html) ── */
+-.table-wrap{ margin-top:32px; border:1px solid var(--do-border-subtle);
+-  border-radius:var(--do-radius-2xl); background:var(--do-white); overflow-x:auto;
+-  box-shadow:var(--do-shadow-sm) }
+-.ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:0.9375rem }
+-.ds-table caption{ text-align:left; padding:22px 26px 0; font-family:var(--do-font-heading);
+-  font-weight:700; font-size:1.15rem; color:var(--do-text-primary) }
+-.ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+-.ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-off-white);
+-  font-family:var(--do-font-heading); font-weight:600; font-size:0.875rem; letter-spacing:0.01em;
+-  white-space:nowrap }
+-.ds-table tbody th{ font-family:var(--do-font-heading); font-weight:700; font-size:1rem;
+-  color:var(--do-text-primary); white-space:nowrap }
+-.ds-table tbody tr+tr th,.ds-table tbody tr+tr td{ border-top:1px solid var(--do-border-subtle) }
+-.ds-table tbody tr:hover td,.ds-table tbody tr:hover th{
+-  background:color-mix(in srgb, var(--do-cerulean) 4%, transparent) }
+-.ds-table .price{ display:block; font-family:var(--do-font-heading); font-weight:700;
+-  font-size:1.0625rem; font-variant-numeric:tabular-nums; letter-spacing:-0.01em }
+-.ds-table .price-sub{ display:block; margin-top:5px; font-size:0.8125rem; color:var(--do-text-secondary) }
+-.ds-table .scope{ color:var(--do-text-secondary); white-space:normal; min-width:22ch }
+-.ds-table .full{ color:var(--do-text-secondary) }
+-.ds-table .full .price{ color:var(--do-text-primary) }
+-.ds-table th.col-star,.ds-table td.col-star{
+-  background:color-mix(in srgb, var(--do-amber) 9%, transparent) }
+-.ds-table thead th.col-star{ background:var(--do-prussian-blue);
+-  box-shadow:inset 0 -4px 0 0 var(--do-amber) }
+-.ds-table tbody tr:hover td.col-star{ background:color-mix(in srgb, var(--do-amber) 14%, transparent) }
+-.star{ display:inline-block; margin-left:7px; padding:2px 8px; border-radius:var(--do-radius-full);
+-  background:var(--do-amber); color:var(--do-prussian-blue); font-family:var(--do-font-body);
+-  font-weight:700; font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase;
+-  vertical-align:2px }
+-.ds-table .dash{ color:var(--do-text-secondary) }
+-.table-foot{ margin:16px 0 0; font-size:0.8125rem; color:var(--do-text-secondary); max-width:80ch }
+-
+ /* ── numbered step cards (process-quality-system.html) ── */
+ .steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:20px; margin-top:32px }
+ .step{ background:var(--do-white); border:1px solid var(--do-border-subtle);
+   border-radius:var(--do-radius-2xl); padding:24px; box-shadow:var(--do-shadow-sm) }
+
+
+Now I have a clear picture. The diff reveals three properties in the ds-marketing.css block that the token block is missing: `.ds-table .full`, `.ds-table .full .price`, and `.ds-table .dash`. Let me execute Fix 1.
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && git add app/design-system/ds-marketing.css app/design-system/marketing-pages-extra.css && git commit -m "fix: BUG-WEB-006 — remove duplicate .ds-table block, add th min-width + scroll hint
+
+ds-marketing.css had a hardcoded .ds-table block that conflicted with the
+token-based version in marketing-pages-extra.css. Deleted the stale block;
+carried over three missing selectors (.full, .full .price, .dash) into the
+token file as single source of truth. Added min-width:180px on th:first-child
+for product-label breathing room. Added mobile scroll affordance matching the
+plate-scroll pattern."
+[fix/tables-analytics-seo a8a47c0] fix: BUG-WEB-006 — remove duplicate .ds-table block, add th min-width + scroll hint
+ 2 files changed, 10 insertions(+), 34 deletions(-)
+
+# Todos
+[✓] Fix 1 (BUG-WEB-006): Diff + delete ds-table duplication, add min-width, add scroll affordance
+[•] Fix 2 (BUG-WEB-007): Add *.analytics.google.com and stats.g.doubleclick.net to CSP connect-src
+[ ] Fix 3 (BUG-WEB-008): Consolidate /decoded-method → /resources/decoded-method, redirect, update links, sitemap
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
+@@ -34,9 +34,9 @@
+       // 'unsafe-eval' is added in development ONLY. Webpack dev mode (`next dev --webpack`)
+       // uses eval for HMR and source maps, and without this React never hydrates locally,
+       // which makes every interactive component look broken while testing. Production
+       // headers are unchanged.
+-      value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://analytics.ahrefs.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
++      value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://analytics.ahrefs.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://analytics.ahrefs.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'`,
+     },
+   ],
+ },
+ {
+
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && git add next.config.ts && git commit -m "fix: BUG-WEB-007 — add regional GA4 + DoubleClick endpoints to CSP connect-src
+
+GA4 sends to region-specific endpoints (region1.analytics.google.com etc.)
+which were blocked by the wildcard pattern. Added *.analytics.google.com and
+stats.g.doubleclick.net to connect-src. No other CSP directives touched."
+[fix/tables-analytics-seo 00b1982] fix: BUG-WEB-007 — add regional GA4 + DoubleClick endpoints to CSP connect-src
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+# Todos
+[✓] Fix 1 (BUG-WEB-006): Diff + delete ds-table duplication, add min-width, add scroll affordance
+[✓] Fix 2 (BUG-WEB-007): Add *.analytics.google.com and stats.g.doubleclick.net to CSP connect-src
+[•] Fix 3 (BUG-WEB-008): Consolidate /decoded-method → /resources/decoded-method, redirect, update links, sitemap
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && Remove-Item -Path "app\decoded-method" -Recurse -Force
+(no output)
+
+← Edit next.config.ts
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\next.config.ts
+@@ -13,8 +13,9 @@
+     // Targets don't exist yet — that's expected, the other lanes build
+     // them; the redirect just needs to be ready ahead of that landing.
+     { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
+     { source: '/resources/software-reviews', destination: '/resources', permanent: true },
++    { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+     { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
+   ];
+ },
+ async headers() {
+
+
+← Edit components/Footer.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Footer.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Footer.tsx
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Footer.tsx
+@@ -63,9 +63,9 @@
+   { label: 'AI paralysis', href: '/problems/ai-paralysis' },
+ ];
+ 
+ const guideChips: FooterLink[] = [
+-  { label: 'The Decoded Method', href: '/decoded-method' },
++  { label: 'The Decoded Method', href: '/resources/decoded-method' },
+   { label: 'Audit checklist', href: '/resources/audit-checklist' },
+   { label: '5 warning signs', href: '/resources/5-warning-signs' },
+   { label: 'Six Sigma explained', href: '/resources/six-sigma' },
+   { label: 'Free calculators', href: '/tools' },
+
+
+← Edit components/Header.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Header.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Header.tsx
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\components\Header.tsx
+@@ -66,9 +66,9 @@
+ };
+ const helpHow: NavGroup = {
+   title: 'How I work',
+   items: [
+-    { label: 'The Decoded Method', href: '/decoded-method' },
++    { label: 'The Decoded Method', href: '/resources/decoded-method' },
+     { label: 'How I build software', href: '/how-i-build' },
+     { label: 'Prices, in plain numbers', href: '/pricing' },
+     { label: 'About Craig', href: '/about' },
+   ],
+
+
+← Edit app/process-quality-system/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\app\process-quality-system\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\app\process-quality-system\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\app\process-quality-system\page.tsx
+@@ -154,9 +154,9 @@
+         keep afterwards is a documented process, not just something that works and nobody can
+         explain.</p>
+       <div className="hero-cta">
+         <Link className="btn btn-primary" href="/deliver">See how this fits into Deliver</Link>
+-        <Link className="btn btn-secondary btn-arrow" href="/decoded-method">The Decoded Method</Link>
++        <Link className="btn btn-secondary btn-arrow" href="/resources/decoded-method">The Decoded Method</Link>
+       </div>
+     </div>
+   </section>
+ </>
+
+
+← Edit app/sitemap.ts
+Index: D:\apps\worktrees\decoded-ops-website\tables-analytics\app\sitemap.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tables-analytics\app\sitemap.ts
++++ D:\apps\worktrees\decoded-ops-website\tables-analytics\app\sitemap.ts
+@@ -48,9 +48,9 @@
+ { url: `${BASE_URL}/apps/artwork-manager`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/apps/crm`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/how-i-build`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+-{ url: `${BASE_URL}/decoded-method`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
++
+ { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+ { url: `${BASE_URL}/problems`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+ { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.65 },
+ { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
+
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && rg '/decoded-method' --glob '*.{ts,tsx,css,js}' --glob '!.context/**' --glob '!.next/**' -n
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+✱ Grep "/decoded-method" in app · 8 matches
+✱ Grep "/decoded-method" in components · 3 matches
+All references now point to `/resources/decoded-method`. The remaining `/decoded-method` occurrences are the PDF download links and the canonical URLs on the resources page — all correct. Let me verify the key files look right.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && git diff --stat
+app/decoded-method/page.tsx         | 193 ------------------------------------
+ app/process-quality-system/page.tsx |   2 +-
+ app/sitemap.ts                      |   2 +-
+ components/Footer.tsx               |   2 +-
+ components/Header.tsx               |   2 +-
+ next.config.ts                      |   1 +
+ 6 files changed, 5 insertions(+), 197 deletions(-)
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && git add -A && git commit -m "fix: BUG-WEB-008 — consolidate /decoded-method → /resources/decoded-method
+
+/resources/decoded-method is the richer page (257 lines, schematics, PDF
+download) and matches where other guides live. Deleted the duplicate
+app/decoded-method/page.tsx, added a permanent redirect in next.config.ts,
+updated Header, Footer, and process-quality-system links, and removed the
+stale /decoded-method sitemap entry."
+[fix/tables-analytics-seo e79c1a8] fix: BUG-WEB-008 — consolidate /decoded-method → /resources/decoded-method
+ 6 files changed, 5 insertions(+), 197 deletions(-)
+ delete mode 100644 app/decoded-method/page.tsx
+
+# Todos
+[✓] Fix 1 (BUG-WEB-006): Diff + delete ds-table duplication, add min-width, add scroll affordance
+[✓] Fix 2 (BUG-WEB-007): Add *.analytics.google.com and stats.g.doubleclick.net to CSP connect-src
+[✓] Fix 3 (BUG-WEB-008): Consolidate /decoded-method → /resources/decoded-method, redirect, update links, sitemap
+
+$ cd "D:\apps\worktrees\decoded-ops-website\tables-analytics" && git log --oneline -5
+e79c1a8 fix: BUG-WEB-008 — consolidate /decoded-method → /resources/decoded-method
+00b1982 fix: BUG-WEB-007 — add regional GA4 + DoubleClick endpoints to CSP connect-src
+a8a47c0 fix: BUG-WEB-006 — remove duplicate .ds-table block, add th min-width + scroll hint
+9fab990 chore: remove Supabase platform mentions from docs and comments (B1)
+c7dae3c chore(security): remove dead Supabase migration scripts and a committed client-data SQL dump
+
+Three commits, one per fix, all on branch `fix/tables-analytics-seo`:
+
+---
+
+**BUG-WEB-006** (`a8a47c0`): Deleted the stale hardcoded `.ds-table` block from `ds-marketing.css` (33 lines). Carried over three missing selectors into `marketing-pages-extra.css`:
+
+| Property | Old block had | Token block was missing |
+|---|---|---|
+| `.ds-table .full` | `color:var(--do-text-secondary)` | Yes — carried over |
+| `.ds-table .full .price` | `color:var(--do-text-primary)` | Yes — carried over |
+| `.ds-table .dash` | `color:var(--do-text-secondary)` | Yes — carried over |
+
+Added `min-width:180px` on `.ds-table th:first-child` for product-label breathing room. Added mobile scroll hint (`Scroll to see the full table →`) on `.table-wrap` matching the `.plate-scroll::after` pattern.
+
+**BUG-WEB-007** (`00b1982`): Added `https://*.analytics.google.com` and `https://stats.g.doubleclick.net` to CSP `connect-src` in `next.config.ts`. No other directives touched.
+
+**BUG-WEB-008** (`e79c1a8`): Deleted `app/decoded-method/page.tsx` and directory. Added permanent redirect `/decoded-method` → `/resources/decoded-method` in `next.config.ts`. Updated Header (line 70), Footer (line 67), and `process-quality-system` (line 158) links. Removed `/decoded-method` from sitemap; `/resources/decoded-method` remains.

@@ -1,0 +1,149 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Task 1: Grep for client-docs references, delete public/client-docs/ directory
+[ ] Task 2: Remove public proposal slug exemptions from middleware.ts
+[ ] Commit changes and summarize
+
+→ Read middleware.ts
+✱ Glob "public/client-docs/**/*" in . · 5 matches
+✱ Grep "client-docs" in . · 18 matches
+
+$ rm -rf "D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\public\client-docs"
+Remove-Item: A parameter cannot be found that matches parameter name 'rf'.
+
+← Edit middleware.ts
+Index: D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
++++ D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
+@@ -5,18 +5,8 @@
+ // Edge-safe auth instance — must NOT import from '@/auth' (it pulls in `pg`,
+ // a native Node module that cannot load on the Edge runtime).
+ const { auth } = NextAuth(authConfig)
+ 
+-// Proposal slugs that are publicly accessible (no login required)
+-const PUBLIC_PROPOSALS = [
+-  '/clients/tacklebag',
+-  '/clients/tacklebag-v2',
+-  '/clients/cobra-workwear',
+-  '/clients/hanicks',
+-  '/clients/cwear',
+-  '/clients/scotshirts',
+-]
+-
+ export default auth((req) => {
+   const { nextUrl } = req
+   const isLoggedIn = !!req.auth
+ 
+
+
+Found 5 files in `public/client-docs/`. References to `client-docs` in code are either hub API proxies (`/api/public/client-docs`) or route handling in middleware/next.config — all should stay per instructions. Executing both tasks now.
+$ Remove-Item -Recurse -Force "D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\public\client-docs"
+(no output)
+
+← Edit middleware.ts
+Index: D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
++++ D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\middleware.ts
+@@ -35,15 +35,8 @@
+     return Response.redirect(new URL('/clients/dashboard', nextUrl.origin))
+   }
+ }
+ 
+-// Public proposal URLs — no auth required
+-if (PUBLIC_PROPOSALS.includes(nextUrl.pathname)) {
+-  const response = NextResponse.next()
+-  response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+-  return response
+-}
+-
+ // Not logged in and visiting a protected client route → login
+ if (!isLoggedIn && nextUrl.pathname.startsWith('/clients') && nextUrl.pathname !== '/clients/login') {
+   const loginUrl = new URL('/clients/login', nextUrl.origin)
+   loginUrl.searchParams.set('callbackUrl', nextUrl.pathname)
+
+
+→ Read middleware.ts
+
+$ Test-Path "D:\apps\worktrees\decoded-ops-website\hotfix-client-docs\public\client-docs"
+False
+
+# Todos
+[✓] Task 1: Grep for client-docs references, delete public/client-docs/ directory
+[✓] Task 2: Remove public proposal slug exemptions from middleware.ts
+[•] Commit changes and summarize
+
+$ git status
+On branch fix/client-docs-exposure
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   middleware.ts
+	deleted:    public/client-docs/scotshirts/discovery-report.html
+	deleted:    public/client-docs/tacklebag/engagement-letter.html
+	deleted:    public/client-docs/tacklebag/invoice-do-003.html
+	deleted:    public/client-docs/tacklebag/invoice-tb-001.html
+	deleted:    public/client-docs/tacklebag/terms-conditions.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git add middleware.ts public/client-docs/ && git commit -m "fix: remove exposed client docs and gate proposals behind login
+
+BUG-WEB-001: Delete public/client-docs/ directory containing real
+client financial documents (invoices, engagement letters, discovery
+reports) that were served unauthenticated. The client portal now
+fetches documents from the hub API — nothing references these files.
+
+Proposal gating (Craig decision 2026-09-03): Remove PUBLIC_PROPOSALS
+exemption array from middleware.ts so /clients/tacklebag,
+/clients/tacklebag-v2, /clients/cobra-workwear, /clients/hanicks,
+/clients/cwear, and /clients/scotshirts now require a session like
+every other /clients/* route. /clients/login remains public.
+
+Route-level handling in next.config.ts and the /client-docs matcher
+entry are preserved per instructions."
+[fix/client-docs-exposure 0b8092c] fix: remove exposed client docs and gate proposals behind login
+ 6 files changed, 1453 deletions(-)
+ delete mode 100644 public/client-docs/scotshirts/discovery-report.html
+ delete mode 100644 public/client-docs/tacklebag/engagement-letter.html
+ delete mode 100644 public/client-docs/tacklebag/invoice-do-003.html
+ delete mode 100644 public/client-docs/tacklebag/invoice-tb-001.html
+ delete mode 100644 public/client-docs/tacklebag/terms-conditions.html
+
+# Todos
+[✓] Task 1: Grep for client-docs references, delete public/client-docs/ directory
+[✓] Task 2: Remove public proposal slug exemptions from middleware.ts
+[✓] Commit changes and summarize
+
+Committed `0b8092c` on `fix/client-docs-exposure`.
+
+## Summary
+
+**Files deleted (5):**
+- `public/client-docs/tacklebag/invoice-tb-001.html`
+- `public/client-docs/tacklebag/invoice-do-003.html`
+- `public/client-docs/tacklebag/engagement-letter.html`
+- `public/client-docs/tacklebag/terms-conditions.html`
+- `public/client-docs/scotshirts/discovery-report.html`
+
+**Middleware changes (middleware.ts, 17 lines removed):**
+- Removed `PUBLIC_PROPOSALS` array (lines 9–17) and the bypass block (lines 49–54) that let 6 proposal slugs through without auth
+- `/clients/login` still excluded from auth check (line 40)
+- `/client-docs/:path*` matcher entry preserved per instructions
+
+**Remaining `client-docs` references (all should stay):**
+- `middleware.ts:13-16` — blocks direct access to `/client-docs/` with redirect to login
+- `middleware.ts:52` — matcher includes `/client-docs/:path*`
+- `next.config.ts:10` — redirect rule for `/client-docs/:path*`
+- `next.config.ts:36` — headers block for `/client-docs/:path*`
+- `app/api/clients/documents/[id]/sign/route.ts:45` — hub API proxy (`/api/public/client-docs/`)
+- `app/api/clients/documents/[id]/questionnaire/route.ts:30,79` — hub API proxy
+- `app/clients/documents/page.tsx:86` — hub API fetch
+- `app/clients/documents/view/[id]/page.tsx:60` — hub API fetch
+- `app/clients/dashboard/page.tsx:79` — hub API fetch
+- `CLAUDE.md`, `.context/loop-status.md`, `.context/handoff.md` — documentation

@@ -1,0 +1,591 @@
+
+> build · mimo-v2.5
+
+← Edit app/case-studies/case-study-01/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-01\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-01\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-01\page.tsx
+@@ -84,9 +84,9 @@
+ <div className="hair"></div>
+ <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
+ 
+ <div className="plate-scroll">
+-  <div className="plate-frame" data-od-id="plate-hanicks">
++  <div className="plate-frame" data-od-id="plate-cs01">
+     <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
+            sub="Case study 01 · 164,752 products, 77% matched on the first run"
+            no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
+ 
+
+
+← Edit app/case-studies/case-study-02/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-02\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-02\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\anonymise-clients\app\case-studies\case-study-02\page.tsx
+@@ -93,9 +93,9 @@
+ <div className="hair"></div>
+ <p className="lede">Case study 02, real production numbers. Nine supplier feeds, fully automated.</p>
+ 
+ <div className="plate-scroll">
+-  <div className="plate-frame" data-od-id="plate-tacklebag">
++  <div className="plate-frame" data-od-id="plate-cs02">
+     <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
+            sub="Case study 02 · 9 feeds automated, 20–40 hrs/wk saved"
+            no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
+ 
+
+
+$ git status && git diff
+...output truncated...
+
+Full output saved to: C:\Users\CraigBlackman\.local\share\opencode\tool-output\tool_066e187ed001cGkv7OYM8qaK7A
+
+-- `:13` Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.
+-- `:21` twitter: card: 'summary_large_image', title: 'Labels & Packaging Technology | Decoded Ops', description: 'Technology and operations consultancy for labels and packaging businesses. Systems audit, project delivery, and fractional CTO support.',
++- `:12` Software & Systems for Label & Packaging Printers | Decoded Ops
++- `:12` title: 'Software & Systems for Label & Packaging Printers | Decoded Ops', description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.', alternates: , openGraph: title: 'Software & Systems for Label & Packaging Printers | Decoded Ops', description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.', url: 'https://decodedops.co.uk/sectors/labels-packaging', images: [ ],
++- `:13` The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.
++- `:21` twitter: card: 'summary_large_image', title: 'Software & Systems for Label & Packaging Printers | Decoded Ops', description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
+ - `:42` Compliance and specification management
+ - `:43` Variable data at speed
+ - `:44` Substrate and press matching
+@@ -1721,7 +1917,7 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:61` Product complexity at volume
+ - `:62` Supplier fragmentation
+ - `:63` The sample and approval cycle
+-- `:64` Quote-to-order conversion costs
++- `:64` What quoting actually costs you
+ - `:65` Artwork approval workflow
+ - `:66` Print production scheduling and capacity planning
+ - `:70` 'Audit your order intake and quoting for hidden time cost', 'Map the full supplier workflow, from order to receipt', 'Find where samples and approvals are creating delay', 'Review your product data and supplier pricing', 'Check your systems for gaps and manual workarounds', 'Put a real cost on every inefficiency found', ];
+@@ -1751,9 +1947,9 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/sectors/promotional-merchandise/page.tsx`
+ 
+ - `:8` Promotional merchandise | Decoded Ops
+-- `:8` title: 'Promotional merchandise | Decoded Ops', description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.', alternates: , openGraph: title: 'Promotional merchandise | Decoded Ops', description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.', url: 'https://decodedops.co.uk/sectors/promotional-merchandise', images: [ ],
+-- `:9` Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.
+-- `:17` twitter: card: 'summary_large_image', title: 'Promotional merchandise | Decoded Ops', description: 'Technology and operations consultancy for promotional merchandise businesses. Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
++- `:8` title: 'Promotional merchandise | Decoded Ops', description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.', alternates: , openGraph: title: 'Promotional merchandise | Decoded Ops', description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.', url: 'https://decodedops.co.uk/sectors/promotional-merchandise', images: [ ],
++- `:9` Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.
++- `:17` twitter: card: 'summary_large_image', title: 'Promotional merchandise | Decoded Ops', description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+ - `:41` Promotional Merchandise
+ - `:47` 'Every client wants something slightly different, on a deadline, at a price point that leaves no room for error.', 'The businesses that do this well have their product data and their production process under control. Most don\'t, and it\'s costing them.',
+ - `:50` See how the audit works
+@@ -1770,8 +1966,8 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:115` The artwork loop
+ - `:123` ), title: 'Margin erosion at the order level', body: 'If decoration cost, supplier lead times, and artwork rework aren\u2019t tracked per job, margin quietly erodes on every order.',
+ - `:124` Margin erosion at the order level
+-- `:132` ), title: 'Quote-to-order conversion costs', body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
+-- `:133` Quote-to-order conversion costs
++- `:132` ), title: 'What quoting actually costs you', body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
++- `:133` What quoting actually costs you
+ - `:141` ), title: 'eCommerce disconnected from supply', body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.',
+ - `:142` eCommerce disconnected from supply
+ - `:148` 'Map your full workflow, from client enquiry to delivery', 'Audit multi-supplier product data for accuracy and currency', 'Review how artwork is stored, approved, and versioned', 'Find where supplier fragmentation creates admin work', 'See how margin is calculated and tracked per order', 'Review quoting accuracy and quote-to-order costs', 'Put a number on every finding in time, margin, and admin cost',
+@@ -1787,9 +1983,9 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/sectors/schoolwear/page.tsx`
+ 
+ - `:8` Schoolwear | Decoded Ops
+-- `:8` title: 'Schoolwear | Decoded Ops', description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.', alternates: , openGraph: title: 'Schoolwear | Decoded Ops', description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.', url: 'https://decodedops.co.uk/sectors/schoolwear', images: [ ],
+-- `:9` Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.
+-- `:17` twitter: card: 'summary_large_image', title: 'Schoolwear | Decoded Ops', description: 'Technology and operations consultancy for schoolwear suppliers. Supplier feeds current before the back-to-school peak, sizing that scales with growing pupils, proven at TackleBag.',
++- `:8` title: 'Schoolwear | Decoded Ops', description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.', alternates: , openGraph: title: 'Schoolwear | Decoded Ops', description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.', url: 'https://decodedops.co.uk/sectors/schoolwear', images: [ ],
++- `:9` Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.
++- `:17` twitter: card: 'summary_large_image', title: 'Schoolwear | Decoded Ops', description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
+ - `:47` 'Blazers, PE kit, and growing pupils, all needing to be right before the first week of September.', 'The businesses that get this right have their supplier data and sizing sorted well before the rush starts.',
+ - `:50` See how the audit works
+ - `:52` src: '/images/sectors/thread-spools.jpg', width: 1600, height: 1067, alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
+@@ -1803,7 +1999,7 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:107` Supplier feeds, current before the peak hits
+ - `:115` ), title: 'Sizing that scales with growing pupils', body: 'A school\'s sizing spread is wider and shifts every year. Stock and bin management that understands that means fewer "sold out in the size everyone actually needs" moments in week one.',
+ - `:116` Sizing that scales with growing pupils
+-- `:124` ), title: 'Proven at a real teamwear-and-schoolwear retailer', body: 'TackleBag runs the Decoded Data App alongside Symphony, handling both their teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
++- `:124` ), title: 'Proven at a real teamwear-and-schoolwear retailer', body: 'The Decoded Data App runs alongside the existing platform, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+ - `:125` Proven at a real teamwear-and-schoolwear retailer
+ - `:131` Teamwear & clubwear
+ - `:132` Promotional merchandise
+@@ -1820,10 +2016,10 @@ Every visible string on the marketing site, in route order, with source line num
+ 
+ `app/sectors/signs-graphics/page.tsx`
+ 
+-- `:12` Signs & Graphics Technology | Decoded Ops
+-- `:12` title: 'Signs & Graphics Technology | Decoded Ops', description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.', alternates: , openGraph: title: 'Signs & Graphics Technology | Decoded Ops', description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.', url: 'https://decodedops.co.uk/sectors/signs-graphics', images: [ ],
+-- `:13` Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.
+-- `:21` twitter: card: 'summary_large_image', title: 'Signs & Graphics Technology | Decoded Ops', description: 'Technology and operations consultancy for signs and graphics businesses. Systems audit, project delivery, and fractional CTO support.',
++- `:12` Software & Systems for Sign Makers | Decoded Ops
++- `:12` title: 'Software & Systems for Sign Makers | Decoded Ops', description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.', alternates: , openGraph: title: 'Software & Systems for Sign Makers | Decoded Ops', description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.', url: 'https://decodedops.co.uk/sectors/signs-graphics', images: [ ],
++- `:13` Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.
++- `:21` twitter: card: 'summary_large_image', title: 'Software & Systems for Sign Makers | Decoded Ops', description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+ - `:42` Survey-to-installation workflow
+ - `:43` Substrate and finish complexity
+ - `:44` Installation scheduling
+@@ -1855,9 +2051,9 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/sectors/teamwear-clubwear/page.tsx`
+ 
+ - `:8` Teamwear & Clubwear | Decoded Ops
+-- `:8` title: 'Teamwear & Clubwear | Decoded Ops', description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.', alternates: , openGraph: title: 'Teamwear & Clubwear | Decoded Ops', description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.', url: 'https://decodedops.co.uk/sectors/teamwear-clubwear', images: [ ],
+-- `:9` Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.
+-- `:17` twitter: card: 'summary_large_image', title: 'Teamwear & Clubwear | Decoded Ops', description: 'Technology and operations consultancy for teamwear and clubwear businesses. Squad numbers, sponsor logos and a hard deadline before the first match, proven at TackleBag.',
++- `:8` title: 'Teamwear & Clubwear | Decoded Ops', description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.', alternates: , openGraph: title: 'Teamwear & Clubwear | Decoded Ops', description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.', url: 'https://decodedops.co.uk/sectors/teamwear-clubwear', images: [ ],
++- `:9` Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.
++- `:17` twitter: card: 'summary_large_image', title: 'Teamwear & Clubwear | Decoded Ops', description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+ - `:41` Teamwear & Clubwear
+ - `:47` 'Squad numbers, sponsor logos, and a hard deadline before the first match of the season.', 'Get the data wrong and it\'s not a quiet admin cost, it\'s kit that doesn\'t arrive in time.',
+ - `:50` See how the audit works
+@@ -1876,7 +2072,7 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:124` Kit range churn
+ - `:132` ), title: 'Sponsor logo management', body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale, across multiple teams and age groups, is a dedicated workflow that email can\u2019t handle.',
+ - `:133` Sponsor logo management
+-- `:141` ), title: 'The proof and approval bottleneck', body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Automating that loop is one of the most impactful levers in teamwear operations.',
++- `:141` ), title: 'The proof and approval bottleneck', body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Fix that loop and you win back more time than anywhere else in the job.',
+ - `:142` The proof and approval bottleneck
+ - `:148` 'Map your full workflow, from squad list to delivery', 'Find where personalisation data is managed by hand', 'Check supplier catalogue data for kit range accuracy', 'Audit proof approval for sponsor logos and numbering', 'See how seasonal deadlines sit against production capacity', 'Review how your online shop connects to your order system', 'Put a number on every finding in time, admin cost, and rework',
+ - `:159` Promotional merchandise
+@@ -1891,9 +2087,9 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/sectors/workwear/page.tsx`
+ 
+ - `:8` Workwear | Decoded Ops
+-- `:8` title: 'Workwear | Decoded Ops', description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.", alternates: , openGraph: title: 'Workwear | Decoded Ops', description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.", url: 'https://decodedops.co.uk/sectors/workwear', images: [ ],
+-- `:9` Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.
+-- `:17` twitter: card: 'summary_large_image', title: 'Workwear | Decoded Ops', description: "Technology and operations consultancy for workwear businesses. Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
++- `:8` title: 'Workwear | Decoded Ops', description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.", alternates: , openGraph: title: 'Workwear | Decoded Ops', description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.", url: 'https://decodedops.co.uk/sectors/workwear', images: [ ],
++- `:9` Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.
++- `:17` twitter: card: 'summary_large_image', title: 'Workwear | Decoded Ops', description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+ - `:47` 'Personalised orders, decoration methods that vary by garment, and stock that has to match sizes, colours, and branding all at once.', 'Generic tech advice gets this sector wrong from the start, because the production step sits between order and despatch, not after it.',
+ - `:50` See how the audit works
+ - `:52` src: '/images/sectors/cat-workwear.jpg', width: 900, height: 596, alt: 'A fanned stack of work shirts in a dozen colourways, collars and button plackets showing, on a plain studio background.',
+@@ -1903,7 +2099,7 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:69` Supplier catalogue Ranges · sizing · colourways · stock availability: current, not copy-pasted
+ - `:78` Production floor Decoration method mix · blank stock · personalisation: the step generic systems skip
+ - `:87` Customer-facing channels eCommerce · B2B trade portal · automated replenishment · size-history-driven reorders
+-- `:105` ), title: 'Supplier feed chaos', body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand is one of the most common operational drags in the sector.',
++- `:105` ), title: 'Supplier feed chaos', body: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand eats more admin hours than anything else in this trade.',
+ - `:106` Supplier feed chaos
+ - `:114` ), title: 'Decoration and stock, in the same picture', body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds. And workarounds mean data outside the system, which means errors and extra admin on every order.",
+ - `:115` Decoration and stock, in the same picture
+@@ -1954,15 +2150,15 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/tools/ai-readiness-check/page.tsx`
+ 
+ - `:1` 'use client';
+-- `:17` Not Ready: Fix Your Foundations
+-- `:17` Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.
+-- `:18` Getting There: Proceed Carefully
+-- `:19` Ready: Evaluate with Confidence
+-- `:34` setCurrentQ(currentQ + 1);
+-- `:44` setCurrentQ(0); setAnswers(Array(questions.length).fill(null)); setShowResults(false);
+-- `:55` Free tool AI readiness check Six quick questions to find out whether your business is ready for AI, or whether you need to fix your operations first.
+-- `:67` Question of %
+-- `:103` View your answers
++- `:18` Not Ready: Fix Your Foundations
++- `:18` Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.
++- `:19` Getting There: Proceed Carefully
++- `:20` Ready: Evaluate with Confidence
++- `:35` setCurrentQ(currentQ + 1);
++- `:45` setCurrentQ(0); setAnswers(Array(questions.length).fill(null)); setShowResults(false);
++- `:56` Free tool AI readiness check Six quick questions to find out whether your business is ready for AI, or whether you need to fix your operations first.
++- `:68` Question of %
++- `:110` View your answers
+ 
+ ## /tools/automation-roi-calculator
+ 
+@@ -1981,40 +2177,57 @@ Every visible string on the marketing site, in route order, with source line num
+ 
+ `app/tools/downtime-cost-calculator/page.tsx`
+ 
+-- `:5` '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Downtime Cost Calculator', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Calculate the annual cost of system downtime across labour and lost revenue.', offers: , url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
+-- `:7` Downtime Cost Calculator
+-- `:10` Calculate the annual cost of system downtime across labour and lost revenue.
+-- `:16` Downtime Cost Calculator | Decoded Ops
+-- `:16` title: 'Downtime Cost Calculator | Decoded Ops', description: 'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.', alternates: ,
+-- `:17` Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.
+-- `:32` Free tool Downtime cost calculator
+-- `:35` Enter your numbers to see exactly what system outages cost you each year in staff time and lost revenue.
++- `:6` '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Downtime Cost Calculator', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Calculate the annual cost of system downtime across labour and lost revenue.', offers: , url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
++- `:8` Downtime Cost Calculator
++- `:11` Calculate the annual cost of system downtime across labour and lost revenue.
++- `:17` Downtime Cost Calculator | Decoded Ops
++- `:17` title: 'Downtime Cost Calculator | Decoded Ops', description: 'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.', alternates: ,
++- `:18` Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.
++- `:33` Free tool Downtime cost calculator
++- `:36` Enter your numbers to see exactly what system outages cost you each year in staff time and lost revenue.
++- `:46` Most calculators ask you for a number nobody has
++- `:50` They want your lost revenue per hour. Almost nobody can state that, so the field gets left at zero and the answer comes out meaninglessly low.
++- `:54` This one builds it up instead. First it works out what an hour of your operation costs to have available at all, which is a number worth knowing on its own. Then it works out what you lose when that hour produces nothing.
++- `:59` The part that surprises people is that the overhead does not stop when the machines do. Rent, machine finance, subscriptions and salaries all keep running through an outage. You just have no production to recover them against.
++- `:78` What to do with the recovery rate
++- `:82` The recovery rate is the more useful of the two numbers, and most businesses have never calculated it. It tells you what each productive hour has to earn towards your overhead before you have paid for a single garment or a gram of thread.
++- `:87` Take it into your quoting. If a job needs thirty minutes of machine time, it has to clear half your hourly rate in contribution above its materials just to break even. Quote below that often enough and you will be busy and unprofitable at the same time.
++- `:92` That is the answer to a question I get asked a lot: we are flat out, every job makes money, so why is there nothing in the bank? Margin is earned per job. Overhead is incurred per hour. If you are recovering less per hour than the hour costs, more volume makes it worse rather than better.
++- `:98` Watch the utilisation slider too. Pricing off theoretical hours rather than real ones is the most common way to arrive at a rate that looks fine and does not cover the business.
++- `:110` Why downtime costs more in decoration than most places
++- `:114` The deadline does not move. A distributor can ship a day late and apologise. You cannot. The match is Saturday, the event is Friday, and a box of shirts nobody wore is scrap rather than stock.
++- `:119` It is also worth being honest about what counts as an outage. It is not only the server being down. If the internet drops and your phones run over it, you cannot take an order. If the artwork system is unreachable, production stops even though every machine is working perfectly. If nobody can see what is in stock, picking stops.
++- `:125` A useful test, and it costs nothing: pick a quiet hour, pull the internet, and write down what still works. Most owners find the machines keep running and everything around them stops.
++- `:137` If the number was higher than you expected
++- `:140` That is the finding, and it is usually a process and systems problem rather than an IT spending problem. A Clarity Audit is a full day on site working through where the hours and the money are actually going, with everything it costs you in writing within five working days.
++- `:150` Book a free 60 minute call
++- `:156` See how a Clarity Audit works
+ 
+ ## /tools/ops-health-score
+ 
+ `app/tools/ops-health-score/page.tsx`
+ 
+ - `:1` 'use client';
+-- `:7` interface Dimension id: string; label: string; low: string; mid: string; high: string;
+-- `:16` Systems Integration
+-- `:17` Process Documentation
+-- `:18` Data Quality
+-- `:19` Team & Capability
+-- `:20` Technology Strategy
+-- `:32` Critical: Needs Immediate Attention
+-- `:32` Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.
+-- `:33` Fragile: Some Areas Need Work
+-- `:33` You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk: fixing them now is cheaper than waiting.
+-- `:34` Stable: Room to Improve
+-- `:34` Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.
+-- `:35` Strong: Well Run Operation
+-- `:35` Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.
+-- `:51` setScores( ); setShowResults(false);
+-- `:59` Free tool Ops health score Rate your business across five areas to see where you stand, and where to focus first.
+-- `:75` Hover for descriptions
+-- `:77` Low (1-2): Mid (3): High (4-5):
+-- `:124` Book a Clarity Audit
+-- `:134` Dimension scores
++- `:8` interface Dimension id: string; label: string; low: string; mid: string; high: string;
++- `:17` Systems Integration
++- `:18` Process Documentation
++- `:19` Data Quality
++- `:20` Team & Capability
++- `:21` Technology Strategy
++- `:33` Critical: Needs Immediate Attention
++- `:33` Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.
++- `:34` Fragile: Some Areas Need Work
++- `:34` You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk: fixing them now is cheaper than waiting.
++- `:35` Stable: Room to Improve
++- `:35` Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.
++- `:36` Strong: Well Run Operation
++- `:36` Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.
++- `:52` setScores( ); setShowResults(false);
++- `:60` Free tool Ops health score Rate your business across five areas to see where you stand, and where to focus first.
++- `:76` Hover for descriptions
++- `:78` Low (1-2): Mid (3): High (4-5):
++- `:125` Book a Clarity Audit
++- `:141` Dimension scores
+ 
+ ## /tools
+ 
+@@ -2071,37 +2284,37 @@ Every visible string on the marketing site, in route order, with source line num
+ `app/tools/should-i-replace-erp/page.tsx`
+ 
+ - `:1` 'use client';
+-- `:19` Stay and Optimise
+-- `:19` Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.
+-- `:20` Proceed with Caution
+-- `:21` Plan Your Exit
+-- `:36` setCurrentQ(currentQ + 1);
+-- `:46` setCurrentQ(0); setAnswers(Array(questions.length).fill(null)); setShowResults(false);
+-- `:57` Free tool Should I replace my ERP? Eight yes/no questions to help you decide whether to fix your current system or plan an exit.
+-- `:70` Question of %
+-- `:109` View your answers
++- `:20` Stay and Optimise
++- `:20` Not sure if you should replace your ERP, upgrade it, or extend it? Answer 8 questions and get a clear recommendation, plus what an honest assessment would cost.
++- `:21` Proceed with Caution
++- `:22` Plan Your Exit
++- `:37` setCurrentQ(currentQ + 1);
++- `:47` setCurrentQ(0); setAnswers(Array(questions.length).fill(null)); setShowResults(false);
++- `:58` Free tool Should I replace my ERP? Eight yes/no questions to help you decide whether to fix your current system or plan an exit.
++- `:71` Question of %
++- `:116` View your answers
+ 
+ ## /transform
+ 
+ `app/transform/page.tsx`
+ 
+ - `:7` Transform: Decoded Ops
+-- `:7` title: 'Transform: Decoded Ops', description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds fully automated.', alternates: , openGraph: type: 'website', title: 'Transform: Decoded Ops', description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Named results at Hanicks and TackleBag.', url: 'https://decodedops.co.uk/transform',
+-- `:8` Transform is the programme that follows a Clarity Audit. The plan, executed. Named results at Hanicks and TackleBag: 77% auto-matched, nine supplier feeds fully automated.
+-- `:13` Transform is the programme that follows a Clarity Audit: the plan, executed. Named results at Hanicks and TackleBag.
++- `:7` title: 'Transform: Decoded Ops', description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine supplier feeds fully automated.', alternates: , openGraph: type: 'website', title: 'Transform: Decoded Ops', description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Measured results across two deployments.', url: 'https://decodedops.co.uk/transform',
++- `:8` Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine supplier feeds fully automated.
++- `:13` Transform is the programme that follows a Clarity Audit: the plan, executed. Measured results across two deployments.
+ - `:16` twitter: card: 'summary_large_image', title: 'Transform: Decoded Ops', description: 'Transform is the programme that follows a Clarity Audit: the plan, executed.',
+ - `:19` Transform is the programme that follows a Clarity Audit: the plan, executed.
+ - `:29` Transform The plan, executed. Transform is what happens after a Clarity Audit finds something that needs proper change, not a quick fix. I take that plan and run it: ERP, eCommerce and process redesign, run as one programme over weeks rather than a day.
+ - `:35` Book a Clarity Audit
+-- `:43` Two live examples · DO-ART-403 Same approach, twice, in two different businesses. Hanicks: 164,752 products imported and 77% matched on the first run. TackleBag: nine supplier feeds automated, a projected saving of 20 to 40 hours a week. Same approach both times: fix the process and the data before automating anything.
++- `:43` Two live examples · DO-ART-403 Same approach, twice, in two different businesses. Case study 01: 164,752 products imported and 77% matched on the first run. Case study 02: nine supplier feeds automated, a projected saving of 20 to 40 hours a week. Same approach both times: fix the process and the data before automating anything.
+ - `:52` Same business. Different Tuesday.
+-- `:53` Hanicks: before and after, paired line for line
++- `:53` Case study 01: before and after, paired line for line
+ - `:65` 164,752 rows, no consistent SKU Matching done by hand Catalogue nobody trusted Website and warehouse disagreed
+-- `:89` 127,135 matched on the first run 77% matched automatically 11,064 live at Khaos Control One catalogue, every channel
++- `:89` 127,135 matched on the first run 77% matched automatically 11,064 prepared for Khaos Control One catalogue, every channel
+ - `:113` Before: both businesses
+ - `:115` Supplier data spread across feeds that all disagreed Matching and re-keying done by hand, every time a range changed A catalogue nobody in the business actually trusted Automation talked about, on top of data that wasn't ready for it
+-- `:124` Hanicks: 164,752 imported, 127,135 matched on the first run Hanicks: 77% matched automatically, 11,064 live at Khaos Control TackleBag: 9 supplier feeds fully automated TackleBag: a projected saving of 20–40 hours a week
+-- `:132` Both named with permission. Same approach both times: fix the process and the data before automating anything.
++- `:124` Case study 01: 164,752 imported, 127,135 matched on the first run Case study 01: 77% matched automatically, 11,064 prepared for Khaos Control Case study 02: 9 supplier feeds fully automated Case study 02: a projected saving of 20–40 hours a week
++- `:132` Both real deployments. Same approach both times: fix the process and the data before automating anything.
+ - `:140` What a Transform engagement covers Three dimensions, run together. Transform is the Clarity Audit plan, turned into a programme. The same discipline as Deliver, applied across several systems or departments at once.
+ - `:154` Sequence the plan The Clarity Audit report becomes a phased programme, what happens first, what depends on what, and what can run in parallel without the business grinding to a halt.
+ - `:167` I don't sell software Every vendor quotes against the same brief, and I stay on your side of the table for the build. There's no commission in it for me, whichever platform you choose.
+@@ -2183,7 +2396,9 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:105` What's included, what isn't
+ - `:111` Work I've done
+ - `:111` title: "Work I've done", items: [ , , , , , ],
+-- `:113` Cobra Workwear
++- `:113` Case study 01
++- `:114` Case study 02
++- `:115` Case study 03
+ - `:116` Eternal Fitness
+ - `:117` All case studies
+ - `:121` Free calculators
+@@ -2194,41 +2409,43 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:127` Are you ready for AI?
+ - `:128` Should I replace my ERP?
+ - `:132` Guides & writing
+-- `:132` title: 'Guides & writing', items: [ , , , , , , ],
++- `:132` title: 'Guides & writing', items: [ , , , , , , , ,
+ - `:134` The ops audit checklist
+ - `:135` 5 signs your systems are failing
+-- `:136` Six Sigma, explained simply
+-- `:137` Building a quality system
+-- `:138` Software reviews
+-- `:163` Book a free 60-min call
+-- `:189` document.addEventListener('click', onDocClick); document.addEventListener('keydown', onKey);
+-- `:192` document.removeEventListener('click', onDocClick); document.removeEventListener('keydown', onKey);
+-- `:204` if (isMobile()) return;
+-- `:215` Skip to main content
+-- `:243` What’s going wrong
+-- `:249` None of these quite fit?
+-- `:249` Three questions, thirty seconds, and I'll point you at the right page.
+-- `:264` The four steps
+-- `:282` Not sure which step?
+-- `:282` Almost everyone starts with Clarity, a day on site and a plan you own, whether you hire me after or not.
+-- `:283` See what each step costs
+-- `:292` Your industry
+-- `:297` Pick what you make. Every page below is written for that trade, same problems, your language, your machines.
+-- `:305` Don't see your trade?
+-- `:305` The problems are the same across decorated goods. Start with the symptom instead.
+-- `:306` Read a case study first
+-- `:315` Small business
+-- `:320` Turning over under £500k and running it yourself? This is the same work, done remotely, at a price that fits.
+-- `:322` Fixed-price, done remotely
+-- `:334` Bigger than £500k?
+-- `:334` Then the on-site work is a better fit, same steps, done in person.
+-- `:344` Proof & free tools
+-- `:352` Start with the score
+-- `:352` Twelve questions about how you run today. You get a score and the three things to fix first.
+-- `:353` Take the 2-minute score
+-- `:353` Or browse everything
+-- `:358` Pricing Client Login
+-- `:362` Book a free call
++- `:136` SOP template for decoration businesses
++- `:137` ERP selection guide
++- `:138` Artwork approval playbook
++- `:140` Six Sigma, explained simply
++- `:141` Building a quality system
++- `:167` Book a free 60-min call
++- `:193` document.addEventListener('click', onDocClick); document.addEventListener('keydown', onKey);
++- `:196` document.removeEventListener('click', onDocClick); document.removeEventListener('keydown', onKey);
++- `:208` if (isMobile()) return;
++- `:219` Skip to main content
++- `:247` What’s going wrong
++- `:253` None of these quite fit?
++- `:253` Three questions, thirty seconds, and I'll point you at the right page.
++- `:268` The four steps
++- `:286` Not sure which step?
++- `:286` Almost everyone starts with Clarity, a day on site and a plan you own, whether you hire me after or not.
++- `:287` See what each step costs
++- `:296` Your industry
++- `:301` Pick what you make. Every page below is written for that trade, same problems, your language, your machines.
++- `:309` Don't see your trade?
++- `:309` The problems are the same across decorated goods. Start with the symptom instead.
++- `:310` Read a case study first
++- `:319` Small business
++- `:324` Turning over under £500k and running it yourself? This is the same work, done remotely, at a price that fits.
++- `:326` Fixed-price, done remotely
++- `:338` Bigger than £500k?
++- `:338` Then the on-site work is a better fit, same steps, done in person.
++- `:348` Proof & free tools
++- `:356` Start with the score
++- `:356` Twelve questions about how you run today. You get a score and the three things to fix first.
++- `:357` Take the 2-minute score
++- `:357` Or browse everything
++- `:362` Pricing Client Login
++- `:366` Book a free call
+ 
+ ## components/Footer.tsx
+ 
+@@ -2323,7 +2540,7 @@ Every visible string on the marketing site, in route order, with source line num
+ - `:183` 'No vendor relationships or commission', 'Worked at every level, warehouse floor to boardroom', '3× Clarity Guarantee on audit work', 'Based in the South East, on-site across Sussex and Surrey',
+ - `:199` Serving and across
+ - `:210` Also serving
+-- `:212` · East Sussex · West Sussex · Surrey,
++- `:212` · East Sussex · West Sussex · Surrey —
+ - `:214` view all locations
+ 
+ ## components/CookieConsent.tsx
+diff --git a/.context/voice-lint.md b/.context/voice-lint.md
+index e6faa7a..0cc2284 100644
+--- a/.context/voice-lint.md
++++ b/.context/voice-lint.md
+@@ -1,16 +1,16 @@
+ # Voice lint — staging branch
+ 
+ Mechanical rules from `decoded-ops/references/voice.md` only. Judgement calls live in the review doc.
+-Generated from commit `dd585e8`.
++Generated from commit `9fab990`.
+ 
+-**14 flags across 8 files.**
++**19 flags across 12 files.**
+ 
+ | Rule | Flags |
+ |---|---|
+-| em-dash — Em dash (banned outright by voice.md) | 0 |
+-| first-person-plural — we/our/us, must be first person singular | 9 |
++| em-dash — Em dash (banned outright by voice.md) | 1 |
++| first-person-plural — we/our/us, must be first person singular | 12 |
+ | banned-phrase — Consultant-speak or buzzword from the banned list | 0 |
+-| not-x-but-y — "not X, but Y" parallelism | 0 |
++| not-x-but-y — "not X, but Y" parallelism | 1 |
+ | ai-setup-phrase — AI setup phrase or filler transition | 0 |
+ | overclaim — Superlative overclaim, only allowed if literally true | 5 |
+ 
+@@ -20,19 +20,22 @@ Generated from commit `dd585e8`.
+ 
+ ---
+ 
+-## em-dash — 0
++## em-dash — 1
+ 
+ Em dash (banned outright by voice.md)
+ 
+-_Clean._
++- `components/LocationPage.tsx:212` · East Sussex · West Sussex · Surrey —
+ 
+-## first-person-plural — 9
++## first-person-plural — 12
+ 
+ we/our/us, must be first person singular
+ 
+ - `app/problems/ai-paralysis/page.tsx:229` 03 The wrong question is being asked “How do we adopt AI?” is the wrong question. The right one is “what specific operational problems do we have that AI might help solve?” Without that reframing, AI adoption becomes a solution in search of a problem.
+-- `app/resources/software-reviews/page.tsx:47` name: 'Printavo', description: 'US-based MIS built for screen printers. Growing UK adoption, but the accounting integration and multi-currency gaps create workarounds for British businesses. Worth evaluating for the right operation profile.', status: 'Coming soon',
+-- `app/resources/software-reviews/page.tsx:48` US-based MIS built for screen printers. Growing UK adoption, but the accounting integration and multi-currency gaps create workarounds for British businesses. Worth evaluating for the right operation profile.
++- `app/resources/artwork-approval-playbook/page.tsx:46` 'The design as it will appear on the garment - correct size, position, and colour', 'The garment colour and style confirmed', 'A measurement reference if size is part of the specification', 'A clear approval request with a deadline: "Please approve or request changes by [date]. We cannot proceed to production without written confirmation."', 'Two clear options: approve as shown, or request specific changes', ];
++- `app/resources/artwork-approval-playbook/page.tsx:168` Your system should flag a proof as awaiting sign-off the moment it is sent, and trigger an automatic chase if no response is received within a defined window - typically 24 hours. That chase is a reminder, not a complaint: "Just checking you have received the artwork for your order - please let us know if you have any questions."
++- `app/resources/decoded-method/page.tsx:204` The register we run Decoded Ops on
++- `app/resources/erp-selection-playbook/page.tsx:271` If the honest assessment lands on "we do need an ERP", do not start shopping. Start preparing. The businesses that get the best outcomes do three things before they ever talk to a vendor.
++- `app/tools/downtime-cost-calculator/page.tsx:92` That is the answer to a question I get asked a lot: we are flat out, every job makes money, so why is there nothing in the bank? Margin is earned per job. Overhead is incurred per hour. If you are recovering less per hour than the hour costs, more volume makes it worse rather than better.
+ - `components/Header.tsx:14` We're on the wrong software
+ - `components/Header.tsx:16` Our system is ancient
+ - `components/Header.tsx:24` We can't take on more work
+@@ -46,11 +49,11 @@ Consultant-speak or buzzword from the banned list
+ 
+ _Clean._
+ 
+-## not-x-but-y — 0
++## not-x-but-y — 1
+ 
+ "not X, but Y" parallelism
+ 
+-_Clean._
++- `app/resources/erp-selection-playbook/page.tsx:112` title: 'Assign internal ownership', body: 'An ERP implementation needs a named person inside the business who owns the project from the business side - not the vendor\'s project manager, not an external consultant, but someone who lives with the outcome every day. This person does not need to be technical. They need to understand the operations, have authority to make decisions, and be available for the duration of the project.',
+ 
+ ## ai-setup-phrase — 0
+ 
+@@ -62,11 +65,11 @@ _Clean._
+ 
+ Superlative overclaim, only allowed if literally true
+ 
+-- `app/blog/[slug]/page.tsx:207` A Clarity Audit maps your operations, finds the changes that will make the biggest difference, and gives you a plan you can act on. No reports you'll never read. No recommendations you can't implement.
++- `app/blog/[slug]/page.tsx:208` A Clarity Audit maps your operations, finds the changes that will make the biggest difference, and gives you a plan you can act on. No reports you'll never read. No recommendations you can't implement.
+ - `app/problems/data-scattered/page.tsx:120` The warehouse floor The only place stock is actually counted by hand, and the last place any system asks.
+ - `app/problems/systems-dont-talk/page.tsx:63` Most decoration and print businesses run four to seven separate systems. Order management, accounts, artwork, the website, despatch. Each one is an island. The only bridges between them are people typing the same data in again, spreadsheets, and emails.
+ - `app/problems/wrong-erp-software/page.tsx:126` 01 Selected on demo, not on fit Vendors are excellent at demos. They show you what the software does well and move quickly past what it doesn't. Without someone on your side who knows the sector, you're judging presentation skills, not fit. The only fair test is against a written brief that describes your actual business.
+-- `app/tools/ops-health-score/page.tsx:32` Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.
++- `app/tools/ops-health-score/page.tsx:33` Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.
+ 
+ ---
+ 
+@@ -81,7 +84,7 @@ The question is whether any single page overuses it.
+ | /problems/bottleneck-growth | 8 |
+ | /apps/crm | 7 |
+ | /apps/commerce | 6 |
+-| /case-studies/cobra-workwear | 6 |
++| /case-studies/case-study-03 | 6 |
+ | /problems/inventory-blind | 6 |
+ | /problems/slow-processes | 6 |
+ | /problems/wrong-erp-software | 6 |
+@@ -94,6 +97,7 @@ The question is whether any single page overuses it.
+ | /locations/fractional-cto | 4 |
+ | /problems/erp-implementation-failure | 4 |
+ | /problems/legacy-system | 4 |
++| /resources/decoded-method | 4 |
+ | /resources | 4 |
+ | /apps/artwork-manager | 3 |
+ | /case-studies/eternal-fitness | 3 |
+@@ -104,23 +108,26 @@ The question is whether any single page overuses it.
+ | /sectors/workwear | 3 |
+ | data/problem-routing.ts | 3 |
+ | /apps/data-app | 2 |
+-| /case-studies/hanicks | 2 |
++| /case-studies/case-study-01 | 2 |
+ | /decoded-method | 2 |
+ | /locations/tech-audit/[location] | 2 |
+ | /pricing | 2 |
+ | /problems/ai-paralysis | 2 |
+ | /problems/cant-scale-operations | 2 |
+ | /problems/data-scattered | 2 |
++| /resources/erp-selection-playbook | 2 |
++| /resources/sop-template | 2 |
+ | /sectors/schoolwear | 2 |
+ | /transform | 2 |
+ | /apps | 1 |
+ | /blog | 1 |
+-| /case-studies/tacklebag | 1 |
++| /case-studies/case-study-02 | 1 |
+ | /problems/buy-vs-build | 1 |
+ | /problems/disaster-recovery | 1 |
+ | /problems/manual-workarounds | 1 |
+ | /problems/no-ops-owner | 1 |
+ | /problems/seasonal-peaks | 1 |
++| /resources/artwork-approval-playbook | 1 |
+ | /retained | 1 |
+ | /sectors/awards-engraving | 1 |
+ | /sectors/garment-decoration | 1 |
+diff --git a/app/case-studies/case-study-01/page.tsx b/app/case-studies/case-study-01/page.tsx
+index f2a1e9c..44c7be7 100644
+--- a/app/case-studies/case-study-01/page.tsx
++++ b/app/case-studies/case-study-01/page.tsx
+@@ -85,7 +85,7 @@ export default function CaseStudy01Page() {
+             <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
+ 
+             <div className="plate-scroll">
+-              <div className="plate-frame" data-od-id="plate-hanicks">
++              <div className="plate-frame" data-od-id="plate-cs01">
+                 <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
+                        sub="Case study 01 · 164,752 products, 77% matched on the first run"
+                        no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
+diff --git a/app/case-studies/case-study-02/page.tsx b/app/case-studies/case-study-02/page.tsx
+index 51ab178..8ddb828 100644
+--- a/app/case-studies/case-study-02/page.tsx
++++ b/app/case-studies/case-study-02/page.tsx
+@@ -94,7 +94,7 @@ export default function CaseStudy02Page() {
+             <p className="lede">Case study 02, real production numbers. Nine supplier feeds, fully automated.</p>
+ 
+             <div className="plate-scroll">
+-              <div className="plate-frame" data-od-id="plate-tacklebag">
++              <div className="plate-frame" data-od-id="plate-cs02">
+                 <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
+                        sub="Case study 02 · 9 feeds automated, 20–40 hrs/wk saved"
+                        no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
+
+The diff confirms both edits landed correctly. Committing now.
+$ git add app/case-studies/case-study-01/page.tsx app/case-studies/case-study-02/page.tsx && git commit -m "fix(CR-WEB-011): anonymise data-od-id plate attributes"
+[cr/anonymise-client-names 5d15180] fix(CR-WEB-011): anonymise data-od-id plate attributes
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+Done. `5d15180` — two `data-od-id` attributes anonymised, nothing else touched.

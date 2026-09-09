@@ -1,0 +1,10 @@
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read app/about/page.tsx
+Γ£▒ Grep "ERP ROI|ERP ROI Benchmarks|Proven impact|What ERP implementations deliver" in . ┬╖ 8 matches
+Γ£▒ Grep "ΓêÆ23%|ΓêÆ22%|\+24%|91%|58%|23%|22%|24%|stock control|on-time delivery|operational costs|admin costs|ROI within" in . ┬╖ 34 matches
+ΓåÆ Read app/page.tsx [offset=300, limit=45]
+ΓåÆ Read docs/content-audit.md [offset=25, limit=60]
+ΓåÆ Read .context/backlog.md
+ΓåÆ Read .context/copy-snapshot.md

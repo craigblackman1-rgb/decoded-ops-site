@@ -1,0 +1,191 @@
+
+> build · mimo-v2.5
+
+→ Read .context/lane-prompt-voice-core.md
+→ Read D:/apps/worktrees/decoded-ops-website/decoded-ops-seo-content-review-9727b8/.context/erp-positioning-brief-pack-2026-09-03.md
+
+# Todos
+[•] Read and verify item 1: app/page.tsx — check for layer-only absolute
+[ ] Read and verify item 2: app/transform/page.tsx — check for absolute neutrality wording
+[ ] Read and verify item 3: app/pricing/page.tsx — check Systems section Data App card
+[ ] Read and verify item 4: components/Header.tsx — Data App sub
+[ ] Read and verify item 5: components/Footer.tsx — verify only
+[ ] Edit item 6: app/sectors/schoolwear/page.tsx — append to L126
+[ ] Edit item 7: app/sectors/garment-decoration/page.tsx — FAQ wording
+[ ] Verify item 8: app/tools/should-i-replace-erp/page.tsx — no change
+[ ] Verify item 9: app/case-studies/case-study-01/page.tsx — no change
+[ ] Verify item 10: app/case-studies/case-study-02/page.tsx — no change
+[ ] Commit changes referencing CR-WEB-021
+
+Let me read the files I need to check and edit.
+✱ Grep "neutral|independent|vendor" in app/transform/page.tsx · 1 match
+✱ Grep "layer|alongside|neutral" in app/page.tsx · 100 matches
+✱ Grep "Data App|layer|alongside" in app/pricing/page.tsx · 2 matches
+✱ Grep "Data App" in components/Header.tsx · 2 matches
+✱ Grep "Data App|layer|alongside|neutral|independent" in components/Footer.tsx · 9 matches
+→ Read app/sectors/schoolwear/page.tsx [offset=120, limit=15]
+✱ Grep "independent evaluation|written brief|scored" in app/sectors/garment-decoration/page.tsx · 1 match
+✱ Grep "neutral|independent|vendor|layer|alongside" in app/tools/should-i-replace-erp/page.tsx · 1 match
+✱ Grep "alongside|layer|neutral|vendor" in app/case-studies/case-study-01/page.tsx · 6 matches
+✱ Grep "alongside|layer|neutral|vendor" in app/case-studies/case-study-02/page.tsx · 2 matches
+→ Read app/page.tsx [offset=395, limit=20]
+→ Read app/pricing/page.tsx [offset=248, limit=20]
+Now let me check item 1's DO-ART-902 area more closely and read the pricing card area for item 3.
+
+# Todos
+[✓] Read and verify item 1: app/page.tsx — check for layer-only absolute
+[✓] Read and verify item 2: app/transform/page.tsx — check for absolute neutrality wording
+[✓] Read and verify item 3: app/pricing/page.tsx — check Systems section Data App card
+[✓] Read and verify item 4: components/Header.tsx — Data App sub
+[✓] Read and verify item 5: components/Footer.tsx — verify only
+[•] Edit item 6: app/sectors/schoolwear/page.tsx — append to L126
+[ ] Edit item 7: app/sectors/garment-decoration/page.tsx — FAQ wording
+[✓] Verify item 8: app/tools/should-i-replace-erp/page.tsx — no change
+[✓] Verify item 9: app/case-studies/case-study-01/page.tsx — no change
+[✓] Verify item 10: app/case-studies/case-study-02/page.tsx — no change
+[ ] Commit changes referencing CR-WEB-021
+
+All checks complete. Now I'll make the two edits.
+← Edit app/sectors/schoolwear/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\schoolwear\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\schoolwear\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\schoolwear\page.tsx
+@@ -122,9 +122,9 @@
+         <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+       </svg>
+     ),
+     title: 'Proven at a real teamwear-and-schoolwear retailer',
+-    body: 'The Decoded Data App runs alongside the existing platform, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
++    body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+   },
+ ]}
+ otherSectors={[
+   { label: 'Workwear', href: '/sectors/workwear' },
+
+
+← Edit app/sectors/garment-decoration/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\garment-decoration\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\garment-decoration\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\erp-touchups\app\sectors\garment-decoration\page.tsx
+@@ -51,9 +51,9 @@
+       },
+       {
+         '@type': 'Question',
+         name: 'What is the best ERP for a garment decoration business in the UK?',
+-        acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
++        acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. A written brief and a scored evaluation against it is the only way to choose correctly.' },
+       },
+     ],
+   },
+ ],
+
+
+# Todos
+[✓] Read and verify item 1: app/page.tsx — check for layer-only absolute
+[✓] Read and verify item 2: app/transform/page.tsx — check for absolute neutrality wording
+[✓] Read and verify item 3: app/pricing/page.tsx — check Systems section Data App card
+[✓] Read and verify item 4: components/Header.tsx — Data App sub
+[✓] Read and verify item 5: components/Footer.tsx — verify only
+[✓] Edit item 6: app/sectors/schoolwear/page.tsx — append to L126
+[✓] Edit item 7: app/sectors/garment-decoration/page.tsx — FAQ wording
+[✓] Verify item 8: app/tools/should-i-replace-erp/page.tsx — no change
+[✓] Verify item 9: app/case-studies/case-study-01/page.tsx — no change
+[✓] Verify item 10: app/case-studies/case-study-02/page.tsx — no change
+[•] Commit changes referencing CR-WEB-021
+
+Both edits applied. Now let me commit.
+$ cd "D:\apps\worktrees\decoded-ops-website\erp-touchups" && git status && git diff
+On branch sweep/erp-touchups
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/sectors/garment-decoration/page.tsx
+	modified:   app/sectors/schoolwear/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+diff --git a/app/sectors/garment-decoration/page.tsx b/app/sectors/garment-decoration/page.tsx
+index b4277ab..6627876 100644
+--- a/app/sectors/garment-decoration/page.tsx
++++ b/app/sectors/garment-decoration/page.tsx
+@@ -52,7 +52,7 @@ const sectorSchema = {
+         {
+           '@type': 'Question',
+           name: 'What is the best ERP for a garment decoration business in the UK?',
+-          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. An independent evaluation against a written brief is the only way to choose correctly.' },
++          acceptedAnswer: { '@type': 'Answer', text: 'There is no single best ERP. The right system depends on your decoration methods, order volume, eCommerce requirements, and growth plans. Several sector-specific systems are used in the UK garment decoration market, each with different strengths and limitations. A written brief and a scored evaluation against it is the only way to choose correctly.' },
+         },
+       ],
+     },
+diff --git a/app/sectors/schoolwear/page.tsx b/app/sectors/schoolwear/page.tsx
+index ed34485..c8ea268 100644
+--- a/app/sectors/schoolwear/page.tsx
++++ b/app/sectors/schoolwear/page.tsx
+@@ -123,7 +123,7 @@ export default function SchoolwearPage() {
+               </svg>
+             ),
+             title: 'Proven at a real teamwear-and-schoolwear retailer',
+-            body: 'The Decoded Data App runs alongside the existing platform, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
++            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+           },
+         ]}
+         otherSectors={[
+
+$ cd "D:\apps\worktrees\decoded-ops-website\erp-touchups" && git add app/sectors/schoolwear/page.tsx app/sectors/garment-decoration/page.tsx && git commit -m "ERP sweep T touch-ups (CR-WEB-021)
+
+Item 6: schoolwear — append full-system option alongside platform language
+Item 7: garment-decoration FAQ — replace 'independent evaluation' with
+'written brief and a scored evaluation' to match new positioning
+
+Verify-only findings (no edits):
+- app/page.tsx: 'Stock, bins and picking alongside Symphony' (L402) — historical, stays
+- app/transform/page.tsx: 'stay on your side of the table' (L168) — not neutrality wording
+- app/pricing/page.tsx: Data App card sub 'Supplier feeds into one clean catalogue' (L255) — matches brief
+- components/Header.tsx: Data App sub (L60) — matches brief, stays
+- components/Footer.tsx: Data App label (L27) — no change expected
+- app/tools/should-i-replace-erp/page.tsx: routes to Clarity Audit — stays
+- app/case-studies/case-study-01/page.tsx: 'sitting alongside Khaos' (L186) — historical fact, stays
+- app/case-studies/case-study-02/page.tsx: 'Data App alongside it' (L201) — historical fact, stays"
+[sweep/erp-touchups ca3b76d] ERP sweep T touch-ups (CR-WEB-021)
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+# Todos
+[✓] Read and verify item 1: app/page.tsx — check for layer-only absolute
+[✓] Read and verify item 2: app/transform/page.tsx — check for absolute neutrality wording
+[✓] Read and verify item 3: app/pricing/page.tsx — check Systems section Data App card
+[✓] Read and verify item 4: components/Header.tsx — Data App sub
+[✓] Read and verify item 5: components/Footer.tsx — verify only
+[✓] Edit item 6: app/sectors/schoolwear/page.tsx — append to L126
+[✓] Edit item 7: app/sectors/garment-decoration/page.tsx — FAQ wording
+[✓] Verify item 8: app/tools/should-i-replace-erp/page.tsx — no change
+[✓] Verify item 9: app/case-studies/case-study-01/page.tsx — no change
+[✓] Verify item 10: app/case-studies/case-study-02/page.tsx — no change
+[✓] Commit changes referencing CR-WEB-021
+
+Done. Committed as `ca3b76d`.
+
+## Edits made (before/after)
+
+**Item 6 — `app/sectors/schoolwear/page.tsx:126`**
+- Before: `"...runs alongside the existing platform, handling both teamwear..."`
+- After: `"...runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear..."`
+
+**Item 7 — `app/sectors/garment-decoration/page.tsx:55`**
+- Before: `"An independent evaluation against a written brief is the only way to choose correctly."`
+- After: `"A written brief and a scored evaluation against it is the only way to choose correctly."`
+
+## Verify-only findings (no edits)
+
+| File | Line | Finding | Verdict |
+|---|---|---|---|
+| `app/page.tsx` | 402 | "Stock, bins and picking alongside Symphony" | Historical, stays per brief |
+| `app/transform/page.tsx` | 168 | "I stay on your side of the table" | Not neutrality wording, fine |
+| `app/pricing/page.tsx` | 255 | Data App card: "Supplier feeds into one clean catalogue" | Matches brief |
+| `components/Header.tsx` | 60 | Data App sub: "Supplier feeds into one clean catalogue" | Matches brief |
+| `components/Footer.tsx` | 27 | "Data App" label only | No change expected |
+| `app/tools/should-i-replace-erp/page.tsx` | — | Routes to Clarity Audit | Stays |
+| `app/case-studies/case-study-01/page.tsx` | 186 | "sitting alongside Khaos rather than replacing it" | Historical fact, stays |
+| `app/case-studies/case-study-02/page.tsx` | 201 | "I built the Data App alongside it" | Historical fact, stays |

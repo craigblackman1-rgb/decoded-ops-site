@@ -1,0 +1,131 @@
+
+> build · mimo-v2.5
+
+→ Read app/pricing/page.tsx
+✱ Glob "app/design-system/**/*.css" in . · 7 matches
+→ Read app/design-system/marketing-pages-extra.css
+
+# Todos
+[•] Add className='inset-list' to the <ul> in pricing page and remove conflicting inline style
+[ ] Add .inset .inset-list CSS rules to marketing-pages-extra.css
+[ ] Commit referencing CR-WEB-020
+
+Let me verify that `marketing-pages-extra.css` is imported somewhere the pricing page can reach it.
+✱ Grep "marketing-pages-extra" in . · 2 matches
+✱ Grep "ds-layer\.css" in . · 0 matches
+✱ Grep "ds-layer" in . · 8 matches
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
+@@ -276,9 +276,9 @@
+ </div>
+ <div className="inset">
+   <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one
+   costs depends on four things:
+-  <ul style={{ margin: '12px 0 12px', paddingLeft: 22 }}>
++  <ul className="inset-list">
+     <li>how many supplier feeds</li>
+     <li>how many sales channels</li>
+     <li>which machines and formats</li>
+     <li>whether it talks to a platform you already run</li>
+
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\pricing-systems\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-systems\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\pricing-systems\app\design-system\marketing-pages-extra.css
+@@ -113,8 +113,10 @@
+   background:color-mix(in srgb, var(--do-prussian-blue) 5%, transparent);
+   border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+   font-size:var(--do-text-sm); color:var(--do-text-secondary); max-width:78ch }
+ .inset b{ color:var(--do-text-primary); font-weight:var(--do-weight-bold) }
++.inset .inset-list{ list-style:disc; padding-left:20px; margin:10px 0 0 }
++.inset .inset-list li{ margin-top:6px }
+ 
+ /* ── log list — one row per system on the /apps index ── */
+ .log-list{ margin-top:32px; border-top:1px solid var(--do-border-subtle) }
+ .log-row{ display:grid; grid-template-columns:minmax(0,0.9fr) minmax(0,1.5fr) auto;
+
+
+Good — `ds-layer.css` is imported globally via `app/layout.tsx:15`, so the CSS will be available. Now I'll make both edits.
+# Todos
+[✓] Add className='inset-list' to the <ul> in pricing page and remove conflicting inline style
+[✓] Add .inset .inset-list CSS rules to marketing-pages-extra.css
+[•] Verify changes are correct
+[ ] Commit referencing CR-WEB-020
+
+→ Read app/pricing/page.tsx [offset=275, limit=15]
+→ Read app/design-system/marketing-pages-extra.css [offset=111, limit=10]
+Both edits look correct. Let me run the price audit to make sure nothing is broken.
+
+$ node .context/price-audit.mjs --check 2>&1
+12 files, 67 lines, 83 figures
+   40  app/pricing/page.tsx
+    7  app/small-business/page.tsx
+    5  app/locations/tech-audit/page.tsx
+    4  app/locations/tech-audit/[location]/page.tsx
+    3  app/clarity/page.tsx
+    2  app/problems/cant-scale-operations/page.tsx
+    1  app/apps/commerce/page.tsx
+    1  app/opengraph-image.tsx
+    1  app/problems/slow-processes/page.tsx
+    1  components/Header.tsx
+    1  data/locations.ts
+    1  data/problem-routing.ts
+
+check: 0 disallowed prices outside /pricing
+  PASS — prices live on /pricing only, plus the £1,500 and £750 exceptions.
+
+# Todos
+[✓] Add className='inset-list' to the <ul> in pricing page and remove conflicting inline style
+[✓] Add .inset .inset-list CSS rules to marketing-pages-extra.css
+[✓] Verify changes are correct
+[•] Commit referencing CR-WEB-020
+
+$ git status && git diff --stat
+On branch cr/pricing-systems-section
+Your branch is ahead of 'origin/staging' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .context/price-audit.md
+	modified:   app/design-system/marketing-pages-extra.css
+	modified:   app/pricing/page.tsx
+	modified:   data/route-slugs.json
+
+no changes added to commit (use "git add" and/or "git commit -a")
+warning: in the working copy of '.context/price-audit.md', LF will be replaced by CRLF the next time Git touches it
+ .context/price-audit.md                     | 90 ++++++++++++++---------------
+ app/design-system/marketing-pages-extra.css |  2 +
+ app/pricing/page.tsx                        |  2 +-
+ 3 files changed, 48 insertions(+), 46 deletions(-)
+warning: in the working copy of 'data/route-slugs.json', LF will be replaced by CRLF the next time Git touches it
+
+$ git add app/pricing/page.tsx app/design-system/marketing-pages-extra.css && git commit -m "fix(pricing): add visible bullets to app cost-factor list in inset [CR-WEB-020]
+
+The four list items inside the 'no price list' grey inset rendered
+without markers because the site CSS resets list-style to none globally.
+Added scoped .inset-list class with disc bullets and matching li spacing.
+Scoped under .inset to avoid affecting other lists."
+[cr/pricing-systems-section c66dd08] fix(pricing): add visible bullets to app cost-factor list in inset [CR-WEB-020]
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+# Todos
+[✓] Add className='inset-list' to the <ul> in pricing page and remove conflicting inline style
+[✓] Add .inset .inset-list CSS rules to marketing-pages-extra.css
+[✓] Verify changes are correct
+[✓] Commit referencing CR-WEB-020
+
+Committed `c66dd08` on `cr/pricing-systems-section`.
+
+**Changes:**
+- `app/pricing/page.tsx:280` — added `className="inset-list"` to the `<ul>`, removed inline `style` that conflicted with the new CSS
+- `app/design-system/marketing-pages-extra.css:117-118` — added `.inset .inset-list` with `list-style:disc`, `padding-left:20px`, `margin:10px 0 0` and `.inset .inset-list li` with `margin-top:6px`, scoped under `.inset`
+
+Price audit passes (0 disallowed prices). No push, no builds.

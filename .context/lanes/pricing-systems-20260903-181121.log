@@ -1,0 +1,208 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Read app/pricing/page.tsx — full SYSTEMS section
+[ ] Read app/apps/page.tsx for reference patterns
+[ ] Read components/Header.tsx for helpBuilt nav strings
+[ ] Check existing CSS classes and patterns to reuse
+[ ] Restructure the SYSTEMS section per the 5 changes
+[ ] Add scoped CSS if needed
+[ ] Commit with CR-WEB-020 reference
+
+→ Read app/pricing/page.tsx
+→ Read app/apps/page.tsx
+→ Read components/Header.tsx
+
+# Todos
+[✓] Read app/pricing/page.tsx — full SYSTEMS section
+[✓] Read app/apps/page.tsx for reference patterns
+[✓] Read components/Header.tsx for helpBuilt nav strings
+[•] Check existing CSS classes and patterns to reuse
+[ ] Restructure the SYSTEMS section per the 5 changes
+[ ] Add scoped CSS if needed
+[ ] Commit with CR-WEB-020 reference
+
+✱ Grep "grid.*3|grid--3|log-list|log-row|feature-card|card-row" 36 matches
+→ Read app/design-system/marketing-pages-extra.css
+Let me check for existing grid/card CSS patterns in the codebase.
+
+# Todos
+[✓] Read app/pricing/page.tsx — full SYSTEMS section
+[✓] Read app/apps/page.tsx for reference patterns
+[✓] Read components/Header.tsx for helpBuilt nav strings
+[✓] Check existing CSS classes and patterns to reuse
+[•] Restructure the SYSTEMS section per the 5 changes
+[ ] Add scoped CSS if needed
+[ ] Commit with CR-WEB-020 reference
+
+✱ Grep "import.*\.css|page\.module" in app/pricing · 0 matches
+Let me check how the pricing page imports CSS and what other pages do for page-level styles.
+✱ Grep "import.*marketing-pages-extra|import.*\.css" in app · 13 matches
+→ Read app/design-system/ds-layer.css
+→ Read app/design-system/ds-marketing.css [offset=180, limit=30]
+`marketing-pages-extra.css` is imported globally via `ds-layer.css:18`. All its classes (including `feature`, `grid--3`, `rung`) are available on every page. No extra CSS import needed.
+
+Now let me check the `grid--3` and `feature` classes more closely in ds-marketing.css to understand the exact pattern.
+
+← Edit app/pricing/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\pricing-systems\app\pricing\page.tsx
+@@ -248,9 +248,28 @@
+   <div className="container">
+     <p className="eyebrow">Systems</p>
+     <h2>Three products. Scoped and quoted per business.</h2>
+ 
+-    <div className="inset" style={{ marginTop: 26 }}>
++    <div className="grid grid--3" style={{ marginTop: 28 }}>
++      <Link className="card" href="/apps/data-app">
++        <span className="kicker">Data App</span>
++        <h3>Supplier feeds into one clean catalogue</h3>
++      </Link>
++      <Link className="card" href="/apps/artwork-manager">
++        <span className="kicker">Artwork Manager</span>
++        <h3>Versions, approvals and delivery</h3>
++      </Link>
++      <Link className="card" href="/apps/commerce">
++        <span className="kicker">Trade store</span>
++        <h3>B2B ordering for your customers</h3>
++      </Link>
++    </div>
++
++    <p className="table-foot" style={{ marginTop: 28 }}>Artwork Manager and Commerce sell on founding-client terms until first
++      delivery: six months of support waived, in exchange for a named reference and accepting that
++      some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
++
++    <div className="inset" style={{ marginTop: 20 }}>
+       <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
+       extra cost.</b> Nothing separate to buy. Building something only makes sense once buying
+       has been ruled out in writing, <Link href="/how-i-build"
+         style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
+@@ -267,16 +286,13 @@
+       Two businesses buying the same app can be a long way apart on all four, so the conversation
+       about your setup comes first and the quote comes after it, written for your business.
+     </div>
+ 
+-    <p className="table-foot">Artwork Manager and Commerce sell on founding-client terms until first
+-      delivery: six months of support waived, in exchange for a named reference and accepting that
+-      some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
+     <p className="table-foot">A full custom build is quoted the same way. If nothing on the market
+       fits, that&rsquo;s a Clarity Audit conversation, never a row on a table.</p>
+ 
+     <div className="hero-cta" style={{ marginTop: 36 }}>
+-      <Link className="btn btn-primary" href="/apps/data-app">See how the Data App works</Link>
++      <Link className="btn btn-primary" href="/apps">See all three apps</Link>
+       <Link className="btn btn-secondary" href="/contact">Book a free 60 minute call</Link>
+     </div>
+   </div>
+ </section>
+
+
+Now I have all the context. The `grid--3` and `card` classes from `ds-marketing.css` are available globally. The `<ul>` is already a proper list. I need to:
+
+1. Insert a `.grid.grid--3` row with `.card` items after the h2
+2. Move the founding-client paragraph up (it's already verbatim)
+3. Change the CTA primary button
+
+The list is already a `<ul>` — no change needed there.
+# Todos
+[✓] Read app/pricing/page.tsx — full SYSTEMS section
+[✓] Read app/apps/page.tsx for reference patterns
+[✓] Read components/Header.tsx for helpBuilt nav strings
+[✓] Check existing CSS classes and patterns to reuse
+[✓] Restructure the SYSTEMS section per the 5 changes
+[•] Add scoped CSS if needed
+[ ] Commit with CR-WEB-020 reference
+
+→ Read app/pricing/page.tsx [offset=246, limit=55]
+
+# Todos
+[✓] Read app/pricing/page.tsx — full SYSTEMS section
+[✓] Read app/apps/page.tsx for reference patterns
+[✓] Read components/Header.tsx for helpBuilt nav strings
+[✓] Check existing CSS classes and patterns to reuse
+[✓] Restructure the SYSTEMS section per the 5 changes
+[✓] Add scoped CSS if needed
+[•] Commit with CR-WEB-020 reference
+
+The edit is correct. The section now has:
+1. h2 + intro
+2. Three-up product row (`.grid.grid--3` with `.card` links — reuse existing CSS)
+3. Founding-client paragraph (moved up, verbatim)
+4. Two grey inset boxes (unchanged)
+5. Custom-build paragraph (unchanged)
+6. CTA row (primary → "See all three apps" → `/apps`)
+
+No scoped CSS addition needed — `grid--3` and `card` are already available via `ds-layer.css`.
+$ git status && git diff --stat
+On branch cr/pricing-systems-section
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/pricing/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ app/pricing/page.tsx | 26 +++++++++++++++++++++-----
+ 1 file changed, 21 insertions(+), 5 deletions(-)
+
+$ git add app/pricing/page.tsx && git commit -m "CR-WEB-020: restructure Systems section on /pricing
+
+- Insert three-up product row (Data App, Artwork Manager, Trade store)
+  after h2/intro, using existing grid--3 + card pattern
+- Move founding-client paragraph to sit immediately after the product row
+- Change primary CTA from 'See how the Data App works' to
+  'See all three apps' linking to /apps
+- Cost-factor list already a <ul>; no CSS change needed
+- No new CSS added — reused existing ds-marketing.css classes"
+[cr/pricing-systems-section 3416522] CR-WEB-020: restructure Systems section on /pricing
+ 1 file changed, 21 insertions(+), 5 deletions(-)
+
+$ node .context/price-audit.mjs --check
+12 files, 67 lines, 83 figures
+   40  app/pricing/page.tsx
+    7  app/small-business/page.tsx
+    5  app/locations/tech-audit/page.tsx
+    4  app/locations/tech-audit/[location]/page.tsx
+    3  app/clarity/page.tsx
+    2  app/problems/cant-scale-operations/page.tsx
+    1  app/apps/commerce/page.tsx
+    1  app/opengraph-image.tsx
+    1  app/problems/slow-processes/page.tsx
+    1  components/Header.tsx
+    1  data/locations.ts
+    1  data/problem-routing.ts
+
+check: 0 disallowed prices outside /pricing
+  PASS — prices live on /pricing only, plus the £1,500 and £750 exceptions.
+
+$ git log --oneline -3
+3416522 CR-WEB-020: restructure Systems section on /pricing
+c557a00 fix: align caption horizontal padding with cell padding (BUG-WEB-011)
+f788243 BUG-WEB-011: reword scope note — internal 'anchor' vocabulary removed
+
+# Todos
+[✓] Read app/pricing/page.tsx — full SYSTEMS section
+[✓] Read app/apps/page.tsx for reference patterns
+[✓] Read components/Header.tsx for helpBuilt nav strings
+[✓] Check existing CSS classes and patterns to reuse
+[✓] Restructure the SYSTEMS section per the 5 changes
+[✓] Add scoped CSS if needed
+[✓] Commit with CR-WEB-020 reference
+
+Done. Commit `3416522` on branch `cr/pricing-systems-section`.
+
+**New element order in the SYSTEMS section (`app/pricing/page.tsx:246-298`):**
+
+1. Eyebrow "Systems" + h2 — unchanged
+2. **Three-up product row** — `.grid.grid--3` with three `.card` Link items (Data App, Artwork Manager, Trade store), reusing strings from the `helpBuilt` nav and existing CSS
+3. **Founding-client paragraph** — moved up from after the grey boxes to immediately after the product row
+4. Grey inset 1 (off-the-shelf platform) — unchanged
+5. Grey inset 2 (no price list, four cost factors) — unchanged; already a `<ul>`
+6. Custom-build paragraph — unchanged
+7. CTA row — primary button changed to "See all three apps" → `/apps`; secondary unchanged
+
+**No CSS added** — `grid--3`, `card`, and `kicker` are all defined in `ds-marketing.css` and available globally via `ds-layer.css`. Price audit passes clean.

@@ -1,0 +1,455 @@
+
+> build · mimo-v2.5
+
+# Todos
+[•] Grep for 'pushed live' and '11,064' in app/
+[ ] Read each flagged file and the data-app reference wording
+[ ] Rewrite overclaims in problem pages and transform page
+[ ] Fix homepage SVG text node
+[ ] Verify: grep, build, diff, commit
+
+$ git grep -n -i "pushed live" -- app/
+app/case-studies/tacklebag/page.tsx:137:                    <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
+app/case-studies/tacklebag/page.tsx:201:              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
+app/page.tsx:291:                            opacity=".55">PUSHED LIVE</text>
+app/problems/data-scattered/page.tsx:213:       a 77% match rate, with 11,064 pushed live to Khaos Control within weeks. Same principle,
+app/problems/erp-implementation-failure/page.tsx:173:         <><b>11,064</b> pushed live to Khaos Control within weeks</>,
+
+$ git grep -n -i "11,064\|11064" -- app/
+app/apps/data-app/page.tsx:150:              <p className="stat-num num">11,064</p>
+app/case-studies/hanicks/page.tsx:85:            <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
+app/case-studies/hanicks/page.tsx:128:                    <text x="890" y="472" className="p-ink">11,064 matched and prepared for the catalogue</text>
+app/case-studies/hanicks/page.tsx:166:                <p className="stat-num num">11,064</p>
+app/case-studies/page.tsx:32:    pull: '164,752 imported, 77% matched, 11,064 live',
+app/case-studies/page.tsx:154:                      <text x="80" y="306">164,752</text><text x="330" y="306">77%</text><text x="510" y="306">11,064</text>
+app/page.tsx:297:                            fontWeight="700" fontSize="30">11,064</text>
+app/problems/data-scattered/page.tsx:213:       a 77% match rate, with 11,064 pushed live to Khaos Control within weeks. Same principle,
+app/problems/erp-implementation-failure/page.tsx:173:         <><b>11,064</b> pushed live to Khaos Control within weeks</>,
+app/transform/page.tsx:91:                  <text x="890" y="462" className="p-ink">11,064 live at Khaos Control</text>
+app/transform/page.tsx:125:                <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> live at Khaos Control</li>
+
+$ npm ci --legacy-peer-deps 2>&1 | tail -5
+tail: The term 'tail' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ Test-Path node_modules
+False
+
+→ Read app/apps/data-app/page.tsx [offset=140, limit=25]
+→ Read app/problems/data-scattered/page.tsx [offset=200, limit=25]
+→ Read app/problems/erp-implementation-failure/page.tsx [offset=160, limit=25]
+→ Read app/transform/page.tsx [offset=80, limit=55]
+→ Read app/page.tsx [offset=275, limit=35]
+
+# Todos
+[✓] Grep for 'pushed live' and '11,064' in app/
+[✓] Read each flagged file and the data-app reference wording
+[•] Rewrite overclaims in problem pages and transform page
+[ ] Fix homepage SVG text node
+[ ] Verify: grep, build, diff, commit
+
+Good, I have the full picture. The reference wording from the data-app is: "matched and prepared for the Khaos Control catalogue within weeks". Let me now install deps and make all edits.
+← Edit app/problems/data-scattered/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\data-scattered\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\data-scattered\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\data-scattered\page.tsx
+@@ -209,9 +209,9 @@
+    <p>The Decoded Data App takes every supplier feed in, matches it against your existing
+     catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
+     the website, the warehouse.</p>
+    <p>At Hanicks, 164,752 products went in and 127,135 matched automatically on the first run,
+-    a 77% match rate, with 11,064 pushed live to Khaos Control within weeks. Same principle,
++    a 77% match rate, with 11,064 matched and prepared for the Khaos Control catalogue within weeks. Same principle,
+     any supplier mix.</p>
+   </div>
+  </div>
+ </section>
+
+
+← Edit app/problems/erp-implementation-failure/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\erp-implementation-failure\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\erp-implementation-failure\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\problems\erp-implementation-failure\page.tsx
+@@ -169,9 +169,9 @@
+ <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
+  {[
+   <><b>127,135</b> matched automatically on the first run</>,
+   <>A <b>77%</b> match rate, without anyone re-keying a row</>,
+-  <><b>11,064</b> pushed live to Khaos Control within weeks</>,
++  <><b>11,064</b> matched and prepared for the Khaos Control catalogue within weeks</>,
+   'The platform stayed. The layer around it changed.',
+  ].map((item, i) => (
+   <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>
+     {item}
+
+
+← Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
+@@ -87,9 +87,9 @@
+ </g>
+ <g className="sk-fade sk-s5" fontSize="22">
+   <text x="890" y="322" className="p-ink">127,135 matched on the first run</text>
+   <text x="890" y="392" className="p-ink">77% matched automatically</text>
+-  <text x="890" y="462" className="p-ink">11,064 live at Khaos Control</text>
++   <text x="890" y="462" className="p-ink">11,064 prepared for Khaos Control</text>
+   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
+   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
+      strokeLinejoin="round" fill="none">
+     <path d="M856 315 L863 322 L876 308"/>
+
+
+← Edit app/transform/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\transform\page.tsx
+@@ -121,9 +121,9 @@
+ <div className={`${s.baCol} ${s.baColAfter}`} data-od-id="ba-after">
+   <h3>After</h3>
+   <ul>
+     <li>Hanicks: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
+-    <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> live at Khaos Control</li>
++     <li>Hanicks: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
+     <li>TackleBag: <strong>9</strong> supplier feeds fully automated</li>
+     <li>TackleBag: a projected saving of <strong>20–40 hours</strong> a week</li>
+   </ul>
+ </div>
+
+
+← Edit app/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\overclaim-sweep\app\page.tsx
+@@ -287,9 +287,9 @@
+ 
+ {/* 3 · live. Amber lands once, on the figure that is the point. */}
+ <g className="sk-fade sk-s4">
+   <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
+-        opacity=".55">PUSHED LIVE</text>
++        opacity=".55">PREPARED</text>
+   <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to Khaos
+     Control</text>
+   <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+         className="p-node-a" strokeWidth="1.4"/>
+
+
+$ npm ci --legacy-peer-deps 2>&1 | Select-String -Pattern "added|up to date|error" | Select-Object -Last 3
+added 414 packages, and audited 415 packages in 38s
+
+# Todos
+[✓] Grep for 'pushed live' and '11,064' in app/
+[✓] Read each flagged file and the data-app reference wording
+[✓] Rewrite overclaims in problem pages and transform page
+[✓] Fix homepage SVG text node
+[•] Verify: grep, build, diff, commit
+
+All five edits applied. Now let me verify.
+$ git grep -n -i "pushed live" -- app/
+app/case-studies/tacklebag/page.tsx:137:                    <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
+app/case-studies/tacklebag/page.tsx:201:              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
+
+$ git diff origin/staging..HEAD --stat
+app/resources/artwork-approval-playbook/page.tsx | 263 ------------------
+ app/resources/decoded-method/page.tsx            | 257 -----------------
+ app/resources/erp-selection-playbook/page.tsx    | 333 -----------------------
+ app/resources/page.tsx                           | 104 +++----
+ app/resources/software-reviews/page.tsx          | 110 ++++++++
+ app/resources/sop-template/page.tsx              | 228 ----------------
+ app/sitemap.ts                                   |   2 +-
+ components/Header.tsx                            |   2 +-
+ next.config.ts                                   |   2 +-
+ public/llms.txt                                  |   2 +-
+ 10 files changed, 155 insertions(+), 1148 deletions(-)
+
+$ git log --oneline origin/staging..HEAD
+(no output)
+
+$ git status
+On branch lane/gf12b-overclaim-sweep-2026-09-02
+Your branch is behind 'origin/staging' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/page.tsx
+	modified:   app/problems/data-scattered/page.tsx
+	modified:   app/problems/erp-implementation-failure/page.tsx
+	modified:   app/transform/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Branch is behind origin/staging by 3 commits. Need to pull and rebase to get my changes on top.
+$ git pull --rebase origin staging 2>&1
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+$ git stash && git pull --rebase origin staging 2>&1 && git stash pop 2>&1
+warning: in the working copy of 'app/transform/page.tsx', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on lane/gf12b-overclaim-sweep-2026-09-02: 0678c3e vocab-strings: rewrite sector metadata, body strings, and Khaos overclaim
+Updating 0678c3e..19111cb
+Fast-forward
+From https://github.com/craigblackman1-rgb/decoded-ops-site
+ * branch            staging    -> FETCH_HEAD
+ app/resources/artwork-approval-playbook/page.tsx | 263 ++++++++++++++++++
+ app/resources/decoded-method/page.tsx            | 257 +++++++++++++++++
+ app/resources/erp-selection-playbook/page.tsx    | 333 +++++++++++++++++++++++
+ app/resources/page.tsx                           | 104 ++++---
+ app/resources/software-reviews/page.tsx          | 110 --------
+ app/resources/sop-template/page.tsx              | 228 ++++++++++++++++
+ app/sitemap.ts                                   |   2 +-
+ components/Header.tsx                            |   2 +-
+ next.config.ts                                   |   2 +-
+ public/llms.txt                                  |   2 +-
+ 10 files changed, 1148 insertions(+), 155 deletions(-)
+ create mode 100644 app/resources/artwork-approval-playbook/page.tsx
+ create mode 100644 app/resources/decoded-method/page.tsx
+ create mode 100644 app/resources/erp-selection-playbook/page.tsx
+ delete mode 100644 app/resources/software-reviews/page.tsx
+ create mode 100644 app/resources/sop-template/page.tsx
+On branch lane/gf12b-overclaim-sweep-2026-09-02
+Your branch is up to date with 'origin/staging'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app/page.tsx
+	modified:   app/problems/data-scattered/page.tsx
+	modified:   app/problems/erp-implementation-failure/page.tsx
+	modified:   app/transform/page.tsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (6421d60f55ba6bf5718f68340c85f599c1f2d221)
+
+$ git grep -n -i "pushed live" -- app/
+app/case-studies/tacklebag/page.tsx:137:                    <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
+app/case-studies/tacklebag/page.tsx:201:              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
+
+Good, now up to date. Let me re-verify and run the build.
+$ git diff origin/staging..HEAD --stat
+(no output)
+
+$ git diff --stat
+app/page.tsx                                     | 2 +-
+ app/problems/data-scattered/page.tsx             | 2 +-
+ app/problems/erp-implementation-failure/page.tsx | 2 +-
+ app/transform/page.tsx                           | 4 ++--
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+Exactly the right 4 files. Now the build.
+$ npx next build 2>&1
+▲ Next.js 16.3.3 (Turbopack)
+✓ Running next.config.ts took 129ms
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+⚠ The Edge Runtime is deprecated. You can use the "nodejs" runtime instead. Learn more: https://nextjs.org/docs/messages/edge-runtime-deprecated
+  Creating an optimized production build ...
+✓ Compiled successfully in 22.5s
+  Running TypeScript ...
+  Finished TypeScript in 18.1s ...
+  Collecting page data using 15 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+  Generating static pages using 15 workers (0/163) ...
+  Generating static pages using 15 workers (40/163) 
+  Generating static pages using 15 workers (81/163) 
+  Generating static pages using 15 workers (122/163) 
+✓ Generating static pages using 15 workers (163/163) in 1148ms
+  Finalizing page optimization ...
+
+Route (app)                                        Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/auth/[...nextauth]
+├ ƒ /api/auth/login
+├ ƒ /api/clients/documents/[id]/questionnaire
+├ ƒ /api/clients/documents/[id]/sign
+├ ƒ /api/clients/uploads
+├ ƒ /api/contact
+├ ƒ /api/tools/capture
+├ ○ /apps
+├ ○ /apps/artwork-manager
+├ ○ /apps/commerce
+├ ○ /apps/crm
+├ ○ /apps/data-app
+├ ○ /blog                                                  5m      1y
+├   /blog/[slug]
+│ ├ ● /blog/the-real-cost-of-a-failed-erp-project          5m      1y
+│ ├ ● /blog/5-questions-vendors-wont-like                  5m      1y
+│ ├ ● /blog/why-systems-dont-talk                          5m      1y
+│ └ ● [+25 more paths]
+├ ○ /case-studies
+├ ○ /case-studies/cobra-workwear
+├ ○ /case-studies/eternal-fitness
+├ ○ /case-studies/hanicks
+├ ○ /case-studies/tacklebag
+├ ○ /clarity
+├ ƒ /clients/[clientId]
+├ ƒ /clients/dashboard
+├ ƒ /clients/documents
+├ ƒ /clients/documents/view/[id]
+├ ○ /clients/login
+├ ƒ /clients/project
+├ ○ /contact
+├ ○ /cookies
+├ ○ /decoded-method
+├ ○ /deliver
+├ ○ /how-i-build
+├ ○ /locations/fractional-cto
+├   /locations/fractional-cto/[location]
+│ ├ ● /locations/fractional-cto/chichester
+│ ├ ● /locations/fractional-cto/worthing
+│ ├ ● /locations/fractional-cto/horsham
+│ └ ● [+24 more paths]
+├ ○ /locations/tech-audit
+├   /locations/tech-audit/[location]
+│ ├ ● /locations/tech-audit/chichester
+│ ├ ● /locations/tech-audit/worthing
+│ ├ ● /locations/tech-audit/horsham
+│ └ ● [+24 more paths]
+├ ƒ /opengraph-image
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /problems
+├ ○ /problems/ai-paralysis
+├ ○ /problems/bottleneck-growth
+├ ○ /problems/buy-vs-build
+├ ○ /problems/cant-scale-operations
+├ ○ /problems/data-scattered
+├ ○ /problems/disaster-recovery
+├ ○ /problems/ecommerce-not-connected
+├ ○ /problems/erp-implementation-failure
+├ ○ /problems/inventory-blind
+├ ○ /problems/legacy-system
+├ ○ /problems/manual-workarounds
+├ ○ /problems/no-ops-owner
+├ ○ /problems/ops-in-owners-head
+├ ○ /problems/seasonal-peaks
+├ ○ /problems/slow-processes
+├ ○ /problems/spreadsheet-addiction
+├ ○ /problems/systems-dont-talk
+├ ○ /problems/wrong-erp-software
+├ ○ /process-quality-system
+├ ○ /resources
+├ ○ /resources/5-warning-signs
+├ ○ /resources/artwork-approval-playbook
+├ ○ /resources/audit-checklist
+├ ○ /resources/decoded-method
+├ ○ /resources/erp-selection-playbook
+├ ○ /resources/six-sigma
+├ ○ /resources/sop-template
+├ ○ /retained
+├ ○ /sectors/awards-engraving
+├ ○ /sectors/garment-decoration
+├ ○ /sectors/labels-packaging
+├ ○ /sectors/print-promotional
+├ ○ /sectors/promotional-merchandise
+├ ○ /sectors/schoolwear
+├ ○ /sectors/signs-graphics
+├ ○ /sectors/teamwear-clubwear
+├ ○ /sectors/workwear
+├ ○ /sitemap.xml                                           5m      1y
+├ ○ /small-business
+├ ○ /tools
+├ ○ /tools/ai-readiness-check
+├ ○ /tools/automation-roi-calculator
+├ ○ /tools/downtime-cost-calculator
+├ ○ /tools/ops-health-score
+├ ○ /tools/rto-calculator
+├ ○ /tools/should-i-replace-erp
+└ ○ /transform
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+Build passes cleanly. Now commit.
+$ git add app/page.tsx app/problems/data-scattered/page.tsx app/problems/erp-implementation-failure/page.tsx app/transform/page.tsx && git commit -m "overclaim sweep: remove 'pushed live to Khaos Control' claims
+
+Rewrite four Hanicks/Khaos overclaims to match the verified data-app
+wording: 'matched and prepared for the Khaos Control catalogue'.
+Homepage SVG label changed from PUSHED LIVE to PREPARED.
+
+Files:
+- app/problems/data-scattered/page.tsx:213
+- app/problems/erp-implementation-failure/page.tsx:173
+- app/transform/page.tsx:91,125
+- app/page.tsx:291
+
+Tacklebag 'pushed live to Symphony' left alone (different product,
+factual). No numbers added or removed."
+[lane/gf12b-overclaim-sweep-2026-09-02 56420d8] overclaim sweep: remove 'pushed live to Khaos Control' claims
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+$ git log --oneline origin/staging..HEAD
+56420d8 overclaim sweep: remove 'pushed live to Khaos Control' claims
+
+$ git diff --stat origin/staging..HEAD
+app/page.tsx                                     | 2 +-
+ app/problems/data-scattered/page.tsx             | 2 +-
+ app/problems/erp-implementation-failure/page.tsx | 2 +-
+ app/transform/page.tsx                           | 4 ++--
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+$ git grep -n -i "pushed live" -- app/
+app/case-studies/tacklebag/page.tsx:137:                    <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
+app/case-studies/tacklebag/page.tsx:201:              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
+
+# Todos
+[✓] Grep for 'pushed live' and '11,064' in app/
+[✓] Read each flagged file and the data-app reference wording
+[✓] Rewrite overclaims in problem pages and transform page
+[✓] Fix homepage SVG text node
+[✓] Verify: grep, build, diff, commit
+
+## REPORT
+
+### Commit
+```
+56420d8 overclaim sweep: remove 'pushed live to Khaos Control' claims
+```
+
+### Diff stat
+```
+ app/page.tsx                                     | 2 +-
+ app/problems/data-scattered/page.tsx             | 2 +-
+ app/problems/erp-implementation-failure/page.tsx | 2 +-
+ app/transform/page.tsx                           | 4 ++--
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+```
+
+### Grep result — "pushed live" in app/
+Only tacklebag/Symphony remains (intentionally left alone):
+```
+app/case-studies/tacklebag/page.tsx:137: Products pushed live to Symphony automatically
+app/case-studies/tacklebag/page.tsx:201: ...and new products pushed live to Symphony automatically...
+```
+
+### Build
+`npx next build` compiled successfully, TypeScript passed, 163 static pages generated.
+
+### Edits made
+
+| File | Line | Old | New |
+|---|---|---|---|
+| `app/problems/data-scattered/page.tsx` | 213 | `11,064 pushed live to Khaos Control within weeks` | `11,064 matched and prepared for the Khaos Control catalogue within weeks` |
+| `app/problems/erp-implementation-failure/page.tsx` | 173 | `<b>11,064</b> pushed live to Khaos Control within weeks` | `<b>11,064</b> matched and prepared for the Khaos Control catalogue within weeks` |
+| `app/transform/page.tsx` | 91 | `11,064 live at Khaos Control` (SVG text) | `11,064 prepared for Khaos Control` |
+| `app/transform/page.tsx` | 125 | `11,064 live at Khaos Control` (list item) | `11,064 prepared for Khaos Control` |
+| `app/page.tsx` | 291 | `PUSHED LIVE` (SVG label) | `PREPARED` |
+
+### No push performed.

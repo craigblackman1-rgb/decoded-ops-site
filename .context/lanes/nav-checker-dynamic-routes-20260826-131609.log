@@ -1,0 +1,319 @@
+
+> build ┬╖ deepseek-v4-pro
+
+ΓåÆ Read .context/check-nav-coverage.mjs
+ΓåÆ Read app/locations/fractional-cto/[location]/page.tsx
+ΓåÆ Read data/locations.ts
+ΓåÆ Read package.json
+ΓåÆ Read tsconfig.json
+Γ£▒ Glob "app/**/page.{ts,tsx}" 58 matches
+
+$ git -C "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" status --short && git -C "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" branch --show-current && git -C "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" log --oneline -5
+claude/nav-checker-dynamic-routes
+ea0233a chore: wire pre-merge gates (price audit + copy extractor)
+cb82067 Compact sign panel bar for unsigned document view
+4744b95 merge
+7ef16d4 fix(client-portal): resolve docs via client-scoped list after hub token gate
+3a1f18e chore: remove closed work-order and lane briefing docs from .context
+
+ΓåÆ Read app/locations/tech-audit/[location]/page.tsx [limit=20]
+ΓåÆ Read app/blog/[slug]/page.tsx [limit=40]
+ΓåÆ Read components/Footer.tsx [offset=30, limit=30]
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && rg -n "slug\s*:" components/ app/locations/ | head -50
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && rg -n "slug\s*:" data/ | head -60
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "slug\s*:" in app/locations ┬╖ 0 matches
+Γ£▒ Grep "slug\s*:" in components ┬╖ 2 matches
+
+ΓåÉ Write .context/check-nav-coverage.mjs
+Wrote file successfully.
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && npm run check:nav; echo "EXIT=$LASTEXITCODE"
+> decoded-ops-next@0.1.0 check:nav
+> node .context/check-nav-coverage.mjs
+
+pages on disk (public, static): 48
+pages from dynamic segments:    54
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (0):
+  none
+
+UNRESOLVED DYNAMIC ΓÇö dynamic route(s) whose slugs could not be enumerated (1):
+  /blog/[slug]
+nav links satisfied by the above (0):
+  none
+EXIT=1
+
+$ $tmp = "C:\Users\CRAIGB~1\AppData\Local\Temp\opencode\nav-teeth-test"; if (Test-Path -LiteralPath $tmp) { Remove-Item -LiteralPath $tmp -Recurse -Force }; New-Item -ItemType Directory -Path $tmp | Out-Null; Copy-Item -LiteralPath "app" -Destination $tmp -Recurse; Copy-Item -LiteralPath "components" -Destination $tmp -Recurse; Copy-Item -LiteralPath "data" -Destination $tmp -Recurse; Add-Content -LiteralPath "$tmp\components\Footer.tsx" -Value "const __teeth = { href: '/definitely-not-a-real-page' };"; Write-Output "scratch prepared"
+scratch prepared
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && node .context/check-nav-coverage.mjs "C:\Users\CRAIGB~1\AppData\Local\Temp\opencode\nav-teeth-test"; echo "EXIT=$LASTEXITCODE"
+pages on disk (public, static): 48
+pages from dynamic segments:    54
+distinct nav hrefs:             39
+
+ORPHANED ΓÇö real page, no nav link (14):
+  /case-studies/cobra-workwear
+  /case-studies/eternal-fitness
+  /case-studies/hanicks
+  /case-studies/tacklebag
+  /cookies
+  /decoded-data-app
+  /resources/software-reviews
+  /small-business
+  /tools/ai-readiness-check
+  /tools/automation-roi-calculator
+  /tools/downtime-cost-calculator
+  /tools/ops-health-score
+  /tools/rto-calculator
+  /tools/should-i-replace-erp
+
+BROKEN ΓÇö nav link, no such page (1):
+  /definitely-not-a-real-page
+
+UNRESOLVED DYNAMIC ΓÇö dynamic route(s) whose slugs could not be enumerated (1):
+  /blog/[slug]
+nav links satisfied by the above (0):
+  none
+EXIT=1
+
+$ Remove-Item -LiteralPath "C:\Users\CRAIGB~1\AppData\Local\Temp\opencode\nav-teeth-test" -Recurse -Force; Write-Output "scratch removed"
+scratch removed
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && git diff --stat && git status --short
+warning: in the working copy of '.context/check-nav-coverage.mjs', LF will be replaced by CRLF the next time Git touches it
+ .context/check-nav-coverage.mjs | 117 ++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 106 insertions(+), 11 deletions(-)
+ M .context/check-nav-coverage.mjs
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && git diff -- .context/check-nav-coverage.mjs
+warning: in the working copy of '.context/check-nav-coverage.mjs', LF will be replaced by CRLF the next time Git touches it
+diff --git a/.context/check-nav-coverage.mjs b/.context/check-nav-coverage.mjs
+index 9604c3b..88073a5 100644
+--- a/.context/check-nav-coverage.mjs
++++ b/.context/check-nav-coverage.mjs
+@@ -3,8 +3,15 @@
+ // href from Header.tsx + Footer.tsx, and reports both directions:
+ //   ORPHANED  ΓÇö a real page nothing in the nav links to
+ //   BROKEN    ΓÇö a nav link pointing at a route that does not exist
++//
++// Dynamic route segments ([param]) are expanded generically: when a [param] page
++// imports a data module that carries `slug: 'ΓÇª'` string literals, those literals
++// become the concrete routes (the same source a generateStaticParams over a
++// locations array would produce). Dynamic segments that cannot be enumerated are
++// treated as satisfied, never reported as broken.
++//
+ // Run: node check-nav-coverage.mjs [repo-root]  (root defaults to the repo this file lives in)
+-import { readFileSync, readdirSync, statSync } from 'node:fs';
++import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+ import { join, relative, sep, dirname, resolve } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ 
+@@ -22,13 +29,82 @@ function walk(dir, out = []) {
+   return out;
+ }
+ 
+-const routes = walk(appDir)
+-  .map(f => '/' + relative(appDir, f).split(sep).slice(0, -1).join('/'))
+-  .map(r => (r === '/' ? '/' : r.replace(/\/$/, '')))
+-  .filter(r => !r.includes('[')) // dynamic segments can't be link targets
+-  .filter(r => !r.startsWith('/clients')) // gated client portal, deliberately not in nav
++function toRoute(pageFile) {
++  const r = '/' + relative(appDir, pageFile).split(sep).slice(0, -1).join('/');
++  return r === '/' ? '/' : r.replace(/\/$/, '');
++}
++
++const pageFiles = walk(appDir);
++const pageByRoute = new Map(pageFiles.map(f => [toRoute(f), f]));
++const allRoutes = [...pageByRoute.keys()];
++
++const isClients = r => r === '/clients' || r.startsWith('/clients/');
++
++// Static pages feed ORPHANED detection exactly as before ΓÇö only literal
++// directory names count as "real pages nothing links to". Dynamic routes are
++// kept out of ORPHANED and instead expand into concrete routes for BROKEN.
++const staticRoutes = allRoutes
++  .filter(r => !r.includes('['))
++  .filter(r => !isClients(r))
+   .filter(r => r !== '/'); // home is the logo link
+ 
++const dynamicRoutes = allRoutes
++  .filter(r => r.includes('['))
++  .filter(r => !isClients(r)); // gated client portal, deliberately not in nav
++
++// ΓöÇΓöÇ 1a. expand dynamic segments from their data module ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
++const IMPORT_FROM_RE = /from\s*['"]([^'"]+)['"]/g;
++const IMPORT_BARE_RE = /import\s*['"]([^'"]+)['"]/g;
++const SLUG_RE = /slug\s*:\s*['"`]([^'"`]+)['"`]/g;
++
++function resolveImport(specifier, fromFile) {
++  if (specifier.startsWith('@/')) return resolve(root, specifier.slice(2));
++  if (specifier.startsWith('./') || specifier.startsWith('../')) return resolve(dirname(fromFile), specifier);
++  return null; // bare package specifier (next, lucide-react, ΓÇª) ΓÇö not a project file
++}
++
++function resolveToFile(base) {
++  const candidates = /\.[a-z0-9]+$/i.test(base)
++    ? [base]
++    : [base + '.ts', base + '.tsx', base + '.js', base + '.jsx', base + '.json'];
++  return candidates.find(c => existsSync(c)) || null;
++}
++
++// Reads the page source, resolves each project-relative import to a file, and
++// returns the slug literals from the first imported module that defines any.
++function extractSlugs(pageFile) {
++  const source = readFileSync(pageFile, 'utf8');
++  const specifiers = new Set();
++  for (const m of source.matchAll(IMPORT_FROM_RE)) specifiers.add(m[1]);
++  for (const m of source.matchAll(IMPORT_BARE_RE)) specifiers.add(m[1]);
++  for (const spec of specifiers) {
++    const base = resolveImport(spec, pageFile);
++    if (!base) continue;
++    const file = resolveToFile(base);
++    if (!file) continue;
++    const slugs = [...readFileSync(file, 'utf8').matchAll(SLUG_RE)].map(m => m[1]);
++    if (slugs.length) return slugs;
++  }
++  return [];
++}
++
++const dynamicResolved = new Set();
++const unresolvedPatterns = [];
++
++for (const route of dynamicRoutes) {
++  const slugs = extractSlugs(pageByRoute.get(route));
++  const segs = route.split('/');
++  const dynIdx = segs.map((s, i) => (s.startsWith('[') ? i : -1)).filter(i => i >= 0);
++  if (slugs.length === 0 || dynIdx.length !== 1) {
++    unresolvedPatterns.push(route);
++    continue;
++  }
++  const idx = dynIdx[0];
++  for (const slug of slugs) {
++    dynamicResolved.add([...segs.slice(0, idx), slug, ...segs.slice(idx + 1)].join('/'));
++  }
++}
++
+ // ΓöÇΓöÇ 2. every href the nav actually renders ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ const navSource = ['components/Header.tsx', 'components/Footer.tsx']
+   .map(f => readFileSync(join(root, f), 'utf8')).join('\n');
+@@ -41,14 +117,28 @@ const linked = new Set(
+ );
+ 
+ // ΓöÇΓöÇ 3. report both directions ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+-const orphaned = routes.filter(r => !linked.has(r)).sort();
+-const routeSet = new Set(routes);
++function matchesPattern(link, pattern) {
++  const l = link.split('/');
++  const p = pattern.split('/');
++  if (l.length !== p.length) return false;
++  return p.every((seg, i) => seg.startsWith('[') || l[i] === seg);
++}
++
++const orphaned = staticRoutes.filter(r => !linked.has(r)).sort();
++
++const routeSet = new Set([...staticRoutes, ...dynamicResolved]);
++const unresolvedLinks = [...linked]
++  .filter(h => h && h !== '/' && !isClients(h))
++  .filter(h => unresolvedPatterns.some(p => matchesPattern(h, p)))
++  .sort();
++
+ const broken = [...linked]
+-  .filter(h => h && h !== '/' && !routeSet.has(h))
+-  .filter(h => !h.startsWith('/clients'))
++  .filter(h => h && h !== '/' && !isClients(h) && !routeSet.has(h))
++  .filter(h => !unresolvedPatterns.some(p => matchesPattern(h, p)))
+   .sort();
+ 
+-console.log(`pages on disk (public, static): ${routes.length}`);
++console.log(`pages on disk (public, static): ${staticRoutes.length}`);
++console.log(`pages from dynamic segments:    ${dynamicResolved.size}`);
+ console.log(`distinct nav hrefs:             ${linked.size}\n`);
+ 
+ console.log(`ORPHANED ΓÇö real page, no nav link (${orphaned.length}):`);
+@@ -57,4 +147,9 @@ console.log(orphaned.length ? orphaned.map(r => '  ' + r).join('\n') : '  none')
+ console.log(`\nBROKEN ΓÇö nav link, no such page (${broken.length}):`);
+ console.log(broken.length ? broken.map(r => '  ' + r).join('\n') : '  none');
+ 
++console.log(`\nUNRESOLVED DYNAMIC ΓÇö dynamic route(s) whose slugs could not be enumerated (${unresolvedPatterns.length}):`);
++console.log(unresolvedPatterns.length ? unresolvedPatterns.map(r => '  ' + r).join('\n') : '  none');
++console.log(`nav links satisfied by the above (${unresolvedLinks.length}):`);
++console.log(unresolvedLinks.length ? unresolvedLinks.map(r => '  ' + r).join('\n') : '  none');
++
+ process.exit(orphaned.length || broken.length ? 1 : 0);
+
+$ cd "D:\apps\worktrees\decoded-ops-website\nav-checker-dynamic-routes" && git add .context/check-nav-coverage.mjs && git commit -m "fix(nav-check): expand dynamic route segments to stop false broken links" && git log --oneline -1
+warning: in the working copy of '.context/check-nav-coverage.mjs', LF will be replaced by CRLF the next time Git touches it
+[claude/nav-checker-dynamic-routes cce3959] fix(nav-check): expand dynamic route segments to stop false broken links
+ 1 file changed, 106 insertions(+), 11 deletions(-)
+cce3959 fix(nav-check): expand dynamic route segments to stop false broken links
+
+Done. One file changed and committed.
+
+## What I changed
+
+Only `.context/check-nav-coverage.mjs`. The checker now:
+
+1. **Expands dynamic segments generically** ΓÇö for any `[param]` page (not just `locations`), it reads the page source, resolves each project-relative import (`@/ΓÇª`, `./ΓÇª`, `../ΓÇª`) to a real file with extension probing, and extracts slug literals via `slug\s*:\s*['"`]([^'"`]+)['"`]/g`. Each slug becomes a concrete route. This resolves both `/locations/fractional-cto/[location]` and `/locations/tech-audit/[location]` from `data/locations.ts` (27 slugs each ΓåÆ 54 dynamic pages).
+2. **Leaves ORPHANED detection unchanged** ΓÇö it still runs on static literal directory names only, so the 14 orphans are untouched.
+3. **Adds an `UNRESOLVED DYNAMIC` advisory section** ΓÇö segments that can't be enumerated (e.g. `/blog/[slug]`, which is hub-authoritative) are listed, and any nav link matching their pattern is treated as satisfied, never broken.
+
+No TS execution, no new dependencies ΓÇö still plain node ESM with `fs`/`path` only. Nav files, `data/locations.ts`, and package files untouched.
+
+## Verification
+
+**a) `npm run check:nav`**
+
+```
+pages on disk (public, static): 48
+pages from dynamic segments:    54
+distinct nav hrefs:             38
+
+ORPHANED ΓÇö real page, no nav link (14):
+  ΓÇª (same 14 as before) ΓÇª
+
+BROKEN ΓÇö nav link, no such page (0):
+  none
+
+UNRESOLVED DYNAMIC ΓÇö dynamic route(s) whose slugs could not be enumerated (1):
+  /blog/[slug]
+nav links satisfied by the above (0):
+  none
+```
+
+The 3 `/locations/fractional-cto/*` entries are gone from BROKEN; `BROKEN` reports 0. (Exit code is still 1, but only because of the 14 pre-existing orphans ΓÇö the queued product decision, unchanged.)
+
+**b) Teeth test** ΓÇö I built a scratch copy of `app` + `components` + `data` in a temp dir, appended `const __teeth = { href: '/definitely-not-a-real-page' };` to the scratch `Footer.tsx`, and ran the checker against it. It reported `BROKEN ΓÇö nav link, no such page (1): /definitely-not-a-real-page`, then I deleted the scratch dir. The check still catches genuinely missing routes ΓÇö nothing was suppressed.
+
+**c) `git diff --stat`**
+
+```
+ .context/check-nav-coverage.mjs | 106 insertions(+), 11 deletions(-)
+```
+
+Exactly one file changed.
+
+Committed as `cce3959` on `claude/nav-checker-dynamic-routes`. Not pushed.

@@ -1,0 +1,1189 @@
+
+> build ┬╖ deepseek-v4-pro
+
+$ git status && git branch --show-current
+On branch task/tools-ds-tokens-2026-08-27
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.context/lane-prompt-tools-ds-tokens.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+task/tools-ds-tokens-2026-08-27
+
+$ grep -rn "bg-\[#\|text-\[#\|border-\[#\|ring-\[#\|from-\[#\|to-\[#\|via-\[#\|fill-\[#\|stroke-\[#\|decoration-\[#" app/tools/ai-readiness-check/page.tsx app/tools/downtime-cost-calculator/page.tsx app/tools/ops-health-score/page.tsx app/tools/should-i-replace-erp/page.tsx
+grep: The term 'grep' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "(bg|text|border|ring|from|to|via|fill|stroke|decoration)-\[#" in app/tools ┬╖ 62 matches
+ΓåÆ Read app/tools/ai-readiness-check/page.tsx
+ΓåÆ Read app/tools/downtime-cost-calculator/page.tsx
+ΓåÆ Read app/tools/ops-health-score/page.tsx
+ΓåÆ Read app/tools/should-i-replace-erp/page.tsx
+Γ£▒ Grep "--color-(prussian-blue|cerulean|sky-blue|amber|orange-brand|off-white):" in app/globals.css ┬╖ 6 matches
+
+$ rg -n -i "#[0-9a-f]{6}" app/tools/ai-readiness-check/page.tsx app/tools/downtime-cost-calculator/page.tsx app/tools/ops-health-score/page.tsx app/tools/should-i-replace-erp/page.tsx
+rg: The term 'rg' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+Γ£▒ Grep "#[0-9A-Fa-f]{6}" in app/tools ┬╖ 93 matches
+
+# Todos
+[ΓÇó] Swap hex colour classes in ai-readiness-check/page.tsx
+[ ] Swap hex colour classes in downtime-cost-calculator/page.tsx
+[ ] Swap hex colour classes in ops-health-score/page.tsx
+[ ] Swap hex colour classes in should-i-replace-erp/page.tsx
+[ ] Verify (grep, tsc, git diff) and commit
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+@@ -62,9 +62,9 @@
+ <div className="max-w-3xl mx-auto px-6 lg:px-8">
+   {!showResults ? (
+     <div>
+       <div className="mb-8">
+-        <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
++        <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+           <span>Question {currentQ + 1} of {questions.length}</span>
+           <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+         </div>
+         <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+@@ -73,12 +73,12 @@
+       </div>
+ 
+       <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+         <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+-        <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
++        <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+         <div className="flex gap-4">
+-          <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+-          <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
++          <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
++          <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+         </div>
+       </div>
+     </div>
+   ) : (
+@@ -87,11 +87,11 @@
+         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+           <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+         </div>
+         <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+-        <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++        <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-          <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++          <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+             {result.action} <ArrowRight size={18} />
+           </Link>
+           <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+             <RotateCcw size={16} /> Try again
+@@ -99,14 +99,14 @@
+         </div>
+       </div>
+ 
+       <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-        <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
++        <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+         <div className="mt-4 space-y-2">
+           {questions.map((q, i) => (
+             <div key={q.id} className="flex items-start gap-3 text-sm">
+               <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+-              <span className="text-[#023047]/70">{q.text}</span>
++              <span className="text-prussian-blue/70">{q.text}</span>
+             </div>
+           ))}
+         </div>
+       </details>
+
+
+ΓåÉ Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+@@ -76,9 +76,9 @@
+ 
+ {/* Why this is hard to answer */}
+ <section className="py-12 lg:py-16 bg-white">
+   <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+       Most calculators ask you for a number nobody has
+     </h2>
+     <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+       <p>
+@@ -108,9 +108,9 @@
+ 
+ {/* What the number means */}
+ <section className="py-12 lg:py-20 bg-white">
+   <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+       What to do with the recovery rate
+     </h2>
+     <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+       <p>
+@@ -140,9 +140,9 @@
+ 
+ {/* Sector framing */}
+ <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
+   <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++    <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+       Why downtime costs more in decoration than most places
+     </h2>
+     <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+       <p>
+@@ -179,9 +179,9 @@
+     </p>
+     <div className="flex flex-wrap gap-4">
+       <Link
+         href="/contact"
+-        className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-[#FFB703] text-[#023047] font-[family-name:var(--font-dm-sans)]"
++        className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-[#FFB703] text-prussian-blue font-[family-name:var(--font-dm-sans)]"
+       >
+         Book a free 60 minute call
+       </Link>
+       <Link
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+@@ -69,12 +69,12 @@
+ {dimensions.map(d => (
+   <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+     <div className="flex items-start justify-between mb-4">
+       <div>
+-        <h2 className="text-lg font-bold text-[#023047] font-[family-name:var(--font-outfit)]">{d.label}</h2>
++        <h2 className="text-lg font-bold text-prussian-blue font-[family-name:var(--font-outfit)]">{d.label}</h2>
+         <div className="relative group">
+-          <p className="text-xs text-[#023047]/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+-          <div className="absolute left-0 top-full mt-2 w-72 bg-[#023047] text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
++          <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
++          <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+             <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
+             <p><strong className="text-[#FFB703]">Mid (3):</strong> {d.mid}</p>
+             <p><strong className="text-[#219EBC]">High (4-5):</strong> {d.high}</p>
+           </div>
+@@ -82,9 +82,9 @@
+       </div>
+       <div className="flex gap-1.5">
+         {[1, 2, 3, 4, 5].map(n => (
+           <button key={n} onClick={() => setScore(d.id, n)}
+-            className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-[#023047]/40 bg-[#023047]/5 hover:bg-[#023047]/10'}`}
++            className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-prussian-blue/40 bg-prussian-blue/5 hover:bg-prussian-blue/10'}`}
+             style={{ backgroundColor: scores[d.id] === n ? getScoreColor(n) : undefined }}
+             aria-label={`Score ${n} for ${d.label}`}
+           >{n}</button>
+         ))}
+@@ -93,9 +93,9 @@
+   </div>
+ ))}
+ 
+ <button onClick={() => allAnswered && setShowResults(true)}
+-  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
++  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-[#FFB703] text-prussian-blue hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+   disabled={!allAnswered}
+ >
+   {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+ </button>
+@@ -106,11 +106,11 @@
+   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+     <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+   </div>
+   <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+-  <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++  <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+   <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+       Book a Clarity Audit <ArrowRight size={18} />
+     </Link>
+     <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+       <RotateCcw size={16} /> Try again
+@@ -119,16 +119,16 @@
+ </div>
+ 
+ {/* Dimension breakdown */}
+ <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-  <h3 className="text-sm font-bold text-[#023047] mb-4">Dimension Scores</h3>
++  <h3 className="text-sm font-bold text-prussian-blue mb-4">Dimension Scores</h3>
+   <div className="space-y-3">
+     {dimensions.map(d => {
+       const s = scores[d.id] || 0;
+       return (
+         <div key={d.id}>
+           <div className="flex justify-between text-sm mb-1">
+-            <span className="text-[#023047]/80">{d.label}</span>
++            <span className="text-prussian-blue/80">{d.label}</span>
+             <span className="font-semibold" style={{ color: getScoreColor(s) }}>{s}/5</span>
+           </div>
+           <div className="h-2 rounded-full bg-[#8ECAE6]/20 overflow-hidden">
+             <div className="h-full rounded-full transition-all" style={{ width: `${(s / 5) * 100}%`, backgroundColor: getScoreColor(s) }} />
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+@@ -65,9 +65,9 @@
+ {!showResults ? (
+   <div>
+     {/* Progress */}
+     <div className="mb-8">
+-      <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
++      <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+         <span>Question {currentQ + 1} of {questions.length}</span>
+         <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+       </div>
+       <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+@@ -77,12 +77,12 @@
+ 
+     {/* Question card */}
+     <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+       <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+-      <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
++      <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+       <div className="flex gap-4">
+-        <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+-        <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
++        <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
++        <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+       </div>
+     </div>
+   </div>
+ ) : (
+@@ -92,11 +92,11 @@
+       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+         <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+       </div>
+       <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+-      <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++      <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+       <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-        <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++        <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+           {result.action} <ArrowRight size={18} />
+         </Link>
+         <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
+           <RotateCcw size={16} /> Try again
+@@ -105,14 +105,14 @@
+     </div>
+ 
+     {/* Answer summary */}
+     <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-      <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
++      <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+       <div className="mt-4 space-y-2">
+         {questions.map((q, i) => (
+           <div key={q.id} className="flex items-start gap-3 text-sm">
+             <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+-            <span className="text-[#023047]/70">{q.text}</span>
++            <span className="text-prussian-blue/70">{q.text}</span>
+           </div>
+         ))}
+       </div>
+     </details>
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+@@ -51,9 +51,9 @@
+ return (
+   <main>
+     <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+       <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-        <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++        <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+         <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">AI Readiness Check</h1>
+         <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your operational foundation first.</p>
+       </div>
+     </section>
+@@ -67,14 +67,14 @@
+                 <span>Question {currentQ + 1} of {questions.length}</span>
+                 <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+               </div>
+               <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+-                <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
++                <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+               </div>
+             </div>
+ 
+             <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+-              <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
++              <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+               <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+               <div className="flex gap-4">
+                 <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+                 <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+@@ -92,9 +92,9 @@
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+                   {result.action} <ArrowRight size={18} />
+                 </Link>
+-                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                   <RotateCcw size={16} /> Try again
+                 </button>
+               </div>
+             </div>
+@@ -103,9 +103,9 @@
+               <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+               <div className="mt-4 space-y-2">
+                 {questions.map((q, i) => (
+                   <div key={q.id} className="flex items-start gap-3 text-sm">
+-                    <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++                    <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+                     <span className="text-prussian-blue/70">{q.text}</span>
+                   </div>
+                 ))}
+               </div>
+
+
+ΓåÉ Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+@@ -60,9 +60,9 @@
+ 
+ {/* Hero */}
+ <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+   <div className="max-w-5xl mx-auto px-6 lg:px-8">
+-    <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">
++    <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+       Free Tool
+     </p>
+     <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+       What does an hour of downtime actually cost you?
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+@@ -55,9 +55,9 @@
+ return (
+   <main>
+     <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+       <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-        <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++        <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+         <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Ops Health Score</h1>
+         <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Rate your business across five operational dimensions to get a clear picture of where you stand ΓÇö and where to focus first.</p>
+       </div>
+     </section>
+@@ -75,9 +75,9 @@
+                       <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+                       <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+                         <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
+                         <p><strong className="text-[#FFB703]">Mid (3):</strong> {d.mid}</p>
+-                        <p><strong className="text-[#219EBC]">High (4-5):</strong> {d.high}</p>
++                        <p><strong className="text-cerulean">High (4-5):</strong> {d.high}</p>
+                       </div>
+                     </div>
+                   </div>
+                   <div className="flex gap-1.5">
+@@ -111,9 +111,9 @@
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+                   Book a Clarity Audit <ArrowRight size={18} />
+                 </Link>
+-                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                   <RotateCcw size={16} /> Try again
+                 </button>
+               </div>
+             </div>
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+@@ -53,9 +53,9 @@
+ return (
+   <main>
+     <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+       <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-        <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++        <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+         <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Should I Replace My ERP?</h1>
+         <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+       </div>
+     </section>
+@@ -70,15 +70,15 @@
+                 <span>Question {currentQ + 1} of {questions.length}</span>
+                 <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+               </div>
+               <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+-                <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
++                <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+               </div>
+             </div>
+ 
+             {/* Question card */}
+             <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+-              <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
++              <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+               <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+               <div className="flex gap-4">
+                 <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+                 <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+@@ -97,9 +97,9 @@
+               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+                   {result.action} <ArrowRight size={18} />
+                 </Link>
+-                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                   <RotateCcw size={16} /> Try again
+                 </button>
+               </div>
+             </div>
+@@ -109,9 +109,9 @@
+               <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+               <div className="mt-4 space-y-2">
+                 {questions.map((q, i) => (
+                   <div key={q.id} className="flex items-start gap-3 text-sm">
+-                    <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++                    <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+                     <span className="text-prussian-blue/70">{q.text}</span>
+                   </div>
+                 ))}
+               </div>
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+@@ -66,14 +66,14 @@
+       <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+         <span>Question {currentQ + 1} of {questions.length}</span>
+         <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+       </div>
+-      <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
++      <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
+         <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+       </div>
+     </div>
+ 
+-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
++    <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+       <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+       <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+       <div className="flex gap-4">
+         <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+@@ -82,9 +82,9 @@
+     </div>
+   </div>
+ ) : (
+   <div>
+-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++    <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+         <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+       </div>
+       <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+@@ -98,9 +98,9 @@
+         </button>
+       </div>
+     </div>
+ 
+-    <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
++    <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+       <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+       <div className="mt-4 space-y-2">
+         {questions.map((q, i) => (
+           <div key={q.id} className="flex items-start gap-3 text-sm">
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+@@ -66,9 +66,9 @@
+ <div className="max-w-3xl mx-auto px-6 lg:px-8">
+   {!showResults ? (
+     <div className="space-y-6">
+       {dimensions.map(d => (
+-        <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
++        <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+           <div className="flex items-start justify-between mb-4">
+             <div>
+               <h2 className="text-lg font-bold text-prussian-blue font-[family-name:var(--font-outfit)]">{d.label}</h2>
+               <div className="relative group">
+@@ -101,9 +101,9 @@
+       </button>
+     </div>
+   ) : (
+     <div>
+-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++      <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+           <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+         </div>
+         <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+@@ -118,9 +118,9 @@
+         </div>
+       </div>
+ 
+       {/* Dimension breakdown */}
+-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
++      <div className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+         <h3 className="text-sm font-bold text-prussian-blue mb-4">Dimension Scores</h3>
+         <div className="space-y-3">
+           {dimensions.map(d => {
+             const s = scores[d.id] || 0;
+@@ -129,9 +129,9 @@
+                 <div className="flex justify-between text-sm mb-1">
+                   <span className="text-prussian-blue/80">{d.label}</span>
+                   <span className="font-semibold" style={{ color: getScoreColor(s) }}>{s}/5</span>
+                 </div>
+-                <div className="h-2 rounded-full bg-[#8ECAE6]/20 overflow-hidden">
++                <div className="h-2 rounded-full bg-sky-blue/20 overflow-hidden">
+                   <div className="h-full rounded-full transition-all" style={{ width: `${(s / 5) * 100}%`, backgroundColor: getScoreColor(s) }} />
+                 </div>
+               </div>
+             );
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+@@ -69,15 +69,15 @@
+       <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+         <span>Question {currentQ + 1} of {questions.length}</span>
+         <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+       </div>
+-      <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
++      <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
+         <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+       </div>
+     </div>
+ 
+     {/* Question card */}
+-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
++    <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+       <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+       <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+       <div className="flex gap-4">
+         <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+@@ -87,9 +87,9 @@
+   </div>
+ ) : (
+   <div>
+     {/* Results */}
+-    <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++    <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+         <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+       </div>
+       <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+@@ -104,9 +104,9 @@
+       </div>
+     </div>
+ 
+     {/* Answer summary */}
+-    <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
++    <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+       <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+       <div className="mt-4 space-y-2">
+         {questions.map((q, i) => (
+           <div key={q.id} className="flex items-start gap-3 text-sm">
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+@@ -89,9 +89,9 @@
+ </div>
+ <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+ <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+ <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+     {result.action} <ArrowRight size={18} />
+   </Link>
+   <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+     <RotateCcw size={16} /> Try again
+
+
+ΓåÉ Edit app/tools/downtime-cost-calculator/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\downtime-cost-calculator\page.tsx
+@@ -179,9 +179,9 @@
+ </p>
+ <div className="flex flex-wrap gap-4">
+   <Link
+     href="/contact"
+-    className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-[#FFB703] text-prussian-blue font-[family-name:var(--font-dm-sans)]"
++    className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-amber text-prussian-blue font-[family-name:var(--font-dm-sans)]"
+   >
+     Book a free 60 minute call
+   </Link>
+   <Link
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+@@ -74,9 +74,9 @@
+         <div className="relative group">
+           <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+           <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+             <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
+-            <p><strong className="text-[#FFB703]">Mid (3):</strong> {d.mid}</p>
++            <p><strong className="text-amber">Mid (3):</strong> {d.mid}</p>
+             <p><strong className="text-cerulean">High (4-5):</strong> {d.high}</p>
+           </div>
+         </div>
+       </div>
+@@ -93,9 +93,9 @@
+   </div>
+ ))}
+ 
+ <button onClick={() => allAnswered && setShowResults(true)}
+-  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-[#FFB703] text-prussian-blue hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
++  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-amber text-prussian-blue hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+   disabled={!allAnswered}
+ >
+   {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+ </button>
+@@ -108,9 +108,9 @@
+   </div>
+   <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+   <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+   <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+       Book a Clarity Audit <ArrowRight size={18} />
+     </Link>
+     <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+       <RotateCcw size={16} /> Try again
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+@@ -94,9 +94,9 @@
+ </div>
+ <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+ <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+ <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
+     {result.action} <ArrowRight size={18} />
+   </Link>
+   <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+     <RotateCcw size={16} /> Try again
+
+
+ΓåÉ Edit app/tools/ai-readiness-check/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ai-readiness-check\page.tsx
+@@ -89,9 +89,9 @@
+ </div>
+ <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+ <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+ <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+     {result.action} <ArrowRight size={18} />
+   </Link>
+   <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+     <RotateCcw size={16} /> Try again
+@@ -103,9 +103,9 @@
+ <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+ <div className="mt-4 space-y-2">
+   {questions.map((q, i) => (
+     <div key={q.id} className="flex items-start gap-3 text-sm">
+-      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+       <span className="text-prussian-blue/70">{q.text}</span>
+     </div>
+   ))}
+ </div>
+
+
+ΓåÉ Edit app/tools/ops-health-score/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\ops-health-score\page.tsx
+@@ -73,9 +73,9 @@
+         <h2 className="text-lg font-bold text-prussian-blue font-[family-name:var(--font-outfit)]">{d.label}</h2>
+         <div className="relative group">
+           <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+           <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+-            <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
++            <p><strong className="text-orange-brand">Low (1-2):</strong> {d.low}</p>
+             <p><strong className="text-amber">Mid (3):</strong> {d.mid}</p>
+             <p><strong className="text-cerulean">High (4-5):</strong> {d.high}</p>
+           </div>
+         </div>
+@@ -93,9 +93,9 @@
+   </div>
+ ))}
+ 
+ <button onClick={() => allAnswered && setShowResults(true)}
+-  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-amber text-prussian-blue hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
++  className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-amber text-prussian-blue hover:bg-orange-brand' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+   disabled={!allAnswered}
+ >
+   {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+ </button>
+@@ -108,9 +108,9 @@
+   </div>
+   <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+   <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+   <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++    <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+       Book a Clarity Audit <ArrowRight size={18} />
+     </Link>
+     <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+       <RotateCcw size={16} /> Try again
+
+
+ΓåÉ Edit app/tools/should-i-replace-erp/page.tsx
+Index: D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
++++ D:\apps\worktrees\decoded-ops-website\tools-ds-tokens\app\tools\should-i-replace-erp\page.tsx
+@@ -94,9 +94,9 @@
+ </div>
+ <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+ <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+ <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-[#FB8500] transition-colors">
++  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+     {result.action} <ArrowRight size={18} />
+   </Link>
+   <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+     <RotateCcw size={16} /> Try again
+@@ -109,9 +109,9 @@
+ <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+ <div className="mt-4 space-y-2">
+   {questions.map((q, i) => (
+     <div key={q.id} className="flex items-start gap-3 text-sm">
+-      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+       <span className="text-prussian-blue/70">{q.text}</span>
+     </div>
+   ))}
+ </div>
+
+
+Γ£▒ Grep "(bg|text|border|ring|from|to|via|fill|stroke|decoration)-\[#" in app/tools ┬╖ 5 matches
+
+$ git diff --stat
+app/tools/ai-readiness-check/page.tsx       | 34 +++++++++++++--------------
+ app/tools/downtime-cost-calculator/page.tsx | 10 ++++----
+ app/tools/ops-health-score/page.tsx         | 36 ++++++++++++++---------------
+ app/tools/should-i-replace-erp/page.tsx     | 34 +++++++++++++--------------
+ 4 files changed, 57 insertions(+), 57 deletions(-)
+
+$ Test-Path -LiteralPath "node_modules\.bin\tsc.cmd"; Test-Path -LiteralPath "node_modules"
+False
+False
+
+$ node --version; npx --version; (Get-Command tsc -ErrorAction SilentlyContinue) -ne $null
+v24.18.0
+11.16.0
+False
+
+$ npx --no-install tsc --noEmit 2>&1; echo "EXIT=$LASTEXITCODE"
+                                                                               
+                This is not the tsc command you are looking for                
+                                                                               
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+EXIT=1
+
+$ git diff
+diff --git a/app/tools/ai-readiness-check/page.tsx b/app/tools/ai-readiness-check/page.tsx
+index 889f9c4..76d152f 100644
+--- a/app/tools/ai-readiness-check/page.tsx
++++ b/app/tools/ai-readiness-check/page.tsx
+@@ -52,7 +52,7 @@ export default function AiReadinessCheckPage() {
+     <main>
+       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">AI Readiness Check</h1>
+           <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your operational foundation first.</p>
+         </div>
+@@ -63,49 +63,49 @@ export default function AiReadinessCheckPage() {
+           {!showResults ? (
+             <div>
+               <div className="mb-8">
+-                <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
++                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+                   <span>Question {currentQ + 1} of {questions.length}</span>
+                   <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+                 </div>
+-                <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+-                  <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
++                <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
++                  <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+                 </div>
+               </div>
+ 
+-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+-                <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+-                <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
++              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
++                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
++                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+                 <div className="flex gap-4">
+-                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+-                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
++                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
++                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+                 </div>
+               </div>
+             </div>
+           ) : (
+             <div>
+-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+                   <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+                 </div>
+                 <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+                     {result.action} <ArrowRight size={18} />
+                   </Link>
+-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                     <RotateCcw size={16} /> Try again
+                   </button>
+                 </div>
+               </div>
+ 
+-              <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-                <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
++              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
++                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+                 <div className="mt-4 space-y-2">
+                   {questions.map((q, i) => (
+                     <div key={q.id} className="flex items-start gap-3 text-sm">
+-                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+-                      <span className="text-[#023047]/70">{q.text}</span>
++                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++                      <span className="text-prussian-blue/70">{q.text}</span>
+                     </div>
+                   ))}
+                 </div>
+diff --git a/app/tools/downtime-cost-calculator/page.tsx b/app/tools/downtime-cost-calculator/page.tsx
+index 0259dc0..04e5eda 100644
+--- a/app/tools/downtime-cost-calculator/page.tsx
++++ b/app/tools/downtime-cost-calculator/page.tsx
+@@ -61,7 +61,7 @@ export default function DowntimeCostCalculatorPage() {
+       {/* Hero */}
+       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+         <div className="max-w-5xl mx-auto px-6 lg:px-8">
+-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">
++          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+             Free Tool
+           </p>
+           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+@@ -77,7 +77,7 @@ export default function DowntimeCostCalculatorPage() {
+       {/* Why this is hard to answer */}
+       <section className="py-12 lg:py-16 bg-white">
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+             Most calculators ask you for a number nobody has
+           </h2>
+           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+@@ -109,7 +109,7 @@ export default function DowntimeCostCalculatorPage() {
+       {/* What the number means */}
+       <section className="py-12 lg:py-20 bg-white">
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+             What to do with the recovery rate
+           </h2>
+           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+@@ -141,7 +141,7 @@ export default function DowntimeCostCalculatorPage() {
+       {/* Sector framing */}
+       <section className="py-12 lg:py-16" style={{ backgroundColor: '#F8F9FA' }}>
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-[#023047] mb-5">
++          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+             Why downtime costs more in decoration than most places
+           </h2>
+           <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+@@ -180,7 +180,7 @@ export default function DowntimeCostCalculatorPage() {
+           <div className="flex flex-wrap gap-4">
+             <Link
+               href="/contact"
+-              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-[#FFB703] text-[#023047] font-[family-name:var(--font-dm-sans)]"
++              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-amber text-prussian-blue font-[family-name:var(--font-dm-sans)]"
+             >
+               Book a free 60 minute call
+             </Link>
+diff --git a/app/tools/ops-health-score/page.tsx b/app/tools/ops-health-score/page.tsx
+index 6e8339a..a5d03e8 100644
+--- a/app/tools/ops-health-score/page.tsx
++++ b/app/tools/ops-health-score/page.tsx
+@@ -56,7 +56,7 @@ export default function OpsHealthScorePage() {
+     <main>
+       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Ops Health Score</h1>
+           <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Rate your business across five operational dimensions to get a clear picture of where you stand ΓÇö and where to focus first.</p>
+         </div>
+@@ -67,23 +67,23 @@ export default function OpsHealthScorePage() {
+           {!showResults ? (
+             <div className="space-y-6">
+               {dimensions.map(d => (
+-                <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
++                <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+                   <div className="flex items-start justify-between mb-4">
+                     <div>
+-                      <h2 className="text-lg font-bold text-[#023047] font-[family-name:var(--font-outfit)]">{d.label}</h2>
++                      <h2 className="text-lg font-bold text-prussian-blue font-[family-name:var(--font-outfit)]">{d.label}</h2>
+                       <div className="relative group">
+-                        <p className="text-xs text-[#023047]/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+-                        <div className="absolute left-0 top-full mt-2 w-72 bg-[#023047] text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+-                          <p><strong className="text-[#FB8500]">Low (1-2):</strong> {d.low}</p>
+-                          <p><strong className="text-[#FFB703]">Mid (3):</strong> {d.mid}</p>
+-                          <p><strong className="text-[#219EBC]">High (4-5):</strong> {d.high}</p>
++                        <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
++                        <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
++                          <p><strong className="text-orange-brand">Low (1-2):</strong> {d.low}</p>
++                          <p><strong className="text-amber">Mid (3):</strong> {d.mid}</p>
++                          <p><strong className="text-cerulean">High (4-5):</strong> {d.high}</p>
+                         </div>
+                       </div>
+                     </div>
+                     <div className="flex gap-1.5">
+                       {[1, 2, 3, 4, 5].map(n => (
+                         <button key={n} onClick={() => setScore(d.id, n)}
+-                          className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-[#023047]/40 bg-[#023047]/5 hover:bg-[#023047]/10'}`}
++                          className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-prussian-blue/40 bg-prussian-blue/5 hover:bg-prussian-blue/10'}`}
+                           style={{ backgroundColor: scores[d.id] === n ? getScoreColor(n) : undefined }}
+                           aria-label={`Score ${n} for ${d.label}`}
+                         >{n}</button>
+@@ -94,7 +94,7 @@ export default function OpsHealthScorePage() {
+               ))}
+ 
+               <button onClick={() => allAnswered && setShowResults(true)}
+-                className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-[#FFB703] text-[#023047] hover:bg-[#FB8500]' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
++                className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-amber text-prussian-blue hover:bg-orange-brand' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+                 disabled={!allAnswered}
+               >
+                 {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+@@ -102,35 +102,35 @@ export default function OpsHealthScorePage() {
+             </div>
+           ) : (
+             <div>
+-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+                   <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+                 </div>
+                 <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+                     Book a Clarity Audit <ArrowRight size={18} />
+                   </Link>
+-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                     <RotateCcw size={16} /> Try again
+                   </button>
+                 </div>
+               </div>
+ 
+               {/* Dimension breakdown */}
+-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-                <h3 className="text-sm font-bold text-[#023047] mb-4">Dimension Scores</h3>
++              <div className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
++                <h3 className="text-sm font-bold text-prussian-blue mb-4">Dimension Scores</h3>
+                 <div className="space-y-3">
+                   {dimensions.map(d => {
+                     const s = scores[d.id] || 0;
+                     return (
+                       <div key={d.id}>
+                         <div className="flex justify-between text-sm mb-1">
+-                          <span className="text-[#023047]/80">{d.label}</span>
++                          <span className="text-prussian-blue/80">{d.label}</span>
+                           <span className="font-semibold" style={{ color: getScoreColor(s) }}>{s}/5</span>
+                         </div>
+-                        <div className="h-2 rounded-full bg-[#8ECAE6]/20 overflow-hidden">
++                        <div className="h-2 rounded-full bg-sky-blue/20 overflow-hidden">
+                           <div className="h-full rounded-full transition-all" style={{ width: `${(s / 5) * 100}%`, backgroundColor: getScoreColor(s) }} />
+                         </div>
+                       </div>
+diff --git a/app/tools/should-i-replace-erp/page.tsx b/app/tools/should-i-replace-erp/page.tsx
+index 04947c1..5d3780c 100644
+--- a/app/tools/should-i-replace-erp/page.tsx
++++ b/app/tools/should-i-replace-erp/page.tsx
+@@ -54,7 +54,7 @@ export default function ShouldIReplaceErpPage() {
+     <main>
+       <section className="pt-24 pb-12 lg:pt-32 lg:pb-16" style={{ backgroundColor: '#023047' }}>
+         <div className="max-w-3xl mx-auto px-6 lg:px-8">
+-          <p className="font-[family-name:var(--font-dm-sans)] text-[#219EBC] text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
++          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+           <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Should I Replace My ERP?</h1>
+           <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+         </div>
+@@ -66,52 +66,52 @@ export default function ShouldIReplaceErpPage() {
+             <div>
+               {/* Progress */}
+               <div className="mb-8">
+-                <div className="flex justify-between text-sm text-[#023047]/60 mb-2">
++                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+                   <span>Question {currentQ + 1} of {questions.length}</span>
+                   <span>{Math.round((answeredCount / questions.length) * 100)}%</span>
+                 </div>
+-                <div className="h-2 rounded-full bg-[#8ECAE6]/30 overflow-hidden">
+-                  <div className="h-full rounded-full transition-all duration-300 bg-[#219EBC]" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
++                <div className="h-2 rounded-full bg-sky-blue/30 overflow-hidden">
++                  <div className="h-full rounded-full transition-all duration-300 bg-cerulean" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+                 </div>
+               </div>
+ 
+               {/* Question card */}
+-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20">
+-                <div className="text-xs font-semibold text-[#219EBC] uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+-                <h2 className="text-xl font-bold text-[#023047] mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
++              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
++                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
++                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+                 <div className="flex gap-4">
+-                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-[#023047] text-white font-semibold hover:bg-[#023047]/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+-                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-[#023047] text-[#023047] font-semibold hover:bg-[#023047]/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
++                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
++                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+                 </div>
+               </div>
+             </div>
+           ) : (
+             <div>
+               {/* Results */}
+-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#8ECAE6]/20 text-center mb-8">
++              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+                   <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+                 </div>
+                 <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+-                <p className="text-[#023047]/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
++                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFB703] text-[#023047] font-semibold hover:bg-[#FB8500] transition-colors">
++                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+                     {result.action} <ArrowRight size={18} />
+                   </Link>
+-                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-[#219EBC] text-[#219EBC] font-semibold hover:bg-[#219EBC]/10 transition-colors">
++                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+                     <RotateCcw size={16} /> Try again
+                   </button>
+                 </div>
+               </div>
+ 
+               {/* Answer summary */}
+-              <details className="bg-white rounded-2xl p-6 shadow-sm border border-[#8ECAE6]/20">
+-                <summary className="text-sm font-semibold text-[#023047] cursor-pointer">View your answers</summary>
++              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
++                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+                 <div className="mt-4 space-y-2">
+                   {questions.map((q, i) => (
+                     <div key={q.id} className="flex items-start gap-3 text-sm">
+-                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-[#FB8500]' : 'text-[#219EBC]'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+-                      <span className="text-[#023047]/70">{q.text}</span>
++                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
++                      <span className="text-prussian-blue/70">{q.text}</span>
+                     </div>
+                   ))}
+                 </div>
+
+Γ£▒ Grep "\[#[0-9A-Fa-f]" in app/tools ┬╖ 5 matches
+
+$ git add app/tools/ai-readiness-check/page.tsx app/tools/downtime-cost-calculator/page.tsx app/tools/ops-health-score/page.tsx app/tools/should-i-replace-erp/page.tsx && git status --short
+M  app/tools/ai-readiness-check/page.tsx
+M  app/tools/downtime-cost-calculator/page.tsx
+M  app/tools/ops-health-score/page.tsx
+M  app/tools/should-i-replace-erp/page.tsx
+?? .context/lane-prompt-tools-ds-tokens.md
+
+$ git commit -m "refactor(tools): swap hardcoded hex colour classes for DS tokens" 2>&1
+[task/tools-ds-tokens-2026-08-27 5a46727] refactor(tools): swap hardcoded hex colour classes for DS tokens
+ 4 files changed, 57 insertions(+), 57 deletions(-)
+
+# Todos
+[Γ£ô] Swap hex colour classes in ai-readiness-check/page.tsx
+[Γ£ô] Swap hex colour classes in downtime-cost-calculator/page.tsx
+[Γ£ô] Swap hex colour classes in ops-health-score/page.tsx
+[Γ£ô] Swap hex colour classes in should-i-replace-erp/page.tsx
+[Γ£ô] Verify (grep, tsc, git diff) and commit
+
+Done. Committed on `task/tools-ds-tokens-2026-08-27` (no push).
+
+**`git diff --stat` (pre-commit):**
+```
+ app/tools/ai-readiness-check/page.tsx       | 34 +++++++++++++--------------
+ app/tools/downtime-cost-calculator/page.tsx | 10 ++++----
+ app/tools/ops-health-score/page.tsx         | 36 ++++++++++++++---------------
+ app/tools/should-i-replace-erp/page.tsx     | 34 +++++++++++++--------------
+ 4 files changed, 57 insertions(+), 57 deletions(-)
+```
+
+**Step 1 grep** ΓÇö zero hits in the four files except the unmapped `#33475b` (3├ù in `downtime-cost-calculator`, left as-is). `automation-roi-calculator` and `rto-calculator` still contain `text-[#219EBC]`, but they are outside the four named files and were correctly untouched.
+
+**tsc exit code** ΓÇö could not run. This worktree has no `node_modules`/TypeScript (documented in CLAUDE.md); `npx tsc --noEmit` and a global `tsc` both fail. The edits are string-literal-only class-name swaps, so no type impact is possible.
+
+**Classes swapped per file:**
+- `ai-readiness-check/page.tsx` ΓÇö 17
+- `downtime-cost-calculator/page.tsx` ΓÇö 5
+- `ops-health-score/page.tsx` ΓÇö 18
+- `should-i-replace-erp/page.tsx` ΓÇö 17
+
+**Left in place (not in mapping table):** `text-[#33475b]` ΓÇö 3 occurrences in `app/tools/downtime-cost-calculator/page.tsx` (lines 83, 115, 147).
+
+Inline `style={{ backgroundColor: '#023047' }}` etc. and JS `color: '#FB8500'` values were intentionally not touched ΓÇö they are not Tailwind utility classes. All opacity modifiers (`/60`, `/30`, `/20`, `/80`, `/5`, `/10`, `/70`, `/40`, `/50`) carried across unchanged.

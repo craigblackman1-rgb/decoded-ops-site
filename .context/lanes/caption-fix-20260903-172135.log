@@ -1,0 +1,31 @@
+
+> build · mimo-v2.5
+
+✱ Grep "\.ds-table\s+caption" in . · 1 match
+→ Read app/design-system/marketing-pages-extra.css [offset=72, limit=8]
+
+← Edit app/design-system/marketing-pages-extra.css
+Index: D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+===================================================================
+--- D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
++++ D:\apps\worktrees\decoded-ops-website\pricing-tables\app\design-system\marketing-pages-extra.css
+@@ -70,9 +70,9 @@
+ .ds-table thead tr th:first-child{ border-top-left-radius:10px }
+ .ds-table thead tr th:last-child{ border-top-right-radius:10px }
+ .ds-table{ width:100%; border-collapse:collapse; min-width:720px; font-size:var(--do-text-sm) }
+ .ds-table--fixed{ table-layout:fixed }
+-.ds-table caption{ text-align:left; padding:12px 12px 14px; font-family:var(--do-font-heading);
++.ds-table caption{ text-align:left; padding:12px 22px 14px; font-family:var(--do-font-heading);
+   font-weight:var(--do-weight-bold); font-size:1.15rem; color:var(--do-text-primary) }
+ .ds-table th,.ds-table td{ padding:16px 22px; text-align:left; vertical-align:top }
+ .ds-table th:first-child{ min-width:180px }
+ .ds-table thead th{ background:var(--do-prussian-blue); color:var(--do-text-on-dark);
+
+
+→ Read app/design-system/marketing-pages-extra.css [limit=3, offset=73]
+
+$ git add app/design-system/marketing-pages-extra.css && git commit -m "fix: align caption horizontal padding with cell padding (BUG-WEB-011)"
+[fix/pricing-table-polish c557a00] fix: align caption horizontal padding with cell padding (BUG-WEB-011)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Done. `c557a00` — caption horizontal padding corrected from `12px` to `22px` to match cell padding, preserving top/bottom values.

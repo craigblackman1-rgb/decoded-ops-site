@@ -1,0 +1,377 @@
+
+> build ┬╖ mimo-v2.5
+
+# Todos
+[ΓÇó] Find all files under app/tools/ and grep for hex colour classes
+[ ] Replace each matching hex with the token utility
+[ ] Verify: tsc, leftover grep, git diff, git status, sanity check
+
+$ npx rg -n "(bg|text|border|ring|from|to|via|fill|stroke|decoration|divide|outline|shadow)-\[#[0-9A-Fa-f]{3,8}\]" app/tools/ 2>/dev/null || true
+README.md already exists. run with -f to overwrite
+
+Γ£▒ Grep "(bg|text|border|ring|from|to|via|fill|stroke|decoration|divide|outline|shadow)-\[#[0-9A-Fa-f]{3,8}\]" in app/tools ┬╖ 3 matches
+Let me also check for any hex values in other forms (opacity modifiers, different case):
+Γ£▒ Grep "#[0-9A-Fa-f]{3,8}" in app/tools ┬╖ 34 matches
+
+# Todos
+[Γ£ô] Find all files under app/tools/ and grep for hex colour classes
+[Γ£ô] Replace each matching hex with the token utility
+[ΓÇó] Verify: tsc, leftover grep, git diff, git status, sanity check
+
+$ ls node_modules/.package-lock.json 2>/dev/null && echo "node_modules exists" || echo "node_modules missing"
+node_modules missing
+
+Zero replacements needed ΓÇö let me run all verification steps to confirm.
+$ git diff --stat
+(no output)
+
+$ git status --short
+?? .context/lane-prompt.md
+
+$ npx rg -n "(bg|text|border|ring|from|to|via|fill|stroke|decoration|divide|outline|shadow)-\[#[0-9A-Fa-f]{3,8}\]" app/tools/ 2>&1
+README.md already exists. run with -f to overwrite
+
+$ npm install 2>&1 | tail -5
+npm warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
+npm warn allow-scripts   ssh2@1.17.0 (install: node install.js)
+npm warn allow-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+
+$ npx --yes rg "(bg|text|border|ring|from|to|via|fill|stroke|decoration|divide|outline|shadow)-\[#[0-9A-Fa-f]{3,8}\]" -n app/tools/ 2>&1
+README.md already exists. run with -f to overwrite
+
+$ grep -rn "(bg\|text\|border\|ring\|from\|to\|via\|fill\|stroke\|decoration\|divide\|outline\|shadow)-\[#[0-9A-Fa-f]\{3,8\}\]" app/tools/ 2>&1
+app/tools/ai-readiness-check/layout.tsx:1:import type { Metadata } from 'next';
+app/tools/ai-readiness-check/layout.tsx:5:  description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.',
+app/tools/ai-readiness-check/layout.tsx:6:  alternates: { canonical: '/tools/ai-readiness-check' },
+app/tools/ai-readiness-check/layout.tsx:9:    description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.',
+app/tools/ai-readiness-check/layout.tsx:10:    url: 'https://decodedops.co.uk/tools/ai-readiness-check',
+app/tools/ai-readiness-check/layout.tsx:16:    description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.',
+app/tools/ai-readiness-check/page.tsx:3:import { useState } from 'react';
+app/tools/ai-readiness-check/page.tsx:4:import Link from 'next/link';
+app/tools/ai-readiness-check/page.tsx:5:import { ArrowRight, RotateCcw } from 'lucide-react';
+app/tools/ai-readiness-check/page.tsx:8:  { id: 1, text: 'Are your core business processes documented and followed consistently?', weight: 2 },
+app/tools/ai-readiness-check/page.tsx:9:  { id: 2, text: 'Is your customer, order, and product data clean and consistent across systems?', weight: 2 },
+app/tools/ai-readiness-check/page.tsx:10:  { id: 3, text: 'Do your key systems (ERP, eCommerce, accounts) talk to each other without manual intervention?', weight: 2 },
+app/tools/ai-readiness-check/page.tsx:11:  { id: 4, text: 'Do you have a specific operational problem you believe AI could help solve?', weight: 2 },
+app/tools/ai-readiness-check/page.tsx:12:  { id: 5, text: 'Does your team have the capacity to learn and adopt new tools?', weight: 1 },
+app/tools/ai-readiness-check/page.tsx:13:  { id: 6, text: 'Have you successfully implemented new technology in the last 12 months?', weight: 1 },
+app/tools/ai-readiness-check/page.tsx:17:  { min: 0, max: 3, label: 'Not Ready ΓÇö Fix Your Foundations', color: '#FB8500', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Book a Clarity Audit' },
+app/tools/ai-readiness-check/page.tsx:18:  { min: 4, max: 6, label: 'Getting There ΓÇö Proceed Carefully', color: '#FFB703', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Discuss Your Readiness' },
+app/tools/ai-readiness-check/page.tsx:19:  { min: 7, max: 10, label: 'Ready ΓÇö Evaluate with Confidence', color: '#219EBC', description: 'Find out if your business is actually ready to benefit from AI. A free 5-minute assessment covering your data quality, process documentation, and systems integration.', action: 'Explore AI Opportunities' },
+app/tools/ai-readiness-check/page.tsx:26:  const [answers, setAnswers] = useState<Answer[]>(Array(questions.length).fill(null));
+app/tools/ai-readiness-check/page.tsx:45:    setAnswers(Array(questions.length).fill(null));
+app/tools/ai-readiness-check/page.tsx:54:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/ai-readiness-check/page.tsx:55:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+app/tools/ai-readiness-check/page.tsx:56:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">AI Readiness Check</h1>
+app/tools/ai-readiness-check/page.tsx:57:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your operational foundation first.</p>
+app/tools/ai-readiness-check/page.tsx:62:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/ai-readiness-check/page.tsx:66:                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+app/tools/ai-readiness-check/page.tsx:75:              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+app/tools/ai-readiness-check/page.tsx:76:                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+app/tools/ai-readiness-check/page.tsx:77:                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+app/tools/ai-readiness-check/page.tsx:79:                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+app/tools/ai-readiness-check/page.tsx:80:                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+app/tools/ai-readiness-check/page.tsx:86:              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+app/tools/ai-readiness-check/page.tsx:87:                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+app/tools/ai-readiness-check/page.tsx:88:                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+app/tools/ai-readiness-check/page.tsx:90:                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/10</div>
+app/tools/ai-readiness-check/page.tsx:91:                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+app/tools/ai-readiness-check/page.tsx:93:                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+app/tools/ai-readiness-check/page.tsx:96:                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+app/tools/ai-readiness-check/page.tsx:98:                  </button>
+app/tools/ai-readiness-check/page.tsx:102:              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+app/tools/ai-readiness-check/page.tsx:103:                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+app/tools/ai-readiness-check/page.tsx:106:                    <div key={q.id} className="flex items-start gap-3 text-sm">
+app/tools/ai-readiness-check/page.tsx:107:                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+app/tools/ai-readiness-check/page.tsx:108:                      <span className="text-prussian-blue/70">{q.text}</span>
+app/tools/automation-roi-calculator/page.tsx:1:import type { Metadata } from 'next';
+app/tools/automation-roi-calculator/page.tsx:2:import { AutomationRoiCalculator } from '@/components/calculators/AutomationRoiCalculator';
+app/tools/automation-roi-calculator/page.tsx:5:  '@context': 'https://schema.org',
+app/tools/automation-roi-calculator/page.tsx:7:  name: 'Automation ROI Calculator',
+app/tools/automation-roi-calculator/page.tsx:10:  description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+app/tools/automation-roi-calculator/page.tsx:12:  url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
+app/tools/automation-roi-calculator/page.tsx:16:  title: 'Automation ROI Calculator | Decoded Ops',
+app/tools/automation-roi-calculator/page.tsx:18:    'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+app/tools/automation-roi-calculator/page.tsx:19:  alternates: { canonical: '/tools/automation-roi-calculator' },
+app/tools/automation-roi-calculator/page.tsx:22:export default function AutomationRoiCalculatorPage() {
+app/tools/automation-roi-calculator/page.tsx:27:        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+app/tools/automation-roi-calculator/page.tsx:33:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/automation-roi-calculator/page.tsx:34:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+app/tools/automation-roi-calculator/page.tsx:37:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+app/tools/automation-roi-calculator/page.tsx:38:            Automation ROI Calculator
+app/tools/automation-roi-calculator/page.tsx:40:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+app/tools/automation-roi-calculator/page.tsx:41:            Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
+app/tools/automation-roi-calculator/page.tsx:47:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/automation-roi-calculator/page.tsx:48:          <AutomationRoiCalculator />
+app/tools/downtime-cost-calculator/page.tsx:1:import type { Metadata } from 'next';
+app/tools/downtime-cost-calculator/page.tsx:2:import Link from 'next/link';
+app/tools/downtime-cost-calculator/page.tsx:3:import { DowntimeCostCalculator } from '@/components/calculators/DowntimeCostCalculator';
+app/tools/downtime-cost-calculator/page.tsx:6:  '@context': 'https://schema.org',
+app/tools/downtime-cost-calculator/page.tsx:8:  name: 'Downtime Cost Calculator',
+app/tools/downtime-cost-calculator/page.tsx:14:  url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
+app/tools/downtime-cost-calculator/page.tsx:18:  '@context': 'https://schema.org',
+app/tools/downtime-cost-calculator/page.tsx:26:        text: 'It is what every productive hour has to earn towards the costs that do not change job by job, before materials and before profit. Annual overhead divided by the productive hours you actually have.',
+app/tools/downtime-cost-calculator/page.tsx:34:        text: 'Because the overhead keeps running. Rent, finance, salaries and subscriptions are all still being paid during an outage, but no hour of production is happening to recover them. The wages of idle staff are on top of that, not instead of it.',
+app/tools/downtime-cost-calculator/page.tsx:42:        text: 'Take the hours your machines are theoretically available and subtract setup, changeover, maintenance, reruns and hours with nothing booked in. Most decoration businesses land well below the 100% they assume when pricing.',
+app/tools/downtime-cost-calculator/page.tsx:49:  title: 'Downtime Cost Calculator | Decoded Ops',
+app/tools/downtime-cost-calculator/page.tsx:51:    'Work out your overhead recovery rate per productive hour, then what an hour and a full day of downtime actually cost you. Free tool for UK print, embroidery, workwear and decorated goods businesses.',
+app/tools/downtime-cost-calculator/page.tsx:52:  alternates: { canonical: '/tools/downtime-cost-calculator' },
+app/tools/downtime-cost-calculator/page.tsx:55:export default function DowntimeCostCalculatorPage() {
+app/tools/downtime-cost-calculator/page.tsx:58:      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+app/tools/downtime-cost-calculator/page.tsx:59:      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+app/tools/downtime-cost-calculator/page.tsx:63:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:64:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+app/tools/downtime-cost-calculator/page.tsx:67:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+app/tools/downtime-cost-calculator/page.tsx:70:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+app/tools/downtime-cost-calculator/page.tsx:71:            Work out what an hour of your operation costs to run, then what you lose every time it
+app/tools/downtime-cost-calculator/page.tsx:72:            stops. Two minutes, no signup, and the number is yours to keep.
+app/tools/downtime-cost-calculator/page.tsx:77:      {/* Why this is hard to answer */}
+app/tools/downtime-cost-calculator/page.tsx:79:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:80:          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+app/tools/downtime-cost-calculator/page.tsx:81:            Most calculators ask you for a number nobody has
+app/tools/downtime-cost-calculator/page.tsx:83:          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+app/tools/downtime-cost-calculator/page.tsx:90:              to have available at all, which is a number worth knowing on its own. Then it works
+app/tools/downtime-cost-calculator/page.tsx:94:              The part that surprises people is that the overhead does not stop when the machines
+app/tools/downtime-cost-calculator/page.tsx:96:              outage. You just have no production to recover them against.
+app/tools/downtime-cost-calculator/page.tsx:102:      {/* Calculator */}
+app/tools/downtime-cost-calculator/page.tsx:104:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:105:          <DowntimeCostCalculator />
+app/tools/downtime-cost-calculator/page.tsx:111:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:112:          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+app/tools/downtime-cost-calculator/page.tsx:113:            What to do with the recovery rate
+app/tools/downtime-cost-calculator/page.tsx:115:          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+app/tools/downtime-cost-calculator/page.tsx:118:              never calculated it. It tells you what each productive hour has to earn towards your
+app/tools/downtime-cost-calculator/page.tsx:122:              Take it into your quoting. If a job needs thirty minutes of machine time, it has to
+app/tools/downtime-cost-calculator/page.tsx:123:              clear half your hourly rate in contribution above its materials just to break even.
+app/tools/downtime-cost-calculator/page.tsx:127:              That is the answer to a question I get asked a lot: we are flat out, every job makes
+app/tools/downtime-cost-calculator/page.tsx:129:              incurred per hour. If you are recovering less per hour than the hour costs, more
+app/tools/downtime-cost-calculator/page.tsx:133:              Watch the utilisation slider too. Pricing off theoretical hours rather than real ones
+app/tools/downtime-cost-calculator/page.tsx:134:              is the most common way to arrive at a rate that looks fine and does not cover the
+app/tools/downtime-cost-calculator/page.tsx:141:      {/* Sector framing */}
+app/tools/downtime-cost-calculator/page.tsx:143:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:144:          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-prussian-blue mb-5">
+app/tools/downtime-cost-calculator/page.tsx:145:            Why downtime costs more in decoration than most places
+app/tools/downtime-cost-calculator/page.tsx:147:          <div className="font-[family-name:var(--font-dm-sans)] text-[#33475b] space-y-4 text-[17px] leading-relaxed">
+app/tools/downtime-cost-calculator/page.tsx:149:              The deadline does not move. A distributor can ship a day late and apologise. You
+app/tools/downtime-cost-calculator/page.tsx:151:              scrap rather than stock.
+app/tools/downtime-cost-calculator/page.tsx:156:              an order. If the artwork system is unreachable, production stops even though every
+app/tools/downtime-cost-calculator/page.tsx:157:              machine is working perfectly. If nobody can see what is in stock, picking stops.
+app/tools/downtime-cost-calculator/page.tsx:162:              around them stops.
+app/tools/downtime-cost-calculator/page.tsx:170:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/downtime-cost-calculator/page.tsx:171:          <h2 className="font-[family-name:var(--font-outfit)] text-2xl lg:text-3xl font-bold text-white mb-4">
+app/tools/downtime-cost-calculator/page.tsx:174:          <p className="font-[family-name:var(--font-dm-sans)] text-white/80 text-[17px] leading-relaxed mb-8">
+app/tools/downtime-cost-calculator/page.tsx:183:              className="inline-block px-7 py-3.5 rounded-lg font-semibold bg-amber text-prussian-blue font-[family-name:var(--font-dm-sans)]"
+app/tools/downtime-cost-calculator/page.tsx:189:              className="inline-block px-7 py-3.5 rounded-lg font-semibold border-2 border-white/30 text-white font-[family-name:var(--font-dm-sans)]"
+app/tools/ops-health-score/layout.tsx:1:import type { Metadata } from 'next';
+app/tools/ops-health-score/layout.tsx:6:  alternates: { canonical: '/tools/ops-health-score' },
+app/tools/ops-health-score/layout.tsx:9:    description: 'Rate your operations across five dimensions and see where to focus first.',
+app/tools/ops-health-score/layout.tsx:10:    url: 'https://decodedops.co.uk/tools/ops-health-score',
+app/tools/ops-health-score/layout.tsx:16:    description: 'Rate your operations across five dimensions and see where to focus first.',
+app/tools/ops-health-score/page.tsx:3:import { useState } from 'react';
+app/tools/ops-health-score/page.tsx:4:import Link from 'next/link';
+app/tools/ops-health-score/page.tsx:5:import { ArrowRight, RotateCcw, Info } from 'lucide-react';
+app/tools/ops-health-score/page.tsx:8:  id: string;
+app/tools/ops-health-score/page.tsx:9:  label: string;
+app/tools/ops-health-score/page.tsx:10:  low: string;
+app/tools/ops-health-score/page.tsx:11:  mid: string;
+app/tools/ops-health-score/page.tsx:12:  high: string;
+app/tools/ops-health-score/page.tsx:16:  { id: 'integration', label: 'Systems Integration', low: 'Systems don\'t talk to each other. Data is re-entered manually.', mid: 'Some systems connected. Gaps exist but are known.', high: 'Systems integrated. Data flows automatically between platforms.' },
+app/tools/ops-health-score/page.tsx:20:  { id: 'strategy', label: 'Technology Strategy', low: 'No roadmap. Systems bought reactively.', mid: 'Informal roadmap exists. Some planning in place.', high: 'Clear technology roadmap aligned to business goals.' },
+app/tools/ops-health-score/page.tsx:25:function getScoreColor(score: number): string {
+app/tools/ops-health-score/page.tsx:31:function getHealthLabel(total: number): { label: string; color: string; description: string } {
+app/tools/ops-health-score/page.tsx:32:  if (total <= 10) return { label: 'Critical ΓÇö Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
+app/tools/ops-health-score/page.tsx:33:  if (total <= 15) return { label: 'Fragile ΓÇö Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk ΓÇö fixing them now is cheaper than waiting.' };
+app/tools/ops-health-score/page.tsx:34:  if (total <= 20) return { label: 'Stable ΓÇö Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
+app/tools/ops-health-score/page.tsx:35:  return { label: 'Strong ΓÇö Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
+app/tools/ops-health-score/page.tsx:39:  const [scores, setScores] = useState<Record<string, number>>({});
+app/tools/ops-health-score/page.tsx:42:  const setScore = (id: string, score: number) => {
+app/tools/ops-health-score/page.tsx:47:  const total = Object.values(scores).reduce((sum, s) => sum + s, 0);
+app/tools/ops-health-score/page.tsx:48:  const result = getHealthLabel(total);
+app/tools/ops-health-score/page.tsx:58:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/ops-health-score/page.tsx:59:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+app/tools/ops-health-score/page.tsx:60:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Ops Health Score</h1>
+app/tools/ops-health-score/page.tsx:61:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Rate your business across five operational dimensions to get a clear picture of where you stand ΓÇö and where to focus first.</p>
+app/tools/ops-health-score/page.tsx:66:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/ops-health-score/page.tsx:70:                <div key={d.id} className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+app/tools/ops-health-score/page.tsx:73:                      <h2 className="text-lg font-bold text-prussian-blue font-[family-name:var(--font-outfit)]">{d.label}</h2>
+app/tools/ops-health-score/page.tsx:75:                        <p className="text-xs text-prussian-blue/50 mt-1 flex items-center gap-1 cursor-help">Hover for descriptions <Info size={12} /></p>
+app/tools/ops-health-score/page.tsx:76:                        <div className="absolute left-0 top-full mt-2 w-72 bg-prussian-blue text-white text-xs p-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg space-y-2">
+app/tools/ops-health-score/page.tsx:77:                          <p><strong className="text-orange-brand">Low (1-2):</strong> {d.low}</p>
+app/tools/ops-health-score/page.tsx:78:                          <p><strong className="text-amber">Mid (3):</strong> {d.mid}</p>
+app/tools/ops-health-score/page.tsx:79:                          <p><strong className="text-cerulean">High (4-5):</strong> {d.high}</p>
+app/tools/ops-health-score/page.tsx:85:                        <button key={n} onClick={() => setScore(d.id, n)}
+app/tools/ops-health-score/page.tsx:86:                          className={`w-9 h-9 rounded-lg text-xs font-bold transition-all ${scores[d.id] === n ? 'text-white scale-110' : 'text-prussian-blue/40 bg-prussian-blue/5 hover:bg-prussian-blue/10'}`}
+app/tools/ops-health-score/page.tsx:89:                        >{n}</button>
+app/tools/ops-health-score/page.tsx:96:              <button onClick={() => allAnswered && setShowResults(true)}
+app/tools/ops-health-score/page.tsx:97:                className={`w-full px-6 py-4 rounded-xl font-semibold transition-colors font-[family-name:var(--font-dm-sans)] ${allAnswered ? 'bg-amber text-prussian-blue hover:bg-orange-brand' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+app/tools/ops-health-score/page.tsx:100:                {allAnswered ? 'See Your Score' : `Rate all dimensions to continue (${dimensions.length - Object.keys(scores).length} remaining)`}
+app/tools/ops-health-score/page.tsx:101:              </button>
+app/tools/ops-health-score/page.tsx:105:              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+app/tools/ops-health-score/page.tsx:106:                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+app/tools/ops-health-score/page.tsx:107:                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+app/tools/ops-health-score/page.tsx:109:                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{total}/25</div>
+app/tools/ops-health-score/page.tsx:110:                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+app/tools/ops-health-score/page.tsx:112:                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+app/tools/ops-health-score/page.tsx:115:                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+app/tools/ops-health-score/page.tsx:117:                  </button>
+app/tools/ops-health-score/page.tsx:122:              <div className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+app/tools/ops-health-score/page.tsx:123:                <h3 className="text-sm font-bold text-prussian-blue mb-4">Dimension Scores</h3>
+app/tools/ops-health-score/page.tsx:129:                        <div className="flex justify-between text-sm mb-1">
+app/tools/ops-health-score/page.tsx:130:                          <span className="text-prussian-blue/80">{d.label}</span>
+app/tools/page.tsx:1:import type { Metadata } from 'next';
+app/tools/page.tsx:2:import Link from 'next/link';
+app/tools/page.tsx:3:import { JsonLd } from '@/components/JsonLd';
+app/tools/page.tsx:4:import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+app/tools/page.tsx:9:    'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+app/tools/page.tsx:10:  alternates: { canonical: '/tools' },
+app/tools/page.tsx:15:      'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+app/tools/page.tsx:16:    url: 'https://decodedops.co.uk/tools',
+app/tools/page.tsx:22:      'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+app/tools/page.tsx:26:const toolsSchema = {
+app/tools/page.tsx:27:  '@context': 'https://schema.org',
+app/tools/page.tsx:29:  '@id': 'https://decodedops.co.uk/tools#collection',
+app/tools/page.tsx:30:  url: 'https://decodedops.co.uk/tools',
+app/tools/page.tsx:32:  description: 'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+app/tools/page.tsx:36:const tools = [
+app/tools/page.tsx:40:      'Eight yes/no questions to help you decide whether your system is fixable or it\'s time to plan an exit.',
+app/tools/page.tsx:41:    href: '/tools/should-i-replace-erp',
+app/tools/page.tsx:46:      'Six quick questions to find out whether your business is ready to adopt AI ΓÇö or whether you need to fix your foundation first.',
+app/tools/page.tsx:47:    href: '/tools/ai-readiness-check',
+app/tools/page.tsx:52:      'Rate your business across five operational dimensions to see where you stand ΓÇö and where to focus first.',
+app/tools/page.tsx:53:    href: '/tools/ops-health-score',
+app/tools/page.tsx:56:    title: 'Downtime Cost Calculator',
+app/tools/page.tsx:59:    href: '/tools/downtime-cost-calculator',
+app/tools/page.tsx:62:    title: 'RTO Calculator',
+app/tools/page.tsx:64:      'Understand the financial value of faster recovery from system failures.',
+app/tools/page.tsx:65:    href: '/tools/rto-calculator',
+app/tools/page.tsx:68:    title: 'Automation ROI Calculator',
+app/tools/page.tsx:70:      'See when automating a manual process pays for itself ΓÇö and what it returns over 3 years.',
+app/tools/page.tsx:71:    href: '/tools/automation-roi-calculator',
+app/tools/page.tsx:80:        { name: 'Tools', url: 'https://decodedops.co.uk/tools' },
+app/tools/page.tsx:82:      <JsonLd data={toolsSchema} />
+app/tools/page.tsx:88:        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+app/tools/page.tsx:90:            className="font-[family-name:var(--font-outfit)] text-4xl lg:text-5xl font-bold text-white mb-6"
+app/tools/page.tsx:94:          <p className="font-[family-name:var(--font-dm-sans)] text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
+app/tools/page.tsx:95:            Free tools to quantify operational inefficiency ΓÇö so you know exactly what it&apos;s costing you.
+app/tools/page.tsx:102:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/page.tsx:104:            {tools.map((tool) => (
+app/tools/page.tsx:106:                key={tool.href}
+app/tools/page.tsx:107:                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col"
+app/tools/page.tsx:110:                  className="font-[family-name:var(--font-outfit)] font-semibold text-xl mb-3"
+app/tools/page.tsx:113:                  {tool.title}
+app/tools/page.tsx:115:                <p className="font-[family-name:var(--font-dm-sans)] text-gray-600 text-sm mb-6 flex-grow">
+app/tools/page.tsx:116:                  {tool.description}
+app/tools/page.tsx:119:                  href={tool.href}
+app/tools/page.tsx:120:                  className="font-[family-name:var(--font-dm-sans)] text-sm font-medium"
+app/tools/page.tsx:123:                  Use Calculator ΓåÆ
+app/tools/rto-calculator/page.tsx:1:import type { Metadata } from 'next';
+app/tools/rto-calculator/page.tsx:2:import { RtoCalculator } from '@/components/calculators/RtoCalculator';
+app/tools/rto-calculator/page.tsx:5:  '@context': 'https://schema.org',
+app/tools/rto-calculator/page.tsx:7:  name: 'RTO Calculator',
+app/tools/rto-calculator/page.tsx:12:  url: 'https://decodedops.co.uk/tools/rto-calculator',
+app/tools/rto-calculator/page.tsx:16:  title: 'RTO Calculator | Decoded Ops',
+app/tools/rto-calculator/page.tsx:18:    'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
+app/tools/rto-calculator/page.tsx:19:  alternates: { canonical: '/tools/rto-calculator' },
+app/tools/rto-calculator/page.tsx:22:export default function RtoCalculatorPage() {
+app/tools/rto-calculator/page.tsx:27:        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+app/tools/rto-calculator/page.tsx:31:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/rto-calculator/page.tsx:32:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">
+app/tools/rto-calculator/page.tsx:35:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">
+app/tools/rto-calculator/page.tsx:36:            RTO Calculator
+app/tools/rto-calculator/page.tsx:38:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">
+app/tools/rto-calculator/page.tsx:44:      {/* Calculator */}
+app/tools/rto-calculator/page.tsx:46:        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+app/tools/rto-calculator/page.tsx:47:          <RtoCalculator />
+app/tools/should-i-replace-erp/layout.tsx:1:import type { Metadata } from 'next';
+app/tools/should-i-replace-erp/layout.tsx:6:  alternates: { canonical: '/tools/should-i-replace-erp' },
+app/tools/should-i-replace-erp/layout.tsx:10:    url: 'https://decodedops.co.uk/tools/should-i-replace-erp',
+app/tools/should-i-replace-erp/page.tsx:3:import { useState } from 'react';
+app/tools/should-i-replace-erp/page.tsx:4:import Link from 'next/link';
+app/tools/should-i-replace-erp/page.tsx:5:import { ArrowRight, RotateCcw } from 'lucide-react';
+app/tools/should-i-replace-erp/page.tsx:8:  { id: 1, text: 'Is your current system unable to handle your core business processes without significant workarounds?', weight: 2 },
+app/tools/should-i-replace-erp/page.tsx:9:  { id: 2, text: 'Have you had to build extensive customisations or manual processes to make the system work?', weight: 2 },
+app/tools/should-i-replace-erp/page.tsx:10:  { id: 3, text: 'Does your team actively avoid using the system, preferring spreadsheets instead?', weight: 2 },
+app/tools/should-i-replace-erp/page.tsx:11:  { id: 4, text: 'Is the cost of maintaining the current system increasing year on year?', weight: 1 },
+app/tools/should-i-replace-erp/page.tsx:12:  { id: 5, text: 'Is your vendor no longer investing in the platform or roadmap?', weight: 2 },
+app/tools/should-i-replace-erp/page.tsx:13:  { id: 6, text: 'Are you missing out on capabilities your competitors have (eCommerce, mobile, integrations)?', weight: 1 },
+app/tools/should-i-replace-erp/page.tsx:14:  { id: 7, text: 'Has the implementation stalled, failed, or been abandoned?', weight: 2 },
+app/tools/should-i-replace-erp/page.tsx:15:  { id: 8, text: 'Has your business model changed significantly since you bought the system?', weight: 1 },
+app/tools/should-i-replace-erp/page.tsx:28:  const [answers, setAnswers] = useState<Answer[]>(Array(questions.length).fill(null));
+app/tools/should-i-replace-erp/page.tsx:47:    setAnswers(Array(questions.length).fill(null));
+app/tools/should-i-replace-erp/page.tsx:56:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/should-i-replace-erp/page.tsx:57:          <p className="font-[family-name:var(--font-dm-sans)] text-cerulean text-sm font-medium mb-3 uppercase tracking-wide">Free Tool</p>
+app/tools/should-i-replace-erp/page.tsx:58:          <h1 className="font-[family-name:var(--font-outfit)] text-3xl lg:text-5xl font-bold text-white mb-4">Should I Replace My ERP?</h1>
+app/tools/should-i-replace-erp/page.tsx:59:          <p className="font-[family-name:var(--font-dm-sans)] text-lg text-white/80 max-w-2xl">Eight yes/no questions to help you decide whether your current system is fixable or it is time to plan an exit.</p>
+app/tools/should-i-replace-erp/page.tsx:64:        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+app/tools/should-i-replace-erp/page.tsx:69:                <div className="flex justify-between text-sm text-prussian-blue/60 mb-2">
+app/tools/should-i-replace-erp/page.tsx:79:              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20">
+app/tools/should-i-replace-erp/page.tsx:80:                <div className="text-xs font-semibold text-cerulean uppercase tracking-wider mb-4">Question {currentQ + 1}</div>
+app/tools/should-i-replace-erp/page.tsx:81:                <h2 className="text-xl font-bold text-prussian-blue mb-8 font-[family-name:var(--font-outfit)]">{questions[currentQ].text}</h2>
+app/tools/should-i-replace-erp/page.tsx:83:                  <button onClick={() => handleAnswer('yes')} className="flex-1 px-6 py-4 rounded-xl bg-prussian-blue text-white font-semibold hover:bg-prussian-blue/80 transition-colors font-[family-name:var(--font-dm-sans)]">Yes</button>
+app/tools/should-i-replace-erp/page.tsx:84:                  <button onClick={() => handleAnswer('no')} className="flex-1 px-6 py-4 rounded-xl border-2 border-prussian-blue text-prussian-blue font-semibold hover:bg-prussian-blue/5 transition-colors font-[family-name:var(--font-dm-sans)]">No</button>
+app/tools/should-i-replace-erp/page.tsx:91:              <div className="bg-white rounded-2xl p-8 shadow-sm border border-sky-blue/20 text-center mb-8">
+app/tools/should-i-replace-erp/page.tsx:92:                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: `${result.color}20`, borderColor: `${result.color}40`, borderWidth: 1 }}>
+app/tools/should-i-replace-erp/page.tsx:93:                  <span className="text-xs font-semibold uppercase" style={{ color: result.color }}>{result.label}</span>
+app/tools/should-i-replace-erp/page.tsx:95:                <div className="text-5xl font-bold mb-4 font-[family-name:var(--font-outfit)]" style={{ color: result.color }}>{score}/{questions.reduce((s, q) => s + q.weight, 0)}</div>
+app/tools/should-i-replace-erp/page.tsx:96:                <p className="text-prussian-blue/70 leading-relaxed mb-8 max-w-xl mx-auto">{result.description}</p>
+app/tools/should-i-replace-erp/page.tsx:98:                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber text-prussian-blue font-semibold hover:bg-orange-brand transition-colors">
+app/tools/should-i-replace-erp/page.tsx:101:                  <button onClick={reset} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border-2 border-cerulean text-cerulean font-semibold hover:bg-cerulean/10 transition-colors">
+app/tools/should-i-replace-erp/page.tsx:103:                  </button>
+app/tools/should-i-replace-erp/page.tsx:108:              <details className="bg-white rounded-2xl p-6 shadow-sm border border-sky-blue/20">
+app/tools/should-i-replace-erp/page.tsx:109:                <summary className="text-sm font-semibold text-prussian-blue cursor-pointer">View your answers</summary>
+app/tools/should-i-replace-erp/page.tsx:112:                    <div key={q.id} className="flex items-start gap-3 text-sm">
+app/tools/should-i-replace-erp/page.tsx:113:                      <span className={`mt-0.5 font-bold ${answers[i] === 'yes' ? 'text-orange-brand' : 'text-cerulean'}`}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
+app/tools/should-i-replace-erp/page.tsx:114:                      <span className="text-prussian-blue/70">{q.text}</span>
+
+$ npx tsc --noEmit 2>&1 | tail -5
+(no output)
+
+# Todos
+[Γ£ô] Find all files under app/tools/ and grep for hex colour classes
+[Γ£ô] Replace each matching hex with the token utility
+[Γ£ô] Verify: tsc, leftover grep, git diff, git status, sanity check
+
+## Report ΓÇö Lane: tools-hex-tokens
+
+### Result: **Zero replacements made**
+
+The three Tailwind `className` hex values found in `app/tools/` are all `#33475b`, which is **not** one of the six token-mapped hexes. Every other hex in the tools directory is either an inline `style={{}}` attribute or a JavaScript data value ΓÇö both explicitly out of scope.
+
+### Files changed: **none**
+
+| File | Replacements |
+|---|---|
+| *(none)* | 0 |
+
+### Hexes deliberately left behind (not in the token table)
+
+| File:line | Hex | Context |
+|---|---|---|
+| `app/tools/downtime-cost-calculator/page.tsx:83` | `#33475b` | `text-[#33475b]` ΓÇö Tailwind class, not in table |
+| `app/tools/downtime-cost-calculator/page.tsx:115` | `#33475b` | `text-[#33475b]` ΓÇö Tailwind class, not in table |
+| `app/tools/downtime-cost-calculator/page.tsx:147` | `#33475b` | `text-[#33475b]` ΓÇö Tailwind class, not in table |
+
+### Inline styles left alone (per scope rules)
+
+All `style={{ backgroundColor: '#023047' }}`, `style={{ backgroundColor: '#F8F9FA' }}`, `style={{ color: '#023047' }}`, `style={{ color: '#219EBC' }}` etc. across 6 files ΓÇö these are inline JS, not Tailwind classes.
+
+### JS data values left alone
+
+`color: '#FB8500'`, `color: '#FFB703'`, `color: '#219EBC'`, `color: '#023047'` in result objects and return statements ΓÇö JS strings, not Tailwind classes.
+
+### VERIFY output
+
+**1. `npx tsc --noEmit`** ΓÇö passed, no output (clean).
+
+**2. Leftover grep** ΓÇö only `#33475b` matches (all not in table, correctly left):
+- `app/tools/downtime-cost-calculator/page.tsx:83` ΓÇö `text-[#33475b]`
+- `app/tools/downtime-cost-calculator/page.tsx:115` ΓÇö `text-[#33475b]`
+- `app/tools/downtime-cost-calculator/page.tsx:147` ΓÇö `text-[#33475b]`
+
+**3. `git diff --stat`** ΓÇö no changes (empty).
+
+**4. `git status --short`** ΓÇö only `.context/lane-prompt.md` (untracked, pre-existing).
+
+**5. Sanity check** ΓÇö N/A, zero replacements to verify.
