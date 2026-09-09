@@ -7,18 +7,18 @@ import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
- title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix : Decoded Ops',
+ title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
  alternates: { canonical: '/problems/ecommerce-not-connected' },
  openGraph: {
-  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix : Decoded Ops',
+  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
   description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
   url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix : Decoded Ops',
+  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
   description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
  },
 };

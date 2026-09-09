@@ -17,18 +17,18 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'ERP Selection Guide for Decorated Goods : Decoded Ops',
+  title: 'ERP Selection Guide for Decorated Goods: Decoded Ops',
   description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
   alternates: { canonical: '/resources/erp-selection-playbook' },
   openGraph: {
     type: 'website',
-    title: 'ERP Selection Guide for Decorated Goods : Decoded Ops',
+    title: 'ERP Selection Guide for Decorated Goods: Decoded Ops',
     description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
     url: 'https://decodedops.co.uk/resources/erp-selection-playbook',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERP Selection Guide for Decorated Goods : Decoded Ops',
+    title: 'ERP Selection Guide for Decorated Goods: Decoded Ops',
     description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
   },
 };

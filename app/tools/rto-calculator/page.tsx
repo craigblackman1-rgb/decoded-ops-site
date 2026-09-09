@@ -13,7 +13,7 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'RTO Calculator : Decoded Ops',
+  title: 'RTO Calculator: Decoded Ops',
   description:
     'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
   alternates: { canonical: '/tools/rto-calculator' },

@@ -6,18 +6,18 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
-  title: 'Client Work : Decoded Ops',
+  title: 'Client Work: Decoded Ops',
   description: 'Live engagements. What I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
   alternates: { canonical: '/case-studies' },
   openGraph: {
     type: 'website',
-    title: 'Client Work : Decoded Ops',
+    title: 'Client Work: Decoded Ops',
     description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
     url: 'https://decodedops.co.uk/case-studies',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Client Work : Decoded Ops',
+    title: 'Client Work: Decoded Ops',
     description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
   },
 };

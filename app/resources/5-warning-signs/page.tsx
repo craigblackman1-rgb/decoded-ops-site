@@ -6,19 +6,19 @@ import { Plate } from '@/components/Plate';
 
 // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
 export const metadata = {
-  title: '5 Warning Signs Your Systems Are Holding You Back : Decoded Ops',
+  title: '5 Warning Signs Your Systems Are Holding You Back: Decoded Ops',
   description: 'Five signs your current technology and processes are costing you more than a replacement would, from 25+ years running operations in this sector, not vendor theory.',
   alternates: { canonical: '/resources/5-warning-signs' },
   openGraph: {
     type: 'website',
-    title: '5 Warning Signs Your Systems Are Holding You Back : Decoded Ops',
+    title: '5 Warning Signs Your Systems Are Holding You Back: Decoded Ops',
     description: 'Five signs your current technology and processes are costing you more than a replacement would.',
     url: 'https://decodedops.co.uk/resources/5-warning-signs',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5 Warning Signs Your Systems Are Holding You Back : Decoded Ops',
+    title: '5 Warning Signs Your Systems Are Holding You Back: Decoded Ops',
     description: 'Five signs your current technology and processes are costing you more than a replacement would.',
   },
 };

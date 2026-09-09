@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy : Decoded Ops',
+  title: 'Cookie Policy: Decoded Ops',
   description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
   alternates: { canonical: '/cookies' },
   openGraph: {
     type: 'website',
-    title: 'Cookie Policy : Decoded Ops',
+    title: 'Cookie Policy: Decoded Ops',
     description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
     url: 'https://decodedops.co.uk/cookies',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cookie Policy : Decoded Ops',
+    title: 'Cookie Policy: Decoded Ops',
     description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
   },
 };

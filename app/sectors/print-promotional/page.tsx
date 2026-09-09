@@ -9,18 +9,18 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Print & Promotional Merchandise Operations : Decoded Ops',
+  title: 'Print & Promotional Merchandise Operations: Decoded Ops',
   description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
   alternates: { canonical: '/sectors/print-promotional' },
   openGraph: {
-    title: 'Print & Promotional Merchandise Operations : Decoded Ops',
+    title: 'Print & Promotional Merchandise Operations: Decoded Ops',
     description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
     url: 'https://decodedops.co.uk/sectors/print-promotional',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Print & Promotional Merchandise Operations : Decoded Ops',
+    title: 'Print & Promotional Merchandise Operations: Decoded Ops',
     description: 'Operations and technology consultancy for print and promotional merchandise businesses. Production scheduling, order management, artwork approval workflow, and eCommerce integration.',
   },
 };
@@ -32,7 +32,7 @@ const sectorSchema = {
       '@type': 'WebPage',
       '@id': 'https://decodedops.co.uk/sectors/print-promotional#webpage',
       url: 'https://decodedops.co.uk/sectors/print-promotional',
-      name: 'Print Shop Operations Management & Systems Consultant : Decoded Ops',
+      name: 'Print Shop Operations Management & Systems Consultant: Decoded Ops',
       description: 'Production scheduling that accounts for method and substrate, artwork approval that doesn\'t live in email, and order management that connects to your shop.',
       isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
     },

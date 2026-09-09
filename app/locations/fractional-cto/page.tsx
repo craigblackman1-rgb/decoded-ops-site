@@ -7,18 +7,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Hire a Fractional CTO : Decoded Ops, Print & Decoration Specialists',
+  title: 'Hire a Fractional CTO: Decoded Ops, Print & Decoration Specialists',
   description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
   alternates: { canonical: '/locations/fractional-cto' },
   openGraph: {
-    title: 'Hire a Fractional CTO : Decoded Ops, Print & Decoration Specialists',
+    title: 'Hire a Fractional CTO: Decoded Ops, Print & Decoration Specialists',
     description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
     url: 'https://decodedops.co.uk/locations/fractional-cto',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hire a Fractional CTO : Decoded Ops, Print & Decoration Specialists',
+    title: 'Hire a Fractional CTO: Decoded Ops, Print & Decoration Specialists',
     description: 'Hire a fractional CTO with 25+ years in print, embroidery, and decoration operations. Independent technology leadership, not a vendor. Available UK-wide.',
   },
 };

@@ -16,19 +16,19 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Seasonal Capacity Calculator : Decoded Ops',
+  title: 'Seasonal Capacity Calculator: Decoded Ops',
   description:
     'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
   alternates: { canonical: '/resources/seasonal-capacity' },
   openGraph: {
     type: 'website',
-    title: 'Seasonal Capacity Calculator : Decoded Ops',
+    title: 'Seasonal Capacity Calculator: Decoded Ops',
     description: 'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
     url: 'https://decodedops.co.uk/resources/seasonal-capacity',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Seasonal Capacity Calculator : Decoded Ops',
+    title: 'Seasonal Capacity Calculator: Decoded Ops',
     description: 'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
   },
 };

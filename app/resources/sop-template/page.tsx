@@ -17,18 +17,18 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Free SOP Template for Decorated Goods : Decoded Ops',
+  title: 'Free SOP Template for Decorated Goods: Decoded Ops',
   description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
   alternates: { canonical: '/resources/sop-template' },
   openGraph: {
     type: 'website',
-    title: 'Free SOP Template for Decorated Goods : Decoded Ops',
+    title: 'Free SOP Template for Decorated Goods: Decoded Ops',
     description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
     url: 'https://decodedops.co.uk/resources/sop-template',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free SOP Template for Decorated Goods : Decoded Ops',
+    title: 'Free SOP Template for Decorated Goods: Decoded Ops',
     description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
   },
 };

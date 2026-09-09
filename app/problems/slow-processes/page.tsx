@@ -7,18 +7,18 @@ import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
- title: 'Slow Processes Costing You Time and Money : Decoded Ops',
+ title: 'Slow Processes Costing You Time and Money: Decoded Ops',
  description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.",
  alternates: { canonical: '/problems/slow-processes' },
  openGraph: {
-  title: 'Slow Processes Costing You Time and Money : Decoded Ops',
+  title: 'Slow Processes Costing You Time and Money: Decoded Ops',
   description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.",
   url: 'https://decodedops.co.uk/problems/slow-processes',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Slow Processes Costing You Time and Money : Decoded Ops',
+  title: 'Slow Processes Costing You Time and Money: Decoded Ops',
   description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix.",
  },
 };
@@ -30,7 +30,7 @@ const slowProcessesSchema = {
    '@type': 'WebPage',
    '@id': 'https://decodedops.co.uk/problems/slow-processes',
    url: 'https://decodedops.co.uk/problems/slow-processes',
-   name: 'Slow Processes Costing You Time and Money : Decoded Ops',
+   name: 'Slow Processes Costing You Time and Money: Decoded Ops',
    description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.",
    isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
   },

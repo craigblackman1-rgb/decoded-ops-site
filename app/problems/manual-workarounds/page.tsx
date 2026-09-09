@@ -7,18 +7,18 @@ import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
 export const metadata: Metadata = {
- title: 'Manual Workarounds Are Costing You More Than You Think : Decoded Ops',
+ title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
  description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
  alternates: { canonical: '/problems/manual-workarounds' },
  openGraph: {
-  title: 'Manual Workarounds Are Costing You More Than You Think : Decoded Ops',
+  title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
   description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
   url: 'https://decodedops.co.uk/problems/manual-workarounds',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Manual Workarounds Are Costing You More Than You Think : Decoded Ops',
+  title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
   description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
  },
 };
