@@ -18,20 +18,20 @@ export async function generateMetadata({
   if (!loc) return {};
 
   return {
-    title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
+    title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
     description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     alternates: {
       canonical: `/locations/tech-audit/${loc.slug}`,
     },
     openGraph: {
-      title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
+      title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
       description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
       url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
       images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Technology Audit for ${loc.name} Businesses : Decoded Ops`,
+      title: `Technology Audit for ${loc.name} Businesses: Decoded Ops`,
       description: `Independent technology audit for ${loc.name} SMEs. Identify hidden costs and failing systems. From £1,500 with a 3× Clarity Guarantee.`,
     },
   };
