@@ -116,7 +116,6 @@ export default async function BlogPage() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               Book a free discovery call
             </Link>
-            <Link href="/contact" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly</Link>
           </div>
         </div>
       </section>
