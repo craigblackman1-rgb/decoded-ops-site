@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import BlogList from '@/components/BlogList';
@@ -115,9 +114,9 @@ export default async function BlogPage() {
               These resources are free. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
-              Book a free discovery call <ArrowRight size={18} />
+              Book a free discovery call
             </Link>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly <ArrowRight size={14} /></a>
+            <Link href="/contact" className="text-sm font-medium inline-flex items-center gap-1 mt-3" style={{ color: 'var(--do-sky-blue)' }}>Or book a call directly</Link>
           </div>
         </div>
       </section>

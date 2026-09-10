@@ -47,36 +47,16 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         <div style={{ marginBottom: 56 }}>
           <Link
             href={`/blog/${leadPost.slug}`}
-            className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-3"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1.15fr 1fr',
-              alignItems: 'stretch',
-              background: 'var(--do-surface-raised)',
-              border: '1px solid var(--do-border-subtle)',
-              borderRadius: 'var(--do-radius-2xl)',
-              overflow: 'hidden',
-              textDecoration: 'none',
-              color: 'inherit',
-              transition: 'border-color var(--do-duration-normal) var(--do-ease-default), box-shadow var(--do-duration-normal) var(--do-ease-default)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--do-cerulean)';
-              e.currentTarget.style.boxShadow = 'var(--do-shadow-md)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--do-border-subtle)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
+            className="blog-lead"
           >
             {leadPost.featuredImage && (
               <img
                 src={leadPost.featuredImage}
                 alt=""
-                style={{ width: '100%', height: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
+                className="lead-art"
               />
             )}
-            <div style={{ padding: '40px 44px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="lead-body">
               <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
                 {leadPost.category}
               </span>
@@ -105,7 +85,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
         style={{
           position: 'sticky',
           top: 0,
-          zIndex: 10,
+          zIndex: 5,
           margin: '0 0 28px',
           padding: '16px 0',
           background: 'var(--do-surface-page)',
@@ -118,20 +98,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
             type="button"
             aria-pressed={activeCategory === cat}
             onClick={() => setActiveCategory(cat)}
-            className="focus-visible:outline-3 focus-visible:outline-[var(--do-cerulean)] focus-visible:outline-offset-2"
-            style={{
-              fontFamily: 'var(--do-font-body)',
-              fontSize: 'var(--do-text-sm)',
-              fontWeight: 600,
-              padding: '8px 16px',
-              borderRadius: 9999,
-              cursor: 'pointer',
-              minHeight: 38,
-              background: activeCategory === cat ? 'var(--do-prussian-blue)' : 'transparent',
-              color: activeCategory === cat ? 'var(--do-off-white)' : 'var(--do-text-secondary)',
-              border: activeCategory === cat ? '1px solid var(--do-prussian-blue)' : '1px solid var(--do-border-subtle)',
-              transition: 'background-color var(--do-duration-fast) var(--do-ease-default), border-color var(--do-duration-fast) var(--do-ease-default)',
-            }}
+            className="blog-filter-pill"
           >
             {cat}
           </button>
