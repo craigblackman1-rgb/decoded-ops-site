@@ -9,17 +9,19 @@ interface BlogPost {
   excerpt: string;
   date?: string;
   publishedDate?: string;
-  readTime: number;
+  readTime?: number;
   category: string;
   featuredImage?: string | null;
 }
 
-function PostMeta({ date, readTime }: { date: string; readTime: number }) {
+function PostMeta({ date, readTime }: { date: string; readTime?: number }) {
+  const hasDate = !!date;
+  const hasReadTime = typeof readTime === 'number' && readTime > 0;
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 'var(--do-text-xs)', color: 'var(--do-text-muted)' }}>
-      <span>{date}</span>
-      <span aria-hidden="true">&middot;</span>
-      <span>{readTime} min read</span>
+      {hasDate && <span>{date}</span>}
+      {hasDate && hasReadTime && <span aria-hidden="true">&middot;</span>}
+      {hasReadTime && <span>{readTime} min read</span>}
     </div>
   );
 }
@@ -57,9 +59,11 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
               />
             )}
             <div className="lead-body">
-              <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
-                {leadPost.category}
-              </span>
+              {leadPost.category && (
+                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+                  {leadPost.category}
+                </span>
+              )}
               <h2 className="font-bold leading-tight" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-3xl)', color: 'var(--do-text-primary)', margin: '14px 0' }}>
                 {leadPost.title}
               </h2>
@@ -109,7 +113,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
       </div>
 
       {/* Card grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 72 }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ marginBottom: 72, alignItems: 'start' }}>
         {gridPosts.map(post => {
           const pubDate = post.date || post.publishedDate;
           const date = pubDate
@@ -149,9 +153,11 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                 />
               )}
               <div style={{ padding: '24px 26px 26px' }}>
-                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
-                  {post.category}
-                </span>
+                {post.category && (
+                  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+                    {post.category}
+                  </span>
+                )}
                 <h3 className="font-bold leading-snug" style={{ fontFamily: 'var(--font-outfit), sans-serif', fontSize: 'var(--do-text-xl)', color: 'var(--do-text-primary)', margin: '14px 0 10px' }}>
                   {post.title}
                 </h3>
