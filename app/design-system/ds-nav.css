@@ -215,7 +215,8 @@
   text-underline-offset:3px }
 
 /* the scrim sits under the header but over the page — and over the rail */
-.scrim{ position:fixed; inset:var(--do-header-h) 0 0;
+.scrim{ position:fixed; top:var(--do-header-h); left:0; right:0;
+  height:calc(100dvh - var(--do-header-h));
   z-index:calc(var(--do-z-dropdown) + 1);
   background:color-mix(in srgb, var(--do-prussian-blue) 28%, transparent) }
 .scrim[hidden]{ display:none }
@@ -224,7 +225,9 @@
 @media(max-width:1100px){
   .site-head--mega .nav-toggle{ display:inline-flex }
   .site-head--mega .site-nav{ display:none; position:fixed;
-    inset:var(--do-header-h) 0 0; flex-direction:column; align-items:stretch;
+    top:var(--do-header-h); left:0; right:0;
+    height:calc(100dvh - var(--do-header-h));
+    flex-direction:column; align-items:stretch;
     gap:0; margin:0; padding:24px 24px 64px; overflow-y:auto;
     background:var(--do-surface-raised); border:0; box-shadow:none;
     z-index:var(--do-z-sticky) }
