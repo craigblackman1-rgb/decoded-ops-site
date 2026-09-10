@@ -168,7 +168,7 @@ export default function HomePage() {
               has followed your processes from start to finish, everything after that is guesswork.</p>
 
             <figure className="band" data-od-id="help-photo">
-              <Image src="/images/sectors/thread-spools.jpg" fill sizes="1200px" className="p-photo"
+              <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
                 style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
                 alt="A row of coloured thread cones loaded on an embroidery machine head." />
               <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
