@@ -12,6 +12,7 @@ const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ preview?: string }>;
 }
 
 function extractFaqSchema(html: string) {
@@ -68,14 +69,13 @@ function buildArticleSchema(item: any, slug: string, pubDate: string) {
   };
 }
 
-async function fetchBlogPost(slug: string) {
+async function fetchBlogPost(slug: string, preview?: string) {
   try {
-    const res = await hubFetch(`${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}`, {
-      next: { revalidate: 300 },
-    });
+    const url = `${HUB_API}/api/content/detail?slug=${encodeURIComponent(slug)}${preview ? `&preview=${encodeURIComponent(preview)}` : ''}`;
+    const res = await hubFetch(url, preview ? { cache: 'no-store' } : { next: { revalidate: 300 } });
     if (!res.ok) return null;
     const data = await res.json();
-    return data.item || null;
+    return data.item ? { ...data.item, _preview: !!data.preview } : null;
   } catch {
     return null;
   }
@@ -94,9 +94,10 @@ export async function generateStaticParams() {
   return (localBlogPosts.items || []).map((item: any) => ({ slug: item.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const item = await fetchBlogPost(slug);
+  const { preview } = await searchParams;
+  const item = await fetchBlogPost(slug, preview);
   if (!item) return { title: 'Blog Post Not Found' };
 
   const pubDate = item.publishedDate ? new Date(item.publishedDate).toISOString() : new Date().toISOString();
@@ -107,6 +108,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: `/blog/${slug}` },
+    ...(item._preview ? { robots: { index: false, follow: false } } : {}),
     openGraph: {
       type: 'article',
       publishedTime: pubDate,
@@ -125,13 +127,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogPost({ params }: PageProps) {
+export default async function BlogPost({ params, searchParams }: PageProps) {
   const { slug } = await params;
-  const item = await fetchBlogPost(slug);
+  const { preview } = await searchParams;
+  const item = await fetchBlogPost(slug, preview);
 
   if (!item || item.status === 'archived') {
     notFound();
   }
+
+  const isPreview = !!item._preview;
 
   const pubDate = item.publishedDate ? new Date(item.publishedDate).toISOString() : new Date().toISOString();
   const displayDate = item.publishedDate
@@ -154,6 +159,13 @@ export default async function BlogPost({ params }: PageProps) {
         { name: 'Insights', url: 'https://decodedops.co.uk/blog' },
         { name: item.title, url: `https://decodedops.co.uk/blog/${slug}` },
       ]} />
+
+      {isPreview && (
+        <div className="w-full px-6 py-4 text-center" style={{ background: '#FFB703', color: '#023047' }}>
+          <p className="font-semibold text-sm uppercase tracking-wider">PREVIEW — not published</p>
+          <p className="text-xs mt-1" style={{ color: '#023047cc' }}>This link expires in 24 hours. Do not share.</p>
+        </div>
+      )}
 
       {/* Article header */}
       <section className="g-off" data-od-id="header">
