@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { sendEmail, getEmailStatus } from '@/lib/email';
 import { toolCaptureRatelimit } from '@/lib/rate-limit';
 import { hubFetch } from '@/lib/hub-fetch';
 
@@ -117,59 +117,77 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const toolNames: Record<string, string> = {
+      'ops-health-score': 'Ops Health Score',
+      'downtime-cost-calculator': 'Downtime Cost Calculator',
+      'rto-calculator': 'RTO Calculator',
+      'should-i-replace-erp': 'Should I Replace My ERP',
+      'ai-readiness-check': 'AI Readiness Check',
+      'automation-roi-calculator': 'Automation ROI Calculator',
+    };
+    const readableTool = toolNames[tool] || tool;
+
+    const answerLines = Object.entries(answers)
+      .map(([key, value]) => {
+        const label = key
+          .replace(/([A-Z])/g, ' $1')
+          .replace(/^./, (s) => s.toUpperCase());
+        return `${label}: ${String(value)}`;
+      })
+      .join('\n');
+
+    const recipient = process.env.LEAD_ALERT_EMAIL || process.env.CONTACT_EMAIL || 'craig@decodedops.co.uk';
+    const subject = `New lead — ${readableTool} — ${sanitizedName}`;
+    const textBody = [
+      `New lead from the ${readableTool} tool.`,
+      ``,
+      `Name: ${sanitizedName}`,
+      `Email: ${sanitizedEmail}`,
+      `Company: ${sanitizedCompany || 'not given'}`,
+      ``,
+      `Result:`,
+      sanitizedSummary,
+      ``,
+      `Answers:`,
+      answerLines,
+      ``,
+      `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
+    ].join('\n');
+
+    const htmlBody = [
+      `<h2>New lead from the ${readableTool} tool</h2>`,
+      `<table style="border-collapse:collapse;margin:16px 0">`,
+      `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Name</td><td style="padding:4px 0">${sanitizedName}</td></tr>`,
+      `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Email</td><td style="padding:4px 0"><a href="mailto:${sanitizedEmail}">${sanitizedEmail}</a></td></tr>`,
+      `<tr><td style="padding:4px 12px 4px 0;font-weight:600">Company</td><td style="padding:4px 0">${sanitizedCompany || 'not given'}</td></tr>`,
+      `</table>`,
+      `<h3>Result</h3>`,
+      `<p style="white-space:pre-wrap">${sanitizedSummary}</p>`,
+      `<h3>Answers</h3>`,
+      `<ul style="list-style:none;padding:0;margin:0">`,
+      ...Object.entries(answers).map(([key, value]) => {
+        const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase());
+        return `<li style="padding:2px 0"><strong>${label}:</strong> ${String(value)}</li>`;
+      }),
+      `</ul>`,
+      `<p style="margin-top:16px"><a href="${process.env.HUB_API_URL}/admin/leads">View in CRM</a></p>`,
+    ].join('\n');
+
     try {
-      const toolNames: Record<string, string> = {
-        'ops-health-score': 'Ops Health Score',
-        'downtime-cost-calculator': 'Downtime Cost Calculator',
-        'rto-calculator': 'RTO Calculator',
-        'should-i-replace-erp': 'Should I Replace My ERP',
-        'ai-readiness-check': 'AI Readiness Check',
-        'automation-roi-calculator': 'Automation ROI Calculator',
-      };
-      const readableTool = toolNames[tool] || tool;
-
-      const answerLines = Object.entries(answers)
-        .map(([key, value]) => {
-          const label = key
-            .replace(/([A-Z])/g, ' $1')
-            .replace(/^./, (s) => s.toUpperCase());
-          return `${label}: ${String(value)}`;
-        })
-        .join('\n');
-
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT) || 587,
-        secure: process.env.SMTP_PORT === '465',
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-      });
-
-      await transporter.sendMail({
-        from: process.env.SMTP_FROM || 'noreply@decodedops.co.uk',
-        replyTo: sanitizedEmail,
-        to: process.env.CONTACT_EMAIL,
-        subject: `New lead — ${readableTool} — ${sanitizedName}`,
-        text: [
-          `New lead from the ${readableTool} tool.`,
-          ``,
-          `Name: ${sanitizedName}`,
-          `Email: ${sanitizedEmail}`,
-          `Company: ${sanitizedCompany || 'not given'}`,
-          ``,
-          `Result:`,
-          sanitizedSummary,
-          ``,
-          `Answers:`,
-          answerLines,
-          ``,
-          `View in CRM: ${process.env.HUB_API_URL}/admin/leads`,
-        ].join('\n'),
-      });
+      const emailStatus = getEmailStatus();
+      if (!emailStatus.configured) {
+        console.warn('[tools/capture] no email backend configured — lead alert skipped');
+      } else {
+        await sendEmail({
+          to: recipient,
+          subject,
+          html: htmlBody,
+          text: textBody,
+          replyTo: sanitizedEmail,
+        });
+      }
     } catch (emailError) {
-      console.error('Lead alert email failed:', emailError);
+      console.error('[tools/capture] lead alert failed', emailError);
     }
 
     return NextResponse.json({ ok: true });
