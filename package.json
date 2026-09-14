@@ -12,7 +12,8 @@
     "check:price": "node .context/price-audit.mjs",
     "copy:extract": "node .context/extract-copy.mjs",
     "check:premerge": "npm run check:nav && npm run check:price",
-    "test": "vitest run"
+    "test": "vitest run",
+    "sync:blog-index": "node scripts/sync-blog-index.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.107.0",

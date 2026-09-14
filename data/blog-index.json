@@ -1,357 +1,234 @@
 {
   "items": [
     {
-      "slug": "orderwise-what-it-does-well-what-it-doesn-t",
-      "title": "Orderwise: What It Does Well, What It Doesn't",
-      "excerpt": "An honest look at what Orderwise handles well and where it falls short for decorated-goods businesses.",
-      "date": "2026-06-15",
-      "category": "Technology"
+      "slug": "decoded-method-operations-framework",
+      "title": "What the Decoded Method Is — And Why Every Engagement Starts With It",
+      "excerpt": "Most consultants leave behind a report. The Decoded Method leaves behind a system the business actually runs. Here's what it is and why the order matters.",
+      "date": "2026-09-09T15:10:53.235Z",
+      "category": "Framework"
     },
     {
-      "slug": "the-real-cost-of-a-failed-erp-project",
-      "title": "The Real Cost of a Failed ERP Project",
-      "excerpt": "How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project.",
-      "date": "2026-05-01",
-      "readTime": 9,
-      "category": "ERP",
-      "featuredImage": "/images/blog/the-real-cost-of-a-failed-erp-project-thumb.svg",
-      "images": [
-        "/images/blog/the-real-cost-of-a-failed-erp-project-img-1.svg",
-        "/images/blog/the-real-cost-of-a-failed-erp-project-img-2.svg"
-      ]
+      "slug": "iso-9001-small-business",
+      "title": "ISO 9001 for a Small Decorated Goods Business: Worth It, or Just a Logo?",
+      "excerpt": "ISO 9001 gets sold as a badge for the website. What it actually is, underneath the certificate, is a documented quality system, the same thing most decorated goods businesses need anyway, certified or not.",
+      "date": "2026-07-15T08:40:09.870Z",
+      "category": "Operations"
     },
     {
-      "slug": "5-questions-vendors-wont-like",
-      "title": "5 Questions Your Software Vendor Doesn't Want You to Ask",
-      "excerpt": "Before you sign a software contract, ask these five questions.",
-      "date": "2026-05-05",
-      "readTime": 5,
-      "category": "Technology",
-      "featuredImage": "/images/blog/5-questions-vendors-wont-like-thumb.svg",
-      "images": [
-        "/images/blog/5-questions-vendors-wont-like-img-1.svg",
-        "/images/blog/5-questions-vendors-wont-like-img-2.svg"
-      ]
+      "slug": "sop-template-decorated-goods",
+      "title": "Standard Operating Procedures for Decorated Goods Businesses: A Free Template",
+      "excerpt": "Standard Operating Procedures for Decorated Goods Businesses: A Free Template",
+      "date": "2026-07-15T08:40:09.870Z",
+      "category": "Process"
     },
     {
-      "slug": "why-systems-dont-talk",
-      "title": "Why Your Systems Don't Talk to Each Other (And How to Fix It)",
-      "excerpt": "Systems that don't integrate are the #1 operations problem in decorated goods. Here's why it happens and how to fix it.",
-      "date": "2026-04-28",
-      "readTime": 8,
-      "category": "Integration",
-      "featuredImage": "/images/blog/why-systems-dont-talk-thumb.svg",
-      "images": [
-        "/images/blog/why-systems-dont-talk-img-1.svg",
-        "/images/blog/why-systems-dont-talk-img-2.svg"
-      ]
-    },
-    {
-      "slug": "ecommerce-integration-trap",
-      "title": "The eCommerce Integration Trap",
-      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong and how to avoid the common pitfalls.",
-      "date": "2026-05-10",
-      "readTime": 6,
-      "category": "Integration",
-      "featuredImage": "/images/blog/ecommerce-integration-trap-thumb.svg",
-      "images": [
-        "/images/blog/ecommerce-integration-trap-img-1.svg",
-        "/images/blog/ecommerce-integration-trap-img-2.svg"
-      ]
-    },
-    {
-      "slug": "what-happens-when-your-systems-go-down",
-      "title": "What Happens to Your Business When Your Systems Go Down",
-      "excerpt": "System downtime costs more than you think. Here's how to calculate the real cost and build resilience.",
-      "date": "2026-05-15",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": "/images/blog/what-happens-when-your-systems-go-down-thumb.svg",
-      "images": [
-        "/images/blog/what-happens-when-your-systems-go-down-img-1.svg",
-        "/images/blog/what-happens-when-your-systems-go-down-img-2.svg"
-      ]
-    },
-    {
-      "slug": "embroidery-stitch-density-quality-speed-cost",
-      "title": "Embroidery Stitch Density: How It Affects Quality, Speed, and Cost",
-      "excerpt": "The setting most businesses never look at \u2014 until rework, late jobs, and margin erosion force them to.",
-      "date": "2026-05-19",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": "/images/blog/embroidery-stitch-density-quality-speed-cost-thumb.svg",
-      "images": [
-        "/images/blog/embroidery-stitch-density-quality-speed-cost-img-1.svg",
-        "/images/blog/embroidery-stitch-density-quality-speed-cost-img-2.svg"
-      ]
-    },
-    {
-      "slug": "heat-press-temperature-dwell-time-operations-guide",
-      "title": "Heat Press Temperature & Dwell Time: The Complete Operations Guide",
-      "excerpt": "Three settings. All three matter. Getting one wrong ruins the result \u2014 and the garment.",
-      "date": "2026-05-20",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": "/images/blog/heat-press-temperature-dwell-time-operations-guide-thumb.svg",
-      "images": [
-        "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-1.svg",
-        "/images/blog/heat-press-temperature-dwell-time-operations-guide-img-2.svg"
-      ]
-    },
-    {
-      "slug": "ralawise-integration-bulk-orders-stock-management",
-      "title": "Ralawise Integration: Automating Bulk Orders and Stock Management",
-      "excerpt": "Manual Ralawise ordering is a task that should not exist. Here's what automating it actually involves.",
-      "date": "2026-05-21",
-      "readTime": 9,
-      "category": "Integration",
-      "featuredImage": "/images/blog/ralawise-integration-bulk-orders-stock-management-thumb.svg",
-      "images": [
-        "/images/blog/ralawise-integration-bulk-orders-stock-management-img-1.svg",
-        "/images/blog/ralawise-integration-bulk-orders-stock-management-img-2.svg"
-      ]
-    },
-    {
-      "slug": "screen-printing-vs-heat-transfer-scale-your-business",
-      "title": "Screen Printing vs Heat Transfer: Which Scales Your Business?",
-      "excerpt": "Both methods work. The question is which one fits where you're going \u2014 not where you are right now.",
-      "date": "2026-05-22",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-thumb.svg",
-      "images": [
-        "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-1.svg",
-        "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-img-2.svg"
-      ]
-    },
-    {
-      "slug": "artwork-approval-workflow-brief-to-sign-off-24-hours",
-      "title": "Artwork Approval Workflow: From Brief to Sign-Off in 24 Hours",
-      "excerpt": "Most artwork delays are created in the first five minutes of an order. A practical workflow from brief to sign-off.",
-      "date": "2026-05-23",
-      "readTime": 8,
-      "category": "Workflow",
-      "featuredImage": "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-thumb.svg",
-      "images": [
-        "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-1.svg",
-        "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-img-2.svg"
-      ]
-    },
-    {
-      "slug": "bulk-order-management-wholesale-decorated-goods",
-      "title": "Bulk Order Management for Wholesale Decorated Goods",
-      "excerpt": "Taking on wholesale volume is straightforward. Managing it without tying up cash or missing deliveries requires a system.",
-      "date": "2026-05-26",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": "/images/blog/bulk-order-management-wholesale-decorated-goods-thumb.svg",
-      "images": [
-        "/images/blog/bulk-order-management-wholesale-decorated-goods-img-1.svg",
-        "/images/blog/bulk-order-management-wholesale-decorated-goods-img-2.svg"
-      ]
-    },
-    {
-      "slug": "production-scheduling-print-embroidery-capacity-quality-rush",
-      "title": "Production Scheduling for Print & Embroidery: Capacity, Quality, and Rush Orders",
-      "excerpt": "A schedule built on real capacity with a clear answer for rush orders keeps every customer happy.",
-      "date": "2026-05-27",
-      "readTime": 9,
-      "category": "Operations",
-      "featuredImage": "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-thumb.svg",
-      "images": [
-        "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-1.svg",
-        "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-img-2.svg"
-      ]
-    },
-    {
-      "slug": "embroidery-quality-standards-stitch-density-thread-durability",
-      "title": "Embroidery Quality Standards: Stitch Density, Thread Selection, and Durability",
-      "excerpt": "Without written standards, quality is whatever the last person to check decided it was.",
-      "date": "2026-05-28",
-      "readTime": 9,
-      "category": "Quality",
-      "featuredImage": "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-thumb.svg",
-      "images": [
-        "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-1.svg",
-        "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-img-2.svg"
-      ]
-    },
-    {
-      "slug": "ai-isnt-your-problem-your-processes-are",
-      "title": "AI Isn't Your Problem. Your Processes Are.",
-      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI.",
-      "date": "2026-05-25",
-      "readTime": 7,
-      "category": "Technology",
-      "featuredImage": "/images/blog/ai-isnt-your-problem-your-processes-are-thumb.svg",
-      "images": [
-        "/images/blog/ai-isnt-your-problem-your-processes-are-img-1.svg",
-        "/images/blog/ai-isnt-your-problem-your-processes-are-img-2.svg"
-      ]
-    },
-    {
-      "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
-      "title": "How to Evaluate an AI Tool Without Getting Sold To",
-      "excerpt": "Most AI tools solve problems you don't have yet. Here's how to evaluate one honestly \u2014 without the sales pitch.",
-      "date": "2026-06-02",
-      "readTime": 7,
-      "category": "Technology",
-      "featuredImage": "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-thumb.svg",
-      "images": [
-        "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-1.svg",
-        "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-img-2.svg"
-      ]
-    },
-    {
-      "slug": "the-artwork-file-that-broke-the-erp-cartoon",
-      "title": "The Artwork File That Broke the ERP",
-      "excerpt": "A low-res JPEG. An order with no artwork attached. Production stops. This happens every day \u2014 and it doesn't have to.",
-      "date": "2026-06-05",
-      "readTime": 7,
-      "category": "Workflow",
-      "featuredImage": "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-thumb.svg",
-      "images": [
-        "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-1.svg",
-        "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-img-2.svg"
-      ]
-    },
-    {
-      "slug": "crm-adoption-failure-why-it-happens-and-how-to-fix-it",
-      "title": "CRM Adoption Failure: Why It Happens and How to Fix It",
-      "excerpt": "Most CRM implementations end up as expensive contact lists nobody uses. The problem isn't the software.",
-      "date": "2026-06-06",
-      "readTime": 8,
-      "category": "Technology",
-      "featuredImage": "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-thumb.svg",
-      "images": [
-        "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-1.svg",
-        "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-img-2.svg"
-      ]
-    },
-    {
-      "slug": "b2b-portal-down-on-christmas-jumper-day-cartoon",
-      "title": "B2B Portal Down on Christmas Jumper Day",
-      "excerpt": "It's December 23rd. The portal has been down since 3am. This happens every year. Here's how to prevent it.",
-      "date": "2026-06-07",
-      "readTime": 7,
-      "category": "Technology",
-      "featuredImage": "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-thumb.svg",
-      "images": [
-        "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-1.svg",
-        "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-img-2.svg"
-      ]
-    },
-    {
-      "slug": "what-good-operations-actually-looks-like",
-      "title": "What Good Operations Actually Looks Like",
-      "excerpt": "Most decorated goods business owners have been firefighting so long that nothing on fire feels like success.",
-      "date": "2026-06-08",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": "/images/blog/what-good-operations-actually-looks-like-thumb.svg",
-      "images": [
-        "/images/blog/what-good-operations-actually-looks-like-img-1.svg",
-        "/images/blog/what-good-operations-actually-looks-like-img-2.svg"
-      ]
-    },
-    {
-      "slug": "when-it-support-is-the-problem",
-      "title": "When IT Support Is the Problem",
-      "excerpt": "For many decorated goods businesses, the IT support relationship is actively holding them back. What good support looks like.",
-      "date": "2026-06-10",
-      "readTime": 8,
-      "category": "Technology",
-      "featuredImage": "/images/blog/when-it-support-is-the-problem-thumb.svg",
-      "images": [
-        "/images/blog/when-it-support-is-the-problem-img-1.svg",
-        "/images/blog/when-it-support-is-the-problem-img-2.svg"
-      ]
-    },
-    {
-      "slug": "the-hidden-cost-of-running-legacy-systems",
-      "title": "The Hidden Cost of Running Legacy Systems",
-      "excerpt": "That system you've been meaning to replace is costing more than the licence fee. How to calculate the real cost.",
-      "date": "2026-06-12",
-      "readTime": 8,
-      "category": "Technology",
-      "featuredImage": "/images/blog/the-hidden-cost-of-running-legacy-systems-thumb.svg",
-      "images": [
-        "/images/blog/the-hidden-cost-of-running-legacy-systems-img-1.svg",
-        "/images/blog/the-hidden-cost-of-running-legacy-systems-img-2.svg"
-      ]
-    },
-    {
-      "slug": "process-before-platform",
-      "title": "Process Before Platform",
-      "excerpt": "The most expensive mistake in this sector: buying a platform before understanding your processes.",
-      "date": "2026-06-17",
-      "readTime": 8,
-      "category": "Operations",
-      "featuredImage": "/images/blog/process-before-platform-thumb.svg",
-      "images": [
-        "/images/blog/process-before-platform-img-1.svg",
-        "/images/blog/process-before-platform-img-2.svg"
-      ]
-    },
-    {
-      "slug": "lean-six-sigma-small-business",
-      "title": "Is Lean Six Sigma Right for Your Small Business?",
-      "excerpt": "Lean Six Sigma sounds like enterprise stuff. Here's the version that actually applies to a print or decoration business under \u00a35m \u2014 and when it's worth your time.",
-      "date": "2026-06-25",
-      "readTime": 5,
-      "category": "Operations",
-      "featuredImage": "/images/blog/lean-six-sigma-small-business-thumb.svg",
-      "images": []
-    },
-    {
-      "slug": "hire-fractional-cto",
-      "title": "Hire a Fractional CTO: What It Costs, What You Get, and When It Makes Sense",
-      "excerpt": "What a fractional CTO actually costs, what you get for the money, and the four situations where fractional leadership beats a full-time hire.",
-      "date": "2026-06-26",
-      "readTime": 5,
-      "category": "Technology",
-      "featuredImage": "/images/blog/hire-fractional-cto-thumb.svg",
-      "images": []
-    },
-    {
-      "slug": "erp-selection-decorated-goods",
-      "title": "ERP Selection for Decorated Goods: A Plain-English Buying Guide",
-      "excerpt": "How to choose an ERP for print, embroidery, and decoration businesses \u2014 with a process that puts your requirements first and the vendor demo second.",
-      "date": "2026-06-27",
-      "readTime": 6,
-      "category": "ERP",
-      "featuredImage": "/images/blog/erp-selection-decorated-goods-thumb.svg",
-      "images": []
-    },
-    {
-      "slug": "what-is-erp-decorated-goods",
-      "title": "What Is ERP? And Does Your Decorated Goods Business Actually Need One?",
-      "excerpt": "A jargon-free explanation of what ERP actually does for a decorated goods business \u2014 and how to know whether you need one or are being sold something you don't.",
-      "date": "2026-06-28",
-      "readTime": 6,
-      "category": "ERP",
-      "featuredImage": "/images/blog/what-is-erp-decorated-goods-thumb.svg",
-      "images": []
-    },
-    {
-      "slug": "cloud-erp-print-business",
-      "title": "Cloud ERP for a Print Business: What Changes When You Move Online",
-      "excerpt": "Cloud ERP for small print businesses: what changes, what you need to check, and the hidden traps that on-premise systems don't have.",
-      "date": "2026-06-29",
-      "readTime": 6,
-      "category": "ERP",
-      "featuredImage": "/images/blog/cloud-erp-print-business-thumb.svg",
-      "images": []
+      "slug": "operations-planning-print-decoration-business",
+      "title": "Operations Planning for Print and Decoration Businesses: Where Most Plans Fall Apart",
+      "excerpt": "Operations planning sounds like a spreadsheet exercise. In a decoration business it’s really about the handoffs between order, production, and despatch. Here’s where most plans fall apart, and what to plan instead.",
+      "date": "2026-07-15T08:40:09.870Z"
     },
     {
       "slug": "local-seo-print-shop",
       "title": "Local SEO for Print Shops: How to Show Up When Nearby Customers Are Searching",
       "excerpt": "Local SEO for print shops: practical steps to rank in local search, optimise your Google Business Profile, and win nearby customers.",
       "date": "2026-06-30",
-      "readTime": 6,
-      "category": "Marketing",
-      "featuredImage": "/images/blog/local-seo-print-shop-thumb.svg",
-      "images": []
+      "category": "Marketing"
+    },
+    {
+      "slug": "cloud-erp-print-business",
+      "title": "Cloud ERP for a Print Business: What Changes When You Move Online",
+      "excerpt": "Cloud ERP for small print businesses: what changes, what you need to check, and the hidden traps that on-premise systems don't have.",
+      "date": "2026-06-29",
+      "category": "ERP"
+    },
+    {
+      "slug": "what-is-erp-decorated-goods",
+      "title": "What Is ERP? And Does Your Decorated Goods Business Actually Need One?",
+      "excerpt": "A jargon-free explanation of what ERP actually does for a decorated goods business — and how to know whether you need one or are being sold something you don't.",
+      "date": "2026-06-28",
+      "category": "ERP"
+    },
+    {
+      "slug": "erp-selection-decorated-goods",
+      "title": "ERP Selection for Decorated Goods: A Plain-English Buying Guide",
+      "excerpt": "How to choose an ERP for print, embroidery, and decoration businesses — with a process that puts your requirements first and the vendor demo second.",
+      "date": "2026-06-27",
+      "category": "ERP"
+    },
+    {
+      "slug": "hire-fractional-cto",
+      "title": "Hire a Fractional CTO: What It Costs, What You Get, and When It Makes Sense",
+      "excerpt": "What a fractional CTO actually costs, what you get for the money, and the four situations where fractional leadership beats a full-time hire.",
+      "date": "2026-06-26",
+      "category": "Technology"
+    },
+    {
+      "slug": "lean-six-sigma-small-business",
+      "title": "Is Lean Six Sigma Right for Your Small Business?",
+      "excerpt": "Lean Six Sigma sounds like enterprise stuff. Here's the version that actually applies to a print or decoration business under £5m — and when it's worth your time.",
+      "date": "2026-06-25",
+      "category": "Operations"
+    },
+    {
+      "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
+      "title": "How to Evaluate an AI Tool Without Getting Sold To",
+      "excerpt": "How to Evaluate an AI Tool Without Getting Sold To",
+      "date": "2026-06-02",
+      "category": "Technology"
+    },
+    {
+      "slug": "the-artwork-file-that-broke-the-erp-cartoon",
+      "title": "The Artwork File That Broke the ERP [Cartoon]",
+      "excerpt": "The Artwork File That Broke the ERP [Cartoon]",
+      "date": "2026-06-02",
+      "category": "Workflow"
+    },
+    {
+      "slug": "b2b-portal-down-on-christmas-jumper-day-cartoon",
+      "title": "B2B Portal Down on Christmas Jumper Day [Cartoon]",
+      "excerpt": "B2B Portal Down on Christmas Jumper Day [Cartoon]",
+      "date": "2026-06-02",
+      "category": "Technology"
+    },
+    {
+      "slug": "crm-adoption-failure-why-it-happens-and-how-to-fix-it",
+      "title": "CRM Adoption Failure: Why It Happens and How to Fix It",
+      "excerpt": "CRM Adoption Failure: Why It Happens and How to Fix It",
+      "date": "2026-06-02",
+      "category": "Technology"
+    },
+    {
+      "slug": "what-good-operations-actually-looks-like",
+      "title": "What Good Operations Actually Looks Like",
+      "excerpt": "What Good Operations Actually Looks Like",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "when-it-support-is-the-problem",
+      "title": "When IT Support Is the Problem",
+      "excerpt": "When IT Support Is the Problem",
+      "date": "2026-06-02",
+      "category": "Technology"
+    },
+    {
+      "slug": "the-hidden-cost-of-running-legacy-systems",
+      "title": "The Hidden Cost of Running Legacy Systems",
+      "excerpt": "The Hidden Cost of Running Legacy Systems",
+      "date": "2026-06-02",
+      "category": "Technology"
+    },
+    {
+      "slug": "process-before-platform",
+      "title": "Process Before Platform",
+      "excerpt": "Process Before Platform",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "embroidery-stitch-density-quality-speed-cost",
+      "title": "Embroidery Stitch Density: How It Affects Quality, Speed, and Cost",
+      "excerpt": "How stitch density decisions affect embroidery quality, production speed, and job cost.",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "heat-press-temperature-dwell-time-operations-guide",
+      "title": "Heat Press Temperature & Dwell Time: The Complete Operations Guide",
+      "excerpt": "A complete operations guide to heat press temperature and dwell time settings.",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "ralawise-integration-bulk-orders-stock-management",
+      "title": "Ralawise Integration: Automating Bulk Orders and Stock Management",
+      "excerpt": "How to integrate Ralawise to automate bulk order processing and stock management.",
+      "date": "2026-06-02",
+      "category": "Integration"
+    },
+    {
+      "slug": "screen-printing-vs-heat-transfer-scale-your-business",
+      "title": "Screen Printing vs Heat Transfer: Which Scales Your Business?",
+      "excerpt": "A straight comparison of screen printing vs heat transfer on costs, capacity, and scalability.",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "artwork-approval-workflow-brief-to-sign-off-24-hours",
+      "title": "Artwork Approval Workflow: From Brief to Sign-Off in 24 Hours",
+      "excerpt": "How to build an artwork approval workflow that gets from brief to client sign-off in 24 hours.",
+      "date": "2026-06-02",
+      "category": "Workflow"
+    },
+    {
+      "slug": "bulk-order-management-wholesale-decorated-goods",
+      "title": "Bulk Order Management for Wholesale Decorated Goods",
+      "excerpt": "How to manage bulk B2B orders for wholesale decorated goods — systems, workflows, and failure points.",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "production-scheduling-print-embroidery-capacity-quality-rush",
+      "title": "Production Scheduling for Print & Embroidery: Capacity, Quality, and Rush Orders",
+      "excerpt": "How to build a production schedule for print and embroidery that handles capacity, quality, and rush orders.",
+      "date": "2026-06-02",
+      "category": "Operations"
+    },
+    {
+      "slug": "embroidery-quality-standards-stitch-density-thread-durability",
+      "title": "Embroidery Quality Standards: Stitch Density, Thread Selection, and Durability Testing",
+      "excerpt": "What embroidery quality standards mean in production — stitch density, thread selection, and durability testing.",
+      "date": "2026-06-02",
+      "category": "Quality"
+    },
+    {
+      "slug": "ai-isnt-your-problem-your-processes-are",
+      "title": "AI Isn't Your Problem. Your Processes Are.",
+      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI â€” and what to do first.",
+      "date": "2026-05-25",
+      "category": "Technology"
+    },
+    {
+      "slug": "what-happens-when-your-systems-go-down",
+      "title": "What Happens to Your Business When Your Systems Go Down",
+      "excerpt": "System downtime costs more than you think. Here's how to calculate the real cost and build resilience into your operations.",
+      "date": "2026-05-15",
+      "category": "Operations"
+    },
+    {
+      "slug": "ecommerce-integration-trap",
+      "title": "The eCommerce Integration Trap",
+      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong â€” and how to avoid the common pitfalls.",
+      "date": "2026-05-10",
+      "category": "Integration"
+    },
+    {
+      "slug": "5-questions-vendors-wont-like",
+      "title": "5 Questions Your Software Vendor Doesn't Want You to Ask",
+      "excerpt": "Before you sign a software contract, ask these five questions. They'll separate the suppliers who understand your business from the ones who don't.",
+      "date": "2026-05-05",
+      "category": "Technology"
+    },
+    {
+      "slug": "the-real-cost-of-a-failed-erp-project",
+      "title": "The Real Cost of a Failed ERP Project",
+      "excerpt": "How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project â€” and how an upfront audit would have prevented it.",
+      "date": "2026-05-01",
+      "category": "ERP"
+    },
+    {
+      "slug": "why-systems-dont-talk",
+      "title": "Why Your Systems Don't Talk to Each Other (And How to Fix It)",
+      "excerpt": "Systems that don't integrate are the #1 operations problem in decorated goods. Here's why it happens and how to fix it.",
+      "date": "2026-04-28",
+      "category": "Integration"
+    },
+    {
+      "slug": "orderwise-what-it-does-well-what-it-doesn-t",
+      "title": "Orderwise: What It Does Well, What It Doesn't",
+      "excerpt": "Orderwise: What It Does Well, What It Doesn't",
+      "date": null,
+      "category": "Technology"
     }
   ]
 }
