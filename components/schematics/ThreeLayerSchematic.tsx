@@ -92,7 +92,7 @@ export function ThreeLayerSchematic({ tone = 'dark', className }: { tone?: Tone;
         {/* PR-001 */}
         <circle cx="150" cy="300" r="5" fill={c.sub} />
         <text x="176" y="296" style={fMono} fontSize="12" fill={c.sub}>DO-PR-001</text>
-        <text x="176" y="314" fontSize="14" fill={c.ink}>Discovery Day</text>
+        <text x="176" y="314" fontSize="14" fill={c.ink}>Clarity Audit</text>
         <circle cx="360" cy="304" r="4" fill={cyan} />
         {/* PR-002 (active, pulsing) */}
         <circle cx="150" cy="380" className="sch-halo" r="16" fill={amber} />

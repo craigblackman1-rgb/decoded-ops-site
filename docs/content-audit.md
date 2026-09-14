@@ -284,7 +284,7 @@ _Source: app/clarity/page.tsx_
 
 ### Metadata (SEO)
 
-- **Title:** Discovery Day — On-Site Audit for Print and Decoration Businesses | Decoded Ops
+- **Title:** Clarity Audit — On-Site Audit for Print and Decoration Businesses | Decoded Ops
 - **Meta description:** A structured one-day audit covering IT infrastructure, software, eCommerce, operations, AI readiness, and budget. Written report, clear recommendations.
 - **Canonical:** /clarity
 
@@ -300,7 +300,7 @@ _Source: app/clarity/page.tsx_
 
 ##### The deliverables
 
-##### What happens after Discovery Day?
+##### What happens after the Clarity Audit?
 
 > "If the written assessment doesn't give you something you can act on, you're not obligated to go any further. No conditions. No questions."
 
@@ -343,7 +343,7 @@ The audit gives you the full picture. These are the three ways to act on it.
 
 ### Data object: `nextSteps`
 
-- icon: Zap; title: Deliver; href: /deliver; desc: A fixed-scope project to implement the highest-impact recommendations from your Discovery Day report.
+- icon: Zap; title: Deliver; href: /deliver; desc: A fixed-scope project to implement the highest-impact recommendations from your Clarity Audit report.
 - icon: Settings; title: Transform; href: /transform; desc: A longer engagement to overhaul systems, processes, and technology across the business.
 - icon: Users; title: Retained; href: /retained; desc: Monthly strategic and operational leadership — roadmap ownership, vendor management, ongoing.
 
@@ -839,7 +839,7 @@ _Source: app/page.tsx_
 ### Metadata (SEO)
 
 - **Title:** Print, Embroidery & Decoration Technology Consultant | Decoded Ops
-- **Meta description:** Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Discovery Day — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.
+- **Meta description:** Independent technology and operations consultant for UK print, embroidery, and decoration businesses. Clarity Audit — a full day on site, a written plan. 25 years in the sector. Plain English. No vendor agenda.
 - **Canonical:** /
 
 ### Page copy (heading & body)
@@ -864,7 +864,7 @@ _Source: app/page.tsx_
 
 You know your business is losing money somewhere. You can feel the friction. The workarounds. The systems that don't talk to each other. 25 years inside print, embroidery, and decoration businesses says the same patterns repeat — and they're fixable.
 
-Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. Discovery Day gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
+Independent technology and operations consultancy for UK print, embroidery, workwear, and promotional merchandise businesses. The Clarity Audit gets you a full day on site and a written plan. Plain English. No jargon. No vendor agenda.
 
 That question is worth sitting with. Most owners can't answer it honestly.
 
@@ -894,7 +894,7 @@ The discovery call is free, takes 60 minutes, and comes with no obligation. Just
 
 ### Data object: `services`
 
-- icon: Search; name: Discovery Day; subtitle: On-Site Audit & Written Plan; desc: A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.; href: /clarity; badge: 'Start here' as string | null
+- icon: Search; name: Clarity Audit; subtitle: On-Site Audit & Written Plan; desc: A full day on site, six areas covered, a written assessment and roadmap — the entry point into everything else.; href: /clarity; badge: 'Start here' as string | null
 - icon: FileText; name: Deliver; subtitle: Project Delivery & Vendor Management; desc: Independent vendor brief, procurement, and project oversight. One point of contact. The vendor delivers what your business actually needs.; href: /deliver; badge: null as string | null
 - icon: Layers; name: Transform; subtitle: Digital Transformation Programme; desc: Multi-workstream programmes — ERP, eCommerce, process redesign. Process-led and people-first. Discovery required before scoping.; href: /transform; badge: null as string | null
 - icon: Users; name: Retained; subtitle: Fractional CTO / Head of Operations; desc: Monthly strategic and operational leadership. Roadmap ownership. Vendor management. A direct line to Craig.; href: /retained; badge: null as string | null
@@ -1501,7 +1501,7 @@ Want it run across your own operation? A Clarity engagement builds your Process 
 
 ### Data object: `processRegister`
 
-- ref: DO-PR-001; process: Discovery Day Delivery; status: active
+- ref: DO-PR-001; process: Clarity Audit Delivery; status: active
 - ref: DO-PR-002; process: Clarity Audit & Report; status: active
 - ref: DO-PR-003; process: New Client Onboarding; status: active
 - ref: DO-PR-004; process: Proposal Build & Sign-off; status: active
