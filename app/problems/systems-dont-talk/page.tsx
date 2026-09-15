@@ -5,6 +5,7 @@ import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { SystemsDontTalkSchematic } from '@/components/schematics/problems/SystemsDontTalkSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'When Your Systems Don\'t Talk to Each Other: Decoded Ops',
@@ -84,6 +85,7 @@ export default function SystemsDontTalkPage() {
    targetService={problemRouting['systems-dont-talk'].targetService}
    relatedProblems={problemRouting['systems-dont-talk'].relatedProblems}
    relatedReading={problemRouting['systems-dont-talk'].relatedReading}
+   video={problemVideos['systems-dont-talk']}
   />
    {/* ── PLATE · DO-ART-410 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Wrong ERP software: Decoded Ops',
@@ -72,6 +75,15 @@ export default function WrongERPSoftwarePage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Wrong ERP software', url: 'https://decodedops.co.uk/problems/wrong-erp-software' },
    ]} />
+   {problemVideos['wrong-erp-software'] && (
+    <VideoSchema
+     name={problemVideos['wrong-erp-software'].title}
+     description={problemVideos['wrong-erp-software'].closeLine}
+     youtubeId={problemVideos['wrong-erp-software'].youtubeId}
+     uploadDate={problemVideos['wrong-erp-software'].uploadDate}
+     durationSec={problemVideos['wrong-erp-software'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -154,6 +166,21 @@ export default function WrongERPSoftwarePage() {
      </div>
     </div>
    </section>
+
+   {problemVideos['wrong-erp-software'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['wrong-erp-software'].youtubeId}
+       title={problemVideos['wrong-erp-software'].title}
+       closeLine={problemVideos['wrong-erp-software'].closeLine}
+       app={problemVideos['wrong-erp-software'].app}
+       durationSec={problemVideos['wrong-erp-software'].durationSec}
+       playlistUrl={problemVideos['wrong-erp-software'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── PLATE · DO-ART-411 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

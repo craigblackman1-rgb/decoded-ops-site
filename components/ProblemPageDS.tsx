@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { BOOKING_URL } from '@/lib/constants';
 import { BreadcrumbSchema } from './BreadcrumbSchema';
+import { VideoEmbed } from './VideoEmbed';
+import { VideoSchema } from './VideoSchema';
+import type { ProblemVideo } from '@/data/problem-videos';
 
 interface ProblemPageDSProps {
   problem: string;
@@ -19,6 +22,8 @@ interface ProblemPageDSProps {
   relatedProblems?: { href: string; label: string }[];
   /** 1-3 related blog posts */
   relatedReading?: { href: string; label: string }[];
+  /** Optional video data for the "one fix, one screen" embed block */
+  video?: ProblemVideo;
 }
 
 /**
@@ -36,7 +41,7 @@ interface ProblemPageDSProps {
  * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
  * now uses its own inline JSX.
  */
-export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading }: ProblemPageDSProps) {
+export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, video }: ProblemPageDSProps) {
   const parts = headline.split('||');
 
   return (
@@ -47,6 +52,16 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
           { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
           { name: problem, url: `https://decodedops.co.uk/problems/${slug}` },
         ]} />
+      )}
+
+      {video && (
+        <VideoSchema
+          name={video.title}
+          description={video.closeLine}
+          youtubeId={video.youtubeId}
+          uploadDate={video.uploadDate}
+          durationSec={video.durationSec}
+        />
       )}
 
       {/* HERO */}
@@ -108,6 +123,22 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
           </div>
         </div>
       </section>
+
+      {/* ONE FIX, ONE SCREEN — video embed */}
+      {video && (
+        <section className="g-off" data-od-id="video-embed">
+          <div className="wrap">
+            <VideoEmbed
+              youtubeId={video.youtubeId}
+              title={video.title}
+              closeLine={video.closeLine}
+              app={video.app}
+              durationSec={video.durationSec}
+              playlistUrl={video.playlistUrl}
+            />
+          </div>
+        </section>
+      )}
 
       {/* HOW I HELP / CTA */}
       <section className="g-white">

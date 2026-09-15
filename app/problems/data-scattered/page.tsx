@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Your data is scattered: Decoded Ops',
@@ -67,6 +70,15 @@ export default function DataScatteredPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Data scattered', url: 'https://decodedops.co.uk/problems/data-scattered' },
    ]} />
+   {problemVideos['data-scattered'] && (
+    <VideoSchema
+     name={problemVideos['data-scattered'].title}
+     description={problemVideos['data-scattered'].closeLine}
+     youtubeId={problemVideos['data-scattered'].youtubeId}
+     uploadDate={problemVideos['data-scattered'].uploadDate}
+     durationSec={problemVideos['data-scattered'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -165,6 +177,21 @@ export default function DataScatteredPage() {
      </div>
     </div>
    </section>
+
+   {problemVideos['data-scattered'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['data-scattered'].youtubeId}
+       title={problemVideos['data-scattered'].title}
+       closeLine={problemVideos['data-scattered'].closeLine}
+       app={problemVideos['data-scattered'].app}
+       durationSec={problemVideos['data-scattered'].durationSec}
+       playlistUrl={problemVideos['data-scattered'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── PLATE · DO-ART-419 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

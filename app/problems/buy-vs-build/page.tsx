@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Buy vs build: Decoded Ops',
@@ -67,6 +70,15 @@ export default function BuyVsBuildPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Buy vs build', url: 'https://decodedops.co.uk/problems/buy-vs-build' },
    ]} />
+   {problemVideos['buy-vs-build'] && (
+    <VideoSchema
+     name={problemVideos['buy-vs-build'].title}
+     description={problemVideos['buy-vs-build'].closeLine}
+     youtubeId={problemVideos['buy-vs-build'].youtubeId}
+     uploadDate={problemVideos['buy-vs-build'].uploadDate}
+     durationSec={problemVideos['buy-vs-build'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -126,6 +138,21 @@ export default function BuyVsBuildPage() {
      </div>
     </div>
    </section>
+
+   {problemVideos['buy-vs-build'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['buy-vs-build'].youtubeId}
+       title={problemVideos['buy-vs-build'].title}
+       closeLine={problemVideos['buy-vs-build'].closeLine}
+       app={problemVideos['buy-vs-build'].app}
+       durationSec={problemVideos['buy-vs-build'].durationSec}
+       playlistUrl={problemVideos['buy-vs-build'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE ARITHMETIC ────────────────────────────────────────────── */}
    <section className="g-white">

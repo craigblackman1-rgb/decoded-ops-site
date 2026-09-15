@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Growth bottleneck: Decoded Ops',
@@ -62,6 +65,15 @@ export default function BottleneckGrowthPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Growth bottleneck', url: 'https://decodedops.co.uk/problems/bottleneck-growth' },
    ]} />
+   {problemVideos['bottleneck-growth'] && (
+    <VideoSchema
+     name={problemVideos['bottleneck-growth'].title}
+     description={problemVideos['bottleneck-growth'].closeLine}
+     youtubeId={problemVideos['bottleneck-growth'].youtubeId}
+     uploadDate={problemVideos['bottleneck-growth'].uploadDate}
+     durationSec={problemVideos['bottleneck-growth'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -104,6 +116,21 @@ export default function BottleneckGrowthPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['bottleneck-growth'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['bottleneck-growth'].youtubeId}
+       title={problemVideos['bottleneck-growth'].title}
+       closeLine={problemVideos['bottleneck-growth'].closeLine}
+       app={problemVideos['bottleneck-growth'].app}
+       durationSec={problemVideos['bottleneck-growth'].durationSec}
+       playlistUrl={problemVideos['bottleneck-growth'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE SOLUTION · Process & Quality System ─────────────────────── */}
    <section className="g-white">

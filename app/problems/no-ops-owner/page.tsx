@@ -5,6 +5,7 @@ import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { NoOpsOwnerSchematic } from '@/components/schematics/problems/NoOpsOwnerSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'No Operations Owner? Here\'s What That Costs You: Decoded Ops',
@@ -94,6 +95,7 @@ export default function NoOpsOwnerPage() {
    targetService={problemRouting['no-ops-owner'].targetService}
    relatedProblems={problemRouting['no-ops-owner'].relatedProblems}
    relatedReading={problemRouting['no-ops-owner'].relatedReading}
+   video={problemVideos['no-ops-owner']}
   />
    {/* ── PLATE · DO-ART-408 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

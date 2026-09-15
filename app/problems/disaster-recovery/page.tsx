@@ -3,6 +3,7 @@ import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { DisasterRecoverySchematic } from '@/components/schematics/problems/DisasterRecoverySchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
@@ -94,6 +95,7 @@ export default function DisasterRecoveryPage() {
    targetService={problemRouting['disaster-recovery'].targetService}
    relatedProblems={problemRouting['disaster-recovery'].relatedProblems}
    relatedReading={problemRouting['disaster-recovery'].relatedReading}
+   video={problemVideos['disaster-recovery']}
   />
    {/* ── PLATE · DO-ART-405 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

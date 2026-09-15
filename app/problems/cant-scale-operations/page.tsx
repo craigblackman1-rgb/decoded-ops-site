@@ -3,6 +3,7 @@ import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { CantScaleSchematic } from '@/components/schematics/problems/CantScaleSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
@@ -147,6 +148,7 @@ export default function CantScaleOperationsPage() {
    targetService={problemRouting['cant-scale-operations'].targetService}
    relatedProblems={problemRouting['cant-scale-operations'].relatedProblems}
    relatedReading={problemRouting['cant-scale-operations'].relatedReading}
+   video={problemVideos['cant-scale-operations']}
   />
    {/* ── PLATE · DO-ART-404 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

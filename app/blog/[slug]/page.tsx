@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
 import RelatedPosts from '@/components/RelatedPosts';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import type { Metadata } from 'next';
@@ -151,9 +153,30 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
   const schemas: Record<string, unknown>[] = [articleSchema];
   if (faqSchema) schemas.push(faqSchema);
 
+  const video = (item as Record<string, unknown>).video as {
+    youtubeId?: string;
+    title?: string;
+    closeLine?: string;
+    app?: 'Decoded Works' | 'Decoded Proof';
+    durationSec?: number;
+    uploadDate?: string;
+    playlistUrl?: string;
+  } | undefined;
+
+  const hasVideo = !!(video?.youtubeId && video?.title && video?.closeLine && video?.app && video?.durationSec && video?.uploadDate && video?.playlistUrl);
+
   return (
     <>
       {schemas.map((s, i) => <JsonLd key={i} data={s} />)}
+      {hasVideo && (
+        <VideoSchema
+          name={video!.title!}
+          description={video!.closeLine!}
+          youtubeId={video!.youtubeId!}
+          uploadDate={video!.uploadDate!}
+          durationSec={video!.durationSec!}
+        />
+      )}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Insights', url: 'https://decodedops.co.uk/blog' },
@@ -184,8 +207,21 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
         </div>
       </section>
 
-      {/* Inline image 1 */}
-      {item.images?.[0] && (
+      {/* Inline video or image 1 */}
+      {hasVideo ? (
+        <section className="g-white" data-od-id="video-embed">
+          <div className="wrap">
+            <VideoEmbed
+              youtubeId={video!.youtubeId!}
+              title={video!.title!}
+              closeLine={video!.closeLine!}
+              app={video!.app!}
+              durationSec={video!.durationSec!}
+              playlistUrl={video!.playlistUrl!}
+            />
+          </div>
+        </section>
+      ) : item.images?.[0] ? (
         <section className="g-white">
           <div className="wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -198,7 +234,7 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
             />
           </div>
         </section>
-      )}
+      ) : null}
 
       {/* Article body */}
       <section className="g-white" data-od-id="article">
@@ -208,12 +244,12 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
             dangerouslySetInnerHTML={{ __html: item.html || '' }}
           />
 
-          {/* Inline image 2 */}
-          {item.images?.[1] && (
+          {/* Inline image 2 — when video is present, image[0] moves here */}
+          {(hasVideo ? item.images?.[0] : item.images?.[1]) && (
             <div className="mt-12">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={item.images[1]}
+                src={hasVideo ? item.images[0] : item.images[1]}
                 alt=""
                 className="w-full rounded-2xl shadow-sm"
                 style={{ border: '1px solid var(--do-border-subtle)' }}

@@ -3,6 +3,7 @@ import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { EcommerceNotConnectedSchematic } from '@/components/schematics/problems/EcommerceNotConnectedSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
@@ -94,6 +95,7 @@ export default function EcommerceNotConnectedPage() {
    targetService={problemRouting['ecommerce-not-connected'].targetService}
    relatedProblems={problemRouting['ecommerce-not-connected'].relatedProblems}
    relatedReading={problemRouting['ecommerce-not-connected'].relatedReading}
+   video={problemVideos['ecommerce-not-connected']}
   />
    {/* ── PLATE · DO-ART-406 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

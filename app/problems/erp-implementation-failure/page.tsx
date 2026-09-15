@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
@@ -76,6 +79,15 @@ export default function ERPImplementationFailurePage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'ERP implementation failure', url: 'https://decodedops.co.uk/problems/erp-implementation-failure' },
    ]} />
+   {problemVideos['erp-implementation-failure'] && (
+    <VideoSchema
+     name={problemVideos['erp-implementation-failure'].title}
+     description={problemVideos['erp-implementation-failure'].closeLine}
+     youtubeId={problemVideos['erp-implementation-failure'].youtubeId}
+     uploadDate={problemVideos['erp-implementation-failure'].uploadDate}
+     durationSec={problemVideos['erp-implementation-failure'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO, the new anchor ─────────────────────────────────────── */}
    <section className="g-off">
@@ -173,6 +185,21 @@ export default function ERPImplementationFailurePage() {
      </div>
     </div>
    </section>
+
+   {problemVideos['erp-implementation-failure'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['erp-implementation-failure'].youtubeId}
+       title={problemVideos['erp-implementation-failure'].title}
+       closeLine={problemVideos['erp-implementation-failure'].closeLine}
+       app={problemVideos['erp-implementation-failure'].app}
+       durationSec={problemVideos['erp-implementation-failure'].durationSec}
+       playlistUrl={problemVideos['erp-implementation-failure'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · SUPPORTING STAT, TackleBag ───────────────────────────────── */}
    <section className="g-navy">

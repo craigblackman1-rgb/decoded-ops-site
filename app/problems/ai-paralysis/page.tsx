@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'AI paralysis: Decoded Ops',
@@ -81,6 +84,15 @@ export default function AiParalysisPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'AI paralysis', url: 'https://decodedops.co.uk/problems/ai-paralysis' },
    ]} />
+   {problemVideos['ai-paralysis'] && (
+    <VideoSchema
+     name={problemVideos['ai-paralysis'].title}
+     description={problemVideos['ai-paralysis'].closeLine}
+     youtubeId={problemVideos['ai-paralysis'].youtubeId}
+     uploadDate={problemVideos['ai-paralysis'].uploadDate}
+     durationSec={problemVideos['ai-paralysis'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -124,6 +136,21 @@ export default function AiParalysisPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['ai-paralysis'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['ai-paralysis'].youtubeId}
+       title={problemVideos['ai-paralysis'].title}
+       closeLine={problemVideos['ai-paralysis'].closeLine}
+       app={problemVideos['ai-paralysis'].app}
+       durationSec={problemVideos['ai-paralysis'].durationSec}
+       playlistUrl={problemVideos['ai-paralysis'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE RIGHT ORDER ────────────────────────────────────────────── */}
    <section className="g-white">

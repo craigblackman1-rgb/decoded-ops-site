@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Legacy system, decoration workflows: Decoded Ops',
@@ -67,6 +70,15 @@ export default function LegacySystemPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Legacy system', url: 'https://decodedops.co.uk/problems/legacy-system' },
    ]} />
+   {problemVideos['legacy-system'] && (
+    <VideoSchema
+     name={problemVideos['legacy-system'].title}
+     description={problemVideos['legacy-system'].closeLine}
+     youtubeId={problemVideos['legacy-system'].youtubeId}
+     uploadDate={problemVideos['legacy-system'].uploadDate}
+     durationSec={problemVideos['legacy-system'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -110,6 +122,21 @@ export default function LegacySystemPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['legacy-system'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['legacy-system'].youtubeId}
+       title={problemVideos['legacy-system'].title}
+       closeLine={problemVideos['legacy-system'].closeLine}
+       app={problemVideos['legacy-system'].app}
+       durationSec={problemVideos['legacy-system'].durationSec}
+       playlistUrl={problemVideos['legacy-system'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE LAYER STACK · archetype 4 ───────────────────────────────── */}
    <section className="g-white">

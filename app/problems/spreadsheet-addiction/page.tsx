@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Spreadsheet addiction: Decoded Ops',
@@ -62,6 +65,15 @@ export default function SpreadsheetAddictionPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Spreadsheet addiction', url: 'https://decodedops.co.uk/problems/spreadsheet-addiction' },
    ]} />
+   {problemVideos['spreadsheet-addiction'] && (
+    <VideoSchema
+     name={problemVideos['spreadsheet-addiction'].title}
+     description={problemVideos['spreadsheet-addiction'].closeLine}
+     youtubeId={problemVideos['spreadsheet-addiction'].youtubeId}
+     uploadDate={problemVideos['spreadsheet-addiction'].uploadDate}
+     durationSec={problemVideos['spreadsheet-addiction'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -104,6 +116,21 @@ export default function SpreadsheetAddictionPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['spreadsheet-addiction'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['spreadsheet-addiction'].youtubeId}
+       title={problemVideos['spreadsheet-addiction'].title}
+       closeLine={problemVideos['spreadsheet-addiction'].closeLine}
+       app={problemVideos['spreadsheet-addiction'].app}
+       durationSec={problemVideos['spreadsheet-addiction'].durationSec}
+       playlistUrl={problemVideos['spreadsheet-addiction'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE REAL FAILURE MODES ─────────────────────────────────────── */}
    <section className="g-white">

@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: "Ops in the owner's head: Decoded Ops",
@@ -62,6 +65,15 @@ export default function OpsInOwnersHeadPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: "Ops in the owner's head", url: 'https://decodedops.co.uk/problems/ops-in-owners-head' },
    ]} />
+   {problemVideos['ops-in-owners-head'] && (
+    <VideoSchema
+     name={problemVideos['ops-in-owners-head'].title}
+     description={problemVideos['ops-in-owners-head'].closeLine}
+     youtubeId={problemVideos['ops-in-owners-head'].youtubeId}
+     uploadDate={problemVideos['ops-in-owners-head'].uploadDate}
+     durationSec={problemVideos['ops-in-owners-head'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -104,6 +116,21 @@ export default function OpsInOwnersHeadPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['ops-in-owners-head'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['ops-in-owners-head'].youtubeId}
+       title={problemVideos['ops-in-owners-head'].title}
+       closeLine={problemVideos['ops-in-owners-head'].closeLine}
+       app={problemVideos['ops-in-owners-head'].app}
+       durationSec={problemVideos['ops-in-owners-head'].durationSec}
+       playlistUrl={problemVideos['ops-in-owners-head'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE SOLUTION · Decoded Method ──────────────────────────────── */}
    <section className="g-white">

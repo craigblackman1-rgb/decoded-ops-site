@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Seasonal peaks: Decoded Ops',
@@ -62,6 +65,15 @@ export default function SeasonalPeaksPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Seasonal peaks', url: 'https://decodedops.co.uk/problems/seasonal-peaks' },
    ]} />
+   {problemVideos['seasonal-peaks'] && (
+    <VideoSchema
+     name={problemVideos['seasonal-peaks'].title}
+     description={problemVideos['seasonal-peaks'].closeLine}
+     youtubeId={problemVideos['seasonal-peaks'].youtubeId}
+     uploadDate={problemVideos['seasonal-peaks'].uploadDate}
+     durationSec={problemVideos['seasonal-peaks'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -155,6 +167,21 @@ export default function SeasonalPeaksPage() {
      </div>
     </div>
    </section>
+
+   {problemVideos['seasonal-peaks'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['seasonal-peaks'].youtubeId}
+       title={problemVideos['seasonal-peaks'].title}
+       closeLine={problemVideos['seasonal-peaks'].closeLine}
+       app={problemVideos['seasonal-peaks'].app}
+       durationSec={problemVideos['seasonal-peaks'].durationSec}
+       playlistUrl={problemVideos['seasonal-peaks'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── PLATE · DO-ART-415 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

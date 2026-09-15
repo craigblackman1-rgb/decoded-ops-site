@@ -3,6 +3,7 @@ import { ProblemPageDS } from '@/components/ProblemPageDS';
 import { ManualWorkaroundsSchematic } from '@/components/schematics/problems/ManualWorkaroundsSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
 
@@ -94,6 +95,7 @@ export default function ManualWorkaroundsPage() {
    targetService={problemRouting['manual-workarounds'].targetService}
    relatedProblems={problemRouting['manual-workarounds'].relatedProblems}
    relatedReading={problemRouting['manual-workarounds'].relatedReading}
+   video={problemVideos['manual-workarounds']}
   />
    {/* ── PLATE · DO-ART-407 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">

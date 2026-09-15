@@ -4,6 +4,9 @@ import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
 import { NowAfterPlate } from '@/components/NowAfterPlate';
+import { VideoEmbed } from '@/components/VideoEmbed';
+import { VideoSchema } from '@/components/VideoSchema';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Inventory blind spots: Decoded Ops',
@@ -67,6 +70,15 @@ export default function InventoryBlindPage() {
     { name: 'Problems', url: 'https://decodedops.co.uk/problems' },
     { name: 'Inventory blind', url: 'https://decodedops.co.uk/problems/inventory-blind' },
    ]} />
+   {problemVideos['inventory-blind'] && (
+    <VideoSchema
+     name={problemVideos['inventory-blind'].title}
+     description={problemVideos['inventory-blind'].closeLine}
+     youtubeId={problemVideos['inventory-blind'].youtubeId}
+     uploadDate={problemVideos['inventory-blind'].uploadDate}
+     durationSec={problemVideos['inventory-blind'].durationSec}
+    />
+   )}
 
    {/* ── 1 · HERO ──────────────────────────────────────────────────────── */}
    <section className="g-off">
@@ -109,6 +121,21 @@ export default function InventoryBlindPage() {
      </ul>
     </div>
    </section>
+
+   {problemVideos['inventory-blind'] && (
+    <section className="g-off" data-od-id="video-embed">
+     <div className="wrap">
+      <VideoEmbed
+       youtubeId={problemVideos['inventory-blind'].youtubeId}
+       title={problemVideos['inventory-blind'].title}
+       closeLine={problemVideos['inventory-blind'].closeLine}
+       app={problemVideos['inventory-blind'].app}
+       durationSec={problemVideos['inventory-blind'].durationSec}
+       playlistUrl={problemVideos['inventory-blind'].playlistUrl}
+      />
+     </div>
+    </section>
+   )}
 
    {/* ── 3 · THE STOCK PICTURE · solution ───────────────────────────────── */}
    <section className="g-white">

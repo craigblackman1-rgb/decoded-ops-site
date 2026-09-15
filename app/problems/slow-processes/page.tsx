@@ -5,6 +5,7 @@ import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { SlowProcessesSchematic } from '@/components/schematics/problems/SlowProcessesSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
+import { problemVideos } from '@/data/problem-videos';
 
 export const metadata: Metadata = {
  title: 'Slow Processes Costing You Time and Money: Decoded Ops',
@@ -148,6 +149,7 @@ export default function SlowProcessesPage() {
    targetService={problemRouting['slow-processes'].targetService}
    relatedProblems={problemRouting['slow-processes'].relatedProblems}
    relatedReading={problemRouting['slow-processes'].relatedReading}
+   video={problemVideos['slow-processes']}
   />
    {/* ── PLATE · DO-ART-409 ──────────────────────────────────────────── */}
    <section className="g-white" data-od-id="plate">
