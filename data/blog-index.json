@@ -1,6 +1,13 @@
 {
   "items": [
     {
+      "slug": "erp-gaps-decorated-goods-business",
+      "title": "Four Gaps in Every ERP for a Decorated Goods Business",
+      "excerpt": "I reviewed twelve ERPs sold into this trade. Only one lists a UK supplier catalogue, and that's just the first gap.",
+      "date": "2026-09-15",
+      "category": "Technology"
+    },
+    {
       "slug": "decoded-method-operations-framework",
       "title": "What the Decoded Method Is — And Why Every Engagement Starts With It",
       "excerpt": "Most consultants leave behind a report. The Decoded Method leaves behind a system the business actually runs. Here's what it is and why the order matters.",
@@ -222,13 +229,6 @@
       "excerpt": "Systems that don't integrate are the #1 operations problem in decorated goods. Here's why it happens and how to fix it.",
       "date": "2026-04-28",
       "category": "Integration"
-    },
-    {
-      "slug": "orderwise-what-it-does-well-what-it-doesn-t",
-      "title": "Orderwise: What It Does Well, What It Doesn't",
-      "excerpt": "Orderwise: What It Does Well, What It Doesn't",
-      "date": null,
-      "category": "Technology"
     }
   ]
 }

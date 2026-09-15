@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
       // BUG-WEB-017: blog slugs renamed during relaunch — preserve Search Console equity
       { source: '/blog/artwork-approval-process', destination: '/blog/artwork-approval-workflow-brief-to-sign-off-24-hours', permanent: true },
       { source: '/blog/embroidery-quality-standards', destination: '/blog/embroidery-quality-standards-stitch-density-thread-durability', permanent: true },
+      { source: '/blog/orderwise-what-it-does-well-what-it-doesn-t', destination: '/blog/erp-gaps-decorated-goods-business', permanent: true },
     ];
   },
   async headers() {
