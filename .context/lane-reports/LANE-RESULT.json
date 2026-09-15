@@ -1,0 +1,23 @@
+{
+  "lane": "cr-mkt-010-publish",
+  "wo": "wo-marketing-sales-consolidated-2026-08-20",
+  "unit": "u36",
+  "commits": [
+    {
+      "sha": "9b0380262c96adc766e26b92b28fbed2524c89d9",
+      "subject": "feat(blog): add 301 redirect for orderwise → erp-gaps, sync blog index"
+    }
+  ],
+  "filesChanged": [
+    "next.config.ts",
+    "data/blog-index.json"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
