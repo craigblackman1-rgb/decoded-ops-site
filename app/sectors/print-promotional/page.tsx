@@ -241,6 +241,19 @@ export default function PrintPromotionalPage() {
         </section>
       )}
 
+      {/* RELATED SECTOR */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+        <div className="wrap">
+          <span className="eyebrow">Related</span>
+          <h2>Operations consultant for print & embroidery</h2>
+          <div className="hair" />
+          <p className="lede">If your print shop also runs embroidery, the operational challenges multiply. See the dedicated page for print and embroidery businesses.</p>
+          <div className="btn-row" style={{ marginTop: '24px' }}>
+            <Link className="btn btn--outline" href="/sectors/operations-consultant-print-embroidery">See the print & embroidery page <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA STRIP */}
       <section className="g-off">
         <div className={`wrap ${styles.centred}`}>

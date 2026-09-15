@@ -79,4 +79,16 @@ export const sectorRouting: Record<string, SectorRoute> = {
       { href: '/problems/no-ops-owner', label: 'No one owns the operational picture' },
     ],
   },
+  'operations-consultant-print-embroidery': {
+    targetService: {
+      href: '/clarity',
+      label: 'Clarity Audit for print & embroidery',
+      anchor: 'A one-day audit that maps your full workflow — order intake, artwork, production scheduling, stock, and despatch — and tells you exactly what to fix, in what order, and what it costs.',
+    },
+    relatedProblems: [
+      { href: '/problems/manual-workarounds', label: 'Manual workarounds across embroidery and print' },
+      { href: '/problems/erp-implementation-failure', label: 'ERP that does not handle decoration methods properly' },
+      { href: '/problems/systems-dont-talk', label: 'Embroidery, print, and admin systems that do not connect' },
+    ],
+  },
 };
