@@ -1,24 +1,25 @@
 {
-  "lane": "cr-web-031-fix-csp",
+  "lane": "gf2-pillar-page-ops-consultant",
   "wo": "wo-marketing-sales-consolidated-2026-08-20",
-  "unit": "u34",
+  "unit": "u2",
   "commits": [
     {
-      "sha": "9c12c02",
-      "subject": "feat: add VideoEmbed, VideoSchema, problem-videos plumbing for CR-WEB-031"
-    },
-    {
-      "sha": "a4f8157",
-      "subject": "fix(csp): add frame-src for youtube-nocookie embed"
+      "sha": "5ccd2d7",
+      "subject": "feat: add GF2 pillar page — operations consultant for print & embroidery businesses UK"
     }
   ],
   "filesChanged": [
-    "next.config.ts"
+    "app/sectors/operations-consultant-print-embroidery/page.tsx",
+    "components/schematics/sectors/PrintEmbroideryOpsConsultantSchematic.tsx",
+    "data/sector-routing.ts",
+    "data/route-slugs.json",
+    "app/sectors/garment-decoration/page.tsx",
+    "app/sectors/print-promotional/page.tsx"
   ],
   "verify": {
-    "tsc": "clean (0 errors)",
-    "tests": "n/a — no test runner configured in this repo",
-    "escapeGrep": "0 hits — CSP change only, no runtime code touched"
+    "tsc": "clean | 0 errors (0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
   },
   "deviations": [],
   "blockers": [],
