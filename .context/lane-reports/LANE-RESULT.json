@@ -1,47 +1,26 @@
 {
-  "lane": "cr-web-031-video-embed",
+  "lane": "cr-web-031-fix-csp",
   "wo": "wo-marketing-sales-consolidated-2026-08-20",
   "unit": "u34",
   "commits": [
     {
       "sha": "9c12c02",
       "subject": "feat: add VideoEmbed, VideoSchema, problem-videos plumbing for CR-WEB-031"
+    },
+    {
+      "sha": "a4f8157",
+      "subject": "fix(csp): add frame-src for youtube-nocookie embed"
     }
   ],
   "filesChanged": [
-    "components/VideoEmbed.tsx",
-    "components/VideoSchema.tsx",
-    "data/problem-videos.ts",
-    "components/ProblemPageDS.tsx",
-    "app/blog/[slug]/page.tsx",
-    "app/globals.css",
-    "app/problems/ai-paralysis/page.tsx",
-    "app/problems/bottleneck-growth/page.tsx",
-    "app/problems/buy-vs-build/page.tsx",
-    "app/problems/cant-scale-operations/page.tsx",
-    "app/problems/data-scattered/page.tsx",
-    "app/problems/disaster-recovery/page.tsx",
-    "app/problems/ecommerce-not-connected/page.tsx",
-    "app/problems/erp-implementation-failure/page.tsx",
-    "app/problems/inventory-blind/page.tsx",
-    "app/problems/legacy-system/page.tsx",
-    "app/problems/manual-workarounds/page.tsx",
-    "app/problems/no-ops-owner/page.tsx",
-    "app/problems/ops-in-owners-head/page.tsx",
-    "app/problems/seasonal-peaks/page.tsx",
-    "app/problems/slow-processes/page.tsx",
-    "app/problems/spreadsheet-addiction/page.tsx",
-    "app/problems/systems-dont-talk/page.tsx",
-    "app/problems/wrong-erp-software/page.tsx"
+    "next.config.ts"
   ],
   "verify": {
     "tsc": "clean (0 errors)",
     "tests": "n/a — no test runner configured in this repo",
-    "escapeGrep": "0 hits — problemVideos is empty, so no video data flows to any page"
+    "escapeGrep": "0 hits — CSP change only, no runtime code touched"
   },
-  "deviations": [
-    "11 of 18 problem pages use inline layouts (not ProblemPageDS), so VideoEmbed/VideoSchema imports were added directly to those page files rather than via a shared component prop"
-  ],
+  "deviations": [],
   "blockers": [],
   "done": true
 }
