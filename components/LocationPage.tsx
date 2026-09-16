@@ -18,6 +18,9 @@ export interface LocationPageProps {
   localContext: string;
   driveTime?: string;
   localFact?: string;
+  nearbyAreas?: string[];
+  businessSectors?: string[];
+  regionalChallenge?: string;
   painPoints: PainPoint[];
   whatIdo: string[];
   cta: string;
@@ -35,6 +38,9 @@ export function LocationPage({
   localContext,
   driveTime,
   localFact,
+  nearbyAreas,
+  businessSectors,
+  regionalChallenge,
   painPoints,
   whatIdo,
   cta,
@@ -42,6 +48,8 @@ export function LocationPage({
   serviceLabel,
 }: LocationPageProps) {
   const parts = tagline.split('||');
+
+  const allCounties = ['West Sussex', 'East Sussex', 'Surrey', 'Greater London', 'Greater Manchester'];
 
   return (
     <>
@@ -93,9 +101,23 @@ export function LocationPage({
               <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>
                 What this looks like for {town} businesses
               </h2>
+              {businessSectors && businessSectors.length > 0 && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 20 }}>
+                  {businessSectors.map((sector) => (
+                    <span key={sector} style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-muted)', padding: '4px 10px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)' }}>
+                      {sector}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
             <div>
               <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75 }}>{localContext}</p>
+              {regionalChallenge && (
+                <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75, marginTop: 16, fontStyle: 'italic' }}>
+                  {regionalChallenge}
+                </p>
+              )}
               <p style={{ color: 'var(--do-text-secondary)', fontSize: 'var(--do-text-lg)', lineHeight: 1.75, marginTop: 16 }}>
                 The work I do is the same wherever the business is based: a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
               </p>
@@ -207,9 +229,17 @@ export function LocationPage({
       {/* NEARBY LOCATIONS */}
       <section className="g-off">
         <div className="wrap" style={{ textAlign: 'center' }}>
+          {nearbyAreas && nearbyAreas.length > 0 && (
+            <div style={{ marginBottom: 16 }}>
+              <p style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-muted)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 8 }}>Nearby areas</p>
+              <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>
+                {nearbyAreas.join(' · ')}
+              </p>
+            </div>
+          )}
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
           <p style={{ color: 'var(--do-text-secondary)' }}>
-            {county} · East Sussex · West Sussex · Surrey —{' '}
+            {allCounties.filter(c => c !== county).join(' · ')} —{' '}
             <Link href={serviceUrl} className="text-cerulean hover:underline">
               view all locations
             </Link>

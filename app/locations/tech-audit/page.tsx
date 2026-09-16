@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-const counties = ['West Sussex', 'East Sussex', 'Surrey'] as const;
+const counties = ['West Sussex', 'East Sussex', 'Surrey', 'Greater London', 'Greater Manchester'] as const;
 
 export default function TechAuditLocationsHub() {
   return (

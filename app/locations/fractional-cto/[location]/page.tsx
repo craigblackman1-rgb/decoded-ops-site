@@ -116,6 +116,9 @@ export default async function FractionalCTOLocationPage({
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}
+        nearbyAreas={loc.nearbyAreas}
+        businessSectors={loc.businessSectors}
+        regionalChallenge={loc.regionalChallenge}
         painPoints={painPoints}
         whatIdo={whatIdo}
         cta={`Find out if a fractional CTO is right for your ${loc.name} business`}

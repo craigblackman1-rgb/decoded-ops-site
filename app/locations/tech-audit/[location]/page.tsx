@@ -122,6 +122,9 @@ export default async function TechAuditLocationPage({
         localContext={loc.localContext}
         driveTime={loc.driveTime}
         localFact={loc.localFact}
+        nearbyAreas={loc.nearbyAreas}
+        businessSectors={loc.businessSectors}
+        regionalChallenge={loc.regionalChallenge}
         painPoints={painPoints}
         whatIdo={whatIdo}
         cta={`Book a Clarity Audit for your ${loc.name} business, from £1,500`}
