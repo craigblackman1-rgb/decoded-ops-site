@@ -1,0 +1,36 @@
+{
+  "lane": "artwork-refresh-batch-a",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061 u2",
+  "commits": [
+    {
+      "sha": "1ac7251",
+      "subject": "feat(CR-WEB-030): batch A photo swaps — about portrait, 4 sector heros, decoded-method cover, data-app hero, commerce product photo"
+    }
+  ],
+  "filesChanged": [
+    "app/about/page.tsx",
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/signs-graphics/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/apps/data-app/page.tsx",
+    "app/apps/commerce/page.tsx",
+    "public/images/craig-blackman.jpg",
+    "public/images/sectors/cat-awards.jpg",
+    "public/images/sectors/cat-packaging.jpg",
+    "public/images/sectors/cat-print.jpg",
+    "public/images/sectors/cat-signage.jpg",
+    "public/images/apps/prod-hivis.jpg",
+    "public/images/apps/data-app-hero.png"
+  ],
+  "verify": {
+    "build": "clean",
+    "escapeGrep": "0 hits"
+  },
+  "oversize_assets": [],
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
