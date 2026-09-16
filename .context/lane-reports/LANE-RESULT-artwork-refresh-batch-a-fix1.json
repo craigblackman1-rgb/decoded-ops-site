@@ -1,0 +1,24 @@
+{
+  "lane": "artwork-refresh-batch-a-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061 u2",
+  "commits": [
+    {
+      "sha": "e1024db",
+      "subject": "fix(CR-WEB-030): responsive hero-split on playbook covers; accurate about portrait alt"
+    }
+  ],
+  "filesChanged": [
+    "app/about/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/resources/six-sigma/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
