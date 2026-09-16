@@ -1,0 +1,27 @@
+{
+  "lane": "web003-u5-location-pages",
+  "wo": "WO-WEB-003",
+  "unit": "u5",
+  "commits": [
+    {
+      "sha": "350fd19e92801cfde5aec5c8437097912d0b0377",
+      "subject": "Fix 404s for london/manchester routes + per-town differentiation for all location pages"
+    }
+  ],
+  "filesChanged": [
+    "data/locations.ts",
+    "components/LocationPage.tsx",
+    "app/locations/fractional-cto/[location]/page.tsx",
+    "app/locations/fractional-cto/page.tsx",
+    "app/locations/tech-audit/[location]/page.tsx",
+    "app/locations/tech-audit/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors, 0 pre-existing in changed files)",
+    "tests": "n/a — no test suite configured for this worktree",
+    "escapeGrep": "0 hits — no unrelated files touched"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
