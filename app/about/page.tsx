@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className={s.heroShot}>
             <div className={s.photo} data-od-id="about-visual">
               <img src="/images/craig-blackman.jpg" width="1400" height="1500"
-                   alt="Craig Blackman, founder of Decoded Ops, photographed in a garment decoration workshop." />
+                   alt="Craig Blackman, founder of Decoded Ops." />
             </div>
             <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
               system that runs them.</p>

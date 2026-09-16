@@ -105,7 +105,7 @@ export default function DecodedMethodPage() {
       <JsonLd data={schema} />
 
       <section className="g-off">
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
+        <div className="wrap hero-split">
           <div>
             <span className="eyebrow">Free playbook</span>
             <h1>The Decoded Method</h1>

@@ -51,7 +51,7 @@ export default function SixSigmaPage() {
 
       {/* HERO, dark ground */}
       <section className="g-off">
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 48, alignItems: 'center' }}>
+        <div className="wrap hero-split">
           <div>
             <span className="eyebrow">Free playbook · Garment decoration</span>
             <h1>What 5 &amp; 6 Sigma mean for your print &amp; embroidery operation</h1>
