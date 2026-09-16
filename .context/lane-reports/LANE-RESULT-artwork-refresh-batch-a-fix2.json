@@ -1,0 +1,23 @@
+{
+  "lane": "artwork-refresh-batch-a-fix2",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061 u2",
+  "commits": [
+    {
+      "sha": "45c4bf53d0b680832cf4888466e0780d7be692ef",
+      "subject": "fix(CR-WEB-030): /about portrait replaced with Craig-supplied photo (1600x1067)"
+    }
+  ],
+  "filesChanged": [
+    "app/about/page.tsx",
+    "public/images/craig-blackman.jpg"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
