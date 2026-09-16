@@ -1,0 +1,22 @@
+{
+  "lane": "web003-u15-rail-breakpoint",
+  "wo": "",
+  "unit": "WO-WEB-003 u15 (CR-WEB-033)",
+  "commits": [
+    {
+      "sha": "2467d59",
+      "subject": "fix: make .rail visible below 1360px and add prefers-reduced-motion coverage"
+    }
+  ],
+  "filesChanged": [
+    "app/homepage.css"
+  ],
+  "verify": {
+    "tsc": "clean | N/A (CSS-only change, no JS/TSX)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
