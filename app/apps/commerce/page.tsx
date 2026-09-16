@@ -113,10 +113,18 @@ export default function CommercePage() {
       {/* 2b · PRODUCT PAGE SCREEN */}
       <section className="g-tint">
         <div className="wrap" style={{ maxWidth: 900 }}>
-          <div className="evidence evidence--screen">
-            <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
-                 alt="Product page with trade pricing and decoration options" loading="lazy" />
-            <span className="stamp">decoded commerce &middot; product page</span>
+          <div className="grid grid--2" style={{ gap: 24 }}>
+            <div className="evidence evidence--screen">
+              <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
+                   alt="Product page with trade pricing and decoration options" loading="lazy" />
+              <span className="stamp">decoded commerce &middot; product page</span>
+            </div>
+            <div className="evidence evidence--screen">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/apps/prod-hivis.jpg" width={900} height={1348}
+                   alt="Hi-vis workwear product detail as sold through a Decoded Commerce trade storefront" loading="lazy" />
+              <span className="stamp">decoded commerce &middot; product detail</span>
+            </div>
           </div>
         </div>
       </section>

@@ -86,8 +86,17 @@ export default function AwardsEngravingPage() {
             </div>
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            <AwardsEngravingSchematic />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sectors/cat-awards.jpg" width="900" height="1350" loading="eager"
+                 alt="A display cabinet of glass and crystal awards, each engraved with different names and titles." />
           </div>
+          <p className={styles.shotCaption}>Every award carries a name, a date, and a hard deadline.</p>
+        </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap">
+          <AwardsEngravingSchematic />
         </div>
       </section>
 

@@ -43,8 +43,9 @@ export default function DataAppPage() {
 
           <div className="hero-shot">
             <div className="evidence evidence--screen">
-               <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
-                   alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue pushing product records to the client&rsquo;s platform." />
+               {/* eslint-disable-next-line @next/next/no-img-element */}
+               <img src="/images/apps/data-app-hero.png" width={2160} height={1215}
+                   alt="Decoded Data App: product catalogue dashboard with supplier feeds and channel status." />
               <span className="stamp">Case study 01 &middot; Data App</span>
             </div>
             <p className="shot-caption">A live client system. Feeds in on the left, one clean catalogue out
@@ -139,6 +140,13 @@ export default function DataAppPage() {
           <p className="eyebrow">The screens</p>
           <h2>What it looks like in practice.</h2>
           <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
+            <div>
+              <div className="evidence evidence--screen">
+                <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
+                     alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue." loading="lazy" />
+                <span className="stamp">Dashboard</span>
+              </div>
+            </div>
             <div>
               <div className="evidence evidence--screen">
                 <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}

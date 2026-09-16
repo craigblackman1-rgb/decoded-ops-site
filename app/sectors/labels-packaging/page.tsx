@@ -86,8 +86,17 @@ export default function LabelsPackagingPage() {
             </div>
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            <LabelsPackagingSchematic />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sectors/cat-packaging.jpg" width="900" height="1200" loading="eager"
+                 alt="Rolls of printed labels stacked on a shelving unit, different widths and substrate finishes visible." />
           </div>
+          <p className={styles.shotCaption}>Hundreds of label SKUs, each with its own spec, substrate, and compliance requirement.</p>
+        </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap">
+          <LabelsPackagingSchematic />
         </div>
       </section>
 

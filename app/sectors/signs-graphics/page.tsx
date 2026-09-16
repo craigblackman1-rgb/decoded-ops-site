@@ -86,8 +86,17 @@ export default function SignsGraphicsPage() {
             </div>
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            <SignsGraphicsSchematic />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sectors/cat-signage.jpg" width="900" height="600" loading="eager"
+                 alt="Illuminated signage being assembled on a workshop bench, vinyl and substrate materials visible." />
           </div>
+          <p className={styles.shotCaption}>From site survey to installation, every job is different.</p>
+        </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap">
+          <SignsGraphicsSchematic />
         </div>
       </section>
 
