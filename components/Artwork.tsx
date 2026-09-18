@@ -113,6 +113,10 @@ export function Artwork({
       data-artboard="page-1600x900"
       data-tx="frame"
       data-tone={tone}
+      data-mode={mode}
+      data-no={no}
+      data-rev={rev}
+      data-sub={sub}
       data-p={prefix}
       viewBox="0 0 1600 900"
       role="img"
