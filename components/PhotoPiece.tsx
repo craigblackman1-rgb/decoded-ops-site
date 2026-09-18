@@ -70,17 +70,19 @@ export function PhotoPiece({
         <div className="tx-photo__tint" />
         <div className="tx-photo__scanline" />
         <div className="tx-photo__scrim-b" />
-      </div>
-      <figcaption className={styles.evCap}>
-        {eyebrow ? (
-          <p className={styles.evEyebrow}>{eyebrow}</p>
-        ) : null}
-        {caption ? (
-          <p className={styles.evLine}>{caption}</p>
-        ) : null}
-      </figcaption>
-      <div className="mark">
-        DECODEDOPS.CO.UK &middot; <b>{no}</b> &middot; REV {rev}
+        <div className="tx-photo__content">
+          <figcaption className={styles.evCap}>
+            {eyebrow ? (
+              <p className={styles.evEyebrow}>{eyebrow}</p>
+            ) : null}
+            {caption ? (
+              <p className={styles.evLine}>{caption}</p>
+            ) : null}
+          </figcaption>
+        </div>
+        <div className="mark">
+          DECODEDOPS.CO.UK &middot; <b>{no}</b> &middot; REV {rev}
+        </div>
       </div>
     </figure>
   );
