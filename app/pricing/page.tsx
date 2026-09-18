@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Pricing: Decoded Ops',
@@ -39,6 +40,23 @@ export default function PricingPage() {
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
             <Link className="btn btn-ghost btn-arrow" href="/how-i-build">See how I decide what to build</Link>
           </div>
+        </div>
+      </section>
+
+      {/* 1a · EVIDENCE PHOTO · DO-ART-912 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="container">
+          <PhotoPiece
+            src="/images/money/prod-mailer-2026-09.jpg"
+            width={900}
+            height={600}
+            alt="A single plain kraft mailer box with its lid on, photographed on a white surface."
+            no="DO-ART-912"
+            rev="01"
+            eyebrow="— Evidence · Pricing"
+            caption="One packed order. One price."
+            focus="50% 50%"
+          />
         </div>
       </section>
 
@@ -94,9 +112,9 @@ export default function PricingPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Plate tone="dark" p="gt" title="The 3x Clarity Guarantee"
+              <Artwork mode="measure" tone="dark" p="gt" title="The 3x Clarity Guarantee"
                      sub="Clarity Audit, £1,500 fixed"
-                     no="DO-ART-203" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-203" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
                   <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
@@ -137,7 +155,7 @@ export default function PricingPage() {
                   <text x="60" y="630" className="p-mono" fontSize="17" opacity=".5">Not insurance,
                     near-certain cost avoidance, priced at the fee itself.</text>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Process & Quality System: Decoded Ops',
@@ -52,9 +53,9 @@ export default function ProcessQualitySystemPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Plate tone="dark" p="pq" title="A loop, not a document"
+              <Artwork mode="flow" tone="dark" p="pq" title="A loop, not a document"
                      sub="Four steps. The fourth feeds the first"
-                     no="DO-ART-305" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-305" rev="02" cls="DECODED OPS · ISSUED">
 
                 <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
                       fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)"/>
@@ -113,7 +114,7 @@ export default function ProcessQualitySystemPage() {
                 <text x="760" y="700" textAnchor="middle" className="p-mono sk-fade sk-s6" fontSize="22"
                       fontStyle="italic" opacity=".8">Then round again, for every process that
                   matters.</text>
-              </Plate>
+              </Artwork>
             </div>
           </div>
 
@@ -143,6 +144,23 @@ export default function ProcessQualitySystemPage() {
                 the loop run again without me.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      {/* 2a · EVIDENCE PHOTO · DO-ART-914 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="container">
+          <PhotoPiece
+            src="/images/money/cat-workwear-2026-09.jpg"
+            width={1600}
+            height={1067}
+            alt="A fanned stack of workwear shirts in white, navy, blue, olive, rust, mauve and red, collars aligned, laid on a pale blue shirt."
+            no="DO-ART-914"
+            rev="01"
+            eyebrow="— Evidence · Process & Quality System"
+            caption="The same result, every run"
+            focus="50% 50%"
+          />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock, Brain, Zap } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { PhotoPiece } from '@/components/PhotoPiece';
 
 export const metadata: Metadata = {
   title: 'Operations & Technology Consultant for Small Businesses: Decoded Ops',
@@ -200,6 +201,23 @@ export default function SmallBusinessPage() {
               <text x="460" y="38" textAnchor="middle" fontSize="7" fontWeight="700" fill="var(--do-amber)">RETAINED</text>
             </svg>
           </div>
+        </div>
+      </section>
+
+      {/* EVIDENCE PHOTO · DO-ART-915 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="wrap">
+          <PhotoPiece
+            src="/images/money/cat-promo-2026-09.jpg"
+            width={1600}
+            height={1067}
+            alt="Two plain white ceramic mugs, handles outward, side by side on a white surface."
+            no="DO-ART-915"
+            rev="01"
+            eyebrow="— Evidence · Small business"
+            caption="Small shop, same standards"
+            focus="50% 50%"
+          />
         </div>
       </section>
 

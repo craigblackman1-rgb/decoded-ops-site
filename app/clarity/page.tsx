@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Plate } from '@/components/Plate';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -48,9 +49,9 @@ export default function ClarityPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="clarity-flow-diagram">
-              <Plate tone="dark" p="cd" title="One call. One day. One clear plan."
+              <Artwork mode="flow" tone="dark" p="cd" title="One call. One day. One clear plan."
                      sub="Four fixed steps. You know what each one produces."
-                     no="DO-ART-306" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-306" rev="02" cls="DECODED OPS · ISSUED">
 
                 <path id="cd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
                       fill="none" strokeWidth="2.5" markerEnd="url(#cd-ah)" />
@@ -112,7 +113,7 @@ export default function ClarityPage() {
                     <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#cd-spine"/></animateMotion>
                   </circle>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
 
@@ -142,6 +143,23 @@ export default function ClarityPage() {
                 Then it&apos;s yours: to act on with me, or without me.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      {/* 2a · EVIDENCE PHOTO · DO-ART-908 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="wrap">
+          <PhotoPiece
+            src="/images/money/hero-workshop-2026-09.jpg"
+            width={1600}
+            height={2397}
+            alt="Two multi-head embroidery machines on a workshop floor, threaded and mid-run, with a grey garment hooped under the needles and thread cones racked behind."
+            no="DO-ART-908"
+            rev="01"
+            eyebrow="— Evidence · Clarity Audit"
+            caption="The floor the audit walks"
+            focus="50% 42%"
+          />
         </div>
       </section>
 

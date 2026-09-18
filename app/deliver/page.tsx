@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Plate } from '@/components/Plate';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -35,6 +36,23 @@ export default function DeliverPage() {
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
           </div>
+        </div>
+      </section>
+
+      {/* 1a · EVIDENCE PHOTO · DO-ART-909 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="wrap">
+          <PhotoPiece
+            src="/images/money/prod-polo-2026-09.jpg"
+            width={1600}
+            height={1067}
+            alt="A finished cream and stone colour-block zip-neck polo shirt, folded and pressed, laid on a grey studio surface."
+            no="DO-ART-909"
+            rev="01"
+            eyebrow="— Evidence · Deliver"
+            caption="Finished, checked, out the door"
+            focus="50% 55%"
+          />
         </div>
       </section>
 
@@ -99,9 +117,9 @@ export default function DeliverPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="deliver-loop-diagram">
-              <Plate tone="dark" p="pq" title="A loop, not a document"
+              <Artwork mode="flow" tone="dark" p="pq" title="A loop, not a document"
                      sub="Four steps. The fourth feeds the first."
-                     no="DO-ART-305" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-305" rev="02" cls="DECODED OPS · ISSUED">
 
                 <path id="pq-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 460 H1420"
                       fill="none" strokeWidth="2.5" markerEnd="url(#pq-ah)" />
@@ -166,7 +184,7 @@ export default function DeliverPage() {
                     <animateMotion dur="4.6s" repeatCount="indefinite"><mpath href="#pq-spine"/></animateMotion>
                   </circle>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
 

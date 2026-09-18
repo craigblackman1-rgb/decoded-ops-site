@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Plate } from '@/components/Plate';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 
 export const metadata: Metadata = {
   title: 'How I build: Decoded Ops',
@@ -36,6 +37,23 @@ export default function HowIBuildPage() {
         </div>
       </section>
 
+      {/* 1a · EVIDENCE PHOTO · DO-ART-913 */}
+      <section className="g-tint ev-band" data-od-id="evidence">
+        <div className="wrap">
+          <PhotoPiece
+            src="/images/money/prod-hivis-2026-09.jpg"
+            width={900}
+            height={1348}
+            alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, photographed against a plain studio backdrop."
+            no="DO-ART-913"
+            rev="01"
+            eyebrow="— Evidence · How I build"
+            caption="Built to the detail"
+            focus="50% 60%"
+          />
+        </div>
+      </section>
+
       {/* 2 · THE LADDER · DO-ART-302 */}
       <section className="g-tint">
         <div className="wrap">
@@ -47,9 +65,9 @@ export default function HowIBuildPage() {
 
           <div className="plate-scroll">
             <div className="plate-frame">
-               <Plate tone="dark" p="ld" title="The ladder. Buy first, build only what is missing"
+               <Artwork mode="flow" tone="dark" p="ld" title="The ladder. Buy first, build only what is missing"
                      sub="Three rungs in fixed order · every option priced"
-                     no="DO-ART-302" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-302" rev="02" cls="DECODED OPS · ISSUED">
 
                 <path id="ld-spine" pathLength={1} className="sk-draw sk-s2 p-scyan"
                       d="M140 520 H1470" fill="none" strokeWidth="2.5" markerEnd="url(#ld-ah)"/>
@@ -114,7 +132,7 @@ export default function HowIBuildPage() {
                     </animateMotion>
                   </circle>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
 
@@ -154,9 +172,9 @@ export default function HowIBuildPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Plate tone="light" p="hb" title="Platform plus layer, not platform replaced"
+              <Artwork mode="schematic" p="hb" title="Platform plus layer, not platform replaced"
                      sub="The gap the layer closes, named specifically"
-                     no="DO-ART-112" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-112" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2">
                   <rect x="120" y="290" width="420" height="320" rx="16" fill="url(#hb-node)"
@@ -198,7 +216,7 @@ export default function HowIBuildPage() {
                   <circle r="5" className="p-cyan"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#hb-l1"/></animateMotion></circle>
                   <circle r="5" className="p-amber"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.3s"><mpath href="#hb-l2"/></animateMotion></circle>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
         </div>

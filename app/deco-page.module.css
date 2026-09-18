@@ -106,9 +106,6 @@
 .statSingle .statLabel{ margin:16px auto 0; color:var(--do-sky-blue); font-size:var(--do-text-base);
   max-width:48ch }
 
-/* hide schematic below 600px — text cards carry the argument */
-@media(max-width:600px){ .plateFrame{ display:none } }
-
 /* ── schematic engine (.sk-*) — palette for self-contained SVG ── */
 .sk[data-tone="dark"]{
   --sk-bg: var(--do-prussian-blue);

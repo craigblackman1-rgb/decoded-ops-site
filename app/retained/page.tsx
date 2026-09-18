@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { JsonLd } from '@/components/JsonLd';
-import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
   title: 'Fractional CTO: Decoded Ops',
@@ -56,6 +57,23 @@ export default function RetainedPage() {
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
           </div>
+        </div>
+      </section>
+
+      {/* 1a · EVIDENCE PHOTO · DO-ART-910 */}
+      <section className="g-white ev-band" data-od-id="evidence">
+        <div className="container">
+          <PhotoPiece
+            src="/images/money/thread-spools-2026-09.jpg"
+            width={1600}
+            height={1067}
+            alt="A full row of embroidery thread cones in black, white, yellow, orange, red, pink, blue and green mounted on a machine's thread stand, every position filled."
+            no="DO-ART-910"
+            rev="01"
+            eyebrow="— Evidence · Retained"
+            caption="Stock that is always there"
+            focus="50% 55%"
+          />
         </div>
       </section>
 
@@ -125,9 +143,9 @@ export default function RetainedPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Plate tone="dark" p="rt" title="Advisory to Programme, the scale"
+              <Artwork mode="measure" tone="dark" p="rt" title="Advisory to Programme, the scale"
                      sub="Three tiers, each covering a wider scope"
-                     no="DO-ART-204" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-204" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
                   <line x1="430" y1="212" x2="430" y2="700" className="p-scyan" strokeWidth=".8"
@@ -170,7 +188,7 @@ export default function RetainedPage() {
                   <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
                     minimum, all three tiers.</text>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
         </div>

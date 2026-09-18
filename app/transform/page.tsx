@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Plate } from '@/components/Plate';
+import { Artwork } from '@/components/Artwork';
+import { PhotoPiece } from '@/components/PhotoPiece';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -37,6 +38,23 @@ export default function TransformPage() {
         </div>
       </section>
 
+      {/* 1a · EVIDENCE PHOTO · DO-ART-911 */}
+      <section className="g-tint ev-band" data-od-id="evidence">
+        <div className="wrap">
+          <PhotoPiece
+            src="/images/money/press-transfer-2026-09.jpg"
+            width={1600}
+            height={1067}
+            alt="A heat press mid-cycle on a print floor, platen lowered onto a green T-shirt with transfer paper taped across the print area."
+            no="DO-ART-911"
+            rev="01"
+            eyebrow="— Evidence · Transform"
+            caption="The press hall, before and after"
+            focus="50% 50%"
+          />
+        </div>
+      </section>
+
       {/* 2 · BEFORE / AFTER · DO-ART-403 */}
       <section className="g-tint" data-od-id="transform-ba">
         <div className="wrap">
@@ -49,9 +67,9 @@ export default function TransformPage() {
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className={`plate-frame ${s.plateFrame}`} data-od-id="transform-ba-diagram">
-               <Plate tone="dark" p="tb" title="Same business. Different Tuesday."
+               <Artwork mode="compare" tone="dark" p="tb" title="Same business. Different Tuesday."
                       sub="Case study 01: before and after, paired line for line"
-                     no="DO-ART-403" rev="01" cls="DECODED OPS · ISSUED">
+                     no="DO-ART-403" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s2" filter="url(#tb-shadow)">
                   <rect x="100" y="200" width="650" height="500" rx="14" fill="url(#tb-amber-n)"
@@ -104,7 +122,7 @@ export default function TransformPage() {
                     <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#tb-p"/></animateMotion>
                   </circle>
                 </g>
-              </Plate>
+              </Artwork>
             </div>
           </div>
 
