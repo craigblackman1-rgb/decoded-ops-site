@@ -19,3 +19,10 @@
 @import url('./marketing-pages-extra.css') layer(ds);
 @import url('./ds-nav.css') layer(ds);
 @import url('./ds-footer.css') layer(ds);
+
+/* ds-artwork.css is authored for artboard export and pins html/body to a fixed canvas
+   (overflow:hidden, fixed width/height). In the app it is only a treatment library, so
+   release the pin — same rule the standalone mockups carry after their inlined copy. */
+@layer ds {
+  html, body { overflow: visible; width: auto; height: auto; }
+}
