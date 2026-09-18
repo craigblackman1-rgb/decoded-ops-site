@@ -105,21 +105,28 @@ export default function DecodedMethodPage() {
       <JsonLd data={schema} />
 
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free playbook</span>
-          <h1>The Decoded Method</h1>
-          <p className="lede">
-            A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person&apos;s head.
-          </p>
-          <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
-            <a href="/downloads/decoded-method.pdf" download className="btn btn--primary">
-              <Download size={18} /> Download the playbook
-            </a>
-            <Link href="/clarity" className="btn btn--outline">
-              See what Clarity covers
-            </Link>
+        <div className="wrap hero-split">
+          <div>
+            <span className="eyebrow">Free playbook</span>
+            <h1>The Decoded Method</h1>
+            <p className="lede">
+              A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person&apos;s head.
+            </p>
+            <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
+              <a href="/downloads/decoded-method.pdf" download className="btn btn--primary">
+                <Download size={18} /> Download the playbook
+              </a>
+              <Link href="/clarity" className="btn btn--outline">
+                See what Clarity covers
+              </Link>
+            </div>
+            <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 12 }}>7-page PDF. No email required.</p>
           </div>
-          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 12 }}>7-page PDF. No email required.</p>
+
+          <div style={{ position: 'relative', margin: '0 auto', width: '100%', maxWidth: 320 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/decoded-method-cover.png" alt="The Decoded Method guide, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
+          </div>
         </div>
       </section>
 

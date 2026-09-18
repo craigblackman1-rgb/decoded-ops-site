@@ -107,8 +107,17 @@ export default function PrintPromotionalPage() {
             </div>
           </div>
           <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            <PrintPromotionalSchematic />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/sectors/cat-print.jpg" width="900" height="1200" loading="eager"
+                 alt="A production table covered with printed promotional items: tote bags, mugs, and branded packaging." />
           </div>
+          <p className={styles.shotCaption}>Short runs, tight deadlines, and artwork approvals that eat into the schedule.</p>
+        </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap">
+          <PrintPromotionalSchematic />
         </div>
       </section>
 
