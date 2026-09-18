@@ -1,0 +1,26 @@
+{
+  "lane": "inf061-u6-batch-b-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061 u6 fix1",
+  "commits": [
+    {
+      "sha": "fc8257e3070160270bef7e9f0bc94fcb3d196304",
+      "subject": "fix(CR-WEB-034): batch B — evidence piece fluid 16:9 in-page (mockup .ev-piece rules), Artwork root carries data-no/rev"
+    }
+  ],
+  "filesChanged": [
+    "components/PhotoPiece.module.css",
+    "components/PhotoPiece.tsx",
+    "components/Artwork.tsx"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors (0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "8 page files already had ev-band in classNames — no edit needed to apply evBand export"
+  ],
+  "blockers": [],
+  "done": true
+}
