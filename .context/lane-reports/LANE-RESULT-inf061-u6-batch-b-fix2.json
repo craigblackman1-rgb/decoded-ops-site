@@ -1,0 +1,20 @@
+{
+  "lane": "inf061-u6-batch-b-fix2",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "1ac96b3",
+      "subject": "fix(CR-WEB-034): batch B — evidence caption and mark anchored inside the .art piece (mockup tree)"
+    }
+  ],
+  "filesChanged": ["components/PhotoPiece.tsx"],
+  "verify": {
+    "tsc": "clean | 0 errors (147 pre-existing lint warnings/errors across codebase)",
+    "tests": "n/a | no test suite",
+    "escapeGrep": "0 hits | 0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
