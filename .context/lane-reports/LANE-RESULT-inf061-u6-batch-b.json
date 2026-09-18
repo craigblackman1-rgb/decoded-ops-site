@@ -1,0 +1,46 @@
+{
+  "lane": "inf061-u6-batch-b",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061 u6",
+  "commits": [
+    {
+      "sha": "607fb8038c71d2129ed50d51016be970413cbc01",
+      "subject": "feat(CR-WEB-034): batch B — money pages re-bound to artwork family v4 (rev 02) + DO-ART-908–915 evidence photography"
+    }
+  ],
+  "filesChanged": [
+    "app/design-system/ds-artwork.css",
+    "app/design-system/ds-layer.css",
+    "components/Artwork.tsx",
+    "components/PhotoPiece.tsx",
+    "app/clarity/page.tsx",
+    "app/deliver/page.tsx",
+    "app/retained/page.tsx",
+    "app/transform/page.tsx",
+    "app/pricing/page.tsx",
+    "app/how-i-build/page.tsx",
+    "app/process-quality-system/page.tsx",
+    "app/small-business/page.tsx",
+    "app/deco-page.module.css",
+    "public/images/money/hero-workshop-2026-09.jpg",
+    "public/images/money/prod-polo-2026-09.jpg",
+    "public/images/money/thread-spools-2026-09.jpg",
+    "public/images/money/press-transfer-2026-09.jpg",
+    "public/images/money/prod-mailer-2026-09.jpg",
+    "public/images/money/prod-hivis-2026-09.jpg",
+    "public/images/money/cat-workwear-2026-09.jpg",
+    "public/images/money/cat-promo-2026-09.jpg"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits in my new files (3 pre-existing in other files)"
+  },
+  "oversize_assets": [
+    "public/images/money/hero-workshop-2026-09.jpg (333.6 KB)"
+  ],
+  "deviations": [],
+  "blockers": [],
+  "notes": "Artwork.tsx renders `sub` where Plate.tsx renders it (y=112) — deliberate mockup deviation per BUG-WEB-028 (ds-artwork.js drops data-sub). Decision 1: removed @media(max-width:600px){ .plateFrame{ display:none } } from deco-page.module.css. Decision 2: PhotoPiece uses .56 tint and default scrim-b from ds-artwork.css. Decision 3: evidence band sections take g-white/g-tint ground per mockup. Decision 4: Artwork subtitle renders identically to Plate subtitle. Plate.tsx and .context scripts untouched per brief scope.",
+  "done": true
+}
