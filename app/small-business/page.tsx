@@ -202,7 +202,7 @@ export default function SmallBusinessPage() {
                   <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 8 }}>{service.name}</h3>
                   <div style={{ marginBottom: 16 }}>
                     <span className="price" style={{ fontSize: 'var(--do-text-lg)' }}>{service.price}</span>
-                    <span className="num" style={{ color: 'var(--do-text-muted)' }}>{service.priceNote}</span>
+                    <span className="num" style={{ color: 'var(--do-text-muted)', marginLeft: 6 }}>{service.priceNote}</span>
                   </div>
                   <p style={{ color: 'var(--do-text-muted)', fontSize: 'var(--do-text-sm)', marginBottom: 24, lineHeight: 1.75 }}>{service.tagline}</p>
                   <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24, flex: 1, padding: 0, listStyle: 'none' }}>
