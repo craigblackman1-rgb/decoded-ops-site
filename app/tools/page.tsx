@@ -43,12 +43,6 @@ const tools = [
     href: '/tools/should-i-replace-erp',
   },
   {
-    title: 'AI Readiness Check',
-    description:
-      'Six quick questions to find out whether your business is ready for AI, or whether you need to fix your foundation first.',
-    href: '/tools/ai-readiness-check',
-  },
-  {
     title: 'Ops Health Score',
     description:
       'Rate your business across five areas to see where you stand, and where to focus first.',
@@ -97,7 +91,7 @@ export default function ToolsPage() {
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow">Tool overview &middot; DO-ART-210</span>
-          <h2>Six calculators, six numbers you can actually use.</h2>
+          <h2>Five calculators, five numbers you can actually use.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
             What each tool hands back, so you can pick the one that answers your question. Every calculator returns a real number, not a vague suggestion.

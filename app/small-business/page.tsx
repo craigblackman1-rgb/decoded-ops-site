@@ -1,24 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Sparkles, Wrench, TrendingUp, Clock, Brain, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles, TrendingUp, Wrench, Clock } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
-  title: 'Operations & Technology Consultant for Small Businesses: Decoded Ops',
-  description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+  title: 'Small Business Operations Consultant: Decoded Ops',
+  description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
-    title: 'Operations & Technology Consultant for Small Businesses: Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+    title: 'Small Business Operations Consultant: Decoded Ops',
+    description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations & Technology Consultant for Small Businesses: Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+    title: 'Small Business Operations Consultant: Decoded Ops',
+    description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
   },
 };
 
@@ -28,16 +28,13 @@ const smallBizSchema = {
     {
       '@type': 'Service',
       name: 'Small Business Operational Support',
-      description: 'Remote operations and technology consultancy for businesses under £500k. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+      description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
       serviceType: 'Small Business Operational Support',
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/small-business',
       offers: [
         { '@type': 'Offer', name: 'Clarity Check', price: '595', priceCurrency: 'GBP' },
-        { '@type': 'Offer', name: 'Retained', price: '360', priceCurrency: 'GBP' },
-        { '@type': 'Offer', name: 'Quarterly Sprint', price: '995', priceCurrency: 'GBP' },
-        { '@type': 'Offer', name: 'AI Readiness Check', price: '395', priceCurrency: 'GBP' },
       ],
     },
     {
@@ -45,23 +42,23 @@ const smallBizSchema = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Is this right for businesses under £500k turnover?',
+          name: 'Is this right for businesses under £1m turnover?',
           acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every product on this page is specifically designed for smaller businesses. Remote delivery. Fixed prices. No minimum commitment on the Clarity Check.' },
         },
         {
           '@type': 'Question',
           name: 'Do I need to commit to anything upfront?',
-          acceptedAnswer: { '@type': 'Answer', text: 'No. The Clarity Check is a one-off fixed fee with no commitment. Monthly and sprint options have a 3-month minimum with 30 days written notice after.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'No. The Clarity Check is a one-off fixed fee with no commitment. Monthly services have minimum terms set at the audit.' },
         },
         {
           '@type': 'Question',
           name: 'What does a small business operations consultant actually do?',
-          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, vendor oversight, and an AI readiness check, delivered on a fixed-price or retainer basis that fits a sub-£500k business.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'A small business operations consultant provides the operational and technology thinking that growing businesses need but cannot yet justify as a full-time hire. This includes system selection advice, process improvement, and vendor oversight, delivered on a fixed-price or retainer basis.' },
         },
         {
           '@type': 'Question',
           name: 'Is this like managed IT support for small businesses?',
-          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, where processes are breaking down, and whether AI can genuinely help your business, not just keeping the lights on.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'No. Managed IT support services handle day-to-day IT issues. A small business operations consultant focuses on the strategic decisions: which systems to use, how to connect them, and where processes are breaking down.' },
         },
       ],
     },
@@ -73,6 +70,8 @@ const services = [
     icon: Sparkles,
     name: 'Clarity Check',
     tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
+    price: '£595',
+    priceNote: 'fixed',
     features: [
       '3-hour structured remote session',
       'Written findings summary, plain English',
@@ -86,6 +85,8 @@ const services = [
     icon: TrendingUp,
     name: 'Deliver',
     tagline: 'Keep a project moving with remote project delivery and vendor management.',
+    price: 'from £1,200',
+    priceNote: '/mo',
     features: [
       '90-minute remote working sessions',
       'Vendor management and buying support',
@@ -98,7 +99,9 @@ const services = [
   {
     icon: Wrench,
     name: 'Transform',
-    tagline: 'Focused transformation programme, one project at a time.',
+    tagline: 'Focused transformation, one project at a time.',
+    price: 'from £1,500',
+    priceNote: '/mo',
     features: [
       '90-minute remote working sessions',
       'One project at a time',
@@ -111,39 +114,17 @@ const services = [
   {
     icon: Clock,
     name: 'Retained',
-    tagline: 'Ongoing technology and operations support. Flexible days. Direct line to Craig.',
-    tiers: [
-      { name: 'Entry', sessions: '2 × 4hr sessions' },
-      { name: 'Mid', sessions: '4 × 4hr sessions' },
-      { name: 'Full', sessions: '6 × 4hr sessions' },
+    tagline: 'Ongoing technology and operations support. Direct line to Craig.',
+    price: 'from £950',
+    priceNote: '/mo',
+    features: [
+      'Flexible engagement, scaled to your operation',
+      'Strategic advice and day-to-day support',
+      'Vendor management and technology decisions',
+      'Regular check-ins and written summaries',
+      'Rolling monthly, no long lock-in',
     ],
     cta: 'Let\'s talk about what you need',
-  },
-  {
-    icon: Brain,
-    name: 'AI Readiness Check',
-    tagline: 'An honest, independent assessment of whether AI can help your business right now, and what needs fixing first.',
-    features: [
-      '90-minute structured remote session',
-      'A review of your data and processes',
-      'One or two concrete next steps if AI can help',
-      'Explicitly includes "not yet" as a valid outcome',
-      'Written assessment delivered within 3 working days',
-    ],
-    cta: 'Book an AI Readiness Check',
-  },
-  {
-    icon: Zap,
-    name: 'Quarterly Sprint',
-    tagline: 'A single intensive session each quarter: an outside look at the whole operation without a monthly commitment.',
-    features: [
-      'Half-day remote or on-site session (travel at cost)',
-      'Review of what\'s changed since last session',
-      '2–3 named priorities for the quarter ahead',
-      'Short written summary delivered within 3 days',
-      'No minimum commitment, booked fresh each quarter',
-    ],
-    cta: 'Book a Quarterly Sprint',
   },
 ];
 
@@ -165,7 +146,7 @@ export default function SmallBusinessPage() {
             The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
-            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, process improvement, and AI readiness, on a flexible, affordable basis built for businesses under £500k.
+            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, and process improvement, on a flexible, affordable basis built for businesses under £1m.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
@@ -210,7 +191,7 @@ export default function SmallBusinessPage() {
             <h2 className="h2">Fractional operations and technology support for small businesses</h2>
             <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>
           </div>
-          <div className="grid grid--3">
+          <div className="grid grid--2">
             {services.map((service) => {
               const Icon = service.icon;
               return (
@@ -218,28 +199,20 @@ export default function SmallBusinessPage() {
                   <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                     <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
                   </div>
-                  <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 16 }}>{service.name}</h3>
+                  <h3 style={{ fontSize: 'var(--do-text-xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-primary)', marginBottom: 8 }}>{service.name}</h3>
+                  <div style={{ marginBottom: 16 }}>
+                    <span className="price" style={{ fontSize: 'var(--do-text-lg)' }}>{service.price}</span>
+                    <span className="num" style={{ color: 'var(--do-text-muted)' }}>{service.priceNote}</span>
+                  </div>
                   <p style={{ color: 'var(--do-text-muted)', fontSize: 'var(--do-text-sm)', marginBottom: 24, lineHeight: 1.75 }}>{service.tagline}</p>
-                  {'features' in service && (
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24, flex: 1, padding: 0, listStyle: 'none' }}>
-                      {service.features!.map(f => (
-                        <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>
-                          <CheckCircle2 size={16} style={{ color: 'var(--do-cerulean)', marginTop: 2, flexShrink: 0 }} />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {'tiers' in service && service.tiers && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
-                      {service.tiers.map(tier => (
-                        <div key={tier.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: 12, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)' }}>
-                          <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>{tier.name}</span>
-                          <span style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)' }}>{tier.sessions}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24, flex: 1, padding: 0, listStyle: 'none' }}>
+                    {service.features.map(f => (
+                      <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>
+                        <CheckCircle2 size={16} style={{ color: 'var(--do-cerulean)', marginTop: 2, flexShrink: 0 }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                   <Link href="/contact" className="btn btn--outline" style={{ alignSelf: 'flex-start' }}>
                     {service.cta} <ArrowRight size={14} />
                   </Link>
@@ -247,6 +220,10 @@ export default function SmallBusinessPage() {
               );
             })}
           </div>
+          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 24, lineHeight: 1.75 }}>
+            Every price has three tiers — Essential, Recommended, Complete — set at the audit.
+            See <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.
+          </p>
         </div>
       </section>
 
@@ -257,7 +234,7 @@ export default function SmallBusinessPage() {
           <p className="lede">Answer two quick questions and I&apos;ll point you to the most relevant option.</p>
           <div className="btn-row" style={{ justifyContent: 'center', marginTop: 32 }}>
             <Link href="/pricing" className="btn btn--primary">
-              Take the pricing questionnaire <ArrowRight size={18} />
+              See all pricing <ArrowRight size={18} />
             </Link>
           </div>
         </div>

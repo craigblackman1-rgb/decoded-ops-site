@@ -88,18 +88,16 @@ const sectors: NavLink[] = [
 
 // ── "Small business", new top-level slot, Craig's decision (2026-08-06) ──
 const smallBusinessProducts: (NavLink & { sub: string })[] = [
-  { label: 'Clarity Check', sub: 'A written plan, no visit needed', href: '/small-business' },
-  { label: 'Deliver', sub: 'I fix things, month by month', href: '/small-business' },
-  { label: 'Transform', sub: 'Rebuild how you work', href: '/small-business' },
-  { label: 'Retained', sub: 'Someone to ask, every month', href: '/small-business' },
-  { label: 'AI Readiness Check', sub: 'Assessed for you, not a self-test', href: '/small-business' },
-  { label: 'Quarterly Sprint', sub: 'One intensive look, no monthly tie-in', href: '/small-business' },
+  { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £595', href: '/small-business' },
+  { label: 'Deliver', sub: 'From £1,200/mo — project delivery', href: '/small-business' },
+  { label: 'Transform', sub: 'From £1,500/mo — rebuild how you work', href: '/small-business' },
+  { label: 'Retained', sub: 'From £950/mo — someone to ask, every month', href: '/small-business' },
+  { label: 'Clarity Audit', sub: 'From £1,500 — the entry point', href: '/small-business' },
 ];
 const smallBusinessStart: NavGroup = {
   title: 'Start free',
   items: [
     { label: 'Ops health score', sub: 'Five areas, two minutes', href: '/tools/ops-health-score' },
-    { label: 'AI readiness check', sub: 'Free two-minute self-test', href: '/tools/ai-readiness-check' },
     { label: 'The audit checklist', sub: 'Run it on yourself', href: '/resources/audit-checklist' },
     { label: 'Read the whole thing', sub: "What's included, what isn't", href: '/small-business' },
   ],
@@ -123,7 +121,6 @@ const proofTools: NavGroup = {
     { label: 'What downtime costs you', href: '/tools/downtime-cost-calculator' },
     { label: 'Is automation worth it?', href: '/tools/automation-roi-calculator' },
     { label: 'How fast could you recover?', href: '/tools/rto-calculator' },
-    { label: 'Are you ready for AI?', href: '/tools/ai-readiness-check' },
     { label: 'Should I replace my ERP?', href: '/tools/should-i-replace-erp' },
   ],
 };
@@ -326,9 +323,9 @@ export function Header() {
               </button>
               <div className="mega" id="mega-small" hidden={openPanel !== 'small'}>
                 <div className="container mega-inner cols-2">
-                  <p className="panel-note">Turning over under &pound;500k and running it yourself? This is the same work, done remotely, at a price that fits.</p>
+                  <p className="panel-note">Turning over under &pound;1m and running it yourself? This is the same work, done remotely, at a price that fits.</p>
                   <div className="mega-group price-list-group">
-                    <h3>Fixed-price, done remotely</h3>
+                    <h3>Small business services</h3>
                     <ul className="price-list">
                       {smallBusinessProducts.map(p => (
                         <li key={p.label}>
@@ -342,7 +339,7 @@ export function Header() {
                   <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
                   <div className="smallbiz-cta-band">
                     <div className="band-text">
-                      <h3>Bigger than £500k?</h3>
+                      <h3>Bigger than £1m?</h3>
                       <p>Then the on-site work is a better fit, same steps, done in person.</p>
                     </div>
                     <div className="band-actions">
