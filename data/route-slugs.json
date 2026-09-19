@@ -33,6 +33,7 @@
     "workwear"
   ],
   "tools": [
+    "ai-readiness-check",
     "automation-roi-calculator",
     "downtime-cost-calculator",
     "ops-health-score",
