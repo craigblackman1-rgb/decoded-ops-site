@@ -23,18 +23,42 @@ export const metadata: Metadata = {
 
 const retainedSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Retained: Fractional CTO',
-  description: 'Ongoing technology leadership for decorated-goods businesses. Advisory, Embedded and Programme tiers.',
-  provider: {
-    '@type': 'Organization',
-    name: 'Decoded Ops',
-    url: 'https://decodedops.co.uk',
-    address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
-  },
-  serviceType: 'Fractional CTO',
-  areaServed: 'GB',
-  url: 'https://decodedops.co.uk/retained',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Retained: Fractional CTO',
+      description: 'Ongoing technology leadership for decorated-goods businesses. Advisory, Embedded and Programme tiers.',
+      provider: {
+        '@type': 'Organization',
+        name: 'Decoded Ops',
+        url: 'https://decodedops.co.uk',
+        address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
+      },
+      serviceType: 'Fractional CTO',
+      areaServed: 'GB',
+      url: 'https://decodedops.co.uk/retained',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does a fractional CTO do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Ongoing technology leadership without the cost of a full-time hire. Vendor calls, platform questions, roadmap ownership, and the things a business would otherwise sit on for a fortnight. The scope and cadence are agreed at the start.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What are the three tiers?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Advisory is a standing line for decisions as they come up. Embedded is closer to the operation with the roadmap owned directly. Programme is near full-time strategic and operational leadership. Six-month minimum on all three.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'When does a fractional CTO relationship not work?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When a business has not worked out what is actually broken yet. A fractional CTO relationship works best once there is a plan to execute, not before one exists.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function RetainedPage() {

@@ -27,12 +27,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
-  url: 'https://decodedops.co.uk/sectors/awards-engraving',
-  name: 'Software & Systems for Awards & Engraving: Decoded Ops',
-  description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
+      url: 'https://decodedops.co.uk/sectors/awards-engraving',
+      name: 'Software & Systems for Awards & Engraving: Decoded Ops',
+      description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you manage variable data for awards?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every award carries different names, titles, dates, and messages. The work starts by auditing how variable data comes in and gets checked, then finding systems built for variable-data personalisation.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does production schedule around event deadlines?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Awards are nearly always for a specific event with a hard deadline. Production has to schedule backwards from the date, and most systems do not do that. The review maps how scheduling currently works against event dates.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What about proof approval when there are 50 personalised items?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When one order has 50 personalised items and each needs a client-approved proof, the approval process can easily take longer than making them. The work maps the proof and approval workflow and finds the bottlenecks.' },
+        },
+      ],
+    },
+  ],
 };
 
 const tagline = 'Personalisation at scale is hard. ||Most awards businesses still do it by hand.||';

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -20,9 +21,36 @@ export const metadata: Metadata = {
   },
 };
 
+const transformFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is Transform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Transform is the programme that follows a Clarity Audit when proper change is needed, not a quick fix. It covers ERP, eCommerce and process redesign, run as one programme over weeks rather than a day.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Transform include buying software?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every vendor quotes against the same brief and Decoded Ops stays on your side of the table for the build. There is no commission, whichever platform you choose.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is Transform priced?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Transform is scoped per engagement. There is no published price for a programme this size. It starts the same way everything does: a full day on site and a written plan.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function TransformPage() {
   return (
     <main id="content">
+      <JsonLd data={transformFaqSchema} />
       {/* 1 · HERO CENTRE */}
       <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
         <div className="wrap">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Commerce: Decoded Ops',
@@ -19,9 +20,36 @@ export const metadata: Metadata = {
   },
 };
 
+const commerceFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What are the three tiers?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Standard adds company accounts, spend limits, approval workflows and quote negotiation. Extended adds multi-site, ERP integration and bespoke checkout and pricing.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is this different from a bespoke build?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the Medusa B2B open-source core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does it integrate with ERP systems like Khaos Control?',
+          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration, including Khaos Control sync, is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function CommercePage() {
   return (
     <>
+      <JsonLd data={commerceFaqSchema} />
       {/* 1 · HERO SPLIT */}
       <section className="g-off">
         <div className="wrap hero-split">

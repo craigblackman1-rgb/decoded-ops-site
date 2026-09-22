@@ -23,12 +23,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/teamwear-clubwear#webpage',
-  url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
-  name: 'Teamwear & Clubwear: Decoded Ops',
-  description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/teamwear-clubwear#webpage',
+      url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
+      name: 'Teamwear & Clubwear: Decoded Ops',
+      description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you handle squad-level personalisation data?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every order. The audit finds where personalisation data is managed by hand.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does production schedule around seasonal deadlines?',
+          acceptedAnswer: { '@type': 'Answer', text: 'The first match of the season is a fixed date and the tolerance for lateness is zero. Production scheduling has to work backwards from that, and most systems do not account for it.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you fix the proof and approval bottleneck?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Fixing that loop wins back more time than anywhere else in the job.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function TeamwearClubwearPage() {

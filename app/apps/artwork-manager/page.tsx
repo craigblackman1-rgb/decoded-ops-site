@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Artwork Manager: Decoded Ops',
@@ -19,9 +20,36 @@ export const metadata: Metadata = {
   },
 };
 
+const artworkManagerFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Artwork Manager do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It is an artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs instead of an email chain. Machine-ready files go straight to the floor.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does customer proofing work?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Customers get their own accounts and approve their own proofs. The approval is recorded against the version that was actually approved. No more chasing a reply on an email thread with six people on it and three versions attached.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What are founding-client terms?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Full implementation pricing, the first six months of support waived, in exchange for accepting that some features arrive during the engagement and agreeing to be a named reference.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function ArtworkManagerPage() {
   return (
     <>
+      <JsonLd data={artworkManagerFaqSchema} />
       {/* 1 · HERO SPLIT */}
       <section className="g-off">
         <div className="wrap hero-split">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
@@ -20,9 +21,36 @@ export const metadata: Metadata = {
   },
 };
 
+const clarityFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Clarity Audit day cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'One full day on site following six areas from start to finish: IT infrastructure, software and systems, eCommerce, processes and operations, growth, and AI readiness. A written report is delivered within five working days.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does the 3x guarantee work?',
+          acceptedAnswer: { '@type': 'Answer', text: 'If the report does not identify at least three times the fee in recoverable cost or lost revenue, it is refunded in full. No conditions. No questions.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What happens after the Clarity Audit?',
+          acceptedAnswer: { '@type': 'Answer', text: 'You get a written report covering what is costing you, what to do about it, what it will cost to fix, and in what order. The debrief is walked through in person so you can push back while Craig is still in the room. Then it is yours to act on with Decoded Ops or without.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function ClarityPage() {
   return (
     <main id="content">
+      <JsonLd data={clarityFaqSchema} />
       {/* 1 · HERO CENTRE */}
       <section className={`g-off ${s.heroCenter}`} data-od-id="hero">
         <div className="wrap">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'How I build: Decoded Ops',
@@ -19,9 +20,36 @@ export const metadata: Metadata = {
   },
 };
 
+const howIBuildFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What are the three rungs?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Rung 1 is buy off the shelf. Rung 2 is buy plus a custom layer, which is the normal answer. Rung 3 is full custom, the last resort. Every engagement climbs the same ladder and it starts at the bottom every time.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Decoded Ops resell software?',
+          acceptedAnswer: { '@type': 'Answer', text: 'No. There are several good platforms in the sector and no vendor pays for a recommendation. Decoded Ops does not resell any of them. Its own software gets scored the same way, in writing.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Will I see the cost of options that were not recommended?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every option is priced, including the ones that were not recommended, so you can check the recommendation against your own brief.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function HowIBuildPage() {
   return (
     <>
+      <JsonLd data={howIBuildFaqSchema} />
       {/* 1 · HERO CENTRE */}
       <section className="g-off">
         <div className="wrap hero-center">

@@ -23,12 +23,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
-  url: 'https://decodedops.co.uk/sectors/workwear',
-  name: 'Workwear: Decoded Ops',
-  description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/workwear#webpage',
+      url: 'https://decodedops.co.uk/sectors/workwear',
+      name: 'Workwear: Decoded Ops',
+      description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you fix supplier feed chaos?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Workwear catalogues change constantly. New ranges, discontinued colours, updated sizing. Keeping that current across every channel without re-keying it by hand eats more admin hours than anything else in this trade. The audit maps where that re-keying happens.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you get decoration and stock in the same picture?',
+          acceptedAnswer: { '@type': 'Answer', text: 'A plain garment is not the same SKU as the decorated one. Systems that do not understand that force workarounds that mean data outside the system, errors, and extra admin on every order.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you manage blank stock dependency?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders until the problem is already in the queue. The work checks blank stock against committed orders for supply gaps.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function WorkwearPage() {

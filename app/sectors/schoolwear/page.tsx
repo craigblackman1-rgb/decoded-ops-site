@@ -23,12 +23,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
-  url: 'https://decodedops.co.uk/sectors/schoolwear',
-  name: 'Schoolwear: Decoded Ops',
-  description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
+      url: 'https://decodedops.co.uk/sectors/schoolwear',
+      name: 'Schoolwear: Decoded Ops',
+      description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you handle the back-to-school peak?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Schoolwear ranges do not change often, but when a supplier updates sizing or stock you need to know before the August rush, not during it. The work finds where supplier data lag creates orders you cannot fulfil before peak season.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does badge and embroidery management work at scale?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every school badge is a thread file before it is a garment. Managing badge specifications, embroidery requirements, and version control at scale across dozens of school accounts is a dedicated workflow that spreadsheets were never built for.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the Decoded Data App replace my existing platform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the existing platform, or as the full system where nothing off the shelf fits. It handles both teamwear and schoolwear lines with supplier feeds automated.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function SchoolwearPage() {

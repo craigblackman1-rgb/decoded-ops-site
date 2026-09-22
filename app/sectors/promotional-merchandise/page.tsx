@@ -23,12 +23,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
-  url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
-  name: 'Promotional merchandise: Decoded Ops',
-  description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
+      url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
+      name: 'Promotional merchandise: Decoded Ops',
+      description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you manage multiple supplier ranges?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them without re-keying is the single biggest challenge in the sector. The audit maps your full workflow from client enquiry to delivery.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does the artwork approval loop work?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I know where margin is leaking?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When decoration cost, supplier lead time variation, and artwork rework are not tracked at the individual order level, margin quietly erodes on every job. The audit puts a number on every finding in time, margin, and admin cost.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function PromotionalMerchandisePage() {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Data App: Decoded Ops',
@@ -19,9 +20,36 @@ export const metadata: Metadata = {
   },
 };
 
+const dataAppFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Data App actually do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It handles supplier feeds, data enrichment, catalogue maintenance across channels, orders, purchasing, stock, production and despatch. It started as the missing layer and has grown into a full system.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does it replace my existing platform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or let it replace it. The platform stays unchanged in the first case. Feeds land in the Data App, get matched and enriched, and get pushed back into the platform clean.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How are supplier feeds handled?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in the Data App, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function DataAppPage() {
   return (
     <>
+      <JsonLd data={dataAppFaqSchema} />
       {/* 1 · HERO SPLIT */}
       <section className="g-off">
         <div className="wrap hero-split">

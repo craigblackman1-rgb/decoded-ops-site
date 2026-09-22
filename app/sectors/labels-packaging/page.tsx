@@ -27,12 +27,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/labels-packaging#webpage',
-  url: 'https://decodedops.co.uk/sectors/labels-packaging',
-  name: 'Software & Systems for Label & Packaging Printers: Decoded Ops',
-  description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/labels-packaging#webpage',
+      url: 'https://decodedops.co.uk/sectors/labels-packaging',
+      name: 'Software & Systems for Label & Packaging Printers: Decoded Ops',
+      description: 'The right label version on press every time, variable data without workarounds, and the EDI your bigger customers keep asking for.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What makes labels and packaging different from other print?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Labels and packaging sit where print, compliance, and the supply chain meet. There is no tolerance for error and turnaround is always tight. Compliance rules and label specs change, and keeping the right version in production across hundreds of label SKUs is a constant challenge.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you help with EDI integration for bigger customers?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Bigger label customers often expect EDI ordering, automated reorders, or direct system links. The work assesses your customer integration and EDI readiness as part of the audit.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you handle variable data at speed?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Short-run, high-variation jobs need print systems most generic software was not built for. The work reviews your variable data workflow from file intake to press-ready output and recommends systems built for short-run, variable-data label production.' },
+        },
+      ],
+    },
+  ],
 };
 
 const tagline = 'Variable data printing and compliance labelling ||demand precision most systems can\'t deliver.||';

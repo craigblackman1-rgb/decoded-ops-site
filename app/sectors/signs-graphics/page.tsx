@@ -27,12 +27,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
-  url: 'https://decodedops.co.uk/sectors/signs-graphics',
-  name: 'Software & Systems for Sign Makers: Decoded Ops',
-  description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
+      url: 'https://decodedops.co.uk/sectors/signs-graphics',
+      name: 'Software & Systems for Sign Makers: Decoded Ops',
+      description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How does the workflow differ from generic ERP?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Signs and graphics jobs do not fit generic ERP systems. The job starts with a site survey, not an order. Most systems cannot track a job from survey, through design, production, and installation, to sign-off as one connected flow.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you cost jobs with so much variation?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every job is different in substrate, finish, size, fixing method, and installation. Costing by hand means margin leaks on every complex job. The work reviews how you cost jobs and where that margin goes.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you help with installation scheduling?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Scheduling installation teams, site access, contractors, and material deliveries is a logistics problem most job systems handle poorly. The audit looks at how installation scheduling connects to production.' },
+        },
+      ],
+    },
+  ],
 };
 
 const tagline = 'Signs and graphics businesses run on ||tight margins, and every job starts with a site survey.||';
