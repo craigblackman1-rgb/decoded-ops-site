@@ -85,6 +85,8 @@ export default function SystemsDontTalkPage() {
    targetService={problemRouting['systems-dont-talk'].targetService}
    relatedProblems={problemRouting['systems-dont-talk'].relatedProblems}
    relatedReading={problemRouting['systems-dont-talk'].relatedReading}
+   relatedSectors={problemRouting['systems-dont-talk'].relatedSectors}
+   relatedResources={problemRouting['systems-dont-talk'].relatedResources}
    video={problemVideos['systems-dont-talk']}
   />
    {/* ── PLATE · DO-ART-410 ──────────────────────────────────────────── */}

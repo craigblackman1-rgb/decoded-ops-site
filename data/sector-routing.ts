@@ -4,6 +4,8 @@
 export type SectorRoute = {
   targetService: { href: string; label: string; anchor: string };
   relatedProblems: { href: string; label: string }[];
+  relatedResources: { href: string; label: string }[];
+  relatedSectors: { href: string; label: string }[];
 };
 
 export const sectorRouting: Record<string, SectorRoute> = {
@@ -18,8 +20,16 @@ export const sectorRouting: Record<string, SectorRoute> = {
       { href: '/problems/erp-implementation-failure', label: 'ERP for decorated goods has gone wrong' },
       { href: '/problems/manual-workarounds', label: 'Manual workarounds in your decoration workflow' },
     ],
+    relatedResources: [
+      { href: '/resources/artwork-approval-playbook', label: 'Artwork approval playbook' },
+      { href: '/resources/sop-template', label: 'SOP template for decoration businesses' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/print-promotional', label: 'Print & promotional' },
+      { href: '/sectors/workwear', label: 'Workwear' },
+    ],
   },
-  'workwear-teamwear': {
+  'workwear': {
     targetService: {
       href: '/transform',
       label: 'Workwear B2B portal and ERP',
@@ -28,7 +38,35 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedProblems: [
       { href: '/problems/ecommerce-not-connected', label: 'Your B2B portal isn\'t connected to operations' },
       { href: '/problems/cant-scale-operations', label: 'Scaling beyond manual account management' },
-      { href: '/problems/manual-workarounds', label: 'Workwear-spec data scattered across spreadsheets' },
+      { href: '/problems/inventory-blind', label: 'No real visibility of stock levels' },
+    ],
+    relatedResources: [
+      { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+      { href: '/tools/ops-health-score', label: 'Ops health score' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/teamwear-clubwear', label: 'Teamwear & clubwear' },
+      { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+    ],
+  },
+  'teamwear-clubwear': {
+    targetService: {
+      href: '/transform',
+      label: 'Teamwear ordering and production',
+      anchor: 'Squad numbers, sponsor logos, season deadlines, and the proof-and-approval loop that eats time before the first match.',
+    },
+    relatedProblems: [
+      { href: '/problems/seasonal-peaks', label: 'Busy season breaks your operation' },
+      { href: '/problems/manual-workarounds', label: 'Manual order processing and artwork checks' },
+      { href: '/problems/cant-scale-operations', label: 'Can\'t scale beyond manual processes' },
+    ],
+    relatedResources: [
+      { href: '/resources/sop-template', label: 'SOP template for decoration businesses' },
+      { href: '/tools/ops-health-score', label: 'Ops health score' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/workwear', label: 'Workwear' },
+      { href: '/sectors/garment-decoration', label: 'Garment decoration' },
     ],
   },
   'print-promotional': {
@@ -42,6 +80,54 @@ export const sectorRouting: Record<string, SectorRoute> = {
       { href: '/problems/erp-implementation-failure', label: 'Print MIS or ERP that doesn\'t fit' },
       { href: '/problems/manual-workarounds', label: 'Manual artwork approval and re-keying' },
     ],
+    relatedResources: [
+      { href: '/resources/artwork-approval-playbook', label: 'Artwork approval playbook' },
+      { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+      { href: '/sectors/promotional-merchandise', label: 'Promotional merchandise' },
+    ],
+  },
+  'promotional-merchandise': {
+    targetService: {
+      href: '/transform',
+      label: 'Promotional merchandise systems',
+      anchor: 'Product data across suppliers, artwork approval, margin tracking, and the catalogue management that keeps every client\'s branded goods accurate.',
+    },
+    relatedProblems: [
+      { href: '/problems/inventory-blind', label: 'No real visibility of stock levels' },
+      { href: '/problems/manual-workarounds', label: 'Manual order processing and artwork checks' },
+      { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
+    ],
+    relatedResources: [
+      { href: '/resources/artwork-approval-playbook', label: 'Artwork approval playbook' },
+      { href: '/resources/sop-template', label: 'SOP template for decoration businesses' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/print-promotional', label: 'Print & promotional' },
+      { href: '/sectors/workwear', label: 'Workwear' },
+    ],
+  },
+  'schoolwear': {
+    targetService: {
+      href: '/clarity',
+      label: 'Operations audit for schoolwear',
+      anchor: 'Supplier data before the back-to-school peak, badge data that scales, and production scheduling that hits September every time.',
+    },
+    relatedProblems: [
+      { href: '/problems/seasonal-peaks', label: 'Busy season breaks your operation' },
+      { href: '/problems/inventory-blind', label: 'No real visibility of stock levels' },
+      { href: '/problems/data-scattered', label: 'Numbers that never agree' },
+    ],
+    relatedResources: [
+      { href: '/resources/sop-template', label: 'SOP template for decoration businesses' },
+      { href: '/tools/ops-health-score', label: 'Ops health score' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/workwear', label: 'Workwear' },
+      { href: '/sectors/teamwear-clubwear', label: 'Teamwear & clubwear' },
+    ],
   },
   'signs-graphics': {
     targetService: {
@@ -54,6 +140,14 @@ export const sectorRouting: Record<string, SectorRoute> = {
       { href: '/problems/no-ops-owner', label: 'No one owns the operational picture' },
       { href: '/problems/wrong-erp-software', label: 'Job-management software that doesn\'t fit' },
     ],
+    relatedResources: [
+      { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+      { href: '/tools/ops-health-score', label: 'Ops health score' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/awards-engraving', label: 'Awards & engraving' },
+      { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
+    ],
   },
   'labels-packaging': {
     targetService: {
@@ -64,7 +158,15 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedProblems: [
       { href: '/problems/ai-paralysis', label: 'AI hype vs what would actually help' },
       { href: '/problems/wrong-erp-software', label: 'Print MIS that doesn\'t fit your business' },
-      { href: '/problems/no-ops-owner', label: 'No one owns the operational picture' },
+      { href: '/problems/disaster-recovery', label: 'If the server died tomorrow…' },
+    ],
+    relatedResources: [
+      { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+      { href: '/tools/rto-calculator', label: 'RTO calculator' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
+      { href: '/sectors/print-promotional', label: 'Print & promotional' },
     ],
   },
   'awards-engraving': {
@@ -76,7 +178,15 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Manual order processing and artwork checks' },
       { href: '/problems/wrong-erp-software', label: 'Job software that doesn\'t fit personalised work' },
-      { href: '/problems/no-ops-owner', label: 'No one owns the operational picture' },
+      { href: '/problems/disaster-recovery', label: 'If the server died tomorrow…' },
+    ],
+    relatedResources: [
+      { href: '/resources/artwork-approval-playbook', label: 'Artwork approval playbook' },
+      { href: '/tools/ops-health-score', label: 'Ops health score' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
+      { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
     ],
   },
   'operations-consultant-print-embroidery': {
@@ -89,6 +199,14 @@ export const sectorRouting: Record<string, SectorRoute> = {
       { href: '/problems/manual-workarounds', label: 'Manual workarounds across embroidery and print' },
       { href: '/problems/erp-implementation-failure', label: 'ERP that does not handle decoration methods properly' },
       { href: '/problems/systems-dont-talk', label: 'Embroidery, print, and admin systems that do not connect' },
+    ],
+    relatedResources: [
+      { href: '/resources/artwork-approval-playbook', label: 'Artwork approval playbook' },
+      { href: '/resources/erp-selection-playbook', label: 'ERP selection playbook' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+      { href: '/sectors/print-promotional', label: 'Print & promotional' },
     ],
   },
 };

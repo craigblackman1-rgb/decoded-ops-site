@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { SectorPageDS } from '@/components/SectorPageDS';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Schoolwear: Decoded Ops',
@@ -56,6 +59,7 @@ const sectorSchema = {
 };
 
 export default function SchoolwearPage() {
+  const route = sectorRouting['schoolwear'];
   return (
     <>
       <JsonLd data={sectorSchema} />
@@ -202,6 +206,62 @@ export default function SchoolwearPage() {
                 <p>{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED PROBLEMS + RESOURCES */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+        <div className="wrap">
+          <div className="grid grid--3">
+            {route.relatedProblems.length > 0 && (
+              <article className="card">
+                <span className="kicker">Common problems</span>
+                <h3>The problems I see most often</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedProblems.map((p) => (
+                    <li key={p.href} style={{ marginBottom: '10px' }}>
+                      <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{p.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedResources.length > 0 && (
+              <article className="card">
+                <span className="kicker">Useful next steps</span>
+                <h3>Resources</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedResources.map((r) => (
+                    <li key={r.href} style={{ marginBottom: '10px' }}>
+                      <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{r.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedSectors.length > 0 && (
+              <article className="card">
+                <span className="kicker">Related sectors</span>
+                <h3>Adjacent trades</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedSectors.map((s) => (
+                    <li key={s.href} style={{ marginBottom: '10px' }}>
+                      <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{s.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
           </div>
         </div>
       </section>

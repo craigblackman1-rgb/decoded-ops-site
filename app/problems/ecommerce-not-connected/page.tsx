@@ -95,6 +95,8 @@ export default function EcommerceNotConnectedPage() {
    targetService={problemRouting['ecommerce-not-connected'].targetService}
    relatedProblems={problemRouting['ecommerce-not-connected'].relatedProblems}
    relatedReading={problemRouting['ecommerce-not-connected'].relatedReading}
+   relatedSectors={problemRouting['ecommerce-not-connected'].relatedSectors}
+   relatedResources={problemRouting['ecommerce-not-connected'].relatedResources}
    video={problemVideos['ecommerce-not-connected']}
   />
    {/* ── PLATE · DO-ART-406 ──────────────────────────────────────────── */}

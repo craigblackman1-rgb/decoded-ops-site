@@ -22,6 +22,10 @@ interface ProblemPageDSProps {
   relatedProblems?: { href: string; label: string }[];
   /** 1-3 related blog posts */
   relatedReading?: { href: string; label: string }[];
+  /** Sectors where this problem shows up */
+  relatedSectors?: { href: string; label: string }[];
+  /** Useful next steps (resources, tools) */
+  relatedResources?: { href: string; label: string }[];
   /** Optional video data for the "one fix, one screen" embed block */
   video?: ProblemVideo;
 }
@@ -41,7 +45,7 @@ interface ProblemPageDSProps {
  * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
  * now uses its own inline JSX.
  */
-export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, video }: ProblemPageDSProps) {
+export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video }: ProblemPageDSProps) {
   const parts = headline.split('||');
 
   return (
@@ -169,8 +173,8 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
         </div>
       </section>
 
-      {/* GET THIS FIXED, service routing + related problems + further reading */}
-      {(targetService || (relatedProblems && relatedProblems.length > 0) || (relatedReading && relatedReading.length > 0)) && (
+      {/* GET THIS FIXED, service routing + related problems + further reading + sectors + resources */}
+      {(targetService || (relatedProblems && relatedProblems.length > 0) || (relatedReading && relatedReading.length > 0) || (relatedSectors && relatedSectors.length > 0) || (relatedResources && relatedResources.length > 0)) && (
         <section className="g-off">
           <div className="wrap">
             <div className="grid grid--3">
@@ -206,6 +210,36 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
                       <li key={p.href} style={{ marginBottom: 10 }}>
                         <Link href={p.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
                           {p.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+              {relatedSectors && relatedSectors.length > 0 && (
+                <article className="card">
+                  <span className="kicker">Sectors where this shows up</span>
+                  <h3>Common in</h3>
+                  <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                    {relatedSectors.map(s => (
+                      <li key={s.href} style={{ marginBottom: 10 }}>
+                        <Link href={s.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+              {relatedResources && relatedResources.length > 0 && (
+                <article className="card">
+                  <span className="kicker">Useful next steps</span>
+                  <h3>Resources</h3>
+                  <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                    {relatedResources.map(r => (
+                      <li key={r.href} style={{ marginBottom: 10 }}>
+                        <Link href={r.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+                          {r.label}
                         </Link>
                       </li>
                     ))}

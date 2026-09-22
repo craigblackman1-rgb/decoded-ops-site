@@ -248,6 +248,35 @@ export default function CaseStudy03Page() {
           </div>
         </section>
 
+        {/* RELATED */}
+        <section className="g-tint">
+          <div className="wrap" style={{ maxWidth: 900 }}>
+            <span className="eyebrow">Related</span>
+            <h2>Relevant sectors and problems</h2>
+            <div className="hair" />
+            <div className="grid grid--3" style={{ marginTop: 24 }}>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Workwear</h3>
+                <p>B2B ordering portal and ERP evaluation for a workwear distributor — the same sector and challenge.</p>
+                <Link href="/sectors/workwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the workwear page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Teamwear &amp; clubwear</h3>
+                <p>Squad numbers, sponsor logos, and the same B2B ordering complexity at a different scale.</p>
+                <Link href="/sectors/teamwear-clubwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the teamwear page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Problem</span>
+                <h3>Wrong ERP software</h3>
+                <p>Choosing the wrong platform and needing an independent evaluation — exactly what this engagement addressed.</p>
+                <Link href="/problems/wrong-erp-software" className="btn btn--outline" style={{ marginTop: 12 }}>Read about wrong ERP software</Link>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* 3. CTA STRIP (navy): never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
         <section className="g-navy cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>

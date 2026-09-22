@@ -204,7 +204,36 @@ export default function CaseStudy01Page() {
           </div>
         </section>
 
-        {/* 4. CTA STRIP */}
+        {/* 4. RELATED */}
+        <section className="g-tint">
+          <div className="wrap" style={{ maxWidth: 900 }}>
+            <span className="eyebrow">Related</span>
+            <h2>Relevant sectors and problems</h2>
+            <div className="hair" />
+            <div className="grid grid--3" style={{ marginTop: 24 }}>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Labels &amp; packaging</h3>
+                <p>Supplier feed ingestion and catalogue maintenance across channels — the same data challenge this case study addresses.</p>
+                <Link href="/sectors/labels-packaging" className="btn btn--outline" style={{ marginTop: 12 }}>See the labels &amp; packaging page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Workwear</h3>
+                <p>B2B ordering, supplier data, and decoration workflows that need the same kind of system integration.</p>
+                <Link href="/sectors/workwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the workwear page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Problem</span>
+                <h3>Inventory blind spots</h3>
+                <p>No real visibility of stock across channels — the problem the Data App solved for this client.</p>
+                <Link href="/problems/inventory-blind" className="btn btn--outline" style={{ marginTop: 12 }}>Read about inventory blindness</Link>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
