@@ -10,7 +10,6 @@ const ALLOWED_ORIGINS = [
 ];
 
 const VALID_TOOLS = [
-  'ai-readiness-check',
   'automation-roi-calculator',
   'downtime-cost-calculator',
   'ops-health-score',
@@ -122,7 +121,6 @@ export async function POST(req: NextRequest) {
       'downtime-cost-calculator': 'Downtime Cost Calculator',
       'rto-calculator': 'RTO Calculator',
       'should-i-replace-erp': 'Should I Replace My ERP',
-      'ai-readiness-check': 'AI Readiness Check',
       'automation-roi-calculator': 'Automation ROI Calculator',
     };
     const readableTool = toolNames[tool] || tool;

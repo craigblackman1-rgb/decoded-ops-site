@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
       { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
       { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
+      { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
       { source: '/sectors/workwear-teamwear', destination: '/sectors/workwear', permanent: true },
       { source: '/case-studies/hanicks', destination: '/case-studies/case-study-01', permanent: true },
       { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },

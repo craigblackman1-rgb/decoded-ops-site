@@ -43,12 +43,6 @@ const tools = [
     href: '/tools/should-i-replace-erp',
   },
   {
-    title: 'AI Readiness Check',
-    description:
-      'Six quick questions to find out whether your business is ready for AI, or whether you need to fix your foundation first.',
-    href: '/tools/ai-readiness-check',
-  },
-  {
     title: 'Ops Health Score',
     description:
       'Rate your business across five areas to see where you stand, and where to focus first.',
