@@ -27,6 +27,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedSectors: [
       { href: '/sectors/print-promotional', label: 'Print & promotional' },
       { href: '/sectors/workwear', label: 'Workwear' },
+      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
     ],
   },
   'workwear': {
@@ -47,6 +48,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedSectors: [
       { href: '/sectors/teamwear-clubwear', label: 'Teamwear & clubwear' },
       { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+      { href: '/sectors/labels-packaging', label: 'Labels & packaging' },
     ],
   },
   'teamwear-clubwear': {
@@ -87,6 +89,8 @@ export const sectorRouting: Record<string, SectorRoute> = {
     relatedSectors: [
       { href: '/sectors/garment-decoration', label: 'Garment decoration' },
       { href: '/sectors/promotional-merchandise', label: 'Promotional merchandise' },
+      { href: '/sectors/signs-graphics', label: 'Signs & graphics' },
+      { href: '/sectors/awards-engraving', label: 'Awards & engraving' },
     ],
   },
   'promotional-merchandise': {

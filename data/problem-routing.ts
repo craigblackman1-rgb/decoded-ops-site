@@ -71,6 +71,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
       { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
+      { href: '/problems/legacy-system', label: 'The system is ancient' },
     ],
     relatedReading: [
       { href: '/blog/ecommerce-integration-trap', label: 'The eCommerce integration trap' },
@@ -94,6 +95,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     relatedProblems: [
       { href: '/problems/systems-dont-talk', label: 'Your systems don\'t talk to each other' },
       { href: '/problems/no-ops-owner', label: 'No one owns operations from start to finish' },
+      { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
     ],
     relatedReading: [
       { href: '/blog/what-happens-when-your-systems-go-down', label: 'What happens when your systems go down?' },
@@ -171,6 +173,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     ],
     relatedResources: [
       { href: '/tools/ops-health-score', label: 'Ops health score' },
+      { href: '/resources/decoded-method', label: 'The Decoded Method' },
     ],
   },
 
@@ -183,6 +186,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     relatedProblems: [
       { href: '/problems/ecommerce-not-connected', label: 'Your eCommerce isn\'t connected to operations' },
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+      { href: '/problems/legacy-system', label: 'The system is ancient' },
     ],
     relatedReading: [
       { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk (and what it costs)' },
@@ -205,6 +209,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
       { href: '/problems/cant-scale-operations', label: 'You can\'t scale operations without breaking things' },
+      { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
     ],
     relatedReading: [
       { href: '/blog/ai-isnt-your-problem-your-processes-are', label: 'AI isn\'t your problem. Your processes are.' },
@@ -412,6 +417,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
       { href: '/problems/cant-scale-operations', label: 'Can\'t scale operations' },
       { href: '/problems/no-ops-owner', label: 'Nobody owns operations' },
       { href: '/problems/slow-processes', label: 'Production is too slow' },
+      { href: '/problems/ops-in-owners-head', label: 'It\'s all in the owner\'s head' },
     ],
     relatedReading: [
       { href: '/blog/why-systems-dont-talk', label: 'Why systems don\'t talk' },
