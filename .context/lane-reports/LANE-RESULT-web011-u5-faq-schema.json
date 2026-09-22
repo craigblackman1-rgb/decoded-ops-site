@@ -1,0 +1,35 @@
+{
+  "lane": "web011-u5-faq-schema",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "8ae4d28",
+      "subject": "CR-WEB-043: FAQPage JSON-LD on service, app and sector pages"
+    }
+  ],
+  "filesChanged": [
+    "app/clarity/page.tsx",
+    "app/retained/page.tsx",
+    "app/transform/page.tsx",
+    "app/how-i-build/page.tsx",
+    "app/apps/data-app/page.tsx",
+    "app/apps/artwork-manager/page.tsx",
+    "app/apps/commerce/page.tsx",
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/promotional-merchandise/page.tsx",
+    "app/sectors/schoolwear/page.tsx",
+    "app/sectors/signs-graphics/page.tsx",
+    "app/sectors/teamwear-clubwear/page.tsx",
+    "app/sectors/workwear/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
