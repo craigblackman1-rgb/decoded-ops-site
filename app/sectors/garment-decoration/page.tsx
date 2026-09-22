@@ -248,6 +248,22 @@ export default function GarmentDecorationPage() {
                   </ul>
                 </div>
               )}
+              {route.relatedSectors && route.relatedSectors.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Related sectors</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Adjacent trades</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedSectors.map((s) => (
+                      <li key={s.href} style={{ marginBottom: '10px' }}>
+                        <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{s.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>

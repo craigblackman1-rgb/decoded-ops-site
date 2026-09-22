@@ -7,6 +7,7 @@ import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
+import { problemRouting } from '@/data/problem-routing';
 
 export const metadata: Metadata = {
  title: 'AI paralysis: Decoded Ops',
@@ -76,6 +77,7 @@ const aiParalysisSchema = {
 };
 
 export default function AiParalysisPage() {
+ const route = problemRouting['ai-paralysis'];
  return (
   <>
    <JsonLd data={aiParalysisSchema} />
@@ -274,9 +276,64 @@ export default function AiParalysisPage() {
        real opportunities are in your specific operation, and what&apos;s noise you can safely ignore.</p>
      </div>
     </div>
-   </section>
+    </section>
 
-   {/* ── 6 · CTA STRIP ──────────────────────────────────────────────────── */}
+    {/* ── RELATED LINKS ──────────────────────────────────────────────── */}
+    {(route.relatedProblems.length > 0 || route.relatedSectors.length > 0 || route.relatedResources.length > 0) && (
+     <section className="g-off">
+      <div className="wrap">
+       <div className="grid grid--3">
+        {route.relatedProblems.length > 0 && (
+         <article className="card">
+          <span className="kicker">Related problems</span>
+          <h3>You might also have</h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+           {route.relatedProblems.map(p => (
+            <li key={p.href} style={{ marginBottom: 10 }}>
+             <Link href={p.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+              {p.label}
+             </Link>
+            </li>
+           ))}
+          </ul>
+         </article>
+        )}
+        {route.relatedSectors.length > 0 && (
+         <article className="card">
+          <span className="kicker">Related sectors</span>
+          <h3>Adjacent trades</h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+           {route.relatedSectors.map(s => (
+            <li key={s.href} style={{ marginBottom: 10 }}>
+             <Link href={s.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+              {s.label}
+             </Link>
+            </li>
+           ))}
+          </ul>
+         </article>
+        )}
+        {route.relatedResources.length > 0 && (
+         <article className="card">
+          <span className="kicker">Useful next steps</span>
+          <h3>Resources</h3>
+          <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+           {route.relatedResources.map(r => (
+            <li key={r.href} style={{ marginBottom: 10 }}>
+             <Link href={r.href} className="underline" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-primary)' }}>
+              {r.label}
+             </Link>
+            </li>
+           ))}
+          </ul>
+         </article>
+        )}
+       </div>
+      </div>
+     </section>
+    )}
+
+    {/* ── 6 · CTA STRIP ──────────────────────────────────────────────────── */}
    <section className="g-white cta-strip">
     <div className="wrap" style={{ maxWidth: 760 }}>
      <h2>Find out what AI could actually do for you.</h2>
