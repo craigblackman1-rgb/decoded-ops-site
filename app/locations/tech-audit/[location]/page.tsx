@@ -91,23 +91,37 @@ export default async function TechAuditLocationPage({
             description: `Technology audit services for small businesses in ${loc.name}, ${loc.county}`,
             address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
             telephone: '07735 620 603',
-            areaServed: {
-              '@type': 'City',
-              name: loc.name,
-              containedInPlace: {
-                '@type': 'AdministrativeArea',
-                name: loc.county,
+            areaServed: [
+              {
+                '@type': 'City',
+                name: loc.name,
+                containedInPlace: {
+                  '@type': 'AdministrativeArea',
+                  name: loc.county,
+                },
               },
-            },
-            serviceRadius: { '@type': 'Distance', name: 'Within 2 hours of Worthing' },
+              {
+                '@type': 'GeoCircle',
+                geoMidpoint: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+                geoRadius: '160000',
+              },
+            ],
             geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
-            serviceType: 'Technology Audit',
-            offers: {
-              '@type': 'Offer',
-              price: '1500',
-              priceCurrency: 'GBP',
-              description: 'Clarity Audit, technology audit and systems diagnostic',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Technology Audit',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Technology Audit',
+                    url: 'https://decodedops.co.uk/clarity',
+                  },
+                },
+              ],
             },
+            parentOrganization: { '@id': 'https://decodedops.co.uk/#organisation' },
             url: `https://decodedops.co.uk/locations/tech-audit/${loc.slug}`,
           }),
         }}

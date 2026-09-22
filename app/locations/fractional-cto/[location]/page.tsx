@@ -91,17 +91,37 @@ export default async function FractionalCTOLocationPage({
             description: `Fractional CTO services for businesses in ${loc.name}, ${loc.county}`,
             address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
             telephone: '07735 620 603',
-            areaServed: {
-              '@type': 'City',
-              name: loc.name,
-              containedInPlace: {
-                '@type': 'AdministrativeArea',
-                name: loc.county,
+            areaServed: [
+              {
+                '@type': 'City',
+                name: loc.name,
+                containedInPlace: {
+                  '@type': 'AdministrativeArea',
+                  name: loc.county,
+                },
               },
-            },
-            serviceRadius: { '@type': 'Distance', name: 'Within 2 hours of Worthing' },
+              {
+                '@type': 'GeoCircle',
+                geoMidpoint: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
+                geoRadius: '160000',
+              },
+            ],
             geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
-            serviceType: 'Fractional CTO',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Fractional CTO',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: 'Fractional CTO',
+                    url: 'https://decodedops.co.uk/fractional',
+                  },
+                },
+              ],
+            },
+            parentOrganization: { '@id': 'https://decodedops.co.uk/#organisation' },
             url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
           }),
         }}
