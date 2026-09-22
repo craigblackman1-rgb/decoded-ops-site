@@ -102,7 +102,7 @@ export default function SignsGraphicsPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Signs and graphics jobs don't fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
+              <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

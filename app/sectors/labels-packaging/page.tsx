@@ -102,7 +102,7 @@ export default function LabelsPackagingPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There's no tolerance for error, and turnaround is always tight.</p>
+              <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There&apos;s no tolerance for error, and turnaround is always tight.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
