@@ -1,0 +1,23 @@
+{
+  "lane": "web011-u15-location-jsonld",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "u15",
+  "commits": [
+    {
+      "sha": "9cd64a3a987d16cfe59fdc7814489734516bae20",
+      "subject": "fix(seo): valid ProfessionalService JSON-LD on location pages (CR-WEB-047, WO-WEB-011 u15)"
+    }
+  ],
+  "filesChanged": [
+    "app/locations/fractional-cto/[location]/page.tsx",
+    "app/locations/tech-audit/[location]/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
