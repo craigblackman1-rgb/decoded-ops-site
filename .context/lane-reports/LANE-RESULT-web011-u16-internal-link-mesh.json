@@ -1,0 +1,23 @@
+{
+  "lane": "web011-u16-internal-link-mesh",
+  "wo": "WO-WEB-011",
+  "unit": "u16",
+  "commits": [
+    {
+      "sha": "b6ce327bcffbc3433ff27d1e307dbfa41ff36447",
+      "subject": "Add internal links to 7 underlinked pages (WO-WEB-011 u16)"
+    }
+  ],
+  "filesChanged": [
+    "data/problem-routing.ts",
+    "data/sector-routing.ts"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
