@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -69,10 +70,10 @@ export default function DataAppPage() {
             </div>
           </div>
 
-          <div className="hero-shot">
+           <div className="hero-shot">
             <div className="evidence evidence--screen">
-               {/* eslint-disable-next-line @next/next/no-img-element */}
-               <img src="/images/apps/data-app-hero.png" width={2160} height={1215}
+               <Image src="/images/apps/data-app-hero-v2.webp" width={2160} height={1215}
+                   sizes="(max-width: 768px) 100vw, 50vw" priority
                    alt="Decoded Data App: product catalogue dashboard with supplier feeds and channel status." />
               <span className="stamp">Case study 01 &middot; Data App</span>
             </div>
@@ -167,24 +168,27 @@ export default function DataAppPage() {
         <div className="wrap">
           <p className="eyebrow">The screens</p>
           <h2>What it looks like in practice.</h2>
-          <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
+           <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
+                <Image src="/images/apps/data-app-dashboard-v2.webp" width={3200} height={3072}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue." loading="lazy" />
                 <span className="stamp">Dashboard</span>
               </div>
             </div>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}
+                <Image src="/images/apps/data-app-catalogue-v2.webp" width={3200} height={2000}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="Parent products catalogue in the Data App" loading="lazy" />
                 <span className="stamp">Catalogue view</span>
               </div>
             </div>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-supplier-import.png" width={3200} height={2000}
+                <Image src="/images/apps/data-app-supplier-import-v2.webp" width={3200} height={2000}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="Supplier CSV import screen" loading="lazy" />
                 <span className="stamp">Supplier import</span>
               </div>

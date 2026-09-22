@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -73,7 +74,8 @@ export default function CommercePage() {
 
           <div className="hero-shot">
             <div className="evidence evidence--screen">
-              <img src="/images/apps/commerce-plp.png" width={2160} height={3816}
+              <Image src="/images/apps/commerce-plp-v2.webp" width={2160} height={3816}
+                   sizes="(max-width: 768px) 100vw, 50vw" priority
                    alt="A B2B trade storefront product listing page: decorated garments in a filtered grid with trade pricing shown per account, size and colour facets down the left, and a quote-request action alongside add to basket." />
               <span className="stamp">decoded commerce &middot; trade storefront</span>
             </div>
@@ -143,13 +145,14 @@ export default function CommercePage() {
         <div className="wrap" style={{ maxWidth: 900 }}>
           <div className="grid grid--2" style={{ gap: 24 }}>
             <div className="evidence evidence--screen">
-              <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
+              <Image src="/images/apps/commerce-pdp-v2.webp" width={3200} height={2000}
+                   sizes="(max-width: 768px) 100vw, 50vw"
                    alt="Product page with trade pricing and decoration options" loading="lazy" />
               <span className="stamp">decoded commerce &middot; product page</span>
             </div>
             <div className="evidence evidence--screen">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/apps/prod-hivis.jpg" width={900} height={1348}
+              <Image src="/images/apps/prod-hivis.jpg" width={900} height={1348}
+                   sizes="(max-width: 768px) 100vw, 50vw"
                    alt="Hi-vis workwear product detail as sold through a Decoded Commerce trade storefront" loading="lazy" />
               <span className="stamp">decoded commerce &middot; product detail</span>
             </div>

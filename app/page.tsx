@@ -113,7 +113,7 @@ export default function HomePage() {
               </div>
 
               <figure className="shot" data-od-id="hero-photo">
-                <Image className="p-photo" src="/images/hero-craft.jpg" fill sizes="(max-width: 1040px) 100vw, 45vw"
+                <Image className="p-photo" src="/images/hero-craft-v2.webp" fill sizes="(max-width: 1040px) 100vw, 45vw"
                   style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
                   alt="Two multi-head embroidery machines running garments on a decoration floor." />
                 <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
@@ -168,7 +168,7 @@ export default function HomePage() {
               has followed your processes from start to finish, everything after that is guesswork.</p>
 
             <figure className="band" data-od-id="help-photo">
-              <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+              <Image src="/images/sectors/thread-spools-v2.webp" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
                 style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
                 alt="A row of coloured thread cones loaded on an embroidery machine head." />
               <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>

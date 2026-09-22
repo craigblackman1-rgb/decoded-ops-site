@@ -73,7 +73,7 @@ export default function SchoolwearPage() {
         ]}
         heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
-          src: '/images/sectors/thread-spools.jpg',
+          src: '/images/sectors/thread-spools-v2.webp',
           width: 1600,
           height: 1067,
           alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',

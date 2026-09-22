@@ -13,7 +13,7 @@ export function HeroVisual() {
     <div className="relative w-full pb-12 pr-6">
       <div className="relative w-full aspect-[4/3.2] rounded-2xl overflow-hidden shadow-xl">
         <Image
-          src="/images/hero-craft.jpg"
+          src="/images/hero-craft-v2.webp"
           alt="Hands preparing a garment on a heat press"
           fill
           priority

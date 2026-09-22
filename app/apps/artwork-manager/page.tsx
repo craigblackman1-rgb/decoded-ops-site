@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 
@@ -69,7 +70,8 @@ export default function ArtworkManagerPage() {
 
           <div className="hero-shot">
             <div className="evidence">
-              <img src="/images/apps/artwork-approval.png" width={3200} height={2000}
+              <Image src="/images/apps/artwork-approval-v2.webp" width={3200} height={2000}
+                   sizes="(max-width: 768px) 100vw, 50vw" priority
                    alt="Artwork approval screen — stitch file preview and sign-off" />
             </div>
             <p className="shot-caption">Customers approve their own proofs against the exact version
