@@ -1,0 +1,24 @@
+{
+  "lane": "cr-web-048-fix1",
+  "wo": "wo-content-reset-2026-09-23",
+  "unit": "CR-WEB-048",
+  "commits": [
+    {
+      "sha": "afd3da087c65e47d59b92bb7f963ab12f71525d6",
+      "subject": "fix(case-studies): card titles, plate lines, full figures (CR-WEB-048)"
+    }
+  ],
+  "filesChanged": [
+    "app/case-studies/page.tsx",
+    "app/case-studies/case-study-01/page.tsx",
+    "app/case-studies/case-study-02/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors, 0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits (Khaos|164,752|127,135|11,064|9 supplier feeds|TackleBag|Tackle Bag|Same platform)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
