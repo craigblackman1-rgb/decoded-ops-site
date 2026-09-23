@@ -311,7 +311,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p className="sheet-foot">Same approach at Case study 02, real production numbers: nine supplier
+              <p className="sheet-foot">Same approach at Case study 02, real production numbers: 17 supplier
                 feeds automated, and a projected saving of 20 to 40 hours a week.</p>
             </article>
           </div>
@@ -394,7 +394,7 @@ export default function HomePage() {
                       <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
                             opacity=".45">SHOWS</text>
                       <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+                            fontWeight="600" fontSize="22">17 supplier feeds, automated</text>
                       <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
                         picking alongside Symphony</text>
 
