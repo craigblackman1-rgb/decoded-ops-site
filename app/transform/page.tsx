@@ -6,7 +6,7 @@ import s from '@/app/deco-page.module.css';
 
 export const metadata: Metadata = {
   title: 'Transform: Decoded Ops',
-  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 77% auto-matched, nine supplier feeds fully automated.',
+  description: 'Transform is the programme that follows a Clarity Audit. The plan, executed. Measured results: 154,518 products matched automatically, 17 supplier feeds fully automated.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
@@ -70,8 +70,8 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Two live examples &middot; DO-ART-403</span>
           <h2>Same approach, twice, in two different businesses.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Case study 01: 164,752 products imported and 77% matched on
-            the first run. Case study 02: nine supplier feeds automated, a projected saving of 20 to 40
+           <p className="lede" style={{ marginTop: 16 }}>Case study 01: 317,812 products brought in and 154,518 matched to a supplier automatically.
+            Case study 02: 17 supplier feeds automated, a projected saving of 20 to 40
             hours a week. Same approach both times: fix the process and the data before automating
             anything.</p>
 
@@ -90,7 +90,7 @@ export default function TransformPage() {
                         letterSpacing="2" fill="var(--do-prussian-blue)">NOW</text>
                 </g>
                 <g className="sk-fade sk-s3" fontSize="22">
-                  <text x="140" y="322" className="p-ink">164,752 rows, no consistent SKU</text>
+                  <text x="140" y="322" className="p-ink">317,812 rows, no consistent SKU</text>
                   <text x="140" y="392" className="p-ink">Matching done by hand</text>
                   <text x="140" y="462" className="p-ink">Catalogue nobody trusted</text>
                   <text x="140" y="532" className="p-ink">Website and warehouse disagreed</text>
@@ -114,9 +114,9 @@ export default function TransformPage() {
                         letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
                 </g>
                 <g className="sk-fade sk-s5" fontSize="22">
-                  <text x="890" y="322" className="p-ink">127,135 matched on the first run</text>
-                  <text x="890" y="392" className="p-ink">77% matched automatically</text>
-                   <text x="890" y="462" className="p-ink">11,064 prepared for Khaos Control</text>
+                  <text x="890" y="322" className="p-ink">154,518 matched automatically</text>
+                  <text x="890" y="392" className="p-ink">40 active suppliers feeding in</text>
+                   <text x="890" y="462" className="p-ink">Data app (now the ERP)</text>
                   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
                   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                      strokeLinejoin="round" fill="none">
@@ -149,9 +149,9 @@ export default function TransformPage() {
             <div className={`${s.baCol} ${s.baColAfter}`} data-od-id="ba-after">
               <h3>After</h3>
               <ul>
-                <li>Case study 01: <strong>164,752</strong> imported, <strong>127,135</strong> matched on the first run</li>
-                 <li>Case study 01: <strong>77%</strong> matched automatically, <strong>11,064</strong> prepared for Khaos Control</li>
-                <li>Case study 02: <strong>9</strong> supplier feeds fully automated</li>
+                <li>Case study 01: <strong>317,812</strong> brought in, <strong>154,518</strong> matched automatically</li>
+                 <li>Case study 01: <strong>40</strong> active suppliers, <strong>3,844</strong> Amazon listings re-optimised</li>
+                <li>Case study 02: <strong>17</strong> supplier feeds fully automated</li>
                 <li>Case study 02: a projected saving of <strong>20–40 hours</strong> a week</li>
               </ul>
             </div>

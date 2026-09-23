@@ -66,7 +66,7 @@ export default function AppsPage() {
               </div>
               <p>Storefront build and migration, scoped to what your customers actually need.
                 A full migration off WooCommerce, a new storefront, and reintegration back
-                into Khaos Control is the worked example.</p>
+                into one clean, matched list is the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
           </div>
@@ -138,7 +138,7 @@ export default function AppsPage() {
                   <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="800" fontSize="26">Your platform</text>
                   <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
-                        fontWeight="600">Khaos Control · Symphony · yours · or the Data App itself</text>
+                        fontWeight="600">Your ERP · your website · or the Data App itself</text>
                 </g>
 
                 <g className="sk-dots">

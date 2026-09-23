@@ -128,8 +128,7 @@ export default function DataAppPage() {
                         className="p-node" strokeWidth="1.4"/>
                   <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">The platform you run today</text>
-                  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ·
-                    Symphony · or this system, once it has earned it</text>
+                  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Your ERP · or this system, once it has earned it</text>
                   <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
                         letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
                 </g>
@@ -205,16 +204,16 @@ export default function DataAppPage() {
 
           <div className="grid grid--3" style={{ marginTop: 44 }}>
             <div className="stat">
-              <p className="stat-num num">164,752</p>
-              <p className="stat-label">products imported from supplier feeds</p>
+              <p className="stat-num num">317,812</p>
+              <p className="stat-label">products brought in from supplier feeds</p>
             </div>
             <div className="stat">
-              <p className="stat-num num">77%</p>
-              <p className="stat-label">matched automatically on the first run</p>
+              <p className="stat-num num">154,518</p>
+              <p className="stat-label">matched to a supplier automatically</p>
             </div>
             <div className="stat">
-              <p className="stat-num num">11,064</p>
-              <p className="stat-label">matched and prepared for the Khaos Control catalogue within weeks</p>
+              <p className="stat-num num">40</p>
+              <p className="stat-label">active suppliers feeding in</p>
             </div>
           </div>
 

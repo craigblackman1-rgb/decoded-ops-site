@@ -206,9 +206,9 @@ export default function DataScatteredPage() {
         ]}
         after={[
           'One matched catalogue, all sources reconciled',
-          'Automated matching, 77%+ on first run',
+          'Automated matching against every supplier feed',
           'Every channel reads the same live data',
-          '164,752 products → one version of the truth',
+          '317,812 products → one version of the truth',
         ]}
        />
       </Plate>
@@ -225,9 +225,8 @@ export default function DataScatteredPage() {
       <p>The Decoded Data App takes every supplier feed in, matches it against your existing
        catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
        the website, the warehouse.</p>
-       <p>In one deployment, 164,752 products went in and 127,135 matched automatically on the first run,
-       a 77% match rate, with 11,064 matched and prepared for the Khaos Control catalogue within weeks. Same principle,
-       any supplier mix.</p>
+       <p>In one deployment, 317,812 products came in from supplier feeds and 154,518 were matched to a supplier automatically, before anyone had to touch them. Same principle,
+        any supplier mix.</p>
      </div>
     </div>
    </section>

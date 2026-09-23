@@ -263,39 +263,37 @@ export default function HomePage() {
                     {/* 1 · rows imported */}
                     <g className="sk-fade sk-s2">
                       <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">ROWS IMPORTED</text>
-                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">supplier feeds</text>
+                            opacity=".55">PRODUCTS BROUGHT IN</text>
+                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">from supplier feeds</text>
                       <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
                             className="p-node" strokeWidth="1"/>
                       <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">164,752</text>
+                            fontWeight="700" fontSize="30">317,812</text>
                     </g>
 
                     {/* 2 · matched automatically */}
                     <g className="sk-fade sk-s3">
                       <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
                             opacity=".55">MATCHED AUTOMATICALLY</text>
-                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">first run, no
-                        hand-matching</text>
-                      <rect x="430" y="348" width="833" height="62" rx="6" fill="url(#ms-bar)"
+                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
+                      <rect x="430" y="348" width="797" height="62" rx="6" fill="url(#ms-bar)"
                             className="p-node" strokeWidth="1"/>
                       <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">127,135</text>
+                            fontWeight="700" fontSize="30">154,518</text>
                       <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">77%</text>
+                            fontWeight="700" fontSize="30">40</text>
                     </g>
 
                     {/* 3 · live. Amber lands once, on the figure that is the point. */}
                     <g className="sk-fade sk-s4">
                       <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">PREPARED</text>
-                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
+                            opacity=".55">RE-OPTIMISED</text>
+                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
                       <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
                             className="p-node-a" strokeWidth="1.4"/>
                       <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">11,064</text>
-                      <text x="700" y="510" className="p-mono" fontSize="17" opacity=".5">in range, priced
-                        and published, within weeks</text>
+                            fontWeight="700" fontSize="30">3,844</text>
+                      <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
                     </g>
 
                     {/* the lever */}

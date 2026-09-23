@@ -39,8 +39,8 @@ const commerceFaqSchema = {
         },
         {
           '@type': 'Question',
-          name: 'Does it integrate with ERP systems like Khaos Control?',
-          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration, including Khaos Control sync, is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
+          name: 'Does it integrate with ERP systems?',
+          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
         },
       ],
     },
@@ -132,7 +132,7 @@ export default function CommercePage() {
               </div>
               <h3>Extended</h3>
               <p className="feature-meta">More than one of everything</p>
-              <p>Multi-site storefronts, ERP integration (Khaos Control sync and similar), and bespoke
+              <p>Multi-site storefronts, ERP integration, and bespoke
                 checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
                 price.</p>
             </div>
@@ -229,7 +229,7 @@ export default function CommercePage() {
             <div className="panel">
               <h3>The worked example</h3>
               <p>A full migration off WooCommerce, a new storefront, and reintegration back
-                into Khaos Control. That&rsquo;s scoped and quoted like any other full custom build, not read
+                into your ERP. That&rsquo;s scoped and quoted like any other full custom build, not read
                 off a tier list.</p>
             </div>
             <div className="panel">
