@@ -131,7 +131,7 @@ export default function CaseStudy01Page() {
                   <g className="sk-fade sk-s5" fontSize="22">
                     <text x="890" y="332" className="p-ink">154,518 matched automatically</text>
                     <text x="890" y="402" className="p-ink">40 active suppliers feeding in</text>
-                    <text x="890" y="472" className="p-ink">Data app (now the ERP)</text>
+                    <text x="890" y="472" className="p-ink">77% of stock records now have a bin location</text>
                     <text x="890" y="542" className="p-ink">Data app (now the ERP)</text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">

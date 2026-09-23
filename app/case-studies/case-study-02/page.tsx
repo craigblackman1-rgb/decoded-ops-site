@@ -130,7 +130,10 @@ export default function CaseStudy02Page() {
                   </g>
                   <g className="sk-fade sk-s5" fontSize="22">
                     <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
-                    <text x="890" y="402" className="p-ink">27,778 supplier products (236,056 sizes and colours) in one place</text>
+                    <text x="890" y="402" className="p-ink">
+                      <tspan x="890" dy="0">27,778 supplier products</tspan>
+                      <tspan x="890" dy="26">(236,056 sizes and colours) in one place</tspan>
+                    </text>
                     <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
                     <text x="890" y="542" className="p-ink">
                       <tspan x="890" dy="0">The same website platform,</tspan>
