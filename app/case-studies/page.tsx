@@ -24,20 +24,20 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    name: 'Case study 01',
+    name: 'Hanicks',
     sector: 'Heating spares & eCommerce',
-    desc: 'Heating spares, big catalogue, lots of suppliers. The ERP changed. The data work carried on.',
+    desc: 'Hanicks sells heating spares. It isn\u2019t decorated goods, but it\u2019s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.',
     href: '/case-studies/case-study-01',
     status: 'Live engagement',
-    pull: '317,812 products brought in · 154,518 matched automatically · 40 active suppliers',
+    pull: '317,812 products brought in \u00b7 154,518 matched automatically \u00b7 40 active suppliers',
   },
   {
-    name: 'Case study 02',
+    name: 'The diagnostic came before the decision.',
     sector: 'Branded apparel & decoration',
-    desc: 'The diagnostic came before the decision.',
+    desc: 'A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.',
     href: '/case-studies/case-study-02',
     status: 'In Deliver',
-    pull: '17 supplier feeds automated · 952 products live on their website · 100% of stock binned',
+    pull: '17 supplier feeds automated \u00b7 952 products live on their website \u00b7 100% of stock binned',
   },
   {
     name: 'Case study 03',
@@ -159,7 +159,6 @@ export default function CaseStudiesPage() {
                     <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Data app (now the ERP), supplier feeds and channel automation</text>
                   </g>
 
-                  {/* TackleBag */}
                   <g className="sk-fade sk-s3">
                     <rect x="820" y="180" width="730" height="230" rx="10"
                           fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"

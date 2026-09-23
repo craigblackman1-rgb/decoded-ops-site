@@ -130,9 +130,12 @@ export default function CaseStudy02Page() {
                   </g>
                   <g className="sk-fade sk-s5" fontSize="22">
                     <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
-                    <text x="890" y="402" className="p-ink">27,778 supplier products in one place</text>
+                    <text x="890" y="402" className="p-ink">27,778 supplier products (236,056 sizes and colours) in one place</text>
                     <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
-                    <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
+                    <text x="890" y="542" className="p-ink">
+                      <tspan x="890" dy="0">The same website platform,</tspan>
+                      <tspan x="890" dy="26">with the data app doing the work it was never built for</tspan>
+                    </text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">
                       <path d="M856 325 L863 332 L876 318"/>
@@ -184,7 +187,7 @@ export default function CaseStudy02Page() {
               </div>
               <div className="stat">
                 <p className="stat-num num">20 to 40</p>
-                <p className="stat-label">hours a week of admin time, projected at discovery</p>
+                <p className="stat-label">hours a week of admin time, projected at discovery (being measured now it&apos;s live)</p>
               </div>
             </div>
             <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>

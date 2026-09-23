@@ -88,7 +88,7 @@ export default function CaseStudy01Page() {
             <span className="eyebrow">Measure &middot; DO-ART-205</span>
             <h2>Not projected. Not modelled. What&apos;s actually in the system.</h2>
             <div className="hair"></div>
-            <p className="lede" style={{ marginTop: 16 }}>317,812 products brought in from supplier feeds. 154,518 matched to a supplier automatically, before anyone had to touch them. 40 active suppliers feeding in.</p>
+            <p className="lede" style={{ marginTop: 16 }}>Catalogue figures from the live system, September 2026.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-cs01">
@@ -131,7 +131,7 @@ export default function CaseStudy01Page() {
                   <g className="sk-fade sk-s5" fontSize="22">
                     <text x="890" y="332" className="p-ink">154,518 matched automatically</text>
                     <text x="890" y="402" className="p-ink">40 active suppliers feeding in</text>
-                    <text x="890" y="472" className="p-ink">Same platform, kept</text>
+                    <text x="890" y="472" className="p-ink">Data app (now the ERP)</text>
                     <text x="890" y="542" className="p-ink">Data app (now the ERP)</text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">
@@ -176,7 +176,7 @@ export default function CaseStudy01Page() {
             <div className="grid grid--3" style={{ marginTop: 32 }}>
               <div className="stat">
                 <p className="stat-num num">2,872</p>
-                <p className="stat-label">new products found in a stock-take reconciliation</p>
+                <p className="stat-label">new products and 28 new suppliers found in a stock-take reconciliation</p>
               </div>
               <div className="stat">
                 <p className="stat-num num">3,844</p>
