@@ -66,7 +66,7 @@ export default function AppsPage() {
               </div>
               <p>Storefront build and migration, scoped to what your customers actually need.
                 A full migration off WooCommerce, a new storefront, and reintegration back
-                into one clean, matched list is the worked example.</p>
+                into the ERP is the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
           </div>

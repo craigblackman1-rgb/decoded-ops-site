@@ -172,7 +172,7 @@ export default function ERPImplementationFailurePage() {
        <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
         {[
          <><b>154,518</b> matched to a supplier automatically</>,
-          <>40 active suppliers feeding in, without anyone re-keying a row</>,
+          <><b>40</b> active suppliers feeding in, without anyone re-keying a row</>,
           <><b>3,844</b> Amazon listings re-optimised ahead of a title-format deadline</>,
          'The platform stayed. The layer around it changed.',
         ].map((item, i) => (
