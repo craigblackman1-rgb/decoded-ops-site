@@ -6,18 +6,18 @@ import { Plate } from '@/components/Plate';
 // Target keyword: "stock control app decorated goods" (secondary: "case study 02 decoded ops")
 export const metadata = {
   title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
-  description: 'A Clarity Audit into a Deliver engagement for a branded apparel & decoration retailer, building a Stock Control module that feeds clean data into their ERP implementation.',
+  description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer. The diagnostic came before the decision.',
   alternates: { canonical: '/case-studies/case-study-02' },
   openGraph: {
     type: 'article',
     title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
-    description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module that feeds clean data into their ERP implementation.',
+    description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer.',
     url: 'https://decodedops.co.uk/case-studies/case-study-02',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
-    description: 'A Clarity Audit into a Deliver engagement, building a Stock Control module.',
+    description: 'A Clarity Audit into a Deliver engagement for branded apparel.',
   },
 };
 
@@ -27,7 +27,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'Case study 02: the diagnostic came before the decision',
-      description: 'Clarity Audit into a Deliver engagement, building a Stock Control module ahead of a Khaos Control ERP implementation, nine supplier feeds fully automated.',
+      description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer. 17 supplier feeds automated, 20 to 40 hours a week of admin time projected saved.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: {
         '@type': 'Organization', name: 'Decoded Ops',
@@ -35,16 +35,11 @@ const schema = {
       },
       image: 'https://decodedops.co.uk/opengraph-image',
       datePublished: '2026-07-28',
-      dateModified: '2026-07-28',
+      dateModified: '2026-09-23',
       url: 'https://decodedops.co.uk/case-studies/case-study-02',
     },
   ],
 };
-
-const supplierFeeds = [
-  'Teamwear brand', 'Swimwear brand', 'Rugby brand', 'Football brand', 'Cricket brand',
-  'Workwear brand', 'Schoolwear brand', 'Leisure brand', 'Outdoor brand',
-];
 
 export default function CaseStudy02Page() {
   return (
@@ -63,10 +58,6 @@ export default function CaseStudy02Page() {
         .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
         .prose h2:first-child{ margin-top:0 }
         .prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:14px }
-        .feed-list{ display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 0 }
-        .feed-list span{ padding:6px 14px; border-radius:var(--do-radius-full);
-          background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
-          font-size:var(--do-text-xs); font-weight:600; color:var(--do-text-primary) }
         .progress-note{ background:color-mix(in srgb, var(--do-amber) 10%, transparent);
           border:1px solid color-mix(in srgb, var(--do-amber) 30%, transparent);
           border-radius:var(--do-radius-2xl); padding:24px 28px; margin-top:36px }
@@ -86,7 +77,7 @@ export default function CaseStudy02Page() {
             <span className="eyebrow">Client work · branded apparel &amp; decoration</span>
             <h1>The diagnostic came before the decision.</h1>
             <p className="lede">
-              A branded apparel and decoration retailer sells teamwear and schoolwear. It runs multiple suppliers with decorated and plain stock side by side. Its eCommerce platform, Symphony, needed to show live stock accurately across nine supplier feeds at once.
+              A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.
             </p>
           </div>
         </section>
@@ -97,12 +88,12 @@ export default function CaseStudy02Page() {
             <span className="eyebrow">Measure &middot; DO-ART-206</span>
             <h2>Before and after, paired line for line.</h2>
             <div className="hair"></div>
-            <p className="lede">Case study 02, real production numbers. Nine supplier feeds, fully automated.</p>
+            <p className="lede">Case study 02, real production numbers. 17 supplier feeds, automated.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-cs02">
                 <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
-                       sub="Case study 02 · 9 feeds automated, 20–40 hrs/wk saved"
+                       sub="Case study 02 · 17 feeds automated, 20–40 hrs/wk saved"
                        no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
 
                   <g className="sk-fade sk-s2" filter="url(#ta-shadow)">
@@ -114,10 +105,10 @@ export default function CaseStudy02Page() {
                           letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
                   </g>
                   <g className="sk-fade sk-s3" fontSize="22">
-                    <text x="140" y="332" className="p-ink">Manual admin, hours every week</text>
-                    <text x="140" y="402" className="p-ink">Supplier feeds disconnected from the site</text>
+                    <text x="140" y="332" className="p-ink">Hours of manual admin every week</text>
+                    <text x="140" y="402" className="p-ink">Supplier feeds that didn&apos;t talk to anything</text>
                     <text x="140" y="472" className="p-ink">Stock levels out of date across channels</text>
-                    <text x="140" y="542" className="p-ink">Product data re-keyed into multiple systems</text>
+                    <text x="140" y="542" className="p-ink">Product data re-typed into more than one system</text>
                     <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
                       <path d="M106 319 L118 331 M118 319 L106 331"/>
                       <path d="M106 389 L118 401 M118 389 L106 401"/>
@@ -138,9 +129,9 @@ export default function CaseStudy02Page() {
                           letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
                   </g>
                   <g className="sk-fade sk-s5" fontSize="22">
-                    <text x="890" y="332" className="p-ink">9 supplier feeds, fully automated</text>
-                    <text x="890" y="402" className="p-ink">20–40 hours a week saved</text>
-                    <text x="890" y="472" className="p-ink">Products pushed live to Symphony automatically</text>
+                    <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
+                    <text x="890" y="402" className="p-ink">27,778 supplier products in one place</text>
+                    <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
                     <text x="890" y="542" className="p-ink">Same platform + Data App alongside it</text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">
@@ -166,31 +157,39 @@ export default function CaseStudy02Page() {
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow eyebrow--amber">The numbers</span>
-            <h2 style={{ marginTop: 14 }}>Nine feeds, fully automated.</h2>
+            <h2 style={{ marginTop: 14 }}>Not projected. Not modelled. What&apos;s actually in the system.</h2>
 
-            <div className="grid grid--3" style={{ marginTop: 40, maxWidth: 820 }}>
+            <div className="grid grid--3" style={{ marginTop: 40 }}>
               <div className="stat">
-                <p className="stat-num num">9</p>
-                <p className="stat-label">supplier feeds running automated stock sync</p>
+                <p className="stat-num num">17</p>
+                <p className="stat-label">supplier feeds automated</p>
               </div>
               <div className="stat">
-                <p className="stat-num num">20–40</p>
-                <p className="stat-label">hours a week of admin time projected saved</p>
+                <p className="stat-num num">27,778</p>
+                <p className="stat-label">supplier products and 236,056 variants in the system</p>
               </div>
               <div className="stat">
-                <p className="stat-num num">Live</p>
-                <p className="stat-label">project underway, Symphony integration proven in production</p>
+                <p className="stat-num num">1,846</p>
+                <p className="stat-label">decorated products built from those blanks</p>
               </div>
             </div>
-
-            <p className="lede" style={{ marginTop: 32, color: 'var(--do-text-muted-on-dark)' }}>
-              Supplier feeds automated:
+            <div className="grid grid--3" style={{ marginTop: 32 }}>
+              <div className="stat">
+                <p className="stat-num num">952</p>
+                <p className="stat-label">products live on their website through the data app</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">100%</p>
+                <p className="stat-label">of stock has a bin location</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">20 to 40</p>
+                <p className="stat-label">hours a week of admin time, projected at discovery</p>
+              </div>
+            </div>
+            <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>
+              Figures from the live system, September 2026. Hours saving is a projection, not yet measured.
             </p>
-            <div className="feed-list">
-              {supplierFeeds.map((feed) => (
-                <span key={feed}>{feed}</span>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -199,15 +198,15 @@ export default function CaseStudy02Page() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Stock, supplier feeds, and getting products live on Symphony meant hours of manual admin every week. Time that should have gone into running the business.
+              Stock and supplier feeds took a lot of manual admin, pulling people away from running the business.
             </p>
 
             <h2>What was done</h2>
             <p>
-              Symphony stayed. It was the right tool for that job. I built the Data App alongside it to automate the parts Symphony could never do: nine supplier feeds kept current, decorated and plain stock tracked separately, warehouse floor operations (bin assignment, live camera barcode scanning, batch picking) run from a phone, and new products pushed live to Symphony automatically, including new variants on an existing product.
+              The eCommerce platform stayed, because it was the right tool for selling. The data app was built alongside it to do the parts the platform was never going to do: supplier feeds kept current, decorated and plain stock tracked separately, warehouse work (bins, barcode scanning, batch picking on a phone), and new products and variants published to the website automatically.
             </p>
             <p>
-              Live Symphony integration was proven in production on 27 July 2026, including new-variant publishing. That was a real gap in the first build, found and fixed live.
+              The website integration has been running in production since July. Supplier automation and warehouse tooling are still growing. Next up is measuring the real hours saved to replace the projection.
             </p>
 
             <div className="progress-note">
