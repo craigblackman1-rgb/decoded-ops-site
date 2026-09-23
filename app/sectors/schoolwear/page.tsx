@@ -151,7 +151,7 @@ export default function SchoolwearPage() {
               </svg>
             ),
             title: 'Proven at a real teamwear-and-schoolwear retailer',
-            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected saving of 20 to 40 hours a week.',
           },
         ]}
         otherSectors={[
