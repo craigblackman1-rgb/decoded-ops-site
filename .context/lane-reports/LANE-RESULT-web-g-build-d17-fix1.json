@@ -1,0 +1,39 @@
+{
+  "lane": "web-g-build-d17-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "58a7a2ee09b7cccab3399548297c2fbc9478b2d2",
+      "subject": "fix(web): SOP hero art, six-sigma plate swap, calculator phone overflow (WO-INF-061)"
+    }
+  ],
+  "filesChanged": [
+    "app/resources/5-warning-signs/page.tsx",
+    "app/resources/artwork-approval-playbook/page.tsx",
+    "app/resources/audit-checklist/page.tsx",
+    "app/resources/capacity-planner/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/resources/erp-selection-playbook/page.tsx",
+    "app/resources/page.tsx",
+    "app/resources/seasonal-capacity/page.tsx",
+    "app/resources/six-sigma/page.tsx",
+    "app/resources/sop-template/page.tsx",
+    "app/tools/automation-roi-calculator/page.tsx",
+    "app/tools/downtime-cost-calculator/page.tsx",
+    "app/tools/ops-health-score/page.tsx",
+    "app/tools/page.tsx",
+    "app/tools/rto-calculator/page.tsx",
+    "app/tools/should-i-replace-erp/page.tsx",
+    "components/calculators/SeasonalCapacityCalculator.tsx",
+    "components/calculators/calculators.css"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
