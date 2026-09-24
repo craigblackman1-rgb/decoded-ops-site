@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { SystemsDisconnectedGraphic } from '@/components/graphics/SystemsDisconnectedGraphic';
 
@@ -63,45 +63,35 @@ export function LocationPage({
     <>
       {/* HERO */}
       <section className="g-off">
-        <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
-            <div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-                <span className="eyebrow" style={{ marginBottom: 0 }}>{badge}</span>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-cerulean) 20%, transparent)' }}>
-                  <MapPin size={12} style={{ color: 'var(--do-cerulean)' }} />
-                  <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-cerulean)' }}>{county}</span>
-                </div>
-              </div>
-              <h1 className="h1">
-                {parts.map((part, i) =>
-                  i % 2 === 0
-                    ? <span key={i}>{part}</span>
-                    : <span key={i} className="h1 em" style={{ color: 'var(--do-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
-                )}
-              </h1>
-              <p className="lede">{intro}</p>
-              <div className="btn-row">
-                <Link href="/contact" className="btn btn--primary">
-                  Book a free call <ArrowRight size={18} />
-                </Link>
-                <Link href={serviceUrl} className="btn btn--outline">
-                  {serviceLabel}
-                </Link>
-              </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
-            </div>
-            {heroArtHtml ? (
-              <div dangerouslySetInnerHTML={{ __html: heroArtHtml }} />
-            ) : (
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
-                  <SystemsDisconnectedGraphic connected variant="light" />
-                </div>
-              </div>
+        <div className="wrap hero-center">
+          <span className="eyebrow">{badge}</span>
+          <h1 className="h1">
+            {parts.map((part, i) =>
+              i % 2 === 0
+                ? <span key={i}>{part}</span>
+                : <span key={i} className="h1 em" style={{ color: 'var(--do-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
             )}
+          </h1>
+          <p className="lede">{intro}</p>
+          <div className="hero-cta">
+            <Link href="/contact" className="btn btn--primary">
+              Book a free call <ArrowRight size={18} />
+            </Link>
+            <Link href={serviceUrl} className="btn btn--outline">
+              {serviceLabel}
+            </Link>
           </div>
+          <p className="direct">Or <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">book a call directly</a></p>
         </div>
+        {heroArtHtml ? (
+          <div className="wrap hero-art" dangerouslySetInnerHTML={{ __html: heroArtHtml }} />
+        ) : (
+          <div className="wrap hero-art" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
+              <SystemsDisconnectedGraphic connected variant="light" />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* LOCAL CONTEXT */}
