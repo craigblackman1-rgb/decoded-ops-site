@@ -1,0 +1,4 @@
+- `{{IMG:decoded-marketing/assets/commerce/cat-promo.jpg|w=1100|q=78}}` -> `/images/d17/problems/cat-promo-6d25d2.jpg`
+- `{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}` -> `/images/d17/problems/cat-workwear-401e08.jpg`
+- `{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}` -> `/images/d17/problems/hero-workshop-8bff06.jpg`
+- `{{IMG:decoded-marketing/assets/commerce/prod-mailer.jpg|w=900|q=80}}` -> `/images/d17/problems/prod-mailer-f70773.jpg`
