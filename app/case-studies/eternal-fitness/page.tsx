@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
+import '@/app/d17-apps-cases.css';
 
 export const metadata = {
   title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',

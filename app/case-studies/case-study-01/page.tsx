@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
+import '@/app/d17-apps-cases.css';
 
 export const metadata = {
   title: 'Case study 01: Hanicks | Decoded Ops',
