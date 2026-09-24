@@ -1,0 +1,364 @@
+/* ══════════════════════════════════════════════════════════════════════
+   D17 ARTWORK — page-embedded rich treatments (WO-INF-061 u10)
+   Photo-led, document mock-ups over a photo, product-screen mock-ups with
+   real figures, drawn route. Six brand colours only; #000 is a mixing
+   partner. Every piece is authored on a reference width and scaled with
+   container units: --u = one artboard pixel. Text carries px floors so it
+   stays readable at 390px. Motion is an in-page draw that plays once when
+   the piece scrolls into view (.play, set by D17Motion); the resting state
+   IS the still, so no-JS, reduced motion and full-page captures all show
+   the canonical frame.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.d17 { position: relative; container-type: inline-size; overflow: hidden; isolation: isolate;
+  border-radius: var(--do-radius-2xl); color: var(--do-off-white);
+  background:
+    radial-gradient(60% 70% at 88% 12%, color-mix(in srgb, var(--do-cerulean) 22%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 84%, var(--do-cerulean)) 0%,
+      var(--do-prussian-blue) 55%, color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%);
+  box-shadow: 0 34px 70px -28px color-mix(in srgb, var(--do-prussian-blue) 70%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--do-sky-blue) 14%, transparent) }
+.d17 * { box-sizing: border-box }
+.d17Ph { position: absolute; inset: 0; z-index: -2; margin: 0 }
+.d17Ph img { width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: var(--d17Grade, saturate(.62) contrast(1.06) brightness(.86)) }
+.d17Scan { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .55;
+  background: repeating-linear-gradient(0deg, color-mix(in srgb, #000 22%, transparent) 0 1px, transparent 1px 3px) }
+.d17Dots { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(color-mix(in srgb, var(--do-sky-blue) 14%, transparent) 1.2px, transparent 1.3px);
+  background-size: 26px 26px }
+.d17Mono { font-family: var(--do-font-mono); text-transform: uppercase; letter-spacing: .18em }
+/* the minimum mark (D15): one corner stamp, amber on Prussian, bottom-left */
+.d17Mark { display: inline-block; font-family: var(--do-font-mono); font-weight: 600;
+  font-size: max(10px, calc(13 * var(--u))); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--do-amber); background: var(--do-prussian-blue); padding: .55em .85em;
+  border-radius: var(--do-radius-sm); white-space: nowrap }
+.d17MarkAbs { position: absolute; left: calc(22 * var(--u)); bottom: calc(20 * var(--u)); z-index: 6 }
+
+/* paper documents (718 recipe) */
+.d17Doc { position: absolute; background: var(--do-white); color: var(--do-prussian-blue);
+  border-radius: calc(5 * var(--u)); padding: calc(18 * var(--u)) calc(20 * var(--u));
+  box-shadow: 0 calc(26 * var(--u)) calc(50 * var(--u)) color-mix(in srgb, #000 45%, transparent);
+  font-family: var(--do-font-body) }
+.d17Doc .tab { position: absolute; top: calc(-9 * var(--u)); right: calc(22 * var(--u));
+  background: var(--do-amber); color: var(--do-prussian-blue); font-family: var(--do-font-mono);
+  font-weight: 700; font-size: max(8px, calc(12 * var(--u))); padding: calc(5 * var(--u)) calc(9 * var(--u));
+  border-radius: calc(3 * var(--u)); letter-spacing: .08em }
+.d17Doc .ref { font-family: var(--do-font-mono); font-size: max(7px, calc(10 * var(--u)));
+  letter-spacing: .16em; text-transform: uppercase; color: color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.d17Doc h4 { margin: calc(6 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800;
+  font-size: max(10px, calc(19 * var(--u))); line-height: 1.1; letter-spacing: -.02em; color: var(--do-prussian-blue) }
+.d17Doc .sub { margin: calc(4 * var(--u)) 0 0; font-family: var(--do-font-mono);
+  font-size: max(6px, calc(9.5 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.d17Doc ol { list-style: none; margin: calc(12 * var(--u)) 0 0; padding: 0 }
+.d17Doc li { display: grid; grid-template-columns: calc(20 * var(--u)) auto 1fr; gap: calc(8 * var(--u)); white-space: nowrap;
+  align-items: center; padding: calc(6.5 * var(--u)) 0;
+  border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  font-size: max(7px, calc(11.5 * var(--u))); font-weight: 600 }
+.d17Doc li b { font-family: var(--do-font-mono); font-weight: 600; font-size: max(6px, calc(9.5 * var(--u)));
+  color: color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.d17Doc li i { display: block; height: calc(5 * var(--u)); border-radius: 9px;
+  background: color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+.d17Doc .lines i { display: block; height: calc(5 * var(--u)); border-radius: 9px; margin-top: calc(7 * var(--u));
+  background: color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
+.d17Doc .phase { margin-top: calc(11 * var(--u)); font-family: var(--do-font-mono); font-weight: 700;
+  font-size: max(6px, calc(10 * var(--u))); letter-spacing: .14em; text-transform: uppercase; color: var(--do-cerulean) }
+
+/* ─── DO-ART-916 · home hero · document mock-ups over the workshop floor ─── */
+.a916 { --u: calc(100cqw / 560); display: flex; flex-direction: column }
+.a916 .d17Ph img { object-position: 50% 18% }
+.a916::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%,
+    transparent 14%, transparent 36%, color-mix(in srgb, var(--do-prussian-blue) 92%, transparent) 62%,
+    var(--do-prussian-blue) 100%) }
+.a916 .top { display: flex; justify-content: space-between; gap: 12px; padding: calc(22 * var(--u)) calc(28 * var(--u)) 0;
+  font-size: max(9px, calc(11 * var(--u))); color: var(--do-off-white) }
+.a916 .top span + span { color: var(--do-sky-blue) }
+.a916 .stage { position: relative; aspect-ratio: 560 / 380 }
+.a916 .docA { left: calc(292 * var(--u)); top: calc(30 * var(--u)); width: calc(244 * var(--u)); transform: rotate(3.5deg) }
+.a916 .docB { left: calc(56 * var(--u)); top: calc(118 * var(--u)); width: calc(222 * var(--u)); transform: rotate(-4deg) }
+.a916 .askBody { padding: calc(8 * var(--u)) calc(30 * var(--u)) calc(26 * var(--u)) }
+.a916 .bar { width: calc(56 * var(--u)); height: 5px; border-radius: 3px; background: var(--do-amber); margin-bottom: 16px }
+.a916 blockquote { margin: 0; font-family: var(--do-font-heading); font-weight: 600;
+  font-size: max(16px, calc(22 * var(--u))); line-height: 1.34; letter-spacing: -.01em; color: var(--do-white) }
+.a916 cite { display: block; margin: 16px 0 18px; font-style: normal; font-family: var(--do-font-mono);
+  font-size: max(10px, calc(11.5 * var(--u))); letter-spacing: .18em; text-transform: uppercase; color: var(--do-sky-blue) }
+.a916 .d17Mark { align-self: flex-start }
+
+/* ─── DO-ART-917 · home figures · product screen with the live Hanicks figures ─── */
+.a917 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 31% 1fr; gap: calc(40 * var(--u));
+  padding: calc(56 * var(--u)) calc(48 * var(--u)) calc(64 * var(--u)) calc(52 * var(--u)); margin-top: 38px }
+.a917 .d17Ph img { object-position: 80% 50%; opacity: .75 }
+.a917::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 30%,
+    color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 60%, color-mix(in srgb, var(--do-prussian-blue) 45%, transparent) 100%) }
+.a917 .cap { align-self: center }
+.a917 .cap .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a917 .cap .k span { color: var(--do-sky-blue) }
+.a917 .cap .bar { width: calc(64 * var(--u)); height: 5px; border-radius: 3px; background: var(--do-amber); margin: calc(20 * var(--u)) 0 }
+.a917 .cap h3 { margin: 0; font-family: var(--do-font-heading); font-weight: 800; color: var(--do-white);
+  font-size: max(26px, calc(52 * var(--u))); line-height: 1.02; letter-spacing: -.035em }
+.a917 .cap p { margin: calc(18 * var(--u)) 0 0; font-size: max(14px, calc(18 * var(--u))); line-height: 1.45;
+  color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a917 .live { margin-top: calc(26 * var(--u)); display: flex; align-items: center; gap: 10px;
+  font-size: max(10px, calc(12 * var(--u))); color: var(--do-sky-blue) }
+.a917 .live::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--do-sky-blue);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--do-sky-blue) 25%, transparent) }
+.a917 .d17Mark { margin-top: calc(34 * var(--u)) }
+
+.win { position: relative; border-radius: calc(12 * var(--u)); overflow: hidden; background: var(--do-off-white);
+  color: var(--do-prussian-blue); box-shadow: 0 calc(30 * var(--u)) calc(60 * var(--u)) color-mix(in srgb, #000 50%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.winBar { display: flex; align-items: center; gap: calc(14 * var(--u)); padding: 0 calc(18 * var(--u));
+  height: max(34px, calc(48 * var(--u))); background: color-mix(in srgb, var(--do-prussian-blue) 92%, #000);
+  color: var(--do-off-white); font-size: max(11px, calc(15 * var(--u))) }
+.winBar .dots { display: flex; gap: 6px }
+.winBar .dots i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--do-sky-blue) 45%, transparent) }
+.winBar .crumb span { color: var(--do-sky-blue) }
+.winBar .pill { margin-left: auto; border: 1px solid color-mix(in srgb, var(--do-sky-blue) 55%, transparent);
+  border-radius: 99px; padding: 3px 11px; font-family: var(--do-font-mono); font-size: max(9px, calc(11 * var(--u)));
+  letter-spacing: .14em; color: var(--do-off-white) }
+.winBody { display: grid; grid-template-columns: calc(78 * var(--u)) 1fr }
+.winNav { background: var(--do-prussian-blue); padding: calc(12 * var(--u)) 0; display: flex; flex-direction: column; gap: calc(4 * var(--u)) }
+.winNav span { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: calc(10 * var(--u)) 0;
+  font-size: max(8px, calc(11 * var(--u))); color: color-mix(in srgb, var(--do-sky-blue) 75%, transparent) }
+.winNav span svg { width: max(14px, calc(20 * var(--u))); height: max(14px, calc(20 * var(--u))) }
+.winNav span.on { color: var(--do-white); background: color-mix(in srgb, var(--do-cerulean) 24%, transparent);
+  box-shadow: inset 3px 0 0 var(--do-sky-blue) }
+.winMain { padding: calc(26 * var(--u)) calc(28 * var(--u)) calc(28 * var(--u)) }
+.winMain h5 { margin: 0; font-family: var(--do-font-heading); font-weight: 800; font-size: max(17px, calc(28 * var(--u)));
+  letter-spacing: -.025em; color: var(--do-prussian-blue) }
+.winMain .s { margin: 4px 0 0; font-size: max(11px, calc(14 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(14 * var(--u)); margin-top: calc(20 * var(--u)) }
+.kpi { background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  border-radius: calc(9 * var(--u)); padding: calc(16 * var(--u)) calc(18 * var(--u)) }
+.kpi .l { font-family: var(--do-font-mono); font-size: max(8px, calc(10.5 * var(--u))); letter-spacing: .16em;
+  text-transform: uppercase; color: color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+.kpi .n { margin: calc(8 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800;
+  font-size: max(24px, calc(42 * var(--u))); line-height: 1; letter-spacing: -.035em; font-variant-numeric: tabular-nums; color: var(--do-prussian-blue) }
+.kpi .d { margin: calc(8 * var(--u)) 0 0; font-size: max(11px, calc(13 * var(--u))); line-height: 1.35;
+  color: color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+.kpiHit { border: 2px solid var(--do-amber); box-shadow: 0 0 0 4px color-mix(in srgb, var(--do-amber) 18%, transparent) }
+.meter { margin-top: calc(14 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  border-radius: calc(9 * var(--u)); padding: calc(14 * var(--u)) calc(18 * var(--u)) }
+.meter .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
+  font-size: max(11px, calc(14 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+.meter .row b { font-family: var(--do-font-heading); font-size: max(13px, calc(16 * var(--u))); color: var(--do-prussian-blue) }
+.meter .track { margin-top: calc(10 * var(--u)); height: max(7px, calc(10 * var(--u))); border-radius: 9px;
+  background: color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow: hidden }
+.meter .fill { height: 100%; border-radius: 9px; transform-origin: left center;
+  background: linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)) }
+.feeds { margin-top: calc(14 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  border-radius: calc(9 * var(--u)); padding: calc(12 * var(--u)) calc(18 * var(--u)) calc(10 * var(--u)) }
+.feeds .hd { display: flex; justify-content: space-between; font-size: max(11px, calc(14 * var(--u))) }
+.feeds .hd b { font-family: var(--do-font-heading); font-size: max(13px, calc(16 * var(--u))) }
+.feeds .r { display: grid; grid-template-columns: 1.1fr 1.4fr auto; gap: 10px; align-items: center;
+  padding: calc(8 * var(--u)) 0; border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
+  font-size: max(11px, calc(13.5 * var(--u))) }
+.feeds .r:first-of-type { margin-top: calc(8 * var(--u)) }
+.feeds .r b { font-weight: 700 }
+.feeds .ok { font-family: var(--do-font-mono); font-size: max(8px, calc(10 * var(--u))); letter-spacing: .12em;
+  padding: 3px 9px; border-radius: 99px; color: var(--do-prussian-blue);
+  background: color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.feeds .more { padding-top: calc(8 * var(--u)); border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
+  font-size: max(11px, calc(13 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+
+/* ─── DO-ART-918 · home evidence · teamwear figures on a graded stock photo ─── */
+.a918 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 50% 1fr; min-height: calc(600 * var(--u)); margin-top: 38px }
+.a918 .d17Ph { left: 36% }
+.a918 .d17Ph img { object-position: 55% 50%; --d17Grade: saturate(.7) contrast(1.05) brightness(.84) }
+.a918::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 36%,
+    color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 55%, transparent 80%) }
+.a918 .copy { padding: calc(50 * var(--u)) calc(20 * var(--u)) calc(40 * var(--u)) calc(52 * var(--u)) }
+.a918 .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a918 .k span { color: var(--do-sky-blue) }
+.a918 h3 { margin: calc(16 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800; color: var(--do-white);
+  font-size: max(24px, calc(40 * var(--u))); line-height: 1.05; letter-spacing: -.03em; max-width: 15ch }
+.ledger { position: relative; list-style: none; margin: calc(28 * var(--u)) 0 calc(26 * var(--u)); padding: 0 0 0 calc(40 * var(--u)) }
+.ledger::before { content: ''; position: absolute; left: calc(9 * var(--u)); top: 14px; bottom: 22px; width: 4px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--do-sky-blue), var(--do-cerulean) 70%, var(--do-amber)); transform-origin: top }
+.ledger li { position: relative; display: flex; align-items: baseline; gap: calc(14 * var(--u)); padding: calc(7 * var(--u)) 0 }
+.ledger li::before { content: ''; position: absolute; left: calc(-40 * var(--u) + 3px); top: calc(50% - 8px);
+  width: 16px; height: 16px; border-radius: 50%; box-sizing: border-box;
+  background: var(--do-off-white); border: 4px solid var(--do-prussian-blue); box-shadow: 0 0 0 2px var(--do-sky-blue) }
+.ledger .n { font-family: var(--do-font-heading); font-weight: 800; font-size: max(22px, calc(34 * var(--u)));
+  line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--do-white); min-width: 5.1ch }
+.ledger .t { font-size: max(13px, calc(16 * var(--u))); line-height: 1.3; color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.ledger li.end .n { color: var(--do-amber) }
+.ledger li.end::before { background: var(--do-amber); box-shadow: 0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
+.a918 .print { position: absolute; right: calc(46 * var(--u)); bottom: calc(46 * var(--u)); width: calc(230 * var(--u));
+  background: var(--do-white); color: var(--do-prussian-blue); padding: calc(14 * var(--u)) calc(16 * var(--u));
+  border-radius: calc(4 * var(--u)); transform: rotate(-2.5deg);
+  box-shadow: 0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+.a918 .print .ref { font-family: var(--do-font-mono); font-size: max(8px, calc(10 * var(--u))); letter-spacing: .16em; color: color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a918 .print b { display: block; margin-top: calc(4 * var(--u)); font-family: var(--do-font-heading); font-size: max(14px, calc(26 * var(--u))); letter-spacing: .02em }
+.a918 .print .bc { margin-top: calc(8 * var(--u)); height: calc(34 * var(--u));
+  background: repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
+.a918 .print .s { margin-top: calc(6 * var(--u)); font-family: var(--do-font-mono); font-size: max(7px, calc(9.5 * var(--u))); letter-spacing: .12em; text-transform: uppercase }
+
+/* ─── DO-ART-831 · About · the route, website cut + in-page draw ─── */
+.a831 { --u: calc(100cqw / 1600); aspect-ratio: 1600 / 900; margin-top: 44px;
+  background:
+    radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
+      color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%) }
+.a831 .gridl { position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image: linear-gradient(color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px);
+  background-size: calc(40 * var(--u)) calc(40 * var(--u)) }
+.a831 .eb { position: absolute; left: calc(96 * var(--u)); top: calc(78 * var(--u)); margin: 0;
+  font-size: max(10px, calc(20 * var(--u))); color: var(--do-sky-blue) }
+.a831 .hd { position: absolute; left: calc(92 * var(--u)); top: calc(112 * var(--u)); margin: 0; font-family: var(--do-font-heading);
+  font-weight: 800; font-size: calc(92 * var(--u)); line-height: 1; letter-spacing: -.032em; color: var(--do-white) }
+.a831 .stand { position: absolute; left: calc(96 * var(--u)); top: calc(222 * var(--u)); width: calc(600 * var(--u)); margin: 0;
+  font-size: calc(24 * var(--u)); line-height: 1.4; color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a831 svg.route { position: absolute; inset: 0; width: 100%; height: 100% }
+.a831 .st { position: absolute; margin: 0; width: calc(250 * var(--u)) }
+.a831 .st .n { display: block; font-family: var(--do-font-mono); font-size: calc(18 * var(--u)); letter-spacing: .18em;
+  text-transform: uppercase; color: var(--do-sky-blue) }
+.a831 .st h3 { margin: calc(6 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800; font-size: calc(33 * var(--u));
+  line-height: 1.02; letter-spacing: -.02em; color: var(--do-off-white) }
+.a831 .st p { margin: calc(9 * var(--u)) 0 0; font-size: calc(20 * var(--u)); line-height: 1.34; color: color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a831 .stEnd h3 { color: var(--do-amber); font-size: calc(44 * var(--u)) }
+.a831 .stEnd .n { color: var(--do-amber) }
+.a831 .print { position: absolute; background: var(--do-off-white); padding: calc(9 * var(--u)) calc(9 * var(--u)) calc(44 * var(--u));
+  box-shadow: 0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.a831 .print img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.12) brightness(.98) }
+.a831 .print .tint { position: absolute; inset: calc(9 * var(--u)) calc(9 * var(--u)) calc(44 * var(--u));
+  background: var(--do-prussian-blue); mix-blend-mode: multiply; opacity: .38 }
+.a831 .print span { position: absolute; left: calc(12 * var(--u)); right: calc(10 * var(--u)); bottom: calc(7 * var(--u));
+  font-family: var(--do-font-mono); font-size: calc(12 * var(--u)); line-height: 1.3; letter-spacing: .06em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
+.a831 .d17Mark { left: calc(26 * var(--u)); bottom: calc(24 * var(--u)); font-size: calc(18 * var(--u)) }
+
+/* ─── DO-ART-904 r03 · About hero portrait, photo-led ─── */
+.a904 { --u: calc(100cqw / 560); aspect-ratio: 14 / 15 }
+.a904 .d17Ph img { object-position: 44% 30%; --d17Grade: saturate(.9) contrast(1.04) brightness(.97) }
+.a904::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 22%,
+    transparent 58%, color-mix(in srgb, var(--do-prussian-blue) 82%, transparent) 88%, var(--do-prussian-blue) 100%),
+    linear-gradient(90deg, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent), transparent 40%) }
+.a904 .top { position: absolute; left: calc(28 * var(--u)); right: calc(28 * var(--u)); top: calc(24 * var(--u));
+  display: flex; justify-content: space-between; gap: 10px; font-size: max(9px, calc(11.5 * var(--u))); color: var(--do-off-white) }
+.a904 .top span + span { color: var(--do-sky-blue) }
+.a904 .note { position: absolute; left: calc(28 * var(--u)); right: calc(28 * var(--u)); bottom: calc(70 * var(--u)); margin: 0;
+  font-family: var(--do-font-heading); font-weight: 700; font-size: max(17px, calc(27 * var(--u))); line-height: 1.15;
+  letter-spacing: -.02em; color: var(--do-white); max-width: 17ch }
+.a904 .note em { font-style: normal; color: var(--do-amber) }
+.a904 .d17Mark { left: calc(28 * var(--u)); bottom: calc(24 * var(--u)) }
+
+/* ─── DO-ART-919 · About fact heads, photo-led figure plates ─── */
+.factHeadA919 { position: relative; overflow: hidden; isolation: isolate; background: var(--do-prussian-blue);
+  padding: 30px 32px 28px; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end }
+.factHeadA919 .d17Ph img { --d17Grade: saturate(.55) contrast(1.05) brightness(.8) }
+.factHeadA919::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 88%, transparent) 42%,
+    color-mix(in srgb, var(--do-prussian-blue) 30%, transparent) 100%) }
+.factHeadA919 .factNo { position: absolute; top: 22px; left: 32px }
+.factHeadA919 .fm { position: absolute; right: 14px; top: 14px; font-family: var(--do-font-mono); font-size: 10px;
+  letter-spacing: .16em; color: var(--do-amber); background: var(--do-prussian-blue); padding: 5px 8px; border-radius: var(--do-radius-sm) }
+
+/* ─── DO-ART-920 · Contact · warm photo-led panel ─── */
+.a920 { --u: calc(100cqw / 1100); display: grid; grid-template-columns: 54% 1fr; min-height: calc(460 * var(--u)); text-align: left }
+.a920 .d17Ph { left: 38% }
+.a920 .d17Ph img { object-position: 50% 40%; --d17Grade: sepia(.22) saturate(1.08) contrast(1.04) brightness(1.02) }
+.a920::before { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 40%,
+    color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 58%, transparent 82%) }
+.a920 .copy { padding: calc(56 * var(--u)) calc(24 * var(--u)) calc(96 * var(--u)) calc(56 * var(--u)) }
+.a920 .k { font-size: max(10px, calc(13 * var(--u))); color: var(--do-off-white) }
+.a920 .k span { color: var(--do-sky-blue) }
+.a920 .copy .bar { width: 56px; height: 5px; border-radius: 3px; background: var(--do-amber); margin: 18px 0 22px }
+.a920 h2 { color: var(--do-white); margin: 0 }
+.a920 .lede { margin: 14px 0 26px; color: color-mix(in srgb, var(--do-off-white) 82%, transparent) }
+.a920 .heroCta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start }
+.a920 .contactLink { flex: 1 1 220px; color: var(--do-off-white); text-decoration: none;
+  background: color-mix(in srgb, var(--do-prussian-blue) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent); backdrop-filter: blur(4px);
+  border-radius: var(--do-radius-xl); padding: 20px 24px; display: flex; align-items: center; gap: 14px;
+  transition: border-color var(--do-duration-normal), background var(--do-duration-normal) }
+.a920 .contactLink:hover { border-color: var(--do-cerulean); background: color-mix(in srgb, var(--do-cerulean) 18%, transparent) }
+.a920 .contactLink .lbl { color: var(--do-sky-blue) }
+.a920 .contactLink .val { color: var(--do-off-white) }
+.a920 .note { position: absolute; right: calc(40 * var(--u)); top: calc(40 * var(--u)); width: calc(250 * var(--u));
+  background: var(--do-off-white); color: var(--do-prussian-blue); padding: calc(18 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u));
+  border-radius: calc(4 * var(--u)); transform: rotate(2.5deg);
+  box-shadow: 0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.a920 .note .ref { font-family: var(--do-font-mono); font-size: max(9px, calc(10.5 * var(--u))); letter-spacing: .16em;
+  text-transform: uppercase; color: color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a920 .note ol { margin: calc(10 * var(--u)) 0 0; padding: 0; list-style: none; counter-reset: c }
+.a920 .note li { counter-increment: c; display: grid; grid-template-columns: 22px 1fr; gap: 6px; padding: calc(6 * var(--u)) 0;
+  border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  font-size: max(12px, calc(14 * var(--u))); line-height: 1.35; font-weight: 600 }
+.a920 .note li::before { content: '0' counter(c); font-family: var(--do-font-mono); font-size: 10px; color: var(--do-cerulean); padding-top: 3px }
+.a920 .d17MarkAbs { left: calc(56 * var(--u)); bottom: calc(28 * var(--u)) }
+
+/* ─── motion: in-page draw (D16/D17). Resting state = the still. ─── */
+@media (prefers-reduced-motion: no-preference) {
+  .d17.play .mRise { animation: d17Rise .7s cubic-bezier(.2,.7,.2,1) both }
+  .d17.play .mFade { animation: d17Fade .6s ease both }
+  .d17.play .mFill { animation: d17Fill 1.3s cubic-bezier(.4,0,.2,1) both }
+  .d17.play .mDrop { animation: d17Drop .9s cubic-bezier(.2,.8,.2,1) both }
+  .d17.play .mLand { animation: d17Land 1s ease both }
+  .d17.play .mDraw { stroke-dasharray: 1; animation: d17Draw 2.4s cubic-bezier(.45,0,.2,1) both }
+  .d17.play .mGrow { animation: d17Grow 1.8s cubic-bezier(.45,0,.2,1) both }
+  .d17.play .mPop { animation: d17Pop .5s cubic-bezier(.3,1.6,.5,1) both }
+  .d17.play .kpiHit.mRise { animation: d17Rise .7s cubic-bezier(.2,.7,.2,1) .3s both, d17Land 2.8s ease both }
+  .d17.play .ledger::before { animation: d17Grow 1.9s cubic-bezier(.45,0,.2,1) both }
+}
+@keyframes d17Rise { from { opacity: 0; transform: translateY(18px) } }
+@keyframes d17Fade { from { opacity: 0 } }
+@keyframes d17Fill { from { transform: scaleX(0) } }
+@keyframes d17Drop { from { opacity: 0; transform: translateY(-26px) rotate(0deg) } }
+@keyframes d17Land { 0%,60% { border-color: color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); box-shadow: none } }
+@keyframes d17Draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
+@keyframes d17Grow { from { transform: scaleY(0) } }
+@keyframes d17Pop { from { opacity: 0; transform: scale(.4) } }
+
+/* ─── responsive ─── */
+@media (max-width: 760px) {
+  .a917 { grid-template-columns: 1fr; padding: 28px 18px 26px; gap: 26px }
+  .a917::before { background: linear-gradient(180deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) 100%) }
+  .winBody { grid-template-columns: 1fr } .winNav { display: none }
+  .winMain { padding: 18px 16px 18px }
+  .kpis { grid-template-columns: 1fr; gap: 10px }
+  .kpi { padding: 12px 14px }
+  .feeds .r { grid-template-columns: 1fr auto } .feeds .r span:nth-child(2) { display: none }
+}
+@media (max-width: 760px) {
+  .a918 { grid-template-columns: 1fr; min-height: 0 }
+  .a918 .d17Ph { left: 0; bottom: auto; height: 230px }
+  .a918::before { background: linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
+  .a918 .copy { padding: 200px 20px 24px }
+  .a918 .print { right: 16px; top: 24px; bottom: auto; width: 150px }
+  .ledger { padding-left: 34px } .ledger li::before { left: -31px }
+  .ledger li { gap: 10px } .ledger .n { min-width: 5.3ch; font-size: 21px } .ledger .t { font-size: 13.5px }
+  .ledger::before { left: 7px }
+}
+@media (max-width: 700px) {
+  .a831 { aspect-ratio: auto; padding: 26px 20px 70px }
+  .a831 .eb, .a831 .hd, .a831 .stand, .a831 .st { position: static; width: auto }
+  .a831 .hd { font-size: 34px; margin-top: 6px } .a831 .stand { font-size: 15px; margin-top: 8px }
+  .a831 svg.route { display: none }
+  .a831 .prints { display: flex; gap: 14px; margin: 22px 0 8px }
+  .a831 .print { position: relative; left: auto !important; top: auto !important; width: 48% !important; height: 170px !important; padding: 6px 6px 46px }
+  .a831 .print .tint { inset: 6px 6px 46px } .a831 .print span { font-size: 8.5px; left: 7px; right: 6px; bottom: 5px }
+  .a831 .stations { position: relative; margin-top: 18px; padding-left: 34px }
+  .a831 .stations::before { content: ''; position: absolute; left: 8px; top: 8px; bottom: 40px; width: 8px; border-radius: 6px;
+    background: linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 80%, var(--do-amber)) }
+  .a831 .st { position: relative !important; left: auto !important; top: auto !important; width: auto !important; padding: 10px 0 12px }
+  .a831 .st::before { content: ''; position: absolute; left: -33px; top: 14px; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--do-off-white); border: 4px solid var(--do-prussian-blue); box-sizing: border-box }
+  .a831 .stEnd::before { background: var(--do-amber); left: -35px; width: 22px; height: 22px }
+  .a831 .st .n { font-size: 11px } .a831 .st h3 { font-size: 21px } .a831 .stEnd h3 { font-size: 26px } .a831 .st p { font-size: 14px }
+  .a831 .d17Mark { left: 20px; bottom: 20px; font-size: 10px }
+}
+@media (max-width: 760px) {
+  .a920 { grid-template-columns: 1fr; min-height: 0 }
+  .a920 .d17Ph { left: 0; bottom: auto; height: 250px }
+  .a920::before { background: linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
+  .a920 .note { right: 16px; top: 18px; width: 190px }
+  .a920 .copy { padding: 230px 20px 76px }
+  .a920 .d17MarkAbs { left: 20px; right: auto }
+}

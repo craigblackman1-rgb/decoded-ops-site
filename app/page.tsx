@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
 import { SheetIndexRail } from '@/components/SheetIndexRail';
+import { D17Motion } from '@/components/D17Motion';
+import d17 from './d17-art.module.css';
 import './homepage.css';
 
 export const metadata: Metadata = {
@@ -112,23 +113,48 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <figure className="shot" data-od-id="hero-photo">
-                <Image className="p-photo" src="/images/hero-craft-v2.webp" fill sizes="(max-width: 1040px) 100vw, 45vw"
-                  style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
-                  alt="Two multi-head embroidery machines running garments on a decoration floor." />
-                <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
+              {/* DO-ART-916 r01 · photo-led + document mock-ups (D17). Workshop photo
+                   with two fanned documents and the question below. */}
+              <figure className={`${d17.d17} ${d17.a916}`} data-od-id="hero-question" data-motion
+                      data-no="DO-ART-916" data-rev="01" data-tx="photo">
+                <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.jpg"
+                  alt="" width={1100} height={1224} /></div>
+                <div className={d17.d17Scan} aria-hidden="true" />
+                <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
+                <div className="stage" aria-hidden="true">
+                  <div className={`${d17.d17Doc} ${d17.docA} m-drop`} style={{ animationDelay: '.35s' }}>
+                    <span className="tab">01</span>
+                    <span className="ref">CA-01 &middot; Written report</span>
+                    <h4>What it&apos;s costing you</h4>
+                    <p className="sub">six areas &middot; followed, not described</p>
+                    <ol>
+                      <li><b>01</b>IT infrastructure<i /></li>
+                      <li><b>02</b>Software &amp; systems<i /></li>
+                      <li><b>03</b>eCommerce<i /></li>
+                      <li><b>04</b>Processes &amp; ops<i /></li>
+                      <li><b>05</b>Growth<i /></li>
+                    </ol>
+                  </div>
+                  <div className={`${d17.d17Doc} ${d17.docB} m-drop`} style={{ animationDelay: '.1s' }}>
+                    <span className="tab">02</span>
+                    <span className="ref">RM-01 &middot; Roadmap</span>
+                    <h4>What to fix, in what order</h4>
+                    <p className="sub">within five working days</p>
+                    <div className="phase">Now</div><div className="lines"><i style={{ width: '92%' }} /><i style={{ width: '70%' }} /></div>
+                    <div className="phase">Next</div><div className="lines"><i style={{ width: '84%' }} /><i style={{ width: '58%' }} /></div>
+                    <div className="phase">Later</div><div className="lines"><i style={{ width: '66%' }} /></div>
+                  </div>
+                </div>
+                <div className={d17.askBody}>
+                  <div className={d17.bar} aria-hidden="true" />
+                  <blockquote>If I spent a day in your business looking at your systems, your processes,
+                    and your technology, how confident are you that I wouldn&apos;t find anything costing you
+                    money you don&apos;t know about?</blockquote>
+                  <cite>Craig Blackman &middot; Decoded Ops</cite>
+                  <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-916 &middot; Rev 01</span>
+                </div>
               </figure>
             </div>
-
-            <figure className="ask" data-od-id="hero-question">
-              <span className="qm" aria-hidden="true">&ldquo;</span>
-              <div>
-                <blockquote>If I spent a day in your business looking at your systems, your processes
-                  and your technology, how confident are you that I wouldn&rsquo;t find anything costing you
-                  money you don&rsquo;t know about?</blockquote>
-                <cite>Craig Blackman &middot; Decoded Ops</cite>
-              </div>
-            </figure>
           </div>
         </section>
 
@@ -230,86 +256,64 @@ export default function HomePage() {
           <div className="do-dot-grid" aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
           <div className="wrap">
             <article className="sheet" data-od-id="sheet-measure">
-              <div className="docket">
-                <span>DO-ART-202 &middot; Measure</span>
-                <span>Rev 01</span>
-                <span className="issued">Issued</span>
-              </div>
-
               <div className="masthead">
                 <div>
-                  <span className="eyebrow">What it turns up</span>
+                  <span className="eyebrow">Measure &middot; DO-ART-917</span>
                   <h2>Nobody retypes a supplier spreadsheet.</h2>
                 </div>
-                <p className="lede">Case study 01, real production numbers. One import pipeline, run to a schedule,
+                <p className="lede">Hanicks. One import pipeline, run to a schedule,
                   doing a job that used to be done by hand every time a supplier changed a range. Not
                   projected and not modelled. This is what actually happened.</p>
               </div>
 
-              <div className="plate-scroll">
-                <div className="plate-frame" data-od-id="plate-measure">
-                  <Plate tone="dark" p="ms" title="Supplier catalogue: raw to live"
-                         sub="Case study 01 · one import pipeline, first automated run"
-                         no="DO-ART-202" rev="01" cls="DECODED OPS · ISSUED">
-
-                    {/* track guides */}
-                    <g className="sk-fade sk-s1" opacity=".5">
-                      <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
-                            strokeOpacity=".35"/>
-                      <line x1="1510" y1="212" x2="1510" y2="560" className="p-scyan" strokeWidth=".8"
-                            strokeOpacity=".2"/>
-                    </g>
-
-                    {/* 1 · rows imported */}
-                    <g className="sk-fade sk-s2">
-                      <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">PRODUCTS BROUGHT IN</text>
-                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">from supplier feeds</text>
-                      <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
-                            className="p-node" strokeWidth="1"/>
-                      <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">317,812</text>
-                    </g>
-
-                    {/* 2 · matched automatically */}
-                    <g className="sk-fade sk-s3">
-                      <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">MATCHED AUTOMATICALLY</text>
-                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
-                      <rect x="430" y="348" width="525" height="62" rx="6" fill="url(#ms-bar)"
-                            className="p-node" strokeWidth="1"/>
-                      <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">154,518</text>
-                    </g>
-
-                    {/* 3 · live. Amber lands once, on the figure that is the point. */}
-                    <g className="sk-fade sk-s4">
-                      <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">RE-OPTIMISED</text>
-                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
-                      <rect x="430" y="468" width="14" height="62" rx="6" fill="url(#ms-amber-b)"
-                            className="p-node-a" strokeWidth="1.4"/>
-                      <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">3,844</text>
-                      <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
-                    </g>
-
-                    {/* the lever */}
-                    <g className="sk-fade sk-s5">
-                      <line x1="60" y1="596" x2="1540" y2="596" className="p-scyan" strokeWidth=".6"
-                            strokeOpacity=".22"/>
-                      <rect x="60" y="624" width="4" height="18" rx="1" className="p-amber"/>
-                      <text x="80" y="640" className="p-mono" fontSize="16" letterSpacing="2.2"
-                            opacity=".55">THE LEVER</text>
-                      <text x="60" y="690" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="26">One import pipeline, run to a schedule.
-                        Nobody retypes a supplier spreadsheet.</text>
-                      <text x="60" y="726" className="p-mono" fontSize="17" opacity=".5">Before: matched by
-                        hand, no repeatable run, and no way to tell what had changed since last time.</text>
-                    </g>
-                  </Plate>
+              {/* DO-ART-917 r01 &middot; product-screen mock-up carrying the live Hanicks
+                   figures (SQL, 23 Sep 2026). In-page draw: cards rise, the meters
+                   fill, the feeds list in, and the amber lands on &quot;matched&quot; last. */}
+              <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
+                      data-no="DO-ART-917" data-rev="01" data-tx="photo"
+                      aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+                <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
+                <div className={d17.d17Scan} aria-hidden="true" />
+                <figcaption className="cap">
+                  <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
+                  <div className={d17.bar} aria-hidden="true" />
+                  <h3>Forty suppliers. One catalogue.</h3>
+                  <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
+                  <div className={`${d17.live} ${d17.d17Mono}`}>Live system, September 2026</div>
+                  <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-917 &middot; Rev 01</span>
+                </figcaption>
+                <div className={d17.win} aria-hidden="true">
+                  <div className={d17.winBar}><span className="dots"><i /><i /><i /></span>
+                    <span className="crumb"><span>Catalogue &rsaquo;</span> Overview</span><span className="pill">HANICKS</span></div>
+                  <div className={d17.winBody}>
+                    <nav className={d17.winNav}><span className="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="m3 13 9 5 9-5" /></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.6" /><circle cx="17" cy="17.5" r="1.6" /></svg>Fulfil</span>
+                      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" /></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" /></svg>Setup</span></nav>
+                    <div className={d17.winMain}>
+                      <h5>Catalogue overview</h5>
+                      <p className="s">Every supplier feed, brought into one catalogue</p>
+                      <div className={d17.kpis}>
+                        <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.1s' }}><div className="l">Products brought in</div>
+                          <p className="n">317,812</p><p className="d">from supplier feeds</p></div>
+                        <div className={`${d17.kpi} ${d17.kpiHit} m-rise`} style={{ animationDelay: '.3s' }}><div className="l">Matched automatically</div>
+                          <p className="n">154,518</p><p className="d">to a supplier, before anyone had to touch them</p></div>
+                        <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.5s' }}><div className="l">Active suppliers</div>
+                          <p className="n">40</p><p className="d">feeding in</p></div>
+                      </div>
+                      <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.7s' }}><div className="row"><b>Supplier matching</b><span>154,518 of 317,812</span></div>
+                        <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '48.6%', animationDelay: '1s' }} /></div></div>
+                      <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.85s' }}><div className="row"><b>Stock records with a bin location</b><span>77%</span></div>
+                        <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '77%', animationDelay: '1.25s' }} /></div></div>
+                      <div className={d17.feeds}>
+                        <div className="hd"><b>Supplier feeds</b><span>40 active</span></div>
+                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.6s' }}><b>Supplier A</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.75s' }}><b>Supplier B</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.9s' }}><b>Supplier C</b><span>Stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.more} m-fade`} style={{ animationDelay: '2.05s' }}>+ 37 more active suppliers</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </figure>
 
               <p className="sheet-foot">Same approach at Case study 02, real production numbers: 17 supplier
                 feeds automated, and a projected saving of 20 to 40 hours a week.</p>
@@ -349,72 +353,31 @@ export default function HomePage() {
             </div>
 
             <div className="origin-exhibit" data-od-id="origin-exhibit">
-              <div className="docket">
-                <span>DO-ART-902 &middot; Evidence</span>
-                <span>Rev 01</span>
-                <span className="issued">Issued</span>
-              </div>
-
-              <div className="plate-scroll">
-                <div className="plate-frame" data-od-id="plate-evidence">
-                  <Plate tone="dark" p="ev" title="Decoded Data App: live deployment"
-                         sub="Supplier feed to platform, one clean catalogue between them"
-                         no="DO-ART-902" rev="01" cls="DECODED OPS · ISSUED">
-
-                    <clipPath id="ev-clip"><rect x="60" y="200" width="900" height="520" rx="12"/></clipPath>
-
-                    {/* THE EXHIBIT. A screen, not a photograph — no grade. */}
-                    <g className="sk-fade sk-s2">
-                      <image href="/assets/screens/data-app-hero.png" x="60" y="200" width="900" height="520"
-                             preserveAspectRatio="xMidYMid slice" clipPath="url(#ev-clip)" className="p-screen"/>
-                      <rect x="60" y="200" width="900" height="520" rx="12" fill="url(#ev-scan)"
-                            opacity=".28" style={{ mixBlendMode: 'overlay' }}/>
-                      <rect x="60" y="200" width="900" height="520" rx="12" fill="none" className="p-scyan"
-                            strokeWidth="1.1" strokeOpacity=".35"/>
-                      <rect x="86" y="648" width="470" height="44" rx="6" className="p-block" opacity=".85"/>
-                      <text x="106" y="677" className="p-amber" fontSize="17" letterSpacing="2"
-                            fontWeight="600">LIVE DEPLOYMENT &middot; CASE STUDY 02</text>
-                    </g>
-
-                    {/* THE SPECIFICATION. What the exhibit proves. */}
-                    <g className="sk-fade sk-s4">
-                      <rect x="1000" y="200" width="540" height="520" rx="12" fill="url(#ev-node)"
-                            className="p-node" strokeWidth="1.1"/>
-                      <rect x="1026" y="226" width="4" height="16" rx="1" className="p-cyan"/>
-                      <text x="1042" y="240" className="p-mono" fontSize="17" letterSpacing="2.4"
-                            fontWeight="600">EXHIBIT</text>
-                      <line x1="1026" y1="262" x2="1514" y2="262" className="p-scyan" strokeWidth=".6"
-                            strokeOpacity=".2"/>
-
-                      <text x="1026" y="306" className="p-mono" fontSize="15" letterSpacing="2"
-                            opacity=".45">CLIENT</text>
-                      <text x="1026" y="336" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">Case study 02 · real production numbers</text>
-
-                      <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
-                            opacity=".45">SHOWS</text>
-                      <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">17 supplier feeds, automated</text>
-                      <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
-                        picking alongside Symphony</text>
-
-                      <text x="1026" y="506" className="p-mono" fontSize="15" letterSpacing="2"
-                            opacity=".45">SOURCE</text>
-                      <text x="1026" y="536" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">Decoded Data App interface</text>
-
-                      <line x1="1026" y1="586" x2="1514" y2="586" className="p-scyan" strokeWidth=".6"
-                            strokeOpacity=".2"/>
-                      <text x="1026" y="626" className="p-mono" fontSize="16" opacity=".55">GRADE: none. A
-                        screen is not</text>
-                      <text x="1026" y="650" className="p-mono" fontSize="16" opacity=".55">a photograph;
-                        grading it would</text>
-                      <text x="1026" y="674" className="p-mono" fontSize="16" opacity=".55">destroy what it
-                        is evidence of.</text>
-                    </g>
-                  </Plate>
+              {/* DO-ART-918 r01 · photo-led evidence with a drawn ledger (D17). The
+                   client is a teamwear business and is never named; figures are the
+                   live system, SQL 23 Sep 2026. In-page draw: the ledger line runs
+                   down and the figures land in order, amber on &quot;binned&quot; last. */}
+              <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
+                      data-no="DO-ART-918" data-rev="01" data-tx="photo"
+                      aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+                <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
+                <div className={d17.d17Scan} aria-hidden="true" />
+                <figcaption className="copy">
+                  <div className={`${d17.k} ${d17.d17Mono}`}>A teamwear business <span>&middot; live system, Sept 2026</span></div>
+                  <h3>Seventeen feeds in. Every item binned.</h3>
+                  <ol className={d17.ledger}>
+                    <li className="m-fade" style={{ animationDelay: '.2s' }}><span className="n">17</span><span className="t">supplier feeds, automated</span></li>
+                    <li className="m-fade" style={{ animationDelay: '.55s' }}><span className="n">27,778</span><span className="t">supplier products in one catalogue</span></li>
+                    <li className="m-fade" style={{ animationDelay: '.9s' }}><span className="n">236,056</span><span className="t">variants, split by colour and size</span></li>
+                    <li className="m-fade" style={{ animationDelay: '1.25s' }}><span className="n">952</span><span className="t">products live on their website</span></li>
+                    <li className={`${d17.end} m-fade`} style={{ animationDelay: '1.6s' }}><span className="n">100%</span><span className="t">of stock with a bin location</span></li>
+                  </ol>
+                  <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-918 &middot; Rev 01</span>
+                </figcaption>
+                <div className={`${d17.print} m-drop`} style={{ animationDelay: '1.9s' }} aria-hidden="true">
+                  <span className="ref">BIN &middot; PICK FACE</span><b>A-04-2</b><div className="bc" /><div className="s">Polo &middot; navy &middot; M</div>
                 </div>
-              </div>
+              </figure>
             </div>
 
             <div className="origin-links" data-od-id="origin-links">
@@ -443,6 +406,7 @@ export default function HomePage() {
         </section>
 
       </main>
+      <D17Motion />
     </>
   );
 }
