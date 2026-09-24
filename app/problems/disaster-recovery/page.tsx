@@ -103,7 +103,7 @@ const heroArt965 = `<figure class="d17 sx px a965" data-od-id="hero-evidence" da
 
 const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-8bff06.jpg" alt="" width="1100" height="1224"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>

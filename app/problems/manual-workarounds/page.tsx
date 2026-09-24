@@ -68,7 +68,7 @@ const manualWorkaroundsSchema = {
 
 const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" data-motion data-no="DO-ART-970" data-rev="01" data-tx="poster"
         aria-label="Journey poster DO-ART-970. One order's route through the business. The email arrives. It is typed into the order system, copied onto the job sheet, the artwork is emailed to the studio, stock is checked by walking the floor, the despatch sheet is written up and the invoice is typed from the job sheet. Four of the seven steps retype the same order. One order, typed in four times.">
-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-promo.jpg|w=1100|q=78}}" alt="" width="900" height="600"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-promo-6d25d2.jpg" alt="" width="900" height="600"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Manual workarounds</span><span>One order's route</span></div>
   <div class="print m-drop" style="animation-delay:.2s" aria-hidden="true"><span class="ref">Job sheet · by hand</span><b>Mugs, one-colour print</b><i style="width:92%"></i><i style="width:74%"></i><i style="width:84%"></i></div>
@@ -92,7 +92,7 @@ const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" da
 
 const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>

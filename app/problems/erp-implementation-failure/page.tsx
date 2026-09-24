@@ -107,6 +107,50 @@ export default function ERPImplementationFailurePage() {
     </div>
    </section>
 
+   {/* ── HERO ARTWORK · DO-ART-967 ──────────────────────────────────── */}
+   <section className="g-off">
+    <div className="wrap">
+     <div dangerouslySetInnerHTML={{ __html: `
+      <!-- DO-ART-967 r01 · journey poster (D17, the 831 route). One decision, two routes: the
+           vendor-scoped one (dashed, sky) ends over budget and late with the platform blamed;
+           the audit-first one (amber) ends with the platform kept and the Hanicks figures.
+           Wide cut on desktop, two vertical lanes on a phone. In-page draw: both routes run,
+           the amber one lands last. Replaces DO-ART-412 in the live IA. -->
+      <figure class="d17 sw a967" data-od-id="pattern-route" data-motion data-no="DO-ART-967" data-rev="01" data-tx="poster"
+              aria-label="Journey poster DO-ART-967. One decision, choosing an ERP, and two routes from it. The vendor-scoped route: the demo, sold on what the software does well; the contract, scoped by the vendor; go-live, where the workarounds begin; ending over budget and late, with the platform blamed for a data problem. The audit-first route: the audit, looking at the business first; the data, fixed before anything moved; the platform, kept and working; ending at Hanicks with 154,518 products matched to a supplier automatically out of 317,812 brought in.">
+        <div class="gridl" aria-hidden="true"></div>
+        <svg class="route" viewBox="0 0 1600 760" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M300 390 C390 390 380 210 480 210 H1250" fill="none" stroke="#8ECAE6" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round" class="m-draw" pathLength="1" style="animation-delay:.2s"/>
+          <path d="M300 390 C390 390 380 560 480 560 H1250" fill="none" stroke="#FFB703" stroke-width="10" stroke-linecap="round" class="m-draw" pathLength="1" style="animation-delay:.9s"/>
+          <circle cx="300" cy="390" r="16" fill="#F8F9FA" stroke="#023047" stroke-width="6"/>
+          <g fill="#023047" stroke="#8ECAE6" stroke-width="4"><circle cx="580" cy="210" r="12"/><circle cx="830" cy="210" r="12"/><circle cx="1080" cy="210" r="12"/></g>
+          <g fill="#F8F9FA" stroke="#023047" stroke-width="5"><circle cx="580" cy="560" r="14"/><circle cx="830" cy="560" r="14"/><circle cx="1080" cy="560" r="14"/></g>
+        </svg>
+        <p class="eb d17-mono">The pattern · same business, same platform</p>
+        <div class="st st--start m-fade" style="left:calc(70 * var(--u));top:calc(322 * var(--u))"><span class="n">01 · The decision</span><h4>Choosing an ERP</h4><p>and who scopes it first</p></div>
+        <div class="lane lane--v">
+          <div class="st st--v m-fade" style="left:calc(556 * var(--u));top:calc(240 * var(--u))"><span class="n">02 · The demo</span><h4>Sold on its strengths</h4><p>what it does well, moved past what it doesn't</p></div>
+          <div class="st st--v m-fade" style="left:calc(806 * var(--u));top:calc(240 * var(--u))"><span class="n">03 · The contract</span><h4>Scoped by the vendor</h4><p>before anyone looked at the business</p></div>
+          <div class="st st--v m-fade" style="left:calc(1056 * var(--u));top:calc(240 * var(--u))"><span class="n">04 · Go-live</span><h4>Workarounds begin</h4><p>the gaps turn up on the floor</p></div>
+          <div class="res res--v m-fade" style="left:calc(1280 * var(--u));top:calc(120 * var(--u))"><span class="n">Vendor-scoped</span><b>Over budget, late</b><p>and the platform takes the blame for a data problem</p></div>
+        </div>
+        <div class="lane lane--a">
+          <div class="st st--a m-fade" style="left:calc(556 * var(--u));top:calc(590 * var(--u))"><span class="n">02 · The audit</span><h4>The business first</h4><p>every workflow followed before any software</p></div>
+          <div class="st st--a m-fade" style="left:calc(806 * var(--u));top:calc(590 * var(--u))"><span class="n">03 · The data</span><h4>Fixed first</h4><p>supplier feeds matched, before anything moved</p></div>
+          <div class="st st--a m-fade" style="left:calc(1056 * var(--u));top:calc(590 * var(--u))"><span class="n">04 · The platform</span><h4>Kept, and working</h4><p>the one they had already paid for</p></div>
+          <div class="res res--a m-pop" style="left:calc(1280 * var(--u));top:calc(470 * var(--u));animation-delay:2.2s"><span class="n">Audit first · Hanicks</span><b>154,518 matched</b><p>to a supplier automatically, out of 317,812 products brought in</p></div>
+        </div>
+        <div class="prints" aria-hidden="true">
+          <div class="print" style="left:calc(50 * var(--u));top:calc(478 * var(--u));width:calc(165 * var(--u));height:calc(170 * var(--u));transform:rotate(-4deg)">
+            <img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt=""><div class="tint"></div><span>The floor it has to serve</span></div>
+          <div class="print" style="left:calc(226 * var(--u));top:calc(505 * var(--u));width:calc(150 * var(--u));height:calc(160 * var(--u));transform:rotate(3deg)">
+            <img src="/images/d17/problems/thread-spools-2195b5.jpg" alt=""><div class="tint"></div><span>Decoration, the part demos skip</span></div>
+        </div>
+        <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-967 · Rev 01</span>
+      </figure>` }} />
+    </div>
+   </section>
+
    {/* ── INLINE ARTWORK · DO-ART-917 ──────────────────────────────────── */}
    <section className="g-navy">
     <div className="wrap">

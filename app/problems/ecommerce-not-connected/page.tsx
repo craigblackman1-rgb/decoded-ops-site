@@ -68,7 +68,7 @@ const ecommerceNotConnectedSchema = {
 
 const heroArt966 = `<figure class="d17 sx px ph-fade a966" data-od-id="hero-evidence" data-motion data-no="DO-ART-966" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-966. Two screens over a photograph of a shipping carton. The online store shows order 1042, paid at 09:14: 25 polos, logo embroidered on the left chest. The production schedule below has jobs to schedule, in production and ready, but the slot for order 1042 is empty and marked not received. Between them, no link: retyped by hand. Paid online, unknown on the floor.">
-  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/prod-mailer.jpg|w=900|q=80}}" alt="" width="900" height="600"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/prod-mailer-f70773.jpg" alt="" width="900" height="600"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Store and floor</span><span>One order, two systems</span></div>
   <div class="pair" aria-hidden="true">
