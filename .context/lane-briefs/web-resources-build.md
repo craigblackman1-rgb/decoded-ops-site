@@ -26,3 +26,9 @@ CR-WEB-055: ERP selection playbook: replace vendor names (OrderWise, Panta, Deco
 FORBIDDEN: dev servers, browsers, npm run build/next build, any DB or .env access, pushing, touching pages outside this batch.
 DONE: `npx tsc --noEmit` passes; `git grep -n "craig-blackman"` in the batch's dirs is empty; one commit
 "feat(web): D17 artwork on resources pages (WO-INF-061)". Report per page: slots replaced, anything not ported and why.
+
+## Retry note (2026-09-24 18:40) - the sources DO exist
+A previous run wrongly reported `.context/lane-briefs/d17-resources/` missing. It exists, is committed, and holds 38 files
+(`<slug>.hero.html`, `<slug>.inline.html`, `d17-art.css`, `d17-resources.css`, `*-1440.png`). Your glob/search tool may skip
+dot-folders: list it with the shell (`ls .context/lane-briefs/d17-resources`) and read each file by its full path.
+The CR-WEB-055 copy fixes are already committed (b44c3ab); do not redo them. Now do the D17 art port for every page and commit.
