@@ -59,8 +59,8 @@ const wrongErpSchema = {
     },
     {
      '@type': 'Question',
-     name: 'What ERP works with Shopify for an embroidery or decoration business?',
-     acceptedAnswer: { '@type': 'Answer', text: 'Several ERPs in this sector can integrate with Shopify, but the quality of that integration varies significantly. The questions to ask are: does the integration handle personalisation data, not just order totals? Does stock sync in real time? And is the integration maintained by the ERP vendor or reliant on a third-party connector that could break? An independent ERP evaluation covers all of these.' },
+     name: 'What ERP works with an online store for an embroidery or decoration business?',
+     acceptedAnswer: { '@type': 'Answer', text: 'Several ERPs in this sector can integrate with an online store, but the quality of that integration varies significantly. The questions to ask are: does the integration handle personalisation data, not just order totals? Does stock sync in real time? And is the integration maintained by the ERP vendor or reliant on a third-party connector that could break? An independent ERP evaluation covers all of these.' },
     },
    ],
   },

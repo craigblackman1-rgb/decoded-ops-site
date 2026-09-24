@@ -65,7 +65,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/transform',
       label: 'eCommerce integration programme',
-      anchor: 'Connect Shopify, WooCommerce or your B2B portal directly with your ERP, stock, and despatch, no spreadsheet middleware.',
+      anchor: 'Connect your online store or B2B portal directly with your ERP, stock, and despatch, no spreadsheet middleware.',
     },
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
