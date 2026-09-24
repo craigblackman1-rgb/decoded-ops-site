@@ -95,6 +95,8 @@ export default function DisasterRecoveryPage() {
    targetService={problemRouting['disaster-recovery'].targetService}
    relatedProblems={problemRouting['disaster-recovery'].relatedProblems}
    relatedReading={problemRouting['disaster-recovery'].relatedReading}
+   relatedSectors={problemRouting['disaster-recovery'].relatedSectors}
+   relatedResources={problemRouting['disaster-recovery'].relatedResources}
    video={problemVideos['disaster-recovery']}
   />
    {/* ── PLATE · DO-ART-405 ──────────────────────────────────────────── */}

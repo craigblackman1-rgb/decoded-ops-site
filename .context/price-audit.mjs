@@ -5,7 +5,8 @@
  * Feeds the "pricing lives only on /pricing" change. Derived from source so the
  * work list cannot silently miss a page.
  *
- *   node .context/price-audit.mjs
+ *   node .context/price-audit.mjs           # generate audit report
+ *   node .context/price-audit.mjs --check   # strict: exit 1 on violations
  */
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -17,13 +18,13 @@ function walk(dir, out = []) {
   for (const e of readdirSync(dir)) {
     const full = join(dir, e);
     if (statSync(full).isDirectory()) walk(full, out);
-    else if (/\.(tsx|ts)$/.test(e)) out.push(relative(ROOT, full).split(sep).join('/'));
+    else if (/\.(tsx|ts|js|mjs|txt|md)$/.test(e) && !e.endsWith('.d.ts')) out.push(relative(ROOT, full).split(sep).join('/'));
   }
   return out;
 }
 
-const files = [...walk(join(ROOT, 'app')), ...walk(join(ROOT, 'components')), ...walk(join(ROOT, 'data'))]
-  .filter(f => !SKIP.test(f))
+const files = [...walk(join(ROOT, 'app')), ...walk(join(ROOT, 'components')), ...walk(join(ROOT, 'public')), ...walk(join(ROOT, 'data'))]
+  .filter(f => !SKIP.test(f) && !f.includes('node_modules') && !f.includes('.next') && !f.includes('.context/lanes'))
   .sort();
 
 // £1,500 / £4,750 / from £15,000 / £1,200–£1,500 / £750 fixed / 20–40 hours is NOT money
@@ -36,22 +37,53 @@ const CLIENT_COST = /150,000|10,000 |£150|£10,000/;
 
 /**
  * --check mode. Craig's rule (8 Aug 2026): prices live on /pricing and nowhere else.
- * Two figures survive that rule as deliberate exceptions, both confirmed by Craig:
- *   £1,500  the Clarity Audit entry anchor, load-bearing in location-page meta
- *           descriptions and the site-wide OG card
- *   £750    the App Scoping Session, the mandatory entry step for the systems line
- * Everything else below is not a Decoded Ops price at all: turnover bands that define
- * a segment, the cost of a client's failed ERP, a salary comparison, a competitor's
- * market range.
+ *
+ * v11 exceptions (Craig 19 Sep 2026): the following files may carry public prices:
+ *   - app/pricing/page.tsx          (the canonical pricing page)
+ *   - app/small-business/page.tsx   (Clarity Check £595, service "from" prices)
+ *   - components/Header.tsx         (small-business mega menu sub-copy)
+ *   - public/llms.txt               (machine-readable pricing lines)
+ *
+ * Public figures (from data/pricing-v11.json): 595, 1500, 1200, 950.
+ * Forbidden figures (from data/pricing-v11.json): 720, 1440, 2880, 5760, 360,
+ *   1080, 395, 995, 795, 1095, 2100, 3675, etc.
  */
 const ALLOWED = new Set([
   '£1,500', '£750',                                       // confirmed price exceptions
-  '£500k', '£1m', '£1.5m', '£5m', '£7.5m',                // turnover bands, not prices
+  '£500k', '£1m', '£1.5m', '£2M', '£5m', '£7.5m',        // turnover bands, not prices
   '£150,000', '£10,000',                                  // a client's failed ERP
   '£80k',                                                 // salary comparison
   '£8,000', '£20,000',                                    // competitors' market range
+  '£20k', '£40k', '£50k', '£80k',                        // industry cost ranges (infographics)
 ]);
-const ALLOWED_FILES = new Set(['app/pricing/page.tsx']);
+const ALLOWED_FILES = new Set([
+  'app/pricing/page.tsx',
+  'app/small-business/page.tsx',
+  'components/Header.tsx',
+  'public/llms.txt',
+]);
+
+// v11: load pricing data for strict checks
+let pricingData = null;
+try {
+  pricingData = JSON.parse(readFileSync(join(ROOT, 'data/pricing-v11.json'), 'utf8'));
+} catch {}
+
+// Forbidden words: phrase-level matches only (not substrings like "invest" → "vest")
+const FORBIDDEN_WORDS_PATTERNS = [
+  { pattern: /\bvests?\b/i, label: 'vest' },
+  { pattern: /\bRoute [AB]\b/i, label: 'Route A/B' },
+  { pattern: /\bday rate\b/i, label: 'day rate' },
+  { pattern: /\bQuarterly Sprint\b/i, label: 'Quarterly Sprint' },
+  { pattern: /\bDiscovery Day\b/i, label: 'Discovery Day' },
+  { pattern: /\bAI Readiness Check\b/i, label: 'AI Readiness Check' },
+];
+
+// Paths that are allowed to mention "AI Readiness Check" (the free tool still exists)
+const AI_READINESS_ALLOWLIST = [
+  'app/tools/ai-readiness-check/',
+  'app/tools/page.tsx',  // tools index + plate illustration
+];
 
 const rows = [];
 for (const f of files) {
@@ -104,14 +136,55 @@ for (const [file, rs] of [...byFile].sort((a, b) => b[1].length - a[1].length)) 
 
 if (process.argv.includes('--check')) {
   const bad = [];
+
+  // Check 1: disallowed prices outside allowed files
   for (const r of rows) {
     if (ALLOWED_FILES.has(r.file)) continue;
-    for (const h of r.hits) if (!ALLOWED.has(h)) bad.push(`${r.file}:${r.line}  ${h}  ${r.text.slice(0, 90)}`);
+    for (const h of r.hits) {
+      if (!ALLOWED.has(h)) bad.push(`${r.file}:${r.line}  disallowed price ${h}  ${r.text.slice(0, 90)}`);
+    }
   }
-  console.log(`\ncheck: ${bad.length} disallowed price${bad.length === 1 ? '' : 's'} outside /pricing`);
+
+  // Check 2: v11 — forbidden_public values (only in allowed files)
+  if (pricingData) {
+    const forbiddenPublic = new Set((pricingData.forbidden_public || []).map(String));
+
+    for (const r of rows) {
+      if (!ALLOWED_FILES.has(r.file)) continue;
+      for (const h of r.hits) {
+        const numStr = h.replace(/[£,]/g, '');
+        const num = parseFloat(numStr);
+        if (isNaN(num)) continue;
+        if (forbiddenPublic.has(String(Math.round(num)))) {
+          bad.push(`${r.file}:${r.line}  forbidden_public ${h}  ${r.text.slice(0, 90)}`);
+        }
+      }
+    }
+
+    // Check 3: scan for forbidden words in public-facing files
+    const textFiles = [...walk(join(ROOT, 'app')), ...walk(join(ROOT, 'components')), ...walk(join(ROOT, 'public'))]
+      .filter(f => !SKIP.test(f) && !f.includes('node_modules') && !f.includes('.next') && !f.includes('.context/'));
+    for (const f of textFiles) {
+      // Allow client proposal data files (private, not public-facing)
+      if (f.includes('clients/[clientId]/data/')) continue;
+      const content = readFileSync(join(ROOT, f), 'utf8');
+      const lines = content.split(/\r?\n/);
+      for (let i = 0; i < lines.length; i++) {
+        for (const { pattern, label } of FORBIDDEN_WORDS_PATTERNS) {
+          if (pattern.test(lines[i])) {
+            // Allow "AI Readiness Check" in the free tool and its index page
+            if (label === 'AI Readiness Check' && AI_READINESS_ALLOWLIST.some(af => f.includes(af))) continue;
+            bad.push(`${f}:${i + 1}  forbidden word "${label}"  ${lines[i].trim().slice(0, 90)}`);
+          }
+        }
+      }
+    }
+  }
+
+  console.log(`\ncheck: ${bad.length} violation${bad.length === 1 ? '' : ''}`);
   if (bad.length) {
     for (const b of bad) console.log(`  FAIL ${b}`);
     process.exit(1);
   }
-  console.log('  PASS — prices live on /pricing only, plus the £1,500 and £750 exceptions.');
+  console.log('  PASS — all prices and content comply with v11 rules.');
 }

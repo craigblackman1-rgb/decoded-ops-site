@@ -95,6 +95,8 @@ export default function NoOpsOwnerPage() {
    targetService={problemRouting['no-ops-owner'].targetService}
    relatedProblems={problemRouting['no-ops-owner'].relatedProblems}
    relatedReading={problemRouting['no-ops-owner'].relatedReading}
+   relatedSectors={problemRouting['no-ops-owner'].relatedSectors}
+   relatedResources={problemRouting['no-ops-owner'].relatedResources}
    video={problemVideos['no-ops-owner']}
   />
    {/* ── PLATE · DO-ART-408 ──────────────────────────────────────────── */}

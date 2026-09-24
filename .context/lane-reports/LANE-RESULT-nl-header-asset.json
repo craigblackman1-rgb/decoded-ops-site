@@ -1,0 +1,22 @@
+{
+  "lane": "nl-header-asset",
+  "wo": "wo-marketing-sales-consolidated-2026-08-20",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "ac186a6",
+      "subject": "assets: host Ops Briefing Issue 1 header image (newsletter/assets)"
+    }
+  ],
+  "filesChanged": [
+    "public/newsletter/assets/ops-briefing-header.png"
+  ],
+  "verify": {
+    "tsc": "n/a — no source code changes",
+    "tests": "n/a",
+    "escapeGrep": "0 hits — only the PNG was committed"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

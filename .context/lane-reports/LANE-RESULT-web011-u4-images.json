@@ -1,0 +1,65 @@
+{
+  "lane": "web011-u4-images",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "f576114",
+      "subject": "CR-WEB-042: optimise heavy app/blog images, next/image on app pages, modern formats"
+    }
+  ],
+  "filesChanged": [
+    "next.config.ts",
+    "app/apps/data-app/page.tsx",
+    "app/apps/commerce/page.tsx",
+    "app/apps/artwork-manager/page.tsx",
+    "app/page.tsx",
+    "app/sectors/schoolwear/page.tsx",
+    "components/HeroVisual.tsx",
+    "components/SectorCredibilityPhoto.tsx",
+    "public/images/apps/commerce-pdp-v2.webp",
+    "public/images/apps/commerce-plp-v2.webp",
+    "public/images/apps/data-app-dashboard-v2.webp",
+    "public/images/apps/data-app-catalogue-v2.webp",
+    "public/images/apps/data-app-supplier-import-v2.webp",
+    "public/images/apps/data-app-hero-v2.webp",
+    "public/images/apps/artwork-approval-v2.webp",
+    "public/images/apps/artwork-manager-hero-v2.webp",
+    "public/images/hero-craft-v2.webp",
+    "public/images/sectors/thread-spools-v2.webp",
+    "public/images/blog/decoded-method-operations-framework-img-1-v2.webp",
+    "public/images/blog/decoded-method-operations-framework-thumb-v2.webp",
+    "public/assets/screens/data-app-hero-v2.webp",
+    "public/images/sector-credibility-v2.webp"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits (app/ and components/ — problem pages unchanged, pre-existing)"
+  },
+  "imageOptimization": {
+    "commerce-pdp.png": "1556KB → 100KB (94% reduction)",
+    "commerce-plp.png": "1401KB → 245KB (82% reduction)",
+    "data-app-dashboard.png": "603KB → 118KB (80% reduction)",
+    "data-app-catalogue.png": "493KB → 82KB (83% reduction)",
+    "data-app-supplier-import.png": "269KB → 46KB (83% reduction)",
+    "data-app-hero.png": "243KB → 72KB (70% reduction)",
+    "artwork-approval.png": "497KB → 97KB (81% reduction)",
+    "artwork-manager-hero.jpg": "334KB → 164KB (51% reduction)",
+    "hero-craft.jpg": "119KB → 46KB (62% reduction)",
+    "thread-spools.jpg": "159KB → 75KB (53% reduction)",
+    "decoded-method-operations-framework-img-1.png": "998KB → 64KB (94% reduction)",
+    "decoded-method-operations-framework-thumb.png": "99KB → 22KB (78% reduction)",
+    "data-app-hero.png (assets/screens)": "243KB → 72KB (70% reduction)",
+    "sector-credibility.jpg": "133KB → 57KB (57% reduction)"
+  },
+  "deviations": [
+    "Blog images (decoded-method-operations-framework-*) have -v2.webp copies but originals left in place — hub content_items references need updating separately",
+    "Problem page <img> tags for hero-craft.jpg and thread-spools.jpg left as-is (cannot change markup in hub-rendered content)",
+    "real-example.jpg referenced by seasonal-peaks and spreadsheet-addiction pages does not exist in public/ — pre-existing broken reference",
+    "Next.js 16 Turbopack build does not emit 'First Load JS' table — bundle analysis skipped",
+    "@next/bundle-analyzer not installed — no ANALYZE run"
+  ],
+  "blockers": [],
+  "done": true
+}

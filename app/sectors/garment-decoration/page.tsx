@@ -202,10 +202,10 @@ export default function GarmentDecorationPage() {
       </section>
 
       {/* CROSS-LINKS */}
-      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0)) && (
+      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0) || (route.relatedResources && route.relatedResources.length > 0) || (route.relatedSectors && route.relatedSectors.length > 0)) && (
         <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
           <div className="wrap">
-            <div className="grid grid--2">
+            <div className="grid grid--3">
               {route.targetService && (
                 <div className="card" style={{ background: 'var(--do-surface-dark)', color: 'var(--do-text-on-dark)' }}>
                   <span className="kicker" style={{ color: 'var(--do-amber)' }}>The work in this sector</span>
@@ -232,6 +232,38 @@ export default function GarmentDecorationPage() {
                   </ul>
                 </div>
               )}
+              {route.relatedResources && route.relatedResources.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Useful next steps</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Resources</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedResources.map((r) => (
+                      <li key={r.href} style={{ marginBottom: '10px' }}>
+                        <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{r.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {route.relatedSectors && route.relatedSectors.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Related sectors</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Adjacent trades</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedSectors.map((s) => (
+                      <li key={s.href} style={{ marginBottom: '10px' }}>
+                        <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{s.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -246,6 +278,19 @@ export default function GarmentDecorationPage() {
           <p className="lede">If you run embroidery alongside screen print or DTF, the same operational challenges apply — but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/sectors/operations-consultant-print-embroidery">See the print & embroidery page <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+        <div className="wrap">
+          <span className="eyebrow">Case study</span>
+          <h2>ERP and supplier data integration for a decoration business</h2>
+          <div className="hair" />
+          <p className="lede">Project-leading an ERP change alongside a custom Data App for supplier data, Amazon FBA, and channel automation.</p>
+          <div className="btn-row" style={{ marginTop: '24px' }}>
+            <Link className="btn btn--outline" href="/case-studies/case-study-01">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

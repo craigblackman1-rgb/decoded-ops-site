@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { SectorPageDS } from '@/components/SectorPageDS';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Schoolwear: Decoded Ops',
@@ -23,15 +26,40 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
-  url: 'https://decodedops.co.uk/sectors/schoolwear',
-  name: 'Schoolwear: Decoded Ops',
-  description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/schoolwear#webpage',
+      url: 'https://decodedops.co.uk/sectors/schoolwear',
+      name: 'Schoolwear: Decoded Ops',
+      description: 'Keeping supplier feeds current before the back-to-school peak, badge data that scales with growing pupils, and production scheduling that hits September every time.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you handle the back-to-school peak?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Schoolwear ranges do not change often, but when a supplier updates sizing or stock you need to know before the August rush, not during it. The work finds where supplier data lag creates orders you cannot fulfil before peak season.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does badge and embroidery management work at scale?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every school badge is a thread file before it is a garment. Managing badge specifications, embroidery requirements, and version control at scale across dozens of school accounts is a dedicated workflow that spreadsheets were never built for.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the Decoded Data App replace my existing platform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the existing platform, or as the full system where nothing off the shelf fits. It handles both teamwear and schoolwear lines with supplier feeds automated.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function SchoolwearPage() {
+  const route = sectorRouting['schoolwear'];
   return (
     <>
       <JsonLd data={sectorSchema} />
@@ -49,7 +77,7 @@ export default function SchoolwearPage() {
         ]}
         heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
         heroImage={{
-          src: '/images/sectors/thread-spools.jpg',
+          src: '/images/sectors/thread-spools-v2.webp',
           width: 1600,
           height: 1067,
           alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
@@ -123,7 +151,7 @@ export default function SchoolwearPage() {
               </svg>
             ),
             title: 'Proven at a real teamwear-and-schoolwear retailer',
-            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: nine supplier feeds automated, a projected saving of 20 to 40 hours a week.',
+            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected saving of 20 to 40 hours a week.',
           },
         ]}
         otherSectors={[
@@ -178,6 +206,62 @@ export default function SchoolwearPage() {
                 <p>{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED PROBLEMS + RESOURCES */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+        <div className="wrap">
+          <div className="grid grid--3">
+            {route.relatedProblems.length > 0 && (
+              <article className="card">
+                <span className="kicker">Common problems</span>
+                <h3>The problems I see most often</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedProblems.map((p) => (
+                    <li key={p.href} style={{ marginBottom: '10px' }}>
+                      <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{p.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedResources.length > 0 && (
+              <article className="card">
+                <span className="kicker">Useful next steps</span>
+                <h3>Resources</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedResources.map((r) => (
+                    <li key={r.href} style={{ marginBottom: '10px' }}>
+                      <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{r.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedSectors.length > 0 && (
+              <article className="card">
+                <span className="kicker">Related sectors</span>
+                <h3>Adjacent trades</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedSectors.map((s) => (
+                    <li key={s.href} style={{ marginBottom: '10px' }}>
+                      <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{s.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
           </div>
         </div>
       </section>

@@ -3,22 +3,53 @@ import Link from 'next/link';
 import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { JsonLd } from '@/components/JsonLd';
+import pricingData from '@/data/pricing-v11.json';
+
+const { consultancy, small_business } = pricingData;
 
 export const metadata: Metadata = {
   title: 'Pricing: Decoded Ops',
-  description: 'One fixed price to start. The Clarity Audit is a fixed price; everything else is quoted after a conversation about your operation.',
+  description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation about your operation.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
     title: 'Pricing: Decoded Ops',
-    description: 'One fixed price to start. The Clarity Audit is a fixed price; everything else is quoted after a conversation about your operation.',
+    description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation.',
     url: 'https://decodedops.co.uk/pricing',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing: Decoded Ops',
-    description: 'One fixed price to start. Everything else is quoted after a conversation.',
+    description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation.',
   },
+};
+
+const pricingSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Pricing',
+      url: 'https://decodedops.co.uk/pricing',
+      description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation about your operation.',
+      provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
+    },
+    {
+      '@type': 'Offer',
+      name: 'Clarity Check',
+      price: String(small_business.products[0].price),
+      priceCurrency: 'GBP',
+      description: small_business.products[0].format,
+    },
+    {
+      '@type': 'Offer',
+      name: 'Clarity Audit',
+      price: String(consultancy[0].public_from),
+      priceCurrency: 'GBP',
+      description: 'One day on site, a written plan within five working days.',
+    },
+  ],
 };
 
 export default function PricingPage() {
@@ -28,8 +59,9 @@ export default function PricingPage() {
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Pricing', url: 'https://decodedops.co.uk/pricing' },
       ]} />
+      <JsonLd data={pricingSchema} />
 
-      {/* 1 · HERO CENTRE */}
+      {/* 1 · HERO */}
       <section className="g-off">
         <div className="container hero-center">
           <p className="eyebrow">Pricing</p>
@@ -60,40 +92,54 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 2 · CLARITY AUDIT */}
+      {/* 2 · CONSULTANCY */}
       <section className="g-white">
         <div className="container">
-          <p className="eyebrow">Entry point</p>
-          <h2>The Clarity Audit.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>A day on site and a written plan within five working days.
-            Six audit areas. A fixed price that scales with the number of sites.</p>
+          <p className="eyebrow">Consultancy</p>
+          <h2>Diagnosis, then delivery.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>Priced by the size of the business, because the work
+            scales with it. Clarity Audit is the entry point into everything below it.</p>
 
           <div className="table-wrap" style={{ marginTop: 28 }}>
             <table className="ds-table ds-table--fixed">
               <colgroup>
-                <col style={{ width: '100%' }} />
+                <col style={{ width: '22%' }} />
+                <col style={{ width: '34%' }} />
+                <col style={{ width: '22%' }} />
+                <col style={{ width: '22%' }} />
               </colgroup>
-              <caption>Clarity Audit: the entry point</caption>
+              <caption>Consultancy services</caption>
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">What it is</th>
+                  <th scope="col">From</th>
+                  <th scope="col">Minimum</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Clarity Audit</th>
-                </tr>
-                <tr>
-                  <td>
-                    <span className="price">From £1,500</span>
-                    <span className="price-sub">One day on site, a written plan within five working days.
-                      £1,500 is the floor for a single site, more sites scale up from there, scoped
-                      after the first call. The entry point into everything else.</span>
-                  </td>
-                </tr>
+                {consultancy.map(s => (
+                  <tr key={s.key}>
+                    <th scope="row">{s.name}</th>
+                    <td className="scope">
+                      {s.key === 'clarity_audit' && 'One day on site, a written plan within five working days.'}
+                      {s.key === 'deliver' && 'Project delivery, vendor management, and keeping things on track.'}
+                      {s.key === 'transform' && 'Rebuild how the business runs, one project at a time.'}
+                      {s.key === 'retained' && 'A technology director, part time. Direct line to Craig.'}
+                    </td>
+                    <td>
+                      <span className="price">From £{s.public_from.toLocaleString()}</span>
+                      {s.unit === 'per month' && <span className="num">/mo</span>}
+                    </td>
+                    <td className="scope">{s.minimum ?? 'One-off'}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
+
+          <p className="table-foot" style={{ marginTop: 20 }}>Every price has three tiers — Essential, Recommended, Complete — set at the audit
+            by the size and shape of your operation. The full tier sheet is in the price pack, sent on request.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
@@ -161,31 +207,43 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 3 · QUALIFICATION */}
+      {/* 3 · SMALL BUSINESS */}
       <section className="g-off">
-        <div className="container narrow">
-          <p className="eyebrow">After the audit</p>
-          <h2>Everything past the audit is priced after a conversation.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>What an engagement costs depends on the size of the operation,
-            how many systems are involved, and how much of the work we take on. We will not quote a number
-            before we understand those things, because a number quoted blind is either too high to be fair
-            or too low to be delivered.</p>
-          <p className="lead" style={{ marginTop: 16 }}>The Clarity Audit is the way in. It is a fixed price,
-            it stands alone, and it produces a written plan and a firm price for whatever comes next.</p>
+        <div className="container">
+          <p className="eyebrow">Small business</p>
+          <h2>The same method, sized for a smaller operation.</h2>
+          <p className="lead" style={{ marginTop: 16 }}>Remote, shorter, and priced so it&rsquo;s a decision you can
+            make on your own without a board behind you.</p>
+
+          <div className="card" style={{ marginTop: 28, maxWidth: 540 }}>
+            <span className="kicker">Start here</span>
+            <h3>Clarity Check</h3>
+            <p style={{ color: 'var(--do-text-muted)', fontSize: 'var(--do-text-sm)', lineHeight: 1.75, marginTop: 8 }}>
+              A 3-hour remote diagnostic. Written priorities within five working days.
+              Feeds directly into the Clarity Audit if you decide to go further.
+            </p>
+            <span className="price" style={{ marginTop: 16, display: 'inline-block' }}>£595 fixed</span>
+            <div style={{ marginTop: 20 }}>
+              <Link className="btn btn-primary" href="/contact">Book your Clarity Check</Link>
+            </div>
+          </div>
+
+          <p className="table-foot" style={{ marginTop: 28 }}>Sub-£1m businesses use the same services at the &ldquo;from&rdquo; prices above.
+            There is no separate small-business pricing ladder. See <Link href="/small-business"
+              style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
         </div>
       </section>
 
-      {/* 4 · HARD BREAK */}
+      {/* 4 · SYSTEMS */}
       <section className="section--tight g-navy">
         <div className="container narrow">
           <p className="eyebrow">A different kind of decision</p>
-          <h2>What follows is software.</h2>
-          <p className="lead" style={{ marginTop: 18 }}>Priced the same way whether you buy it standalone or
-            alongside a programme. Different decision, different section, on purpose.</p>
+          <h2>Everything above is diagnosis and delivery. What follows is software.</h2>
+          <p className="lead" style={{ marginTop: 18 }}>Priced at the audit — buy outright or lease to own over 36–60 months;
+            you own it at the end. Different decision, different section, on purpose.</p>
         </div>
       </section>
 
-      {/* 5 · SYSTEMS */}
       <section className="g-off">
         <div className="container">
           <p className="eyebrow">Systems</p>
@@ -239,14 +297,13 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* 6 · CTA STRIP */}
+      {/* 5 · CTA STRIP */}
       <section className="g-white cta-strip">
         <div className="container" style={{ maxWidth: 760 }}>
-          <h2>Not sure which line you&rsquo;re in?</h2>
-          <p className="lead">That&rsquo;s what the discovery call is for. It&rsquo;s free, takes 60 minutes, and comes
-            with no obligation, just an honest conversation about your operation.</p>
+          <h2>Get the price pack.</h2>
+          <p className="lead">Two pages: how I price, and what I built. Sent the same day.</p>
           <div className="hero-cta">
-            <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
+            <Link className="btn btn-primary" href="/contact">Request the price pack</Link>
             <Link className="btn btn-ghost btn-arrow" href="/clarity">See how Clarity Audit works</Link>
           </div>
         </div>

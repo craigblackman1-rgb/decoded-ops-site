@@ -156,7 +156,7 @@ export default function ERPImplementationFailurePage() {
        <span className="kicker">Before</span>
        <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
         {[
-         <>The <b>164,752</b> products scattered across supplier feeds</>,
+          <>The <b>317,812</b> products scattered across supplier feeds</>,
          'No consistent SKU to match any of them against',
          'No reliable stock picture for the warehouse or the website',
          'A platform taking the blame for a data problem',
@@ -171,9 +171,9 @@ export default function ERPImplementationFailurePage() {
        <span className="kicker">After</span>
        <ul style={{ margin: '10px 0 0', padding: 0, listStyle: 'none' }}>
         {[
-         <><b>127,135</b> matched automatically on the first run</>,
-         <>A <b>77%</b> match rate, without anyone re-keying a row</>,
-         <><b>11,064</b> matched and prepared for the Khaos Control catalogue within weeks</>,
+         <><b>154,518</b> matched to a supplier automatically</>,
+          <><b>40</b> active suppliers feeding in, without anyone re-keying a row</>,
+          <><b>3,844</b> Amazon listings re-optimised ahead of a title-format deadline</>,
          'The platform stayed. The layer around it changed.',
         ].map((item, i) => (
          <li key={i} style={{ fontSize: 'var(--do-text-sm)', marginBottom: 10, color: 'color-mix(in srgb, var(--do-prussian-blue) 74%, transparent)' }}>

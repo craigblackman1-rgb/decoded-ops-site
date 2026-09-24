@@ -19,7 +19,7 @@ export function SectorCredibilityPhoto() {
     <div className="relative pb-10 sm:pb-12">
       <div className="relative aspect-[4/3.1] rounded-2xl overflow-hidden shadow-xl">
         <Image
-          src="/images/sector-credibility.jpg"
+          src="/images/sector-credibility-v2.webp"
           alt="Garment decoration production floor"
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"

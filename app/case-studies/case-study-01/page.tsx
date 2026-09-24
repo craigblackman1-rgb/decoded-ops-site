@@ -5,19 +5,19 @@ import { Plate } from '@/components/Plate';
 
 // Target keyword: "erp implementation project lead" (secondary: "case study 01 decoded ops")
 export const metadata = {
-  title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
-  description: 'Project-leading a Khaos Control ERP implementation for a heating spares & eCommerce retailer alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+  title: 'Case study 01: Hanicks | Decoded Ops',
+  description: 'Hanicks sells heating spares. A big catalogue arriving from lots of suppliers in different formats, needing to be clean and current on every channel.',
   alternates: { canonical: '/case-studies/case-study-01' },
   openGraph: {
     type: 'article',
-    title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
-    description: 'Project-leading a Khaos Control ERP implementation alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+    title: 'Case study 01: Hanicks | Decoded Ops',
+    description: 'Hanicks sells heating spares. A big catalogue arriving from lots of suppliers in different formats, needing to be clean and current on every channel.',
     url: 'https://decodedops.co.uk/case-studies/case-study-01',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Case study 01: Khaos Control ERP + Custom App | Decoded Ops',
-    description: 'Project-leading a Khaos Control ERP implementation alongside a custom app.',
+    title: 'Case study 01: Hanicks | Decoded Ops',
+    description: 'Hanicks sells heating spares. A big catalogue, lots of suppliers, needing to be clean and current.',
   },
 };
 
@@ -26,8 +26,8 @@ const schema = {
   '@graph': [
     {
       '@type': 'Article',
-      headline: 'Case study 01: Khaos Control ERP + Custom App',
-      description: 'Project-leading a Khaos Control ERP implementation for a heating spares & eCommerce retailer alongside a custom app for supplier data, Amazon FBA, and channel automation.',
+      headline: 'Case study 01: Hanicks',
+      description: 'Hanicks sells heating spares. A big catalogue arriving from lots of suppliers in different formats, needing to be clean and current on every channel.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: {
         '@type': 'Organization', name: 'Decoded Ops',
@@ -35,7 +35,7 @@ const schema = {
       },
       image: 'https://decodedops.co.uk/opengraph-image',
       datePublished: '2026-07-21',
-      dateModified: '2026-07-21',
+      dateModified: '2026-09-23',
       url: 'https://decodedops.co.uk/case-studies/case-study-01',
     },
   ],
@@ -75,9 +75,9 @@ export default function CaseStudy01Page() {
         <section className="g-off">
           <div className="wrap hero-center">
             <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
-            <h1>The platform stayed. The layer around it changed.</h1>
+            <h1>The ERP changed. The data work carried on.</h1>
             <p className="lede">
-              This is a heating spares &amp; eCommerce retailer, not a decorated-goods one. The underlying problem is the same: a large product catalogue arriving from many suppliers in inconsistent formats, needing to be clean and current on every channel it sells on.
+              Hanicks sells heating spares. It isn&apos;t decorated goods, but it&apos;s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.
             </p>
           </div>
         </section>
@@ -86,14 +86,14 @@ export default function CaseStudy01Page() {
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow">Measure &middot; DO-ART-205</span>
-            <h2>Not projected. Not modelled. What actually happened.</h2>
+            <h2>Not projected. Not modelled. What&apos;s actually in the system.</h2>
             <div className="hair"></div>
-            <p className="lede" style={{ marginTop: 16 }}>164,752 products imported from supplier feeds. 127,135 matched automatically on the first run, a 77% match rate, without anyone re-keying a row. 11,064 matched and prepared for the Khaos Control catalogue within weeks.</p>
+            <p className="lede" style={{ marginTop: 16 }}>Catalogue figures from the live system, September 2026.</p>
 
             <div className="plate-scroll">
               <div className="plate-frame" data-od-id="plate-cs01">
                 <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
-                       sub="Case study 01 · 164,752 products, 77% matched on the first run"
+                       sub="Case study 01 · 317,812 products, 154,518 matched automatically"
                        no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
 
                   <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
@@ -105,8 +105,8 @@ export default function CaseStudy01Page() {
                           letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
                   </g>
                   <g className="sk-fade sk-s3" fontSize="22">
-                    <text x="140" y="332" className="p-ink">164,752 products across feeds</text>
-                    <text x="140" y="402" className="p-ink">No consistent SKU</text>
+                    <text x="140" y="332" className="p-ink">317,812 products imported from feeds</text>
+                    <text x="140" y="402" className="p-ink">No consistent SKU across suppliers</text>
                     <text x="140" y="472" className="p-ink">No reliable stock picture</text>
                     <text x="140" y="542" className="p-ink">The platform getting the blame</text>
                     <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
@@ -129,10 +129,10 @@ export default function CaseStudy01Page() {
                           letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
                   </g>
                   <g className="sk-fade sk-s5" fontSize="22">
-                    <text x="890" y="332" className="p-ink">127,135 matched on the first run</text>
-                    <text x="890" y="402" className="p-ink">77% matched automatically</text>
-                    <text x="890" y="472" className="p-ink">11,064 matched and prepared for the catalogue</text>
-                    <text x="890" y="542" className="p-ink">Same platform, kept</text>
+                    <text x="890" y="332" className="p-ink">154,518 matched automatically</text>
+                    <text x="890" y="402" className="p-ink">40 active suppliers feeding in</text>
+                    <text x="890" y="472" className="p-ink">77% of stock records now have a bin location</text>
+                    <text x="890" y="542" className="p-ink">Data app (now the ERP)</text>
                     <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                        strokeLinejoin="round" fill="none">
                       <path d="M856 325 L863 332 L876 318"/>
@@ -157,24 +157,38 @@ export default function CaseStudy01Page() {
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow eyebrow--amber">The numbers</span>
-            <h2 style={{ marginTop: 14 }}>Not projected. Not modelled. What actually happened.</h2>
+            <h2 style={{ marginTop: 14 }}>Not projected. Not modelled. What&apos;s actually in the system.</h2>
 
             <div className="grid grid--3" style={{ marginTop: 40 }}>
               <div className="stat">
-                <p className="stat-num num">164,752</p>
-                <p className="stat-label">WooCommerce products imported</p>
+                <p className="stat-num num">317,812</p>
+                <p className="stat-label">products brought in from supplier feeds</p>
               </div>
               <div className="stat">
-                <p className="stat-num num">127,135</p>
-                <p className="stat-label">matched automatically, a 77% first-run match rate</p>
+                <p className="stat-num num">154,518</p>
+                <p className="stat-label">matched to a supplier automatically, before anyone had to touch them</p>
               </div>
               <div className="stat">
-                <p className="stat-num num">11,064</p>
-                <p className="stat-label">products matched and prepared for the Khaos Control catalogue</p>
+                <p className="stat-num num">40</p>
+                <p className="stat-label">active suppliers feeding in (89 on file)</p>
+              </div>
+            </div>
+            <div className="grid grid--3" style={{ marginTop: 32 }}>
+              <div className="stat">
+                <p className="stat-num num">2,872</p>
+                <p className="stat-label">new products and 28 new suppliers found in a stock-take reconciliation</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">3,844</p>
+                <p className="stat-label">Amazon listings re-optimised ahead of a title-format deadline</p>
+              </div>
+              <div className="stat">
+                <p className="stat-num num">77%</p>
+                <p className="stat-label">of stock records now have a bin location, and climbing</p>
               </div>
             </div>
             <p className="lede" style={{ marginTop: 36, color: 'var(--do-text-muted-on-dark)' }}>
-              Also: 2,872 new products and 28 new suppliers identified from a stock-take reconciliation, and 3,844 Amazon ASINs re-optimised ahead of a title-format deadline.
+              Catalogue figures from the live system, September 2026.
             </p>
           </div>
         </section>
@@ -184,27 +198,56 @@ export default function CaseStudy01Page() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Product data was scattered across supplier feeds, with no consistent SKU matching and no reliable way to know what was actually in stock or where. The business needed a proper ERP, but starting that with dirty data would have meant paying to migrate a mess.
+              Product data was spread across supplier feeds with no consistent SKU, and no reliable way of knowing what was actually in stock or where it was. The business needed a proper ERP, but going into one with messy data would have meant paying to migrate the mess.
             </p>
 
             <h2>What was done</h2>
             <p>
-              A Clarity Audit picked the platform first: Khaos Control, an off-the-shelf ERP. Khaos does not handle supplier feed ingestion, data enrichment, or catalogue maintenance across channels well. So the Data App was built to do exactly that, sitting alongside Khaos rather than replacing it. This is rung 2 of how I work: keep the platform that fits, build the layer it does not do.
+              The work started with the data, not the platform. I built the data app to bring in every supplier catalogue, match it against what Hanicks actually sells, and keep it clean and current across their channels.
             </p>
             <p>
-              The Data App took in every supplier catalogue, matched it against what the business already sold, and prepared the clean result for the Khaos Control catalogue.
+              The off-the-shelf ERP they&apos;d originally chosen stalled on its own terms, nothing to do with the data work, which kept running throughout. So rather than start again with another off-the-shelf system, the data app became the ERP. Their marketplace listings on Amazon, eBay and OnBuy are now linked to it, and a new website is being built on top of the same data.
             </p>
 
             <div className="progress-note">
               <h3>What&apos;s still in progress</h3>
               <p>
-                The remaining 23% of unmatched products are a known, visible list, not a hidden gap. They are being worked through rather than papered over.
+                The catalogue is still being worked through. Unmatched products sit on a visible list rather than being hidden, and the warehouse is being binned and labelled as we go. The new website goes live later this year.
               </p>
             </div>
           </div>
         </section>
 
-        {/* 4. CTA STRIP */}
+        {/* 4. RELATED */}
+        <section className="g-tint">
+          <div className="wrap" style={{ maxWidth: 900 }}>
+            <span className="eyebrow">Related</span>
+            <h2>Relevant sectors and problems</h2>
+            <div className="hair" />
+            <div className="grid grid--3" style={{ marginTop: 24 }}>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Labels &amp; packaging</h3>
+                <p>Supplier feed ingestion and catalogue maintenance across channels — the same data challenge this case study addresses.</p>
+                <Link href="/sectors/labels-packaging" className="btn btn--outline" style={{ marginTop: 12 }}>See the labels &amp; packaging page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Workwear</h3>
+                <p>B2B ordering, supplier data, and decoration workflows that need the same kind of system integration.</p>
+                <Link href="/sectors/workwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the workwear page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Problem</span>
+                <h3>Inventory blind spots</h3>
+                <p>No real visibility of stock across channels — the problem the Data App solved for this client.</p>
+                <Link href="/problems/inventory-blind" className="btn btn--outline" style={{ marginTop: 12 }}>Read about inventory blindness</Link>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>

@@ -1,0 +1,23 @@
+{
+  "lane": "cr-web-048-fix2",
+  "wo": "wo-content-reset-2026-09-23",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "4b47906",
+      "subject": "fix(case-studies): plate line fixes (CR-WEB-048)"
+    }
+  ],
+  "filesChanged": [
+    "app/case-studies/case-study-01/page.tsx",
+    "app/case-studies/case-study-02/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors, 0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

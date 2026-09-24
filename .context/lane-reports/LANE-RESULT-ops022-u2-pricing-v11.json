@@ -1,0 +1,30 @@
+{
+  "lane": "ops022-u2-pricing-v11",
+  "wo": "pricing-consolidation-2026-09-19",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "2da1ad128fb3fee13c38a09c85205827871edcff",
+      "subject": "feat(pricing): rebuild /pricing and /small-business on v11 canonical JSON (CR-WEB-036)"
+    }
+  ],
+  "filesChanged": [
+    "data/pricing-v11.json",
+    "app/pricing/page.tsx",
+    "app/small-business/page.tsx",
+    "components/Header.tsx",
+    "public/llms.txt",
+    ".context/price-audit.mjs",
+    ".context/price-audit.md",
+    "app/tools/page.tsx",
+    "data/route-slugs.json"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "priceAudit": "0 violations — PASS"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

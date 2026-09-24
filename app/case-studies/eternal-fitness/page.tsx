@@ -209,6 +209,34 @@ export default function EternalFitnessCaseStudyPage() {
           </div>
         </section>
 
+        <section className="g-tint">
+          <div className="wrap" style={{ maxWidth: 900 }}>
+            <span className="eyebrow">Related</span>
+            <h2>Relevant problems and sectors</h2>
+            <div className="hair" />
+            <div className="grid grid--3" style={{ marginTop: 24 }}>
+              <article className="card">
+                <span className="kicker">Problem</span>
+                <h3>Buy vs build</h3>
+                <p>Choosing between off-the-shelf and custom — the decision behind this build.</p>
+                <Link href="/problems/buy-vs-build" className="btn btn--outline" style={{ marginTop: 12 }}>Read about buy vs build</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Signs &amp; graphics</h3>
+                <p>Short-run, personalised production with custom tooling — similar operational patterns.</p>
+                <Link href="/sectors/signs-graphics" className="btn btn--outline" style={{ marginTop: 12 }}>See the signs &amp; graphics page</Link>
+              </article>
+              <article className="card">
+                <span className="kicker">Sector</span>
+                <h3>Awards &amp; engraving</h3>
+                <p>Mixed-method, personalised production with artwork approval loops.</p>
+                <Link href="/sectors/awards-engraving" className="btn btn--outline" style={{ marginTop: 12 }}>See the awards &amp; engraving page</Link>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="g-navy">
           <div className="wrap">
             <div className="article-body">

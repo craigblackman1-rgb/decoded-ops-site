@@ -113,7 +113,7 @@ export default function HomePage() {
               </div>
 
               <figure className="shot" data-od-id="hero-photo">
-                <Image className="p-photo" src="/images/hero-craft.jpg" fill sizes="(max-width: 1040px) 100vw, 45vw"
+                <Image className="p-photo" src="/images/hero-craft-v2.webp" fill sizes="(max-width: 1040px) 100vw, 45vw"
                   style={{ objectFit: 'cover', objectPosition: '52% 42%' }}
                   alt="Two multi-head embroidery machines running garments on a decoration floor." />
                 <figcaption className="stamp">DO-ART-905 &middot; Decoration floor</figcaption>
@@ -168,7 +168,7 @@ export default function HomePage() {
               has followed your processes from start to finish, everything after that is guesswork.</p>
 
             <figure className="band" data-od-id="help-photo">
-              <Image src="/images/sectors/thread-spools.jpg" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
+              <Image src="/images/sectors/thread-spools-v2.webp" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
                 style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
                 alt="A row of coloured thread cones loaded on an embroidery machine head." />
               <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
@@ -263,39 +263,35 @@ export default function HomePage() {
                     {/* 1 · rows imported */}
                     <g className="sk-fade sk-s2">
                       <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">ROWS IMPORTED</text>
-                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">supplier feeds</text>
+                            opacity=".55">PRODUCTS BROUGHT IN</text>
+                      <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">from supplier feeds</text>
                       <rect x="430" y="228" width="1080" height="62" rx="6" fill="url(#ms-bar)"
                             className="p-node" strokeWidth="1"/>
                       <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">164,752</text>
+                            fontWeight="700" fontSize="30">317,812</text>
                     </g>
 
                     {/* 2 · matched automatically */}
                     <g className="sk-fade sk-s3">
                       <text x="60" y="372" className="p-mono" fontSize="17" letterSpacing="1.6"
                             opacity=".55">MATCHED AUTOMATICALLY</text>
-                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">first run, no
-                        hand-matching</text>
-                      <rect x="430" y="348" width="833" height="62" rx="6" fill="url(#ms-bar)"
+                      <text x="60" y="402" className="p-mono" fontSize="16" opacity=".4">matched to a supplier</text>
+                      <rect x="430" y="348" width="525" height="62" rx="6" fill="url(#ms-bar)"
                             className="p-node" strokeWidth="1"/>
                       <text x="458" y="390" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">127,135</text>
-                      <text x="1291" y="390" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">77%</text>
+                            fontWeight="700" fontSize="30">154,518</text>
                     </g>
 
                     {/* 3 · live. Amber lands once, on the figure that is the point. */}
                     <g className="sk-fade sk-s4">
                       <text x="60" y="492" className="p-mono" fontSize="17" letterSpacing="1.6"
-                            opacity=".55">PREPARED</text>
-                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">to their ERP</text>
-                      <rect x="430" y="468" width="73" height="62" rx="6" fill="url(#ms-amber-b)"
+                            opacity=".55">RE-OPTIMISED</text>
+                      <text x="60" y="522" className="p-mono" fontSize="16" opacity=".4">Amazon listings</text>
+                      <rect x="430" y="468" width="14" height="62" rx="6" fill="url(#ms-amber-b)"
                             className="p-node-a" strokeWidth="1.4"/>
                       <text x="527" y="510" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="700" fontSize="30">11,064</text>
-                      <text x="700" y="510" className="p-mono" fontSize="17" opacity=".5">in range, priced
-                        and published, within weeks</text>
+                            fontWeight="700" fontSize="30">3,844</text>
+                      <text x="630" y="510" className="p-mono" fontSize="17" opacity=".5">ahead of a title-format deadline</text>
                     </g>
 
                     {/* the lever */}
@@ -315,7 +311,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <p className="sheet-foot">Same approach at Case study 02, real production numbers: nine supplier
+              <p className="sheet-foot">Same approach at Case study 02, real production numbers: 17 supplier
                 feeds automated, and a projected saving of 20 to 40 hours a week.</p>
             </article>
           </div>
@@ -398,7 +394,7 @@ export default function HomePage() {
                       <text x="1026" y="392" className="p-mono" fontSize="15" letterSpacing="2"
                             opacity=".45">SHOWS</text>
                       <text x="1026" y="422" className="p-ink" fontFamily="Outfit,sans-serif"
-                            fontWeight="600" fontSize="22">Nine supplier feeds, automated</text>
+                            fontWeight="600" fontSize="22">17 supplier feeds, automated</text>
                       <text x="1026" y="450" className="p-mono" fontSize="16" opacity=".62">Stock, bins and
                         picking alongside Symphony</text>
 

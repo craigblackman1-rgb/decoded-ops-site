@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { SectorPageDS } from '@/components/SectorPageDS';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { sectorRouting } from '@/data/sector-routing';
 
 export const metadata: Metadata = {
   title: 'Promotional merchandise: Decoded Ops',
@@ -23,15 +26,40 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
-  url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
-  name: 'Promotional merchandise: Decoded Ops',
-  description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/promotional-merchandise#webpage',
+      url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
+      name: 'Promotional merchandise: Decoded Ops',
+      description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you manage multiple supplier ranges?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them without re-keying is the single biggest challenge in the sector. The audit maps your full workflow from client enquiry to delivery.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does the artwork approval loop work?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I know where margin is leaking?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When decoration cost, supplier lead time variation, and artwork rework are not tracked at the individual order level, margin quietly erodes on every job. The audit puts a number on every finding in time, margin, and admin cost.' },
+        },
+      ],
+    },
+  ],
 };
 
 export default function PromotionalMerchandisePage() {
+  const route = sectorRouting['promotional-merchandise'];
   return (
     <>
       <JsonLd data={sectorSchema} />
@@ -206,6 +234,75 @@ export default function PromotionalMerchandisePage() {
                 <p>{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED PROBLEMS + RESOURCES */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
+        <div className="wrap">
+          <div className="grid grid--3">
+            {route.relatedProblems.length > 0 && (
+              <article className="card">
+                <span className="kicker">Common problems</span>
+                <h3>The problems I see most often</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedProblems.map((p) => (
+                    <li key={p.href} style={{ marginBottom: '10px' }}>
+                      <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{p.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedResources.length > 0 && (
+              <article className="card">
+                <span className="kicker">Useful next steps</span>
+                <h3>Resources</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedResources.map((r) => (
+                    <li key={r.href} style={{ marginBottom: '10px' }}>
+                      <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{r.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+            {route.relatedSectors.length > 0 && (
+              <article className="card">
+                <span className="kicker">Related sectors</span>
+                <h3>Adjacent trades</h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {route.relatedSectors.map((s) => (
+                    <li key={s.href} style={{ marginBottom: '10px' }}>
+                      <Link href={s.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                        <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                        <span>{s.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* CASE STUDY */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+        <div className="wrap">
+          <span className="eyebrow">Case study</span>
+          <h2>Custom tooling for a service business</h2>
+          <div className="hair" />
+          <p className="lede">Full site rebuild and a custom tool — the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>
+          <div className="btn-row" style={{ marginTop: '24px' }}>
+            <Link className="btn btn--outline" href="/case-studies/eternal-fitness">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

@@ -1,0 +1,313 @@
+{
+  "version": "v11",
+  "revision": "2026-09-19",
+  "canonical": true,
+  "sources": [
+    "DO_Pricing_Strategy_v11_Recommendations_2026-09-08.md (rev 14 Sep + 19 Sep small-business block)",
+    "DO_Software_Tier_Matrix_2026-09-10.md",
+    "DO_Pricing_Model_2026-09-10.xlsx",
+    "DO_Pricing_v11_SmallBusiness_2026-09-19.md (Craig ruling 19 Sep)"
+  ],
+  "rules": {
+    "multipliers": "cumulative: Recommended = Essential x1.4; Complete = Recommended x1.75 (x2.45 on Essential). Craig 14 Sep, confirmed 19 Sep.",
+    "public_policy": "Website may show 'from' prices for consultancy services and Clarity Check. No tier tables, no segment bands, no software figures, no add-on prices, no implementation figures, no day rate or day counts on any public surface. Full figures live in the How-I-price pack sent after a raised hand (DO-SOP-015).",
+    "software_presentation": "Every software price is shown two ways in proposals/packs: buy outright, or finance lease at the rate card. Never monthly alone.",
+    "day_rate": "Internal only. Never publish 720 or any multiple (1440, 2880, 5760, 360, 1080) as a price."
+  },
+  "segments": {
+    "S1": {
+      "label": "Under £1m turnover",
+      "band": "<£1m"
+    },
+    "S2": {
+      "label": "£1m–£7.5m",
+      "band": "£1m–£7.5m"
+    },
+    "S3": {
+      "label": "£7.5m+",
+      "band": "£7.5m+"
+    }
+  },
+  "consultancy": [
+    {
+      "key": "clarity_audit",
+      "name": "Clarity Audit",
+      "unit": "one-off",
+      "minimum": null,
+      "public_from": 1500,
+      "tiers": {
+        "S1": {
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3675
+        },
+        "S2": {
+          "essential": 2500,
+          "recommended": 3500,
+          "complete": 6125
+        },
+        "S3": {
+          "essential": 4000,
+          "recommended": 5600,
+          "complete": 9800
+        }
+      }
+    },
+    {
+      "key": "deliver",
+      "name": "Deliver",
+      "unit": "per month",
+      "minimum": "6 months",
+      "public_from": 1200,
+      "tiers": {
+        "S1": {
+          "essential": 1200,
+          "recommended": 1680,
+          "complete": 2940
+        },
+        "S2": {
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3675
+        },
+        "S3": {
+          "essential": 2000,
+          "recommended": 2800,
+          "complete": 4900
+        }
+      }
+    },
+    {
+      "key": "transform",
+      "name": "Transform",
+      "unit": "per month",
+      "minimum": "12 months",
+      "public_from": 1500,
+      "tiers": {
+        "S1": {
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3675
+        },
+        "S2": {
+          "essential": 2000,
+          "recommended": 2800,
+          "complete": 4900
+        },
+        "S3": {
+          "essential": 3000,
+          "recommended": 4200,
+          "complete": 7350
+        }
+      }
+    },
+    {
+      "key": "retained",
+      "name": "Retained (fractional)",
+      "unit": "per month",
+      "minimum": "rolling",
+      "public_from": 950,
+      "tiers": {
+        "S1": {
+          "essential": 950,
+          "recommended": 1330,
+          "complete": 2328
+        },
+        "S2": {
+          "essential": 1800,
+          "recommended": 2520,
+          "complete": 4410
+        },
+        "S3": {
+          "essential": 3000,
+          "recommended": 4200,
+          "complete": 7350
+        }
+      }
+    }
+  ],
+  "small_business": {
+    "ruling": "Craig 19 Sep 2026 (qmu821g9o03): Clarity Check survives as the sole fixed-price small-business product. AI Readiness Check and Quarterly Sprint retired. Small-business Deliver/Transform/Retained ladders retired; sub-£1m buyers use the S1 figures above.",
+    "products": [
+      {
+        "key": "clarity_check",
+        "name": "Clarity Check",
+        "format": "3-hour remote diagnostic",
+        "price": 595,
+        "unit": "fixed",
+        "public": true,
+        "next_step": "clarity_audit"
+      }
+    ],
+    "retired": [
+      {
+        "key": "ai_readiness_check",
+        "was": 395,
+        "note": "AI readiness is a question inside the audit, asked last"
+      },
+      {
+        "key": "quarterly_sprint",
+        "was": 995,
+        "note": "Retained S1 covers it"
+      },
+      {
+        "key": "retained_smallbiz",
+        "was": [
+          360,
+          720,
+          1080
+        ],
+        "note": "day-rate multiples; use Retained S1"
+      },
+      {
+        "key": "deliver_smallbiz",
+        "was": 795,
+        "note": "use Deliver S1"
+      },
+      {
+        "key": "transform_smallbiz",
+        "was": 1095,
+        "note": "use Transform S1"
+      }
+    ]
+  },
+  "software": {
+    "lease_rate_card": {
+      "per_1000": {
+        "36": 32.73,
+        "48": 25.67,
+        "60": 21.46
+      },
+      "funder": "Bluestar",
+      "note": "£ per month per £1,000 financed"
+    },
+    "works": {
+      "name": "Decoded Works",
+      "editions": {
+        "core": {
+          "outright": 18000,
+          "finance_36": 589,
+          "finance_48": 462,
+          "finance_60": 386
+        },
+        "connected": {
+          "outright": 25200,
+          "finance_36": 825,
+          "finance_48": 647,
+          "finance_60": 541
+        },
+        "scaled": {
+          "outright": 44100,
+          "finance_36": 1443,
+          "finance_48": 1132,
+          "finance_60": 946
+        }
+      },
+      "public": false
+    },
+    "proof": {
+      "name": "Decoded Proof",
+      "editions": {
+        "proof": {
+          "outright": 8500,
+          "finance_36": 278,
+          "finance_48": 218,
+          "finance_60": 182
+        },
+        "proof_crm": {
+          "outright": 11900,
+          "finance_36": 389,
+          "finance_48": 305,
+          "finance_60": 255
+        },
+        "proof_crm_floor": {
+          "outright": 20825,
+          "finance_36": 682,
+          "finance_48": 535,
+          "finance_60": 447
+        }
+      },
+      "public": false
+    },
+    "commerce": {
+      "name": "Decoded Commerce",
+      "note": "demo only — no pricing published or quoted (Craig 16 Sep)",
+      "public": false
+    },
+    "addons": {
+      "note": "internal reference only; see DO_Software_Tier_Matrix_2026-09-10.md; client documents name add-ons without per-line prices (DO-SOP-014 rule 9)",
+      "public": false
+    }
+  },
+  "implementation": {
+    "basis": "fixed price set at the audit",
+    "indicative_from": {
+      "S1": 7200
+    },
+    "public": false
+  },
+  "support": {
+    "unit": "per month",
+    "from": {
+      "S1": 300,
+      "S2": 550,
+      "S3": 1500
+    },
+    "tiers": "quoted at the audit — bands in the strategy doc are not yet reconciled (flagged 19 Sep)",
+    "public": false
+  },
+  "public_figures": [
+    595,
+    1500,
+    1200,
+    1500,
+    950
+  ],
+  "forbidden_public": [
+    720,
+    1440,
+    2880,
+    5760,
+    360,
+    1080,
+    395,
+    995,
+    795,
+    1095,
+    2100,
+    3675,
+    2500,
+    3500,
+    6125,
+    4000,
+    5600,
+    9800,
+    1680,
+    2940,
+    2625,
+    4900,
+    2800,
+    1330,
+    2328,
+    2520,
+    4410,
+    4200,
+    7350,
+    18000,
+    25200,
+    44100,
+    8500,
+    11900,
+    20825,
+    589,
+    825,
+    1443,
+    462,
+    647,
+    1132,
+    386,
+    541,
+    946,
+    7200
+  ]
+}

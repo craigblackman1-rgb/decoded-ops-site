@@ -1,0 +1,55 @@
+{
+  "lane": "web011-u1u2-links",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "CR-WEB-039 + CR-WEB-040",
+  "commits": [
+    {
+      "sha": "6b35125",
+      "subject": "CR-WEB-039: retire /tools/ai-readiness-check (301 → ops-health-score)"
+    },
+    {
+      "sha": "c5ed2b2",
+      "subject": "CR-WEB-040: internal link mesh for sector/problem/resource/case-study pages"
+    }
+  ],
+  "filesChanged": [
+    "next.config.ts",
+    "app/tools/ai-readiness-check/layout.tsx",
+    "app/tools/ai-readiness-check/page.tsx",
+    "app/tools/page.tsx",
+    "app/api/tools/capture/route.ts",
+    "data/route-slugs.json",
+    "data/sector-routing.ts",
+    "data/problem-routing.ts",
+    "components/ProblemPageDS.tsx",
+    "app/sectors/garment-decoration/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/signs-graphics/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/operations-consultant-print-embroidery/page.tsx",
+    "app/sectors/workwear/page.tsx",
+    "app/sectors/teamwear-clubwear/page.tsx",
+    "app/sectors/schoolwear/page.tsx",
+    "app/sectors/promotional-merchandise/page.tsx",
+    "app/problems/ecommerce-not-connected/page.tsx",
+    "app/problems/disaster-recovery/page.tsx",
+    "app/problems/cant-scale-operations/page.tsx",
+    "app/problems/manual-workarounds/page.tsx",
+    "app/problems/no-ops-owner/page.tsx",
+    "app/problems/systems-dont-talk/page.tsx",
+    "app/problems/slow-processes/page.tsx",
+    "app/case-studies/case-study-01/page.tsx",
+    "app/case-studies/case-study-03/page.tsx",
+    "app/case-studies/eternal-fitness/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "lint": "clean (all errors pre-existing)",
+    "escapeGrep": "0 hits (only redirect line + price-audit utility reference remain)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

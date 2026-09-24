@@ -24,20 +24,20 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    name: 'Case study 01',
+    name: 'Hanicks',
     sector: 'Heating spares & eCommerce',
-    desc: 'I\'m leading a Khaos Control ERP implementation, with a custom app for supplier data, Amazon FBA, and channel automation.',
+    desc: 'Hanicks sells heating spares. It isn\u2019t decorated goods, but it\u2019s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.',
     href: '/case-studies/case-study-01',
     status: 'Live engagement',
-    pull: '164,752 imported, 77% matched, 11,064 live',
+    pull: '317,812 products brought in \u00b7 154,518 matched automatically \u00b7 40 active suppliers',
   },
   {
-    name: 'Case study 02',
+    name: 'The diagnostic came before the decision.',
     sector: 'Branded apparel & decoration',
-    desc: 'A Clarity Audit into a Deliver build. I\'m building a Stock Control module that feeds clean data straight into their ERP.',
+    desc: 'A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.',
     href: '/case-studies/case-study-02',
     status: 'In Deliver',
-    pull: '9 supplier feeds automated, projected 20–40 hrs/week saved',
+    pull: '17 supplier feeds automated \u00b7 952 products live on their website \u00b7 100% of stock binned',
   },
   {
     name: 'Case study 03',
@@ -151,15 +151,14 @@ export default function CaseStudiesPage() {
                     <text x="750" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEATING SPARES &amp; ECOMMERCE · LIVE ENGAGEMENT</text>
                     <line x1="80" y1="242" x2="750" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
-                      <text x="80" y="306">164,752</text><text x="330" y="306">77%</text><text x="510" y="306">11,064</text>
+                      <text x="80" y="306">317,812</text><text x="380" y="306">154,518</text><text x="620" y="306">40</text>
                     </g>
                     <g className="p-mono" fontSize="15" opacity=".55">
-                      <text x="80" y="336">products imported</text><text x="330" y="336">matched</text><text x="510" y="336">live on channel</text>
+                      <text x="80" y="336">products brought in</text><text x="380" y="336">matched automatically</text><text x="620" y="336">active suppliers</text>
                     </g>
-                    <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Khaos Control ERP, plus a custom app for supplier data and channel automation</text>
+                    <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Data app (now the ERP), supplier feeds and channel automation</text>
                   </g>
 
-                  {/* TackleBag */}
                   <g className="sk-fade sk-s3">
                     <rect x="820" y="180" width="730" height="230" rx="10"
                           fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
@@ -168,12 +167,12 @@ export default function CaseStudiesPage() {
                     <text x="1520" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">BRANDED APPAREL · IN DELIVER</text>
                     <line x1="850" y1="242" x2="1520" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
                     <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
-                      <text x="850" y="306">9</text><text x="1010" y="306">20–40</text>
+                      <text x="850" y="306">17</text><text x="1010" y="306">952</text><text x="1180" y="306">100%</text>
                     </g>
                     <g className="p-mono" fontSize="15" opacity=".55">
-                      <text x="884" y="306">supplier feeds automated</text><text x="1180" y="306">hrs/week saved, projected</text>
+                      <text x="884" y="306">supplier feeds automated</text><text x="1040" y="306">products live</text><text x="1210" y="306">stock binned</text>
                     </g>
-                    <text x="850" y="382" className="p-mono" fontSize="16" opacity=".62">Stock Control module feeding clean data into their ERP implementation</text>
+                    <text x="850" y="382" className="p-mono" fontSize="16" opacity=".62">Supplier feeds, warehouse tooling and product data managed by the data app</text>
                   </g>
 
                   {/* Cobra */}

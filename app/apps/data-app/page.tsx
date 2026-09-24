@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Data App: Decoded Ops',
@@ -19,9 +21,36 @@ export const metadata: Metadata = {
   },
 };
 
+const dataAppFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the Data App actually do?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It handles supplier feeds, data enrichment, catalogue maintenance across channels, orders, purchasing, stock, production and despatch. It started as the missing layer and has grown into a full system.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does it replace my existing platform?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or let it replace it. The platform stays unchanged in the first case. Feeds land in the Data App, get matched and enriched, and get pushed back into the platform clean.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How are supplier feeds handled?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in the Data App, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function DataAppPage() {
   return (
     <>
+      <JsonLd data={dataAppFaqSchema} />
       {/* 1 · HERO SPLIT */}
       <section className="g-off">
         <div className="wrap hero-split">
@@ -41,10 +70,10 @@ export default function DataAppPage() {
             </div>
           </div>
 
-          <div className="hero-shot">
+           <div className="hero-shot">
             <div className="evidence evidence--screen">
-               {/* eslint-disable-next-line @next/next/no-img-element */}
-               <img src="/images/apps/data-app-hero.png" width={2160} height={1215}
+               <Image src="/images/apps/data-app-hero-v2.webp" width={2160} height={1215}
+                   sizes="(max-width: 768px) 100vw, 50vw" priority
                    alt="Decoded Data App: product catalogue dashboard with supplier feeds and channel status." />
               <span className="stamp">Case study 01 &middot; Data App</span>
             </div>
@@ -99,8 +128,7 @@ export default function DataAppPage() {
                         className="p-node" strokeWidth="1.4"/>
                   <text x="310" y="612" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
                         fontSize="26">The platform you run today</text>
-                  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Khaos Control ·
-                    Symphony · or this system, once it has earned it</text>
+                  <text x="310" y="646" className="p-mono" fontSize="18" opacity=".85">Your ERP · or this system, once it has earned it</text>
                   <text x="1400" y="628" textAnchor="end" className="p-mono" fontSize="17"
                         letterSpacing="1.5" opacity=".55">STAYS AS IT IS</text>
                 </g>
@@ -139,24 +167,27 @@ export default function DataAppPage() {
         <div className="wrap">
           <p className="eyebrow">The screens</p>
           <h2>What it looks like in practice.</h2>
-          <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
+           <div className="grid grid--2" style={{ marginTop: 34, gap: 24 }}>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-dashboard.png" width={3200} height={3072}
+                <Image src="/images/apps/data-app-dashboard-v2.webp" width={3200} height={3072}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="The Decoded Data App dashboard: supplier feed imports listed by source with row counts, a variant matching panel, and a stock export queue." loading="lazy" />
                 <span className="stamp">Dashboard</span>
               </div>
             </div>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-catalogue.png" width={3200} height={2000}
+                <Image src="/images/apps/data-app-catalogue-v2.webp" width={3200} height={2000}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="Parent products catalogue in the Data App" loading="lazy" />
                 <span className="stamp">Catalogue view</span>
               </div>
             </div>
             <div>
               <div className="evidence evidence--screen">
-                <img src="/images/apps/data-app-supplier-import.png" width={3200} height={2000}
+                <Image src="/images/apps/data-app-supplier-import-v2.webp" width={3200} height={2000}
+                     sizes="(max-width: 768px) 100vw, 50vw"
                      alt="Supplier CSV import screen" loading="lazy" />
                 <span className="stamp">Supplier import</span>
               </div>
@@ -173,16 +204,16 @@ export default function DataAppPage() {
 
           <div className="grid grid--3" style={{ marginTop: 44 }}>
             <div className="stat">
-              <p className="stat-num num">164,752</p>
-              <p className="stat-label">products imported from supplier feeds</p>
+              <p className="stat-num num">317,812</p>
+              <p className="stat-label">products brought in from supplier feeds</p>
             </div>
             <div className="stat">
-              <p className="stat-num num">77%</p>
-              <p className="stat-label">matched automatically on the first run</p>
+              <p className="stat-num num">154,518</p>
+              <p className="stat-label">matched to a supplier automatically</p>
             </div>
             <div className="stat">
-              <p className="stat-num num">11,064</p>
-              <p className="stat-label">matched and prepared for the Khaos Control catalogue within weeks</p>
+              <p className="stat-num num">40</p>
+              <p className="stat-label">active suppliers feeding in</p>
             </div>
           </div>
 

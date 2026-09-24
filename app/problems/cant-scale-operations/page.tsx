@@ -148,6 +148,8 @@ export default function CantScaleOperationsPage() {
    targetService={problemRouting['cant-scale-operations'].targetService}
    relatedProblems={problemRouting['cant-scale-operations'].relatedProblems}
    relatedReading={problemRouting['cant-scale-operations'].relatedReading}
+   relatedSectors={problemRouting['cant-scale-operations'].relatedSectors}
+   relatedResources={problemRouting['cant-scale-operations'].relatedResources}
    video={problemVideos['cant-scale-operations']}
   />
    {/* ── PLATE · DO-ART-404 ──────────────────────────────────────────── */}

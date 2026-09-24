@@ -1,0 +1,25 @@
+{
+  "lane": "web011-u16-fix1",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "u16-fix1",
+  "commits": [
+    {
+      "sha": "b6846c220df66190a61485d7a810bedc9c1ac7cc",
+      "subject": "fix(seo): render related links on 4 pages missing the routing block (CR-WEB-040, WO-WEB-011 u16 fix1)"
+    }
+  ],
+  "filesChanged": [
+    "app/problems/ai-paralysis/page.tsx",
+    "app/problems/bottleneck-growth/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/garment-decoration/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors",
+    "lint": "n/a | 85 errors, 50 warnings — all pre-existing in untouched files; 0 new from this change",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

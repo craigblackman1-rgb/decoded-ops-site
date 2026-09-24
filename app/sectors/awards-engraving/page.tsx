@@ -27,12 +27,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
-  url: 'https://decodedops.co.uk/sectors/awards-engraving',
-  name: 'Software & Systems for Awards & Engraving: Decoded Ops',
-  description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/awards-engraving#webpage',
+      url: 'https://decodedops.co.uk/sectors/awards-engraving',
+      name: 'Software & Systems for Awards & Engraving: Decoded Ops',
+      description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do you manage variable data for awards?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every award carries different names, titles, dates, and messages. The work starts by auditing how variable data comes in and gets checked, then finding systems built for variable-data personalisation.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does production schedule around event deadlines?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Awards are nearly always for a specific event with a hard deadline. Production has to schedule backwards from the date, and most systems do not do that. The review maps how scheduling currently works against event dates.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What about proof approval when there are 50 personalised items?',
+          acceptedAnswer: { '@type': 'Answer', text: 'When one order has 50 personalised items and each needs a client-approved proof, the approval process can easily take longer than making them. The work maps the proof and approval workflow and finds the bottlenecks.' },
+        },
+      ],
+    },
+  ],
 };
 
 const tagline = 'Personalisation at scale is hard. ||Most awards businesses still do it by hand.||';
@@ -185,10 +209,10 @@ export default function AwardsEngravingPage() {
       </section>
 
       {/* CROSS-LINKS */}
-      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0)) && (
+      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0) || (route.relatedResources && route.relatedResources.length > 0)) && (
         <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
           <div className="wrap">
-            <div className="grid grid--2">
+            <div className="grid grid--3">
               {route.targetService && (
                 <div className="card" style={{ background: 'var(--do-surface-dark)', color: 'var(--do-text-on-dark)' }}>
                   <span className="kicker" style={{ color: 'var(--do-amber)' }}>The work in this sector</span>
@@ -209,6 +233,22 @@ export default function AwardsEngravingPage() {
                         <Link href={p.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
                           <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
                           <span>{p.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {route.relatedResources && route.relatedResources.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Useful next steps</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Resources</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedResources.map((r) => (
+                      <li key={r.href} style={{ marginBottom: '10px' }}>
+                        <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{r.label}</span>
                         </Link>
                       </li>
                     ))}

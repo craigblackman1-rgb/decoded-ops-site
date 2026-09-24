@@ -149,6 +149,8 @@ export default function SlowProcessesPage() {
    targetService={problemRouting['slow-processes'].targetService}
    relatedProblems={problemRouting['slow-processes'].relatedProblems}
    relatedReading={problemRouting['slow-processes'].relatedReading}
+   relatedSectors={problemRouting['slow-processes'].relatedSectors}
+   relatedResources={problemRouting['slow-processes'].relatedResources}
    video={problemVideos['slow-processes']}
   />
    {/* ── PLATE · DO-ART-409 ──────────────────────────────────────────── */}

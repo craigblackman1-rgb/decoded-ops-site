@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plate } from '@/components/Plate';
+import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Decoded Commerce: Decoded Ops',
@@ -19,9 +21,36 @@ export const metadata: Metadata = {
   },
 };
 
+const commerceFaqSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What are the three tiers?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Standard adds company accounts, spend limits, approval workflows and quote negotiation. Extended adds multi-site, ERP integration and bespoke checkout and pricing.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is this different from a bespoke build?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the Medusa B2B open-source core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does it integrate with ERP systems?',
+          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
+        },
+      ],
+    },
+  ],
+};
+
 export default function CommercePage() {
   return (
     <>
+      <JsonLd data={commerceFaqSchema} />
       {/* 1 · HERO SPLIT */}
       <section className="g-off">
         <div className="wrap hero-split">
@@ -45,7 +74,8 @@ export default function CommercePage() {
 
           <div className="hero-shot">
             <div className="evidence evidence--screen">
-              <img src="/images/apps/commerce-plp.png" width={2160} height={3816}
+              <Image src="/images/apps/commerce-plp-v2.webp" width={2160} height={3816}
+                   sizes="(max-width: 768px) 100vw, 50vw" priority
                    alt="A B2B trade storefront product listing page: decorated garments in a filtered grid with trade pricing shown per account, size and colour facets down the left, and a quote-request action alongside add to basket." />
               <span className="stamp">decoded commerce &middot; trade storefront</span>
             </div>
@@ -102,7 +132,7 @@ export default function CommercePage() {
               </div>
               <h3>Extended</h3>
               <p className="feature-meta">More than one of everything</p>
-              <p>Multi-site storefronts, ERP integration (Khaos Control sync and similar), and bespoke
+              <p>Multi-site storefronts, ERP integration, and bespoke
                 checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
                 price.</p>
             </div>
@@ -115,13 +145,14 @@ export default function CommercePage() {
         <div className="wrap" style={{ maxWidth: 900 }}>
           <div className="grid grid--2" style={{ gap: 24 }}>
             <div className="evidence evidence--screen">
-              <img src="/images/apps/commerce-pdp.png" width={3200} height={2000}
+              <Image src="/images/apps/commerce-pdp-v2.webp" width={3200} height={2000}
+                   sizes="(max-width: 768px) 100vw, 50vw"
                    alt="Product page with trade pricing and decoration options" loading="lazy" />
               <span className="stamp">decoded commerce &middot; product page</span>
             </div>
             <div className="evidence evidence--screen">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/apps/prod-hivis.jpg" width={900} height={1348}
+              <Image src="/images/apps/prod-hivis.jpg" width={900} height={1348}
+                   sizes="(max-width: 768px) 100vw, 50vw"
                    alt="Hi-vis workwear product detail as sold through a Decoded Commerce trade storefront" loading="lazy" />
               <span className="stamp">decoded commerce &middot; product detail</span>
             </div>
@@ -198,7 +229,7 @@ export default function CommercePage() {
             <div className="panel">
               <h3>The worked example</h3>
               <p>A full migration off WooCommerce, a new storefront, and reintegration back
-                into Khaos Control. That&rsquo;s scoped and quoted like any other full custom build, not read
+                into your ERP. That&rsquo;s scoped and quoted like any other full custom build, not read
                 off a tier list.</p>
             </div>
             <div className="panel">

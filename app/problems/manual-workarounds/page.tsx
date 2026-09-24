@@ -95,6 +95,8 @@ export default function ManualWorkaroundsPage() {
    targetService={problemRouting['manual-workarounds'].targetService}
    relatedProblems={problemRouting['manual-workarounds'].relatedProblems}
    relatedReading={problemRouting['manual-workarounds'].relatedReading}
+   relatedSectors={problemRouting['manual-workarounds'].relatedSectors}
+   relatedResources={problemRouting['manual-workarounds'].relatedResources}
    video={problemVideos['manual-workarounds']}
   />
    {/* ── PLATE · DO-ART-407 ──────────────────────────────────────────── */}

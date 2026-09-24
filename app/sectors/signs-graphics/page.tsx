@@ -27,12 +27,36 @@ export const metadata: Metadata = {
 
 const sectorSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
-  url: 'https://decodedops.co.uk/sectors/signs-graphics',
-  name: 'Software & Systems for Sign Makers: Decoded Ops',
-  description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
-  isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://decodedops.co.uk/sectors/signs-graphics#webpage',
+      url: 'https://decodedops.co.uk/sectors/signs-graphics',
+      name: 'Software & Systems for Sign Makers: Decoded Ops',
+      description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+      isPartOf: { '@id': 'https://decodedops.co.uk/#organization' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How does the workflow differ from generic ERP?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Signs and graphics jobs do not fit generic ERP systems. The job starts with a site survey, not an order. Most systems cannot track a job from survey, through design, production, and installation, to sign-off as one connected flow.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How do you cost jobs with so much variation?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Every job is different in substrate, finish, size, fixing method, and installation. Costing by hand means margin leaks on every complex job. The work reviews how you cost jobs and where that margin goes.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can you help with installation scheduling?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Scheduling installation teams, site access, contractors, and material deliveries is a logistics problem most job systems handle poorly. The audit looks at how installation scheduling connects to production.' },
+        },
+      ],
+    },
+  ],
 };
 
 const tagline = 'Signs and graphics businesses run on ||tight margins, and every job starts with a site survey.||';
@@ -78,7 +102,7 @@ export default function SignsGraphicsPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Signs and graphics jobs don't fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people's heads.</p>
+              <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -194,10 +218,10 @@ export default function SignsGraphicsPage() {
       </section>
 
       {/* CROSS-LINKS */}
-      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0)) && (
+      {(route.targetService || (route.relatedProblems && route.relatedProblems.length > 0) || (route.relatedResources && route.relatedResources.length > 0)) && (
         <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-tint">
           <div className="wrap">
-            <div className="grid grid--2">
+            <div className="grid grid--3">
               {route.targetService && (
                 <div className="card" style={{ background: 'var(--do-surface-dark)', color: 'var(--do-text-on-dark)' }}>
                   <span className="kicker" style={{ color: 'var(--do-amber)' }}>The work in this sector</span>
@@ -224,10 +248,39 @@ export default function SignsGraphicsPage() {
                   </ul>
                 </div>
               )}
+              {route.relatedResources && route.relatedResources.length > 0 && (
+                <div className="card">
+                  <span className="kicker">Useful next steps</span>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '8px 0' }}>Resources</h3>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                    {route.relatedResources.map((r) => (
+                      <li key={r.href} style={{ marginBottom: '10px' }}>
+                        <Link href={r.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: 'var(--do-text-sm)' }}>
+                          <ArrowRight size={14} style={{ marginTop: '2px', flexShrink: 0, color: 'var(--do-cerulean)' }} aria-hidden="true" />
+                          <span>{r.label}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>
       )}
+
+      {/* CASE STUDY */}
+      <section style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }} className="g-off">
+        <div className="wrap">
+          <span className="eyebrow">Case study</span>
+          <h2>Custom tooling for a service business</h2>
+          <div className="hair" />
+          <p className="lede">Full site rebuild and a custom AI-assisted tool — the kind of bespoke build that signs and graphics businesses need when off-the-shelf doesn&apos;t fit.</p>
+          <div className="btn-row" style={{ marginTop: '24px' }}>
+            <Link className="btn btn--outline" href="/case-studies/eternal-fitness">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA STRIP */}
       <section className="g-off">

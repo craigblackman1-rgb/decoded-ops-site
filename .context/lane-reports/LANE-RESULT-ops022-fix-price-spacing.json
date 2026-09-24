@@ -1,0 +1,1 @@
+{"lane":"ops022-fix-price-spacing","wo":"pricing-consolidation-2026-09-19","unit":"","commits":[{"sha":"897e940","subject":"fix(small-business): space between price and note (CR-WEB-036)"}],"filesChanged":["app/small-business/page.tsx"],"verify":{"tsc":"clean","tests":"n/a","escapeGrep":"0 hits"},"deviations":[],"blockers":[],"done":true}
