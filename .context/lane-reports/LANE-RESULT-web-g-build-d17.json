@@ -1,0 +1,34 @@
+{
+  "lane": "web-g-build-d17",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "u???-resources",
+  "commits": [
+    {
+      "sha": "b44c3ab",
+      "subject": "fix(web): CR-WEB-055 copy fixes on resources/tools pages (WO-INF-061)"
+    }
+  ],
+  "filesChanged": [
+    "app/resources/erp-selection-playbook/page.tsx",
+    "app/resources/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/resources/sop-template/page.tsx",
+    "app/resources/5-warning-signs/page.tsx",
+    "app/resources/audit-checklist/page.tsx",
+    "app/resources/artwork-approval-playbook/page.tsx",
+    "app/tools/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors, 0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "D17 artwork NOT ported — .context/lane-briefs/d17-resources/ does not exist on any branch. Without the HTML mockup sources (hero.html, inline.html, d17-resources.css), no artwork can be injected. This unit needs the mockup sources created first.",
+    "Downtime page em dash replacement: no em dashes found in the file — already uses commas and full stops."
+  ],
+  "blockers": [
+    "Mockup sources directory .context/lane-briefs/d17-resources/ missing from all branches (checked staging, web-e, web-f, web-g, web-h). The brief references HTML snippets, CSS, and PNG renders that do not exist."
+  ],
+  "done": false
+}
