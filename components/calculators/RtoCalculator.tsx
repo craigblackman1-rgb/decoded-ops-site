@@ -156,7 +156,7 @@ export function RtoCalculator() {
           <div style={{ marginTop: 24 }}>
             <ToolLeadCapture
               tool="rto-calculator"
-              resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving — £${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
+              resultSummary={`£${annualSaving.toLocaleString('en-GB')}/yr saving, £${threeYearSaving.toLocaleString('en-GB')} over 3 years`}
               answers={{ revenuePerHour, currentRto, targetRto, incidentsPerYear }}
             />
           </div>

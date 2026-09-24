@@ -342,7 +342,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Technology & operations audit',
-      anchor: 'A structured assessment that compares off-the-shelf against custom, with real numbers on cost, timeline, and fit — not vendor sales decks.',
+      anchor: 'A structured assessment that compares off-the-shelf against custom, with real numbers on cost, timeline, and fit, not vendor sales decks.',
     },
     relatedProblems: [
       { href: '/problems/wrong-erp-software', label: 'The wrong software for your business' },

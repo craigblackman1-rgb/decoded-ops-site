@@ -247,7 +247,7 @@ export function LocationPage({
           )}
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
           <p style={{ color: 'var(--do-text-secondary)' }}>
-            {allCounties.filter(c => c !== county).join(' · ')} —{' '}
+            {allCounties.filter(c => c !== county).join(' · ')},{' '}
             <Link href={serviceUrl} className="text-cerulean hover:underline">
               view all locations
             </Link>

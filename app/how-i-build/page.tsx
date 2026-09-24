@@ -75,7 +75,7 @@ export default function HowIBuildPage() {
             alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, photographed against a plain studio backdrop."
             no="DO-ART-913"
             rev="01"
-            eyebrow="— Evidence · How I build"
+            eyebrow="Evidence · How I build"
             caption="Built to the detail"
             focus="50% 60%"
           />

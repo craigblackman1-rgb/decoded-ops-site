@@ -228,7 +228,7 @@ export default function CaseStudy03Page() {
               <article className="card">
                 <span className="kicker">Sector</span>
                 <h3>Workwear</h3>
-                <p>B2B ordering portal and ERP evaluation for a workwear distributor — the same sector and challenge.</p>
+                <p>B2B ordering portal and ERP evaluation for a workwear distributor, the same sector and challenge.</p>
                 <Link href="/sectors/workwear" className="btn btn--outline" style={{ marginTop: 12 }}>See the workwear page</Link>
               </article>
               <article className="card">
@@ -240,7 +240,7 @@ export default function CaseStudy03Page() {
               <article className="card">
                 <span className="kicker">Problem</span>
                 <h3>Wrong ERP software</h3>
-                <p>Choosing the wrong platform and needing an independent evaluation — exactly what this engagement addressed.</p>
+                <p>Choosing the wrong platform and needing an independent evaluation: exactly what this engagement addressed.</p>
                 <Link href="/problems/wrong-erp-software" className="btn btn--outline" style={{ marginTop: 12 }}>Read about wrong ERP software</Link>
               </article>
             </div>

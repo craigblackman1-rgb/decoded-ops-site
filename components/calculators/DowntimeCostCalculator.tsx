@@ -145,7 +145,7 @@ export function DowntimeCostCalculator() {
           <div style={{ marginTop: 24 }}>
             <ToolLeadCapture
               tool="downtime-cost-calculator"
-              resultSummary={`£${totalAnnualCost.toLocaleString('en-GB')} annual downtime cost — ${totalDowntimeHours} hours lost`}
+              resultSummary={`£${totalAnnualCost.toLocaleString('en-GB')} annual downtime cost, ${totalDowntimeHours} hours lost`}
               answers={{ employees, hourlySalary, outagesPerYear, hoursPerOutage, revenuePerHour }}
             />
           </div>

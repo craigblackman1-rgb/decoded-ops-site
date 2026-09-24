@@ -197,7 +197,7 @@ export const sectorRouting: Record<string, SectorRoute> = {
     targetService: {
       href: '/clarity',
       label: 'Clarity Audit for print & embroidery',
-      anchor: 'A one-day audit that maps your full workflow — order intake, artwork, production scheduling, stock, and despatch — and tells you exactly what to fix, in what order, and what it costs.',
+      anchor: 'A one-day audit that maps your full workflow: order intake, artwork, production scheduling, stock, and despatch, and tells you exactly what to fix, in what order, and what it costs.',
     },
     relatedProblems: [
       { href: '/problems/manual-workarounds', label: 'Manual workarounds across embroidery and print' },

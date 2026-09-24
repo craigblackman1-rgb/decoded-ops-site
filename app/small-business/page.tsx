@@ -123,7 +123,7 @@ export default function SmallBusinessPage() {
             alt="Two plain white ceramic mugs, handles outward, side by side on a white surface."
             no="DO-ART-915"
             rev="01"
-            eyebrow="— Evidence · Small business"
+            eyebrow="Evidence · Small business"
             caption="Small shop, same standards"
             focus="50% 50%"
           />

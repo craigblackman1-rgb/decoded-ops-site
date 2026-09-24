@@ -85,7 +85,7 @@ export default function PricingPage() {
             alt="A single plain kraft mailer box with its lid on, photographed on a white surface."
             no="DO-ART-912"
             rev="01"
-            eyebrow="— Evidence · Pricing"
+            eyebrow="Evidence · Pricing"
             caption="One packed order. One price."
             focus="50% 50%"
           />

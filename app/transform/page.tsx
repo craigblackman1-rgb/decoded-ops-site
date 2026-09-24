@@ -76,7 +76,7 @@ export default function TransformPage() {
             alt="A heat press mid-cycle on a print floor, platen lowered onto a green T-shirt with transfer paper taped across the print area."
             no="DO-ART-911"
             rev="01"
-            eyebrow="— Evidence · Transform"
+            eyebrow="Evidence · Transform"
             caption="The press hall, before and after"
             focus="50% 50%"
           />

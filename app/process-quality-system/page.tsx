@@ -157,7 +157,7 @@ export default function ProcessQualitySystemPage() {
             alt="A fanned stack of workwear shirts in white, navy, blue, olive, rust, mauve and red, collars aligned, laid on a pale blue shirt."
             no="DO-ART-914"
             rev="01"
-            eyebrow="— Evidence · Process & Quality System"
+            eyebrow="Evidence · Process & Quality System"
             caption="The same result, every run"
             focus="50% 50%"
           />

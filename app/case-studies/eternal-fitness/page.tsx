@@ -230,13 +230,13 @@ export default function EternalFitnessCaseStudyPage() {
               <article className="card">
                 <span className="kicker">Problem</span>
                 <h3>Buy vs build</h3>
-                <p>Choosing between off-the-shelf and custom — the decision behind this build.</p>
+                <p>Choosing between off-the-shelf and custom, the decision behind this build.</p>
                 <Link href="/problems/buy-vs-build" className="btn btn--outline" style={{ marginTop: 12 }}>Read about buy vs build</Link>
               </article>
               <article className="card">
                 <span className="kicker">Sector</span>
                 <h3>Signs &amp; graphics</h3>
-                <p>Short-run, personalised production with custom tooling — similar operational patterns.</p>
+                <p>Short-run, personalised production with custom tooling, similar operational patterns.</p>
                 <Link href="/sectors/signs-graphics" className="btn btn--outline" style={{ marginTop: 12 }}>See the signs &amp; graphics page</Link>
               </article>
               <article className="card">

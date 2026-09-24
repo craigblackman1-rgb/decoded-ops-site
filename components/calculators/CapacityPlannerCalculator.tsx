@@ -45,7 +45,7 @@ export function CapacityPlannerCalculator() {
             onChange={(e) => setMachines(Math.max(1, Number(e.target.value) || 1))}
             className="calc-input"
           />
-          <p className="calc-hint">Heat presses, embroidery heads, print stations — anything that does the work.</p>
+          <p className="calc-hint">Heat presses, embroidery heads, print stations: anything that does the work.</p>
         </div>
 
         <div className="calc-input-group">
@@ -91,7 +91,7 @@ export function CapacityPlannerCalculator() {
             onChange={(e) => setAvgJobMinutes(Math.max(1, Number(e.target.value) || 1))}
             className="calc-input"
           />
-          <p className="calc-hint">The average time a job occupies a machine — setup through completion.</p>
+          <p className="calc-hint">The average time a job occupies a machine, from setup through completion.</p>
         </div>
 
         <div className="calc-input-group">
@@ -152,10 +152,10 @@ export function CapacityPlannerCalculator() {
             </div>
             <p className="calc-hint" style={{ color: 'color-mix(in srgb, var(--do-sky-blue) 70%, transparent)', marginTop: 6 }}>
               {capacityUtilisation > 85
-                ? 'High utilisation — very little headroom for spikes or breakdowns.'
+                ? 'High utilisation: very little headroom for spikes or breakdowns.'
                 : capacityUtilisation > 65
                   ? 'Solid utilisation with some room for surge capacity.'
-                  : 'Plenty of spare capacity — check whether the inputs match reality.'}
+                  : 'Plenty of spare capacity: check whether the inputs match reality.'}
             </p>
           </div>
 
@@ -171,7 +171,7 @@ export function CapacityPlannerCalculator() {
           <div style={{ marginTop: 24 }}>
             <ToolLeadCapture
               tool="capacity-planner"
-              resultSummary={`${jobsPerWeek} jobs/week capacity — ${capacityUtilisation}% utilisation`}
+              resultSummary={`${jobsPerWeek} jobs/week capacity, ${capacityUtilisation}% utilisation`}
               answers={{ machines, hoursPerDay, daysPerWeek, avgJobMinutes, downtimePct }}
             />
           </div>

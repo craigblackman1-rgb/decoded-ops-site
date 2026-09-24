@@ -49,7 +49,7 @@ export default function DeliverPage() {
             alt="A finished cream and stone colour-block zip-neck polo shirt, folded and pressed, laid on a grey studio surface."
             no="DO-ART-909"
             rev="01"
-            eyebrow="— Evidence · Deliver"
+            eyebrow="Evidence · Deliver"
             caption="Finished, checked, out the door"
             focus="50% 55%"
           />

@@ -184,7 +184,7 @@ export default function ClarityPage() {
             alt="Two multi-head embroidery machines on a workshop floor, threaded and mid-run, with a grey garment hooped under the needles and thread cones racked behind."
             no="DO-ART-908"
             rev="01"
-            eyebrow="— Evidence · Clarity Audit"
+            eyebrow="Evidence · Clarity Audit"
             caption="The floor the audit walks"
             focus="50% 42%"
           />

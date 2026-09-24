@@ -94,7 +94,7 @@ export default function RetainedPage() {
             alt="A full row of embroidery thread cones in black, white, yellow, orange, red, pink, blue and green mounted on a machine's thread stand, every position filled."
             no="DO-ART-910"
             rev="01"
-            eyebrow="— Evidence · Retained"
+            eyebrow="Evidence · Retained"
             caption="Stock that is always there"
             focus="50% 55%"
           />

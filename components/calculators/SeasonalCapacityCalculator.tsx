@@ -76,7 +76,7 @@ export function SeasonalCapacityCalculator() {
             onChange={(e) => setBaselineJobs(Math.max(1, Number(e.target.value) || 1))}
             className="calc-input"
           />
-          <p className="calc-hint">Your output in a normal month. All months start at 100% (flat) — adjust each month to match your seasonal pattern.</p>
+          <p className="calc-hint">Your output in a normal month. All months start at 100% (flat). Adjust each month to match your seasonal pattern.</p>
         </div>
 
         <div style={{ marginTop: 24 }}>

@@ -187,7 +187,7 @@ export function AutomationRoiCalculator() {
           <div style={{ marginTop: 24 }}>
             <ToolLeadCapture
               tool="automation-roi-calculator"
-              resultSummary={`${roiPercent}% 3-year ROI — break-even ${breakEvenMonths !== null ? `${breakEvenMonths} months` : 'not achievable'}`}
+              resultSummary={`${roiPercent}% 3-year ROI, break-even ${breakEvenMonths !== null ? `${breakEvenMonths} months` : 'not achievable'}`}
               answers={{ hoursPerWeek, staffCount, hourlyRate, setupCost, monthlyMaintenance }}
             />
           </div>

@@ -344,7 +344,7 @@ export const locations: LocationData[] = [
     name: 'London',
     county: 'Greater London',
     localContext:
-      'London has the UK\'s densest cluster of decorated-goods businesses, from embroidery shops in East London to screen printers in the West End and workwear suppliers across the South and East. The scale is different from Sussex or Surrey — higher volumes, more complex supply chains, more staff — but the underlying technology problems are the same: disconnected systems, manual processes, and nobody senior enough to own the technology decisions.',
+      'London has the UK\'s densest cluster of decorated-goods businesses, from embroidery shops in East London to screen printers in the West End and workwear suppliers across the South and East. The scale is different from Sussex or Surrey: higher volumes, more complex supply chains, more staff, but the underlying technology problems are the same: disconnected systems, manual processes, and nobody senior enough to own the technology decisions.',
     driveTime: 'Around 90–120 minutes (variable by location within London)',
     localFact: 'London\'s garment district around Hackney and Dalston hosts one of Europe\'s highest concentrations of independent garment decoration businesses, many serving fashion brands and corporate clients.',
     nearbyAreas: ['Croydon', 'Bromley', 'Enfield', 'Greenwich'],
