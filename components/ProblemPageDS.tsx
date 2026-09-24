@@ -28,6 +28,10 @@ interface ProblemPageDSProps {
   relatedResources?: { href: string; label: string }[];
   /** Optional video data for the "one fix, one screen" embed block */
   video?: ProblemVideo;
+  /** D17 hero artwork HTML, injected via dangerouslySetInnerHTML */
+  heroArt?: string;
+  /** D17 inline artwork HTML, injected via dangerouslySetInnerHTML */
+  inlineArt?: string;
 }
 
 /**
@@ -45,7 +49,7 @@ interface ProblemPageDSProps {
  * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
  * now uses its own inline JSX.
  */
-export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video }: ProblemPageDSProps) {
+export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video, heroArt, inlineArt }: ProblemPageDSProps) {
   const parts = headline.split('||');
 
   return (
@@ -85,7 +89,9 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
               <Link className="btn btn--outline" href="/clarity">See how the audit works</Link>
             </div>
           </div>
-          {heroGraphic && (
+          {heroArt ? (
+            <div dangerouslySetInnerHTML={{ __html: heroArt }} />
+          ) : heroGraphic && (
             <div className="plate-frame" style={{ marginTop: 0 }}>
               {heroGraphic}
             </div>
@@ -247,6 +253,15 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
                 </article>
               )}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* D17 INLINE ARTWORK */}
+      {inlineArt && (
+        <section className="g-navy" data-od-id="inline-art">
+          <div className="wrap">
+            <div dangerouslySetInnerHTML={{ __html: inlineArt }} />
           </div>
         </section>
       )}
