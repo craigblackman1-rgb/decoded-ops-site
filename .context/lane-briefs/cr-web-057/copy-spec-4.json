@@ -1,0 +1,62 @@
+[
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "so rather than start again, the data app became the ERP. The data track",
+  "replace": "so rather than start again, the data work became the ERP, now Decoded Works. The data track",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "style=\"font-size:17px\">The data app</text>",
+  "replace": "style=\"font-size:17px\">Decoded Works</text>",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "style=\"font-size:13px;font-weight:700\">Data app</text>",
+  "replace": "style=\"font-size:13px;font-weight:700\">Works</text>",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "I built the data app to bring in every supplier catalogue",
+  "replace": "I built what is now Decoded Works to bring in every supplier catalogue",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "with another off-the-shelf system, the data app became the ERP.",
+  "replace": "with another off-the-shelf system, Decoded Works became the ERP.",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "The eCommerce platform stayed. The data app does the parts it was never going to do.",
+  "replace": "The eCommerce platform stayed. Decoded Works does the parts it was never going to do.",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "<h3>The platform stayed. The data app does the rest.</h3>",
+  "replace": "<h3>The platform stayed. Decoded Works does the rest.</h3>",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "products live on their website through the data app</p>",
+  "replace": "products live on their website through Decoded Works</p>",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/transform/page.tsx",
+  "find": "className=\"p-ink\">Data app (now the ERP)</text>",
+  "replace": "className=\"p-ink\">Decoded Works (the ERP)</text>",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ },
+ {
+  "file": "app/resources/page.tsx",
+  "find": "per week — real throughput, not the spec sheet number.",
+  "replace": "per week: real throughput, not the spec sheet number.",
+  "why": "CR-WEB-057 lowercase data app / CR-WEB-056 em dash"
+ }
+]
