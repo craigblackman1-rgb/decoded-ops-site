@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       // retired in favour of new DS-ported routes built by later lanes.
       // Targets don't exist yet — that's expected, the other lanes build
       // them; the redirect just needs to be ready ahead of that landing.
-      { source: '/decoded-data-app', destination: '/apps/data-app', permanent: true },
+      { source: '/decoded-data-app', destination: '/apps/works', permanent: true },
       { source: '/resources/software-reviews', destination: '/resources', permanent: true },
       { source: '/decoded-method', destination: '/resources/decoded-method', permanent: true },
       { source: '/tools/ai-readiness-check', destination: '/tools/ops-health-score', permanent: true },
@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
       { source: '/case-studies/tacklebag', destination: '/case-studies/case-study-02', permanent: true },
       { source: '/case-studies/cobra-workwear', destination: '/case-studies/case-study-03', permanent: true },
       { source: '/apps/crm', destination: '/apps', permanent: true },
+      { source: '/apps/data-app', destination: '/apps/works', permanent: true },
+      { source: '/apps/artwork-manager', destination: '/apps/proof', permanent: true },
       // BUG-WEB-017: blog slugs renamed during relaunch — preserve Search Console equity
       { source: '/blog/artwork-approval-process', destination: '/blog/artwork-approval-workflow-brief-to-sign-off-24-hours', permanent: true },
       { source: '/blog/embroidery-quality-standards', destination: '/blog/embroidery-quality-standards-stitch-density-thread-durability', permanent: true },

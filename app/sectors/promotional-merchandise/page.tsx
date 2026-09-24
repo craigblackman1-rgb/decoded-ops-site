@@ -130,11 +130,11 @@ export default function PromotionalMerchandisePage() {
         <div className="wrap">
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a930" data-od-id="plate-architecture" data-motion data-no="DO-ART-930" data-rev="01" data-tx="photo"
-        aria-label="Product screen DO-ART-930. The Data App supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.">
+        aria-label="Product screen DO-ART-930. The Works supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.">
   <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-6d25d2.jpg" alt="" width="1100" height="733"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
-    <div class="k d17-mono">The Data App <span>· supplier matching</span></div>
+    <div class="k d17-mono">Works <span>· supplier matching</span></div>
     <div class="bar" aria-hidden="true"></div>
     <h3>Every supplier range, one clean catalogue.</h3>
     <p>Supplier feeds come in on their own, and each product is matched to its supplier before

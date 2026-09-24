@@ -69,11 +69,9 @@ const warningSigns = [
 ];
 
 const systems = [
-  { name: 'A generic print ERP', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
-  { name: 'A decoration-specific order system', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
-  { name: 'An eCommerce-first decoration platform', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
-  { name: 'A sector-specific MIS', strength: 'Sector-specific, strong on screen print workflow', weakness: '' },
-  { name: 'An inventory-focused platform', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
+  { name: 'Wholesale and distribution heavy', strength: 'Strong stock control, multi-warehouse handling, and account-based pricing for trade customers', weakness: 'Check how well it copes with mixed decoration methods before you commit' },
+  { name: 'Decoration-first shops', strength: 'Production workflow built around decoration methods, with artwork and proofing handled natively and accurate costing per method', weakness: 'Often weaker on financial controls and multi-channel selling, so check those separately' },
+  { name: 'Multi-channel online sellers', strength: 'Strong eCommerce and marketplace integration, with real-time stock across every channel', weakness: 'Can be light on production scheduling for decoration work, so check that against your own order types in a demo' },
 ];
 
 const selectionSteps = [
@@ -260,9 +258,9 @@ export default function ErpSelectionPlaybookPage() {
           </div>
 
           <div style={{ marginBottom: 64 }}>
-            <h2>The systems worth considering</h2>
+            <h2>What to look for, by business type</h2>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
-              The ERP landscape for decorated goods businesses in the UK includes:
+              No system is right for every decorated goods business. What to look for depends on the shape of yours:
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {systems.map((sys) => (
@@ -298,7 +296,7 @@ export default function ErpSelectionPlaybookPage() {
           <div style={{ marginBottom: 64 }}>
             <h2>Where I stand</h2>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
-              One thing this playbook should say plainly: I build one of the systems in this market. The Data App grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
+              One thing this playbook should say plainly: I build one of the systems in this market. Works grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
             </p>
           </div>
 
@@ -365,7 +363,7 @@ export default function ErpSelectionPlaybookPage() {
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
             <h3>Not sure whether you need an ERP?</h3>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
-              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From GBP 1,500.
+              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From £1,500.
             </p>
             <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
               <Link href="/contact" className="btn btn--primary">

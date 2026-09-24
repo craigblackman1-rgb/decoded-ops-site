@@ -57,8 +57,8 @@ const helpLadder: (NavLink & { sub: string; startHere?: boolean })[] = [
 const helpBuilt: NavGroup = {
   title: 'Software I’ve already built',
   items: [
-    { label: 'Data App', sub: 'Supplier feeds into one clean catalogue', href: '/apps/data-app' },
-    { label: 'Artwork Manager', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },
+    { label: 'Works', sub: 'The ERP for decorated goods', href: '/apps/works' },
+    { label: 'Proof', sub: 'Versions, approvals and delivery', href: '/apps/proof' },
     { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
     { label: 'All apps', sub: "What's ready to buy today", href: '/apps' },
   ],

@@ -177,7 +177,7 @@ export default function LegacySystemPage() {
        <span className="no">Layer 1</span>
       </div>
       <div className="layer-tier layer-tier--mid">
-       <div><h3>The Decoded Data App</h3><p>Decoration BOMs, blank-to-finished mapping, and
+       <div><h3>Decoded Works</h3><p>Decoration BOMs, blank-to-finished mapping, and
         supplier artwork, modelled properly for the first time</p></div>
        <span className="no">Layer 2</span>
       </div>
@@ -316,7 +316,7 @@ export default function LegacySystemPage() {
       ripped out.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
-      <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+      <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
      </div>
     </div>
     </section>

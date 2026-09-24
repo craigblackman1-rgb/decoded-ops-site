@@ -272,11 +272,11 @@ export default function HomePage() {
                    fill, the feeds list in, and the amber lands on &quot;matched&quot; last. */}
               <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
                       data-no="DO-ART-917" data-rev="01" data-tx="photo"
-                      aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+                      aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
                 <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <figcaption className={d17.cap}>
-                  <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
+                  <div className={`${d17.k} ${d17.d17Mono}`}>Works <span>&middot; at Hanicks</span></div>
                   <div className={d17.bar} aria-hidden="true" />
                   <h3>Forty suppliers. One catalogue.</h3>
                   <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
@@ -360,7 +360,7 @@ export default function HomePage() {
                    down and the figures land in order, amber on &quot;binned&quot; last. */}
               <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
                       data-no="DO-ART-918" data-rev="01" data-tx="photo"
-                      aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+                      aria-label="Evidence piece DO-ART-918. A teamwear business on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
                 <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <figcaption className={d17.copy}>

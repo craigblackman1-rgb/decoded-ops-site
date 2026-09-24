@@ -338,8 +338,8 @@ export default function BuyVsBuildPage() {
       <h2>Being upfront about where I stand.</h2>
 
       <div className="answer">
-       <p>I build software too. The Data App started life plugging gaps nothing on the market
-        covered, and it has grown into a full system. So I am not a neutral bystander, and I will
+       <p>I build software too. Works started life plugging gaps nothing on the market
+        covered, and it has grown into the ERP. So I am not a neutral bystander, and I will
         not pretend to be one.</p>
        <p>What I will do is put every option through the same coverage test, in writing, mine
         included. If an off-the-shelf platform covers what you need, that is what the report

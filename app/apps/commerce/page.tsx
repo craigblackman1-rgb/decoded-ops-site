@@ -31,7 +31,7 @@ const commerceFaqSchema = {
         {
           '@type': 'Question',
           name: 'What are the three tiers?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Standard adds company accounts, spend limits, approval workflows and quote negotiation. Extended adds multi-site, ERP integration and bespoke checkout and pricing.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Connected adds company accounts, spend limits, approval workflows and quote negotiation. Scaled adds multi-site, ERP integration and bespoke checkout and pricing.' },
         },
         {
           '@type': 'Question',
@@ -41,7 +41,7 @@ const commerceFaqSchema = {
         {
           '@type': 'Question',
           name: 'Does it integrate with ERP systems?',
-          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Scaled tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },
         },
       ],
     },
@@ -56,15 +56,15 @@ export default function CommercePage() {
       <section className="g-off" data-od-id="hero">
         <div className="wrap hero-split">
           <div>
-            <span className="eyebrow">Decoded Commerce · live infrastructure</span>
+            <span className="eyebrow">Decoded Commerce · the trade storefront that runs off Works</span>
             <h1>A storefront that fits how you actually sell.</h1>
             <div className="hero-body">
               <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
               <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,
                 approval workflows, quote negotiation, order editing, and a full storefront and
-                checkout, all on an open-source core. Real foundations, not a from-scratch build,
-                which keeps the cost well under a bespoke quote for the same thing.</p>
+                checkout. Real foundations, not a from-scratch build, which keeps the cost well under a
+                bespoke quote for the same thing.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
@@ -77,7 +77,7 @@ export default function CommercePage() {
         aria-label="Product screen DO-ART-946. A Decoded Commerce trade storefront, signed in as a trade account: a filtered catalogue of decorated workwear and merchandise with range and decoration method facets, the account's own price list on every product, and a quote request for a hundred and fifty embroidered polos sitting alongside the basket. Trade pricing per account, quotes next to the basket, one catalogue with the warehouse.">
   <div class="d17-ph"><img src="/images/d17/apps-cases/gen-press-hall-03697e.jpg" alt="" width="1024" height="1024"></div>
   <div class="d17-scan" aria-hidden="true"></div>
-  <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>Live infrastructure</span></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>In build at Hanicks</span></div>
   <div class="stage" aria-hidden="true">
     <div class="mw">
       <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Commerce ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
@@ -145,7 +145,7 @@ export default function CommercePage() {
                   <path d="M17 9.5h4M17 13.5h4" />
                 </svg>
               </div>
-              <h3>Standard</h3>
+              <h3>Connected</h3>
               <p className="feature-meta">The B2B trade portal shape</p>
               <p>Adds company accounts with multi-user roles, per-employee spending limits, approval
                 workflows, and quote negotiation. This is what most trade businesses in this sector
@@ -159,7 +159,7 @@ export default function CommercePage() {
                   <path d="M4 6h7v5H4zM13 13h7v5h-7z" /><path d="M7.5 11v4.5H13" />
                 </svg>
               </div>
-              <h3>Extended</h3>
+              <h3>Scaled</h3>
               <p className="feature-meta">More than one of everything</p>
               <p>Multi-site storefronts, ERP integration, and bespoke checkout and pricing logic where
                 the standard rules don&rsquo;t describe how you price.</p>
@@ -176,21 +176,21 @@ export default function CommercePage() {
           <p className="lede" style={{ marginTop: 16 }}>Each tier adds what the one below doesn&rsquo;t have.</p>
 
           <figure className="d17 sw a947" data-od-id="plate-architecture" data-motion data-no="DO-ART-947" data-rev="01" data-tx="schematic"
-                  aria-label="Drawn plate DO-ART-947. Three nested tiers drawn as a plan. Core, at the centre: a single storefront with a product catalogue, customer accounts and logins, and manual pricing tiers. Standard wraps Core and adds company accounts with multi-user roles, per-employee spending limits, approval workflows and quote negotiation: the B2B trade portal shape most take. Extended wraps Standard and adds multi-site storefronts, ERP integration, and bespoke checkout and pricing logic. Each tier adds what the one below does not have.">
+                  aria-label="Drawn plate DO-ART-947. Three nested tiers drawn as a plan. Core, at the centre: a single storefront with a product catalogue, customer accounts and logins, and manual pricing tiers. Connected wraps Core and adds company accounts with multi-user roles, per-employee spending limits, approval workflows and quote negotiation: the B2B trade portal shape most take. Scaled wraps Connected and adds multi-site storefronts, ERP integration, and bespoke checkout and pricing logic. Each tier adds what the one below does not have.">
             <div className="q-grid" aria-hidden="true" />
             <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true"><defs>
               <marker id="q-ah947" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6" /></marker>
             </defs></svg>
             <svg className="q v-wide" viewBox="0 0 1600 680" aria-hidden="true">
-              {/* Extended */}
+              {/* Scaled */}
               <g className="m-fade" style={{ animationDelay: '.9s' }}>
                 <rect x="20" y="20" width="1000" height="640" rx="22" fill="none" stroke="#8ECAE6" strokeOpacity=".7" strokeWidth="2" />
-                <text className="t-m" x="50" y="62" style={{ fontSize: '17px' }}>Extended · more than one of everything</text>
+                <text className="t-m" x="50" y="62" style={{ fontSize: '17px' }}>Scaled · more than one of everything</text>
               </g>
-              {/* Standard */}
+              {/* Connected */}
               <g className="m-fade" style={{ animationDelay: '.5s' }}>
                 <rect className="bx-a" x="80" y="92" width="880" height="508" rx="18" style={{ fillOpacity: '.9' }} />
-                <text className="t-m t-a" x="110" y="134" style={{ fontSize: '17px' }}>Standard · the B2B trade portal shape · most take this</text>
+                <text className="t-m t-a" x="110" y="134" style={{ fontSize: '17px' }}>Connected · the B2B trade portal shape · most take this</text>
               </g>
               {/* Core */}
               <g className="m-pop" style={{ animationDelay: '.1s' }}>
@@ -204,14 +204,14 @@ export default function CommercePage() {
                 <text className="t-d" x="170" y="470" style={{ fontSize: '18px' }}>No approval workflow:</text>
                 <text className="t-d" x="170" y="496" style={{ fontSize: '18px' }}>nobody has to sign off</text>
               </g>
-              {/* Standard adds */}
+              {/* Connected adds */}
               <g className="m-rise" style={{ animationDelay: '.6s' }}>
                 <rect x="590" y="164" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="206" style={{ fontSize: '22px' }}>Company accounts, roles</text>
                 <rect x="590" y="246" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="288" style={{ fontSize: '22px' }}>Per-employee spend limits</text>
                 <rect x="590" y="328" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="370" style={{ fontSize: '22px' }}>Approval workflows</text>
                 <rect x="590" y="410" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="452" style={{ fontSize: '22px' }}>Quote negotiation</text>
               </g>
-              {/* Extended adds */}
+              {/* Scaled adds */}
               <g className="m-rise" style={{ animationDelay: '1s' }}>
                 <text className="t-d" x="110" y="636" style={{ fontSize: '19px' }}>Multi-site storefronts  ·  ERP integration  ·  bespoke checkout and pricing logic</text>
               </g>
@@ -219,10 +219,10 @@ export default function CommercePage() {
               <g className="m-fade" style={{ animationDelay: '1.2s' }}>
                 <path className="ln-f" d="M1060 20 V660 M1050 20 H1070 M1050 660 H1070" />
                 <path className="ln m-draw" pathLength="1" style={{ animationDelay: '1.3s' }} d="M1110 120 H1026" markerEnd="url(#q-ah947)" />
-                <text className="t-m" x="1120" y="112" style={{ fontSize: '15px' }}>Extended adds</text>
+                <text className="t-m" x="1120" y="112" style={{ fontSize: '15px' }}>Scaled adds</text>
                 <text className="t" x="1120" y="142" style={{ fontSize: '20px' }}>more than one of everything</text>
                 <path className="ln-a m-draw" pathLength="1" style={{ animationDelay: '1.1s' }} d="M1110 320 H966" />
-                <text className="t-m t-a" x="1120" y="312" style={{ fontSize: '15px' }}>Standard adds</text>
+                <text className="t-m t-a" x="1120" y="312" style={{ fontSize: '15px' }}>Connected adds</text>
                 <text className="t" x="1120" y="342" style={{ fontSize: '20px' }}>the machinery for sign-off</text>
                 <path className="ln m-draw" pathLength="1" style={{ animationDelay: '.9s' }} d="M1110 500 H566" markerEnd="url(#q-ah947)" />
                 <text className="t-m" x="1120" y="492" style={{ fontSize: '15px' }}>Core</text>
@@ -233,26 +233,26 @@ export default function CommercePage() {
             </svg>
             <svg className="q v-tall" viewBox="0 0 700 1130" aria-hidden="true">
               <rect x="6" y="6" width="688" height="1118" rx="20" fill="none" stroke="#8ECAE6" strokeOpacity=".7" strokeWidth="2" />
-              <text className="t-m" x="30" y="50" style={{ fontSize: '20px' }}>Extended · more than one of everything</text>
+              <text className="t-m" x="30" y="50" style={{ fontSize: '20px' }}>Scaled · more than one of everything</text>
               <rect className="bx-a" x="30" y="76" width="640" height="850" rx="16" />
-              <text className="t-m t-a" x="54" y="118" style={{ fontSize: '20px' }}>Standard · most take this</text>
+              <text className="t-m t-a" x="54" y="118" style={{ fontSize: '20px' }}>Connected · most take this</text>
               <rect className="bx" x="54" y="140" width="592" height="320" rx="12" />
               <text className="t-m" x="78" y="182" style={{ fontSize: '20px' }}>Core · single storefront</text>
               <text className="t" x="78" y="238" style={{ fontSize: '28px' }}>Product catalogue</text>
               <text className="t" x="78" y="290" style={{ fontSize: '28px' }}>Customer accounts, logins</text>
               <text className="t" x="78" y="342" style={{ fontSize: '28px' }}>Manual pricing tiers</text>
               <text className="t-d" x="78" y="414" style={{ fontSize: '23px' }}>No approval workflow</text>
-              <text className="t-m t-a" x="54" y="514" style={{ fontSize: '20px' }}>Standard adds</text>
+              <text className="t-m t-a" x="54" y="514" style={{ fontSize: '20px' }}>Connected adds</text>
               <text className="t" x="54" y="570" style={{ fontSize: '28px' }}>Company accounts, roles</text>
               <text className="t" x="54" y="624" style={{ fontSize: '28px' }}>Per-employee spend limits</text>
               <text className="t" x="54" y="678" style={{ fontSize: '28px' }}>Approval workflows</text>
               <text className="t" x="54" y="732" style={{ fontSize: '28px' }}>Quote negotiation</text>
               <text className="t-d" x="54" y="800" style={{ fontSize: '23px' }}>the B2B trade portal shape</text>
-              <text className="t-m" x="30" y="984" style={{ fontSize: '20px' }}>Extended adds</text>
+              <text className="t-m" x="30" y="984" style={{ fontSize: '20px' }}>Scaled adds</text>
               <text className="t" x="30" y="1034" style={{ fontSize: '27px' }}>Multi-site · ERP integration</text>
               <text className="t" x="30" y="1080" style={{ fontSize: '27px' }}>Bespoke checkout and pricing</text>
             </svg>
-            <div className="foot"><span className="k d17-mono">Core · Standard · Extended</span><span className="d17-mark">decodedops.co.uk · DO-ART-947 · Rev 01</span></div>
+            <div className="foot"><span className="k d17-mono">Core · Connected · Scaled</span><span className="d17-mark">decodedops.co.uk · DO-ART-947 · Rev 01</span></div>
           </figure>
         </div>
       </section>
@@ -349,12 +349,12 @@ export default function CommercePage() {
                   <td className="scope">Single storefront, catalogue, accounts, manual pricing</td>
                 </tr>
                 <tr>
-                  <th scope="row">Standard <span className="star">Most take this</span></th>
+                  <th scope="row">Connected <span className="star">Most take this</span></th>
                   <td className="scope">Company accounts, spend limits, approval workflows, quote
                     negotiation</td>
                 </tr>
                 <tr>
-                  <th scope="row">Extended</th>
+                  <th scope="row">Scaled</th>
                   <td className="scope">Multi-site, ERP integration, bespoke checkout and pricing</td>
                 </tr>
               </tbody>
@@ -366,11 +366,10 @@ export default function CommercePage() {
 
           <div className="notice" data-od-id="founding-terms">
             <p className="notice-tag">Founding-client terms</p>
-            <h3>No client has taken first delivery of the packaged product yet.</h3>
-            <p>Real work has been scoped and quoted, but nobody has yet bought Decoded
-              Commerce as a tiered product. Until that happens it sells at the rates above with the
-              first six months of support waived, in exchange for accepting that some features arrive
-              during the engagement and agreeing to be a named reference.</p>
+            <h3>Hanicks is already running its storefront through Commerce, ahead of a public launch.</h3>
+            <p>Their store reads the same catalogue as their Works instance. Nobody has yet bought Commerce as a tiered, off-the-shelf product,
+              so until that happens it sells at the rates above with the first six months of support
+              included, in exchange for agreeing to be a named reference.</p>
             <p>Stated plainly, because you&rsquo;d find out anyway. And you should be able to price it in
               before you decide, not after.</p>
           </div>

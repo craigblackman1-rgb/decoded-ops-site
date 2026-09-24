@@ -11,18 +11,18 @@ import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Inventory blind spots: Decoded Ops',
- description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
+ description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
  alternates: { canonical: '/problems/inventory-blind' },
  openGraph: {
   title: 'Inventory blind spots: Decoded Ops',
-  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
+  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
   url: 'https://decodedops.co.uk/problems/inventory-blind',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
   title: 'Inventory blind spots: Decoded Ops',
-  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.",
+  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
  },
 };
 
@@ -40,7 +40,7 @@ const inventoryBlindSchema = {
     {
      '@type': 'Question',
      name: 'How do I get a single inventory picture across supplier feeds and stock?',
-     acceptedAnswer: { '@type': 'Answer', text: 'The Data App reconciles supplier feeds and your real stock position continuously, not on whatever schedule someone remembers to run a report. What is on the shelf, what is committed, and what is actually available, in one number.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'Works reconciles supplier feeds and your real stock position continuously, not on whatever schedule someone remembers to run a report. What is on the shelf, what is committed, and what is actually available, in one number.' },
     },
     {
      '@type': 'Question',
@@ -168,7 +168,7 @@ export default function InventoryBlindPage() {
     <div className="wrap">
      <span className="eyebrow">The fix</span>
      <h2>One real-time stock picture, not a guess reconciled weekly.</h2>
-     <p className="lede" style={{ marginTop: 16 }}>The Decoded Data App combines what your suppliers say
+     <p className="lede" style={{ marginTop: 16 }}>Decoded Works combines what your suppliers say
       they&apos;ve got with what&apos;s actually moved through your own warehouse, so the number on screen
       is the number on the shelf.</p>
 
@@ -200,7 +200,7 @@ export default function InventoryBlindPage() {
      <span className="eyebrow">Evidence · DO-ART-918</span>
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
-        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
   <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
@@ -230,7 +230,7 @@ export default function InventoryBlindPage() {
 
      <div className="answer">
       <p>I map where your stock picture actually breaks down: which feeds, which manual steps,
-       which system nobody quite trusts. Then I build the Data App layer that fixes it.</p>
+       which system nobody quite trusts. Then I build the Works layer that fixes it.</p>
       <p><b>No more guesswork stock checks before a big order.</b> The number on screen becomes
        the number worth ordering against.</p>
      </div>
@@ -245,7 +245,7 @@ export default function InventoryBlindPage() {
       make it real-time.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
-      <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+      <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
      </div>
     </div>
     </section>

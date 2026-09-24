@@ -208,7 +208,7 @@ export default function CaseStudy02Page() {
 
             <h2>What was done</h2>
             <p>
-              The eCommerce platform stayed, because it was the right tool for selling. The data app was built alongside it to do the parts the platform was never going to do: supplier feeds kept current, decorated and plain stock tracked separately, warehouse work (bins, barcode scanning, batch picking on a phone), and new products and variants published to the website automatically.
+              The eCommerce platform stayed, because it was the right tool for selling. Works was built alongside it to do the parts the platform was never going to do: supplier feeds kept current, decorated and plain stock tracked separately, warehouse work (bins, barcode scanning, batch picking on a phone), and new products and variants published to the website automatically.
             </p>
             <p>
               The website integration has been running in production since July. Supplier automation and warehouse tooling are still growing. Next up is measuring the real hours saved to replace the projection.
@@ -217,7 +217,7 @@ export default function CaseStudy02Page() {
             <div className="progress-note">
               <h3>What&apos;s still in progress</h3>
               <p>
-                The Data App keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.
+                Works keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.
               </p>
             </div>
           </div>
@@ -226,7 +226,7 @@ export default function CaseStudy02Page() {
         {/* 5. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
-            <h2>See how the Data App does this.</h2>
+            <h2>See how Works does this.</h2>
             <p className="lede">
               This is a Systems (rung 2) example. To find out what your own operation needs, book a Clarity Audit.
             </p>
@@ -234,8 +234,8 @@ export default function CaseStudy02Page() {
               <Link href="/contact" className="btn btn--primary">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/apps/data-app" className="btn btn-ghost btn-arrow">
-                See the Data App
+              <Link href="/apps/works" className="btn btn-ghost btn-arrow">
+                See Works
               </Link>
             </div>
           </div>

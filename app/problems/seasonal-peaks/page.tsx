@@ -40,7 +40,7 @@ const seasonalPeaksSchema = {
     {
      '@type': 'Question',
      name: 'How can automation help with seasonal demand spikes?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Manual processes have a hard ceiling. When the seasonal peak demands far more than the team can handle at normal capacity, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into the Data App, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Manual processes have a hard ceiling. When the seasonal peak demands far more than the team can handle at normal capacity, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into Works, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },
     },
     {
      '@type': 'Question',
@@ -222,7 +222,7 @@ export default function SeasonalPeaksPage() {
      <span className="eyebrow">Evidence · DO-ART-918</span>
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
-        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
   <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
@@ -255,7 +255,7 @@ export default function SeasonalPeaksPage() {
        and the written plan tells you which processes to automate first so the business can handle
        the peak without burning out the people. <b>Ten times the orders shouldn&apos;t mean ten times
        the staff.</b></p>
-      <p>Where automation fits (supplier feeds into the Data App, artwork approval workflows,
+      <p>Where automation fits (supplier feeds into Works, artwork approval workflows,
        order-to-production routing), the system absorbs the volume spike instead of the team
        absorbing the overtime.</p>
      </div>
@@ -270,7 +270,7 @@ export default function SeasonalPeaksPage() {
       capacity, and prices the fix before the next spike hits.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
-      <Link className="btn btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+      <Link className="btn btn-ghost btn-arrow" href="/apps/works">See Works</Link>
      </div>
     </div>
     </section>

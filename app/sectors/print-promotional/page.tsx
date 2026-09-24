@@ -364,7 +364,7 @@ export default function PrintPromotionalPage() {
           <span className="eyebrow">Case study</span>
           <h2>Supplier data and channel automation for a print business</h2>
           <div className="hair" />
-          <p className="lede">Project-leading an ERP implementation alongside a custom Data App for supplier catalogue management and multi-channel automation.</p>
+          <p className="lede">Project-leading an ERP implementation alongside a custom Works build for supplier catalogue management and multi-channel automation.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/case-studies/case-study-01">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>

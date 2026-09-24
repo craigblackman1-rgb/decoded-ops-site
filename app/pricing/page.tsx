@@ -250,12 +250,12 @@ export default function PricingPage() {
           <h2>Three products. Scoped and quoted per business.</h2>
 
           <div className="grid grid--3" style={{ marginTop: 28 }}>
-            <Link className="card" href="/apps/data-app">
-              <span className="kicker">Data App</span>
-              <h3>Supplier feeds into one clean catalogue</h3>
+            <Link className="card" href="/apps/works">
+              <span className="kicker">Works</span>
+              <h3>The ERP for decorated goods</h3>
             </Link>
-            <Link className="card" href="/apps/artwork-manager">
-              <span className="kicker">Artwork Manager</span>
+            <Link className="card" href="/apps/proof">
+              <span className="kicker">Proof</span>
               <h3>Versions, approvals and delivery</h3>
             </Link>
             <Link className="card" href="/apps/commerce">
@@ -264,9 +264,9 @@ export default function PricingPage() {
             </Link>
           </div>
 
-          <p className="table-foot" style={{ marginTop: 28 }}>Artwork Manager and Commerce sell on founding-client terms until first
-            delivery: six months of support waived, in exchange for a named reference and accepting that
-            some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>
+          <p className="table-foot" style={{ marginTop: 28 }}>Proof and Commerce sell on founding-client terms while the
+            first names go on the reference list: six months of support included, in exchange for being
+            one of the first named references. Stated plainly, not a discount dressed as an offer.</p>
 
           <div className="inset" style={{ marginTop: 20 }}>
             <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no

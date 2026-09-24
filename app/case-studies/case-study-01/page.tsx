@@ -164,7 +164,7 @@ export default function CaseStudy01Page() {
 
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a951" data-od-id="plate-measure" data-motion data-no="DO-ART-951" data-rev="01" data-tx="photo"
-        aria-label="Product screen DO-ART-951. The Hanicks catalogue overview in the Decoded Data App, live figures from September 2026: 317,812 products brought in from supplier feeds; 154,518 matched to a supplier automatically; 40 active suppliers, 89 on file; 2,872 new products and 28 new suppliers found in a stock-take reconciliation; 3,844 Amazon listings re-optimised ahead of a title-format deadline; 77% of stock records with a bin location, and climbing. Unmatched products sit on a visible list rather than being hidden.">
+        aria-label="Product screen DO-ART-951. The Hanicks catalogue overview in Decoded Works, live figures from September 2026: 317,812 products brought in from supplier feeds; 154,518 matched to a supplier automatically; 40 active suppliers, 89 on file; 2,872 new products and 28 new suppliers found in a stock-take reconciliation; 3,844 Amazon listings re-optimised ahead of a title-format deadline; 77% of stock records with a bin location, and climbing. Unmatched products sit on a visible list rather than being hidden.">
   <div class="d17-dots" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">Case study 01 <span>· the live catalogue</span></div>
@@ -285,7 +285,7 @@ export default function CaseStudy01Page() {
               <article className="card">
                 <span className="kicker">Problem</span>
                 <h3>Inventory blind spots</h3>
-                <p>No real visibility of stock across channels: the problem the Data App solved for this client.</p>
+                <p>No real visibility of stock across channels: the problem Works solved for this client.</p>
                 <Link href="/problems/inventory-blind" className="btn btn--outline" style={{ marginTop: 12 }}>Read about inventory blindness</Link>
               </article>
             </div>
@@ -295,7 +295,7 @@ export default function CaseStudy01Page() {
         {/* 6. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
-            <h2>See how the Data App does this.</h2>
+            <h2>See how Works does this.</h2>
             <p className="lede">
               This is a Systems (rung 2) example. To find out what your own data looks like, book a Clarity Audit.
             </p>
@@ -303,8 +303,8 @@ export default function CaseStudy01Page() {
               <Link href="/contact" className="btn btn--primary">
                 Book a free discovery call <ArrowRight size={18} />
               </Link>
-              <Link href="/apps/data-app" className="btn btn-ghost btn-arrow">
-                See the Data App
+              <Link href="/apps/works" className="btn btn-ghost btn-arrow">
+                See Works
               </Link>
             </div>
           </div>

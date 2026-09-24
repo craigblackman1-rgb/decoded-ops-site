@@ -198,7 +198,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <p className="sheet-foot" data-od-id="sheet-foot">The Data App is one of those layers. At Hanicks,
+            <p className="sheet-foot" data-od-id="sheet-foot">Works is one of those layers. At Hanicks,
               it has brought 317,812 supplier products into one catalogue and
               matched 154,518 of them to a supplier automatically. Nobody retypes a supplier
               spreadsheet any more.</p>

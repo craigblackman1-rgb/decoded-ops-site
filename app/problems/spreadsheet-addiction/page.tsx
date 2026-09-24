@@ -45,7 +45,7 @@ const spreadsheetAddictionSchema = {
     {
      '@type': 'Question',
      name: 'How does the Process & Quality System replace spreadsheet dependency?',
-     acceptedAnswer: { '@type': 'Answer', text: 'The PQS replaces the dependency on one file with documented processes that live outside anyone\'s laptop. The order log becomes a named process with a documented workflow, not a file that only opens on one version of a spreadsheet. Where the spreadsheet was doing something useful, tracking orders, managing prices, a Clarity Audit finds the right tool to replace it, whether that is a small system, a Data App layer, or a properly-structured process document.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'The PQS replaces the dependency on one file with documented processes that live outside anyone\'s laptop. The order log becomes a named process with a documented workflow, not a file that only opens on one version of a spreadsheet. Where the spreadsheet was doing something useful, tracking orders, managing prices, a Clarity Audit finds the right tool to replace it, whether that is a small system, a Works layer, or a properly-structured process document.' },
     },
     {
      '@type': 'Question',
@@ -254,7 +254,7 @@ export default function SpreadsheetAddictionPage() {
        a spreadsheet.</b></p>
       <p>Where the spreadsheet was actually doing something useful (tracking orders, managing
        supplier prices, routing artwork approvals), a Clarity Audit finds the right tool to
-       replace it, whether that&apos;s a small system, a Data App layer, or a properly-structured
+       replace it, whether that&apos;s a small system, a Works layer, or a properly-structured
        process document that doesn&apos;t rely on one person&apos;s macros.</p>
      </div>
     </div>

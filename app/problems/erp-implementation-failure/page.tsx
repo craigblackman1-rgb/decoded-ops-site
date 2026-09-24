@@ -157,11 +157,11 @@ export default function ERPImplementationFailurePage() {
      <span className="eyebrow">Evidence · DO-ART-917</span>
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a917" data-od-id="plate-measure" data-motion data-no="DO-ART-917" data-rev="01" data-tx="photo"
-        aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+        aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
   <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1300" height="867"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="cap">
-    <div class="k d17-mono">The Data App <span>· at Hanicks</span></div>
+    <div class="k d17-mono">Works <span>· at Hanicks</span></div>
     <div class="bar" aria-hidden="true"></div>
     <h3>Forty suppliers. One catalogue.</h3>
     <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>

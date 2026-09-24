@@ -6,19 +6,19 @@ import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
 
 export const metadata: Metadata = {
-  title: 'Decoded Artwork Manager: Decoded Ops',
-  description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor. Currently on founding-client terms.',
-  alternates: { canonical: '/apps/artwork-manager' },
+  title: 'Decoded Proof: Decoded Ops',
+  description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+  alternates: { canonical: '/apps/proof' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Artwork Manager: Decoded Ops',
-    description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
-    url: 'https://decodedops.co.uk/apps/artwork-manager',
+    title: 'Decoded Proof: Decoded Ops',
+    description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+    url: 'https://decodedops.co.uk/apps/proof',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Artwork Manager: Decoded Ops',
-    description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Currently on founding-client terms.',
+    title: 'Decoded Proof: Decoded Ops',
+    description: 'Artwork revision control for embroidery and print, with customer proofing and machine-ready delivery built in.',
   },
 };
 
@@ -30,8 +30,8 @@ const artworkManagerFaqSchema = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'What does the Artwork Manager do?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It is an artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs instead of an email chain. Machine-ready files go straight to the floor.' },
+          name: 'What does Decoded Proof do?',
+          acceptedAnswer: { '@type': 'Answer', text: "It's revision control for artwork: every format and every version of every logo, versioned with a full audit trail, with the colourways and thread library held against the job. Customers approve their own proofs instead of an email chain, and the approved file goes straight to the machine in its native format." },
         },
         {
           '@type': 'Question',
@@ -40,8 +40,8 @@ const artworkManagerFaqSchema = {
         },
         {
           '@type': 'Question',
-          name: 'What are founding-client terms?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Full implementation pricing, the first six months of support waived, in exchange for accepting that some features arrive during the engagement and agreeing to be a named reference.' },
+          name: 'What happens to an approved design?',
+          acceptedAnswer: { '@type': 'Answer', text: 'It goes to the machine in its native format (Tajima, Barudan, Happy, with DST as the fallback, hot folders for DTF and DTG), so the file the floor gets is the file the machine wants, not something a person has to convert first.' },
         },
       ],
     },
@@ -56,15 +56,17 @@ export default function ArtworkManagerPage() {
       <section className="g-off">
         <div className="wrap hero-split">
           <div>
-            <p className="eyebrow">Decoded Artwork Manager &middot; Founding clients</p>
-            <h1>Every logo, every format, every version.</h1>
+            <p className="eyebrow">Decoded Proof &middot; artwork revision control</p>
+            <h1>Every version. The one they actually approved.</h1>
             <div className="hero-body">
-              <p>Artwork vault across embroidery and print formats, versioned with an audit trail.
-                Customers approve their own proofs instead of an email chain. Machine-ready files go
-                straight to the floor.</p>
+              <p>An artwork vault across embroidery and print formats, with full revision control and an
+                audit trail. Colourways and thread libraries are held against the job, not scattered
+                across folders and someone&rsquo;s memory. Customers approve their own proofs instead of an
+                email chain, and the approved file goes straight to the floor in the format the machine
+                actually wants.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
-              <Link className="btn btn--primary" href="/contact">Talk about founding-client terms</Link>
+              <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
               <Link className="btn btn--ghost btn-arrow" href="#terms">Read the terms first</Link>
             </div>
           </div>
@@ -76,11 +78,11 @@ export default function ArtworkManagerPage() {
                  changes requested. Roles, never people's names; generic job reference. Graded
                  thread-spool photo behind (the thread library). In-page draw: versions rise,
                  the APPROVED stamp lands on v4. */}
-            <figure className="d17 sx a944" aria-label="Product screen DO-ART-944. The Decoded Artwork Manager approval history for a left breast crest, over a graded photograph of thread spools on an embroidery machine. Version 5 is a draft that has not been sent, so production cannot pull it. Version 4 was sent to the customer, opened twice and signed off by the customer contact, and is in production as a machine-ready stitch file. Version 3 had changes requested. Every version kept, sign-off stamped against the one they actually saw."
+            <figure className="d17 sx a944" aria-label="Product screen DO-ART-944. The Decoded Proof approval history for a left breast crest, over a graded photograph of thread spools on an embroidery machine. Version 5 is a draft that has not been sent, so production cannot pull it. Version 4 was sent to the customer, opened twice and signed off by the customer contact, and is in production as a machine-ready stitch file. Version 3 had changes requested. Every version kept, sign-off stamped against the one they actually saw."
               dangerouslySetInnerHTML={{ __html: `
 <div class="d17-ph"><img src="/images/d17/apps-cases/thread-spools-ba5d03.jpg" alt="" width="900" height="600" /></div>
 <div class="d17-scan" aria-hidden="true"></div>
-<div class="sx-top d17-mono" aria-hidden="true"><span>Artwork Manager · approvals</span><span>Founding clients</span></div>
+<div class="sx-top d17-mono" aria-hidden="true"><span>Proof · approvals</span><span>Founding clients</span></div>
 <div class="stage" aria-hidden="true">
   <div class="mw">
     <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Artwork › EMB-0142 ›</span> Approvals</span><span class="pill pill--a">AUDIT TRAIL</span></div>
@@ -116,10 +118,11 @@ export default function ArtworkManagerPage() {
       <section className="g-white">
         <div className="wrap">
           <p className="eyebrow">Three parts</p>
-          <h2>Vault, proofing, and delivery to the machine.</h2>
+          <h2>Revision control, proofing, and delivery to the machine.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Artwork is the thing that goes wrong quietly. Wrong
-            version stitched, logo re-drawn for the fourth time, a proof approved in an email nobody
-            can find. All three of those are the same problem.</p>
+            version stitched, a colourway approved for one job and used on the next, a proof approved in
+            an email nobody can find. All three of those are the same problem: no record of which
+            version was the real one.</p>
 
           <div className="grid grid--3">
             <div className="feature">
@@ -131,9 +134,10 @@ export default function ArtworkManagerPage() {
                 </svg>
               </div>
               <h3>The vault</h3>
-              <p>Every format and every version of every logo in one place, with the thread library and
-                the colourways that go with it, and access for the staff who need it.</p>
-              <p>Version history means you can prove which file went to the machine, and when.</p>
+              <p>Every format and every version of every logo in one place, with full revision history:
+                you can prove which file went to the machine, and when. The colourways and thread
+                library that go with each design are held against the job, not against a folder
+                somewhere else, so the right thread is never a guess.</p>
             </div>
 
             <div className="feature">
@@ -164,8 +168,8 @@ export default function ArtworkManagerPage() {
             </div>
           </div>
 
-          <p style={{ marginTop: 24, maxWidth: '68ch' }}>Bought standalone, the Artwork Manager also
-            includes an embedded CRM: pipeline and client records, in the same place as the artwork.</p>
+          <p style={{ marginTop: 24, maxWidth: '68ch' }}>Bought standalone, Proof also includes an embedded
+            CRM: pipeline and client records, in the same place as the artwork.</p>
         </div>
       </section>
 
@@ -225,22 +229,18 @@ export default function ArtworkManagerPage() {
       <section className="g-navy" id="terms">
         <div className="wrap">
           <p className="eyebrow">Said plainly</p>
-          <h2>No client has taken first delivery yet.</h2>
+          <h2>Built for one job: proving which version is real.</h2>
 
           <div className="panel" style={{ marginTop: 36, maxWidth: '78ch' }}>
-            <h3>Founding-client terms</h3>
-            <p>This is deployed and in active development. Until a client has taken first delivery, it
-              sells on founding-client terms: full implementation pricing, the first six months of
-              support waived, in exchange for accepting that some features arrive during the engagement
-              and agreeing to be a named reference.</p>
-            <p>That&rsquo;s the whole arrangement. It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a
-              pilot you&rsquo;re paying to be part of. You get the implementation you paid for, and I get the
-              first reference I can point at.</p>
+            <h3>How Proof is priced right now</h3>
+            <p>Proof runs on founding-client terms while the first names go on the reference list: full
+              implementation pricing, with the first six months of support included at no extra cost,
+              in exchange for being one of the first named references. That&rsquo;s the whole arrangement.
+              It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a pilot you&rsquo;re paying to be part
+              of. You get the implementation you paid for, and I get a name I can point at.</p>
           </div>
 
           <figure className="pull" style={{ marginTop: 44 }}>
-            <blockquote>If I told you it was finished, you&rsquo;d find out in month two. Better you know
-              now, and price it in.</blockquote>
             <cite>Craig Blackman &middot; Decoded Ops</cite>
           </figure>
         </div>
@@ -259,7 +259,7 @@ export default function ArtworkManagerPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>Decoded Artwork Manager</caption>
+              <caption>Decoded Proof</caption>
               <thead>
                 <tr>
                   <th scope="col">Tier</th>
@@ -272,14 +272,14 @@ export default function ArtworkManagerPage() {
                   <td className="scope">Vault, versioning, audit trail, thread library</td>
                 </tr>
                 <tr>
-                  <th scope="row">Standard <span className="star">Most take this</span></th>
+                  <th scope="row">Connected <span className="star">Most take this</span></th>
                   <td className="scope">Adds the customer proofing portal and machine delivery</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="table-foot">There&rsquo;s no Extended tier for this product. If what you need is bigger
-            than Standard, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
+          <p className="table-foot">There&rsquo;s no third tier for this product. If what you need is bigger
+            than Connected, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
             tier list.</p>
           <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
@@ -288,11 +288,12 @@ export default function ArtworkManagerPage() {
       {/* 5 · CTA STRIP */}
       <section className="g-off cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
-          <h2>Talk about founding-client terms.</h2>
-          <p className="lede">An hour to work out whether being first is worth it to you. If your artwork
-            problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the end of it.</p>
+          <h2>Talk about getting your artwork under control.</h2>
+          <p className="lede">An hour on what you&rsquo;re running today, formats, machines and how proofing
+            works now. If your artwork problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the
+            end of it.</p>
           <div className="btn-row">
-            <Link className="btn btn--primary" href="/contact">Talk about founding-client terms</Link>
+            <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
             <Link className="btn btn--ghost btn-arrow" href="/apps">See the other systems</Link>
           </div>
         </div>

@@ -11,18 +11,18 @@ import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Your data is scattered: Decoded Ops',
- description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
+ description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
  alternates: { canonical: '/problems/data-scattered' },
  openGraph: {
   title: 'Your data is scattered: Decoded Ops',
-  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
+  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
   url: 'https://decodedops.co.uk/problems/data-scattered',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
   title: 'Your data is scattered: Decoded Ops',
-  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.",
+  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
  },
 };
 
@@ -50,7 +50,7 @@ const dataScatteredSchema = {
     {
      '@type': 'Question',
      name: 'How do I get all my supplier feeds into one place?',
-     acceptedAnswer: { '@type': 'Answer', text: 'The Data App ingests every supplier feed in whatever format it arrives, cleans and matches it against what you already sell. One source of truth, pushed out to every channel.' },
+     acceptedAnswer: { '@type': 'Answer', text: 'Works ingests every supplier feed in whatever format it arrives, cleans and matches it against what you already sell. One source of truth, pushed out to every channel.' },
     },
     {
      '@type': 'Question',
@@ -216,11 +216,11 @@ export default function DataScatteredPage() {
      <span className="eyebrow">Evidence · DO-ART-917</span>
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a917" data-od-id="plate-measure" data-motion data-no="DO-ART-917" data-rev="01" data-tx="photo"
-        aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+        aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
   <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1300" height="867"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="cap">
-    <div class="k d17-mono">The Data App <span>· at Hanicks</span></div>
+    <div class="k d17-mono">Works <span>· at Hanicks</span></div>
     <div class="bar" aria-hidden="true"></div>
     <h3>Forty suppliers. One catalogue.</h3>
     <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
@@ -269,9 +269,9 @@ export default function DataScatteredPage() {
      <h2>One matched catalogue, and every channel reads the same data.</h2>
 
      <div className="answer">
-      <p>The Decoded Data App takes every supplier feed in, matches it against your existing
-       catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,
-       the website, the warehouse.</p>
+      <p>Works takes every supplier feed in, matches it against your existing
+       catalogue, and becomes <b>the single source every other system reads from</b>: the website,
+       the warehouse.</p>
        <p>In one deployment, 317,812 products came in from supplier feeds and 154,518 were matched to a supplier automatically, before anyone had to touch them. Same principle,
         any supplier mix.</p>
      </div>
@@ -286,7 +286,7 @@ export default function DataScatteredPage() {
       take to get them all reading from the same data.</p>
      <div className="hero-cta">
       <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
-      <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
+      <Link className="btn-ghost btn-arrow" href="/apps/works">See Works</Link>
      </div>
     </div>
     </section>

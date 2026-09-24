@@ -6,19 +6,19 @@ import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
 
 export const metadata: Metadata = {
-  title: 'Decoded Data App: Decoded Ops',
-  description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',
-  alternates: { canonical: '/apps/data-app' },
+  title: 'Decoded Works: Decoded Ops',
+  description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+  alternates: { canonical: '/apps/works' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Data App: Decoded Ops',
-    description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',
-    url: 'https://decodedops.co.uk/apps/data-app',
+    title: 'Decoded Works: Decoded Ops',
+    description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+    url: 'https://decodedops.co.uk/apps/works',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Data App: Decoded Ops',
-    description: 'A full operations system built from client gaps. Catalogue, orders, stock, production and despatch.',
+    title: 'Decoded Works: Decoded Ops',
+    description: 'The ERP built for decorated goods. Live today, running catalogue, orders, purchasing, stock, production and despatch.',
   },
 };
 
@@ -30,18 +30,18 @@ const dataAppFaqSchema = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'What does the Data App actually do?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It handles supplier feeds, data enrichment, catalogue maintenance across channels, orders, purchasing, stock, production and despatch. It started as the missing layer and has grown into a full system.' },
+          name: 'What does Decoded Works actually do?',
+          acceptedAnswer: { '@type': 'Answer', text: "It's the ERP for a decoration business: supplier feeds, data enrichment and catalogue maintenance across channels, plus orders, purchasing, stock, production and despatch. It started as the missing layer for one client's supplier feeds and has grown into the full system." },
         },
         {
           '@type': 'Question',
           name: 'Does it replace my existing platform?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or let it replace it. The platform stays unchanged in the first case. Feeds land in the Data App, get matched and enriched, and get pushed back into the platform clean.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or replace it. The platform stays unchanged in the first case. Feeds land in Works, get matched and enriched, and get pushed back into the platform clean.' },
         },
         {
           '@type': 'Question',
           name: 'How are supplier feeds handled?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in the Data App, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in Works, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },
         },
       ],
     },
@@ -56,15 +56,15 @@ export default function DataAppPage() {
       <section className="g-off">
         <div className="wrap hero-split">
           <div>
-            <span className="eyebrow">Decoded Data App &middot; live</span>
-            <h1>The system I couldn&rsquo;t buy for my clients.</h1>
+            <span className="eyebrow">Decoded Works &middot; the ERP for decorated goods</span>
+            <h1>The ERP I couldn&rsquo;t buy for my clients.</h1>
             <div className="hero-body">
               <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back
-                with nothing on the market to cover them: supplier feeds, decoration data,
-                blank-to-finished mapping. So I built the missing piece. Engagement by engagement it
-                grew, and today it runs catalogue, orders, purchasing, stock, production and despatch.
-                It still plays both ways. Alongside the platform you already own, or as the system
-                itself.</p>
+                with nothing on the market built for decorated goods: supplier feeds, decoration data,
+                blank-to-finished mapping, artwork held against the job. So I built the missing piece.
+                Engagement by engagement it grew, and today it runs the whole operation: catalogue,
+                orders, purchasing, stock, production and despatch. It still plays both ways. Alongside
+                the platform you already own, or as the system itself.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
@@ -75,10 +75,10 @@ export default function DataAppPage() {
           <div className="hero-shot">
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a941" data-od-id="hero-visual" data-motion data-no="DO-ART-941" data-rev="01" data-tx="photo"
-        aria-label="Product screen DO-ART-941. The Decoded Data App supplier matching screen at a live client, September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers with 89 on file. Supplier lines arrive in different formats and are matched to one catalogue product; anything not yet matched sits on a visible list. Feeds in, one clean catalogue out.">
+        aria-label="Product screen DO-ART-941. The Decoded Works supplier matching screen at a live client, September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers with 89 on file. Supplier lines arrive in different formats and are matched to one catalogue product; anything not yet matched sits on a visible list. Feeds in, one clean catalogue out.">
   <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-679f8b.jpg" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
-  <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 01 · Data App</span><span>Live, September 2026</span></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 01 · Works</span><span>Live, September 2026</span></div>
   <div class="stage" aria-hidden="true">
     <div class="mw">
       <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Catalogue ›</span> Supplier matching</span><span class="pill">LIVE</span></div>
@@ -117,13 +117,13 @@ export default function DataAppPage() {
         <div className="wrap">
           <span className="eyebrow">Architecture &middot; DO-ART-942</span>
           <h2>Keep your platform, or let this become it.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>The Data App started as the missing layer: supplier
-            feeds, data enrichment, catalogue maintenance across channels. It has grown into a full
-            system. You can run it alongside the platform you already own, or let it replace it.</p>
+          <p className="lede" style={{ marginTop: 16 }}>Works started as the missing layer: supplier
+            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP.
+            You can run it alongside the platform you already own, or let it replace it.</p>
 
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a942" data-od-id="layer-stack-diagram" data-motion data-no="DO-ART-942" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-942. Two ways to run the Decoded Data App, drawn side by side. Way A: the platform you already own stays at the bottom, the Data App sits alongside it, taking supplier feeds in, matching and enriching them, and pushing clean data back; the website, marketplaces and trade portal all read from one catalogue. Way B: the Data App is the system itself, running catalogue, orders, purchasing, stock, production and despatch, and the old platform is retired. Either way, every channel reads from one catalogue.">
+        aria-label="Drawn plate DO-ART-942. Two ways to run Decoded Works, drawn side by side. Way A: the platform you already own stays at the bottom, Works sits alongside it, taking supplier feeds in, matching and enriching them, and pushing clean data back; the website, marketplaces and trade portal all read from one catalogue. Way B: Works is the system itself, running catalogue, orders, purchasing, stock, production and despatch, and the old platform is retired. Either way, every channel reads from one catalogue.">
   <div class="q-grid" aria-hidden="true"></div>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <marker id="q-ah942" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
@@ -140,7 +140,7 @@ export default function DataAppPage() {
     <path class="ln-a m-draw" pathLength="1" style="animation-delay:.4s" d="M300 480 V528" marker-end="url(#q-ah942a)"/>
     <g class="m-pop" style="animation-delay:.3s"><rect class="bx-a" x="20" y="306" width="700" height="170" rx="14"/>
       <text class="t-m t-a" x="46" y="344" style="font-size:15px">Layer 2 · alongside</text>
-      <text class="t-h" x="46" y="388" style="font-size:32px">Decoded Data App</text>
+      <text class="t-h" x="46" y="388" style="font-size:32px">Decoded Works</text>
       <text class="t" x="46" y="424" style="font-size:19px">feeds land · matched · enriched · pushed back clean</text>
       <text class="t-d" x="46" y="454" style="font-size:17px">no re-keying, no second version of the truth</text></g>
     <path class="ln m-draw" pathLength="1" style="animation-delay:.7s" d="M140 304 V250 M370 304 V250 M600 304 V250" marker-end="url(#q-ah942)"/>
@@ -161,7 +161,7 @@ export default function DataAppPage() {
       <text class="t-m" x="1556" y="632" text-anchor="end" style="font-size:14px">retired</text></g>
     <g class="m-pop" style="animation-delay:.45s"><rect class="bx-a" x="880" y="290" width="700" height="270" rx="14"/>
       <text class="t-m t-a" x="906" y="328" style="font-size:15px">The system</text>
-      <text class="t-h" x="906" y="372" style="font-size:32px">Decoded Data App</text>
+      <text class="t-h" x="906" y="372" style="font-size:32px">Decoded Works</text>
       <rect x="906" y="394" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="926" y="428" style="font-size:20px">Catalogue</text>
       <rect x="1124" y="394" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1144" y="428" style="font-size:20px">Orders</text>
       <rect x="1342" y="394" width="212" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1362" y="428" style="font-size:20px">Purchasing</text>
@@ -179,14 +179,14 @@ export default function DataAppPage() {
     <text class="t-m" x="10" y="32" style="font-size:22px">A · Alongside the platform</text>
     <rect class="bx" x="10" y="56" width="680" height="80" rx="12"/><text class="t" x="34" y="106" style="font-size:26px;font-weight:700">Website · marketplaces · trade</text>
     <path class="ln" d="M350 138 V172" marker-end="url(#q-ah942)"/>
-    <rect class="bx-a" x="10" y="180" width="680" height="120" rx="14"/><text class="t-m t-a" x="34" y="220" style="font-size:20px">Layer 2 · alongside</text><text class="t-h" x="34" y="270" style="font-size:36px">Decoded Data App</text>
+    <rect class="bx-a" x="10" y="180" width="680" height="120" rx="14"/><text class="t-m t-a" x="34" y="220" style="font-size:20px">Layer 2 · alongside</text><text class="t-h" x="34" y="270" style="font-size:36px">Decoded Works</text>
     <rect class="bx" x="10" y="318" width="680" height="96" rx="12"/><text class="t-m" x="34" y="354" style="font-size:19px">Layer 1 · stays</text><text class="t" x="34" y="394" style="font-size:26px;font-weight:700">The platform you already own</text>
     <line x1="10" y1="478" x2="690" y2="478" stroke="#8ECAE6" stroke-opacity=".3" stroke-dasharray="6 6"/>
     <circle cx="350" cy="478" r="32" fill="#023047" stroke="#8ECAE6" stroke-opacity=".6"/><text class="t-h" x="350" y="488" text-anchor="middle" style="font-size:26px">or</text>
     <text class="t-m t-a" x="10" y="566" style="font-size:22px">B · As the system itself</text>
     <rect class="bx" x="10" y="590" width="680" height="80" rx="12"/><text class="t" x="34" y="640" style="font-size:26px;font-weight:700">Website · marketplaces · trade</text>
     <path class="ln" d="M350 672 V706" marker-end="url(#q-ah942)"/>
-    <rect class="bx-a" x="10" y="714" width="680" height="330" rx="14"/><text class="t-m t-a" x="34" y="756" style="font-size:20px">The system</text><text class="t-h" x="34" y="806" style="font-size:36px">Decoded Data App</text>
+    <rect class="bx-a" x="10" y="714" width="680" height="330" rx="14"/><text class="t-m t-a" x="34" y="756" style="font-size:20px">The system</text><text class="t-h" x="34" y="806" style="font-size:36px">Decoded Works</text>
     <text class="t" x="34" y="866" style="font-size:26px">Catalogue · Orders · Purchasing</text>
     <text class="t" x="34" y="910" style="font-size:26px">Stock + bins · Production</text>
     <text class="t" x="34" y="954" style="font-size:26px">Despatch</text>
@@ -205,7 +205,7 @@ export default function DataAppPage() {
             </article>
             <article className="step step--last">
               <p className="step-n">LAYER 2</p>
-              <h3>The Data App goes alongside</h3>
+              <h3>Works goes alongside</h3>
               <p>Feeds land here, get matched against what you already sell, get enriched, and get pushed
                 back into the platform clean. No re-keying, no second version of the truth.</p>
             </article>
@@ -223,11 +223,11 @@ export default function DataAppPage() {
       <section className="g-white">
         <div className="wrap">
           <span className="eyebrow">The screens</span>
-          <h2>What it looks like in practice.</h2>
+          <h2>What it looks like running the operation.</h2>
 
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a943" data-od-id="screens-visual" data-motion data-no="DO-ART-943" data-rev="01" data-tx="photo"
-        aria-label="Artwork DO-ART-943. A graded workbench photograph with two Decoded Data App screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.">
+        aria-label="Artwork DO-ART-943. A graded workbench photograph with two Decoded Works screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.">
   <div class="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-dea11a.jpg" alt="" width="1024" height="1024"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="desk m-rise" style="animation-delay:.1s" aria-hidden="true">
@@ -315,7 +315,7 @@ export default function DataAppPage() {
 
           <div className="table-wrap">
             <table className="ds-table">
-              <caption>Decoded Data App</caption>
+              <caption>Decoded Works</caption>
               <thead>
                 <tr>
                   <th scope="col">Tier</th>

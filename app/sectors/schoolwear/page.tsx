@@ -51,7 +51,7 @@ const sectorSchema = {
         },
         {
           '@type': 'Question',
-          name: 'Does the Decoded Data App replace my existing platform?',
+          name: 'Does Decoded Works replace my existing platform?',
           acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the existing platform, or as the full system where nothing off the shelf fits. It handles both teamwear and schoolwear lines with supplier feeds automated.' },
         },
       ],
@@ -191,7 +191,7 @@ export default function SchoolwearPage() {
             {[
               {
                 title: 'Supplier feeds, current before the peak hits',
-                body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. The Decoded Data App keeps that current automatically.",
+                body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. Decoded Works keeps that current automatically.",
               },
               {
                 title: 'Sizing that scales with growing pupils',
@@ -199,7 +199,7 @@ export default function SchoolwearPage() {
               },
               {
                 title: 'Proven at a teamwear business',
-                body: "The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.",
+                body: "Decoded Works runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.",
               },
             ].map((f, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>

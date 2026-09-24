@@ -295,7 +295,7 @@ export default function GarmentDecorationPage() {
           <span className="eyebrow">Case study</span>
           <h2>ERP and supplier data integration for a decoration business</h2>
           <div className="hair" />
-          <p className="lede">Project-leading an ERP change alongside a custom Data App for supplier data, Amazon FBA, and channel automation.</p>
+          <p className="lede">Project-leading an ERP change alongside a custom Works build for supplier data, Amazon FBA, and channel automation.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/case-studies/case-study-01">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
