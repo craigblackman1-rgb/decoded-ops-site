@@ -1,0 +1,35 @@
+
+/* PAGE-SPECIFIC LAYOUT ONLY — Fractional CTO location template.
+   Programmatic: [town]/[county]/[localFact] are the only variables between generated pages.
+   No tokens, no palette, no component redefinitions. No bespoke plate — held back for Craig. */
+.skip{ position:absolute; left:-9999px; top:0; z-index:99;
+  background:var(--do-white); color:var(--do-text-primary);
+  padding:10px 16px; border-radius:var(--do-radius-lg) }
+.skip:focus{ left:16px; top:16px; outline:3px solid var(--do-cerulean) }
+
+.hero-center{ text-align:center; max-width:760px; margin-inline:auto }
+.hero-center h1{ max-width:none; margin-inline:auto }
+.hero-center .lede{ margin:18px auto 0 }
+.hero-center .eyebrow{ margin-inline:auto }
+
+.local-strip{ display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:22px }
+.local-chip{ font-size:var(--do-text-xs); color:var(--do-text-subtle); display:flex; gap:6px;
+  align-items:center }
+.local-chip b{ color:var(--do-text-primary) }
+
+.cause .n{ display:block; font-family:var(--do-font-heading); font-size:var(--do-text-sm);
+  font-weight:800; color:var(--do-text-primary); opacity:.55; margin-bottom:6px }
+
+.check{ list-style:none; padding:0; margin:20px 0 0; max-width:78ch }
+.check li{ display:flex; gap:16px; padding:14px 0; font-size:var(--do-text-base);
+  color:var(--do-text-secondary);
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 20%, transparent) }
+.check li:last-child{ border-bottom:0 }
+.check li::before{ content:''; flex:0 0 auto; width:18px; height:18px; margin-top:4px;
+  border-radius:var(--do-radius-sm); border:2px solid var(--do-cerulean);
+  background:color-mix(in srgb, var(--do-cerulean) 16%, transparent) }
+
+.cta-strip{ text-align:center }
+.cta-strip h2{ max-width:none; margin-inline:auto }
+.cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
+.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center }

@@ -1,0 +1,23 @@
+
+/* PAGE-SPECIFIC LAYOUT ONLY — Privacy policy. Legal text unchanged, layout only.
+   No CTA, no diagrams, no buttons except nav — legal pages don't sell. */
+.skip{ position:absolute; left:-9999px; top:0; z-index:99;
+  background:var(--do-white); color:var(--do-text-primary);
+  padding:10px 16px; border-radius:var(--do-radius-lg) }
+.skip:focus{ left:16px; top:16px; outline:3px solid var(--do-cerulean) }
+
+.hero-center{ max-width:760px }
+
+.prose{ max-width:72ch; margin-inline:auto }
+.prose section{ margin-bottom:36px }
+.prose section:last-child{ margin-bottom:0 }
+.prose h2{ font-size:var(--do-text-xl); margin-bottom:12px }
+.prose h3{ font-size:var(--do-text-base); margin:18px 0 8px }
+.prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:12px }
+.prose ul{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed);
+  padding-left:22px; margin-bottom:12px }
+.prose li{ margin-bottom:6px }
+.prose b{ color:var(--do-text-primary) }
+.contact-box{ background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
+  border-radius:var(--do-radius-xl); padding:20px 24px; margin-top:14px }
+.contact-box p{ margin:0 }
