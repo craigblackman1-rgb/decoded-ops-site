@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw } from 'lucide-react';
 import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 const questions = [
   { id: 1, text: 'Is your current system unable to handle your core business processes without significant workarounds?', weight: 2 },
@@ -58,6 +61,42 @@ export default function ShouldIReplaceErpPage() {
           <span className="eyebrow">Free tool</span>
           <h1>Should I replace my ERP?</h1>
           <p className="lede">Eight yes/no questions to help you decide whether to fix your current system or plan an exit.</p>
+        </div>
+      </section>
+
+      {/* D17 hero art · DO-ART-999 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <figure className="d17 sx a999" data-od-id="hero-art" data-motion data-no="DO-ART-999" data-rev="01" data-tx="photo"
+                  aria-label="Artwork DO-ART-999. The should I replace my ERP scorecard over a graded photograph of a despatch box, answered as an example. Question 1: is your current system unable to handle your core business processes without significant workarounds? Yes. Questions 2 to 8 answered: no, no, yes, no, no, no, no. Two of eight yes. The verdict stamp: example, fixable. Fix it, or plan an exit: eight questions decide which.">
+            <div className="d17-ph"><img src="/images/d17/resources/prod-mailer-259a39.jpg" alt="" width="900" height="600" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <div className="sx-top d17-mono" aria-hidden="true"><span>Should I replace my ERP?</span><span>Eight questions</span></div>
+            <div className="stage" aria-hidden="true">
+              <div className="d17-doc doc-qz m-drop" style={{ animationDelay: '.05s' }}>
+                <span className="tab">EXAMPLE</span>
+                <span className="ref">Decision scorecard · yes or no</span>
+                <h4>Fix it, or plan an exit?</h4>
+                <div className="qz">
+                  <div className="q1"><span className="n">Q1</span><span className="t">Is your current system unable to handle your core business processes without significant workarounds?</span><em className="yes m-pop" style={{ animationDelay: '.4s' }}>Yes</em></div>
+                  <div><span className="n">Q2</span><span className="ln"></span><em className="m-pop" style={{ animationDelay: '.5s' }}>No</em></div>
+                  <div><span className="n">Q3</span><span className="ln" style={{ width: '70%' }}></span><em className="m-pop" style={{ animationDelay: '.6s' }}>No</em></div>
+                  <div><span className="n">Q4</span><span className="ln" style={{ width: '84%' }}></span><em className="yes m-pop" style={{ animationDelay: '.7s' }}>Yes</em></div>
+                  <div><span className="n">Q5</span><span className="ln" style={{ width: '62%' }}></span><em className="m-pop" style={{ animationDelay: '.8s' }}>No</em></div>
+                  <div><span className="n">Q6</span><span className="ln" style={{ width: '76%' }}></span><em className="m-pop" style={{ animationDelay: '.9s' }}>No</em></div>
+                  <div><span className="n">Q7</span><span className="ln" style={{ width: '68%' }}></span><em className="m-pop" style={{ animationDelay: '1s' }}>No</em></div>
+                  <div><span className="n">Q8</span><span className="ln" style={{ width: '80%' }}></span><em className="m-pop" style={{ animationDelay: '1.1s' }}>No</em></div>
+                </div>
+                <div className="tally"><span>Yes</span><b>2 of 8</b></div>
+              </div>
+              <div className="rt-stamp st-999 m-pop" style={{ animationDelay: '1.4s' }}>Fixable<small>Example verdict</small></div>
+            </div>
+            <div className="sx-foot">
+              <div className="sx-bar" aria-hidden="true"></div>
+              <p className="sx-say">Fix it, or plan an exit. <em>Eight questions decide which.</em></p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-999 · Rev 01</span>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -133,6 +172,7 @@ export default function ShouldIReplaceErpPage() {
           )}
         </div>
       </section>
+      <D17Motion />
     </main>
   );
 }

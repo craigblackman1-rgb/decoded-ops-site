@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { ArrowRight, ClipboardCheck, AlertTriangle, Star, Workflow, Gauge, FileText, Palette, ListChecks, Calculator } from 'lucide-react';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 export const metadata: Metadata = {
   title: 'Free Resources for Print & Embroidery Businesses: Decoded Ops',
@@ -96,84 +99,53 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* PLATE · DO-ART-308 */}
+      {/* D17 hero artwork DO-ART-980 */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">Resource sequence &middot; DO-ART-308</span>
-          <h2>Nine free resources, one order that makes them worth anything.</h2>
-          <div className="hair"></div>
-          <p className="lede" style={{ marginTop: 16 }}>
-            They are a sequence, not a menu. Using them out of order wastes most of them. Choosing the platform first is step five done first, which is warning sign five.
-          </p>
-
-          <div className="plate-scroll">
-            <div className="plate-frame" data-od-id="plate-resources">
-              <Plate tone="dark" p="rsx" title="Nine resources, one order"
-                     sub="They are a sequence, not a menu &middot; using them out of order wastes most of them"
-                     no="DO-ART-308" rev="02" cls="DECODED OPS &middot; ISSUED">
-
-                <g className="sk-fade sk-s2">
-                  <text x="55" y="210" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">THE ORDER THEY ARE MEANT TO BE USED IN</text>
-                </g>
-
-                <g className="sk-fade sk-s3" filter="url(#rsx-shadow)">
-                  <rect x="55" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="280" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="505" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="730" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="955" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="1180" y="250" width="200" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="1405" y="250" width="140" height="300" rx="10" fill="url(#rsx-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="13" fontWeight="700" letterSpacing="2.4">
-                    <text x="75" y="294">01</text>
-                    <text x="300" y="294">02</text>
-                    <text x="525" y="294">03</text>
-                    <text x="750" y="294">04</text>
-                    <text x="975" y="294">05</text>
-                    <text x="1200" y="294">06</text>
-                    <text x="1425" y="294">07</text>
-                  </g>
-                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="20">
-                    <text x="75" y="350">5 warning</text><text x="75" y="375">signs</text>
-                    <text x="300" y="350">Audit</text><text x="300" y="375">checklist</text>
-                    <text x="525" y="350">SOP</text><text x="525" y="375">template</text>
-                    <text x="750" y="350">ERP</text><text x="750" y="375">selection</text>
-                    <text x="975" y="350">Artwork</text><text x="975" y="375">approval</text>
-                    <text x="1200" y="350">The Decoded</text><text x="1200" y="375">Method</text>
-                    <text x="1425" y="350">Sigma,</text><text x="1425" y="375">explained</text>
-                  </g>
-                  <g className="p-mono" fontSize="13" opacity=".58">
-                    <text x="75" y="430">Is anything</text><text x="75" y="450">actually wrong?</text>
-                    <text x="300" y="430">Where exactly,</text><text x="300" y="450">across six areas</text>
-                    <text x="525" y="430">Write it down</text><text x="525" y="450">so it survives</text>
-                    <text x="750" y="430">Pick the right</text><text x="750" y="450">platform</text>
-                    <text x="975" y="430">Brief to</text><text x="975" y="450">sign-off</text>
-                    <text x="1200" y="430">Document the</text><text x="1200" y="450">whole operation</text>
-                    <text x="1425" y="430">How bad,</text><text x="1425" y="450">per million</text>
-                  </g>
-                </g>
-
-                <g>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M259 400 H275" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M484 400 H500" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M709 400 H725" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M934 400 H950" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M1159 400 H1175" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                  <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M1384 400 H1400" fill="none" strokeWidth="2" markerEnd="url(#rsx-ah)"/>
-                </g>
-
-                <g className="sk-fade sk-s6">
-                  <rect x="55" y="620" width="1490" height="120" rx="10" fill="url(#rsx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
-                  <text x="81" y="660" className="p-amber" fontSize="14" letterSpacing="2.4" fontWeight="600">THE ORDER MATTERS</text>
-                  <text x="81" y="698" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Choosing the platform first is step five done first, which is warning sign five.</text>
-                  <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The nine resources are free. Doing them in this order is what makes them worth anything.</text>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx px ph-fade a980" data-od-id="hero-art" data-motion data-no="DO-ART-980" data-rev="01" data-tx="poster"
+        aria-label="Artwork DO-ART-980. Three free documents pinned over a graded photograph of a workbench: the operational audit checklist, the SOP template and the ERP selection playbook. Below them, the order that makes the resources worth anything, drawn as a route: one, recognise, the five warning signs; two, check, the operational audit checklist; three, measure, the capacity and seasonal calculators; four, document, the Decoded Method, the SOP template, the artwork approval playbook and the Sigma playbook; five, in amber, choose, the ERP selection playbook, last. Choose the platform first and step five is done first.">
+  <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-215572.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Free resources</span><span>One order, five steps</span></div>
+  <div class="prints" aria-hidden="true">
+    <div class="d17-doc pr pr-1 m-drop" style="animation-delay:.05s">
+      <span class="tab">02</span>
+      <span class="ref">Checklist · 7 areas</span>
+      <h4>Operational audit</h4>
+      <ul class="tl">
+        <li><i class="y"></i>Backups tested quarterly?</li>
+        <li><i class="y"></i>Orders re-keyed anywhere?</li>
+        <li class="h"><i class="q"></i>Cost per order?</li>
+      </ul>
+    </div>
+    <div class="d17-doc pr pr-2 m-drop" style="animation-delay:.25s">
+      <span class="tab">04</span>
+      <span class="ref">SOP · template</span>
+      <h4>Process, owner, steps</h4>
+      <div class="lines"><i style="width:92%"></i><i style="width:74%"></i><i style="width:86%"></i><i style="width:58%"></i></div>
+      <p class="phase">Review date · 6 months</p>
+    </div>
+    <div class="d17-doc cov-dark pr pr-3 m-drop" style="animation-delay:.45s">
+      <span class="tab">05</span>
+      <span class="ref">Playbook</span>
+      <h4>ERP selection, brief first</h4>
+      <div class="lines"><i style="width:80%"></i><i style="width:64%"></i></div>
+    </div>
+  </div>
+  <ol class="rt-route" aria-hidden="true">
+    <li class="m-rise" style="animation-delay:.6s"><span class="n">01 · Recognise</span><b>Five warning signs</b></li>
+    <li class="m-rise" style="animation-delay:.8s"><span class="n">02 · Check</span><b>Operational audit checklist</b></li>
+    <li class="m-rise" style="animation-delay:1s"><span class="n">03 · Measure</span><b>Capacity and seasonal calculators</b></li>
+    <li class="m-rise" style="animation-delay:1.2s"><span class="n">04 · Document</span><b>The Decoded Method, SOPs, artwork, Sigma</b></li>
+    <li class="end m-rise" style="animation-delay:1.5s"><span class="n">05 · Choose</span><b>ERP selection, last</b></li>
+  </ol>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Choose the platform first, <em>and step five is done first.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-980 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -198,6 +170,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

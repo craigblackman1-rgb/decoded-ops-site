@@ -4,6 +4,9 @@ import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic';
 import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -128,6 +131,52 @@ export default function DecodedMethodPage() {
             <img src="/images/decoded-method-cover.png" alt="The Decoded Method guide, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
           </div>
         </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+      <figure class="d17 sx a988" data-od-id="hero-art" data-motion data-no="DO-ART-988" data-rev="01" data-tx="photo"
+              aria-label="Artwork DO-ART-988. The Decoded Method playbook, seven pages, three of them fanned over a graded photograph of a workbench. The cover. The three layers: process register, one-page SOPs, improvement log. And the self-assessment scorecard, scored as an example against the six principles: plain English, one page per process, owner on everything, reviewed regularly, delivery-linked, ISO-ready. The lowest score, owner on everything, is marked in amber. Handed over, not held in one head.">
+        <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-79b455.jpg" alt="" width="900" height="742"></div>
+        <div class="d17-scan" aria-hidden="true"></div>
+        <div class="sx-top d17-mono" aria-hidden="true"><span>Free playbook</span><span>7 pages · no email</span></div>
+        <div class="stage" aria-hidden="true">
+          <div class="d17-doc cov-dark doc-mc m-drop" style="animation-delay:.05s">
+            <span class="ref">Decoded Ops · playbook</span>
+            <p class="glyph">3<span>layers</span></p>
+            <h4>The Decoded Method</h4>
+            <p class="sub">How the business runs, written down</p>
+          </div>
+          <div class="d17-doc doc-ml m-drop" style="animation-delay:.25s">
+            <span class="ref">P.2 · Three layers</span>
+            <h4>Each layer has a job</h4>
+            <ol>
+              <li><b>01</b>Process register<i></i></li>
+              <li><b>02</b>One-page SOPs<i></i></li>
+              <li><b>03</b>Improvement log<i></i></li>
+            </ol>
+          </div>
+          <div class="d17-doc doc-ms m-drop" style="animation-delay:.5s">
+            <span class="tab">P.7</span>
+            <span class="ref">Self-assessment · example</span>
+            <h4>Where do you stand?</h4>
+            <div class="sc">
+              <div><span>Plain English</span><em class="d4"><i></i><i></i><i></i><i></i><i></i></em></div>
+              <div><span>One page per process</span><em class="d3"><i></i><i></i><i></i><i></i><i></i></em></div>
+              <div class="hot"><span>Owner on everything</span><em class="d1"><i></i><i></i><i></i><i></i><i></i></em></div>
+              <div><span>Reviewed regularly</span><em class="d2"><i></i><i></i><i></i><i></i><i></i></em></div>
+              <div><span>Delivery-linked</span><em class="d3"><i></i><i></i><i></i><i></i><i></i></em></div>
+              <div><span>ISO-ready</span><em class="d2"><i></i><i></i><i></i><i></i><i></i></em></div>
+            </div>
+          </div>
+        </div>
+        <div class="sx-foot">
+          <div class="sx-bar" aria-hidden="true"></div>
+          <p class="sx-say">Handed over, <em>not held in one head.</em></p>
+          <span class="d17-mark">decodedops.co.uk · DO-ART-988 · Rev 01</span>
+        </div>
+      </figure>
+        ` }} />
       </section>
 
       <section className="g-off section--tight">
@@ -259,6 +308,8 @@ export default function DecodedMethodPage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

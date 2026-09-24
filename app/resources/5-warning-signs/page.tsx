@@ -3,6 +3,9 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
 export const metadata = {
@@ -73,71 +76,28 @@ export default function FiveWarningSignsPage() {
         </div>
       </section>
 
-      {/* PLATE · DO-ART-422 */}
+      {/* D17 hero artwork DO-ART-982 */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">The signs, compared &middot; DO-ART-422</span>
-          <h2>Five signs, and what each one looks like fixed.</h2>
-          <div className="hair"></div>
-          <p className="lede" style={{ marginTop: 16 }}>
-            The gap between a broken process and the same process after a Clarity Audit. Every sign here is one I have walked into myself, not a checklist borrowed from a vendor.
-          </p>
-
-          <div className="plate-scroll">
-            <div className="plate-frame" data-od-id="plate-5-warning-signs">
-              <Plate tone="dark" p="wrn" title="Five signs, and what each one looks like fixed"
-                     sub=""
-                     no="DO-ART-422" rev="01" cls="DECODED OPS · ISSUED">
-
-                <rect x="50" y="100" width="700" height="520" rx="12"
-                      fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-                      stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-                <text x="80" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-                      fontSize="22" fill="var(--do-amber)" letterSpacing="0.06em">NOW</text>
-                <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-                  <text x="80" y="200"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Nobody can put a number on what it costs</tspan></text>
-                  <text x="80" y="250"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The process lives in a head and a workaround</tspan></text>
-                  <text x="80" y="300"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">Growth feels like wading, not momentum</tspan></text>
-                  <text x="80" y="350"><tspan fill="var(--do-amber)" fontWeight="700">✕</tspan><tspan dx="14">The last platform was bought off a demo</tspan></text>
-                </g>
-
-                <rect x="850" y="100" width="700" height="520" rx="12"
-                      fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-                      stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-                <text x="880" y="150" fontFamily="var(--do-font-heading)" fontWeight="700"
-                      fontSize="22" fill="var(--do-cerulean)" letterSpacing="0.06em">AFTER</text>
-                <g fontFamily="var(--do-font-body)" fontSize="17" fill="color-mix(in srgb, var(--do-off-white) 78%, transparent)">
-                  <text x="880" y="200"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">The monthly cost is added up and written down</tspan></text>
-                  <text x="880" y="250"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Written down once, so a fortnight off is survivable</tspan></text>
-                  <text x="880" y="300"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Volume rises without the pain rising with it</tspan></text>
-                  <text x="880" y="350"><tspan fill="var(--do-cerulean)" fontWeight="700">✓</tspan><tspan dx="14">Requirements written before anyone demos</tspan></text>
-                </g>
-
-                <line x1="770" y1="320" x2="830" y2="320" stroke="var(--do-cerulean)" strokeWidth="2"/>
-                <polygon points="828,316 840,320 828,324" fill="var(--do-amber)"/>
-
-                {/* Sign 5, as the sequence it actually follows. The priced version of
-                    this band used a client example Craig retired in July 2026. */}
-                <g className="sk-fade sk-s6">
-                  <rect x="50" y="660" width="1500" height="98" rx="10"
-                        fill="color-mix(in srgb, var(--do-amber) 8%, var(--do-prussian-blue))"
-                        stroke="color-mix(in srgb, var(--do-amber) 28%, transparent)" strokeWidth="1.5"/>
-                  <text x="80" y="694" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".45">SIGN 5, THE SEQUENCE. WHY THE SOFTWARE ENDS UP GETTING BLAMED</text>
-                  <g fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="20" fill="var(--do-amber)">
-                    <text x="80" y="738">Chosen without the users</text>
-                    <text x="470" y="738">Trained on the tool</text>
-                    <text x="880" y="738">Old way back by week 3</text>
-                    <text x="1290" y="738">Blamed by month 3</text>
-                  </g>
-                  <g fill="color-mix(in srgb, var(--do-off-white) 45%, transparent)" fontSize="22">
-                    <text x="420" y="738">&#8594;</text>
-                    <text x="830" y="738">&#8594;</text>
-                    <text x="1240" y="738">&#8594;</text>
-                  </g>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a982" data-od-id="hero-art" data-motion data-no="DO-ART-982" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-982. A graded photograph of a print floor with five tags pinned to it, one for each warning sign. One, the cost: nobody can name it. Two, the knowledge: in one person's head. Three, the workarounds: a sheet here, a sticky note there. Four, growth: more orders, more pain. Five, in amber, the last system: bought off a demo. Two or more sound familiar? Worth a closer look.">
+  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-c85ac6.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Five warning signs</span><span>One floor</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="sx-tag m-pop" style="left:5%;top:15%;animation-delay:.1s"><small>01 · The cost</small>Nobody can name it</div>
+    <div class="sx-tag m-pop" style="right:5%;top:26%;animation-delay:.3s"><small>02 · The knowledge</small>In one person's head</div>
+    <div class="sx-tag m-pop" style="left:5%;top:39%;animation-delay:.5s"><small>03 · Workarounds</small>A sheet here, a note there</div>
+    <div class="sx-tag m-pop" style="right:5%;top:52%;animation-delay:.7s"><small>04 · Growth</small>More orders, more pain</div>
+    <div class="sx-tag sx-tag--a m-pop" style="left:5%;top:66%;animation-delay:.95s"><small>05 · The last system</small>Bought off a demo</div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Two or more sound familiar? <em>Worth a closer look.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-982 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -188,6 +148,7 @@ export default function FiveWarningSignsPage() {
         </div>
       </section>
       <JsonLd data={schema} />
+      <D17Motion />
     </main>
   );
 }

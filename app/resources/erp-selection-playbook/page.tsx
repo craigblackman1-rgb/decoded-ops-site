@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Check, AlertTriangle } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -127,6 +130,47 @@ export default function ErpSelectionPlaybookPage() {
             A plain-English guide to ERP for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
           </p>
         </div>
+      </section>
+
+      <section className="g-navy">
+        <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+      <figure class="d17 sx a991" data-od-id="hero-art" data-motion data-no="DO-ART-991" data-rev="01" data-tx="photo"
+              aria-label="Artwork DO-ART-991. The ERP selection playbook over a graded photograph of folded workwear, and beside it the vendor brief, written before any demo, scoring three candidates like-for-like as an example: candidate A, candidate B, and ours, scored the same way. The requirements are the page's own: mixed decoration methods, the artwork approval loop, a B2B portal, blank stock and work in progress, supplier lead times, and a data migration plan. Write the brief first; every demo is scored against it, ours included.">
+        <div class="d17-ph"><img src="/images/d17/resources/cat-workwear-ce9fb8.jpg" alt="" width="900" height="596"></div>
+        <div class="d17-scan" aria-hidden="true"></div>
+        <div class="sx-top d17-mono" aria-hidden="true"><span>ERP selection</span><span>Brief before demo</span></div>
+        <div class="stage" aria-hidden="true">
+          <div class="d17-doc cov-dark doc-ec m-drop" style="animation-delay:.05s">
+            <span class="ref">Decoded Ops · playbook</span>
+            <h4>ERP selection for decorated goods</h4>
+            <p class="sub">Audit · brief · vendors · compare · negotiate</p>
+            <div class="lines"><i style="width:84%"></i><i style="width:70%"></i><i style="width:52%"></i></div>
+          </div>
+          <div class="d17-doc doc-vb m-drop" style="animation-delay:.35s">
+            <span class="tab">BRIEF</span>
+            <span class="ref">Vendor brief · scored like-for-like · example</span>
+            <h4>Does it cover how we work?</h4>
+            <table class="vb">
+              <thead><tr><th>Requirement</th><th>A</th><th>B</th><th class="us">Ours</th></tr></thead>
+              <tbody>
+                <tr><td>Mixed decoration methods</td><td><i class="n"></i></td><td><i class="y"></i></td><td><i class="y"></i></td></tr>
+                <tr><td>Artwork approval loop</td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
+                <tr><td>B2B portal</td><td><i class="y"></i></td><td><i class="n"></i></td><td><i class="p"></i></td></tr>
+                <tr><td>Blank stock and WIP</td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="y"></i></td></tr>
+                <tr><td>Supplier lead times</td><td><i class="y"></i></td><td><i class="n"></i></td><td><i class="y"></i></td></tr>
+                <tr><td>Data migration plan</td><td><i class="p"></i></td><td><i class="y"></i></td><td><i class="p"></i></td></tr>
+              </tbody>
+            </table>
+            <p class="key"><span><i class="y"></i>Covers</span><span><i class="p"></i>Partly</span><span><i class="n"></i>Gap</span></p>
+          </div>
+        </div>
+        <div class="sx-foot">
+          <div class="sx-bar" aria-hidden="true"></div>
+          <p class="sx-say">Brief first. <em>Every demo scored against it, ours too.</em></p>
+          <span class="d17-mark">decodedops.co.uk · DO-ART-991 · Rev 01</span>
+        </div>
+      </figure>
+        ` }} />
       </section>
 
       <section className="g-off section--tight">
@@ -335,6 +379,8 @@ export default function ErpSelectionPlaybookPage() {
 
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

@@ -4,6 +4,9 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 export const metadata: Metadata = {
   title: 'Free Operational Tools: Decoded Ops',
@@ -87,69 +90,46 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      {/* PLATE · DO-ART-210 */}
+      {/* D17 hero art · DO-ART-981 */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">Tool overview &middot; DO-ART-210</span>
-          <h2>Five calculators, five numbers you can actually use.</h2>
-          <div className="hair"></div>
-          <p className="lede" style={{ marginTop: 16 }}>
-            What each tool hands back, so you can pick the one that answers your question. Every calculator returns a real number, not a vague suggestion.
-          </p>
-
-          <div className="plate-scroll">
-            <div className="plate-frame" data-od-id="plate-tools">
-              <Plate tone="dark" p="tlx" title="Five calculators, five numbers"
-                     sub="What each tool actually hands back, so you can pick the one that answers your question"
-                     no="DO-ART-210" rev="01" cls="DECODED OPS · ISSUED">
-
-                <g className="sk-fade sk-s2" filter="url(#tlx-shadow)">
-                  <rect x="50" y="180" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="820" y="180" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="50" y="380" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="820" y="380" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="410" y="580" width="730" height="170" rx="10" fill="url(#tlx-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-
-                <g className="sk-fade sk-s3">
-                  <g className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">
-                    <text x="80" y="216">01</text><text x="850" y="216">02</text>
-                    <text x="80" y="416">03</text><text x="850" y="416">04</text>
-                    <text x="440" y="616">05</text>
-                  </g>
-                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
-                    <text x="80" y="262">Should I replace my ERP?</text>
-                    <text x="850" y="262">Ops Health Score</text>
-                    <text x="80" y="462">Downtime Cost Calculator</text>
-                    <text x="850" y="462">RTO Calculator</text>
-                    <text x="440" y="662">Automation ROI Calculator</text>
-                  </g>
-                  <g className="p-mono" fontSize="16" opacity=".55">
-                    <text x="80" y="292">Eight yes/no questions</text>
-                    <text x="850" y="292">Five operational dimensions</text>
-                    <text x="80" y="492">Your outage hours and headcount</text>
-                    <text x="850" y="492">Your current recovery time</text>
-                    <text x="440" y="692">One manual process, costed</text>
-                  </g>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <g className="p-mono" fontSize="13" letterSpacing="2.4" opacity=".4">
-                    <text x="80" y="322">HANDS BACK</text><text x="850" y="322">HANDS BACK</text>
-                    <text x="80" y="522">HANDS BACK</text><text x="850" y="522">HANDS BACK</text>
-                    <text x="440" y="722">HANDS BACK</text>
-                  </g>
-                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="19">
-                    <text x="230" y="322">Fixable, or plan an exit</text>
-                    <text x="1000" y="322">Where you stand, and where to start</text>
-                    <text x="230" y="522">The annual cost of outages, in £</text>
-                    <text x="1000" y="522">What faster recovery is worth, in £</text>
-                    <text x="590" y="722">Payback month, and the 3-year return</text>
-                  </g>
-                </g>
-              </Plate>
+          <figure className="d17 sx a981" data-od-id="hero-art" data-motion data-no="DO-ART-981" data-rev="01" data-tx="screen"
+                  aria-label="Artwork DO-ART-981. Three calculator result screens fanned over a graded photograph of embroidery heads, each labelled Example and worked from the tool's default inputs. Downtime cost: a total annual cost of downtime of £3,495. Automation ROI: break-even in 8 months, a 3-year return of 227 per cent. RTO: recovery from 8 hours to 1 hour saves £28,000 a year. Every calculator hands back a number, not a vague suggestion.">
+            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-ad3944.jpg" alt="" width="900" height="900" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <div className="sx-top d17-mono" aria-hidden="true"><span>Free tools</span><span>Five calculators</span></div>
+            <div className="stage" aria-hidden="true">
+              <div className="win scr scr-a m-rise" style={{ animationDelay: '.1s' }}>
+                <div className="win-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb">RTO</span><span className="pill">EXAMPLE</span></div>
+                <div className="scr-b">
+                  <p className="l">Recovery time</p>
+                  <div className="rt-bars"><span><i style={{ width: '100%' }}></i><b>8h now</b></span><span><i className="t" style={{ width: '12.5%' }}></i><b>1h target</b></span></div>
+                  <p className="l">Annual saving</p><p className="n">£28,000</p>
+                </div>
+              </div>
+              <div className="win scr scr-b2 m-rise" style={{ animationDelay: '.35s' }}>
+                <div className="win-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb">Automation ROI</span><span className="pill">EXAMPLE</span></div>
+                <div className="scr-b">
+                  <div className="two"><div><p className="l">Break-even</p><p className="n">8 months</p></div><div><p className="l">3-year ROI</p><p className="n">227%</p></div></div>
+                  <svg className="pay" viewBox="0 0 300 70" preserveAspectRatio="none"><path className="z" d="M0 40 H300"/><path className="c m-draw" pathLength="1" d="M0 64 L80 40 L300 6"/><circle cx="80" cy="40" r="5" /></svg>
+                </div>
+              </div>
+              <div className="win scr scr-c m-rise" style={{ animationDelay: '.6s' }}>
+                <div className="win-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb">Downtime cost</span><span className="pill">EXAMPLE</span></div>
+                <div className="scr-b">
+                  <p className="l">Total annual cost of downtime</p>
+                  <p className="n n--a">£3,495</p>
+                  <div className="rows"><span>Overhead paid for, never recovered</span><b>£903</b></div>
+                  <div className="rows"><span>Wages for people who couldn't work</span><b>£2,592</b></div>
+                </div>
+              </div>
             </div>
-          </div>
+            <div className="sx-foot">
+              <div className="sx-bar" aria-hidden="true"></div>
+              <p className="sx-say">Five calculators. <em>Every one hands back a number.</em></p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-981 · Rev 01</span>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -169,6 +149,7 @@ export default function ToolsPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </main>
   );
 }

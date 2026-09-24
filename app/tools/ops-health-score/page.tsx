@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, RotateCcw, Info } from 'lucide-react';
 import { ToolLeadCapture } from '@/components/ToolLeadCapture';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 interface Dimension {
   id: string;
@@ -60,6 +63,39 @@ export default function OpsHealthScorePage() {
           <span className="eyebrow">Free tool</span>
           <h1>Ops health score</h1>
           <p className="lede">Rate your business across five areas to see where you stand, and where to focus first.</p>
+        </div>
+      </section>
+
+      {/* D17 hero art · DO-ART-997 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <figure className="d17 sx px ph-fade a997" data-od-id="hero-art" data-motion data-no="DO-ART-997" data-rev="01" data-tx="screen"
+                  aria-label="Artwork DO-ART-997. The ops health score result screen over a graded photograph of a workbench, labelled Example. Five areas rated one to five: systems integration 2, process documentation 3, data quality 3, team and capability 4, technology strategy 1, in amber. Total 13 out of 25. Focus first on technology strategy. Five areas, and one place to start.">
+            <div className="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-6b4161.jpg" alt="" width="900" height="756" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <div className="sx-top d17-mono" aria-hidden="true"><span>Ops health score</span><span>Five areas</span></div>
+            <div className="body">
+              <div className="win" aria-hidden="true">
+                <div className="win-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Tools ›</span> Ops health</span><span className="pill">EXAMPLE</span></div>
+                <div className="win-flat">
+                  <div className="hs-hd"><div><h5>Your ops health</h5><p className="s">Each area rated 1 to 5</p></div><p className="tot"><b>13</b><span>/ 25</span></p></div>
+                  <div className="hs">
+                    <div><span>Systems integration</span><em><i className="m-fill" style={{ width: '40%', animationDelay: '.1s' }}></i></em><b>2</b></div>
+                    <div><span>Process documentation</span><em><i className="m-fill" style={{ width: '60%', animationDelay: '.25s' }}></i></em><b>3</b></div>
+                    <div><span>Data quality</span><em><i className="m-fill" style={{ width: '60%', animationDelay: '.4s' }}></i></em><b>3</b></div>
+                    <div><span>Team &amp; capability</span><em><i className="m-fill" style={{ width: '80%', animationDelay: '.55s' }}></i></em><b>4</b></div>
+                    <div className="hot"><span>Technology strategy</span><em><i className="m-fill" style={{ width: '20%', animationDelay: '.8s' }}></i></em><b>1</b></div>
+                  </div>
+                  <div className="win-foot"><span>Focus first</span>Technology strategy</div>
+                </div>
+              </div>
+            </div>
+            <div className="sx-foot">
+              <div className="sx-bar" aria-hidden="true"></div>
+              <p className="sx-say">Five areas. <em>One place to start.</em></p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-997 · Rev 01</span>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -160,6 +196,7 @@ export default function OpsHealthScorePage() {
           )}
         </div>
       </section>
+      <D17Motion />
     </main>
   );
 }

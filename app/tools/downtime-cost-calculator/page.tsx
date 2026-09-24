@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DowntimeCostCalculator } from '@/components/calculators/DowntimeCostCalculator';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -36,6 +39,34 @@ export default function DowntimeCostCalculatorPage() {
             Enter your numbers to see exactly what system outages cost you each year in
             staff time and lost revenue.
           </p>
+        </div>
+      </section>
+
+      {/* D17 hero art · DO-ART-996 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <figure className="d17 sx a996" data-od-id="incident-docket" data-motion data-no="DO-ART-996" data-rev="01" data-tx="photo"
+                  aria-label="Artwork DO-ART-996. The scenario, a Tuesday in November, pinned over a graded photograph of embroidery heads. Time: nine o'clock. Machines: all running, files already loaded. Connection: internet down. Trading: no. A result slip, labelled Example and worked from the worksheet's default figures: £3,495 a year, the cost of hours the business is up but can't trade. Everything is running. Nothing is earning.">
+            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-5bb1b8.jpg" alt="" width="900" height="900" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <div className="sx-top d17-mono" aria-hidden="true"><span>The scenario</span><span>A Tuesday in November</span></div>
+            <div className="stage" aria-hidden="true">
+              <div className="sx-tag m-pop" style={{ left: '5%', top: '15%', animationDelay: '.1s' }}><small>Time</small>09:00</div>
+              <div className="sx-tag m-pop" style={{ right: '5%', top: '24%', animationDelay: '.3s' }}><small>Machines</small>All running</div>
+              <div className="sx-tag sx-tag--a m-pop" style={{ left: '5%', top: '38%', animationDelay: '.5s' }}><small>Connection</small>Internet down</div>
+              <div className="sx-tag sx-tag--a m-pop" style={{ right: '5%', top: '50%', animationDelay: '.7s' }}><small>Trading</small>No</div>
+              <div className="slip m-drop" style={{ animationDelay: '1s' }}>
+                <span className="ref">Worksheet result · example</span>
+                <b>£3,495</b>
+                <span className="s">a year, up but not trading</span>
+              </div>
+            </div>
+            <div className="sx-foot">
+              <div className="sx-bar" aria-hidden="true"></div>
+              <p className="sx-say">Everything running. <em>Nothing earning.</em></p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-996 · Rev 01</span>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -158,6 +189,7 @@ export default function DowntimeCostCalculatorPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </main>
   );
 }

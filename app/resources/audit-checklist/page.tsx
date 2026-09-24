@@ -3,6 +3,9 @@ import { ArrowRight, CheckCircle2, Download } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 // Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
 const schema = {
@@ -125,99 +128,46 @@ export default function ChecklistPage() {
         </div>
       </section>
 
-      {/* PLATE · DO-ART-307 */}
+      {/* D17 hero artwork DO-ART-983 */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">Audit structure &middot; DO-ART-307</span>
-          <h2>Six areas you can check today, and the seventh only the checking answers.</h2>
-          <div className="hair"></div>
-          <p className="lede" style={{ marginTop: 16 }}>
-            The checklist as a sequence: what you can check today, and the strategic section the first six make possible.
-          </p>
-
-          <div className="plate-scroll">
-            <div className="plate-frame" data-od-id="plate-audit-checklist">
-              <Plate tone="dark" p="chk" title="Six areas, then the seventh"
-                     sub="The audit checklist as a sequence · what you can check today, and what only the checking answers"
-                     no="DO-ART-307" rev="01" cls="DECODED OPS · ISSUED">
-
-                <g className="sk-fade sk-s2">
-                  <text x="80" y="180" className="p-mono" fontSize="14" letterSpacing="2.6" opacity=".45">WHAT YOU CAN GO AND CHECK TODAY</text>
-                </g>
-
-                {/* ══ ROW 1 ══ */}
-                <g className="sk-fade sk-s3" filter="url(#chk-shadow)">
-                  <rect x="80" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="585" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="1090" y="196" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-                <g className="sk-fade sk-s3">
-                  <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
-                    <text x="106" y="234">01</text><text x="611" y="234">02</text><text x="1116" y="234">03</text>
-                  </g>
-                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
-                    <text x="504" y="234">6 questions</text><text x="1009" y="234">5 questions</text><text x="1514" y="234">5 questions</text>
-                  </g>
-                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
-                    <text x="106" y="286">IT &amp; security</text>
-                    <text x="611" y="286">Systems &amp; software</text>
-                    <text x="1116" y="286">eCommerce</text>
-                  </g>
-                  <g className="p-mono" fontSize="16" opacity=".6">
-                    <text x="106" y="322">Backups, access, and what IT costs</text>
-                    <text x="611" y="322">Every system, and whether they talk</text>
-                    <text x="1116" y="322">Does the website talk to the ERP</text>
-                  </g>
-                </g>
-
-                {/* row 1 connectors */}
-                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M534 281 H578" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
-                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1039 281 H1083" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
-                {/* turn down */}
-                <path pathLength="1" className="sk-draw sk-s4 p-scyan" d="M1315 370 V410" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
-
-                {/* ══ ROW 2, runs right to left ══ */}
-                <g className="sk-fade sk-s4" filter="url(#chk-shadow)">
-                  <rect x="1090" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="585" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="80" y="416" width="450" height="170" rx="10" fill="url(#chk-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-                <g className="sk-fade sk-s4">
-                  <g className="p-mono" fontSize="15" letterSpacing="2.4" opacity=".45">
-                    <text x="1116" y="454">04</text><text x="611" y="454">05</text><text x="106" y="454">06</text>
-                  </g>
-                  <g className="p-cyan" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700" textAnchor="end">
-                    <text x="1514" y="454">6 questions</text><text x="1009" y="454">5 questions</text><text x="504" y="454">5 questions</text>
-                  </g>
-                  <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">
-                    <text x="1116" y="506">Processes &amp; operations</text>
-                    <text x="611" y="506">Inventory &amp; stock</text>
-                    <text x="106" y="506">Costs &amp; financial</text>
-                  </g>
-                  <g className="p-mono" fontSize="16" opacity=".6">
-                    <text x="1116" y="542">Order to invoice, stock to despatch</text>
-                    <text x="611" y="542">Whether the count matches the system</text>
-                    <text x="106" y="542">Cost per order, and where revenue leaks</text>
-                  </g>
-                </g>
-
-                {/* row 2 connectors, pointing left */}
-                <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M1083 501 H1039" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
-                <path pathLength="1" className="sk-draw sk-s5 p-scyan" d="M578 501 H534" fill="none" strokeWidth="2" markerEnd="url(#chk-ah)"/>
-                {/* down into the outcome */}
-                <path pathLength="1" className="sk-draw sk-s5 p-samber" d="M305 590 V630" fill="none" strokeWidth="2.5" markerEnd="url(#chk-ah)"/>
-
-                {/* ══ THE SEVENTH ══ */}
-                <g className="sk-fade sk-s6">
-                  <rect x="80" y="636" width="1460" height="118" rx="10" fill="url(#chk-amber)" className="p-samber" strokeWidth="1.2" strokeOpacity=".5"/>
-                  <text x="106" y="674" className="p-amber" fontSize="15" letterSpacing="2.4" fontWeight="600">07 · GROWTH &amp; STRATEGIC</text>
-                  <text x="1514" y="674" textAnchor="end" className="p-amber" fontFamily="var(--do-font-heading)" fontSize="15" fontWeight="700">4 questions</text>
-                  <text x="106" y="712" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">The section you cannot answer until the other six are done</text>
-                  <text x="106" y="740" className="p-mono" fontSize="16" opacity=".62">Grow 20% next year, what would have to change? The first six tell you. Guessing does not.</text>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a983" data-od-id="hero-art" data-motion data-no="DO-ART-983" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-983. The operational audit checklist on a clipboard over a graded photograph of an embroidery floor, part-worked as an example. Backups automated and tested quarterly: yes. Paying for licences no longer used: yes. Orders re-keyed from the website into the ERP: yes. Cost per order including labour, materials and overhead: can't answer, marked in amber. What the slowest process is and why: can't answer, in amber. A note pinned beside it: the ones you can't answer are where the cost is.">
+  <div class="d17-ph"><img src="/images/d17/resources/hero-workshop-23d6be.jpg" alt="" width="900" height="842"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Audit checklist</span><span>Example, part-worked</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="clip m-drop" style="animation-delay:.05s"><i></i></div>
+    <div class="d17-doc doc-k m-drop" style="animation-delay:.05s">
+      <span class="ref">Operational audit · checklist</span>
+      <h4>Answer honestly. No scoring.</h4>
+      <p class="phase">IT infrastructure &amp; security</p>
+      <ul class="tl">
+        <li class="m-fade" style="animation-delay:.5s"><i class="y"></i>Are backups automated, and tested quarterly?</li>
+        <li class="m-fade" style="animation-delay:.65s"><i class="y"></i>Paying for licences you no longer use?</li>
+      </ul>
+      <p class="phase">eCommerce &amp; digital sales</p>
+      <ul class="tl">
+        <li class="m-fade" style="animation-delay:.8s"><i class="y"></i>Do you re-key website orders into your ERP?</li>
+      </ul>
+      <p class="phase">Costs &amp; financial</p>
+      <ul class="tl">
+        <li class="h m-fade" style="animation-delay:1s"><i class="q"></i>Your actual cost per order, all in?</li>
+      </ul>
+      <p class="phase">Processes &amp; operations</p>
+      <ul class="tl">
+        <li class="h m-fade" style="animation-delay:1.15s"><i class="q"></i>Which process takes longest, and why?</li>
+      </ul>
+    </div>
+    <div class="note-y m-pop" style="animation-delay:1.4s">The ones you can't answer <b>are where the cost is.</b></div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Seven areas. <em>The gaps are the point.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-983 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -292,6 +242,63 @@ export default function ChecklistPage() {
             </div>
           </div>
 
+          {/* D17 inline artwork DO-ART-984 */}
+          <section className="g-navy">
+            <div className="wrap">
+              <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a984" data-od-id="plate-structure" data-motion data-no="DO-ART-984" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-984, the audit structure. Six areas you can check today: IT infrastructure and security, six questions; systems and software, five; eCommerce and digital sales, five; processes and operations, six; inventory and stock, five; costs and financial, five. All six feed the seventh, in amber: growth and strategic, four questions that only the first six can answer.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sw-cap">
+    <p class="k d17-mono">Audit structure <span>· seven areas</span></p>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Six you can check today. The seventh, only the checking answers.</h3>
+    <p>Work the six in any order. Growth is last on purpose: you can't plan it until you know what the first six say.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-984 · Rev 01</span>
+  </div>
+  <div class="dw" aria-hidden="true">
+    <svg class="q v-wide" viewBox="0 0 760 420">
+      <g class="m-fade">
+        <rect class="bx" x="0" y="10" width="116" height="118" rx="8"/><text class="t-m" x="12" y="36">01</text><text class="t" x="12" y="66">IT &amp;</text><text class="t" x="12" y="88">security</text><text class="t-d" x="12" y="114">6 questions</text>
+        <rect class="bx" x="128" y="10" width="116" height="118" rx="8"/><text class="t-m" x="140" y="36">02</text><text class="t" x="140" y="66">Systems &amp;</text><text class="t" x="140" y="88">software</text><text class="t-d" x="140" y="114">5 questions</text>
+        <rect class="bx" x="256" y="10" width="116" height="118" rx="8"/><text class="t-m" x="268" y="36">03</text><text class="t" x="268" y="66">eCommerce</text><text class="t" x="268" y="88">&amp; digital</text><text class="t-d" x="268" y="114">5 questions</text>
+        <rect class="bx" x="384" y="10" width="116" height="118" rx="8"/><text class="t-m" x="396" y="36">04</text><text class="t" x="396" y="66">Processes &amp;</text><text class="t" x="396" y="88">operations</text><text class="t-d" x="396" y="114">6 questions</text>
+        <rect class="bx" x="512" y="10" width="116" height="118" rx="8"/><text class="t-m" x="524" y="36">05</text><text class="t" x="524" y="66">Inventory</text><text class="t" x="524" y="88">&amp; stock</text><text class="t-d" x="524" y="114">5 questions</text>
+        <rect class="bx" x="640" y="10" width="116" height="118" rx="8"/><text class="t-m" x="652" y="36">06</text><text class="t" x="652" y="66">Costs &amp;</text><text class="t" x="652" y="88">financial</text><text class="t-d" x="652" y="114">5 questions</text>
+      </g>
+      <path class="ln m-draw" pathLength="1" d="M58 128 V190 H698 V128 M186 128 V190 M314 128 V190 M442 128 V190 M570 128 V190"/>
+      <path class="ln m-draw" pathLength="1" d="M378 190 V262" marker-end="url(#ah984)"/>
+      <text class="t-m" x="392" y="232">Only once these are answered</text>
+      <g class="m-pop" style="animation-delay:1.6s">
+        <rect class="bx-a" x="198" y="270" width="360" height="130" rx="10"/>
+        <text class="t-m t-a" x="222" y="302">07 · Last on purpose</text>
+        <text class="t-h" x="222" y="340">Growth &amp; strategic</text>
+        <text class="t-d" x="222" y="376">4 questions only the first six can answer</text>
+      </g>
+      <defs><marker id="ah984" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
+    </svg>
+    <svg class="q v-tall" viewBox="0 0 340 560">
+      <g>
+        <rect class="bx" x="0" y="0" width="164" height="86" rx="8"/><text class="t-m" x="12" y="24">01</text><text class="t" x="12" y="50">IT &amp; security</text><text class="t-d" x="12" y="74">6 questions</text>
+        <rect class="bx" x="176" y="0" width="164" height="86" rx="8"/><text class="t-m" x="188" y="24">02</text><text class="t" x="188" y="50">Systems</text><text class="t-d" x="188" y="74">5 questions</text>
+        <rect class="bx" x="0" y="98" width="164" height="86" rx="8"/><text class="t-m" x="12" y="122">03</text><text class="t" x="12" y="148">eCommerce</text><text class="t-d" x="12" y="172">5 questions</text>
+        <rect class="bx" x="176" y="98" width="164" height="86" rx="8"/><text class="t-m" x="188" y="122">04</text><text class="t" x="188" y="148">Processes</text><text class="t-d" x="188" y="172">6 questions</text>
+        <rect class="bx" x="0" y="196" width="164" height="86" rx="8"/><text class="t-m" x="12" y="220">05</text><text class="t" x="12" y="246">Inventory</text><text class="t-d" x="12" y="270">5 questions</text>
+        <rect class="bx" x="176" y="196" width="164" height="86" rx="8"/><text class="t-m" x="188" y="220">06</text><text class="t" x="188" y="246">Costs</text><text class="t-d" x="188" y="270">5 questions</text>
+      </g>
+      <path class="ln" d="M82 282 V316 H258 V282 M170 316 V372" marker-end="url(#ah984t)"/>
+      <text class="t-m" x="182" y="348">Then</text>
+      <rect class="bx-a" x="0" y="380" width="340" height="130" rx="10"/>
+      <text class="t-m t-a" x="18" y="412">07 · Last on purpose</text>
+      <text class="t-h" x="18" y="450">Growth &amp; strategic</text>
+      <text class="t-d" x="18" y="484">Only the first six can answer it</text>
+      <defs><marker id="ah984t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
+    </svg>
+  </div>
+</figure>` }} />
+            </div>
+          </section>
+
           {/* CTA */}
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>
             <h3>Once you've worked through this checklist...</h3>
@@ -311,6 +318,7 @@ export default function ChecklistPage() {
 
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }
