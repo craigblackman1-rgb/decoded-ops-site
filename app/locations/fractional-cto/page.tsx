@@ -5,6 +5,9 @@ import { BOOKING_URL } from '@/lib/constants';
 import { locations } from '@/data/locations';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
   title: 'Hire a Fractional CTO: Decoded Ops, Print & Decoration Specialists',
@@ -54,6 +57,7 @@ const locationSchema = {
 export default function FractionalCTOLocationsHub() {
   return (
     <>
+      <D17Motion />
       <JsonLd data={locationSchema} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://decodedops.co.uk/' },

@@ -26,6 +26,10 @@ export interface LocationPageProps {
   cta: string;
   serviceUrl: string;
   serviceLabel: string;
+  heroArtHtml?: string;
+  coverageMapHtml?: string;
+  stepsArtHtml?: string;
+  trustLine?: string;
 }
 
 export function LocationPage({
@@ -46,6 +50,10 @@ export function LocationPage({
   cta,
   serviceUrl,
   serviceLabel,
+  heroArtHtml,
+  coverageMapHtml,
+  stepsArtHtml,
+  trustLine,
 }: LocationPageProps) {
   const parts = tagline.split('||');
 
@@ -83,11 +91,15 @@ export function LocationPage({
               </div>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
-                <SystemsDisconnectedGraphic connected variant="light" />
+            {heroArtHtml ? (
+              <div dangerouslySetInnerHTML={{ __html: heroArtHtml }} />
+            ) : (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '100%', borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', boxShadow: 'var(--do-shadow-lg)' }}>
+                  <SystemsDisconnectedGraphic connected variant="light" />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -139,6 +151,9 @@ export function LocationPage({
               )}
             </div>
           </div>
+          {coverageMapHtml && (
+            <div dangerouslySetInnerHTML={{ __html: coverageMapHtml }} />
+          )}
         </div>
       </section>
 
@@ -205,7 +220,7 @@ export function LocationPage({
                     'No vendor relationships or commission',
                     'Worked at every level, warehouse floor to boardroom',
                     '3× Clarity Guarantee on audit work',
-                    'Based in the South East, on-site across Sussex and Surrey',
+                    trustLine || 'Based in the South East, on-site across Sussex and Surrey',
                   ].map((item) => (
                     <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72 }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--do-cerulean)', marginTop: 7, flexShrink: 0 }} />
@@ -223,6 +238,9 @@ export function LocationPage({
               </div>
             </div>
           </div>
+          {stepsArtHtml && (
+            <div dangerouslySetInnerHTML={{ __html: stepsArtHtml }} />
+          )}
         </div>
       </section>
 

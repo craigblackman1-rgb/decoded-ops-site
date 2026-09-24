@@ -4,6 +4,9 @@ import { ArrowRight, MapPin } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { locations } from '@/data/locations';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
   title: 'Technology Audit for Sussex & Surrey SMEs: Decoded Ops',
@@ -30,6 +33,7 @@ const counties = ['West Sussex', 'East Sussex', 'Surrey', 'Greater London', 'Gre
 export default function TechAuditLocationsHub() {
   return (
     <>
+      <D17Motion />
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://decodedops.co.uk/' },
         { name: 'Tech Audit Locations', url: 'https://decodedops.co.uk/locations/tech-audit' },

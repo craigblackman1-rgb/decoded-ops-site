@@ -19,7 +19,7 @@ export const locations: LocationData[] = [
     localContext:
       'Chichester has a strong base of independent retailers, heritage tourism businesses, and professional services firms spread across the city and surrounding villages. Many are owner-managed businesses turning over £1m–£5m that have grown into technology they no longer fully control, systems that worked at smaller scale but now create daily friction they can\'t quite see the source of.',
     driveTime: 'Around 30–45 minutes',
-    localFact: 'Rolls-Royce Motor Cars\' global headquarters and only manufacturing plant sits at Goodwood, on Chichester\'s eastern edge, around 2,500 people work there.',
+    localFact: 'The global headquarters and manufacturing plant of a luxury automotive manufacturer sits at Goodwood, on Chichester\'s eastern edge, around 2,500 people work there.',
     nearbyAreas: ['Bognor Regis', 'Midhurst', 'Petworth', 'Goodwood'],
     businessSectors: ['Heritage tourism', 'Agriculture and food production', 'Independent retail', 'Marine services'],
     regionalChallenge: 'Chichester\'s economy spans coastal hospitality, rural agriculture, and a luxury automotive cluster at Goodwood — three sectors that rarely share systems, creating fragmented operational infrastructure across the wider district.',
@@ -31,7 +31,7 @@ export const locations: LocationData[] = [
     localContext:
       'Worthing has seen a wave of e-commerce businesses start locally and scale nationally, particularly in home goods, clothing, and niche retail. That transition from local to national brings a specific set of technology challenges: stock visibility, fulfilment integration, and customer data sitting in three or four different places with no single source of truth.',
     driveTime: 'This is where I\'m based',
-    localFact: 'Home to the Worthing Creative & Digital Hub and established digital agency Fresh Egg, part of the wider "Silicon Beach" tech corridor spilling out from Brighton.',
+    localFact: 'Home to the Worthing Creative & Digital Hub and a cluster of established digital agencies, part of the wider "Silicon Beach" tech corridor spilling out from Brighton.',
     nearbyAreas: ['Shoreham-by-Sea', 'Littlehampton', 'Lancing', 'Steyning'],
     businessSectors: ['E-commerce', 'Digital and creative agencies', 'Financial services', 'Healthcare'],
     regionalChallenge: 'Worthing sits at the centre of a growing digital corridor between Brighton and Chichester, but the businesses that drive it — e-commerce, agencies, professional services — often scale their tech independently, creating duplicated systems across the town.',
@@ -43,7 +43,7 @@ export const locations: LocationData[] = [
     localContext:
       'Horsham sits at the centre of a prosperous commuter belt, with a business base that mixes professional services, trade businesses, and light industrial operations. Many firms here are profitable and growing, but running on operational infrastructure that hasn\'t kept pace with their ambitions, and making technology decisions without anyone senior enough to make them well.',
     driveTime: 'Under 30 minutes',
-    localFact: 'The former Novartis pharmaceutical site on Wimblehurst Road, in continuous operation for 75 years until 2014, is being redeveloped into a life-sciences science park.',
+    localFact: 'The former pharmaceutical site on Wimblehurst Road, in continuous operation for 75 years until 2014, is being redeveloped into a life-sciences science park.',
     nearbyAreas: ['Billingshurst', 'Henfield', 'Southwater', 'Steyning'],
     businessSectors: ['Pharmaceutical and life sciences', 'Professional services', 'Trade and construction', 'Agriculture'],
     regionalChallenge: 'Horsham\'s business community mixes established professional firms with trade and light industrial operations — sectors with very different technology maturity levels, making it harder to find shared solutions or benchmarks.',
@@ -67,7 +67,7 @@ export const locations: LocationData[] = [
     localContext:
       'Bognor Regis has a mix of hospitality, retail, and light manufacturing businesses, many of which are owner-operated and have grown organically over many years. The systems challenge here is usually the same: the tools that got the business to its current size are now the main obstacle to going further, and no one inside the business has the time or the perspective to redesign them.',
     driveTime: 'Under 30 minutes',
-    localFact: 'Butlin\'s flagship post-war holiday camp opened here in 1960, continuing a brand presence in the town dating back to 1932.',
+    localFact: 'A flagship post-war holiday camp opened here in 1960, continuing a brand presence in the town dating back to 1932.',
     nearbyAreas: ['Chichester', 'Littlehampton', 'Felpham', 'Aldwick'],
     businessSectors: ['Hospitality and leisure', 'Light manufacturing', 'Retail', 'Marine and boat services'],
     regionalChallenge: 'Bognor\'s hospitality-heavy economy means seasonal revenue swings that stress operational systems — the same technology that handles January volumes breaks under August demand, and nobody invested in scalability because the off-season felt safe.',
@@ -79,7 +79,7 @@ export const locations: LocationData[] = [
     localContext:
       'Littlehampton\'s business base spans trade services, coastal hospitality, retail, and some light manufacturing. Growth tends to create operational complexity faster than businesses can adapt, and technology often becomes the bottleneck before owners realise what\'s happening. By the time it\'s visible, it\'s already costing more than it needs to.',
     driveTime: 'Under 30 minutes',
-    localFact: 'The Body Shop\'s historic Watersmead campus was based here for decades before the company relocated its HQ to Brighton in 2024.',
+    localFact: 'A major cosmetics company\'s historic campus was based here for decades before the company relocated its HQ to Brighton in 2024.',
     nearbyAreas: ['Bognor Regis', 'Rustington', 'Arundel', 'East Preston'],
     businessSectors: ['Trade services', 'Coastal hospitality', 'Retail', 'Light manufacturing'],
     regionalChallenge: 'Littlehampton\'s mix of trade businesses and coastal hospitality creates a two-speed economy — trades need year-round operational efficiency while hospitality businesses wrestle with seasonal scaling, and neither sector has internal technology resource.',
@@ -103,7 +103,7 @@ export const locations: LocationData[] = [
     localContext:
       'Burgess Hill has a substantial light industrial and trade business base alongside retail and professional services. Operational efficiency is a constant priority for these businesses, and the technology gap between what they\'re running and what\'s available is often wider than owners realise until someone external maps it out clearly.',
     driveTime: 'Under 30 minutes',
-    localFact: 'The second-largest employment area in the Gatwick Diamond, around 300 companies and 8,000 jobs across four business parks, including Roche\'s UK HQ.',
+    localFact: 'The second-largest employment area in the Gatwick Diamond, around 300 companies and 8,000 jobs across four business parks, including a major pharmaceutical company\'s UK HQ.',
     nearbyAreas: ['Haywards Heath', 'Hassocks', 'Hurstpierpoint', 'Ditchling'],
     businessSectors: ['Light industrial', 'Pharmaceutical', 'Trade and construction', 'Technology'],
     regionalChallenge: 'Burgess Hill sits in the Gatwick Diamond between two larger employment centres, which means businesses here compete for talent and customers while running lean operations — the technology overhead hits harder when margins are already tight.',
@@ -128,7 +128,7 @@ export const locations: LocationData[] = [
     localContext:
       'Brighton has one of the most diverse and fast-moving business communities in the South East, from tech startups to creative agencies, independent retailers to e-commerce operations shipping nationally. Growth here tends to be fast, which means technology decisions get made quickly and often in the wrong order. The cost of that shows up later.',
     driveTime: 'Around 30–45 minutes (A27 corridor can run slower at peak times)',
-    localFact: 'American Express\'s European services HQ is one of the city\'s largest private-sector employers, part of the "Silicon Beach" cluster of over 1,500 tech and creative businesses.',
+    localFact: 'A major financial services company\'s European services HQ is one of the city\'s largest private-sector employers, part of the "Silicon Beach" cluster of over 1,500 tech and creative businesses.',
     nearbyAreas: ['Hove', 'Lewes', 'Portslade', 'Rottingdean'],
     businessSectors: ['Tech startups', 'Creative and digital agencies', 'E-commerce', 'Hospitality and nightlife'],
     regionalChallenge: 'Brighton\'s Silicon Beach cluster means tech-literate businesses surrounded by tech-challenged ones — the gap between what the startups assume and what the independent retailers actually run is wider than the city\'s geography suggests.',
@@ -176,7 +176,7 @@ export const locations: LocationData[] = [
     localContext:
       'Lewes has a strong independent business culture, retail, professional services, some manufacturing, with businesses that are deeply local but increasingly reaching customers further afield. Managing that transition without breaking your operations requires a clear picture of what your systems can actually support, and what they can\'t.',
     driveTime: 'Around 30–45 minutes',
-    localFact: 'County town of East Sussex and home to Harvey\'s Brewery, founded in 1790 and still family-owned, the oldest independent brewery in Sussex.',
+    localFact: 'County town of East Sussex and home to an independent brewery, founded in 1790 and still family-owned, the oldest independent brewery in Sussex.',
     nearbyAreas: ['Brighton', 'Uckfield', 'Newhaven', 'Peacehaven'],
     businessSectors: ['Independent retail', 'Food and drink production', 'Professional services', 'Artisan manufacturing'],
     regionalChallenge: 'Lewes\' independent business culture means businesses are proud of doing things their own way — which is a strength until it becomes the reason they\'re running bespoke systems that nobody else understands and nobody can maintain.',
@@ -200,7 +200,7 @@ export const locations: LocationData[] = [
     localContext:
       'Bexhill has a retail-heavy town centre, some light manufacturing, and a growing hospitality offer. Many businesses here are owner-managed with lean teams, which means every hour of manual administration and every system failure hits harder than it would in a larger organisation with more people to absorb the fallout.',
     driveTime: 'Around 45–60 minutes',
-    localFact: 'Hastings Direct, one of the UK\'s largest motor insurers, is headquartered here at Conquest House, not in Hastings itself.',
+    localFact: 'One of the UK\'s largest motor insurers is headquartered here, serving customers nationwide.',
     nearbyAreas: ['Hastings', 'Eastbourne', 'Battle', 'Pevensey'],
     businessSectors: ['Insurance', 'Retail', 'Light manufacturing', 'Hospitality'],
     regionalChallenge: 'Bexhill hosts a major insurance employer alongside small independent businesses — two scales of operation with completely different technology needs, but the town\'s infrastructure and support networks tend to serve only one of them.',
@@ -237,7 +237,7 @@ export const locations: LocationData[] = [
     localContext:
       'Guildford is one of the South East\'s major commercial centres, professional services, retail, technology businesses, and a large university-linked ecosystem. The range of business types is broad, but the operational technology challenges follow familiar patterns: systems that don\'t integrate, data that lives in the wrong place, and decisions being made without the information needed to make them well.',
     driveTime: 'Around 45–60 minutes',
-    localFact: 'Known as the "Hollywood of Video Games", over 50 games studios and 3,000+ programmers, a cluster dating back to Bullfrog Productions in the 1980s.',
+    localFact: 'Known as the "Hollywood of Video Games", over 50 games studios and 3,000+ programmers, a cluster dating back to the 1980s.',
     nearbyAreas: ['Godalming', 'Woking', 'Farnham', 'Ripley'],
     businessSectors: ['Technology and gaming', 'Professional services', 'Retail', 'University and research'],
     regionalChallenge: 'Guildford\'s games cluster and university ecosystem create a tech-savvy environment that can make traditional businesses feel behind — the gap between what the tech sector assumes everyone can do and what the average SME actually runs is particularly visible here.',
@@ -249,7 +249,7 @@ export const locations: LocationData[] = [
     localContext:
       'Woking has a strong commercial centre with a mix of professional services, retail, and corporate offices. Businesses here tend to be growth-oriented and well-resourced, but operational infrastructure often lags behind commercial ambition, particularly where technology is concerned. The cost of that gap is real, even if it\'s not yet visible on a spreadsheet.',
     driveTime: 'Around 60–90 minutes',
-    localFact: 'The McLaren Technology Centre, HQ of the McLaren Group, occupies a 50-hectare site here, opened by the Queen in 2004.',
+    localFact: 'A major motorsport and technology company\'s headquarters occupies a 50-hectare site here, opened in 2004.',
     nearbyAreas: ['Guildford', 'Byfleet', 'West Byfleet', 'Old Woking'],
     businessSectors: ['Corporate offices', 'Professional services', 'Motorsport and engineering', 'Retail'],
     regionalChallenge: 'Woking\'s corporate-heavy economy means businesses operate at a scale where operational inefficiency costs real money — but the technology decisions are often made by finance or operations people without the technical depth to evaluate what they\'re buying.',
@@ -321,7 +321,7 @@ export const locations: LocationData[] = [
     localContext:
       'Leatherhead has a notable concentration of professional services, pharmaceutical, and technology-adjacent businesses. Operational complexity here tends to be higher than the average SME town, which means the cost of poor systems is also higher, and the upside from addressing them is significant.',
     driveTime: 'Around 45–60 minutes',
-    localFact: 'Unilever\'s UK headquarters sits at Leatherhead Office Park, alongside multinational occupiers including ExxonMobil and CGI.',
+    localFact: 'Major multinational companies sit at Leatherhead Office Park, a well-established business campus.',
     nearbyAreas: ['Epsom', 'Dorking', 'Ashtead', 'Bookham'],
     businessSectors: ['Pharmaceutical', 'Professional services', 'FMCG and consumer goods', 'Technology'],
     regionalChallenge: 'Leatherhead\'s multinational corporate presence sits alongside SME-scale businesses — two completely different operational scales sharing the same town, with the SMEs often trying to match the systems sophistication of their larger neighbours.',
