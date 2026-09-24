@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { ProblemPageDS } from '@/components/ProblemPageDS';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { SystemsDontTalkSchematic } from '@/components/schematics/problems/SystemsDontTalkSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'When Your Systems Don\'t Talk to Each Other: Decoded Ops',
@@ -55,6 +56,82 @@ const systemsDontTalkSchema = {
  ],
 };
 
+const heroArt976 = `<figure class="d17 sx px a976" data-od-id="hero-evidence" data-motion data-no="DO-ART-976" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-976. Five systems drawn as islands: order management, accounts, artwork, despatch, and the website. Bridges between them are people, manually typing the same data into two systems. No system knows what the others are doing.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Systems don't talk</span><span>Five islands, zero bridges</span></div>
+  <svg class="q" viewBox="0 0 560 420" aria-hidden="true">
+    <text class="t-m" x="26" y="44" style="font-size:15px">Five systems, zero integration</text>
+    <path class="ln-d" d="M140 160 V200"/>
+    <path class="ln-d" d="M280 160 V200"/>
+    <path class="ln-d" d="M420 160 V200"/>
+    <path class="ln-d" d="M210 310 V280"/>
+    <path class="ln-d" d="M350 310 V280"/>
+    <g class="m-rise" style="animation-delay:0.10s"><rect class="bx" x="60" y="106" width="160" height="54" rx="10"/><text class="t" x="140" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Orders</text></g>
+    <g class="m-rise" style="animation-delay:0.18s"><rect class="bx" x="200" y="106" width="160" height="54" rx="10"/><text class="t" x="280" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Accounts</text></g>
+    <g class="m-rise" style="animation-delay:0.26s"><rect class="bx" x="340" y="106" width="160" height="54" rx="10"/><text class="t" x="420" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Artwork</text></g>
+    <g class="m-rise" style="animation-delay:0.34s"><rect class="bx" x="130" y="310" width="160" height="54" rx="10"/><text class="t" x="210" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Despatch</text></g>
+    <g class="m-rise" style="animation-delay:0.42s"><rect class="bx" x="270" y="310" width="160" height="54" rx="10"/><text class="t" x="350" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Website</text></g>
+    <g class="m-pop" style="animation-delay:1.0s">
+      <rect class="bx-x2" x="160" y="200" width="240" height="80" rx="12"/>
+      <text class="t-h" x="280" y="236" text-anchor="middle" style="font-size:20px">The bridges</text>
+      <text class="t-d" x="280" y="264" text-anchor="middle" style="font-size:16px">are people</text>
+    </g>
+    <g class="m-pop" style="animation-delay:1.3s">
+      <text class="t-a" x="80" y="230" style="font-size:28px">👤</text>
+      <text class="t-a" x="260" y="190" style="font-size:28px">👤</text>
+      <text class="t-a" x="440" y="230" style="font-size:28px">👤</text>
+    </g>
+    <text class="t-d" x="26" y="404" style="font-size:15px">Each island knows only what it is told. <tspan class="t-a">Nobody sees the whole picture.</tspan></text>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Five systems. <em>None of them know what the others are doing.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-976 · Rev 01</span>
+  </div>
+</figure>`;
+
+const inlineArt918 = `<figure class="d17 sw sw-doc a918" data-od-id="plate-ledger" data-motion data-no="DO-ART-918" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-918, an evidence ledger. A table showing six systems, when they were bought, what they connect to, and what they don't. Most rows show no integration. The cost column adds up to a number nobody has ever added up before.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Systems don't talk</span><span>The evidence ledger</span></div>
+  <svg class="q" viewBox="0 0 560 420" aria-hidden="true">
+    <text class="t-m" x="26" y="44" style="font-size:15px">What it's actually costing you</text>
+    <g class="m-rise" style="animation-delay:0.10s">
+      <rect class="bx" x="30" y="70" width="500" height="320" rx="8" fill="none" stroke="#8ECAE6" stroke-width="1.6"/>
+      <text class="t-h" x="280" y="100" text-anchor="middle" style="font-size:18px">System integration audit</text>
+      <line x1="30" y1="112" x2="530" y2="112" stroke="#8ECAE6" stroke-opacity=".3" stroke-width="1"/>
+      <text class="t-m" x="50" y="136" style="font-size:14px">System</text>
+      <text class="t-m" x="200" y="136" style="font-size:14px">Bought</text>
+      <text class="t-m" x="320" y="136" style="font-size:14px">Connects to</text>
+      <line x1="30" y1="146" x2="530" y2="146" stroke="#8ECAE6" stroke-opacity=".3" stroke-width="1"/>
+      <text class="t" x="50" y="172" style="font-size:16px">Order management</text>
+      <text class="t-d" x="200" y="172" style="font-size:14px">2019</text>
+      <text class="t-a" x="320" y="172" style="font-size:14px">Nothing</text>
+      <text class="t" x="50" y="204" style="font-size:16px">Accounts</text>
+      <text class="t-d" x="200" y="204" style="font-size:14px">2017</text>
+      <text class="t-a" x="320" y="204" style="font-size:14px">Orders (manual)</text>
+      <text class="t" x="50" y="236" style="font-size:16px">Artwork</text>
+      <text class="t-d" x="200" y="236" style="font-size:14px">2021</text>
+      <text class="t-a" x="320" y="236" style="font-size:14px">Nothing</text>
+      <text class="t" x="50" y="268" style="font-size:16px">Despatch</text>
+      <text class="t-d" x="200" y="268" style="font-size:14px">2020</text>
+      <text class="t-a" x="320" y="268" style="font-size:14px">Orders (email)</text>
+      <text class="t" x="50" y="300" style="font-size:16px">Website</text>
+      <text class="t-d" x="200" y="300" style="font-size:14px">2022</text>
+      <text class="t-a" x="320" y="300" style="font-size:14px">Nothing</text>
+      <line x1="30" y1="316" x2="530" y2="316" stroke="#8ECAE6" stroke-opacity=".3" stroke-width="1"/>
+      <text class="t-h t-a" x="50" y="348" style="font-size:16px">Total hidden cost</text>
+      <text class="t-h t-a" x="320" y="348" style="font-size:16px">Nobody has added it up</text>
+    </g>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">The cost was always there. <em>Nobody had added it up.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  </div>
+</figure>`;
+
 export default function SystemsDontTalkPage() {
  return (
   <>
@@ -64,6 +141,8 @@ export default function SystemsDontTalkPage() {
    headline="You have five systems. ||None of them know what the others are doing.||"
    intro="Most decoration and print businesses run four to seven separate systems. Order management, accounts, artwork, the website, despatch. Each one is an island. The only bridges between them are people typing the same data in again, spreadsheets, and emails."
    heroGraphic={<SystemsDontTalkSchematic />}
+   heroArt={heroArt976}
+   inlineArt={inlineArt918}
    symptoms={[
     "You type the same data into more than one system",
     "You can't see the whole order without checking three different places",
@@ -89,27 +168,7 @@ export default function SystemsDontTalkPage() {
    relatedResources={problemRouting['systems-dont-talk'].relatedResources}
    video={problemVideos['systems-dont-talk']}
   />
-   {/* ── PLATE · DO-ART-410 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
-    <div className="wrap">
-      <Plate tone="dark" no="DO-ART-410" title="Siloed → connected systems" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Six systems, zero integration',
-          'Same data entered three times',
-          'Nobody trusts any one system fully',
-          'Manual reconciliation weekly',
-        ]}
-        after={[
-          'Connected architecture, one data layer',
-          'Enter once, available everywhere',
-          'Single source of truth, everyone trusts it',
-          'Real-time, no reconciliation needed',
-        ]}
-       />
-      </Plate>
-    </div>
-   </section>
+   <D17Motion />
   </>
  );
 }

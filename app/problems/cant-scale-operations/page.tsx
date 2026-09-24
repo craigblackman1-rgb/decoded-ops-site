@@ -4,8 +4,9 @@ import { CantScaleSchematic } from '@/components/schematics/problems/CantScaleSc
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
@@ -81,7 +82,7 @@ const cantScaleSchema = {
     {
      '@type': 'Question',
      name: 'Why does scaling a small business feel harder than growing it?',
-     acceptedAnswer: { '@type': 'Answer', text: 'Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at £500k becomes a bottleneck at £1m. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it, not after.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Because growth adds volume to systems and processes that were designed for a smaller operation. Every workaround, manual step, and undocumented process that was manageable at a smaller scale becomes a bottleneck as you grow. Scaling operations in a small business requires rebuilding the operational infrastructure before the volume overwhelms it, not after.' },
     },
     {
      '@type': 'Question',
@@ -105,6 +106,75 @@ const scalingSteps = [
  { label: 'Foundation', sub: 'Built right' },
 ];
 
+const heroArt963 = `<figure class="d17 sx px a963" data-od-id="hero-evidence" data-motion data-no="DO-ART-963" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-963. Five stations on one line, order in, artwork, production, despatch and invoice. Above each, a stack of jobs waiting. A dashed rule marks what the process was built for. Production, where everything flows through one or two people, has the tallest stack and spills over the rule in amber. More orders, same process: the queue lands on one or two people.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Can't scale</span><span>Volume is where the cracks show</span></div>
+  <svg class="q" viewBox="0 0 560 410" aria-hidden="true">
+    <text class="t-m" x="26" y="44" style="font-size:15px">Order in to invoice out</text>
+    <path class="ln-d" d="M20 204 H540"/>
+    <text class="t-d" x="540" y="196" text-anchor="end" style="font-size:15px">what the process was built for</text>
+      <rect class="qb m-rise" style="animation-delay:0.30s" x="36" y="284" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.35s" x="36" y="265" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.40s" x="146" y="284" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.45s" x="146" y="265" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.50s" x="146" y="246" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.55s" x="146" y="227" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.60s" x="256" y="284" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.65s" x="256" y="265" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.70s" x="256" y="246" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.75s" x="256" y="227" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:0.80s" x="256" y="208" width="48" height="16" rx="3"/>
+      <rect class="qb-a m-rise" style="animation-delay:0.85s" x="256" y="189" width="48" height="16" rx="3"/>
+      <rect class="qb-a m-rise" style="animation-delay:0.90s" x="256" y="170" width="48" height="16" rx="3"/>
+      <rect class="qb-a m-rise" style="animation-delay:0.95s" x="256" y="151" width="48" height="16" rx="3"/>
+      <rect class="qb-a m-rise" style="animation-delay:1.00s" x="256" y="132" width="48" height="16" rx="3" transform="rotate(-7 280 140)"/>
+      <rect class="qb m-rise" style="animation-delay:1.05s" x="366" y="284" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.10s" x="366" y="265" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.15s" x="366" y="246" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.20s" x="366" y="227" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.25s" x="366" y="208" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.30s" x="476" y="284" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.35s" x="476" y="265" width="48" height="16" rx="3"/>
+      <rect class="qb m-rise" style="animation-delay:1.40s" x="476" y="246" width="48" height="16" rx="3"/>
+    <path class="ln" d="M40 318 H520" style="stroke-width:4"/>
+    <circle cx="60" cy="318" r="10" class="f-w"/><circle cx="170" cy="318" r="10" class="f-w"/>
+    <circle cx="280" cy="318" r="14" class="f-a"/><circle cx="390" cy="318" r="10" class="f-w"/><circle cx="500" cy="318" r="10" class="f-w"/>
+    <g style="font-size:19px" text-anchor="middle">
+      <text class="t" x="60" y="360">Order in</text><text class="t" x="170" y="360">Artwork</text>
+      <text class="t t-a" x="280" y="360" style="font-weight:700">Production</text>
+      <text class="t" x="390" y="360">Despatch</text><text class="t" x="500" y="360">Invoice</text>
+    </g>
+    <text class="t-d" x="280" y="386" text-anchor="middle" style="font-size:15px">through one or two people</text>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">More orders, same process. <em>The queue lands on one or two people.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-963 · Rev 01</span>
+  </div>
+</figure>`;
+
+const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
+        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="copy">
+    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
+    <h3>Seventeen feeds in. Every item binned.</h3>
+    <ol class="ledger">
+      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
+      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
+      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
+      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
+      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
+    </ol>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  </figcaption>
+  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
+    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
+  </div>
+</figure>`;
+
 export default function CantScaleOperationsPage() {
  return (
   <>
@@ -127,7 +197,7 @@ export default function CantScaleOperationsPage() {
     causes={[
      {
       title: "The informal setup that worked at half the size doesn't scale",
-      body: "When the team was small, everyone knew what was going on. As you grow, that breaks down, but the systems and habits don't change with it. The same processes that worked at £500k a year start failing at £1.5m.",
+       body: "When the team was small, everyone knew what was going on. As you grow, that breaks down, but the systems and habits don't change with it. The same processes that worked at half your current size start failing as the volume grows.",
      },
      {
       title: "Processes aren't written down and belong to individuals, not the business",
@@ -151,28 +221,10 @@ export default function CantScaleOperationsPage() {
    relatedSectors={problemRouting['cant-scale-operations'].relatedSectors}
    relatedResources={problemRouting['cant-scale-operations'].relatedResources}
    video={problemVideos['cant-scale-operations']}
+   heroArt={heroArt963}
+   inlineArt={inlineArt918}
   />
-   {/* ── PLATE · DO-ART-404 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
-    <div className="wrap">
-      <Plate tone="dark" no="DO-ART-404" title="Growth outruns the operation" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Orders processed at the speed of one person',
-          'Production scheduling in your head',
-          'Every decision still goes through you',
-          'Growth feels like punishment',
-        ]}
-        after={[
-          'Documented process scales independently',
-          'SOPs mean anyone can schedule production',
-          'Decisions delegated with a written rulebook',
-          'Growth is absorbable, not overwhelming',
-        ]}
-       />
-      </Plate>
-    </div>
-   </section>
+   <D17Motion />
   </>
  );
 }

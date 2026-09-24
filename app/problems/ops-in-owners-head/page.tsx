@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: "Ops in the owner's head: Decoded Ops",
@@ -89,11 +90,36 @@ export default function OpsInOwnersHeadPage() {
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
      </div>
-     <figure className="evidence">
-      <img src="/images/hero-craft.jpg"
-       alt="Print and decoration samples, the work that only you know how to route, approve and schedule." />
-      <figcaption className="stamp">YOU ARE THE BUSINESS CONTINUITY PLAN</figcaption>
-     </figure>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx px ph-fade a972" data-od-id="hero-evidence" data-motion data-no="DO-ART-972" data-rev="01" data-tx="screen"
+        aria-label="Artwork DO-ART-972. A process register screen over a dimmed photograph of the embroidery floor. Seven processes, enquiry to quote, artwork proofing, the rush-order supplier, embroidery digitising, goods in, despatch and invoicing. Every row has the same owner, the owner, and every row is marked not written. Seven processes, one head to keep them in.">
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="963"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>In the owner's head</span><span>Process register, as it stands</span></div>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Method ›</span> Process register</span><span class="pill">DRAFT</span></div>
+    <div class="win-flat">
+      <h5>Process register</h5>
+      <p class="s">Every process the business runs, and who owns it</p>
+      <table class="tbl">
+        <tr><th>Process</th><th>Owner</th><th>Written down</th></tr>
+        <tr class="m-fade" style="animation-delay:0.15s"><td>Enquiry to quote</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.27s"><td>Artwork proofing</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.39s"><td>Rush-order supplier</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.51s"><td>Embroidery digitising</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.63s"><td>Goods in</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.75s"><td>Despatch</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+        <tr class="m-fade" style="animation-delay:0.87s"><td>Invoicing</td><td class="o"><span>Owner</span></td><td><span class="chip chip--o">Not written</span></td></tr>
+      </table>
+      <div class="win-foot"><b>7 processes</b><span>1 owner · 0 written down</span></div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Seven processes. <em>One head to keep them in.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-972 · Rev 01</span>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -173,25 +199,71 @@ export default function OpsInOwnersHeadPage() {
     </div>
    </section>
 
-   {/* ── PLATE · DO-ART-414 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
+   {/* ── INLINE ARTWORK · DO-ART-718 ──────────────────────────────────── */}
+   <section className="g-navy">
     <div className="wrap">
-     <Plate tone="dark" no="DO-ART-414" title="In your head → on the page" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Artwork proofing: only you know the steps',
-          'Supplier routing: personal relationships',
-          'No written process for anyone to follow',
-          "Business isn't sellable as-is",
-        ]}
-        after={[
-          'Process Register: every workflow named',
-          'SOPs: step-by-step, anyone can follow',
-          'Improvement Log: failures sharpen process',
-          'Business knowledge lives outside one person',
-        ]}
-       />
-     </Plate>
+     <span className="eyebrow">The register, finished · DO-ART-718</span>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+        aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Three layers.</h3>
+    <p>How a business runs, written down so it can be handed over instead of living in one person's head.</p>
+    <ul class="keys">
+      <li><b>01</b><span>Process register</span><small>one page</small></li>
+      <li><b>02</b><span>One-page SOPs</span><small>five sections</small></li>
+      <li><b>03</b><span>Improvement log</span><small>three lines</small></li>
+    </ul>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-718 · Rev 03</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
+      <span class="tab">01</span>
+      <span class="ref">PR-01 · Process register</span>
+      <h4>Every process, one page</h4>
+      <p class="sub">each process has a named owner · reviewed quarterly</p>
+      <table class="reg">
+        <tr><th>Process</th><th>Owner</th><th>SOP</th></tr>
+        <tr><td>Enquiry to quote</td><td>Sales lead</td><td class="s">SOP-01</td></tr>
+        <tr><td>Artwork approval</td><td>Studio manager</td><td class="s">SOP-02</td></tr>
+        <tr><td>Goods in</td><td>Warehouse lead</td><td class="s">SOP-03</td></tr>
+        <tr><td>Production planning</td><td>Production manager</td><td class="s">SOP-04</td></tr>
+        <tr><td>Embroidery run</td><td>Production supervisor</td><td class="s">SOP-05</td></tr>
+        <tr><td>Despatch</td><td>Despatch lead</td><td class="s">SOP-06</td></tr>
+        <tr><td>Invoicing</td><td>Accounts</td><td class="s">SOP-07</td></tr>
+      </table>
+    </div>
+    <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
+      <span class="tab">02</span>
+      <span class="ref">SOP-06 · Despatch</span>
+      <h4>Despatch: pack and ship</h4>
+      <p class="sub">Owner: Despatch lead · one page</p>
+      <p class="h"><i>1</i>Purpose</p>
+      <p class="p">Every order leaves complete, checked and booked the same way.</p>
+      <p class="h"><i>2</i>When it applies</p>
+      <p class="p">Any order marked ready to ship.</p>
+      <p class="h"><i>3</i>Steps</p>
+      <div class="line" style="width:92%"></div><div class="line" style="width:84%"></div><div class="line" style="width:70%"></div>
+      <p class="h"><i>4</i>Checks</p>
+      <div class="line" style="width:80%"></div>
+      <p class="h"><i>5</i>If it goes wrong</p>
+      <p class="p">Log it in the improvement log, three lines.</p>
+    </div>
+    <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
+      <span class="tab">03</span>
+      <span class="ref">IL · Improvement log</span>
+      <h4>Three lines, every time</h4>
+      <div class="e"><div class="d"><b>Despatch</b>SOP-06</div>
+        <div class="t"><span><em>What</em>Second box of a two-box order left behind.</span><span><em>Why</em>No box count on the packing check.</span><span><em>Change</em>Box count added to SOP-06, step 4.</span></div></div>
+      <div class="e"><div class="d"><b>Artwork</b>SOP-02</div>
+        <div class="t"><span><em>What</em>Proof approved on an old version.</span><span><em>Why</em>Versions sent by email.</span><span><em>Change</em>Approval recorded against the version.</span></div></div>
+    </div>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -223,7 +295,8 @@ export default function OpsInOwnersHeadPage() {
       <Link className="btn btn-ghost btn-arrow" href="/deliver">See how Deliver works</Link>
      </div>
     </div>
-   </section>
-  </>
- );
+    </section>
+    <D17Motion />
+   </>
+  );
 }

@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Seasonal peaks: Decoded Ops',
@@ -39,7 +40,7 @@ const seasonalPeaksSchema = {
     {
      '@type': 'Question',
      name: 'How can automation help with seasonal demand spikes?',
-     acceptedAnswer: { '@type': 'Answer', text: 'A person can process forty orders a day. When the seasonal peak demands two hundred, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into the Data App, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Manual processes have a hard ceiling. When the seasonal peak demands far more than the team can handle at normal capacity, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into the Data App, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },
     },
     {
      '@type': 'Question',
@@ -89,11 +90,43 @@ export default function SeasonalPeaksPage() {
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
      </div>
-     <figure className="evidence">
-      <img src="/images/real-example.jpg"
-       alt="Orders being packed for despatch, the volume that spikes by a factor of four depending on the season." />
-      <figcaption className="stamp">SEASONAL, EVERY YEAR. PREDICTABLE, EVERY YEAR.</figcaption>
-     </figure>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx px ph-fade a973" data-od-id="hero-evidence" data-motion data-no="DO-ART-973" data-rev="01" data-tx="screen"
+        aria-label="Artwork DO-ART-973. An order intake chart by month, drawn as a shape without figures, over a dimmed photograph. Teamwear rises from March to June, schoolwear peaks in July to September with August the busiest month, four times February, the quietest, and promotional work climbs in November and December. A dashed line marks what the team can process; every month above it is amber. Staffed for the average, swamped at the peak.">
+  <div class="d17-ph"><img src="/images/d17/problems/cat-awards-70dc2f.jpg" alt="" width="900" height="1200"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Seasonal peaks</span><span>Twelve months, three rhythms</span></div>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Insight ›</span> Order intake</span><span class="pill">12 MONTHS</span></div>
+    <div class="win-flat">
+      <h5>Order intake by month</h5>
+      <p class="s">The shape of the year: the busiest month, four times the quietest</p>
+      <div class="seasons"><span style="grid-column:3 / 7">Teamwear</span><span style="grid-column:7 / 10" class="on">Schoolwear</span><span style="grid-column:11 / 13">Promotional</span></div>
+      <div class="chart">
+          <i class="m-grow" style="--h:30%;animation-delay:0.00s"></i>
+          <i class="m-grow" style="--h:25%;animation-delay:0.05s"></i>
+          <i class="m-grow" style="--h:48%;animation-delay:0.10s"></i>
+          <i class="over m-grow" style="--h:55%;--cap:calc(100% * 50 / 55);animation-delay:0.15s"></i>
+          <i class="over m-grow" style="--h:52%;--cap:calc(100% * 50 / 52);animation-delay:0.20s"></i>
+          <i class="m-grow" style="--h:45%;animation-delay:0.25s"></i>
+          <i class="over m-grow" style="--h:88%;--cap:calc(100% * 50 / 88);animation-delay:0.30s"></i>
+          <i class="over m-grow" style="--h:100%;--cap:calc(100% * 50 / 100);animation-delay:0.35s"></i>
+          <i class="over m-grow" style="--h:70%;--cap:calc(100% * 50 / 70);animation-delay:0.40s"></i>
+          <i class="m-grow" style="--h:38%;animation-delay:0.45s"></i>
+          <i class="over m-grow" style="--h:66%;--cap:calc(100% * 50 / 66);animation-delay:0.50s"></i>
+          <i class="over m-grow" style="--h:60%;--cap:calc(100% * 50 / 60);animation-delay:0.55s"></i>
+        <div class="cap" style="--capH:50%"><span>What the team can process</span></div>
+      </div>
+      <div class="months"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+      <div class="legend"><span style="--c:var(--do-amber)">Above what the team can process</span><span style="--c:color-mix(in srgb, var(--do-cerulean) 55%, var(--do-sky-blue))">Within it</span></div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Staffed for the average. <em>Swamped at the peak.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-973 · Rev 01</span>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -139,9 +172,9 @@ export default function SeasonalPeaksPage() {
       <article className="card cause">
        <span className="n">01</span>
        <h3>Manual processes hit a hard ceiling</h3>
-       <p>A person can process forty orders a day. Sixty on a good day. When the seasonal peak
-        demands two hundred, the person doesn&apos;t get faster, the backlog just grows, and the
-        customer waits longer.</p>
+        <p>Manual processes have a hard ceiling. When the seasonal peak
+         demands far more than the team can process by hand, the backlog just grows, and the
+         customer waits longer.</p>
       </article>
       <article className="card cause">
        <span className="n">02</span>
@@ -183,25 +216,31 @@ export default function SeasonalPeaksPage() {
     </section>
    )}
 
-   {/* ── PLATE · DO-ART-415 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
+   {/* ── INLINE ARTWORK · DO-ART-918 ──────────────────────────────────── */}
+   <section className="g-navy">
     <div className="wrap">
-     <Plate tone="dark" no="DO-ART-415" title="Peak demand breaks manual processes" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          '40 orders/day is the manual ceiling',
-          'Temp staff need constant hand-holding',
-          'Supplier data out of date when it matters',
-          'Staff idle in trough, burnt out in peak',
-        ]}
-        after={[
-          'Automation handles volume spikes',
-          'Documented process = temps productive day one',
-          'Supplier feeds refresh in real time',
-          'Systems flex up/down with demand',
-        ]}
-       />
-     </Plate>
+     <span className="eyebrow">Evidence · DO-ART-918</span>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
+        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="copy">
+    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
+    <h3>Seventeen feeds in. Every item binned.</h3>
+    <ol class="ledger">
+      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
+      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
+      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
+      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
+      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
+    </ol>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  </figcaption>
+  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
+    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -234,7 +273,8 @@ export default function SeasonalPeaksPage() {
       <Link className="btn btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
      </div>
     </div>
-   </section>
-  </>
- );
+    </section>
+    <D17Motion />
+   </>
+  );
 }

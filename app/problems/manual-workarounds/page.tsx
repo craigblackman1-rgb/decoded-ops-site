@@ -4,8 +4,9 @@ import { ManualWorkaroundsSchematic } from '@/components/schematics/problems/Man
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
@@ -65,6 +66,51 @@ const manualWorkaroundsSchema = {
  ],
 };
 
+const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" data-motion data-no="DO-ART-970" data-rev="01" data-tx="poster"
+        aria-label="Journey poster DO-ART-970. One order's route through the business. The email arrives. It is typed into the order system, copied onto the job sheet, the artwork is emailed to the studio, stock is checked by walking the floor, the despatch sheet is written up and the invoice is typed from the job sheet. Four of the seven steps retype the same order. One order, typed in four times.">
+  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-promo.jpg|w=1100|q=78}}" alt="" width="900" height="600"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Manual workarounds</span><span>One order's route</span></div>
+  <div class="print m-drop" style="animation-delay:.2s" aria-hidden="true"><span class="ref">Job sheet · by hand</span><b>Mugs, one-colour print</b><i style="width:92%"></i><i style="width:74%"></i><i style="width:84%"></i></div>
+  <div class="body" aria-hidden="true">
+    <ol class="rt">
+      <li class="m-fade" style="animation-delay:.3s"><div><b>Email arrives</b><small>the order, in an inbox</small></div><em class="k">In</em></li>
+      <li class="m-fade" style="animation-delay:.45s"><div><b>Typed into the order system</b><small>from the email</small></div><em>Re-key</em></li>
+      <li class="m-fade" style="animation-delay:.6s"><div><b>Copied onto the job sheet</b><small>for the floor</small></div><em>Re-key</em></li>
+      <li class="m-fade" style="animation-delay:.75s"><div><b>Artwork emailed to the studio</b><small>as an attachment</small></div><em class="k">By email</em></li>
+      <li class="m-fade" style="animation-delay:.9s"><div><b>Stock checked on the floor</b><small>walk over and look</small></div><em class="k">By hand</em></li>
+      <li class="m-fade" style="animation-delay:1.05s"><div><b>Despatch sheet written up</b><small>from the job sheet</small></div><em>Re-key</em></li>
+      <li class="m-fade" style="animation-delay:1.2s"><div><b>Invoice typed up</b><small>from the despatch sheet</small></div><em>Re-key</em></li>
+    </ol>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">One order. <em>Typed in four times.</em><small>The shadow system is the one doing the work.</small></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-970 · Rev 01</span>
+  </div>
+</figure>`;
+
+const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
+        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
+  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/cat-workwear.jpg|blank=410,262,560,350|w=900|q=84}}" alt="" width="900" height="596"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="copy">
+    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
+    <h3>Seventeen feeds in. Every item binned.</h3>
+    <ol class="ledger">
+      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
+      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
+      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
+      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
+      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
+    </ol>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  </figcaption>
+  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
+    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
+  </div>
+</figure>`;
+
 export default function ManualWorkaroundsPage() {
  return (
   <>
@@ -98,28 +144,10 @@ export default function ManualWorkaroundsPage() {
    relatedSectors={problemRouting['manual-workarounds'].relatedSectors}
    relatedResources={problemRouting['manual-workarounds'].relatedResources}
    video={problemVideos['manual-workarounds']}
+   heroArt={heroArt970}
+   inlineArt={inlineArt918}
   />
-   {/* ── PLATE · DO-ART-407 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
-    <div className="wrap">
-     <Plate tone="dark" no="DO-ART-407" title="Workarounds → documented process" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Export to CSV, import to Excel, re-key to ERP',
-          'Three systems, two manual steps between each',
-          'Workarounds known to one person only',
-          'Every manual step is a failure point',
-        ]}
-        after={[
-          'Automated feeds replace re-keying',
-          'Systems talk directly, no manual bridge',
-          'Process documented, anyone can run it',
-          'Failure points eliminated by automation',
-        ]}
-       />
-     </Plate>
-    </div>
-   </section>
+   <D17Motion />
   </>
  );
 }

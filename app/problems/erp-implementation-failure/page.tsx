@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'ERP Implementation Failure: Why Decorated Goods Projects Fail | Decoded Ops',
@@ -106,39 +107,55 @@ export default function ERPImplementationFailurePage() {
     </div>
    </section>
 
-   {/* PLATE · DO-ART-412 */}
+   {/* ── INLINE ARTWORK · DO-ART-917 ──────────────────────────────────── */}
    <section className="g-navy">
     <div className="wrap">
-      <span className="eyebrow">The pattern &middot; DO-ART-412</span>
-     <h2>What changes when the audit comes first.</h2>
-     <div className="hair" />
-     <p className="lede" style={{ marginTop: 16 }}>
-        The difference between a vendor-scoped implementation and one scoped independently. Same business, same platform, opposite outcomes.
-     </p>
-
-     <div className="plate-scroll">
-      <div className="plate-frame" data-od-id="plate-erp-implementation-failure">
-       <Plate tone="dark" p="eif" title="Vendor-scoped → independently scoped"
-              sub=""
-              no="DO-ART-412" rev="01" cls="DECODED OPS · ISSUED">
-
-         <NowAfterPlate
-          now={[
-            'Platform picked from a demo, not an audit',
-            'Scoped by the vendor, not by the business',
-            'Data quality becomes a crisis at go-live',
-            'Budget signed off before the floor was seen',
-          ]}
-          after={[
-            'Independent audit before the shortlist',
-            'Scoped for how the floor actually works',
-            'Data quality fixed before go-live, not after',
-            'Budget set against a real scope, not a demo',
-          ]}
-         />
-       </Plate>
+     <span className="eyebrow">Evidence · DO-ART-917</span>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 a917" data-od-id="plate-measure" data-motion data-no="DO-ART-917" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1300" height="867"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="cap">
+    <div class="k d17-mono">The Data App <span>· at Hanicks</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Forty suppliers. One catalogue.</h3>
+    <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
+    <div class="live d17-mono">Live system, September 2026</div>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-917 · Rev 01</span>
+  </figcaption>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Catalogue ›</span> Overview</span><span class="pill">HANICKS</span></div>
+    <div class="win-body">
+      <nav class="win-nav"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>Fulfil</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Setup</span></nav>
+      <div class="win-main">
+        <h5>Catalogue overview</h5>
+        <p class="s">Every supplier feed, brought into one catalogue</p>
+        <div class="kpis">
+          <div class="kpi m-rise" style="animation-delay:.1s"><div class="l">Products brought in</div>
+            <p class="n">317,812</p><p class="d">from supplier feeds</p></div>
+          <div class="kpi kpi--hit m-rise" style="animation-delay:.3s"><div class="l">Matched automatically</div>
+            <p class="n">154,518</p><p class="d">to a supplier, before anyone had to touch them</p></div>
+          <div class="kpi m-rise" style="animation-delay:.5s"><div class="l">Active suppliers</div>
+            <p class="n">40</p><p class="d">feeding in</p></div>
+        </div>
+        <div class="meter m-rise" style="animation-delay:.7s"><div class="row"><b>Supplier matching</b><span>154,518 of 317,812</span></div>
+          <div class="track"><div class="fill m-fill" style="width:48.6%;animation-delay:1s"></div></div></div>
+        <div class="meter m-rise" style="animation-delay:.85s"><div class="row"><b>Stock records with a bin location</b><span>77%</span></div>
+          <div class="track"><div class="fill m-fill" style="width:77%;animation-delay:1.25s"></div></div></div>
+        <div class="feeds">
+          <div class="hd"><b>Supplier feeds</b><span>40 active</span></div>
+          <div class="r m-fade" style="animation-delay:1.6s"><b>Supplier A</b><span>Product and stock</span><span class="ok">IMPORTED</span></div>
+          <div class="r m-fade" style="animation-delay:1.75s"><b>Supplier B</b><span>Product and stock</span><span class="ok">IMPORTED</span></div>
+          <div class="r m-fade" style="animation-delay:1.9s"><b>Supplier C</b><span>Stock</span><span class="ok">IMPORTED</span></div>
+          <div class="more m-fade" style="animation-delay:2.05s">+ 37 more active suppliers</div>
+        </div>
       </div>
-     </div>
+    </div>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -210,7 +227,7 @@ export default function ERPImplementationFailurePage() {
 
      <div className="grid grid--2" style={{ marginTop: 34, maxWidth: 620 }}>
       <div className="card">
-       <div style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-extrabold)', fontSize: 'clamp(2rem,4vw,2.75rem)', color: 'var(--do-amber)', lineHeight: 1 }}>9</div>
+       <div style={{ fontFamily: 'var(--do-font-heading)', fontWeight: 'var(--do-weight-extrabold)', fontSize: 'clamp(2rem,4vw,2.75rem)', color: 'var(--do-amber)', lineHeight: 1 }}>17</div>
        <p style={{ marginTop: 10 }}>supplier feeds automated from feed to ERP</p>
       </div>
       <div className="card">
@@ -264,7 +281,8 @@ export default function ERPImplementationFailurePage() {
       <Link className="btn btn--outline" href="/clarity">See how a Clarity Audit works</Link>
      </div>
     </div>
-   </section>
-  </>
- );
+    </section>
+    <D17Motion />
+   </>
+  );
 }

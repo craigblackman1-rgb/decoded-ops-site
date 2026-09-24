@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Your data is scattered: Decoded Ops',
@@ -93,11 +94,27 @@ export default function DataScatteredPage() {
        <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
      </div>
-     <figure className="evidence">
-      <img src="/images/hero-craft.jpg"
-       alt="A catalogue of printed and promotional products, the range every disconnected system is trying, and failing, to describe consistently." />
-      <figcaption className="stamp">SIX VERSIONS OF THE SAME PRODUCT</figcaption>
-     </figure>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a964" data-od-id="hero-evidence" data-motion data-no="DO-ART-964" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-964. A graded photograph of one folded polo shirt with six tags pinned round it, one for each place the data lives. Supplier feed: 40 in stock. Spreadsheet: 12. ERP: 0. Website: in stock. Warehouse count: 7. The one who knows: ask me. One polo, six answers, and none of them agree.">
+  <div class="d17-ph"><img src="/images/d17/problems/prod-polo-5947fe.jpg" alt="" width="900" height="905"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Scattered data</span><span>Six places, one product</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="sx-tag m-pop" style="left:4%;top:14%;animation-delay:.1s"><small>01 · Supplier feed</small><span class="v">40 in stock</span></div>
+    <div class="sx-tag m-pop" style="right:4%;top:14%;animation-delay:.25s"><small>04 · Website</small><span class="v v--t">In stock</span></div>
+    <div class="sx-tag m-pop" style="left:4%;top:38%;animation-delay:.4s"><small>02 · Spreadsheet</small><span class="v">12</span></div>
+    <div class="sx-tag m-pop" style="right:4%;top:38%;animation-delay:.55s"><small>05 · Warehouse count</small><span class="v">7</span></div>
+    <div class="sx-tag sx-tag--a m-pop" style="left:4%;top:62%;animation-delay:.7s"><small>03 · ERP</small><span class="v">0</span></div>
+    <div class="sx-tag m-pop" style="right:4%;top:62%;animation-delay:.85s"><small>06 · The one who knows</small><span class="v v--t">"Ask me"</span></div>
+    <span class="sku m-pop" style="top:88%;animation-delay:1.1s">Polo · stone · M · one SKU</span>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">One polo. <em>Six answers, and none of them agree.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-964 · Rev 01</span>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -193,25 +210,55 @@ export default function DataScatteredPage() {
     </section>
    )}
 
-   {/* ── PLATE · DO-ART-419 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
+   {/* ── INLINE ARTWORK · DO-ART-917 ──────────────────────────────────── */}
+   <section className="g-navy">
     <div className="wrap">
-      <Plate tone="dark" no="DO-ART-419" title="Six sources → one catalogue" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Supplier feeds: stale on arrival',
-          'Spreadsheets: edited by anyone, trusted by nobody',
-          'ERP: only as accurate as the last re-key',
-          'Website: shows what was true last week',
-        ]}
-        after={[
-          'One matched catalogue, all sources reconciled',
-          'Automated matching against every supplier feed',
-          'Every channel reads the same live data',
-          '317,812 products → one version of the truth',
-        ]}
-       />
-      </Plate>
+     <span className="eyebrow">Evidence · DO-ART-917</span>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 a917" data-od-id="plate-measure" data-motion data-no="DO-ART-917" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
+  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1300" height="867"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="cap">
+    <div class="k d17-mono">The Data App <span>· at Hanicks</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Forty suppliers. One catalogue.</h3>
+    <p>Every supplier feed brought into one place, and matched to its supplier before anyone has to touch it.</p>
+    <div class="live d17-mono">Live system, September 2026</div>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-917 · Rev 01</span>
+  </figcaption>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Catalogue ›</span> Overview</span><span class="pill">HANICKS</span></div>
+    <div class="win-body">
+      <nav class="win-nav"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>Fulfil</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>Setup</span></nav>
+      <div class="win-main">
+        <h5>Catalogue overview</h5>
+        <p class="s">Every supplier feed, brought into one catalogue</p>
+        <div class="kpis">
+          <div class="kpi m-rise" style="animation-delay:.1s"><div class="l">Products brought in</div>
+            <p class="n">317,812</p><p class="d">from supplier feeds</p></div>
+          <div class="kpi kpi--hit m-rise" style="animation-delay:.3s"><div class="l">Matched automatically</div>
+            <p class="n">154,518</p><p class="d">to a supplier, before anyone had to touch them</p></div>
+          <div class="kpi m-rise" style="animation-delay:.5s"><div class="l">Active suppliers</div>
+            <p class="n">40</p><p class="d">feeding in</p></div>
+        </div>
+        <div class="meter m-rise" style="animation-delay:.7s"><div class="row"><b>Supplier matching</b><span>154,518 of 317,812</span></div>
+          <div class="track"><div class="fill m-fill" style="width:48.6%;animation-delay:1s"></div></div></div>
+        <div class="meter m-rise" style="animation-delay:.85s"><div class="row"><b>Stock records with a bin location</b><span>77%</span></div>
+          <div class="track"><div class="fill m-fill" style="width:77%;animation-delay:1.25s"></div></div></div>
+        <div class="feeds">
+          <div class="hd"><b>Supplier feeds</b><span>40 active</span></div>
+          <div class="r m-fade" style="animation-delay:1.6s"><b>Supplier A</b><span>Product and stock</span><span class="ok">IMPORTED</span></div>
+          <div class="r m-fade" style="animation-delay:1.75s"><b>Supplier B</b><span>Product and stock</span><span class="ok">IMPORTED</span></div>
+          <div class="r m-fade" style="animation-delay:1.9s"><b>Supplier C</b><span>Stock</span><span class="ok">IMPORTED</span></div>
+          <div class="more m-fade" style="animation-delay:2.05s">+ 37 more active suppliers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -242,7 +289,8 @@ export default function DataScatteredPage() {
       <Link className="btn-ghost btn-arrow" href="/apps/data-app">See the Data App</Link>
      </div>
     </div>
-   </section>
-  </>
- );
+    </section>
+    <D17Motion />
+   </>
+  );
 }

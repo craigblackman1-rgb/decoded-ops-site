@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { ProblemPageDS } from '@/components/ProblemPageDS';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { NoOpsOwnerSchematic } from '@/components/schematics/problems/NoOpsOwnerSchematic';
 import { JsonLd } from '@/components/JsonLd';
 import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'No Operations Owner? Here\'s What That Costs You: Decoded Ops',
@@ -65,6 +66,102 @@ const noOpsOwnerSchema = {
  ],
 };
 
+const heroArt971 = `<figure class="d17 sx px a971" data-od-id="hero-evidence" data-motion data-no="DO-ART-971" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-971. An organisation chart. At the top, the owner. In the middle, an operations seat, hatched and marked vacant. At the bottom, five departments: sales, studio, production, warehouse and accounts. Dashed lines show each department reporting into operations, but the real lines, in amber, route round the empty seat and all land on the owner's desk. Every line leads to your desk.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>No ops owner</span><span>The chart as it runs</span></div>
+  <svg class="q" viewBox="0 0 560 410" aria-hidden="true">
+    <defs><pattern id="q-hatch-o" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047"/><path d="M0 0 V10" stroke="#FFB703" stroke-opacity=".35" stroke-width="3"/></pattern></defs>
+    <path class="ln-d" d="M57 330 V284 H280 V262"/>
+    <path class="ln-d" d="M167 330 V284 H280 V262"/>
+    <path class="ln-d" d="M277 330 V284 H280 V262"/>
+    <path class="ln-d" d="M387 330 V284 H280 V262"/>
+    <path class="ln-d" d="M497 330 V284 H280 V262"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.7s" d="M57 330 V318 H60 V150 C60 118 232 128 232 102"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.7s" d="M167 330 V310 H120 V150 C120 118 242 128 242 102"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.7s" d="M277 330 V298 H180 V150 C180 118 252 128 252 102"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.7s" d="M387 330 V304 H400 V150 C400 118 318 128 318 102"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.7s" d="M497 330 V312 H460 V150 C460 118 328 128 328 102"/>
+    <g class="m-pop" style="animation-delay:1.4s"><rect class="bx-a" x="210" y="44" width="140" height="58" rx="12"/>
+      <text class="t-h t-a" x="280" y="81" text-anchor="middle" style="font-size:23px">Owner</text></g>
+    <rect class="vac" x="200" y="196" width="160" height="66" rx="12"/>
+    <text class="t-h" x="280" y="226" text-anchor="middle" style="font-size:21px">Operations</text>
+    <text class="t-m t-a" x="280" y="250" text-anchor="middle" style="font-size:13px">vacant</text>
+    <g class="m-rise" style="animation-delay:0.10s"><rect class="bx" x="8" y="330" width="98" height="54" rx="10"/><text class="t" x="57" y="363" text-anchor="middle" style="font-size:17px;font-weight:700">Sales</text></g>
+    <g class="m-rise" style="animation-delay:0.18s"><rect class="bx" x="118" y="330" width="98" height="54" rx="10"/><text class="t" x="167" y="363" text-anchor="middle" style="font-size:17px;font-weight:700">Studio</text></g>
+    <g class="m-rise" style="animation-delay:0.26s"><rect class="bx" x="228" y="330" width="98" height="54" rx="10"/><text class="t" x="277" y="363" text-anchor="middle" style="font-size:17px;font-weight:700">Production</text></g>
+    <g class="m-rise" style="animation-delay:0.34s"><rect class="bx" x="338" y="330" width="98" height="54" rx="10"/><text class="t" x="387" y="363" text-anchor="middle" style="font-size:17px;font-weight:700">Warehouse</text></g>
+    <g class="m-rise" style="animation-delay:0.42s"><rect class="bx" x="448" y="330" width="98" height="54" rx="10"/><text class="t" x="497" y="363" text-anchor="middle" style="font-size:17px;font-weight:700">Accounts</text></g>
+    <text class="t-d" x="280" y="406" text-anchor="middle" style="font-size:15px">dashed: how it should run · amber: how it does</text>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Every line leads <em>to your desk.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-971 · Rev 01</span>
+  </div>
+</figure>`;
+
+const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+        aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+  <div class="d17-ph"><img src="{{IMG:decoded-marketing/assets/commerce/hero-workshop.jpg|crop=0,120,1600,1900|blank=680,1340,800,1440;1080,1270,1270,1420|w=1100|q=80}}" alt="" width="1100" height="1224"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Three layers.</h3>
+    <p>How a business runs, written down so it can be handed over instead of living in one person's head.</p>
+    <ul class="keys">
+      <li><b>01</b><span>Process register</span><small>one page</small></li>
+      <li><b>02</b><span>One-page SOPs</span><small>five sections</small></li>
+      <li><b>03</b><span>Improvement log</span><small>three lines</small></li>
+    </ul>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-718 · Rev 03</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
+      <span class="tab">01</span>
+      <span class="ref">PR-01 · Process register</span>
+      <h4>Every process, one page</h4>
+      <p class="sub">each process has a named owner · reviewed quarterly</p>
+      <table class="reg">
+        <tr><th>Process</th><th>Owner</th><th>SOP</th></tr>
+        <tr><td>Enquiry to quote</td><td>Sales lead</td><td class="s">SOP-01</td></tr>
+        <tr><td>Artwork approval</td><td>Studio manager</td><td class="s">SOP-02</td></tr>
+        <tr><td>Goods in</td><td>Warehouse lead</td><td class="s">SOP-03</td></tr>
+        <tr><td>Production planning</td><td>Production manager</td><td class="s">SOP-04</td></tr>
+        <tr><td>Embroidery run</td><td>Production supervisor</td><td class="s">SOP-05</td></tr>
+        <tr><td>Despatch</td><td>Despatch lead</td><td class="s">SOP-06</td></tr>
+        <tr><td>Invoicing</td><td>Accounts</td><td class="s">SOP-07</td></tr>
+      </table>
+    </div>
+    <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
+      <span class="tab">02</span>
+      <span class="ref">SOP-06 · Despatch</span>
+      <h4>Despatch: pack and ship</h4>
+      <p class="sub">Owner: Despatch lead · one page</p>
+      <p class="h"><i>1</i>Purpose</p>
+      <p class="p">Every order leaves complete, checked and booked the same way.</p>
+      <p class="h"><i>2</i>When it applies</p>
+      <p class="p">Any order marked ready to ship.</p>
+      <p class="h"><i>3</i>Steps</p>
+      <div class="line" style="width:92%"></div><div class="line" style="width:84%"></div><div class="line" style="width:70%"></div>
+      <p class="h"><i>4</i>Checks</p>
+      <div class="line" style="width:80%"></div>
+      <p class="h"><i>5</i>If it goes wrong</p>
+      <p class="p">Log it in the improvement log, three lines.</p>
+    </div>
+    <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
+      <span class="tab">03</span>
+      <span class="ref">IL · Improvement log</span>
+      <h4>Three lines, every time</h4>
+      <div class="e"><div class="d"><b>Despatch</b>SOP-06</div>
+        <div class="t"><span><em>What</em>Second box of a two-box order left behind.</span><span><em>Why</em>No box count on the packing check.</span><span><em>Change</em>Box count added to SOP-06, step 4.</span></div></div>
+      <div class="e"><div class="d"><b>Artwork</b>SOP-02</div>
+        <div class="t"><span><em>What</em>Proof approved on an old version.</span><span><em>Why</em>Versions sent by email.</span><span><em>Change</em>Approval recorded against the version.</span></div></div>
+    </div>
+  </div>
+</figure>`;
+
 export default function NoOpsOwnerPage() {
  return (
   <>
@@ -98,28 +195,10 @@ export default function NoOpsOwnerPage() {
    relatedSectors={problemRouting['no-ops-owner'].relatedSectors}
    relatedResources={problemRouting['no-ops-owner'].relatedResources}
    video={problemVideos['no-ops-owner']}
+   heroArt={heroArt971}
+   inlineArt={inlineArt718}
   />
-   {/* ── PLATE · DO-ART-408 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
-    <div className="wrap">
-     <Plate tone="dark" no="DO-ART-408" title="Nobody accountable → named ownership" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Nobody knows who owns which process',
-          'Problems fall between departments',
-          'Fix is reactive: whoever shouts loudest',
-          'No single person accountable for operations',
-        ]}
-        after={[
-          'Process Register names every owner',
-          'Clear accountability per workflow',
-          'Issues caught by the Improvement Log',
-          'Operations has a named, accountable lead',
-        ]}
-       />
-     </Plate>
-    </div>
-   </section>
+   <D17Motion />
   </>
  );
 }

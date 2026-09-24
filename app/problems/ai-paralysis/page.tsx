@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
-import { NowAfterPlate } from '@/components/NowAfterPlate';
 import { VideoEmbed } from '@/components/VideoEmbed';
 import { VideoSchema } from '@/components/VideoSchema';
 import { problemVideos } from '@/data/problem-videos';
 import { problemRouting } from '@/data/problem-routing';
+import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
+import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'AI paralysis: Decoded Ops',
@@ -111,11 +112,33 @@ export default function AiParalysisPage() {
        <Link className="btn btn--primary" href="/contact">Get an honest assessment</Link>
       </div>
      </div>
-     <figure className="evidence">
-      <img src="/images/hero-craft.jpg"
-       alt="A working decoration floor, the physical operation AI is supposed to improve." />
-      <figcaption className="stamp">THE OPERATION COMES FIRST</figcaption>
-     </figure>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx px ph-fade a960" data-od-id="hero-evidence" data-motion data-no="DO-ART-960" data-rev="01" data-tx="screen"
+        aria-label="Artwork DO-ART-960. An AI assistant window over a dimmed photograph. Someone asks which best-selling polos are about to run out. The assistant answers that it found the same polo in three places with three different stock figures, supplier feed 40, spreadsheet 12, ERP 0, and cannot say which one is right. The AI is only as good as the data underneath it.">
+  <div class="d17-ph"><img src="/images/d17/problems/cat-signage-58e48c.jpg" alt="" width="900" height="600"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>AI readiness</span><span>The question meets the data</span></div>
+  <div class="body" aria-hidden="true">
+    <div class="win">
+      <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Assistant ›</span> New question</span><span class="pill">AI</span></div>
+      <div class="chat">
+        <div class="bub bub--q m-rise" style="animation-delay:.1s"><small>You</small>Which of our best-selling polos are about to run out?</div>
+        <div class="bub bub--a m-rise" style="animation-delay:.6s"><small>Assistant</small>I found the same polo in three places, with three different stock figures. I can't tell you which one is right.
+          <div class="srcs">
+            <div class="m-pop" style="animation-delay:1.1s"><span>Supplier feed</span><b>40</b></div>
+            <div class="m-pop" style="animation-delay:1.3s"><span>Spreadsheet</span><b>12</b></div>
+            <div class="x m-pop" style="animation-delay:1.5s"><span>ERP</span><b>0</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">The AI is only as good as <em>the data underneath it.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-960 · Rev 01</span>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -200,25 +223,71 @@ export default function AiParalysisPage() {
     </div>
    </section>
 
-   {/* ── PLATE · DO-ART-417 ──────────────────────────────────────────── */}
-   <section className="g-white" data-od-id="plate">
+   {/* ── INLINE ARTWORK · DO-ART-718 ──────────────────────────────────── */}
+   <section className="g-navy">
     <div className="wrap">
-     <Plate tone="dark" no="DO-ART-417" title="AI hype → grounded assessment" rev="01" cls="DECODED OPS · ISSUED">
-       <NowAfterPlate
-        now={[
-          'Pressure to have an AI strategy',
-          "Vendors selling features you didn't ask for",
-          'No clear use case for your operation',
-          'Fear of being left behind',
-        ]}
-        after={[
-          'Honest assessment of where AI actually fits',
-          'No vendor agenda, no tool to sell',
-          'Specific use cases mapped to your workflow',
-          'Confidence to invest or to wait',
-        ]}
-       />
-     </Plate>
+     <span className="eyebrow">The foundation · DO-ART-718</span>
+     <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
+        aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Three layers.</h3>
+    <p>How a business runs, written down so it can be handed over instead of living in one person's head.</p>
+    <ul class="keys">
+      <li><b>01</b><span>Process register</span><small>one page</small></li>
+      <li><b>02</b><span>One-page SOPs</span><small>five sections</small></li>
+      <li><b>03</b><span>Improvement log</span><small>three lines</small></li>
+    </ul>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-718 · Rev 03</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
+      <span class="tab">01</span>
+      <span class="ref">PR-01 · Process register</span>
+      <h4>Every process, one page</h4>
+      <p class="sub">each process has a named owner · reviewed quarterly</p>
+      <table class="reg">
+        <tr><th>Process</th><th>Owner</th><th>SOP</th></tr>
+        <tr><td>Enquiry to quote</td><td>Sales lead</td><td class="s">SOP-01</td></tr>
+        <tr><td>Artwork approval</td><td>Studio manager</td><td class="s">SOP-02</td></tr>
+        <tr><td>Goods in</td><td>Warehouse lead</td><td class="s">SOP-03</td></tr>
+        <tr><td>Production planning</td><td>Production manager</td><td class="s">SOP-04</td></tr>
+        <tr><td>Embroidery run</td><td>Production supervisor</td><td class="s">SOP-05</td></tr>
+        <tr><td>Despatch</td><td>Despatch lead</td><td class="s">SOP-06</td></tr>
+        <tr><td>Invoicing</td><td>Accounts</td><td class="s">SOP-07</td></tr>
+      </table>
+    </div>
+    <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
+      <span class="tab">02</span>
+      <span class="ref">SOP-06 · Despatch</span>
+      <h4>Despatch: pack and ship</h4>
+      <p class="sub">Owner: Despatch lead · one page</p>
+      <p class="h"><i>1</i>Purpose</p>
+      <p class="p">Every order leaves complete, checked and booked the same way.</p>
+      <p class="h"><i>2</i>When it applies</p>
+      <p class="p">Any order marked ready to ship.</p>
+      <p class="h"><i>3</i>Steps</p>
+      <div class="line" style="width:92%"></div><div class="line" style="width:84%"></div><div class="line" style="width:70%"></div>
+      <p class="h"><i>4</i>Checks</p>
+      <div class="line" style="width:80%"></div>
+      <p class="h"><i>5</i>If it goes wrong</p>
+      <p class="p">Log it in the improvement log, three lines.</p>
+    </div>
+    <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
+      <span class="tab">03</span>
+      <span class="ref">IL · Improvement log</span>
+      <h4>Three lines, every time</h4>
+      <div class="e"><div class="d"><b>Despatch</b>SOP-06</div>
+        <div class="t"><span><em>What</em>Second box of a two-box order left behind.</span><span><em>Why</em>No box count on the packing check.</span><span><em>Change</em>Box count added to SOP-06, step 4.</span></div></div>
+      <div class="e"><div class="d"><b>Artwork</b>SOP-02</div>
+        <div class="t"><span><em>What</em>Proof approved on an old version.</span><span><em>Why</em>Versions sent by email.</span><span><em>Change</em>Approval recorded against the version.</span></div></div>
+    </div>
+  </div>
+</figure>` }} />
     </div>
    </section>
 
@@ -344,7 +413,8 @@ export default function AiParalysisPage() {
       <Link className="btn btn-ghost btn-arrow" href="/clarity">See how a Clarity Audit works</Link>
      </div>
     </div>
-   </section>
-  </>
- );
+    </section>
+    <D17Motion />
+   </>
+  );
 }
