@@ -42,7 +42,7 @@ const sectorSchema = {
         {
           '@type': 'Question',
           name: 'What does an operations consultant do for a print or embroidery business?',
-          acceptedAnswer: { '@type': 'Answer', text: 'An operations consultant reviews your entire workflow — from order intake to despatch — identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'An operations consultant reviews your entire workflow, from order intake to despatch, identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },
         },
         {
           '@type': 'Question',
@@ -67,7 +67,7 @@ const challenges = [
   { title: 'The artwork loop', body: "Artwork sign-off causes more delay than almost anything else in this sector. Every manual chase and email thread is time and money that shows up nowhere. Artwork software can automate sign-off, but only if it connects to your order system. Most businesses still approve artwork by email." },
   { title: 'Blank dependency', body: "Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock against committed orders, until the problem is already in the queue." },
   { title: 'eCommerce disconnected from production', body: "Online orders that do not automatically flow into the production schedule. Personalisation that needs manual re-entry. Artwork files that arrive separately from the order. All of this is solvable." },
-  { title: 'Quoting complexity', body: "A single embroidery order can involve digitising setup, stitch count pricing, thread colour selection, and garment-specific hooping rules. Pricing it accurately means knowing your cost per thousand stitches, your setup time, and your margin — and most businesses estimate." },
+  { title: 'Quoting complexity', body: "A single embroidery order can involve digitising setup, stitch count pricing, thread colour selection, and garment-specific hooping rules. Pricing it accurately means knowing your cost per thousand stitches, your setup time, and your margin, and most businesses estimate." },
 ];
 
 const whatIdo = [

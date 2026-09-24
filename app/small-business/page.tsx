@@ -82,51 +82,6 @@ const services = [
     ],
     cta: 'Book your Clarity Check',
   },
-  {
-    icon: TrendingUp,
-    name: 'Deliver',
-    tagline: 'Keep a project moving with remote project delivery and vendor management.',
-    price: 'from £1,200',
-    priceNote: '/mo',
-    features: [
-      '90-minute remote working sessions',
-      'Vendor management and buying support',
-      'Keeping the project on track',
-      'Written progress summaries',
-      'Practical tools and checklists',
-    ],
-    cta: 'Book a discovery call',
-  },
-  {
-    icon: Wrench,
-    name: 'Transform',
-    tagline: 'Focused transformation, one project at a time.',
-    price: 'from £1,500',
-    priceNote: '/mo',
-    features: [
-      '90-minute remote working sessions',
-      'One project at a time',
-      'ERP, eCommerce, or process redesign',
-      'Vendor selection, with no vendor agenda',
-      'Milestone-based delivery',
-    ],
-    cta: 'Request a proposal',
-  },
-  {
-    icon: Clock,
-    name: 'Retained',
-    tagline: 'Ongoing technology and operations support. Direct line to Craig.',
-    price: 'from £950',
-    priceNote: '/mo',
-    features: [
-      'Flexible engagement, scaled to your operation',
-      'Strategic advice and day-to-day support',
-      'Vendor management and technology decisions',
-      'Regular check-ins and written summaries',
-      'Rolling monthly, no long lock-in',
-    ],
-    cta: 'Let\'s talk about what you need',
-  },
 ];
 
 export default function SmallBusinessPage() {
@@ -158,33 +113,6 @@ export default function SmallBusinessPage() {
         </div>
       </section>
 
-      {/* Small business visual strip */}
-      <section className="g-navy" style={{ padding: '32px 0' }}>
-        <div className="wrap">
-          <div style={{ maxWidth: 600, margin: '0 auto', padding: 16, borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-off-white) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-off-white) 10%, transparent)' }}>
-            <svg viewBox="0 0 500 80" className="w-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ display: 'block', width: '100%' }}>
-              <rect x="20" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
-              <text x="70" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">CLARITY</text>
-
-              <text x="140" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
-
-              <rect x="160" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
-              <text x="210" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">DELIVER</text>
-
-              <text x="280" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
-
-              <rect x="300" y="15" width="100" height="50" rx="8" fill="color-mix(in srgb, var(--do-cerulean) 15%, transparent)" stroke="var(--do-cerulean)" strokeWidth="1.5" />
-              <text x="350" y="38" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--do-cerulean)">TRANSFORM</text>
-
-              <text x="420" y="44" textAnchor="middle" fontSize="16" fill="var(--do-sky-blue)" opacity="0.5">→</text>
-
-              <rect x="440" y="15" width="40" height="50" rx="8" fill="color-mix(in srgb, var(--do-amber) 15%, transparent)" stroke="var(--do-amber)" strokeWidth="1.5" />
-              <text x="460" y="38" textAnchor="middle" fontSize="7" fontWeight="700" fill="var(--do-amber)">RETAINED</text>
-            </svg>
-          </div>
-        </div>
-      </section>
-
       {/* EVIDENCE PHOTO · DO-ART-915 */}
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="wrap">
@@ -206,8 +134,8 @@ export default function SmallBusinessPage() {
       <section className="g-off">
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
-            <h2 className="h2">Fractional operations and technology support for small businesses</h2>
-            <p className="lede">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>
+            <h2 className="h2">Start with a Clarity Check</h2>
+            <p className="lede">A fixed-price remote diagnostic, delivered by me, not a junior team.</p>
           </div>
           <div className="grid grid--2">
             {services.map((service) => {
@@ -239,7 +167,7 @@ export default function SmallBusinessPage() {
             })}
           </div>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 24, lineHeight: 1.75 }}>
-            Every price has three tiers — Essential, Recommended, Complete — set at the audit.
+            Beyond the Clarity Check, it&apos;s the same services and the same from-prices as everywhere else on this site.
             See <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.
           </p>
         </div>

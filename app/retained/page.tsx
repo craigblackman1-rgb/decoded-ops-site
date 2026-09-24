@@ -7,18 +7,18 @@ import { JsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Fractional CTO: Decoded Ops',
-  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',
+  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950/mo.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
     title: 'Fractional CTO: Decoded Ops',
-    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',
+    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950/mo.',
     url: 'https://decodedops.co.uk/retained',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional CTO: Decoded Ops',
-    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire.',
+    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. From £950/mo.',
   },
 };
 
@@ -28,7 +28,7 @@ const retainedSchema = {
     {
       '@type': 'Service',
       name: 'Retained: Fractional CTO',
-      description: 'Ongoing technology leadership for decorated-goods businesses. Advisory, Embedded and Programme tiers.',
+      description: 'Ongoing technology leadership for decorated-goods businesses. Essential, Recommended and Complete tiers, from £950/mo.',
       provider: {
         '@type': 'Organization',
         name: 'Decoded Ops',
@@ -50,7 +50,7 @@ const retainedSchema = {
         {
           '@type': 'Question',
           name: 'What are the three tiers?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Advisory is a standing line for decisions as they come up. Embedded is closer to the operation with the roadmap owned directly. Programme is near full-time strategic and operational leadership. Six-month minimum on all three.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs rolling monthly, with no minimum term.' },
         },
         {
           '@type': 'Question',
@@ -105,10 +105,10 @@ export default function RetainedPage() {
       <section className="g-white">
         <div className="container stack" style={{ gap: 48 }}>
           <div>
-            <p className="eyebrow">Three ways to run it</p>
-            <h2>Advisory, Embedded and Programme.</h2>
+            <p className="eyebrow">Three tiers</p>
+            <h2>Essential, Recommended and Complete.</h2>
             <p className="lead" style={{ marginTop: 16 }}>Each tier covers a different level of involvement.
-              You pick the one that fits, and the scope is fixed at the start.</p>
+              Which one fits is set at the audit, from £950/mo.</p>
           </div>
 
           <div className="grid-3">
@@ -119,7 +119,7 @@ export default function RetainedPage() {
                   <path d="M4 5.5h16M4 12h16M4 18.5h9" />
                 </svg>
               </div>
-              <h3>Advisory</h3>
+              <h3>Essential</h3>
               <p className="feature-meta">A standing line for decisions as they come up</p>
               <p>Vendor calls, platform questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>
             </div>
@@ -131,7 +131,7 @@ export default function RetainedPage() {
                   <rect x="3" y="4" width="18" height="16" rx="2.5" /><path d="M3 9.5h18M9 9.5V20" />
                 </svg>
               </div>
-              <h3>Embedded</h3>
+              <h3>Recommended</h3>
               <p className="feature-meta">Closer to the operation, roadmap owned directly</p>
               <p>On site regularly enough that your team stops saving things up for me.</p>
             </div>
@@ -143,16 +143,15 @@ export default function RetainedPage() {
                   <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
                 </svg>
               </div>
-              <h3>Programme</h3>
+              <h3>Complete</h3>
               <p className="feature-meta">Near full-time strategic and operational leadership</p>
               <p>For a business mid-way through something big enough that it needs one person holding it.</p>
             </div>
           </div>
 
           <div className="inset" style={{ maxWidth: 'none' }}>
-            <b>Six-month minimum on all three tiers.</b> Long enough to be useful, short enough that
-            you&rsquo;re not trapped in it. The scope is agreed at the start and the price is the price
-            at every turnover band.
+            <b>Rolling monthly, no minimum term.</b> The scope is agreed at the start, and which tier fits
+            is set at the audit by the size and shape of your operation. From £950/mo.
           </div>
         </div>
       </section>
@@ -161,13 +160,13 @@ export default function RetainedPage() {
       <section className="g-tint">
         <div className="container">
           <p className="eyebrow">Scale &middot; DO-ART-204</p>
-          <h2>Advisory to Programme: the scale.</h2>
+          <h2>Essential to Complete: the scale.</h2>
           <p className="lead" style={{ marginTop: 16 }}>Each tier covers a wider scope and a deeper level
-            of involvement. Same price at every turnover band.</p>
+            of involvement. From £950/mo, set at the audit by the size and shape of your operation.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
-              <Artwork mode="measure" tone="dark" p="rt" title="Advisory to Programme, the scale"
+              <Artwork mode="measure" tone="dark" p="rt" title="Essential to Complete, the scale"
                      sub="Three tiers, each covering a wider scope"
                      no="DO-ART-204" rev="02" cls="DECODED OPS · ISSUED">
 
@@ -178,7 +177,7 @@ export default function RetainedPage() {
 
                 <g className="sk-fade sk-s2">
                   <text x="60" y="252" className="p-mono" fontSize="17" letterSpacing="1.6"
-                        opacity=".55">ADVISORY</text>
+                        opacity=".55">ESSENTIAL</text>
                   <text x="60" y="282" className="p-mono" fontSize="16" opacity=".4">Standing line for
                     decisions</text>
                   <rect x="430" y="228" width="270" height="62" rx="6" fill="url(#rt-bar)"
@@ -187,7 +186,7 @@ export default function RetainedPage() {
 
                 <g className="sk-fade sk-s3">
                   <text x="60" y="392" className="p-mono" fontSize="17" letterSpacing="1.6"
-                        opacity=".55">EMBEDDED</text>
+                        opacity=".55">RECOMMENDED</text>
                   <text x="60" y="422" className="p-mono" fontSize="16" opacity=".4">Closer to the
                     operation</text>
                   <rect x="430" y="368" width="540" height="62" rx="6" fill="url(#rt-bar)"
@@ -196,7 +195,7 @@ export default function RetainedPage() {
 
                 <g className="sk-fade sk-s4" filter="url(#rt-shadow)">
                   <text x="60" y="532" className="p-mono" fontSize="17" letterSpacing="1.6"
-                        opacity=".55">PROGRAMME</text>
+                        opacity=".55">COMPLETE</text>
                   <text x="60" y="562" className="p-mono" fontSize="16" opacity=".4">Full strategic and
                     operational leadership</text>
                   <rect x="430" y="508" width="1080" height="62" rx="6" fill="url(#rt-amber-b)"
@@ -208,9 +207,9 @@ export default function RetainedPage() {
                         strokeOpacity=".22"/>
                   <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="600" fontSize="24" opacity=".9">Each tier covers a wider scope.
-                    Same price at every turnover band.</text>
-                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Six-month
-                    minimum, all three tiers.</text>
+                    Set at the audit, from £950/mo.</text>
+                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Rolling
+                    monthly, no minimum term.</text>
                 </g>
               </Artwork>
             </div>

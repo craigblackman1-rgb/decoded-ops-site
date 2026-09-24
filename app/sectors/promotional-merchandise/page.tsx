@@ -287,7 +287,7 @@ export default function PromotionalMerchandisePage() {
           <span className="eyebrow">Case study</span>
           <h2>Custom tooling for a service business</h2>
           <div className="hair" />
-          <p className="lede">Full site rebuild and a custom tool — the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>
+          <p className="lede">Full site rebuild and a custom tool: the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/case-studies/eternal-fitness">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>

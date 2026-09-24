@@ -209,7 +209,7 @@ export default function CantScaleOperationsPage() {
      },
      {
       title: 'No one owns the whole flow from order to invoice',
-      body: "People own their own department, but nobody owns the full journey from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
+      body: "People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
      },
     ]}
     howIHelp="I come on site and follow how work moves through your business, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, spot what's missing, and put a cost on it in time, margin, and risk. Within five days you get a written report with every finding and every fix prioritised. Quick wins are separated from bigger changes, so you know what to do this week and what to plan for. If you need help making the changes, I run a structured Deliver engagement to do the work with you. And if you're at a growth point and need ongoing operational leadership, there's a retained option: monthly support without the cost of a full-time hire."

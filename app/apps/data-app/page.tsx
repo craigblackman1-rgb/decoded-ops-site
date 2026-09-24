@@ -328,11 +328,11 @@ export default function DataAppPage() {
                   <td className="scope">Up to 3 supplier feeds, one sales channel</td>
                 </tr>
                 <tr>
-                  <th scope="row">Standard <span className="star">Most take this</span></th>
+                  <th scope="row">Connected <span className="star">Most take this</span></th>
                   <td className="scope">Up to 10 feeds, up to 3 channels, platform integration</td>
                 </tr>
                 <tr>
-                  <th scope="row">Extended</th>
+                  <th scope="row">Scaled</th>
                   <td className="scope">Unlimited feeds, marketplace automation, multi-warehouse</td>
                 </tr>
               </tbody>

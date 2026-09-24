@@ -121,7 +121,7 @@ export default function DataScatteredPage() {
    {/* ── 2 · THE SIX SOURCES · disconnected systems ─────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-     <span className="eyebrow">Sound familiar?</span>
+     <span className="eyebrow">The signs</span>
      <h2>Six places, six different answers.</h2>
      <p className="lede" style={{ marginTop: 16 }}>Every one of these is trying to describe the same
       catalogue. None of them talk to each other, so none of them are right for long.</p>

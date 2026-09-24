@@ -56,7 +56,7 @@ export default function ArtworkManagerPage() {
       <section className="g-off">
         <div className="wrap hero-split">
           <div>
-            <p className="eyebrow">Decoded Artwork Manager &middot; pre-release</p>
+            <p className="eyebrow">Decoded Artwork Manager &middot; Founding clients</p>
             <h1>Every logo, every format, every version.</h1>
             <div className="hero-body">
               <p>Artwork vault across embroidery and print formats, versioned with an audit trail.
@@ -80,7 +80,7 @@ export default function ArtworkManagerPage() {
               dangerouslySetInnerHTML={{ __html: `
 <div class="d17-ph"><img src="/images/d17/apps-cases/thread-spools-ba5d03.jpg" alt="" width="900" height="600" /></div>
 <div class="d17-scan" aria-hidden="true"></div>
-<div class="sx-top d17-mono" aria-hidden="true"><span>Artwork Manager · approvals</span><span>Pre-release</span></div>
+<div class="sx-top d17-mono" aria-hidden="true"><span>Artwork Manager · approvals</span><span>Founding clients</span></div>
 <div class="stage" aria-hidden="true">
   <div class="mw">
     <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Artwork › EMB-0142 ›</span> Approvals</span><span class="pill pill--a">AUDIT TRAIL</span></div>

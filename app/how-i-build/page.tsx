@@ -183,8 +183,8 @@ export default function HowIBuildPage() {
             <article className="rung rung--last">
               <p className="kicker">Rung 3 &middot; Last resort</p>
               <h3>Full custom</h3>
-              <p>If nothing off the shelf fits, that option goes on the table too, priced honestly,
-                alongside everything else considered and why it didn&rsquo;t make the cut.</p>
+              <p>If nothing off the shelf fits, that option goes on the table too, priced and put next
+                to everything else considered, and why it didn&rsquo;t make the cut.</p>
               <p>You own the decision. I just make sure you&rsquo;re making it with the facts in front of you.</p>
             </article>
           </div>
@@ -265,7 +265,7 @@ export default function HowIBuildPage() {
               </figure>
             </div>
             <div className="panel">
-              <h3>No reseller margin. No referral fee. No partner tier.</h3>
+              <h3>No reseller margin, no referral fee, and nothing that looks like a partner tier.</h3>
               <p>I&rsquo;m not on anyone&rsquo;s partner list, so there&rsquo;s no version of this where the platform I
                 name pays me for naming it. If your own choice lands on rung 2 or rung 3, you&rsquo;ll see
                 what every option would have cost, not only the one you chose.</p>

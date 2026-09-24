@@ -160,7 +160,7 @@ export default function SpreadsheetAddictionPage() {
    {/* ── 2 · SYMPTOMS ──────────────────────────────────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-     <span className="eyebrow">Sound familiar?</span>
+     <span className="eyebrow">The signs</span>
      <h2>Seven signs your spreadsheet has become the single point of failure.</h2>
      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the spreadsheet
       isn&apos;t a tool any more. It&apos;s a risk the business is carrying every day.</p>

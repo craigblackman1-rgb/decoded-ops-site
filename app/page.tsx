@@ -133,6 +133,7 @@ export default function HomePage() {
                       <li><b>03</b>eCommerce<i /></li>
                       <li><b>04</b>Processes &amp; ops<i /></li>
                       <li><b>05</b>Growth<i /></li>
+                      <li><b>06</b>AI readiness<i /></li>
                     </ol>
                   </div>
                   <div className={`${d17.d17Doc} ${d17.docB} ${d17.mDrop}`} style={{ animationDelay: '.1s' }}>

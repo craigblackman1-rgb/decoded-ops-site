@@ -138,7 +138,7 @@ export default function PricingPage() {
             </table>
           </div>
 
-          <p className="table-foot" style={{ marginTop: 20 }}>Every price has three tiers — Essential, Recommended, Complete — set at the audit
+          <p className="table-foot" style={{ marginTop: 20 }}>Every price has three tiers (Essential, Recommended, Complete), set at the audit
             by the size and shape of your operation. The full tier sheet is in the price pack, sent on request.</p>
 
           <div className="hero-cta" style={{ marginTop: 36 }}>
@@ -239,8 +239,8 @@ export default function PricingPage() {
         <div className="container narrow">
           <p className="eyebrow">A different kind of decision</p>
           <h2>Everything above is diagnosis and delivery. What follows is software.</h2>
-          <p className="lead" style={{ marginTop: 18 }}>Priced at the audit — buy outright or lease to own over 36–60 months;
-            you own it at the end. Different decision, different section, on purpose.</p>
+          <p className="lead" style={{ marginTop: 18 }}>Priced at the audit: buy outright, or lease to own over 36–60 months,
+            and you own it at the end. Different decision, different section, on purpose.</p>
         </div>
       </section>
 

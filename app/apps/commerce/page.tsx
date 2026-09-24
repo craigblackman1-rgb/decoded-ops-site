@@ -36,7 +36,7 @@ const commerceFaqSchema = {
         {
           '@type': 'Question',
           name: 'How is this different from a bespoke build?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That keeps the cost well under a bespoke quote for the same thing.' },
         },
         {
           '@type': 'Question',
@@ -63,9 +63,8 @@ export default function CommercePage() {
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
               <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,
                 approval workflows, quote negotiation, order editing, and a full storefront and
-                checkout, all on an open-source core. Real foundations, not a from-scratch build.
-                That&rsquo;s why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
-                quoted elsewhere for the same thing.</p>
+                checkout, all on an open-source core. Real foundations, not a from-scratch build,
+                which keeps the cost well under a bespoke quote for the same thing.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
@@ -163,7 +162,7 @@ export default function CommercePage() {
               <h3>Extended</h3>
               <p className="feature-meta">More than one of everything</p>
               <p>Multi-site storefronts, ERP integration, and bespoke checkout and pricing logic where
-                the standard rules genuinely don&rsquo;t describe how you price.</p>
+                the standard rules don&rsquo;t describe how you price.</p>
             </div>
           </div>
         </div>

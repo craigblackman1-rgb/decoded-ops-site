@@ -118,7 +118,7 @@ export default function BottleneckGrowthPage() {
    {/* ── 2 · SYMPTOMS ──────────────────────────────────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-     <span className="eyebrow">Sound familiar?</span>
+     <span className="eyebrow">The signs</span>
      <h2>Seven signs the owner is the bottleneck.</h2>
      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the fix
       isn&apos;t working harder. It&apos;s documenting what you do so someone else can do it too.</p>

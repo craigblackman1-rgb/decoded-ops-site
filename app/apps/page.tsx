@@ -39,7 +39,7 @@ export default function AppsPage() {
             <div className="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-44196e.jpg" alt="" width="1400" height="875" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <div className="top d17-mono" aria-hidden="true"><span>The systems · three apps</span><span>Running today, September 2026</span></div>
-            <div className="under d17-mono" aria-hidden="true"><span>Live · two deployments<b>Decoded Data App</b></span><span>Pre-release<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span></div>
+            <div className="under d17-mono" aria-hidden="true"><span>Live · two deployments<b>Decoded Data App</b></span><span>Founding clients<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span></div>
             <div className="screens" aria-hidden="true">
               <div className="mw s1 m-rise" style={{animationDelay:'.1s'}} data-cap="Decoded Data App · live, two deployments">
                 <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Catalogue ›</span> Overview</span><span className="pill">LIVE</span></div>
@@ -52,7 +52,7 @@ export default function AppsPage() {
                     <div className="track"><div className="fill m-fill" style={{width:'45%',animationDelay:'.9s'}}></div></div></div>
                 </div>
               </div>
-              <div className="mw s2 m-rise" style={{animationDelay:'.35s'}} data-cap="Decoded Artwork Manager · pre-release">
+              <div className="mw s2 m-rise" style={{animationDelay:'.35s'}} data-cap="Decoded Artwork Manager · founding clients">
                 <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Artwork › EMB-0142 ›</span> Approvals</span><span className="pill pill--a">PROOF</span></div>
                 <div className="mw-main">
                   <h5>Approval history</h5>
@@ -106,7 +106,7 @@ export default function AppsPage() {
 
             <Link className="log-row" href="/apps/artwork-manager">
               <div>
-                <span className="chip chip--pre">Pre-release &middot; founding client terms</span>
+                <span className="chip chip--pre">Founding clients</span>
                 <h3 style={{ marginTop: 14 }}>Decoded Artwork Manager</h3>
               </div>
               <p>Every logo, every format, every version, with an audit trail. Customers approve their own
@@ -196,7 +196,7 @@ export default function AppsPage() {
                 <text className="t-h" x="806" y="436" style={{fontSize:'30px'}}>machine delivery</text>
                 <rect x="806" y="470" width="332" height="44" rx="8" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45"/><text className="t" x="822" y="499" style={{fontSize:'18px'}}>v4 approved · in production</text>
                 <rect x="806" y="524" width="332" height="44" rx="8" fill="none" stroke="#8ECAE6" strokeOpacity=".35" strokeDasharray="5 4"/><text className="t-d" x="822" y="553" style={{fontSize:'18px'}}>v5 draft · can&rsquo;t be pulled</text>
-                <text className="t-d" x="806" y="638" style={{fontSize:'18px'}}>Pre-release · founding terms</text></g>
+                <text className="t-d" x="806" y="638" style={{fontSize:'18px'}}>Founding clients</text></g>
               <g className="m-rise" style={{animationDelay:'1.2s'}}>
                 <rect className="bx" x="1182" y="316" width="374" height="360" rx="14"/>
                 <text className="t-m" x="1208" y="356" style={{fontSize:'16px'}}>Decoded Commerce</text>
@@ -221,7 +221,7 @@ export default function AppsPage() {
               <text className="t" x="34" y="734" style={{fontSize:'27px'}}>Despatch · CRM built in</text>
               <text className="t-d" x="34" y="800" style={{fontSize:'24px'}}>Alongside the platform you own,</text>
               <text className="t-d" x="34" y="834" style={{fontSize:'24px'}}>or as the system itself</text>
-              <rect className="bx" x="10" y="910" width="680" height="150" rx="14"/><text className="t-m" x="34" y="954" style={{fontSize:'22px'}}>Artwork Manager · pre-release</text><text className="t-h" x="34" y="1008" style={{fontSize:'34px'}}>Vault, proofing, machine delivery</text>
+              <rect className="bx" x="10" y="910" width="680" height="150" rx="14"/><text className="t-m" x="34" y="954" style={{fontSize:'22px'}}>Artwork Manager · founding clients</text><text className="t-h" x="34" y="1008" style={{fontSize:'34px'}}>Vault, proofing, machine delivery</text>
               <rect className="bx" x="10" y="1080" width="680" height="150" rx="14"/><text className="t-m" x="34" y="1124" style={{fontSize:'22px'}}>Decoded Commerce · live</text><text className="t-h" x="34" y="1178" style={{fontSize:'34px'}}>Storefront and trade portal</text>
             </svg>
             <div className="foot"><span className="k d17-mono">Three gaps · three apps · one platform</span><span className="d17-mark">decodedops.co.uk · DO-ART-940 · Rev 01</span></div>

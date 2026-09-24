@@ -131,7 +131,7 @@ export default function InventoryBlindPage() {
    {/* ── 2 · SYMPTOMS ──────────────────────────────────────────────────── */}
    <section className="g-tint">
     <div className="wrap">
-     <span className="eyebrow">Sound familiar?</span>
+     <span className="eyebrow">The signs</span>
      <h2>Seven signs you&apos;re flying blind on stock.</h2>
      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the fix isn&apos;t
       a bigger stocktake. It&apos;s one stock picture everyone actually trusts.</p>

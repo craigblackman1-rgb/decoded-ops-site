@@ -103,7 +103,7 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow">The symptoms</span>
-          <h2>Does this sound familiar?</h2>
+          <h2>The signs.</h2>
           <div className="hair" />
           <div className="grid grid--2">
             {symptoms.map((s, i) => (
@@ -160,7 +160,7 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
             <p className="lede">{howIHelp}</p>
           </div>
           <div className="card">
-            <h3>Let&apos;s talk about what&apos;s happening</h3>
+            <h3>The first call is free.</h3>
             <p>The first call is free. 60 minutes. No sales pitch, just a direct conversation about your situation.</p>
             <ul style={{ margin: '18px 0 26px', padding: 0, listStyle: 'none' }}>
               {['One day on site', 'Written report in 5 days', '3× Clarity Guarantee', 'No vendor agenda'].map(item => (

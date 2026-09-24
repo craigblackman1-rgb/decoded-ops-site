@@ -10,18 +10,18 @@ import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
- description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+ description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
  alternates: { canonical: '/problems/ecommerce-not-connected' },
  openGraph: {
   title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
-  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+  description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
   url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
   title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
-  description: 'Your Shopify orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+  description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
  },
 };
 
@@ -53,13 +53,13 @@ const ecommerceNotConnectedSchema = {
     },
     {
      '@type': 'Question',
-     name: 'Why is Shopify not syncing with my ERP?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },
+     name: 'Why isn\'t my online store syncing with my ERP?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Many online store platforms were not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When an online store is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },
     },
     {
      '@type': 'Question',
-     name: 'Can WooCommerce integrate with a decoration business ERP?',
-     acceptedAnswer: { '@type': 'Answer', text: 'WooCommerce can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether WooCommerce can capture your personalisation data in a format the ERP can process. WooCommerce ERP integration for print businesses is a common engagement, and the answer is rarely "yes, it integrates" and more often "it depends on what data you need to move and how fast."' },
+     name: 'Can an online store integrate with a decoration business ERP?',
+     acceptedAnswer: { '@type': 'Answer', text: 'Most online store platforms can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether the online store can capture your personalisation data in a format the ERP can process. Online store ERP integration for print businesses is a common engagement, and the answer is rarely "yes, it integrates" and more often "it depends on what data you need to move and how fast."' },
     },
    ],
   },

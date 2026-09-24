@@ -129,7 +129,7 @@ export default function EternalFitnessCaseStudyPage() {
             <h2>What I&apos;m building</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
               {[
-                'A full site rebuild with clinical framing, not fitness-marketing convention. No "transformation," no before-and-after, no crush-it language',
+                'A full site rebuild with clinical framing, not fitness-marketing convention: no before-and-after, no crush-it language',
                 'A training plan tool that generates session plans against a confirmed equipment list and each client\'s condition. Esther reviews and approves every output',
                 'Brand and tooling consistency across the site and the training plan output, so the two don\'t drift apart over time',
                 'A technical foundation Esther can rely on without needing to manage it herself. She owns the clinical and brand decisions, I own the build',

@@ -205,7 +205,7 @@ export default function CaseStudy03Page() {
             <div style={{ maxWidth: '72ch' }}>
               <h2 style={{ marginTop: 48 }}>The commercial shape</h2>
               <p style={{ color: 'var(--do-text-secondary)', lineHeight: 'var(--do-leading-relaxed)' }}>
-                Restructured from an initial six-month framing to a twelve-month minimum retainer: the full build across the first four months, then ongoing weekly involvement. I name it here only as a shape, not a price. Pricing detail stays out of public case studies.
+                Restructured from Deliver's usual six months to a twelve-month minimum for this engagement, given the scope: the full build across the first four months, then ongoing weekly involvement. I name it here only as a shape, not a price. Pricing detail stays out of public case studies.
               </p>
 
               <div className="progress-note">

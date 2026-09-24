@@ -273,7 +273,7 @@ export default function CaseStudy01Page() {
               <article className="card">
                 <span className="kicker">Sector</span>
                 <h3>Labels &amp; packaging</h3>
-                <p>Supplier feed ingestion and catalogue maintenance across channels — the same data challenge this case study addresses.</p>
+                <p>Supplier feed ingestion and catalogue maintenance across channels: the same data challenge this case study addresses.</p>
                 <Link href="/sectors/labels-packaging" className="btn btn--outline" style={{ marginTop: 12 }}>See the labels &amp; packaging page</Link>
               </article>
               <article className="card">
@@ -285,7 +285,7 @@ export default function CaseStudy01Page() {
               <article className="card">
                 <span className="kicker">Problem</span>
                 <h3>Inventory blind spots</h3>
-                <p>No real visibility of stock across channels — the problem the Data App solved for this client.</p>
+                <p>No real visibility of stock across channels: the problem the Data App solved for this client.</p>
                 <Link href="/problems/inventory-blind" className="btn btn--outline" style={{ marginTop: 12 }}>Read about inventory blindness</Link>
               </article>
             </div>

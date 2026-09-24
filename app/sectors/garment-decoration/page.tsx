@@ -282,7 +282,7 @@ export default function GarmentDecorationPage() {
           <span className="eyebrow">Related</span>
           <h2>Operations consultant for print & embroidery</h2>
           <div className="hair" />
-          <p className="lede">If you run embroidery alongside screen print or DTF, the same operational challenges apply — but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>
+          <p className="lede">If you run embroidery alongside screen print or DTF, the same operational challenges apply, but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/sectors/operations-consultant-print-embroidery">See the print & embroidery page <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>

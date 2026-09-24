@@ -59,7 +59,7 @@ const helpBuilt: NavGroup = {
   items: [
     { label: 'Data App', sub: 'Supplier feeds into one clean catalogue', href: '/apps/data-app' },
     { label: 'Artwork Manager', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },
-    { label: 'Trade store', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
+    { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },
     { label: 'All apps', sub: "What's ready to buy today", href: '/apps' },
   ],
 };
@@ -89,10 +89,7 @@ const sectors: NavLink[] = [
 // ── "Small business", new top-level slot, Craig's decision (2026-08-06) ──
 const smallBusinessProducts: (NavLink & { sub: string })[] = [
   { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £595', href: '/small-business' },
-  { label: 'Deliver', sub: 'From £1,200/mo — project delivery', href: '/small-business' },
-  { label: 'Transform', sub: 'From £1,500/mo — rebuild how you work', href: '/small-business' },
-  { label: 'Retained', sub: 'From £950/mo — someone to ask, every month', href: '/small-business' },
-  { label: 'Clarity Audit', sub: 'From £1,500 — the entry point', href: '/small-business' },
+  { label: 'Everything else', sub: 'Same services, same from-prices as everyone else', href: '/pricing' },
 ];
 const smallBusinessStart: NavGroup = {
   title: 'Start free',

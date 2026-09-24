@@ -220,7 +220,7 @@ export default function WorkwearPage() {
           <span className="eyebrow">Case study</span>
           <h2>B2B portal and ERP evaluation for a workwear distributor</h2>
           <div className="hair" />
-          <p className="lede">Vendor requirements, procurement, and integration architecture for a B2B ordering portal — the same sector, the same challenges.</p>
+          <p className="lede">Vendor requirements, procurement, and integration architecture for a B2B ordering portal: the same sector, the same challenges.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/case-studies/case-study-03">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
