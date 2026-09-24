@@ -1,0 +1,127 @@
+
+      <!-- DO-ART-1002 r01 · drawn engineering plate, coverage from the base (D17). ONE piece for both
+           location templates and all 29 town pages: every live town is a dot (id="t-<slug>") placed by
+           its real position, spokes run from the Worthing base, Manchester sits off the plate (by
+           arrangement), remote work covers the rest of the UK. BUILD: add class cov-dot--hi + m-pop to
+           #t-<slug>, draw the amber spoke to it, hide that dot's grey label, and place the .pin at the
+           dot (left = cx/740, top = cy/640). Pin text is {{town}} / {{county}} / {{travel}}
+           (travel is the page's "From Worthing" line, wraps at 260px). This mockup highlights the
+           brighton position with the variables shown literally. For London and Manchester the pin sits
+           top-left of the plate. No figures. In-page draw: the amber spoke draws, the town lands. -->
+      <figure class="d17 sw a1002" data-od-id="plate-coverage" data-motion data-no="DO-ART-1002" data-rev="01" data-tx="plate"
+              aria-label="Artwork DO-ART-1002. A drawn map of Sussex, Surrey and Greater London with every town this service covers marked as a dot. Routes run out from the base in Worthing, West Sussex; the route to this town is drawn in amber. On site across Sussex and Surrey, and in Greater London; Manchester by arrangement; remote work across the UK.">
+        <div class="q-grid" aria-hidden="true"></div>
+        <figcaption class="sw-cap">
+          <div class="k d17-mono">Technology audit <span>· where I work</span></div>
+          <div class="bar" aria-hidden="true"></div>
+          <h3>Worthing-based. On site where the work needs it.</h3>
+          <ul class="legend">
+            <li><i class="base"></i>Base: Worthing, West Sussex</li>
+            <li><i></i>On site across Sussex and Surrey</li>
+            <li><i></i>Greater London</li>
+            <li><i class="far"></i>Manchester, on-site visits by arrangement</li>
+            <li><i class="rem"></i>Remote work across the UK</li>
+            <li><i class="hi"></i><span>Your business in <span class="tv">{{town}}</span></span></li>
+          </ul>
+          <span class="d17-mark">decodedops.co.uk · DO-ART-1002 · Rev 01</span>
+        </figcaption>
+        <div class="map">
+          <svg class="q cov-map" viewBox="0 0 740 640" role="presentation" aria-hidden="true">
+<defs><pattern id="cov-sea" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="10" class="ln-f" /></pattern></defs>
+<path d="M5.4,562.6 L20.45,566.05 Q35.5,569.5 59.15,590.85 Q82.8,612.2 106.44999999999999,597.05 Q130.1,581.9 160.2,571.5999999999999 Q190.3,561.3 226.85,559.9 Q263.4,558.5 284.9,551.65 Q306.4,544.8 334.35,548.55 Q362.3,552.3 403.15,562.65 Q444.0,573.0 454.75,579.85 Q465.5,586.7 495.6,597.05 Q525.7,607.4 536.45,597.75 Q547.2,588.1 560.1,576.4000000000001 Q573.0,564.7 598.8,551.95 Q624.6,539.2 648.25,533.7 Q671.9,528.2 697.7,511.0 L723.5,493.8 L740,640 L0,640 Z" fill="url(#cov-sea)" opacity=".55"/>
+<path d="M5.4,562.6 L20.45,566.05 Q35.5,569.5 59.15,590.85 Q82.8,612.2 106.44999999999999,597.05 Q130.1,581.9 160.2,571.5999999999999 Q190.3,561.3 226.85,559.9 Q263.4,558.5 284.9,551.65 Q306.4,544.8 334.35,548.55 Q362.3,552.3 403.15,562.65 Q444.0,573.0 454.75,579.85 Q465.5,586.7 495.6,597.05 Q525.7,607.4 536.45,597.75 Q547.2,588.1 560.1,576.4000000000001 Q573.0,564.7 598.8,551.95 Q624.6,539.2 648.25,533.7 Q671.9,528.2 697.7,511.0 L723.5,493.8" class="ln" />
+<text class="t-m cov-cty" x="150" y="470">West Sussex</text>
+<text class="t-m cov-cty" x="520" y="440">East Sussex</text>
+<text class="t-m cov-cty" x="120" y="150">Surrey</text>
+<text class="t-m cov-cty" x="430" y="40">Greater London</text>
+<text class="t-m cov-sea-l" x="470" y="626">English Channel</text>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L87.1,537.9"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L130.1,574.3"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L190.3,554.4"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L306.4,539.2"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L349.4,540.6"/>
+<path class="ln-a m-draw" pathLength="1" d="M262.5,552.3 L363.6,546.1"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L465.5,581.9"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L542.9,583.3"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L624.6,533.7"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L668.9,524.1"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L426.8,511.7"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L465.5,445.7"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L491.3,383.8"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L379.5,425.0"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L366.6,456.0"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L281.9,381.7"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L342.1,350.0"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L349.4,259.9"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L334.4,262.0"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L280.6,265.4"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L280.6,221.4"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L306.4,195.9"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L177.4,262.7"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L181.7,205.6"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L78.5,277.1"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L100.0,193.2"/>
+<path class="ln-d cov-spoke" d="M262.5,552.3 L367.5,76.2"/>
+<path class="ln-d" d="M262.5,552.3 L40,24"/><path class="ln" d="M40,24 l4,14 M40,24 l14,4"/>
+<text class="t cov-far" x="54" y="30">Manchester, by arrangement</text>
+<circle id="t-chichester" class="cov-dot" cx="87.1" cy="537.9" r="5.5"/>
+<text class="t-d cov-lbl" x="87.1" y="523.9" text-anchor="middle">Chichester</text>
+<circle id="t-bognor-regis" class="cov-dot" cx="130.1" cy="574.3" r="5.5"/>
+<text class="t-d cov-lbl" x="130.1" y="596.3" text-anchor="middle">Bognor Regis</text>
+<circle id="t-littlehampton" class="cov-dot" cx="190.3" cy="554.4" r="5.5"/>
+<text class="t-d cov-lbl" x="190.3" y="576.4" text-anchor="middle">Littlehampton</text>
+<circle id="t-shoreham-by-sea" class="cov-dot" cx="306.4" cy="539.2" r="5.5"/>
+<text class="t-d cov-lbl" x="300.4" y="527.2" text-anchor="end">Shoreham</text>
+<circle id="t-hove" class="cov-dot" cx="349.4" cy="540.6" r="5.5"/>
+<text class="t-d cov-lbl" x="347.4" y="528.6" text-anchor="end">Hove</text>
+<circle id="t-brighton" class="cov-dot cov-dot--hi m-pop" cx="363.6" cy="546.1" r="9"/>
+<circle id="t-seaford" class="cov-dot" cx="465.5" cy="581.9" r="5.5"/>
+<text class="t-d cov-lbl" x="465.5" y="603.9" text-anchor="middle">Seaford</text>
+<circle id="t-eastbourne" class="cov-dot" cx="542.9" cy="583.3" r="5.5"/>
+<text class="t-d cov-lbl" x="552.9" y="588.3" text-anchor="start">Eastbourne</text>
+<circle id="t-bexhill-on-sea" class="cov-dot" cx="624.6" cy="533.7" r="5.5"/>
+<text class="t-d cov-lbl" x="624.6" y="555.7" text-anchor="middle">Bexhill</text>
+<circle id="t-hastings" class="cov-dot" cx="668.9" cy="524.1" r="5.5"/>
+<text class="t-d cov-lbl" x="668.9" y="511.1" text-anchor="middle">Hastings</text>
+<circle id="t-lewes" class="cov-dot" cx="426.8" cy="511.7" r="5.5"/>
+<text class="t-d cov-lbl" x="436.8" y="516.7" text-anchor="start">Lewes</text>
+<circle id="t-uckfield" class="cov-dot" cx="465.5" cy="445.7" r="5.5"/>
+<text class="t-d cov-lbl" x="475.5" y="450.7" text-anchor="start">Uckfield</text>
+<circle id="t-crowborough" class="cov-dot" cx="491.3" cy="383.8" r="5.5"/>
+<text class="t-d cov-lbl" x="501.3" y="388.8" text-anchor="start">Crowborough</text>
+<circle id="t-haywards-heath" class="cov-dot" cx="379.5" cy="425.0" r="5.5"/>
+<text class="t-d cov-lbl" x="389.5" y="425.0" text-anchor="start">Haywards Heath</text>
+<circle id="t-burgess-hill" class="cov-dot" cx="366.6" cy="456.0" r="5.5"/>
+<text class="t-d cov-lbl" x="376.6" y="466.0" text-anchor="start">Burgess Hill</text>
+<circle id="t-horsham" class="cov-dot" cx="281.9" cy="381.7" r="5.5"/>
+<text class="t-d cov-lbl" x="271.9" y="386.7" text-anchor="end">Horsham</text>
+<circle id="t-crawley" class="cov-dot" cx="342.1" cy="350.0" r="5.5"/>
+<text class="t-d cov-lbl" x="352.1" y="355.0" text-anchor="start">Crawley</text>
+<circle id="t-redhill" class="cov-dot" cx="349.4" cy="259.9" r="5.5"/>
+<text class="t-d cov-lbl" x="359.4" y="267.9" text-anchor="start">Redhill</text>
+<circle id="t-reigate" class="cov-dot" cx="334.4" cy="262.0" r="5.5"/>
+<text class="t-d cov-lbl" x="324.4" y="256.0" text-anchor="end">Reigate</text>
+<circle id="t-dorking" class="cov-dot" cx="280.6" cy="265.4" r="5.5"/>
+<text class="t-d cov-lbl" x="270.6" y="275.4" text-anchor="end">Dorking</text>
+<circle id="t-leatherhead" class="cov-dot" cx="280.6" cy="221.4" r="5.5"/>
+<text class="t-d cov-lbl" x="270.6" y="226.4" text-anchor="end">Leatherhead</text>
+<circle id="t-epsom" class="cov-dot" cx="306.4" cy="195.9" r="5.5"/>
+<text class="t-d cov-lbl" x="316.4" y="193.9" text-anchor="start">Epsom</text>
+<circle id="t-guildford" class="cov-dot" cx="177.4" cy="262.7" r="5.5"/>
+<text class="t-d cov-lbl" x="167.4" y="272.7" text-anchor="end">Guildford</text>
+<circle id="t-woking" class="cov-dot" cx="181.7" cy="205.6" r="5.5"/>
+<text class="t-d cov-lbl" x="191.7" y="210.6" text-anchor="start">Woking</text>
+<circle id="t-farnham" class="cov-dot" cx="78.5" cy="277.1" r="5.5"/>
+<text class="t-d cov-lbl" x="78.5" y="299.1" text-anchor="middle">Farnham</text>
+<circle id="t-camberley" class="cov-dot" cx="100.0" cy="193.2" r="5.5"/>
+<text class="t-d cov-lbl" x="100.0" y="180.2" text-anchor="middle">Camberley</text>
+<circle id="t-london" class="cov-dot" cx="367.5" cy="76.2" r="5.5"/>
+<text class="t-d cov-lbl" x="377.5" y="81.2" text-anchor="start">London</text>
+<circle class="cov-base-ring" cx="262.5" cy="552.3" r="22"/><circle class="cov-base" cx="262.5" cy="552.3" r="11"/>
+<text class="t-h cov-base-l" x="278.5" y="596.3" text-anchor="middle">Worthing</text>
+<text class="t-m cov-base-s" x="278.5" y="616.3" text-anchor="middle">Base</text>
+</svg>
+          <div class="pin m-pop" style="left:49.1%; top:85.3%; animation-delay:1.9s" aria-hidden="true">
+            <small><span class="tv">{{county}}</span></small><b><span class="tv">{{town}}</span></b><span>From Worthing: <span class="tv">{{travel}}</span></span></div>
+        </div>
+      </figure>
