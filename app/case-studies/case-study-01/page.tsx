@@ -86,7 +86,7 @@ export default function CaseStudy01Page() {
             </div>
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a952" data-od-id="hanicks-hero-diagram" data-motion data-no="DO-ART-952" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-952. Two tracks at Hanicks. The ERP track: an off-the-shelf ERP was chosen first, then stalled on its own terms, nothing to do with the data work; so rather than start again, the data app became the ERP. The data track runs unbroken underneath: supplier feeds in, matched to what Hanicks sells, clean on every channel, marketplace listings linked, and a new website being built on the same data. The ERP changed. The data work carried on.">
+        aria-label="Drawn plate DO-ART-952. Two tracks at Hanicks. The ERP track: an off-the-shelf ERP was chosen first, then stalled on its own terms, nothing to do with the data work; so rather than start again, the data work became the ERP, now Decoded Works. The data track runs unbroken underneath: supplier feeds in, matched to what Hanicks sells, clean on every channel, marketplace listings linked, and a new website being built on the same data. The ERP changed. The data work carried on.">
   <div class="q-grid" aria-hidden="true"></div>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
     <pattern id="q-hatch-952" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047"/><line x1="0" y1="0" x2="0" y2="10" stroke="#8ECAE6" stroke-opacity=".28" stroke-width="3"/></pattern>
@@ -108,7 +108,7 @@ export default function CaseStudy01Page() {
     <path class="ln-a m-draw" pathLength="1" style="animation-delay:.9s" d="M358 86 H380" marker-end="url(#q-ah952a)"/>
     <g class="m-pop" style="animation-delay:1.1s"><rect class="bx-a" x="386" y="40" width="150" height="92" rx="10"/>
       <text class="t-m t-a" x="400" y="64" style="font-size:10.5px">So instead</text>
-      <text class="t-h" x="400" y="92" style="font-size:17px">The data app</text>
+      <text class="t-h" x="400" y="92" style="font-size:17px">Decoded Works</text>
       <text class="t-h" x="400" y="114" style="font-size:17px">became the ERP</text></g>
     <path class="ln-d" d="M281 134 V218"/>
     <text class="t-d" x="290" y="170" style="font-size:12.5px">nothing to do with</text>
@@ -134,7 +134,7 @@ export default function CaseStudy01Page() {
     <text class="t-m" x="14" y="16" style="font-size:11px">01 · The ERP</text>
     <rect class="bx" x="14" y="28" width="98" height="78" rx="8"/><text class="t-m" x="22" y="46" style="font-size:8.5px">Chosen first</text><text class="t" x="22" y="70" style="font-size:13px;font-weight:700">Off-the-</text><text class="t" x="22" y="88" style="font-size:13px;font-weight:700">shelf ERP</text>
     <rect x="121" y="28" width="98" height="78" rx="8" fill="url(#q-hatch-952)" stroke="#8ECAE6" stroke-opacity=".55" stroke-dasharray="5 4"/><text class="t-m" x="129" y="46" style="font-size:8.5px">Then</text><text class="t" x="129" y="70" style="font-size:13px;font-weight:700">Stalled on</text><text class="t" x="129" y="88" style="font-size:13px;font-weight:700">own terms</text>
-    <rect class="bx-a" x="228" y="28" width="98" height="78" rx="8"/><text class="t-m t-a" x="236" y="46" style="font-size:8.5px">So instead</text><text class="t" x="236" y="70" style="font-size:13px;font-weight:700">Data app</text><text class="t" x="236" y="88" style="font-size:13px;font-weight:700">is the ERP</text>
+    <rect class="bx-a" x="228" y="28" width="98" height="78" rx="8"/><text class="t-m t-a" x="236" y="46" style="font-size:8.5px">So instead</text><text class="t" x="236" y="70" style="font-size:13px;font-weight:700">Works</text><text class="t" x="236" y="88" style="font-size:13px;font-weight:700">is the ERP</text>
     <text class="t-d" x="14" y="130" style="font-size:12px">The stall had nothing to do with the data work.</text>
     <text class="t-m" x="14" y="168" style="font-size:11px">02 · The data work, unbroken</text>
     <path d="M30 186 V520" stroke="#8ECAE6" stroke-width="5" stroke-linecap="round"/>
@@ -248,10 +248,10 @@ export default function CaseStudy01Page() {
 
             <h2>What was done</h2>
             <p>
-              The work started with the data, not the platform. I built the data app to bring in every supplier catalogue, match it against what Hanicks actually sells, and keep it clean and current across their channels.
+              The work started with the data, not the platform. I built what is now Decoded Works to bring in every supplier catalogue, match it against what Hanicks actually sells, and keep it clean and current across their channels.
             </p>
             <p>
-              The off-the-shelf ERP they&apos;d originally chosen stalled on its own terms, nothing to do with the data work, which kept running throughout. So rather than start again with another off-the-shelf system, the data app became the ERP. Their marketplace listings on Amazon, eBay and OnBuy are now linked to it, and a new website is being built on top of the same data.
+              The off-the-shelf ERP they&apos;d originally chosen stalled on its own terms, nothing to do with the data work, which kept running throughout. So rather than start again with another off-the-shelf system, Decoded Works became the ERP. Their marketplace listings on Amazon, eBay and OnBuy are now linked to it, and a new website is being built on top of the same data.
             </p>
 
             <div className="progress-note">

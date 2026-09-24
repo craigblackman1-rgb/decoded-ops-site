@@ -134,7 +134,7 @@ export default function TransformPage() {
                 <g className="sk-fade sk-s5" fontSize="22">
                   <text x="890" y="322" className="p-ink">154,518 matched automatically</text>
                   <text x="890" y="392" className="p-ink">40 active suppliers feeding in</text>
-                   <text x="890" y="462" className="p-ink">Data app (now the ERP)</text>
+                   <text x="890" y="462" className="p-ink">Decoded Works (the ERP)</text>
                   <text x="890" y="532" className="p-ink">One catalogue, every channel</text>
                   <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
                      strokeLinejoin="round" fill="none">

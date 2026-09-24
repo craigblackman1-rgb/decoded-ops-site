@@ -84,13 +84,13 @@ export default function CaseStudy02Page() {
           <div className="wrap" style={{ marginTop: 'clamp(24px, 3vw, 48px)' }}>
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a953" data-od-id="hero-visual" data-motion data-no="DO-ART-953" data-rev="01" data-tx="photo"
-        aria-label="Artwork DO-ART-953. A graded photograph of folded shirts in a warehouse, with a phone showing a batch pick: six orders, each line with its bin location, one line being picked now. Pinned tags: 100% of stock has a bin location; 952 products live on their website; 17 supplier feeds automated. The eCommerce platform stayed. The data app does the parts it was never going to do.">
+        aria-label="Artwork DO-ART-953. A graded photograph of folded shirts in a warehouse, with a phone showing a batch pick: six orders, each line with its bin location, one line being picked now. Pinned tags: 100% of stock has a bin location; 952 products live on their website; 17 supplier feeds automated. The eCommerce platform stayed. Decoded Works does the parts it was never going to do.">
   <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-d86bf7.jpg" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="cap">
     <div class="k d17-mono">Case study 02 <span>· live since July</span></div>
     <div class="bar" aria-hidden="true"></div>
-    <h3>The platform stayed. The data app does the rest.</h3>
+    <h3>The platform stayed. Decoded Works does the rest.</h3>
     <p>Supplier feeds kept current, decorated and plain stock tracked separately, and the
       warehouse run from a phone.</p>
     <span class="d17-mark">decodedops.co.uk · DO-ART-953 · Rev 01</span>
@@ -181,7 +181,7 @@ export default function CaseStudy02Page() {
             <div className="grid grid--3" style={{ marginTop: 32 }}>
               <div className="stat">
                 <p className="stat-num num">952</p>
-                <p className="stat-label">products live on their website through the data app</p>
+                <p className="stat-label">products live on their website through Decoded Works</p>
               </div>
               <div className="stat">
                 <p className="stat-num num">100%</p>

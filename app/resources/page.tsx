@@ -72,7 +72,7 @@ const resources = [
   {
     icon: Calculator,
     title: 'Capacity Planning Calculator',
-    desc: 'Work out how many jobs your machines can actually produce per week — real throughput, not the spec sheet number.',
+    desc: 'Work out how many jobs your machines can actually produce per week: real throughput, not the spec sheet number.',
     href: '/resources/capacity-planner',
   },
   {
