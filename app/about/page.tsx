@@ -89,36 +89,36 @@ export default function AboutPage() {
             <p className={d17.stand}>Every level of these businesses, one stop at a time.</p>
             <svg className="route" viewBox="0 0 1600 900" aria-hidden="true">
               <defs><filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" /></filter></defs>
-              <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className="m-fade" style={{ animationDelay: '1.6s' }}>
+              <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className={d17.mFade} style={{ animationDelay: '1.6s' }}>
                 <path d="M470 572 V 596" /><path d="M1080 392 V 436" /></g>
-              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" strokeWidth="30" strokeLinejoin="round" strokeLinecap="round" filter="url(#rt-glow)" className="m-draw" />
-              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" strokeWidth="24" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
-              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" strokeWidth="14" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" strokeWidth="30" strokeLinejoin="round" strokeLinecap="round" filter="url(#rt-glow)" className={d17.mDraw} />
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" strokeWidth="24" strokeLinejoin="round" strokeLinecap="round" className={d17.mDraw} />
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" strokeWidth="14" strokeLinejoin="round" strokeLinecap="round" className={d17.mDraw} />
               <rect x="58" y="596" width="12" height="48" rx="3" fill="#8ECAE6" />
               <g fill="#F8F9FA" stroke="#023047" strokeWidth="6">
-                <circle cx="190" cy="620" r="17" className="m-pop" style={{ animationDelay: '.35s', transformOrigin: '190px 620px' }} />
-                <circle cx="470" cy="620" r="17" className="m-pop" style={{ animationDelay: '.75s', transformOrigin: '470px 620px' }} />
-                <circle cx="860" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.3s', transformOrigin: '860px 460px' }} />
-                <circle cx="1080" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.6s', transformOrigin: '1080px 460px' }} />
+                <circle cx="190" cy="620" r="17" className={d17.mPop} style={{ animationDelay: '.35s', transformOrigin: '190px 620px' }} />
+                <circle cx="470" cy="620" r="17" className={d17.mPop} style={{ animationDelay: '.75s', transformOrigin: '470px 620px' }} />
+                <circle cx="860" cy="460" r="17" className={d17.mPop} style={{ animationDelay: '1.3s', transformOrigin: '860px 460px' }} />
+                <circle cx="1080" cy="460" r="17" className={d17.mPop} style={{ animationDelay: '1.6s', transformOrigin: '1080px 460px' }} />
               </g>
-              <g className="m-pop" style={{ animationDelay: '2.3s', transformOrigin: '1430px 320px' }}>
+              <g className={d17.mPop} style={{ animationDelay: '2.3s', transformOrigin: '1430px 320px' }}>
                 <circle cx="1430" cy="320" r="46" fill="rgba(255,183,3,.16)" />
                 <circle cx="1430" cy="320" r="30" fill="#023047" stroke="#FFB703" strokeWidth="10" />
                 <circle cx="1430" cy="320" r="11" fill="#FFB703" /></g>
             </svg>
-            <div className="prints" aria-hidden="true">
-              <div className={`${d17.print} m-drop`} style={{ left: 'calc(352 * var(--u))', top: 'calc(356 * var(--u))', width: 'calc(236 * var(--u))', height: 'calc(216 * var(--u))', transform: 'rotate(-3deg)', animationDelay: '.9s' }}>
-                <img src="/images/d17/thread-spools.jpg" alt="" /><i className="tint" />
+            <div className={d17.prints} aria-hidden="true">
+              <div className={`${d17.print} ${d17.mDrop}`} style={{ left: 'calc(352 * var(--u))', top: 'calc(356 * var(--u))', width: 'calc(236 * var(--u))', height: 'calc(216 * var(--u))', transform: 'rotate(-3deg)', animationDelay: '.9s' }}>
+                <img src="/images/d17/thread-spools.jpg" alt="" /><i className={d17.tint} />
                 <span>where print and embroidery got hold of me</span></div>
-              <div className={`${d17.print} m-drop`} style={{ left: 'calc(966 * var(--u))', top: 'calc(196 * var(--u))', width: 'calc(228 * var(--u))', height: 'calc(196 * var(--u))', transform: 'rotate(2.6deg)', animationDelay: '1.8s' }}>
-                <img src="/images/d17/gen-press-hall.jpg" alt="" /><i className="tint" /></div>
+              <div className={`${d17.print} ${d17.mDrop}`} style={{ left: 'calc(966 * var(--u))', top: 'calc(196 * var(--u))', width: 'calc(228 * var(--u))', height: 'calc(196 * var(--u))', transform: 'rotate(2.6deg)', animationDelay: '1.8s' }}>
+                <img src="/images/d17/gen-press-hall.jpg" alt="" /><i className={d17.tint} /></div>
             </div>
-            <div className="stations">
-              <div className={`${d17.st} m-fade`} style={{ left: 'calc(168 * var(--u))', top: 'calc(658 * var(--u))', animationDelay: '.4s' }}><span className="n">01</span><h3>Industrial computing</h3><p>MOD, BBC, ITV</p></div>
-              <div className={`${d17.st} m-fade`} style={{ left: 'calc(448 * var(--u))', top: 'calc(658 * var(--u))', width: 'calc(270 * var(--u))', animationDelay: '.8s' }}><span className="n">02</span><h3>Textiles</h3><p>Warehouse floor to 1,000+ orders a day at peak</p></div>
-              <div className={`${d17.st} m-fade`} style={{ left: 'calc(838 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(210 * var(--u))', animationDelay: '1.35s' }}><span className="n">03</span><h3>IT managed services</h3></div>
-              <div className={`${d17.st} m-fade`} style={{ left: 'calc(1058 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(300 * var(--u))', animationDelay: '1.65s' }}><span className="n">04</span><h3>Demystify Digital</h3><p>4.5 years building eCommerce for print and embroidery</p></div>
-              <div className={`${d17.st} ${d17.stEnd} m-fade`} style={{ left: 'calc(1300 * var(--u))', top: 'calc(382 * var(--u))', width: 'calc(280 * var(--u))', animationDelay: '2.4s' }}><span className="n">05 &middot; What I do now</span><h3>Operations consultancy</h3></div>
+            <div className={d17.stations}>
+              <div className={`${d17.st} ${d17.mFade}`} style={{ left: 'calc(168 * var(--u))', top: 'calc(658 * var(--u))', animationDelay: '.4s' }}><span className={d17.n}>01</span><h3>Industrial computing</h3><p>MOD, BBC, ITV</p></div>
+              <div className={`${d17.st} ${d17.mFade}`} style={{ left: 'calc(448 * var(--u))', top: 'calc(658 * var(--u))', width: 'calc(270 * var(--u))', animationDelay: '.8s' }}><span className={d17.n}>02</span><h3>Textiles</h3><p>Warehouse floor to 1,000+ orders a day at peak</p></div>
+              <div className={`${d17.st} ${d17.mFade}`} style={{ left: 'calc(838 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(210 * var(--u))', animationDelay: '1.35s' }}><span className={d17.n}>03</span><h3>IT managed services</h3></div>
+              <div className={`${d17.st} ${d17.mFade}`} style={{ left: 'calc(1058 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(300 * var(--u))', animationDelay: '1.65s' }}><span className={d17.n}>04</span><h3>Demystify Digital</h3><p>4.5 years building eCommerce for print and embroidery</p></div>
+              <div className={`${d17.st} ${d17.stEnd} ${d17.mFade}`} style={{ left: 'calc(1300 * var(--u))', top: 'calc(382 * var(--u))', width: 'calc(280 * var(--u))', animationDelay: '2.4s' }}><span className={d17.n}>05 &middot; What I do now</span><h3>Operations consultancy</h3></div>
             </div>
             <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-831 &middot; Rev 01</span>
           </figure>
@@ -170,10 +170,10 @@ export default function AboutPage() {
       <section className="g-navy set" data-od-id="software-origin">
         <div className="wrap">
           <article className="sheet" data-od-id="sheet-software">
-            <div className="docket">
+            <div className={d17.docket}>
               <span>DO-ART-719 &middot; Schematic</span>
               <span>Rev 03</span>
-              <span className="issued">Issued</span>
+              <span className={d17.issued}>Issued</span>
             </div>
 
             <div className="masthead">

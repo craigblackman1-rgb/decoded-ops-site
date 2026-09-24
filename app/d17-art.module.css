@@ -84,6 +84,7 @@
 .a916 cite { display: block; margin: 16px 0 18px; font-style: normal; font-family: var(--do-font-mono);
   font-size: max(10px, calc(11.5 * var(--u))); letter-spacing: .18em; text-transform: uppercase; color: var(--do-sky-blue) }
 .a916 .d17Mark { align-self: flex-start }
+.a916 .stage { position: relative; aspect-ratio: 560 / 380 }
 
 /* ─── DO-ART-917 · home figures · product screen with the live Hanicks figures ─── */
 .a917 { --u: calc(100cqw / 1152); display: grid; grid-template-columns: 31% 1fr; gap: calc(40 * var(--u));
@@ -258,6 +259,19 @@
 .factHeadA919 .factNo { position: absolute; top: 22px; left: 32px }
 .factHeadA919 .fm { position: absolute; right: 14px; top: 14px; font-family: var(--do-font-mono); font-size: 10px;
   letter-spacing: .16em; color: var(--do-amber); background: var(--do-prussian-blue); padding: 5px 8px; border-radius: var(--do-radius-sm) }
+.factFig { margin: 16px 0 0; font-family: var(--do-font-heading); font-weight: 800;
+  font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -.04em; color: var(--do-amber) }
+.factFigSub { margin: 12px 0 0; font-size: var(--do-text-sm); color: var(--do-text-on-dark); max-width: 34ch }
+.factBody { flex: 1; padding: 28px 32px 32px }
+
+/* ─── docket (shared by DO-ART-719 sections) ─── */
+.docket { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center;
+  padding-bottom: 14px; border-bottom: 1px solid var(--do-border-dark);
+  font-family: var(--do-font-mono); font-size: var(--do-text-xs);
+  letter-spacing: var(--do-tracking-wider); text-transform: uppercase;
+  color: var(--do-text-muted-on-dark) }
+.docket .issued { padding: 4px 11px; border-radius: var(--do-radius-sm); color: var(--do-amber);
+  border: 1px solid color-mix(in srgb, var(--do-amber) 55%, transparent) }
 
 /* ─── DO-ART-920 · Contact · warm photo-led panel ─── */
 .a920 { --u: calc(100cqw / 1100); display: grid; grid-template-columns: 54% 1fr; min-height: calc(460 * var(--u)); text-align: left }

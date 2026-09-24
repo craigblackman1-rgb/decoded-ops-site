@@ -121,12 +121,12 @@ export default function HomePage() {
                   alt="" width={1100} height={1224} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
-                <div className="stage" aria-hidden="true">
-                  <div className={`${d17.d17Doc} ${d17.docA} m-drop`} style={{ animationDelay: '.35s' }}>
-                    <span className="tab">01</span>
-                    <span className="ref">CA-01 &middot; Written report</span>
+                <div className={`${d17.stage}`} aria-hidden="true">
+                  <div className={`${d17.d17Doc} ${d17.docA} ${d17.mDrop}`} style={{ animationDelay: '.35s' }}>
+                    <span className={d17.tab}>01</span>
+                    <span className={d17.ref}>CA-01 &middot; Written report</span>
                     <h4>What it&apos;s costing you</h4>
-                    <p className="sub">six areas &middot; followed, not described</p>
+                    <p className={d17.sub}>six areas &middot; followed, not described</p>
                     <ol>
                       <li><b>01</b>IT infrastructure<i /></li>
                       <li><b>02</b>Software &amp; systems<i /></li>
@@ -135,14 +135,14 @@ export default function HomePage() {
                       <li><b>05</b>Growth<i /></li>
                     </ol>
                   </div>
-                  <div className={`${d17.d17Doc} ${d17.docB} m-drop`} style={{ animationDelay: '.1s' }}>
-                    <span className="tab">02</span>
-                    <span className="ref">RM-01 &middot; Roadmap</span>
+                  <div className={`${d17.d17Doc} ${d17.docB} ${d17.mDrop}`} style={{ animationDelay: '.1s' }}>
+                    <span className={d17.tab}>02</span>
+                    <span className={d17.ref}>RM-01 &middot; Roadmap</span>
                     <h4>What to fix, in what order</h4>
-                    <p className="sub">within five working days</p>
-                    <div className="phase">Now</div><div className="lines"><i style={{ width: '92%' }} /><i style={{ width: '70%' }} /></div>
-                    <div className="phase">Next</div><div className="lines"><i style={{ width: '84%' }} /><i style={{ width: '58%' }} /></div>
-                    <div className="phase">Later</div><div className="lines"><i style={{ width: '66%' }} /></div>
+                    <p className={d17.sub}>within five working days</p>
+                    <div className={d17.phase}>Now</div><div className={d17.lines}><i style={{ width: '92%' }} /><i style={{ width: '70%' }} /></div>
+                    <div className={d17.phase}>Next</div><div className={d17.lines}><i style={{ width: '84%' }} /><i style={{ width: '58%' }} /></div>
+                    <div className={d17.phase}>Later</div><div className={d17.lines}><i style={{ width: '66%' }} /></div>
                   </div>
                 </div>
                 <div className={d17.askBody}>
@@ -274,7 +274,7 @@ export default function HomePage() {
                       aria-label="Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
                 <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
-                <figcaption className="cap">
+                <figcaption className={d17.cap}>
                   <div className={`${d17.k} ${d17.d17Mono}`}>The Data App <span>&middot; at Hanicks</span></div>
                   <div className={d17.bar} aria-hidden="true" />
                   <h3>Forty suppliers. One catalogue.</h3>
@@ -283,32 +283,32 @@ export default function HomePage() {
                   <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-917 &middot; Rev 01</span>
                 </figcaption>
                 <div className={d17.win} aria-hidden="true">
-                  <div className={d17.winBar}><span className="dots"><i /><i /><i /></span>
-                    <span className="crumb"><span>Catalogue &rsaquo;</span> Overview</span><span className="pill">HANICKS</span></div>
+                  <div className={d17.winBar}><span className={d17.dots}><i /><i /><i /></span>
+                    <span className={d17.crumb}><span>Catalogue &rsaquo;</span> Overview</span><span className={d17.pill}>HANICKS</span></div>
                   <div className={d17.winBody}>
-                    <nav className={d17.winNav}><span className="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="m3 13 9 5 9-5" /></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.6" /><circle cx="17" cy="17.5" r="1.6" /></svg>Fulfil</span>
+                    <nav className={d17.winNav}><span className={d17.on}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="m3 13 9 5 9-5" /></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" /><circle cx="7" cy="17.5" r="1.6" /><circle cx="17" cy="17.5" r="1.6" /></svg>Fulfil</span>
                       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z" /></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>Insight</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" /></svg>Setup</span></nav>
                     <div className={d17.winMain}>
                       <h5>Catalogue overview</h5>
-                      <p className="s">Every supplier feed, brought into one catalogue</p>
+                      <p className={d17.s}>Every supplier feed, brought into one catalogue</p>
                       <div className={d17.kpis}>
-                        <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.1s' }}><div className="l">Products brought in</div>
-                          <p className="n">317,812</p><p className="d">from supplier feeds</p></div>
-                        <div className={`${d17.kpi} ${d17.kpiHit} m-rise`} style={{ animationDelay: '.3s' }}><div className="l">Matched automatically</div>
-                          <p className="n">154,518</p><p className="d">to a supplier, before anyone had to touch them</p></div>
-                        <div className={`${d17.kpi} m-rise`} style={{ animationDelay: '.5s' }}><div className="l">Active suppliers</div>
-                          <p className="n">40</p><p className="d">feeding in</p></div>
+                        <div className={`${d17.kpi} ${d17.mRise}`} style={{ animationDelay: '.1s' }}><div className={d17.l}>Products brought in</div>
+                          <p className={d17.n}>317,812</p><p className={d17.d}>from supplier feeds</p></div>
+                        <div className={`${d17.kpi} ${d17.kpiHit} ${d17.mRise}`} style={{ animationDelay: '.3s' }}><div className={d17.l}>Matched automatically</div>
+                          <p className={d17.n}>154,518</p><p className={d17.d}>to a supplier, before anyone had to touch them</p></div>
+                        <div className={`${d17.kpi} ${d17.mRise}`} style={{ animationDelay: '.5s' }}><div className={d17.l}>Active suppliers</div>
+                          <p className={d17.n}>40</p><p className={d17.d}>feeding in</p></div>
                       </div>
-                      <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.7s' }}><div className="row"><b>Supplier matching</b><span>154,518 of 317,812</span></div>
-                        <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '48.6%', animationDelay: '1s' }} /></div></div>
-                      <div className={`${d17.meter} m-rise`} style={{ animationDelay: '.85s' }}><div className="row"><b>Stock records with a bin location</b><span>77%</span></div>
-                        <div className="track"><div className={`${d17.fill} m-fill`} style={{ width: '77%', animationDelay: '1.25s' }} /></div></div>
+                      <div className={`${d17.meter} ${d17.mRise}`} style={{ animationDelay: '.7s' }}><div className={d17.row}><b>Supplier matching</b><span>154,518 of 317,812</span></div>
+                        <div className={d17.track}><div className={`${d17.fill} ${d17.mFill}`} style={{ width: '48.6%', animationDelay: '1s' }} /></div></div>
+                      <div className={`${d17.meter} ${d17.mRise}`} style={{ animationDelay: '.85s' }}><div className={d17.row}><b>Stock records with a bin location</b><span>77%</span></div>
+                        <div className={d17.track}><div className={`${d17.fill} ${d17.mFill}`} style={{ width: '77%', animationDelay: '1.25s' }} /></div></div>
                       <div className={d17.feeds}>
-                        <div className="hd"><b>Supplier feeds</b><span>40 active</span></div>
-                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.6s' }}><b>Supplier A</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
-                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.75s' }}><b>Supplier B</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
-                        <div className={`${d17.r} m-fade`} style={{ animationDelay: '1.9s' }}><b>Supplier C</b><span>Stock</span><span className={d17.ok}>IMPORTED</span></div>
-                        <div className={`${d17.more} m-fade`} style={{ animationDelay: '2.05s' }}>+ 37 more active suppliers</div>
+                        <div className={d17.hd}><b>Supplier feeds</b><span>40 active</span></div>
+                        <div className={`${d17.r} ${d17.mFade}`} style={{ animationDelay: '1.6s' }}><b>Supplier A</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.r} ${d17.mFade}`} style={{ animationDelay: '1.75s' }}><b>Supplier B</b><span>Product and stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.r} ${d17.mFade}`} style={{ animationDelay: '1.9s' }}><b>Supplier C</b><span>Stock</span><span className={d17.ok}>IMPORTED</span></div>
+                        <div className={`${d17.more} ${d17.mFade}`} style={{ animationDelay: '2.05s' }}>+ 37 more active suppliers</div>
                       </div>
                     </div>
                   </div>
@@ -362,20 +362,20 @@ export default function HomePage() {
                       aria-label="Evidence piece DO-ART-918. A teamwear business on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
                 <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
-                <figcaption className="copy">
+                <figcaption className={d17.copy}>
                   <div className={`${d17.k} ${d17.d17Mono}`}>A teamwear business <span>&middot; live system, Sept 2026</span></div>
                   <h3>Seventeen feeds in. Every item binned.</h3>
                   <ol className={d17.ledger}>
-                    <li className="m-fade" style={{ animationDelay: '.2s' }}><span className="n">17</span><span className="t">supplier feeds, automated</span></li>
-                    <li className="m-fade" style={{ animationDelay: '.55s' }}><span className="n">27,778</span><span className="t">supplier products in one catalogue</span></li>
-                    <li className="m-fade" style={{ animationDelay: '.9s' }}><span className="n">236,056</span><span className="t">variants, split by colour and size</span></li>
-                    <li className="m-fade" style={{ animationDelay: '1.25s' }}><span className="n">952</span><span className="t">products live on their website</span></li>
-                    <li className={`${d17.end} m-fade`} style={{ animationDelay: '1.6s' }}><span className="n">100%</span><span className="t">of stock with a bin location</span></li>
+                    <li className={`${d17.mFade}`} style={{ animationDelay: '.2s' }}><span className={d17.n}>17</span><span className={d17.t}>supplier feeds, automated</span></li>
+                    <li className={`${d17.mFade}`} style={{ animationDelay: '.55s' }}><span className={d17.n}>27,778</span><span className={d17.t}>supplier products in one catalogue</span></li>
+                    <li className={`${d17.mFade}`} style={{ animationDelay: '.9s' }}><span className={d17.n}>236,056</span><span className={d17.t}>variants, split by colour and size</span></li>
+                    <li className={`${d17.mFade}`} style={{ animationDelay: '1.25s' }}><span className={d17.n}>952</span><span className={d17.t}>products live on their website</span></li>
+                    <li className={`${d17.end} ${d17.mFade}`} style={{ animationDelay: '1.6s' }}><span className={d17.n}>100%</span><span className={d17.t}>of stock with a bin location</span></li>
                   </ol>
                   <span className={d17.d17Mark}>decodedops.co.uk &middot; DO-ART-918 &middot; Rev 01</span>
                 </figcaption>
-                <div className={`${d17.print} m-drop`} style={{ animationDelay: '1.9s' }} aria-hidden="true">
-                  <span className="ref">BIN &middot; PICK FACE</span><b>A-04-2</b><div className="bc" /><div className="s">Polo &middot; navy &middot; M</div>
+                <div className={`${d17.print} ${d17.mDrop}`} style={{ animationDelay: '1.9s' }} aria-hidden="true">
+                  <span className={d17.ref}>BIN &middot; PICK FACE</span><b>A-04-2</b><div className={d17.bc} /><div className={d17.s}>Polo &middot; navy &middot; M</div>
                 </div>
               </figure>
             </div>
