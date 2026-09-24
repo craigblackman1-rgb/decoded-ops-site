@@ -119,9 +119,9 @@ export default function ChecklistPage() {
         <div className="wrap" style={{ maxWidth: 720 }}>
           <span className="eyebrow">Free resource</span>
           <h1>Operational audit checklist</h1>
-          <p className="lede">
-            20 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
-          </p>
+            <p className="lede">
+              36 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+            </p>
         </div>
       </section>
 
@@ -280,13 +280,13 @@ export default function ChecklistPage() {
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
-                  If your systems don't integrate, you're paying 3-5% of revenue in manual workarounds.
+                  If your systems don&apos;t integrate, you are paying a significant amount in manual workarounds.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
-                  Inventory accuracy problems typically cost 1-3% of stock value per year.
+                  Inventory accuracy problems cost more than most businesses realise.
                 </p>
               </div>
             </div>

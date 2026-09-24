@@ -53,7 +53,7 @@ const proofItems = [
 const faqs = [
   {
     q: 'Why does artwork approval take so long?',
-    a: 'Almost always because the brief at the start was incomplete. When colours, file format, placement, or sizing are not confirmed before artwork is created, the revision cycle begins. A brief template that collects all requirements upfront reduces revision rounds from 3-5 to 1 in most cases.',
+    a: 'Almost always because the brief at the start was incomplete. When colours, file format, placement, or sizing are not confirmed before artwork is created, the revision cycle begins. A brief template that collects all requirements upfront dramatically reduces revision rounds.',
   },
   {
     q: 'What should an artwork approval proof include?',

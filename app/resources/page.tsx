@@ -100,7 +100,7 @@ export default function ResourcesPage() {
       <section className="g-navy">
         <div className="wrap">
           <span className="eyebrow">Resource sequence &middot; DO-ART-308</span>
-          <h2>Seven free resources, one order that makes them worth anything.</h2>
+          <h2>Nine free resources, one order that makes them worth anything.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
             They are a sequence, not a menu. Using them out of order wastes most of them. Choosing the platform first is step five done first, which is warning sign five.
@@ -108,7 +108,7 @@ export default function ResourcesPage() {
 
           <div className="plate-scroll">
             <div className="plate-frame" data-od-id="plate-resources">
-              <Plate tone="dark" p="rsx" title="Seven resources, one order"
+              <Plate tone="dark" p="rsx" title="Nine resources, one order"
                      sub="They are a sequence, not a menu &middot; using them out of order wastes most of them"
                      no="DO-ART-308" rev="02" cls="DECODED OPS &middot; ISSUED">
 
@@ -169,7 +169,7 @@ export default function ResourcesPage() {
                   <rect x="55" y="620" width="1490" height="120" rx="10" fill="url(#rsx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
                   <text x="81" y="660" className="p-amber" fontSize="14" letterSpacing="2.4" fontWeight="600">THE ORDER MATTERS</text>
                   <text x="81" y="698" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Choosing the platform first is step five done first, which is warning sign five.</text>
-                  <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The seven resources are free. Doing them in this order is what makes them worth anything.</text>
+                  <text x="81" y="728" className="p-mono" fontSize="17" opacity=".62">The nine resources are free. Doing them in this order is what makes them worth anything.</text>
                 </g>
               </Plate>
             </div>

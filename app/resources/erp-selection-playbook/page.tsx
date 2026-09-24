@@ -65,11 +65,11 @@ const warningSigns = [
 ];
 
 const systems = [
-  { name: 'OrderWise', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
-  { name: 'Panta ERP', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
-  { name: 'DecoNetwork', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
-  { name: 'ShirtWorks', strength: 'Sector-specific MIS, strong on screen print workflow', weakness: '' },
-  { name: 'Cin7', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
+  { name: 'A generic print ERP', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },
+  { name: 'A decoration-specific order system', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },
+  { name: 'An eCommerce-first decoration platform', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },
+  { name: 'A sector-specific MIS', strength: 'Sector-specific, strong on screen print workflow', weakness: '' },
+  { name: 'An inventory-focused platform', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },
 ];
 
 const selectionSteps = [

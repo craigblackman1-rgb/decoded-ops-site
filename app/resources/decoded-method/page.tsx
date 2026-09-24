@@ -64,7 +64,7 @@ const layers = [
     n: '01', name: 'The Process Register', accent: '#219EBC',
     blurb: "The spine. One row per process: what it's called, who owns it, and when it was last looked at. Often the first time a business has everything it does written down in one place.",
     fields: [
-      ['Ref', 'a short code, e.g. TB-PR-001'],
+      ['Ref', 'a short code, e.g. PR-001'],
       ['Owner', 'one named person, never "the team"'],
       ['Category', 'Delivery, Sales, Admin, Finance, Marketing, or Tech'],
       ['Status', 'active, draft, review, or archived'],
