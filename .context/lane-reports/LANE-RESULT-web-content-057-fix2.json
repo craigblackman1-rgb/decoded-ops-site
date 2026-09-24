@@ -1,0 +1,25 @@
+{
+  "lane": "web-content-057-fix2",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "88b7dd4fe04c49dda8eb7927b569e41a6a66702d",
+      "subject": "content(web): remaining data app mentions + em dash (CR-WEB-057)"
+    }
+  ],
+  "filesChanged": [
+    "app/blog/[slug]/page.tsx",
+    "app/case-studies/hanicks/page.tsx",
+    "app/case-studies/tacklebag/page.tsx",
+    "app/case-studies/cobra-workwear/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
