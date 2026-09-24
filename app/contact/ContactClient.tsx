@@ -4,6 +4,8 @@ import { ArrowRight, Mail, Phone, Clock, MessageSquare, CheckCircle, AlertCircle
 import { useState } from 'react';
 import { submitContactForm } from './actions';
 import { BOOKING_URL } from '@/lib/constants';
+import { D17Motion } from '@/components/D17Motion';
+import d17 from '@/app/d17-art.module.css';
 
 export function ContactClient() {
   const [formState, setFormState] = useState<{
@@ -251,6 +253,39 @@ export function ContactClient() {
           </div>
         </div>
       </section>
+
+      {/* DO-ART-920 r01 · photo-led panel (D17): the approved portrait
+           (assets/craig-blackman.jpg, the same photograph as /about), warm,
+           light grade. "It reaches me directly" is the argument, so the
+           panel shows who it reaches. */}
+      <section className="g-navy cta-strip" data-od-id="cta-strip">
+        <div className="wrap" style={{ maxWidth: 1148 }}>
+          <figure className={`${d17.d17} ${d17.a920}`} data-od-id="direct-line"
+                  data-no="DO-ART-920" data-rev="01" data-tx="photo" style={{ margin: 0 }}>
+            <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={950} height={1067}
+                 alt="Craig Blackman on a beach, smiling, hands in the pockets of a black jacket." /></div>
+            <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
+            <figcaption className="copy">
+              <div className={`${d17.k} ${d17.d17Mono}`}>Direct line <span>&middot; no gatekeeper</span></div>
+              <div className={d17.bar} aria-hidden="true" />
+              <h2>Prefer a direct line?</h2>
+              <p className="lede">Call or email &mdash; either way it reaches me directly, not a gatekeeper.</p>
+              <div className={d17.heroCta}>
+                <a className={d17.contactLink} href="mailto:craig@decodedops.co.uk" data-od-id="contact-email">
+                  <span className="icon">&#9993;</span>
+                  <span><span className="lbl">Email</span><br /><span className="val">craig@decodedops.co.uk</span></span>
+                </a>
+                <a className={d17.contactLink} href="tel:+447735620603" data-od-id="contact-phone">
+                  <span className="icon">&#9742;</span>
+                  <span><span className="lbl">Phone</span><br /><span className="val">07735 620 603</span></span>
+                </a>
+              </div>
+            </figcaption>
+            <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-920 &middot; Rev 01</span>
+          </figure>
+        </div>
+      </section>
+      <D17Motion />
     </>
   );
 }
