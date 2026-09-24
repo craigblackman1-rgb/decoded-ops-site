@@ -1,0 +1,23 @@
+{
+  "lane": "web-h-build-d17-fix2",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "2658603d6397613ee47a3ddab4d6f2627723c943",
+      "subject": "fix(web): stack location page sections on phones (WO-INF-061)"
+    }
+  ],
+  "filesChanged": [
+    "components/LocationPage.tsx",
+    "app/d17-locations.css"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
