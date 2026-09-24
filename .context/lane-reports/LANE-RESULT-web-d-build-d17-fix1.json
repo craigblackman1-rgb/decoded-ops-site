@@ -1,0 +1,32 @@
+{
+  "lane": "web-d-build-d17-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "f16dc21659588300d69e22e722f0420571364176",
+      "subject": "fix(web): sector D17 art uses a global stylesheet (injected markup)"
+    }
+  ],
+  "filesChanged": [
+    "app/d17-global.css",
+    "app/d17-sectors.module.css",
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/garment-decoration/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/promotional-merchandise/page.tsx",
+    "app/sectors/schoolwear/page.tsx",
+    "app/sectors/signs-graphics/page.tsx",
+    "app/sectors/teamwear-clubwear/page.tsx",
+    "app/sectors/workwear/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors, 0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits (git grep d17-sectors.module -- app returned empty)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
