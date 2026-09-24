@@ -1,0 +1,23 @@
+{
+  "lane": "web-content-056-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "ea13afdc4752949ad06c1c2d2c0a5ec1ac5a0464",
+      "subject": "content(web): remove remaining platform names (CR-WEB-056)"
+    }
+  ],
+  "filesChanged": [
+    "app/problems/wrong-erp-software/page.tsx",
+    "data/problem-routing.ts"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
