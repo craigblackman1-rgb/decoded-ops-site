@@ -65,7 +65,7 @@ export default function AppsPage() {
                 </div>
               </div>
               <div className="mw s3 m-rise" style={{animationDelay:'.6s'}} data-cap="Decoded Commerce · live infrastructure">
-                <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Trade store ›</span> Workwear</span><span className="pill">TRADE</span></div>
+                <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Commerce ›</span> Workwear</span><span className="pill">TRADE</span></div>
                 <div className="mw-main">
                   <h5>Trade catalogue</h5>
                   <p className="s">Your account pricing · quote alongside the basket</p>

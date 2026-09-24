@@ -80,7 +80,7 @@ export default function CommercePage() {
   <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>Live infrastructure</span></div>
   <div class="stage" aria-hidden="true">
     <div class="mw">
-      <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Trade store ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
+      <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Commerce ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
       <div class="acct"><span>Trade account · your price list applies</span><b>Basket 2 · Quotes 1</b></div>
       <div class="mw-main">
         <h5>Full trade catalogue</h5>

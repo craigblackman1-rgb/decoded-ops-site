@@ -259,7 +259,7 @@ export default function PricingPage() {
               <h3>Versions, approvals and delivery</h3>
             </Link>
             <Link className="card" href="/apps/commerce">
-              <span className="kicker">Trade store</span>
+              <span className="kicker">Commerce</span>
               <h3>B2B ordering for your customers</h3>
             </Link>
           </div>
