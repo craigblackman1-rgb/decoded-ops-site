@@ -6,6 +6,7 @@ import { ThreeLayerSchematic } from '@/components/schematics/ThreeLayerSchematic
 import { SinglePointSchematic } from '@/components/schematics/SinglePointSchematic';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 const schema = {

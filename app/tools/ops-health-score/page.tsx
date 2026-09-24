@@ -6,6 +6,7 @@ import { ArrowRight, RotateCcw, Info } from 'lucide-react';
 import { ToolLeadCapture } from '@/components/ToolLeadCapture';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 interface Dimension {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { RtoCalculator } from '@/components/calculators/RtoCalculator';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 const jsonLd = {

@@ -79,4 +79,7 @@
 
 @media (max-width: 639px) {
   .calc-months-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .calc-bar-label { width: 24px; flex-shrink: 0; }
+  .calc-bar-val { width: 32px; flex-shrink: 0; }
+  .calc-bar-legend { padding-left: 0 !important; }
 }

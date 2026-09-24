@@ -180,11 +180,11 @@ export function SeasonalCapacityCalculator() {
               const demandWidth = barMax > 0 ? (d.demand / barMax) * 100 : 0;
               const capWidth = barMax > 0 ? (baseCapacity / barMax) * 100 : 0;
               return (
-                <div key={d.month} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                  <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', width: 28, flexShrink: 0 }}>
+                <div key={d.month} className="calc-bar-row" style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                  <span className="calc-bar-label" style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)' }}>
                     {d.month}
                   </span>
-                  <div style={{ flex: 1, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-text-on-dark) 8%, transparent)' }}>
+                  <div style={{ flex: 1, minWidth: 0, position: 'relative', height: 16, borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-text-on-dark) 8%, transparent)' }}>
                     {/* Capacity line */}
                     <div style={{ position: 'absolute', left: `${capWidth}%`, top: -2, bottom: -2, width: 2, background: 'var(--do-sky-blue)', borderRadius: 1 }} />
                     {/* Demand bar */}
@@ -198,13 +198,13 @@ export function SeasonalCapacityCalculator() {
                       }}
                     />
                   </div>
-                  <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: d.gap < 0 ? 'var(--do-orange)' : 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', width: 40, textAlign: 'right', flexShrink: 0 }}>
+                  <span className="calc-bar-val" style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: d.gap < 0 ? 'var(--do-orange)' : 'color-mix(in srgb, var(--do-text-on-dark) 70%, transparent)', textAlign: 'right' }}>
                     {d.gap > 0 ? `+${d.gap}` : d.gap}
                   </span>
                 </div>
               );
             })}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8, paddingLeft: 36 }}>
+            <div className="calc-bar-legend" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 8, marginTop: 8, paddingLeft: 36 }}>
               <div style={{ width: 10, height: 3, background: 'var(--do-cerulean)', borderRadius: 2 }} />
               <span style={{ fontSize: 'var(--do-text-xs)', color: 'color-mix(in srgb, var(--do-text-on-dark) 60%, transparent)' }}>Demand</span>
               <div style={{ width: 10, height: 3, background: 'var(--do-orange)', borderRadius: 2 }} />

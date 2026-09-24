@@ -5,6 +5,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
+import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 // Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
