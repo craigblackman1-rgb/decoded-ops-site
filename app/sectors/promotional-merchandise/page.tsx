@@ -5,8 +5,7 @@ import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
-import d17 from '@/app/d17-art.module.css';
-import sectors from '@/app/d17-sectors.module.css';
+import '@/app/d17-global.css';
 
 export const metadata: Metadata = {
   title: 'Promotional merchandise: Decoded Ops',
