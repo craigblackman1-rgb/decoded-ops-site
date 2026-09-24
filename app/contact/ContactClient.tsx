@@ -71,7 +71,7 @@ export function ContactClient() {
       {/* HERO */}
       <section className="g-off">
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
+          <div className={d17.contactHero} style={{ gap: 'clamp(48px, 8vw, 64px)', alignItems: 'center' }}>
             <div>
               <span className="eyebrow" style={{ marginBottom: 22 }}>Get in touch</span>
               <h1 className="h1">Start with a free <em>60-minute call.</em></h1>
@@ -113,7 +113,7 @@ export function ContactClient() {
             </div>
 
             {/* Form */}
-            <div style={{ background: 'var(--do-white)', borderRadius: 'var(--do-radius-2xl)', border: '1px solid var(--do-border-subtle)', boxShadow: 'var(--do-shadow-sm)', padding: 32 }}>
+            <div className={d17.contactFormCard}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 20%, transparent)', marginBottom: 24 }}>
                 <MessageSquare size={12} style={{ color: 'var(--do-text-primary)' }} />
                 <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-text-primary)' }}>Send a message</span>
@@ -137,7 +137,7 @@ export function ContactClient() {
               )}
 
               <form style={{ display: 'flex', flexDirection: 'column', gap: 16 }} onSubmit={handleSubmit}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div className={d17.contactFormRow}>
                   <div>
                     <label style={{ display: 'block', fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-medium)', color: 'var(--do-text-primary)', marginBottom: 6 }}>Your name</label>
                     <input
