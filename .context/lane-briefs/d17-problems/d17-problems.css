@@ -1,0 +1,471 @@
+/* ══════════════════════════════════════════════════════════════════════
+   D17 ARTWORK — problem pages (WO-INF-061 u21, 2026-09-24)
+   Extends d17-art.css + d17-sectors.css (load after both); reuses .d17, .sx,
+   .sw, .d17-doc, .win, .kpi, svg.q and the motion keyframes, redefines none.
+   Every hero is DO-ART-960..978, one per page. Inline slots reuse approved
+   art (917, 918 unchanged; 718 and 719 rebuilt as responsive web cuts).
+   Hero pieces here run in flow (no absolute stage) wherever the argument
+   allows, so the 390 cut is the same drawing re-flowed, not a shrunk one.
+   Resting state is the still, as everywhere in D17.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* flow hero: top line in flow, content, foot */
+.px{ padding:0 }
+.px .sx-top{ position:relative; left:auto; right:auto; top:auto; padding:calc(22 * var(--u)) calc(26 * var(--u)) 0 }
+.px .sx-foot{ margin-top:0 }
+.px .body{ position:relative; z-index:4; padding:calc(18 * var(--u)) calc(26 * var(--u)) 0 }
+.sx-say small{ display:block; margin-top:calc(8 * var(--u)); font-family:var(--do-font-body); font-weight:500;
+  font-size:max(12px, calc(14 * var(--u))); letter-spacing:0; line-height:1.4; color:color-mix(in srgb, var(--do-off-white) 76%, transparent) }
+.ph-fade::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) 0%,
+    color-mix(in srgb, var(--do-prussian-blue) 30%, transparent) 26%, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 55%,
+    color-mix(in srgb, var(--do-prussian-blue) 94%, transparent) 80%, var(--do-prussian-blue) 100%) }
+svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weight:800; letter-spacing:-.02em }
+
+/* hero screens: a window without the side nav */
+.sx .win{ --u:calc(100cqw / 560) }
+.win-flat{ padding:calc(18 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u)) }
+.win-flat h5{ margin:0; font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u)));
+  letter-spacing:-.02em; color:var(--do-prussian-blue) }
+.win-flat .s{ margin:3px 0 0; font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.tbl{ width:100%; border-collapse:collapse; margin-top:calc(12 * var(--u)); font-size:max(11px, calc(13 * var(--u))) }
+.tbl th{ text-align:left; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.14em;
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); padding:0 calc(6 * var(--u)) calc(6 * var(--u)) 0 }
+.tbl td{ padding:calc(7 * var(--u)) calc(6 * var(--u)) calc(7 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent);
+  font-weight:600; vertical-align:middle }
+.tbl td.num, .tbl th.num{ text-align:right; font-variant-numeric:tabular-nums }
+.tbl td.m{ font-family:var(--do-font-mono); font-weight:500; font-size:max(9.5px, calc(11 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+.chip{ display:inline-block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.1em;
+  text-transform:uppercase; padding:2px 8px; border-radius:99px; white-space:nowrap;
+  color:var(--do-prussian-blue); background:color-mix(in srgb, var(--do-sky-blue) 32%, transparent) }
+.chip--a{ background:var(--do-amber) }
+.chip--o{ background:transparent; box-shadow:inset 0 0 0 1.5px color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) }
+.tbl tr.hit td{ background:color-mix(in srgb, var(--do-amber) 16%, transparent) }
+.tbl tr.hit td:first-child{ box-shadow:inset 3px 0 0 var(--do-amber); padding-left:calc(8 * var(--u)) }
+.win-foot{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-top:calc(12 * var(--u)); padding-top:calc(10 * var(--u));
+  border-top:2px solid var(--do-prussian-blue); font-size:max(11px, calc(12.5 * var(--u))); font-weight:700 }
+.win-foot span{ font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase }
+
+/* ─── DO-ART-960 · ai-paralysis hero · the AI question meets the data (product screen over photo) ─── */
+.a960 .d17-ph img{ object-position:50% 30%; --d17-grade:saturate(.6) contrast(1.05) brightness(.8) }
+.a960 .win{ margin:0 calc(22 * var(--u)) }
+.chat{ padding:calc(16 * var(--u)) calc(18 * var(--u)) calc(18 * var(--u)); display:flex; flex-direction:column; gap:calc(12 * var(--u)) }
+.bub{ max-width:86%; padding:calc(11 * var(--u)) calc(14 * var(--u)); border-radius:calc(12 * var(--u));
+  font-size:max(12px, calc(14.5 * var(--u))); line-height:1.4; font-weight:500 }
+.bub small{ display:block; font-family:var(--do-font-mono); font-size:max(8.5px, calc(9.5 * var(--u))); letter-spacing:.14em;
+  text-transform:uppercase; margin-bottom:4px; opacity:.7 }
+.bub--q{ align-self:flex-end; background:var(--do-prussian-blue); color:var(--do-off-white); border-bottom-right-radius:3px }
+.bub--a{ align-self:flex-start; background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 14%, transparent); border-bottom-left-radius:3px }
+.srcs{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(10 * var(--u)) }
+.srcs div{ border:1px solid color-mix(in srgb, var(--do-prussian-blue) 16%, transparent); border-radius:calc(7 * var(--u));
+  padding:calc(8 * var(--u)) calc(9 * var(--u)); background:color-mix(in srgb, var(--do-sky-blue) 8%, var(--do-white)) }
+.srcs span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.srcs b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(24 * var(--u))); letter-spacing:-.02em }
+.srcs div.x{ border:2px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 12%, var(--do-white)) }
+.typing{ display:inline-flex; gap:4px; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u)));
+  letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+
+/* ─── DO-ART-961 · bottleneck hero · machines ready, every tag waiting on the owner (photo-led) ─── */
+.a961 .stage{ aspect-ratio:560 / 470 }
+.a961 .d17-ph img{ object-position:30% 40%; --d17-grade:saturate(.6) contrast(1.06) brightness(.82) }
+.a961::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 16%,
+    transparent 50%, color-mix(in srgb, var(--do-prussian-blue) 92%, transparent) 76%, var(--do-prussian-blue) 100%) }
+.a961 .sx-tag b{ display:block; margin-top:3px; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(10 * var(--u)));
+  letter-spacing:.1em; text-transform:uppercase; color:var(--do-prussian-blue) }
+.a961 .sx-tag b i{ font-style:normal; background:var(--do-amber); padding:1px 5px; border-radius:2px }
+.desk{ position:absolute; z-index:4; left:50%; bottom:calc(8 * var(--u)); transform:translateX(-50%);
+  display:flex; align-items:center; gap:8px; padding:calc(8 * var(--u)) calc(14 * var(--u)); border-radius:99px;
+  background:var(--do-amber); color:var(--do-prussian-blue); font-family:var(--do-font-mono); font-weight:700;
+  font-size:max(9px, calc(11 * var(--u))); letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
+  box-shadow:0 0 0 6px color-mix(in srgb, var(--do-amber) 25%, transparent) }
+
+/* ─── DO-ART-962 · buy-vs-build hero · the coverage test (documents over the press hall) ─── */
+.a962 .stage{ aspect-ratio:560 / 450 }
+.a962 .d17-ph{ bottom:30% }
+.a962 .d17-ph img{ object-position:50% 45%; --d17-grade:saturate(.6) contrast(1.05) brightness(.8) }
+.a962::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 18%,
+    transparent 40%, var(--do-prussian-blue) 70%) }
+.a962 .doc-c{ left:calc(24 * var(--u)); top:calc(64 * var(--u)); width:calc(330 * var(--u)); transform:rotate(-2.5deg) }
+.a962 .doc-g{ left:calc(338 * var(--u)); top:calc(150 * var(--u)); width:calc(200 * var(--u)); transform:rotate(3.5deg) }
+.cov{ margin-top:calc(10 * var(--u)) }
+.cov div{ display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; padding:calc(5 * var(--u)) 0;
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-size:max(8px, calc(11.5 * var(--u))); font-weight:600; white-space:nowrap }
+.cov em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
+  padding:1px 6px; border-radius:99px }
+.cov em.y{ background:color-mix(in srgb, var(--do-sky-blue) 40%, transparent) }
+.cov em.n{ box-shadow:inset 0 0 0 1.3px var(--do-amber); color:color-mix(in srgb, var(--do-prussian-blue) 80%, transparent) }
+.cov-bar{ display:flex; height:calc(12 * var(--u)); margin-top:calc(10 * var(--u)); border-radius:99px; overflow:hidden;
+  background:repeating-linear-gradient(135deg, color-mix(in srgb, var(--do-amber) 55%, var(--do-white)) 0 4px, var(--do-white) 4px 8px);
+  box-shadow:inset 0 0 0 1.3px var(--do-amber) }
+.cov-bar i{ width:25%; background:var(--do-cerulean); transform-origin:left center }
+.cov-k{ display:flex; justify-content:space-between; margin-top:calc(5 * var(--u)); font-family:var(--do-font-mono);
+  font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+.q-list{ margin:calc(10 * var(--u)) 0 0; padding:0; list-style:none }
+.q-list li{ display:block; padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
+  font-size:max(8px, calc(11 * var(--u))); font-weight:600; line-height:1.3; white-space:normal }
+.q-list li span{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.08em;
+  text-transform:uppercase; color:var(--do-cerulean) }
+.q-list li.hot span{ color:color-mix(in srgb, var(--do-amber) 55%, var(--do-prussian-blue)) }
+
+/* ─── DO-ART-963 · cant-scale hero · the flow and where the queues pile up (drawn plate) ─── */
+.a963 svg.q{ margin-top:calc(4 * var(--u)) }
+svg.q .qb{ fill:color-mix(in srgb, var(--do-sky-blue) 30%, var(--do-prussian-blue)); stroke:color-mix(in srgb, var(--do-sky-blue) 65%, transparent); stroke-width:1.2 }
+svg.q .qb-a{ fill:color-mix(in srgb, var(--do-amber) 70%, var(--do-prussian-blue)); stroke:var(--do-amber); stroke-width:1.2 }
+
+/* ─── DO-ART-964 · data-scattered hero · one polo, six answers (photo-led, pinned tags) ─── */
+.a964 .stage{ aspect-ratio:560 / 540 }
+.a964 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.7) contrast(1.06) brightness(.86) }
+.a964::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) 18%,
+    color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) 55%, color-mix(in srgb, var(--do-prussian-blue) 92%, transparent) 84%, var(--do-prussian-blue) 100%) }
+.a964 .sx-tag{ min-width:calc(150 * var(--u)) }
+.a964 .sx-tag .v{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(22 * var(--u))); letter-spacing:-.02em }
+.a964 .sx-tag .v--t{ font-size:max(12px, calc(17 * var(--u))) }
+.a964 .sku{ position:absolute; z-index:4; left:50%; top:47%; transform:translate(-50%, -50%); padding:calc(8 * var(--u)) calc(12 * var(--u));
+  border-radius:calc(4 * var(--u)); background:var(--do-prussian-blue); color:var(--do-off-white); border:1.5px solid var(--do-sky-blue);
+  font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; white-space:nowrap }
+
+/* ─── DO-ART-965 · disaster-recovery hero · a single point of failure (drawn plate) ─── */
+svg.q .bx-x2{ fill:color-mix(in srgb, var(--do-amber) 18%, var(--do-prussian-blue)); stroke:var(--do-amber); stroke-width:2.4 }
+svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejoin:round; stroke-linecap:round }
+
+/* ─── DO-ART-966 · ecommerce hero · paid online, unknown on the floor (two product screens) ─── */
+.a966 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a966 .pair{ position:relative; z-index:4; padding:calc(16 * var(--u)) calc(22 * var(--u)) 0; display:grid; gap:calc(34 * var(--u)) }
+.a966 .win-bar{ height:max(30px, calc(40 * var(--u))) }
+.a966 .ord{ display:grid; grid-template-columns:1fr auto; gap:6px 12px; align-items:center }
+.a966 .ord h5{ grid-column:1 / -1 }
+.a966 .ord p{ margin:0; font-size:max(11px, calc(13 * var(--u))); line-height:1.35; color:color-mix(in srgb, var(--do-prussian-blue) 80%, transparent) }
+.a966 .ord p b{ color:var(--do-prussian-blue) }
+.cols{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(10 * var(--u)) }
+.cols .c{ background:color-mix(in srgb, var(--do-prussian-blue) 5%, var(--do-off-white)); border-radius:calc(6 * var(--u)); padding:calc(8 * var(--u)) }
+.cols .c > span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent); margin-bottom:calc(6 * var(--u)) }
+.cols .j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); border-radius:calc(4 * var(--u));
+  padding:calc(6 * var(--u)) calc(7 * var(--u)); margin-bottom:calc(5 * var(--u)); font-size:max(9.5px, calc(11 * var(--u))); font-weight:700; line-height:1.25 }
+.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+.cols .j.miss{ border:2px dashed var(--do-amber); background:color-mix(in srgb, var(--do-amber) 10%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 80%, transparent) }
+.a966 .gap-l{ position:absolute; z-index:5; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px;
+  font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
+  color:var(--do-prussian-blue); background:var(--do-amber); padding:calc(4 * var(--u)) calc(10 * var(--u)); border-radius:99px; white-space:nowrap }
+
+/* ─── DO-ART-967 · erp hero · two routes from one decision (journey poster, wide) ─── */
+.a967{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 760; margin-top:34px }
+.a967 .gridl{ position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background-image:linear-gradient(color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px);
+  background-size:calc(40 * var(--u)) calc(40 * var(--u)) }
+.a967 svg.route{ position:absolute; inset:0; width:100%; height:100% }
+.a967 .eb{ position:absolute; left:calc(70 * var(--u)); top:calc(52 * var(--u)); margin:0; font-size:max(10px, calc(18 * var(--u))); color:var(--do-sky-blue) }
+.a967 .st{ position:absolute; margin:0; width:calc(240 * var(--u)) }
+.a967 .st .n{ display:block; font-family:var(--do-font-mono); font-size:calc(15 * var(--u)); letter-spacing:.16em; text-transform:uppercase; color:var(--do-sky-blue) }
+.a967 .st h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:calc(27 * var(--u));
+  line-height:1.05; letter-spacing:-.02em; color:var(--do-off-white) }
+.a967 .st p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(17 * var(--u)); line-height:1.35; color:color-mix(in srgb, var(--do-off-white) 76%, transparent) }
+.a967 .st--v h4{ color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+.a967 .st--a .n, .a967 .st--a h4{ color:var(--do-amber) }
+.a967 .st--start h4{ font-size:calc(40 * var(--u)); color:var(--do-white) }
+.a967 .res{ position:absolute; width:calc(290 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u)); border-radius:calc(10 * var(--u)) }
+.a967 .res .n{ display:block; font-family:var(--do-font-mono); font-size:calc(14 * var(--u)); letter-spacing:.16em; text-transform:uppercase }
+.a967 .res b{ display:block; margin-top:calc(4 * var(--u)); font-family:var(--do-font-heading); font-weight:800; font-size:calc(28 * var(--u)); line-height:1.05; letter-spacing:-.02em }
+.a967 .res p{ margin:calc(6 * var(--u)) 0 0; font-size:calc(16 * var(--u)); line-height:1.35 }
+.a967 .res--v{ border:1.5px dashed color-mix(in srgb, var(--do-sky-blue) 55%, transparent); background:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent);
+  color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.a967 .res--v .n{ color:var(--do-sky-blue) }
+.a967 .res--a{ border:2.5px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 14%, var(--do-prussian-blue)); color:var(--do-off-white) }
+.a967 .res--a .n, .a967 .res--a b{ color:var(--do-amber) }
+.a967 .print{ position:absolute; background:var(--do-off-white); padding:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u));
+  box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.a967 .print img{ display:block; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.12) brightness(.98) }
+.a967 .print .tint{ position:absolute; inset:calc(8 * var(--u)) calc(8 * var(--u)) calc(38 * var(--u)); background:var(--do-prussian-blue); mix-blend-mode:multiply; opacity:.36 }
+.a967 .print span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u)); font-family:var(--do-font-mono);
+  font-size:calc(12 * var(--u)); line-height:1.3; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
+.a967 .d17-mark{ left:calc(26 * var(--u)); bottom:calc(22 * var(--u)); font-size:max(10px, calc(16 * var(--u))) }
+@media (max-width: 760px){
+  .a967{ aspect-ratio:auto; padding:22px 18px 70px }
+  .a967 svg.route, .a967 .prints{ display:none }
+  .a967 .eb, .a967 .st, .a967 .res{ position:static !important; width:auto !important }
+  .a967 .st--start{ margin-top:8px } .a967 .st--start h4{ font-size:24px }
+  .a967 .lane{ position:relative; margin-top:18px; padding-left:28px }
+  .a967 .lane::before{ content:''; position:absolute; left:7px; top:6px; bottom:6px; width:4px; border-radius:4px }
+  .a967 .lane--v::before{ background:repeating-linear-gradient(180deg, var(--do-sky-blue) 0 7px, transparent 7px 13px) }
+  .a967 .lane--a::before{ background:var(--do-amber) }
+  .a967 .lane .st{ padding:6px 0 8px } .a967 .lane .st .n{ font-size:10px } .a967 .lane .st h4{ font-size:17px } .a967 .lane .st p{ font-size:13px }
+  .a967 .lane .res{ margin-top:6px; padding:12px 14px } .a967 .res .n{ font-size:10px } .a967 .res b{ font-size:19px } .a967 .res p{ font-size:13px }
+  .a967 .d17-mark{ left:18px; bottom:20px }
+}
+
+/* ─── DO-ART-968 · inventory-blind hero · the stock screen with a gap (product screen) ─── */
+.a968 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a968 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.a968 .shelf{ display:flex; gap:calc(12 * var(--u)); align-items:center; margin-top:calc(12 * var(--u)); padding:calc(10 * var(--u)) calc(12 * var(--u));
+  border-radius:calc(8 * var(--u)); border:2px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 12%, var(--do-white)) }
+.a968 .shelf img{ width:calc(78 * var(--u)); min-width:52px; aspect-ratio:1; object-fit:cover; border-radius:calc(5 * var(--u)); filter:saturate(.8) }
+.a968 .shelf p{ margin:0; font-size:max(11px, calc(13 * var(--u))); line-height:1.35; font-weight:600 }
+.a968 .shelf p span{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em;
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
+
+/* ─── DO-ART-969 · legacy hero · the old item screen with no field for decoration (documents over photo) ─── */
+.a969 .stage{ aspect-ratio:560 / 450 }
+.a969 .d17-ph{ bottom:26% }
+.a969 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.65) contrast(1.06) brightness(.82) }
+.a969::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 18%,
+    transparent 42%, var(--do-prussian-blue) 74%) }
+.lp{ position:absolute; left:calc(28 * var(--u)); top:calc(62 * var(--u)); width:calc(370 * var(--u)); transform:rotate(-2deg);
+  padding:calc(14 * var(--u)) calc(30 * var(--u)); color:color-mix(in srgb, var(--do-prussian-blue) 92%, #000);
+  font-family:var(--do-font-mono); font-size:max(7.5px, calc(10.5 * var(--u))); line-height:1.5; letter-spacing:.02em;
+  background:
+    radial-gradient(circle at calc(12 * var(--u)) 50%, color-mix(in srgb, var(--do-prussian-blue) 40%, #000) calc(3.5 * var(--u)), transparent calc(4 * var(--u))) left top / 100% calc(22 * var(--u)) repeat-y,
+    radial-gradient(circle at calc(100% - 12 * var(--u)) 50%, color-mix(in srgb, var(--do-prussian-blue) 40%, #000) calc(3.5 * var(--u)), transparent calc(4 * var(--u))) left top / 100% calc(22 * var(--u)) repeat-y,
+    repeating-linear-gradient(180deg, color-mix(in srgb, var(--do-sky-blue) 22%, var(--do-white)) 0 calc(22 * var(--u)), var(--do-white) calc(22 * var(--u)) calc(44 * var(--u)));
+  box-shadow:0 calc(26 * var(--u)) calc(50 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.lp .hd{ display:flex; justify-content:space-between; font-weight:700; letter-spacing:.1em }
+.lp .row{ display:grid; grid-template-columns:44% 1fr; gap:6px; white-space:nowrap }
+.lp .row span:last-child{ font-weight:600 }
+.lp .row.no span:last-child{ color:color-mix(in srgb, var(--do-amber) 35%, var(--do-prussian-blue)); font-weight:700;
+  background:color-mix(in srgb, var(--do-amber) 26%, transparent); padding:0 4px }
+.sticky{ position:absolute; z-index:5; right:calc(28 * var(--u)); top:calc(206 * var(--u)); width:calc(170 * var(--u)); transform:rotate(4deg);
+  padding:calc(14 * var(--u)) calc(14 * var(--u)) calc(16 * var(--u)); background:color-mix(in srgb, var(--do-amber) 75%, var(--do-white)); color:var(--do-prussian-blue);
+  box-shadow:0 calc(16 * var(--u)) calc(30 * var(--u)) color-mix(in srgb, #000 45%, transparent);
+  font-family:var(--do-font-heading); font-weight:700; font-size:max(11px, calc(16 * var(--u))); line-height:1.25 }
+.sticky small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px; opacity:.7 }
+
+/* ─── DO-ART-970 · manual-workarounds hero · one order, retyped at every step (journey poster) ─── */
+.a970 .d17-ph{ bottom:auto; height:calc(250 * var(--u)) }
+.a970 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.06) brightness(.8) }
+.a970::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent calc(60 * var(--u)),
+    color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) calc(170 * var(--u)), var(--do-prussian-blue) calc(250 * var(--u))) }
+.a970 .body{ padding-top:calc(120 * var(--u)) }
+.rt{ list-style:none; margin:0; padding:0 0 0 calc(34 * var(--u)); position:relative }
+.rt::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:calc(12 * var(--u)); bottom:calc(14 * var(--u)); width:5px; border-radius:5px;
+  background:linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 88%, var(--do-amber)); transform-origin:top }
+.rt li{ position:relative; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; padding:calc(7 * var(--u)) 0;
+  border-bottom:1px dashed color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+.rt li::before{ content:''; position:absolute; left:calc(-34 * var(--u) + 2px); top:50%; margin-top:-8px; width:16px; height:16px; border-radius:50%; box-sizing:border-box;
+  background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
+.rt li b{ display:block; font-family:var(--do-font-heading); font-weight:700; font-size:max(13px, calc(17 * var(--u))); color:var(--do-white); line-height:1.2 }
+.rt li small{ display:block; font-size:max(11px, calc(12.5 * var(--u))); color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+.rt li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--do-prussian-blue); background:var(--do-amber); padding:2px 7px; border-radius:3px; white-space:nowrap }
+.rt li em.k{ background:transparent; color:var(--do-sky-blue); box-shadow:inset 0 0 0 1.2px color-mix(in srgb, var(--do-sky-blue) 60%, transparent) }
+.a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * var(--u)); transform:rotate(3deg);
+  background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(3 * var(--u));
+  box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+.a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
+.a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
+
+/* ─── DO-ART-971 · no-ops-owner hero · the org chart with the operations seat empty (drawn plate) ─── */
+svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stroke-dasharray:8 6 }
+
+/* ─── DO-ART-972 · ops-in-owners-head hero · the process register, one owner on every row (product screen) ─── */
+.a972 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.5) contrast(1.05) brightness(.7) }
+.a972 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.a972 .tbl td.o{ color:var(--do-prussian-blue) }
+.a972 .tbl td.o span{ display:inline-flex; align-items:center; gap:6px }
+.a972 .tbl td.o span::before{ content:''; width:max(14px, calc(18 * var(--u))); height:max(14px, calc(18 * var(--u))); border-radius:50%;
+  background:var(--do-amber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='7.4' r='3.3' fill='%23023047'/%3E%3Cpath d='M3.6 17c.9-3.4 3.4-5.2 6.4-5.2s5.5 1.8 6.4 5.2' fill='%23023047'/%3E%3C/svg%3E") center/80% no-repeat }
+
+/* ─── DO-ART-973 · seasonal-peaks hero · order intake by month against what the team can process (product screen) ─── */
+.a973 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a973 .win{ margin:calc(16 * var(--u)) calc(22 * var(--u)) 0 }
+.chart{ position:relative; display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); align-items:end;
+  height:calc(210 * var(--u)); min-height:130px; margin-top:calc(16 * var(--u)); padding:0 0 0 0;
+  border-bottom:2px solid color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.chart i{ display:block; height:var(--h); border-radius:calc(3 * var(--u)) calc(3 * var(--u)) 0 0; transform-origin:bottom;
+  background:color-mix(in srgb, var(--do-cerulean) 55%, var(--do-sky-blue)) }
+.chart i.over{ background:linear-gradient(180deg, var(--do-amber) 0, var(--do-amber) calc(100% - var(--cap)), color-mix(in srgb, var(--do-cerulean) 55%, var(--do-sky-blue)) calc(100% - var(--cap))) }
+.chart .cap{ position:absolute; left:-4px; right:-4px; bottom:var(--capH); border-top:2px dashed var(--do-prussian-blue); z-index:2 }
+.chart .cap span{ position:absolute; right:0; top:calc(-24 * var(--u) - 6px); font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u)));
+  letter-spacing:.12em; text-transform:uppercase; background:var(--do-off-white); padding:0 4px; color:var(--do-prussian-blue) }
+.months{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); margin-top:6px; text-align:center;
+  font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.04em; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+.legend{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:calc(12 * var(--u)); font-size:max(10.5px, calc(12 * var(--u))); font-weight:600 }
+.legend span{ display:inline-flex; align-items:center; gap:6px }
+.legend span::before{ content:''; width:12px; height:12px; border-radius:3px; background:var(--c) }
+
+/* ─── DO-ART-974 · slow-processes hero · where the days actually go (drawn plate, Gantt) ─── */
+.gantt{ position:relative; z-index:4; margin:calc(16 * var(--u)) calc(26 * var(--u)) 0 }
+.gantt .r{ display:grid; grid-template-columns:calc(150 * var(--u)) 1fr; gap:calc(12 * var(--u)); align-items:center; padding:calc(7 * var(--u)) 0;
+  border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 14%, transparent) }
+.gantt .r b{ font-family:var(--do-font-heading); font-weight:700; font-size:max(12px, calc(15.5 * var(--u))); color:var(--do-off-white); line-height:1.2 }
+.gantt .r b small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:var(--do-sky-blue) }
+.gantt .bar{ position:relative; height:max(16px, calc(24 * var(--u))) }
+.gantt .bar i{ position:absolute; top:0; bottom:0; border-radius:calc(4 * var(--u)); transform-origin:left center }
+.gantt .bar i.w{ background:repeating-linear-gradient(135deg, color-mix(in srgb, var(--do-amber) 55%, transparent) 0 5px, transparent 5px 10px);
+  box-shadow:inset 0 0 0 1.5px var(--do-amber) }
+.gantt .bar i.d{ background:var(--do-sky-blue) }
+.gantt .scale{ display:flex; justify-content:space-between; margin-left:calc(162 * var(--u)); padding-top:calc(6 * var(--u));
+  font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--do-sky-blue) 80%, transparent) }
+.gantt .key{ display:flex; gap:16px; margin-top:calc(12 * var(--u)); font-size:max(11px, calc(12.5 * var(--u))); color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.gantt .key span{ display:inline-flex; align-items:center; gap:7px }
+.gantt .key i{ width:22px; height:12px; border-radius:3px }
+.gantt .key i.w{ background:repeating-linear-gradient(135deg, color-mix(in srgb, var(--do-amber) 55%, transparent) 0 4px, transparent 4px 8px); box-shadow:inset 0 0 0 1.5px var(--do-amber) }
+.gantt .key i.d{ background:var(--do-sky-blue) }
+
+/* ─── DO-ART-975 · spreadsheet-addiction hero · the tangle of spreadsheets (documents over photo) ─── */
+.a975 .stage{ aspect-ratio:560 / 470 }
+.a975 .d17-ph{ bottom:24% }
+.a975 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.6) contrast(1.06) brightness(.78) }
+.a975::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 16%,
+    transparent 44%, var(--do-prussian-blue) 76%) }
+.xl{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue); border-radius:calc(4 * var(--u)); overflow:hidden;
+  box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 48%, transparent) }
+.xl .fn{ display:flex; align-items:center; gap:6px; padding:calc(6 * var(--u)) calc(9 * var(--u)); background:color-mix(in srgb, var(--do-cerulean) 70%, var(--do-prussian-blue));
+  color:var(--do-off-white); font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.04em; white-space:nowrap }
+.xl .fn::before{ content:''; width:calc(10 * var(--u)); height:calc(10 * var(--u)); border-radius:2px; background:var(--do-sky-blue) }
+.xl table{ border-collapse:collapse; width:100%; font-size:max(6.5px, calc(9.5 * var(--u))); font-family:var(--do-font-mono) }
+.xl th, .xl td{ border:1px solid color-mix(in srgb, var(--do-prussian-blue) 14%, transparent); padding:calc(3 * var(--u)) calc(5 * var(--u)); white-space:nowrap; text-align:left }
+.xl th{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); font-weight:600; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center }
+.xl td.rn{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center; width:1%; padding-inline:calc(4 * var(--u)) }
+.xl td.err{ color:var(--do-prussian-blue); font-weight:700; background:color-mix(in srgb, var(--do-amber) 45%, var(--do-white)) }
+.xl td.sel{ box-shadow:inset 0 0 0 2px var(--do-cerulean) }
+.xl .tabs{ display:flex; gap:2px; padding:calc(4 * var(--u)) calc(6 * var(--u)) 0; background:color-mix(in srgb, var(--do-prussian-blue) 6%, var(--do-white));
+  font-family:var(--do-font-mono); font-size:max(6.5px, calc(8.5 * var(--u))); white-space:nowrap; overflow:hidden }
+.xl .tabs span{ padding:calc(2 * var(--u)) calc(6 * var(--u)); border-radius:3px 3px 0 0; background:color-mix(in srgb, var(--do-prussian-blue) 8%, transparent) }
+.xl .tabs span.on{ background:var(--do-white); font-weight:700 }
+.xl-a{ left:calc(18 * var(--u)); top:calc(70 * var(--u)); width:calc(300 * var(--u)); transform:rotate(-3deg) }
+.xl-b{ left:calc(262 * var(--u)); top:calc(52 * var(--u)); width:calc(270 * var(--u)); transform:rotate(2.5deg) }
+.xl-c{ left:calc(150 * var(--u)); top:calc(214 * var(--u)); width:calc(290 * var(--u)); transform:rotate(-1deg) }
+.dlg{ position:absolute; z-index:6; right:calc(22 * var(--u)); top:calc(236 * var(--u)); width:calc(210 * var(--u)); transform:rotate(3deg);
+  background:var(--do-off-white); color:var(--do-prussian-blue); border-radius:calc(6 * var(--u)); border:2px solid var(--do-amber);
+  box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent); padding:calc(12 * var(--u)) calc(13 * var(--u)) }
+.dlg b{ display:flex; align-items:center; gap:6px; font-family:var(--do-font-heading); font-size:max(10.5px, calc(14 * var(--u))) }
+.dlg b::before{ content:'!'; display:inline-grid; place-items:center; width:max(14px, calc(18 * var(--u))); height:max(14px, calc(18 * var(--u))); border-radius:50%;
+  background:var(--do-amber); font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))) }
+.dlg p{ margin:calc(5 * var(--u)) 0 0; font-size:max(9px, calc(11.5 * var(--u))); line-height:1.35 }
+.dlg .btns{ display:flex; gap:6px; margin-top:calc(9 * var(--u)) }
+.dlg .btns span{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; border-radius:3px;
+  box-shadow:inset 0 0 0 1.2px color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) }
+.dlg .btns span:first-child{ background:var(--do-prussian-blue); color:var(--do-off-white); box-shadow:none }
+
+/* ─── DO-ART-977 · systems-dont-talk-video hero · one order, five systems that each know a part (photo-led) ─── */
+.a977 .stage{ aspect-ratio:560 / 500 }
+.a977 .d17-ph img{ object-position:55% 50%; --d17-grade:saturate(.6) contrast(1.06) brightness(.82) }
+.a977::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 18%,
+    color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 56%, color-mix(in srgb, var(--do-prussian-blue) 92%, transparent) 82%, var(--do-prussian-blue) 100%) }
+.a977 .sx-tag span{ display:block; font-weight:500; font-size:max(9.5px, calc(11.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 75%, transparent) }
+.a977 .who{ position:absolute; z-index:5; left:50%; top:52%; transform:translate(-50%, -50%); text-align:center; padding:calc(10 * var(--u)) calc(14 * var(--u));
+  border-radius:calc(6 * var(--u)); border:2px dashed var(--do-amber); background:color-mix(in srgb, var(--do-prussian-blue) 88%, transparent); color:var(--do-off-white);
+  font-family:var(--do-font-heading); font-weight:700; font-size:max(11px, calc(15 * var(--u))); line-height:1.2; white-space:nowrap }
+.a977 .who small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-amber); margin-bottom:3px }
+
+/* ─── DO-ART-978 · wrong-erp hero · the vendor demo script against your real Tuesday (documents over photo) ─── */
+.a978 .stage{ aspect-ratio:560 / 460 }
+.a978 .d17-ph{ bottom:26% }
+.a978 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.6) contrast(1.06) brightness(.8) }
+.a978::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) 0%, transparent 18%,
+    transparent 42%, var(--do-prussian-blue) 74%) }
+.a978 .doc-d{ left:calc(26 * var(--u)); top:calc(66 * var(--u)); width:calc(240 * var(--u)); transform:rotate(-3deg) }
+.a978 .doc-t{ left:calc(262 * var(--u)); top:calc(96 * var(--u)); width:calc(276 * var(--u)); transform:rotate(2.5deg) }
+.ck{ list-style:none; margin:calc(10 * var(--u)) 0 0; padding:0 }
+.ck li{ display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(8 * var(--u)); align-items:center; padding:calc(5.5 * var(--u)) 0;
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-size:max(8px, calc(11.5 * var(--u))); font-weight:600; white-space:nowrap }
+.ck li::before{ content:''; width:calc(14 * var(--u)); height:calc(14 * var(--u)); border-radius:3px;
+  background:var(--do-cerulean) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3L15 6.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/85% no-repeat }
+.ck li.no{ white-space:normal; line-height:1.25 }
+.ck li.no::before{ background:transparent; box-shadow:inset 0 0 0 1.6px var(--do-amber) }
+.ck li.no em{ display:block; font-style:normal; font-family:var(--do-font-mono); font-weight:600; font-size:max(6.5px, calc(8.5 * var(--u))); letter-spacing:.1em;
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
+
+/* ─── DO-ART-718 web cut · three documents over the embroidery floor (reused, rebuilt responsive) ─── */
+.a718 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.06) brightness(.78) }
+.a718 .stage{ min-height:calc(500 * var(--u)) }
+.a718 .doc-r{ left:calc(10 * var(--u)); top:calc(0 * var(--u)); width:calc(380 * var(--u)); transform:rotate(-2.5deg) }
+.a718 .doc-s{ left:calc(420 * var(--u)); top:calc(34 * var(--u)); width:calc(270 * var(--u)); transform:rotate(2.8deg) }
+.a718 .doc-l{ left:calc(90 * var(--u)); top:calc(316 * var(--u)); width:calc(470 * var(--u)); transform:rotate(-1deg) }
+.reg{ width:100%; border-collapse:collapse; margin-top:calc(10 * var(--u)); font-size:max(9px, calc(12 * var(--u))) }
+.reg th{ text-align:left; font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(5 * var(--u)) }
+.reg td{ padding:calc(5.5 * var(--u)) calc(8 * var(--u)) calc(5.5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-weight:600; white-space:nowrap }
+.reg td + td{ font-weight:500 }
+.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-cerulean) }
+.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); margin-right:6px }
+.sop .p{ margin:calc(3 * var(--u)) 0 0; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.35 }
+.sop .line{ height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(6 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+.il .e{ display:grid; grid-template-columns:calc(90 * var(--u)) 1fr; gap:calc(12 * var(--u)); padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+.il .e:first-of-type{ margin-top:calc(8 * var(--u)) }
+.il .d b{ display:block; font-weight:700; font-size:max(9px, calc(12 * var(--u))) }
+.il .d{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.il .t span{ display:grid; grid-template-columns:calc(56 * var(--u)) 1fr; gap:8px; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.4 }
+.il .t em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6.5px, calc(8.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding-top:2px }
+.a718 .keys{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
+.a718 .keys li{ display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:calc(10 * var(--u)) 0;
+  border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+.a718 .keys li:last-child{ border-bottom:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+.a718 .keys b{ font-family:var(--do-font-mono); color:var(--do-amber); font-size:max(11px, calc(14 * var(--u))) }
+.a718 .keys span{ font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u))); color:var(--do-white); letter-spacing:-.01em }
+.a718 .keys small{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; color:var(--do-sky-blue) }
+@media (max-width: 760px){
+  .a718 .il .e{ grid-template-columns:1fr; gap:4px } .a718 .il .t span{ grid-template-columns:64px 1fr }
+  .reg td{ white-space:normal }
+}
+
+/* ─── DO-ART-719 web cut · three ways to fill the gap (reused, rebuilt responsive; drawn plate) ─── */
+.a719{ padding:calc(40 * var(--pu)) calc(40 * var(--pu)) calc(30 * var(--pu)) }
+.a719 .v-tall{ display:none }
+.a719 .foot{ display:flex; justify-content:space-between; align-items:center; gap:14px; margin-top:calc(8 * var(--u)) }
+.a719 .foot .k{ font-size:max(9px, calc(12 * var(--u))); color:var(--do-sky-blue) }
+@media (max-width: 760px){
+  .a719{ padding:22px 14px 20px }
+  .a719 .v-wide{ display:none } .a719 .v-tall{ display:block }
+  .a719 .foot{ flex-direction:column; align-items:flex-start }
+}
+
+/* hero pieces at phone width */
+@media (max-width: 760px){
+  .a962 .stage{ aspect-ratio:560 / 560 } .a969 .stage{ aspect-ratio:560 / 540 } .a975 .stage{ aspect-ratio:560 / 560 } .a978 .stage{ aspect-ratio:560 / 600 }
+  .a961 .stage{ aspect-ratio:560 / 540 } .a964 .stage{ aspect-ratio:560 / 620 } .a977 .stage{ aspect-ratio:560 / 580 }
+  .a962 .doc-c, .a962 .doc-g, .a978 .doc-d, .a978 .doc-t{ padding:9px 10px }
+  .srcs b{ font-size:16px }
+  .gantt .r{ grid-template-columns:96px 1fr }
+  .gantt .scale{ margin-left:108px }
+}
+
+/* 966: the gap between the two screens */
+.a966 .pair{ gap:calc(6 * var(--u)) }
+.a966 .gapr{ position:relative; display:flex; justify-content:center; padding:calc(10 * var(--u)) 0 }
+.a966 .gapr::before{ content:''; position:absolute; left:50%; top:0; bottom:0; border-left:2px dashed var(--do-amber) }
+.a966 .gapr span{ position:relative; font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.14em;
+  text-transform:uppercase; color:var(--do-prussian-blue); background:var(--do-amber); padding:calc(4 * var(--u)) calc(10 * var(--u)); border-radius:99px; white-space:nowrap }
+/* 973: season bands over the chart */
+.seasons{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); margin-top:calc(12 * var(--u)) }
+.seasons span{ text-align:center; font-family:var(--do-font-mono); font-weight:600; font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
+  padding:2px 0; border-radius:99px; background:color-mix(in srgb, var(--do-sky-blue) 26%, transparent); color:var(--do-prussian-blue); white-space:nowrap; overflow:hidden }
+.seasons span.on{ background:color-mix(in srgb, var(--do-amber) 50%, transparent) }
+
+/* ── fixes after the first render ── */
+.ck li.no span{ display:block }
+.a969 .lp .hd, .a969 .lp .row{ min-height:calc(22 * var(--u)); align-items:center }
+.a969 .lp .row{ display:grid }
+.a969 .stage{ aspect-ratio:560 / 380 }
+.a975 .stage{ aspect-ratio:560 / 410 }
+.xl-a{ left:calc(14 * var(--u)); top:calc(60 * var(--u)); width:calc(330 * var(--u)) }
+.xl-b{ left:calc(328 * var(--u)); top:calc(40 * var(--u)); width:calc(216 * var(--u)) }
+.xl-c{ left:calc(70 * var(--u)); top:calc(236 * var(--u)); width:calc(260 * var(--u)) }
+.dlg{ top:calc(214 * var(--u)) }
+.a970 .print{ top:calc(40 * var(--u)) }
+.a970 .body{ padding-top:calc(150 * var(--u)) }
+.chart .cap span{ right:auto; left:4px }
+.a718 .doc-l{ left:calc(150 * var(--u)); top:calc(384 * var(--u)); width:calc(460 * var(--u)) }
+.a718 .stage{ min-height:calc(580 * var(--u)) }
+@media (max-width: 760px){
+  .a970 .print{ width:118px; right:12px; top:34px }
+  .a970 .body{ padding-top:150px }
+  .a718 .stage .d17-doc{ --u:.82px }
+  .a975 .stage{ aspect-ratio:560 / 520 }
+}
+@media (max-width: 760px){
+  .a967 .st .n{ font-size:10px } .a967 .st p{ font-size:13px } .a967 .st h4{ font-size:17px }
+  .a967 .st--start h4{ font-size:24px }
+}
