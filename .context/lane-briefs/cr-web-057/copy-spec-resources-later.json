@@ -1,0 +1,20 @@
+[
+ {
+  "file": "app/resources/erp-selection-playbook/page.tsx",
+  "find": "const systems = [\n  { name: 'A generic print ERP', strength: 'Strong for wholesale and distribution', weakness: 'Gaps in mixed decoration methods' },\n  { name: 'A decoration-specific order system', strength: 'Built for garment decoration, strong on production workflow', weakness: 'Limited eCommerce integration' },\n  { name: 'An eCommerce-first decoration platform', strength: 'Strong on eCommerce and decoration management', weakness: 'Weaker on financial controls' },\n  { name: 'A sector-specific MIS', strength: 'Sector-specific, strong on screen print workflow', weakness: '' },\n  { name: 'An inventory-focused platform', strength: 'Inventory-focused', weakness: 'Requires middleware for decoration-specific workflows' },\n];",
+  "replace": "const systems = [\r\n  { name: 'Wholesale and distribution heavy', strength: 'Strong stock control, multi-warehouse handling, and account-based pricing for trade customers', weakness: 'Check how well it copes with mixed decoration methods before you commit' },\r\n  { name: 'Decoration-first shops', strength: 'Production workflow built around decoration methods, with artwork and proofing handled natively and accurate costing per method', weakness: 'Often weaker on financial controls and multi-channel selling, so check those separately' },\r\n  { name: 'Multi-channel online sellers', strength: 'Strong eCommerce and marketplace integration, with real-time stock across every channel', weakness: 'Can be light on production scheduling for decoration work, so check that against your own order types in a demo' },\r\n];",
+  "why": "Decision 10: rewrite vendor-neutral, no product names, criteria by business type"
+ },
+ {
+  "file": "app/resources/erp-selection-playbook/page.tsx",
+  "find": "          <div style={{ marginBottom: 64 }}>\r\n            <h2>The systems worth considering</h2>\r\n            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>\r\n              The ERP landscape for decorated goods businesses in the UK includes:\r\n            </p>",
+  "replace": "          <div style={{ marginBottom: 64 }}>\r\n            <h2>What to look for, by business type</h2>\r\n            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>\r\n              No system is right for every decorated goods business. What to look for depends on the shape of yours:\r\n            </p>",
+  "why": "Decision 10: vendor-neutral heading and intro, no product names"
+ },
+ {
+  "file": "app/resources/erp-selection-playbook/page.tsx",
+  "find": "              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From GBP 1,500.",
+  "replace": "              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From £1,500.",
+  "why": "Decision 10: fix currency rendering, GBP 1,500 to £1,500"
+ }
+]

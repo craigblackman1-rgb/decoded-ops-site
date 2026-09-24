@@ -1,0 +1,578 @@
+[
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "export const metadata: Metadata = {\n  title: 'Decoded Data App: Decoded Ops',\n  description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',\n  alternates: { canonical: '/apps/data-app' },\n  openGraph: {\n    type: 'website',\n    title: 'Decoded Data App: Decoded Ops',\n    description: 'Built from client gaps, now a full operations system: catalogue, orders, purchasing, stock, production and despatch. Runs alongside your platform or replaces it.',\n    url: 'https://decodedops.co.uk/apps/data-app',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Decoded Data App: Decoded Ops',\n    description: 'A full operations system built from client gaps. Catalogue, orders, stock, production and despatch.',\n  },\n};",
+  "replace": "export const metadata: Metadata = {\n  title: 'Decoded Works: Decoded Ops',\n  description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',\n  alternates: { canonical: '/apps/data-app' },\n  openGraph: {\n    type: 'website',\n    title: 'Decoded Works: Decoded Ops',\n    description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',\n    url: 'https://decodedops.co.uk/apps/data-app',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Decoded Works: Decoded Ops',\n    description: 'The ERP built for decorated goods. Live today, running catalogue, orders, purchasing, stock, production and despatch.',\n  },\n};",
+  "why": "Renamed 24 Sep 2026; meta description reframed as ERP per positioning.md §2/page-works.md. canonical/url left as /apps/data-app on purpose — the route move to /apps/works is structural, see structural.md."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "const dataAppFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What does the Data App actually do?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It handles supplier feeds, data enrichment, catalogue maintenance across channels, orders, purchasing, stock, production and despatch. It started as the missing layer and has grown into a full system.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'Does it replace my existing platform?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or let it replace it. The platform stays unchanged in the first case. Feeds land in the Data App, get matched and enriched, and get pushed back into the platform clean.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'How are supplier feeds handled?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in the Data App, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },\n        },\n      ],\n    },\n  ],\n};",
+  "replace": "const dataAppFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What does Decoded Works actually do?',\n          acceptedAnswer: { '@type': 'Answer', text: \"It's the ERP for a decoration business: supplier feeds, data enrichment and catalogue maintenance across channels, plus orders, purchasing, stock, production and despatch. It started as the missing layer for one client's supplier feeds and has grown into the full system.\" },\n        },\n        {\n          '@type': 'Question',\n          name: 'Does it replace my existing platform?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the platform you already own, or replace it. The platform stays unchanged in the first case. Feeds land in Works, get matched and enriched, and get pushed back into the platform clean.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'How are supplier feeds handled?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Supplier feeds land in Works, get matched against what you already sell, get enriched, and get pushed back into the platform. No re-keying, no second version of the truth.' },\n        },\n      ],\n    },\n  ],\n};",
+  "why": "FAQ schema renamed and sharpened toward ERP framing, per page-works.md."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "            <span className=\"eyebrow\">Decoded Data App &middot; live</span>\n            <h1>The system I couldn&rsquo;t buy for my clients.</h1>",
+  "replace": "            <span className=\"eyebrow\">Decoded Works &middot; the ERP for decorated goods</span>\n            <h1>The ERP I couldn&rsquo;t buy for my clients.</h1>",
+  "why": "Hero eyebrow/H1 per page-works.md §1."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "              <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back\n                with nothing on the market to cover them: supplier feeds, decoration data,\n                blank-to-finished mapping. So I built the missing piece. Engagement by engagement it\n                grew, and today it runs catalogue, orders, purchasing, stock, production and despatch.\n                It still plays both ways. Alongside the platform you already own, or as the system\n                itself.</p>",
+  "replace": "              <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back\n                with nothing on the market built for decorated goods: supplier feeds, decoration data,\n                blank-to-finished mapping, artwork held against the job. So I built the missing piece.\n                Engagement by engagement it grew, and today it runs the whole operation: catalogue,\n                orders, purchasing, stock, production and despatch. It still plays both ways. Alongside\n                the platform you already own, or as the system itself.</p>",
+  "why": "Hero body per page-works.md §1, names the ERP scope."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-941. The Decoded Data App supplier matching screen at a live client, September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers with 89 on file. Supplier lines arrive in different formats and are matched to one catalogue product; anything not yet matched sits on a visible list. Feeds in, one clean catalogue out.\">",
+  "replace": "aria-label=\"Product screen DO-ART-941. The Decoded Works supplier matching screen at a live client, September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers with 89 on file. Supplier lines arrive in different formats and are matched to one catalogue product; anything not yet matched sits on a visible list. Feeds in, one clean catalogue out.\">",
+  "why": "Alt text rename, DO-ART-941 figure."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Case study 01 · Data App</span><span>Live, September 2026</span></div>",
+  "replace": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Case study 01 · Works</span><span>Live, September 2026</span></div>",
+  "why": "On-screen mock label rename."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "          <p className=\"lede\" style={{ marginTop: 16 }}>The Data App started as the missing layer: supplier\n            feeds, data enrichment, catalogue maintenance across channels. It has grown into a full\n            system. You can run it alongside the platform you already own, or let it replace it.</p>",
+  "replace": "          <p className=\"lede\" style={{ marginTop: 16 }}>Works started as the missing layer: supplier\n            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP.\n            You can run it alongside the platform you already own, or let it replace it.</p>",
+  "why": "Layer-stack lede per page-works.md §2."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "aria-label=\"Drawn plate DO-ART-942. Two ways to run the Decoded Data App, drawn side by side. Way A: the platform you already own stays at the bottom, the Data App sits alongside it, taking supplier feeds in, matching and enriching them, and pushing clean data back; the website, marketplaces and trade portal all read from one catalogue. Way B: the Data App is the system itself, running catalogue, orders, purchasing, stock, production and despatch, and the old platform is retired. Either way, every channel reads from one catalogue.\">",
+  "replace": "aria-label=\"Drawn plate DO-ART-942. Two ways to run Decoded Works, drawn side by side. Way A: the platform you already own stays at the bottom, Works sits alongside it, taking supplier feeds in, matching and enriching them, and pushing clean data back; the website, marketplaces and trade portal all read from one catalogue. Way B: Works is the system itself, running catalogue, orders, purchasing, stock, production and despatch, and the old platform is retired. Either way, every channel reads from one catalogue.\">",
+  "why": "Alt text rename, DO-ART-942 diagram."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "      <text class=\"t-h\" x=\"46\" y=\"388\" style=\"font-size:32px\">Decoded Data App</text>",
+  "replace": "      <text class=\"t-h\" x=\"46\" y=\"388\" style=\"font-size:32px\">Decoded Works</text>",
+  "why": "SVG diagram label, Way A box."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "      <text class=\"t-h\" x=\"906\" y=\"372\" style=\"font-size:32px\">Decoded Data App</text>",
+  "replace": "      <text class=\"t-h\" x=\"906\" y=\"372\" style=\"font-size:32px\">Decoded Works</text>",
+  "why": "SVG diagram label, Way B box."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "    <rect class=\"bx-a\" x=\"10\" y=\"180\" width=\"680\" height=\"120\" rx=\"14\"/><text class=\"t-m t-a\" x=\"34\" y=\"220\" style=\"font-size:20px\">Layer 2 · alongside</text><text class=\"t-h\" x=\"34\" y=\"270\" style=\"font-size:36px\">Decoded Data App</text>",
+  "replace": "    <rect class=\"bx-a\" x=\"10\" y=\"180\" width=\"680\" height=\"120\" rx=\"14\"/><text class=\"t-m t-a\" x=\"34\" y=\"220\" style=\"font-size:20px\">Layer 2 · alongside</text><text class=\"t-h\" x=\"34\" y=\"270\" style=\"font-size:36px\">Decoded Works</text>",
+  "why": "SVG diagram label, mobile/tall Way A box."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "    <rect class=\"bx-a\" x=\"10\" y=\"714\" width=\"680\" height=\"330\" rx=\"14\"/><text class=\"t-m t-a\" x=\"34\" y=\"756\" style=\"font-size:20px\">The system</text><text class=\"t-h\" x=\"34\" y=\"806\" style=\"font-size:36px\">Decoded Data App</text>",
+  "replace": "    <rect class=\"bx-a\" x=\"10\" y=\"714\" width=\"680\" height=\"330\" rx=\"14\"/><text class=\"t-m t-a\" x=\"34\" y=\"756\" style=\"font-size:20px\">The system</text><text class=\"t-h\" x=\"34\" y=\"806\" style=\"font-size:36px\">Decoded Works</text>",
+  "why": "SVG diagram label, mobile/tall Way B box."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "            <article className=\"step step--last\">\n              <p className=\"step-n\">LAYER 2</p>\n              <h3>The Data App goes alongside</h3>",
+  "replace": "            <article className=\"step step--last\">\n              <p className=\"step-n\">LAYER 2</p>\n              <h3>Works goes alongside</h3>",
+  "why": "Step heading rename."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "          <span className=\"eyebrow\">The screens</span>\n          <h2>What it looks like in practice.</h2>",
+  "replace": "          <span className=\"eyebrow\">The screens</span>\n          <h2>What it looks like running the operation.</h2>",
+  "why": "Optional sharpen per page-works.md §3 (ERP framing)."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "aria-label=\"Artwork DO-ART-943. A graded workbench photograph with two Decoded Data App screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.\">",
+  "replace": "aria-label=\"Artwork DO-ART-943. A graded workbench photograph with two Decoded Works screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.\">",
+  "why": "Alt text rename, DO-ART-943 figure."
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "              <caption>Decoded Data App</caption>",
+  "replace": "              <caption>Decoded Works</caption>",
+  "why": "Pricing table caption rename."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "export const metadata: Metadata = {\n  title: 'Decoded Artwork Manager: Decoded Ops',\n  description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor. Currently on founding-client terms.',\n  alternates: { canonical: '/apps/artwork-manager' },\n  openGraph: {\n    type: 'website',\n    title: 'Decoded Artwork Manager: Decoded Ops',\n    description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',\n    url: 'https://decodedops.co.uk/apps/artwork-manager',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Decoded Artwork Manager: Decoded Ops',\n    description: 'An artwork vault across embroidery and print formats, versioned with an audit trail. Currently on founding-client terms.',\n  },\n};",
+  "replace": "export const metadata: Metadata = {\n  title: 'Decoded Proof: Decoded Ops',\n  description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',\n  alternates: { canonical: '/apps/artwork-manager' },\n  openGraph: {\n    type: 'website',\n    title: 'Decoded Proof: Decoded Ops',\n    description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',\n    url: 'https://decodedops.co.uk/apps/artwork-manager',\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: 'Decoded Proof: Decoded Ops',\n    description: 'Artwork revision control for embroidery and print, with customer proofing and machine-ready delivery built in.',\n  },\n};",
+  "why": "Renamed 24 Sep 2026; drops 'founding-client terms' from meta per rule against unfinished framing; text from page-proof.md. canonical/url left at /apps/artwork-manager, route move is structural."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "const artworkManagerFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What does the Artwork Manager do?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It is an artwork vault across embroidery and print formats, versioned with an audit trail. Customers approve their own proofs instead of an email chain. Machine-ready files go straight to the floor.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'How does customer proofing work?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Customers get their own accounts and approve their own proofs. The approval is recorded against the version that was actually approved. No more chasing a reply on an email thread with six people on it and three versions attached.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'What are founding-client terms?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Full implementation pricing, the first six months of support waived, in exchange for accepting that some features arrive during the engagement and agreeing to be a named reference.' },\n        },\n      ],\n    },\n  ],\n};",
+  "replace": "const artworkManagerFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What does Decoded Proof do?',\n          acceptedAnswer: { '@type': 'Answer', text: \"It's revision control for artwork: every format and every version of every logo, versioned with a full audit trail, with the colourways and thread library held against the job. Customers approve their own proofs instead of an email chain, and the approved file goes straight to the machine in its native format.\" },\n        },\n        {\n          '@type': 'Question',\n          name: 'How does customer proofing work?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Customers get their own accounts and approve their own proofs. The approval is recorded against the version that was actually approved. No more chasing a reply on an email thread with six people on it and three versions attached.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'What happens to an approved design?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It goes to the machine in its native format (Tajima, Barudan, Happy, with DST as the fallback, hot folders for DTF and DTG), so the file the floor gets is the file the machine wants, not something a person has to convert first.' },\n        },\n      ],\n    },\n  ],\n};",
+  "why": "FAQ schema renamed; drops the founding-client-terms question per page-proof.md (that framing goes per the 21 Sep rule); third question replaced with the machine-delivery FAQ from page-proof.md."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "            <p className=\"eyebrow\">Decoded Artwork Manager &middot; Founding clients</p>\n            <h1>Every logo, every format, every version.</h1>\n            <div className=\"hero-body\">\n              <p>Artwork vault across embroidery and print formats, versioned with an audit trail.\n                Customers approve their own proofs instead of an email chain. Machine-ready files go\n                straight to the floor.</p>\n            </div>\n            <div className=\"btn-row\" style={{ marginTop: 30 }}>\n              <Link className=\"btn btn--primary\" href=\"/contact\">Talk about founding-client terms</Link>\n              <Link className=\"btn btn--ghost btn-arrow\" href=\"#terms\">Read the terms first</Link>\n            </div>",
+  "replace": "            <p className=\"eyebrow\">Decoded Proof &middot; artwork revision control</p>\n            <h1>Every version. The one they actually approved.</h1>\n            <div className=\"hero-body\">\n              <p>An artwork vault across embroidery and print formats, with full revision control and an\n                audit trail. Colourways and thread libraries are held against the job, not scattered\n                across folders and someone&rsquo;s memory. Customers approve their own proofs instead of an\n                email chain, and the approved file goes straight to the floor in the format the machine\n                actually wants.</p>\n            </div>\n            <div className=\"btn-row\" style={{ marginTop: 30 }}>\n              <Link className=\"btn btn--primary\" href=\"/contact\">Book a free 60 minute call</Link>\n              <Link className=\"btn btn--ghost btn-arrow\" href=\"#terms\">Read the terms first</Link>\n            </div>",
+  "why": "Hero eyebrow/H1/body/CTA per page-proof.md §1, leads with revision control per the 21 Sep product-messaging rule."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-944. The Decoded Artwork Manager approval history for a left breast crest, over a graded photograph of thread spools on an embroidery machine. Version 5 is a draft that has not been sent, so production cannot pull it. Version 4 was sent to the customer, opened twice and signed off by the customer contact, and is in production as a machine-ready stitch file. Version 3 had changes requested. Every version kept, sign-off stamped against the one they actually saw.\"",
+  "replace": "aria-label=\"Product screen DO-ART-944. The Decoded Proof approval history for a left breast crest, over a graded photograph of thread spools on an embroidery machine. Version 5 is a draft that has not been sent, so production cannot pull it. Version 4 was sent to the customer, opened twice and signed off by the customer contact, and is in production as a machine-ready stitch file. Version 3 had changes requested. Every version kept, sign-off stamped against the one they actually saw.\"",
+  "why": "Alt text rename, DO-ART-944 figure."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Artwork Manager · approvals</span><span>Founding clients</span></div>",
+  "replace": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Proof · approvals</span><span>Founding clients</span></div>",
+  "why": "On-screen mock label rename. 'Founding clients' KEPT per Craig's decision 1 (positive status stays on Proof/Commerce) -- only the app name changes."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "          <p className=\"eyebrow\">Three parts</p>\n          <h2>Vault, proofing, and delivery to the machine.</h2>\n          <p className=\"lede\" style={{ marginTop: 16 }}>Artwork is the thing that goes wrong quietly. Wrong\n            version stitched, logo re-drawn for the fourth time, a proof approved in an email nobody\n            can find. All three of those are the same problem.</p>",
+  "replace": "          <p className=\"eyebrow\">Three parts</p>\n          <h2>Revision control, proofing, and delivery to the machine.</h2>\n          <p className=\"lede\" style={{ marginTop: 16 }}>Artwork is the thing that goes wrong quietly. Wrong\n            version stitched, a colourway approved for one job and used on the next, a proof approved in\n            an email nobody can find. All three of those are the same problem: no record of which\n            version was the real one.</p>",
+  "why": "Features triplet H2/lede resequenced to lead with revision control, per page-proof.md §2."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "              <h3>The vault</h3>\n              <p>Every format and every version of every logo in one place, with the thread library and\n                the colourways that go with it, and access for the staff who need it.</p>\n              <p>Version history means you can prove which file went to the machine, and when.</p>",
+  "replace": "              <h3>The vault</h3>\n              <p>Every format and every version of every logo in one place, with full revision history:\n                you can prove which file went to the machine, and when. The colourways and thread\n                library that go with each design are held against the job, not against a folder\n                somewhere else, so the right thread is never a guess.</p>",
+  "why": "Feature 1 tightened to foreground revision control, per page-proof.md §2."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "          <p style={{ marginTop: 24, maxWidth: '68ch' }}>Bought standalone, the Artwork Manager also\n            includes an embedded CRM: pipeline and client records, in the same place as the artwork.</p>",
+  "replace": "          <p style={{ marginTop: 24, maxWidth: '68ch' }}>Bought standalone, Proof also includes an embedded\n            CRM: pipeline and client records, in the same place as the artwork.</p>",
+  "why": "Rename."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "      <section className=\"g-navy\" id=\"terms\">\n        <div className=\"wrap\">\n          <p className=\"eyebrow\">Said plainly</p>\n          <h2>No client has taken first delivery yet.</h2>\n\n          <div className=\"panel\" style={{ marginTop: 36, maxWidth: '78ch' }}>\n            <h3>Founding-client terms</h3>\n            <p>This is deployed and in active development. Until a client has taken first delivery, it\n              sells on founding-client terms: full implementation pricing, the first six months of\n              support waived, in exchange for accepting that some features arrive during the engagement\n              and agreeing to be a named reference.</p>\n            <p>That&rsquo;s the whole arrangement. It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a\n              pilot you&rsquo;re paying to be part of. You get the implementation you paid for, and I get the\n              first reference I can point at.</p>\n          </div>\n\n          <figure className=\"pull\" style={{ marginTop: 44 }}>\n            <blockquote>If I told you it was finished, you&rsquo;d find out in month two. Better you know\n              now, and price it in.</blockquote>\n            <cite>Craig Blackman &middot; Decoded Ops</cite>\n          </figure>\n        </div>\n      </section>",
+  "replace": "      <section className=\"g-navy\" id=\"terms\">\n        <div className=\"wrap\">\n          <p className=\"eyebrow\">Said plainly</p>\n          <h2>Built for one job: proving which version is real.</h2>\n\n          <div className=\"panel\" style={{ marginTop: 36, maxWidth: '78ch' }}>\n            <h3>How Proof is priced right now</h3>\n            <p>Proof runs on founding-client terms while the first names go on the reference list: full\n              implementation pricing, with the first six months of support included at no extra cost,\n              in exchange for being one of the first named references. That&rsquo;s the whole arrangement.\n              It isn&rsquo;t a discount dressed as an offer, and it isn&rsquo;t a pilot you&rsquo;re paying to be part\n              of. You get the implementation you paid for, and I get a name I can point at.</p>\n          </div>\n\n          <figure className=\"pull\" style={{ marginTop: 44 }}>\n            <cite>Craig Blackman &middot; Decoded Ops</cite>\n          </figure>\n        </div>\n      </section>",
+  "why": "Section 3 rewritten per page-proof.md section 3: drops the negative 'no client has taken first delivery' framing and the 'if I told you it was finished' construction (both banned by the 21 Sep rule and voice.md section 7.1). 'Founding-client terms' KEPT as the label (Craig's decision 1) -- only the negative sentences and the 'some features arrive during the engagement' unfinished-sounding caveat are dropped. NEEDS CRAIG: the pull quote is drafted in his voice but invented, flagged in notes.md, do not publish under his name without sign-off."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "              <caption>Decoded Artwork Manager</caption>",
+  "replace": "              <caption>Decoded Proof</caption>",
+  "why": "Pricing table caption rename."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "                <tr>\n                  <th scope=\"row\">Standard <span className=\"star\">Most take this</span></th>\n                  <td className=\"scope\">Adds the customer proofing portal and machine delivery</td>\n                </tr>",
+  "replace": "                <tr>\n                  <th scope=\"row\">Connected <span className=\"star\">Most take this</span></th>\n                  <td className=\"scope\">Adds the customer proofing portal and machine delivery</td>\n                </tr>",
+  "why": "Tier renamed Standard → Connected to match the house standard Core/Connected/Scaled ratified 4 Sep 2026, per page-proof.md §4. NEEDS CRAIG per positioning.md §7 item 2 — if he keeps Core/Standard for Proof, revert this row only."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "          <p className=\"table-foot\">There&rsquo;s no Extended tier for this product. If what you need is bigger\n            than Standard, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a\n            tier list.</p>",
+  "replace": "          <p className=\"table-foot\">There&rsquo;s no third tier for this product. If what you need is bigger\n            than Connected, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a\n            tier list.</p>",
+  "why": "Table footer updated to match the Connected tier name (or revert together with the tier-name row above if Craig keeps Core/Standard)."
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "          <h2>Talk about founding-client terms.</h2>\n          <p className=\"lede\">An hour to work out whether being first is worth it to you. If your artwork\n            problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the end of it.</p>\n          <div className=\"btn-row\">\n            <Link className=\"btn btn--primary\" href=\"/contact\">Talk about founding-client terms</Link>\n            <Link className=\"btn btn--ghost btn-arrow\" href=\"/apps\">See the other systems</Link>\n          </div>",
+  "replace": "          <h2>Talk about getting your artwork under control.</h2>\n          <p className=\"lede\">An hour on what you&rsquo;re running today, formats, machines and how proofing\n            works now. If your artwork problem is smaller than this, I&rsquo;ll tell you that, and that&rsquo;s the\n            end of it.</p>\n          <div className=\"btn-row\">\n            <Link className=\"btn btn--primary\" href=\"/contact\">Book a free 60 minute call</Link>\n            <Link className=\"btn btn--ghost btn-arrow\" href=\"/apps\">See the other systems</Link>\n          </div>",
+  "why": "CTA strip per page-proof.md §5, drops 'founding-client terms' as the CTA framing."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "            <span className=\"eyebrow\">Decoded Commerce · live infrastructure</span>",
+  "replace": "            <span className=\"eyebrow\">Decoded Commerce · the trade storefront that runs off Works</span>",
+  "why": "Hero eyebrow per page-commerce.md §1, names the Works relationship instead of the vague 'live infrastructure' claim."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,\n                approval workflows, quote negotiation, order editing, and a full storefront and\n                checkout, all on an open-source core. Real foundations, not a from-scratch build,\n                which keeps the cost well under a bespoke quote for the same thing.</p>",
+  "replace": "              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,\n                approval workflows, quote negotiation, order editing, and a full storefront and\n                checkout. Real foundations, not a from-scratch build, which keeps the cost well under a\n                bespoke quote for the same thing.</p>",
+  "why": "Minor tightening per page-commerce.md §1 (drops the repeated 'on an open-source core')."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Decoded Commerce · trade storefront</span><span>Live infrastructure</span></div>",
+  "replace": "<div class=\"sx-top d17-mono\" aria-hidden=\"true\"><span>Decoded Commerce · trade storefront</span><span>In build at Hanicks</span></div>",
+  "why": "On-screen mock tag rename — drops the unverified 'Live infrastructure' claim for the real, factual build status (Craig's decision 3: Hanicks may be named)."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "          <div className=\"notice\" data-od-id=\"founding-terms\">\n            <p className=\"notice-tag\">Founding-client terms</p>\n            <h3>No client has taken first delivery of the packaged product yet.</h3>\n            <p>Real work has been scoped and quoted, but nobody has yet bought Decoded\n              Commerce as a tiered product. Until that happens it sells at the rates above with the\n              first six months of support waived, in exchange for accepting that some features arrive\n              during the engagement and agreeing to be a named reference.</p>\n            <p>Stated plainly, because you&rsquo;d find out anyway. And you should be able to price it in\n              before you decide, not after.</p>\n          </div>",
+  "replace": "          <div className=\"notice\" data-od-id=\"founding-terms\">\n            <p className=\"notice-tag\">Founding-client terms</p>\n            <h3>Hanicks is already running its storefront through Commerce, ahead of a public launch.</h3>\n            <p>Their store reads the same catalogue as their Works instance. Nobody has yet bought Commerce as a tiered, off-the-shelf product,\n              so until that happens it sells at the rates above with the first six months of support\n              included, in exchange for agreeing to be a named reference.</p>\n            <p>Stated plainly, because you&rsquo;d find out anyway. And you should be able to price it in\n              before you decide, not after.</p>\n          </div>",
+  "why": "Notice block rewritten per Craig's decisions 1 and 3: 'Founding-client terms' KEPT as the positive status label (decision 1); drops the negative 'no client has taken first delivery' framing and the 'some features arrive during the engagement' unfinished-sounding caveat; names Hanicks (decision 3) but WITHOUT the '766 products staged' figure, which decision 3 explicitly says to drop as not on the allowed-figures list. No specific product count is used here on purpose."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "  description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients.',\n  alternates: { canonical: '/apps' },\n  openGraph: {\n    type: 'website',\n    title: 'The systems: Decoded Ops',\n    description: 'Software built for jobs the platforms in this sector were never going to do. The Decoded Data App, the Artwork Manager and Decoded Commerce, proven at real clients.',\n    url: 'https://decodedops.co.uk/apps',\n  },",
+  "replace": "  description: 'Not a product catalogue. Software built for jobs the platforms in this sector were never going to do: Decoded Works, the ERP for decorated goods; Decoded Proof, artwork revision control; Decoded Commerce, the trade storefront. Proven at real clients.',\n  alternates: { canonical: '/apps' },\n  openGraph: {\n    type: 'website',\n    title: 'The systems: Decoded Ops',\n    description: 'Not a product catalogue. Software built for jobs the platforms in this sector were never going to do: Decoded Works, the ERP for decorated goods; Decoded Proof, artwork revision control; Decoded Commerce, the trade storefront. Proven at real clients.',\n    url: 'https://decodedops.co.uk/apps',\n  },",
+  "why": "Meta/OG description per page-apps-index.md."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "          <span className=\"eyebrow\">The systems</span>\n          <h1>What&rsquo;s already running.</h1>\n          <p className=\"lede\">Not a product catalogue. Software built for jobs the platforms in this sector\n            were never going to do, proven at real clients.</p>",
+  "replace": "          <span className=\"eyebrow\">The systems</span>\n          <h1>Run the operation. Approve the artwork. Sell the goods.</h1>\n          <p className=\"lede\">Not a product catalogue. Software built for jobs the platforms in this sector\n            were never going to do, proven at real clients.</p>",
+  "why": "H1 replaced with the ratified strap line per positioning.md §3 / page-apps-index.md §1 (DO_Naming_Architecture_v1.0_2026-08-14)."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "<div className=\"under d17-mono\" aria-hidden=\"true\"><span>Live · two deployments<b>Decoded Data App</b></span><span>Founding clients<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span></div>",
+  "replace": "<div className=\"under d17-mono\" aria-hidden=\"true\"><span>Live · two deployments<b>Decoded Works</b></span><span>Founding clients<b>Decoded Proof</b></span><span>In build at Hanicks<b>Decoded Commerce</b></span></div>",
+  "why": "Hero strip rename. 'Founding clients' KEPT per Craig's decision 1 (positive status stays on Proof). 'Live infrastructure' dropped for the real, factual 'In build at Hanicks' status."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <div className=\"mw s1 m-rise\" style={{animationDelay:'.1s'}} data-cap=\"Decoded Data App · live, two deployments\">",
+  "replace": "              <div className=\"mw s1 m-rise\" style={{animationDelay:'.1s'}} data-cap=\"Decoded Works · live, two deployments\">",
+  "why": "data-cap attribute rename, screen 1."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <div className=\"mw s2 m-rise\" style={{animationDelay:'.35s'}} data-cap=\"Decoded Artwork Manager · founding clients\">",
+  "replace": "              <div className=\"mw s2 m-rise\" style={{animationDelay:'.35s'}} data-cap=\"Decoded Proof · founding clients\">",
+  "why": "data-cap attribute rename, screen 2. 'Founding clients' status KEPT per decision 1."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <div className=\"mw s3 m-rise\" style={{animationDelay:'.6s'}} data-cap=\"Decoded Commerce · live infrastructure\">",
+  "replace": "              <div className=\"mw s3 m-rise\" style={{animationDelay:'.6s'}} data-cap=\"Decoded Commerce · in build at Hanicks\">",
+  "why": "data-cap tag rework, screen 3, drops unverified 'live infrastructure'."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "            <Link className=\"log-row\" href=\"/apps/data-app\">\n              <div>\n                <span className=\"chip chip--live\">Live &middot; two deployments</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Data App</h3>\n              </div>\n              <p>Supplier feeds in, clean product data out, stock and bins right on the warehouse floor.\n                Live today at two client deployments.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>\n\n            <Link className=\"log-row\" href=\"/apps/artwork-manager\">\n              <div>\n                <span className=\"chip chip--pre\">Founding clients</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Artwork Manager</h3>\n              </div>\n              <p>Every logo, every format, every version, with an audit trail. Customers approve their own\n                proofs, no email back-and-forth.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>\n\n            <Link className=\"log-row\" href=\"/apps/commerce\">\n              <div>\n                <span className=\"chip chip--live\">Live infrastructure</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>\n              </div>\n              <p>Storefront build and migration, scoped to what your customers actually need.\n                A full migration off an existing web platform, a new storefront, and reintegration back\n                into the ERP is the worked example.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>",
+  "replace": "            <Link className=\"log-row\" href=\"/apps/data-app\">\n              <div>\n                <span className=\"chip chip--live\">Live &middot; running the operation</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Works</h3>\n              </div>\n              <p>The ERP for decorated goods: sales, stock, purchasing, production and channels, in one\n                system. Live today at two client deployments, including a full catalogue and warehouse\n                build.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>\n\n            <Link className=\"log-row\" href=\"/apps/artwork-manager\">\n              <div>\n                <span className=\"chip chip--pre\">Founding clients</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Proof</h3>\n              </div>\n              <p>Every logo, every format, every version, with full revision control and an audit trail.\n                Colourways and thread libraries held against the job. Customers approve their own\n                proofs, no email back-and-forth.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>\n\n            <Link className=\"log-row\" href=\"/apps/commerce\">\n              <div>\n                <span className=\"chip chip--live\">In build at Hanicks</span>\n                <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>\n              </div>\n              <p>The trade storefront that runs off Works: company accounts, spend limits, approval\n                workflows and quote negotiation, reading one catalogue with the warehouse. Scoped to\n                what your customers actually need.</p>\n              <span className=\"go\">See how it works</span>\n            </Link>",
+  "why": "Log list rows renamed and reframed per page-apps-index.md §2: Works chip/body carry the ERP framing; Proof's 'Founding clients' chip KEPT per Craig's decision 1; Commerce chip names the real in-flight Hanicks build instead of the unverified 'Live infrastructure'. hrefs unchanged here on purpose (route move is structural)."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "          <p style={{ marginTop: 32, maxWidth: '68ch' }}>Pipeline and client records (CRM) are built into\n            the ERP solution, and included with the Artwork Manager when bought standalone.</p>",
+  "replace": "          <p style={{ marginTop: 32, maxWidth: '68ch' }}>Pipeline and client records (CRM) are built into\n            Works, and included with Proof when bought standalone.</p>",
+  "why": "Rename per page-apps-index.md §2."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "          <p className=\"lede\" style={{ marginTop: 16 }}>Each one started as a gap nothing off the shelf covered.\n            The Data App has since grown into a full system in its own right.</p>",
+  "replace": "          <p className=\"lede\" style={{ marginTop: 16 }}>Each one started as a gap nothing off the shelf covered for\n            decorated goods. Works has since grown into the ERP.</p>",
+  "why": "Architecture-plate lede per page-apps-index.md §2a."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "aria-label=\"Drawn plate DO-ART-940. Three gaps nothing off the shelf covered: supplier feeds and one clean catalogue; artwork versions and customer approvals; trade ordering for your customers. Each gap is filled by an app: the Decoded Data App, the Artwork Manager and Decoded Commerce. All three sit on one platform. The Data App has grown into the full system: catalogue, orders, purchasing, stock, production and despatch, with pipeline and client records built in.\">",
+  "replace": "aria-label=\"Drawn plate DO-ART-940. Three gaps nothing off the shelf covered: supplier feeds and one clean catalogue; artwork versions and customer approvals; trade ordering for your customers. Each gap is filled by an app: Decoded Works, Decoded Proof and Decoded Commerce. All three sit on one platform. Works has grown into the full system: catalogue, orders, purchasing, stock, production and despatch, with pipeline and client records built in.\">",
+  "why": "Alt text rename, DO-ART-940 diagram."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "                <text className=\"t-m t-a\" x=\"72\" y=\"356\" style={{fontSize:'16px'}}>Decoded Data App · live</text>",
+  "replace": "                <text className=\"t-m t-a\" x=\"72\" y=\"356\" style={{fontSize:'16px'}}>Decoded Works · live</text>",
+  "why": "SVG diagram label rename, wide layout."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "                <text className=\"t-m\" x=\"806\" y=\"356\" style={{fontSize:'16px'}}>Artwork Manager</text>",
+  "replace": "                <text className=\"t-m\" x=\"806\" y=\"356\" style={{fontSize:'16px'}}>Decoded Proof</text>",
+  "why": "SVG diagram label rename, wide layout."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "                <text className=\"t-d\" x=\"1208\" y=\"638\" style={{fontSize:'18px'}}>Live infrastructure</text></g>",
+  "replace": "                <text className=\"t-d\" x=\"1208\" y=\"638\" style={{fontSize:'18px'}}>In build at Hanicks</text></g>",
+  "why": "SVG diagram tag rework, wide layout, drops unverified 'Live infrastructure'. (The 'Founding clients' label at x=806 in this same diagram is left untouched — kept per Craig's decision 1.)"
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <text className=\"t-m t-a\" x=\"34\" y=\"534\" style={{fontSize:'22px'}}>Decoded Data App · live</text>",
+  "replace": "              <text className=\"t-m t-a\" x=\"34\" y=\"534\" style={{fontSize:'22px'}}>Decoded Works · live</text>",
+  "why": "SVG diagram label rename, tall/mobile layout."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <rect className=\"bx\" x=\"10\" y=\"910\" width=\"680\" height=\"150\" rx=\"14\"/><text className=\"t-m\" x=\"34\" y=\"954\" style={{fontSize:'22px'}}>Artwork Manager · founding clients</text><text className=\"t-h\" x=\"34\" y=\"1008\" style={{fontSize:'34px'}}>Vault, proofing, machine delivery</text>",
+  "replace": "              <rect className=\"bx\" x=\"10\" y=\"910\" width=\"680\" height=\"150\" rx=\"14\"/><text className=\"t-m\" x=\"34\" y=\"954\" style={{fontSize:'22px'}}>Decoded Proof · founding clients</text><text className=\"t-h\" x=\"34\" y=\"1008\" style={{fontSize:'34px'}}>Vault, proofing, machine delivery</text>",
+  "why": "SVG diagram label rename, tall/mobile layout. 'Founding clients' KEPT per Craig's decision 1."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "              <rect className=\"bx\" x=\"10\" y=\"1080\" width=\"680\" height=\"150\" rx=\"14\"/><text className=\"t-m\" x=\"34\" y=\"1124\" style={{fontSize:'22px'}}>Decoded Commerce · live</text><text className=\"t-h\" x=\"34\" y=\"1178\" style={{fontSize:'34px'}}>Storefront and trade portal</text>",
+  "replace": "              <rect className=\"bx\" x=\"10\" y=\"1080\" width=\"680\" height=\"150\" rx=\"14\"/><text className=\"t-m\" x=\"34\" y=\"1124\" style={{fontSize:'22px'}}>Decoded Commerce · in build</text><text className=\"t-h\" x=\"34\" y=\"1178\" style={{fontSize:'34px'}}>Storefront and trade portal</text>",
+  "why": "SVG diagram tag rework, tall/mobile layout, drops the overclaim 'live'."
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "          <p className=\"lede\" style={{ marginTop: 16, maxWidth: '62ch' }}>If a platform already on the market does\n            the job, that&rsquo;s what goes on the table: named, no commission in it for me.\n            These three exist because for a specific set of jobs, nothing on the market did.</p>",
+  "replace": "          <p className=\"lede\" style={{ marginTop: 16, maxWidth: '62ch' }}>The audit comes first and it decides\n            what&rsquo;s needed, not the other way round. If a platform already on the market does the job,\n            that&rsquo;s what goes on the table: named, no commission in it for me. Works, Proof and Commerce\n            exist because for a specific set of jobs in this sector, nothing on the market did the job\n            properly.</p>",
+  "why": "Vendor-agenda lede sharpened per positioning.md §4 / page-apps-index.md §3."
+ },
+ {
+  "file": "components/Footer.tsx",
+  "find": "const appsLinks: FooterLink[] = [\n  { label: 'Data App', href: '/apps/data-app' },\n  { label: 'Artwork Manager', href: '/apps/artwork-manager' },\n  { label: 'Commerce', href: '/apps/commerce' },\n  { label: 'All apps', href: '/apps' },\n];",
+  "replace": "const appsLinks: FooterLink[] = [\n  { label: 'Works', href: '/apps/data-app' },\n  { label: 'Proof', href: '/apps/artwork-manager' },\n  { label: 'Commerce', href: '/apps/commerce' },\n  { label: 'All apps', href: '/apps' },\n];",
+  "why": "Footer nav labels renamed. hrefs left at current paths on purpose (route move is structural, see structural.md)."
+ },
+ {
+  "file": "components/Header.tsx",
+  "find": "const helpBuilt: NavGroup = {\n  title: 'Software I’ve already built',\n  items: [\n    { label: 'Data App', sub: 'Supplier feeds into one clean catalogue', href: '/apps/data-app' },\n    { label: 'Artwork Manager', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },\n    { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },\n    { label: 'All apps', sub: \"What's ready to buy today\", href: '/apps' },\n  ],\n};",
+  "replace": "const helpBuilt: NavGroup = {\n  title: 'Software I’ve already built',\n  items: [\n    { label: 'Works', sub: 'The ERP for decorated goods', href: '/apps/data-app' },\n    { label: 'Proof', sub: 'Versions, approvals and delivery', href: '/apps/artwork-manager' },\n    { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },\n    { label: 'All apps', sub: \"What's ready to buy today\", href: '/apps' },\n  ],\n};",
+  "why": "Header nav labels renamed; Works sub-label updated to ERP framing per positioning.md §2. hrefs left at current paths, route move is structural."
+ },
+ {
+  "file": "app/pricing/page.tsx",
+  "find": "            <Link className=\"card\" href=\"/apps/data-app\">\n              <span className=\"kicker\">Data App</span>\n              <h3>Supplier feeds into one clean catalogue</h3>\n            </Link>\n            <Link className=\"card\" href=\"/apps/artwork-manager\">\n              <span className=\"kicker\">Artwork Manager</span>\n              <h3>Versions, approvals and delivery</h3>\n            </Link>",
+  "replace": "            <Link className=\"card\" href=\"/apps/data-app\">\n              <span className=\"kicker\">Works</span>\n              <h3>The ERP for decorated goods</h3>\n            </Link>\n            <Link className=\"card\" href=\"/apps/artwork-manager\">\n              <span className=\"kicker\">Proof</span>\n              <h3>Versions, approvals and delivery</h3>\n            </Link>",
+  "why": "Card kicker/heading renamed; Works heading updated to ERP framing per positioning.md §2. hrefs left at current paths, route move is structural."
+ },
+ {
+  "file": "app/pricing/page.tsx",
+  "find": "          <p className=\"table-foot\" style={{ marginTop: 28 }}>Artwork Manager and Commerce sell on founding-client terms until first\n            delivery: six months of support waived, in exchange for a named reference and accepting that\n            some features arrive during the engagement. Stated plainly, not a discount dressed as an offer.</p>",
+  "replace": "          <p className=\"table-foot\" style={{ marginTop: 28 }}>Proof and Commerce sell on founding-client terms while the\n            first names go on the reference list: six months of support included, in exchange for being\n            one of the first named references. Stated plainly, not a discount dressed as an offer.</p>",
+  "why": "Renamed and reframed positively per the 21 Sep product-messaging rule and positioning.md §7 item 1."
+ },
+ {
+  "file": "app/about/page.tsx",
+  "find": "            <p className=\"sheet-foot\" data-od-id=\"sheet-foot\">The Data App is one of those layers. At Hanicks,\n              it has brought 317,812 supplier products into one catalogue and\n              matched 154,518 of them to a supplier automatically. Nobody retypes a supplier\n              spreadsheet any more.</p>",
+  "replace": "            <p className=\"sheet-foot\" data-od-id=\"sheet-foot\">Works is one of those layers. At Hanicks,\n              it has brought 317,812 supplier products into one catalogue and\n              matched 154,518 of them to a supplier automatically. Nobody retypes a supplier\n              spreadsheet any more.</p>",
+  "why": "Mid-sentence rename 'the Data App' → 'Works' per positioning.md §5."
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-951. The Hanicks catalogue overview in the Decoded Data App, live figures from September 2026: 317,812 products brought in from supplier feeds; 154,518 matched to a supplier automatically; 40 active suppliers, 89 on file; 2,872 new products and 28 new suppliers found in a stock-take reconciliation; 3,844 Amazon listings re-optimised ahead of a title-format deadline; 77% of stock records with a bin location, and climbing. Unmatched products sit on a visible list rather than being hidden.\">",
+  "replace": "aria-label=\"Product screen DO-ART-951. The Hanicks catalogue overview in Decoded Works, live figures from September 2026: 317,812 products brought in from supplier feeds; 154,518 matched to a supplier automatically; 40 active suppliers, 89 on file; 2,872 new products and 28 new suppliers found in a stock-take reconciliation; 3,844 Amazon listings re-optimised ahead of a title-format deadline; 77% of stock records with a bin location, and climbing. Unmatched products sit on a visible list rather than being hidden.\">",
+  "why": "Alt text rename, DO-ART-951 figure."
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "                <p>No real visibility of stock across channels: the problem the Data App solved for this client.</p>",
+  "replace": "                <p>No real visibility of stock across channels: the problem Works solved for this client.</p>",
+  "why": "Related-card rename."
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "            <h2>See how the Data App does this.</h2>\n            <p className=\"lede\">\n              This is a Systems (rung 2) example. To find out what your own data looks like, book a Clarity Audit.\n            </p>\n            <div className=\"hero-cta\">\n              <Link href=\"/contact\" className=\"btn btn--primary\">\n                Book a free discovery call <ArrowRight size={18} />\n              </Link>\n              <Link href=\"/apps/data-app\" className=\"btn btn-ghost btn-arrow\">\n                See the Data App\n              </Link>\n            </div>",
+  "replace": "            <h2>See how Works does this.</h2>\n            <p className=\"lede\">\n              This is a Systems (rung 2) example. To find out what your own data looks like, book a Clarity Audit.\n            </p>\n            <div className=\"hero-cta\">\n              <Link href=\"/contact\" className=\"btn btn--primary\">\n                Book a free discovery call <ArrowRight size={18} />\n              </Link>\n              <Link href=\"/apps/data-app\" className=\"btn btn-ghost btn-arrow\">\n                See Works\n              </Link>\n            </div>",
+  "why": "CTA strip renamed. href left at current path, route move is structural."
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "              The eCommerce platform stayed, because it was the right tool for selling. The data app was built alongside it to do the parts the platform was never going to do: supplier feeds kept current, decorated and plain stock tracked separately, warehouse work (bins, barcode scanning, batch picking on a phone), and new products and variants published to the website automatically.",
+  "replace": "              The eCommerce platform stayed, because it was the right tool for selling. Works was built alongside it to do the parts the platform was never going to do: supplier feeds kept current, decorated and plain stock tracked separately, warehouse work (bins, barcode scanning, batch picking on a phone), and new products and variants published to the website automatically.",
+  "why": "Mid-sentence rename 'the data app' → 'Works'."
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "                The Data App keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.",
+  "replace": "                Works keeps expanding. Warehouse floor tooling and further supplier automation are active, ongoing work, not a finished job being presented as complete.",
+  "why": "Rename."
+ },
+ {
+  "file": "app/case-studies/case-study-02/page.tsx",
+  "find": "            <h2>See how the Data App does this.</h2>\n            <p className=\"lede\">\n              This is a Systems (rung 2) example. To find out what your own operation needs, book a Clarity Audit.\n            </p>\n            <div className=\"hero-cta\">\n              <Link href=\"/contact\" className=\"btn btn--primary\">\n                Book a free discovery call <ArrowRight size={18} />\n              </Link>\n              <Link href=\"/apps/data-app\" className=\"btn btn-ghost btn-arrow\">\n                See the Data App\n              </Link>\n            </div>",
+  "replace": "            <h2>See how Works does this.</h2>\n            <p className=\"lede\">\n              This is a Systems (rung 2) example. To find out what your own operation needs, book a Clarity Audit.\n            </p>\n            <div className=\"hero-cta\">\n              <Link href=\"/contact\" className=\"btn btn--primary\">\n                Book a free discovery call <ArrowRight size={18} />\n              </Link>\n              <Link href=\"/apps/data-app\" className=\"btn btn-ghost btn-arrow\">\n                See Works\n              </Link>\n            </div>",
+  "why": "CTA strip renamed. href left at current path, route move is structural."
+ },
+ {
+  "file": "app/problems/buy-vs-build/page.tsx",
+  "find": "       <p>I build software too. The Data App started life plugging gaps nothing on the market\n        covered, and it has grown into a full system. So I am not a neutral bystander, and I will\n        not pretend to be one.</p>",
+  "replace": "       <p>I build software too. Works started life plugging gaps nothing on the market\n        covered, and it has grown into the ERP. So I am not a neutral bystander, and I will\n        not pretend to be one.</p>",
+  "why": "Rename per positioning.md §5."
+ },
+ {
+  "file": "app/problems/cant-scale-operations/page.tsx",
+  "find": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "replace": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "why": "Alt text rename, DO-ART-918 figure."
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "export const metadata: Metadata = {\n title: 'Your data is scattered: Decoded Ops',\n description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.\",\n alternates: { canonical: '/problems/data-scattered' },\n openGraph: {\n  title: 'Your data is scattered: Decoded Ops',\n  description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.\",\n  url: 'https://decodedops.co.uk/problems/data-scattered',\n  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],\n },\n twitter: {\n  card: 'summary_large_image',\n  title: 'Your data is scattered: Decoded Ops',\n  description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how the Decoded Data App becomes the one source everyone reads from.\",\n },\n};",
+  "replace": "export const metadata: Metadata = {\n title: 'Your data is scattered: Decoded Ops',\n description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.\",\n alternates: { canonical: '/problems/data-scattered' },\n openGraph: {\n  title: 'Your data is scattered: Decoded Ops',\n  description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.\",\n  url: 'https://decodedops.co.uk/problems/data-scattered',\n  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],\n },\n twitter: {\n  card: 'summary_large_image',\n  title: 'Your data is scattered: Decoded Ops',\n  description: \"Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.\",\n },\n};",
+  "why": "Whole metadata block replaced (the description string repeats 3x identically, so the block is the smallest unique unit). Rename only, per positioning.md §5."
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "     name: 'How do I get all my supplier feeds into one place?',\n     acceptedAnswer: { '@type': 'Answer', text: 'The Data App ingests every supplier feed in whatever format it arrives, cleans and matches it against what you already sell. One source of truth, pushed out to every channel.' },",
+  "replace": "     name: 'How do I get all my supplier feeds into one place?',\n     acceptedAnswer: { '@type': 'Answer', text: 'Works ingests every supplier feed in whatever format it arrives, cleans and matches it against what you already sell. One source of truth, pushed out to every channel.' },",
+  "why": "FAQ answer rename."
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/thread-spools-2195b5.jpg\" alt=\"\" width=\"1300\" height=\"867\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"cap\">\n    <div class=\"k d17-mono\">The Data App <span>· at Hanicks</span></div>",
+  "replace": "aria-label=\"Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/thread-spools-2195b5.jpg\" alt=\"\" width=\"1300\" height=\"867\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"cap\">\n    <div class=\"k d17-mono\">Works <span>· at Hanicks</span></div>",
+  "why": "Alt text + on-screen mock label rename, DO-ART-917 figure (this exact combined block is unique; the alt text and mock label alone each repeat verbatim on other pages' copies of this same figure)."
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "      <p>The Decoded Data App takes every supplier feed in, matches it against your existing\n       catalogue, and becomes <b>the single source every other system reads from</b>: the ERP,\n       the website, the warehouse.</p>",
+  "replace": "      <p>Works takes every supplier feed in, matches it against your existing\n       catalogue, and becomes <b>the single source every other system reads from</b>: the website,\n       the warehouse.</p>",
+  "why": "Rename; drops the redundant 'the ERP' from the list since Works is now positioned as the ERP itself."
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See the Data App</Link>\n     </div>\n    </div>\n    </section>\n    <D17Motion />\n   </>\n  );",
+  "replace": "      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See Works</Link>\n     </div>\n    </div>\n    </section>\n    <D17Motion />\n   </>\n  );",
+  "why": "CTA link text renamed. href left at current path, route move is structural. (Matched with trailing context because 'See the Data App' repeats verbatim across several problem pages.)"
+ },
+ {
+  "file": "app/problems/erp-implementation-failure/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-917. The Data App catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/thread-spools-2195b5.jpg\" alt=\"\" width=\"1300\" height=\"867\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"cap\">\n    <div class=\"k d17-mono\">The Data App <span>· at Hanicks</span></div>",
+  "replace": "aria-label=\"Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/thread-spools-2195b5.jpg\" alt=\"\" width=\"1300\" height=\"867\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"cap\">\n    <div class=\"k d17-mono\">Works <span>· at Hanicks</span></div>",
+  "why": "Alt text + on-screen mock label rename, DO-ART-917 figure copy on this page."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "export const metadata: Metadata = {\n title: 'Inventory blind spots: Decoded Ops',\n description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.\",\n alternates: { canonical: '/problems/inventory-blind' },\n openGraph: {\n  title: 'Inventory blind spots: Decoded Ops',\n  description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.\",\n  url: 'https://decodedops.co.uk/problems/inventory-blind',\n  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],\n },\n twitter: {\n  card: 'summary_large_image',\n  title: 'Inventory blind spots: Decoded Ops',\n  description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how the Decoded Data App builds one real-time stock picture from your supplier feeds.\",\n },\n};",
+  "replace": "export const metadata: Metadata = {\n title: 'Inventory blind spots: Decoded Ops',\n description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.\",\n alternates: { canonical: '/problems/inventory-blind' },\n openGraph: {\n  title: 'Inventory blind spots: Decoded Ops',\n  description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.\",\n  url: 'https://decodedops.co.uk/problems/inventory-blind',\n  images: [{ url: '/opengraph-image', width: 1200, height: 630 }],\n },\n twitter: {\n  card: 'summary_large_image',\n  title: 'Inventory blind spots: Decoded Ops',\n  description: \"Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.\",\n },\n};",
+  "why": "Whole metadata block replaced (description repeats 3x identically). Rename only."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "     name: 'How do I get a single inventory picture across supplier feeds and stock?',\n     acceptedAnswer: { '@type': 'Answer', text: 'The Data App reconciles supplier feeds and your real stock position continuously, not on whatever schedule someone remembers to run a report. What is on the shelf, what is committed, and what is actually available, in one number.' },",
+  "replace": "     name: 'How do I get a single inventory picture across supplier feeds and stock?',\n     acceptedAnswer: { '@type': 'Answer', text: 'Works reconciles supplier feeds and your real stock position continuously, not on whatever schedule someone remembers to run a report. What is on the shelf, what is committed, and what is actually available, in one number.' },",
+  "why": "FAQ answer rename."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "     <p className=\"lede\" style={{ marginTop: 16 }}>The Decoded Data App combines what your suppliers say\n      they&apos;ve got with what&apos;s actually moved through your own warehouse, so the number on screen\n      is the number on the shelf.</p>",
+  "replace": "     <p className=\"lede\" style={{ marginTop: 16 }}>Decoded Works combines what your suppliers say\n      they&apos;ve got with what&apos;s actually moved through your own warehouse, so the number on screen\n      is the number on the shelf.</p>",
+  "why": "Rename."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/cat-workwear-401e08.jpg\" alt=\"\" width=\"900\" height=\"596\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"copy\">\n    <div class=\"k d17-mono\">A sports and teamwear client <span>· live system, Sept 2026</span></div>\n    <h3>Seventeen feeds in. Every item binned.</h3>\n    <ol class=\"ledger\">\n      <li class=\"m-fade\" style=\"animation-delay:.2s\"><span class=\"n\">17</span><span class=\"t\">supplier feeds, automated</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:.55s\"><span class=\"n\">27,778</span><span class=\"t\">supplier products in one catalogue</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:.9s\"><span class=\"n\">236,056</span><span class=\"t\">variants, split by colour and size</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:1.25s\"><span class=\"n\">952</span><span class=\"t\">products live on their website</span></li>\n      <li class=\"end m-fade\" style=\"animation-delay:1.6s\"><span class=\"n\">100%</span><span class=\"t\">of stock with a bin location</span></li>\n    </ol>\n    <span class=\"d17-mark\">decodedops.co.uk · DO-ART-918 · Rev 01</span>\n  </figcaption>\n  <div class=\"print m-drop\" style=\"animation-delay:1.9s\" aria-hidden=\"true\">\n    <span class=\"ref\">BIN · PICK FACE</span><b>A-04-2</b><div class=\"bc\"></div><div class=\"s\">Polo · navy · M</div>\n  </div>\n</figure>` }} />\n    </div>\n   </section>\n\n   {/* ── 4 · HOW I HELP",
+  "replace": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/problems/cat-workwear-401e08.jpg\" alt=\"\" width=\"900\" height=\"596\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"copy\">\n    <div class=\"k d17-mono\">A sports and teamwear client <span>· live system, Sept 2026</span></div>\n    <h3>Seventeen feeds in. Every item binned.</h3>\n    <ol class=\"ledger\">\n      <li class=\"m-fade\" style=\"animation-delay:.2s\"><span class=\"n\">17</span><span class=\"t\">supplier feeds, automated</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:.55s\"><span class=\"n\">27,778</span><span class=\"t\">supplier products in one catalogue</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:.9s\"><span class=\"n\">236,056</span><span class=\"t\">variants, split by colour and size</span></li>\n      <li class=\"m-fade\" style=\"animation-delay:1.25s\"><span class=\"n\">952</span><span class=\"t\">products live on their website</span></li>\n      <li class=\"end m-fade\" style=\"animation-delay:1.6s\"><span class=\"n\">100%</span><span class=\"t\">of stock with a bin location</span></li>\n    </ol>\n    <span class=\"d17-mark\">decodedops.co.uk · DO-ART-918 · Rev 01</span>\n  </figcaption>\n  <div class=\"print m-drop\" style=\"animation-delay:1.9s\" aria-hidden=\"true\">\n    <span class=\"ref\">BIN · PICK FACE</span><b>A-04-2</b><div class=\"bc\"></div><div class=\"s\">Polo · navy · M</div>\n  </div>\n</figure>` }} />\n    </div>\n   </section>\n\n   {/* ── 4 · HOW I HELP",
+  "why": "Alt text rename, DO-ART-918 figure copy on this page (long context needed: this exact figure/aria-label repeats byte-for-byte on cant-scale-operations, manual-workarounds and seasonal-peaks pages too, so the surrounding section-comment anchors it to this file's occurrence)."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "      <p>I map where your stock picture actually breaks down: which feeds, which manual steps,\n       which system nobody quite trusts. Then I build the Data App layer that fixes it.</p>",
+  "replace": "      <p>I map where your stock picture actually breaks down: which feeds, which manual steps,\n       which system nobody quite trusts. Then I build the Works layer that fixes it.</p>",
+  "why": "Rename."
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See the Data App</Link>\n     </div>\n    </div>\n    </section>\n    <D17Motion />\n   </>\n  );\n}",
+  "replace": "      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See Works</Link>\n     </div>\n    </div>\n    </section>\n    <D17Motion />\n   </>\n  );\n}",
+  "why": "CTA link text renamed. href left at current path."
+ },
+ {
+  "file": "app/problems/legacy-system/page.tsx",
+  "find": "      <div className=\"layer-tier layer-tier--mid\">\n       <div><h3>The Decoded Data App</h3><p>Decoration BOMs, blank-to-finished mapping, and\n        supplier artwork, modelled properly for the first time</p></div>\n       <span className=\"no\">Layer 2</span>\n      </div>",
+  "replace": "      <div className=\"layer-tier layer-tier--mid\">\n       <div><h3>Decoded Works</h3><p>Decoration BOMs, blank-to-finished mapping, and\n        supplier artwork, modelled properly for the first time</p></div>\n       <span className=\"no\">Layer 2</span>\n      </div>",
+  "why": "Layer-diagram heading rename."
+ },
+ {
+  "file": "app/problems/legacy-system/page.tsx",
+  "find": "      <Link className=\"btn btn--primary\" href=\"/contact\">Book a free 60 minute call</Link>\n      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See the Data App</Link>",
+  "replace": "      <Link className=\"btn btn--primary\" href=\"/contact\">Book a free 60 minute call</Link>\n      <Link className=\"btn-ghost btn-arrow\" href=\"/apps/data-app\">See Works</Link>",
+  "why": "CTA link text renamed. href left at current path."
+ },
+ {
+  "file": "app/problems/manual-workarounds/page.tsx",
+  "find": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "replace": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "why": "Alt text rename, DO-ART-918 figure."
+ },
+ {
+  "file": "app/problems/seasonal-peaks/page.tsx",
+  "find": "      acceptedAnswer: { '@type': 'Answer', text: 'Manual processes have a hard ceiling. When the seasonal peak demands far more than the team can handle at normal capacity, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into the Data App, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },",
+  "replace": "      acceptedAnswer: { '@type': 'Answer', text: 'Manual processes have a hard ceiling. When the seasonal peak demands far more than the team can handle at normal capacity, automation absorbs the volume spike instead of the team absorbing the overtime. Supplier feeds into Works, artwork approval workflows, and order-to-production routing can all be automated, so the system handles the surge, not the people.' },",
+  "why": "FAQ answer rename."
+ },
+ {
+  "file": "app/problems/seasonal-peaks/page.tsx",
+  "find": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on the Data App, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "replace": "aria-label=\"Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.\">",
+  "why": "Alt text rename, DO-ART-918 figure."
+ },
+ {
+  "file": "app/problems/seasonal-peaks/page.tsx",
+  "find": "      <p>Where automation fits (supplier feeds into the Data App, artwork approval workflows,\n       order-to-production routing), the system absorbs the volume spike instead of the team\n       absorbing the overtime.</p>",
+  "replace": "      <p>Where automation fits (supplier feeds into Works, artwork approval workflows,\n       order-to-production routing), the system absorbs the volume spike instead of the team\n       absorbing the overtime.</p>",
+  "why": "Rename."
+ },
+ {
+  "file": "app/problems/seasonal-peaks/page.tsx",
+  "find": "      <Link className=\"btn btn--primary\" href=\"/contact\">Book a Clarity Audit</Link>\n      <Link className=\"btn btn-ghost btn-arrow\" href=\"/apps/data-app\">See the Data App</Link>",
+  "replace": "      <Link className=\"btn btn--primary\" href=\"/contact\">Book a Clarity Audit</Link>\n      <Link className=\"btn btn-ghost btn-arrow\" href=\"/apps/data-app\">See Works</Link>",
+  "why": "CTA link text renamed. href left at current path."
+ },
+ {
+  "file": "app/problems/spreadsheet-addiction/page.tsx",
+  "find": "     acceptedAnswer: { '@type': 'Answer', text: 'The PQS replaces the dependency on one file with documented processes that live outside anyone\\'s laptop. The order log becomes a named process with a documented workflow, not a file that only opens on one version of a spreadsheet. Where the spreadsheet was doing something useful, tracking orders, managing prices, a Clarity Audit finds the right tool to replace it, whether that is a small system, a Data App layer, or a properly-structured process document.' },",
+  "replace": "     acceptedAnswer: { '@type': 'Answer', text: 'The PQS replaces the dependency on one file with documented processes that live outside anyone\\'s laptop. The order log becomes a named process with a documented workflow, not a file that only opens on one version of a spreadsheet. Where the spreadsheet was doing something useful, tracking orders, managing prices, a Clarity Audit finds the right tool to replace it, whether that is a small system, a Works layer, or a properly-structured process document.' },",
+  "why": "FAQ answer rename."
+ },
+ {
+  "file": "app/problems/spreadsheet-addiction/page.tsx",
+  "find": "       replace it, whether that&apos;s a small system, a Data App layer, or a properly-structured\n       process document that doesn&apos;t rely on one person&apos;s macros.</p>",
+  "replace": "       replace it, whether that&apos;s a small system, a Works layer, or a properly-structured\n       process document that doesn&apos;t rely on one person&apos;s macros.</p>",
+  "why": "Body text rename."
+ },
+ {
+  "file": "app/resources/erp-selection-playbook/page.tsx",
+  "find": "              One thing this playbook should say plainly: I build one of the systems in this market. The Data App grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.",
+  "replace": "              One thing this playbook should say plainly: I build one of the systems in this market. Works grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.",
+  "why": "Rename."
+ },
+ {
+  "file": "app/sectors/garment-decoration/page.tsx",
+  "find": "          <p className=\"lede\">Project-leading an ERP change alongside a custom Data App for supplier data, Amazon FBA, and channel automation.</p>",
+  "replace": "          <p className=\"lede\">Project-leading an ERP change alongside a custom Works build for supplier data, Amazon FBA, and channel automation.</p>",
+  "why": "Rename ('Data App' → 'Works build', reads better than a bare product name mid-sentence here)."
+ },
+ {
+  "file": "app/sectors/print-promotional/page.tsx",
+  "find": "          <p className=\"lede\">Project-leading an ERP implementation alongside a custom Data App for supplier catalogue management and multi-channel automation.</p>",
+  "replace": "          <p className=\"lede\">Project-leading an ERP implementation alongside a custom Works build for supplier catalogue management and multi-channel automation.</p>",
+  "why": "Rename."
+ },
+ {
+  "file": "app/sectors/promotional-merchandise/page.tsx",
+  "find": "aria-label=\"Product screen DO-ART-930. The Data App supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/sectors/cat-promo-6d25d2.jpg\" alt=\"\" width=\"1100\" height=\"733\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"sw-cap\">\n    <div class=\"k d17-mono\">The Data App <span>· supplier matching</span></div>",
+  "replace": "aria-label=\"Product screen DO-ART-930. The Works supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.\">\n  <div class=\"d17-ph\"><img src=\"/images/d17/sectors/cat-promo-6d25d2.jpg\" alt=\"\" width=\"1100\" height=\"733\"></div>\n  <div class=\"d17-scan\" aria-hidden=\"true\"></div>\n  <figcaption class=\"sw-cap\">\n    <div class=\"k d17-mono\">Works <span>· supplier matching</span></div>",
+  "why": "Alt text + on-screen mock label rename, DO-ART-930 figure."
+ },
+ {
+  "file": "app/sectors/schoolwear/page.tsx",
+  "find": "          '@type': 'Question',\n          name: 'Does the Decoded Data App replace my existing platform?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the existing platform, or as the full system where nothing off the shelf fits. It handles both teamwear and schoolwear lines with supplier feeds automated.' },",
+  "replace": "          '@type': 'Question',\n          name: 'Does Decoded Works replace my existing platform?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It can run alongside the existing platform, or as the full system where nothing off the shelf fits. It handles both teamwear and schoolwear lines with supplier feeds automated.' },",
+  "why": "FAQ question/rename."
+ },
+ {
+  "file": "app/sectors/schoolwear/page.tsx",
+  "find": "                body: \"Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. The Decoded Data App keeps that current automatically.\",",
+  "replace": "                body: \"Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. Decoded Works keeps that current automatically.\",",
+  "why": "Rename."
+ },
+ {
+  "file": "app/sectors/schoolwear/page.tsx",
+  "find": "                body: \"The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.\",",
+  "replace": "                body: \"Decoded Works runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.\",",
+  "why": "Rename."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "const commerceFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What are the three tiers?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Standard adds company accounts, spend limits, approval workflows and quote negotiation. Extended adds multi-site, ERP integration and bespoke checkout and pricing.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'How is this different from a bespoke build?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That keeps the cost well under a bespoke quote for the same thing.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'Does it integrate with ERP systems?',\n          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Extended tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },\n        },\n      ],\n    },\n  ],\n};",
+  "replace": "const commerceFaqSchema = {\n  '@context': 'https://schema.org',\n  '@graph': [\n    {\n      '@type': 'FAQPage',\n      mainEntity: [\n        {\n          '@type': 'Question',\n          name: 'What are the three tiers?',\n          acceptedAnswer: { '@type': 'Answer', text: 'Core is a single storefront with catalogue, customer accounts and manual pricing. Connected adds company accounts, spend limits, approval workflows and quote negotiation. Scaled adds multi-site, ERP integration and bespoke checkout and pricing.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'How is this different from a bespoke build?',\n          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That keeps the cost well under a bespoke quote for the same thing.' },\n        },\n        {\n          '@type': 'Question',\n          name: 'Does it integrate with ERP systems?',\n          acceptedAnswer: { '@type': 'Answer', text: 'ERP integration is part of the Scaled tier. A full migration off an existing platform is scoped and quoted separately, not read off a tier list.' },\n        },\n      ],\n    },\n  ],\n};",
+  "why": "Tier names renamed Standard->Connected, Extended->Scaled to match the house standard Core/Connected/Scaled, per Craig's decision 2 (applies to Works, Proof AND Commerce -- this page's own three-tier structure keeps the same shape as Works)."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "              <h3>Standard</h3>\n              <p className=\"feature-meta\">The B2B trade portal shape</p>",
+  "replace": "              <h3>Connected</h3>\n              <p className=\"feature-meta\">The B2B trade portal shape</p>",
+  "why": "Features-triplet tier heading rename."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "              <h3>Extended</h3>\n              <p className=\"feature-meta\">More than one of everything</p>",
+  "replace": "              <h3>Scaled</h3>\n              <p className=\"feature-meta\">More than one of everything</p>",
+  "why": "Features-triplet tier heading rename."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "          <figure className=\"d17 sw a947\" data-od-id=\"plate-architecture\" data-motion data-no=\"DO-ART-947\" data-rev=\"01\" data-tx=\"schematic\"\n                  aria-label=\"Drawn plate DO-ART-947. Three nested tiers drawn as a plan. Core, at the centre: a single storefront with a product catalogue, customer accounts and logins, and manual pricing tiers. Standard wraps Core and adds company accounts with multi-user roles, per-employee spending limits, approval workflows and quote negotiation: the B2B trade portal shape most take. Extended wraps Standard and adds multi-site storefronts, ERP integration, and bespoke checkout and pricing logic. Each tier adds what the one below does not have.\">\n            <div className=\"q-grid\" aria-hidden=\"true\" />\n            <svg width=\"0\" height=\"0\" style={{ position: 'absolute' }} aria-hidden=\"true\"><defs>\n              <marker id=\"q-ah947\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#8ECAE6\" /></marker>\n            </defs></svg>\n            <svg className=\"q v-wide\" viewBox=\"0 0 1600 680\" aria-hidden=\"true\">\n              {/* Extended */}\n              <g className=\"m-fade\" style={{ animationDelay: '.9s' }}>\n                <rect x=\"20\" y=\"20\" width=\"1000\" height=\"640\" rx=\"22\" fill=\"none\" stroke=\"#8ECAE6\" strokeOpacity=\".7\" strokeWidth=\"2\" />\n                <text className=\"t-m\" x=\"50\" y=\"62\" style={{ fontSize: '17px' }}>Extended · more than one of everything</text>\n              </g>\n              {/* Standard */}\n              <g className=\"m-fade\" style={{ animationDelay: '.5s' }}>\n                <rect className=\"bx-a\" x=\"80\" y=\"92\" width=\"880\" height=\"508\" rx=\"18\" style={{ fillOpacity: '.9' }} />\n                <text className=\"t-m t-a\" x=\"110\" y=\"134\" style={{ fontSize: '17px' }}>Standard · the B2B trade portal shape · most take this</text>\n              </g>\n              {/* Core */}\n              <g className=\"m-pop\" style={{ animationDelay: '.1s' }}>\n                <rect className=\"bx\" x=\"140\" y=\"164\" width=\"420\" height=\"376\" rx=\"14\" />\n                <text className=\"t-m\" x=\"170\" y=\"204\" style={{ fontSize: '16px' }}>Core · single storefront</text>\n                <g className=\"t\" style={{ fontSize: '22px' }}>\n                  <rect x=\"170\" y=\"228\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"264\" style={{ fontSize: '22px' }}>Product catalogue</text>\n                  <rect x=\"170\" y=\"296\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"332\" style={{ fontSize: '22px' }}>Customer accounts, logins</text>\n                  <rect x=\"170\" y=\"364\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"400\" style={{ fontSize: '22px' }}>Manual pricing tiers</text>\n                </g>\n                <text className=\"t-d\" x=\"170\" y=\"470\" style={{ fontSize: '18px' }}>No approval workflow:</text>\n                <text className=\"t-d\" x=\"170\" y=\"496\" style={{ fontSize: '18px' }}>nobody has to sign off</text>\n              </g>\n              {/* Standard adds */}\n              <g className=\"m-rise\" style={{ animationDelay: '.6s' }}>\n                <rect x=\"590\" y=\"164\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"206\" style={{ fontSize: '22px' }}>Company accounts, roles</text>\n                <rect x=\"590\" y=\"246\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"288\" style={{ fontSize: '22px' }}>Per-employee spend limits</text>\n                <rect x=\"590\" y=\"328\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"370\" style={{ fontSize: '22px' }}>Approval workflows</text>\n                <rect x=\"590\" y=\"410\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"452\" style={{ fontSize: '22px' }}>Quote negotiation</text>\n              </g>\n              {/* Extended adds */}\n              <g className=\"m-rise\" style={{ animationDelay: '1s' }}>\n                <text className=\"t-d\" x=\"110\" y=\"636\" style={{ fontSize: '19px' }}>Multi-site storefronts  ·  ERP integration  ·  bespoke checkout and pricing logic</text>\n              </g>\n              {/* call-outs */}\n              <g className=\"m-fade\" style={{ animationDelay: '1.2s' }}>\n                <path className=\"ln-f\" d=\"M1060 20 V660 M1050 20 H1070 M1050 660 H1070\" />\n                <path className=\"ln m-draw\" pathLength=\"1\" style={{ animationDelay: '1.3s' }} d=\"M1110 120 H1026\" markerEnd=\"url(#q-ah947)\" />\n                <text className=\"t-m\" x=\"1120\" y=\"112\" style={{ fontSize: '15px' }}>Extended adds</text>\n                <text className=\"t\" x=\"1120\" y=\"142\" style={{ fontSize: '20px' }}>more than one of everything</text>\n                <path className=\"ln-a m-draw\" pathLength=\"1\" style={{ animationDelay: '1.1s' }} d=\"M1110 320 H966\" />\n                <text className=\"t-m t-a\" x=\"1120\" y=\"312\" style={{ fontSize: '15px' }}>Standard adds</text>\n                <text className=\"t\" x=\"1120\" y=\"342\" style={{ fontSize: '20px' }}>the machinery for sign-off</text>\n                <path className=\"ln m-draw\" pathLength=\"1\" style={{ animationDelay: '.9s' }} d=\"M1110 500 H566\" markerEnd=\"url(#q-ah947)\" />\n                <text className=\"t-m\" x=\"1120\" y=\"492\" style={{ fontSize: '15px' }}>Core</text>\n                <text className=\"t\" x=\"1120\" y=\"522\" style={{ fontSize: '20px' }}>one storefront, sold simply</text>\n                <text className=\"t-d\" x=\"1120\" y=\"620\" style={{ fontSize: '17px' }}>A full rebuild is scoped separately,</text>\n                <text className=\"t-d\" x=\"1120\" y=\"644\" style={{ fontSize: '17px' }}>not read off this drawing.</text>\n              </g>\n            </svg>\n            <svg className=\"q v-tall\" viewBox=\"0 0 700 1130\" aria-hidden=\"true\">\n              <rect x=\"6\" y=\"6\" width=\"688\" height=\"1118\" rx=\"20\" fill=\"none\" stroke=\"#8ECAE6\" strokeOpacity=\".7\" strokeWidth=\"2\" />\n              <text className=\"t-m\" x=\"30\" y=\"50\" style={{ fontSize: '20px' }}>Extended · more than one of everything</text>\n              <rect className=\"bx-a\" x=\"30\" y=\"76\" width=\"640\" height=\"850\" rx=\"16\" />\n              <text className=\"t-m t-a\" x=\"54\" y=\"118\" style={{ fontSize: '20px' }}>Standard · most take this</text>\n              <rect className=\"bx\" x=\"54\" y=\"140\" width=\"592\" height=\"320\" rx=\"12\" />\n              <text className=\"t-m\" x=\"78\" y=\"182\" style={{ fontSize: '20px' }}>Core · single storefront</text>\n              <text className=\"t\" x=\"78\" y=\"238\" style={{ fontSize: '28px' }}>Product catalogue</text>\n              <text className=\"t\" x=\"78\" y=\"290\" style={{ fontSize: '28px' }}>Customer accounts, logins</text>\n              <text className=\"t\" x=\"78\" y=\"342\" style={{ fontSize: '28px' }}>Manual pricing tiers</text>\n              <text className=\"t-d\" x=\"78\" y=\"414\" style={{ fontSize: '23px' }}>No approval workflow</text>\n              <text className=\"t-m t-a\" x=\"54\" y=\"514\" style={{ fontSize: '20px' }}>Standard adds</text>\n              <text className=\"t\" x=\"54\" y=\"570\" style={{ fontSize: '28px' }}>Company accounts, roles</text>\n              <text className=\"t\" x=\"54\" y=\"624\" style={{ fontSize: '28px' }}>Per-employee spend limits</text>\n              <text className=\"t\" x=\"54\" y=\"678\" style={{ fontSize: '28px' }}>Approval workflows</text>\n              <text className=\"t\" x=\"54\" y=\"732\" style={{ fontSize: '28px' }}>Quote negotiation</text>\n              <text className=\"t-d\" x=\"54\" y=\"800\" style={{ fontSize: '23px' }}>the B2B trade portal shape</text>\n              <text className=\"t-m\" x=\"30\" y=\"984\" style={{ fontSize: '20px' }}>Extended adds</text>\n              <text className=\"t\" x=\"30\" y=\"1034\" style={{ fontSize: '27px' }}>Multi-site · ERP integration</text>\n              <text className=\"t\" x=\"30\" y=\"1080\" style={{ fontSize: '27px' }}>Bespoke checkout and pricing</text>\n            </svg>\n            <div className=\"foot\"><span className=\"k d17-mono\">Core · Standard · Extended</span><span className=\"d17-mark\">decodedops.co.uk · DO-ART-947 · Rev 01</span></div>\n          </figure>",
+  "replace": "          <figure className=\"d17 sw a947\" data-od-id=\"plate-architecture\" data-motion data-no=\"DO-ART-947\" data-rev=\"01\" data-tx=\"schematic\"\n                  aria-label=\"Drawn plate DO-ART-947. Three nested tiers drawn as a plan. Core, at the centre: a single storefront with a product catalogue, customer accounts and logins, and manual pricing tiers. Connected wraps Core and adds company accounts with multi-user roles, per-employee spending limits, approval workflows and quote negotiation: the B2B trade portal shape most take. Scaled wraps Connected and adds multi-site storefronts, ERP integration, and bespoke checkout and pricing logic. Each tier adds what the one below does not have.\">\n            <div className=\"q-grid\" aria-hidden=\"true\" />\n            <svg width=\"0\" height=\"0\" style={{ position: 'absolute' }} aria-hidden=\"true\"><defs>\n              <marker id=\"q-ah947\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#8ECAE6\" /></marker>\n            </defs></svg>\n            <svg className=\"q v-wide\" viewBox=\"0 0 1600 680\" aria-hidden=\"true\">\n              {/* Scaled */}\n              <g className=\"m-fade\" style={{ animationDelay: '.9s' }}>\n                <rect x=\"20\" y=\"20\" width=\"1000\" height=\"640\" rx=\"22\" fill=\"none\" stroke=\"#8ECAE6\" strokeOpacity=\".7\" strokeWidth=\"2\" />\n                <text className=\"t-m\" x=\"50\" y=\"62\" style={{ fontSize: '17px' }}>Scaled · more than one of everything</text>\n              </g>\n              {/* Connected */}\n              <g className=\"m-fade\" style={{ animationDelay: '.5s' }}>\n                <rect className=\"bx-a\" x=\"80\" y=\"92\" width=\"880\" height=\"508\" rx=\"18\" style={{ fillOpacity: '.9' }} />\n                <text className=\"t-m t-a\" x=\"110\" y=\"134\" style={{ fontSize: '17px' }}>Connected · the B2B trade portal shape · most take this</text>\n              </g>\n              {/* Core */}\n              <g className=\"m-pop\" style={{ animationDelay: '.1s' }}>\n                <rect className=\"bx\" x=\"140\" y=\"164\" width=\"420\" height=\"376\" rx=\"14\" />\n                <text className=\"t-m\" x=\"170\" y=\"204\" style={{ fontSize: '16px' }}>Core · single storefront</text>\n                <g className=\"t\" style={{ fontSize: '22px' }}>\n                  <rect x=\"170\" y=\"228\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"264\" style={{ fontSize: '22px' }}>Product catalogue</text>\n                  <rect x=\"170\" y=\"296\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"332\" style={{ fontSize: '22px' }}>Customer accounts, logins</text>\n                  <rect x=\"170\" y=\"364\" width=\"360\" height=\"56\" rx=\"9\" fill=\"#8ECAE6\" fillOpacity=\".12\" stroke=\"#8ECAE6\" strokeOpacity=\".45\" /><text className=\"t\" x=\"192\" y=\"400\" style={{ fontSize: '22px' }}>Manual pricing tiers</text>\n                </g>\n                <text className=\"t-d\" x=\"170\" y=\"470\" style={{ fontSize: '18px' }}>No approval workflow:</text>\n                <text className=\"t-d\" x=\"170\" y=\"496\" style={{ fontSize: '18px' }}>nobody has to sign off</text>\n              </g>\n              {/* Connected adds */}\n              <g className=\"m-rise\" style={{ animationDelay: '.6s' }}>\n                <rect x=\"590\" y=\"164\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"206\" style={{ fontSize: '22px' }}>Company accounts, roles</text>\n                <rect x=\"590\" y=\"246\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"288\" style={{ fontSize: '22px' }}>Per-employee spend limits</text>\n                <rect x=\"590\" y=\"328\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"370\" style={{ fontSize: '22px' }}>Approval workflows</text>\n                <rect x=\"590\" y=\"410\" width=\"340\" height=\"68\" rx=\"9\" fill=\"#FFB703\" fillOpacity=\".13\" stroke=\"#FFB703\" strokeOpacity=\".6\" /><text className=\"t\" x=\"612\" y=\"452\" style={{ fontSize: '22px' }}>Quote negotiation</text>\n              </g>\n              {/* Scaled adds */}\n              <g className=\"m-rise\" style={{ animationDelay: '1s' }}>\n                <text className=\"t-d\" x=\"110\" y=\"636\" style={{ fontSize: '19px' }}>Multi-site storefronts  ·  ERP integration  ·  bespoke checkout and pricing logic</text>\n              </g>\n              {/* call-outs */}\n              <g className=\"m-fade\" style={{ animationDelay: '1.2s' }}>\n                <path className=\"ln-f\" d=\"M1060 20 V660 M1050 20 H1070 M1050 660 H1070\" />\n                <path className=\"ln m-draw\" pathLength=\"1\" style={{ animationDelay: '1.3s' }} d=\"M1110 120 H1026\" markerEnd=\"url(#q-ah947)\" />\n                <text className=\"t-m\" x=\"1120\" y=\"112\" style={{ fontSize: '15px' }}>Scaled adds</text>\n                <text className=\"t\" x=\"1120\" y=\"142\" style={{ fontSize: '20px' }}>more than one of everything</text>\n                <path className=\"ln-a m-draw\" pathLength=\"1\" style={{ animationDelay: '1.1s' }} d=\"M1110 320 H966\" />\n                <text className=\"t-m t-a\" x=\"1120\" y=\"312\" style={{ fontSize: '15px' }}>Connected adds</text>\n                <text className=\"t\" x=\"1120\" y=\"342\" style={{ fontSize: '20px' }}>the machinery for sign-off</text>\n                <path className=\"ln m-draw\" pathLength=\"1\" style={{ animationDelay: '.9s' }} d=\"M1110 500 H566\" markerEnd=\"url(#q-ah947)\" />\n                <text className=\"t-m\" x=\"1120\" y=\"492\" style={{ fontSize: '15px' }}>Core</text>\n                <text className=\"t\" x=\"1120\" y=\"522\" style={{ fontSize: '20px' }}>one storefront, sold simply</text>\n                <text className=\"t-d\" x=\"1120\" y=\"620\" style={{ fontSize: '17px' }}>A full rebuild is scoped separately,</text>\n                <text className=\"t-d\" x=\"1120\" y=\"644\" style={{ fontSize: '17px' }}>not read off this drawing.</text>\n              </g>\n            </svg>\n            <svg className=\"q v-tall\" viewBox=\"0 0 700 1130\" aria-hidden=\"true\">\n              <rect x=\"6\" y=\"6\" width=\"688\" height=\"1118\" rx=\"20\" fill=\"none\" stroke=\"#8ECAE6\" strokeOpacity=\".7\" strokeWidth=\"2\" />\n              <text className=\"t-m\" x=\"30\" y=\"50\" style={{ fontSize: '20px' }}>Scaled · more than one of everything</text>\n              <rect className=\"bx-a\" x=\"30\" y=\"76\" width=\"640\" height=\"850\" rx=\"16\" />\n              <text className=\"t-m t-a\" x=\"54\" y=\"118\" style={{ fontSize: '20px' }}>Connected · most take this</text>\n              <rect className=\"bx\" x=\"54\" y=\"140\" width=\"592\" height=\"320\" rx=\"12\" />\n              <text className=\"t-m\" x=\"78\" y=\"182\" style={{ fontSize: '20px' }}>Core · single storefront</text>\n              <text className=\"t\" x=\"78\" y=\"238\" style={{ fontSize: '28px' }}>Product catalogue</text>\n              <text className=\"t\" x=\"78\" y=\"290\" style={{ fontSize: '28px' }}>Customer accounts, logins</text>\n              <text className=\"t\" x=\"78\" y=\"342\" style={{ fontSize: '28px' }}>Manual pricing tiers</text>\n              <text className=\"t-d\" x=\"78\" y=\"414\" style={{ fontSize: '23px' }}>No approval workflow</text>\n              <text className=\"t-m t-a\" x=\"54\" y=\"514\" style={{ fontSize: '20px' }}>Connected adds</text>\n              <text className=\"t\" x=\"54\" y=\"570\" style={{ fontSize: '28px' }}>Company accounts, roles</text>\n              <text className=\"t\" x=\"54\" y=\"624\" style={{ fontSize: '28px' }}>Per-employee spend limits</text>\n              <text className=\"t\" x=\"54\" y=\"678\" style={{ fontSize: '28px' }}>Approval workflows</text>\n              <text className=\"t\" x=\"54\" y=\"732\" style={{ fontSize: '28px' }}>Quote negotiation</text>\n              <text className=\"t-d\" x=\"54\" y=\"800\" style={{ fontSize: '23px' }}>the B2B trade portal shape</text>\n              <text className=\"t-m\" x=\"30\" y=\"984\" style={{ fontSize: '20px' }}>Scaled adds</text>\n              <text className=\"t\" x=\"30\" y=\"1034\" style={{ fontSize: '27px' }}>Multi-site · ERP integration</text>\n              <text className=\"t\" x=\"30\" y=\"1080\" style={{ fontSize: '27px' }}>Bespoke checkout and pricing</text>\n            </svg>\n            <div className=\"foot\"><span className=\"k d17-mono\">Core · Connected · Scaled</span><span className=\"d17-mark\">decodedops.co.uk · DO-ART-947 · Rev 01</span></div>\n          </figure>",
+  "why": "Whole capability-plate figure (DO-ART-947) replaced as one block since Standard/Extended each appear many times inside it -- renames every occurrence to Connected/Scaled, in visible text, JSX comments and the alt text, per Craig's decision 2."
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "                <tr>\n                  <th scope=\"row\">Standard <span className=\"star\">Most take this</span></th>\n                  <td className=\"scope\">Company accounts, spend limits, approval workflows, quote\n                    negotiation</td>\n                </tr>\n                <tr>\n                  <th scope=\"row\">Extended</th>\n                  <td className=\"scope\">Multi-site, ERP integration, bespoke checkout and pricing</td>\n                </tr>",
+  "replace": "                <tr>\n                  <th scope=\"row\">Connected <span className=\"star\">Most take this</span></th>\n                  <td className=\"scope\">Company accounts, spend limits, approval workflows, quote\n                    negotiation</td>\n                </tr>\n                <tr>\n                  <th scope=\"row\">Scaled</th>\n                  <td className=\"scope\">Multi-site, ERP integration, bespoke checkout and pricing</td>\n                </tr>",
+  "why": "Comparison table tier rows renamed."
+ }
+]
