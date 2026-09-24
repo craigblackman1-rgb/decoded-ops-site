@@ -1,0 +1,944 @@
+[
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "<p className=\"eyebrow\">Decoded Artwork Manager &middot; pre-release</p>",
+  "replace": "<p className=\"eyebrow\">Decoded Artwork Manager &middot; Founding clients</p>",
+  "why": "Decision 1: never \"pre-release\"; status badge becomes \"Founding clients\""
+ },
+ {
+  "file": "app/apps/artwork-manager/page.tsx",
+  "find": "<span>Artwork Manager · approvals</span><span>Pre-release</span>",
+  "replace": "<span>Artwork Manager · approvals</span><span>Founding clients</span>",
+  "why": "Decision 1: badge in product mockup must not say pre-release"
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "<span>Live · two deployments<b>Decoded Data App</b></span><span>Pre-release<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span>",
+  "replace": "<span>Live · two deployments<b>Decoded Data App</b></span><span>Founding clients<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span>",
+  "why": "Decision 1: /apps hero mockup status row"
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "data-cap=\"Decoded Artwork Manager · pre-release\"",
+  "replace": "data-cap=\"Decoded Artwork Manager · founding clients\"",
+  "why": "Decision 1: screen caption attribute"
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "<span className=\"chip chip--pre\">Pre-release &middot; founding client terms</span>",
+  "replace": "<span className=\"chip chip--pre\">Founding clients</span>",
+  "why": "Decision 1: /apps listing status badge becomes \"Founding clients\""
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "<text className=\"t-d\" x=\"806\" y=\"638\" style={{fontSize:'18px'}}>Pre-release · founding terms</text>",
+  "replace": "<text className=\"t-d\" x=\"806\" y=\"638\" style={{fontSize:'18px'}}>Founding clients</text>",
+  "why": "Decision 1: architecture plate (wide) label"
+ },
+ {
+  "file": "app/apps/page.tsx",
+  "find": "<text className=\"t-m\" x=\"34\" y=\"954\" style={{fontSize:'22px'}}>Artwork Manager · pre-release</text>",
+  "replace": "<text className=\"t-m\" x=\"34\" y=\"954\" style={{fontSize:'22px'}}>Artwork Manager · founding clients</text>",
+  "why": "Decision 1: architecture plate (tall) label"
+ },
+ {
+  "file": "app/small-business/page.tsx",
+  "find": "const services = [\r\n  {\r\n    icon: Sparkles,\r\n    name: 'Clarity Check',\r\n    tagline: 'The starting point. A remote operational review: honest, specific, actionable.',\r\n    price: '£595',\r\n    priceNote: 'fixed',\r\n    features: [\r\n      '3-hour structured remote session',\r\n      'Written findings summary, plain English',\r\n      'Three priority actions identified',\r\n      'The systems you use and AI readiness assessed',\r\n      'Delivered within 5 working days',\r\n    ],\r\n    cta: 'Book your Clarity Check',\r\n  },\r\n  {\r\n    icon: TrendingUp,\r\n    name: 'Deliver',\r\n    tagline: 'Keep a project moving with remote project delivery and vendor management.',\r\n    price: 'from £1,200',\r\n    priceNote: '/mo',\r\n    features: [\r\n      '90-minute remote working sessions',\r\n      'Vendor management and buying support',\r\n      'Keeping the project on track',\r\n      'Written progress summaries',\r\n      'Practical tools and checklists',\r\n    ],\r\n    cta: 'Book a discovery call',\r\n  },\r\n  {\r\n    icon: Wrench,\r\n    name: 'Transform',\r\n    tagline: 'Focused transformation, one project at a time.',\r\n    price: 'from £1,500',\r\n    priceNote: '/mo',\r\n    features: [\r\n      '90-minute remote working sessions',\r\n      'One project at a time',\r\n      'ERP, eCommerce, or process redesign',\r\n      'Vendor selection, with no vendor agenda',\r\n      'Milestone-based delivery',\r\n    ],\r\n    cta: 'Request a proposal',\r\n  },\r\n  {\r\n    icon: Clock,\r\n    name: 'Retained',\r\n    tagline: 'Ongoing technology and operations support. Direct line to Craig.',\r\n    price: 'from £950',\r\n    priceNote: '/mo',\r\n    features: [\r\n      'Flexible engagement, scaled to your operation',\r\n      'Strategic advice and day-to-day support',\r\n      'Vendor management and technology decisions',\r\n      'Regular check-ins and written summaries',\r\n      'Rolling monthly, no long lock-in',\r\n    ],\r\n    cta: 'Let\\'s talk about what you need',\r\n  },\r\n];",
+  "replace": "const services = [\r\n  {\r\n    icon: Sparkles,\r\n    name: 'Clarity Check',\r\n    tagline: 'The starting point. A remote operational review: honest, specific, actionable.',\r\n    price: '£595',\r\n    priceNote: 'fixed',\r\n    features: [\r\n      '3-hour structured remote session',\r\n      'Written findings summary, plain English',\r\n      'Three priority actions identified',\r\n      'The systems you use and AI readiness assessed',\r\n      'Delivered within 5 working days',\r\n    ],\r\n    cta: 'Book your Clarity Check',\r\n  },\r\n];",
+  "why": "Decision 2: Clarity Check is the one small-business product; retired Deliver/Transform/Retained small-business ladder"
+ },
+ {
+  "file": "app/small-business/page.tsx",
+  "find": "      {/* Small business visual strip */}\r\n      <section className=\"g-navy\" style={{ padding: '32px 0' }}>\r\n        <div className=\"wrap\">\r\n          <div style={{ maxWidth: 600, margin: '0 auto', padding: 16, borderRadius: 'var(--do-radius-2xl)', background: 'color-mix(in srgb, var(--do-off-white) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-off-white) 10%, transparent)' }}>\r\n            <svg viewBox=\"0 0 500 80\" className=\"w-full\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" style={{ display: 'block', width: '100%' }}>\r\n              <rect x=\"20\" y=\"15\" width=\"100\" height=\"50\" rx=\"8\" fill=\"color-mix(in srgb, var(--do-cerulean) 15%, transparent)\" stroke=\"var(--do-cerulean)\" strokeWidth=\"1.5\" />\r\n              <text x=\"70\" y=\"38\" textAnchor=\"middle\" fontSize=\"10\" fontWeight=\"700\" fill=\"var(--do-cerulean)\">CLARITY</text>\r\n\r\n              <text x=\"140\" y=\"44\" textAnchor=\"middle\" fontSize=\"16\" fill=\"var(--do-sky-blue)\" opacity=\"0.5\">→</text>\r\n\r\n              <rect x=\"160\" y=\"15\" width=\"100\" height=\"50\" rx=\"8\" fill=\"color-mix(in srgb, var(--do-cerulean) 15%, transparent)\" stroke=\"var(--do-cerulean)\" strokeWidth=\"1.5\" />\r\n              <text x=\"210\" y=\"38\" textAnchor=\"middle\" fontSize=\"10\" fontWeight=\"700\" fill=\"var(--do-cerulean)\">DELIVER</text>\r\n\r\n              <text x=\"280\" y=\"44\" textAnchor=\"middle\" fontSize=\"16\" fill=\"var(--do-sky-blue)\" opacity=\"0.5\">→</text>\r\n\r\n              <rect x=\"300\" y=\"15\" width=\"100\" height=\"50\" rx=\"8\" fill=\"color-mix(in srgb, var(--do-cerulean) 15%, transparent)\" stroke=\"var(--do-cerulean)\" strokeWidth=\"1.5\" />\r\n              <text x=\"350\" y=\"38\" textAnchor=\"middle\" fontSize=\"10\" fontWeight=\"700\" fill=\"var(--do-cerulean)\">TRANSFORM</text>\r\n\r\n              <text x=\"420\" y=\"44\" textAnchor=\"middle\" fontSize=\"16\" fill=\"var(--do-sky-blue)\" opacity=\"0.5\">→</text>\r\n\r\n              <rect x=\"440\" y=\"15\" width=\"40\" height=\"50\" rx=\"8\" fill=\"color-mix(in srgb, var(--do-amber) 15%, transparent)\" stroke=\"var(--do-amber)\" strokeWidth=\"1.5\" />\r\n              <text x=\"460\" y=\"38\" textAnchor=\"middle\" fontSize=\"7\" fontWeight=\"700\" fill=\"var(--do-amber)\">RETAINED</text>\r\n            </svg>\r\n          </div>\r\n        </div>\r\n      </section>\r\n\r\n      {/* EVIDENCE PHOTO · DO-ART-915 */}",
+  "replace": "      {/* EVIDENCE PHOTO · DO-ART-915 */}",
+  "why": "Decision 2: remove the Clarity/Deliver/Transform/Retained ladder graphic, there is no small-business ladder any more"
+ },
+ {
+  "file": "app/small-business/page.tsx",
+  "find": "          <div style={{ maxWidth: '42ch', marginBottom: 64 }}>\r\n            <h2 className=\"h2\">Fractional operations and technology support for small businesses</h2>\r\n            <p className=\"lede\">Each designed for a different situation. All delivered remotely. All with a direct line to me, not a junior team.</p>\r\n          </div>",
+  "replace": "          <div style={{ maxWidth: '42ch', marginBottom: 64 }}>\r\n            <h2 className=\"h2\">Start with a Clarity Check</h2>\r\n            <p className=\"lede\">A fixed-price remote diagnostic, delivered by me, not a junior team.</p>\r\n          </div>",
+  "why": "Decision 2: heading/lede rewritten for the single Clarity Check product"
+ },
+ {
+  "file": "app/small-business/page.tsx",
+  "find": "          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 24, lineHeight: 1.75 }}>\r\n            Every price has three tiers — Essential, Recommended, Complete — set at the audit.\r\n            See <Link href=\"/pricing\" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.\r\n          </p>",
+  "replace": "          <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 24, lineHeight: 1.75 }}>\r\n            Beyond the Clarity Check, it&apos;s the same services and the same from-prices as everywhere else on this site.\r\n            See <Link href=\"/pricing\" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.\r\n          </p>",
+  "why": "Decision 2: one line pointing to /pricing instead of the retired ladder"
+ },
+ {
+  "file": "components/Header.tsx",
+  "find": "const smallBusinessProducts: (NavLink & { sub: string })[] = [\r\n  { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £595', href: '/small-business' },\r\n  { label: 'Deliver', sub: 'From £1,200/mo — project delivery', href: '/small-business' },\r\n  { label: 'Transform', sub: 'From £1,500/mo — rebuild how you work', href: '/small-business' },\r\n  { label: 'Retained', sub: 'From £950/mo — someone to ask, every month', href: '/small-business' },\r\n  { label: 'Clarity Audit', sub: 'From £1,500 — the entry point', href: '/small-business' },\r\n];",
+  "replace": "const smallBusinessProducts: (NavLink & { sub: string })[] = [\r\n  { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £595', href: '/small-business' },\r\n  { label: 'Everything else', sub: 'Same services, same from-prices as everyone else', href: '/pricing' },\r\n];",
+  "why": "Decision 2: nav small-business menu drops the retired Deliver/Transform/Retained/Clarity Audit ladder"
+ },
+ {
+  "file": "components/Header.tsx",
+  "find": "    { label: 'Trade store', sub: 'B2B ordering for your customers', href: '/apps/commerce' },",
+  "replace": "    { label: 'Commerce', sub: 'B2B ordering for your customers', href: '/apps/commerce' },",
+  "why": "Decision 6: nav short form is \"Commerce\", not \"Trade store\""
+ },
+ {
+  "file": "components/Footer.tsx",
+  "find": "  { label: 'Trade store', href: '/apps/commerce' },",
+  "replace": "  { label: 'Commerce', href: '/apps/commerce' },",
+  "why": "Decision 6: footer short form is \"Commerce\", not \"Trade store\""
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',\r\n  alternates: { canonical: '/retained' },",
+  "replace": "  description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950/mo.',\r\n  alternates: { canonical: '/retained' },",
+  "why": "Decision 3: tier names Essential/Recommended/Complete, public price from £950/mo"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Advisory, Embedded and Programme tiers.',",
+  "replace": "    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950/mo.',",
+  "why": "Decision 3: openGraph description, tier names + public price"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire.',",
+  "replace": "    description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. From £950/mo.',",
+  "why": "Decision 3: twitter description, add public price"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "      description: 'Ongoing technology leadership for decorated-goods businesses. Advisory, Embedded and Programme tiers.',",
+  "replace": "      description: 'Ongoing technology leadership for decorated-goods businesses. Essential, Recommended and Complete tiers, from £950/mo.',",
+  "why": "Decision 3: schema.org Service description, tier names + public price"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "          acceptedAnswer: { '@type': 'Answer', text: 'Advisory is a standing line for decisions as they come up. Embedded is closer to the operation with the roadmap owned directly. Programme is near full-time strategic and operational leadership. Six-month minimum on all three.' },",
+  "replace": "          acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs rolling monthly, with no minimum term.' },",
+  "why": "Decision 3: FAQ answer, tier names + no six-month minimum (v11 Retained is rolling, no lock-in)"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "            <p className=\"eyebrow\">Three ways to run it</p>\r\n            <h2>Advisory, Embedded and Programme.</h2>\r\n            <p className=\"lead\" style={{ marginTop: 16 }}>Each tier covers a different level of involvement.\r\n              You pick the one that fits, and the scope is fixed at the start.</p>",
+  "replace": "            <p className=\"eyebrow\">Three tiers</p>\r\n            <h2>Essential, Recommended and Complete.</h2>\r\n            <p className=\"lead\" style={{ marginTop: 16 }}>Each tier covers a different level of involvement.\r\n              Which one fits is set at the audit, from £950/mo.</p>",
+  "why": "Decision 3: tier names + public \"from £950/mo\" price"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "              <h3>Advisory</h3>\r\n              <p className=\"feature-meta\">A standing line for decisions as they come up</p>\r\n              <p>Vendor calls, platform questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>",
+  "replace": "              <h3>Essential</h3>\r\n              <p className=\"feature-meta\">A standing line for decisions as they come up</p>\r\n              <p>Vendor calls, platform questions, the thing you&rsquo;d otherwise sit on for a fortnight.</p>",
+  "why": "Decision 3: tier name Essential"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "              <h3>Embedded</h3>\r\n              <p className=\"feature-meta\">Closer to the operation, roadmap owned directly</p>\r\n              <p>On site regularly enough that your team stops saving things up for me.</p>",
+  "replace": "              <h3>Recommended</h3>\r\n              <p className=\"feature-meta\">Closer to the operation, roadmap owned directly</p>\r\n              <p>On site regularly enough that your team stops saving things up for me.</p>",
+  "why": "Decision 3: tier name Recommended"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "              <h3>Programme</h3>\r\n              <p className=\"feature-meta\">Near full-time strategic and operational leadership</p>\r\n              <p>For a business mid-way through something big enough that it needs one person holding it.</p>",
+  "replace": "              <h3>Complete</h3>\r\n              <p className=\"feature-meta\">Near full-time strategic and operational leadership</p>\r\n              <p>For a business mid-way through something big enough that it needs one person holding it.</p>",
+  "why": "Decision 3: tier name Complete"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "          <div className=\"inset\" style={{ maxWidth: 'none' }}>\r\n            <b>Six-month minimum on all three tiers.</b> Long enough to be useful, short enough that\r\n            you&rsquo;re not trapped in it. The scope is agreed at the start and the price is the price\r\n            at every turnover band.\r\n          </div>",
+  "replace": "          <div className=\"inset\" style={{ maxWidth: 'none' }}>\r\n            <b>Rolling monthly, no minimum term.</b> The scope is agreed at the start, and which tier fits\r\n            is set at the audit by the size and shape of your operation. From £950/mo.\r\n          </div>",
+  "why": "Decision 3: remove six-month minimum claim (v11 Retained is rolling/no lock-in) and \"same price at every turnover band\""
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "          <p className=\"eyebrow\">Scale &middot; DO-ART-204</p>\r\n          <h2>Advisory to Programme: the scale.</h2>\r\n          <p className=\"lead\" style={{ marginTop: 16 }}>Each tier covers a wider scope and a deeper level\r\n            of involvement. Same price at every turnover band.</p>",
+  "replace": "          <p className=\"eyebrow\">Scale &middot; DO-ART-204</p>\r\n          <h2>Essential to Complete: the scale.</h2>\r\n          <p className=\"lead\" style={{ marginTop: 16 }}>Each tier covers a wider scope and a deeper level\r\n            of involvement. From £950/mo, set at the audit by the size and shape of your operation.</p>",
+  "why": "Decision 3: scale plate heading/lede, tier names + public price, remove flat-price claim"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "              <Artwork mode=\"measure\" tone=\"dark\" p=\"rt\" title=\"Advisory to Programme, the scale\"\r\n                     sub=\"Three tiers, each covering a wider scope\"\r\n                     no=\"DO-ART-204\" rev=\"02\" cls=\"DECODED OPS · ISSUED\">",
+  "replace": "              <Artwork mode=\"measure\" tone=\"dark\" p=\"rt\" title=\"Essential to Complete, the scale\"\r\n                     sub=\"Three tiers, each covering a wider scope\"\r\n                     no=\"DO-ART-204\" rev=\"02\" cls=\"DECODED OPS · ISSUED\">",
+  "why": "Decision 3: artwork title, tier names"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "                  <text x=\"60\" y=\"252\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">ADVISORY</text>\r\n                  <text x=\"60\" y=\"282\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Standing line for\r\n                    decisions</text>",
+  "replace": "                  <text x=\"60\" y=\"252\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">ESSENTIAL</text>\r\n                  <text x=\"60\" y=\"282\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Standing line for\r\n                    decisions</text>",
+  "why": "Decision 3: artwork plate label, tier name Essential"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "                  <text x=\"60\" y=\"392\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">EMBEDDED</text>\r\n                  <text x=\"60\" y=\"422\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Closer to the\r\n                    operation</text>",
+  "replace": "                  <text x=\"60\" y=\"392\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">RECOMMENDED</text>\r\n                  <text x=\"60\" y=\"422\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Closer to the\r\n                    operation</text>",
+  "why": "Decision 3: artwork plate label, tier name Recommended"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "                  <text x=\"60\" y=\"532\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">PROGRAMME</text>\r\n                  <text x=\"60\" y=\"562\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Full strategic and\r\n                    operational leadership</text>",
+  "replace": "                  <text x=\"60\" y=\"532\" className=\"p-mono\" fontSize=\"17\" letterSpacing=\"1.6\"\r\n                        opacity=\".55\">COMPLETE</text>\r\n                  <text x=\"60\" y=\"562\" className=\"p-mono\" fontSize=\"16\" opacity=\".4\">Full strategic and\r\n                    operational leadership</text>",
+  "why": "Decision 3: artwork plate label, tier name Complete"
+ },
+ {
+  "file": "app/retained/page.tsx",
+  "find": "                  <text x=\"60\" y=\"700\" className=\"p-ink\" fontFamily=\"Outfit,sans-serif\"\r\n                        fontWeight=\"600\" fontSize=\"24\" opacity=\".9\">Each tier covers a wider scope.\r\n                    Same price at every turnover band.</text>\r\n                  <text x=\"60\" y=\"732\" className=\"p-mono\" fontSize=\"16\" opacity=\".5\">Six-month\r\n                    minimum, all three tiers.</text>",
+  "replace": "                  <text x=\"60\" y=\"700\" className=\"p-ink\" fontFamily=\"Outfit,sans-serif\"\r\n                        fontWeight=\"600\" fontSize=\"24\" opacity=\".9\">Each tier covers a wider scope.\r\n                    Set at the audit, from £950/mo.</text>\r\n                  <text x=\"60\" y=\"732\" className=\"p-mono\" fontSize=\"16\" opacity=\".5\">Rolling\r\n                    monthly, no minimum term.</text>",
+  "why": "Decision 3: artwork plate footer text, remove flat-price and six-month claims"
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },",
+  "replace": "acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That keeps the cost well under a bespoke quote for the same thing.' },",
+  "why": "Decision 4: drop the £8,000-£20,000 bespoke range figure, make the point without a number"
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,\r\n                approval workflows, quote negotiation, order editing, and a full storefront and\r\n                checkout, all on an open-source core. Real foundations, not a from-scratch build.\r\n                That&rsquo;s why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be\r\n                quoted elsewhere for the same thing.</p>",
+  "replace": "              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,\r\n                approval workflows, quote negotiation, order editing, and a full storefront and\r\n                checkout, all on an open-source core. Real foundations, not a from-scratch build,\r\n                which keeps the cost well under a bespoke quote for the same thing.</p>",
+  "why": "Decision 4: hero body, drop the £8,000-£20,000 figure"
+ },
+ {
+  "file": "app/page.tsx",
+  "find": "                    <ol>\r\n                      <li><b>01</b>IT infrastructure<i /></li>\r\n                      <li><b>02</b>Software &amp; systems<i /></li>\r\n                      <li><b>03</b>eCommerce<i /></li>\r\n                      <li><b>04</b>Processes &amp; ops<i /></li>\r\n                      <li><b>05</b>Growth<i /></li>\r\n                    </ol>",
+  "replace": "                    <ol>\r\n                      <li><b>01</b>IT infrastructure<i /></li>\r\n                      <li><b>02</b>Software &amp; systems<i /></li>\r\n                      <li><b>03</b>eCommerce<i /></li>\r\n                      <li><b>04</b>Processes &amp; ops<i /></li>\r\n                      <li><b>05</b>Growth<i /></li>\r\n                      <li><b>06</b>AI readiness<i /></li>\r\n                    </ol>",
+  "why": "Decision 5: homepage Clarity Audit card claims six areas but lists five, add 06 AI readiness to match /clarity"
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "                <tr>\r\n                  <th scope=\"row\">Standard <span className=\"star\">Most take this</span></th>\r\n                  <td className=\"scope\">Up to 10 feeds, up to 3 channels, platform integration</td>\r\n                </tr>",
+  "replace": "                <tr>\r\n                  <th scope=\"row\">Connected <span className=\"star\">Most take this</span></th>\r\n                  <td className=\"scope\">Up to 10 feeds, up to 3 channels, platform integration</td>\r\n                </tr>",
+  "why": "Decision 7: Data App tier names align to tier matrix, Standard becomes Connected"
+ },
+ {
+  "file": "app/apps/data-app/page.tsx",
+  "find": "                <tr>\r\n                  <th scope=\"row\">Extended</th>\r\n                  <td className=\"scope\">Unlimited feeds, marketplace automation, multi-warehouse</td>\r\n                </tr>",
+  "replace": "                <tr>\r\n                  <th scope=\"row\">Scaled</th>\r\n                  <td className=\"scope\">Unlimited feeds, marketplace automation, multi-warehouse</td>\r\n                </tr>",
+  "why": "Decision 7: Data App tier names align to tier matrix, Extended becomes Scaled"
+ },
+ {
+  "file": "app/how-i-build/page.tsx",
+  "find": "              <h3>No reseller margin. No referral fee. No partner tier.</h3>",
+  "replace": "              <h3>No reseller margin, no referral fee, and nothing that looks like a partner tier.</h3>",
+  "why": "Decision 8: voice.md don't-list item 4, three-beat \"No X. No Y. No Z.\" list, reviewer rewrite"
+ },
+ {
+  "file": "app/how-i-build/page.tsx",
+  "find": "              <p>If nothing off the shelf fits, that option goes on the table too, priced honestly,\r\n                alongside everything else considered and why it didn&rsquo;t make the cut.</p>",
+  "replace": "              <p>If nothing off the shelf fits, that option goes on the table too, priced and put next\r\n                to everything else considered, and why it didn&rsquo;t make the cut.</p>",
+  "why": "Decision 8: voice.md don't-list item 7, \"honestly\" bolted on for weight, reviewer rewrite"
+ },
+ {
+  "file": "app/apps/commerce/page.tsx",
+  "find": "              <p>Multi-site storefronts, ERP integration, and bespoke checkout and pricing logic where\r\n                the standard rules genuinely don&rsquo;t describe how you price.</p>",
+  "replace": "              <p>Multi-site storefronts, ERP integration, and bespoke checkout and pricing logic where\r\n                the standard rules don&rsquo;t describe how you price.</p>",
+  "why": "Decision 8: voice.md don't-list item 7, \"genuinely\" bolted on for weight, reviewer rewrite"
+ },
+ {
+  "file": "app/problems/cant-scale-operations/page.tsx",
+  "find": "      body: \"People own their own department, but nobody owns the full journey from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.\",",
+  "replace": "      body: \"People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.\",",
+  "why": "Decision 8: \"journey\" is on voice.md's banned-word list, replace with \"run\""
+ },
+ {
+  "file": "components/ProblemPageDS.tsx",
+  "find": "          <span className=\"eyebrow\">The symptoms</span>\r\n          <h2>Does this sound familiar?</h2>",
+  "replace": "          <span className=\"eyebrow\">The symptoms</span>\r\n          <h2>The signs.</h2>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3), shared component used by 7 problem pages"
+ },
+ {
+  "file": "components/ProblemPageDS.tsx",
+  "find": "            <h3>Let&apos;s talk about what&apos;s happening</h3>",
+  "replace": "            <h3>The first call is free.</h3>",
+  "why": "Decision 8: \"Let's talk about\" announcement banned (voice.md 7.6), shared component used by 7 problem pages"
+ },
+ {
+  "file": "app/problems/wrong-erp-software/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/data-scattered/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/spreadsheet-addiction/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/legacy-system/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/ops-in-owners-head/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/bottleneck-growth/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/inventory-blind/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/problems/ai-paralysis/page.tsx",
+  "find": "     <span className=\"eyebrow\">Sound familiar?</span>",
+  "replace": "     <span className=\"eyebrow\">The signs</span>",
+  "why": "Decision 8: rhetorical question heading banned (voice.md 7.3)"
+ },
+ {
+  "file": "app/pricing/page.tsx",
+  "find": "          <p className=\"table-foot\" style={{ marginTop: 20 }}>Every price has three tiers — Essential, Recommended, Complete — set at the audit\r\n            by the size and shape of your operation. The full tier sheet is in the price pack, sent on request.</p>",
+  "replace": "          <p className=\"table-foot\" style={{ marginTop: 20 }}>Every price has three tiers (Essential, Recommended, Complete), set at the audit\r\n            by the size and shape of your operation. The full tier sheet is in the price pack, sent on request.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/pricing/page.tsx",
+  "find": "      <p className=\"lead\" style={{ marginTop: 18 }}>Priced at the audit — buy outright or lease to own over 36–60 months;\r\n            you own it at the end. Different decision, different section, on purpose.</p>",
+  "replace": "      <p className=\"lead\" style={{ marginTop: 18 }}>Priced at the audit: buy outright, or lease to own over 36–60 months,\r\n            and you own it at the end. Different decision, different section, on purpose.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "                <p>Supplier feed ingestion and catalogue maintenance across channels — the same data challenge this case study addresses.</p>",
+  "replace": "                <p>Supplier feed ingestion and catalogue maintenance across channels: the same data challenge this case study addresses.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/case-studies/case-study-01/page.tsx",
+  "find": "                <p>No real visibility of stock across channels — the problem the Data App solved for this client.</p>",
+  "replace": "                <p>No real visibility of stock across channels: the problem the Data App solved for this client.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/case-studies/eternal-fitness/page.tsx",
+  "find": "                'A full site rebuild with clinical framing, not fitness-marketing convention. No \"transformation,\" no before-and-after, no crush-it language',",
+  "replace": "                'A full site rebuild with clinical framing, not fitness-marketing convention: no before-and-after, no crush-it language',",
+  "why": "Decision 8: three-beat \"No X, no Y, no Z\" list (voice.md 7.4) and banned word \"transformation\" (voice.md 7.8), reviewer rewrite"
+ },
+ {
+  "file": "app/case-studies/case-study-03/page.tsx",
+  "find": "                Restructured from an initial six-month framing to a twelve-month minimum retainer: the full build across the first four months, then ongoing weekly involvement. I name it here only as a shape, not a price. Pricing detail stays out of public case studies.",
+  "replace": "                Restructured from Deliver's usual six months to a twelve-month minimum for this engagement, given the scope: the full build across the first four months, then ongoing weekly involvement. I name it here only as a shape, not a price. Pricing detail stays out of public case studies.",
+  "why": "Decision 8: clarify this is a bespoke extension, not Deliver's standard six-month minimum, reviewer rewrite"
+ },
+ {
+  "file": "app/sectors/garment-decoration/page.tsx",
+  "find": "          <p className=\"lede\">If you run embroidery alongside screen print or DTF, the same operational challenges apply — but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>",
+  "replace": "          <p className=\"lede\">If you run embroidery alongside screen print or DTF, the same operational challenges apply, but with the added complexity of decoration-method-specific scheduling. See the full picture for print & embroidery businesses.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/sectors/operations-consultant-print-embroidery/page.tsx",
+  "find": "          acceptedAnswer: { '@type': 'Answer', text: 'An operations consultant reviews your entire workflow — from order intake to despatch — identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },",
+  "replace": "          acceptedAnswer: { '@type': 'Answer', text: 'An operations consultant reviews your entire workflow, from order intake to despatch, identifies where time, money, and quality are being lost, and provides specific, costed recommendations. For print and embroidery businesses, this typically covers production scheduling, artwork approval, ERP or MIS selection, and the connections between your online shop, order system, and production floor.' },",
+  "why": "Decision 8: voice.md no em dashes in web copy"
+ },
+ {
+  "file": "app/sectors/operations-consultant-print-embroidery/page.tsx",
+  "find": "  { title: 'Quoting complexity', body: \"A single embroidery order can involve digitising setup, stitch count pricing, thread colour selection, and garment-specific hooping rules. Pricing it accurately means knowing your cost per thousand stitches, your setup time, and your margin — and most businesses estimate.\" },",
+  "replace": "  { title: 'Quoting complexity', body: \"A single embroidery order can involve digitising setup, stitch count pricing, thread colour selection, and garment-specific hooping rules. Pricing it accurately means knowing your cost per thousand stitches, your setup time, and your margin, and most businesses estimate.\" },",
+  "why": "Decision 8: voice.md no em dashes in web copy"
+ },
+ {
+  "file": "app/sectors/promotional-merchandise/page.tsx",
+  "find": "          <p className=\"lede\">Full site rebuild and a custom tool — the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>",
+  "replace": "          <p className=\"lede\">Full site rebuild and a custom tool: the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/sectors/signs-graphics/page.tsx",
+  "find": "          <p className=\"lede\">Full site rebuild and a custom AI-assisted tool — the kind of bespoke build that signs and graphics businesses need when off-the-shelf doesn&apos;t fit.</p>",
+  "replace": "          <p className=\"lede\">Full site rebuild and a custom AI-assisted tool: the kind of bespoke build that signs and graphics businesses need when off-the-shelf doesn&apos;t fit.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/sectors/teamwear-clubwear/page.tsx",
+  "find": "          <p className=\"lede\">Vendor requirements, procurement, and integration architecture for a B2B ordering portal — the same ordering complexity, the same sector challenges.</p>",
+  "replace": "          <p className=\"lede\">Vendor requirements, procurement, and integration architecture for a B2B ordering portal: the same ordering complexity, the same sector challenges.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/sectors/workwear/page.tsx",
+  "find": "          <p className=\"lede\">Vendor requirements, procurement, and integration architecture for a B2B ordering portal — the same sector, the same challenges.</p>",
+  "replace": "          <p className=\"lede\">Vendor requirements, procurement, and integration architecture for a B2B ordering portal: the same sector, the same challenges.</p>",
+  "why": "Decision 8: voice.md no em dashes in web copy, reviewer rewrite"
+ },
+ {
+  "file": "app/problems/ecommerce-not-connected/page.tsx",
+  "find": " description: 'Your Shopify orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',\r\n alternates: { canonical: '/problems/ecommerce-not-connected' },",
+  "replace": " description: 'Your online store orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',\r\n alternates: { canonical: '/problems/ecommerce-not-connected' },",
+  "why": "Decision 9: remove Shopify name from metadata description"
+ },
+ {
+  "file": "app/problems/ecommerce-not-connected/page.tsx",
+  "find": "  title: 'eCommerce Not Connected to Your Operations? Here\\'s the Fix: Decoded Ops',\r\n  description: 'Your Shopify orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',\r\n  url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',",
+  "replace": "  title: 'eCommerce Not Connected to Your Operations? Here\\'s the Fix: Decoded Ops',\r\n  description: 'Your online store orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',\r\n  url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',",
+  "why": "Decision 9: remove Shopify name from openGraph description"
+ },
+ {
+  "file": "app/problems/ecommerce-not-connected/page.tsx",
+  "find": "  card: 'summary_large_image',\r\n  title: 'eCommerce Not Connected to Your Operations? Here\\'s the Fix: Decoded Ops',\r\n  description: 'Your Shopify orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',",
+  "replace": "  card: 'summary_large_image',\r\n  title: 'eCommerce Not Connected to Your Operations? Here\\'s the Fix: Decoded Ops',\r\n  description: 'Your online store orders come in but your stock doesn\\'t update, your ERP doesn\\'t know, and your invoicing is manual. Here\\'s how to fix eCommerce integration for print and decoration businesses.',",
+  "why": "Decision 9: remove Shopify name from twitter description"
+ },
+ {
+  "file": "app/problems/ecommerce-not-connected/page.tsx",
+  "find": "     name: 'Why is Shopify not syncing with my ERP?',\r\n      acceptedAnswer: { '@type': 'Answer', text: 'Shopify was not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When Shopify is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },",
+  "replace": "     name: 'Why isn\\'t my online store syncing with my ERP?',\r\n      acceptedAnswer: { '@type': 'Answer', text: 'Many online store platforms were not designed for businesses that produce to order, handle personalisation, or manage blank inventory separately from finished goods. When an online store is not syncing with your ERP, it is usually because the data model on one side does not match the other. The integration itself is rarely broken. Fixing this requires either a middleware solution, a different eCommerce platform, or both.' },",
+  "why": "Decision 9: remove Shopify name from FAQ question and answer"
+ },
+ {
+  "file": "app/problems/ecommerce-not-connected/page.tsx",
+  "find": "     name: 'Can WooCommerce integrate with a decoration business ERP?',\r\n     acceptedAnswer: { '@type': 'Answer', text: 'WooCommerce can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether WooCommerce can capture your personalisation data in a format the ERP can process. WooCommerce ERP integration for print businesses is a common engagement, and the answer is rarely \"yes, it integrates\" and more often \"it depends on what data you need to move and how fast.\"' },",
+  "replace": "     name: 'Can an online store integrate with a decoration business ERP?',\r\n     acceptedAnswer: { '@type': 'Answer', text: 'Most online store platforms can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether the online store can capture your personalisation data in a format the ERP can process. Online store ERP integration for print businesses is a common engagement, and the answer is rarely \"yes, it integrates\" and more often \"it depends on what data you need to move and how fast.\"' },",
+  "why": "Decision 9: remove WooCommerce name from FAQ question and answer"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Chichester has a strong base of independent retailers, heritage tourism businesses, and professional services firms spread across the city and surrounding villages. Many are owner-managed businesses turning over £1m–£5m that have grown into technology they no longer fully control, systems that worked at smaller scale but now create daily friction they can\\'t quite see the source of.",
+  "replace": "Chichester sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: chichester localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Heritage tourism', 'Agriculture and food production', 'Independent retail', 'Marine services']",
+  "replace": "['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise']",
+  "why": "Decision 11: chichester businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Chichester\\'s economy spans coastal hospitality, rural agriculture, and a luxury automotive cluster at Goodwood — three sectors that rarely share systems, creating fragmented operational infrastructure across the wider district.",
+  "replace": "Chichester\\'s decoration and print trade sits alongside Bognor Regis and Midhurst, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: chichester regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "The global headquarters and manufacturing plant of a luxury automotive manufacturer sits at Goodwood, on Chichester\\'s eastern edge, around 2,500 people work there.",
+  "replace": "The global headquarters and manufacturing plant of a luxury automotive manufacturer sits at Goodwood, on Chichester\\'s eastern edge.",
+  "why": "Decision 11: chichester localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Worthing has seen a wave of e-commerce businesses start locally and scale nationally, particularly in home goods, clothing, and niche retail. That transition from local to national brings a specific set of technology challenges: stock visibility, fulfilment integration, and customer data sitting in three or four different places with no single source of truth.",
+  "replace": "In and around Worthing, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: worthing localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['E-commerce', 'Digital and creative agencies', 'Financial services', 'Healthcare']",
+  "replace": "['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear']",
+  "why": "Decision 11: worthing businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Worthing sits at the centre of a growing digital corridor between Brighton and Chichester, but the businesses that drive it — e-commerce, agencies, professional services — often scale their tech independently, creating duplicated systems across the town.",
+  "replace": "Whether a decoration business is based in Worthing itself or out towards Shoreham-by-Sea, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: worthing regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Horsham sits at the centre of a prosperous commuter belt, with a business base that mixes professional services, trade businesses, and light industrial operations. Many firms here are profitable and growing, but running on operational infrastructure that hasn\\'t kept pace with their ambitions, and making technology decisions without anyone senior enough to make them well.",
+  "replace": "Horsham has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: horsham localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Pharmaceutical and life sciences', 'Professional services', 'Trade and construction', 'Agriculture']",
+  "replace": "['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print']",
+  "why": "Decision 11: horsham businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Horsham\\'s business community mixes established professional firms with trade and light industrial operations — sectors with very different technology maturity levels, making it harder to find shared solutions or benchmarks.",
+  "replace": "Horsham sits within easy reach of Billingshurst and Henfield, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: horsham regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Crawley\\'s proximity to Gatwick Airport has shaped a business community heavily weighted toward logistics, aviation supply chain, facilities management, and trade. These are operationally complex businesses where process failures cost money fast, and where technology is often patched together over years rather than designed with a view to how the business actually needs to run.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Crawley face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: crawley localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Aviation and logistics', 'Facilities management', 'Distribution', 'Warehousing']",
+  "replace": "['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics']",
+  "why": "Decision 11: crawley businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "The Gatwick supply chain creates a dense cluster of logistics and distribution businesses that all face the same operational complexity — multi-system environments, manual handoffs, and integrations that break under volume.",
+  "replace": "Being close to Horley and East Grinstead doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in West Sussex you\\'re based.",
+  "why": "Decision 11: crawley regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Manor Royal is one of the South East\\'s largest business districts, 540 acres, around 600 businesses, and 30,000 jobs, plus the UK\\'s largest industrial Business Improvement District.",
+  "replace": "Manor Royal is one of the South East\\'s largest business districts, and home to the UK\\'s largest industrial Business Improvement District.",
+  "why": "Decision 11: crawley localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Bognor Regis has a mix of hospitality, retail, and light manufacturing businesses, many of which are owner-operated and have grown organically over many years. The systems challenge here is usually the same: the tools that got the business to its current size are now the main obstacle to going further, and no one inside the business has the time or the perspective to redesign them.",
+  "replace": "Bognor Regis sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: bognor-regis localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Hospitality and leisure', 'Light manufacturing', 'Retail', 'Marine and boat services']",
+  "replace": "['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers']",
+  "why": "Decision 11: bognor-regis businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Bognor\\'s hospitality-heavy economy means seasonal revenue swings that stress operational systems — the same technology that handles January volumes breaks under August demand, and nobody invested in scalability because the off-season felt safe.",
+  "replace": "Bognor Regis\\'s decoration and print trade sits alongside Chichester and Littlehampton, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: bognor-regis regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Littlehampton\\'s business base spans trade services, coastal hospitality, retail, and some light manufacturing. Growth tends to create operational complexity faster than businesses can adapt, and technology often becomes the bottleneck before owners realise what\\'s happening. By the time it\\'s visible, it\\'s already costing more than it needs to.",
+  "replace": "In and around Littlehampton, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: littlehampton localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Trade services', 'Coastal hospitality', 'Retail', 'Light manufacturing']",
+  "replace": "['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers']",
+  "why": "Decision 11: littlehampton businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Littlehampton\\'s mix of trade businesses and coastal hospitality creates a two-speed economy — trades need year-round operational efficiency while hospitality businesses wrestle with seasonal scaling, and neither sector has internal technology resource.",
+  "replace": "Whether a decoration business is based in Littlehampton itself or out towards Bognor Regis, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: littlehampton regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Haywards Heath is a prosperous commuter town with a strong professional services and financial sector presence. Businesses here tend to be well-run and profitable, but often rely on manual processes and disconnected systems that create invisible overhead and limit how quickly they can respond to growth opportunities.",
+  "replace": "Haywards Heath has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: haywards-heath localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Financial services', 'Professional services', 'Insurance', 'Wealth management']",
+  "replace": "['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging']",
+  "why": "Decision 11: haywards-heath businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Haywards Heath\\'s financial and professional services cluster means businesses handle sensitive data across multiple systems — compliance requirements add operational complexity that generic tools rarely address well.",
+  "replace": "Haywards Heath sits within easy reach of Burgess Hill and Cuckfield, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: haywards-heath regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Sits on the Brighton Main Line with journeys to London Victoria in around 43 minutes, and accounts for roughly 22% of Mid Sussex district\\'s jobs.",
+  "replace": "Sits on the Brighton Main Line, with journeys to London Victoria in around 43 minutes.",
+  "why": "Decision 11: haywards-heath localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Burgess Hill has a substantial light industrial and trade business base alongside retail and professional services. Operational efficiency is a constant priority for these businesses, and the technology gap between what they\\'re running and what\\'s available is often wider than owners realise until someone external maps it out clearly.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Burgess Hill face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: burgess-hill localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Light industrial', 'Pharmaceutical', 'Trade and construction', 'Technology']",
+  "replace": "['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration']",
+  "why": "Decision 11: burgess-hill businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Burgess Hill sits in the Gatwick Diamond between two larger employment centres, which means businesses here compete for talent and customers while running lean operations — the technology overhead hits harder when margins are already tight.",
+  "replace": "Being close to Haywards Heath and Hassocks doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in West Sussex you\\'re based.",
+  "why": "Decision 11: burgess-hill regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "The second-largest employment area in the Gatwick Diamond, around 300 companies and 8,000 jobs across four business parks, including a major pharmaceutical company\\'s UK HQ.",
+  "replace": "The second-largest employment area in the Gatwick Diamond, spread across four business parks and including a major pharmaceutical company\\'s UK HQ.",
+  "why": "Decision 11: burgess-hill localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Shoreham has an active port, a light industrial base, and a growing number of creative and e-commerce businesses. The combination of physical goods and digital sales channels creates specific technology challenges around stock, fulfilment, and customer management that many businesses here are wrestling with, often without a clear picture of where the cost is actually coming from.",
+  "replace": "Shoreham-by-Sea sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: shoreham-by-sea localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Port and marine services', 'Creative and digital', 'E-commerce', 'Light industrial']",
+  "replace": "['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise']",
+  "why": "Decision 11: shoreham-by-sea businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Shoreham\\'s port heritage and growing creative sector sit side by side, but they share almost no operational DNA — the systems that run a marine business are nothing like the ones that run an e-commerce operation, and the town\\'s infrastructure reflects neither well.",
+  "replace": "Shoreham-by-Sea\\'s decoration and print trade sits alongside Worthing and Southwick, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: shoreham-by-sea regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Brighton has one of the most diverse and fast-moving business communities in the South East, from tech startups to creative agencies, independent retailers to e-commerce operations shipping nationally. Growth here tends to be fast, which means technology decisions get made quickly and often in the wrong order. The cost of that shows up later.",
+  "replace": "In and around Brighton, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: brighton localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Tech startups', 'Creative and digital agencies', 'E-commerce', 'Hospitality and nightlife']",
+  "replace": "['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear']",
+  "why": "Decision 11: brighton businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Brighton\\'s Silicon Beach cluster means tech-literate businesses surrounded by tech-challenged ones — the gap between what the startups assume and what the independent retailers actually run is wider than the city\\'s geography suggests.",
+  "replace": "Whether a decoration business is based in Brighton itself or out towards Hove, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: brighton regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "A major financial services company\\'s European services HQ is one of the city\\'s largest private-sector employers, part of the \"Silicon Beach\" cluster of over 1,500 tech and creative businesses.",
+  "replace": "A major financial services company\\'s European services HQ is one of the city\\'s largest private-sector employers, part of the \"Silicon Beach\" cluster of tech and creative businesses.",
+  "why": "Decision 11: brighton localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Hove\\'s business base leans heavily toward professional services, independent retail, and hospitality. Many businesses here are well-established but face the same operational challenge: systems that work individually but don\\'t talk to each other, creating manual overhead that costs time and money every day and grows quietly as the business scales.",
+  "replace": "Hove has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: hove localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Professional services', 'Independent retail', 'Hospitality', 'Healthcare and wellbeing']",
+  "replace": "['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print']",
+  "why": "Decision 11: hove businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Hove\\'s professional services firms often operate in isolation from Brighton\\'s tech ecosystem despite being neighbours — different building costs, different client expectations, and different operational needs that generic \"Brighton tech\" solutions don\\'t address.",
+  "replace": "Hove sits within easy reach of Brighton and Portslade, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: hove regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Eastbourne has a large hospitality and retail sector alongside professional services and health care businesses. The town\\'s business community is predominantly SME-scale, and the operational technology challenges, disconnected systems, manual data entry, no single source of truth, are almost universal. They\\'re also almost universally underestimated until an audit surfaces the actual cost.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Eastbourne face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: eastbourne localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Hospitality and tourism', 'Retail', 'Healthcare', 'Marine and harbour services']",
+  "replace": "['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics']",
+  "why": "Decision 11: eastbourne businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Eastbourne\\'s economy is weighted toward hospitality and care — two sectors where operational technology is essential but rarely prioritised, and where the cost of poor systems shows up in staff hours and customer experience rather than visible waste.",
+  "replace": "Being close to Bexhill-on-Sea and Polegate doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in East Sussex you\\'re based.",
+  "why": "Decision 11: eastbourne regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Hastings has a growing creative quarter, an active hospitality and tourism sector, and a base of independent businesses increasingly selling online as well as locally. The operational complexity that comes with multi-channel trading, inventory, fulfilment, customer data, is something most businesses here encounter before they\\'re ready for it.",
+  "replace": "Hastings sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: hastings localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Creative industries', 'Fishing and marine', 'Hospitality and tourism', 'E-commerce']",
+  "replace": "['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers']",
+  "why": "Decision 11: hastings businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Hastings\\' creative quarter and fishing heritage sit on opposite ends of the economic spectrum, but both face the same issue: businesses that are good at what they do are bad at the systems that support what they do, and neither has the internal resource to fix it.",
+  "replace": "Hastings\\'s decoration and print trade sits alongside Bexhill-on-Sea and Battle, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: hastings regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Lewes has a strong independent business culture, retail, professional services, some manufacturing, with businesses that are deeply local but increasingly reaching customers further afield. Managing that transition without breaking your operations requires a clear picture of what your systems can actually support, and what they can\\'t.",
+  "replace": "In and around Lewes, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: lewes localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Independent retail', 'Food and drink production', 'Professional services', 'Artisan manufacturing']",
+  "replace": "['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers']",
+  "why": "Decision 11: lewes businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Lewes\\' independent business culture means businesses are proud of doing things their own way — which is a strength until it becomes the reason they\\'re running bespoke systems that nobody else understands and nobody can maintain.",
+  "replace": "Whether a decoration business is based in Lewes itself or out towards Brighton, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: lewes regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Crowborough has a quieter business base, professional services, trade, some light industrial, but the operational technology challenges are no different from larger towns. Businesses here often have more to gain from better systems than they realise, because the comparison point tends to be what they\\'ve always done rather than what\\'s available.",
+  "replace": "Crowborough has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: crowborough localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Trade and construction', 'Professional services', 'Agriculture', 'Light industrial']",
+  "replace": "['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging']",
+  "why": "Decision 11: crowborough businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Crowborough\\'s position in the High Weald means businesses serve a dispersed rural catchment — the operational complexity of covering a wide area with limited local infrastructure creates technology challenges that town-centre businesses never face.",
+  "replace": "Crowborough sits within easy reach of Uckfield and Tonbridge, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: crowborough regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Bexhill has a retail-heavy town centre, some light manufacturing, and a growing hospitality offer. Many businesses here are owner-managed with lean teams, which means every hour of manual administration and every system failure hits harder than it would in a larger organisation with more people to absorb the fallout.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Bexhill-on-Sea face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: bexhill-on-sea localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Insurance', 'Retail', 'Light manufacturing', 'Hospitality']",
+  "replace": "['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration']",
+  "why": "Decision 11: bexhill-on-sea businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Bexhill hosts a major insurance employer alongside small independent businesses — two scales of operation with completely different technology needs, but the town\\'s infrastructure and support networks tend to serve only one of them.",
+  "replace": "Being close to Hastings and Eastbourne doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in East Sussex you\\'re based.",
+  "why": "Decision 11: bexhill-on-sea regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Uckfield sits in a prosperous rural area with a mix of trade businesses, professional services, and some light industrial. Growth here tends to be steady rather than explosive, but that doesn\\'t make the operational technology challenges any less real when they hit, or any less costly when no one has mapped where they\\'re coming from.",
+  "replace": "Uckfield sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: uckfield localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Trade and construction', 'Professional services', 'Agriculture', 'Distribution']",
+  "replace": "['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise']",
+  "why": "Decision 11: uckfield businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Uckfield\\'s position on the A22 corridor makes it a distribution hub, but the trade and agricultural businesses that surround it operate on different cycles and different systems — the town serves both but has infrastructure designed for neither.",
+  "replace": "Uckfield\\'s decoration and print trade sits alongside Lewes and Crowborough, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: uckfield regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Seaford has a mix of independent retail, professional services, and hospitality businesses serving both local residents and a wider coastal catchment. The systems challenges here are typical of smaller coastal towns: the business has grown, the tools haven\\'t kept pace, and the gap between them is where the cost is hiding.",
+  "replace": "In and around Seaford, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: seaford localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Hospitality and tourism', 'Retail', 'Professional services', 'Marine and coastal services']",
+  "replace": "['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear']",
+  "why": "Decision 11: seaford businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Seaford\\'s coastal location means businesses serve a catchment that stretches from Eastbourne to Brighton — a wide operational area for a small team, where the technology gap between what you need and what you\\'ve got grows with every new customer.",
+  "replace": "Whether a decoration business is based in Seaford itself or out towards Newhaven, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: seaford regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Guildford is one of the South East\\'s major commercial centres, professional services, retail, technology businesses, and a large university-linked ecosystem. The range of business types is broad, but the operational technology challenges follow familiar patterns: systems that don\\'t integrate, data that lives in the wrong place, and decisions being made without the information needed to make them well.",
+  "replace": "Guildford has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: guildford localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Technology and gaming', 'Professional services', 'Retail', 'University and research']",
+  "replace": "['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print']",
+  "why": "Decision 11: guildford businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Guildford\\'s games cluster and university ecosystem create a tech-savvy environment that can make traditional businesses feel behind — the gap between what the tech sector assumes everyone can do and what the average SME actually runs is particularly visible here.",
+  "replace": "Guildford sits within easy reach of Godalming and Woking, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: guildford regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Known as the \"Hollywood of Video Games\", over 50 games studios and 3,000+ programmers, a cluster dating back to the 1980s.",
+  "replace": "Known as the \"Hollywood of Video Games\", a games studio cluster dating back to the 1980s.",
+  "why": "Decision 11: guildford localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Woking has a strong commercial centre with a mix of professional services, retail, and corporate offices. Businesses here tend to be growth-oriented and well-resourced, but operational infrastructure often lags behind commercial ambition, particularly where technology is concerned. The cost of that gap is real, even if it\\'s not yet visible on a spreadsheet.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Woking face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: woking localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Corporate offices', 'Professional services', 'Motorsport and engineering', 'Retail']",
+  "replace": "['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics']",
+  "why": "Decision 11: woking businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Woking\\'s corporate-heavy economy means businesses operate at a scale where operational inefficiency costs real money — but the technology decisions are often made by finance or operations people without the technical depth to evaluate what they\\'re buying.",
+  "replace": "Being close to Guildford and Byfleet doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in Surrey you\\'re based.",
+  "why": "Decision 11: woking regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Epsom has a prosperous business base spanning professional services, retail, and hospitality. Many businesses here are running on operational systems that were inherited rather than chosen, systems that worked when the business was smaller but now create more friction than they should as volumes and complexity have grown.",
+  "replace": "Epsom sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: epsom localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Professional services', 'Hospitality', 'Retail', 'Healthcare']",
+  "replace": "['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers']",
+  "why": "Decision 11: epsom businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Epsom\\'s proximity to London means businesses here compete for talent and customers with capital-based firms — but they\\'re doing it with the operational infrastructure of a provincial town, which creates a cost disadvantage that doesn\\'t show up until someone maps it.",
+  "replace": "Epsom\\'s decoration and print trade sits alongside Leatherhead and Ashtead, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: epsom regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Reigate is an affluent commuter town with a business community skewed toward professional services, independent retail, and financial services. The businesses here tend to be commercially strong, but operational technology is often the last thing to get attention, which means it\\'s usually where the hidden costs are accumulating unnoticed.",
+  "replace": "In and around Reigate, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: reigate localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Financial services', 'Professional services', 'Independent retail', 'Insurance']",
+  "replace": "['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers']",
+  "why": "Decision 11: reigate businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Reigate\\'s financial services cluster means businesses handle regulated data across systems that weren\\'t designed for compliance — the operational risk is real but invisible until an audit surfaces it.",
+  "replace": "Whether a decoration business is based in Reigate itself or out towards Redhill, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: reigate regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Redhill functions as a commercial hub for a wide surrounding area, with distribution businesses, professional services, and retail all well represented. Distribution and logistics businesses in particular tend to carry significant technology complexity, multiple systems, manual handoffs, and integrations that were built to solve yesterday\\'s problem but are now creating today\\'s overhead.",
+  "replace": "Redhill has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: redhill localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Distribution and logistics', 'Professional services', 'Retail', 'Aviation services']",
+  "replace": "['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging']",
+  "why": "Decision 11: redhill businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Redhill\\'s position at the M23/M25 junction makes it a distribution centre, but the logistics businesses here have accumulated layers of systems over decades — each one solving a specific problem, collectively creating a technology stack that nobody fully understands.",
+  "replace": "Redhill sits within easy reach of Reigate and Horley, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: redhill regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Dorking has a strong independent business culture, retail, professional services, tourism, serving both a local market and a prosperous surrounding rural area. Many businesses here are owner-managed and growing, with all the operational technology challenges that come with growth and without the internal resource to address them strategically.",
+  "replace": "Garment decorators, screen printers, and workwear and promotional merchandise suppliers working in and around Dorking face the same operational challenges as their counterparts across the region: disconnected systems, manual processes, and no single person who owns the fix. The audit runs on site, following your actual workflow, with the same written report and guarantee wherever the business is based.",
+  "why": "Decision 11: dorking localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Antiques and specialist retail', 'Tourism', 'Professional services', 'Agriculture']",
+  "replace": "['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration']",
+  "why": "Decision 11: dorking businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Dorking\\'s specialist retail and tourism economy means businesses operate in niche markets where the technology needs are specific and the solutions are rarely off-the-shelf — custom systems create custom problems.",
+  "replace": "Being close to Leatherhead and Guildford doesn\\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in Surrey you\\'re based.",
+  "why": "Decision 11: dorking regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "West Street has been the centre of Surrey\\'s antiques trade for over 50 years, with more than 60 dealers drawing buyers from around the world.",
+  "replace": "West Street has been the centre of Surrey\\'s antiques trade for over 50 years, drawing buyers from around the world.",
+  "why": "Decision 11: dorking localFact — unsourced local stat removed"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Farnham has a thriving independent retail and creative sector alongside professional services and some light manufacturing. The creative industries concentration here means businesses often have sophisticated client-facing operations but significantly underinvested operational infrastructure behind the scenes, which is where the cost and the constraint both tend to live.",
+  "replace": "Farnham sits within reach of the garment decorators, screen printers, embroiderers, and workwear and promotional merchandise suppliers working across the wider area. The operational problems in this trade don\\'t change from postcode to postcode: supplier data that doesn\\'t match what\\'s on the shelf, artwork stuck in an email thread, and stock nobody fully trusts. An on-site day here works the same way it does everywhere: I follow the actual process, then write down what I find.",
+  "why": "Decision 11: farnham localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Creative industries', 'Independent retail', 'Professional services', 'Light manufacturing']",
+  "replace": "['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise']",
+  "why": "Decision 11: farnham businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Farnham\\'s creative cluster means businesses are brilliant at presenting themselves but often running their operations on spreadsheets and email — the gap between the client-facing polish and the back-office reality is wider here than most towns.",
+  "replace": "Farnham\\'s decoration and print trade sits alongside Alton and Haslemere, and the operational problems don\\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.",
+  "why": "Decision 11: farnham regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Leatherhead has a notable concentration of professional services, pharmaceutical, and technology-adjacent businesses. Operational complexity here tends to be higher than the average SME town, which means the cost of poor systems is also higher, and the upside from addressing them is significant.",
+  "replace": "In and around Leatherhead, decorated-goods businesses, embroiderers, printers, and workwear and promotional merchandise suppliers among them, run into the same operational gaps as the trade does everywhere else: manual workarounds standing in for a proper system, and nobody with the time to step back and look at the whole operation. A Clarity Audit here means a day on your premises, following the work as it actually happens.",
+  "why": "Decision 11: leatherhead localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Pharmaceutical', 'Professional services', 'FMCG and consumer goods', 'Technology']",
+  "replace": "['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear']",
+  "why": "Decision 11: leatherhead businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Leatherhead\\'s multinational corporate presence sits alongside SME-scale businesses — two completely different operational scales sharing the same town, with the SMEs often trying to match the systems sophistication of their larger neighbours.",
+  "replace": "Whether a decoration business is based in Leatherhead itself or out towards Epsom, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\\'s head rather than on paper.",
+  "why": "Decision 11: leatherhead regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Camberley has a commercial centre anchored by retail and professional services, with a wider hinterland of trade and light industrial businesses. The proximity to a large military community also means some businesses here serve very specific procurement and compliance requirements, which adds operational complexity that generic systems rarely handle well.",
+  "replace": "Camberley has its share of embroidery, print, and workwear businesses, and the problems look the same as they do across the sector nationally: too much held in one person\\'s head, systems that don\\'t talk to each other, and growth that has outpaced the processes underneath it. I come to your site, follow the work from order in to despatch out, and write down what needs fixing.",
+  "why": "Decision 11: camberley localContext — generic local-economy paragraph"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "['Defence and security', 'Professional services', 'Retail', 'Light industrial']",
+  "replace": "['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print']",
+  "why": "Decision 11: camberley businessSectors — business-sector chips"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Camberley\\'s defence and security sector means some businesses here operate under procurement and compliance frameworks that generic SME tools simply don\\'t support — the operational complexity is structural, not optional.",
+  "replace": "Camberley sits within easy reach of Frimley and Bagshot, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\\'t change what needs fixing.",
+  "why": "Decision 11: camberley regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "London\\'s decorated-goods businesses operate at higher volumes and tighter margins than their South East counterparts — the technology decisions that are inconvenient in Worthing become existential in London, where the cost of a failed integration or a stockout runs into tens of thousands.",
+  "replace": "London\\'s decorated-goods businesses operate at higher volumes and tighter margins than their South East counterparts. The technology decisions that are inconvenient in Worthing become existential in London, where the cost of a failed integration or a stockout runs into tens of thousands.",
+  "why": "Decision 11: london regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ },
+ {
+  "file": "data/locations.ts",
+  "find": "Manchester\\'s decorated-goods businesses are further from Craig\\'s base, which means the on-site model needs to work differently — more structured engagements, clearer scoping, and technology solutions that can be maintained remotely after the initial audit.",
+  "replace": "Manchester\\'s decorated-goods businesses are further from Craig\\'s base, which means the on-site model needs to work differently: more structured engagements, clearer scoping, and technology solutions that can be maintained remotely after the initial audit.",
+  "why": "Decision 11: manchester regionalChallenge — second paragraph (em dash removal / decoration tie-in)"
+ }
+]
