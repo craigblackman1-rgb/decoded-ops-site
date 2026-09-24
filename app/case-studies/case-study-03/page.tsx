@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
-import { Plate } from '@/components/Plate';
+import '@/app/d17-global.css';
 
-// Target keyword: "b2b ordering portal workwear" (secondary: "case study 03 decoded ops")
 export const metadata = {
   title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
   description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
@@ -49,13 +49,6 @@ export default function CaseStudy03Page() {
         @media(max-width:980px){ .hero-split{ grid-template-columns:1fr; gap:32px } }
         .hero-split .lede{ margin:18px 0 0 }
         .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px }
-        .shape-card{ background:var(--do-surface-raised); border:1px solid var(--do-border-subtle);
-          border-radius:var(--do-radius-2xl); padding:28px }
-        .shape-card h3{ font-size:var(--do-text-sm); text-transform:uppercase; letter-spacing:.06em;
-          color:var(--do-text-muted); margin-bottom:16px }
-        .shape-card dl{ margin:0; display:grid; gap:14px }
-        .shape-card dt{ font-size:var(--do-text-xs); color:var(--do-text-muted); margin-bottom:3px }
-        .shape-card dd{ margin:0; font-weight:600; color:var(--do-text-primary) }
         .prose{ max-width:72ch; margin-inline:auto }
         .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
         .prose h2:first-child{ margin-top:0 }
@@ -73,14 +66,14 @@ export default function CaseStudy03Page() {
       <main>
         <JsonLd data={schema} />
 
-        {/* 1. HERO */}
+        {/* 1. HERO + DO-ART-955 */}
         <section className="g-off">
           <div className="wrap hero-split">
             <div>
               <span className="eyebrow">Client work · workwear</span>
               <h1>Architect and advisor, not the builder.</h1>
               <p className="lede">
-                A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a Shopify replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+                A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a storefront replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
               </p>
               <div className="hero-cta">
                 <Link href="/contact" className="btn btn--primary">
@@ -88,127 +81,103 @@ export default function CaseStudy03Page() {
                 </Link>
               </div>
             </div>
-            <div className="shape-card">
-              <h3>The engagement shape</h3>
-              <dl>
-                <div><dt>Role</dt><dd>Architect and advisor. Third-party team builds.</dd></div>
-                <div><dt>Stack</dt><dd>Medusa v2 and Next.js</dd></div>
-                <div><dt>Structure</dt><dd>12-month minimum retainer</dd></div>
-                <div><dt>Status</dt><dd>Live and ongoing</dd></div>
-              </dl>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a955" data-od-id="shape-card" data-motion data-no="DO-ART-955" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-955. Two documents over a graded photograph of a hi-vis vest. A vendor requirements brief for the trade portal, each requirement scored against the brief. And the engagement shape: role, architect and advisor, a third-party team builds; stack, an open-source commerce stack; structure, a 12-month minimum retainer; status, live and ongoing.">
+  <div class="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-392a14.jpg" alt="" width="900" height="1018"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 03 · workwear</span><span>Live and ongoing</span></div>
+  <div class="stage">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s" aria-hidden="true"><span class="tab">VR</span>
+      <span class="ref">VR-01 · Vendor requirements</span><h4>Trade portal brief</h4><p class="sub">every vendor scored against the same brief</p>
+      <ol>
+        <li><b>R-01</b><span>Company accounts, buyer roles</span></li>
+        <li><b>R-02</b><span>Account pricing from the ERP</span></li>
+        <li><b>R-03</b><span>Approval before an order goes</span></li>
+        <li><b>R-04</b><span>Stock read live, not nightly</span></li>
+      </ol></div>
+    <div class="d17-doc doc-e m-drop" style="animation-delay:.4s"><span class="tab">SHAPE</span>
+      <span class="ref">The engagement shape</span>
+      <dl class="shape">
+        <div><dt>Role</dt><dd>Architect and advisor. Third-party team builds.</dd></div>
+        <div><dt>Stack</dt><dd>Open-source commerce stack</dd></div>
+        <div><dt>Structure</dt><dd>12-month minimum retainer</dd></div>
+        <div><dt>Status</dt><dd>Live and ongoing</dd></div>
+      </dl></div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">I scope and oversee it. <em>The partner team builds it.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-955 · Rev 01</span>
+  </div>
+</figure>` }} />
           </div>
         </section>
 
-        {/* 1b. PLATE · DO-ART-101 */}
-        <section className="g-navy">
+        {/* 2. ARCHITECTURE · DO-ART-956 */}
+        <section className="g-tint">
           <div className="wrap">
-            <span className="eyebrow">Architecture &middot; DO-ART-101</span>
+            <span className="eyebrow">Architecture · DO-ART-956</span>
             <h2>Trade ordering, target state.</h2>
-            <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>
-              Cobra&rsquo;s customer-facing, business-systems and production zones feed into one specified spine. I scope and oversee it. The implementation partner builds it.
+              The customer-facing, business-systems and production zones feed into one specified spine. I scope and oversee it. The implementation partner builds it.
             </p>
 
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-cobra-workwear">
-                <Plate tone="dark" p="cbr" title="Trade ordering, target state"
-                       sub="Case study 03 &middot; specified by Decoded Ops, built by the partner team"
-                       no="DO-ART-101" rev="02" cls="DECODED OPS · ISSUED">
-
-                  {/* ── client zones ── */}
-                  <g className="sk-fade sk-s2">
-                    <rect x="60" y="230" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
-                    <rect x="76" y="248" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
-                    <text x="90" y="260" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">CUSTOMER-FACING</text>
-                    <rect x="60" y="380" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
-                    <rect x="76" y="398" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
-                    <text x="90" y="410" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">BUSINESS SYSTEMS</text>
-                    <rect x="60" y="530" width="700" height="120" rx="10" fill="none" className="p-scyan" strokeWidth=".9" strokeOpacity=".38"/>
-                    <rect x="76" y="548" width="4" height="14" rx="1" className="p-cyan" opacity=".8"/>
-                    <text x="90" y="560" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600" opacity=".85">PRODUCTION</text>
-                  </g>
-
-                  <g className="sk-fade sk-s3" filter="url(#cbr-shadow)">
-                    <rect x="90" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="310" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="530" y="278" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="90" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="310" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="530" y="428" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="90" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="310" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                    <rect x="530" y="578" width="200" height="54" rx="8" fill="url(#cbr-node)" className="p-node" strokeWidth="1.1"/>
-                  </g>
-                  <g className="sk-fade sk-s3" textAnchor="middle">
-                    <g className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="20">
-                      <text x="190" y="303">Trade accounts</text><text x="410" y="303">Retail storefront</text><text x="630" y="303">Reorder</text>
-                      <text x="190" y="453">ERP</text><text x="410" y="453">Accounts</text><text x="630" y="453">Stock &amp; buying</text>
-                      <text x="190" y="603">Embroidery</text><text x="410" y="603">Print</text><text x="630" y="603">Despatch</text>
-                    </g>
-                    <g className="p-mono" fontSize="15" opacity=".6">
-                      <text x="190" y="322">B2B ordering</text><text x="410" y="322">Shopify, replaced</text><text x="630" y="322">repeat lines</text>
-                      <text x="190" y="472">under evaluation</text><text x="410" y="472">finance</text><text x="630" y="472">purchasing</text>
-                      <text x="190" y="622">decoration</text><text x="410" y="622">decoration</text><text x="630" y="622">carrier labels</text>
-                    </g>
-                  </g>
-
-                  {/* feeds into the spine */}
-                  <path id="cbr-f1" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 290 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
-                  <path id="cbr-f2" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 440 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
-                  <path id="cbr-f3" pathLength="1" className="sk-draw sk-s4 p-scyan" d="M760 590 H860" fill="none" strokeWidth="2" strokeOpacity=".6" markerEnd="url(#cbr-ah)"/>
-
-                  {/* ── the specified spine ── */}
-                  <g className="sk-fade sk-s5">
-                    <rect x="880" y="230" width="640" height="420" rx="12" fill="url(#cbr-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".5"/>
-                    <rect x="900" y="250" width="4" height="14" rx="1" className="p-amber"/>
-                    <text x="914" y="262" className="p-amber" fontSize="17" letterSpacing="2.4" fontWeight="600">THE SPECIFIED SPINE</text>
-                    <text x="914" y="286" className="p-mono" fontSize="15" letterSpacing="1.4" opacity=".6">SCOPED AND OVERSEEN: BUILT BY THE PARTNER TEAM</text>
-                    <line x1="900" y1="302" x2="1500" y2="302" className="p-samber" strokeWidth=".6" strokeOpacity=".2"/>
-                  </g>
-                  <g className="sk-fade sk-s6" filter="url(#cbr-shadow)">
-                    <rect x="906" y="322" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
-                    <rect x="1214" y="322" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
-                    <rect x="906" y="404" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
-                    <rect x="1214" y="404" width="290" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
-                    <rect x="906" y="486" width="598" height="62" rx="8" fill="url(#cbr-amber-n)" className="p-node-a" strokeWidth="1.1"/>
-                  </g>
-                  <g className="sk-fade sk-s6" textAnchor="middle">
-                    <g fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="20" className="p-accent-ink">
-                      <text x="1051" y="348">B2B trade portal</text>
-                      <text x="1359" y="348">Storefront</text>
-                      <text x="1051" y="430">ERP evaluation</text>
-                      <text x="1359" y="430">Integration architecture</text>
-                      <text x="1205" y="512">Vendor requirements, written before anyone demoed</text>
-                    </g>
-                    <g className="p-mono" fontSize="15" opacity=".62">
-                      <text x="1051" y="368">Medusa v2</text>
-                      <text x="1359" y="368">Next.js</text>
-                      <text x="1051" y="450">shortlist &middot; procurement</text>
-                      <text x="1359" y="450">checked weekly, not signed off once</text>
-                      <text x="1205" y="532">the brief the partner team builds against</text>
-                    </g>
-                  </g>
-
-                  <g className="sk-fade sk-s6">
-                    <circle cx="86" cy="694" r="5" className="p-cyan"/>
-                    <text x="102" y="700" className="p-mono" fontSize="16" opacity=".7">The client&apos;s operation, kept and connected, not replaced</text>
-                    <circle cx="700" cy="694" r="5" className="p-amber"/>
-                    <text x="716" y="700" className="p-mono" fontSize="16" opacity=".7">Scoped and overseen by Decoded Ops &middot; built by the implementation partner</text>
-                  </g>
-
-                  <g className="sk-dots">
-                    <circle r="6" className="p-cyan"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#cbr-f1"/></animateMotion></circle>
-                    <circle r="6" className="p-cyan"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#cbr-f2"/></animateMotion></circle>
-                    <circle r="6" className="p-cyan"><animateMotion dur="2.9s" repeatCount="indefinite"><mpath href="#cbr-f3"/></animateMotion></circle>
-                  </g>
-                </Plate>
-              </div>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a956" data-od-id="plate-architecture" data-motion data-no="DO-ART-956" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-956. Trade ordering, target state. Three zones feed one specified spine. Customer-facing: the B2B trade portal and the storefront. Business systems: the ERP, account pricing, stock. Production: decoration and despatch. The spine carries orders, prices, stock and status between them. Decoded Ops scopes and oversees the whole design; the implementation partner builds it, with weekly involvement across the build.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <marker id="q-ah956" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+    <marker id="q-ah956a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+  </defs></svg>
+  <svg class="q v-wide" viewBox="0 0 1600 660" aria-hidden="true">
+    <path class="ln-f" d="M20 30 H1580 M20 22 V38 M1580 22 V38"/>
+    <text class="t-m" x="800" y="18" text-anchor="middle" style="font-size:15px">Scoped and overseen · Decoded Ops, weekly across the build</text>
+    <g class="m-rise" style="animation-delay:.05s"><rect class="bx" x="20" y="70" width="480" height="230" rx="14"/>
+      <text class="t-m" x="46" y="108" style="font-size:15px">Zone 1 · customer-facing</text>
+      <rect x="46" y="130" width="428" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="66" y="166" style="font-size:22px">B2B trade portal</text>
+      <rect x="46" y="200" width="428" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="66" y="236" style="font-size:22px">Storefront</text></g>
+    <g class="m-rise" style="animation-delay:.2s"><rect class="bx" x="560" y="70" width="480" height="230" rx="14"/>
+      <text class="t-m" x="586" y="108" style="font-size:15px">Zone 2 · business systems</text>
+      <rect x="586" y="130" width="428" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="606" y="166" style="font-size:22px">ERP, chosen by evaluation</text>
+      <rect x="586" y="200" width="206" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="606" y="236" style="font-size:22px">Pricing</text>
+      <rect x="808" y="200" width="206" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="828" y="236" style="font-size:22px">Stock</text></g>
+    <g class="m-rise" style="animation-delay:.35s"><rect class="bx" x="1100" y="70" width="480" height="230" rx="14"/>
+      <text class="t-m" x="1126" y="108" style="font-size:15px">Zone 3 · production</text>
+      <rect x="1126" y="130" width="428" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="1146" y="166" style="font-size:22px">Decoration</text>
+      <rect x="1126" y="200" width="428" height="58" rx="9" fill="#8ECAE6" fill-opacity=".12" stroke="#8ECAE6" stroke-opacity=".45"/><text class="t" x="1146" y="236" style="font-size:22px">Despatch</text></g>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.6s" d="M260 302 V398" marker-end="url(#q-ah956)"/>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.7s" d="M800 302 V398" marker-end="url(#q-ah956)"/>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.8s" d="M1340 302 V398" marker-end="url(#q-ah956)"/>
+    <g class="m-pop" style="animation-delay:1.1s"><rect class="bx-a" x="20" y="406" width="1560" height="120" rx="16"/>
+      <text class="t-m t-a" x="50" y="446" style="font-size:16px">One specified spine</text>
+      <text class="t-h" x="50" y="492" style="font-size:32px">Orders · prices · stock · status, one path between every zone</text></g>
+    <path class="ln-a" d="M20 560 H1580 M20 552 V568 M1580 552 V568" style="stroke-width:2"/>
+    <text class="t-m t-a" x="800" y="596" text-anchor="middle" style="font-size:15px">Built · the implementation partner</text>
+    <text class="t-d" x="800" y="630" text-anchor="middle" style="font-size:18px">I write the requirements and check the architecture holds. I don&apos;t write the code.</text>
+  </svg>
+  <svg class="q v-tall" viewBox="0 0 700 1180" aria-hidden="true">
+    <text class="t-m" x="10" y="30" style="font-size:20px">Scoped and overseen · weekly</text>
+    <rect class="bx" x="10" y="54" width="680" height="190" rx="14"/><text class="t-m" x="34" y="96" style="font-size:21px">Zone 1 · customer-facing</text>
+    <text class="t" x="34" y="150" style="font-size:29px">B2B trade portal</text><text class="t" x="34" y="200" style="font-size:29px">Storefront</text>
+    <rect class="bx" x="10" y="262" width="680" height="190" rx="14"/><text class="t-m" x="34" y="304" style="font-size:21px">Zone 2 · business systems</text>
+    <text class="t" x="34" y="358" style="font-size:29px">ERP, chosen by evaluation</text><text class="t" x="34" y="408" style="font-size:29px">Pricing · stock</text>
+    <rect class="bx" x="10" y="470" width="680" height="190" rx="14"/><text class="t-m" x="34" y="512" style="font-size:21px">Zone 3 · production</text>
+    <text class="t" x="34" y="566" style="font-size:29px">Decoration</text><text class="t" x="34" y="616" style="font-size:29px">Despatch</text>
+    <path class="ln-a" d="M350 666 V724" marker-end="url(#q-ah956a)"/>
+    <rect class="bx-a" x="10" y="732" width="680" height="220" rx="16"/><text class="t-m t-a" x="34" y="776" style="font-size:21px">One specified spine</text>
+    <text class="t-h" x="34" y="832" style="font-size:36px">Orders · prices · stock</text><text class="t-h" x="34" y="878" style="font-size:36px">· status, one path</text>
+    <text class="t-m t-a" x="10" y="1010" style="font-size:20px">Built · the implementation partner</text>
+    <text class="t-d" x="10" y="1060" style="font-size:25px">I write the requirements and check</text>
+    <text class="t-d" x="10" y="1096" style="font-size:25px">the architecture holds.</text>
+  </svg>
+  <div class="foot"><span class="k d17-mono">Customer-facing · business systems · production</span><span class="d17-mark">decodedops.co.uk · DO-ART-956 · Rev 01</span></div>
+</figure>` }} />
           </div>
         </section>
 
-        {/* 2. WHAT THE ENGAGEMENT COVERS */}
+        {/* 3. WHAT THE ENGAGEMENT COVERS */}
         <section className="g-white">
           <div className="wrap">
             <span className="eyebrow">What the engagement covers</span>
@@ -216,17 +185,17 @@ export default function CaseStudy03Page() {
 
             <div className="grid grid--3" style={{ marginTop: 34 }}>
               <article className="card">
-                <span className="kicker">01 &middot; Vendor selection</span>
+                <span className="kicker">01 · Vendor selection</span>
                 <h3>Choosing the implementation partner</h3>
-                <p>I evaluate who actually builds it. The stack, Medusa v2 and Next.js, was chosen deliberately as a flagship reference build, not a one-off. The third-party team was selected against that brief.</p>
+                <p>I evaluate who actually builds it. The stack was chosen deliberately as a flagship reference build, not a one-off. The third-party team was selected against that brief.</p>
               </article>
               <article className="card">
-                <span className="kicker">02 &middot; Process design</span>
+                <span className="kicker">02 · Process design</span>
                 <h3>Vendor requirements and procurement</h3>
                 <p>I write the requirements the trade portal and ERP evaluation actually need to answer, then run procurement against them, rather than accepting the first plausible platform.</p>
               </article>
               <article className="card">
-                <span className="kicker">03 &middot; Implementation oversight</span>
+                <span className="kicker">03 · Implementation oversight</span>
                 <h3>Integration architecture, ongoing</h3>
                 <p>I stay involved weekly across the build, checking the integration architecture holds as the implementation partner delivers. Not a one-off sign-off at the start.</p>
               </article>
@@ -277,7 +246,7 @@ export default function CaseStudy03Page() {
           </div>
         </section>
 
-        {/* 3. CTA STRIP (navy): never links to /apps or /how-i-build, this is a consultancy story not a Systems example */}
+        {/* 4. CTA STRIP */}
         <section className="g-navy cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>Evaluating an ERP or platform decision?</h2>
@@ -292,6 +261,7 @@ export default function CaseStudy03Page() {
           </div>
         </section>
       </main>
+      <D17Motion />
     </>
   );
 }

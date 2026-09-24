@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-apps-cases.css';
 
 export const metadata: Metadata = {
   title: 'The systems: Decoded Ops',
@@ -22,13 +24,66 @@ export const metadata: Metadata = {
 export default function AppsPage() {
   return (
     <>
-      {/* 1 · HERO CENTRE */}
+      {/* 1 · HERO CENTRE + DO-ART-939 */}
       <section className="g-off">
-        <div className="wrap hero-center">
-          <p className="eyebrow">The systems</p>
+        <div className="wrap centred">
+          <span className="eyebrow">The systems</span>
           <h1>What&rsquo;s already running.</h1>
           <p className="lede">Not a product catalogue. Software built for jobs the platforms in this sector
             were never going to do, proven at real clients.</p>
+        </div>
+        <div className="wrap hero-art">
+          {/* DO-ART-939 r01 */}
+          <figure className="d17 sw a939" data-od-id="hero-visual" data-motion data-no="DO-ART-939" data-rev="01" data-tx="photo"
+                  aria-label="Product screens DO-ART-939. Three app screens over a graded photograph of an embroidery floor.">
+            <div className="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-44196e.jpg" alt="" width="1400" height="875" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <div className="top d17-mono" aria-hidden="true"><span>The systems · three apps</span><span>Running today, September 2026</span></div>
+            <div className="under d17-mono" aria-hidden="true"><span>Live · two deployments<b>Decoded Data App</b></span><span>Pre-release<b>Artwork Manager</b></span><span>Live infrastructure<b>Decoded Commerce</b></span></div>
+            <div className="screens" aria-hidden="true">
+              <div className="mw s1 m-rise" style={{animationDelay:'.1s'}} data-cap="Decoded Data App · live, two deployments">
+                <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Catalogue ›</span> Overview</span><span className="pill">LIVE</span></div>
+                <div className="mw-main">
+                  <h5>Catalogue overview</h5>
+                  <p className="s">Every supplier feed, brought into one catalogue</p>
+                  <div className="mw-card"><div className="l">Products brought in</div><p className="n">317,812</p><p className="d">from supplier feeds</p></div>
+                  <div className="mw-card mw-card--hit"><div className="l">Matched automatically</div><p className="n">154,518</p><p className="d">to a supplier, before anyone touched them</p></div>
+                  <div className="mw-card mw-hide"><div className="row"><b>Active suppliers</b><span>40 feeding in</span></div>
+                    <div className="track"><div className="fill m-fill" style={{width:'45%',animationDelay:'.9s'}}></div></div></div>
+                </div>
+              </div>
+              <div className="mw s2 m-rise" style={{animationDelay:'.35s'}} data-cap="Decoded Artwork Manager · pre-release">
+                <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Artwork › EMB-0142 ›</span> Approvals</span><span className="pill pill--a">PROOF</span></div>
+                <div className="mw-main">
+                  <h5>Approval history</h5>
+                  <p className="s">Left breast crest · 90 × 90 mm · 5 versions</p>
+                  <div className="ver mw-hide"><span className="v">v5</span><div><div className="t">Uploaded 9 Sep, 10:12 <span className="tag">Draft</span></div>
+                    <div className="m">Not approved, so production can&rsquo;t pull it</div></div></div>
+                  <div className="ver ver--ok"><span className="v">v4</span><div><div className="t">Sent 5 Sep, 09:15 <span className="tag">Approved</span></div>
+                    <div className="m">Signed off by the customer contact · 14:32 <span className="tag tag--a">In production</span></div>
+                    <div className="say"><small>Customer sign-off</small>&ldquo;That&rsquo;s the one, go ahead with this.&rdquo;</div></div></div>
+                </div>
+              </div>
+              <div className="mw s3 m-rise" style={{animationDelay:'.6s'}} data-cap="Decoded Commerce · live infrastructure">
+                <div className="mw-bar"><span className="dots"><i></i><i></i><i></i></span><span className="crumb"><span>Trade store ›</span> Workwear</span><span className="pill">TRADE</span></div>
+                <div className="mw-main">
+                  <h5>Trade catalogue</h5>
+                  <p className="s">Your account pricing · quote alongside the basket</p>
+                  <div className="tiles">
+                    <div className="tile"><img src="/images/d17/apps-cases/prod-polo-a16032.jpg" alt="" /><div className="tb"><div className="sku">WRK-001</div><div className="nm">Piqué polo</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
+                    <div className="tile"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.jpg" alt="" /><div className="tb"><div className="sku">WRK-042</div><div className="nm">Hi-vis vest</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
+                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/cat-promo-89c58a.jpg" alt="" /><div className="tb"><div className="sku">PRM-055</div><div className="nm">Ceramic mug</div></div></div>
+                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/prod-mailer-9c1448.jpg" alt="" /><div className="tb"><div className="sku">PKG-003</div><div className="nm">Mailer box</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="base">
+              <div><div className="bar" aria-hidden="true"></div>
+                <p>Built for jobs the platforms <em>were never going to do.</em></p></div>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-939 · Rev 01</span>
+            </div>
+          </figure>
         </div>
       </section>
 
@@ -65,7 +120,7 @@ export default function AppsPage() {
                 <h3 style={{ marginTop: 14 }}>Decoded Commerce</h3>
               </div>
               <p>Storefront build and migration, scoped to what your customers actually need.
-                A full migration off WooCommerce, a new storefront, and reintegration back
+                A full migration off an existing web platform, a new storefront, and reintegration back
                 into the ERP is the worked example.</p>
               <span className="go">See how it works</span>
             </Link>
@@ -76,79 +131,101 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* 2a · THREE APPS PLATE · DO-ART-104 */}
+      {/* 2a · ARCHITECTURE · DO-ART-940 */}
       <section className="g-tint">
         <div className="wrap">
-          <p className="eyebrow">Architecture &middot; DO-ART-104</p>
+          <span className="eyebrow">Architecture · DO-ART-940</span>
           <h2>Three apps, one platform.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Each one started as a gap nothing off the shelf covered.
             The Data App has since grown into a full system in its own right.</p>
 
-          <div className="plate-scroll" style={{ marginTop: 34 }}>
-            <div className="plate-frame">
-              <Plate tone="dark" p="ap" title="Three apps, one platform"
-                     sub="Each started as a gap nothing covered. The Data App grew into a full system."
-                     no="DO-ART-104" rev="01" cls="DECODED OPS · ISSUED">
-
-                <g className="sk-fade sk-s2">
-                  <path id="ap-l1" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
-                        markerEnd="url(#ap-ah)" d="M470 330 C 560 370, 600 390, 660 420"/>
-                  <path id="ap-l2" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
-                        markerEnd="url(#ap-ah)" d="M1130 330 C 1040 370, 1000 390, 940 420"/>
-                  <path id="ap-l3" pathLength={1} className="sk-draw p-scyan" fill="none" strokeWidth="2.4"
-                        markerEnd="url(#ap-ah)" d="M800 620 C 800 580, 800 550, 800 512"/>
+          <figure className="d17 sw a940" data-od-id="plate-architecture" data-motion data-no="DO-ART-940" data-rev="01" data-tx="schematic"
+                  aria-label="Drawn plate DO-ART-940. Three gaps nothing off the shelf covered: supplier feeds and one clean catalogue; artwork versions and customer approvals; trade ordering for your customers. Each gap is filled by an app: the Decoded Data App, the Artwork Manager and Decoded Commerce. All three sit on one platform. The Data App has grown into the full system: catalogue, orders, purchasing, stock, production and despatch, with pipeline and client records built in.">
+            <div className="q-grid" aria-hidden="true"></div>
+            <svg width="0" height="0" style={{position:'absolute'}} aria-hidden="true"><defs>
+              <pattern id="q-hatch-940" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#023047"/><line x1="0" y1="0" x2="0" y2="12" stroke="#8ECAE6" strokeOpacity=".28" strokeWidth="3"/></pattern>
+              <marker id="q-ah940" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+              <marker id="q-ah940a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+            </defs></svg>
+            <svg className="q v-wide" viewBox="0 0 1600 720" aria-hidden="true">
+              <text className="t-m" x="20" y="30" style={{fontSize:'16px'}}>01 · The gaps nothing off the shelf covered</text>
+              {/* gap 1 */}
+              <g className="m-rise" style={{animationDelay:'.05s'}}>
+                <rect x="20" y="56" width="480" height="150" rx="14" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeWidth="1.4" strokeDasharray="6 5"/>
+                <text className="t-m" x="46" y="94" style={{fontSize:'15px'}}>Gap · the data</text>
+                <text className="t-h" x="46" y="136" style={{fontSize:'28px'}}>Supplier feeds in,</text>
+                <text className="t-h" x="46" y="170" style={{fontSize:'28px'}}>one clean catalogue out</text></g>
+              <g className="m-rise" style={{animationDelay:'.2s'}}>
+                <rect x="560" y="56" width="480" height="150" rx="14" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeWidth="1.4" strokeDasharray="6 5"/>
+                <text className="t-m" x="586" y="94" style={{fontSize:'15px'}}>Gap · the artwork</text>
+                <text className="t-h" x="586" y="136" style={{fontSize:'28px'}}>Every version, and the</text>
+                <text className="t-h" x="586" y="170" style={{fontSize:'28px'}}>one the customer approved</text></g>
+              <g className="m-rise" style={{animationDelay:'.35s'}}>
+                <rect x="1100" y="56" width="480" height="150" rx="14" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeWidth="1.4" strokeDasharray="6 5"/>
+                <text className="t-m" x="1126" y="94" style={{fontSize:'15px'}}>Gap · the ordering</text>
+                <text className="t-h" x="1126" y="136" style={{fontSize:'28px'}}>Trade customers who</text>
+                <text className="t-h" x="1126" y="170" style={{fontSize:'28px'}}>order on their own terms</text></g>
+              {/* drops */}
+              <path className="ln-a m-draw" pathLength="1" style={{animationDelay:'.6s'}} d="M260 208 V292" markerEnd="url(#q-ah940a)"/>
+              <path className="ln m-draw" pathLength="1" style={{animationDelay:'.75s'}} d="M800 208 V292" markerEnd="url(#q-ah940)"/>
+              <path className="ln m-draw" pathLength="1" style={{animationDelay:'.9s'}} d="M1340 208 V292" markerEnd="url(#q-ah940)"/>
+              <text className="t-m" x="20" y="262" style={{fontSize:'16px'}}>02 · Filled</text>
+              {/* the platform */}
+              <g className="m-fade" style={{animationDelay:'1s'}}>
+                <rect x="20" y="300" width="1560" height="400" rx="18" fill="none" stroke="#8ECAE6" strokeOpacity=".6" strokeWidth="2"/>
+                <text className="t-m" x="1300" y="262" textAnchor="end" style={{fontSize:'16px'}}>03 · One platform</text></g>
+              {/* data app: the one that grew */}
+              <g className="m-pop" style={{animationDelay:'1.3s'}}>
+                <rect className="bx-a" x="44" y="316" width="720" height="360" rx="14"/>
+                <text className="t-m t-a" x="72" y="356" style={{fontSize:'16px'}}>Decoded Data App · live</text>
+                <text className="t-h" x="72" y="400" style={{fontSize:'36px'}}>Grew into the full system</text>
+                <g style={{fontSize:'20px'}}>
+                  <rect x="72" y="428" width="208" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="94" y="464" style={{fontSize:'21px'}}>Catalogue</text>
+                  <rect x="294" y="428" width="208" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="316" y="464" style={{fontSize:'21px'}}>Orders</text>
+                  <rect x="516" y="428" width="220" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="538" y="464" style={{fontSize:'21px'}}>Purchasing</text>
+                  <rect x="72" y="500" width="208" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="94" y="536" style={{fontSize:'21px'}}>Stock + bins</text>
+                  <rect x="294" y="500" width="208" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="316" y="536" style={{fontSize:'21px'}}>Production</text>
+                  <rect x="516" y="500" width="220" height="58" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".55"/><text className="t" x="538" y="536" style={{fontSize:'21px'}}>Despatch</text>
                 </g>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Data App</text>
-                  <text x="140" y="284" className="p-mono" fontSize="16" opacity=".8">Supplier feeds in,
-                    clean stock out</text>
-                  <text x="140" y="308" className="p-mono" fontSize="15" opacity=".55">Live · two
-                    client deployments</text>
-                </g>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="1110" y="200" width="380" height="130" rx="14" fill="url(#ap-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="1140" y="252" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Artwork Manager</text>
-                  <text x="1140" y="284" className="p-mono" fontSize="16" opacity=".8">Approved,
-                    machine-ready files</text>
-                  <text x="1140" y="308" className="p-mono" fontSize="15" opacity=".55">Pre-release ·
-                    founding client terms</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="610" y="620" width="380" height="130" rx="14" fill="url(#ap-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="640" y="672" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Commerce</text>
-                  <text x="640" y="704" className="p-mono" fontSize="16" opacity=".8">Clean storefront
-                    orders in</text>
-                  <text x="640" y="728" className="p-mono" fontSize="15" opacity=".55">Live
-                    infrastructure</text>
-                </g>
-
-                <g className="sk-fade sk-s5" filter="url(#ap-shadow)">
-                  <rect x="650" y="390" width="300" height="120" rx="16" fill="url(#ap-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="800" y="442" textAnchor="middle" className="p-ink" fontFamily="Outfit,sans-serif"
-                        fontWeight="800" fontSize="26">Your platform</text>
-                  <text x="800" y="472" textAnchor="middle" className="p-accent-ink" fontSize="16"
-                        fontWeight="600">Your ERP · your website · or the Data App itself</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#ap-l1"/></animateMotion></circle>
-                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.4s"><mpath href="#ap-l2"/></animateMotion></circle>
-                  <circle r="6" className="p-cyan"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s"><mpath href="#ap-l3"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+                <text className="t-d" x="72" y="610" style={{fontSize:'19px'}}>Runs alongside the platform you own,</text>
+                <text className="t-d" x="72" y="638" style={{fontSize:'19px'}}>or as the system itself. CRM built in.</text></g>
+              <g className="m-rise" style={{animationDelay:'1.1s'}}>
+                <rect className="bx" x="780" y="316" width="386" height="360" rx="14"/>
+                <text className="t-m" x="806" y="356" style={{fontSize:'16px'}}>Artwork Manager</text>
+                <text className="t-h" x="806" y="400" style={{fontSize:'30px'}}>Vault, proofing,</text>
+                <text className="t-h" x="806" y="436" style={{fontSize:'30px'}}>machine delivery</text>
+                <rect x="806" y="470" width="332" height="44" rx="8" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45"/><text className="t" x="822" y="499" style={{fontSize:'18px'}}>v4 approved · in production</text>
+                <rect x="806" y="524" width="332" height="44" rx="8" fill="none" stroke="#8ECAE6" strokeOpacity=".35" strokeDasharray="5 4"/><text className="t-d" x="822" y="553" style={{fontSize:'18px'}}>v5 draft · can&rsquo;t be pulled</text>
+                <text className="t-d" x="806" y="638" style={{fontSize:'18px'}}>Pre-release · founding terms</text></g>
+              <g className="m-rise" style={{animationDelay:'1.2s'}}>
+                <rect className="bx" x="1182" y="316" width="374" height="360" rx="14"/>
+                <text className="t-m" x="1208" y="356" style={{fontSize:'16px'}}>Decoded Commerce</text>
+                <text className="t-h" x="1208" y="400" style={{fontSize:'30px'}}>Storefront and</text>
+                <text className="t-h" x="1208" y="436" style={{fontSize:'30px'}}>trade portal</text>
+                <rect x="1208" y="470" width="320" height="44" rx="8" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45"/><text className="t" x="1224" y="499" style={{fontSize:'18px'}}>Account pricing, quotes</text>
+                <rect x="1208" y="524" width="320" height="44" rx="8" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45"/><text className="t" x="1224" y="553" style={{fontSize:'18px'}}>Reads the same stock</text>
+                <text className="t-d" x="1208" y="638" style={{fontSize:'18px'}}>Live infrastructure</text></g>
+            </svg>
+            <svg className="q v-tall" viewBox="0 0 700 1260" aria-hidden="true">
+              <text className="t-m" x="10" y="30" style={{fontSize:'22px'}}>01 · The gaps</text>
+              <rect x="10" y="50" width="680" height="96" rx="12" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeDasharray="6 5"/><text className="t-h" x="34" y="108" style={{fontSize:'32px'}}>Feeds in, one catalogue out</text>
+              <rect x="10" y="160" width="680" height="96" rx="12" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeDasharray="6 5"/><text className="t-h" x="34" y="218" style={{fontSize:'32px'}}>The version they approved</text>
+              <rect x="10" y="270" width="680" height="96" rx="12" fill="url(#q-hatch-940)" stroke="#8ECAE6" strokeOpacity=".55" strokeDasharray="6 5"/><text className="t-h" x="34" y="328" style={{fontSize:'32px'}}>Trade ordering, their terms</text>
+              <path className="ln-a" d="M350 372 V430" markerEnd="url(#q-ah940a)"/>
+              <text className="t-m" x="10" y="470" style={{fontSize:'22px'}}>02 · Filled, on one platform</text>
+              <rect className="bx-a" x="10" y="490" width="680" height="400" rx="14"/>
+              <text className="t-m t-a" x="34" y="534" style={{fontSize:'22px'}}>Decoded Data App · live</text>
+              <text className="t-h" x="34" y="588" style={{fontSize:'40px'}}>Grew into the full system</text>
+              <text className="t" x="34" y="646" style={{fontSize:'27px'}}>Catalogue · Orders · Purchasing</text>
+              <text className="t" x="34" y="690" style={{fontSize:'27px'}}>Stock + bins · Production</text>
+              <text className="t" x="34" y="734" style={{fontSize:'27px'}}>Despatch · CRM built in</text>
+              <text className="t-d" x="34" y="800" style={{fontSize:'24px'}}>Alongside the platform you own,</text>
+              <text className="t-d" x="34" y="834" style={{fontSize:'24px'}}>or as the system itself</text>
+              <rect className="bx" x="10" y="910" width="680" height="150" rx="14"/><text className="t-m" x="34" y="954" style={{fontSize:'22px'}}>Artwork Manager · pre-release</text><text className="t-h" x="34" y="1008" style={{fontSize:'34px'}}>Vault, proofing, machine delivery</text>
+              <rect className="bx" x="10" y="1080" width="680" height="150" rx="14"/><text className="t-m" x="34" y="1124" style={{fontSize:'22px'}}>Decoded Commerce · live</text><text className="t-h" x="34" y="1178" style={{fontSize:'34px'}}>Storefront and trade portal</text>
+            </svg>
+            <div className="foot"><span className="k d17-mono">Three gaps · three apps · one platform</span><span className="d17-mark">decodedops.co.uk · DO-ART-940 · Rev 01</span></div>
+          </figure>
         </div>
       </section>
 
@@ -178,6 +255,8 @@ export default function AppsPage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
-import { Plate } from '@/components/Plate';
+import '@/app/d17-global.css';
 
-// Target keyword: "stock control app decorated goods" (secondary: "case study 02 decoded ops")
 export const metadata = {
   title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
   description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer. The diagnostic came before the decision.',
@@ -71,7 +71,7 @@ export default function CaseStudy02Page() {
       <main>
         <JsonLd data={schema} />
 
-        {/* 1. HERO */}
+        {/* 1. HERO + DO-ART-953 */}
         <section className="g-off">
           <div className="wrap hero-center">
             <span className="eyebrow">Client work · branded apparel &amp; decoration</span>
@@ -80,86 +80,84 @@ export default function CaseStudy02Page() {
               A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.
             </p>
           </div>
-        </section>
-
-        {/* 1b. PLATE · DO-ART-206 */}
-        <section className="g-navy">
-          <div className="wrap">
-            <span className="eyebrow">Measure &middot; DO-ART-206</span>
-            <h2>Before and after, paired line for line.</h2>
-            <div className="hair"></div>
-            <p className="lede">Case study 02, real production numbers. 17 supplier feeds, automated.</p>
-
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-cs02">
-                <Plate tone="dark" p="ta" title="Supplier feeds: before and after"
-                       sub="Case study 02 · 17 feeds automated, 20–40 hrs/wk saved"
-                       no="DO-ART-206" rev="01" cls="DECODED OPS · ISSUED">
-
-                  <g className="sk-fade sk-s2" filter="url(#ta-shadow)">
-                    <rect x="100" y="210" width="650" height="480" rx="14" fill="url(#ta-amber-n)"
-                          className="p-node-a" strokeWidth="1.6"/>
-                    <rect x="100" y="210" width="650" height="56" rx="14" className="p-amber" opacity=".92"/>
-                    <rect x="100" y="252" width="650" height="14" className="p-amber" opacity=".92"/>
-                    <text x="128" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
-                          letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
-                  </g>
-                  <g className="sk-fade sk-s3" fontSize="22">
-                    <text x="140" y="332" className="p-ink">Hours of manual admin every week</text>
-                    <text x="140" y="402" className="p-ink">Supplier feeds that didn&apos;t talk to anything</text>
-                    <text x="140" y="472" className="p-ink">Stock levels out of date across channels</text>
-                    <text x="140" y="542" className="p-ink">Product data re-typed into more than one system</text>
-                    <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
-                      <path d="M106 319 L118 331 M118 319 L106 331"/>
-                      <path d="M106 389 L118 401 M118 389 L106 401"/>
-                      <path d="M106 459 L118 471 M118 459 L106 471"/>
-                      <path d="M106 529 L118 541 M118 529 L106 541"/>
-                    </g>
-                  </g>
-
-                  <path id="ta-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
-                        fill="none" strokeWidth="3" markerEnd="url(#ta-ah)"/>
-
-                  <g className="sk-fade sk-s4" filter="url(#ta-shadow)">
-                    <rect x="850" y="210" width="650" height="480" rx="14" fill="url(#ta-node)"
-                          className="p-node" strokeWidth="1.6"/>
-                    <rect x="850" y="210" width="650" height="56" rx="14" className="p-cyan" opacity=".95"/>
-                    <rect x="850" y="252" width="650" height="14" className="p-cyan" opacity=".95"/>
-                    <text x="878" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
-                          letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
-                  </g>
-                  <g className="sk-fade sk-s5" fontSize="22">
-                    <text x="890" y="332" className="p-ink">17 supplier feeds coming in on their own</text>
-                    <text x="890" y="402" className="p-ink">
-                      <tspan x="890" dy="0">27,778 supplier products</tspan>
-                      <tspan x="890" dy="26">(236,056 sizes and colours) in one place</tspan>
-                    </text>
-                    <text x="890" y="472" className="p-ink">Every order landing in one queue, ready to pick</text>
-                    <text x="890" y="542" className="p-ink">
-                      <tspan x="890" dy="0">The same website platform,</tspan>
-                      <tspan x="890" dy="26">with the data app doing the work it was never built for</tspan>
-                    </text>
-                    <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
-                       strokeLinejoin="round" fill="none">
-                      <path d="M856 325 L863 332 L876 318"/>
-                      <path d="M856 395 L863 402 L876 388"/>
-                      <path d="M856 465 L863 472 L876 458"/>
-                      <path d="M856 535 L863 542 L876 528"/>
-                    </g>
-                  </g>
-
-                  <g className="sk-dots">
-                    <circle r="6" className="p-cyan">
-                      <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#ta-p"/></animateMotion>
-                    </circle>
-                  </g>
-                </Plate>
-              </div>
-            </div>
+          <div className="wrap" style={{ marginTop: 'clamp(24px, 3vw, 48px)' }}>
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a953" data-od-id="hero-visual" data-motion data-no="DO-ART-953" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-953. A graded photograph of folded shirts in a warehouse, with a phone showing a batch pick: six orders, each line with its bin location, one line being picked now. Pinned tags: 100% of stock has a bin location; 952 products live on their website; 17 supplier feeds automated. The eCommerce platform stayed. The data app does the parts it was never going to do.">
+  <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-d86bf7.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="cap">
+    <div class="k d17-mono">Case study 02 <span>· live since July</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>The platform stayed. The data app does the rest.</h3>
+    <p>Supplier feeds kept current, decorated and plain stock tracked separately, and the
+      warehouse run from a phone.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-953 · Rev 01</span>
+  </figcaption>
+  <div class="phone2 m-rise" style="animation-delay:.2s" aria-hidden="true">
+    <div class="scr">
+      <div class="ph-bar"><small>WAREHOUSE · BATCH PICK</small>6 orders, one walk</div>
+      <div class="pick pick--done"><b>Club polo, navy, M</b><span class="bin">B-02-1</span><span>× 12 · decorated</span></div>
+      <div class="pick pick--done"><b>Training top, black, L</b><span class="bin">B-03-4</span><span>× 8 · plain</span></div>
+      <div class="pick pick--now m-pop" style="animation-delay:1s"><b>Hoodie, red, S</b><span class="bin">C-01-2</span><span>× 6 · picking now</span></div>
+      <div class="pick"><b>Shorts, navy, YL</b><span class="bin">C-04-1</span><span>× 14 · plain</span></div>
+      <div class="scanbtn">Scan to confirm</div>
+    </div>
+  </div>
+  <div class="sx-tag sx-tag--a t1 m-pop" style="animation-delay:.6s" aria-hidden="true"><small>Binned</small>100% of stock has a bin</div>
+  <div class="sx-tag t2 m-pop" style="animation-delay:.8s" aria-hidden="true"><small>On their website</small>952 products live</div>
+  <div class="sx-tag t3 m-pop" style="animation-delay:1s" aria-hidden="true"><small>Automated</small>17 supplier feeds</div>
+</figure>` }} />
           </div>
         </section>
 
-        {/* 2. THE NUMBERS */}
+        {/* 2. MEASURE · DO-ART-954 */}
+        <section className="g-tint">
+          <div className="wrap">
+            <span className="eyebrow">Measure · DO-ART-954</span>
+            <h2>Before and after, paired line for line.</h2>
+            <div className="hair"></div>
+            <p className="lede" style={{ marginTop: 16 }}>Case study 02, real production numbers. 17 supplier feeds, automated.</p>
+
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw sw-doc a954" data-od-id="plate-measure" data-motion data-no="DO-ART-954" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-954. Two documents over a graded photograph of an embroidery floor, paired line for line. Before, at discovery: supplier feeds handled by hand; decorated and plain stock hard to tell apart; stock with no reliable location; new products and variants added to the website by hand; hours of admin every week. After, from the live system in September 2026: 17 supplier feeds automated; 27,778 supplier products and 236,056 variants in the system; 1,846 decorated products built from those blanks; 952 products live on their website, published automatically; 100% of stock has a bin location. Admin time saved, 20 to 40 hours a week, is a projection from discovery and is being measured now.">
+  <div class="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-38370e.jpg" alt="" width="1100" height="688"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Case study 02 <span>· paired line for line</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Not projected. Not modelled. What&apos;s actually in the system.</h3>
+    <p>Every line on the right is read off the live system. The one figure that isn&apos;t yet
+      measured says so.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-954 · Rev 01</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-b m-drop" style="animation-delay:.1s"><span class="tab">BEFORE</span>
+      <span class="ref">Discovery · Clarity Audit</span><h4>How it ran</h4><p class="sub">manual, every week</p>
+      <ul class="pair">
+        <li><span>Supplier feeds handled by hand</span></li>
+        <li><span>Decorated and plain stock hard to tell apart</span></li>
+        <li><span>Stock with no reliable location</span></li>
+        <li><span>New products and variants typed onto the website</span></li>
+        <li><span>Hours of admin pulling people off the business</span></li>
+      </ul></div>
+    <div class="d17-doc doc-a m-drop" style="animation-delay:.4s"><span class="tab">AFTER</span>
+      <span class="ref">Live system · September 2026</span><h4>How it runs now</h4><p class="sub">read off the system</p>
+      <ul class="pair">
+        <li><span><b>17</b> supplier feeds automated</span></li>
+        <li><span><b>1,846</b> decorated products, separate from plain</span></li>
+        <li><span><b>100%</b> of stock has a bin location</span></li>
+        <li><span><b>952</b> products live on their website, published automatically</span></li>
+        <li><span><b>27,778</b> supplier products, <b>236,056</b> variants</span></li>
+      </ul>
+      <div class="proj"><b>Projected, not yet measured</b>20 to 40 hours a week of admin time, projected at discovery. Being measured now it&apos;s live.</div></div>
+  </div>
+</figure>` }} />
+          </div>
+        </section>
+
+        {/* 3. THE NUMBERS */}
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow eyebrow--amber">The numbers</span>
@@ -199,7 +197,7 @@ export default function CaseStudy02Page() {
           </div>
         </section>
 
-        {/* 3. THE STORY */}
+        {/* 4. THE STORY */}
         <section className="g-white">
           <div className="wrap prose">
             <h2>The situation before</h2>
@@ -224,7 +222,7 @@ export default function CaseStudy02Page() {
           </div>
         </section>
 
-        {/* 4. CTA STRIP */}
+        {/* 5. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
@@ -242,6 +240,7 @@ export default function CaseStudy02Page() {
           </div>
         </section>
       </main>
+      <D17Motion />
     </>
   );
 }

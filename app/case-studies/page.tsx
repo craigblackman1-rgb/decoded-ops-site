@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-apps-cases.css';
 
 export const metadata: Metadata = {
   title: 'Client Work: Decoded Ops',
@@ -22,41 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-const cases = [
-  {
-    name: 'Hanicks',
-    sector: 'Heating spares & eCommerce',
-    desc: 'Hanicks sells heating spares. It isn\u2019t decorated goods, but it\u2019s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.',
-    href: '/case-studies/case-study-01',
-    status: 'Live engagement',
-    pull: '317,812 products brought in \u00b7 154,518 matched automatically \u00b7 40 active suppliers',
-  },
-  {
-    name: 'The diagnostic came before the decision.',
-    sector: 'Branded apparel & decoration',
-    desc: 'A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.',
-    href: '/case-studies/case-study-02',
-    status: 'In Deliver',
-    pull: '17 supplier feeds automated \u00b7 952 products live on their website \u00b7 100% of stock binned',
-  },
-  {
-    name: 'Case study 03',
-    sector: 'Workwear B2B distributor',
-    desc: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a B2B ordering portal, with a partner team building.',
-    href: '/case-studies/case-study-03',
-    status: 'In Deliver',
-    pull: 'B2B ordering portal and ERP evaluation, architecture and vendor brief',
-  },
-  {
-    name: 'Eternal Fitness',
-    sector: 'Health & fitness (clinical populations)',
-    desc: 'I\'m technical lead on a full site rebuild and an AI-assisted training plan tool for a 1-to-1 personal training studio.',
-    href: '/case-studies/eternal-fitness',
-    status: 'In build',
-    pull: 'Full site rebuild and an AI-assisted training plan tool',
-  },
-];
-
 export default function CaseStudiesPage() {
   return (
     <>
@@ -65,190 +32,145 @@ export default function CaseStudiesPage() {
         { name: 'Client Work', url: 'https://decodedops.co.uk/case-studies' },
       ]} />
 
-      <style>{`
-        .log-list { display: flex; flex-direction: column; gap: 16px; }
-        .log-row {
-          display: flex; align-items: center; gap: 24px;
-          padding: 24px 28px;
-          background: var(--do-surface-raised);
-          border: 1px solid var(--do-border-subtle);
-          border-radius: var(--do-radius-xl);
-          text-decoration: none; color: inherit;
-          transition: border-color var(--do-duration-normal), box-shadow var(--do-duration-normal);
-        }
-        .log-row:hover {
-          border-color: var(--do-border-strong);
-          box-shadow: var(--do-shadow-md);
-        }
-        .log-main { flex: 1; min-width: 0; }
-        .log-main h3 { margin-bottom: 4px; }
-        .log-sector {
-          font-size: var(--do-text-xs);
-          letter-spacing: var(--do-tracking-wide);
-          text-transform: uppercase;
-          color: color-mix(in srgb, var(--do-prussian-blue) 50%, transparent);
-          margin-bottom: 8px;
-        }
-        .log-desc {
-          font-size: var(--do-text-sm);
-          color: color-mix(in srgb, var(--do-prussian-blue) 74%, transparent);
-          margin-bottom: 0; line-height: var(--do-leading-relaxed);
-        }
-        .log-pull {
-          flex-shrink: 0; text-align: right; max-width: 260px;
-          font-family: var(--do-font-heading);
-          font-size: var(--do-text-lg);
-          font-weight: var(--do-weight-bold);
-          color: var(--do-text-primary);
-        }
-        .log-arrow {
-          flex-shrink: 0;
-          color: var(--do-cerulean);
-          transition: transform var(--do-duration-normal);
-        }
-        .log-row:hover .log-arrow { transform: translateX(4px); }
-        @media(max-width: 760px) {
-          .log-row { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px 22px; }
-          .log-pull { text-align: left; max-width: none; font-size: var(--do-text-base); }
-        }
-      `}</style>
-
-      <main>
-        <section className="g-off">
-          <div className="wrap">
-            <div style={{ maxWidth: '740px', margin: '0 auto' }}>
-              <span className="eyebrow">Client Work</span>
-              <h1>What I&apos;m actually building right now</h1>
-              <p className="lede">
-                Live engagements across four sectors. Same approach every time: fix the process and the data before you automate anything.
-              </p>
+      {/* ─────────────── HERO + DO-ART-949 ─────────────── */}
+      <section className="g-off" data-od-id="hero">
+        <div className="wrap hero-center">
+          <span className="eyebrow">Client work</span>
+          <h1>What I&apos;m actually building right now.</h1>
+          <p className="lede">Live engagements across four sectors. Same approach every time: fix the
+            process and the data before you automate anything.</p>
+        </div>
+        <div className="wrap hero-art">
+          <figure className="d17 sw sw-doc a949" data-od-id="engagement-summary" data-motion data-no="DO-ART-949" data-rev="01" data-tx="photo"
+                  aria-label="Artwork DO-ART-949. Four engagement files laid over a graded workbench photograph. Case study 01, heating spares and eCommerce, live engagement: 317,812 products brought in, 154,518 matched automatically, 40 active suppliers, stamped measured. Case study 02, branded apparel and decoration, in Deliver: 17 supplier feeds automated, 952 products live on their website, 100% of stock binned, stamped measured. Case study 03, workwear B2B distributor, in Deliver: B2B ordering portal and ERP evaluation, architecture and vendor brief, stamped too new to measure. Eternal Fitness, health and fitness, in build: full site rebuild and an AI-assisted training plan tool, stamped too new to measure. Four engagements, two with measurable outcomes.">
+            <div className="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-v2-6f5bfe.jpg" alt="" width="1024" height="1024" /></div>
+            <div className="d17-scan" aria-hidden="true"></div>
+            <figcaption className="sw-cap">
+              <div className="k d17-mono">Engagement summary <span>· September 2026</span></div>
+              <div className="bar" aria-hidden="true"></div>
+              <h3>Four engagements, two with measurable outcomes.</h3>
+              <p>Live client work across four sectors. Two can be measured in numbers today. The other
+                two are too new, and they say so rather than guessing.</p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-949 · Rev 01</span>
+            </figcaption>
+            <div className="stage" aria-hidden="true">
+              <div className="d17-doc f1 m-drop" style={{ animationDelay: '.1s' }}><span className="tab">01</span>
+                <span className="ref">Case study 01 · live engagement</span><h4>Heating spares &amp; eCommerce</h4>
+                <ul className="figs"><li><b>317,812</b>products brought in</li><li><b>154,518</b>matched automatically</li><li><b>40</b>active suppliers</li></ul>
+                <span className="stamp2 stamp2--a m-pop" style={{ animationDelay: '1.1s' }}>Measured · live system</span></div>
+              <div className="d17-doc f2 m-drop" style={{ animationDelay: '.3s' }}><span className="tab">02</span>
+                <span className="ref">Case study 02 · in Deliver</span><h4>Branded apparel &amp; decoration</h4>
+                <ul className="figs"><li><b>17</b>supplier feeds automated</li><li><b>952</b>products live on their website</li><li><b>100%</b>of stock binned</li></ul>
+                <span className="stamp2 stamp2--a m-pop" style={{ animationDelay: '1.3s' }}>Measured · live system</span></div>
+              <div className="d17-doc f3 m-drop" style={{ animationDelay: '.5s' }}><span className="tab">03</span>
+                <span className="ref">Case study 03 · in Deliver</span><h4>Workwear B2B distributor</h4>
+                <ul className="figs figs--none"><li><b>Scope</b>B2B ordering portal and ERP evaluation</li><li><b>Role</b>architecture and vendor brief</li></ul>
+                <span className="stamp2">Too new to measure</span></div>
+              <div className="d17-doc f4 m-drop" style={{ animationDelay: '.7s' }}><span className="tab">EF</span>
+                <span className="ref">Eternal Fitness · in build</span><h4>Health &amp; fitness</h4>
+                <ul className="figs figs--none"><li><b>Scope</b>full site rebuild</li><li><b>Tool</b>AI-assisted training plan tool</li></ul>
+                <span className="stamp2">Too new to measure</span></div>
             </div>
+          </figure>
+        </div>
+      </section>
+
+      {/* ─────────────── CASE CARDS · DO-ART-950 ─────────────── */}
+      <section className="g-white" data-od-id="case-grid">
+        <div className="wrap">
+          <div className="grid grid--2">
+
+            <article className="card case-card" data-od-id="case-hanicks">
+              <figure className="d17 chd chd--h" data-no="DO-ART-950" data-rev="01" data-tx="photo"
+                      aria-label="Case index head DO-ART-950, Hanicks cut. A product screen from the live catalogue: 317,812 products brought in, 154,518 matched automatically.">
+                <div className="d17-dots" aria-hidden="true"></div>
+                <div className="k d17-mono" aria-hidden="true">Case study 01 <span>· live catalogue</span></div>
+                <div className="mini" aria-hidden="true"><div className="c"><div className="l">Brought in</div><div className="n">317,812</div></div>
+                  <div className="c c--a"><div className="l">Matched auto</div><div className="n">154,518</div></div><div className="tr"><i></i></div></div>
+                <span className="mk" aria-hidden="true">decodedops.co.uk · DO-ART-950 · Rev 01</span>
+              </figure>
+              <span className="case-status">Live engagement</span>
+              <p className="case-sector">Heating spares &amp; eCommerce</p>
+              <h3>Hanicks</h3>
+              <p className="desc">Hanicks sells heating spares. It isn&apos;t decorated goods, but it&apos;s the same
+                problem underneath: a big catalogue arriving from lots of suppliers in different
+                formats, which has to be clean and current on every channel it sells through.</p>
+              <p className="figline">317,812 products brought in · 154,518 matched automatically · 40 active suppliers</p>
+              <Link className="readmore" href="/case-studies/case-study-01">Read more</Link>
+            </article>
+
+            <article className="card case-card" data-od-id="case-02">
+              <figure className="d17 chd chd--t" data-no="DO-ART-950" data-rev="01" data-tx="photo"
+                      aria-label="Case index head DO-ART-950, case study 02 cut. A graded photograph of a folded polo with a pinned tag: 17 supplier feeds automated.">
+                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-polo-34c129.jpg" alt="" width="700" height="311" /></div>
+                <div className="d17-scan" aria-hidden="true"></div>
+                <div className="k d17-mono" aria-hidden="true">Case study 02 <span>· in Deliver</span></div>
+                <div className="sx-tag sx-tag--a" aria-hidden="true"><small>Automated</small><b>17 supplier feeds</b></div>
+                <span className="mk" aria-hidden="true">decodedops.co.uk · DO-ART-950 · Rev 01</span>
+              </figure>
+              <span className="case-status">In Deliver</span>
+              <p className="case-sector">Branded apparel &amp; decoration</p>
+              <h3>The diagnostic came before the decision.</h3>
+              <p className="desc">A teamwear and schoolwear business selling decorated and plain stock across
+                a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.</p>
+              <p className="figline">17 supplier feeds automated · 952 products live on their website · 100% of stock binned</p>
+              <Link className="readmore" href="/case-studies/case-study-02">Read more</Link>
+            </article>
+
+            <article className="card case-card" data-od-id="case-03">
+              <figure className="d17 chd chd--c" data-no="DO-ART-950" data-rev="01" data-tx="photo"
+                      aria-label="Case index head DO-ART-950, case study 03 cut. A graded photograph of a hi-vis vest with a pinned tag: B2B ordering portal, architect and advisor.">
+                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-47c1d3.jpg" alt="" width="700" height="311" /></div>
+                <div className="d17-scan" aria-hidden="true"></div>
+                <div className="k d17-mono" aria-hidden="true">Case study 03 <span>· in Deliver</span></div>
+                <div className="sx-tag" aria-hidden="true"><small>Architect and advisor</small><b>B2B ordering portal</b></div>
+                <span className="mk" aria-hidden="true">decodedops.co.uk · DO-ART-950 · Rev 01</span>
+              </figure>
+              <span className="case-status">In Deliver</span>
+              <p className="case-sector">Workwear B2B distributor</p>
+              <h3>Case study 03</h3>
+              <p className="desc">A Clarity Audit into Deliver Consultancy: vendor requirements, procurement
+                and integration architecture for a B2B ordering portal, with a partner team building.</p>
+              <p className="figline">B2B ordering portal and ERP evaluation, architecture and vendor brief</p>
+              <Link className="readmore" href="/case-studies/case-study-03">Read more</Link>
+            </article>
+
+            <article className="card case-card" data-od-id="case-eternal-fitness">
+              <figure className="d17 chd chd--e" data-no="DO-ART-950" data-rev="01" data-tx="photo"
+                      aria-label="Case index head DO-ART-950, Eternal Fitness cut. A draft training plan document marked awaiting sign-off by the Level 4 PT.">
+                <div className="d17-dots" aria-hidden="true"></div>
+                <div className="k d17-mono" aria-hidden="true">Eternal Fitness <span>· in build</span></div>
+                <div className="d17-doc" aria-hidden="true"><span className="tab">DRAFT</span><span className="ref">Plan · week 1 · session A</span><h4>Draft session plan</h4>
+                  <ol><li><b>01</b><span>Warm-up, mobility</span><i></i></li><li><b>02</b><span>Seated row, light</span><i></i></li></ol>
+                  <div className="approved">Awaiting sign-off · Level 4 PT</div></div>
+                <span className="mk" aria-hidden="true">decodedops.co.uk · DO-ART-950 · Rev 01</span>
+              </figure>
+              <span className="case-status">In build</span>
+              <p className="case-sector">Health &amp; fitness (clinical populations)</p>
+              <h3>Eternal Fitness</h3>
+              <p className="desc">I&apos;m technical lead on a full site rebuild and an AI-assisted training plan
+                tool for a 1-to-1 personal training studio.</p>
+              <p className="figline">Full site rebuild and an AI-assisted training plan tool</p>
+              <Link className="readmore" href="/case-studies/eternal-fitness">Read more</Link>
+            </article>
+
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* PLATE · DO-ART-207 */}
-        <section className="g-navy">
-          <div className="wrap">
-            <span className="eyebrow">Engagement summary &middot; DO-ART-207</span>
-            <h2>Four engagements, two with measurable outcomes.</h2>
-            <div className="hair"></div>
-            <p className="lede" style={{ marginTop: 16 }}>
-              Live client work across four sectors. Two can be measured in numbers today. The other two are too new, and they say so rather than guessing.
-            </p>
-
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-case-studies">
-                <Plate tone="dark" p="csx" title="Four engagements, two with numbers"
-                       sub="Live client work across four sectors · what each one has proved so far"
-                       no="DO-ART-207" rev="01" cls="DECODED OPS · ISSUED">
-
-                  {/* Hanicks */}
-                  <g className="sk-fade sk-s2">
-                    <rect x="50" y="180" width="730" height="230" rx="10"
-                          fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-                          stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-                    <text x="80" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 01</text>
-                    <text x="750" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEATING SPARES &amp; ECOMMERCE · LIVE ENGAGEMENT</text>
-                    <line x1="80" y1="242" x2="750" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
-                    <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
-                      <text x="80" y="306">317,812</text><text x="380" y="306">154,518</text><text x="620" y="306">40</text>
-                    </g>
-                    <g className="p-mono" fontSize="15" opacity=".55">
-                      <text x="80" y="336">products brought in</text><text x="380" y="336">matched automatically</text><text x="620" y="336">active suppliers</text>
-                    </g>
-                    <text x="80" y="382" className="p-mono" fontSize="16" opacity=".62">Data app (now the ERP), supplier feeds and channel automation</text>
-                  </g>
-
-                  <g className="sk-fade sk-s3">
-                    <rect x="820" y="180" width="730" height="230" rx="10"
-                          fill="color-mix(in srgb, var(--do-cerulean) 8%, var(--do-prussian-blue))"
-                          stroke="color-mix(in srgb, var(--do-cerulean) 28%, transparent)" strokeWidth="1.5"/>
-                    <text x="850" y="222" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 02</text>
-                    <text x="1520" y="222" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">BRANDED APPAREL · IN DELIVER</text>
-                    <line x1="850" y1="242" x2="1520" y2="242" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
-                    <g className="p-cyan" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="40">
-                      <text x="850" y="306">17</text><text x="1010" y="306">952</text><text x="1180" y="306">100%</text>
-                    </g>
-                    <g className="p-mono" fontSize="15" opacity=".55">
-                      <text x="884" y="306">supplier feeds automated</text><text x="1040" y="306">products live</text><text x="1210" y="306">stock binned</text>
-                    </g>
-                    <text x="850" y="382" className="p-mono" fontSize="16" opacity=".62">Supplier feeds, warehouse tooling and product data managed by the data app</text>
-                  </g>
-
-                  {/* Cobra */}
-                  <g className="sk-fade sk-s4">
-                    <rect x="50" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
-                    <text x="80" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Case study 03</text>
-                    <text x="750" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">WORKWEAR B2B · IN DELIVER</text>
-                    <line x1="80" y1="502" x2="750" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
-                    <text x="80" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">B2B ordering portal · ERP evaluation</text>
-                    <text x="80" y="586" className="p-mono" fontSize="16" opacity=".62">Architecture and vendor brief. Architect and advisor, a partner team builds.</text>
-                    <g>
-                      <rect x="80" y="614" width="290" height="30" rx="6" className="p-block" opacity=".8"/>
-                      <text x="96" y="634" className="p-mono" fontSize="13" letterSpacing="1.6" opacity=".65">NO OUTCOME FIGURE YET</text>
-                    </g>
-                  </g>
-
-                  {/* Eternal Fitness */}
-                  <g className="sk-fade sk-s5">
-                    <rect x="820" y="440" width="730" height="230" rx="10" fill="url(#csx-node)" className="p-node" strokeWidth="1.1"/>
-                    <text x="850" y="482" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="30">Eternal Fitness</text>
-                    <text x="1520" y="482" textAnchor="end" className="p-mono" fontSize="15" opacity=".5">HEALTH &amp; FITNESS · IN BUILD</text>
-                    <line x1="850" y1="502" x2="1520" y2="502" className="p-scyan" strokeWidth=".6" strokeOpacity=".25"/>
-                    <text x="850" y="552" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="23">Site rebuild · AI training plan tool</text>
-                    <text x="850" y="586" className="p-mono" fontSize="16" opacity=".62">Technical lead. The tool drafts; the clinician signs off every plan.</text>
-                    <g>
-                      <rect x="850" y="614" width="290" height="30" rx="6" className="p-block" opacity=".8"/>
-                      <text x="866" y="634" className="p-mono" fontSize="13" letterSpacing="1.6" opacity=".65">NO OUTCOME FIGURE YET</text>
-                    </g>
-                  </g>
-
-                  {/* footer */}
-                  <g className="sk-fade sk-s6">
-                    <rect x="50" y="700" width="1500" height="70" rx="10" fill="url(#csx-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
-                    <text x="80" y="744" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="23">Two of four can be measured today. The other two say so rather than estimating.</text>
-                  </g>
-                </Plate>
-              </div>
-            </div>
+      {/* ─────────────── CTA STRIP ─────────────── */}
+      <section className="g-navy cta-strip" data-od-id="cta-strip">
+        <div className="wrap" style={{ maxWidth: '760px' }}>
+          <h2>Want to talk about your operation?</h2>
+          <p className="lede">Every engagement above started the same way: a Clarity Audit to find out what
+            was actually going on before anything was built.</p>
+          <div className="hero-cta">
+            <Link className="btn btn--primary" href="/contact">Book a free discovery call</Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section>
-          <div className="wrap">
-            <div className="log-list">
-              {cases.map((c) => (
-                <Link key={c.href} href={c.href} className="log-row">
-                  <div className="log-main">
-                    <h3>{c.name}</h3>
-                    <p className="log-sector">{c.sector} · {c.status}</p>
-                    <p className="log-desc">{c.desc}</p>
-                  </div>
-                  <div className="log-pull">{c.pull}</div>
-                  <ArrowRight size={18} className="log-arrow" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="g-navy">
-          <div className="wrap">
-            <div style={{ maxWidth: '740px', margin: '0 auto' }}>
-              <h3>Want to talk about your operation?</h3>
-              <p className="lede">
-                Every engagement above started the same way: a Clarity Audit to find out what was actually going on before anything was built.
-              </p>
-              <div className="btn-row">
-                <Link href="/contact" className="btn btn--primary">
-                  Book a free discovery call <ArrowRight size={18} />
-                </Link>
-              </div>
-              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted-on-dark)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>Or book a call directly <ArrowRight size={14} /></a>
-            </div>
-          </div>
-        </section>
-      </main>
+      <D17Motion />
     </>
   );
 }

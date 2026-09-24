@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
-import { Plate } from '@/components/Plate';
+import '@/app/d17-global.css';
 
-// Target keyword: "erp implementation project lead" (secondary: "case study 01 decoded ops")
 export const metadata = {
   title: 'Case study 01: Hanicks | Decoded Ops',
   description: 'Hanicks sells heating spares. A big catalogue arriving from lots of suppliers in different formats, needing to be clean and current on every channel.',
@@ -45,10 +45,10 @@ export default function CaseStudy01Page() {
   return (
     <>
       <style>{`
-        .hero-center{ text-align:center; max-width:760px; margin-inline:auto }
-        .hero-center h1{ max-width:none; margin-inline:auto }
-        .hero-center .lede{ margin:18px auto 0 }
-        .hero-center .eyebrow{ margin-inline:auto }
+        .hero-split{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center }
+        @media(max-width:980px){ .hero-split{ grid-template-columns:1fr; gap:32px } }
+        .hero-split .lede{ margin:18px 0 0 }
+        .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:28px }
         .stat .stat-num{ font-family:var(--do-font-heading); font-weight:800;
           font-size:clamp(2.2rem,4vw,3.2rem); line-height:1; letter-spacing:-.03em;
           color:var(--do-amber); font-variant-numeric:tabular-nums }
@@ -66,94 +66,138 @@ export default function CaseStudy01Page() {
         .cta-strip{ text-align:center }
         .cta-strip h2{ max-width:none; margin-inline:auto }
         .cta-strip .lede{ margin:18px auto 32px; max-width:52ch }
-        .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center }
       `}</style>
       <main>
         <JsonLd data={schema} />
 
-        {/* 1. HERO */}
+        {/* 1. HERO + DO-ART-952 */}
         <section className="g-off">
-          <div className="wrap hero-center">
-            <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
-            <h1>The ERP changed. The data work carried on.</h1>
-            <p className="lede">
-              Hanicks sells heating spares. It isn&apos;t decorated goods, but it&apos;s the same problem underneath: a big catalogue arriving from lots of suppliers in different formats, which has to be clean and current on every channel it sells through.
-            </p>
+          <div className="wrap hero-split">
+            <div>
+              <span className="eyebrow">Client work · heating spares &amp; eCommerce</span>
+              <h1>The ERP changed. The data work carried on.</h1>
+              <p className="lede">Hanicks sells heating spares. It isn&apos;t decorated goods, but it&apos;s the same
+                problem underneath: a big catalogue arriving from lots of suppliers in different formats,
+                which has to be clean and current on every channel it sells through.</p>
+              <div className="hero-cta" style={{ justifyContent: 'flex-start' }}>
+                <Link className="btn btn--primary" href="/contact">Book a free discovery call <ArrowRight size={16} aria-hidden="true" /></Link>
+              </div>
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a952" data-od-id="hanicks-hero-diagram" data-motion data-no="DO-ART-952" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-952. Two tracks at Hanicks. The ERP track: an off-the-shelf ERP was chosen first, then stalled on its own terms, nothing to do with the data work; so rather than start again, the data app became the ERP. The data track runs unbroken underneath: supplier feeds in, matched to what Hanicks sells, clean on every channel, marketplace listings linked, and a new website being built on the same data. The ERP changed. The data work carried on.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <pattern id="q-hatch-952" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047"/><line x1="0" y1="0" x2="0" y2="10" stroke="#8ECAE6" stroke-opacity=".28" stroke-width="3"/></pattern>
+    <marker id="q-ah952" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+    <marker id="q-ah952a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+  </defs></svg>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 01 · Hanicks</span><span>Heating spares</span></div>
+  <svg class="q v-wide" viewBox="0 0 560 430" aria-hidden="true">
+    <text class="t-m" x="26" y="26" style="font-size:12px">01 · The ERP</text>
+    <g class="m-rise" style="animation-delay:.05s"><rect class="bx" x="26" y="40" width="150" height="92" rx="10"/>
+      <text class="t-m" x="40" y="64" style="font-size:10.5px">Chosen first</text>
+      <text class="t-h" x="40" y="92" style="font-size:17px">Off-the-shelf</text>
+      <text class="t-h" x="40" y="114" style="font-size:17px">ERP</text></g>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.3s" d="M178 86 H200" marker-end="url(#q-ah952)"/>
+    <g class="m-rise" style="animation-delay:.4s"><rect x="206" y="40" width="150" height="92" rx="10" fill="url(#q-hatch-952)" stroke="#8ECAE6" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="6 5"/>
+      <text class="t-m" x="220" y="64" style="font-size:10.5px">Then</text>
+      <text class="t-h" x="220" y="92" style="font-size:17px">Stalled on</text>
+      <text class="t-h" x="220" y="114" style="font-size:17px">its own terms</text></g>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.9s" d="M358 86 H380" marker-end="url(#q-ah952a)"/>
+    <g class="m-pop" style="animation-delay:1.1s"><rect class="bx-a" x="386" y="40" width="150" height="92" rx="10"/>
+      <text class="t-m t-a" x="400" y="64" style="font-size:10.5px">So instead</text>
+      <text class="t-h" x="400" y="92" style="font-size:17px">The data app</text>
+      <text class="t-h" x="400" y="114" style="font-size:17px">became the ERP</text></g>
+    <path class="ln-d" d="M281 134 V218"/>
+    <text class="t-d" x="290" y="170" style="font-size:12.5px">nothing to do with</text>
+    <text class="t-d" x="290" y="186" style="font-size:12.5px">the data work</text>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:1.3s" d="M461 238 V142" marker-end="url(#q-ah952a)"/>
+    <text class="t-m" x="26" y="214" style="font-size:12px">02 · The data work</text>
+    <path class="m-draw" pathLength="1" style="animation-delay:.1s" d="M26 250 H534" fill="none" stroke="#8ECAE6" stroke-width="6" stroke-linecap="round"/>
+    <g class="f-w">
+      <circle cx="40" cy="250" r="7" stroke="#023047" stroke-width="3"/><circle cx="148" cy="250" r="7" stroke="#023047" stroke-width="3"/>
+      <circle cx="256" cy="250" r="7" stroke="#023047" stroke-width="3"/><circle cx="364" cy="250" r="7" stroke="#023047" stroke-width="3"/>
+      <circle cx="520" cy="250" r="8" fill="#FFB703" stroke="#023047" stroke-width="3"/></g>
+    <g class="t" style="font-size:13px">
+      <text class="t" x="26" y="282" style="font-size:13.5px;font-weight:700">Feeds in</text><text class="t-d" x="26" y="299" style="font-size:12px">every supplier</text><text class="t-d" x="26" y="314" style="font-size:12px">catalogue</text>
+      <text class="t" x="134" y="282" style="font-size:13.5px;font-weight:700">Matched</text><text class="t-d" x="134" y="299" style="font-size:12px">to what they</text><text class="t-d" x="134" y="314" style="font-size:12px">actually sell</text>
+      <text class="t" x="242" y="282" style="font-size:13.5px;font-weight:700">Clean</text><text class="t-d" x="242" y="299" style="font-size:12px">on every</text><text class="t-d" x="242" y="314" style="font-size:12px">channel</text>
+      <text class="t" x="350" y="282" style="font-size:13.5px;font-weight:700">Marketplaces</text><text class="t-d" x="350" y="299" style="font-size:12px">listings linked</text><text class="t-d" x="350" y="314" style="font-size:12px">to it</text>
+      <text class="t t-a" x="534" y="282" text-anchor="end" style="font-size:13.5px;font-weight:700">New website</text><text class="t-d" x="534" y="299" text-anchor="end" style="font-size:12px">on the</text><text class="t-d" x="534" y="314" text-anchor="end" style="font-size:12px">same data</text>
+    </g>
+    <path class="ln-f" d="M26 346 H534 M26 339 V353 M534 339 V353"/>
+    <text class="t-m" x="280" y="372" text-anchor="middle" style="font-size:11px">Carried on throughout, never paused</text>
+  </svg>
+  <svg class="q v-tall" viewBox="0 0 340 560" aria-hidden="true">
+    <text class="t-m" x="14" y="16" style="font-size:11px">01 · The ERP</text>
+    <rect class="bx" x="14" y="28" width="98" height="78" rx="8"/><text class="t-m" x="22" y="46" style="font-size:8.5px">Chosen first</text><text class="t" x="22" y="70" style="font-size:13px;font-weight:700">Off-the-</text><text class="t" x="22" y="88" style="font-size:13px;font-weight:700">shelf ERP</text>
+    <rect x="121" y="28" width="98" height="78" rx="8" fill="url(#q-hatch-952)" stroke="#8ECAE6" stroke-opacity=".55" stroke-dasharray="5 4"/><text class="t-m" x="129" y="46" style="font-size:8.5px">Then</text><text class="t" x="129" y="70" style="font-size:13px;font-weight:700">Stalled on</text><text class="t" x="129" y="88" style="font-size:13px;font-weight:700">own terms</text>
+    <rect class="bx-a" x="228" y="28" width="98" height="78" rx="8"/><text class="t-m t-a" x="236" y="46" style="font-size:8.5px">So instead</text><text class="t" x="236" y="70" style="font-size:13px;font-weight:700">Data app</text><text class="t" x="236" y="88" style="font-size:13px;font-weight:700">is the ERP</text>
+    <text class="t-d" x="14" y="130" style="font-size:12px">The stall had nothing to do with the data work.</text>
+    <text class="t-m" x="14" y="168" style="font-size:11px">02 · The data work, unbroken</text>
+    <path d="M30 186 V520" stroke="#8ECAE6" stroke-width="5" stroke-linecap="round"/>
+    <g class="f-w"><circle cx="30" cy="200" r="6" stroke="#023047" stroke-width="3"/><circle cx="30" cy="272" r="6" stroke="#023047" stroke-width="3"/><circle cx="30" cy="344" r="6" stroke="#023047" stroke-width="3"/><circle cx="30" cy="416" r="6" stroke="#023047" stroke-width="3"/><circle cx="30" cy="496" r="7" fill="#FFB703" stroke="#023047" stroke-width="3"/></g>
+    <text class="t" x="50" y="205" style="font-size:15px;font-weight:700">Feeds in</text><text class="t-d" x="50" y="224" style="font-size:12.5px">every supplier catalogue</text>
+    <text class="t" x="50" y="277" style="font-size:15px;font-weight:700">Matched</text><text class="t-d" x="50" y="296" style="font-size:12.5px">to what they actually sell</text>
+    <text class="t" x="50" y="349" style="font-size:15px;font-weight:700">Clean on every channel</text><text class="t-d" x="50" y="368" style="font-size:12.5px">kept current</text>
+    <text class="t" x="50" y="421" style="font-size:15px;font-weight:700">Marketplaces linked</text><text class="t-d" x="50" y="440" style="font-size:12.5px">listings run off the same data</text>
+    <text class="t t-a" x="50" y="501" style="font-size:15px;font-weight:700">New website</text><text class="t-d" x="50" y="520" style="font-size:12.5px">built on the same data</text>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">The ERP changed. <em>The data work carried on.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-952 · Rev 01</span>
+  </div>
+</figure>` }} />
           </div>
         </section>
 
-        {/* 1b. PLATE · DO-ART-205 */}
-        <section className="g-navy">
+        {/* 2. MEASURE · DO-ART-951 */}
+        <section className="g-tint">
           <div className="wrap">
-            <span className="eyebrow">Measure &middot; DO-ART-205</span>
+            <span className="eyebrow">Measure · DO-ART-951</span>
             <h2>Not projected. Not modelled. What&apos;s actually in the system.</h2>
             <div className="hair"></div>
             <p className="lede" style={{ marginTop: 16 }}>Catalogue figures from the live system, September 2026.</p>
 
-            <div className="plate-scroll">
-              <div className="plate-frame" data-od-id="plate-cs01">
-                <Plate tone="dark" p="hs" title="Supplier catalogue: before and after"
-                       sub="Case study 01 · 317,812 products, 154,518 matched automatically"
-                       no="DO-ART-205" rev="01" cls="DECODED OPS · ISSUED">
-
-                  <g className="sk-fade sk-s2" filter="url(#hs-shadow)">
-                    <rect x="100" y="210" width="650" height="480" rx="14" fill="url(#hs-amber-n)"
-                          className="p-node-a" strokeWidth="1.6"/>
-                    <rect x="100" y="210" width="650" height="56" rx="14" className="p-amber" opacity=".92"/>
-                    <rect x="100" y="252" width="650" height="14" className="p-amber" opacity=".92"/>
-                    <text x="128" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
-                          letterSpacing="2" fill="var(--do-prussian-blue)">BEFORE</text>
-                  </g>
-                  <g className="sk-fade sk-s3" fontSize="22">
-                    <text x="140" y="332" className="p-ink">317,812 products imported from feeds</text>
-                    <text x="140" y="402" className="p-ink">No consistent SKU across suppliers</text>
-                    <text x="140" y="472" className="p-ink">No reliable stock picture</text>
-                    <text x="140" y="542" className="p-ink">The platform getting the blame</text>
-                    <g className="p-samber" strokeWidth="2.4" strokeLinecap="round">
-                      <path d="M106 319 L118 331 M118 319 L106 331"/>
-                      <path d="M106 389 L118 401 M118 389 L106 401"/>
-                      <path d="M106 459 L118 471 M118 459 L106 471"/>
-                      <path d="M106 529 L118 541 M118 529 L106 541"/>
-                    </g>
-                  </g>
-
-                  <path id="hs-p" pathLength={1} className="sk-draw sk-s4 p-scyan" d="M760 450 H840"
-                        fill="none" strokeWidth="3" markerEnd="url(#hs-ah)"/>
-
-                  <g className="sk-fade sk-s4" filter="url(#hs-shadow)">
-                    <rect x="850" y="210" width="650" height="480" rx="14" fill="url(#hs-node)"
-                          className="p-node" strokeWidth="1.6"/>
-                    <rect x="850" y="210" width="650" height="56" rx="14" className="p-cyan" opacity=".95"/>
-                    <rect x="850" y="252" width="650" height="14" className="p-cyan" opacity=".95"/>
-                    <text x="878" y="248" fontFamily="Outfit,sans-serif" fontWeight="800" fontSize="22"
-                          letterSpacing="2" fill="var(--do-prussian-blue)">AFTER</text>
-                  </g>
-                  <g className="sk-fade sk-s5" fontSize="22">
-                    <text x="890" y="332" className="p-ink">154,518 matched automatically</text>
-                    <text x="890" y="402" className="p-ink">40 active suppliers feeding in</text>
-                    <text x="890" y="472" className="p-ink">77% of stock records now have a bin location</text>
-                    <text x="890" y="542" className="p-ink">Data app (now the ERP)</text>
-                    <g className="p-scyan" strokeWidth="2.6" strokeLinecap="round"
-                       strokeLinejoin="round" fill="none">
-                      <path d="M856 325 L863 332 L876 318"/>
-                      <path d="M856 395 L863 402 L876 388"/>
-                      <path d="M856 465 L863 472 L876 458"/>
-                      <path d="M856 535 L863 542 L876 528"/>
-                    </g>
-                  </g>
-
-                  <g className="sk-dots">
-                    <circle r="6" className="p-cyan">
-                      <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#hs-p"/></animateMotion>
-                    </circle>
-                  </g>
-                </Plate>
-              </div>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a951" data-od-id="plate-measure" data-motion data-no="DO-ART-951" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-951. The Hanicks catalogue overview in the Decoded Data App, live figures from September 2026: 317,812 products brought in from supplier feeds; 154,518 matched to a supplier automatically; 40 active suppliers, 89 on file; 2,872 new products and 28 new suppliers found in a stock-take reconciliation; 3,844 Amazon listings re-optimised ahead of a title-format deadline; 77% of stock records with a bin location, and climbing. Unmatched products sit on a visible list rather than being hidden.">
+  <div class="d17-dots" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Case study 01 <span>· the live catalogue</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Not projected. Not modelled.</h3>
+    <p>Six figures, read straight off the system the business runs on. Nothing here is a
+      forecast.</p>
+    <div class="live d17-mono">Live system, September 2026</div>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-951 · Rev 01</span>
+  </figcaption>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Catalogue ›</span> Overview</span><span class="pill">HANICKS</span></div>
+    <div class="win-main">
+      <h5>Catalogue overview</h5>
+      <p class="s">Every supplier feed, brought into one catalogue</p>
+      <div class="kpis">
+        <div class="kpi m-rise" style="animation-delay:.1s"><div class="l">Brought in</div><p class="n">317,812</p><p class="d">products from supplier feeds</p></div>
+        <div class="kpi kpi--hit m-rise" style="animation-delay:.2s"><div class="l">Matched automatically</div><p class="n">154,518</p><p class="d">before anyone touched them</p></div>
+        <div class="kpi m-rise" style="animation-delay:.3s"><div class="l">Active suppliers</div><p class="n">40</p><p class="d">feeding in, 89 on file</p></div>
+        <div class="kpi m-rise" style="animation-delay:.4s"><div class="l">Stock-take reconciliation</div><p class="n">2,872</p><p class="d">new products, 28 new suppliers</p></div>
+        <div class="kpi m-rise" style="animation-delay:.5s"><div class="l">Amazon listings</div><p class="n">3,844</p><p class="d">re-optimised ahead of a deadline</p></div>
+        <div class="kpi m-rise" style="animation-delay:.6s"><div class="l">Binned</div><p class="n">77%</p><p class="d">of stock records, and climbing</p></div>
+      </div>
+      <div class="meter m-rise" style="animation-delay:.7s"><div class="row"><b>Stock records with a bin location</b><span>77%</span></div>
+        <div class="track"><div class="fill m-fill" style="width:77%;animation-delay:1s"></div></div></div>
+      <div class="open m-rise" style="animation-delay:.8s"><b>Unmatched products</b>On a visible list, worked through, not hidden<span>OPEN LIST</span></div>
+    </div>
+  </div>
+</figure>` }} />
           </div>
         </section>
 
-        {/* 2. THE NUMBERS */}
+        {/* 3. THE NUMBERS */}
         <section className="g-navy">
           <div className="wrap">
             <span className="eyebrow eyebrow--amber">The numbers</span>
@@ -193,7 +237,7 @@ export default function CaseStudy01Page() {
           </div>
         </section>
 
-        {/* 3. THE STORY */}
+        {/* 4. THE STORY */}
         <section className="g-white">
           <div className="wrap prose">
             <h2>The situation before</h2>
@@ -218,7 +262,7 @@ export default function CaseStudy01Page() {
           </div>
         </section>
 
-        {/* 4. RELATED */}
+        {/* 5. RELATED */}
         <section className="g-tint">
           <div className="wrap" style={{ maxWidth: 900 }}>
             <span className="eyebrow">Related</span>
@@ -247,7 +291,7 @@ export default function CaseStudy01Page() {
           </div>
         </section>
 
-        {/* 5. CTA STRIP */}
+        {/* 6. CTA STRIP */}
         <section className="g-off cta-strip">
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how the Data App does this.</h2>
@@ -265,6 +309,7 @@ export default function CaseStudy01Page() {
           </div>
         </section>
       </main>
+      <D17Motion />
     </>
   );
 }

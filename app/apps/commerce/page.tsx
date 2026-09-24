@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
+import '@/app/d17-global.css';
+import '@/app/d17-apps-cases.css';
 
 export const metadata: Metadata = {
   title: 'Decoded Commerce: Decoded Ops',
-  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation: company accounts, spend limits, approval workflows and quote negotiation.',
+  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on an open-source B2B commerce foundation: company accounts, spend limits, approval workflows and quote negotiation.',
   alternates: { canonical: '/apps/commerce' },
   openGraph: {
     type: 'website',
     title: 'Decoded Commerce: Decoded Ops',
-    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on the open-source Medusa B2B foundation.',
+    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on an open-source B2B commerce foundation.',
     url: 'https://decodedops.co.uk/apps/commerce',
   },
   twitter: {
@@ -35,7 +36,7 @@ const commerceFaqSchema = {
         {
           '@type': 'Question',
           name: 'How is this different from a bespoke build?',
-          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the Medusa B2B open-source core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'It is built on the open-source B2B commerce core with real foundations, not a from-scratch build. That is why it comes in well under the 8,000 to 20,000 pound bespoke range you will be quoted elsewhere for the same thing.' },
         },
         {
           '@type': 'Question',
@@ -51,50 +52,79 @@ export default function CommercePage() {
   return (
     <>
       <JsonLd data={commerceFaqSchema} />
-      {/* 1 · HERO SPLIT */}
-      <section className="g-off">
+      {/* 1 · HERO SPLIT + DO-ART-946 */}
+      <section className="g-off" data-od-id="hero">
         <div className="wrap hero-split">
           <div>
-            <p className="eyebrow">Decoded Commerce &middot; live infrastructure</p>
+            <span className="eyebrow">Decoded Commerce · live infrastructure</span>
             <h1>A storefront that fits how you actually sell.</h1>
             <div className="hero-body">
               <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
-              <p>It&rsquo;s built on the Medusa B2B starter: company accounts, spend limits, approval
-                workflows, quote negotiation, order editing, and a full storefront and checkout, all on
-                an open-source core. Real foundations, not a from-scratch build. That&rsquo;s
-                why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
+              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,
+                approval workflows, quote negotiation, order editing, and a full storefront and
+                checkout, all on an open-source core. Real foundations, not a from-scratch build.
+                That&rsquo;s why it comes in well under the £8,000&ndash;£20,000 bespoke range you&rsquo;ll be
                 quoted elsewhere for the same thing.</p>
             </div>
             <div className="btn-row" style={{ marginTop: 30 }}>
               <Link className="btn btn--primary" href="/contact">Talk about your storefront</Link>
-              <Link className="btn btn--ghost btn-arrow" href="/pricing">How I price this</Link>
+              <Link className="btn btn--ghost btn-arrow" href="#pricing">How I price this</Link>
             </div>
           </div>
 
-          <div className="hero-shot">
-            <div className="evidence evidence--screen">
-              <Image src="/images/apps/commerce-plp-v2.webp" width={2160} height={3816}
-                   sizes="(max-width: 768px) 100vw, 50vw" priority
-                   alt="A B2B trade storefront product listing page: decorated garments in a filtered grid with trade pricing shown per account, size and colour facets down the left, and a quote-request action alongside add to basket." />
-              <span className="stamp">decoded commerce &middot; trade storefront</span>
-            </div>
-            <p className="shot-caption">Trade pricing per account, quote requests alongside the basket, and
-              a catalogue that reads from the same data as the warehouse.</p>
+          <div className="hero-shot" dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a946" data-od-id="hero-visual" data-motion data-no="DO-ART-946" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-946. A Decoded Commerce trade storefront, signed in as a trade account: a filtered catalogue of decorated workwear and merchandise with range and decoration method facets, the account's own price list on every product, and a quote request for a hundred and fifty embroidered polos sitting alongside the basket. Trade pricing per account, quotes next to the basket, one catalogue with the warehouse.">
+  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-press-hall-03697e.jpg" alt="" width="1024" height="1024"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>Live infrastructure</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="mw">
+      <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Trade store ›</span> Full catalogue</span><span class="pill">SIGNED IN</span></div>
+      <div class="acct"><span>Trade account · your price list applies</span><b>Basket 2 · Quotes 1</b></div>
+      <div class="mw-main">
+        <h5>Full trade catalogue</h5>
+        <p class="s">Decoration-ready lines, live stock, prices for your account</p>
+        <div class="shop">
+          <div class="facets">
+            <div class="fh">Range</div>
+            <label class="on"><i></i>Workwear</label><label><i></i>Promo</label><label><i></i>Packaging</label>
+            <div class="fh">Decoration</div>
+            <label class="on"><i></i>Embroidery</label><label><i></i>Screen print</label><label><i></i>DTF</label><label><i></i>Engraving</label>
           </div>
+          <div class="tiles">
+            <div class="tile m-rise" style="animation-delay:.1s"><img src="/images/d17/apps-cases/prod-polo-a16032.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Piqué polo</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.2s"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Hi-vis vest</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.3s"><img src="/images/d17/apps-cases/cat-promo-89c58a.jpg" alt=""><div class="tb"><div class="stock">Made to order</div><div class="nm">Ceramic mug</div><div class="pr"><b>Your price</b><i></i></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.4s"><img src="/images/d17/apps-cases/prod-mailer-9c1448.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Kraft mailer box</div><div class="pr"><b>Your price</b><i></i></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote m-pop" style="animation-delay:.9s"><span class="l">Quote request · sent</span><b>150 × piqué polo</b><p>Embroidered left chest, logo from your vault. Approver: purchasing lead.</p></div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Their prices, their approvals, <em>one catalogue with the warehouse.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-946 · Rev 01</span>
+  </div>
+</figure>` }} />
+          <p className="shot-caption">Trade pricing per account, quote requests alongside the basket, and
+            a catalogue that reads from the same data as the warehouse.</p>
         </div>
       </section>
 
       {/* 2 · FEATURES TRIPLET · per tier */}
-      <section className="g-white">
+      <section className="g-white" data-od-id="tiers">
         <div className="wrap">
-          <p className="eyebrow">What each tier is</p>
+          <span className="eyebrow">What each tier is</span>
           <h2>Priced on functionality, not on days.</h2>
           <p className="lede" style={{ marginTop: 16 }}>You pick the tier by what the business needs to do,
             not by how long I think it&rsquo;ll take me. The scope is written down before anything starts.</p>
 
           <div className="grid grid--3">
-            <div className="feature">
+            <div className="feature" data-od-id="tier-core">
               <div className="feature-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
                      strokeLinecap="round" strokeLinejoin="round">
@@ -108,7 +138,7 @@ export default function CommercePage() {
                 need to pay for the machinery that makes them.</p>
             </div>
 
-            <div className="feature">
+            <div className="feature" data-od-id="tier-standard">
               <div className="feature-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
                      strokeLinecap="round" strokeLinejoin="round">
@@ -123,7 +153,7 @@ export default function CommercePage() {
                 actually mean when they say they want a trade portal.</p>
             </div>
 
-            <div className="feature">
+            <div className="feature" data-od-id="tier-extended">
               <div className="feature-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
                      strokeLinecap="round" strokeLinejoin="round">
@@ -132,107 +162,156 @@ export default function CommercePage() {
               </div>
               <h3>Extended</h3>
               <p className="feature-meta">More than one of everything</p>
-              <p>Multi-site storefronts, ERP integration, and bespoke
-                checkout and pricing logic where the standard rules genuinely don&rsquo;t describe how you
-                price.</p>
+              <p>Multi-site storefronts, ERP integration, and bespoke checkout and pricing logic where
+                the standard rules genuinely don&rsquo;t describe how you price.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2b · PRODUCT PAGE SCREEN */}
-      <section className="g-tint">
-        <div className="wrap" style={{ maxWidth: 900 }}>
-          <div className="grid grid--2" style={{ gap: 24 }}>
-            <div className="evidence evidence--screen">
-              <Image src="/images/apps/commerce-pdp-v2.webp" width={3200} height={2000}
-                   sizes="(max-width: 768px) 100vw, 50vw"
-                   alt="Product page with trade pricing and decoration options" loading="lazy" />
-              <span className="stamp">decoded commerce &middot; product page</span>
-            </div>
-            <div className="evidence evidence--screen">
-              <Image src="/images/apps/prod-hivis.jpg" width={900} height={1348}
-                   sizes="(max-width: 768px) 100vw, 50vw"
-                   alt="Hi-vis workwear product detail as sold through a Decoded Commerce trade storefront" loading="lazy" />
-              <span className="stamp">decoded commerce &middot; product detail</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2a · CORE TO EXTENDED PLATE · DO-ART-103 */}
-      <section className="g-tint">
+      {/* 3 · CAPABILITY · DO-ART-947 (supersedes 103) */}
+      <section className="g-tint" data-od-id="architecture">
         <div className="wrap">
-          <p className="eyebrow">Capability &middot; DO-ART-103</p>
+          <span className="eyebrow">Capability · DO-ART-947</span>
           <h2>Core to Extended, by capability.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Each tier adds what the one below doesn&rsquo;t
-            have.</p>
+          <p className="lede" style={{ marginTop: 16 }}>Each tier adds what the one below doesn&rsquo;t have.</p>
 
-          <div className="plate-scroll" style={{ marginTop: 34 }}>
-            <div className="plate-frame">
-              <Plate tone="dark" p="cm" title="Core to Extended, by capability"
-                     sub="Each tier adds what the one below doesn't have"
-                     no="DO-ART-103" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="cm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M180 700 V300"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#cm-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="260" y="580" width="1180" height="120" rx="14" fill="url(#cm-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="310" y="632" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Core</text>
-                  <text x="310" y="664" className="p-mono" fontSize="17" opacity=".85">Catalogue ·
-                    customer accounts · manual pricing</text>
-                  <text x="1400" y="646" textAnchor="end" className="p-mono" fontSize="16"
-                        letterSpacing="1.4" opacity=".55">SINGLE STOREFRONT</text>
+          <figure className="d17 sw a947" data-od-id="plate-architecture" data-motion data-no="DO-ART-947" data-rev="01" data-tx="schematic"
+                  aria-label="Drawn plate DO-ART-947. Three nested tiers drawn as a plan. Core, at the centre: a single storefront with a product catalogue, customer accounts and logins, and manual pricing tiers. Standard wraps Core and adds company accounts with multi-user roles, per-employee spending limits, approval workflows and quote negotiation: the B2B trade portal shape most take. Extended wraps Standard and adds multi-site storefronts, ERP integration, and bespoke checkout and pricing logic. Each tier adds what the one below does not have.">
+            <div className="q-grid" aria-hidden="true" />
+            <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true"><defs>
+              <marker id="q-ah947" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6" /></marker>
+            </defs></svg>
+            <svg className="q v-wide" viewBox="0 0 1600 680" aria-hidden="true">
+              {/* Extended */}
+              <g className="m-fade" style={{ animationDelay: '.9s' }}>
+                <rect x="20" y="20" width="1000" height="640" rx="22" fill="none" stroke="#8ECAE6" strokeOpacity=".7" strokeWidth="2" />
+                <text className="t-m" x="50" y="62" style={{ fontSize: '17px' }}>Extended · more than one of everything</text>
+              </g>
+              {/* Standard */}
+              <g className="m-fade" style={{ animationDelay: '.5s' }}>
+                <rect className="bx-a" x="80" y="92" width="880" height="508" rx="18" style={{ fillOpacity: '.9' }} />
+                <text className="t-m t-a" x="110" y="134" style={{ fontSize: '17px' }}>Standard · the B2B trade portal shape · most take this</text>
+              </g>
+              {/* Core */}
+              <g className="m-pop" style={{ animationDelay: '.1s' }}>
+                <rect className="bx" x="140" y="164" width="420" height="376" rx="14" />
+                <text className="t-m" x="170" y="204" style={{ fontSize: '16px' }}>Core · single storefront</text>
+                <g className="t" style={{ fontSize: '22px' }}>
+                  <rect x="170" y="228" width="360" height="56" rx="9" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45" /><text className="t" x="192" y="264" style={{ fontSize: '22px' }}>Product catalogue</text>
+                  <rect x="170" y="296" width="360" height="56" rx="9" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45" /><text className="t" x="192" y="332" style={{ fontSize: '22px' }}>Customer accounts, logins</text>
+                  <rect x="170" y="364" width="360" height="56" rx="9" fill="#8ECAE6" fillOpacity=".12" stroke="#8ECAE6" strokeOpacity=".45" /><text className="t" x="192" y="400" style={{ fontSize: '22px' }}>Manual pricing tiers</text>
                 </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="260" y="420" width="1180" height="130" rx="14" fill="url(#cm-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="310" y="472" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Standard</text>
-                  <text x="310" y="506" className="p-mono" fontSize="17" opacity=".85">+ company accounts
-                    · spend limits · approvals · quote negotiation</text>
-                  <text x="1400" y="486" textAnchor="end" className="p-mono" fontSize="16"
-                        letterSpacing="1.4" opacity=".7">THE B2B TRADE PORTAL SHAPE</text>
-                </g>
-
-                <g className="sk-fade sk-s5" filter="url(#cm-shadow)">
-                  <rect x="260" y="250" width="1180" height="140" rx="16" fill="url(#cm-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="310" y="312" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Extended</text>
-                  <text x="310" y="348" className="p-accent-ink" fontSize="18" fontWeight="600">+
-                    multi-site · ERP integration · bespoke checkout &amp; pricing</text>
-                  <text x="1400" y="330" textAnchor="end" className="p-mono" fontSize="16"
-                        letterSpacing="1.4" opacity=".85">MORE THAN ONE OF EVERYTHING</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#cm-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+                <text className="t-d" x="170" y="470" style={{ fontSize: '18px' }}>No approval workflow:</text>
+                <text className="t-d" x="170" y="496" style={{ fontSize: '18px' }}>nobody has to sign off</text>
+              </g>
+              {/* Standard adds */}
+              <g className="m-rise" style={{ animationDelay: '.6s' }}>
+                <rect x="590" y="164" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="206" style={{ fontSize: '22px' }}>Company accounts, roles</text>
+                <rect x="590" y="246" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="288" style={{ fontSize: '22px' }}>Per-employee spend limits</text>
+                <rect x="590" y="328" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="370" style={{ fontSize: '22px' }}>Approval workflows</text>
+                <rect x="590" y="410" width="340" height="68" rx="9" fill="#FFB703" fillOpacity=".13" stroke="#FFB703" strokeOpacity=".6" /><text className="t" x="612" y="452" style={{ fontSize: '22px' }}>Quote negotiation</text>
+              </g>
+              {/* Extended adds */}
+              <g className="m-rise" style={{ animationDelay: '1s' }}>
+                <text className="t-d" x="110" y="636" style={{ fontSize: '19px' }}>Multi-site storefronts  ·  ERP integration  ·  bespoke checkout and pricing logic</text>
+              </g>
+              {/* call-outs */}
+              <g className="m-fade" style={{ animationDelay: '1.2s' }}>
+                <path className="ln-f" d="M1060 20 V660 M1050 20 H1070 M1050 660 H1070" />
+                <path className="ln m-draw" pathLength="1" style={{ animationDelay: '1.3s' }} d="M1110 120 H1026" markerEnd="url(#q-ah947)" />
+                <text className="t-m" x="1120" y="112" style={{ fontSize: '15px' }}>Extended adds</text>
+                <text className="t" x="1120" y="142" style={{ fontSize: '20px' }}>more than one of everything</text>
+                <path className="ln-a m-draw" pathLength="1" style={{ animationDelay: '1.1s' }} d="M1110 320 H966" />
+                <text className="t-m t-a" x="1120" y="312" style={{ fontSize: '15px' }}>Standard adds</text>
+                <text className="t" x="1120" y="342" style={{ fontSize: '20px' }}>the machinery for sign-off</text>
+                <path className="ln m-draw" pathLength="1" style={{ animationDelay: '.9s' }} d="M1110 500 H566" markerEnd="url(#q-ah947)" />
+                <text className="t-m" x="1120" y="492" style={{ fontSize: '15px' }}>Core</text>
+                <text className="t" x="1120" y="522" style={{ fontSize: '20px' }}>one storefront, sold simply</text>
+                <text className="t-d" x="1120" y="620" style={{ fontSize: '17px' }}>A full rebuild is scoped separately,</text>
+                <text className="t-d" x="1120" y="644" style={{ fontSize: '17px' }}>not read off this drawing.</text>
+              </g>
+            </svg>
+            <svg className="q v-tall" viewBox="0 0 700 1130" aria-hidden="true">
+              <rect x="6" y="6" width="688" height="1118" rx="20" fill="none" stroke="#8ECAE6" strokeOpacity=".7" strokeWidth="2" />
+              <text className="t-m" x="30" y="50" style={{ fontSize: '20px' }}>Extended · more than one of everything</text>
+              <rect className="bx-a" x="30" y="76" width="640" height="850" rx="16" />
+              <text className="t-m t-a" x="54" y="118" style={{ fontSize: '20px' }}>Standard · most take this</text>
+              <rect className="bx" x="54" y="140" width="592" height="320" rx="12" />
+              <text className="t-m" x="78" y="182" style={{ fontSize: '20px' }}>Core · single storefront</text>
+              <text className="t" x="78" y="238" style={{ fontSize: '28px' }}>Product catalogue</text>
+              <text className="t" x="78" y="290" style={{ fontSize: '28px' }}>Customer accounts, logins</text>
+              <text className="t" x="78" y="342" style={{ fontSize: '28px' }}>Manual pricing tiers</text>
+              <text className="t-d" x="78" y="414" style={{ fontSize: '23px' }}>No approval workflow</text>
+              <text className="t-m t-a" x="54" y="514" style={{ fontSize: '20px' }}>Standard adds</text>
+              <text className="t" x="54" y="570" style={{ fontSize: '28px' }}>Company accounts, roles</text>
+              <text className="t" x="54" y="624" style={{ fontSize: '28px' }}>Per-employee spend limits</text>
+              <text className="t" x="54" y="678" style={{ fontSize: '28px' }}>Approval workflows</text>
+              <text className="t" x="54" y="732" style={{ fontSize: '28px' }}>Quote negotiation</text>
+              <text className="t-d" x="54" y="800" style={{ fontSize: '23px' }}>the B2B trade portal shape</text>
+              <text className="t-m" x="30" y="984" style={{ fontSize: '20px' }}>Extended adds</text>
+              <text className="t" x="30" y="1034" style={{ fontSize: '27px' }}>Multi-site · ERP integration</text>
+              <text className="t" x="30" y="1080" style={{ fontSize: '27px' }}>Bespoke checkout and pricing</text>
+            </svg>
+            <div className="foot"><span className="k d17-mono">Core · Standard · Extended</span><span className="d17-mark">decodedops.co.uk · DO-ART-947 · Rev 01</span></div>
+          </figure>
         </div>
       </section>
 
-      {/* 3 · CUSTOM WORK CALLOUT */}
-      <section className="g-navy">
+      {/* 4 · CUSTOM WORK · DO-ART-948 */}
+      <section className="g-navy" data-od-id="custom-work">
         <div className="wrap">
-          <p className="eyebrow">Off the tier list</p>
+          <span className="eyebrow">Off the tier list</span>
           <h2>When it&rsquo;s a full rebuild, not a tier.</h2>
 
-          <div className="grid grid--2" style={{ marginTop: 40 }}>
-            <div className="panel">
-              <h3>The worked example</h3>
-              <p>A full migration off WooCommerce, a new storefront, and reintegration back
-                into your ERP. That&rsquo;s scoped and quoted like any other full custom build, not read
-                off a tier list.</p>
+          <figure className="d17 sw sw-doc a948" data-od-id="custom-visual" data-motion data-no="DO-ART-948" data-rev="01" data-tx="photo"
+                  aria-label="Artwork DO-ART-948. Two documents over a graded photograph of packed kraft boxes. A scope sheet for a full rebuild in three parts: migrate products, customers and order history off the existing platform; build a new storefront; reintegrate orders and stock back into the ERP. And an options sheet: everything on the market goes on the table first, priced, including the options expected to be rejected, with the decision left to the client. Scoped and quoted like any full custom build.">
+            <div className="d17-ph"><img src="/images/d17/apps-cases/cat-packaging-2b20a6.jpg" alt="" width="900" height="800" /></div>
+            <div className="d17-scan" aria-hidden="true" />
+            <figcaption className="sw-cap">
+              <div className="k d17-mono">The worked example <span>· scoped, not tiered</span></div>
+              <div className="bar" aria-hidden="true" />
+              <h3>Migration, new storefront, back into the ERP.</h3>
+              <p>The scope is written down first. Everything on the market goes on the table beside it,
+                priced, and the decision stays yours.</p>
+              <span className="d17-mark">decodedops.co.uk · DO-ART-948 · Rev 01</span>
+            </figcaption>
+            <div className="stage" aria-hidden="true">
+              <div className="d17-doc doc-s m-drop" style={{ animationDelay: '.1s' }}>
+                <span className="tab">SCOPE</span>
+                <span className="ref">SC-01 · Full rebuild · written first</span>
+                <h4>Storefront rebuild</h4>
+                <p className="sub">three parts · one written scope</p>
+                <ol>
+                  <li><b>01</b><span>Migrate products, customers, order history</span><em>EXPORTED</em></li>
+                  <li><b>02</b><span>New storefront and checkout</span><em>NEW</em></li>
+                  <li className="hit"><b>03</b><span>Orders and stock back into the ERP</span><em>REINTEGRATED</em></li>
+                </ol>
+                <div className="lines"><i style={{ width: '92%' }} /><i style={{ width: '74%' }} /></div>
+              </div>
+              <div className="d17-doc doc-o m-drop" style={{ animationDelay: '.45s' }}>
+                <span className="tab">OPTIONS</span>
+                <span className="ref">OP-01 · On the table first</span>
+                <h4>Everything on the market</h4>
+                <p className="sub">priced, including the ones to reject</p>
+                <div className="opt">
+                  <span>Off-the-shelf platform</span><span>PRICED</span>
+                  <span>Hosted store, add-ons</span><span>PRICED</span>
+                  <span>Full custom build</span><span>PRICED</span>
+                  <span className="you">Decision: yours</span>
+                </div>
+              </div>
             </div>
-            <div className="panel">
+          </figure>
+
+          <div className="grid grid--2" style={{ marginTop: 40 }}>
+            <div className="panel" data-od-id="custom-example">
+              <h3>The worked example</h3>
+              <p>A full migration off an existing web platform, a new storefront, and reintegration back
+                into your ERP. That&rsquo;s scoped and quoted like any other full custom build, not read off
+                a tier list.</p>
+            </div>
+            <div className="panel" data-od-id="custom-route">
               <h3>How it starts</h3>
               <p>With a Clarity Audit, the same as any rung 3 conversation. Everything on the market
                 goes on the table first, priced, including the options I&rsquo;d expect you to reject. And
@@ -244,19 +323,19 @@ export default function CommercePage() {
         </div>
       </section>
 
-      {/* 4 · COMPARISON TABLE */}
-      <section className="g-white" id="pricing">
+      {/* 5 · COMPARISON TABLE */}
+      <section className="g-white" id="pricing" data-od-id="pricing">
         <div className="wrap">
-          <p className="eyebrow">What each tier covers</p>
+          <span className="eyebrow">What each tier covers</span>
           <h2>Three tiers. Pick by what the business needs to do.</h2>
 
-          <div className="inset">
+          <div className="inset" data-od-id="entry-point">
             <b>Which tier fits depends on your setup.</b> What you sell, who buys it, and how
             they&rsquo;re allowed to buy it. That gets settled in conversation before the build is
             quoted.
           </div>
 
-          <div className="table-wrap">
+          <div className="table-wrap" data-od-id="pricing-table">
             <table className="ds-table">
               <caption>Decoded Commerce</caption>
               <thead>
@@ -286,7 +365,7 @@ export default function CommercePage() {
             purpose. That&rsquo;s scoped separately.</p>
           <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
 
-          <div className="notice">
+          <div className="notice" data-od-id="founding-terms">
             <p className="notice-tag">Founding-client terms</p>
             <h3>No client has taken first delivery of the packaged product yet.</h3>
             <p>Real work has been scoped and quoted, but nobody has yet bought Decoded
@@ -299,10 +378,11 @@ export default function CommercePage() {
         </div>
       </section>
 
-      {/* 5 · CTA STRIP */}
-      <section className="g-off cta-strip">
-        <div className="wrap" style={{ maxWidth: 760 }}>
+      {/* 6 · CTA STRIP */}
+      <section className="g-off" data-od-id="cta-strip">
+        <div className="wrap centred">
           <h2>Talk about your storefront.</h2>
+          <div className="hair" />
           <p className="lede">An hour on what you sell and who buys it. If a tier fits, I&rsquo;ll name it. If
             what you actually need is a migration, I&rsquo;ll say that instead of selling you a tier.</p>
           <div className="btn-row">
@@ -311,6 +391,8 @@ export default function CommercePage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }
