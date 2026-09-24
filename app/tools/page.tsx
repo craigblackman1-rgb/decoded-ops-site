@@ -79,20 +79,18 @@ export default function ToolsPage() {
         { name: 'Tools', url: 'https://decodedops.co.uk/tools' },
       ]} />
       <JsonLd data={toolsSchema} />
-      {/* Hero */}
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 720, textAlign: 'center' }}>
-          <span className="eyebrow">Free tools</span>
-          <h1>Calculate your operational cost</h1>
-          <p className="lede" style={{ margin: '0 auto' }}>
-            Free tools that put a number on what your operation is costing you.
-          </p>
-        </div>
-      </section>
+      {/* Hero — rt-split: copy left, DO-ART-981 right */}
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tools</span>
+            <h1>Calculate your operational cost</h1>
+            <p className="lede">
+              Free tools that put a number on what your operation is costing you.
+            </p>
+          </div>
 
-      {/* D17 hero art · DO-ART-981 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-981 */}
           <figure className="d17 sx a981" data-od-id="hero-art" data-motion data-no="DO-ART-981" data-rev="01" data-tx="screen"
                   aria-label="Artwork DO-ART-981. Three calculator result screens fanned over a graded photograph of embroidery heads, each labelled Example and worked from the tool's default inputs. Downtime cost: a total annual cost of downtime of £3,495. Automation ROI: break-even in 8 months, a 3-year return of 227 per cent. RTO: recovery from 8 hours to 1 hour saves £28,000 a year. Every calculator hands back a number, not a vague suggestion.">
             <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-ad3944.jpg" alt="" width="900" height="900" /></div>
@@ -132,8 +130,6 @@ export default function ToolsPage() {
           </figure>
         </div>
       </section>
-
-      {/* Cards */}
       <section className="g-off">
         <div className="wrap">
           <div className="grid grid--3">

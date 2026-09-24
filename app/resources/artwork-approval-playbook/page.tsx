@@ -73,19 +73,16 @@ export default function ArtworkApprovalPlaybookPage() {
     <>
       <JsonLd data={schema} />
 
+      {/* HERO — rt-split: copy left, DO-ART-989 right */}
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free resource</span>
-          <h1>Artwork approval playbook</h1>
-          <p className="lede">
-            A 5-step workflow to take artwork approval from brief to sign-off in 24 hours. Structured brief, proof standard, automated chase, and production release.
-          </p>
-        </div>
-      </section>
-
-      {/* D17 hero artwork DO-ART-989 */}
-      <section className="g-navy">
-        <div className="wrap">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free resource</span>
+            <h1>Artwork approval playbook</h1>
+            <p className="lede">
+              A 5-step workflow to take artwork approval from brief to sign-off in 24 hours. Structured brief, proof standard, automated chase, and production release.
+            </p>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a989" data-od-id="hero-art" data-motion data-no="DO-ART-989" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-989. Two documents for one example job over a graded photograph of a folded polo. The artwork brief, all six fields confirmed: logo file, vector; colours, Pantone references; size, 90 millimetres wide; position, left chest; garment, stone polo; method, embroidery. The proof: the design drawn on the garment at size and position, a clear request to approve or request changes by five tomorrow, two buttons, approve as shown or request changes, and an amber stamp: approved, released to production. Brief complete, one round, signed off.">
@@ -119,6 +116,78 @@ export default function ArtworkApprovalPlaybookPage() {
     <div class="sx-bar" aria-hidden="true"></div>
     <p class="sx-say">Brief complete. <em>One round. Signed off.</em></p>
     <span class="d17-mark">decodedops.co.uk · DO-ART-989 · Rev 01</span>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
+
+      {/* D17 inline artwork DO-ART-990 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a990" data-od-id="plate-route" data-motion data-no="DO-ART-990" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-990, where the time goes. Started without a brief, the job loops: proof, changes, proof, changes, proof, and the time goes in the waiting between rounds, drawn hatched. Run to the playbook it is one line, in amber, inside 24 hours: one, the brief; two, artwork to a standard; three, the proof with a deadline; four, an automatic chase at 24 hours; five, sign-off releases the job to production.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sw-cap">
+    <p class="k d17-mono">Artwork approval <span>· two routes</span></p>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>The time goes in the gaps, not the artwork.</h3>
+    <p>Every missing detail in the brief adds a round trip. Confirm it first and the route is a straight line.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-990 · Rev 01</span>
+  </div>
+  <div class="dw" aria-hidden="true">
+    <svg class="q v-wide" viewBox="0 0 760 410">
+      <defs>
+        <pattern id="h990" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047" fill-opacity=".5"/><path d="M0 0 V10" stroke="#8ECAE6" stroke-opacity=".4" stroke-width="1.4"/></pattern>
+      </defs>
+      <text class="t-m" x="0" y="22">Started without a brief</text>
+      <g>
+        <rect class="bx" x="0" y="42" width="92" height="48" rx="6"/><text class="t" x="16" y="72">Proof</text>
+        <rect x="92" y="54" width="44" height="24" fill="url(#h990)"/>
+        <rect class="bx" x="136" y="42" width="92" height="48" rx="6"/><text class="t" x="148" y="72">Changes</text>
+        <rect x="228" y="54" width="44" height="24" fill="url(#h990)"/>
+        <rect class="bx" x="272" y="42" width="92" height="48" rx="6"/><text class="t" x="288" y="72">Proof</text>
+        <rect x="364" y="54" width="44" height="24" fill="url(#h990)"/>
+        <rect class="bx" x="408" y="42" width="92" height="48" rx="6"/><text class="t" x="420" y="72">Changes</text>
+        <rect x="500" y="54" width="44" height="24" fill="url(#h990)"/>
+        <rect class="bx" x="544" y="42" width="92" height="48" rx="6"/><text class="t" x="560" y="72">Proof</text>
+        <path class="ln-d" d="M636 66 H700"/><text class="t-h" x="708" y="75">?</text>
+        <text class="t-d" x="96" y="116">waiting</text><text class="t-d" x="232" y="116">waiting</text><text class="t-d" x="368" y="116">waiting</text><text class="t-d" x="504" y="116">waiting</text>
+      </g>
+      <text class="t-m t-a" x="0" y="196">Run to the playbook · inside 24 hours</text>
+      <path class="ln-f" d="M40 226 V218 H700 V226"/>
+      <path class="ln-a m-draw" pathLength="1" d="M40 280 H700" style="stroke-width:5"/>
+      <g class="m-fade">
+        <circle class="f-a" cx="40" cy="280" r="11"/><circle class="f-a" cx="205" cy="280" r="11"/><circle class="f-a" cx="370" cy="280" r="11"/><circle class="f-a" cx="535" cy="280" r="11"/><circle class="f-a" cx="700" cy="280" r="13"/>
+      </g>
+      <g>
+        <text class="t-m" x="4" y="324">01</text><text class="t" x="4" y="350">The brief</text><text class="t-d" x="4" y="374">six fields</text>
+        <text class="t-m" x="169" y="324">02</text><text class="t" x="169" y="350">To a standard</text><text class="t-d" x="169" y="374">same every time</text>
+        <text class="t-m" x="334" y="324">03</text><text class="t" x="334" y="350">The proof</text><text class="t-d" x="334" y="374">with a deadline</text>
+        <text class="t-m" x="499" y="324">04</text><text class="t" x="499" y="350">Auto chase</text><text class="t-d" x="499" y="374">at 24 hours</text>
+        <text class="t-m t-a" x="640" y="324">05</text><text class="t t-a" x="640" y="350">Released</text><text class="t-d" x="640" y="374">sign-off triggers it</text>
+      </g>
+    </svg>
+    <svg class="q v-tall" viewBox="0 0 340 600">
+      <defs>
+        <pattern id="h990t" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047" fill-opacity=".5"/><path d="M0 0 V10" stroke="#8ECAE6" stroke-opacity=".4" stroke-width="1.4"/></pattern>
+      </defs>
+      <text class="t-m" x="0" y="18">Started without a brief</text>
+      <rect class="bx" x="0" y="34" width="96" height="44" rx="6"/><text class="t" x="14" y="62">Proof</text>
+      <rect x="96" y="46" width="26" height="20" fill="url(#h990t)"/>
+      <rect class="bx" x="122" y="34" width="96" height="44" rx="6"/><text class="t" x="132" y="62">Changes</text>
+      <rect x="218" y="46" width="26" height="20" fill="url(#h990t)"/>
+      <rect class="bx" x="244" y="34" width="96" height="44" rx="6"/><text class="t" x="258" y="62">Proof</text>
+      <text class="t-d" x="0" y="104">round after round, waiting between</text>
+      <text class="t-m t-a" x="0" y="160">Run to the playbook · 24 hours</text>
+      <path class="ln-a" d="M22 190 V560" style="stroke-width:5"/>
+      <circle class="f-a" cx="22" cy="196" r="10"/><circle class="f-a" cx="22" cy="286" r="10"/><circle class="f-a" cx="22" cy="376" r="10"/><circle class="f-a" cx="22" cy="466" r="10"/><circle class="f-a" cx="22" cy="556" r="12"/>
+      <text class="t-m" x="52" y="190">01</text><text class="t" x="52" y="214">The brief, six fields</text>
+      <text class="t-m" x="52" y="280">02</text><text class="t" x="52" y="304">Artwork to a standard</text>
+      <text class="t-m" x="52" y="370">03</text><text class="t" x="52" y="394">Proof with a deadline</text>
+      <text class="t-m" x="52" y="460">04</text><text class="t" x="52" y="484">Auto chase at 24 hours</text>
+      <text class="t-m t-a" x="52" y="550">05</text><text class="t t-a" x="52" y="574">Sign-off releases it</text>
+    </svg>
   </div>
 </figure>` }} />
         </div>
@@ -241,78 +310,6 @@ export default function ArtworkApprovalPlaybookPage() {
               For smaller operations, a structured email template with a clear approval link and a tracked chase sequence achieves most of the same result without a platform investment.
             </p>
           </div>
-
-          {/* D17 inline artwork DO-ART-990 */}
-          <section className="g-navy">
-            <div className="wrap">
-              <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 sw a990" data-od-id="plate-route" data-motion data-no="DO-ART-990" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-990, where the time goes. Started without a brief, the job loops: proof, changes, proof, changes, proof, and the time goes in the waiting between rounds, drawn hatched. Run to the playbook it is one line, in amber, inside 24 hours: one, the brief; two, artwork to a standard; three, the proof with a deadline; four, an automatic chase at 24 hours; five, sign-off releases the job to production.">
-  <div class="q-grid" aria-hidden="true"></div>
-  <div class="sw-cap">
-    <p class="k d17-mono">Artwork approval <span>· two routes</span></p>
-    <div class="bar" aria-hidden="true"></div>
-    <h3>The time goes in the gaps, not the artwork.</h3>
-    <p>Every missing detail in the brief adds a round trip. Confirm it first and the route is a straight line.</p>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-990 · Rev 01</span>
-  </div>
-  <div class="dw" aria-hidden="true">
-    <svg class="q v-wide" viewBox="0 0 760 410">
-      <defs>
-        <pattern id="h990" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047" fill-opacity=".5"/><path d="M0 0 V10" stroke="#8ECAE6" stroke-opacity=".4" stroke-width="1.4"/></pattern>
-      </defs>
-      <text class="t-m" x="0" y="22">Started without a brief</text>
-      <g>
-        <rect class="bx" x="0" y="42" width="92" height="48" rx="6"/><text class="t" x="16" y="72">Proof</text>
-        <rect x="92" y="54" width="44" height="24" fill="url(#h990)"/>
-        <rect class="bx" x="136" y="42" width="92" height="48" rx="6"/><text class="t" x="148" y="72">Changes</text>
-        <rect x="228" y="54" width="44" height="24" fill="url(#h990)"/>
-        <rect class="bx" x="272" y="42" width="92" height="48" rx="6"/><text class="t" x="288" y="72">Proof</text>
-        <rect x="364" y="54" width="44" height="24" fill="url(#h990)"/>
-        <rect class="bx" x="408" y="42" width="92" height="48" rx="6"/><text class="t" x="420" y="72">Changes</text>
-        <rect x="500" y="54" width="44" height="24" fill="url(#h990)"/>
-        <rect class="bx" x="544" y="42" width="92" height="48" rx="6"/><text class="t" x="560" y="72">Proof</text>
-        <path class="ln-d" d="M636 66 H700"/><text class="t-h" x="708" y="75">?</text>
-        <text class="t-d" x="96" y="116">waiting</text><text class="t-d" x="232" y="116">waiting</text><text class="t-d" x="368" y="116">waiting</text><text class="t-d" x="504" y="116">waiting</text>
-      </g>
-      <text class="t-m t-a" x="0" y="196">Run to the playbook · inside 24 hours</text>
-      <path class="ln-f" d="M40 226 V218 H700 V226"/>
-      <path class="ln-a m-draw" pathLength="1" d="M40 280 H700" style="stroke-width:5"/>
-      <g class="m-fade">
-        <circle class="f-a" cx="40" cy="280" r="11"/><circle class="f-a" cx="205" cy="280" r="11"/><circle class="f-a" cx="370" cy="280" r="11"/><circle class="f-a" cx="535" cy="280" r="11"/><circle class="f-a" cx="700" cy="280" r="13"/>
-      </g>
-      <g>
-        <text class="t-m" x="4" y="324">01</text><text class="t" x="4" y="350">The brief</text><text class="t-d" x="4" y="374">six fields</text>
-        <text class="t-m" x="169" y="324">02</text><text class="t" x="169" y="350">To a standard</text><text class="t-d" x="169" y="374">same every time</text>
-        <text class="t-m" x="334" y="324">03</text><text class="t" x="334" y="350">The proof</text><text class="t-d" x="334" y="374">with a deadline</text>
-        <text class="t-m" x="499" y="324">04</text><text class="t" x="499" y="350">Auto chase</text><text class="t-d" x="499" y="374">at 24 hours</text>
-        <text class="t-m t-a" x="640" y="324">05</text><text class="t t-a" x="640" y="350">Released</text><text class="t-d" x="640" y="374">sign-off triggers it</text>
-      </g>
-    </svg>
-    <svg class="q v-tall" viewBox="0 0 340 600">
-      <defs>
-        <pattern id="h990t" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047" fill-opacity=".5"/><path d="M0 0 V10" stroke="#8ECAE6" stroke-opacity=".4" stroke-width="1.4"/></pattern>
-      </defs>
-      <text class="t-m" x="0" y="18">Started without a brief</text>
-      <rect class="bx" x="0" y="34" width="96" height="44" rx="6"/><text class="t" x="14" y="62">Proof</text>
-      <rect x="96" y="46" width="26" height="20" fill="url(#h990t)"/>
-      <rect class="bx" x="122" y="34" width="96" height="44" rx="6"/><text class="t" x="132" y="62">Changes</text>
-      <rect x="218" y="46" width="26" height="20" fill="url(#h990t)"/>
-      <rect class="bx" x="244" y="34" width="96" height="44" rx="6"/><text class="t" x="258" y="62">Proof</text>
-      <text class="t-d" x="0" y="104">round after round, waiting between</text>
-      <text class="t-m t-a" x="0" y="160">Run to the playbook · 24 hours</text>
-      <path class="ln-a" d="M22 190 V560" style="stroke-width:5"/>
-      <circle class="f-a" cx="22" cy="196" r="10"/><circle class="f-a" cx="22" cy="286" r="10"/><circle class="f-a" cx="22" cy="376" r="10"/><circle class="f-a" cx="22" cy="466" r="10"/><circle class="f-a" cx="22" cy="556" r="12"/>
-      <text class="t-m" x="52" y="190">01</text><text class="t" x="52" y="214">The brief, six fields</text>
-      <text class="t-m" x="52" y="280">02</text><text class="t" x="52" y="304">Artwork to a standard</text>
-      <text class="t-m" x="52" y="370">03</text><text class="t" x="52" y="394">Proof with a deadline</text>
-      <text class="t-m" x="52" y="460">04</text><text class="t" x="52" y="484">Auto chase at 24 hours</text>
-      <text class="t-m t-a" x="52" y="550">05</text><text class="t t-a" x="52" y="574">Sign-off releases it</text>
-    </svg>
-  </div>
-</figure>` }} />
-            </div>
-          </section>
 
           <div style={{ marginBottom: 64 }}>
             <h2>Common questions</h2>

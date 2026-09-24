@@ -123,17 +123,16 @@ export default function ErpSelectionPlaybookPage() {
       <JsonLd data={schema} />
 
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free resource</span>
-          <h1>ERP selection playbook for decorated goods</h1>
-          <p className="lede">
-            A plain-English guide to ERP for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
-          </p>
-        </div>
-      </section>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free resource</span>
+            <h1>ERP selection playbook for decorated goods</h1>
+            <p className="lede">
+              A plain-English guide to ERP for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
+            </p>
+          </div>
 
-      <section className="g-navy">
-        <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+          <div dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a991" data-od-id="hero-art" data-motion data-no="DO-ART-991" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-991. The ERP selection playbook over a graded photograph of folded workwear, and beside it the vendor brief, written before any demo, scoring three candidates like-for-like as an example: candidate A, candidate B, and ours, scored the same way. The requirements are the page's own: mixed decoration methods, the artwork approval loop, a B2B portal, blank stock and work in progress, supplier lead times, and a data migration plan. Write the brief first; every demo is scored against it, ours included.">
         <div class="d17-ph"><img src="/images/d17/resources/cat-workwear-ce9fb8.jpg" alt="" width="900" height="596"></div>
@@ -171,6 +170,7 @@ export default function ErpSelectionPlaybookPage() {
         </div>
       </figure>
         ` }} />
+        </div>
       </section>
 
       <section className="g-off section--tight">

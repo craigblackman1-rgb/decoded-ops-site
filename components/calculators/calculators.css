@@ -4,6 +4,7 @@
    only, no new hex, no component redefinitions of ds-marketing.css's own classes. */
 
 .calc-grid { display: grid; gap: 32px; }
+.calc-grid > * { min-width: 0; }
 @media (min-width: 1024px) {
   .calc-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -75,3 +76,7 @@
   font-size: var(--do-text-sm); color: var(--do-sky-blue); font-weight: 500; text-decoration: none;
 }
 .calc-secondary-link:hover { color: var(--do-text-on-dark); }
+
+@media (max-width: 639px) {
+  .calc-months-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}

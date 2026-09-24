@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Check } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import '@/app/d17-global.css';
+import '@/app/d17-resources.css';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -70,13 +73,58 @@ export default function SopTemplatePage() {
     <>
       <JsonLd data={schema} />
 
+      {/* HERO — rt-split: copy left, DO-ART-987 right */}
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free resource</span>
-          <h1>SOP template for decorated goods businesses</h1>
-          <p className="lede">
-            A free template and 7-step method for writing Standard Operating Procedures that your team can actually follow. Built for garment decoration, print, and embroidery businesses.
-          </p>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free resource</span>
+            <h1>SOP template for decorated goods businesses</h1>
+            <p className="lede">
+              A free template and 7-step method for writing Standard Operating Procedures that your team can actually follow. Built for garment decoration, print, and embroidery businesses.
+            </p>
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a987" data-od-id="hero-art" data-motion data-no="DO-ART-987" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-987. The SOP template over a graded photograph of a print hall, filled in as an example. Process: screen press set-up. Owner: production supervisor. Inputs: approved proof, job ticket, screens and inks. Steps one to five in order. Exceptions: artwork in the wrong format, stock short. Review date: every six months. Behind it, the one-page process register. A note pinned on top: test it on someone who doesn't normally do the job. One page, one process, one owner.">
+  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-a6acf5.jpg" alt="" width="900" height="761"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>SOP template</span><span>Example, filled in</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-rg m-drop" style="animation-delay:.05s">
+      <span class="ref">PR · Process register</span>
+      <h4>What exists, and who owns it</h4>
+      <ol>
+        <li><b>01</b>Order intake<i></i></li>
+        <li><b>02</b>Artwork approval<i></i></li>
+        <li><b>03</b>Press set-up<i></i></li>
+        <li><b>04</b>QC and despatch<i></i></li>
+      </ol>
+    </div>
+    <div class="d17-doc doc-sop m-drop" style="animation-delay:.3s">
+      <span class="tab">TEMPLATE</span>
+      <span class="ref">SOP-03 · one page</span>
+      <div class="fld"><span>Process</span><b>Screen press set-up</b></div>
+      <div class="fld two"><div><span>Owner</span><b>Production supervisor</b></div><div><span>Review</span><b>Every 6 months</b></div></div>
+      <div class="fld"><span>Inputs</span><b>Approved proof, job ticket, screens, inks</b></div>
+      <div class="fld"><span>Steps, in order</span>
+        <ol class="st">
+          <li>Check the proof against the job ticket</li>
+          <li>Load and register the screens</li>
+          <li>Set the press profile for the garment</li>
+          <li>Test print, check against the proof</li>
+          <li>Sign the ticket, release the run</li>
+        </ol>
+      </div>
+      <div class="fld ex"><span>Exceptions</span><b>Wrong file format · stock short · proof not signed</b></div>
+    </div>
+    <div class="note-y nt-987 m-pop" style="animation-delay:1.1s">Test it on someone who <b>doesn't normally do the job.</b></div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">One page. One process. <em>One owner.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-987 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -223,6 +271,7 @@ export default function SopTemplatePage() {
 
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

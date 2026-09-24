@@ -30,21 +30,19 @@ export default function DowntimeCostCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero */}
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">Free tool</span>
-          <h1>Downtime cost calculator</h1>
-          <p className="lede">
-            Enter your numbers to see exactly what system outages cost you each year in
-            staff time and lost revenue.
-          </p>
-        </div>
-      </section>
+      {/* Hero — rt-split: copy left, DO-ART-996 right */}
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool</span>
+            <h1>Downtime cost calculator</h1>
+            <p className="lede">
+              Enter your numbers to see exactly what system outages cost you each year in
+              staff time and lost revenue.
+            </p>
+          </div>
 
-      {/* D17 hero art · DO-ART-996 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-996 */}
           <figure className="d17 sx a996" data-od-id="incident-docket" data-motion data-no="DO-ART-996" data-rev="01" data-tx="photo"
                   aria-label="Artwork DO-ART-996. The scenario, a Tuesday in November, pinned over a graded photograph of embroidery heads. Time: nine o'clock. Machines: all running, files already loaded. Connection: internet down. Trading: no. A result slip, labelled Example and worked from the worksheet's default figures: £3,495 a year, the cost of hours the business is up but can't trade. Everything is running. Nothing is earning.">
             <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-5bb1b8.jpg" alt="" width="900" height="900" /></div>

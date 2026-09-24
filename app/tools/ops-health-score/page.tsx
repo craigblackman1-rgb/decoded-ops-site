@@ -58,17 +58,21 @@ export default function OpsHealthScorePage() {
 
   return (
     <main>
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free tool</span>
-          <h1>Ops health score</h1>
-          <p className="lede">Rate your business across five areas to see where you stand, and where to focus first.</p>
-        </div>
-      </section>
+      <style>{`
+        @media (max-width: 639px) {
+          .score-btns { gap: 4px !important; }
+          .score-btn { width: 32px !important; height: 32px !important; }
+        }
+      `}</style>
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool</span>
+            <h1>Ops health score</h1>
+            <p className="lede">Rate your business across five areas to see where you stand, and where to focus first.</p>
+          </div>
 
-      {/* D17 hero art · DO-ART-997 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-997 */}
           <figure className="d17 sx px ph-fade a997" data-od-id="hero-art" data-motion data-no="DO-ART-997" data-rev="01" data-tx="screen"
                   aria-label="Artwork DO-ART-997. The ops health score result screen over a graded photograph of a workbench, labelled Example. Five areas rated one to five: systems integration 2, process documentation 3, data quality 3, team and capability 4, technology strategy 1, in amber. Total 13 out of 25. Focus first on technology strategy. Five areas, and one place to start.">
             <div className="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-6b4161.jpg" alt="" width="900" height="756" /></div>
@@ -105,7 +109,7 @@ export default function OpsHealthScorePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {dimensions.map(d => (
                 <div key={d.id} className="card">
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, marginBottom: 8 }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, marginBottom: 8, flexWrap: 'wrap', minWidth: 0 }}>
                     <div>
                       <h2 style={{ marginBottom: 0 }}>{d.label}</h2>
                       <div className="relative group" style={{ position: 'relative' }}>
@@ -117,7 +121,7 @@ export default function OpsHealthScorePage() {
                         </div>
                       </div>
                     </div>
-                    <div style={{ display: 'flex', gap: 6 }}>
+                    <div className="score-btns" style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                       {[1, 2, 3, 4, 5].map(n => (
                         <button key={n} onClick={() => setScore(d.id, n)}
                           className="score-btn"
@@ -127,6 +131,7 @@ export default function OpsHealthScorePage() {
                             color: scores[d.id] === n ? 'var(--do-white)' : 'var(--do-text-subtle)',
                             background: scores[d.id] === n ? getScoreColor(n) : 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)',
                             transform: scores[d.id] === n ? 'scale(1.1)' : 'none',
+                            flexShrink: 0,
                           }}
                           aria-label={`Score ${n} for ${d.label}`}
                         >{n}</button>

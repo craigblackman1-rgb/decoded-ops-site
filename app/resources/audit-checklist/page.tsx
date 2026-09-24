@@ -117,20 +117,16 @@ export default function ChecklistPage() {
   return (
     <>
       <JsonLd data={schema} />
-      {/* HERO */}
+      {/* HERO — rt-split: copy left, DO-ART-983 right */}
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free resource</span>
-          <h1>Operational audit checklist</h1>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free resource</span>
+            <h1>Operational audit checklist</h1>
             <p className="lede">
               36 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
             </p>
-        </div>
-      </section>
-
-      {/* D17 hero artwork DO-ART-983 */}
-      <section className="g-navy">
-        <div className="wrap">
+          </div>
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a983" data-od-id="hero-art" data-motion data-no="DO-ART-983" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-983. The operational audit checklist on a clipboard over a graded photograph of an embroidery floor, part-worked as an example. Backups automated and tested quarterly: yes. Paying for licences no longer used: yes. Orders re-keyed from the website into the ERP: yes. Cost per order including labour, materials and overhead: can't answer, marked in amber. What the slowest process is and why: can't answer, in amber. A note pinned beside it: the ones you can't answer are where the cost is.">
@@ -166,6 +162,63 @@ export default function ChecklistPage() {
     <div class="sx-bar" aria-hidden="true"></div>
     <p class="sx-say">Seven areas. <em>The gaps are the point.</em></p>
     <span class="d17-mark">decodedops.co.uk · DO-ART-983 · Rev 01</span>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
+
+      {/* D17 inline artwork DO-ART-984 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a984" data-od-id="plate-structure" data-motion data-no="DO-ART-984" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-984, the audit structure. Six areas you can check today: IT infrastructure and security, six questions; systems and software, five; eCommerce and digital sales, five; processes and operations, six; inventory and stock, five; costs and financial, five. All six feed the seventh, in amber: growth and strategic, four questions that only the first six can answer.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sw-cap">
+    <p class="k d17-mono">Audit structure <span>· seven areas</span></p>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Six you can check today. The seventh, only the checking answers.</h3>
+    <p>Work the six in any order. Growth is last on purpose: you can't plan it until you know what the first six say.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-984 · Rev 01</span>
+  </div>
+  <div class="dw" aria-hidden="true">
+    <svg class="q v-wide" viewBox="0 0 760 420">
+      <g class="m-fade">
+        <rect class="bx" x="0" y="10" width="116" height="118" rx="8"/><text class="t-m" x="12" y="36">01</text><text class="t" x="12" y="66">IT &amp;</text><text class="t" x="12" y="88">security</text><text class="t-d" x="12" y="114">6 questions</text>
+        <rect class="bx" x="128" y="10" width="116" height="118" rx="8"/><text class="t-m" x="140" y="36">02</text><text class="t" x="140" y="66">Systems &amp;</text><text class="t" x="140" y="88">software</text><text class="t-d" x="140" y="114">5 questions</text>
+        <rect class="bx" x="256" y="10" width="116" height="118" rx="8"/><text class="t-m" x="268" y="36">03</text><text class="t" x="268" y="66">eCommerce</text><text class="t" x="268" y="88">&amp; digital</text><text class="t-d" x="268" y="114">5 questions</text>
+        <rect class="bx" x="384" y="10" width="116" height="118" rx="8"/><text class="t-m" x="396" y="36">04</text><text class="t" x="396" y="66">Processes &amp;</text><text class="t" x="396" y="88">operations</text><text class="t-d" x="396" y="114">6 questions</text>
+        <rect class="bx" x="512" y="10" width="116" height="118" rx="8"/><text class="t-m" x="524" y="36">05</text><text class="t" x="524" y="66">Inventory</text><text class="t" x="524" y="88">&amp; stock</text><text class="t-d" x="524" y="114">5 questions</text>
+        <rect class="bx" x="640" y="10" width="116" height="118" rx="8"/><text class="t-m" x="652" y="36">06</text><text class="t" x="652" y="66">Costs &amp;</text><text class="t" x="652" y="88">financial</text><text class="t-d" x="652" y="114">5 questions</text>
+      </g>
+      <path class="ln m-draw" pathLength="1" d="M58 128 V190 H698 V128 M186 128 V190 M314 128 V190 M442 128 V190 M570 128 V190"/>
+      <path class="ln m-draw" pathLength="1" d="M378 190 V262" marker-end="url(#ah984)"/>
+      <text class="t-m" x="392" y="232">Only once these are answered</text>
+      <g class="m-pop" style="animation-delay:1.6s">
+        <rect class="bx-a" x="198" y="270" width="360" height="130" rx="10"/>
+        <text class="t-m t-a" x="222" y="302">07 · Last on purpose</text>
+        <text class="t-h" x="222" y="340">Growth &amp; strategic</text>
+        <text class="t-d" x="222" y="376">4 questions only the first six can answer</text>
+      </g>
+      <defs><marker id="ah984" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
+    </svg>
+    <svg class="q v-tall" viewBox="0 0 340 560">
+      <g>
+        <rect class="bx" x="0" y="0" width="164" height="86" rx="8"/><text class="t-m" x="12" y="24">01</text><text class="t" x="12" y="50">IT &amp; security</text><text class="t-d" x="12" y="74">6 questions</text>
+        <rect class="bx" x="176" y="0" width="164" height="86" rx="8"/><text class="t-m" x="188" y="24">02</text><text class="t" x="188" y="50">Systems</text><text class="t-d" x="188" y="74">5 questions</text>
+        <rect class="bx" x="0" y="98" width="164" height="86" rx="8"/><text class="t-m" x="12" y="122">03</text><text class="t" x="12" y="148">eCommerce</text><text class="t-d" x="12" y="172">5 questions</text>
+        <rect class="bx" x="176" y="98" width="164" height="86" rx="8"/><text class="t-m" x="188" y="122">04</text><text class="t" x="188" y="148">Processes</text><text class="t-d" x="188" y="172">6 questions</text>
+        <rect class="bx" x="0" y="196" width="164" height="86" rx="8"/><text class="t-m" x="12" y="220">05</text><text class="t" x="12" y="246">Inventory</text><text class="t-d" x="12" y="270">5 questions</text>
+        <rect class="bx" x="176" y="196" width="164" height="86" rx="8"/><text class="t-m" x="188" y="220">06</text><text class="t" x="188" y="246">Costs</text><text class="t-d" x="188" y="270">5 questions</text>
+      </g>
+      <path class="ln" d="M82 282 V316 H258 V282 M170 316 V372" marker-end="url(#ah984t)"/>
+      <text class="t-m" x="182" y="348">Then</text>
+      <rect class="bx-a" x="0" y="380" width="340" height="130" rx="10"/>
+      <text class="t-m t-a" x="18" y="412">07 · Last on purpose</text>
+      <text class="t-h" x="18" y="450">Growth &amp; strategic</text>
+      <text class="t-d" x="18" y="484">Only the first six can answer it</text>
+      <defs><marker id="ah984t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
+    </svg>
   </div>
 </figure>` }} />
         </div>
@@ -241,63 +294,6 @@ export default function ChecklistPage() {
               </div>
             </div>
           </div>
-
-          {/* D17 inline artwork DO-ART-984 */}
-          <section className="g-navy">
-            <div className="wrap">
-              <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 sw a984" data-od-id="plate-structure" data-motion data-no="DO-ART-984" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-984, the audit structure. Six areas you can check today: IT infrastructure and security, six questions; systems and software, five; eCommerce and digital sales, five; processes and operations, six; inventory and stock, five; costs and financial, five. All six feed the seventh, in amber: growth and strategic, four questions that only the first six can answer.">
-  <div class="q-grid" aria-hidden="true"></div>
-  <div class="sw-cap">
-    <p class="k d17-mono">Audit structure <span>· seven areas</span></p>
-    <div class="bar" aria-hidden="true"></div>
-    <h3>Six you can check today. The seventh, only the checking answers.</h3>
-    <p>Work the six in any order. Growth is last on purpose: you can't plan it until you know what the first six say.</p>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-984 · Rev 01</span>
-  </div>
-  <div class="dw" aria-hidden="true">
-    <svg class="q v-wide" viewBox="0 0 760 420">
-      <g class="m-fade">
-        <rect class="bx" x="0" y="10" width="116" height="118" rx="8"/><text class="t-m" x="12" y="36">01</text><text class="t" x="12" y="66">IT &amp;</text><text class="t" x="12" y="88">security</text><text class="t-d" x="12" y="114">6 questions</text>
-        <rect class="bx" x="128" y="10" width="116" height="118" rx="8"/><text class="t-m" x="140" y="36">02</text><text class="t" x="140" y="66">Systems &amp;</text><text class="t" x="140" y="88">software</text><text class="t-d" x="140" y="114">5 questions</text>
-        <rect class="bx" x="256" y="10" width="116" height="118" rx="8"/><text class="t-m" x="268" y="36">03</text><text class="t" x="268" y="66">eCommerce</text><text class="t" x="268" y="88">&amp; digital</text><text class="t-d" x="268" y="114">5 questions</text>
-        <rect class="bx" x="384" y="10" width="116" height="118" rx="8"/><text class="t-m" x="396" y="36">04</text><text class="t" x="396" y="66">Processes &amp;</text><text class="t" x="396" y="88">operations</text><text class="t-d" x="396" y="114">6 questions</text>
-        <rect class="bx" x="512" y="10" width="116" height="118" rx="8"/><text class="t-m" x="524" y="36">05</text><text class="t" x="524" y="66">Inventory</text><text class="t" x="524" y="88">&amp; stock</text><text class="t-d" x="524" y="114">5 questions</text>
-        <rect class="bx" x="640" y="10" width="116" height="118" rx="8"/><text class="t-m" x="652" y="36">06</text><text class="t" x="652" y="66">Costs &amp;</text><text class="t" x="652" y="88">financial</text><text class="t-d" x="652" y="114">5 questions</text>
-      </g>
-      <path class="ln m-draw" pathLength="1" d="M58 128 V190 H698 V128 M186 128 V190 M314 128 V190 M442 128 V190 M570 128 V190"/>
-      <path class="ln m-draw" pathLength="1" d="M378 190 V262" marker-end="url(#ah984)"/>
-      <text class="t-m" x="392" y="232">Only once these are answered</text>
-      <g class="m-pop" style="animation-delay:1.6s">
-        <rect class="bx-a" x="198" y="270" width="360" height="130" rx="10"/>
-        <text class="t-m t-a" x="222" y="302">07 · Last on purpose</text>
-        <text class="t-h" x="222" y="340">Growth &amp; strategic</text>
-        <text class="t-d" x="222" y="376">4 questions only the first six can answer</text>
-      </g>
-      <defs><marker id="ah984" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
-    </svg>
-    <svg class="q v-tall" viewBox="0 0 340 560">
-      <g>
-        <rect class="bx" x="0" y="0" width="164" height="86" rx="8"/><text class="t-m" x="12" y="24">01</text><text class="t" x="12" y="50">IT &amp; security</text><text class="t-d" x="12" y="74">6 questions</text>
-        <rect class="bx" x="176" y="0" width="164" height="86" rx="8"/><text class="t-m" x="188" y="24">02</text><text class="t" x="188" y="50">Systems</text><text class="t-d" x="188" y="74">5 questions</text>
-        <rect class="bx" x="0" y="98" width="164" height="86" rx="8"/><text class="t-m" x="12" y="122">03</text><text class="t" x="12" y="148">eCommerce</text><text class="t-d" x="12" y="172">5 questions</text>
-        <rect class="bx" x="176" y="98" width="164" height="86" rx="8"/><text class="t-m" x="188" y="122">04</text><text class="t" x="188" y="148">Processes</text><text class="t-d" x="188" y="172">6 questions</text>
-        <rect class="bx" x="0" y="196" width="164" height="86" rx="8"/><text class="t-m" x="12" y="220">05</text><text class="t" x="12" y="246">Inventory</text><text class="t-d" x="12" y="270">5 questions</text>
-        <rect class="bx" x="176" y="196" width="164" height="86" rx="8"/><text class="t-m" x="188" y="220">06</text><text class="t" x="188" y="246">Costs</text><text class="t-d" x="188" y="270">5 questions</text>
-      </g>
-      <path class="ln" d="M82 282 V316 H258 V282 M170 316 V372" marker-end="url(#ah984t)"/>
-      <text class="t-m" x="182" y="348">Then</text>
-      <rect class="bx-a" x="0" y="380" width="340" height="130" rx="10"/>
-      <text class="t-m t-a" x="18" y="412">07 · Last on purpose</text>
-      <text class="t-h" x="18" y="450">Growth &amp; strategic</text>
-      <text class="t-d" x="18" y="484">Only the first six can answer it</text>
-      <defs><marker id="ah984t" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker></defs>
-    </svg>
-  </div>
-</figure>` }} />
-            </div>
-          </section>
 
           {/* CTA */}
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>

@@ -29,19 +29,18 @@ export default function AutomationRoiCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">Free tool</span>
-          <h1>Automation ROI calculator</h1>
-          <p className="lede">
-            Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
-          </p>
-        </div>
-      </section>
+      {/* Hero — rt-split: copy left, DO-ART-995 right */}
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool</span>
+            <h1>Automation ROI calculator</h1>
+            <p className="lede">
+              Enter your manual process details to see exactly when automation pays for itself and what it returns over 3 years.
+            </p>
+          </div>
 
-      {/* D17 hero art · DO-ART-995 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-995 */}
           <figure className="d17 sx px ph-fade a995" data-od-id="hero-art" data-motion data-no="DO-ART-995" data-rev="01" data-tx="screen"
                   aria-label="Artwork DO-ART-995. The automation ROI calculator's result screen over a graded photograph of thread spools, labelled Example and worked from the default inputs: five hours a week, two staff, eighteen pounds an hour, five thousand pounds set-up and one hundred a month to maintain. Year one: manual cost £9,360, automated £6,200, saving £3,160. Years two and three: saving £8,160 each. Break-even at 8 months; a 3-year return of 227 per cent. The cumulative line crosses zero at month eight.">
             <div className="d17-ph"><img src="/images/d17/resources/thread-spools-ba5d03.jpg" alt="" width="900" height="600" /></div>

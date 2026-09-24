@@ -29,20 +29,18 @@ export default function RtoCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero */}
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 900 }}>
-          <span className="eyebrow">Free tool</span>
-          <h1>RTO calculator</h1>
-          <p className="lede">
-            See what your current recovery time is costing you, and what faster recovery is actually worth in pounds.
-          </p>
-        </div>
-      </section>
+      {/* Hero — rt-split: copy left, DO-ART-998 right */}
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool</span>
+            <h1>RTO calculator</h1>
+            <p className="lede">
+              See what your current recovery time is costing you, and what faster recovery is actually worth in pounds.
+            </p>
+          </div>
 
-      {/* D17 hero art · DO-ART-998 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-998 */}
           <figure className="d17 sx px a998" data-od-id="hero-art" data-motion data-no="DO-ART-998" data-rev="01" data-tx="schematic"
                   aria-label="Drawn plate DO-ART-998, recovery time to scale, labelled Example and worked from the calculator's defaults: one thousand pounds of revenue an hour, four major incidents a year, current recovery eight hours, target one hour. Four incident bars run to eight hours each; inside each, the one-hour target in amber. Current annual recovery cost £32,000; target £4,000; annual saving £28,000; over three years, £84,000. Seven hours back, four times a year.">
             <div className="q-grid" aria-hidden="true"></div>

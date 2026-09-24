@@ -90,18 +90,16 @@ export default function ResourcesPage() {
         { name: 'Resources', url: 'https://decodedops.co.uk/resources' },
       ]} />
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Resources</span>
-          <h1>Tools and guides <em>you can use today</em></h1>
-          <p className="lede">
-            Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No sign-up tricks. Just useful stuff.
-          </p>
-        </div>
-      </section>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Resources</span>
+            <h1>Tools and guides <em>you can use today</em></h1>
+            <p className="lede">
+              Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No sign-up tricks. Just useful stuff.
+            </p>
+          </div>
 
-      {/* D17 hero artwork DO-ART-980 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero artwork DO-ART-980 */}
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a980" data-od-id="hero-art" data-motion data-no="DO-ART-980" data-rev="01" data-tx="poster"
         aria-label="Artwork DO-ART-980. Three free documents pinned over a graded photograph of a workbench: the operational audit checklist, the SOP template and the ERP selection playbook. Below them, the order that makes the resources worth anything, drawn as a route: one, recognise, the five warning signs; two, check, the operational audit checklist; three, measure, the capacity and seasonal calculators; four, document, the Decoded Method, the SOP template, the artwork approval playbook and the Sigma playbook; five, in amber, choose, the ERP selection playbook, last. Choose the platform first and step five is done first.">

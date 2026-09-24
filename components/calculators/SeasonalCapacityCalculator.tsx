@@ -98,7 +98,7 @@ export function SeasonalCapacityCalculator() {
             100% = your baseline. Drag up for peak months, down for quiet ones.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+          <div className="calc-months-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
             {MONTHS.map((m, i) => (
               <div key={m} style={{ padding: '8px 10px', borderRadius: 'var(--do-radius-lg)', background: 'var(--do-off-white)' }}>
                 <label style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: 'var(--do-text-secondary)', display: 'block', marginBottom: 4 }}>

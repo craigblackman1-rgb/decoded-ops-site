@@ -41,19 +41,18 @@ export default function SeasonalCapacityPage() {
     <>
       <JsonLd data={jsonLd} />
 
-      {/* HERO */}
+      {/* HERO — rt-split: copy left, DO-ART-994 right */}
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free tool &middot; Give first</span>
-          <h1>Seasonal capacity calculator</h1>
-          <p className="lede">
-            Your capacity is not the problem in January and it is not the problem in July. The problem is that they are not the same month, and you need to plan for both.
-          </p>
-        </div>
-      </section>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool &middot; Give first</span>
+            <h1>Seasonal capacity calculator</h1>
+            <p className="lede">
+              Your capacity is not the problem in January and it is not the problem in July. The problem is that they are not the same month, and you need to plan for both.
+            </p>
+          </div>
 
-      <section className="g-navy">
-        <div className="wrap" dangerouslySetInnerHTML={{ __html: `
+          <div dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a994" data-od-id="hero-art" data-motion data-no="DO-ART-994" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-994. A paper year planner pinned over a graded photograph of blank mugs, filled in as an example. Demand for each month is pencilled as a share of the baseline: from 70 per cent in January rising to 140 per cent in November. A ruled line marks capacity at 110 per cent. September to December sit above it, in amber. Two sticky notes: over capacity in the autumn, overtime or turn work away; spare in January, staff and machines idle. Plan for both months.">
         <div class="d17-ph"><img src="/images/d17/resources/cat-promo-264d08.jpg" alt="" width="900" height="600"></div>
@@ -81,6 +80,7 @@ export default function SeasonalCapacityPage() {
         </div>
       </figure>
         ` }} />
+        </div>
       </section>
 
       {/* How it works */}

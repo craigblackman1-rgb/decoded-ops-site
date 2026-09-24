@@ -67,18 +67,16 @@ export default function FiveWarningSignsPage() {
   return (
     <main>
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free resource</span>
-          <h1>5 warning signs your systems are holding you back</h1>
-          <p className="lede">
-            Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it's worth a closer look.
-          </p>
-        </div>
-      </section>
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free resource</span>
+            <h1>5 warning signs your systems are holding you back</h1>
+            <p className="lede">
+              Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it&apos;s worth a closer look.
+            </p>
+          </div>
 
-      {/* D17 hero artwork DO-ART-982 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero artwork DO-ART-982 */}
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a982" data-od-id="hero-art" data-motion data-no="DO-ART-982" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-982. A graded photograph of a print floor with five tags pinned to it, one for each warning sign. One, the cost: nobody can name it. Two, the knowledge: in one person's head. Three, the workarounds: a sheet here, a sticky note there. Four, growth: more orders, more pain. Five, in amber, the last system: bought off a demo. Two or more sound familiar? Worth a closer look.">

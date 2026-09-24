@@ -56,17 +56,15 @@ export default function ShouldIReplaceErpPage() {
 
   return (
     <main>
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free tool</span>
-          <h1>Should I replace my ERP?</h1>
-          <p className="lede">Eight yes/no questions to help you decide whether to fix your current system or plan an exit.</p>
-        </div>
-      </section>
+      <section className="g-off">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool</span>
+            <h1>Should I replace my ERP?</h1>
+            <p className="lede">Eight yes/no questions to help you decide whether to fix your current system or plan an exit.</p>
+          </div>
 
-      {/* D17 hero art · DO-ART-999 */}
-      <section className="g-navy">
-        <div className="wrap">
+          {/* D17 hero art · DO-ART-999 */}
           <figure className="d17 sx a999" data-od-id="hero-art" data-motion data-no="DO-ART-999" data-rev="01" data-tx="photo"
                   aria-label="Artwork DO-ART-999. The should I replace my ERP scorecard over a graded photograph of a despatch box, answered as an example. Question 1: is your current system unable to handle your core business processes without significant workarounds? Yes. Questions 2 to 8 answered: no, no, yes, no, no, no, no. Two of eight yes. The verdict stamp: example, fixable. Fix it, or plan an exit: eight questions decide which.">
             <div className="d17-ph"><img src="/images/d17/resources/prod-mailer-259a39.jpg" alt="" width="900" height="600" /></div>

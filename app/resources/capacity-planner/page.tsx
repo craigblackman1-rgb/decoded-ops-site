@@ -41,20 +41,16 @@ export default function CapacityPlannerPage() {
     <>
       <JsonLd data={jsonLd} />
 
-      {/* HERO */}
+      {/* HERO — rt-split: copy left, DO-ART-992 right */}
       <section className="g-off">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">Free tool &middot; Give first</span>
-          <h1>Capacity planning calculator</h1>
-          <p className="lede">
-            Work out how many jobs your machines can actually produce — not the theoretical maximum, but the real number after changeovers, breaks, and downtime eat into the day.
-          </p>
-        </div>
-      </section>
-
-      {/* D17 hero artwork DO-ART-992 */}
-      <section className="g-navy">
-        <div className="wrap">
+        <div className="wrap rt-split">
+          <div>
+            <span className="eyebrow">Free tool &middot; Give first</span>
+            <h1>Capacity planning calculator</h1>
+            <p className="lede">
+              Work out how many jobs your machines can actually produce — not the theoretical maximum, but the real number after changeovers, breaks, and downtime eat into the day.
+            </p>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a992" data-od-id="hero-art" data-motion data-no="DO-ART-992" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-992. The capacity planner's result screen over a graded photograph of embroidery heads, labelled Example and worked from the calculator's default inputs: four machines, eight production hours a day, five days a week, thirty minutes a job, fifteen per cent downtime and changeover allowance. On paper, 64 jobs a day. Real capacity: 54 jobs a day, 270 a week, 1,169 a month, 85 per cent utilisation. Plan against the real number, not the spec sheet.">
@@ -86,33 +82,6 @@ export default function CapacityPlannerPage() {
     <span class="d17-mark">decodedops.co.uk · DO-ART-992 · Rev 01</span>
   </div>
 </figure>` }} />
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="g-navy">
-        <div className="wrap" style={{ maxWidth: 720 }}>
-          <span className="eyebrow">How it works</span>
-          <h2>Five inputs, one answer you can plan against.</h2>
-          <div className="hair" />
-          <p className="lede" style={{ marginTop: 16 }}>
-            Most decoration businesses guess their capacity or quote the number printed on the machine spec sheet. Neither accounts for changeovers, maintenance, or the gap between theoretical and actual throughput. This calculator builds your capacity figure from the ground up, using your real numbers.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginTop: 32 }}>
-            {[
-              { n: '01', t: 'How many machines', d: 'Every head, press, or station that does the work.' },
-              { n: '02', t: 'Hours per day', d: 'Production hours, not including breaks.' },
-              { n: '03', t: 'Days per week', d: 'Your working pattern.' },
-              { n: '04', t: 'Average job time', d: 'Setup through completion, per job.' },
-              { n: '05', t: 'Downtime allowance', d: 'Changeovers, cleaning, minor breakdowns.' },
-            ].map((s) => (
-              <div key={s.n} style={{ padding: 16, borderRadius: 'var(--do-radius-lg)', border: '1px solid rgba(142,202,230,.15)' }}>
-                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
-                <h3 style={{ fontSize: 'var(--do-text-base)', margin: '6px 0 4px', color: 'var(--do-text-on-dark)' }}>{s.t}</h3>
-                <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-text-on-dark) 65%, transparent)', margin: 0 }}>{s.d}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -157,6 +126,33 @@ export default function CapacityPlannerPage() {
     </div>
   </div>
 </figure>` }} />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="g-navy">
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <span className="eyebrow">How it works</span>
+          <h2>Five inputs, one answer you can plan against.</h2>
+          <div className="hair" />
+          <p className="lede" style={{ marginTop: 16 }}>
+            Most decoration businesses guess their capacity or quote the number printed on the machine spec sheet. Neither accounts for changeovers, maintenance, or the gap between theoretical and actual throughput. This calculator builds your capacity figure from the ground up, using your real numbers.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginTop: 32 }}>
+            {[
+              { n: '01', t: 'How many machines', d: 'Every head, press, or station that does the work.' },
+              { n: '02', t: 'Hours per day', d: 'Production hours, not including breaks.' },
+              { n: '03', t: 'Days per week', d: 'Your working pattern.' },
+              { n: '04', t: 'Average job time', d: 'Setup through completion, per job.' },
+              { n: '05', t: 'Downtime allowance', d: 'Changeovers, cleaning, minor breakdowns.' },
+            ].map((s) => (
+              <div key={s.n} style={{ padding: 16, borderRadius: 'var(--do-radius-lg)', border: '1px solid rgba(142,202,230,.15)' }}>
+                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
+                <h3 style={{ fontSize: 'var(--do-text-base)', margin: '6px 0 4px', color: 'var(--do-text-on-dark)' }}>{s.t}</h3>
+                <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-text-on-dark) 65%, transparent)', margin: 0 }}>{s.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
