@@ -272,7 +272,7 @@ export const problemRouting: Record<string, ProblemRoute> = {
   'inventory-blind': {
     targetService: {
       href: '/transform',
-      label: 'Data App and supplier integration',
+      label: 'Decoded Works and supplier integration',
       anchor: 'One real-time stock picture built from your supplier feeds, so you stop ordering stock you already have and running out of what you didn\'t.',
     },
     relatedProblems: [
