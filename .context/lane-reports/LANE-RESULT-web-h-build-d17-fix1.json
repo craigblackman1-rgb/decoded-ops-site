@@ -1,0 +1,25 @@
+{
+  "lane": "web-h-build-d17-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061",
+  "commits": [
+    {
+      "sha": "dfe7ffb",
+      "subject": "fix(web): locations hero + legal prose parity with D17 mockups (WO-INF-061)"
+    }
+  ],
+  "filesChanged": [
+    "components/LocationPage.tsx",
+    "app/d17-locations.css"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Cookies page prose section margin-bottom is 36px (matching privacy mockup) rather than 32px per cookies mockup — 4px difference, acceptable for uniformity across both legal pages"
+  ],
+  "blockers": [],
+  "done": true
+}
