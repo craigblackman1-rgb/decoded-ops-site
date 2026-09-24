@@ -1,0 +1,463 @@
+/* ══════════════════════════════════════════════════════════════════════
+   D17 ARTWORK — resources and tools (WO-INF-061 u25, 2026-09-24)
+   Extends d17-art.css + d17-sectors.css + d17-problems.css (load after all
+   three); reuses .d17, .sx, .sw, .px, .d17-doc, .win, .win-flat, .tbl, .meter,
+   .sx-tag, svg.q and the motion keyframes, and redefines none of them.
+   Pieces DO-ART-980..999, one hero per page; inline slots are 984, 986, 990,
+   993 plus approved 718, 719 and 918 reused where they carry the argument.
+   Resting state is the still, as everywhere in D17.
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* hero layout: copy left, the piece right */
+.rt-split{ display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center }
+@media(max-width:980px){ .rt-split{ grid-template-columns:1fr; gap:34px } }
+.rt-split .lede{ margin:18px 0 0; max-width:56ch }
+.rt-split .hero-cta{ justify-content:flex-start; margin-top:26px }
+.rt-split .meta{ margin:12px 0 0; font-size:var(--do-text-sm); color:var(--do-text-muted) }
+.rt-inline{ margin-top:8px }
+
+/* ─── shared paper vocabulary ─── */
+.d17-doc.rel{ position:relative }
+.d17-doc.cov-dark{ outline:1.5px solid color-mix(in srgb, var(--do-sky-blue) 45%, transparent); background:linear-gradient(160deg, color-mix(in srgb, var(--do-prussian-blue) 86%, var(--do-cerulean)), var(--do-prussian-blue) 70%);
+  color:var(--do-off-white); box-shadow:0 calc(26 * var(--u)) calc(50 * var(--u)) color-mix(in srgb, #000 55%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }
+.d17-doc.cov-dark .ref{ color:var(--do-sky-blue) }
+.d17-doc.cov-dark h4{ color:var(--do-white) }
+.d17-doc.cov-dark .sub{ color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+.d17-doc.cov-dark .lines i{ background:color-mix(in srgb, var(--do-sky-blue) 26%, transparent) }
+.d17-doc .glyph{ margin:calc(14 * var(--u)) 0 calc(4 * var(--u)); font-family:var(--do-font-heading); font-weight:800;
+  font-size:max(26px, calc(64 * var(--u))); line-height:.9; letter-spacing:-.04em; color:var(--do-amber) }
+.d17-doc .glyph span{ margin-left:.18em; color:color-mix(in srgb, var(--do-sky-blue) 70%, transparent); font-size:.6em }
+.d17-doc .glyph--s{ font-size:max(20px, calc(44 * var(--u))) }
+.d17-doc .glyph--s span{ font-size:1em; margin-left:.12em }
+.d17-doc .tl{ list-style:none; margin:calc(8 * var(--u)) 0 0; padding:0 }
+.d17-doc .tl li{ display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(8 * var(--u)); align-items:center; white-space:normal;
+  padding:calc(5.5 * var(--u)) calc(4 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
+  font-size:max(8.5px, calc(11.5 * var(--u))); font-weight:600; line-height:1.28 }
+.d17-doc .tl li i{ display:grid; place-items:center; width:calc(15 * var(--u)); height:calc(15 * var(--u)); border-radius:3px;
+  box-shadow:inset 0 0 0 1.5px color-mix(in srgb, var(--do-prussian-blue) 40%, transparent); background:none; font-style:normal }
+.d17-doc .tl li i.y{ box-shadow:none; background:color-mix(in srgb, var(--do-sky-blue) 55%, transparent) }
+.d17-doc .tl li i.y::after{ content:''; width:45%; height:25%; margin-top:-12%; border:solid var(--do-prussian-blue); border-width:0 0 2px 2px; transform:rotate(-45deg) }
+.d17-doc .tl li i.q{ box-shadow:none; background:var(--do-amber) }
+.d17-doc .tl li i.q::after{ content:'?'; font-family:var(--do-font-heading); font-weight:800; font-size:max(7px, calc(11 * var(--u))); color:var(--do-prussian-blue) }
+.d17-doc .tl li.h{ background:color-mix(in srgb, var(--do-amber) 18%, transparent) }
+.d17-doc .tl li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, calc(9.5 * var(--u)));
+  letter-spacing:.06em; color:var(--do-cerulean); margin-left:.5em }
+/* sticky note */
+.note-y{ position:absolute; z-index:5; width:calc(170 * var(--u)); padding:calc(12 * var(--u)) calc(13 * var(--u));
+  background:color-mix(in srgb, var(--do-amber) 88%, var(--do-white)); color:var(--do-prussian-blue);
+  font-family:var(--do-font-heading); font-weight:600; font-size:max(9px, calc(14 * var(--u))); line-height:1.25;
+  border-radius:2px; transform:rotate(3deg); box-shadow:0 calc(14 * var(--u)) calc(26 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.note-y b{ font-weight:800 }
+/* rubber stamp */
+.rt-stamp{ position:absolute; z-index:6; display:flex; flex-direction:column; align-items:center; gap:2px;
+  padding:calc(8 * var(--u)) calc(14 * var(--u)); border:3px solid var(--do-amber); border-radius:calc(6 * var(--u));
+  background:color-mix(in srgb, var(--do-prussian-blue) 88%, transparent); color:var(--do-amber); transform:rotate(-8deg);
+  font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(26 * var(--u))); letter-spacing:.06em; text-transform:uppercase;
+  box-shadow:0 0 0 5px color-mix(in srgb, var(--do-amber) 18%, transparent), 0 calc(14 * var(--u)) calc(30 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.rt-stamp small{ font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.16em; color:var(--do-off-white) }
+/* a window scaled to the hero piece */
+.sx .win-flat .s{ font-size:max(10px, calc(12.5 * var(--u))) }
+.win-foot .big{ font-family:var(--do-font-heading); font-weight:800; font-size:max(18px, calc(28 * var(--u))); letter-spacing:-.02em; color:var(--do-prussian-blue);
+  background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 8px; border-radius:4px }
+/* photo grounds that sit under paper: fade the lower half into the foot */
+.a981::before, .a982::before, .a983::before, .a985::before, .a987::before, .a988::before, .a989::before,
+.a991::before, .a994::before, .a996::before, .a999::before{ content:''; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) 0%, transparent 16%,
+    transparent 48%, color-mix(in srgb, var(--do-prussian-blue) 90%, transparent) 78%, var(--do-prussian-blue) 100%) }
+
+/* ─── DO-ART-980 · resources index · the sequence, prints over the bench ─── */
+.a980 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.7) contrast(1.05) brightness(.9) }
+.a980 .prints{ position:relative; z-index:4; display:flex; justify-content:center; align-items:flex-start;
+  padding:calc(26 * var(--u)) calc(20 * var(--u)) 0 }
+.a980 .pr{ position:relative; width:calc(172 * var(--u)); padding:calc(14 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u)) }
+.a980 .pr + .pr{ margin-left:calc(-4 * var(--u)) }
+.a980 .pr{ width:calc(168 * var(--u)) }
+.a980 .pr-1{ transform:rotate(-5deg); margin-top:calc(12 * var(--u)) }
+.a980 .pr-2{ transform:rotate(1.5deg); z-index:2 }
+.a980 .pr-3{ transform:rotate(5.5deg); margin-top:calc(18 * var(--u)) }
+.a980 .pr h4{ font-size:max(9px, calc(15 * var(--u))) }
+.a980 .pr .tl li{ font-size:max(7px, calc(10 * var(--u))); padding:calc(4 * var(--u)) 0; grid-template-columns:calc(13 * var(--u)) 1fr; gap:calc(6 * var(--u)) }
+.a980 .pr .tl li i{ width:calc(12 * var(--u)); height:calc(12 * var(--u)) }
+.rt-route{ position:relative; z-index:4; list-style:none; margin:calc(26 * var(--u)) calc(26 * var(--u)) 0; padding:0 0 0 calc(38 * var(--u)) }
+.rt-route::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:calc(14 * var(--u)); bottom:calc(18 * var(--u)); width:4px; border-radius:3px;
+  background:linear-gradient(180deg, var(--do-sky-blue), var(--do-cerulean) 75%, var(--do-amber)); transform-origin:top }
+.rt-route li{ position:relative; display:grid; grid-template-columns:calc(118 * var(--u)) 1fr; gap:calc(12 * var(--u)); align-items:baseline;
+  padding:calc(7 * var(--u)) 0 }
+.rt-route li::before{ content:''; position:absolute; left:calc(-38 * var(--u) + 2px); top:calc(50% - 7px); width:15px; height:15px; border-radius:50%;
+  box-sizing:border-box; background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
+.rt-route .n{ font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-sky-blue) }
+.rt-route b{ font-family:var(--do-font-heading); font-weight:700; font-size:max(13px, calc(18 * var(--u))); line-height:1.2; color:var(--do-white) }
+.rt-route li.end .n, .rt-route li.end b{ color:var(--do-amber) }
+.rt-route li.end::before{ background:var(--do-amber); box-shadow:0 0 0 2px var(--do-amber), 0 0 0 8px color-mix(in srgb, var(--do-amber) 22%, transparent) }
+.a980 .sx-foot{ margin-top:calc(8 * var(--u)) }
+
+/* ─── DO-ART-981 · tools index · three result screens, fanned ─── */
+.a981 .stage{ aspect-ratio:560 / 450 }
+.a981 .d17-ph img{ object-position:40% 50%; --d17-grade:saturate(.6) contrast(1.05) brightness(.78) }
+.scr{ position:absolute; --u:calc(100cqw / 560) }
+.a981 .scr .win-bar{ height:max(24px, calc(34 * var(--u))); font-size:max(8px, calc(12 * var(--u))) }
+.a981 .scr .win-bar .pill{ font-size:max(7px, calc(9 * var(--u))); padding:1px 8px }
+.scr-a{ left:calc(22 * var(--u)); top:calc(74 * var(--u)); width:calc(252 * var(--u)); transform:rotate(-3deg) }
+.scr-b2{ left:calc(292 * var(--u)); top:calc(46 * var(--u)); width:calc(246 * var(--u)); transform:rotate(3deg) }
+.scr-c{ left:calc(118 * var(--u)); top:calc(206 * var(--u)); width:calc(318 * var(--u)); transform:rotate(-.5deg); z-index:3 }
+.scr-b{ padding:calc(12 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u)) }
+.scr .l{ margin:0; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.scr .n{ margin:calc(3 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(28 * var(--u)));
+  line-height:1; letter-spacing:-.03em; color:var(--do-prussian-blue) }
+.scr .n--a{ display:inline-block; font-size:max(18px, calc(40 * var(--u))); background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 .12em; border-radius:4px }
+.scr .two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
+.rt-bars{ display:flex; flex-direction:column; gap:calc(5 * var(--u)); margin:calc(6 * var(--u)) 0 calc(10 * var(--u)) }
+.rt-bars span{ display:grid; grid-template-columns:1fr auto; gap:6px; align-items:center }
+.rt-bars i{ display:block; height:calc(10 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-cerulean) 70%, var(--do-sky-blue)); transform-origin:left }
+.rt-bars i.t{ background:var(--do-amber) }
+.rt-bars b{ font-family:var(--do-font-mono); font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.08em }
+.scr .pay{ display:block; width:100%; height:calc(56 * var(--u)); margin-top:calc(8 * var(--u)) }
+.pay .z, .pb .z{ stroke:color-mix(in srgb, var(--do-prussian-blue) 30%, transparent); stroke-width:1.2; stroke-dasharray:4 4; fill:none; vector-effect:non-scaling-stroke }
+.pay .c, .pb .c{ stroke:var(--do-cerulean); stroke-width:3; fill:none; vector-effect:non-scaling-stroke }
+.pay circle, .pb circle{ fill:var(--do-amber); stroke:var(--do-prussian-blue); stroke-width:2 }
+.scr .rows{ display:flex; justify-content:space-between; gap:8px; margin-top:calc(6 * var(--u)); padding-top:calc(6 * var(--u));
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); font-size:max(7px, calc(11 * var(--u))) }
+.scr .rows:first-of-type{ margin-top:calc(10 * var(--u)) }
+
+/* ─── DO-ART-982 · five warning signs · tags on the print floor ─── */
+.a982 .stage{ aspect-ratio:560 / 500 }
+.a982 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.6) contrast(1.06) brightness(.8) }
+
+/* ─── DO-ART-983 · audit checklist · the sheet on a clipboard ─── */
+.a983 .stage{ aspect-ratio:560 / 540 }
+.a983 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.55) contrast(1.05) brightness(.76) }
+.a983 .doc-k{ left:calc(40 * var(--u)); top:calc(58 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2deg); padding-top:calc(30 * var(--u)) }
+.a983 .doc-k .phase{ margin-top:calc(10 * var(--u)) }
+.a983 .clip{ position:absolute; z-index:4; left:calc(170 * var(--u)); top:calc(44 * var(--u)); width:calc(100 * var(--u)); height:calc(30 * var(--u));
+  transform:rotate(-2deg); border-radius:calc(6 * var(--u)) calc(6 * var(--u)) calc(3 * var(--u)) calc(3 * var(--u));
+  background:linear-gradient(180deg, color-mix(in srgb, var(--do-sky-blue) 30%, #9aa6ad), #5d6a72); box-shadow:0 4px 10px color-mix(in srgb, #000 40%, transparent) }
+.a983 .clip i{ position:absolute; left:50%; top:calc(-9 * var(--u)); width:calc(26 * var(--u)); height:calc(16 * var(--u)); margin-left:calc(-13 * var(--u));
+  border-radius:50% 50% 0 0; border:calc(4 * var(--u)) solid #5d6a72; border-bottom:0 }
+.a983 .note-y{ right:calc(26 * var(--u)); top:calc(300 * var(--u)); width:calc(150 * var(--u)) }
+
+/* ─── DO-ART-984 · audit structure · six feed the seventh (drawn) ─── */
+.a984{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+  padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+.a984 svg.q .t, .a990 svg.q .t{ font-size:17px }
+.a984 svg.q .t-d, .a990 svg.q .t-d{ font-size:14px }
+.dw .v-tall{ display:none }
+@media (max-width: 760px){
+  .a984, .a990{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+  .dw .v-wide{ display:none } .dw .v-tall{ display:block }
+  .a984 svg.q .t, .a990 svg.q .t{ font-size:19px } .a984 svg.q .t-d, .a990 svg.q .t-d{ font-size:15px }
+}
+
+/* ─── DO-ART-985 · six sigma · the playbook, cover and spread ─── */
+.a985 .stage{ aspect-ratio:560 / 460 }
+.a985 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.6) contrast(1.05) brightness(.74) }
+.a985 .doc-cv{ left:calc(26 * var(--u)); top:calc(62 * var(--u)); width:calc(210 * var(--u)); min-height:calc(290 * var(--u)); transform:rotate(-4deg) }
+.a985 .doc-sp{ left:calc(222 * var(--u)); top:calc(92 * var(--u)); width:calc(312 * var(--u)); transform:rotate(2.5deg) }
+.sg{ margin-top:calc(10 * var(--u)) }
+.sg div{ display:grid; grid-template-columns:calc(30 * var(--u)) 1fr auto; gap:calc(8 * var(--u)); align-items:center;
+  padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
+.sg b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(9px, calc(15 * var(--u))) }
+.sg .tr{ height:calc(9 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow:hidden }
+.sg .tr i{ display:block; height:100%; border-radius:9px; background:color-mix(in srgb, var(--do-cerulean) 70%, var(--do-sky-blue)); transform-origin:left }
+.sg em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.04em; white-space:nowrap }
+.sg .hot{ background:color-mix(in srgb, var(--do-amber) 20%, transparent) }
+.sg .hot .tr i{ background:var(--do-amber) }
+
+/* ─── DO-ART-986 · six sigma inline · the same 1,000 garments ─── */
+.a986{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+  padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+.floors{ display:grid; grid-template-columns:1fr 1fr; gap:calc(28 * var(--u)) }
+.fl .h{ display:flex; align-items:baseline; gap:10px; margin:0 0 10px }
+.fl .h b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u))); color:var(--do-white); letter-spacing:-.02em }
+.fl .h span{ font-family:var(--do-font-mono); font-size:max(10px, calc(12 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-sky-blue) }
+.fl-5 .h b{ color:var(--do-amber) }
+.g1k{ display:grid; grid-template-columns:repeat(40, 1fr); gap:2px }
+.g1k i{ aspect-ratio:1; border-radius:1.5px; background:color-mix(in srgb, var(--do-sky-blue) 34%, transparent) }
+.g1k i.x{ background:var(--do-amber); box-shadow:0 0 0 1px color-mix(in srgb, var(--do-amber) 50%, transparent) }
+.fl .f{ margin:12px 0 0; font-size:max(13px, calc(15 * var(--u))); line-height:1.35; color:color-mix(in srgb, var(--do-off-white) 82%, transparent) }
+.fl .f b{ font-family:var(--do-font-heading); font-size:1.3em; color:var(--do-white) }
+.fl-3 .f b{ color:var(--do-amber) }
+@media (max-width: 760px){
+  .a986{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+  .floors{ grid-template-columns:1fr; gap:24px }
+}
+
+/* ─── DO-ART-987 · SOP template · the template, filled in ─── */
+.a987 .stage{ aspect-ratio:560 / 540 }
+.a987 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a987 .doc-rg{ left:calc(318 * var(--u)); top:calc(50 * var(--u)); width:calc(218 * var(--u)); transform:rotate(4deg) }
+.a987 .doc-sop{ left:calc(24 * var(--u)); top:calc(70 * var(--u)); width:calc(318 * var(--u)); transform:rotate(-2deg); z-index:2 }
+.fld{ margin-top:calc(8 * var(--u)); padding-top:calc(7 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+.fld span{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; color:var(--do-cerulean) }
+.fld.two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
+.fld.ex b{ color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
+.d17-doc ol.st{ list-style:none; counter-reset:s; margin:calc(4 * var(--u)) 0 0; padding:0 }
+.d17-doc ol.st li{ counter-increment:s; display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(6 * var(--u)); white-space:normal;
+  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; color:var(--do-cerulean) }
+.d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, var(--do-prussian-blue) 50%, transparent) }
+.a987 .nt-987{ left:calc(356 * var(--u)); top:calc(318 * var(--u)); width:calc(170 * var(--u)) }
+
+/* ─── DO-ART-988 · the Decoded Method · three pages fanned ─── */
+.a988 .stage{ aspect-ratio:560 / 470 }
+.a988 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a988 .doc-mc{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(200 * var(--u)); min-height:calc(270 * var(--u)); transform:rotate(-6deg) }
+.a988 .doc-ml{ left:calc(248 * var(--u)); top:calc(46 * var(--u)); width:calc(288 * var(--u)); transform:rotate(2deg) }
+.a988 .doc-ms{ left:calc(168 * var(--u)); top:calc(196 * var(--u)); width:calc(268 * var(--u)); transform:rotate(-2.5deg); z-index:2 }
+.sc{ margin-top:calc(8 * var(--u)) }
+.sc div{ display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; padding:calc(5 * var(--u)) calc(3 * var(--u));
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-size:max(8.5px, calc(10.5 * var(--u))); font-weight:600 }
+.sc em{ display:flex; gap:calc(3 * var(--u)) }
+.sc em i{ width:calc(9 * var(--u)); height:calc(9 * var(--u)); border-radius:50%; box-shadow:inset 0 0 0 1.3px color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) }
+.sc .d1 i:nth-child(-n+1), .sc .d2 i:nth-child(-n+2), .sc .d3 i:nth-child(-n+3), .sc .d4 i:nth-child(-n+4){ background:var(--do-cerulean); box-shadow:none }
+.sc .hot{ background:color-mix(in srgb, var(--do-amber) 22%, transparent) }
+.sc .hot em i:nth-child(1){ background:var(--do-amber) }
+
+/* ─── DO-ART-989 · artwork approval · brief, proof, stamp ─── */
+.a989 .stage{ aspect-ratio:560 / 520 }
+.a989 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.7) contrast(1.05) brightness(.8) }
+.a989 .doc-br{ left:calc(24 * var(--u)); top:calc(64 * var(--u)); width:calc(236 * var(--u)); transform:rotate(-4deg) }
+.a989 .doc-br .tl li span{ display:flex; justify-content:space-between; gap:6px }
+.a989 .doc-pf{ left:calc(244 * var(--u)); top:calc(84 * var(--u)); width:calc(292 * var(--u)); transform:rotate(3deg); z-index:2 }
+.pf-shirt{ display:block; width:100%; height:auto; margin-top:calc(6 * var(--u)); background:color-mix(in srgb, var(--do-sky-blue) 10%, var(--do-white)); border-radius:calc(4 * var(--u)) }
+.pf-shirt path:first-child{ fill:color-mix(in srgb, #d8cdb8 70%, var(--do-white)); stroke:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); stroke-width:1.4 }
+.pf-shirt .lg{ fill:var(--do-prussian-blue) }
+.pf-shirt .dim{ fill:none; stroke:var(--do-cerulean); stroke-width:1 }
+.pf-shirt text{ font-family:var(--do-font-mono); font-size:8px; fill:var(--do-cerulean); text-anchor:middle }
+.a989 .ask{ margin:calc(8 * var(--u)) 0 0; font-size:max(7px, calc(11.5 * var(--u))); line-height:1.35 }
+.a989 .ask b{ background:color-mix(in srgb, var(--do-amber) 40%, transparent) }
+.a989 .opts{ display:flex; gap:calc(6 * var(--u)); margin-top:calc(8 * var(--u)) }
+.a989 .opts span{ flex:1; text-align:center; padding:calc(6 * var(--u)) 4px; border-radius:calc(4 * var(--u)); font-size:max(6.5px, calc(10 * var(--u))); font-weight:700;
+  box-shadow:inset 0 0 0 1.4px color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) }
+.a989 .opts .ok{ background:var(--do-prussian-blue); color:var(--do-white); box-shadow:none }
+.a989 .rt-stamp{ right:calc(26 * var(--u)); top:calc(432 * var(--u)) }
+
+/* ─── DO-ART-990 · artwork inline · two routes (drawn) ─── */
+.a990{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+  padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+
+/* ─── DO-ART-991 · ERP selection · cover and vendor brief ─── */
+.a991 .stage{ aspect-ratio:560 / 500 }
+.a991 .d17-ph{ bottom:18% }
+.a991 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.65) contrast(1.05) brightness(.8) }
+.a991 .doc-ec{ left:calc(22 * var(--u)); top:calc(60 * var(--u)); width:calc(186 * var(--u)); min-height:calc(260 * var(--u)); transform:rotate(-5deg) }
+.a991 .doc-ec h4{ margin-top:calc(40 * var(--u)); font-size:max(11px, calc(18 * var(--u))); max-width:8.5em }
+.a991 .doc-vb{ left:calc(198 * var(--u)); top:calc(84 * var(--u)); width:calc(340 * var(--u)); transform:rotate(2deg); z-index:2 }
+.vb{ width:100%; border-collapse:collapse; margin-top:calc(8 * var(--u)); font-size:max(8.5px, calc(11 * var(--u))) }
+.vb th{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); text-align:center; padding:0 0 calc(5 * var(--u)) }
+.vb th:first-child{ text-align:left }
+.vb th.us{ color:var(--do-cerulean) }
+.vb td{ padding:calc(5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent); font-weight:600; text-align:center }
+.vb td:first-child{ text-align:left }
+.vb i, .d17-doc .key i{ display:inline-block; width:calc(11 * var(--u)); height:calc(11 * var(--u)); border-radius:50%; vertical-align:middle }
+.vb i.y, .key i.y{ background:var(--do-cerulean) }
+.vb i.p, .key i.p{ background:linear-gradient(90deg, var(--do-cerulean) 50%, transparent 50%); box-shadow:inset 0 0 0 1.4px var(--do-cerulean) }
+.vb i.n, .key i.n{ box-shadow:inset 0 0 0 1.6px var(--do-amber); background:color-mix(in srgb, var(--do-amber) 25%, transparent) }
+.d17-doc .key{ display:flex; gap:calc(12 * var(--u)); margin:calc(8 * var(--u)) 0 0; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u)));
+  letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+.d17-doc .key span{ display:inline-flex; gap:4px; align-items:center }
+
+/* ─── DO-ART-992 · capacity planner · result screen ─── */
+.a992 .d17-ph img{ object-position:30% 40%; --d17-grade:saturate(.55) contrast(1.05) brightness(.72) }
+.a992 .win, .a995 .win, .a997 .win{ margin:0 calc(4 * var(--u)) }
+.k4{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(10 * var(--u)); margin-top:calc(14 * var(--u)) }
+.k4 div{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); border-radius:calc(8 * var(--u));
+  padding:calc(11 * var(--u)) calc(12 * var(--u)) }
+.k4 span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.k4 b{ display:block; margin-top:calc(5 * var(--u)); font-family:var(--do-font-heading); font-weight:800; font-size:max(20px, calc(34 * var(--u)));
+  line-height:1; letter-spacing:-.03em; color:var(--do-prussian-blue); font-variant-numeric:tabular-nums }
+.a992 .meter .fill{ background:linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)) }
+.vs{ display:grid; grid-template-columns:auto auto 1fr auto; gap:6px 10px; align-items:baseline; margin-top:calc(12 * var(--u));
+  padding-top:calc(10 * var(--u)); border-top:2px solid var(--do-prussian-blue); font-size:max(11px, calc(13 * var(--u))) }
+.vs span{ font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.vs s{ font-weight:700; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.vs .r{ justify-self:end }
+.vs b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(18 * var(--u))); background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 6px; border-radius:4px }
+@media (max-width: 420px){ .vs{ grid-template-columns:auto 1fr } .vs .r{ justify-self:start } }
+
+/* ─── DO-ART-993 · capacity inline · spec sheet against the real day ─── */
+.a993{ display:grid; grid-template-columns:30% 1fr; gap:calc(40 * var(--pu)); align-items:center;
+  padding:calc(52 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+.rd{ display:grid; grid-template-columns:.8fr 1.2fr; gap:calc(34 * var(--u)); align-items:center }
+.rd .specs{ position:relative; --u:calc(100cqw / 1152 * 1.25); transform:rotate(-2.5deg) }
+.rd .specs h4{ font-size:max(18px, calc(26 * var(--u))) }
+.strk{ list-style:none; margin:calc(8 * var(--u)) 0 0; padding:0 }
+.strk li{ position:relative; padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
+  font-size:max(12px, calc(15 * var(--u))); font-weight:600; display:block; white-space:normal }
+.strk li span{ position:relative }
+.strk li i{ position:absolute; left:0; top:50%; width:max(110px, calc(160 * var(--u))); height:2.5px; background:var(--do-amber); transform-origin:left; border-radius:2px }
+.day .lab{ margin:0 0 10px; font-size:max(10px, calc(12 * var(--u))); color:var(--do-sky-blue) }
+.bar8{ display:flex; height:max(46px, calc(64 * var(--u))); border-radius:8px; overflow:hidden; box-shadow:0 0 0 1.5px color-mix(in srgb, var(--do-sky-blue) 55%, transparent) }
+.bar8 span{ display:flex; align-items:center; padding:0 14px; font-family:var(--do-font-mono); font-weight:600; font-size:max(10px, calc(13 * var(--u))); letter-spacing:.1em; text-transform:uppercase; white-space:nowrap }
+.bar8 .p{ flex:0 0 85%; background:color-mix(in srgb, var(--do-cerulean) 70%, var(--do-sky-blue)); color:var(--do-prussian-blue) }
+.bar8 .x{ flex:1; justify-content:center; padding:0 4px; color:var(--do-prussian-blue);
+  background:repeating-linear-gradient(135deg, var(--do-amber) 0 6px, color-mix(in srgb, var(--do-amber) 55%, var(--do-prussian-blue)) 6px 12px) }
+.hrs{ display:flex; justify-content:space-between; margin-top:6px; font-family:var(--do-font-mono); font-size:max(9px, calc(11 * var(--u))); color:color-mix(in srgb, var(--do-off-white) 70%, transparent) }
+.lost{ list-style:none; margin:16px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end }
+.lost li{ font-family:var(--do-font-mono); font-size:max(10px, calc(12 * var(--u))); letter-spacing:.08em; text-transform:uppercase; color:var(--do-prussian-blue);
+  background:var(--do-amber); padding:4px 10px; border-radius:99px }
+@media (max-width: 760px){
+  .a993{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px }
+  .rd{ grid-template-columns:1fr; gap:26px }
+  .rd .specs{ --u:.9px }
+  .lost{ justify-content:flex-start }
+}
+
+/* ─── DO-ART-994 · seasonal capacity · the year planner ─── */
+.a994 .stage{ aspect-ratio:560 / 540 }
+.a994 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.5) contrast(1.05) brightness(.7) }
+.a994 .doc-yp{ left:calc(24 * var(--u)); top:calc(62 * var(--u)); width:calc(512 * var(--u)); transform:rotate(-1.5deg) }
+.yp{ position:relative; display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); align-items:end; height:calc(190 * var(--u));
+  margin-top:calc(12 * var(--u)); padding:0 2px; border-bottom:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 45%, transparent);
+  background:repeating-linear-gradient(0deg, color-mix(in srgb, var(--do-prussian-blue) 7%, transparent) 0 1px, transparent 1px calc(19 * var(--u))) }
+.yp i{ position:relative; height:var(--h); border-radius:2px 2px 0 0; transform-origin:bottom;
+  background:repeating-linear-gradient(160deg, color-mix(in srgb, var(--do-cerulean) 55%, var(--do-white)) 0 2px, color-mix(in srgb, var(--do-cerulean) 30%, var(--do-white)) 2px 4px) }
+.yp i.over{ background:repeating-linear-gradient(160deg, var(--do-amber) 0 2px, color-mix(in srgb, var(--do-amber) 55%, var(--do-white)) 2px 4px) }
+.yp i b{ position:absolute; left:50%; bottom:100%; transform:translateX(-50%); padding-bottom:2px; font-family:var(--do-font-mono); font-weight:600;
+  font-size:max(6px, calc(9 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.yp .capl{ position:absolute; left:0; right:0; bottom:var(--c); border-top:2px dashed var(--do-prussian-blue) }
+.yp .capl span{ position:absolute; left:0; top:3px; font-family:var(--do-font-mono); font-weight:700; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em;
+  text-transform:uppercase; background:var(--do-white); padding:0 4px }
+.ym{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
+  font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+.a994 .nt-a{ right:calc(22 * var(--u)); top:calc(412 * var(--u)); width:calc(190 * var(--u)) }
+.a994 .nt-b{ left:calc(40 * var(--u)); top:calc(420 * var(--u)); width:calc(170 * var(--u)); transform:rotate(-3deg) }
+
+/* ─── DO-ART-995 · automation ROI · result screen ─── */
+.a995 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.6) contrast(1.05) brightness(.72) }
+.pb{ position:relative; margin-top:calc(12 * var(--u)) }
+.pb svg{ display:block; width:100%; height:max(60px, calc(96 * var(--u))) }
+.pb .lb{ position:absolute; top:calc(8 * var(--u)); font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u)));
+  letter-spacing:.12em; text-transform:uppercase; background:var(--do-amber); color:var(--do-prussian-blue); padding:2px 8px; border-radius:99px; white-space:nowrap }
+
+/* ─── DO-ART-996 · downtime · the scenario on the floor ─── */
+.a996 .stage{ aspect-ratio:560 / 470 }
+.a996 .d17-ph img{ object-position:40% 50%; --d17-grade:saturate(.6) contrast(1.06) brightness(.8) }
+.a996 .slip{ position:absolute; z-index:5; right:calc(28 * var(--u)); bottom:calc(10 * var(--u)); width:calc(220 * var(--u));
+  background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(4 * var(--u));
+  transform:rotate(-2.5deg); box-shadow:0 calc(18 * var(--u)) calc(34 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
+.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.a996 .slip b{ display:inline-block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(40 * var(--u))); line-height:1;
+  letter-spacing:-.03em; background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 6px; border-radius:4px }
+.a996 .slip .s{ display:block; margin-top:4px; font-size:max(10px, calc(12 * var(--u))); font-weight:600 }
+.stage-grid .a996{ align-self:stretch }
+
+/* ─── DO-ART-997 · ops health · result screen ─── */
+.a997 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.55) contrast(1.05) brightness(.7) }
+.hs-hd{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px }
+.hs-hd .tot{ margin:0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-prussian-blue) }
+.hs-hd .tot b{ font-size:max(26px, calc(40 * var(--u))); letter-spacing:-.03em }
+.hs-hd .tot span{ font-size:max(12px, calc(16 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.hs{ margin-top:calc(10 * var(--u)) }
+.hs div{ display:grid; grid-template-columns:minmax(0, 1.2fr) 1fr auto; gap:calc(10 * var(--u)); align-items:center; padding:calc(7 * var(--u)) calc(4 * var(--u));
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent); font-size:max(11px, calc(13 * var(--u))); font-weight:600 }
+.hs em{ height:max(7px, calc(10 * var(--u))); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow:hidden }
+.hs em i{ display:block; height:100%; border-radius:9px; background:linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)); transform-origin:left }
+.hs b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(13px, calc(16 * var(--u))) }
+.hs .hot{ background:color-mix(in srgb, var(--do-amber) 18%, transparent) }
+.hs .hot em i{ background:var(--do-amber) }
+
+/* ─── DO-ART-998 · RTO · recovery to scale (drawn) ─── */
+.a998 .body{ padding-top:calc(24 * var(--u)) }
+.rt-k{ margin:0; font-size:max(10px, calc(12 * var(--u))); color:var(--do-off-white) }
+.inc{ margin-top:calc(16 * var(--u)) }
+.inc .sc, .inc .r{ display:grid; grid-template-columns:calc(96 * var(--u)) 1fr; gap:calc(12 * var(--u)); align-items:center }
+.inc .sc{ grid-template-columns:calc(96 * var(--u)) repeat(4, 1fr) auto; font-family:var(--do-font-mono); font-size:max(9px, calc(10.5 * var(--u)));
+  color:color-mix(in srgb, var(--do-off-white) 60%, transparent) }
+.inc .sc span:first-child{ grid-column:2 }
+.inc .sc span:last-child{ justify-self:end }
+.inc .r{ padding:calc(7 * var(--u)) 0 }
+.inc .l{ font-size:max(9px, calc(11 * var(--u))); letter-spacing:.12em; color:var(--do-sky-blue) }
+.inc .b{ position:relative; height:max(18px, calc(26 * var(--u))); border-radius:5px;
+  background:repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), color-mix(in srgb, var(--do-sky-blue) 22%, transparent) calc(12.5% - 1px) 12.5%) }
+.inc .now{ position:absolute; inset:0; border-radius:5px; transform-origin:left;
+  background:repeating-linear-gradient(135deg, color-mix(in srgb, var(--do-sky-blue) 40%, transparent) 0 5px, color-mix(in srgb, var(--do-sky-blue) 18%, transparent) 5px 10px);
+  box-shadow:inset 0 0 0 1.5px var(--do-sky-blue) }
+.inc .tg{ position:absolute; left:0; top:0; bottom:0; width:12.5%; border-radius:5px; background:var(--do-amber) }
+.inc .key{ display:flex; gap:18px; margin:calc(10 * var(--u)) 0 0 calc(108 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10.5 * var(--u)));
+  letter-spacing:.1em; text-transform:uppercase; color:var(--do-off-white) }
+.inc .key span::before{ content:''; display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px }
+.inc .k-now::before{ box-shadow:inset 0 0 0 1.5px var(--do-sky-blue); background:color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
+.inc .k-tg::before{ background:var(--do-amber) }
+.rt-sum{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(10 * var(--u)); margin-top:calc(22 * var(--u)) }
+.rt-sum div{ border-top:2px solid color-mix(in srgb, var(--do-sky-blue) 50%, transparent); padding-top:calc(8 * var(--u)) }
+.rt-sum span{ display:block; font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:var(--do-sky-blue) }
+.rt-sum b{ display:block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(28 * var(--u))); letter-spacing:-.02em; color:var(--do-white) }
+.rt-sum .hot{ border-color:var(--do-amber) } .rt-sum .hot span, .rt-sum .hot b{ color:var(--do-amber) }
+
+/* ─── DO-ART-999 · should I replace my ERP · the scorecard ─── */
+.a999 .stage{ aspect-ratio:560 / 560 }
+.a999 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.6) contrast(1.05) brightness(.66) }
+.a999 .doc-qz{ left:calc(40 * var(--u)); top:calc(58 * var(--u)); width:calc(400 * var(--u)); transform:rotate(-2deg) }
+.qz{ margin-top:calc(8 * var(--u)) }
+.qz div{ display:grid; grid-template-columns:calc(24 * var(--u)) 1fr auto; gap:calc(8 * var(--u)); align-items:center; padding:calc(5 * var(--u)) 0;
+  border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
+.qz .n{ font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.qz .t{ font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; line-height:1.3 }
+.qz .ln{ display:block; width:90%; height:calc(5 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
+.qz em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(6.5px, calc(9.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
+  padding:1px 7px; border-radius:99px; box-shadow:inset 0 0 0 1.3px color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) }
+.qz em.yes{ background:var(--do-amber); box-shadow:none }
+.tally{ display:flex; justify-content:space-between; align-items:baseline; margin-top:calc(8 * var(--u)); padding-top:calc(7 * var(--u)); border-top:2px solid var(--do-prussian-blue);
+  font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase }
+.tally b{ font-family:var(--do-font-heading); font-size:max(11px, calc(18 * var(--u))); letter-spacing:0 }
+.a999 .st-999{ right:calc(34 * var(--u)); top:calc(452 * var(--u)) }
+
+/* ─── phone width: stages get taller so the paper keeps its floor sizes ─── */
+@media (max-width: 760px){
+  .a981 .stage{ aspect-ratio:560 / 560 }
+  .scr-c{ top:calc(260 * var(--u)); left:calc(60 * var(--u)); width:calc(440 * var(--u)) }
+  .scr-a{ width:calc(300 * var(--u)) } .scr-b2{ left:calc(250 * var(--u)); width:calc(290 * var(--u)) }
+  .a982 .stage{ aspect-ratio:560 / 640 }
+  .a983 .stage{ aspect-ratio:560 / 640 } .a983 .doc-k{ left:calc(20 * var(--u)); width:calc(430 * var(--u)) }
+  .a983 .note-y{ top:calc(520 * var(--u)); width:calc(230 * var(--u)) }
+  .a985 .stage{ aspect-ratio:560 / 620 } .a985 .doc-sp{ left:calc(140 * var(--u)); top:calc(250 * var(--u)); width:calc(400 * var(--u)) }
+  .a985 .doc-cv{ width:calc(260 * var(--u)) }
+  .a987 .stage{ aspect-ratio:560 / 760 } .a987 .doc-sop{ left:calc(18 * var(--u)); width:calc(470 * var(--u)); top:calc(150 * var(--u)) }
+  .a987 .doc-rg{ left:calc(220 * var(--u)); top:calc(52 * var(--u)); width:calc(320 * var(--u)) }
+  .a987 .nt-987{ left:auto; right:calc(16 * var(--u)); top:calc(620 * var(--u)); width:calc(220 * var(--u)) }
+  .a988 .stage{ aspect-ratio:560 / 640 } .a988 .doc-ms{ left:calc(120 * var(--u)); top:calc(290 * var(--u)); width:calc(410 * var(--u)) }
+  .a988 .doc-ml{ left:calc(230 * var(--u)); top:calc(60 * var(--u)); width:calc(310 * var(--u)) } .a988 .doc-mc{ width:calc(250 * var(--u)) }
+  .a989 .stage{ aspect-ratio:560 / 800 } .a989 .doc-br{ width:calc(330 * var(--u)) }
+  .a989 .doc-pf{ left:calc(150 * var(--u)); top:calc(300 * var(--u)); width:calc(390 * var(--u)) }
+  .a989 .rt-stamp{ left:calc(170 * var(--u)); right:auto; top:calc(700 * var(--u)) }
+  .a991 .stage{ aspect-ratio:560 / 720 } .a991 .doc-vb{ left:calc(18 * var(--u)); top:calc(260 * var(--u)); width:calc(520 * var(--u)) }
+  .a991 .doc-ec{ width:calc(280 * var(--u)); min-height:calc(200 * var(--u)) } .a991 .doc-ec h4{ margin-top:calc(16 * var(--u)) }
+  .a994 .stage{ aspect-ratio:560 / 720 } .a994 .doc-yp{ left:calc(14 * var(--u)); width:calc(532 * var(--u)) }
+  .a994 .nt-a{ top:calc(560 * var(--u)); width:calc(250 * var(--u)) } .a994 .nt-b{ top:calc(575 * var(--u)); width:calc(220 * var(--u)) }
+  .a996 .stage{ aspect-ratio:560 / 600 } .a996 .slip{ width:calc(300 * var(--u)) }
+  .a999 .stage{ aspect-ratio:560 / 760 } .a999 .doc-qz{ left:calc(16 * var(--u)); width:calc(528 * var(--u)) }
+  .a999 .st-999{ top:calc(640 * var(--u)) }
+  .rt-route li{ grid-template-columns:1fr; gap:2px }
+  .inc .sc, .inc .r{ grid-template-columns:62px 1fr } .inc .sc{ grid-template-columns:62px repeat(4, 1fr) auto }
+  .inc .key{ margin-left:0; flex-wrap:wrap; gap:8px 16px }
+  .rt-sum{ grid-template-columns:1fr; gap:10px } .rt-sum div{ display:flex; justify-content:space-between; align-items:baseline }
+  .k4{ gap:8px } .k4 div{ padding:9px 8px } .k4 b{ font-size:20px } .k4 span{ font-size:7.5px; letter-spacing:.08em }
+  .hs div{ grid-template-columns:minmax(0, 1.4fr) .8fr auto }
+}
+
+/* ─── motion extras (the resting state is the still) ─── */
+@media (prefers-reduced-motion: no-preference){
+  .d17.play .g1k i.x{ animation:d17-pop .45s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(var(--d, 0) * 1s + .3s) }
+  .d17.play .rt-route::before{ animation:d17-grow 1.9s cubic-bezier(.45,0,.2,1) .4s both }
+}
+
+/* ── fixes after the first render ── */
+.scr .crumb{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.scr .two .n{ font-size:max(13px, calc(24 * var(--u))); white-space:nowrap }
+.scr-c{ top:calc(232 * var(--u)) }
+.strk li i{ display:none }
+.strk li span{ text-decoration:line-through; text-decoration-color:var(--do-amber); text-decoration-thickness:3px }
+@media (max-width: 760px){
+  .a981 .stage{ aspect-ratio:560 / 640 }
+  .scr-a{ left:calc(16 * var(--u)); top:calc(70 * var(--u)); width:calc(300 * var(--u)) }
+  .scr-b2{ left:calc(250 * var(--u)); top:calc(40 * var(--u)); width:calc(294 * var(--u)) }
+  .scr-c{ left:calc(40 * var(--u)); top:calc(330 * var(--u)); width:calc(480 * var(--u)) }
+  .a994 .stage{ aspect-ratio:560 / 600 }
+  .a994 .nt-a{ top:calc(448 * var(--u)) } .a994 .nt-b{ top:calc(462 * var(--u)) }
+}
+@media (max-width: 760px){ .a990{ grid-template-columns:1fr; padding:26px 18px 24px; gap:22px } }
