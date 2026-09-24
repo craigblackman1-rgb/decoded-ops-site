@@ -61,6 +61,20 @@
   .hero-art{ margin-top:30px }
 }
 
+/* ─── live location page sections (WO-INF-061) ─── */
+.loc-ctx{ display:grid; grid-template-columns:1fr 2fr; gap:40px; align-items:start }
+.loc-ctx > *{ min-width:0 }
+.loc-how{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(48px, 8vw, 80px); align-items:start }
+.loc-how > *{ min-width:0 }
+.loc-cta-card{ display:flex; flex-wrap:wrap; gap:32px; margin-top:24px }
+.loc-cta-card > *{ min-width:0 }
+@media (max-width: 768px){
+  .loc-ctx{ grid-template-columns:1fr; gap:24px }
+  .loc-how{ grid-template-columns:1fr; gap:32px }
+  .loc-how > div[style*="sticky"]{ position:static }
+  .loc-cta-card{ flex-direction:column; gap:16px }
+}
+
 /* ─── DO-ART-1001 · fractional CTO hero · the monthly review pack over the floor ─── */
 .a1001{ --u:calc(100cqw / 1152); display:flex; flex-direction:column }
 .a1001 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.6) contrast(1.06) brightness(.8) }

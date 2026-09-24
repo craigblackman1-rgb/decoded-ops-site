@@ -97,7 +97,7 @@ export function LocationPage({
       {/* LOCAL CONTEXT */}
       <section className="g-white" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'start' }}>
+          <div className="loc-ctx">
             <div>
               <span className="eyebrow" style={{ marginBottom: 22 }}>{town}</span>
               <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>
@@ -124,7 +124,7 @@ export function LocationPage({
                 The work I do is the same wherever the business is based: a structured, independent look at what&apos;s running, what it costs, and what it&apos;s holding back. But the conversation starts with understanding what&apos;s specific to this business, in this town, in this market.
               </p>
               {(driveTime || localFact) && (
-                <div className="card" style={{ marginTop: 24, display: 'flex', gap: 32, flexDirection: 'row' }}>
+                <div className="card loc-cta-card" style={{ marginTop: 24 }}>
                   {driveTime && (
                     <div>
                       <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>From Worthing</div>
@@ -175,7 +175,7 @@ export function LocationPage({
       {/* HOW I HELP */}
       <section className="g-navy">
         <div className="wrap">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(48px, 8vw, 80px)', alignItems: 'start' }}>
+          <div className="loc-how">
             <div>
               <span className="eyebrow" style={{ marginBottom: 22 }}>How I help</span>
               <h2 className="h2">What the work actually looks like</h2>
