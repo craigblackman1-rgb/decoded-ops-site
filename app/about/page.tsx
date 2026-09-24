@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import s from '@/app/deco-page.module.css';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
+import d17 from '@/app/d17-art.module.css';
 
 export const metadata: Metadata = {
   title: 'About Craig: Decoded Ops',
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
+    <>
     <main id="content">
       {/* 1 · HERO SPLIT */}
       <section className="g-off" data-od-id="hero">
@@ -46,177 +48,161 @@ export default function AboutPage() {
           </div>
 
           <div className={s.heroShot}>
-            <div className={s.photo} data-od-id="about-visual">
-               <img src="/images/craig-blackman.jpg" width="1600" height="1067"
-                   alt="Craig Blackman, founder of Decoded Ops." />
-            </div>
-            <p className={s.shotCaption}>Twenty-five years in rooms like this one, on both sides of the
-              system that runs them.</p>
+            {/* DO-ART-904 r03 · photo-led portrait (D17). assets/craig-blackman.jpg is
+                 the only approved portrait; rev 02's close-up selfie is banned.
+                 Light grade, faces never palette-reduced. */}
+            <figure className={`${d17.d17} ${d17.a904}`} data-od-id="about-visual"
+                    data-no="DO-ART-904" data-rev="03" data-tx="photo">
+              <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={1100} height={1067}
+                   alt="Craig Blackman on a wide sandy beach under a grey sky, smiling, hands in the pockets of a black jacket, the sea behind him." /></div>
+              <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
+              <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Craig Blackman</span><span>Decoded Ops</span></div>
+              <p className={d17.note} aria-hidden="true">Twenty-five years inside <em>the businesses I now advise.</em></p>
+              <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-904 &middot; Rev 03</span>
+            </figure>
+            <p className={s.shotCaption}>Craig Blackman, Decoded Ops. Based in Worthing, West Sussex,
+              working across the UK.</p>
           </div>
         </div>
       </section>
 
-      {/* PLATE · DO-ART-904 */}
+      {/* PLATE · DO-ART-904 → DO-ART-831 route */}
       <section className="g-navy">
         <div className="wrap">
-          <span className="eyebrow">Career arc &middot; DO-ART-904</span>
+          <span className="eyebrow">Career arc &middot; DO-ART-831</span>
           <h2>Three vantage points, one problem that never changed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
             Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
           </p>
 
-          <div className="plate-scroll">
-            <div className="plate-frame" data-od-id="plate-about">
-              <Plate tone="dark" p="abt" title="Three heights, one gap"
-                     sub="Craig Blackman · twenty-five years, three vantage points, the same problem"
-                     no="DO-ART-904" rev="01" cls="DECODED OPS · ISSUED">
-
-                {/* ══ EXHIBIT, three vantage bands ══ */}
-                <g className="sk-fade sk-s2">
-                  <text x="66" y="212" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">LOOKING DOWN FROM</text>
-                  <text x="800" y="212" textAnchor="end" className="p-mono" fontSize="14" letterSpacing="2.4" opacity=".42">WHAT BECAME VISIBLE</text>
-                </g>
-
-                {/* band 3, highest, drawn first so the stack reads bottom-up */}
-                <g className="sk-fade sk-s3" filter="url(#abt-shadow)">
-                  <rect x="60" y="230" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-                <g className="sk-fade sk-s3">
-                  <rect x="86" y="258" width="4" height="18" rx="1" className="p-cyan"/>
-                  <text x="102" y="272" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">03 · OPERATIONS &amp; ERP</text>
-                  <text x="102" y="308" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Choosing the platform</text>
-                  <text x="102" y="336" className="p-mono" fontSize="16" opacity=".6">Running the department, then implementing what it depends on</text>
-                  <text x="914" y="308" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Who signed it off</text>
-                  <text x="914" y="334" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and what nobody scoped first</text>
-                </g>
-
-                {/* band 2 */}
-                <g className="sk-fade sk-s4" filter="url(#abt-shadow)">
-                  <rect x="60" y="382" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-                <g className="sk-fade sk-s4">
-                  <rect x="86" y="410" width="4" height="18" rx="1" className="p-cyan"/>
-                  <text x="102" y="424" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">02 · IT &amp; SYSTEMS</text>
-                  <text x="102" y="460" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Keeping it all running</text>
-                  <text x="102" y="488" className="p-mono" fontSize="16" opacity=".6">Networks, backups, the software nobody remembers choosing</text>
-                  <text x="914" y="460" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">Why it &ldquo;can't do that&rdquo;</text>
-                  <text x="914" y="486" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">usually the start of the conversation</text>
-                </g>
-
-                {/* band 1, the floor */}
-                <g className="sk-fade sk-s5" filter="url(#abt-shadow)">
-                  <rect x="60" y="534" width="880" height="132" rx="10" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
-                </g>
-                <g className="sk-fade sk-s5">
-                  <rect x="86" y="562" width="4" height="18" rx="1" className="p-cyan"/>
-                  <text x="102" y="576" className="p-mono" fontSize="15" letterSpacing="2.4" fontWeight="600" opacity=".7">01 · WAREHOUSE FLOOR</text>
-                  <text x="102" y="612" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="26">Picking, packing, despatch</text>
-                  <text x="102" y="640" className="p-mono" fontSize="16" opacity=".6">Doing the job, not observing it</text>
-                  <text x="914" y="612" textAnchor="end" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="19">The workaround</text>
-                  <text x="914" y="638" textAnchor="end" className="p-mono" fontSize="15" opacity=".55">and that it wasn't in any document</text>
-                </g>
-
-                {/* ══ THE CONSTANT, one amber thread through all three ══ */}
-                <path id="abt-thread" pathLength="1" className="sk-draw sk-s6 p-samber"
-                      d="M40 660 V296" fill="none" strokeWidth="2.5" markerEnd="url(#abt-ah)"/>
-                <g className="sk-fade sk-s6">
-                  <circle cx="40" cy="600" r="5" className="p-amber"/>
-                  <circle cx="40" cy="448" r="5" className="p-amber"/>
-                  <circle cx="40" cy="296" r="5" className="p-amber"/>
-                  <text x="30" y="700" className="p-mono" fontSize="15" letterSpacing="1.6" fill="none"></text>
-                </g>
-                <g className="sk-fade sk-s6">
-                  <rect x="60" y="690" width="880" height="46" rx="8" fill="url(#abt-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
-                  <circle cx="86" cy="713" r="5" className="p-amber"/>
-                  <text x="104" y="719" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="18">The constant, the gap between the process on paper and the workaround on the floor</text>
-                </g>
-
-                {/* ══ SPECIFICATION PANEL ══ */}
-                <g className="sk-fade sk-s4">
-                  <rect x="980" y="230" width="540" height="506" rx="12" fill="url(#abt-node)" className="p-node" strokeWidth="1.1"/>
-                  <rect x="1006" y="256" width="4" height="16" rx="1" className="p-cyan"/>
-                  <text x="1022" y="270" className="p-mono" fontSize="17" letterSpacing="2.4" fontWeight="600">EXHIBIT</text>
-                  <line x1="1006" y1="292" x2="1494" y2="292" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
-
-                  <text x="1006" y="330" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SPAN</text>
-                  <text x="1006" y="374" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="800" fontSize="46">25 years</text>
-
-                  <text x="1006" y="428" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">SECTORS</text>
-                  <text x="1006" y="458" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Print · embroidery</text>
-                  <text x="1006" y="486" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">Workwear · decoration</text>
-
-                  <text x="1006" y="534" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT CHANGED</text>
-                  <text x="1006" y="564" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="600" fontSize="21">The vantage point</text>
-
-                  <text x="1006" y="612" className="p-mono" fontSize="15" letterSpacing="2" opacity=".45">WHAT DIDN'T</text>
-                  <text x="1006" y="642" className="p-amber" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="21">The problem</text>
-
-                  <line x1="1006" y1="672" x2="1494" y2="672" className="p-scyan" strokeWidth=".6" strokeOpacity=".2"/>
-                  <text x="1006" y="706" className="p-mono" fontSize="15" opacity=".62">Which is most of why the audit</text>
-                  <text x="1006" y="726" className="p-mono" fontSize="15" opacity=".62">works the way it does.</text>
-                </g>
-              </Plate>
+          {/* DO-ART-831 r01 · journey poster, website cut (D16/D17). Same drawing
+               and argument as the Issue 02 poster; the in-page draw runs the line
+               left to right and lands on the amber terminus. Below 700px the
+               route turns vertical: same five stations, same two prints. */}
+          <figure className={`${d17.d17} ${d17.a831}`} data-od-id="route" data-motion
+                  data-no="DO-ART-831" data-rev="01" data-tx="poster"
+                  aria-label="Journey plate DO-ART-831, how I got here. One line with five stations, climbing left to right. 01 Industrial computing: MOD, BBC, ITV. 02 Textiles: warehouse floor to 1,000+ orders a day at peak. 03 IT managed services. 04 Demystify Digital: 4.5 years building eCommerce for print and embroidery. 05 Operations consultancy, the amber terminus: what I do now.">
+            <div className={d17.gridl} aria-hidden="true" />
+            <p className={`${d17.eb} ${d17.d17Mono}`}>The route</p>
+            <p className={d17.hd}>How I got here</p>
+            <p className={d17.stand}>Every level of these businesses, one stop at a time.</p>
+            <svg className="route" viewBox="0 0 1600 900" aria-hidden="true">
+              <defs><filter id="rt-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10" /></filter></defs>
+              <g stroke="rgba(142,202,230,.55)" strokeWidth="2" strokeDasharray="4 6" fill="none" className="m-fade" style={{ animationDelay: '1.6s' }}>
+                <path d="M470 572 V 596" /><path d="M1080 392 V 436" /></g>
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" strokeWidth="30" strokeLinejoin="round" strokeLinecap="round" filter="url(#rt-glow)" className="m-draw" />
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" strokeWidth="24" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
+              <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" strokeWidth="14" strokeLinejoin="round" strokeLinecap="round" className="m-draw" />
+              <rect x="58" y="596" width="12" height="48" rx="3" fill="#8ECAE6" />
+              <g fill="#F8F9FA" stroke="#023047" strokeWidth="6">
+                <circle cx="190" cy="620" r="17" className="m-pop" style={{ animationDelay: '.35s', transformOrigin: '190px 620px' }} />
+                <circle cx="470" cy="620" r="17" className="m-pop" style={{ animationDelay: '.75s', transformOrigin: '470px 620px' }} />
+                <circle cx="860" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.3s', transformOrigin: '860px 460px' }} />
+                <circle cx="1080" cy="460" r="17" className="m-pop" style={{ animationDelay: '1.6s', transformOrigin: '1080px 460px' }} />
+              </g>
+              <g className="m-pop" style={{ animationDelay: '2.3s', transformOrigin: '1430px 320px' }}>
+                <circle cx="1430" cy="320" r="46" fill="rgba(255,183,3,.16)" />
+                <circle cx="1430" cy="320" r="30" fill="#023047" stroke="#FFB703" strokeWidth="10" />
+                <circle cx="1430" cy="320" r="11" fill="#FFB703" /></g>
+            </svg>
+            <div className="prints" aria-hidden="true">
+              <div className={`${d17.print} m-drop`} style={{ left: 'calc(352 * var(--u))', top: 'calc(356 * var(--u))', width: 'calc(236 * var(--u))', height: 'calc(216 * var(--u))', transform: 'rotate(-3deg)', animationDelay: '.9s' }}>
+                <img src="/images/d17/thread-spools.jpg" alt="" /><i className="tint" />
+                <span>where print and embroidery got hold of me</span></div>
+              <div className={`${d17.print} m-drop`} style={{ left: 'calc(966 * var(--u))', top: 'calc(196 * var(--u))', width: 'calc(228 * var(--u))', height: 'calc(196 * var(--u))', transform: 'rotate(2.6deg)', animationDelay: '1.8s' }}>
+                <img src="/images/d17/gen-press-hall.jpg" alt="" /><i className="tint" /></div>
             </div>
-          </div>
+            <div className="stations">
+              <div className={`${d17.st} m-fade`} style={{ left: 'calc(168 * var(--u))', top: 'calc(658 * var(--u))', animationDelay: '.4s' }}><span className="n">01</span><h3>Industrial computing</h3><p>MOD, BBC, ITV</p></div>
+              <div className={`${d17.st} m-fade`} style={{ left: 'calc(448 * var(--u))', top: 'calc(658 * var(--u))', width: 'calc(270 * var(--u))', animationDelay: '.8s' }}><span className="n">02</span><h3>Textiles</h3><p>Warehouse floor to 1,000+ orders a day at peak</p></div>
+              <div className={`${d17.st} m-fade`} style={{ left: 'calc(838 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(210 * var(--u))', animationDelay: '1.35s' }}><span className="n">03</span><h3>IT managed services</h3></div>
+              <div className={`${d17.st} m-fade`} style={{ left: 'calc(1058 * var(--u))', top: 'calc(498 * var(--u))', width: 'calc(300 * var(--u))', animationDelay: '1.65s' }}><span className="n">04</span><h3>Demystify Digital</h3><p>4.5 years building eCommerce for print and embroidery</p></div>
+              <div className={`${d17.st} ${d17.stEnd} m-fade`} style={{ left: 'calc(1300 * var(--u))', top: 'calc(382 * var(--u))', width: 'calc(280 * var(--u))', animationDelay: '2.4s' }}><span className="n">05 &middot; What I do now</span><h3>Operations consultancy</h3></div>
+            </div>
+            <span className={`${d17.d17Mark} ${d17.d17MarkAbs}`}>decodedops.co.uk &middot; DO-ART-831 &middot; Rev 01</span>
+          </figure>
         </div>
       </section>
 
-      {/* 2 · THE TIMELINE */}
-      <section className="g-white" data-od-id="timeline">
+      {/* 2 · THE RECORD · DO-ART-919a/b */}
+      <section className="g-white" data-od-id="record">
         <div className="wrap">
-          <span className="eyebrow">Where this comes from</span>
-          <h2>Three beats, not a straight line.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Each one changed what I noticed the next time round.</p>
+          <span className="eyebrow">The record</span>
+          <h2>Two things worth knowing.</h2>
 
-          <div className="grid grid--3">
-            <div className={s.feature} data-od-id="beat-warehouse">
-              <div className={s.featureMark} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
-                     strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 10 12 4l9 6v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 20v-6h6v6"/>
-                </svg>
+          <div className="grid grid--2" style={{ marginTop: 44 }}>
+            <article className="card" data-od-id="fact-textile">
+              <div className={`${d17.factHeadA919}`}>
+                <div className={d17.d17Ph}><img src="/images/d17/prod-mailer.jpg" alt="" /></div>
+                <span className={d17.fm} aria-hidden="true">DO-ART-919a</span>
+                <span className={d17.factNo}>Fact 01</span>
+                <p className={`${d17.factFig} ${d17.num}`}>1,000+</p>
+                <p className={d17.factFigSub}>orders a day at Christmas peak</p>
               </div>
-              <p className={s.featureMeta}>Warehouse floor</p>
-              <h3>Picking, packing, despatch</h3>
-              <p>Where I learned that the workaround on the floor and the process on paper are rarely
-                the same thing, and that the gap between them is where the cost hides.</p>
-            </div>
-            <div className={s.feature} data-od-id="beat-it">
-              <div className={s.featureMark} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
-                     strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>
-                </svg>
+              <div className={d17.factBody}>
+                <h3>Seven years running operations at one textile business.</h3>
+                <p>We went from paper and people&apos;s memories to shipping over a thousand orders a day at
+                  Christmas peak. Full barcode scanning, ERP, proper pick, pack and despatch.</p>
               </div>
-              <p className={s.featureMeta}>IT &amp; systems</p>
-              <h3>Keeping it all running</h3>
-              <p>Networks, backups, the software nobody remembers choosing. Where I learned that &quot;it
-                can&apos;t do that&quot; is usually the start of the conversation, not the end of it.</p>
-            </div>
-            <div className={s.feature} data-od-id="beat-ops">
-              <div className={s.featureMark} aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
-                     strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5l3.2 2"/>
-                </svg>
+            </article>
+
+            <article className="card" data-od-id="fact-closed">
+              <div className={`${d17.factHeadA919}`}>
+                <div className={d17.d17Ph}><img src="/images/d17/gen-bench-flatlay-v2.jpg" alt="" /></div>
+                <span className={d17.fm} aria-hidden="true">DO-ART-919b</span>
+                <span className={d17.factNo}>Fact 02</span>
+                <p className={`${d17.factFig} ${d17.num}`}>4&frac12; years</p>
+                <p className={d17.factFigSub}>of a business of my own, then I closed it</p>
               </div>
-              <p className={s.featureMeta}>Operations &amp; ERP</p>
-              <h3>Implementing the systems</h3>
-              <p>Running the department, then choosing and implementing the platform it depends on,
-                and living with what happens when nobody scoped the business before scoping the
-                software.</p>
-            </div>
+              <div className={d17.factBody}>
+                <h3>A large customer did not pay.</h3>
+                <p>In that time I built a full print and embroidery ecommerce ecosystem on Magento 2. So
+                  I know what a bad commercial decision costs from the inside rather than from a
+                  slide.</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* 3 · STAT */}
-      <section className="g-navy" data-od-id="stat">
-        <div className={`wrap ${s.centred} ${s.statSingle}`}>
-          <p className={`${s.statNum} ${s.num}`}>25 years</p>
-          <p className={s.statLabel}>Inside print, embroidery, workwear, and decoration businesses. As the
-            person doing the job, not just the one advising on it.</p>
+      {/* 3 · WHY THE SOFTWARE EXISTS · DO-ART-719 */}
+      <section className="g-navy set" data-od-id="software-origin">
+        <div className="wrap">
+          <article className="sheet" data-od-id="sheet-software">
+            <div className="docket">
+              <span>DO-ART-719 &middot; Schematic</span>
+              <span>Rev 03</span>
+              <span className="issued">Issued</span>
+            </div>
+
+            <div className="masthead">
+              <div>
+                <span className="eyebrow">Why the software exists</span>
+                <h2>I didn&apos;t set out to build software.</h2>
+              </div>
+              <p className="lede">I kept meeting the same gap in businesses I was already fixing, and
+                nothing on the market closed it at a price those businesses could justify. So I built
+                the thing that did. It exists because the operational work needed it to, not because I
+                went looking for a product to sell.</p>
+            </div>
+
+            <div className="plate-scroll">
+              {/* DO-ART-719 r03 · drawn engineering plate, website cut of the
+                   Issue 02 schematic: the platform you already run, the gap it
+                   leaves, and three ways to fill it. The drawing is the still. */}
+              <div className="plate-frame" data-od-id="plate-gap">
+                <img src="/images/d17/fill-the-gap.png" width={1600} height={900}
+                     style={{ display: 'block', width: '100%', height: 'auto' }}
+                     alt="Schematic plate DO-ART-719, three ways to fill the gap. The platform you already run covers orders, stock, customers, products, accounts, suppliers, purchasing and reports, with custom development bolted on to make it fit; decoration and artwork are not built for it, leaving a gap. Three routes lead out of the gap: use what is already there; add a layer on top; or use something already built, because there was nothing on the market designed to do that job." />
+              </div>
+            </div>
+
+            <p className="sheet-foot" data-od-id="sheet-foot">The Data App is one of those layers. At Hanicks,
+              it has brought 317,812 supplier products into one catalogue and
+              matched 154,518 of them to a supplier automatically. Nobody retypes a supplier
+              spreadsheet any more.</p>
+          </article>
         </div>
       </section>
 
@@ -233,5 +219,7 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    <D17Motion />
+    </>
   );
 }
