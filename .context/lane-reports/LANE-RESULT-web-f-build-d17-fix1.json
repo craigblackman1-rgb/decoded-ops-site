@@ -1,0 +1,28 @@
+{
+  "lane": "web-f-build-d17-fix1",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "WO-INF-061",
+  "commits": [
+    {
+      "sha": "3a9cb5a8f63fbfe12fc7ac538f4a4d29c3767f27",
+      "subject": "fix(web): resolve problem-page image placeholders + ERP hero art (WO-INF-061)"
+    }
+  ],
+  "filesChanged": [
+    "app/problems/cant-scale-operations/page.tsx",
+    "app/problems/disaster-recovery/page.tsx",
+    "app/problems/ecommerce-not-connected/page.tsx",
+    "app/problems/erp-implementation-failure/page.tsx",
+    "app/problems/manual-workarounds/page.tsx",
+    "app/problems/no-ops-owner/page.tsx",
+    "app/problems/slow-processes/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits — git grep -n \"{{IMG\" app components returns nothing"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
