@@ -1,0 +1,27 @@
+{
+  "lane": "web-c-build-d17",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "u10",
+  "commits": [
+    {"sha": "6c00364", "subject": "Merge remote-tracking branch 'origin/main' into web-c-build-d17"},
+    {"sha": "c927ae9", "subject": "feat(web): D17 artwork on Home, About, Contact (WO-INF-061 u10, CR-WEB-034)"},
+    {"sha": "67d8a20", "subject": "feat(web): D17 artwork on About page (WO-INF-061 u10)"},
+    {"sha": "0e13215", "subject": "feat(web): D17 artwork on Contact page (WO-INF-061 u10)"}
+  ],
+  "filesChanged": [
+    "app/page.tsx",
+    "app/about/page.tsx",
+    "app/contact/ContactClient.tsx",
+    "app/d17-art.module.css",
+    "components/D17Motion.tsx",
+    "app/pricing/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
