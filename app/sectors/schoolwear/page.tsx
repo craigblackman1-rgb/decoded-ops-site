@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { SectorPageDS } from '@/components/SectorPageDS';
+import { D17Motion } from '@/components/D17Motion';
 import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
+import d17 from '@/app/d17-art.module.css';
+import sectors from '@/app/d17-sectors.module.css';
 
 export const metadata: Metadata = {
   title: 'Schoolwear: Decoded Ops',
@@ -68,99 +70,150 @@ export default function SchoolwearPage() {
         { name: 'Sectors', url: 'https://decodedops.co.uk/sectors' },
         { name: 'Schoolwear', url: 'https://decodedops.co.uk/sectors/schoolwear' },
       ]} />
-      <SectorPageDS
-        sectorLabel="schoolwear"
-        h1="Schoolwear, and the back-to-school peak that decides your year."
-        introParagraphs={[
-          'Blazers, PE kit, and growing pupils, all needing to be right before the first week of September.',
-          'The businesses that get this right have their supplier data and sizing sorted well before the rush starts.',
-        ]}
-        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
-        heroImage={{
-          src: '/images/sectors/thread-spools-v2.webp',
-          width: 1600,
-          height: 1067,
-          alt: 'A rack of embroidery thread cones in mixed colours on a workshop wall, the working stock of a decoration floor.',
-        }}
-        shotCaption="Every school badge is a thread file before it's a garment. And the size curve behind it changes every September."
-        plate={
-          <Plate tone="dark" p="sw" title="Schoolwear: supplier range to parent delivery"
-                 sub="Four connected systems: supplier catalogue, badge management, parent portal, production"
-                 no="DO-ART-110" rev="01" cls="DECODED OPS · ISSUED">
+      {/* HERO SPLIT */}
+      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 3vw, 48px)', alignItems: 'center' }}>
+          <div>
+            <span className="eyebrow">Sector · schoolwear</span>
+            <h1>Schoolwear, and the back-to-school peak that decides your year.</h1>
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Blazers, PE kit, and growing pupils, all needing to be right before the first week of September.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that get this right have their supplier data and sizing sorted well before the rush starts.</p>
+            </div>
+            <div className="btn-row" style={{ marginTop: '24px' }}>
+              <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+          {/* D17 hero artwork */}
+          <div dangerouslySetInnerHTML={{ __html: `
+      <figure class="d17 sx a931" data-od-id="hero-evidence" data-motion data-no="DO-ART-931" data-rev="01" data-tx="schematic"
+              aria-label="Drawn plate DO-ART-931. Schoolwear orders across the year, from April to October: flat through spring, a steep surge in the August window, and a fall after the first week of September. An amber line in early summer marks where supplier data and sizing need to be ready. An inset shows the size spread shifting from last September to this one. Sorted before the rush, not during it.">
+        <div class="q-grid" aria-hidden="true"></div>
+        <div class="sx-top d17-mono" aria-hidden="true"><span>Schoolwear</span><span>Orders, April to October</span></div>
+        <svg class="q" viewBox="0 0 560 500" aria-hidden="true">
+          <defs>
+            <pattern id="q-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047"/><line x1="0" y1="0" x2="0" y2="10" stroke="#8ECAE6" stroke-opacity=".22" stroke-width="3"/></pattern>
+            <linearGradient id="q-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#219EBC" stop-opacity=".55"/><stop offset="1" stop-color="#219EBC" stop-opacity=".05"/></linearGradient>
+          </defs>
+          <rect x="344" y="96" width="112" height="304" fill="url(#q-hatch)" opacity=".9"/>
+          <path class="ln-f" d="M344 96 V400 M456 96 V400"/>
+          <text class="t-m" x="400" y="86" text-anchor="middle" style="font-size:13px">The rush</text>
+          <path class="ln-f" d="M30 400 H540"/>
+          <g class="t-m" style="font-size:13px" text-anchor="middle"><text x="50" y="428">Apr</text><text x="125" y="428">May</text><text x="200" y="428">Jun</text><text x="275" y="428">Jul</text><text x="365" y="428" class="t-a">Aug</text><text x="440" y="428">Sep</text><text x="515" y="428">Oct</text></g>
+          <path class="m-fade" style="animation-delay:.6s" d="M30 386 C150 384 240 380 300 364 C336 352 352 190 382 132 C402 96 424 104 440 190 C456 290 480 372 540 386 V400 H30 Z" fill="url(#q-area)"/>
+          <path class="m-draw" pathLength="1" d="M30 386 C150 384 240 380 300 364 C336 352 352 190 382 132 C402 96 424 104 440 190 C456 290 480 372 540 386" fill="none" stroke="#8ECAE6" stroke-width="4" stroke-linecap="round"/>
+          <g class="m-pop" style="animation-delay:1.6s">
+            <path d="M236 150 V400" stroke="#FFB703" stroke-width="3.5"/>
+            <circle cx="236" cy="150" r="8" fill="#FFB703"/>
+            <text class="t t-a" x="222" y="170" text-anchor="end" style="font-size:18px;font-weight:700">Ready by here</text>
+            <text class="t-d" x="222" y="194" text-anchor="end" style="font-size:17px">supplier data current,</text>
+            <text class="t-d" x="222" y="216" text-anchor="end" style="font-size:17px">sizes set, badges signed off</text>
+          </g>
+          <g class="m-rise" style="animation-delay:.3s">
+            <rect class="bx" x="30" y="14" width="210" height="112" rx="10"/>
+            <text class="t-m" x="46" y="38" style="font-size:12px">Size spread</text>
+            <path d="M50 108 C80 108 88 58 110 58 C132 58 140 108 170 108" fill="none" stroke="#8ECAE6" stroke-width="2" stroke-dasharray="5 4" opacity=".7"/>
+            <path d="M70 108 C104 108 112 50 136 50 C160 50 170 108 214 108" fill="none" stroke="#8ECAE6" stroke-width="3"/>
+            <path class="ln-f" d="M46 108 H226"/>
+            <text class="t-d" x="176" y="66" style="font-size:12px">this Sept</text>
+            <text class="t-d" x="46" y="66" style="font-size:12px" opacity=".8">last</text>
+          </g>
+          <path d="M452 392 V408" stroke="#F8F9FA" stroke-width="2"/>
+          <text class="t-d" x="452" y="466" text-anchor="middle" style="font-size:14px">first week of term</text>
+          <path class="ln-f" d="M452 436 V448"/>
+        </svg>
+        <div class="sx-foot">
+          <div class="sx-bar" aria-hidden="true"></div>
+          <p class="sx-say">Sorted before the rush, <em>not during it.</em></p>
+          <span class="d17-mark">decodedops.co.uk · DO-ART-931 · Rev 01</span>
+        </div>
+      </figure>` }} />
+        </div>
+      </section>
 
-            <path id="sw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                  fill="none" strokeWidth="2.5" markerEnd="url(#sw-ah)"/>
+      {/* D17 INLINE ARTWORK · DO-ART-932 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div dangerouslySetInnerHTML={{ __html: `
+      <figure class="d17 sw sw-doc a932" data-od-id="plate-architecture" data-motion data-no="DO-ART-932" data-rev="01" data-tx="photo"
+              aria-label="Artwork DO-ART-932. A graded photograph of an embroidery head stitching a garment, with a school badge specification (revision 03, approved by the school) and a parent order laid over it. The order is routed to the school, picks up badge revision 03, takes the size from live stock and is delivered to the school. Every school badge is a thread file before it's a garment.">
+        <div class="d17-ph"><img src="/images/d17/sectors/hero-workshop-037adf.jpg" alt="" width="1100" height="963"></div>
+        <div class="d17-scan" aria-hidden="true"></div>
+        <figcaption class="sw-cap">
+          <div class="k d17-mono">Badge management <span>· per school</span></div>
+          <div class="bar" aria-hidden="true"></div>
+          <h3>Every school badge is a thread file before it's a garment.</h3>
+          <p>The badge, its stitch file and the school's approval live in one record. A parent's order
+            picks up the right one on its way to the machine, so no email thread decides which version
+            gets stitched in August.</p>
+          <span class="d17-mark">decodedops.co.uk · DO-ART-932 · Rev 01</span>
+        </figcaption>
+        <div class="stage" aria-hidden="true">
+          <div class="d17-doc doc-b m-drop" style="animation-delay:.1s">
+            <span class="tab">REV 03</span>
+            <span class="ref">BDG-A · Badge specification</span>
+            <h4>School A crest, left chest</h4>
+            <p class="sub">embroidery · one record per school</p>
+            <div class="badge">
+              <svg viewBox="0 0 92 104"><path d="M46 4 L86 16 V52 C86 76 68 92 46 100 C24 92 6 76 6 52 V16 Z" fill="#023047"/><path d="M46 14 L76 23 V52 C76 70 63 83 46 89 C29 83 16 70 16 52 V23 Z" fill="none" stroke="#FFB703" stroke-width="3"/><path d="M30 46 H62 M46 32 V74" stroke="#8ECAE6" stroke-width="5"/><circle cx="46" cy="46" r="7" fill="#FFB703"/></svg>
+              <dl class="spec" style="margin-top:0">
+                <dt>Method</dt><dd>Embroidery</dd>
+                <dt>Position</dt><dd>Left chest, 80mm</dd>
+                <dt>Thread</dt><dd><span class="swatch"><i style="background:#023047"></i><i style="background:#FFB703"></i><i style="background:#8ECAE6"></i><i style="background:#FFFFFF"></i></span></dd>
+                <dt>File</dt><dd class="hit">BDG-A stitch file · Rev 03</dd>
+              </dl>
+            </div>
+            <span class="approved m-pop" style="animation-delay:1.1s">Approved by the school</span>
+          </div>
+          <div class="d17-doc doc-r m-drop" style="animation-delay:.4s">
+            <span class="tab">WEB</span>
+            <span class="ref">Parent order · routed</span>
+            <h4>Blazer, age 11–12</h4>
+            <ol class="route">
+              <li class="m-fade" style="animation-delay:1s"><small>From the parent portal</small>School A</li>
+              <li class="m-fade" style="animation-delay:1.2s"><small>Badge</small>BDG-A · Rev 03, not Rev 02</li>
+              <li class="m-fade" style="animation-delay:1.4s"><small>Size</small>11–12, from live stock</li>
+              <li class="end m-fade" style="animation-delay:1.6s"><small>Delivery</small>To the school, with the class order</li>
+            </ol>
+          </div>
+        </div>
+      </figure>` }} />
+        </div>
+      </section>
 
-            <g className="sk-fade sk-s3">
-              <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#sw-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">Supplier kit range catalogue</text>
-              <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Blazers · PE kit ·
-                accessories: live data before the August rush, not during it</text>
-            </g>
-
-            <g className="sk-fade sk-s4">
-              <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#sw-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">School badge management</text>
-              <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Badge per school ·
-                embroidery spec · version control: not an email thread</text>
-            </g>
-
-            <g className="sk-fade sk-s5" filter="url(#sw-shadow)">
-              <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#sw-amber-n)"
-                    className="p-node-a" strokeWidth="2"/>
-              <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                    fontSize="28">Parent portal + production</text>
-              <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Order
-                routes to correct school · badge applied correctly · production scheduled from live
-                demand</text>
-            </g>
-
-            <g className="sk-dots">
-              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sw-spine"/></animateMotion></circle>
-            </g>
-          </Plate>
-        }
-        featuresHeading="Three problems, all of them worse in August."
-        features={[
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
-              </svg>
-            ),
-            title: 'Supplier feeds, current before the peak hits',
-            body: 'Schoolwear ranges don\'t change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. The Decoded Data App keeps that current automatically.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 14.5 14.5 3 21 9.5 9.5 21z" /><path d="M8 9.5 10 11.5M11 6.5 13 8.5M14.5 12 16.5 14" />
-              </svg>
-            ),
-            title: 'Sizing that scales with growing pupils',
-            body: 'A school\'s sizing spread is wider and shifts every year. Stock and bin management that understands that means fewer "sold out in the size everyone actually needs" moments in week one.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
-              </svg>
-            ),
-            title: 'Proven at a real teamwear-and-schoolwear retailer',
-            body: 'The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected saving of 20 to 40 hours a week.',
-          },
-        ]}
-        otherSectors={[
-          { label: 'Workwear', href: '/sectors/workwear' },
-          { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
-          { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
-        ]}
-        ctaLead="Best had in the quiet months, not in August. An hour on what's actually going wrong, and an honest read on whether it needs software at all."
-      />
+      {/* FEATURES */}
+      <section className="g-white">
+        <div className="wrap">
+          <span className="eyebrow">Where it usually breaks</span>
+          <h2>Three problems, all of them worse in August.</h2>
+          <div className="hair" />
+          <div className="grid grid--2" style={{ marginTop: '32px' }}>
+            {[
+              {
+                title: 'Supplier feeds, current before the peak hits',
+                body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. The Decoded Data App keeps that current automatically.",
+              },
+              {
+                title: 'Sizing that scales with growing pupils',
+                body: "A school's sizing spread is wider and shifts every year. Stock and bin management that understands that means fewer \u201csold out in the size everyone actually needs\u201d moments in week one.",
+              },
+              {
+                title: 'Proven at a teamwear business',
+                body: "The Decoded Data App runs alongside the existing platform, or as the full system where nothing off the shelf fits, handling both teamwear and schoolwear lines: 17 supplier feeds automated, a projected 20 to 40 hours a week.",
+              },
+            ].map((f, i) => (
+              <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <span style={{ minWidth: '28px', height: '28px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 style={{ fontSize: 'var(--do-text-lg)', margin: '0 0 8px' }}>{f.title}</h3>
+                  <p>{f.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* COMMON CHALLENGES */}
       <section className="g-white">
@@ -265,6 +318,8 @@ export default function SchoolwearPage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { SignsGraphicsSchematic } from '@/components/schematics/sectors/SignsGraphicsSchematic';
-import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import sectors from '@/app/d17-sectors.module.css';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
@@ -109,75 +109,81 @@ export default function SignsGraphicsPage() {
               <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/sectors/cat-signage.jpg" width="900" height="600" loading="eager"
-                 alt="Illuminated signage being assembled on a workshop bench, vinyl and substrate materials visible." />
-          </div>
-          <p className={styles.shotCaption}>From site survey to installation, every job is different.</p>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a933" data-od-id="hero-evidence" data-motion data-no="DO-ART-933" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-933. A graded photograph of a blank sign panel on a brick wall, measured with amber dimension lines, and a site survey sheet laid over it: size, substrate, fixing, access and photos, recorded before anything is quoted or made. The job starts at the site survey, not the order.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-982ce6.jpg" alt="" width="900" height="701"></div>
+  <svg class="dims" viewBox="0 0 770 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <rect x="28" y="170" width="641" height="273" fill="none" stroke="#FFB703" stroke-width="3" stroke-dasharray="10 8"/>
+    <g class="m-draw-g">
+      <path class="m-draw" pathLength="1" d="M28 128 H669 M28 114 V142 M669 114 V142" stroke="#FFB703" stroke-width="3" fill="none"/>
+    </g>
+    <rect x="293" y="106" width="110" height="44" rx="6" fill="#023047"/>
+    <text x="348" y="137" text-anchor="middle" fill="#FFB703" style="font-family:var(--do-font-mono);font-size:24px;font-weight:700">2400</text>
+  </svg>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Signs &amp; graphics</span><span>Site visit · before the quote</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-s m-drop" style="animation-delay:.6s">
+      <span class="tab">SITE</span>
+      <span class="ref">SS-0112 · Site survey</span>
+      <h4>Shopfront fascia</h4>
+      <p class="sub">surveyed · then designed, made, fitted</p>
+      <dl class="spec">
+        <dt>Size</dt><dd>2400 × 1000 mm</dd>
+        <dt>Substrate</dt><dd>ACM, 3 mm</dd>
+        <dt>Fixing</dt><dd>Stand-off, masonry</dd>
+        <dt>Access</dt><dd>Tower, pavement permit</dd>
+        <dt>Install</dt><dd class="hit">Booked from the survey</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">The job starts at the site survey, <em>not the order.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-933 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
+      {/* D17 INLINE ARTWORK · DO-ART-934 */}
       <section className="g-navy">
         <div className="wrap">
-          <SignsGraphicsSchematic />
-        </div>
-      </section>
-
-      {/* PLATE DIAGRAM · DO-ART-114 */}
-      <section className="g-navy">
-        <div className="wrap">
-          <div className="plate-scroll">
-            <div className="plate-frame">
-              <Plate tone="dark" p="sg" title="Signs & graphics: site survey to sign-off"
-                     sub="Four connected systems: survey, design, production, installation"
-                     no="DO-ART-114" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="sg-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#sg-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#sg-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Site survey</text>
-                  <text x="840" y="658" className="p-mono" fontSize="17" opacity=".85">Measurements ·
-                    access · fixing requirements: the data the whole job depends on</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#sg-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Design &amp; artwork proof</text>
-                  <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Client approval
-                    before production · version control · not managed in email</text>
-                </g>
-
-                <g className="sk-fade sk-s5">
-                  <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#sg-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Production</text>
-                  <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Substrate · finish ·
-                    size · fixing method: job costed accurately, not estimated</text>
-                </g>
-
-                <g className="sk-fade sk-s6" filter="url(#sg-shadow)">
-                  <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#sg-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Installation &amp; sign-off</text>
-                  <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Team
-                    scheduling · site access · third-party contractors · final sign-off captured</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#sg-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a934" data-od-id="plate-architecture" data-motion data-no="DO-ART-934" data-rev="01" data-tx="screen"
+        aria-label="Product screen DO-ART-934. A production board for a signs and graphics business with six columns: survey, design, proof, production, install and signed off. Each job card carries its survey, substrate and install details with it as it moves, and a fitted fascia job lands in signed off.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-58e48c.jpg" alt="" width="1100" height="733"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="head">
+    <div class="sw-cap">
+      <div class="k d17-mono">Job board <span>· survey to sign-off</span></div>
+      <h3>One job, one record, all the way to the wall.</h3>
+    </div>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-934 · Rev 01</span>
+  </div>
+  <div class="win" aria-hidden="true" style="--u:calc(100cqw / 1152)">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Production ›</span> Job board</span><span class="pill">THIS WEEK</span></div>
+    <div class="board">
+      <div class="col"><div class="ch">Survey<i>2</i></div>
+        <div class="card-j m-rise" style="animation-delay:.1s"><span class="r">J-2217</span><b>Window graphics, shopfront</b><div class="m"><span>4 photos</span><span>measured</span></div></div>
+        <div class="card-j m-rise" style="animation-delay:.15s"><span class="r">J-2219</span><b>Wayfinding, office floor</b><div class="m"><span>site visit Thu</span></div></div></div>
+      <div class="col"><div class="ch">Design<i>2</i></div>
+        <div class="card-j m-rise" style="animation-delay:.25s"><span class="r">J-2211</span><b>Vehicle livery, van</b><div class="m"><span>template</span><span>brand kit</span></div></div>
+        <div class="card-j m-rise" style="animation-delay:.3s"><span class="r">J-2214</span><b>Hoarding, site boundary</b><div class="m"><span>survey in</span></div></div></div>
+      <div class="col"><div class="ch">Proof<i>1</i></div>
+        <div class="card-j m-rise" style="animation-delay:.4s"><span class="r">J-2208</span><b>Illuminated letters</b><div class="m"><span>proof v2 sent</span></div></div></div>
+      <div class="col"><div class="ch">Production<i>2</i></div>
+        <div class="card-j m-rise" style="animation-delay:.5s"><span class="r">J-2203</span><b>Directional signs, car park</b><div class="m"><span>ACM 3mm</span><span>print + laminate</span></div></div>
+        <div class="card-j m-rise" style="animation-delay:.55s"><span class="r">J-2206</span><b>Wall graphic, reception</b><div class="m"><span>vinyl</span></div></div></div>
+      <div class="col"><div class="ch">Install<i>1</i></div>
+        <div class="card-j m-rise" style="animation-delay:.65s"><span class="r">J-2199</span><b>Pub fascia, re-brand</b><div class="m"><span>tower booked</span><span>2 fitters</span></div></div></div>
+      <div class="col"><div class="ch">Signed off<i>1</i></div>
+        <div class="card-j card-j--a m-rise" style="animation-delay:1s"><img class="th" src="/images/d17/sectors/cat-signage-2bf918.jpg" alt="" width="320" height="165"><span class="r">J-2194</span><b>Shopfront fascia</b><div class="m"><span>fitted</span><span>photo signed</span><span>invoiced</span></div></div></div>
+    </div>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -294,6 +300,7 @@ export default function SignsGraphicsPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

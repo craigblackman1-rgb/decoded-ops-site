@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { LabelsPackagingSchematic } from '@/components/schematics/sectors/LabelsPackagingSchematic';
-import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import sectors from '@/app/d17-sectors.module.css';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
@@ -109,66 +109,108 @@ export default function LabelsPackagingPage() {
               <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/sectors/cat-packaging.jpg" width="900" height="1200" loading="eager"
-                 alt="Rolls of printed labels stacked on a shelving unit, different widths and substrate finishes visible." />
-          </div>
-          <p className={styles.shotCaption}>Hundreds of label SKUs, each with its own spec, substrate, and compliance requirement.</p>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a925" data-od-id="hero-evidence" data-motion data-no="DO-ART-925" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-925. One label SKU with three revisions. Revisions A and B are superseded and stopped at the version check. Revision C is live and is the only version released to the press. Hundreds of SKUs, one right version.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Labels &amp; packaging</span><span>SKU LBL-0141</span></div>
+  <svg class="q" viewBox="0 0 560 520" aria-hidden="true">
+    <defs>
+      <pattern id="q-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#023047"/><line x1="0" y1="0" x2="0" y2="10" stroke="#8ECAE6" stroke-opacity=".28" stroke-width="3"/></pattern>
+      <marker id="q-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+    </defs>
+    <g class="m-rise" style="animation-delay:.1s">
+      <rect class="bx-x" x="26" y="22" width="286" height="104" rx="10"/>
+      <text class="t-m" x="44" y="50">Rev A · superseded</text>
+      <text class="t" x="44" y="80" style="font-size:20px;font-weight:700">Allergen panel v1</text>
+      <text class="t-d" x="44" y="106">Original artwork, first print</text>
+      <line class="strike" x1="40" y1="74" x2="236" y2="74"/>
+    </g>
+    <g class="m-rise" style="animation-delay:.3s">
+      <rect class="bx-x" x="26" y="146" width="286" height="104" rx="10"/>
+      <text class="t-m" x="44" y="174">Rev B · superseded</text>
+      <text class="t" x="44" y="204" style="font-size:20px;font-weight:700">Barcode moved</text>
+      <text class="t-d" x="44" y="230">Customer change, month two</text>
+      <line class="strike" x1="40" y1="198" x2="200" y2="198"/>
+    </g>
+    <g class="m-rise" style="animation-delay:.5s">
+      <rect class="bx-a" x="26" y="270" width="286" height="116" rx="12"/>
+      <text class="t-m t-a" x="44" y="300">Rev C · live</text>
+      <text class="t-h" x="44" y="334" style="font-size:24px">Compliance text v3</text>
+      <text class="t-d" x="44" y="362">The only version that may print</text>
+    </g>
+    <path class="ln-d" d="M312 74 H380 C404 74 404 110 404 150 V214"/>
+    <path class="ln-d" d="M312 198 H360 C380 198 386 206 392 214"/>
+    <g stroke="#8ECAE6" stroke-width="3" stroke-linecap="round"><path d="M394 180 l14 14 M408 180 l-14 14"/><path d="M356 188 l14 14 M370 188 l-14 14"/></g>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.9s" d="M312 328 H362 C390 328 404 306 420 282"/>
+    <g class="m-pop" style="animation-delay:.7s">
+      <path d="M440 214 L484 256 L440 298 L396 256 Z" fill="#023047" stroke="#8ECAE6" stroke-width="2"/>
+      <text class="t-m" x="440" y="252" text-anchor="middle" style="font-size:11px">Version</text>
+      <text class="t-m" x="440" y="268" text-anchor="middle" style="font-size:11px">check</text>
+    </g>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:1.4s" d="M440 298 V402" marker-end="url(#q-ah)"/>
+    <g class="m-pop" style="animation-delay:1.9s">
+      <rect class="bx" x="350" y="412" width="180" height="84" rx="12"/>
+      <text class="t-m" x="370" y="440">To press</text>
+      <text class="t-h" x="370" y="474" style="font-size:24px">Rev C only</text>
+    </g>
+    <path class="ln-f" d="M26 430 H300 M26 424 v12 M300 424 v12"/>
+    <text class="t-d" x="26" y="462" style="font-size:15px">one SKU of hundreds, each with its own</text>
+    <text class="t-d" x="26" y="484" style="font-size:15px">specification and its own history</text>
+  </svg>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Hundreds of SKUs, <em>one right version.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-925 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
+      {/* D17 INLINE ARTWORK · DO-ART-926 */}
       <section className="g-navy">
         <div className="wrap">
-          <LabelsPackagingSchematic />
-        </div>
-      </section>
-
-      {/* PLATE DIAGRAM · DO-ART-116 */}
-      <section className="g-navy">
-        <div className="wrap">
-          <div className="plate-scroll">
-            <div className="plate-frame">
-              <Plate tone="dark" p="lp" title="Labels & packaging: specification to compliant delivery"
-                     sub="Three connected systems: specification control, variable data printing, delivery"
-                     no="DO-ART-116" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="lp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#lp-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#lp-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Specification control</text>
-                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Hundreds of label
-                    SKUs · version management · compliance data: right version, every time</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#lp-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Variable data printing</text>
-                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Short-run ·
-                    high-variation · substrate matched to press: workflow built for the job, not generic</text>
-                </g>
-
-                <g className="sk-fade sk-s5" filter="url(#lp-shadow)">
-                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#lp-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Compliance delivery</text>
-                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Correct
-                    spec · correct substrate · EDI integration: delivered right first time</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#lp-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw sw-doc a926" data-od-id="plate-architecture" data-motion data-no="DO-ART-926" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-926. A label specification sheet, revision C, and a variable-data proof laid over a photograph of packed cartons. The specification ties substrate, adhesive, finish, press set-up, variable data and the compliance check to one live version.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-packaging-48f149.jpg" alt="" width="900" height="950"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Specification control <span>· one live version</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>The spec, the data and the check, on one sheet.</h3>
+    <p>Substrate, adhesive, finish, press set-up and the variable data all hang off the live
+      revision. When the spec changes, the old version can't reach the press, and the compliance
+      check is recorded against the job, not remembered.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-926 · Rev 01</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-s m-drop" style="animation-delay:.1s">
+      <span class="tab">REV C</span>
+      <span class="ref">SP-0141 · Label specification</span>
+      <h4>Food label, 100 × 70</h4>
+      <p class="sub">live revision · issued to production</p>
+      <dl class="spec">
+        <dt>Substrate</dt><dd>White PP film</dd>
+        <dt>Adhesive</dt><dd>Permanent, chiller grade</dd>
+        <dt>Finish</dt><dd>Gloss laminate</dd>
+        <dt>Press</dt><dd>Press 2 · four colour + varnish</dd>
+        <dt>Variable</dt><dd>Batch code · best before</dd>
+        <dt>Compliance</dt><dd class="hit">Allergen panel checked · Rev C</dd>
+      </dl>
+    </div>
+    <div class="d17-doc doc-v m-drop" style="animation-delay:.4s">
+      <span class="tab">VD</span>
+      <span class="ref">VD-07 · Variable data proof</span>
+      <h4>Every label, its own data</h4>
+      <div class="lbl"><span class="l l--h"></span><span class="l" style="width:88%"></span><span class="l" style="width:74%"></span>
+        <span class="l" style="width:80%"></span>
+        <div class="vd"><span>BATCH <b>A0417</b></span><span>BEST BEFORE <b>MAR 27</b></span></div>
+        <div class="bc"></div></div>
+      <span class="approved m-pop" style="animation-delay:1.2s">Matches Rev C</span>
+    </div>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -272,6 +314,7 @@ export default function LabelsPackagingPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

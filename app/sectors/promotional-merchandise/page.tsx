@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { SectorPageDS } from '@/components/SectorPageDS';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
+import d17 from '@/app/d17-art.module.css';
+import sectors from '@/app/d17-sectors.module.css';
 
 export const metadata: Metadata = {
   title: 'Promotional merchandise: Decoded Ops',
@@ -68,126 +69,112 @@ export default function PromotionalMerchandisePage() {
         { name: 'Sectors', url: 'https://decodedops.co.uk/sectors' },
         { name: 'Promotional Merchandise', url: 'https://decodedops.co.uk/sectors/promotional-merchandise' },
       ]} />
-      <SectorPageDS
-        sectorLabel="promotional merchandise"
-        h1="Promotional merchandise, without the spreadsheet chaos."
-        introParagraphs={[
-          'Every client wants something slightly different, on a deadline, at a price point that leaves no room for error.',
-          'The businesses that do this well have their product data and their production process under control. Most don\'t, and it\'s costing them.',
-        ]}
-        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
-        heroImage={{
-          src: '/images/sectors/cat-promo.jpg',
-          width: 900,
-          height: 600,
-          alt: 'An assortment of branded promotional items grouped on a plain surface, the kind of mixed order a merchandise supplier fulfils from several different supplier ranges at once.',
-        }}
-        shotCaption="One order, four supplier ranges, four different lead times, and one logo that has to work on all of them."
-        plate={
-          <Plate tone="dark" p="pm" title="Promotional merchandise: supplier range to delivered order"
-                 sub="Three connected systems: multi-supplier catalogue, artwork management, order fulfilment"
-                 no="DO-ART-111" rev="01" cls="DECODED OPS · ISSUED">
 
-            <path id="pm-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                  fill="none" strokeWidth="2.5" markerEnd="url(#pm-ah)"/>
+      {/* HERO SPLIT */}
+      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 3vw, 48px)', alignItems: 'center' }}>
+          <div>
+            <span className="eyebrow">Sector · promotional merchandise</span>
+            <h1>Promotional merchandise, without the spreadsheet chaos.</h1>
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Every client wants something slightly different, on a deadline, at a price point that leaves no room for error.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that do this well have their product data and their production process under control. Most don&apos;t, and it&apos;s costing them.</p>
+            </div>
+            <div className="btn-row" style={{ marginTop: '24px' }}>
+              <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+          {/* D17 hero artwork · DO-ART-929 */}
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a929" data-od-id="hero-evidence" data-motion data-no="DO-ART-929" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-929. A graded photograph of blank mugs with a client order laid over it: four product lines from four supplier ranges, each with its own lead time, and the four purchase orders it becomes. The order ships when the slowest line lands. One order, four supplier ranges, four different lead times.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-96b20f.jpg" alt="" width="900" height="771"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Promotional merchandise</span><span>One client order</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-m m-drop" style="animation-delay:.45s">
+      <span class="tab">PO ×4</span>
+      <span class="ref">Purchase orders</span>
+      <ol>
+        <li><b>A</b>Supplier A<i></i></li>
+        <li><b>B</b>Supplier B<i></i></li>
+        <li><b>C</b>Supplier C<i></i></li>
+        <li><b>D</b>Supplier D<i></i></li>
+      </ol>
+    </div>
+    <div class="d17-doc doc-o m-drop" style="animation-delay:.1s">
+      <span class="tab">SO</span>
+      <span class="ref">SO-3308 · Client order</span>
+      <h4>Conference welcome packs</h4>
+      <p class="sub">one order · four supplier ranges</p>
+      <ol>
+        <li><b>01</b>Mug, ceramic<span>Supplier A</span><em>5 DAYS</em></li>
+        <li><b>02</b>Pen, metal<span>Supplier B</span><em>3 DAYS</em></li>
+        <li class="slow"><b>03</b>Tote, cotton<span>Supplier C</span><em>10 DAYS</em></li>
+        <li><b>04</b>Lanyard<span>Supplier D</span><em>7 DAYS</em></li>
+      </ol>
+      <div class="ship">Ships when the slowest line lands<span>DAY 10</span></div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">One order, four supplier ranges, <em>four different lead times.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-929 · Rev 01</span>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
 
-            <g className="sk-fade sk-s3">
-              <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#pm-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">Multi-supplier catalogue</text>
-              <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Dozens of ranges ·
-                live pricing · live stock: not a folder of spreadsheets nobody trusts</text>
-            </g>
-
-            <g className="sk-fade sk-s4">
-              <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#pm-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">Artwork management</text>
-              <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Client logo
-                versioning · proof approval · audit trail: not an email thread per order</text>
-            </g>
-
-            <g className="sk-fade sk-s5" filter="url(#pm-shadow)">
-              <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#pm-amber-n)"
-                    className="p-node-a" strokeWidth="2"/>
-              <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                    fontSize="28">Order fulfilment</text>
-              <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Decoration
-                cost · supplier lead times · margin trackable per job: not estimated after delivery</text>
-            </g>
-
-            <g className="sk-dots">
-              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pm-spine"/></animateMotion></circle>
-            </g>
-          </Plate>
-        }
-        featuresHeading="Five challenges specific to this sector."
-        features={[
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
-              </svg>
-            ),
-            title: 'Multi-supplier catalogue management',
-            body: 'Promotional merchandise runs on dozens of supplier ranges. Matching products, managing pricing, and keeping stock current across all of them, without re-keying, is the single biggest challenge in the sector.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
-              </svg>
-            ),
-            title: 'The artwork loop',
-            body: 'Client logos, in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 18 9.5 12l3.5 3.5L20 8" /><path d="M15.5 8H20v4.5" />
-              </svg>
-            ),
-            title: 'Margin erosion at the order level',
-            body: 'If decoration cost, supplier lead times, and artwork rework aren\u2019t tracked per job, margin quietly erodes on every order.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M16 13H8" /><path d="M16 17H8" /><path d="M10 9H8" />
-              </svg>
-            ),
-            title: 'What quoting actually costs you',
-            body: 'How much does it cost you to produce a quote? How much of that time converts to an order? Most promotional merchandise businesses have never measured it. And the answer is usually uncomfortable.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a14.8 14.8 0 0 0-3 10 14.8 14.8 0 0 0 3 10 14.8 14.8 0 0 0 3-10A14.8 14.8 0 0 0 12 2z" />
-              </svg>
-            ),
-            title: 'eCommerce disconnected from supply',
-            body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.',
-          },
-        ]}
-        checklistHeading="An independent audit of supplier data, artwork, and margin."
-        checklist={[
-          'Map your full workflow, from client enquiry to delivery',
-          'Audit multi-supplier product data for accuracy and currency',
-          'Review how artwork is stored, approved, and versioned',
-          'Find where supplier fragmentation creates admin work',
-          'See how margin is calculated and tracked per order',
-          'Review quoting accuracy and quote-to-order costs',
-          'Put a number on every finding in time, margin, and admin cost',
-        ]}
-        otherSectors={[
-          { label: 'Workwear', href: '/sectors/workwear' },
-          { label: 'Teamwear & clubwear', href: '/sectors/teamwear-clubwear' },
-          { label: 'Schoolwear', href: '/sectors/schoolwear' },
-        ]}
-        ctaLead="An hour on supplier data, the artwork loop, and where the margin is actually leaking: on every order, not in the year-end numbers."
-      />
+      {/* D17 INLINE ARTWORK · DO-ART-930 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a930" data-od-id="plate-architecture" data-motion data-no="DO-ART-930" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-930. The Data App supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-6d25d2.jpg" alt="" width="1100" height="733"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">The Data App <span>· supplier matching</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Every supplier range, one clean catalogue.</h3>
+    <p>Supplier feeds come in on their own, and each product is matched to its supplier before
+      anyone re-keys a line. Pricing and stock stay current because nobody is copying them.</p>
+    <div class="live d17-mono">Live system, September 2026</div>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-930 · Rev 01</span>
+  </figcaption>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Catalogue ›</span> Supplier matching</span><span class="pill">LIVE</span></div>
+    <div class="win-body">
+      <nav class="win-nav"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg>Catalogue</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>Fulfil</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg>Publish</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Insight</span></nav>
+      <div class="win-main">
+        <h5>Supplier matching</h5>
+        <p class="s">Every product brought in, matched to the supplier range it came from</p>
+        <div class="kpis">
+          <div class="kpi m-rise" style="animation-delay:.1s"><div class="l">Products brought in</div>
+            <p class="n">317,812</p><p class="d">from supplier feeds</p></div>
+          <div class="kpi kpi--hit m-rise" style="animation-delay:.3s"><div class="l">Matched automatically</div>
+            <p class="n">154,518</p><p class="d">to a supplier, before anyone had to touch them</p></div>
+          <div class="kpi m-rise" style="animation-delay:.5s"><div class="l">Active suppliers</div>
+            <p class="n">40</p><p class="d">ranges feeding in</p></div>
+        </div>
+        <div class="meter m-rise" style="animation-delay:.7s"><div class="row"><b>Matched to a supplier</b><span>154,518 of 317,812</span></div>
+          <div class="track"><div class="fill m-fill" style="width:48.6%;animation-delay:1s"></div></div></div>
+        <div class="match">
+          <div class="hd"><b>Recently matched</b><span>example rows</span></div>
+          <div class="r m-fade" style="animation-delay:1.4s"><b>Ceramic mug, white</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Supplier A</span><span class="ok">MATCHED</span></div>
+          <div class="r m-fade" style="animation-delay:1.55s"><b>Cotton tote, natural</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Supplier C</span><span class="ok">MATCHED</span></div>
+          <div class="r m-fade" style="animation-delay:1.7s"><b>Metal pen, black</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Supplier B</span><span class="ok">MATCHED</span></div>
+          <div class="r m-fade" style="animation-delay:1.85s"><b>Lanyard, 20mm</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Supplier D</span><span class="ok">MATCHED</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
 
       {/* COMMON CHALLENGES */}
       <section className="g-white">
@@ -198,11 +185,11 @@ export default function PromotionalMerchandisePage() {
           <p className="lede">In promotional merchandise, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           <div className="grid grid--2">
             {[
-              { title: 'Multi-supplier catalogue management', body: "Dozens of supplier ranges, each with their own pricing, stock levels, and lead times. Matching products, managing pricing, and keeping stock current across all of them without re-keying data eats more admin hours than anything else in this trade." },
-              { title: 'The artwork loop', body: "Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email." },
-              { title: 'Margin erosion at the order level', body: "When decoration cost, supplier lead time variation, and artwork rework aren't tracked at the individual order level, margin quietly erodes on every job. It's invisible in the P&L until the year-end numbers land." },
-              { title: 'What quoting actually costs you', body: "The cost of producing quotes that don't convert is rarely measured, and the answer is usually uncomfortable. A quoting process that takes thirty minutes per prospect becomes a full-time salary at scale." },
-              { title: 'eCommerce disconnected from supply', body: "A product listed online that isn't connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume." },
+              { title: 'Multi-supplier catalogue management', body: 'Dozens of supplier ranges, each with their own pricing, stock levels, and lead times. Matching products, managing pricing, and keeping stock current across all of them without re-keying data eats more admin hours than anything else in this trade.' },
+              { title: 'The artwork loop', body: 'Client logos in every format, with version control and an audit trail. Customers should approve their own proofs instead of a back-and-forth that eats a day per order. Most promotional merchandise businesses are still managing approval by email.' },
+              { title: 'Margin erosion at the order level', body: 'When decoration cost, supplier lead time variation, and artwork rework aren\u2019t tracked at the individual order level, margin quietly erodes on every job. It\u2019s invisible in the P&L until the year-end numbers land.' },
+              { title: 'What quoting actually costs you', body: 'The cost of producing quotes that don\u2019t convert is rarely measured, and the answer is usually uncomfortable. A quoting process that takes thirty minutes per prospect becomes a full-time salary at scale.' },
+              { title: 'eCommerce disconnected from supply', body: 'A product listed online that isn\u2019t connected to live supplier data means manual checks on every order. A catalogue of thousands of items makes that impossible to sustain at any volume.' },
             ].map((c, i) => (
               <article key={i} className="card">
                 <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>
@@ -227,6 +214,7 @@ export default function PromotionalMerchandisePage() {
               'Review how artwork is stored, approved, and versioned',
               'Find where supplier fragmentation creates admin work',
               'See how margin is calculated and tracked per order',
+              'Review quoting accuracy and quote-to-order costs',
               'Put a number on every finding in time, margin, and admin cost',
             ].map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -306,6 +294,8 @@ export default function PromotionalMerchandisePage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

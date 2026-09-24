@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { PrintPromotionalSchematic } from '@/components/schematics/sectors/PrintPromotionalSchematic';
-import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import sectors from '@/app/d17-sectors.module.css';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
@@ -62,7 +62,7 @@ const challenges = [
   { title: 'Supplier fragmentation', body: "Multiple suppliers, multiple portals, multiple confirmation processes. The admin of chasing incoming goods rarely shows in the P&L, but it's real." },
   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step you can't measure or improve." },
   { title: 'What quoting actually costs you', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
-  { title: 'Artwork approval workflow', body: "Artwork approval is where most print shop schedules break down. Every unapproved job stuck in an email thread is a press slot you can't plan. Automating approval, from brief to proof to sign-off, typically cuts production delays by 20-40% with no change to the print process." },
+  { title: 'Artwork approval workflow', body: "Artwork approval is where most print shop schedules break down. Every unapproved job stuck in an email thread is a press slot you can't plan. Automating approval, from brief to proof to sign-off, cuts production delays with no change to the print process." },
   { title: 'Print production scheduling and capacity planning', body: "Scheduling software that ignores substrate, print method, drying time, and finishing can't produce a realistic schedule. Most print shops schedule by eye and experience. That works until volume outgrows what one person can hold in their head." },
 ];
 
@@ -106,75 +106,138 @@ export default function PrintPromotionalPage() {
               <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/sectors/cat-print.jpg" width="900" height="1200" loading="eager"
-                 alt="A production table covered with printed promotional items: tote bags, mugs, and branded packaging." />
-          </div>
-          <p className={styles.shotCaption}>Short runs, tight deadlines, and artwork approvals that eat into the schedule.</p>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.jpg" alt="" width="1000" height="1000"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="sheet m-drop" style="animation-delay:.1s">
+      <span class="ref">RS-02 · Run sheet</span>
+      <h4>One slot, as planned and as run</h4>
+      <div class="slot"><span class="lab">Planned · one long run</span><div class="long"></div></div>
+      <div class="slot"><span class="lab">Run · short jobs</span>
+        <div class="short m-fill" style="animation-delay:.6s"><i style="--g:1.4"></i><i style="--g:.8"></i><i style="--g:1.1"></i><i class="gap" style="--g:1.6"></i><i style="--g:.7"></i><i style="--g:1"></i></div></div>
+      <p class="note">Every change of job is a set-up. The dashed slot is a job waiting on artwork sign-off: time on the press nobody could plan.</p>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Short runs, <em>a schedule built for long ones.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-927 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
       <section className="g-navy">
         <div className="wrap">
-          <PrintPromotionalSchematic />
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.jpg" alt="" width="1000" height="1000"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="sheet m-drop" style="animation-delay:.1s">
+      <span class="ref">RS-02 · Run sheet</span>
+      <h4>One slot, as planned and as run</h4>
+      <div class="slot"><span class="lab">Planned · one long run</span><div class="long"></div></div>
+      <div class="slot"><span class="lab">Run · short jobs</span>
+        <div class="short m-fill" style="animation-delay:.6s"><i style="--g:1.4"></i><i style="--g:.8"></i><i style="--g:1.1"></i><i class="gap" style="--g:1.6"></i><i style="--g:.7"></i><i style="--g:1"></i></div></div>
+      <p class="note">Every change of job is a set-up. The dashed slot is a job waiting on artwork sign-off: time on the press nobody could plan.</p>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Short runs, <em>a schedule built for long ones.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-927 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
-      {/* PLATE DIAGRAM · DO-ART-113 */}
+      {/* D17 INLINE ARTWORK · DO-ART-928 */}
       <section className="g-navy">
         <div className="wrap">
-          <div className="plate-scroll">
-            <div className="plate-frame">
-              <Plate tone="dark" p="pp" title="Print & promotional: quote to delivered print run"
-                     sub="Four connected systems: quoting, supplier management, artwork approval, production scheduling"
-                     no="DO-ART-113" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="pp-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 740 V240"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#pp-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="450" y="620" width="840" height="80" rx="14" fill="url(#pp-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="658" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Quoting &amp; order intake</text>
-                  <text x="940" y="658" className="p-mono" fontSize="17" opacity=".85">Cost modelled
-                    accurately before the order is priced</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="450" y="500" width="840" height="90" rx="14" fill="url(#pp-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="540" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Supplier management</text>
-                  <text x="500" y="566" className="p-mono" fontSize="17" opacity=".85">Multiple suppliers ·
-                    multiple portals: one consolidated view of what is ordered and when it arrives</text>
-                </g>
-
-                <g className="sk-fade sk-s5">
-                  <rect x="450" y="380" width="840" height="90" rx="14" fill="url(#pp-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="420" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Artwork approval</text>
-                  <text x="500" y="446" className="p-mono" fontSize="17" opacity=".85">Proof management
-                    with audit trail: not an email thread per job</text>
-                </g>
-
-                <g className="sk-fade sk-s6" filter="url(#pp-shadow)">
-                  <rect x="450" y="250" width="840" height="100" rx="16" fill="url(#pp-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="500" y="298" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Production scheduling</text>
-                  <text x="500" y="326" className="p-accent-ink" fontSize="18" fontWeight="600">Substrate
-                    · print method · drying time · finishing: a schedule that reflects the real job</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#pp-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a928" data-od-id="plate-architecture" data-motion data-no="DO-ART-928" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-928. Four connected systems: quoting, supplier management, artwork approval and production scheduling, each feeding the next. Below them, a press week across two presses and finishing: short runs, each with its own drying and finishing step, and one press slot held open by a job waiting on artwork sign-off. When approval is in the same system as the schedule, the slot can be planned.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="q-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#023047"/><line x1="0" y1="0" x2="0" y2="12" stroke="#8ECAE6" stroke-opacity=".3" stroke-width="3"/></pattern></defs></svg>
+  <svg class="q v-wide" viewBox="0 0 1600 700" aria-hidden="true">
+    <defs>
+      <marker id="q-ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+      <marker id="q-ah3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+    </defs>
+    <g class="m-rise" style="animation-delay:.05s"><rect class="bx" x="20" y="10" width="330" height="112" rx="14"/>
+      <text class="t-m" x="44" y="44" style="font-size:16px">01 · Quoting</text><text class="t-h" x="44" y="80" style="font-size:30px">Quote</text><text class="t-d" x="44" y="106" style="font-size:19px">cost of a quote, measured</text></g>
+    <g class="m-rise" style="animation-delay:.2s"><rect class="bx" x="430" y="10" width="330" height="112" rx="14"/>
+      <text class="t-m" x="454" y="44" style="font-size:16px">02 · Supply</text><text class="t-h" x="454" y="80" style="font-size:30px">Suppliers</text><text class="t-d" x="454" y="106" style="font-size:19px">every line, its own lead time</text></g>
+    <g class="m-rise" style="animation-delay:.35s"><rect class="bx" x="840" y="10" width="330" height="112" rx="14"/>
+      <text class="t-m" x="864" y="44" style="font-size:16px">03 · Approval</text><text class="t-h" x="864" y="80" style="font-size:30px">Artwork sign-off</text><text class="t-d" x="864" y="106" style="font-size:19px">brief, proof, signed</text></g>
+    <g class="m-rise" style="animation-delay:.5s"><rect class="bx-a" x="1250" y="10" width="330" height="112" rx="14"/>
+      <text class="t-m t-a" x="1274" y="44" style="font-size:16px">04 · Production</text><text class="t-h" x="1274" y="80" style="font-size:30px">Press schedule</text><text class="t-d" x="1274" y="106" style="font-size:19px">planned from what's real</text></g>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.3s" d="M352 66 H424" marker-end="url(#q-ah2)"/>
+    <path class="ln m-draw" pathLength="1" style="animation-delay:.45s" d="M762 66 H834" marker-end="url(#q-ah2)"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.6s" d="M1172 66 H1244" marker-end="url(#q-ah3)"/>
+    <text class="t-m" x="20" y="188" style="font-size:16px">The press week it has to plan</text>
+    <g class="t-m" style="font-size:15px"><text x="250" y="222">Mon</text><text x="516" y="222">Tue</text><text x="782" y="222">Wed</text><text x="1048" y="222">Thu</text><text x="1314" y="222">Fri</text></g>
+    <path class="ln-f" d="M236 232 V560 M502 232 V560 M768 232 V560 M1034 232 V560 M1300 232 V560 M1566 232 V560"/>
+    <g class="t" style="font-size:21px;font-weight:700"><text x="20" y="280">Press 1</text><text x="20" y="380">Press 2</text><text x="20" y="480">Finishing</text></g>
+    <g class="m-pop" style="animation-delay:.9s"><rect x="244" y="248" width="128" height="50" rx="7" class="f-c"/><rect x="376" y="248" width="46" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1s"><rect x="430" y="248" width="170" height="50" rx="7" class="f-c"/><rect x="604" y="248" width="46" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.1s"><rect x="660" y="248" width="96" height="50" rx="7" class="f-c"/><rect x="760" y="248" width="40" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.2s"><rect x="810" y="248" width="210" height="50" rx="7" class="f-c"/><rect x="1024" y="248" width="46" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.3s"><rect x="1080" y="248" width="140" height="50" rx="7" class="f-c"/><rect x="1224" y="248" width="44" height="50" rx="7" class="bx-x"/><rect x="1280" y="248" width="150" height="50" rx="7" class="f-c"/></g>
+    <g class="m-pop" style="animation-delay:1s"><rect x="244" y="348" width="200" height="50" rx="7" class="f-c"/><rect x="448" y="348" width="46" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.1s"><rect x="506" y="348" width="120" height="50" rx="7" class="f-c"/><rect x="630" y="348" width="40" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.6s"><rect x="680" y="344" width="330" height="58" rx="8" fill="url(#q-hatch)" stroke="#FFB703" stroke-width="2.6" stroke-dasharray="9 7"/>
+      <text class="t t-a" x="700" y="380" style="font-size:19px;font-weight:700">Waiting on sign-off</text></g>
+    <g class="m-pop" style="animation-delay:1.2s"><rect x="1020" y="348" width="160" height="50" rx="7" class="f-c"/><rect x="1184" y="348" width="46" height="50" rx="7" class="bx-x"/><rect x="1240" y="348" width="110" height="50" rx="7" class="f-c"/><rect x="1354" y="348" width="40" height="50" rx="7" class="bx-x"/></g>
+    <g class="m-pop" style="animation-delay:1.4s"><rect x="430" y="448" width="80" height="50" rx="7" class="f-s"/><rect x="660" y="448" width="90" height="50" rx="7" class="f-s"/><rect x="820" y="448" width="70" height="50" rx="7" class="f-s"/><rect x="1080" y="448" width="110" height="50" rx="7" class="f-s"/><rect x="1240" y="448" width="80" height="50" rx="7" class="f-s"/><rect x="1440" y="448" width="90" height="50" rx="7" class="f-s"/></g>
+    <path class="ln-d" d="M399 298 V330 C399 420 440 420 450 446 M627 298 C640 400 680 400 690 446 M1047 298 C1050 380 840 400 840 446 M1246 298 V330 C1246 360 1120 400 1110 446 M1372 398 C1380 430 1270 430 1270 446 M1207 398 C1300 430 1460 420 1470 446"/>
+    <path class="ln-a m-draw" pathLength="1" style="animation-delay:2s" d="M1005 124 C1005 200 900 240 860 336" marker-end="url(#q-ah3)"/>
+    <text class="t t-a" x="1030" y="162" style="font-size:19px;font-weight:700">Signed off in the same system:</text>
+    <text class="t-d" x="1030" y="188" style="font-size:18px">the slot can be planned</text>
+    <g transform="translate(236 600)">
+      <rect width="40" height="22" rx="4" class="f-c"/><text class="t-d" x="52" y="17" style="font-size:18px">short run</text>
+      <rect x="190" width="40" height="22" rx="4" class="bx-x"/><text class="t-d" x="242" y="17" style="font-size:18px">drying / cure</text>
+      <rect x="420" width="40" height="22" rx="4" class="f-s"/><text class="t-d" x="472" y="17" style="font-size:18px">finishing</text>
+      <rect x="620" width="40" height="22" rx="4" fill="url(#q-hatch)" stroke="#FFB703" stroke-width="2" stroke-dasharray="6 4"/><text class="t-d" x="672" y="17" style="font-size:18px">a press slot nobody can plan</text>
+    </g>
+  </svg>
+  <svg class="q v-tall" viewBox="0 0 700 1060" aria-hidden="true">
+    <defs>
+      <marker id="q-ah4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
+      <marker id="q-ah5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
+    </defs>
+    <g><rect class="bx" x="10" y="10" width="330" height="120" rx="14"/><text class="t-m" x="32" y="48" style="font-size:22px">01 · Quoting</text><text class="t-h" x="32" y="98" style="font-size:38px">Quote</text></g>
+    <g><rect class="bx" x="360" y="10" width="330" height="120" rx="14"/><text class="t-m" x="382" y="48" style="font-size:22px">02 · Supply</text><text class="t-h" x="382" y="98" style="font-size:38px">Suppliers</text></g>
+    <g><rect class="bx" x="10" y="170" width="330" height="120" rx="14"/><text class="t-m" x="32" y="208" style="font-size:22px">03 · Approval</text><text class="t-h" x="32" y="258" style="font-size:34px">Artwork sign-off</text></g>
+    <g><rect class="bx-a" x="360" y="170" width="330" height="120" rx="14"/><text class="t-m t-a" x="382" y="208" style="font-size:22px">04 · Production</text><text class="t-h" x="382" y="258" style="font-size:34px">Press schedule</text></g>
+    <path class="ln" d="M342 70 H354" marker-end="url(#q-ah4)"/><path class="ln" d="M525 132 C525 150 175 150 175 164" marker-end="url(#q-ah4)"/><path class="ln-a" d="M342 230 H354" marker-end="url(#q-ah5)"/>
+    <text class="t-m" x="10" y="360" style="font-size:22px">The press week it has to plan</text>
+    <g class="t-m" style="font-size:22px"><text x="190" y="410">Mon</text><text x="360" y="410">Tue</text><text x="530" y="410">Wed</text></g>
+    <path class="ln-f" d="M180 424 V760 M350 424 V760 M520 424 V760 M690 424 V760"/>
+    <g class="t" style="font-size:26px;font-weight:700"><text x="10" y="478">Press 1</text><text x="10" y="598">Press 2</text><text x="10" y="718">Finish</text></g>
+    <rect x="186" y="440" width="90" height="62" rx="7" class="f-c"/><rect x="280" y="440" width="34" height="62" rx="7" class="bx-x"/><rect x="322" y="440" width="140" height="62" rx="7" class="f-c"/><rect x="466" y="440" width="34" height="62" rx="7" class="bx-x"/><rect x="510" y="440" width="120" height="62" rx="7" class="f-c"/><rect x="634" y="440" width="34" height="62" rx="7" class="bx-x"/>
+    <rect x="186" y="560" width="120" height="62" rx="7" class="f-c"/><rect x="310" y="560" width="34" height="62" rx="7" class="bx-x"/>
+    <rect x="352" y="554" width="330" height="74" rx="8" fill="url(#q-hatch)" stroke="#FFB703" stroke-width="3" stroke-dasharray="10 8"/><text class="t t-a" x="372" y="600" style="font-size:24px;font-weight:700">Waiting on sign-off</text>
+    <rect x="300" y="680" width="80" height="62" rx="7" class="f-s"/><rect x="470" y="680" width="90" height="62" rx="7" class="f-s"/><rect x="620" y="680" width="66" height="62" rx="7" class="f-s"/>
+    <path class="ln-a" d="M175 292 C175 420 340 480 420 548" marker-end="url(#q-ah5)"/>
+    <text class="t t-a" x="10" y="830" style="font-size:26px;font-weight:700">Signed off in the same system:</text>
+    <text class="t-d" x="10" y="866" style="font-size:24px">the slot can be planned.</text>
+    <g transform="translate(10 920)">
+      <rect width="44" height="26" rx="4" class="f-c"/><text class="t-d" x="58" y="21" style="font-size:22px">short run</text>
+      <rect x="250" width="44" height="26" rx="4" class="bx-x"/><text class="t-d" x="308" y="21" style="font-size:22px">drying / cure</text>
+      <rect y="50" width="44" height="26" rx="4" class="f-s"/><text class="t-d" x="58" y="71" style="font-size:22px">finishing</text>
+      <rect x="250" y="50" width="44" height="26" rx="4" fill="url(#q-hatch)" stroke="#FFB703" stroke-width="2" stroke-dasharray="6 4"/><text class="t-d" x="308" y="71" style="font-size:22px">unplanned slot</text>
+    </g>
+  </svg>
+  <div class="foot"><span class="k d17-mono">Quote · supply · approval · schedule</span><span class="d17-mark">decodedops.co.uk · DO-ART-928 · Rev 01</span></div>
+</figure>` }} />
         </div>
       </section>
 
@@ -320,6 +383,7 @@ export default function PrintPromotionalPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

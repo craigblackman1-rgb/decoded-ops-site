@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { SectorPageDS } from '@/components/SectorPageDS';
-import { Plate } from '@/components/Plate';
+import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
+import d17 from '@/app/d17-art.module.css';
+import sectors from '@/app/d17-sectors.module.css';
 
 export const metadata: Metadata = {
   title: 'Teamwear & Clubwear: Decoded Ops',
@@ -68,126 +69,105 @@ export default function TeamwearClubwearPage() {
         { name: 'Sectors', url: 'https://decodedops.co.uk/sectors' },
         { name: 'Teamwear & Clubwear', url: 'https://decodedops.co.uk/sectors/teamwear-clubwear' },
       ]} />
-      <SectorPageDS
-        sectorLabel="teamwear & clubwear"
-        h1="Teamwear and clubwear, sized to the squad."
-        introParagraphs={[
-          'Squad numbers, sponsor logos, and a hard deadline before the first match of the season.',
-          'Get the data wrong and it\'s not a quiet admin cost, it\'s kit that doesn\'t arrive in time.',
-        ]}
-        heroSecondaryCta={{ label: 'See how the audit works', href: '/clarity' }}
-        heroImage={{
-          src: '/images/sectors/prod-polo.jpg',
-          width: 900,
-          height: 1125,
-          alt: 'A folded zip-neck polo shirt in cream and sand panels, photographed flat on a plain grey surface.',
-        }}
-        shotCaption="One base garment. Twenty-four names, twenty-four numbers, and one sponsor logo that has to sit in the same place on every one."
-        plate={
-          <Plate tone="dark" p="tw" title="Teamwear: squad list to kitted-out"
-                 sub="Four connected stages: kit range data, squad list, personalisation proofs, production"
-                 no="DO-ART-109" rev="01" cls="DECODED OPS · ISSUED">
 
-            <path id="tw-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                  fill="none" strokeWidth="2.5" markerEnd="url(#tw-ah)"/>
+      {/* HERO SPLIT */}
+      <section className="g-off" style={{ padding: 'clamp(40px, 4.5vw, 60px) 0' }}>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 3vw, 48px)', alignItems: 'center' }}>
+          <div>
+            <span className="eyebrow">Sector · teamwear & clubwear</span>
+            <h1>Teamwear and clubwear, sized to the squad.</h1>
+            <div style={{ marginTop: '20px' }}>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Squad numbers, sponsor logos, and a hard deadline before the first match of the season.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>Get the data wrong and it&apos;s not a quiet admin cost, it&apos;s kit that doesn&apos;t arrive in time.</p>
+            </div>
+            <div className="btn-row" style={{ marginTop: '24px' }}>
+              <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
+            </div>
+          </div>
+          {/* D17 hero artwork — DO-ART-935 */}
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a935" data-od-id="hero-evidence" data-motion data-no="DO-ART-935" data-rev="01" data-tx="photo"
+        aria-label="Product screen DO-ART-935. The supplier feed overview at a teamwear business, live in September 2026: 17 supplier feeds automated, 27,778 supplier products, 236,056 variants, 952 products live on their website, 1,846 decorated products, and every stock record with a bin location. Kit range churn, kept current on its own.">
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-bench-flatlay-v2-215572.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Teamwear &amp; clubwear</span><span>Live, September 2026</span></div>
+  <div class="win" aria-hidden="true">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span>
+      <span class="crumb"><span>Catalogue ›</span> Supplier feeds</span><span class="pill">LIVE</span></div>
+    <div class="win-main">
+      <h5>Supplier feeds overview</h5>
+      <p class="s">A teamwear business, every kit range brought in automatically</p>
+      <div class="kpis">
+        <div class="kpi kpi--hit m-rise" style="animation-delay:.1s"><div class="l">Supplier feeds</div><p class="n">17</p><p class="d">automated</p></div>
+        <div class="kpi m-rise" style="animation-delay:.2s"><div class="l">Supplier products</div><p class="n">27,778</p><p class="d">brought in</p></div>
+        <div class="kpi m-rise" style="animation-delay:.3s"><div class="l">Variants</div><p class="n">236,056</p><p class="d">sizes and colours</p></div>
+        <div class="kpi m-rise" style="animation-delay:.4s"><div class="l">Decorated</div><p class="n">1,846</p><p class="d">decorated products</p></div>
+        <div class="kpi m-rise" style="animation-delay:.5s"><div class="l">On the website</div><p class="n">952</p><p class="d">products live</p></div>
+        <div class="kpi m-rise" style="animation-delay:.6s"><div class="l">Binned</div><p class="n">100%</p><p class="d">stock with a bin</p></div>
+      </div>
+      <div class="meter m-rise" style="animation-delay:.7s"><div class="row"><b>Stock records with a bin location</b><span>100%</span></div>
+        <div class="track"><div class="fill m-fill" style="width:100%;animation-delay:1s"></div></div></div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Kit range churn, <em>kept current on its own.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-935 · Rev 01</span>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
 
-            <g className="sk-fade sk-s3">
-              <rect x="450" y="600" width="840" height="90" rx="14" fill="url(#tw-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="640" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">Supplier kit range catalogue</text>
-              <text x="500" y="666" className="p-mono" fontSize="17" opacity=".85">Ranges · sizes ·
-                colourways: live across every channel a team orders through</text>
-            </g>
-
-            <g className="sk-fade sk-s4">
-              <rect x="450" y="460" width="840" height="110" rx="14" fill="url(#tw-node)"
-                    className="p-node" strokeWidth="1.4"/>
-              <text x="500" y="500" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                    fontSize="26">Squad list management</text>
-              <text x="500" y="534" className="p-mono" fontSize="17" opacity=".85">Name · number ·
-                size per player · sponsor logo per age group: not a spreadsheet</text>
-            </g>
-
-            <g className="sk-fade sk-s5" filter="url(#tw-shadow)">
-              <rect x="450" y="320" width="840" height="110" rx="16" fill="url(#tw-amber-n)"
-                    className="p-node-a" strokeWidth="2"/>
-              <text x="500" y="360" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                    fontSize="28">Personalisation + proof</text>
-              <text x="500" y="396" className="p-accent-ink" fontSize="18" fontWeight="600">Proof per
-                kit · sponsor logo approval · production-ready data that doesn&apos;t need re-keying</text>
-            </g>
-
-            <g className="sk-dots">
-              <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#tw-spine"/></animateMotion></circle>
-            </g>
-          </Plate>
-        }
-        featuresHeading="Five challenges specific to this sector."
-        features={[
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h10" /><circle cx="18.5" cy="18" r="2.2" />
-              </svg>
-            ),
-            title: 'Squad-level personalisation data',
-            body: 'Names, numbers, sponsor logos: every kit is a variant of the same product. Systems that treat that as one SKU force manual workarounds on every order.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><path d="M16 2v4M8 2v4M3 10h18" /><circle cx="12" cy="15" r="1" />
-              </svg>
-            ),
-            title: 'Seasonal deadline pressure',
-            body: 'The tolerance for lateness in teamwear is zero. The first match of the season is a fixed date. Production scheduling has to work backwards from that, and most systems don\u2019t account for it.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v4.5h-4.5" />
-              </svg>
-            ),
-            title: 'Kit range churn',
-            body: 'Kit ranges change season to season. Keeping supplier data current across every channel is a constant maintenance task. And when it\u2019s wrong, it\u2019s the order that fails, not the system.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20.5 6.5 10 17l-5-5" /><path d="M3.5 20.5h17" />
-              </svg>
-            ),
-            title: 'Sponsor logo management',
-            body: 'Every sponsor has their own logo specifications, positioning requirements, and approval process. Managing that at squad scale, across multiple teams and age groups, is a dedicated workflow that email can\u2019t handle.',
-          },
-          {
-            icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 6h16M4 12h16M4 18h10" /><path d="M9 18l3-3 3 3" />
-              </svg>
-            ),
-            title: 'The proof and approval bottleneck',
-            body: 'When twenty-four kits each need a proof, the approval cycle can consume more time than the production itself. Fix that loop and you win back more time than anywhere else in the job.',
-          },
-        ]}
-        checklistHeading="An independent audit of the whole teamwear workflow."
-        checklist={[
-          'Map your full workflow, from squad list to delivery',
-          'Find where personalisation data is managed by hand',
-          'Check supplier catalogue data for kit range accuracy',
-          'Audit proof approval for sponsor logos and numbering',
-          'See how seasonal deadlines sit against production capacity',
-          'Review how your online shop connects to your order system',
-          'Put a number on every finding in time, admin cost, and rework',
-        ]}
-        otherSectors={[
-          { label: 'Workwear', href: '/sectors/workwear' },
-          { label: 'Schoolwear', href: '/sectors/schoolwear' },
-          { label: 'Promotional merchandise', href: '/sectors/promotional-merchandise' },
-        ]}
-        ctaLead="An hour on squad data, sponsor logos, and where the proof loop is eating time before the first match."
-      />
+      {/* D17 INLINE ARTWORK — DO-ART-936 */}
+      <section className="g-navy">
+        <div className="wrap">
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw sw-doc a936" data-od-id="plate-architecture" data-motion data-no="DO-ART-936" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-936. A graded photograph of a folded base garment with a squad list and a sponsor logo specification laid over it. One base garment becomes twenty-four kits, each with its own name, number and size, and the same approved sponsor logo. One base garment, twenty-four names, twenty-four numbers.">
+  <div class="d17-ph"><img src="/images/d17/sectors/prod-polo-5947fe.jpg" alt="" width="900" height="905"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Squad-level data <span>· one kit per player</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>One base garment, twenty-four names, twenty-four numbers.</h3>
+    <p>Every kit is a variant of the same product. The squad list, the sizes and the approved
+      sponsor logo sit on the order, so nobody re-types a name, and the first match of the season
+      gets the kit it was promised.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-936 · Rev 01</span>
+  </figcaption>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-q m-drop" style="animation-delay:.1s">
+      <span class="tab">SQUAD</span>
+      <span class="ref">SQ-U14 · Squad list · home kit</span>
+      <h4>Under-14s, home shirt</h4>
+      <p class="sub">one base garment · 24 players</p>
+      <table class="squad">
+        <tr><th>No.</th><th>Name on back</th><th style="text-align:right">Size</th></tr>
+        <tr><td class="no">1</td><td><i style="width:62%"></i></td><td class="sz">YL</td></tr>
+        <tr><td class="no">2</td><td><i style="width:48%"></i></td><td class="sz">YM</td></tr>
+        <tr><td class="no">4</td><td><i style="width:70%"></i></td><td class="sz">S</td></tr>
+        <tr><td class="no">7</td><td><i style="width:55%"></i></td><td class="sz">YL</td></tr>
+        <tr><td class="no">9</td><td><i style="width:66%"></i></td><td class="sz">S</td></tr>
+        <tr><td class="no">10</td><td><i style="width:44%"></i></td><td class="sz">YM</td></tr>
+        <tr class="more"><td colspan="3">+ 18 more players, same garment</td></tr>
+      </table>
+    </div>
+    <div class="d17-doc doc-sp m-drop" style="animation-delay:.4s">
+      <span class="tab">SP</span>
+      <span class="ref">SP-01 · Sponsor logo</span>
+      <h4>Front, centre chest</h4>
+      <svg class="shirt" viewBox="0 0 120 110"><path d="M40 6 L20 14 L4 34 L20 46 L26 40 V104 H94 V40 L100 46 L116 34 L100 14 L80 6 C76 16 68 20 60 20 C52 20 44 16 40 6 Z" fill="#F8F9FA" stroke="#023047" stroke-width="2.5"/><rect x="40" y="42" width="40" height="16" rx="3" fill="#219EBC"/><path d="M40 64 H80" stroke="#023047" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 3"/></svg>
+      <dl class="spec">
+        <dt>Size</dt><dd>250 mm wide</dd>
+        <dt>Method</dt><dd>Heat transfer, one colour</dd>
+        <dt>Artwork</dt><dd class="hit">Approved by the club</dd>
+      </dl>
+    </div>
+  </div>
+</figure>` }} />
+        </div>
+      </section>
 
       {/* COMMON CHALLENGES */}
       <section className="g-white">
@@ -306,6 +286,8 @@ export default function TeamwearClubwearPage() {
           </div>
         </div>
       </section>
+
+      <D17Motion />
     </>
   );
 }

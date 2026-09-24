@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { AwardsEngravingSchematic } from '@/components/schematics/sectors/AwardsEngravingSchematic';
-import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import sectors from '@/app/d17-sectors.module.css';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
@@ -109,66 +109,71 @@ export default function AwardsEngravingPage() {
               <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/sectors/cat-awards.jpg" width="900" height="1350" loading="eager"
-                 alt="A display cabinet of glass and crystal awards, each engraved with different names and titles." />
-          </div>
-          <p className={styles.shotCaption}>Every award carries a name, a date, and a hard deadline.</p>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a921" data-od-id="hero-evidence" data-motion data-no="DO-ART-921" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-921. A graded photograph of glass, crystal and metal awards, with an awards job ticket and a client-approved engraving proof laid over it. Fifty pieces, fifty approved proofs.">
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-awards-70dc2f.jpg" alt="" width="900" height="1200"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Awards &amp; engraving</span><span>One event date</span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-t m-drop" style="animation-delay:.1s">
+      <span class="tab">JT</span>
+      <span class="ref">JT-0418 · Job ticket</span>
+      <h4>Annual dinner awards</h4>
+      <p class="sub">50 pieces · event date fixed</p>
+      <ol>
+        <li><b>01</b>Crystal<em>LASER</em></li>
+        <li><b>02</b>Glass<em>LASER</em></li>
+        <li><b>03</b>Metal plate<em>ROTARY</em></li>
+        <li><b>04</b>Wood plinth<em>LASER</em></li>
+        <li><b>05</b>Acrylic<em>PRINT</em></li>
+      </ol>
+    </div>
+    <div class="d17-doc doc-p m-drop" style="animation-delay:.35s">
+      <span class="tab">17/50</span>
+      <span class="ref">PR-17 · Engraving proof</span>
+      <h4>Proof, piece 17</h4>
+      <p class="sub">name · title · date · message</p>
+      <div class="plaque"><span class="l l--h" style="width:70%"></span><span class="l" style="width:52%"></span>
+        <span class="l" style="width:38%"></span><span class="l" style="width:60%"></span></div>
+      <span class="approved m-pop" style="animation-delay:1.1s">Approved by client</span>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Fifty pieces, <em>fifty approved proofs.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-921 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
+      {/* D17 INLINE ARTWORK · DO-ART-922 */}
       <section className="g-navy">
         <div className="wrap">
-          <AwardsEngravingSchematic />
-        </div>
-      </section>
-
-      {/* PLATE DIAGRAM · DO-ART-115 */}
-      <section className="g-navy">
-        <div className="wrap">
-          <div className="plate-scroll">
-            <div className="plate-frame">
-              <Plate tone="dark" p="ae" title="Awards & engraving: variable data to delivered awards"
-                     sub="Three connected systems: data intake, proof management, production"
-                     no="DO-ART-115" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="ae-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#ae-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#ae-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Variable data intake</text>
-                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Names · titles ·
-                    dates · messages: verified before production, not during it</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#ae-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Proof approval at volume</text>
-                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Fifty proofs ·
-                    fifty approvals: a workflow that doesn&apos;t consume more time than production itself</text>
-                </g>
-
-                <g className="sk-fade sk-s5" filter="url(#ae-shadow)">
-                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#ae-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Production + deadline delivery</text>
-                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Glass ·
-                    crystal · metal · wood: method-matched engraving, scheduled to the event date</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#ae-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a922" data-od-id="plate-architecture" data-motion data-no="DO-ART-922" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-922. One awards order of fifty personalised pieces, each with its own proof. All fifty proofs come back approved, and only then is the order released to engraving, ahead of a fixed event date. Stages: variable data in, a proof per piece, all fifty approved, engraved before the event.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Proof and approval <span>· at volume</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>One order. Fifty proofs. One date that doesn't move.</h3>
+    <p>Every award is different, so every piece gets its own proof. The system holds the names,
+      tracks each approval, and releases the job to the engraver when the last one is signed, not
+      when someone remembers to check the inbox.</p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-922 · Rev 01</span>
+  </figcaption>
+  <div aria-hidden="true">
+    <div class="proofs"><i class="m-pop" style="animation-delay:0.02s"><b>01</b></i><i class="m-pop" style="animation-delay:0.04s"><b>02</b></i><i class="m-pop" style="animation-delay:0.06s"><b>03</b></i><i class="m-pop" style="animation-delay:0.08s"><b>04</b></i><i class="m-pop" style="animation-delay:0.10s"><b>05</b></i><i class="m-pop" style="animation-delay:0.12s"><b>06</b></i><i class="m-pop" style="animation-delay:0.14s"><b>07</b></i><i class="m-pop" style="animation-delay:0.16s"><b>08</b></i><i class="m-pop" style="animation-delay:0.18s"><b>09</b></i><i class="m-pop" style="animation-delay:0.20s"><b>10</b></i><i class="m-pop" style="animation-delay:0.22s"><b>11</b></i><i class="m-pop" style="animation-delay:0.24s"><b>12</b></i><i class="m-pop" style="animation-delay:0.26s"><b>13</b></i><i class="m-pop" style="animation-delay:0.28s"><b>14</b></i><i class="m-pop" style="animation-delay:0.30s"><b>15</b></i><i class="m-pop" style="animation-delay:0.32s"><b>16</b></i><i class="m-pop" style="animation-delay:0.34s"><b>17</b></i><i class="m-pop" style="animation-delay:0.36s"><b>18</b></i><i class="m-pop" style="animation-delay:0.38s"><b>19</b></i><i class="m-pop" style="animation-delay:0.40s"><b>20</b></i><i class="m-pop" style="animation-delay:0.42s"><b>21</b></i><i class="m-pop" style="animation-delay:0.44s"><b>22</b></i><i class="m-pop" style="animation-delay:0.46s"><b>23</b></i><i class="m-pop" style="animation-delay:0.48s"><b>24</b></i><i class="m-pop" style="animation-delay:0.50s"><b>25</b></i><i class="m-pop" style="animation-delay:0.52s"><b>26</b></i><i class="m-pop" style="animation-delay:0.54s"><b>27</b></i><i class="m-pop" style="animation-delay:0.56s"><b>28</b></i><i class="m-pop" style="animation-delay:0.58s"><b>29</b></i><i class="m-pop" style="animation-delay:0.60s"><b>30</b></i><i class="m-pop" style="animation-delay:0.62s"><b>31</b></i><i class="m-pop" style="animation-delay:0.64s"><b>32</b></i><i class="m-pop" style="animation-delay:0.66s"><b>33</b></i><i class="m-pop" style="animation-delay:0.68s"><b>34</b></i><i class="m-pop" style="animation-delay:0.70s"><b>35</b></i><i class="m-pop" style="animation-delay:0.72s"><b>36</b></i><i class="m-pop" style="animation-delay:0.74s"><b>37</b></i><i class="m-pop" style="animation-delay:0.76s"><b>38</b></i><i class="m-pop" style="animation-delay:0.78s"><b>39</b></i><i class="m-pop" style="animation-delay:0.80s"><b>40</b></i><i class="m-pop" style="animation-delay:0.82s"><b>41</b></i><i class="m-pop" style="animation-delay:0.84s"><b>42</b></i><i class="m-pop" style="animation-delay:0.86s"><b>43</b></i><i class="m-pop" style="animation-delay:0.88s"><b>44</b></i><i class="m-pop" style="animation-delay:0.90s"><b>45</b></i><i class="m-pop" style="animation-delay:0.92s"><b>46</b></i><i class="m-pop" style="animation-delay:0.94s"><b>47</b></i><i class="m-pop" style="animation-delay:0.96s"><b>48</b></i><i class="m-pop" style="animation-delay:0.98s"><b>49</b></i><i class="m-pop last" style="animation-delay:1.00s"><b>50</b></i></div>
+    <div class="track"><ol>
+      <li><b>01 · In</b>Names, titles, dates and messages, taken once</li>
+      <li><b>02 · Proof</b>One proof per piece, out to the client</li>
+      <li><b>03 · Signed</b>Fifty of fifty approved, tracked</li>
+      <li class="end"><b>04 · Engrave</b>Released to production, ahead of the event</li>
+    </ol></div>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
@@ -272,6 +277,7 @@ export default function AwardsEngravingPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }

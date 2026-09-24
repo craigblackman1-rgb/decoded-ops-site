@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { GarmentDecorationSchematic } from '@/components/schematics/sectors/GarmentDecorationSchematic';
-import { Plate } from '@/components/Plate';
 import { JsonLd } from '@/components/JsonLd';
+import { D17Motion } from '@/components/D17Motion';
+import sectors from '@/app/d17-sectors.module.css';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
@@ -111,57 +111,64 @@ export default function GarmentDecorationPage() {
               <Link className="btn btn--outline" href="/clarity">See how the audit works <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <div className={styles.photo} style={{ aspectRatio: 'auto' }}>
-            <GarmentDecorationSchematic />
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sx a923" data-od-id="hero-evidence" data-motion data-no="DO-ART-923" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-923. Thread spools racked on an embroidery machine, graded, above three drawn production runs: embroidery (digitise, hoop, stitch, trim), screen print (screens, set-up, print, flash, cure) and direct-to-garment (pre-treat, press, print, cure). Three methods, three production logics.">
+  <div class="d17-ph"><img src="/images/d17/sectors/thread-spools-1c52d7.jpg" alt="" width="1000" height="889"></div>
+  <div class="d17-scan" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Garment decoration</span><span>One floor, three methods</span></div>
+  <div class="stage" aria-hidden="true"></div>
+  <div class="runs" aria-hidden="true">
+    <div class="run"><div class="h"><b>Embroidery</b><span class="d17-mono">stitch count sets the clock</span></div>
+      <div class="seg m-fill" style="animation-delay:.1s"><span style="--g:3">Digitise</span><span style="--g:1.4">Hoop</span><span class="k" style="--g:5">Stitch · per head</span><span style="--g:1.2">Trim</span></div></div>
+    <div class="run"><div class="h"><b>Screen print</b><span class="d17-mono">set-up sets the clock</span></div>
+      <div class="seg m-fill" style="animation-delay:.35s"><span class="k" style="--g:3.4">Screens</span><span style="--g:2.2">Set-up</span><span style="--g:1.8">Print</span><span style="--g:1">Flash</span><span style="--g:1.8">Cure</span></div></div>
+    <div class="run"><div class="h"><b>DTG</b><span class="d17-mono">one garment at a time</span></div>
+      <div class="seg m-fill" style="animation-delay:.6s"><span style="--g:1.6">Pre-treat</span><span style="--g:1">Press</span><span class="k" style="--g:4.6">Print · per garment</span><span style="--g:1.7">Cure</span></div></div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Three methods, <em>three production logics.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-923 · Rev 01</span>
+  </div>
+</figure>` }} />
         </div>
       </section>
 
-      {/* PLATE DIAGRAM · DO-ART-107 */}
+      {/* D17 INLINE ARTWORK · DO-ART-924 */}
       <section className="g-navy">
         <div className="wrap">
-          <div className="plate-scroll">
-            <div className="plate-frame">
-              <Plate tone="dark" p="gd" title="Garment decoration: order intake to despatched garment"
-                     sub="Three connected systems: order + artwork intake, blank stock + decoration scheduling, delivery"
-                     no="DO-ART-107" rev="01" cls="DECODED OPS · ISSUED">
-
-                <path id="gd-spine" pathLength={1} className="sk-draw sk-s2 p-scyan" d="M350 720 V260"
-                      fill="none" strokeWidth="2.5" markerEnd="url(#gd-ah)"/>
-
-                <g className="sk-fade sk-s3">
-                  <rect x="450" y="580" width="840" height="110" rx="14" fill="url(#gd-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="628" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Order intake + artwork</text>
-                  <text x="500" y="660" className="p-mono" fontSize="17" opacity=".85">Order details ·
-                    artwork files · personalisation data: all arriving together, not separately</text>
-                </g>
-
-                <g className="sk-fade sk-s4">
-                  <rect x="450" y="420" width="840" height="120" rx="14" fill="url(#gd-node)"
-                        className="p-node" strokeWidth="1.4"/>
-                  <text x="500" y="468" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="700"
-                        fontSize="26">Production floor</text>
-                  <text x="500" y="502" className="p-mono" fontSize="17" opacity=".85">Embroidery ·
-                    screen print · DTF · DTG: method mix scheduling that accounts for blank stock</text>
-                </g>
-
-                <g className="sk-fade sk-s5" filter="url(#gd-shadow)">
-                  <rect x="450" y="250" width="840" height="130" rx="16" fill="url(#gd-amber-n)"
-                        className="p-node-a" strokeWidth="2"/>
-                  <text x="500" y="308" className="p-ink" fontFamily="Outfit,sans-serif" fontWeight="800"
-                        fontSize="28">Despatch</text>
-                  <text x="500" y="344" className="p-accent-ink" fontSize="18" fontWeight="600">Finished
-                    garment · correct decoration · right address: data carried through from order to door</text>
-                </g>
-
-                <g className="sk-dots">
-                  <circle r="6" className="p-cyan"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#gd-spine"/></animateMotion></circle>
-                </g>
-              </Plate>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: `
+<figure class="d17 sw a924" data-od-id="plate-architecture" data-motion data-no="DO-ART-924" data-rev="01" data-tx="journey"
+        aria-label="Journey poster DO-ART-924. One order's route through a garment decoration business: order intake, the artwork loop, blanks checked against committed orders, then production split by method, each scheduled by its own logic, and despatch on the date promised. Two pinned prints: an embroidery head and a screen-print press.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <p class="eb d17-mono">One order's route</p>
+  <h3 class="hd">In, artwork, blanks, three methods, out.</h3>
+  <svg class="route" viewBox="0 0 1600 820" preserveAspectRatio="none" aria-hidden="true">
+    <path class="m-draw" pathLength="1" d="M110 520 H330 C400 520 400 440 470 440 H640 C710 440 710 520 780 520 H960" fill="none" stroke="var(--do-sky-blue)" stroke-width="7" stroke-linecap="round"/>
+    <path class="m-draw" pathLength="1" style="animation-delay:.9s" d="M960 520 C1020 520 1020 420 1080 420 H1180 C1240 420 1240 520 1300 520 M960 520 H1300 M960 520 C1020 520 1020 620 1080 620 H1180 C1240 620 1240 520 1300 520" fill="none" stroke="var(--do-sky-blue)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+    <path class="m-draw" pathLength="1" style="animation-delay:1.8s" d="M1300 520 H1480" fill="none" stroke="var(--do-amber)" stroke-width="8" stroke-linecap="round"/>
+    <g class="m-pop" style="animation-delay:.2s"><circle cx="110" cy="520" r="15" fill="var(--do-off-white)" stroke="var(--do-prussian-blue)" stroke-width="6"/></g>
+    <g class="m-pop" style="animation-delay:.5s"><circle cx="555" cy="440" r="15" fill="var(--do-off-white)" stroke="var(--do-prussian-blue)" stroke-width="6"/></g>
+    <g class="m-pop" style="animation-delay:.8s"><circle cx="960" cy="520" r="15" fill="var(--do-off-white)" stroke="var(--do-prussian-blue)" stroke-width="6"/></g>
+    <g class="m-pop" style="animation-delay:1.3s"><circle cx="1130" cy="420" r="10" fill="var(--do-sky-blue)"/><circle cx="1130" cy="520" r="10" fill="var(--do-sky-blue)"/><circle cx="1130" cy="620" r="10" fill="var(--do-sky-blue)"/></g>
+    <g class="m-pop" style="animation-delay:2.2s"><circle cx="1480" cy="520" r="21" fill="var(--do-amber)" stroke="var(--do-prussian-blue)" stroke-width="6"/></g>
+  </svg>
+  <div class="methods d17-mono" aria-hidden="true">
+    <span style="left:70.6%;top:51.2%">Embroidery</span><span style="left:70.6%;top:63.4%">Screen print</span><span style="left:70.6%;top:75.6%">DTG</span>
+  </div>
+  <div class="prints" aria-hidden="true">
+    <div class="print" style="left:55%;top:5%;width:14%;height:31%;transform:rotate(-3deg)"><img src="/images/d17/sectors/hero-workshop-783ec1.jpg" alt="" width="520" height="455"><div class="tint"></div><span>Embroidery · by stitch count</span></div>
+    <div class="print" style="left:73%;top:8%;width:14%;height:31%;transform:rotate(2.5deg)"><img src="/images/d17/sectors/gen-press-hall-40f9e1.jpg" alt="" width="520" height="327"><div class="tint"></div><span>Screen print · by set-up</span></div>
+  </div>
+  <div class="stations">
+    <div class="st" style="left:5%;top:68%"><span class="n">01 · In</span><h4>Order intake</h4><p>Online, trade and repeat orders in one place.</p></div>
+    <div class="st" style="left:28%;top:59%"><span class="n">02 · Artwork</span><h4>The artwork loop</h4><p>Proof and sign-off travel with the order, not in email.</p></div>
+    <div class="st" style="left:51%;top:70%;width:calc(200 * var(--u))"><span class="n">03 · Blanks</span><h4>Blanks in</h4><p>Checked against committed orders.</p></div>
+    <div class="st st--end" style="left:84%;top:68%;width:calc(230 * var(--u))"><span class="n">04 · Out</span><h4>Despatch</h4><p>Each method on its own clock, out on the date promised.</p></div>
+  </div>
+  <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-924 · Rev 01</span>
+</figure>` }} />
         </div>
       </section>
 
@@ -307,6 +314,7 @@ export default function GarmentDecorationPage() {
           </div>
         </div>
       </section>
+      <D17Motion />
     </>
   );
 }
