@@ -1,0 +1,1 @@
+{"lane":"web-content-057-fix1","wo":"wo-website-artwork-refresh-2026-09-16","unit":"","commits":[{"sha":"f133a52","subject":"content(web): last Data App label (CR-WEB-057)"}],"filesChanged":["app/sectors/corporate-wear/page.tsx"],"verify":{"tsc":"clean | 0 errors","tests":"n/a","escapeGrep":"0 hits"},"deviations":[],"blockers":[],"done":true}
