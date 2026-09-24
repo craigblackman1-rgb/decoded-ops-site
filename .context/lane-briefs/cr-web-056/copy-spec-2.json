@@ -1,0 +1,20 @@
+[
+ {
+  "file": "data/problem-routing.ts",
+  "find": "Connect Shopify, WooCommerce or your B2B portal",
+  "replace": "Connect your online store or B2B portal",
+  "why": "CR-WEB-056 platform names"
+ },
+ {
+  "file": "app/problems/wrong-erp-software/page.tsx",
+  "find": "What ERP works with Shopify for an embroidery or decoration business?",
+  "replace": "What ERP works with an online store for an embroidery or decoration business?",
+  "why": "CR-WEB-056 platform names"
+ },
+ {
+  "file": "app/problems/wrong-erp-software/page.tsx",
+  "find": "Several ERPs in this sector can integrate with Shopify, but",
+  "replace": "Several ERPs in this sector can integrate with an online store, but",
+  "why": "CR-WEB-056 platform names"
+ }
+]
