@@ -1,0 +1,33 @@
+{
+  "lane": "web065-fix3",
+  "wo": "",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "1d03b63aa60ecb14e8a6e0d09d6b8b0d4cb165a7",
+      "subject": "fix(a11y): translucent text >= 72% + faded dark text (CR-WEB-065)"
+    }
+  ],
+  "filesChanged": [
+    "app/d17-global.css",
+    "app/d17-resources.css",
+    "app/d17-problems.css",
+    "app/d17-locations.css",
+    "app/case-studies/eternal-fitness/page.tsx",
+    "app/resources/sop-template/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/tools/should-i-replace-erp/page.tsx",
+    "components/LocationPage.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "build": "pass"
+  },
+  "deviations": [
+    "Task 3 (homepage step numbers using --do-text-subtle) was already resolved: .idx .no and .note .no both use --do-text-muted. No change needed.",
+    "OG image opacity:0.5 text (opengraph-image.tsx:95,100,105) left untouched — social share image, not page text, and brief targeted LocationPage.tsx specifically."
+  ],
+  "blockers": [],
+  "done": true
+}
