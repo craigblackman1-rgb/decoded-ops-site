@@ -100,7 +100,7 @@ export default function OperationsConsultantPrintEmbroideryPage() {
               {parts.map((p, i) =>
                 i % 2 === 0
                   ? <span key={i}>{p}</span>
-                  : <span key={i} style={{ color: '#219EBC' }}>{p}</span>
+                  : <span key={i} style={{ color: 'var(--do-text-cerulean)' }}>{p}</span>
               )}
             </h1>
             <div className={styles.heroBody}>
