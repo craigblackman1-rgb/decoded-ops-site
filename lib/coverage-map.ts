@@ -123,7 +123,7 @@ export function generateCoverageMapSvg(highlightSlug: string): string {
   // Base
   lines.push(`<circle class="cov-base-ring" cx="${wx}" cy="${wy}" r="22"/><circle class="cov-base" cx="${wx}" cy="${wy}" r="11"/>`);
   lines.push(`<text class="t-h cov-base-l" x="${wx + 16}" y="${wy + 44}" text-anchor="middle">Worthing</text>`);
-  lines.push('<text class="t-m cov-base-s" x="${wx + 16}" y="${wy + 64}" text-anchor="middle">Base</text>');
+  lines.push(`<text class="t-m cov-base-s" x="${wx + 16}" y="${wy + 64}" text-anchor="middle">Base</text>`);
   lines.push('</svg>');
 
   return lines.join('\n');
