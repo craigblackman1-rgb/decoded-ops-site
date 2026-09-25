@@ -1,0 +1,38 @@
+[
+  {
+    "file": "app/about/page.tsx",
+    "find": "I&apos;ve worked at every level in these businesses. Not as a consultant brought in to\n                observe. As the person on the warehouse floor picking, packing, and despatching. As\n                the IT engineer. As the operations manager. As the one who implemented the systems,\n                lived with the consequences, and fixed what went wrong.",
+    "replace": "I&apos;ve worked at every level in these businesses, not as a consultant brought in to observe. I picked, packed and despatched on the warehouse floor, kept things running as the IT engineer, and ran the operation as the ops manager. I implemented the systems, worked with them every day, and fixed what needed fixing.",
+    "why": "Repeated openers (\"As the... As the... As the...\") — voice.md §7.4 flags repeated openers and three-beat lists. Rewritten as one continuous account, same content, no repeated skeleton."
+  },
+  {
+    "file": "app/about/page.tsx",
+    "find": "Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.",
+    "replace": "Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job I do now.",
+    "why": "Craig's 25 Sep feedback: \"The vantage point changed. The gap...did not\" is \"so AI\" — flat, slogan-shaped contrast. Also an uncontracted \"did not\". Rewritten as a plain statement of what he learned, kept positive, same underlying point about the gap between paper and floor."
+  },
+  {
+    "file": "app/about/page.tsx",
+    "find": "<p className={d17.factFigSub}>of a business of my own, then I closed it</p>",
+    "replace": "<p className={d17.factFigSub}>running my own eCommerce agency, Demystify Digital</p>",
+    "why": "Positivity rule: \"then I closed it\" frames the business as a failure. Replaced with what the 4½ years actually was, factually and positively, same figure kept."
+  },
+  {
+    "file": "app/about/page.tsx",
+    "find": "<h3>A large customer did not pay.</h3>\n                <p>In that time I built a full print and embroidery ecommerce ecosystem on Magento 2. So\n                  I know what a bad commercial decision costs from the inside rather than from a\n                  slide.</p>",
+    "replace": "<h3>Building it taught me where the real problem was.</h3>\n                <p>I built a full print and embroidery ecommerce ecosystem on Magento 2 for clients across\n                  the sector. Most of the enquiries that came in as a website problem turned out to be an\n                  operations problem underneath, and that&apos;s what pulled me into consultancy.</p>",
+    "why": "Craig's 25 Sep feedback: this Fact 02 (unpaid customer, closure, \"bad commercial decision\") is \"really negative\". RULE: everything positive, no closures, unpaid customers, failures, self-deprecation. Reframed as a strength per Craig's instruction: what he built at Demystify Digital and what it taught him (most eCommerce enquiries were operations problems underneath, per voice.md §2 and opinions.md/stories.md Story 4). Also removes the uncontracted \"did not\"."
+  },
+  {
+    "file": "app/about/page.tsx",
+    "find": "It exists because the operational work needed it to, not because I\n                went looking for a product to sell.",
+    "replace": "It exists because the operational work needed it, and every feature in it has come out of a real job for a real client.",
+    "why": "\"not because I went looking for a product to sell\" is the not-X-but-Y / not-X shape voice.md §7.1 flags. Rewritten to state what's true without the negative-space contrast."
+  },
+  {
+    "file": "app/about/page.tsx",
+    "find": "No pitch, no obligation. Just a conversation about whether this is the right\n            fit before anything gets booked.",
+    "replace": "A straightforward conversation about whether this is the right fit, before anything gets booked.",
+    "why": "\"No pitch, no obligation. Just a conversation...\" is the two-beat \"No X, no Y\" plus slogan-flourish shape voice.md §7.4/§7.5 flags. Rewritten as a plain, direct statement, same meaning."
+  }
+]
