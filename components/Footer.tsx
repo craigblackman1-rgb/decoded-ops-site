@@ -78,7 +78,7 @@ const locationChips: FooterLink[] = [
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div className="f-col">
-      <h4>{title}</h4>
+      <p className="f-col-title">{title}</p>
       {links.map(link => (
         <Link key={link.href + link.label} href={link.href}>{link.label}</Link>
       ))}

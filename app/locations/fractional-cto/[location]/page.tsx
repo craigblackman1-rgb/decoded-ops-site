@@ -80,7 +80,7 @@ function getHeroArtHtml(town: string): string {
           <div class="sx-tag sx-tag--a t2 m-pop" style="animation-delay:1.4s"><small>Standing</small>Not just on call</div>
           <div class="d17-doc doc-c m-drop" style="animation-delay:.1s"><span class="tab">PACK</span>
             <span class="ref">Monthly technology review</span>
-            <h4>Leadership meeting pack</h4>
+            <b>Leadership meeting pack</b>
             <p class="sub">Prepared for the <span class="tv">${t}</span> leadership team</p>
             <ol class="pk">
               <li>Decisions due this month</li>
@@ -92,7 +92,7 @@ function getHeroArtHtml(town: string): string {
             <div class="doc-foot">Independent · no vendor commission</div></div>
           <div class="d17-doc doc-d m-drop" style="animation-delay:.35s"><span class="tab">DECISIONS</span>
             <span class="ref">Decision log</span>
-            <h4>Owned, dated, written down</h4>
+            <b>Owned, dated, written down</b>
             <div class="dl">
               <div class="r h"><span>Decision</span><span>Owner</span><span>Status</span></div>
               <div class="r"><span>Replace the order spreadsheet</span><span class="who">MD</span><span class="st-chip">Agreed</span></div>
@@ -103,7 +103,7 @@ function getHeroArtHtml(town: string): string {
             </div></div>
           <div class="d17-doc doc-r m-drop" style="animation-delay:.6s"><span class="tab">ROADMAP</span>
             <span class="ref">Next 90 days</span>
-            <h4>Now, next, later</h4>
+            <b>Now, next, later</b>
             <div class="rm">
               <div class="c"><b>Now</b><span class="a">One stock figure</span><span>Order entry, once</span></div>
               <div class="c"><b>Next</b><span>Supplier feeds</span><span>Weekly reporting</span></div>
@@ -115,7 +115,7 @@ function getHeroArtHtml(town: string): string {
           <div>
             <div class="k d17-mono">Fractional CTO <span>· the monthly pack</span></div>
             <div class="bar" aria-hidden="true"></div>
-            <h3>A standing decision-maker. Every decision written down.</h3>
+            <b>A standing decision-maker. Every decision written down.</b>
           </div>
           <div>
             <p>Present in the room, your voice with vendors, and a roadmap you can act on,
@@ -148,11 +148,11 @@ function getStepsArtHtml(): string {
           <circle cx="894" cy="328" r="14" fill="var(--do-amber)" stroke="var(--do-prussian-blue)" stroke-width="5" class="m-pop" style="animation-delay:2.2s"/>
         </svg>
         <div class="stations">
-          <div class="st m-fade" style="left:calc(60 * var(--u)); top:calc(354 * var(--u)); animation-delay:.3s"><span class="n">Week 1</span><h4>Leadership meeting</h4><p>In the room, present and accountable.</p></div>
-          <div class="st m-fade" style="left:calc(264 * var(--u)); top:calc(414 * var(--u)); animation-delay:.6s"><span class="n">Week 2</span><h4>Vendor conversations</h4><p>Your technology voice. No commission.</p></div>
-          <div class="st m-fade" style="left:calc(470 * var(--u)); top:calc(354 * var(--u)); animation-delay:.9s"><span class="n">Week 3</span><h4>Roadmap reviewed</h4><p>What moved, what's next, in order.</p></div>
-          <div class="st m-fade" style="left:calc(676 * var(--u)); top:calc(414 * var(--u)); animation-delay:1.2s"><span class="n">Week 4</span><h4>Team capability</h4><p>Less dependent every month, not more.</p></div>
-          <div class="st st--end m-fade" style="left:calc(882 * var(--u)); top:calc(354 * var(--u)); width:calc(240 * var(--u)); animation-delay:2.2s"><span class="n">Every month</span><h4>Decisions owned</h4><p>Written down, in the pack, month after month.</p></div>
+          <div class="st m-fade" style="left:calc(60 * var(--u)); top:calc(354 * var(--u)); animation-delay:.3s"><span class="n">Week 1</span><b>Leadership meeting</b><p>In the room, present and accountable.</p></div>
+          <div class="st m-fade" style="left:calc(264 * var(--u)); top:calc(414 * var(--u)); animation-delay:.6s"><span class="n">Week 2</span><b>Vendor conversations</b><p>Your technology voice. No commission.</p></div>
+          <div class="st m-fade" style="left:calc(470 * var(--u)); top:calc(354 * var(--u)); animation-delay:.9s"><span class="n">Week 3</span><b>Roadmap reviewed</b><p>What moved, what's next, in order.</p></div>
+          <div class="st m-fade" style="left:calc(676 * var(--u)); top:calc(414 * var(--u)); animation-delay:1.2s"><span class="n">Week 4</span><b>Team capability</b><p>Less dependent every month, not more.</p></div>
+          <div class="st st--end m-fade" style="left:calc(882 * var(--u)); top:calc(354 * var(--u)); width:calc(240 * var(--u)); animation-delay:2.2s"><span class="n">Every month</span><b>Decisions owned</b><p>Written down, in the pack, month after month.</p></div>
         </div>
         <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-1003 · Rev 01</span>
       </figure>`;

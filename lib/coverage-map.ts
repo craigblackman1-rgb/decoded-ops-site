@@ -155,7 +155,7 @@ export function getCoverageMapHtml(
         <figcaption class="sw-cap">
           <div class="k d17-mono">${escapeHtml(service)} <span>· where I work</span></div>
           <div class="bar" aria-hidden="true"></div>
-          <h3>Worthing-based. On site where the work needs it.</h3>
+          <b>Worthing-based. On site where the work needs it.</b>
           <ul class="legend">
             <li><i class="base"></i>Base: Worthing, West Sussex</li>
             <li><i></i>On site across Sussex and Surrey</li>

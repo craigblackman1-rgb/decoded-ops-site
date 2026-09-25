@@ -78,7 +78,7 @@ function getHeroArtHtml(town: string): string {
         <figcaption class="sw-cap">
           <div class="k d17-mono">Clarity Audit <span>· what you get</span></div>
           <div class="bar" aria-hidden="true"></div>
-          <h3>Where the cost is hiding, and what to change first.</h3>
+          <b>Where the cost is hiding, and what to change first.</b>
           <p>One day on site. A written report within five working days: specific, costed, with
             independent vendor recommendations.</p>
           <span class="d17-mark">decodedops.co.uk · DO-ART-1004 · Rev 01</span>
@@ -86,7 +86,7 @@ function getHeroArtHtml(town: string): string {
         <div class="stage" aria-hidden="true">
           <div class="d17-doc doc-f m-drop" style="animation-delay:.1s"><span class="tab">REPORT</span>
             <span class="ref">Clarity Audit · findings</span>
-            <h4>Where the cost is hiding</h4>
+            <b>Where the cost is hiding</b>
             <p class="sub">A <span class="tv">${t}</span> business · one day on site</p>
             <div class="fx">
               <div class="r top"><span>Orders keyed in twice</span><i class="m-fill" style="--w:100%;animation-delay:.9s"></i><em>Costed</em></div>
@@ -98,7 +98,7 @@ function getHeroArtHtml(town: string): string {
             <div class="doc-foot">Every manual handoff documented · costed line by line</div></div>
           <div class="d17-doc doc-m m-drop" style="animation-delay:.45s"><span class="tab">ROADMAP</span>
             <span class="ref">The changes, in order</span>
-            <h4>Three to five changes</h4>
+            <b>Three to five changes</b>
             <ol class="chg">
               <li>One stock figure<span class="st-chip st-chip--a">Now</span></li>
               <li>Orders entered once<span class="st-chip st-chip--a">Now</span></li>
@@ -120,7 +120,7 @@ function getStepsArtHtml(travel: string): string {
         <figcaption class="sw-cap">
           <div class="k d17-mono">Clarity Audit <span>· example day plan</span></div>
           <div class="bar" aria-hidden="true"></div>
-          <h3>One day on site. A written report within five.</h3>
+          <b>One day on site. A written report within five.</b>
           <p>Talking to the people doing the work, not just the people managing it.</p>
           <span class="d17-mark">decodedops.co.uk · DO-ART-1005 · Rev 01</span>
         </figcaption>

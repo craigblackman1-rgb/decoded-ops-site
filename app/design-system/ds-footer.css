@@ -36,7 +36,7 @@ footer.f-tight{ padding:48px 0 20px }
 .f-reach .f-cta:focus-visible, .f-contact a:focus-visible{ outline:2px solid var(--do-sky-blue);
   outline-offset:3px; border-radius:var(--do-radius-sm) }
 
-footer.f-tight h4{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
+footer.f-tight h4, footer.f-tight .f-col-title{ font-size:var(--do-text-xs); font-weight:var(--do-weight-semibold);
   letter-spacing:var(--do-tracking-wider); text-transform:uppercase;
   color:color-mix(in srgb, var(--do-off-white) 58%, transparent); margin:0 0 12px }
 footer.f-tight .f-col a{ display:block; font-size:var(--do-text-sm); text-decoration:none;
