@@ -46,18 +46,18 @@
   font-weight:700; font-size:max(8px, calc(12 * var(--u))); padding:calc(5 * var(--u)) calc(9 * var(--u));
   border-radius:calc(3 * var(--u)); letter-spacing:.08em }
 .d17-doc .ref{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
-  letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .d17-doc h4{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800;
   font-size:max(10px, calc(19 * var(--u))); line-height:1.1; letter-spacing:-.02em; color:var(--do-prussian-blue) }
 .d17-doc .sub{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-mono);
-  font-size:max(6px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  font-size:max(6px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .d17-doc ol{ list-style:none; margin:calc(12 * var(--u)) 0 0; padding:0 }
 .d17-doc li{ display:grid; grid-template-columns:calc(20 * var(--u)) auto 1fr; gap:calc(8 * var(--u)); white-space:nowrap;
   align-items:center; padding:calc(6.5 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:max(7px, calc(11.5 * var(--u))); font-weight:600 }
 .d17-doc li b{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9.5 * var(--u)));
-  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .d17-doc li i{ display:block; height:calc(5 * var(--u)); border-radius:9px;
   background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .d17-doc .lines i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u));
@@ -129,12 +129,12 @@
 .win-main{ padding:calc(26 * var(--u)) calc(28 * var(--u)) calc(28 * var(--u)) }
 .win-main h5{ margin:0; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(28 * var(--u)));
   letter-spacing:-.025em; color:var(--do-prussian-blue) }
-.win-main .s{ margin:4px 0 0; font-size:max(11px, calc(14 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.win-main .s{ margin:4px 0 0; font-size:max(11px, calc(14 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .kpis{ display:grid; grid-template-columns:repeat(3,1fr); gap:calc(14 * var(--u)); margin-top:calc(20 * var(--u)) }
 .kpi{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   border-radius:calc(9 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u)) }
 .kpi .l{ font-family:var(--do-font-mono); font-size:max(8px, calc(10.5 * var(--u))); letter-spacing:.16em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .kpi .n{ margin:calc(8 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800;
   font-size:max(24px, calc(42 * var(--u))); line-height:1; letter-spacing:-.035em; font-variant-numeric:tabular-nums; color:var(--do-prussian-blue) }
 .kpi .d{ margin:calc(8 * var(--u)) 0 0; font-size:max(11px, calc(13 * var(--u))); line-height:1.35;
@@ -162,7 +162,7 @@
   padding:3px 9px; border-radius:99px; color:var(--do-prussian-blue);
   background:color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
 .feeds .more{ padding-top:calc(8 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
-  font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+  font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 @media (max-width: 760px){
   .a917{ grid-template-columns:1fr; padding:28px 18px 26px; gap:26px }
   .a917::before{ background:linear-gradient(180deg, var(--do-prussian-blue) 0%, color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) 100%) }
@@ -201,7 +201,7 @@
   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(14 * var(--u)) calc(16 * var(--u));
   border-radius:calc(4 * var(--u)); transform:rotate(-2.5deg);
   box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
-.a918 .print .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.16em; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a918 .print .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.16em; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a918 .print b{ display:block; margin-top:calc(4 * var(--u)); font-family:var(--do-font-heading); font-size:max(14px, calc(26 * var(--u))); letter-spacing:.02em }
 .a918 .print .bc{ margin-top:calc(8 * var(--u)); height:calc(34 * var(--u));
   background:repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
@@ -322,7 +322,7 @@
   border-radius:calc(4 * var(--u)); transform:rotate(2.5deg);
   box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
 .a920 .note .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.16em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a920 .note ol{ margin:calc(10 * var(--u)) 0 0; padding:0; list-style:none; counter-reset:c }
 .a920 .note li{ counter-increment:c; display:grid; grid-template-columns:22px 1fr; gap:6px; padding:calc(6 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
@@ -355,7 +355,7 @@
 @keyframes d17-fade{ from{ opacity:0 } }
 @keyframes d17-fill{ from{ transform:scaleX(0) } }
 @keyframes d17-drop{ from{ opacity:0; transform:translateY(-26px) rotate(0deg) } }
-@keyframes d17-land{ 0%,60%{ border-color:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); box-shadow:none } }
+@keyframes d17-land{ 0%,60%{ border-color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); box-shadow:none } }
 @keyframes d17-draw{ from{ stroke-dashoffset:1 } to{ stroke-dashoffset:0 } }
 @keyframes d17-grow{ from{ transform:scaleY(0) } }
 @keyframes d17-pop{ from{ opacity:0; transform:scale(.4) } }
@@ -494,7 +494,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   box-shadow:0 0 0 2px var(--do-prussian-blue) }
 .proofs i.last::after{ background-color:var(--do-amber) }
 .proofs i b{ position:absolute; left:0; right:0; bottom:10%; text-align:center; font-family:var(--do-font-mono); font-weight:600;
-  font-size:max(7px, calc(10 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  font-size:max(7px, calc(10 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a922 .track{ position:relative; margin-top:calc(30 * var(--u)); padding-top:calc(24 * var(--u)) }
 .a922 .track::before{ content:''; position:absolute; left:0; right:0; top:calc(8 * var(--u)); height:3px; border-radius:3px;
   background:linear-gradient(90deg, var(--do-sky-blue), var(--do-sky-blue) 74%, var(--do-amber) 74%) }
@@ -591,7 +591,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
 .spec{ margin-top:calc(12 * var(--u)); display:grid; grid-template-columns:auto 1fr; column-gap:calc(14 * var(--u)) }
 .spec dt, .spec dd{ margin:0; padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .spec dt{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); padding-top:calc(8 * var(--u)) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); padding-top:calc(8 * var(--u)) }
 .spec dd{ font-size:max(9px, calc(12.5 * var(--u))); font-weight:600 }
 .spec dd.hit{ color:var(--do-prussian-blue); box-shadow:inset 3px 0 0 var(--do-amber); padding-left:calc(8 * var(--u)) }
 .lbl{ margin-top:calc(12 * var(--u)); border:1.5px dashed color-mix(in srgb, var(--do-prussian-blue) 35%, transparent);
@@ -616,11 +616,11 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   padding:calc(14 * var(--u)) calc(16 * var(--u)) calc(16 * var(--u));
   box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
 .a927 .sheet .ref{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); letter-spacing:.16em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a927 .sheet h4{ margin:calc(4 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(11px, calc(17 * var(--u))); letter-spacing:-.015em }
 .slot{ position:relative; margin-top:calc(12 * var(--u)); padding:calc(18 * var(--u)) 0 0 }
 .slot .lab{ position:absolute; left:0; top:0; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.12em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .slot .long{ height:calc(24 * var(--u)); border-radius:calc(3 * var(--u)); border:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 40%, transparent);
   background:repeating-linear-gradient(135deg, transparent 0 5px, color-mix(in srgb, var(--do-prussian-blue) 8%, transparent) 5px 6px) }
 .slot .short{ display:flex; gap:calc(4 * var(--u)); height:calc(24 * var(--u)) }
@@ -647,7 +647,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
     transparent 38%, var(--do-prussian-blue) 70%) }
 .a929 .doc-o{ left:calc(30 * var(--u)); top:calc(96 * var(--u)); width:calc(360 * var(--u)); transform:rotate(-2deg) }
 .a929 .doc-o li{ grid-template-columns:calc(20 * var(--u)) 1.3fr 1fr auto; white-space:nowrap }
-.a929 .doc-o li span{ font-weight:500; color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.a929 .doc-o li span{ font-weight:500; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a929 .doc-o li em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); letter-spacing:.06em;
   padding:2px 6px; border-radius:99px; background:color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
 .a929 .doc-o li.slow em{ background:var(--do-amber) }
@@ -709,7 +709,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   border-radius:50%; background:var(--do-white); border:2px solid var(--do-cerulean) }
 .route li.end::before{ background:var(--do-amber); border-color:var(--do-amber) }
 .route li small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.1em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 
 /* ─── DO-ART-933 · signs hero · site survey over the blank wall (documents + drawn dimensions) ─── */
 .a933 .stage{ aspect-ratio:560 / 480 }
@@ -738,7 +738,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   background:color-mix(in srgb, var(--do-prussian-blue) 5%, var(--do-off-white)) }
 .col .ch{ display:flex; justify-content:space-between; align-items:center; padding:0 calc(4 * var(--u)) calc(8 * var(--u));
   font-family:var(--do-font-mono); font-size:max(8px, calc(10.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .col .ch i{ font-style:normal; min-width:1.8em; text-align:center; padding:1px 5px; border-radius:99px;
   background:color-mix(in srgb, var(--do-prussian-blue) 10%, transparent) }
 .card-j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
@@ -787,14 +787,14 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
 .a936 .doc-sp{ left:calc(400 * var(--u)); top:calc(150 * var(--u)); width:calc(270 * var(--u)); transform:rotate(3deg) }
 .squad{ width:100%; border-collapse:collapse; margin-top:calc(10 * var(--u)) }
 .squad th{ text-align:left; font-family:var(--do-font-mono); font-weight:600; font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.14em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(4 * var(--u)) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); padding:0 0 calc(4 * var(--u)) }
 .squad td{ padding:calc(5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
   font-size:max(8px, calc(11.5 * var(--u))); font-weight:700; white-space:nowrap }
 .squad td.no{ font-family:var(--do-font-heading); font-weight:800; font-size:max(9px, calc(14 * var(--u))); width:18% }
 .squad td i{ display:block; height:calc(6 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) }
 .squad td.sz{ font-family:var(--do-font-mono); font-weight:500; font-size:max(7px, calc(10 * var(--u))); width:20%; text-align:right }
 .squad tr.more td{ font-family:var(--do-font-mono); font-weight:500; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.08em;
-  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .shirt{ display:block; width:62%; margin:calc(10 * var(--u)) auto 0 }
 
 /* ─── DO-ART-937 · workwear hero · one garment, three decoration tags (photo-led) ─── */
@@ -856,7 +856,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent);
   font-family:var(--do-font-body) }
 .a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
-  letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
   padding-top:calc(9 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:max(10px, calc(14 * var(--u))); font-weight:700 }

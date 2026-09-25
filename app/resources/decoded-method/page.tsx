@@ -205,7 +205,7 @@ export default function DecodedMethodPage() {
         <div className="wrap">
           <div style={{ maxWidth: 720 }}>
             <h2>Three layers, each with a job</h2>
-            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>
+            <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)' }}>
               Together they make a system you can hand to a new starter and trust them to follow. Here is how the three layers connect.
             </p>
           </div>
@@ -250,7 +250,7 @@ export default function DecodedMethodPage() {
                   </div>
                   <div>
                     <h3 style={{ fontWeight: 700, color: 'var(--do-text-primary)', margin: 0 }}>{head}.</h3>
-                    <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginTop: 6 }}>{rest.join('. ')}</p>
+                    <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginTop: 6 }}>{rest.join('. ')}</p>
                   </div>
                 </div>
               );
@@ -262,7 +262,7 @@ export default function DecodedMethodPage() {
       <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
           <h2>The register we run Decoded Ops on</h2>
-          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)', marginBottom: 40 }}>
+          <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginBottom: 40 }}>
             Twelve processes, each owned, each with a status. The same artefact a Clarity engagement produces for a client, usually the first time they&apos;ve seen their whole operation on one page.
           </p>
           <div style={{ borderRadius: 'var(--do-radius-2xl)', overflow: 'hidden', border: '1px solid var(--do-border-subtle)' }}>
@@ -306,7 +306,7 @@ export default function DecodedMethodPage() {
               </Link>
             </div>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
-            <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', marginTop: 20, marginBottom: 0 }}>
+            <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginTop: 20, marginBottom: 0 }}>
               Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>
           </div>

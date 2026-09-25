@@ -103,7 +103,7 @@
 .scr-c{ left:calc(118 * var(--u)); top:calc(206 * var(--u)); width:calc(318 * var(--u)); transform:rotate(-.5deg); z-index:3 }
 .scr-b{ padding:calc(12 * var(--u)) calc(14 * var(--u)) calc(14 * var(--u)) }
 .scr .l{ margin:0; font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .scr .n{ margin:calc(3 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(28 * var(--u)));
   line-height:1; letter-spacing:-.03em; color:var(--do-prussian-blue) }
 .scr .n--a{ display:inline-block; font-size:max(18px, calc(40 * var(--u))); background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 .12em; border-radius:4px }
@@ -190,14 +190,14 @@
 .a987 .doc-sop{ left:calc(24 * var(--u)); top:calc(70 * var(--u)); width:calc(318 * var(--u)); transform:rotate(-2deg); z-index:2 }
 .fld{ margin-top:calc(8 * var(--u)); padding-top:calc(7 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .fld span{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; color:var(--do-text-cerulean) }
 .fld.two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
 .fld.ex b{ color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
 .d17-doc ol.st{ list-style:none; counter-reset:s; margin:calc(4 * var(--u)) 0 0; padding:0 }
 .d17-doc ol.st li{ counter-increment:s; display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(6 * var(--u)); white-space:normal;
   padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; color:var(--do-text-cerulean) }
-.d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, var(--do-prussian-blue) 50%, transparent) }
+.d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a987 .nt-987{ left:calc(356 * var(--u)); top:calc(318 * var(--u)); width:calc(170 * var(--u)) }
 
 /* ─── DO-ART-988 · the Decoded Method · three pages fanned ─── */
@@ -247,7 +247,7 @@
 .a991 .doc-vb{ left:calc(198 * var(--u)); top:calc(84 * var(--u)); width:calc(340 * var(--u)); transform:rotate(2deg); z-index:2 }
 .vb{ width:100%; border-collapse:collapse; margin-top:calc(8 * var(--u)); font-size:max(8.5px, calc(11 * var(--u))) }
 .vb th{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); text-align:center; padding:0 0 calc(5 * var(--u)) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); text-align:center; padding:0 0 calc(5 * var(--u)) }
 .vb th:first-child{ text-align:left }
 .vb th.us{ color:var(--do-text-cerulean) }
 .vb td{ padding:calc(5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent); font-weight:600; text-align:center }
@@ -257,7 +257,7 @@
 .vb i.p, .key i.p{ background:linear-gradient(90deg, var(--do-cerulean) 50%, transparent 50%); box-shadow:inset 0 0 0 1.4px var(--do-cerulean) }
 .vb i.n, .key i.n{ box-shadow:inset 0 0 0 1.6px var(--do-amber); background:color-mix(in srgb, var(--do-amber) 25%, transparent) }
 .d17-doc .key{ display:flex; gap:calc(12 * var(--u)); margin:calc(8 * var(--u)) 0 0; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u)));
-  letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+  letter-spacing:.08em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .d17-doc .key span{ display:inline-flex; gap:4px; align-items:center }
 
 /* ─── DO-ART-992 · capacity planner · result screen ─── */
@@ -267,14 +267,14 @@
 .k4 div{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); border-radius:calc(8 * var(--u));
   padding:calc(11 * var(--u)) calc(12 * var(--u)) }
 .k4 span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .k4 b{ display:block; margin-top:calc(5 * var(--u)); font-family:var(--do-font-heading); font-weight:800; font-size:max(20px, calc(34 * var(--u)));
   line-height:1; letter-spacing:-.03em; color:var(--do-prussian-blue); font-variant-numeric:tabular-nums }
 .a992 .meter .fill{ background:linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)) }
 .vs{ display:grid; grid-template-columns:auto auto 1fr auto; gap:6px 10px; align-items:baseline; margin-top:calc(12 * var(--u));
   padding-top:calc(10 * var(--u)); border-top:2px solid var(--do-prussian-blue); font-size:max(11px, calc(13 * var(--u))) }
-.vs span{ font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
-.vs s{ font-weight:700; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.vs span{ font-family:var(--do-font-mono); font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
+.vs s{ font-weight:700; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .vs .r{ justify-self:end }
 .vs b{ font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(18 * var(--u))); background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 6px; border-radius:4px }
 @media (max-width: 420px){ .vs{ grid-template-columns:auto 1fr } .vs .r{ justify-self:start } }
@@ -318,12 +318,12 @@
   background:repeating-linear-gradient(160deg, color-mix(in srgb, var(--do-cerulean) 55%, var(--do-white)) 0 2px, color-mix(in srgb, var(--do-cerulean) 30%, var(--do-white)) 2px 4px) }
 .yp i.over{ background:repeating-linear-gradient(160deg, var(--do-amber) 0 2px, color-mix(in srgb, var(--do-amber) 55%, var(--do-white)) 2px 4px) }
 .yp i b{ position:absolute; left:50%; bottom:100%; transform:translateX(-50%); padding-bottom:2px; font-family:var(--do-font-mono); font-weight:600;
-  font-size:max(6px, calc(9 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+  font-size:max(6px, calc(9 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .yp .capl{ position:absolute; left:0; right:0; bottom:var(--c); border-top:2px dashed var(--do-prussian-blue) }
 .yp .capl span{ position:absolute; left:0; top:3px; font-family:var(--do-font-mono); font-weight:700; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em;
   text-transform:uppercase; background:var(--do-white); padding:0 4px }
 .ym{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
-  font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+  font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a994 .nt-a{ right:calc(22 * var(--u)); top:calc(412 * var(--u)); width:calc(190 * var(--u)) }
 .a994 .nt-b{ left:calc(40 * var(--u)); top:calc(420 * var(--u)); width:calc(170 * var(--u)); transform:rotate(-3deg) }
 
@@ -351,7 +351,7 @@
 .hs-hd{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px }
 .hs-hd .tot{ margin:0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-prussian-blue) }
 .hs-hd .tot b{ font-size:max(26px, calc(40 * var(--u))); letter-spacing:-.03em }
-.hs-hd .tot span{ font-size:max(12px, calc(16 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.hs-hd .tot span{ font-size:max(12px, calc(16 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .hs{ margin-top:calc(10 * var(--u)) }
 .hs div{ display:grid; grid-template-columns:minmax(0, 1.2fr) 1fr auto; gap:calc(10 * var(--u)); align-items:center; padding:calc(7 * var(--u)) calc(4 * var(--u));
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent); font-size:max(11px, calc(13 * var(--u))); font-weight:600 }
@@ -396,7 +396,7 @@
 .qz{ margin-top:calc(8 * var(--u)) }
 .qz div{ display:grid; grid-template-columns:calc(24 * var(--u)) 1fr auto; gap:calc(8 * var(--u)); align-items:center; padding:calc(5 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
-.qz .n{ font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
+.qz .n{ font-family:var(--do-font-mono); font-size:max(6.5px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .qz .t{ font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; line-height:1.3 }
 .qz .ln{ display:block; width:90%; height:calc(5 * var(--u)); border-radius:9px; background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .qz em{ font-style:normal; font-family:var(--do-font-mono); font-weight:700; font-size:max(6.5px, calc(9.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase;

@@ -163,7 +163,7 @@ export default function ShouldIReplaceErpPage() {
                   {questions.map((q, i) => (
                     <div key={q.id} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, fontSize: 'var(--do-text-sm)' }}>
                       <span style={{ marginTop: 2, fontWeight: 'var(--do-weight-bold)', color: answers[i] === 'yes' ? 'var(--do-orange)' : 'var(--do-cerulean)' }}>{answers[i] === 'yes' ? 'Yes' : 'No'}</span>
-                      <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 70%, transparent)' }}>{q.text}</span>
+                      <span style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)' }}>{q.text}</span>
                     </div>
                   ))}
                 </div>

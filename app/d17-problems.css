@@ -27,14 +27,14 @@ svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weig
 .win-flat{ padding:calc(18 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u)) }
 .win-flat h5{ margin:0; font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(21 * var(--u)));
   letter-spacing:-.02em; color:var(--do-prussian-blue) }
-.win-flat .s{ margin:3px 0 0; font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
+.win-flat .s{ margin:3px 0 0; font-size:max(11px, calc(13 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .tbl{ width:100%; border-collapse:collapse; margin-top:calc(12 * var(--u)); font-size:max(11px, calc(13 * var(--u))) }
 .tbl th{ text-align:left; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.14em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); padding:0 calc(6 * var(--u)) calc(6 * var(--u)) 0 }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); padding:0 calc(6 * var(--u)) calc(6 * var(--u)) 0 }
 .tbl td{ padding:calc(7 * var(--u)) calc(6 * var(--u)) calc(7 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent);
   font-weight:600; vertical-align:middle }
 .tbl td.num, .tbl th.num{ text-align:right; font-variant-numeric:tabular-nums }
-.tbl td.m{ font-family:var(--do-font-mono); font-weight:500; font-size:max(9.5px, calc(11 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+.tbl td.m{ font-family:var(--do-font-mono); font-weight:500; font-size:max(9.5px, calc(11 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .chip{ display:inline-block; font-family:var(--do-font-mono); font-weight:600; font-size:max(8.5px, calc(10 * var(--u))); letter-spacing:.1em;
   text-transform:uppercase; padding:2px 8px; border-radius:99px; white-space:nowrap;
   color:var(--do-prussian-blue); background:color-mix(in srgb, var(--do-sky-blue) 32%, transparent) }
@@ -60,7 +60,7 @@ svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weig
 .srcs div{ border:1px solid color-mix(in srgb, var(--do-prussian-blue) 16%, transparent); border-radius:calc(7 * var(--u));
   padding:calc(8 * var(--u)) calc(9 * var(--u)); background:color-mix(in srgb, var(--do-sky-blue) 8%, var(--do-white)) }
 .srcs span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .srcs b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(24 * var(--u))); letter-spacing:-.02em }
 .srcs div.x{ border:2px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 12%, var(--do-white)) }
 .typing{ display:inline-flex; gap:4px; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u)));
@@ -102,7 +102,7 @@ svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weig
   box-shadow:inset 0 0 0 1.3px var(--do-amber) }
 .cov-bar i{ width:25%; background:var(--do-cerulean); transform-origin:left center }
 .cov-k{ display:flex; justify-content:space-between; margin-top:calc(5 * var(--u)); font-family:var(--do-font-mono);
-  font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
+  font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .q-list{ margin:calc(10 * var(--u)) 0 0; padding:0; list-style:none }
 .q-list li{ display:block; padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
   font-size:max(8px, calc(11 * var(--u))); font-weight:600; line-height:1.3; white-space:normal }
@@ -143,7 +143,7 @@ svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejo
 .cols{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(10 * var(--u)) }
 .cols .c{ background:color-mix(in srgb, var(--do-prussian-blue) 5%, var(--do-off-white)); border-radius:calc(6 * var(--u)); padding:calc(8 * var(--u)) }
 .cols .c > span{ display:block; font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent); margin-bottom:calc(6 * var(--u)) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); margin-bottom:calc(6 * var(--u)) }
 .cols .j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); border-radius:calc(4 * var(--u));
   padding:calc(6 * var(--u)) calc(7 * var(--u)); margin-bottom:calc(5 * var(--u)); font-size:max(9.5px, calc(11 * var(--u))); font-weight:700; line-height:1.25 }
 .cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
@@ -256,7 +256,7 @@ svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejo
 .a970 .print{ position:absolute; z-index:5; right:calc(24 * var(--u)); top:calc(58 * var(--u)); width:calc(170 * var(--u)); transform:rotate(3deg);
   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(3 * var(--u));
   box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
-.a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a970 .print .ref{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a970 .print b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-size:max(12px, calc(17 * var(--u))) }
 .a970 .print i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 14%, transparent) }
 
@@ -284,7 +284,7 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
 .chart .cap span{ position:absolute; right:0; top:calc(-24 * var(--u) - 6px); font-family:var(--do-font-mono); font-weight:700; font-size:max(8.5px, calc(10 * var(--u)));
   letter-spacing:.12em; text-transform:uppercase; background:var(--do-off-white); padding:0 4px; color:var(--do-prussian-blue) }
 .months{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(6 * var(--u)); margin-top:6px; text-align:center;
-  font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.04em; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+  font-family:var(--do-font-mono); font-size:max(8px, calc(9.5 * var(--u))); letter-spacing:.04em; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .legend{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:calc(12 * var(--u)); font-size:max(10.5px, calc(12 * var(--u))); font-weight:600 }
 .legend span{ display:inline-flex; align-items:center; gap:6px }
 .legend span::before{ content:''; width:12px; height:12px; border-radius:3px; background:var(--c) }
@@ -322,8 +322,8 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
 .xl .fn::before{ content:''; width:calc(10 * var(--u)); height:calc(10 * var(--u)); border-radius:2px; background:var(--do-sky-blue) }
 .xl table{ border-collapse:collapse; width:100%; font-size:max(6.5px, calc(9.5 * var(--u))); font-family:var(--do-font-mono) }
 .xl th, .xl td{ border:1px solid color-mix(in srgb, var(--do-prussian-blue) 14%, transparent); padding:calc(3 * var(--u)) calc(5 * var(--u)); white-space:nowrap; text-align:left }
-.xl th{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); font-weight:600; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center }
-.xl td.rn{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent); text-align:center; width:1%; padding-inline:calc(4 * var(--u)) }
+.xl th{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); font-weight:600; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); text-align:center }
+.xl td.rn{ background:color-mix(in srgb, var(--do-prussian-blue) 7%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); text-align:center; width:1%; padding-inline:calc(4 * var(--u)) }
 .xl td.err{ color:var(--do-prussian-blue); font-weight:700; background:color-mix(in srgb, var(--do-amber) 45%, var(--do-white)) }
 .xl td.sel{ box-shadow:inset 0 0 0 2px var(--do-cerulean) }
 .xl .tabs{ display:flex; gap:2px; padding:calc(4 * var(--u)) calc(6 * var(--u)) 0; background:color-mix(in srgb, var(--do-prussian-blue) 6%, var(--do-white));
@@ -384,21 +384,21 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
 .a718 .doc-l{ left:calc(90 * var(--u)); top:calc(316 * var(--u)); width:calc(470 * var(--u)); transform:rotate(-1deg) }
 .reg{ width:100%; border-collapse:collapse; margin-top:calc(10 * var(--u)); font-size:max(9px, calc(12 * var(--u))) }
 .reg th{ text-align:left; font-family:var(--do-font-mono); font-weight:600; font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(5 * var(--u)) }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); padding:0 0 calc(5 * var(--u)) }
 .reg td{ padding:calc(5.5 * var(--u)) calc(8 * var(--u)) calc(5.5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-weight:600; white-space:nowrap }
 .reg td + td{ font-weight:500 }
 .reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-text-cerulean) }
 .sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
-.sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); margin-right:6px }
+.sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); margin-right:6px }
 .sop .p{ margin:calc(3 * var(--u)) 0 0; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.35 }
 .sop .line{ height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(6 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .il .e{ display:grid; grid-template-columns:calc(90 * var(--u)) 1fr; gap:calc(12 * var(--u)); padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .il .e:first-of-type{ margin-top:calc(8 * var(--u)) }
 .il .d b{ display:block; font-weight:700; font-size:max(9px, calc(12 * var(--u))) }
-.il .d{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.il .d{ font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .il .t span{ display:grid; grid-template-columns:calc(56 * var(--u)) 1fr; gap:8px; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.4 }
 .il .t em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6.5px, calc(8.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding-top:2px }
+  color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); padding-top:2px }
 .a718 .keys{ list-style:none; margin:calc(22 * var(--u)) 0 0; padding:0 }
 .a718 .keys li{ display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:baseline; padding:calc(10 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 22%, transparent) }

@@ -202,7 +202,7 @@ export function LocationPage({
             <div style={{ position: 'sticky', top: 112 }}>
               <div className="card" style={{ padding: 32 }}>
                 <div style={{ fontSize: 'var(--do-text-2xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-on-dark)', marginBottom: 8 }}>{cta}</div>
-                <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, lineHeight: 1.75, marginBottom: 24 }}>
+                <p style={{ fontSize: 'var(--do-text-sm)', color: '#dfe6ea', lineHeight: 1.75, marginBottom: 24 }}>
                   The first conversation is free and there&apos;s no obligation. Just a call about what&apos;s happening in your business and whether I can help.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
@@ -212,7 +212,7 @@ export function LocationPage({
                     '3× Clarity Guarantee on audit work',
                     trustLine || 'Based in the South East, on-site across Sussex and Surrey',
                   ].map((item) => (
-                    <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72 }}>
+                    <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 'var(--do-text-sm)', color: '#dfe6ea' }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--do-cerulean)', marginTop: 7, flexShrink: 0 }} />
                       {item}
                     </div>
@@ -221,8 +221,8 @@ export function LocationPage({
                 <Link href="/contact" className="btn btn--primary" style={{ width: '100%' }}>
                   Book a free call <ArrowRight size={18} />
                 </Link>
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, fontWeight: 'var(--do-weight-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
-                <p style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-on-dark)', opacity: 0.4, textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: '#dfe6ea', fontWeight: 'var(--do-weight-medium)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4, marginTop: 12 }}>Or book a call directly <ArrowRight size={14} /></a>
+                <p style={{ fontSize: 'var(--do-text-xs)', color: '#c3d0d6', textAlign: 'center', marginTop: 16, marginBottom: 0 }}>
                   Serving {town} and across {county}
                 </p>
               </div>

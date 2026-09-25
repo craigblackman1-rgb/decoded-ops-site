@@ -107,8 +107,8 @@
   padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:max(7px, calc(12.5 * var(--u))); font-weight:600; line-height:1.25 }
 .dl .r.h{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.14em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); border-top:0; padding-bottom:calc(4 * var(--u)) }
-.dl .who{ font-family:var(--do-font-mono); font-weight:500; font-size:max(6px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent); border-top:0; padding-bottom:calc(4 * var(--u)) }
+.dl .who{ font-family:var(--do-font-mono); font-weight:500; font-size:max(6px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .st-chip{ font-family:var(--do-font-mono); font-weight:700; font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.1em;
   text-transform:uppercase; padding:calc(3 * var(--u)) calc(7 * var(--u)); border-radius:99px; white-space:nowrap;
   background:color-mix(in srgb, var(--do-sky-blue) 32%, transparent); color:var(--do-prussian-blue) }
@@ -122,7 +122,7 @@
   background:color-mix(in srgb, var(--do-sky-blue) 22%, transparent); font-size:max(6.5px, calc(10.5 * var(--u))); font-weight:600; line-height:1.2 }
 .rm .c span.a{ background:color-mix(in srgb, var(--do-amber) 40%, transparent) }
 .doc-foot{ margin-top:calc(12 * var(--u)); padding-top:calc(8 * var(--u)); border-top:1px dashed color-mix(in srgb, var(--do-prussian-blue) 25%, transparent);
-  font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
+  font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.08em; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 @media (max-width: 760px){
   .a1001 .stage{ aspect-ratio:auto; display:flex; flex-direction:column; gap:16px; padding:64px 16px 8px }
   .a1001 .stage .d17-doc{ position:relative; left:auto; top:auto; width:auto; --u:.8px }
@@ -241,7 +241,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
   background:linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)); width:var(--w) }
 .fx .r.top i{ background:var(--do-amber) }
 .fx .r em{ font-style:normal; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.1em;
-  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+  text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .chg{ list-style:none; margin:calc(12 * var(--u)) 0 0; padding:0; counter-reset:c }
 .chg li{ counter-increment:c; display:grid; grid-template-columns:calc(24 * var(--u)) 1fr auto; gap:calc(8 * var(--u)); align-items:center;
   padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
