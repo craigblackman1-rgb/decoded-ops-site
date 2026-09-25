@@ -72,7 +72,7 @@ export default function HowIBuildPage() {
       <section className="g-tint ev-band" data-od-id="evidence">
         <div className="wrap">
           <PhotoPiece
-            src="/images/money/prod-hivis-2026-09.jpg"
+            src="/images/money/prod-hivis-2026-09.webp"
             width={900}
             height={1348}
             alt="A worker in a grey T-shirt wearing an orange hi-vis vest with two reflective bands, photographed against a plain studio backdrop."

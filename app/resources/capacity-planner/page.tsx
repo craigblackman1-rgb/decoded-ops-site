@@ -55,7 +55,7 @@ export default function CapacityPlannerPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a992" data-od-id="hero-art" data-motion data-no="DO-ART-992" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-992. The capacity planner's result screen over a graded photograph of embroidery heads, labelled Example and worked from the calculator's default inputs: four machines, eight production hours a day, five days a week, thirty minutes a job, fifteen per cent downtime and changeover allowance. On paper, 64 jobs a day. Real capacity: 54 jobs a day, 270 a week, 1,169 a month, 85 per cent utilisation. Plan against the real number, not the spec sheet.">
-  <div class="d17-ph"><img src="/images/d17/resources/hero-workshop-c19d7e.jpg" alt="" width="900" height="844"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/hero-workshop-c19d7e.webp" alt="" width="900" height="844"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Capacity planner</span><span>Five inputs, one answer</span></div>
   <div class="body">

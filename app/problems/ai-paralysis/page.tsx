@@ -115,7 +115,7 @@ export default function AiParalysisPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a960" data-od-id="hero-evidence" data-motion data-no="DO-ART-960" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-960. An AI assistant window over a dimmed photograph. Someone asks which best-selling polos are about to run out. The assistant answers that it found the same polo in three places with three different stock figures, supplier feed 40, spreadsheet 12, ERP 0, and cannot say which one is right. The AI is only as good as the data underneath it.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-signage-58e48c.jpg" alt="" width="900" height="600"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-signage-58e48c.webp" alt="" width="900" height="600"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>AI readiness</span><span>The question meets the data</span></div>
   <div class="body" aria-hidden="true">
@@ -230,7 +230,7 @@ export default function AiParalysisPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
-  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.webp" alt="" width="1100" height="1224"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>

@@ -117,7 +117,7 @@ export default function SmallBusinessPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="wrap">
           <PhotoPiece
-            src="/images/money/cat-promo-2026-09.jpg"
+            src="/images/money/cat-promo-2026-09.webp"
             width={1600}
             height={1067}
             alt="Two plain white ceramic mugs, handles outward, side by side on a white surface."

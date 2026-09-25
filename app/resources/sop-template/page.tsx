@@ -90,7 +90,7 @@ export default function SopTemplatePage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a987" data-od-id="hero-art" data-motion data-no="DO-ART-987" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-987. The SOP template over a graded photograph of a print hall, filled in as an example. Process: screen press set-up. Owner: production supervisor. Inputs: approved proof, job ticket, screens and inks. Steps one to five in order. Exceptions: artwork in the wrong format, stock short. Review date: every six months. Behind it, the one-page process register. A note pinned on top: test it on someone who doesn't normally do the job. One page, one process, one owner.">
-  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-a6acf5.jpg" alt="" width="900" height="761"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-a6acf5.webp" alt="" width="900" height="761"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>SOP template</span><span>Example, filled in</span></div>
   <div class="stage" aria-hidden="true">

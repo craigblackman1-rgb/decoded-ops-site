@@ -60,7 +60,7 @@ export default function DowntimeCostCalculatorPage() {
           {/* D17 hero art · DO-ART-996 */}
           <figure className="d17 sx a996" data-od-id="incident-docket" data-motion data-no="DO-ART-996" data-rev="01" data-tx="photo"
                   aria-label="Artwork DO-ART-996. The scenario, a Tuesday in November, pinned over a graded photograph of embroidery heads. Time: nine o'clock. Machines: all running, files already loaded. Connection: internet down. Trading: no. A result slip, labelled Example and worked from the worksheet's default figures: £3,495 a year, the cost of hours the business is up but can't trade. Everything is running. Nothing is earning.">
-            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-5bb1b8.jpg" alt="" width="900" height="900" /></div>
+            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-5bb1b8.webp" alt="" width="900" height="900" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <div className="sx-top d17-mono" aria-hidden="true"><span>The scenario</span><span>A Tuesday in November</span></div>
             <div className="stage" aria-hidden="true">

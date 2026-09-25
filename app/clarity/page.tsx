@@ -181,7 +181,7 @@ export default function ClarityPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="wrap">
           <PhotoPiece
-            src="/images/money/hero-workshop-2026-09.jpg"
+            src="/images/money/hero-workshop-2026-09.webp"
             width={1600}
             height={2397}
             alt="Two multi-head embroidery machines on a workshop floor, threaded and mid-run, with a grey garment hooped under the needles and thread cones racked behind."

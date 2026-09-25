@@ -106,7 +106,7 @@ export default function HomePage() {
                    with two fanned documents and the question below. */}
               <figure className={`${d17.d17} ${d17.a916}`} data-od-id="hero-question" data-motion
                       data-no="DO-ART-916" data-rev="01" data-tx="photo">
-                <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.jpg"
+                <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.webp"
                   alt="" width={1100} height={1224} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
@@ -211,7 +211,7 @@ export default function HomePage() {
             <div class="row"><b>RM-01</b><span>Roadmap</span></div>
           </div>
           <div class="photopin m-drop" style="left:calc(966 * var(--u)); top:calc(196 * var(--u)); width:calc(228 * var(--u)); height:calc(196 * var(--u)); transform:rotate(2.6deg); animation-delay:1.8s">
-            <img src="/images/d17/home/hero-workshop-32a6d0.jpg" alt=""><i class="tint"></i>
+            <img src="/images/d17/home/hero-workshop-32a6d0.webp" alt=""><i class="tint"></i>
             <span>on site, day one</span></div>
         </div>
         <div class="stations">
@@ -288,7 +288,7 @@ export default function HomePage() {
               <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
                       data-no="DO-ART-917" data-rev="01" data-tx="photo"
                       aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
-                <div className={d17.d17Ph}><img src="/images/d17/thread-spools.jpg" alt="" width={1300} height={867} /></div>
+                <div className={d17.d17Ph}><img src="/images/d17/thread-spools.webp" alt="" width={1300} height={867} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <figcaption className={d17.cap}>
                   <div className={`${d17.k} ${d17.d17Mono}`}>Works <span>&middot; at Hanicks</span></div>
@@ -376,7 +376,7 @@ export default function HomePage() {
               <figure className={`${d17.d17} ${d17.a918}`} data-od-id="plate-evidence" data-motion
                       data-no="DO-ART-918" data-rev="01" data-tx="photo"
                       aria-label="Evidence piece DO-ART-918. A teamwear business on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-                <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.jpg" alt="" width={900} height={596} /></div>
+                <div className={d17.d17Ph}><img src="/images/d17/cat-workwear.webp" alt="" width={900} height={596} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <figcaption className={d17.copy}>
                   <div className={`${d17.k} ${d17.d17Mono}`}>A teamwear business <span>&middot; live system, Sept 2026</span></div>

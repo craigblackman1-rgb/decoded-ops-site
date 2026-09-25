@@ -69,7 +69,7 @@ const wrongErpSchema = {
 
 const heroArt978 = `<figure class="d17 sx px a978" data-od-id="hero-evidence" data-motion data-no="DO-ART-978" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-978. Documents over a photograph of an embroidery floor. A vendor demo script sits on the left: a polished presentation showing perfect workflows and happy users. On the right, a real Tuesday morning: customisation costs spiralling, your team running workarounds, and the vendor telling you it's a configuration issue. The demo showed one thing. The operation is another.">
-  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.webp" alt="" width="1100" height="1224"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Wrong ERP</span><span>Demo script vs real Tuesday</span></div>
   <div class="stage" aria-hidden="true">

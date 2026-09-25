@@ -156,7 +156,7 @@ const heroArt963 = `<figure class="d17 sx px a963" data-od-id="hero-evidence" da
 
 const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>

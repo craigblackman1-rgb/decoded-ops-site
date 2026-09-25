@@ -132,7 +132,7 @@ export default function DecodedMethodPage() {
 
           <div style={{ position: 'relative', margin: '0 auto', width: '100%', maxWidth: 320 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/decoded-method-cover.png" alt="The Decoded Method guide, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
+            <img src="/images/decoded-method-cover.webp" alt="The Decoded Method guide, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
           </div>
         </div>
       </section>
@@ -141,7 +141,7 @@ export default function DecodedMethodPage() {
         <div className="wrap" dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a988" data-od-id="hero-art" data-motion data-no="DO-ART-988" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-988. The Decoded Method playbook, seven pages, three of them fanned over a graded photograph of a workbench. The cover. The three layers: process register, one-page SOPs, improvement log. And the self-assessment scorecard, scored as an example against the six principles: plain English, one page per process, owner on everything, reviewed regularly, delivery-linked, ISO-ready. The lowest score, owner on everything, is marked in amber. Handed over, not held in one head.">
-        <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-79b455.jpg" alt="" width="900" height="742"></div>
+        <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-79b455.webp" alt="" width="900" height="742"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <div class="sx-top d17-mono" aria-hidden="true"><span>Free playbook</span><span>7 pages · no email</span></div>
         <div class="stage" aria-hidden="true">

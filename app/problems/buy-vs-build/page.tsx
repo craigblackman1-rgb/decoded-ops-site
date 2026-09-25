@@ -98,7 +98,7 @@ export default function BuyVsBuildPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a962" data-od-id="hero-evidence" data-motion data-no="DO-ART-962" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-962. Two papers over a photograph of a print hall. A coverage test runs a platform against eight steps of the workflow: it covers two, enquiry to quote and invoicing, and leaves six as gaps, a quarter covered and three quarters not. A second note, the other three quarters, lists what nobody has priced: the cost of the gap and the cost of changing how the business works. A quarter covered: what closes the rest?">
-  <div class="d17-ph"><img src="/images/d17/problems/gen-press-hall-7c2764.jpg" alt="" width="1000" height="1000"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/gen-press-hall-7c2764.webp" alt="" width="1000" height="1000"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Buy or build</span><span>The operation decides</span></div>
   <div class="stage" aria-hidden="true">

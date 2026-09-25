@@ -88,7 +88,7 @@ export default function PromotionalMerchandisePage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a929" data-od-id="hero-evidence" data-motion data-no="DO-ART-929" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-929. A graded photograph of blank mugs with a client order laid over it: four product lines from four supplier ranges, each with its own lead time, and the four purchase orders it becomes. The order ships when the slowest line lands. One order, four supplier ranges, four different lead times.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-96b20f.jpg" alt="" width="900" height="771"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-96b20f.webp" alt="" width="900" height="771"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Promotional merchandise</span><span>One client order</span></div>
   <div class="stage" aria-hidden="true">
@@ -131,7 +131,7 @@ export default function PromotionalMerchandisePage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a930" data-od-id="plate-architecture" data-motion data-no="DO-ART-930" data-rev="01" data-tx="photo"
         aria-label="Product screen DO-ART-930. The Works supplier matching view, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers. Example product rows are shown matched to suppliers A to D.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-6d25d2.jpg" alt="" width="1100" height="733"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-promo-6d25d2.webp" alt="" width="1100" height="733"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">Works <span>· supplier matching</span></div>

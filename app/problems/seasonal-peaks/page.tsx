@@ -93,7 +93,7 @@ export default function SeasonalPeaksPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a973" data-od-id="hero-evidence" data-motion data-no="DO-ART-973" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-973. An order intake chart by month, drawn as a shape without figures, over a dimmed photograph. Teamwear rises from March to June, schoolwear peaks in July to September with August the busiest month, four times February, the quietest, and promotional work climbs in November and December. A dashed line marks what the team can process; every month above it is amber. Staffed for the average, swamped at the peak.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-awards-70dc2f.jpg" alt="" width="900" height="1200"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-awards-70dc2f.webp" alt="" width="900" height="1200"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Seasonal peaks</span><span>Twelve months, three rhythms</span></div>
   <div class="win" aria-hidden="true">
@@ -223,7 +223,7 @@ export default function SeasonalPeaksPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>

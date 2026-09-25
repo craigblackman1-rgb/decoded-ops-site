@@ -78,7 +78,7 @@ export default function SixSigmaPage() {
 
           <div style={{ position: 'relative', margin: '0 auto', width: '100%', maxWidth: 320 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/six-sigma-cover.png" alt="The 5 & 6 Sigma Decoration Playbook, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
+            <img src="/images/six-sigma-cover.webp" alt="The 5 & 6 Sigma Decoration Playbook, cover" width={1075} height={1521} style={{ width: '100%', borderRadius: 'var(--do-radius-lg)', boxShadow: 'var(--do-shadow-xl)', transform: 'rotate(2.5deg)' }} />
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function SixSigmaPage() {
         <div className="wrap" dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a985" data-od-id="hero-art" data-motion data-no="DO-ART-985" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-985. The 5 and 6 Sigma decoration playbook over a graded photograph of an embroidery machine's thread spools: the cover, seven pages, and an open spread with the scale. Three sigma, industry baseline, 93.3 per cent yield, 66,807 defects per million. Four sigma, controlled, 99.4 per cent, 6,210. Five sigma, high performance, in amber, 99.98 per cent, 233. Six sigma, world class, 99.9997 per cent, 3.4. The gap is process, not machinery.">
-        <div class="d17-ph"><img src="/images/d17/resources/thread-spools-a145a8.jpg" alt="" width="900" height="873"></div>
+        <div class="d17-ph"><img src="/images/d17/resources/thread-spools-a145a8.webp" alt="" width="900" height="873"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <div class="sx-top d17-mono" aria-hidden="true"><span>Free playbook</span><span>7 pages · no email</span></div>
         <div class="stage" aria-hidden="true">

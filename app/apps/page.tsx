@@ -39,7 +39,7 @@ export default function AppsPage() {
           {/* DO-ART-939 r01 */}
           <figure className="d17 sw a939" data-od-id="hero-visual" data-motion data-no="DO-ART-939" data-rev="01" data-tx="photo"
                   aria-label="Product screens DO-ART-939. Three app screens over a graded photograph of an embroidery floor.">
-            <div className="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-44196e.jpg" alt="" width="1400" height="875" /></div>
+            <div className="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-44196e.webp" alt="" width="1400" height="875" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <div className="top d17-mono" aria-hidden="true"><span>The systems · three apps</span><span>Running today, September 2026</span></div>
             <div className="under d17-mono" aria-hidden="true"><span>Live · two deployments<b>Decoded Works</b></span><span>Founding clients<b>Decoded Proof</b></span><span>In build at Hanicks<b>Decoded Commerce</b></span></div>
@@ -73,10 +73,10 @@ export default function AppsPage() {
                   <h5>Trade catalogue</h5>
                   <p className="s">Your account pricing · quote alongside the basket</p>
                   <div className="tiles">
-                    <div className="tile"><img src="/images/d17/apps-cases/prod-polo-a16032.jpg" alt="" /><div className="tb"><div className="sku">WRK-001</div><div className="nm">Piqué polo</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
-                    <div className="tile"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.jpg" alt="" /><div className="tb"><div className="sku">WRK-042</div><div className="nm">Hi-vis vest</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
-                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/cat-promo-89c58a.jpg" alt="" /><div className="tb"><div className="sku">PRM-055</div><div className="nm">Ceramic mug</div></div></div>
-                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/prod-mailer-9c1448.jpg" alt="" /><div className="tb"><div className="sku">PKG-003</div><div className="nm">Mailer box</div></div></div>
+                    <div className="tile"><img src="/images/d17/apps-cases/prod-polo-a16032.webp" alt="" /><div className="tb"><div className="sku">WRK-001</div><div className="nm">Piqué polo</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
+                    <div className="tile"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.webp" alt="" /><div className="tb"><div className="sku">WRK-042</div><div className="nm">Hi-vis vest</div><div className="act"><span>Quote</span><span>Add</span></div></div></div>
+                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/cat-promo-89c58a.webp" alt="" /><div className="tb"><div className="sku">PRM-055</div><div className="nm">Ceramic mug</div></div></div>
+                    <div className="tile mw-hide"><img src="/images/d17/apps-cases/prod-mailer-9c1448.webp" alt="" /><div className="tb"><div className="sku">PKG-003</div><div className="nm">Mailer box</div></div></div>
                   </div>
                 </div>
               </div>

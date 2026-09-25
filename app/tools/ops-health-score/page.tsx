@@ -76,7 +76,7 @@ export default function OpsHealthScorePage() {
           {/* D17 hero art · DO-ART-997 */}
           <figure className="d17 sx px ph-fade a997" data-od-id="hero-art" data-motion data-no="DO-ART-997" data-rev="01" data-tx="screen"
                   aria-label="Artwork DO-ART-997. The ops health score result screen over a graded photograph of a workbench, labelled Example. Five areas rated one to five: systems integration 2, process documentation 3, data quality 3, team and capability 4, technology strategy 1, in amber. Total 13 out of 25. Focus first on technology strategy. Five areas, and one place to start.">
-            <div className="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-6b4161.jpg" alt="" width="900" height="756" /></div>
+            <div className="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-6b4161.webp" alt="" width="900" height="756" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <div className="sx-top d17-mono" aria-hidden="true"><span>Ops health score</span><span>Five areas</span></div>
             <div className="body">

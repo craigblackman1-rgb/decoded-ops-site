@@ -137,7 +137,7 @@ export default function ErpSelectionPlaybookPage() {
           <div dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a991" data-od-id="hero-art" data-motion data-no="DO-ART-991" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-991. The ERP selection playbook over a graded photograph of folded workwear, and beside it the vendor brief, written before any demo, scoring three candidates like-for-like as an example: candidate A, candidate B, and ours, scored the same way. The requirements are the page's own: mixed decoration methods, the artwork approval loop, a B2B portal, blank stock and work in progress, supplier lead times, and a data migration plan. Write the brief first; every demo is scored against it, ours included.">
-        <div class="d17-ph"><img src="/images/d17/resources/cat-workwear-ce9fb8.jpg" alt="" width="900" height="596"></div>
+        <div class="d17-ph"><img src="/images/d17/resources/cat-workwear-ce9fb8.webp" alt="" width="900" height="596"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <div class="sx-top d17-mono" aria-hidden="true"><span>ERP selection</span><span>Brief before demo</span></div>
         <div class="stage" aria-hidden="true">

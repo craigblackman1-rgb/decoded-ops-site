@@ -88,7 +88,7 @@ export default function CaseStudy03Page() {
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a955" data-od-id="shape-card" data-motion data-no="DO-ART-955" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-955. Two documents over a graded photograph of a hi-vis vest. A vendor requirements brief for the trade portal, each requirement scored against the brief. And the engagement shape: role, architect and advisor, a third-party team builds; stack, an open-source commerce stack; structure, a 12-month minimum retainer; status, live and ongoing.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-392a14.jpg" alt="" width="900" height="1018"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-392a14.webp" alt="" width="900" height="1018"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 03 · workwear</span><span>Live and ongoing</span></div>
   <div class="stage">

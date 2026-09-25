@@ -88,7 +88,7 @@ export default function TeamwearClubwearPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a935" data-od-id="hero-evidence" data-motion data-no="DO-ART-935" data-rev="01" data-tx="photo"
         aria-label="Product screen DO-ART-935. The supplier feed overview at a teamwear business, live in September 2026: 17 supplier feeds automated, 27,778 supplier products, 236,056 variants, 952 products live on their website, 1,846 decorated products, and every stock record with a bin location. Kit range churn, kept current on its own.">
-  <div class="d17-ph"><img src="/images/d17/sectors/gen-bench-flatlay-v2-215572.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-bench-flatlay-v2-215572.webp" alt="" width="900" height="900"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Teamwear &amp; clubwear</span><span>Live, September 2026</span></div>
   <div class="win" aria-hidden="true">
@@ -124,7 +124,7 @@ export default function TeamwearClubwearPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw sw-doc a936" data-od-id="plate-architecture" data-motion data-no="DO-ART-936" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-936. A graded photograph of a folded base garment with a squad list and a sponsor logo specification laid over it. One base garment becomes twenty-four kits, each with its own name, number and size, and the same approved sponsor logo. One base garment, twenty-four names, twenty-four numbers.">
-  <div class="d17-ph"><img src="/images/d17/sectors/prod-polo-5947fe.jpg" alt="" width="900" height="905"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/prod-polo-5947fe.webp" alt="" width="900" height="905"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">Squad-level data <span>· one kit per player</span></div>

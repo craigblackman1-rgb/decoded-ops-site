@@ -114,7 +114,7 @@ export default function GarmentDecorationPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a923" data-od-id="hero-evidence" data-motion data-no="DO-ART-923" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-923. Thread spools racked on an embroidery machine, graded, above three drawn production runs: embroidery (digitise, hoop, stitch, trim), screen print (screens, set-up, print, flash, cure) and direct-to-garment (pre-treat, press, print, cure). Three methods, three production logics.">
-  <div class="d17-ph"><img src="/images/d17/sectors/thread-spools-1c52d7.jpg" alt="" width="1000" height="889"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/thread-spools-1c52d7.webp" alt="" width="1000" height="889"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Garment decoration</span><span>One floor, three methods</span></div>
   <div class="stage" aria-hidden="true"></div>
@@ -158,8 +158,8 @@ export default function GarmentDecorationPage() {
     <span style="left:70.6%;top:51.2%">Embroidery</span><span style="left:70.6%;top:63.4%">Screen print</span><span style="left:70.6%;top:75.6%">DTG</span>
   </div>
   <div class="prints" aria-hidden="true">
-    <div class="print" style="left:55%;top:5%;width:14%;height:31%;transform:rotate(-3deg)"><img src="/images/d17/sectors/hero-workshop-783ec1.jpg" alt="" width="520" height="455"><div class="tint"></div><span>Embroidery · by stitch count</span></div>
-    <div class="print" style="left:73%;top:8%;width:14%;height:31%;transform:rotate(2.5deg)"><img src="/images/d17/sectors/gen-press-hall-40f9e1.jpg" alt="" width="520" height="327"><div class="tint"></div><span>Screen print · by set-up</span></div>
+    <div class="print" style="left:55%;top:5%;width:14%;height:31%;transform:rotate(-3deg)"><img src="/images/d17/sectors/hero-workshop-783ec1.webp" alt="" width="520" height="455"><div class="tint"></div><span>Embroidery · by stitch count</span></div>
+    <div class="print" style="left:73%;top:8%;width:14%;height:31%;transform:rotate(2.5deg)"><img src="/images/d17/sectors/gen-press-hall-40f9e1.webp" alt="" width="520" height="327"><div class="tint"></div><span>Screen print · by set-up</span></div>
   </div>
   <div class="stations">
     <div class="st" style="left:5%;top:68%"><span class="n">01 · In</span><h4>Order intake</h4><p>Online, trade and repeat orders in one place.</p></div>

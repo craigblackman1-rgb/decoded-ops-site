@@ -83,7 +83,7 @@ export default function ArtworkManagerPage() {
                  the APPROVED stamp lands on v4. */}
             <figure className="d17 sx a944" aria-label="Product screen DO-ART-944. The Decoded Proof approval history for a left breast crest, over a graded photograph of thread spools on an embroidery machine. Version 5 is a draft that has not been sent, so production cannot pull it. Version 4 was sent to the customer, opened twice and signed off by the customer contact, and is in production as a machine-ready stitch file. Version 3 had changes requested. Every version kept, sign-off stamped against the one they actually saw."
               dangerouslySetInnerHTML={{ __html: `
-<div class="d17-ph"><img src="/images/d17/apps-cases/thread-spools-ba5d03.jpg" alt="" width="900" height="600" /></div>
+<div class="d17-ph"><img src="/images/d17/apps-cases/thread-spools-ba5d03.webp" alt="" width="900" height="600" /></div>
 <div class="d17-scan" aria-hidden="true"></div>
 <div class="sx-top d17-mono" aria-hidden="true"><span>Proof · approvals</span><span>Founding clients</span></div>
 <div class="stage" aria-hidden="true">
@@ -200,14 +200,14 @@ export default function ArtworkManagerPage() {
 </div>
 <div class="cols">
   <div class="pin p1 m-drop" style="animation-delay:.2s" aria-hidden="true"><i class="tack"></i>
-    <div class="print"><img src="/images/d17/apps-cases/thread-spools-dada9d.jpg" alt="" /><span>Thread library · colourways</span></div></div>
+    <div class="print"><img src="/images/d17/apps-cases/thread-spools-dada9d.webp" alt="" /><span>Thread library · colourways</span></div></div>
   <div class="pin p2 m-drop" style="animation-delay:.5s" aria-hidden="true"><i class="tack"></i>
     <div class="proof"><span class="ref">EMB-0142 · proof · v4</span><h4>Left breast crest</h4>
       <div class="crest"><svg viewBox="0 0 80 80"><path d="M40 6 L70 16 V40 C70 58 56 70 40 76 C24 70 10 58 10 40 V16 Z" fill="#023047" /><path d="M40 16 L60 23 V40 C60 53 51 61 40 66 C29 61 20 53 20 40 V23 Z" fill="none" stroke="#FFB703" stroke-width="3" /><circle cx="40" cy="41" r="9" fill="#8ECAE6" /></svg>
         <dl><dt>Size</dt><dd>90 × 90 mm</dd><dt>Thread</dt><dd>4 colours</dd><dt>Sign-off</dt><dd>Customer contact</dd></dl></div>
       <div class="approved" style="margin-top:10px">Approved · v4</div></div></div>
   <div class="pin p3 m-drop" style="animation-delay:.8s" aria-hidden="true"><i class="tack"></i>
-    <div class="print"><img src="/images/d17/apps-cases/hero-workshop-187638.jpg" alt="" /><span>The floor · machine-ready file</span></div></div>
+    <div class="print"><img src="/images/d17/apps-cases/hero-workshop-187638.webp" alt="" /><span>The floor · machine-ready file</span></div></div>
   <div class="rline" aria-hidden="true">
     <svg viewBox="0 0 1064 64" preserveAspectRatio="none">
       <path class="m-draw" pathLength="1" d="M10 32 H532" fill="none" stroke="#8ECAE6" stroke-width="6" stroke-linecap="round" />

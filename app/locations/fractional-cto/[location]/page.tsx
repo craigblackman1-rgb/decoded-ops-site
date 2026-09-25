@@ -73,7 +73,7 @@ function getHeroArtHtml(town: string): string {
   const t = town.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return `<figure class="d17 a1001" data-od-id="hero-visual" data-motion data-no="DO-ART-1001" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-1001. Three documents over a graded photograph of an embroidery floor: the monthly technology review pack for the leadership meeting.">
-        <div class="d17-ph"><img src="/images/d17/locations/hero-workshop-db78aa.jpg" alt="" width="1400" height="934"></div>
+        <div class="d17-ph"><img src="/images/d17/locations/hero-workshop-db78aa.webp" alt="" width="1400" height="934"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <div class="stage" aria-hidden="true">
           <div class="sx-tag t1 m-pop" style="animation-delay:1.2s"><small>Every month</small>In the leadership meeting</div>
@@ -135,9 +135,9 @@ function getStepsArtHtml(): string {
         <p class="stand">The same four things every month, so decisions get made on purpose instead of in a hurry.</p>
         <div class="prints" aria-hidden="true">
           <div class="print m-rise" style="left:calc(612 * var(--u)); top:calc(60 * var(--u)); width:calc(210 * var(--u)); height:calc(172 * var(--u)); transform:rotate(-3deg); animation-delay:.2s">
-            <img src="/images/d17/locations/gen-bench-flatlay-v2-fa6a3a.jpg" alt=""><i class="tint"></i><span>The bench · what the team runs on</span></div>
+            <img src="/images/d17/locations/gen-bench-flatlay-v2-fa6a3a.webp" alt=""><i class="tint"></i><span>The bench · what the team runs on</span></div>
           <div class="print m-rise" style="left:calc(846 * var(--u)); top:calc(34 * var(--u)); width:calc(250 * var(--u)); height:calc(214 * var(--u)); transform:rotate(2.5deg); animation-delay:.35s">
-            <img src="/images/d17/locations/hero-workshop-99888d.jpg" alt=""><i class="tint"></i><span>The floor · where decisions land</span></div>
+            <img src="/images/d17/locations/hero-workshop-99888d.webp" alt=""><i class="tint"></i><span>The floor · where decisions land</span></div>
         </div>
         <svg class="route" viewBox="0 0 1152 620" preserveAspectRatio="none" aria-hidden="true">
           <path d="M72 328 C170 328 180 388 276 388 S388 328 482 328 S592 388 688 388" fill="none" stroke="var(--do-sky-blue)" stroke-width="6" stroke-linecap="round" class="m-draw" pathLength="1"/>

@@ -46,7 +46,7 @@ export default function CaseStudiesPage() {
         <div className="wrap hero-art">
           <figure className="d17 sw sw-doc a949" data-od-id="engagement-summary" data-motion data-no="DO-ART-949" data-rev="01" data-tx="photo"
                   aria-label="Artwork DO-ART-949. Four engagement files laid over a graded workbench photograph. Case study 01, heating spares and eCommerce, live engagement: 317,812 products brought in, 154,518 matched automatically, 40 active suppliers, stamped measured. Case study 02, branded apparel and decoration, in Deliver: 17 supplier feeds automated, 952 products live on their website, 100% of stock binned, stamped measured. Case study 03, workwear B2B distributor, in Deliver: B2B ordering portal and ERP evaluation, architecture and vendor brief, stamped too new to measure. Eternal Fitness, health and fitness, in build: full site rebuild and an AI-assisted training plan tool, stamped too new to measure. Four engagements, two with measurable outcomes.">
-            <div className="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-v2-6f5bfe.jpg" alt="" width="1024" height="1024" /></div>
+            <div className="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-v2-6f5bfe.webp" alt="" width="1024" height="1024" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <figcaption className="sw-cap">
               <div className="k d17-mono">Engagement summary <span>· September 2026</span></div>
@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
             <article className="card case-card" data-od-id="case-02">
               <figure className="d17 chd chd--t" data-no="DO-ART-950" data-rev="01" data-tx="photo"
                       aria-label="Case index head DO-ART-950, case study 02 cut. A graded photograph of a folded polo with a pinned tag: 17 supplier feeds automated.">
-                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-polo-34c129.jpg" alt="" width="700" height="311" /></div>
+                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-polo-34c129.webp" alt="" width="700" height="311" /></div>
                 <div className="d17-scan" aria-hidden="true"></div>
                 <div className="k d17-mono" aria-hidden="true">Case study 02 <span>· in Deliver</span></div>
                 <div className="sx-tag sx-tag--a" aria-hidden="true"><small>Automated</small><b>17 supplier feeds</b></div>
@@ -123,7 +123,7 @@ export default function CaseStudiesPage() {
             <article className="card case-card" data-od-id="case-03">
               <figure className="d17 chd chd--c" data-no="DO-ART-950" data-rev="01" data-tx="photo"
                       aria-label="Case index head DO-ART-950, case study 03 cut. A graded photograph of a hi-vis vest with a pinned tag: B2B ordering portal, architect and advisor.">
-                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-47c1d3.jpg" alt="" width="700" height="311" /></div>
+                <div className="d17-ph"><img src="/images/d17/apps-cases/prod-hivis-47c1d3.webp" alt="" width="700" height="311" /></div>
                 <div className="d17-scan" aria-hidden="true"></div>
                 <div className="k d17-mono" aria-hidden="true">Case study 03 <span>· in Deliver</span></div>
                 <div className="sx-tag" aria-hidden="true"><small>Architect and advisor</small><b>B2B ordering portal</b></div>

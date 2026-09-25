@@ -134,7 +134,7 @@ export default function ChecklistPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a983" data-od-id="hero-art" data-motion data-no="DO-ART-983" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-983. The operational audit checklist on a clipboard over a graded photograph of an embroidery floor, part-worked as an example. Backups automated and tested quarterly: yes. Paying for licences no longer used: yes. Orders re-keyed from the website into the ERP: yes. Cost per order including labour, materials and overhead: can't answer, marked in amber. What the slowest process is and why: can't answer, in amber. A note pinned beside it: the ones you can't answer are where the cost is.">
-  <div class="d17-ph"><img src="/images/d17/resources/hero-workshop-23d6be.jpg" alt="" width="900" height="842"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/hero-workshop-23d6be.webp" alt="" width="900" height="842"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Audit checklist</span><span>Example, part-worked</span></div>
   <div class="stage" aria-hidden="true">

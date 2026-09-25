@@ -98,7 +98,7 @@ export default function LegacySystemPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a969" data-od-id="hero-evidence" data-motion data-no="DO-ART-969" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-969. A tractor-feed printout of an old item maintenance screen over a photograph of an embroidery machine. It holds an item code, a description, a supplier and a unit of sale, but decoration method and artwork reference both read field not available, and a finished item made from a blank reads not supported. A sticky note says: decoration, see the spreadsheet on the studio PC. Built to buy and sell, not to decorate.">
-  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1000" height="889"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.webp" alt="" width="1000" height="889"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Legacy platform</span><span>Bought ten years ago</span></div>
   <div class="stage" aria-hidden="true">

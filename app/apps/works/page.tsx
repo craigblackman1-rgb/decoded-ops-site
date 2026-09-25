@@ -79,7 +79,7 @@ export default function DataAppPage() {
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a941" data-od-id="hero-visual" data-motion data-no="DO-ART-941" data-rev="01" data-tx="photo"
         aria-label="Product screen DO-ART-941. The Decoded Works supplier matching screen at a live client, September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers with 89 on file. Supplier lines arrive in different formats and are matched to one catalogue product; anything not yet matched sits on a visible list. Feeds in, one clean catalogue out.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-679f8b.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-679f8b.webp" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Case study 01 · Works</span><span>Live, September 2026</span></div>
   <div class="stage" aria-hidden="true">
@@ -231,7 +231,7 @@ export default function DataAppPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a943" data-od-id="screens-visual" data-motion data-no="DO-ART-943" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-943. A graded workbench photograph with two Decoded Works screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-dea11a.jpg" alt="" width="1024" height="1024"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-dea11a.webp" alt="" width="1024" height="1024"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="desk m-rise" style="animation-delay:.1s" aria-hidden="true">
     <div class="mw">
@@ -240,7 +240,7 @@ export default function DataAppPage() {
         <h5>Work polo, piqué</h5>
         <p class="s">One parent product · every variant linked to stock and a bin</p>
         <div class="pv">
-          <div class="img"><img src="/images/d17/apps-cases/prod-polo-80aad7.jpg" alt=""></div>
+          <div class="img"><img src="/images/d17/apps-cases/prod-polo-80aad7.webp" alt=""></div>
           <dl>
             <dt>Supplier</dt><dd>Supplier A · matched automatically</dd>
             <dt>Decoration</dt><dd>Embroidery · left chest</dd>

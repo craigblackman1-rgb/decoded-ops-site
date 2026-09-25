@@ -78,7 +78,7 @@ export default function CommercePage() {
           <div className="hero-shot" dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a946" data-od-id="hero-visual" data-motion data-no="DO-ART-946" data-rev="01" data-tx="photo"
         aria-label="Product screen DO-ART-946. A Decoded Commerce trade storefront, signed in as a trade account: a filtered catalogue of decorated workwear and merchandise with range and decoration method facets, the account's own price list on every product, and a quote request for a hundred and fifty embroidered polos sitting alongside the basket. Trade pricing per account, quotes next to the basket, one catalogue with the warehouse.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-press-hall-03697e.jpg" alt="" width="1024" height="1024"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-press-hall-03697e.webp" alt="" width="1024" height="1024"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Decoded Commerce · trade storefront</span><span>In build at Hanicks</span></div>
   <div class="stage" aria-hidden="true">
@@ -96,10 +96,10 @@ export default function CommercePage() {
             <label class="on"><i></i>Embroidery</label><label><i></i>Screen print</label><label><i></i>DTF</label><label><i></i>Engraving</label>
           </div>
           <div class="tiles">
-            <div class="tile m-rise" style="animation-delay:.1s"><img src="/images/d17/apps-cases/prod-polo-a16032.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Piqué polo</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
-            <div class="tile m-rise" style="animation-delay:.2s"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Hi-vis vest</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
-            <div class="tile m-rise" style="animation-delay:.3s"><img src="/images/d17/apps-cases/cat-promo-89c58a.jpg" alt=""><div class="tb"><div class="stock">Made to order</div><div class="nm">Ceramic mug</div><div class="pr"><b>Your price</b><i></i></div></div></div>
-            <div class="tile m-rise" style="animation-delay:.4s"><img src="/images/d17/apps-cases/prod-mailer-9c1448.jpg" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Kraft mailer box</div><div class="pr"><b>Your price</b><i></i></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.1s"><img src="/images/d17/apps-cases/prod-polo-a16032.webp" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Piqué polo</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.2s"><img src="/images/d17/apps-cases/prod-hivis-c5b3cd.webp" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Hi-vis vest</div><div class="pr"><b>Your price</b><i></i></div><div class="act"><span>Quote</span><span>Add</span></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.3s"><img src="/images/d17/apps-cases/cat-promo-89c58a.webp" alt=""><div class="tb"><div class="stock">Made to order</div><div class="nm">Ceramic mug</div><div class="pr"><b>Your price</b><i></i></div></div></div>
+            <div class="tile m-rise" style="animation-delay:.4s"><img src="/images/d17/apps-cases/prod-mailer-9c1448.webp" alt=""><div class="tb"><div class="stock">In stock</div><div class="nm">Kraft mailer box</div><div class="pr"><b>Your price</b><i></i></div></div></div>
           </div>
         </div>
       </div>
@@ -268,7 +268,7 @@ export default function CommercePage() {
 
           <figure className="d17 sw sw-doc a948" data-od-id="custom-visual" data-motion data-no="DO-ART-948" data-rev="01" data-tx="photo"
                   aria-label="Artwork DO-ART-948. Two documents over a graded photograph of packed kraft boxes. A scope sheet for a full rebuild in three parts: migrate products, customers and order history off the existing platform; build a new storefront; reintegrate orders and stock back into the ERP. And an options sheet: everything on the market goes on the table first, priced, including the options expected to be rejected, with the decision left to the client. Scoped and quoted like any full custom build.">
-            <div className="d17-ph"><img src="/images/d17/apps-cases/cat-packaging-2b20a6.jpg" alt="" width="900" height="800" /></div>
+            <div className="d17-ph"><img src="/images/d17/apps-cases/cat-packaging-2b20a6.webp" alt="" width="900" height="800" /></div>
             <div className="d17-scan" aria-hidden="true" />
             <figcaption className="sw-cap">
               <div className="k d17-mono">The worked example <span>· scoped, not tiered</span></div>

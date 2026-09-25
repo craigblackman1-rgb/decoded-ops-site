@@ -81,7 +81,7 @@ export default function FiveWarningSignsPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a982" data-od-id="hero-art" data-motion data-no="DO-ART-982" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-982. A graded photograph of a print floor with five tags pinned to it, one for each warning sign. One, the cost: nobody can name it. Two, the knowledge: in one person's head. Three, the workarounds: a sheet here, a sticky note there. Four, growth: more orders, more pain. Five, in amber, the last system: bought off a demo. Two or more sound familiar? Worth a closer look.">
-  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-c85ac6.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/gen-press-hall-c85ac6.webp" alt="" width="900" height="900"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Five warning signs</span><span>One floor</span></div>
   <div class="stage" aria-hidden="true">

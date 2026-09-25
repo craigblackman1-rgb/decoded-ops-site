@@ -56,7 +56,7 @@ export default function SeasonalCapacityPage() {
           <div dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sx a994" data-od-id="hero-art" data-motion data-no="DO-ART-994" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-994. A paper year planner pinned over a graded photograph of blank mugs, filled in as an example. Demand for each month is pencilled as a share of the baseline: from 70 per cent in January rising to 140 per cent in November. A ruled line marks capacity at 110 per cent. September to December sit above it, in amber. Two sticky notes: over capacity in the autumn, overtime or turn work away; spare in January, staff and machines idle. Plan for both months.">
-        <div class="d17-ph"><img src="/images/d17/resources/cat-promo-264d08.jpg" alt="" width="900" height="600"></div>
+        <div class="d17-ph"><img src="/images/d17/resources/cat-promo-264d08.webp" alt="" width="900" height="600"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <div class="sx-top d17-mono" aria-hidden="true"><span>Seasonal capacity</span><span>Example year</span></div>
         <div class="stage" aria-hidden="true">

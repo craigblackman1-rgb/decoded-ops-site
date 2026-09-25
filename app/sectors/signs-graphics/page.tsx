@@ -112,7 +112,7 @@ export default function SignsGraphicsPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a933" data-od-id="hero-evidence" data-motion data-no="DO-ART-933" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-933. A graded photograph of a blank sign panel on a brick wall, measured with amber dimension lines, and a site survey sheet laid over it: size, substrate, fixing, access and photos, recorded before anything is quoted or made. The job starts at the site survey, not the order.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-982ce6.jpg" alt="" width="900" height="701"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-982ce6.webp" alt="" width="900" height="701"></div>
   <svg class="dims" viewBox="0 0 770 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <rect x="28" y="170" width="641" height="273" fill="none" stroke="#FFB703" stroke-width="3" stroke-dasharray="10 8"/>
     <g class="m-draw-g">
@@ -153,7 +153,7 @@ export default function SignsGraphicsPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a934" data-od-id="plate-architecture" data-motion data-no="DO-ART-934" data-rev="01" data-tx="screen"
         aria-label="Product screen DO-ART-934. A production board for a signs and graphics business with six columns: survey, design, proof, production, install and signed off. Each job card carries its survey, substrate and install details with it as it moves, and a fitted fascia job lands in signed off.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-58e48c.jpg" alt="" width="1100" height="733"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-signage-58e48c.webp" alt="" width="1100" height="733"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="head">
     <div class="sw-cap">
@@ -180,7 +180,7 @@ export default function SignsGraphicsPage() {
       <div class="col"><div class="ch">Install<i>1</i></div>
         <div class="card-j m-rise" style="animation-delay:.65s"><span class="r">J-2199</span><b>Pub fascia, re-brand</b><div class="m"><span>tower booked</span><span>2 fitters</span></div></div></div>
       <div class="col"><div class="ch">Signed off<i>1</i></div>
-        <div class="card-j card-j--a m-rise" style="animation-delay:1s"><img class="th" src="/images/d17/sectors/cat-signage-2bf918.jpg" alt="" width="320" height="165"><span class="r">J-2194</span><b>Shopfront fascia</b><div class="m"><span>fitted</span><span>photo signed</span><span>invoiced</span></div></div></div>
+        <div class="card-j card-j--a m-rise" style="animation-delay:1s"><img class="th" src="/images/d17/sectors/cat-signage-2bf918.webp" alt="" width="320" height="165"><span class="r">J-2194</span><b>Shopfront fascia</b><div class="m"><span>fitted</span><span>photo signed</span><span>invoiced</span></div></div></div>
     </div>
   </div>
 </figure>` }} />

@@ -73,7 +73,7 @@ export default function TransformPage() {
       <section className="g-tint ev-band" data-od-id="evidence">
         <div className="wrap">
           <PhotoPiece
-            src="/images/money/press-transfer-2026-09.jpg"
+            src="/images/money/press-transfer-2026-09.webp"
             width={1600}
             height={1067}
             alt="A heat press mid-cycle on a print floor, platen lowered onto a green T-shirt with transfer paper taped across the print area."

@@ -82,7 +82,7 @@ export default function PricingPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="container">
           <PhotoPiece
-            src="/images/money/prod-mailer-2026-09.jpg"
+            src="/images/money/prod-mailer-2026-09.webp"
             width={900}
             height={600}
             alt="A single plain kraft mailer box with its lid on, photographed on a white surface."

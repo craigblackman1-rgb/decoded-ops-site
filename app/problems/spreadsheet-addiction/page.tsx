@@ -59,7 +59,7 @@ const spreadsheetAddictionSchema = {
 
 const heroArt975 = `<figure class="d17 sx px a975" data-od-id="hero-evidence" data-motion data-no="DO-ART-975" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-975. Documents over a photograph of a tangle of spreadsheets. A spreadsheet grid shows supplier prices frozen months ago, macros that only work on one machine, three people editing at once, and a version history nobody trusts. One corrupted save away from disaster.">
-  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.webp" alt="" width="1100" height="1224"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Spreadsheet addiction</span><span>One corrupted save away</span></div>
   <div class="stage" aria-hidden="true">

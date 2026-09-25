@@ -73,7 +73,7 @@ function getHeroArtHtml(town: string): string {
   const t = town.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return `<figure class="d17 sw sw-doc a1004" data-od-id="hero-visual" data-motion data-no="DO-ART-1004" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-1004. Two documents over a graded photograph of a print room. The findings report and the roadmap.">
-        <div class="d17-ph"><img src="/images/d17/locations/gen-press-hall-82ca78.jpg" alt="" width="1024" height="1024"></div>
+        <div class="d17-ph"><img src="/images/d17/locations/gen-press-hall-82ca78.webp" alt="" width="1024" height="1024"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <figcaption class="sw-cap">
           <div class="k d17-mono">Clarity Audit <span>· what you get</span></div>

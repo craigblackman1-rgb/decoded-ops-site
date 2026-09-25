@@ -88,7 +88,7 @@ export default function CaseStudy02Page() {
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw a953" data-od-id="hero-visual" data-motion data-no="DO-ART-953" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-953. A graded photograph of folded shirts in a warehouse, with a phone showing a batch pick: six orders, each line with its bin location, one line being picked now. Pinned tags: 100% of stock has a bin location; 952 products live on their website; 17 supplier feeds automated. The eCommerce platform stayed. Decoded Works does the parts it was never going to do.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-d86bf7.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/cat-workwear-d86bf7.webp" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="cap">
     <div class="k d17-mono">Case study 02 <span>· live since July</span></div>
@@ -126,7 +126,7 @@ export default function CaseStudy02Page() {
             <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw sw-doc a954" data-od-id="plate-measure" data-motion data-no="DO-ART-954" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-954. Two documents over a graded photograph of an embroidery floor, paired line for line. Before, at discovery: supplier feeds handled by hand; decorated and plain stock hard to tell apart; stock with no reliable location; new products and variants added to the website by hand; hours of admin every week. After, from the live system in September 2026: 17 supplier feeds automated; 27,778 supplier products and 236,056 variants in the system; 1,846 decorated products built from those blanks; 952 products live on their website, published automatically; 100% of stock has a bin location. Admin time saved, 20 to 40 hours a week, is a projection from discovery and is being measured now.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-38370e.jpg" alt="" width="1100" height="688"></div>
+  <div class="d17-ph"><img src="/images/d17/apps-cases/hero-workshop-38370e.webp" alt="" width="1100" height="688"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">Case study 02 <span>· paired line for line</span></div>

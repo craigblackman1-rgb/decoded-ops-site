@@ -137,7 +137,7 @@ export default function SchoolwearPage() {
           <div dangerouslySetInnerHTML={{ __html: `
       <figure class="d17 sw sw-doc a932" data-od-id="plate-architecture" data-motion data-no="DO-ART-932" data-rev="01" data-tx="photo"
               aria-label="Artwork DO-ART-932. A graded photograph of an embroidery head stitching a garment, with a school badge specification (revision 03, approved by the school) and a parent order laid over it. The order is routed to the school, picks up badge revision 03, takes the size from live stock and is delivered to the school. Every school badge is a thread file before it's a garment.">
-        <div class="d17-ph"><img src="/images/d17/sectors/hero-workshop-037adf.jpg" alt="" width="1100" height="963"></div>
+        <div class="d17-ph"><img src="/images/d17/sectors/hero-workshop-037adf.webp" alt="" width="1100" height="963"></div>
         <div class="d17-scan" aria-hidden="true"></div>
         <figcaption class="sw-cap">
           <div class="k d17-mono">Badge management <span>· per school</span></div>

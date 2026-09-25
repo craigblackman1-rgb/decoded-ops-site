@@ -104,7 +104,7 @@ export default function ResourcesPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a980" data-od-id="hero-art" data-motion data-no="DO-ART-980" data-rev="01" data-tx="poster"
         aria-label="Artwork DO-ART-980. Three free documents pinned over a graded photograph of a workbench: the operational audit checklist, the SOP template and the ERP selection playbook. Below them, the order that makes the resources worth anything, drawn as a route: one, recognise, the five warning signs; two, check, the operational audit checklist; three, measure, the capacity and seasonal calculators; four, document, the Decoded Method, the SOP template, the artwork approval playbook and the Sigma playbook; five, in amber, choose, the ERP selection playbook, last. Choose the platform first and step five is done first.">
-  <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-215572.jpg" alt="" width="900" height="900"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/gen-bench-flatlay-v2-215572.webp" alt="" width="900" height="900"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Free resources</span><span>One order, five steps</span></div>
   <div class="prints" aria-hidden="true">

@@ -90,7 +90,7 @@ export default function ArtworkApprovalPlaybookPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a989" data-od-id="hero-art" data-motion data-no="DO-ART-989" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-989. Two documents for one example job over a graded photograph of a folded polo. The artwork brief, all six fields confirmed: logo file, vector; colours, Pantone references; size, 90 millimetres wide; position, left chest; garment, stone polo; method, embroidery. The proof: the design drawn on the garment at size and position, a clear request to approve or request changes by five tomorrow, two buttons, approve as shown or request changes, and an amber stamp: approved, released to production. Brief complete, one round, signed off.">
-  <div class="d17-ph"><img src="/images/d17/resources/prod-polo-5947fe.jpg" alt="" width="900" height="905"></div>
+  <div class="d17-ph"><img src="/images/d17/resources/prod-polo-5947fe.webp" alt="" width="900" height="905"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Artwork approval</span><span>Example job</span></div>
   <div class="stage" aria-hidden="true">

@@ -97,7 +97,7 @@ export default function DataScatteredPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a964" data-od-id="hero-evidence" data-motion data-no="DO-ART-964" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-964. A graded photograph of one folded polo shirt with six tags pinned round it, one for each place the data lives. Supplier feed: 40 in stock. Spreadsheet: 12. ERP: 0. Website: in stock. Warehouse count: 7. The one who knows: ask me. One polo, six answers, and none of them agree.">
-  <div class="d17-ph"><img src="/images/d17/problems/prod-polo-5947fe.jpg" alt="" width="900" height="905"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/prod-polo-5947fe.webp" alt="" width="900" height="905"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Scattered data</span><span>Six places, one product</span></div>
   <div class="stage" aria-hidden="true">
@@ -217,7 +217,7 @@ export default function DataScatteredPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a917" data-od-id="plate-measure" data-motion data-no="DO-ART-917" data-rev="01" data-tx="photo"
         aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.jpg" alt="" width="1300" height="867"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/thread-spools-2195b5.webp" alt="" width="1300" height="867"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="cap">
     <div class="k d17-mono">Works <span>· at Hanicks</span></div>

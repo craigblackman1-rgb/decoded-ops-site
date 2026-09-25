@@ -173,7 +173,7 @@ export default function LabelsPackagingPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw sw-doc a926" data-od-id="plate-architecture" data-motion data-no="DO-ART-926" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-926. A label specification sheet, revision C, and a variable-data proof laid over a photograph of packed cartons. The specification ties substrate, adhesive, finish, press set-up, variable data and the compliance check to one live version.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-packaging-48f149.jpg" alt="" width="900" height="950"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-packaging-48f149.webp" alt="" width="900" height="950"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">Specification control <span>· one live version</span></div>

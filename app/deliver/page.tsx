@@ -46,7 +46,7 @@ export default function DeliverPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="wrap">
           <PhotoPiece
-            src="/images/money/prod-polo-2026-09.jpg"
+            src="/images/money/prod-polo-2026-09.webp"
             width={1600}
             height={1067}
             alt="A finished cream and stone colour-block zip-neck polo shirt, folded and pressed, laid on a grey studio surface."

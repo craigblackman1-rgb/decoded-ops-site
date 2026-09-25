@@ -109,7 +109,7 @@ export default function PrintPromotionalPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
-  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.jpg" alt="" width="1000" height="1000"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.webp" alt="" width="1000" height="1000"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
   <div class="stage" aria-hidden="true">
@@ -136,7 +136,7 @@ export default function PrintPromotionalPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
-  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.jpg" alt="" width="1000" height="1000"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.webp" alt="" width="1000" height="1000"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
   <div class="stage" aria-hidden="true">

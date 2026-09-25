@@ -93,7 +93,7 @@ export default function OpsInOwnersHeadPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a972" data-od-id="hero-evidence" data-motion data-no="DO-ART-972" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-972. A process register screen over a dimmed photograph of the embroidery floor. Seven processes, enquiry to quote, artwork proofing, the rush-order supplier, embroidery digitising, goods in, despatch and invoicing. Every row has the same owner, the owner, and every row is marked not written. Seven processes, one head to keep them in.">
-  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="963"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.webp" alt="" width="1100" height="963"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>In the owner's head</span><span>Process register, as it stands</span></div>
   <div class="win" aria-hidden="true">
@@ -206,7 +206,7 @@ export default function OpsInOwnersHeadPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
         aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
-  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.jpg" alt="" width="1100" height="1224"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-783ec1.webp" alt="" width="1100" height="1224"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
     <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>

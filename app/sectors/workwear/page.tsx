@@ -88,7 +88,7 @@ export default function WorkwearPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a937" data-od-id="hero-evidence" data-motion data-no="DO-ART-937" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-937. A graded photograph of a worker in a hi-vis vest, tagged three ways: the plain garment as one SKU with its own stock, an embroidered logo on the left chest, and a heat-transfer company name on the back, each a decorated product of its own. One garment, a dozen colourways, three decoration methods.">
-  <div class="d17-ph"><img src="/images/d17/sectors/prod-hivis-7a7ace.jpg" alt="" width="900" height="1220"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/prod-hivis-7a7ace.webp" alt="" width="900" height="1220"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Workwear</span><span>Plain in, decorated out</span></div>
   <div class="stage" aria-hidden="true">

@@ -98,7 +98,7 @@ export default function InventoryBlindPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx px ph-fade a968" data-od-id="hero-evidence" data-motion data-no="DO-ART-968" data-rev="01" data-tx="screen"
         aria-label="Artwork DO-ART-968. A stock screen for one polo in four sizes, over a photograph of stacked cartons, showing what the supplier says, what the system says and what is on the shelf. Size M reads zero on the system while 24 sit in bin A-03, so 48 more are already on order. The number on screen isn't the number on the shelf.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-packaging-48f149.jpg" alt="" width="900" height="950"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-packaging-48f149.webp" alt="" width="900" height="950"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Stock picture</span><span>Screen against shelf</span></div>
   <div class="win" aria-hidden="true">
@@ -114,7 +114,7 @@ export default function InventoryBlindPage() {
         <tr class="m-fade" style="animation-delay:.8s"><td>XL</td><td class="num">0</td><td class="num">6</td><td class="num">2</td><td><span class="chip chip--o">Oversold</span></td></tr>
       </table>
       <div class="shelf m-rise" style="animation-delay:1.2s">
-        <img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="">
+        <img src="/images/d17/problems/cat-workwear-401e08.webp" alt="">
         <p><span>Bin A-03 · on the shelf</span>24 in the bin. The system says none, so 48 more are already on order.</p>
       </div>
     </div>
@@ -201,7 +201,7 @@ export default function InventoryBlindPage() {
      <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
         aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.jpg" alt="" width="900" height="596"></div>
+  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="copy">
     <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>

@@ -262,7 +262,7 @@ export function ContactClient() {
         <div className="wrap" style={{ maxWidth: 1148 }}>
           <figure className={`${d17.d17} ${d17.a920}`} data-od-id="direct-line"
                   data-no="DO-ART-920" data-rev="01" data-tx="photo" style={{ margin: 0 }}>
-            <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={950} height={1067}
+            <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.webp" width={950} height={1067}
                  alt="Craig Blackman on a beach, smiling, hands in the pockets of a black jacket." /></div>
             <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
             <figcaption className="copy">

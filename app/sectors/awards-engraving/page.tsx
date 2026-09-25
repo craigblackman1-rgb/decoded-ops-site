@@ -112,7 +112,7 @@ export default function AwardsEngravingPage() {
           <div dangerouslySetInnerHTML={{ __html: `
 <figure class="d17 sx a921" data-od-id="hero-evidence" data-motion data-no="DO-ART-921" data-rev="01" data-tx="photo"
         aria-label="Artwork DO-ART-921. A graded photograph of glass, crystal and metal awards, with an awards job ticket and a client-approved engraving proof laid over it. Fifty pieces, fifty approved proofs.">
-  <div class="d17-ph"><img src="/images/d17/sectors/cat-awards-70dc2f.jpg" alt="" width="900" height="1200"></div>
+  <div class="d17-ph"><img src="/images/d17/sectors/cat-awards-70dc2f.webp" alt="" width="900" height="1200"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Awards &amp; engraving</span><span>One event date</span></div>
   <div class="stage" aria-hidden="true">

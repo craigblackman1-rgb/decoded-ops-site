@@ -97,7 +97,7 @@ export default function ToolsPage() {
           {/* D17 hero art · DO-ART-981 */}
           <figure className="d17 sx a981" data-od-id="hero-art" data-motion data-no="DO-ART-981" data-rev="01" data-tx="screen"
                   aria-label="Artwork DO-ART-981. Three calculator result screens fanned over a graded photograph of embroidery heads, each labelled Example and worked from the tool's default inputs. Downtime cost: a total annual cost of downtime of £3,495. Automation ROI: break-even in 8 months, a 3-year return of 227 per cent. RTO: recovery from 8 hours to 1 hour saves £28,000 a year. Every calculator hands back a number, not a vague suggestion.">
-            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-ad3944.jpg" alt="" width="900" height="900" /></div>
+            <div className="d17-ph"><img src="/images/d17/resources/hero-workshop-ad3944.webp" alt="" width="900" height="900" /></div>
             <div className="d17-scan" aria-hidden="true"></div>
             <div className="sx-top d17-mono" aria-hidden="true"><span>Free tools</span><span>Five calculators</span></div>
             <div className="stage" aria-hidden="true">

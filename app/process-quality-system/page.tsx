@@ -154,7 +154,7 @@ export default function ProcessQualitySystemPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="container">
           <PhotoPiece
-            src="/images/money/cat-workwear-2026-09.jpg"
+            src="/images/money/cat-workwear-2026-09.webp"
             width={1600}
             height={1067}
             alt="A fanned stack of workwear shirts in white, navy, blue, olive, rust, mauve and red, collars aligned, laid on a pale blue shirt."

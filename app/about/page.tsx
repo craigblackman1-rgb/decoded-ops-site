@@ -53,7 +53,7 @@ export default function AboutPage() {
                  Light grade, faces never palette-reduced. */}
             <figure className={`${d17.d17} ${d17.a904}`} data-od-id="about-visual"
                     data-no="DO-ART-904" data-rev="03" data-tx="photo">
-              <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.jpg" width={1100} height={1067}
+              <div className={d17.d17Ph}><img src="/images/d17/craig-blackman.webp" width={1100} height={1067}
                    alt="Craig Blackman on a wide sandy beach under a grey sky, smiling, hands in the pockets of a black jacket, the sea behind him." /></div>
               <div className={d17.d17Scan} aria-hidden="true" style={{ opacity: '.3' }} />
               <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Craig Blackman</span><span>Decoded Ops</span></div>
@@ -108,10 +108,10 @@ export default function AboutPage() {
             </svg>
             <div className={d17.prints} aria-hidden="true">
               <div className={`${d17.print} ${d17.mDrop}`} style={{ left: 'calc(352 * var(--u))', top: 'calc(356 * var(--u))', width: 'calc(236 * var(--u))', height: 'calc(216 * var(--u))', transform: 'rotate(-3deg)', animationDelay: '.9s' }}>
-                <img src="/images/d17/thread-spools.jpg" alt="" /><i className={d17.tint} />
+                <img src="/images/d17/thread-spools.webp" alt="" /><i className={d17.tint} />
                 <span>where print and embroidery got hold of me</span></div>
               <div className={`${d17.print} ${d17.mDrop}`} style={{ left: 'calc(966 * var(--u))', top: 'calc(196 * var(--u))', width: 'calc(228 * var(--u))', height: 'calc(196 * var(--u))', transform: 'rotate(2.6deg)', animationDelay: '1.8s' }}>
-                <img src="/images/d17/gen-press-hall.jpg" alt="" /><i className={d17.tint} /></div>
+                <img src="/images/d17/gen-press-hall.webp" alt="" /><i className={d17.tint} /></div>
             </div>
             <div className={d17.stations}>
               <div className={`${d17.st} ${d17.mFade}`} style={{ left: 'calc(168 * var(--u))', top: 'calc(658 * var(--u))', animationDelay: '.4s' }}><span className={d17.n}>01</span><h3>Industrial computing</h3><p>MOD, BBC, ITV</p></div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
           <div className="grid grid--2" style={{ marginTop: 44 }}>
             <article className="card" data-od-id="fact-textile">
               <div className={`${d17.factHeadA919}`}>
-                <div className={d17.d17Ph}><img src="/images/d17/prod-mailer.jpg" alt="" /></div>
+                <div className={d17.d17Ph}><img src="/images/d17/prod-mailer.webp" alt="" /></div>
                 <span className={d17.fm} aria-hidden="true">DO-ART-919a</span>
                 <span className={d17.factNo}>Fact 01</span>
                 <p className={`${d17.factFig} ${d17.num}`}>1,000+</p>
@@ -149,7 +149,7 @@ export default function AboutPage() {
 
             <article className="card" data-od-id="fact-closed">
               <div className={`${d17.factHeadA919}`}>
-                <div className={d17.d17Ph}><img src="/images/d17/gen-bench-flatlay-v2.jpg" alt="" /></div>
+                <div className={d17.d17Ph}><img src="/images/d17/gen-bench-flatlay-v2.webp" alt="" /></div>
                 <span className={d17.fm} aria-hidden="true">DO-ART-919b</span>
                 <span className={d17.factNo}>Fact 02</span>
                 <p className={`${d17.factFig} ${d17.num}`}>4&frac12; years</p>
@@ -191,7 +191,7 @@ export default function AboutPage() {
                    Issue 02 schematic: the platform you already run, the gap it
                    leaves, and three ways to fill it. The drawing is the still. */}
               <div className="plate-frame" data-od-id="plate-gap">
-                <img src="/images/d17/fill-the-gap.png" width={1600} height={900}
+                <img src="/images/d17/fill-the-gap.webp" width={1600} height={900}
                      style={{ display: 'block', width: '100%', height: 'auto' }}
                      alt="Schematic plate DO-ART-719, three ways to fill the gap. The platform you already run covers orders, stock, customers, products, accounts, suppliers, purchasing and reports, with custom development bolted on to make it fit; decoration and artwork are not built for it, leaving a gap. Three routes lead out of the gap: use what is already there; add a layer on top; or use something already built, because there was nothing on the market designed to do that job." />
               </div>
