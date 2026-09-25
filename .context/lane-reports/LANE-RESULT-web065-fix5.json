@@ -1,0 +1,27 @@
+{
+  "lane": "web065-fix5",
+  "wo": "",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "2c3d584",
+      "subject": "fix(a11y): sector H1 accent text shade (CR-WEB-065)"
+    }
+  ],
+  "filesChanged": [
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/garment-decoration/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/operations-consultant-print-embroidery/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/signs-graphics/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits (no remaining #219EBC in sector page H1 accents)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
