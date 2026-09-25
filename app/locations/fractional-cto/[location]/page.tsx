@@ -219,7 +219,7 @@ export default async function FractionalCTOLocationPage({
                   itemOffered: {
                     '@type': 'Service',
                     name: 'Fractional CTO',
-                    url: 'https://decodedops.co.uk/fractional',
+                    url: 'https://decodedops.co.uk/retained',
                   },
                 },
               ],
@@ -245,7 +245,7 @@ export default async function FractionalCTOLocationPage({
         painPoints={painPoints}
         whatIdo={whatIdo}
         cta={`Find out if a fractional CTO is right for your ${loc.name} business`}
-        serviceUrl="/fractional"
+        serviceUrl="/retained"
         serviceLabel="See how fractional CTO works"
         heroArtHtml={heroArt}
         coverageMapHtml={coverageMap}
