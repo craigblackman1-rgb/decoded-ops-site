@@ -1,0 +1,23 @@
+{
+  "lane": "web-content-060",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "CR-WEB-060",
+  "commits": [
+    {
+      "sha": "3a07c5f",
+      "subject": "feat(web): homepage How I help route poster DO-ART-1008 (CR-WEB-060)"
+    }
+  ],
+  "filesChanged": [
+    "app/page.tsx",
+    "app/d17-global.css"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
