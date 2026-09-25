@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -21,6 +22,19 @@ export const metadata: Metadata = {
   description:
     'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
   alternates: { canonical: '/tools/automation-roi-calculator' },
+  openGraph: {
+    type: 'website',
+    title: 'Automation ROI Calculator: Decoded Ops',
+    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+    url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
+    images: OG_IMAGE,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Automation ROI Calculator: Decoded Ops',
+    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 export default function AutomationRoiCalculatorPage() {

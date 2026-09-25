@@ -5,6 +5,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -22,6 +23,19 @@ export const metadata: Metadata = {
   description:
     'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
   alternates: { canonical: '/tools/downtime-cost-calculator' },
+  openGraph: {
+    type: 'website',
+    title: 'Downtime Cost Calculator: Decoded Ops',
+    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
+    url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
+    images: OG_IMAGE,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Downtime Cost Calculator: Decoded Ops',
+    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 export default function DowntimeCostCalculatorPage() {

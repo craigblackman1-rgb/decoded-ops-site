@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -21,6 +22,19 @@ export const metadata: Metadata = {
   description:
     'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
   alternates: { canonical: '/tools/rto-calculator' },
+  openGraph: {
+    type: 'website',
+    title: 'RTO Calculator: Decoded Ops',
+    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+    url: 'https://decodedops.co.uk/tools/rto-calculator',
+    images: OG_IMAGE,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'RTO Calculator: Decoded Ops',
+    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+    images: [OG_IMAGE_PATH],
+  },
 };
 
 export default function RtoCalculatorPage() {
