@@ -100,6 +100,7 @@ export default function RetainedPage() {
             eyebrow="Evidence · Retained"
             caption="Stock that is always there"
             focus="50% 55%"
+            priority
           />
         </div>
       </section>

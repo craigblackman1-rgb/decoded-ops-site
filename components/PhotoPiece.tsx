@@ -14,6 +14,7 @@ interface PhotoPieceProps {
   caption?: string;
   focus?: string;
   cls?: string;
+  priority?: boolean;
 }
 
 declare global {
@@ -33,6 +34,7 @@ export function PhotoPiece({
   caption = '',
   focus = '50% 50%',
   cls = '',
+  priority = false,
 }: PhotoPieceProps) {
   useEffect(() => {
     const register = (window.DO_ARTWORK = window.DO_ARTWORK || []);
@@ -65,7 +67,9 @@ export function PhotoPiece({
           width={width}
           height={height}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          {...(priority ? { fetchPriority: 'high' } : {})}
         />
         <div className="tx-photo__tint" />
         <div className="tx-photo__scanline" />
