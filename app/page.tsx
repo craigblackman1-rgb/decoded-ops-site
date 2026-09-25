@@ -7,6 +7,7 @@ import { SheetIndexRail } from '@/components/SheetIndexRail';
 import { D17Motion } from '@/components/D17Motion';
 import d17 from './d17-art.module.css';
 import './homepage.css';
+import './d17-global.css';
 
 export const metadata: Metadata = {
   title: 'Decoded Ops: operations and technology consultancy for decorated goods',
@@ -52,18 +53,6 @@ const costLedger = [
   { value: '2–4', unit: 'hrs a week', desc: 'Spent on manual invoicing and reconciliation', tag: 'Finance' },
   { value: '3–5', unit: 'per cent', desc: 'Of inbound stock at risk where inventory is disconnected', tag: 'Inventory' },
   { value: '1–3', unit: 'per cent', desc: 'Of orders affected by picking and despatch errors', tag: 'Despatch' },
-];
-
-const services = [
-  { no: '01', name: 'Clarity Audit', role: 'On-site audit and written plan', lead: true,
-    desc: 'A full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days.',
-    go: { href: '/clarity', label: 'Start here' } },
-  { no: '02', name: 'Deliver', role: 'Delivery and vendor management', lead: false,
-    desc: 'Independent vendor brief, procurement and project oversight. One point of contact, and someone technical sitting on your side of the table.' },
-  { no: '03', name: 'Transform', role: 'Multi-workstream programme', lead: false,
-    desc: 'ERP, eCommerce and process redesign run together as one programme. Process led and people first, and scoped only once an audit has shown what it needs to cover.' },
-  { no: '04', name: 'Retained', role: 'Fractional CTO', lead: false,
-    desc: 'Monthly strategic and operational leadership. Roadmap ownership, vendor management, and a direct line to me.' },
 ];
 
 const notes = [
@@ -194,28 +183,54 @@ export default function HomePage() {
               from the one before it. Almost everyone starts with a Clarity Audit, because until somebody
               has followed your processes from start to finish, everything after that is guesswork.</p>
 
-            <figure className="band" data-od-id="help-photo">
-              <Image src="/images/sectors/thread-spools-v2.webp" fill sizes="(max-width: 1200px) 100vw, 1152px" className="p-photo"
-                style={{ objectFit: 'cover', objectPosition: '50% 58%' }}
-                alt="A row of coloured thread cones loaded on an embroidery machine head." />
-              <figcaption className="stamp">DO-ART-906 &middot; Materials</figcaption>
-            </figure>
-
-            <ol className="idx" data-od-id="services-index">
-              {services.map(s => (
-                <li key={s.no} className={s.lead ? 'is-lead' : ''} data-od-id={`service-${s.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <span className="no">{s.no}</span>
-                  <div>
-                    <h3>{s.name}</h3>
-                    <span className="role">{s.role}</span>
-                  </div>
-                  <div>
-                    <p>{s.desc}</p>
-                    {s.go && <Link className="go" href={s.go.href}>{s.go.label}</Link>}
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <div dangerouslySetInnerHTML={{ __html: `<figure class="d17 a1008" data-od-id="services-route" data-motion data-no="DO-ART-1008" data-rev="01" data-tx="poster"
+              aria-label="Journey plate DO-ART-1008, four services on one route. 01 Clarity Audit, start here: a full day on site, six areas followed from start to finish, then a written assessment and roadmap inside five working days. 02 Deliver: independent vendor brief, procurement and project oversight. 03 Transform: ERP, eCommerce and process redesign run together as one programme, scoped only once an audit has shown what it needs to cover. 04 Retained, the amber terminus, fractional CTO: monthly strategic and operational leadership, roadmap ownership, vendor management, a direct line to me.">
+        <div class="gridl" aria-hidden="true"></div>
+        <p class="eb d17-mono">The route</p>
+        <p class="stand">Four services, each a natural next step from the one before.</p>
+        <svg class="route" viewBox="0 0 1600 900" aria-hidden="true">
+          <defs><filter id="rt-glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+          <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="rgba(33,158,188,.5)" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" filter="url(#rt-glow2)" class="m-draw"/>
+          <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#01263a" stroke-width="24" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
+          <path d="M70 620 H 590 L 750 460 H 1180 L 1320 320 H 1430" pathLength="1" fill="none" stroke="#8ECAE6" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" class="m-draw"/>
+          <rect x="58" y="596" width="12" height="48" rx="3" fill="#8ECAE6"/>
+          <g fill="#F8F9FA" stroke="#023047" stroke-width="6">
+            <circle cx="190" cy="620" r="17" class="m-pop" style="animation-delay:.35s;transform-origin:190px 620px"/>
+            <circle cx="470" cy="620" r="17" class="m-pop" style="animation-delay:.75s;transform-origin:470px 620px"/>
+            <circle cx="1080" cy="460" r="17" class="m-pop" style="animation-delay:1.45s;transform-origin:1080px 460px"/>
+          </g>
+          <g class="m-pop" style="animation-delay:2.15s;transform-origin:1430px 320px">
+            <circle cx="1430" cy="320" r="46" fill="rgba(255,183,3,.16)"/>
+            <circle cx="1430" cy="320" r="30" fill="#023047" stroke="#FFB703" stroke-width="10"/>
+            <circle cx="1430" cy="320" r="11" fill="#FFB703"/></g>
+        </svg>
+        <div class="fan" aria-hidden="true">
+          <div class="docmini m-drop" style="left:calc(352 * var(--u)); top:calc(356 * var(--u)); width:calc(236 * var(--u)); transform:rotate(-3deg); animation-delay:.9s">
+            <span class="tag">What the audit gives you</span>
+            <div class="row"><b>CA-01</b><span>Written report</span></div>
+            <div class="row"><b>RM-01</b><span>Roadmap</span></div>
+          </div>
+          <div class="photopin m-drop" style="left:calc(966 * var(--u)); top:calc(196 * var(--u)); width:calc(228 * var(--u)); height:calc(196 * var(--u)); transform:rotate(2.6deg); animation-delay:1.8s">
+            <img src="/images/d17/home/hero-workshop-32a6d0.jpg" alt=""><i class="tint"></i>
+            <span>on site, day one</span></div>
+        </div>
+        <div class="stations">
+          <div class="st m-fade" style="left:calc(168 * var(--u)); top:calc(658 * var(--u)); width:calc(280 * var(--u)); animation-delay:.4s">
+            <span class="n">01 &middot; Start here</span><h3>Clarity Audit</h3>
+            <p>On-site audit and written plan, six areas followed start to finish</p>
+            <a href="/clarity">Start here &rarr;</a></div>
+          <div class="st m-fade" style="left:calc(448 * var(--u)); top:calc(658 * var(--u)); width:calc(270 * var(--u)); animation-delay:.8s">
+            <span class="n">02</span><h3>Deliver</h3>
+            <p>Independent vendor brief, procurement and project oversight</p></div>
+          <div class="st m-fade" style="left:calc(1058 * var(--u)); top:calc(498 * var(--u)); width:calc(300 * var(--u)); animation-delay:1.35s">
+            <span class="n">03</span><h3>Transform</h3>
+            <p>ERP, eCommerce and process redesign, run as one programme</p></div>
+          <div class="st st--end m-fade" style="left:calc(1300 * var(--u)); top:calc(382 * var(--u)); width:calc(280 * var(--u)); animation-delay:2.15s">
+            <span class="n">04 &middot; Fractional CTO</span><h3>Retained</h3>
+            <p>Monthly leadership, roadmap ownership, a direct line to me</p></div>
+        </div>
+        <span class="d17-mark d17-mark--abs">decodedops.co.uk &middot; DO-ART-1008 &middot; Rev 01</span>
+      </figure>` }} />
           </div>
         </section>
 
