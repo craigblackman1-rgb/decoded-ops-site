@@ -365,7 +365,7 @@ export default function CommercePage() {
           </div>
           <p className="table-foot">A full rebuild, like a migration off an existing platform, isn&rsquo;t on this table on
             purpose. That&rsquo;s scoped separately.</p>
-          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing"               style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
 
           <div className="notice" data-od-id="founding-terms">
             <p className="notice-tag">Founding-client terms</p>

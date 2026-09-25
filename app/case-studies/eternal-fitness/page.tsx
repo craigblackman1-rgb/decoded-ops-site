@@ -138,7 +138,7 @@ export default function EternalFitnessCaseStudyPage() {
                 'A technical foundation Esther can rely on without needing to manage it herself. She owns the clinical and brand decisions, I own the build',
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-cerulean)' }} />
+                  <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--do-text-cerulean)' }} />
                   <p>{item}</p>
                 </div>
               ))}

@@ -153,7 +153,7 @@ export default function SixSigmaPage() {
                 <div style={{ textAlign: 'right', flexShrink: 0 }}>
                   <div style={{ fontSize: 'var(--do-text-lg)', fontWeight: 'var(--do-weight-extrabold)', color: 'var(--do-text-primary)' }}>{l.yield}</div>
                   <div style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', color: 'var(--do-text-subtle)' }}>yield</div>
-                  <div style={{ marginTop: 4, fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)' }}>{l.dpmo} DPMO</div>
+                  <div style={{ marginTop: 4, fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-cerulean)' }}>{l.dpmo} DPMO</div>
                 </div>
               </div>
             ))}

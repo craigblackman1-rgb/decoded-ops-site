@@ -63,7 +63,7 @@
   place-items: center;
   border: 1px solid color-mix(in srgb, var(--do-sky-blue) 55%, transparent);
   border-radius: var(--do-radius-xl);
-  color: var(--do-cerulean);
+  color: var(--do-text-cerulean);
   margin-bottom: var(--do-space-4);
   background: color-mix(in srgb, var(--do-cerulean) 7%, transparent);
 }

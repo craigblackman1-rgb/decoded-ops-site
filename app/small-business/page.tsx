@@ -168,7 +168,7 @@ export default function SmallBusinessPage() {
           </div>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', marginTop: 24, lineHeight: 1.75 }}>
             Beyond the Clarity Check, it&apos;s the same services and the same from-prices as everywhere else on this site.
-            See <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.
+            See <Link href="/pricing" style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>full pricing</Link> for details.
           </p>
         </div>
       </section>

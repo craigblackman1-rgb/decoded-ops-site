@@ -63,7 +63,7 @@
 .d17-doc .lines i{ display:block; height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(7 * var(--u));
   background:color-mix(in srgb, var(--do-prussian-blue) 11%, transparent) }
 .d17-doc .phase{ margin-top:calc(11 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
-  font-size:max(6px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+  font-size:max(6px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 
 /* ─── DO-ART-916 · home hero · document mock-ups over the workshop floor ─── */
 .a916{ --u:calc(100cqw / 560); display:flex; flex-direction:column }
@@ -327,7 +327,7 @@
 .a920 .note li{ counter-increment:c; display:grid; grid-template-columns:22px 1fr; gap:6px; padding:calc(6 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:max(12px, calc(14 * var(--u))); line-height:1.35; font-weight:600 }
-.a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; color:var(--do-cerulean); padding-top:3px }
+.a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; color:var(--do-text-cerulean); padding-top:3px }
 .a920 .d17-mark--abs{ left:calc(56 * var(--u)); bottom:calc(28 * var(--u)) }
 @media (max-width: 760px){
   .a920{ grid-template-columns:1fr; min-height:0 }
@@ -425,7 +425,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   box-shadow:0 calc(14 * var(--u)) calc(30 * var(--u)) color-mix(in srgb, #000 45%, transparent);
   font-size:max(10px, calc(13 * var(--u))); font-weight:700; line-height:1.25; white-space:nowrap }
 .sx-tag small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(7.5px, calc(9.5 * var(--u)));
-  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean); margin-bottom:2px }
+  letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean); margin-bottom:2px }
 .sx-tag--a{ border:2px solid var(--do-amber) }
 .sx-dot{ position:absolute; z-index:4; width:max(10px, calc(14 * var(--u))); height:max(10px, calc(14 * var(--u)));
   margin:calc(-7 * var(--u)) 0 0 calc(-7 * var(--u)); border-radius:50%; background:var(--do-off-white);
@@ -466,7 +466,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
 .a921 .doc-p{ left:calc(292 * var(--u)); top:calc(120 * var(--u)); width:calc(238 * var(--u)); transform:rotate(3.5deg) }
 .a921 li{ grid-template-columns:calc(20 * var(--u)) auto 1fr }
 .a921 li em{ font-style:normal; justify-self:end; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u)));
-  color:var(--do-cerulean); letter-spacing:.08em }
+  color:var(--do-text-cerulean); letter-spacing:.08em }
 .plaque{ margin-top:calc(12 * var(--u)); border:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 30%, transparent);
   border-radius:calc(4 * var(--u)); padding:calc(14 * var(--u)) calc(14 * var(--u)) calc(12 * var(--u)); text-align:center }
 .plaque .l{ display:block; height:calc(6 * var(--u)); border-radius:9px; margin:calc(7 * var(--u)) auto 0;
@@ -744,7 +744,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
 .card-j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   border-radius:calc(7 * var(--u)); padding:calc(10 * var(--u)) calc(11 * var(--u)); margin-bottom:calc(8 * var(--u));
   box-shadow:0 2px 4px color-mix(in srgb, var(--do-prussian-blue) 8%, transparent) }
-.card-j .r{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.1em; color:var(--do-cerulean) }
+.card-j .r{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.1em; color:var(--do-text-cerulean) }
 .card-j b{ display:block; margin-top:3px; font-size:max(11px, calc(13.5 * var(--u))); line-height:1.25 }
 .card-j .m{ display:flex; flex-wrap:wrap; gap:4px; margin-top:calc(7 * var(--u)) }
 .card-j .m span{ font-size:max(9px, calc(10.5 * var(--u))); padding:1px 7px; border-radius:99px;
@@ -862,7 +862,7 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   font-size:max(10px, calc(14 * var(--u))); font-weight:700 }
 .a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
 .a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
-  color:var(--do-cerulean) }
+  color:var(--do-text-cerulean) }
 .a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
   background:var(--do-off-white); box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
 .a1008 .photopin img{ display:block; width:100%; height:100%; object-fit:cover;

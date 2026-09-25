@@ -70,9 +70,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col bg-off-white text-prussian-blue" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-SN2Z3J31CZ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="gtag-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="lazyOnload">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="GagP9ji+yt3Y0PukCnZybQ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <JsonLd data={{

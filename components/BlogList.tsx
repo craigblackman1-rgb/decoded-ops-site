@@ -60,7 +60,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
             )}
             <div className="lead-body">
               {leadPost.category && (
-                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+                <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ alignSelf: 'flex-start', color: 'var(--do-text-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
                   {leadPost.category}
                 </span>
               )}
@@ -154,7 +154,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
               )}
               <div style={{ padding: '24px 26px 26px' }}>
                 {post.category && (
-                  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
+                  <span className="inline-block text-xs font-semibold tracking-wide uppercase" style={{ color: 'var(--do-text-cerulean)', padding: '4px 11px', borderRadius: 9999, background: 'rgba(33,158,188,0.1)', border: '1px solid rgba(33,158,188,0.28)' }}>
                     {post.category}
                   </span>
                 )}

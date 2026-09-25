@@ -62,7 +62,7 @@ export function ToolLeadCapture({ tool, resultSummary, answers }: ToolLeadCaptur
         </p>
         <p className="text-prussian-blue/60 text-sm font-[family-name:var(--font-dm-sans)]">
           I&apos;ve got your results and I&apos;ll be in touch. If you&apos;d rather talk sooner,{' '}
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-cerulean hover:underline">
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="text-cerulean hover:underline" style={{ textDecoration: 'underline' }}>
             book a call
           </a>.
         </p>

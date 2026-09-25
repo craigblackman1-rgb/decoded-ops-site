@@ -156,11 +156,11 @@ export default function ResourcesPage() {
               return (
                 <Link key={r.href} href={r.href} className="card">
                   <div style={{ width: 48, height: 48, borderRadius: 'var(--do-radius-xl)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={24} style={{ color: 'var(--do-cerulean)' }} />
+                    <Icon size={24} style={{ color: 'var(--do-text-cerulean)' }} />
                   </div>
                   <h2 style={{ fontSize: 'var(--do-text-xl)' }}>{r.title}</h2>
                   <p>{r.desc}</p>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-cerulean)' }}>
                     Read more <ArrowRight size={14} />
                   </span>
                 </Link>

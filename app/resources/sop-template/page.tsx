@@ -140,7 +140,7 @@ export default function SopTemplatePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {templateContents.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
                     {item}
                   </p>
@@ -231,25 +231,25 @@ export default function SopTemplatePage() {
             <h2>Key takeaways</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Start with the process that would cause the most damage if the person who does it was unavailable. That is where the risk is.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   One page per process. If it needs more than a page, split it into two processes.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Test every SOP with someone who does not normally do the job. If they get stuck, the SOP is the problem, not the person.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Set a 6-month review cycle. An SOP that is not reviewed becomes outdated and ignored.
                 </p>
@@ -270,7 +270,7 @@ export default function SopTemplatePage() {
                 See what Clarity covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

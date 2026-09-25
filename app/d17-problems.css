@@ -64,7 +64,7 @@ svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weig
 .srcs b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(24 * var(--u))); letter-spacing:-.02em }
 .srcs div.x{ border:2px solid var(--do-amber); background:color-mix(in srgb, var(--do-amber) 12%, var(--do-white)) }
 .typing{ display:inline-flex; gap:4px; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u)));
-  letter-spacing:.12em; text-transform:uppercase; color:var(--do-cerulean) }
+  letter-spacing:.12em; text-transform:uppercase; color:var(--do-text-cerulean) }
 
 /* ─── DO-ART-961 · bottleneck hero · machines ready, every tag waiting on the owner (photo-led) ─── */
 .a961 .stage{ aspect-ratio:560 / 470 }
@@ -107,7 +107,7 @@ svg.q .t-xl{ fill:var(--do-white); font-family:var(--do-font-heading); font-weig
 .q-list li{ display:block; padding:calc(6 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent);
   font-size:max(8px, calc(11 * var(--u))); font-weight:600; line-height:1.3; white-space:normal }
 .q-list li span{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, calc(9 * var(--u))); letter-spacing:.08em;
-  text-transform:uppercase; color:var(--do-cerulean) }
+  text-transform:uppercase; color:var(--do-text-cerulean) }
 .q-list li.hot span{ color:color-mix(in srgb, var(--do-amber) 55%, var(--do-prussian-blue)) }
 
 /* ─── DO-ART-963 · cant-scale hero · the flow and where the queues pile up (drawn plate) ─── */
@@ -146,7 +146,7 @@ svg.q .crack{ fill:none; stroke:var(--do-amber); stroke-width:3.2; stroke-linejo
   color:color-mix(in srgb, var(--do-prussian-blue) 65%, transparent); margin-bottom:calc(6 * var(--u)) }
 .cols .j{ background:var(--do-white); border:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent); border-radius:calc(4 * var(--u));
   padding:calc(6 * var(--u)) calc(7 * var(--u)); margin-bottom:calc(5 * var(--u)); font-size:max(9.5px, calc(11 * var(--u))); font-weight:700; line-height:1.25 }
-.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.08em; color:var(--do-cerulean) }
+.cols .j small{ display:block; font-family:var(--do-font-mono); font-weight:500; font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.08em; color:var(--do-text-cerulean) }
 .cols .j.miss{ border:2px dashed var(--do-amber); background:color-mix(in srgb, var(--do-amber) 10%, var(--do-white)); color:color-mix(in srgb, var(--do-prussian-blue) 80%, transparent) }
 .a966 .gap-l{ position:absolute; z-index:5; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px;
   font-family:var(--do-font-mono); font-weight:700; font-size:max(9px, calc(10.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
@@ -387,8 +387,8 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
   color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); padding:0 0 calc(5 * var(--u)) }
 .reg td{ padding:calc(5.5 * var(--u)) calc(8 * var(--u)) calc(5.5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 11%, transparent); font-weight:600; white-space:nowrap }
 .reg td + td{ font-weight:500 }
-.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-cerulean) }
-.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.reg td.s{ font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u))); color:var(--do-text-cerulean) }
+.sop .h{ margin:calc(9 * var(--u)) 0 0; font-family:var(--do-font-mono); font-weight:700; font-size:max(7px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .sop .h i{ font-style:normal; color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent); margin-right:6px }
 .sop .p{ margin:calc(3 * var(--u)) 0 0; font-size:max(8.5px, calc(11.5 * var(--u))); line-height:1.35 }
 .sop .line{ height:calc(5 * var(--u)); border-radius:9px; margin-top:calc(6 * var(--u)); background:color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }

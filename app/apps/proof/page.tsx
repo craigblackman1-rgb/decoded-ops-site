@@ -284,7 +284,7 @@ export default function ArtworkManagerPage() {
           <p className="table-foot">There&rsquo;s no third tier for this product. If what you need is bigger
             than Connected, that&rsquo;s a different conversation and it starts with a Clarity Audit, not a
             tier list.</p>
-          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing" style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
+          <p className="table-foot">What this costs depends on scope, so it&rsquo;s quoted once I know what your setup needs rather than read off a list. I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add. How I price everything else is on the <Link href="/pricing"               style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>pricing page</Link>.</p>
         </div>
       </section>
 

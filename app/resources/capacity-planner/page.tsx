@@ -151,7 +151,7 @@ export default function CapacityPlannerPage() {
               { n: '05', t: 'Downtime allowance', d: 'Changeovers, cleaning, minor breakdowns.' },
             ].map((s) => (
               <div key={s.n} style={{ padding: 16, borderRadius: 'var(--do-radius-lg)', border: '1px solid rgba(142,202,230,.15)' }}>
-                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
+                <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 700, color: 'var(--do-text-cerulean)', letterSpacing: '0.06em' }}>{s.n}</span>
                 <h3 style={{ fontSize: 'var(--do-text-base)', margin: '6px 0 4px', color: 'var(--do-text-on-dark)' }}>{s.t}</h3>
                 <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-text-on-dark) 65%, transparent)', margin: 0 }}>{s.d}</p>
               </div>

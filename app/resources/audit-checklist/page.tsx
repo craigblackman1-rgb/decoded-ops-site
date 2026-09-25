@@ -273,25 +273,25 @@ export default function ChecklistPage() {
             <h2>Key takeaways</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   If you can't answer 5+ questions, you probably have a bigger operational problem than you realize.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   The items about "manual work" and "re-keying" are where the money is hiding.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   If your systems don&apos;t integrate, you are paying a significant amount in manual workarounds.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Inventory accuracy problems cost more than most businesses realise.
                 </p>
@@ -313,7 +313,7 @@ export default function ChecklistPage() {
                 See what an audit covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

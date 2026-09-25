@@ -233,7 +233,7 @@ export default function PricingPage() {
 
           <p className="table-foot" style={{ marginTop: 28 }}>Sub-£1m businesses use the same services at the &ldquo;from&rdquo; prices above.
             There is no separate small-business pricing ladder. See <Link href="/small-business"
-              style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
+              style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
         </div>
       </section>
 
@@ -275,7 +275,7 @@ export default function PricingPage() {
             <b>If an off-the-shelf platform fits, that&rsquo;s folded into the Clarity Audit at no
             extra cost.</b> Nothing separate to buy. Building something only makes sense once buying
             has been ruled out in writing, <Link href="/how-i-build"
-              style={{ color: 'var(--do-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
+              style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>that&rsquo;s the whole of how I build</Link>.
           </div>
           <div className="inset">
             <b>There is no price list for the apps, and putting one here would be dishonest.</b> What one

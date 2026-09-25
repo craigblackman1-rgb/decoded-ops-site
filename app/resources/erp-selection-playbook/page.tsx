@@ -192,7 +192,7 @@ export default function ErpSelectionPlaybookPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 20 }}>
               {erpCapabilities.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+                  <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-text-cerulean)' }} />
                   <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>{item}</p>
                 </div>
               ))}
@@ -213,7 +213,7 @@ export default function ErpSelectionPlaybookPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {dontNeed.map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 75%, transparent)' }}>
-                      <span style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }}>-</span>
+                      <span style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-text-cerulean)' }}>-</span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -224,7 +224,7 @@ export default function ErpSelectionPlaybookPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {doNeed.map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 75%, transparent)' }}>
-                      <CheckCircle2 size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+                      <CheckCircle2 size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-text-cerulean)' }} />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -270,7 +270,7 @@ export default function ErpSelectionPlaybookPage() {
                 <div key={sys.name} style={{ padding: 20, borderRadius: 'var(--do-radius-xl)', background: 'var(--do-off-white)', border: '1px solid var(--do-border-subtle)' }}>
                   <h3 style={{ fontWeight: 700, color: 'var(--do-text-primary)', marginBottom: 4 }}>{sys.name}</h3>
                   <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 75%, transparent)', marginBottom: 0 }}>
-                    <span style={{ color: 'var(--do-cerulean)' }}>{sys.strength}</span>
+                    <span style={{ color: 'var(--do-text-cerulean)' }}>{sys.strength}</span>
                     {sys.weakness && <span> - {sys.weakness}</span>}
                   </p>
                 </div>
@@ -337,25 +337,25 @@ export default function ErpSelectionPlaybookPage() {
             <h2>Key takeaways</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Most businesses do not need a new ERP. They need to use what they have properly and fix their processes first.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Write the vendor brief before you talk to any vendor. Without it, every demo looks impressive because the vendor controls what they show you.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   A Clarity Audit identifies what you actually need before you spend anything on software.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-cerulean)' }} />
+                <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
                   Clean your data and document your real processes before you start talking to vendors. The ERP will inherit whatever you give it.
                 </p>
@@ -376,7 +376,7 @@ export default function ErpSelectionPlaybookPage() {
                 See what an audit covers
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
 
         </div>

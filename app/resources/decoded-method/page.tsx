@@ -225,7 +225,7 @@ export default function DecodedMethodPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 20 }}>
                   {layer.fields.map(([k, v]) => (
                     <div key={k} style={{ display: 'flex', gap: 10, fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
-                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-cerulean)' }} />
+                      <Check size={16} style={{ flexShrink: 0, marginTop: 2, color: 'var(--do-text-cerulean)' }} />
                       <span><strong style={{ color: 'var(--do-text-primary)' }}>{k}</strong> - {v}</span>
                     </div>
                   ))}
@@ -246,7 +246,7 @@ export default function DecodedMethodPage() {
               return (
                 <div key={i} style={{ padding: 24, borderRadius: 'var(--do-radius-xl)', background: 'white', borderLeft: '4px solid var(--do-cerulean)', border: '1px solid var(--do-border-subtle)', borderLeftWidth: 4, borderLeftColor: 'var(--do-cerulean)', display: 'flex', gap: 16 }}>
                   <div style={{ flexShrink: 0, width: 44, height: 44, borderRadius: 'var(--do-radius-lg)', background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={20} style={{ color: 'var(--do-cerulean)' }} />
+                    <Icon size={20} style={{ color: 'var(--do-text-cerulean)' }} />
                   </div>
                   <div>
                     <h3 style={{ fontWeight: 700, color: 'var(--do-text-primary)', margin: 0 }}>{head}.</h3>
@@ -305,7 +305,7 @@ export default function DecodedMethodPage() {
                 Book a discovery call
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
             <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 60%, transparent)', marginTop: 20, marginBottom: 0 }}>
               Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>

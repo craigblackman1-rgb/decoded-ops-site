@@ -78,7 +78,7 @@ export default function FractionalCTOLocationsHub() {
                 Book a free call <ArrowRight size={18} />
               </Link>
             </div>
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
           </div>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function FractionalCTOLocationsHub() {
           <section key={county} className="g-off" style={{ borderBottom: '1px solid var(--do-border-subtle)' }}>
             <div className="wrap">
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 40 }}>
-                <MapPin size={18} style={{ color: 'var(--do-cerulean)' }} />
+                <MapPin size={18} style={{ color: 'var(--do-text-cerulean)' }} />
                 <h2 className="h2" style={{ fontSize: 'var(--do-text-2xl)' }}>{county}</h2>
               </div>
               <div className="grid grid--3">
@@ -122,7 +122,7 @@ export default function FractionalCTOLocationsHub() {
                       </div>
                       <div style={{ fontSize: 'var(--do-text-xs)', color: 'var(--do-text-subtle)', marginTop: 4 }}>Fractional CTO</div>
                     </div>
-                    <ArrowRight size={16} style={{ color: 'var(--do-cerulean)', opacity: 0, transition: 'opacity 0.2s' }} />
+                    <ArrowRight size={16} style={{ color: 'var(--do-text-cerulean)', opacity: 0, transition: 'opacity 0.2s' }} />
                   </Link>
                 ))}
               </div>

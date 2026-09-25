@@ -69,7 +69,7 @@ export function LocationPage({
             {parts.map((part, i) =>
               i % 2 === 0
                 ? <span key={i}>{part}</span>
-                : <span key={i} className="h1 em" style={{ color: 'var(--do-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
+                : <span key={i} className="h1 em" style={{ color: 'var(--do-text-cerulean)', fontFamily: 'var(--do-font-heading)', display: 'inline' }}>{part}</span>
             )}
           </h1>
           <p className="lede">{intro}</p>
@@ -127,13 +127,13 @@ export function LocationPage({
                 <div className="card loc-cta-card" style={{ marginTop: 24 }}>
                   {driveTime && (
                     <div>
-                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>From Worthing</div>
+                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>From Worthing</div>
                       <div style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>{driveTime}</div>
                     </div>
                   )}
                   {localFact && (
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>{town}</div>
+                      <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wide)', marginBottom: 4 }}>{town}</div>
                       <div style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)' }}>{localFact}</div>
                     </div>
                   )}
@@ -190,9 +190,9 @@ export function LocationPage({
                     style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}
                   >
                     <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: '#a7b8c1' }}>{String(i + 1).padStart(2, '0')}</span>
+                      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: '#c3d0d6' }}>{String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <p style={{ fontSize: 'var(--do-text-sm)', color: '#a7b8c1', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
+                    <p style={{ fontSize: 'var(--do-text-sm)', color: '#c3d0d6', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
                   </div>
                 ))}
               </div>
@@ -248,7 +248,7 @@ export function LocationPage({
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', fontWeight: 'var(--do-weight-medium)', letterSpacing: 'var(--do-tracking-wider)', textTransform: 'uppercase', marginBottom: 8 }}>Also serving</p>
           <p style={{ color: 'var(--do-text-secondary)' }}>
             {allCounties.filter(c => c !== county).join(' · ')},{' '}
-            <Link href={serviceUrl} className="text-cerulean hover:underline">
+            <Link href={serviceUrl} className="text-cerulean hover:underline" style={{ textDecoration: 'underline' }}>
               view all locations
             </Link>
           </p>

@@ -42,7 +42,7 @@
 .d17-doc .tl li i.q::after{ content:'?'; font-family:var(--do-font-heading); font-weight:800; font-size:max(7px, calc(11 * var(--u))); color:var(--do-prussian-blue) }
 .d17-doc .tl li.h{ background:color-mix(in srgb, var(--do-amber) 18%, transparent) }
 .d17-doc .tl li em{ font-style:normal; font-family:var(--do-font-mono); font-weight:500; font-size:max(6.5px, calc(9.5 * var(--u)));
-  letter-spacing:.06em; color:var(--do-cerulean); margin-left:.5em }
+  letter-spacing:.06em; color:var(--do-text-cerulean); margin-left:.5em }
 /* sticky note */
 .note-y{ position:absolute; z-index:5; width:calc(170 * var(--u)); padding:calc(12 * var(--u)) calc(13 * var(--u));
   background:color-mix(in srgb, var(--do-amber) 88%, var(--do-white)); color:var(--do-prussian-blue);
@@ -191,12 +191,12 @@
 .fld{ margin-top:calc(8 * var(--u)); padding-top:calc(7 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .fld span{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9 * var(--u))); letter-spacing:.14em; text-transform:uppercase;
   color:color-mix(in srgb, var(--do-prussian-blue) 55%, transparent) }
-.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; color:var(--do-cerulean) }
+.fld b{ display:block; margin-top:2px; font-size:max(8.5px, calc(12 * var(--u))); font-weight:700; color:var(--do-text-cerulean) }
 .fld.two{ display:grid; grid-template-columns:1fr 1fr; gap:8px }
 .fld.ex b{ color:color-mix(in srgb, var(--do-amber) 45%, var(--do-prussian-blue)) }
 .d17-doc ol.st{ list-style:none; counter-reset:s; margin:calc(4 * var(--u)) 0 0; padding:0 }
 .d17-doc ol.st li{ counter-increment:s; display:grid; grid-template-columns:calc(16 * var(--u)) 1fr; gap:calc(6 * var(--u)); white-space:normal;
-  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; color:var(--do-cerulean) }
+  padding:calc(3 * var(--u)) 0; border:0; font-size:max(8.5px, calc(11 * var(--u))); font-weight:600; color:var(--do-text-cerulean) }
 .d17-doc ol.st li::before{ content:counter(s); font-family:var(--do-font-mono); color:color-mix(in srgb, var(--do-prussian-blue) 50%, transparent) }
 .a987 .nt-987{ left:calc(356 * var(--u)); top:calc(318 * var(--u)); width:calc(170 * var(--u)) }
 
@@ -249,7 +249,7 @@
 .vb th{ font-family:var(--do-font-mono); font-weight:600; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em; text-transform:uppercase;
   color:color-mix(in srgb, var(--do-prussian-blue) 58%, transparent); text-align:center; padding:0 0 calc(5 * var(--u)) }
 .vb th:first-child{ text-align:left }
-.vb th.us{ color:var(--do-cerulean) }
+.vb th.us{ color:var(--do-text-cerulean) }
 .vb td{ padding:calc(5 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent); font-weight:600; text-align:center }
 .vb td:first-child{ text-align:left }
 .vb i, .d17-doc .key i{ display:inline-block; width:calc(11 * var(--u)); height:calc(11 * var(--u)); border-radius:50%; vertical-align:middle }
@@ -340,7 +340,7 @@
 .a996 .slip{ position:absolute; z-index:5; right:calc(28 * var(--u)); bottom:calc(10 * var(--u)); width:calc(220 * var(--u));
   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(12 * var(--u)) calc(14 * var(--u)); border-radius:calc(4 * var(--u));
   transform:rotate(-2.5deg); box-shadow:0 calc(18 * var(--u)) calc(34 * var(--u)) color-mix(in srgb, #000 50%, transparent) }
-.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.a996 .slip .ref{ display:block; font-family:var(--do-font-mono); font-size:max(7.5px, calc(9.5 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .a996 .slip b{ display:inline-block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(40 * var(--u))); line-height:1;
   letter-spacing:-.03em; background:color-mix(in srgb, var(--do-amber) 55%, transparent); padding:0 6px; border-radius:4px }
 .a996 .slip .s{ display:block; margin-top:4px; font-size:max(10px, calc(12 * var(--u))); font-weight:600 }

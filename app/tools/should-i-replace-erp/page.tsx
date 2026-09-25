@@ -117,7 +117,7 @@ export default function ShouldIReplaceErpPage() {
 
               {/* Question card */}
               <div className="card">
-                <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 16 }}>Question {currentQ + 1}</div>
+                <div style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-cerulean)', textTransform: 'uppercase', letterSpacing: 'var(--do-tracking-wider)', marginBottom: 16 }}>Question {currentQ + 1}</div>
                 <h2 style={{ marginBottom: 32 }}>{questions[currentQ].text}</h2>
                 <div style={{ display: 'flex', gap: 16 }}>
                   <button onClick={() => handleAnswer('yes')} className="btn" style={{ flex: 1, background: 'var(--do-prussian-blue)', color: 'var(--do-text-on-dark)' }}>Yes</button>
@@ -151,7 +151,7 @@ export default function ShouldIReplaceErpPage() {
               />
 
               <p style={{ marginTop: 24, fontSize: 'var(--do-text-sm)', textAlign: 'center' }}>
-                <Link href="/resources/erp-selection-playbook" style={{ color: 'var(--do-cerulean)', fontWeight: 'var(--do-weight-medium)' }}>
+                <Link href="/resources/erp-selection-playbook" style={{ color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)' }}>
                   Read the ERP selection playbook <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
                 </Link>
               </p>

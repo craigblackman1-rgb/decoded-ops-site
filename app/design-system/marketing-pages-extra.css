@@ -126,7 +126,7 @@
 .log-row h3{ font-size:1.375rem; letter-spacing:-0.015em; margin-bottom:10px }
 .log-row:hover h3{ color:var(--do-cerulean) }
 .log-row p{ margin:0; color:var(--do-text-secondary); font-size:var(--do-text-sm); max-width:56ch }
-.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); color:var(--do-cerulean);
+.log-row .go{ align-self:center; font-weight:var(--do-weight-semibold); font-size:var(--do-text-sm); color:var(--do-text-cerulean);
   white-space:nowrap }
 .log-row .go::after{ content:'\2192'; display:inline-block; margin-left:7px; transition:transform var(--do-duration-normal) }
 .log-row:hover .go::after{ transform:translateX(3px) }

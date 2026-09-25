@@ -95,7 +95,7 @@ export default async function BlogPage() {
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style={{ backgroundColor: 'var(--do-cerulean)/0.15', border: '1px solid var(--do-cerulean)/0.3' }}>
-                    <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-cerulean)' }}>Checklist</span>
+                    <span className="text-xs font-semibold uppercase" style={{ color: 'var(--do-text-cerulean)' }}>Checklist</span>
                   </div>
                   <h3 className="text-2xl font-bold transition-colors mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-primary)' }}>
                     Operational Audit Checklist

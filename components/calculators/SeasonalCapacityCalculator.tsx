@@ -87,7 +87,7 @@ export function SeasonalCapacityCalculator() {
             <button
               onClick={resetToDefault}
               style={{
-                fontSize: 'var(--do-text-xs)', color: 'var(--do-cerulean)', background: 'none',
+                fontSize: 'var(--do-text-xs)', color: 'var(--do-text-cerulean)', background: 'none',
                 border: 'none', cursor: 'pointer', fontWeight: 500, textDecoration: 'underline',
               }}
             >

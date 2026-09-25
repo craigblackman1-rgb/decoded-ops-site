@@ -101,7 +101,7 @@
 .pk li{ counter-increment:p; display:grid; grid-template-columns:calc(26 * var(--u)) 1fr; gap:calc(6 * var(--u));
   padding:calc(7 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
   font-size:max(7px, calc(12.5 * var(--u))); font-weight:600; line-height:1.25 }
-.pk li::before{ content:'0' counter(p); font-family:var(--do-font-mono); font-size:max(6px, calc(10 * var(--u))); color:var(--do-cerulean); padding-top:1px }
+.pk li::before{ content:'0' counter(p); font-family:var(--do-font-mono); font-size:max(6px, calc(10 * var(--u))); color:var(--do-text-cerulean); padding-top:1px }
 .dl{ margin-top:calc(12 * var(--u)) }
 .dl .r{ display:grid; grid-template-columns:1fr auto auto; gap:calc(10 * var(--u)); align-items:center;
   padding:calc(8 * var(--u)) 0; border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
@@ -116,7 +116,7 @@
 .st-chip--o{ background:transparent; border:1px solid color-mix(in srgb, var(--do-prussian-blue) 30%, transparent) }
 .rm{ display:grid; grid-template-columns:repeat(3, 1fr); gap:calc(8 * var(--u)); margin-top:calc(12 * var(--u)) }
 .rm .c b{ display:block; font-family:var(--do-font-mono); font-size:max(6px, calc(9.5 * var(--u))); letter-spacing:.14em;
-  text-transform:uppercase; color:var(--do-cerulean); padding-bottom:calc(5 * var(--u));
+  text-transform:uppercase; color:var(--do-text-cerulean); padding-bottom:calc(5 * var(--u));
   border-bottom:2px solid color-mix(in srgb, var(--do-cerulean) 40%, transparent) }
 .rm .c span{ display:block; margin-top:calc(7 * var(--u)); padding:calc(6 * var(--u)) calc(7 * var(--u)); border-radius:calc(4 * var(--u));
   background:color-mix(in srgb, var(--do-sky-blue) 22%, transparent); font-size:max(6.5px, calc(10.5 * var(--u))); font-weight:600; line-height:1.2 }
@@ -167,7 +167,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
   background:var(--do-white); border-right:2px solid var(--do-amber); border-bottom:2px solid var(--do-amber); transform:rotate(45deg) }
 .a1002 .pin .tv{ display:inline; background:color-mix(in srgb, var(--do-amber) 30%, transparent) }
 .a1002 .pin small{ display:block; font-family:var(--do-font-mono); font-weight:600; font-size:max(9px, calc(10 * var(--u)));
-  letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+  letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .a1002 .pin b{ display:block; margin-top:2px; font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(20 * var(--u))) }
 .a1002 .pin > span{ display:block; margin-top:3px; font-size:max(11px, calc(13 * var(--u))) }
 @media (max-width: 760px){
@@ -291,7 +291,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
 .five .rep{ position:relative; background:var(--do-white); color:var(--do-prussian-blue); border-radius:calc(5 * var(--u));
   padding:calc(12 * var(--u)) calc(14 * var(--u)); box-shadow:0 calc(16 * var(--u)) calc(34 * var(--u)) color-mix(in srgb, #000 45%, transparent);
   border:2px solid var(--do-amber); transform:rotate(1.5deg) }
-.five .rep .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.five .rep .ref{ font-family:var(--do-font-mono); font-size:max(8px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .five .rep b{ display:block; margin-top:4px; font-family:var(--do-font-heading); font-weight:800; font-size:max(14px, calc(18 * var(--u))); line-height:1.1 }
 .five .rep ul{ margin:calc(6 * var(--u)) 0 0; padding:0; list-style:none }
 .five .rep li{ font-size:max(11px, calc(12.5 * var(--u))); line-height:1.3; padding:calc(3 * var(--u)) 0 calc(3 * var(--u)) 14px; position:relative }
@@ -315,7 +315,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
   padding:calc(14 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)) }
 .keep .cd + .cd::before{ content:''; position:absolute; left:calc(-34 * var(--u)); top:50%; width:calc(34 * var(--u)); height:2px;
   background:var(--do-sky-blue) }
-.keep .cd .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.keep .cd .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .keep .cd b{ display:block; margin-top:3px; font-family:var(--do-font-heading); font-weight:800; font-size:max(15px, calc(18 * var(--u))) }
 .keep .cd ul{ list-style:none; margin:calc(8 * var(--u)) 0 0; padding:0 }
 .keep .cd li{ font-size:max(12px, calc(13 * var(--u))); line-height:1.35; padding:calc(4 * var(--u)) 0;
@@ -342,7 +342,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
 .ck{ display:grid; grid-template-columns:1.25fr 1fr; gap:calc(30 * var(--u)); margin-top:calc(18 * var(--u)); align-items:center }
 .ck .panel{ background:var(--do-off-white); color:var(--do-prussian-blue); border-radius:calc(8 * var(--u));
   padding:calc(12 * var(--u)) calc(16 * var(--u)) calc(14 * var(--u)); box-shadow:0 calc(18 * var(--u)) calc(36 * var(--u)) color-mix(in srgb, #000 40%, transparent) }
-.ck .panel .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-cerulean) }
+.ck .panel .ref{ font-family:var(--do-font-mono); font-size:max(9px, calc(10 * var(--u))); letter-spacing:.14em; text-transform:uppercase; color:var(--do-text-cerulean) }
 .ck .row{ display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; padding:calc(9 * var(--u)) 0;
   border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent) }
 .ck .row:first-of-type{ margin-top:calc(8 * var(--u)) }
@@ -354,7 +354,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
   background:color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) }
 .sw-t.on{ background:var(--do-prussian-blue); border-color:var(--do-prussian-blue) }
 .sw-t.on::after{ left:23px; background:var(--do-sky-blue) }
-.sw-t.lock::before{ content:'ALWAYS'; position:absolute; right:54px; top:4px; font-family:var(--do-font-mono); font-size:9px; letter-spacing:.14em; color:var(--do-cerulean) }
+.sw-t.lock::before{ content:'ALWAYS'; position:absolute; right:54px; top:4px; font-family:var(--do-font-mono); font-size:9px; letter-spacing:.14em; color:var(--do-text-cerulean) }
 .ck .say h3{ margin:calc(12 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-white);
   font-size:max(20px, calc(28 * var(--u))); line-height:1.1; letter-spacing:-.02em }
 .ck .say p{ margin:calc(10 * var(--u)) 0 0; font-size:max(13px, calc(15 * var(--u))); line-height:1.45; color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
