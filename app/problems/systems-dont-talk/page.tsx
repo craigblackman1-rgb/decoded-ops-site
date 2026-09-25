@@ -67,20 +67,20 @@ const heroArt976 = `<figure class="d17 sx px a976" data-od-id="hero-evidence" da
     <path class="ln-d" d="M420 160 V200"/>
     <path class="ln-d" d="M210 310 V280"/>
     <path class="ln-d" d="M350 310 V280"/>
-    <g class="m-rise" style="animation-delay:0.10s"><rect class="bx" x="60" y="106" width="160" height="54" rx="10"/><text class="t" x="140" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Orders</text></g>
-    <g class="m-rise" style="animation-delay:0.18s"><rect class="bx" x="200" y="106" width="160" height="54" rx="10"/><text class="t" x="280" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Accounts</text></g>
-    <g class="m-rise" style="animation-delay:0.26s"><rect class="bx" x="340" y="106" width="160" height="54" rx="10"/><text class="t" x="420" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Artwork</text></g>
-    <g class="m-rise" style="animation-delay:0.34s"><rect class="bx" x="130" y="310" width="160" height="54" rx="10"/><text class="t" x="210" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Despatch</text></g>
-    <g class="m-rise" style="animation-delay:0.42s"><rect class="bx" x="270" y="310" width="160" height="54" rx="10"/><text class="t" x="350" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Website</text></g>
+    <g class="m-rise" style="animation-delay:0.10s"><rect class="bx" x="80" y="106" width="120" height="54" rx="10"/><text class="t" x="140" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Orders</text></g>
+    <g class="m-rise" style="animation-delay:0.18s"><rect class="bx" x="220" y="106" width="120" height="54" rx="10"/><text class="t" x="280" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Accounts</text></g>
+    <g class="m-rise" style="animation-delay:0.26s"><rect class="bx" x="360" y="106" width="120" height="54" rx="10"/><text class="t" x="420" y="140" text-anchor="middle" style="font-size:16px;font-weight:700">Artwork</text></g>
+    <g class="m-rise" style="animation-delay:0.34s"><rect class="bx" x="150" y="310" width="120" height="54" rx="10"/><text class="t" x="210" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Despatch</text></g>
+    <g class="m-rise" style="animation-delay:0.42s"><rect class="bx" x="290" y="310" width="120" height="54" rx="10"/><text class="t" x="350" y="344" text-anchor="middle" style="font-size:16px;font-weight:700">Website</text></g>
     <g class="m-pop" style="animation-delay:1.0s">
       <rect class="bx-x2" x="160" y="200" width="240" height="80" rx="12"/>
       <text class="t-h" x="280" y="236" text-anchor="middle" style="font-size:20px">The bridges</text>
       <text class="t-d" x="280" y="264" text-anchor="middle" style="font-size:16px">are people</text>
     </g>
-    <g class="m-pop" style="animation-delay:1.3s">
-      <text class="t-a" x="80" y="230" style="font-size:28px">👤</text>
-      <text class="t-a" x="260" y="190" style="font-size:28px">👤</text>
-      <text class="t-a" x="440" y="230" style="font-size:28px">👤</text>
+    <g class="m-pop" style="animation-delay:1.3s" fill="none" stroke="var(--do-amber, #FFB703)" stroke-width="2" stroke-linecap="round">
+      <g transform="translate(94 206)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
+      <g transform="translate(222 180)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
+      <g transform="translate(466 206)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
     </g>
     <text class="t-d" x="26" y="404" style="font-size:15px">Each island knows only what it is told. <tspan class="t-a">Nobody sees the whole picture.</tspan></text>
   </svg>
