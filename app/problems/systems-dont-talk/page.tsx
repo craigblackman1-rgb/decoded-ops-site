@@ -79,7 +79,7 @@ const heroArt976 = `<figure class="d17 sx px a976" data-od-id="hero-evidence" da
     </g>
     <g class="m-pop" style="animation-delay:1.3s" fill="none" stroke="var(--do-amber, #FFB703)" stroke-width="2" stroke-linecap="round">
       <g transform="translate(94 206)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
-      <g transform="translate(222 180)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
+      <g transform="translate(240 168)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
       <g transform="translate(466 206)"><circle cx="0" cy="0" r="7"/><path d="M-12 24 C-12 13 -6 9 0 9 C6 9 12 13 12 24"/></g>
     </g>
     <text class="t-d" x="26" y="404" style="font-size:15px">Each island knows only what it is told. <tspan class="t-a">Nobody sees the whole picture.</tspan></text>
