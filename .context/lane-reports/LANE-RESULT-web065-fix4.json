@@ -1,0 +1,35 @@
+{
+  "lane": "web065-fix4",
+  "wo": "",
+  "unit": "CR-WEB-065",
+  "commits": [
+    {
+      "sha": "1ecffd9",
+      "subject": "fix(a11y): muted token + cerulean on dark sections (CR-WEB-065)"
+    }
+  ],
+  "filesChanged": [
+    "app/globals.css",
+    "app/sectors/awards-engraving/page.tsx",
+    "app/sectors/garment-decoration/page.tsx",
+    "app/sectors/labels-packaging/page.tsx",
+    "app/sectors/operations-consultant-print-embroidery/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/sectors/promotional-merchandise/page.tsx",
+    "app/sectors/schoolwear/page.tsx",
+    "app/sectors/signs-graphics/page.tsx",
+    "app/sectors/teamwear-clubwear/page.tsx",
+    "app/sectors/workwear/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Brief named 5 sector files; all 10 had the same da21301 change. Fixed all 10.",
+    "Brief did not name workwear, teamwear-clubwear, promotional-merchandise, signs-graphics, or schoolwear but they had identical numbered badges on g-navy backgrounds."
+  ],
+  "blockers": [],
+  "done": true
+}
