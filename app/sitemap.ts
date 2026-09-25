@@ -7,6 +7,7 @@ import { hubFetch } from '@/lib/hub-fetch'
 
 const BASE_URL = 'https://decodedops.co.uk'
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000'
+const SITE_CONTENT_UPDATED = '2026-09-25'
 
 async function fetchBlogPosts() {
   let hubItems: any[] = [];
@@ -52,41 +53,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.85 },
-    { url: `${BASE_URL}/clarity`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/cookies`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
-    { url: `${BASE_URL}/deliver`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/apps`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/apps/works`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/apps/proof`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE_URL}/how-i-build`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: BASE_URL, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE_URL}/about`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/blog`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'weekly', priority: 0.85 },
+    { url: `${BASE_URL}/clarity`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/contact`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/cookies`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${BASE_URL}/deliver`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/apps`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/apps/works`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/apps/proof`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/apps/commerce`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/how-i-build`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
 
-    { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/problems`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.65 },
-    { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
-    { url: `${BASE_URL}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/process-quality-system`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/problems`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/resources/six-sigma`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.65 },
+    { url: `${BASE_URL}/privacy`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${BASE_URL}/pricing`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/resources`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/audit-checklist`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/5-warning-signs`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/sop-template`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/erp-selection-playbook`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/artwork-approval-playbook`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/decoded-method`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${BASE_URL}/resources/capacity-planner`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/resources/seasonal-capacity`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.6 },
 
-    { url: `${BASE_URL}/retained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/small-business`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/transform`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/tools`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies/case-study-01`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies/case-study-02`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies/case-study-03`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/case-studies/eternal-fitness`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/retained`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/small-business`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/transform`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/tools`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/case-studies`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/case-studies/case-study-01`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/case-studies/case-study-02`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/case-studies/case-study-03`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/case-studies/eternal-fitness`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
   ]
 
   // Blog posts
@@ -99,21 +102,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const problemPages = problemSlugs.map(slug => ({
     url: `${BASE_URL}/problems/${slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(SITE_CONTENT_UPDATED),
     changeFrequency: 'yearly' as const,
     priority: 0.65,
   }))
 
   const sectorPages = sectorSlugs.map(slug => ({
     url: `${BASE_URL}/sectors/${slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(SITE_CONTENT_UPDATED),
     changeFrequency: 'yearly' as const,
     priority: 0.7,
   }))
 
   const toolPages = toolSlugs.map(slug => ({
     url: `${BASE_URL}/tools/${slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(SITE_CONTENT_UPDATED),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
@@ -124,7 +127,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/locations/tech-audit`, priority: 0.75 },
   ].map(hub => ({
     url: hub.url,
-    lastModified: new Date(),
+    lastModified: new Date(SITE_CONTENT_UPDATED),
     changeFrequency: 'monthly' as const,
     priority: hub.priority,
   }))
@@ -133,13 +136,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const locationPages = locations.flatMap(loc => [
     {
       url: `${BASE_URL}/locations/fractional-cto/${loc.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(SITE_CONTENT_UPDATED),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     {
       url: `${BASE_URL}/locations/tech-audit/${loc.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(SITE_CONTENT_UPDATED),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
