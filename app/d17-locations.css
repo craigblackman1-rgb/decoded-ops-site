@@ -22,7 +22,7 @@
 .hero-center .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:28px }
 .hero-art{ margin-top:44px; max-width:880px; margin-inline:auto }
 .direct{ display:block; margin-top:14px; font-size:var(--do-text-sm); color:var(--do-text-subtle) }
-.direct a{ color:var(--do-text-primary); font-weight:600 }
+.direct a{ color:var(--do-text-primary); font-weight:600; text-decoration: underline; text-underline-offset: 2px }
 .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none }
 .chips li{ font-size:var(--do-text-xs); font-weight:600; color:var(--do-text-primary);
   border:1px solid color-mix(in srgb, var(--do-cerulean) 40%, transparent);
@@ -45,7 +45,7 @@
   border-top:1px solid color-mix(in srgb, var(--do-sky-blue) 30%, transparent);
   font-size:var(--do-text-base); line-height:1.5; color:var(--do-text-secondary) }
 .steps li::before{ content:'0' counter(s); font-family:var(--do-font-heading); font-weight:800;
-  color:var(--do-cerulean); font-size:var(--do-text-sm); padding-top:2px }
+  color:var(--do-text-cerulean); font-size:var(--do-text-sm); padding-top:2px }
 .trust{ list-style:none; padding:0; margin:0 auto 30px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px }
 .trust li{ display:flex; gap:9px; align-items:center; font-size:var(--do-text-sm); color:var(--do-text-muted-on-dark) }
 .trust li::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--do-sky-blue); flex:none }

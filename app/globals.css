@@ -38,7 +38,8 @@
   /* Semantic */
   --do-text-primary:        var(--do-prussian-blue);
   --do-text-accent:         var(--do-cerulean);
-  --do-text-muted:          #5a7d8f;
+  --do-text-cerulean:       #176f86;
+  --do-text-muted:          #486a7b;
   --do-text-on-dark:        var(--do-off-white);
   --do-surface-page:        var(--do-off-white);
   --do-surface-dark:        var(--do-prussian-blue);
@@ -80,6 +81,7 @@
 @theme {
   --color-prussian-blue: #023047;
   --color-cerulean:      #219EBC;
+  --color-cerulean-text: #176f86;
   --color-sky-blue:      #8ECAE6;
   --color-amber:         #FFB703;
   --color-orange-brand:  #FB8500;

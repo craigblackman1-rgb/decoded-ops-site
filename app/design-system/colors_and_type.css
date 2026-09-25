@@ -177,10 +177,11 @@
   --do-text-primary:       var(--do-prussian-blue);  /* 13.14:1 on Off-White */
   --do-text-secondary:     #3a5f74;
   --do-text-muted:         #3e6274;
-  --do-text-subtle:        #5a7d8f;                  /* placeholders/disabled ONLY */
+  --do-text-subtle:        #486a7b;                  /* placeholders/disabled ONLY */
   --do-text-on-dark:       var(--do-off-white);      /* 13.14:1 on Prussian Blue */
   --do-text-muted-on-dark: var(--do-sky-blue);       /* 7.74:1 — the muted tier on dark */
   --do-text-accent:        var(--do-cerulean);       /* ≥24px display only */
+  --do-text-cerulean:      #176f86;                  /* 5.45:1 on Off-White — cerulean for text/links */
 
   /* --- Borders --- */
   --do-border-subtle:  #d4e8f0;                      /* the quiet default */

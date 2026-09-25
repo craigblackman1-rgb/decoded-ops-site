@@ -89,7 +89,7 @@ h3{ font-size:var(--do-text-xl); font-weight:var(--do-weight-bold); margin-botto
 .site-head .wrap{ display:flex; align-items:center; justify-content:space-between; height:76px }
 .logo{ font-family:var(--do-font-heading); font-weight:var(--do-weight-extrabold);
   font-size:21px; letter-spacing:-0.01em; text-decoration:none; color:var(--do-text-primary) }
-.logo span{ color:var(--do-cerulean) }
+.logo span{ color:var(--do-text-cerulean) }
 /* On a dark ground the logotype inverts, exactly as the SVG asset draws it:
    Off-White "Decoded", Amber "Ops" (7.93:1). Without this, .logo's
    --do-text-primary wins over `footer a` on specificity and "Decoded"

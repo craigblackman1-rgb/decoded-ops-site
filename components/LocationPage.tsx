@@ -163,7 +163,7 @@ export function LocationPage({
                 key={p.title}
                 className="card"
               >
-                <div style={{ fontSize: 'var(--do-text-3xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-sky-blue)', marginBottom: 16 }}>{String(i + 1).padStart(2, '0')}</div>
+                <div style={{ fontSize: 'var(--do-text-3xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-cerulean)', marginBottom: 16 }}>{String(i + 1).padStart(2, '0')}</div>
                 <h3 className="h3" style={{ marginBottom: 8 }}>{p.title}</h3>
                 <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-secondary)', lineHeight: 1.75, marginBottom: 0 }}>{p.body}</p>
               </div>
@@ -190,9 +190,9 @@ export function LocationPage({
                     style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}
                   >
                     <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'color-mix(in srgb, var(--do-cerulean) 20%, transparent)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
-                      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-cerulean)' }}>{String(i + 1).padStart(2, '0')}</span>
+                      <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 'var(--do-weight-bold)', color: '#a7b8c1' }}>{String(i + 1).padStart(2, '0')}</span>
                     </div>
-                    <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-on-dark)', opacity: 0.72, lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
+                    <p style={{ fontSize: 'var(--do-text-sm)', color: '#a7b8c1', lineHeight: 1.75, marginBottom: 0 }}>{item}</p>
                   </div>
                 ))}
               </div>
