@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { CapacityPlannerCalculator } from '@/components/calculators/CapacityPlannerCalculator';
 import { D17Motion } from '@/components/D17Motion';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
@@ -20,20 +21,22 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Capacity Planning Calculator: Decoded Ops',
+  title: { absolute: 'Capacity Planning Calculator for Print | Decoded Ops' },
   description:
-    'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
+    'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
   alternates: { canonical: '/resources/capacity-planner' },
   openGraph: {
     type: 'website',
-    title: 'Capacity Planning Calculator: Decoded Ops',
-    description: 'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
+    title: 'Capacity Planning Calculator for Print | Decoded Ops',
+    description: 'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
     url: 'https://decodedops.co.uk/resources/capacity-planner',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Capacity Planning Calculator: Decoded Ops',
-    description: 'Work out how many jobs your setup can actually produce per week. Free tool for print, embroidery, and decoration businesses.',
+    title: 'Capacity Planning Calculator for Print | Decoded Ops',
+    description: 'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

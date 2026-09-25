@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
 import { SeasonalCapacityCalculator } from '@/components/calculators/SeasonalCapacityCalculator';
 import { D17Motion } from '@/components/D17Motion';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
@@ -20,20 +21,22 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Seasonal Capacity Calculator: Decoded Ops',
+  title: { absolute: 'Seasonal Capacity Calculator for Print | Decoded Ops' },
   description:
-    'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
+    'A free seasonal capacity calculator for print, embroidery and workwear businesses. See whether your busiest months fit your machines and your team.',
   alternates: { canonical: '/resources/seasonal-capacity' },
   openGraph: {
     type: 'website',
-    title: 'Seasonal Capacity Calculator: Decoded Ops',
-    description: 'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
+    title: 'Seasonal Capacity Calculator for Print | Decoded Ops',
+    description: 'A free seasonal capacity calculator for print, embroidery and workwear businesses. See whether your busiest months fit your machines and your team.',
     url: 'https://decodedops.co.uk/resources/seasonal-capacity',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Seasonal Capacity Calculator: Decoded Ops',
-    description: 'See where your capacity gap or surplus lands across the year. Free tool for print, embroidery, and decoration businesses.',
+    title: 'Seasonal Capacity Calculator for Print | Decoded Ops',
+    description: 'A free seasonal capacity calculator for print, embroidery and workwear businesses. See whether your busiest months fit your machines and your team.',
+    images: [OG_IMAGE_PATH],
   },
 };
 
