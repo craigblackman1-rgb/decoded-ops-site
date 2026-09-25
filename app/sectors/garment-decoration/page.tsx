@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Garment Decoration Operations & Systems Consultant: Decoded Ops',
-  description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
+  title: 'ERP for Garment Decoration | Decoded Ops',
+  description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
   alternates: { canonical: '/sectors/garment-decoration' },
   openGraph: {
-    title: 'Garment Decoration Operations & Systems Consultant: Decoded Ops',
-    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
+    title: 'ERP for Garment Decoration | Decoded Ops',
+    description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
     url: 'https://decodedops.co.uk/sectors/garment-decoration',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Garment Decoration Operations & Systems Consultant: Decoded Ops',
-    description: 'Artwork that doesn\'t get approved by email, production scheduling that accounts for embroidery, screen print, DTF, and DTG, and systems that match how you actually decorate.',
+    title: 'ERP for Garment Decoration | Decoded Ops',
+    description: 'ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn\'t get approved over email.',
   },
 };
 

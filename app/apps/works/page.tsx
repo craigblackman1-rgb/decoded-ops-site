@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decoded Works: Decoded Ops',
-  description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+  title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
+  description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
   alternates: { canonical: '/apps/works' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Works: Decoded Ops',
-    description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
+    title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
+    description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
     url: 'https://decodedops.co.uk/apps/works',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Works: Decoded Ops',
-    description: 'The ERP built for decorated goods. Live today, running catalogue, orders, purchasing, stock, production and despatch.',
+    title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
+    description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
     images: [OG_IMAGE_PATH],
   },
 };

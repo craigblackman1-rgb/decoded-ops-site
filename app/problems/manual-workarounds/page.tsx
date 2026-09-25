@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
- description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
+ title: 'Business Process Automation for Small Business | Decoded Ops',
+ description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
  alternates: { canonical: '/problems/manual-workarounds' },
  openGraph: {
-  title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
-  description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
+  title: 'Business Process Automation for Small Business | Decoded Ops',
+  description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
   url: 'https://decodedops.co.uk/problems/manual-workarounds',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Manual Workarounds Are Costing You More Than You Think: Decoded Ops',
-  description: 'If your team spends hours each week on manual re-entry, copy-paste fixes, and spreadsheet workarounds, you\'re paying for a system that isn\'t working. Here\'s the real cost.',
+  title: 'Business Process Automation for Small Business | Decoded Ops',
+  description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
  },
 };
 

@@ -3,19 +3,19 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Problems solved: Decoded Ops',
- description: 'Common operational and technology problems in decorated-goods businesses, and the Decoded Ops approach to solving them.',
+ title: 'Operations Problems in Decorated Goods | Decoded Ops',
+ description: 'Eighteen operational and technology problems that decorated goods businesses recognise, and the Decoded Ops approach to solving each one, from audit to build.',
  alternates: { canonical: '/problems' },
  openGraph: {
-  title: 'Problems solved: Decoded Ops',
-  description: 'Common operational and technology problems in decorated-goods businesses, and the Decoded Ops approach to solving them.',
+  title: 'Operations Problems in Decorated Goods | Decoded Ops',
+  description: 'Eighteen operational and technology problems that decorated goods businesses recognise, and the Decoded Ops approach to solving each one, from audit to build.',
   url: 'https://decodedops.co.uk/problems',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Problems solved: Decoded Ops',
-  description: 'Common operational and technology problems in decorated-goods businesses.',
+  title: 'Operations Problems in Decorated Goods | Decoded Ops',
+  description: 'Eighteen operational and technology problems that decorated goods businesses recognise, and the Decoded Ops approach to solving each one, from audit to build.',
  },
 };
 

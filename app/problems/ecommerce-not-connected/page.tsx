@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
- description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+ title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+ description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
  alternates: { canonical: '/problems/ecommerce-not-connected' },
  openGraph: {
-  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
-  description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+  title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+  description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
   url: 'https://decodedops.co.uk/problems/ecommerce-not-connected',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'eCommerce Not Connected to Your Operations? Here\'s the Fix: Decoded Ops',
-  description: 'Your online store orders come in but your stock doesn\'t update, your ERP doesn\'t know, and your invoicing is manual. Here\'s how to fix eCommerce integration for print and decoration businesses.',
+  title: 'Ecommerce Not Connected to Inventory | Decoded Ops',
+  description: 'When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here\'s how to fix the integration properly.',
  },
 };
 

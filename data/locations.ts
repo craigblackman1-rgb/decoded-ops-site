@@ -8,6 +8,10 @@ export interface LocationData {
   nearbyAreas: string[];
   businessSectors: string[];
   regionalChallenge: string;
+  seoTitle: string;
+  seoDescription: string;
+  seoTitleTechAudit: string;
+  seoDescriptionTechAudit: string;
 }
 
 export const locations: LocationData[] = [
@@ -23,6 +27,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Bognor Regis', 'Midhurst', 'Petworth', 'Goodwood'],
     businessSectors: ['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise'],
     regionalChallenge: 'Chichester\'s decoration and print trade sits alongside Bognor Regis and Midhurst, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Chichester | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Chichester. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Chichester Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Chichester. Book a free call to talk through your systems.',
   },
   {
     slug: 'worthing',
@@ -35,6 +43,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Shoreham-by-Sea', 'Littlehampton', 'Lancing', 'Steyning'],
     businessSectors: ['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear'],
     regionalChallenge: 'Whether a decoration business is based in Worthing itself or out towards Shoreham-by-Sea, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Worthing | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Worthing. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Worthing Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Worthing. Book a free call to talk through your systems.',
   },
   {
     slug: 'horsham',
@@ -47,6 +59,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Billingshurst', 'Henfield', 'Southwater', 'Steyning'],
     businessSectors: ['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print'],
     regionalChallenge: 'Horsham sits within easy reach of Billingshurst and Henfield, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Horsham | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Horsham. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Horsham Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Horsham. Book a free call to talk through your systems.',
   },
   {
     slug: 'crawley',
@@ -59,6 +75,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Horley', 'East Grinstead', 'Copoly', 'Pease Pottage'],
     businessSectors: ['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics'],
     regionalChallenge: 'Being close to Horley and East Grinstead doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in West Sussex you\'re based.',
+  seoTitle: 'Fractional CTO in Crawley | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Crawley. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Crawley Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Crawley. Book a free call to talk through your systems.',
   },
   {
     slug: 'bognor-regis',
@@ -71,6 +91,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Chichester', 'Littlehampton', 'Felpham', 'Aldwick'],
     businessSectors: ['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers'],
     regionalChallenge: 'Bognor Regis\'s decoration and print trade sits alongside Chichester and Littlehampton, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Bognor Regis | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Bognor Regis. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Bognor Regis Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Bognor Regis. Book a free call to talk through your systems.',
   },
   {
     slug: 'littlehampton',
@@ -83,6 +107,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Bognor Regis', 'Rustington', 'Arundel', 'East Preston'],
     businessSectors: ['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers'],
     regionalChallenge: 'Whether a decoration business is based in Littlehampton itself or out towards Bognor Regis, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Littlehampton | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Littlehampton. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Littlehampton Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Littlehampton. Book a free call to talk through your systems.',
   },
   {
     slug: 'haywards-heath',
@@ -95,6 +123,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Burgess Hill', 'Cuckfield', 'Lindfield', 'Uckfield'],
     businessSectors: ['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging'],
     regionalChallenge: 'Haywards Heath sits within easy reach of Burgess Hill and Cuckfield, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Haywards Heath | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Haywards Heath. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Haywards Heath Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Haywards Heath. Book a free call to talk through your systems.',
   },
   {
     slug: 'burgess-hill',
@@ -107,6 +139,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Haywards Heath', 'Hassocks', 'Hurstpierpoint', 'Ditchling'],
     businessSectors: ['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration'],
     regionalChallenge: 'Being close to Haywards Heath and Hassocks doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in West Sussex you\'re based.',
+  seoTitle: 'Fractional CTO in Burgess Hill | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Burgess Hill. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Burgess Hill Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Burgess Hill. Book a free call to talk through your systems.',
   },
   {
     slug: 'shoreham-by-sea',
@@ -119,6 +155,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Worthing', 'Southwick', 'Portslade', 'Botyns Cross'],
     businessSectors: ['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise'],
     regionalChallenge: 'Shoreham-by-Sea\'s decoration and print trade sits alongside Worthing and Southwick, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Shoreham-by-Sea | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Shoreham-by-Sea. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Shoreham-by-Sea Businesses',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Shoreham-by-Sea. Book a free call to talk through your systems.',
   },
   // East Sussex
   {
@@ -132,6 +172,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Hove', 'Lewes', 'Portslade', 'Rottingdean'],
     businessSectors: ['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear'],
     regionalChallenge: 'Whether a decoration business is based in Brighton itself or out towards Hove, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Brighton | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Brighton. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Brighton Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Brighton. Book a free call to talk through your systems.',
   },
   {
     slug: 'hove',
@@ -144,6 +188,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Brighton', 'Portslade', 'Southwick', 'Shoreham-by-Sea'],
     businessSectors: ['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print'],
     regionalChallenge: 'Hove sits within easy reach of Brighton and Portslade, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Hove | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Hove. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Hove Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Hove. Book a free call to talk through your systems.',
   },
   {
     slug: 'eastbourne',
@@ -156,6 +204,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Bexhill-on-Sea', 'Polegate', 'Hailsham', 'Seaford'],
     businessSectors: ['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics'],
     regionalChallenge: 'Being close to Bexhill-on-Sea and Polegate doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in East Sussex you\'re based.',
+  seoTitle: 'Fractional CTO in Eastbourne | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Eastbourne. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Eastbourne Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Eastbourne. Book a free call to talk through your systems.',
   },
   {
     slug: 'hastings',
@@ -168,6 +220,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Bexhill-on-Sea', 'Battle', 'Rye', 'St Leonards-on-Sea'],
     businessSectors: ['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers'],
     regionalChallenge: 'Hastings\'s decoration and print trade sits alongside Bexhill-on-Sea and Battle, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Hastings | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Hastings. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Hastings Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Hastings. Book a free call to talk through your systems.',
   },
   {
     slug: 'lewes',
@@ -180,6 +236,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Brighton', 'Uckfield', 'Newhaven', 'Peacehaven'],
     businessSectors: ['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers'],
     regionalChallenge: 'Whether a decoration business is based in Lewes itself or out towards Brighton, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Lewes | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Lewes. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Lewes Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Lewes. Book a free call to talk through your systems.',
   },
   {
     slug: 'crowborough',
@@ -192,6 +252,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Uckfield', 'Tonbridge', 'Royal Tunbridge Wells', 'Eridge'],
     businessSectors: ['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging'],
     regionalChallenge: 'Crowborough sits within easy reach of Uckfield and Tonbridge, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Crowborough | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Crowborough. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Crowborough Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Crowborough. Book a free call to talk through your systems.',
   },
   {
     slug: 'bexhill-on-sea',
@@ -204,6 +268,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Hastings', 'Eastbourne', 'Battle', 'Pevensey'],
     businessSectors: ['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration'],
     regionalChallenge: 'Being close to Hastings and Eastbourne doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in East Sussex you\'re based.',
+  seoTitle: 'Fractional CTO in Bexhill-on-Sea | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Bexhill-on-Sea. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Bexhill-on-Sea Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Bexhill-on-Sea. Book a free call to talk through your systems.',
   },
   {
     slug: 'uckfield',
@@ -216,6 +284,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Lewes', 'Crowborough', 'Haywards Heath', 'Newhaven'],
     businessSectors: ['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise'],
     regionalChallenge: 'Uckfield\'s decoration and print trade sits alongside Lewes and Crowborough, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Uckfield | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Uckfield. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Uckfield Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Uckfield. Book a free call to talk through your systems.',
   },
   {
     slug: 'seaford',
@@ -228,6 +300,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Newhaven', 'Eastbourne', 'Lewes', 'Peacehaven'],
     businessSectors: ['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear'],
     regionalChallenge: 'Whether a decoration business is based in Seaford itself or out towards Newhaven, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Seaford | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Seaford. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Seaford Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Seaford. Book a free call to talk through your systems.',
   },
   // Surrey
   {
@@ -241,6 +317,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Godalming', 'Woking', 'Farnham', 'Ripley'],
     businessSectors: ['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print'],
     regionalChallenge: 'Guildford sits within easy reach of Godalming and Woking, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Guildford | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Guildford. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Guildford Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Guildford. Book a free call to talk through your systems.',
   },
   {
     slug: 'woking',
@@ -253,6 +333,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Guildford', 'Byfleet', 'West Byfleet', 'Old Woking'],
     businessSectors: ['Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise', 'Signs and graphics'],
     regionalChallenge: 'Being close to Guildford and Byfleet doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in Surrey you\'re based.',
+  seoTitle: 'Fractional CTO in Woking | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Woking. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Woking Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Woking. Book a free call to talk through your systems.',
   },
   {
     slug: 'epsom',
@@ -265,6 +349,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Leatherhead', 'Ashtead', 'Banstead', 'Tadworth'],
     businessSectors: ['Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers'],
     regionalChallenge: 'Epsom\'s decoration and print trade sits alongside Leatherhead and Ashtead, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Epsom | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Epsom. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Epsom Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Epsom. Book a free call to talk through your systems.',
   },
   {
     slug: 'reigate',
@@ -277,6 +365,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Redhill', 'Bletchingley', 'Horley', 'Chipstead'],
     businessSectors: ['Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print', 'Workwear suppliers'],
     regionalChallenge: 'Whether a decoration business is based in Reigate itself or out towards Redhill, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Reigate | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Reigate. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Reigate Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Reigate. Book a free call to talk through your systems.',
   },
   {
     slug: 'redhill',
@@ -289,6 +381,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Reigate', 'Horley', 'Bletchingley', 'Merstham'],
     businessSectors: ['Workwear suppliers', 'Promotional merchandise', 'Signs and graphics', 'Labels and packaging'],
     regionalChallenge: 'Redhill sits within easy reach of Reigate and Horley, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Redhill | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Redhill. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Redhill Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Redhill. Book a free call to talk through your systems.',
   },
   {
     slug: 'dorking',
@@ -301,6 +397,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Leatherhead', 'Guildford', 'Leigh', 'Abinger Hammer'],
     businessSectors: ['Labels and packaging', 'Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration'],
     regionalChallenge: 'Being close to Leatherhead and Guildford doesn\'t change what a decoration business needs from its systems. The fix costs the same to get right wherever in Surrey you\'re based.',
+  seoTitle: 'Fractional CTO in Dorking | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Dorking. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Dorking Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Dorking. Book a free call to talk through your systems.',
   },
   {
     slug: 'farnham',
@@ -313,6 +413,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Alton', 'Haslemere', 'Bentley', 'Crondall'],
     businessSectors: ['Garment decoration', 'Embroidery and screen print', 'Workwear suppliers', 'Promotional merchandise'],
     regionalChallenge: 'Farnham\'s decoration and print trade sits alongside Alton and Haslemere, and the operational problems don\'t stop at a town boundary. Wherever the business sits, the audit runs the same way.',
+  seoTitle: 'Fractional CTO in Farnham | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Farnham. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Farnham Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Farnham. Book a free call to talk through your systems.',
   },
   {
     slug: 'leatherhead',
@@ -325,6 +429,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Epsom', 'Dorking', 'Ashtead', 'Bookham'],
     businessSectors: ['Promotional merchandise', 'Signs and graphics', 'Labels and packaging', 'Teamwear and clubwear'],
     regionalChallenge: 'Whether a decoration business is based in Leatherhead itself or out towards Epsom, the same systems problems turn up: manual handoffs, disconnected data, and processes that live in someone\'s head rather than on paper.',
+  seoTitle: 'Fractional CTO in Leatherhead | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Leatherhead. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Leatherhead Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Leatherhead. Book a free call to talk through your systems.',
   },
   {
     slug: 'camberley',
@@ -337,6 +445,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Frimley', 'Bagshot', 'Windlesham', 'Blackwater'],
     businessSectors: ['Teamwear and clubwear', 'Schoolwear suppliers', 'Garment decoration', 'Embroidery and screen print'],
     regionalChallenge: 'Camberley sits within easy reach of Frimley and Bagshot, and decoration businesses across that whole stretch run into the same operational gaps. Distance from the workshop floor doesn\'t change what needs fixing.',
+  seoTitle: 'Fractional CTO in Camberley | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Camberley. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Camberley Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Camberley. Book a free call to talk through your systems.',
   },
   // Greater London
   {
@@ -350,6 +462,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Croydon', 'Bromley', 'Enfield', 'Greenwich'],
     businessSectors: ['Garment decoration', 'Fashion and textiles', 'Corporate workwear', 'Promotional merchandise'],
     regionalChallenge: 'London\'s decorated-goods businesses operate at higher volumes and tighter margins than their South East counterparts. The technology decisions that are inconvenient in Worthing become existential in London, where the cost of a failed integration or a stockout runs into tens of thousands.',
+  seoTitle: 'Fractional CTO in London | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in London. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for London Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in London. Book a free call to talk through your systems.',
   },
   // Greater Manchester
   {
@@ -363,6 +479,10 @@ export const locations: LocationData[] = [
     nearbyAreas: ['Salford', 'Stockport', 'Bolton', 'Oldham'],
     businessSectors: ['Embroidery and screen printing', 'Workwear and uniform supply', 'Promotional merchandise', 'Fashion textiles'],
     regionalChallenge: 'Manchester\'s decorated-goods businesses are further from Craig\'s base, which means the on-site model needs to work differently: more structured engagements, clearer scoping, and technology solutions that can be maintained remotely after the initial audit.',
+  seoTitle: 'Fractional CTO in Manchester | Decoded Ops',
+  seoDescription: 'Fractional CTO support for print, embroidery and decorated goods businesses in Manchester. Book a free call to talk through your operations.',
+  seoTitleTechAudit: 'Technology Audit for Manchester Businesses | Decoded Ops',
+  seoDescriptionTechAudit: 'Independent technology audits for print, embroidery and decorated goods businesses in Manchester. Book a free call to talk through your systems.',
   },
 ];
 

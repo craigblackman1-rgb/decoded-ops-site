@@ -8,19 +8,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import '@/app/d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Promotional merchandise: Decoded Ops',
-  description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+  title: 'Promotional Merchandise Software | Decoded Ops',
+  description: 'Promotional merchandise software that puts every supplier in one clean catalogue, keeps artwork out of email threads, and protects margin at the order level.',
   alternates: { canonical: '/sectors/promotional-merchandise' },
   openGraph: {
-    title: 'Promotional merchandise: Decoded Ops',
-    description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+    title: 'Promotional Merchandise Software | Decoded Ops',
+    description: 'Promotional merchandise software that puts every supplier in one clean catalogue, keeps artwork out of email threads, and protects margin at the order level.',
     url: 'https://decodedops.co.uk/sectors/promotional-merchandise',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Promotional merchandise: Decoded Ops',
-    description: 'Every supplier in one clean catalogue, artwork that doesn\'t live in email, and margin protected at the order level.',
+    title: 'Promotional Merchandise Software | Decoded Ops',
+    description: 'Promotional merchandise software that puts every supplier in one clean catalogue, keeps artwork out of email threads, and protects margin at the order level.',
   },
 };
 

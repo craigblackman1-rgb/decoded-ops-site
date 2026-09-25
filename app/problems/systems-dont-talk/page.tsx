@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'When Your Systems Don\'t Talk to Each Other: Decoded Ops',
- description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what re-keying orders between systems that don\'t talk is actually costing you each week.',
+ title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+ description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
   alternates: { canonical: '/problems/systems-dont-talk' },
   openGraph: {
-   title: 'When Your Systems Don\'t Talk to Each Other: Decoded Ops',
-   description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what re-keying orders between systems that don\'t talk is actually costing you each week.',
+   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
    url: 'https://decodedops.co.uk/problems/systems-dont-talk',
    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
    card: 'summary_large_image',
-   title: 'When Your Systems Don\'t Talk to Each Other: Decoded Ops',
-   description: 'Disconnected systems mean manual rekeying, errors, and hidden costs. Find out what re-keying orders between systems that don\'t talk is actually costing you each week.',
+   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
+   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
   },
 };
 

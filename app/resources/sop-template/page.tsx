@@ -22,20 +22,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Free SOP Template for Decorated Goods: Decoded Ops',
-  description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+  title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+  description: 'A free SOP template for garment decoration, print and embroidery businesses, with a seven-step writing method and a Process Register included.',
   alternates: { canonical: '/resources/sop-template' },
   openGraph: {
     type: 'website',
-    title: 'Free SOP Template for Decorated Goods: Decoded Ops',
-    description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+    title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+    description: 'A free SOP template for garment decoration, print and embroidery businesses, with a seven-step writing method and a Process Register included.',
     url: 'https://decodedops.co.uk/resources/sop-template',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free SOP Template for Decorated Goods: Decoded Ops',
-    description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+    title: 'Free SOP Template for Decorated Goods | Decoded Ops',
+    description: 'A free SOP template for garment decoration, print and embroidery businesses, with a seven-step writing method and a Process Register included.',
     images: [OG_IMAGE_PATH],
   },
 };

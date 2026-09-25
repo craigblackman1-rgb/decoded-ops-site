@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Inventory blind spots: Decoded Ops',
- description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
+ title: 'Inventory Blind Spots | Decoded Ops',
+ description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
  alternates: { canonical: '/problems/inventory-blind' },
  openGraph: {
-  title: 'Inventory blind spots: Decoded Ops',
-  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
+  title: 'Inventory Blind Spots | Decoded Ops',
+  description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
   url: 'https://decodedops.co.uk/problems/inventory-blind',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Inventory blind spots: Decoded Ops',
-  description: "Ordering stock you already have, and running out of stock you didn't know you needed. Why inventory blindness happens in decorated goods, and how Decoded Works builds one real-time stock picture from your supplier feeds.",
+  title: 'Inventory Blind Spots | Decoded Ops',
+  description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
  },
 };
 

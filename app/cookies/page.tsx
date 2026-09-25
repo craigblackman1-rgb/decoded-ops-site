@@ -5,20 +5,20 @@ import '@/app/d17-locations.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy: Decoded Ops',
-  description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+  title: 'Cookie Policy | decodedops.co.uk',
+  description: 'How Decoded Ops uses cookies on decodedops.co.uk: what gets set, why it gets set, and how you can manage your preferences at any time from this page.',
   alternates: { canonical: '/cookies' },
   openGraph: {
     type: 'website',
-    title: 'Cookie Policy: Decoded Ops',
-    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+    title: 'Cookie Policy | decodedops.co.uk',
+    description: 'How Decoded Ops uses cookies on decodedops.co.uk: what gets set, why it gets set, and how you can manage your preferences at any time from this page.',
     url: 'https://decodedops.co.uk/cookies',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cookie Policy: Decoded Ops',
-    description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+    title: 'Cookie Policy | decodedops.co.uk',
+    description: 'How Decoded Ops uses cookies on decodedops.co.uk: what gets set, why it gets set, and how you can manage your preferences at any time from this page.',
     images: [OG_IMAGE_PATH],
   },
 };

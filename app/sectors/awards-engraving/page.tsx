@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Software & Systems for Awards & Engraving: Decoded Ops',
-  description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
+  title: 'Engraving Business Software | Decoded Ops',
+  description: 'Engraving business software that gets names, dates and titles from customer to engraver without errors, proofs approved at volume, jobs scheduled on time.',
   alternates: { canonical: '/sectors/awards-engraving' },
   openGraph: {
-    title: 'Software & Systems for Awards & Engraving: Decoded Ops',
-    description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
+    title: 'Engraving Business Software | Decoded Ops',
+    description: 'Engraving business software that gets names, dates and titles from customer to engraver without errors, proofs approved at volume, jobs scheduled on time.',
     url: 'https://decodedops.co.uk/sectors/awards-engraving',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software & Systems for Awards & Engraving: Decoded Ops',
-    description: 'Getting names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled back from the event date.',
+    title: 'Engraving Business Software | Decoded Ops',
+    description: 'Engraving business software that gets names, dates and titles from customer to engraver without errors, proofs approved at volume, jobs scheduled on time.',
   },
 };
 

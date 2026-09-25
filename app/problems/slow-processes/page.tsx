@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Slow Processes Costing You Time and Money: Decoded Ops',
- description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.",
+ title: 'Process Improvement Consultant | Decoded Ops',
+ description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
  alternates: { canonical: '/problems/slow-processes' },
  openGraph: {
-  title: 'Slow Processes Costing You Time and Money: Decoded Ops',
-  description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix. UK-wide.",
+  title: 'Process Improvement Consultant | Decoded Ops',
+  description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
   url: 'https://decodedops.co.uk/problems/slow-processes',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Slow Processes Costing You Time and Money: Decoded Ops',
-  description: "Your processes are slowing production, not your software. I come in, observe how work actually moves through your business, and find exactly what to fix.",
+  title: 'Process Improvement Consultant | Decoded Ops',
+  description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
  },
 };
 

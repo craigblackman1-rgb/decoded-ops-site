@@ -6,20 +6,20 @@ import d17 from '@/app/d17-art.module.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Craig: Decoded Ops',
-  description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems, just from the other side of the table.',
+  title: 'About Craig Blackman, Operations Consultant | Decoded Ops',
+  description: 'Craig Blackman is an operations consultant who started on the warehouse floor, still solving the same problems from the other side of the table today.',
   alternates: { canonical: '/about' },
   openGraph: {
     type: 'website',
-    title: 'About Craig: Decoded Ops',
-    description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
+    title: 'About Craig Blackman, Operations Consultant | Decoded Ops',
+    description: 'Craig Blackman is an operations consultant who started on the warehouse floor, still solving the same problems from the other side of the table today.',
     url: 'https://decodedops.co.uk/about',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Craig: Decoded Ops',
-    description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
+    title: 'About Craig Blackman, Operations Consultant | Decoded Ops',
+    description: 'Craig Blackman is an operations consultant who started on the warehouse floor, still solving the same problems from the other side of the table today.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -8,19 +8,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import '@/app/d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Teamwear & Clubwear: Decoded Ops',
-  description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+  title: 'Teamwear Management Software | Decoded Ops',
+  description: 'Teamwear management software for squad numbers, sponsor logos and a hard deadline before the first match: the proof loop before the season starts.',
   alternates: { canonical: '/sectors/teamwear-clubwear' },
   openGraph: {
-    title: 'Teamwear & Clubwear: Decoded Ops',
-    description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+    title: 'Teamwear Management Software | Decoded Ops',
+    description: 'Teamwear management software for squad numbers, sponsor logos and a hard deadline before the first match: the proof loop before the season starts.',
     url: 'https://decodedops.co.uk/sectors/teamwear-clubwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teamwear & Clubwear: Decoded Ops',
-    description: 'Squad numbers, sponsor logos and a hard deadline before the first match. The proof and approval loop that eats time before the season starts.',
+    title: 'Teamwear Management Software | Decoded Ops',
+    description: 'Teamwear management software for squad numbers, sponsor logos and a hard deadline before the first match: the proof loop before the season starts.',
   },
 };
 

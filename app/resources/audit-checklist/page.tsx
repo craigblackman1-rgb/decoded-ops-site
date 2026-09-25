@@ -16,7 +16,7 @@ const schema = {
     {
       '@type': 'Article',
       headline: 'Operational Audit Checklist',
-      description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses.',
+      description: 'A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.',
       author: { '@type': 'Person', name: 'Craig Blackman' },
       publisher: { '@type': 'Organization', name: 'Decoded Ops' },
       url: 'https://decodedops.co.uk/resources/audit-checklist',
@@ -25,20 +25,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Free Technology & Operations Audit Checklist: Decoded Ops',
-  description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
+  title: 'Technology Audit Checklist | Decoded Ops',
+  description: 'A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.',
   alternates: { canonical: '/resources/audit-checklist' },
   openGraph: {
     type: 'website',
-    title: 'Free Technology & Operations Audit Checklist: Decoded Ops',
-    description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
+    title: 'Technology Audit Checklist | Decoded Ops',
+    description: 'A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.',
     url: 'https://decodedops.co.uk/resources/audit-checklist',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Technology & Operations Audit Checklist: Decoded Ops',
-    description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
+    title: 'Technology Audit Checklist | Decoded Ops',
+    description: 'A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.',
     images: [OG_IMAGE_PATH],
   },
 };

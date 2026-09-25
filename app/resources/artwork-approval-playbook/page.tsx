@@ -22,20 +22,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
-  description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+  title: 'Artwork Approval Workflow Playbook | Decoded Ops',
+  description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
   alternates: { canonical: '/resources/artwork-approval-playbook' },
   openGraph: {
     type: 'website',
-    title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
-    description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+    title: 'Artwork Approval Workflow Playbook | Decoded Ops',
+    description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
     url: 'https://decodedops.co.uk/resources/artwork-approval-playbook',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
-    description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+    title: 'Artwork Approval Workflow Playbook | Decoded Ops',
+    description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
     images: [OG_IMAGE_PATH],
   },
 };

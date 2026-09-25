@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'No Operations Owner? Here\'s What That Costs You: Decoded Ops',
- description: 'When no one owns operations in a growing business, the same problems repeat, until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
+ title: 'Head of Operations for Small Business | Decoded Ops',
+ description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
  alternates: { canonical: '/problems/no-ops-owner' },
  openGraph: {
-  title: 'No Operations Owner? Here\'s What That Costs You: Decoded Ops',
-  description: 'When no one owns operations in a growing business, the same problems repeat, until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
+  title: 'Head of Operations for Small Business | Decoded Ops',
+  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
   url: 'https://decodedops.co.uk/problems/no-ops-owner',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'No Operations Owner? Here\'s What That Costs You: Decoded Ops',
-  description: 'When no one owns operations in a growing business, the same problems repeat, until someone owns it. Here\'s what an ops lead actually does, and how to get one without a full-time hire.',
+  title: 'Head of Operations for Small Business | Decoded Ops',
+  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
  },
 };
 

@@ -8,20 +8,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
-  description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a 1-to-1 personal training studio for clinical populations.',
+  title: 'Eternal Fitness Case Study | Decoded Ops',
+  description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
   alternates: { canonical: '/case-studies/eternal-fitness' },
   openGraph: {
     type: 'article',
-    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
-    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
+    title: 'Eternal Fitness Case Study | Decoded Ops',
+    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
-    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
+    title: 'Eternal Fitness Case Study | Decoded Ops',
+    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
     images: [OG_IMAGE_PATH],
   },
 };

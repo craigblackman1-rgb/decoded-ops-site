@@ -7,20 +7,20 @@ import s from '@/app/deco-page.module.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Clarity Audit: Decoded Ops',
-  description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500 and the way every Decoded Ops engagement starts.',
+  title: 'Technology Audit for Small Business | Decoded Ops',
+  description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £1,500.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Clarity Audit: Decoded Ops',
-    description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500.',
+    title: 'Technology Audit for Small Business | Decoded Ops',
+    description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £1,500.',
     url: 'https://decodedops.co.uk/clarity',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clarity Audit: Decoded Ops',
-    description: 'One day on site, a written report within five, and the 3× Clarity Guarantee.',
+    title: 'Technology Audit for Small Business | Decoded Ops',
+    description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £1,500.',
     images: [OG_IMAGE_PATH],
   },
 };

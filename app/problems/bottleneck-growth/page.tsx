@@ -11,19 +11,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Growth bottleneck: Decoded Ops',
- description: "The business stops where you stop. When every decision still goes through the owner, purchase orders, artwork approvals, production scheduling, growth hits a hard ceiling. The fix is documented process that means the business runs without you in the room.",
+ title: 'Growth Bottleneck Operations | Decoded Ops',
+ description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
  alternates: { canonical: '/problems/bottleneck-growth' },
  openGraph: {
-  title: 'Growth bottleneck: Decoded Ops',
-  description: "The business stops where you stop. When every decision still goes through the owner, growth hits a hard ceiling. The fix is documented process that means the business runs without you in the room.",
+  title: 'Growth Bottleneck Operations | Decoded Ops',
+  description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
   url: 'https://decodedops.co.uk/problems/bottleneck-growth',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Growth bottleneck: Decoded Ops',
-  description: "The business stops where you stop. When every decision still goes through the owner, growth hits a hard ceiling.",
+  title: 'Growth Bottleneck Operations | Decoded Ops',
+  description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
  },
 };
 

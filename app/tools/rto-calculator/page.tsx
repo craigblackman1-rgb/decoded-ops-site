@@ -12,27 +12,26 @@ const jsonLd = {
   name: 'RTO Calculator',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+  description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
   url: 'https://decodedops.co.uk/tools/rto-calculator',
 };
 
 export const metadata: Metadata = {
-  title: 'RTO Calculator: Decoded Ops',
-  description:
-    'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth. Free tool for operations leaders.',
+  title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
+  description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
   alternates: { canonical: '/tools/rto-calculator' },
   openGraph: {
     type: 'website',
-    title: 'RTO Calculator: Decoded Ops',
-    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+    title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
+    description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
     url: 'https://decodedops.co.uk/tools/rto-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RTO Calculator: Decoded Ops',
-    description: 'Calculate the financial cost of your current recovery time objective and see what faster recovery is worth.',
+    title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
+    description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
     images: [OG_IMAGE_PATH],
   },
 };

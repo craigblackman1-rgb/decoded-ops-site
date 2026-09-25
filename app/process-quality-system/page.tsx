@@ -6,20 +6,20 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Process & Quality System: Decoded Ops',
-  description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
+  title: 'How to Write a Standard Operating Procedure | Decoded Ops',
+  description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
   alternates: { canonical: '/process-quality-system' },
   openGraph: {
     type: 'website',
-    title: 'Process & Quality System: Decoded Ops',
-    description: 'Not a report that sits in a drawer. A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
+    title: 'How to Write a Standard Operating Procedure | Decoded Ops',
+    description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
     url: 'https://decodedops.co.uk/process-quality-system',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Process & Quality System: Decoded Ops',
-    description: 'A working system for how the business documents, checks and improves its own processes, built during the engagement and owned by you after it.',
+    title: 'How to Write a Standard Operating Procedure | Decoded Ops',
+    description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Seasonal peaks: Decoded Ops',
- description: "Your busiest month is four times your quietest, and your systems can't flex. Why seasonal peaks break decorated-goods operations, and how automation means ten times the orders doesn't mean ten times the staff.",
+ title: 'Seasonal Peak Operations Planning | Decoded Ops',
+ description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
  alternates: { canonical: '/problems/seasonal-peaks' },
  openGraph: {
-  title: 'Seasonal peaks: Decoded Ops',
-  description: "Your busiest month is four times your quietest, and your systems can't flex. Why seasonal peaks break decorated-goods operations.",
+  title: 'Seasonal Peak Operations Planning | Decoded Ops',
+  description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
   url: 'https://decodedops.co.uk/problems/seasonal-peaks',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Seasonal peaks: Decoded Ops',
-  description: "Your busiest month is four times your quietest, and your systems can't flex.",
+  title: 'Seasonal Peak Operations Planning | Decoded Ops',
+  description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
  },
 };
 

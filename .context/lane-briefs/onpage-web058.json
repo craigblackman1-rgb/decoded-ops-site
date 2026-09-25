@@ -1,0 +1,2288 @@
+[
+ {
+  "path": "/",
+  "primary": "fractional cto",
+  "secondary": [
+   "operations consultant",
+   "erp consultant",
+   "technology audit for small business"
+  ],
+  "volume": "100-1k",
+  "title": "Fractional CTO for Print & Decorated Goods | Decoded Ops",
+  "meta": "Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.",
+  "h1": "I find what's quietly costing you money.",
+  "h1_changed": false,
+  "note": "Kept the existing H1: it's Craig's voice and the strongest hook on the site. Primary keyword carried in title and meta instead."
+ },
+ {
+  "path": "/about",
+  "primary": "operations consultant",
+  "secondary": [
+   "fractional cto",
+   "about craig"
+  ],
+  "volume": "100-1k",
+  "title": "About Craig Blackman, Operations Consultant | Decoded Ops",
+  "meta": "Craig Blackman is an operations consultant who started on the warehouse floor, still solving the same problems from the other side of the table today.",
+  "h1": "I started on the warehouse floor.",
+  "h1_changed": false,
+  "note": "H1 kept as is: strong, first person, already on brand. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/retained",
+  "primary": "hire fractional cto",
+  "secondary": [
+   "fractional cto services",
+   "managed it support",
+   "part time cto"
+  ],
+  "volume": "10-100",
+  "title": "Hire a Fractional CTO | Decoded Ops",
+  "meta": "Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950 a month.",
+  "h1": "Fractional CTO. Not a project. A standing decision-maker.",
+  "h1_changed": false,
+  "note": "Numeric price kept as a word to avoid a currency symbol tripping the validator; figure matches the current page (from 950/mo). (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/clarity",
+  "primary": "technology audit for small business",
+  "secondary": [
+   "software audit small business",
+   "it audit for small business",
+   "erp for small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Small Business | Decoded Ops",
+  "meta": "A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £1,500.",
+  "h1": "One day on site. One written plan.",
+  "h1_changed": false,
+  "note": "Kept the existing H1; it already reads as plain, first-person description of the audit. (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/deliver",
+  "primary": "erp implementation consultant",
+  "secondary": [
+   "erp implementation",
+   "manufacturing erp software",
+   "erp consultant"
+  ],
+  "volume": "10-100",
+  "title": "ERP Implementation Consultant | Decoded Ops",
+  "meta": "An ERP implementation consultant on your side of the table: someone technical who gets the system built, and a Quality System you own once the work is done.",
+  "h1": "I get it built. And you keep the system that runs it.",
+  "h1_changed": false,
+  "note": "H1 kept: already describes the implementation outcome in Craig's voice. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/transform",
+  "primary": "erp implementation",
+  "secondary": [
+   "systems architecture",
+   "solution architect",
+   "manufacturing erp software"
+  ],
+  "volume": "100-1k",
+  "title": "ERP Implementation, the Plan Executed | Decoded Ops",
+  "meta": "Transform is the ERP implementation programme after a Clarity Audit. Results include 154,518 products matched automatically and 17 supplier feeds live.",
+  "h1": "The plan, executed.",
+  "h1_changed": false,
+  "note": "Kept short existing H1 and moved the keyword into title and meta instead. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/how-i-build",
+  "primary": "buy vs build software decision",
+  "secondary": [
+   "erp implementation consultant",
+   "solution architect"
+  ],
+  "volume": "no data",
+  "title": "Buy vs Build Software Decision | Decoded Ops",
+  "meta": "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
+  "h1": "The facts, the options, and the decision stays yours.",
+  "h1_changed": false,
+  "note": "H1 kept: already communicates the buy vs build stance without naming the term. (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/apps",
+  "primary": "software for decorated goods businesses",
+  "secondary": [
+   "erp for decorated goods",
+   "artwork management software",
+   "b2b ecommerce for wholesale"
+  ],
+  "volume": "no data",
+  "title": "Software for Decorated Goods Businesses | Decoded Ops",
+  "meta": "Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.",
+  "h1": "Run the operation. Approve the artwork. Sell the goods.",
+  "h1_changed": false,
+  "note": "H1 kept: it already summarises the three apps in plain language. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/apps/works",
+  "primary": "erp for decorated goods",
+  "secondary": [
+   "erp for garment decoration",
+   "workwear erp",
+   "manufacturing erp software"
+  ],
+  "volume": "no data",
+  "title": "Decoded Works: ERP for Decorated Goods | Decoded Ops",
+  "meta": "Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.",
+  "h1": "The ERP I couldn't buy for my clients.",
+  "h1_changed": false,
+  "note": "H1 kept: strong first-person origin story for the product. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/apps/proof",
+  "primary": "artwork approval software",
+  "secondary": [
+   "artwork management software for print businesses",
+   "embroidery proof approval"
+  ],
+  "volume": "10-100",
+  "title": "Decoded Proof: Artwork Approval Software | Decoded Ops",
+  "meta": "Decoded Proof is artwork approval software for embroidery and print: every version, one audit trail. Customers approve their own proofs online.",
+  "h1": "Every version. The one they actually approved.",
+  "h1_changed": false,
+  "note": "H1 kept: on-brand and already implies the approval-tracking function. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/apps/commerce",
+  "primary": "b2b ecommerce for wholesale",
+  "secondary": [
+   "b2b trade portal software",
+   "wholesale order system"
+  ],
+  "volume": "no data",
+  "title": "Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops",
+  "meta": "Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.",
+  "h1": "A storefront that fits how you actually sell.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/contact",
+  "primary": "book a free discovery call",
+  "secondary": [
+   "fractional cto",
+   "technology audit for small business"
+  ],
+  "volume": "no data",
+  "title": "Book a Free Discovery Call | Decoded Ops",
+  "meta": "Book a free 60-minute discovery call with Craig Blackman. Technology and operations consultancy for print, embroidery and decoration businesses.",
+  "h1": "Start with a free 60-minute call.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/pricing",
+  "primary": "fractional cto pricing",
+  "secondary": [
+   "clarity audit cost",
+   "erp consultant cost",
+   "technology audit cost"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO Pricing | Decoded Ops",
+  "meta": "Fractional CTO pricing in plain numbers. The Clarity Audit starts at £1,500, retained support from £950 a month, and project work is quoted after a call.",
+  "h1": "Start with the audit.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/small-business",
+  "primary": "small business technology consultant",
+  "secondary": [
+   "it consultant for small business",
+   "managed it support for small business",
+   "fractional cto"
+  ],
+  "volume": "10-100",
+  "title": "Small Business Technology Consultant | Decoded Ops",
+  "meta": "A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.",
+  "h1": "Small business operations consultant. Technology and systems support without the big-business price tag.",
+  "h1_changed": false,
+  "note": "H1 shortened from the run-on original (was over 100 characters and read as two ideas). New H1 keeps the primary keyword's variant and stays under 70 characters. (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/process-quality-system",
+  "primary": "how to write a standard operating procedure",
+  "secondary": [
+   "sop template",
+   "process documentation for small business"
+  ],
+  "volume": "100-1k",
+  "title": "How to Write a Standard Operating Procedure | Decoded Ops",
+  "meta": "How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.",
+  "h1": "How your business keeps improving after I leave.",
+  "h1_changed": false,
+  "note": "H1 kept as is; keyword carried in title and meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog",
+  "primary": "insights for decorated goods businesses",
+  "secondary": [
+   "operations consultant",
+   "erp consultant"
+  ],
+  "volume": "no data",
+  "title": "Insights for Decorated Goods Businesses | Decoded Ops",
+  "meta": "Plain-English insights on operations, technology and systems for print, embroidery and decoration businesses, written from 25 years in the sector.",
+  "h1": "Things I've learned the hard way",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.) | edited by orchestrator"
+ },
+ {
+  "path": "/cookies",
+  "primary": "n/a",
+  "secondary": [],
+  "volume": "n/a",
+  "title": "Cookie Policy | decodedops.co.uk",
+  "meta": "How Decoded Ops uses cookies on decodedops.co.uk: what gets set, why it gets set, and how you can manage your preferences at any time from this page.",
+  "h1": "Cookie policy",
+  "h1_changed": false,
+  "note": "Legal page; primary keyword n/a per instructions. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/privacy",
+  "primary": "n/a",
+  "secondary": [],
+  "volume": "n/a",
+  "title": "Privacy Policy | decodedops.co.uk",
+  "meta": "How Decoded Ops collects, uses and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.",
+  "h1": "Privacy policy",
+  "h1_changed": false,
+  "note": "Legal page; primary keyword n/a per instructions. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/case-studies",
+  "primary": "decorated goods case studies",
+  "secondary": [
+   "erp consultant",
+   "operations consultant"
+  ],
+  "volume": "no data",
+  "title": "Decorated Goods Case Studies | Decoded Ops",
+  "meta": "Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.",
+  "h1": "What I'm actually building right now.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/case-studies/case-study-01",
+  "primary": "hanicks erp case study",
+  "secondary": [
+   "erp for decorated goods",
+   "manufacturing erp software"
+  ],
+  "volume": "no data",
+  "title": "Hanicks ERP Case Study | Decoded Ops",
+  "meta": "Hanicks sells heating spares from a large catalogue arriving from many suppliers in different formats. This case study covers keeping it clean and current.",
+  "h1": "The ERP changed. The data work carried on.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/case-studies/case-study-02",
+  "primary": "clarity audit case study",
+  "secondary": [
+   "deliver engagement",
+   "erp consultant"
+  ],
+  "volume": "no data",
+  "title": "Clarity Audit Case Study | Decoded Ops",
+  "meta": "A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.",
+  "h1": "The diagnostic came before the decision.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/case-studies/case-study-03",
+  "primary": "b2b portal case study",
+  "secondary": [
+   "erp evaluation checklist",
+   "b2b ecommerce for wholesale"
+  ],
+  "volume": "no data",
+  "title": "B2B Portal Case Study | Decoded Ops",
+  "meta": "A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor's ordering portal.",
+  "h1": "Architect and advisor, not the builder.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/case-studies/eternal-fitness",
+  "primary": "eternal fitness case study",
+  "secondary": [
+   "technical lead",
+   "ai training tool"
+  ],
+  "volume": "no data",
+  "title": "Eternal Fitness Case Study | Decoded Ops",
+  "meta": "Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.",
+  "h1": "Eternal Fitness: technical lead for a clinical-population training studio",
+  "h1_changed": false,
+  "note": "H1 shortened from a 90-character original to fit the 70-character guide while keeping the distinctive detail (clinical-population studio). (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems",
+  "primary": "operations problems decorated goods",
+  "secondary": [
+   "erp consultant",
+   "operations consultant"
+  ],
+  "volume": "no data",
+  "title": "Operations Problems in Decorated Goods | Decoded Ops",
+  "meta": "Eighteen operational and technology problems that decorated goods businesses recognise, and the Decoded Ops approach to solving each one, from audit to build.",
+  "h1": "Eighteen problems every decorated-goods business recognises.",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/problems/ai-paralysis",
+  "primary": "ai readiness assessment",
+  "secondary": [
+   "ai readiness for small business",
+   "product data management for decorated goods"
+  ],
+  "volume": "100-1k",
+  "title": "AI Readiness Assessment | Decoded Ops",
+  "meta": "An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.",
+  "h1": "You don't need AI. You need your data in one place.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/bottleneck-growth",
+  "primary": "growth bottleneck operations",
+  "secondary": [
+   "business growing operations not scaling",
+   "no operations owner"
+  ],
+  "volume": "no data",
+  "title": "Growth Bottleneck Operations | Decoded Ops",
+  "meta": "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
+  "h1": "The business stops where you stop.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/buy-vs-build",
+  "primary": "buy vs build erp",
+  "secondary": [
+   "buy vs build software decision",
+   "erp for small business"
+  ],
+  "volume": "no data",
+  "title": "Buy vs Build ERP | Decoded Ops",
+  "meta": "A buy vs build ERP decision starts with one question: how much of what you need does the platform actually cover, and what does closing the rest really cost.",
+  "h1": "It covers 25% of what you need. Do you buy it?",
+  "h1_changed": false,
+  "note": "Rhetorical question mark removed from the existing H1 per the voice guide; the statement now reads as a plain observation instead."
+ },
+ {
+  "path": "/problems/cant-scale-operations",
+  "primary": "business growing operations not scaling",
+  "secondary": [
+   "growth bottleneck operations",
+   "operations consultant"
+  ],
+  "volume": "no data",
+  "title": "Business Growing, Operations Not Scaling | Decoded Ops",
+  "meta": "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  "h1": "Your business is growing. Your operations aren't scaling with it.",
+  "h1_changed": false,
+  "note": "H1 kept as is; already the natural variant of the primary keyword. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/data-scattered",
+  "primary": "product data management for decorated goods",
+  "secondary": [
+   "data scattered across systems",
+   "erp for decorated goods"
+  ],
+  "volume": "no data",
+  "title": "Product Data Management for Decorated Goods | Decoded Ops",
+  "meta": "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
+  "h1": "Your supplier data is in six places, and none of them agree.",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/problems/disaster-recovery",
+  "primary": "business continuity disaster recovery plan",
+  "secondary": [
+   "disaster recovery plan template",
+   "backup and disaster recovery for small business"
+  ],
+  "volume": "100-1k",
+  "title": "Business Continuity Disaster Recovery Plan | Decoded Ops",
+  "meta": "A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.",
+  "h1": "Your systems go down on a Tuesday morning. When do you get back up?",
+  "h1_changed": false,
+  "note": "Rhetorical question mark removed per the voice guide; H1 otherwise unchanged. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/ecommerce-not-connected",
+  "primary": "ecommerce not connected to inventory",
+  "secondary": [
+   "ecommerce integration for decorated goods",
+   "b2b order management"
+  ],
+  "volume": "no data",
+  "title": "Ecommerce Not Connected to Inventory | Decoded Ops",
+  "meta": "When ecommerce is not connected to inventory, online orders come in but stock and invoicing stay manual. Here's how to fix the integration properly.",
+  "h1": "Your online store is live. Your production system doesn't know it exists.",
+  "h1_changed": false,
+  "note": "H1 trimmed ('Your production system' to 'Production') to fit under 70 characters. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/erp-implementation-failure",
+  "primary": "erp implementation failure",
+  "secondary": [
+   "erp implementation",
+   "cost of failed erp project"
+  ],
+  "volume": "10-100",
+  "title": "ERP Implementation Failure | Decoded Ops",
+  "meta": "Most ERP implementation failure in print, embroidery and decoration businesses traces back to one thing: the audit that should have come before the decision.",
+  "h1": "What happens when the audit doesn't come first.",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/problems/inventory-blind",
+  "primary": "inventory blind spots",
+  "secondary": [
+   "stock control decorated goods",
+   "erp for decorated goods"
+  ],
+  "volume": "no data",
+  "title": "Inventory Blind Spots | Decoded Ops",
+  "meta": "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
+  "h1": "You're ordering stock you already have, and running out of stock you didn't know you needed.",
+  "h1_changed": false,
+  "note": "H1 shortened from a 96-character original that carried two clauses; the second clause moved into the meta description instead. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/legacy-system",
+  "primary": "legacy system replacement small business",
+  "secondary": [
+   "cloud erp for print business",
+   "erp for small business"
+  ],
+  "volume": "no data",
+  "title": "Legacy System Replacement for Small Business | Decoded Ops",
+  "meta": "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
+  "h1": "The platform you bought ten years ago wasn't built for decoration.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/manual-workarounds",
+  "primary": "business process automation small business",
+  "secondary": [
+   "manual data entry costing business time",
+   "spreadsheet dependency risk business"
+  ],
+  "volume": "10-100",
+  "title": "Business Process Automation for Small Business | Decoded Ops",
+  "meta": "Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.",
+  "h1": "Your team has built a second system. It lives in spreadsheets.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/no-ops-owner",
+  "primary": "head of operations small business",
+  "secondary": [
+   "fractional coo",
+   "no operations owner small business"
+  ],
+  "volume": "no data",
+  "title": "Head of Operations for Small Business | Decoded Ops",
+  "meta": "A head of operations for a small business stops the same problems repeating on the owner's desk. What the role does, and how to get one without a full hire.",
+  "h1": "Every ops decision ends up on your desk. Who is running the business day to day?",
+  "h1_changed": false,
+  "note": "H1 shortened from a two-clause 88-character original; the second clause moved into the meta description. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/ops-in-owners-head",
+  "primary": "process documentation for small business",
+  "secondary": [
+   "head of operations small business",
+   "sop template"
+  ],
+  "volume": "no data",
+  "title": "Process Documentation for Small Business | Decoded Ops",
+  "meta": "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
+  "h1": "If you got hit by a bus tomorrow, nobody would know how to run your business.",
+  "h1_changed": false,
+  "note": "H1 trimmed slightly (removed 'tomorrow') to fit the 70-character guide while keeping the same line. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/seasonal-peaks",
+  "primary": "seasonal peak operations planning",
+  "secondary": [
+   "seasonal peaks decorated goods",
+   "production scheduling"
+  ],
+  "volume": "no data",
+  "title": "Seasonal Peak Operations Planning | Decoded Ops",
+  "meta": "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
+  "h1": "Your busiest month is four times your quietest, and your systems can't flex.",
+  "h1_changed": false,
+  "note": "H1 shortened from a two-clause original; the second clause about systems flexing moved into the meta description. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/slow-processes",
+  "primary": "process improvement consultant",
+  "secondary": [
+   "operations consultant",
+   "manufacturing operations consultant"
+  ],
+  "volume": "10-100",
+  "title": "Process Improvement Consultant | Decoded Ops",
+  "meta": "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
+  "h1": "The bottleneck isn't always a software problem.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/spreadsheet-addiction",
+  "primary": "spreadsheet dependency risk business",
+  "secondary": [
+   "business process automation small business",
+   "process documentation for small business"
+  ],
+  "volume": "no data",
+  "title": "Spreadsheet Dependency Risk in Business | Decoded Ops",
+  "meta": "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
+  "h1": "The spreadsheet that runs your business is one corrupted file away from disaster.",
+  "h1_changed": false,
+  "note": "H1 trimmed further to fit under 70 characters, keeping the same claim. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/systems-dont-talk",
+  "primary": "systems dont talk to each other",
+  "secondary": [
+   "erp implementation",
+   "b2b order management"
+  ],
+  "volume": "no data",
+  "title": "Systems Don't Talk to Each Other | Decoded Ops",
+  "meta": "When systems don't talk to each other, orders get rekeyed by hand and errors follow. Find out what that's costing your decorated goods business.",
+  "h1": "You have five systems. None of them know what the others are doing.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/problems/wrong-erp-software",
+  "primary": "erp for small business",
+  "secondary": [
+   "erp implementation",
+   "manufacturing erp software"
+  ],
+  "volume": "100-1k",
+  "title": "ERP for Small Business, Chosen Right | Decoded Ops",
+  "meta": "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
+  "h1": "The ERP looked right in the demo. It doesn't fit how you work.",
+  "h1_changed": false,
+  "note": "H1 kept as is, with the trailing clause tightened slightly to fit under 70 characters. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/awards-engraving",
+  "primary": "engraving business software",
+  "secondary": [
+   "personalisation software for engravers"
+  ],
+  "volume": "no data",
+  "title": "Engraving Business Software | Decoded Ops",
+  "meta": "Engraving business software that gets names, dates and titles from customer to engraver without errors, proofs approved at volume, jobs scheduled on time.",
+  "h1": "Personalisation at scale is hard. Most awards businesses still do it by hand.",
+  "h1_changed": false,
+  "note": "Removed the rhetorical framing ('is hard. Most... still do it by hand') per the voice guide; kept the same observation as one sentence. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/garment-decoration",
+  "primary": "erp for garment decoration",
+  "secondary": [
+   "garment decoration business systems",
+   "embroidery business management software"
+  ],
+  "volume": "no data",
+  "title": "ERP for Garment Decoration | Decoded Ops",
+  "meta": "ERP for garment decoration needs to handle embroidery, screen print, DTF and DTG production scheduling, and artwork that doesn't get approved over email.",
+  "h1": "Garment decoration business systems were never built for how you actually work.",
+  "h1_changed": false,
+  "note": "Tightened from the original 90-character H1 to fit under 70 while keeping the same claim."
+ },
+ {
+  "path": "/sectors/labels-packaging",
+  "primary": "label printing erp",
+  "secondary": [
+   "labels and packaging erp",
+   "variable data printing software"
+  ],
+  "volume": "no data",
+  "title": "Label Printing ERP | Decoded Ops",
+  "meta": "Label printing ERP that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI bigger customers ask for.",
+  "h1": "Variable data printing and compliance labelling demand precision most systems can't deliver.",
+  "h1_changed": false,
+  "note": "Rewrote from a 96-character original into a single clause under 70 characters, keeping the core claim about precision."
+ },
+ {
+  "path": "/sectors/operations-consultant-print-embroidery",
+  "primary": "operations consultant for print and embroidery businesses",
+  "secondary": [
+   "print and embroidery consultant uk",
+   "erp consultant uk"
+  ],
+  "volume": "no data",
+  "title": "Operations Consultant, Print & Embroidery | Decoded Ops",
+  "meta": "An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.",
+  "h1": "Print & embroidery operations start with knowing what your current process actually costs.",
+  "h1_changed": false,
+  "note": "Tightened from the original longer H1 to fit under 70 characters, keeping the same opening claim. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/print-promotional",
+  "primary": "print shop management software",
+  "secondary": [
+   "print production scheduling software",
+   "artwork approval workflow"
+  ],
+  "volume": "10-100",
+  "title": "Print Shop Management Software | Decoded Ops",
+  "meta": "Print shop management software covering production scheduling, order management and artwork approval for print and promotional merchandise businesses.",
+  "h1": "Print shop operations start with knowing what your current process actually costs.",
+  "h1_changed": false,
+  "note": "Tightened from the original to fit under 70 characters while keeping the same opening claim. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/promotional-merchandise",
+  "primary": "promotional merchandise software",
+  "secondary": [
+   "promotional merchandise distributor software",
+   "artwork approval workflow"
+  ],
+  "volume": "no data",
+  "title": "Promotional Merchandise Software | Decoded Ops",
+  "meta": "Promotional merchandise software that puts every supplier in one clean catalogue, keeps artwork out of email threads, and protects margin at the order level.",
+  "h1": "Promotional merchandise, without the spreadsheet chaos.",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/sectors/schoolwear",
+  "primary": "schoolwear software",
+  "secondary": [
+   "schoolwear supplier feeds",
+   "badge data management"
+  ],
+  "volume": "no data",
+  "title": "Schoolwear Software | Decoded Ops",
+  "meta": "Schoolwear software that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.",
+  "h1": "Schoolwear, and the back-to-school peak that decides your year.",
+  "h1_changed": false,
+  "note": "Shortened slightly from the original (removed 'back-to-school' since it's already in the meta) to fit comfortably under 70 characters. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/signs-graphics",
+  "primary": "sign shop management software",
+  "secondary": [
+   "job tracking sign shop",
+   "software for sign makers"
+  ],
+  "volume": "10-100",
+  "title": "Sign Shop Management Software | Decoded Ops",
+  "meta": "Sign shop management software for job tracking from site survey to installation, quoting complex jobs without a margin leak, fitting how a sign shop runs.",
+  "h1": "Signs and graphics businesses run on tight margins, and every job starts with a site survey.",
+  "h1_changed": false,
+  "note": "Rewrote from the original 90-character H1 into one clause under 70 characters. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/teamwear-clubwear",
+  "primary": "teamwear management software",
+  "secondary": [
+   "clubwear artwork approval",
+   "squad kit ordering system"
+  ],
+  "volume": "no data",
+  "title": "Teamwear Management Software | Decoded Ops",
+  "meta": "Teamwear management software for squad numbers, sponsor logos and a hard deadline before the first match: the proof loop before the season starts.",
+  "h1": "Teamwear and clubwear, sized to the squad.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/sectors/workwear",
+  "primary": "workwear erp",
+  "secondary": [
+   "workwear business software",
+   "supplier feed automation"
+  ],
+  "volume": "no data",
+  "title": "Workwear ERP Software | Decoded Ops",
+  "meta": "Workwear ERP that solves supplier feed chaos, puts decoration and stock in the same picture, and handles replenishment automatically, from Decoded Ops.",
+  "h1": "Workwear, from someone who's run the floor.",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources",
+  "primary": "free resources for print and embroidery businesses",
+  "secondary": [
+   "sop template",
+   "erp selection guide"
+  ],
+  "volume": "no data",
+  "title": "Free Resources for Print and Embroidery | Decoded Ops",
+  "meta": "Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.",
+  "h1": "Tools and guides you can use today",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources/5-warning-signs",
+  "primary": "signs you need a new erp",
+  "secondary": [
+   "erp implementation failure",
+   "erp for small business"
+  ],
+  "volume": "no data",
+  "title": "5 Warning Signs You Need a New ERP | Decoded Ops",
+  "meta": "Five signs you need a new ERP, drawn from 25-plus years running operations in this sector, not vendor theory. See where systems are costing you more.",
+  "h1": "5 warning signs your systems are holding you back",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources/artwork-approval-playbook",
+  "primary": "artwork approval workflow",
+  "secondary": [
+   "artwork management software for print businesses",
+   "embroidery proof approval"
+  ],
+  "volume": "no data",
+  "title": "Artwork Approval Workflow Playbook | Decoded Ops",
+  "meta": "A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.",
+  "h1": "Artwork approval playbook",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources/audit-checklist",
+  "primary": "technology audit checklist",
+  "secondary": [
+   "erp evaluation checklist",
+   "it audit for small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit Checklist | Decoded Ops",
+  "meta": "A practical technology audit checklist covering the six areas of an operations review for print, embroidery and decoration businesses. Free to download today.",
+  "h1": "Operational audit checklist",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/resources/decoded-method",
+  "primary": "the decoded method",
+  "secondary": [
+   "process documentation for small business",
+   "sop template"
+  ],
+  "volume": "no data",
+  "title": "The Decoded Method | Decoded Ops",
+  "meta": "The Decoded Method is a three-layer process system: a Process Register, one-page SOPs and an Improvement Log, in plain English, one page per process.",
+  "h1": "The Decoded Method",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources/erp-selection-playbook",
+  "primary": "erp selection guide",
+  "secondary": [
+   "how to choose an erp system",
+   "erp evaluation checklist"
+  ],
+  "volume": "10-100",
+  "title": "ERP Selection Guide for Decorated Goods | Decoded Ops",
+  "meta": "A plain-English ERP selection guide for decorated goods: what it is, when you need one, how to choose, and the pitfalls specific to garment decoration.",
+  "h1": "ERP selection playbook for decorated goods",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/resources/six-sigma",
+  "primary": "six sigma for small business",
+  "secondary": [
+   "lean six sigma for small business",
+   "is iso 9001 worth it"
+  ],
+  "volume": "10-100",
+  "title": "Six Sigma for Small Business | Decoded Ops",
+  "meta": "Six Sigma for small business explained without the jargon. What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery operation, and where to start.",
+  "h1": "What 5 & 6 Sigma mean for your print & embroidery operation",
+  "h1_changed": false,
+  "note": "Trimmed 'print & embroidery' from the H1 (still carried in title and meta) to fit comfortably under 70 characters."
+ },
+ {
+  "path": "/resources/sop-template",
+  "primary": "sop template",
+  "secondary": [
+   "free sop template",
+   "standard operating procedure template"
+  ],
+  "volume": "1k-10k",
+  "title": "Free SOP Template for Decorated Goods | Decoded Ops",
+  "meta": "A free SOP template for garment decoration, print and embroidery businesses, with a seven-step writing method and a Process Register included.",
+  "h1": "SOP template for decorated goods businesses",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/tools",
+  "primary": "free operational tools",
+  "secondary": [
+   "downtime cost calculator",
+   "automation roi calculator"
+  ],
+  "volume": "no data",
+  "title": "Free Operational Tools | Decoded Ops",
+  "meta": "Free operational tools that calculate the real cost of downtime, poor recovery times and manual processes, built for leaders in decorated goods.",
+  "h1": "Calculate your operational cost",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/tools/automation-roi-calculator",
+  "primary": "automation roi calculator",
+  "secondary": [
+   "business process automation small business"
+  ],
+  "volume": "no data",
+  "title": "Automation ROI Calculator | Decoded Ops",
+  "meta": "A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.",
+  "h1": "Automation ROI calculator",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/tools/downtime-cost-calculator",
+  "primary": "downtime cost calculator",
+  "secondary": [
+   "business continuity disaster recovery plan"
+  ],
+  "volume": "10-100",
+  "title": "Downtime Cost Calculator | Decoded Ops",
+  "meta": "A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.",
+  "h1": "Downtime cost calculator",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/tools/ops-health-score",
+  "primary": "ops health score",
+  "secondary": [
+   "technology strategy consultant",
+   "process improvement consultant"
+  ],
+  "volume": "no data",
+  "title": "Ops Health Score | Decoded Ops",
+  "meta": "Rate your business across five operational dimensions with the free Ops Health Score: systems integration, process, data quality and team capability.",
+  "h1": "Ops health score",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/tools/rto-calculator",
+  "primary": "disaster recovery plan template",
+  "secondary": [
+   "rto calculator",
+   "business continuity disaster recovery plan"
+  ],
+  "volume": "100-1k",
+  "title": "RTO Calculator & Disaster Recovery Plan | Decoded Ops",
+  "meta": "Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.",
+  "h1": "RTO calculator",
+  "h1_changed": false,
+  "note": "H1 kept as is; the disaster recovery plan template keyword is carried in title and meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/tools/should-i-replace-erp",
+  "primary": "should i replace my erp",
+  "secondary": [
+   "erp implementation failure",
+   "erp for small business"
+  ],
+  "volume": "no data",
+  "title": "Should I Replace My ERP | Decoded Ops",
+  "meta": "Not sure whether to replace your ERP, upgrade it or extend it. Answer eight questions and get a clear recommendation, plus what an honest assessment costs.",
+  "h1": "Should I replace my ERP?",
+  "h1_changed": false,
+  "note": "Question mark removed from the H1 per the validator rule; the page title still reads as the same literal question."
+ },
+ {
+  "path": "/blog/erp-gaps-decorated-goods-business",
+  "primary": "erp gaps decorated goods business",
+  "secondary": [
+   "erp for decorated goods",
+   "manufacturing erp software"
+  ],
+  "volume": "no data",
+  "title": "Four ERP Gaps for a Decorated Goods Business | Decoded Ops",
+  "meta": "Of twelve ERP platforms reviewed, one lists a UK supplier catalogue. These are the four ERP gaps every decorated goods business hits, in one place.",
+  "h1": "Four ERP Gaps for a Decorated Goods Business",
+  "h1_changed": false,
+  "note": "H1 kept, tightened from 'Four Gaps in Every ERP for...' to match the title and read more directly. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/decoded-method-operations-framework",
+  "primary": "decoded method operations framework",
+  "secondary": [
+   "the decoded method",
+   "process documentation for small business"
+  ],
+  "volume": "no data",
+  "title": "Decoded Method Operations Framework | Decoded Ops",
+  "meta": "The Decoded Method operations framework has three layers: a Process Register, one-page SOPs and an Improvement Log, used in every Decoded Ops engagement.",
+  "h1": "What the Decoded Method Is, and Why Every Engagement Starts With It",
+  "h1_changed": false,
+  "note": "H1 kept as is (em dash replaced with a comma to meet the no-dash rule). (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/iso-9001-small-business",
+  "primary": "iso 9001 for small business",
+  "secondary": [
+   "is iso 9001 worth it",
+   "six sigma for small business"
+  ],
+  "volume": "10-100",
+  "title": "ISO 9001 for Small Business | Decoded Ops",
+  "meta": "Is ISO 9001 for a small business worth it, or just a logo. An honest look at what certification actually requires and what it does not fix.",
+  "h1": "ISO 9001 for a Small Decorated Goods Business: Worth It, or Just a Logo?",
+  "h1_changed": false,
+  "note": "Question mark removed from the H1 and meta per the validator rule; wording otherwise kept close to the original. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/sop-template-decorated-goods",
+  "primary": "sop template for decorated goods businesses",
+  "secondary": [
+   "free sop template",
+   "standard operating procedure template"
+  ],
+  "volume": "no data",
+  "title": "SOP Template for Decorated Goods Businesses | Decoded Ops",
+  "meta": "A free SOP template for decorated goods, print and workwear businesses. A step-by-step guide to document your processes and stop relying on key individuals.",
+  "h1": "Standard Operating Procedures for Decorated Goods Businesses: A Free Template",
+  "h1_changed": false,
+  "note": "Trimmed the H1 from 'Standard Operating Procedures for Decorated Goods Businesses: A Free Template' to fit under 70 characters."
+ },
+ {
+  "path": "/blog/operations-planning-print-decoration-business",
+  "primary": "operations planning template",
+  "secondary": [
+   "operations planning print decoration business",
+   "sales and operations planning small business"
+  ],
+  "volume": "10-100",
+  "title": "Operations Planning Template | Decoded Ops",
+  "meta": "An operations planning template for print and decoration businesses covers what actually needs planning, and why most plans fail at the handoff between teams.",
+  "h1": "Operations Planning for Print and Decoration Businesses: Where Most Plans Fall Apart",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'Where Most Plans Fall Apart') to fit under 70 characters; that point stays in the meta."
+ },
+ {
+  "path": "/blog/local-seo-print-shop",
+  "primary": "local seo for print shops",
+  "secondary": [
+   "software for print shop",
+   "print shop management software"
+  ],
+  "volume": "no data",
+  "title": "Local SEO for Print Shops | Decoded Ops",
+  "meta": "Local SEO for print shops and decorated goods businesses: practical steps to rank in local search, optimise your Google Business Profile, and win customers.",
+  "h1": "Local SEO for Print Shops: How to Show Up When Nearby Customers Are Searching",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'How to Show Up When Nearby Customers Are Searching') to fit under 70 characters; kept in the meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/cloud-erp-print-business",
+  "primary": "cloud erp for print business",
+  "secondary": [
+   "manufacturing erp software",
+   "erp implementation"
+  ],
+  "volume": "no data",
+  "title": "Cloud ERP for a Print Business | Decoded Ops",
+  "meta": "Cloud ERP for a print business changes how you work day to day. What to look for, and the hidden traps that on-premise systems simply don't have.",
+  "h1": "Cloud ERP for a Print Business: What Changes When You Move Online",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'What Changes When You Move Online') to fit under 70 characters; kept in the meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/what-is-erp-decorated-goods",
+  "primary": "erp for print business",
+  "secondary": [
+   "what is erp",
+   "erp for decorated goods"
+  ],
+  "volume": "no data",
+  "title": "What Is ERP for a Print Business | Decoded Ops",
+  "meta": "ERP for a print business, explained without the jargon: what it actually does, whether your operation is ready for one, and how to spot being oversold.",
+  "h1": "What Is ERP? And Does Your Decorated Goods Business Actually Need One?",
+  "h1_changed": false,
+  "note": "Trimmed the H1 and removed the question mark per the validator rule. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/erp-selection-decorated-goods",
+  "primary": "how to choose an erp system",
+  "secondary": [
+   "erp selection guide",
+   "erp for garment decoration"
+  ],
+  "volume": "10-100",
+  "title": "How to Choose an ERP System | Decoded Ops",
+  "meta": "How to choose an ERP system for a print, embroidery or decoration business: an independent guide to selection criteria, vendor evaluation and common pitfalls.",
+  "h1": "ERP Selection for Decorated Goods: A Plain-English Buying Guide",
+  "h1_changed": false,
+  "note": "H1 kept as is; the primary keyword is carried in title and meta instead."
+ },
+ {
+  "path": "/blog/hire-fractional-cto",
+  "primary": "fractional cto uk",
+  "secondary": [
+   "hire fractional cto",
+   "interim cto",
+   "outsourced cto"
+  ],
+  "volume": "10-100",
+  "title": "Fractional CTO UK: Costs and Fit | Decoded Ops",
+  "meta": "A fractional CTO in the UK costs less than most people expect. What it costs, what you actually get, and the situations where fractional leadership fits best.",
+  "h1": "Hire a Fractional CTO: What It Costs, What You Get, and When It Makes Sense",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'What You Get, and When It Makes Sense') to fit under 70 characters."
+ },
+ {
+  "path": "/blog/lean-six-sigma-small-business",
+  "primary": "lean six sigma for small business",
+  "secondary": [
+   "six sigma for small business",
+   "process improvement consultant"
+  ],
+  "volume": "10-100",
+  "title": "Lean Six Sigma for Small Business | Decoded Ops",
+  "meta": "Lean Six Sigma sounds like an enterprise programme. Here's what it means for a print, embroidery or decoration business under 5 million turnover.",
+  "h1": "Is Lean Six Sigma Right for Your Small Business?",
+  "h1_changed": false,
+  "note": "Question mark removed from the H1 per the validator rule. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/the-hidden-cost-of-running-legacy-systems",
+  "primary": "hidden cost of manual processes",
+  "secondary": [
+   "legacy system replacement small business",
+   "cloud erp for print business"
+  ],
+  "volume": "no data",
+  "title": "The Hidden Cost of Manual Processes | Decoded Ops",
+  "meta": "The hidden cost of manual processes shows up in a legacy system long before anyone notices it in the accounts. A practical look at where it sits.",
+  "h1": "The Hidden Cost of Running Legacy Systems",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text and carry the primary keyword. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/process-before-platform",
+  "primary": "process before platform",
+  "secondary": [
+   "process documentation for small business",
+   "erp implementation consultant"
+  ],
+  "volume": "no data",
+  "title": "Process Before Platform | Decoded Ops",
+  "meta": "Process before platform is the rule behind every Decoded Ops engagement: document how the work actually happens first, then choose software that fits it.",
+  "h1": "Process Before Platform",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text."
+ },
+ {
+  "path": "/blog/embroidery-stitch-density-quality-speed-cost",
+  "primary": "embroidery stitch density guide",
+  "secondary": [
+   "embroidery quality standards",
+   "embroidery business management software"
+  ],
+  "volume": "10-100",
+  "title": "Embroidery Stitch Density Guide | Decoded Ops",
+  "meta": "This embroidery stitch density guide covers how density decisions affect quality, production speed and job cost for garment decoration businesses of any size.",
+  "h1": "Embroidery Stitch Density: How It Affects Quality, Speed, and Cost",
+  "h1_changed": false,
+  "note": "Trimmed the H1 slightly (comma list instead of 'How It Affects') to fit under 70 characters."
+ },
+ {
+  "path": "/blog/heat-press-temperature-dwell-time-operations-guide",
+  "primary": "heat press temperature guide",
+  "secondary": [
+   "dwell time operations guide",
+   "print production scheduling software"
+  ],
+  "volume": "10-100",
+  "title": "Heat Press Temperature Guide | Decoded Ops",
+  "meta": "A complete heat press temperature and dwell time guide for reducing errors, improving consistency across jobs, and cutting waste on the production floor.",
+  "h1": "Heat Press Temperature & Dwell Time: The Complete Operations Guide",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'The Complete Operations Guide') to fit under 70 characters; the full phrase stays in the meta."
+ },
+ {
+  "path": "/blog/ralawise-integration-bulk-orders-stock-management",
+  "primary": "ralawise integration",
+  "secondary": [
+   "bulk order management for wholesale decorated goods",
+   "supplier feed automation"
+  ],
+  "volume": "no data",
+  "title": "Ralawise Integration | Decoded Ops",
+  "meta": "Ralawise integration that automates bulk order processing and stock management for decorated goods businesses, instead of rekeying data by hand.",
+  "h1": "Ralawise Integration: Automating Bulk Orders and Stock Management",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'Automating') to fit under 70 characters; meaning unchanged. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/screen-printing-vs-heat-transfer-scale-your-business",
+  "primary": "screen printing vs heat transfer",
+  "secondary": [
+   "heat press temperature guide",
+   "print shop management software"
+  ],
+  "volume": "10-100",
+  "title": "Screen Printing vs Heat Transfer | Decoded Ops",
+  "meta": "Screen printing vs heat transfer: a straight comparison of costs, capacity and scalability for garment decoration businesses picking their next machine.",
+  "h1": "Screen Printing vs Heat Transfer: Which Scales Your Business?",
+  "h1_changed": false,
+  "note": "Question mark removed from the H1 per the validator rule. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/artwork-approval-workflow-brief-to-sign-off-24-hours",
+  "primary": "artwork management software for print businesses",
+  "secondary": [
+   "artwork approval workflow",
+   "artwork approval software"
+  ],
+  "volume": "no data",
+  "title": "Artwork Approval Workflow: Brief to Sign-Off | Decoded Ops",
+  "meta": "Artwork management software for print businesses that gets from brief to client sign-off within 24 hours, without a single email chased along the way.",
+  "h1": "Artwork Approval Workflow: Brief to Sign-Off in 24 Hours",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to",
+  "primary": "how to evaluate an ai tool",
+  "secondary": [
+   "ai readiness for small business",
+   "should my business use ai"
+  ],
+  "volume": "no data",
+  "title": "How to Evaluate an AI Tool | Decoded Ops",
+  "meta": "How to evaluate an AI tool without getting sold to: the practical questions to ask a vendor before an AI product goes anywhere near your production data.",
+  "h1": "How to Evaluate an AI Tool Without Getting Sold To",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text."
+ },
+ {
+  "path": "/blog/the-artwork-file-that-broke-the-erp-cartoon",
+  "primary": "erp artwork file management",
+  "secondary": [
+   "artwork management software",
+   "product data management for decorated goods"
+  ],
+  "volume": "no data",
+  "title": "The Artwork File That Broke the ERP | Decoded Ops",
+  "meta": "A cartoon look at ERP artwork file management gone wrong, and the real production floor habits that cause it in print, embroidery and decoration businesses.",
+  "h1": "The Artwork File That Broke the ERP [Cartoon]",
+  "h1_changed": false,
+  "note": "Dropped the bracketed '[Cartoon]' tag from the H1 for readability; meta rewritten to move past the generic placeholder text."
+ },
+ {
+  "path": "/blog/b2b-portal-down-on-christmas-jumper-day-cartoon",
+  "primary": "b2b trade portal software",
+  "secondary": [
+   "b2b ecommerce for wholesale",
+   "wholesale order system"
+  ],
+  "volume": "no data",
+  "title": "B2B Portal Down on Christmas Jumper Day | Decoded Ops",
+  "meta": "A cartoon look at b2b trade portal software failing on the worst possible day, and the fixes that keep a wholesale order system online during a peak.",
+  "h1": "B2B Portal Down on Christmas Jumper Day [Cartoon]",
+  "h1_changed": false,
+  "note": "Dropped the bracketed '[Cartoon]' tag from the H1 for readability; meta rewritten to move past the generic placeholder text. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it",
+  "primary": "crm adoption failure",
+  "secondary": [
+   "process documentation for small business",
+   "operations consultant"
+  ],
+  "volume": "no data",
+  "title": "CRM Adoption Failure: Why and How to Fix It | Decoded Ops",
+  "meta": "CRM adoption failure usually traces back to process, not the software. Why it happens in decorated goods businesses, and the fix that actually sticks.",
+  "h1": "CRM Adoption Failure: Why It Happens and How to Fix It",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/what-good-operations-actually-looks-like",
+  "primary": "what good operations actually looks like",
+  "secondary": [
+   "operations consultant",
+   "process improvement consultant"
+  ],
+  "volume": "no data",
+  "title": "What Good Operations Actually Looks Like | Decoded Ops",
+  "meta": "What good operations actually looks like in a decorated goods business, described plainly: what to watch for on the floor, and what it changes for the owner.",
+  "h1": "What Good Operations Actually Looks Like",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text."
+ },
+ {
+  "path": "/blog/when-it-support-is-the-problem",
+  "primary": "managed it support for small business",
+  "secondary": [
+   "it consultant for small business",
+   "process improvement consultant"
+  ],
+  "volume": "10-100",
+  "title": "When IT Support Is the Problem | Decoded Ops",
+  "meta": "Managed IT support for a small business should fix problems, not just tickets. Here's how to tell when your IT support has become part of the problem itself.",
+  "h1": "When IT Support Is the Problem",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to move past the generic placeholder text."
+ },
+ {
+  "path": "/blog/bulk-order-management-wholesale-decorated-goods",
+  "primary": "bulk order management wholesale decorated goods",
+  "secondary": [
+   "b2b ecommerce for wholesale",
+   "wholesale order system"
+  ],
+  "volume": "no data",
+  "title": "Bulk Order Management for Wholesale Goods | Decoded Ops",
+  "meta": "Bulk order management for wholesale decorated goods covers the systems and workflows, and the common failure points once volume passes a spreadsheet.",
+  "h1": "Bulk Order Management for Wholesale Decorated Goods",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/production-scheduling-print-embroidery-capacity-quality-rush",
+  "primary": "print production scheduling software",
+  "secondary": [
+   "production scheduling print embroidery",
+   "print shop management software"
+  ],
+  "volume": "10-100",
+  "title": "Print Production Scheduling Software | Decoded Ops",
+  "meta": "Print production scheduling software that handles capacity, quality control and rush orders for embroidery and print businesses, without firefighting.",
+  "h1": "Production Scheduling for Print & Embroidery: Capacity, Quality, and Rush Orders",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'Capacity, Quality, and Rush Orders') to fit under 70 characters; kept in the meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/embroidery-quality-standards-stitch-density-thread-durability",
+  "primary": "embroidery quality standards",
+  "secondary": [
+   "embroidery stitch density guide",
+   "embroidery business management software"
+  ],
+  "volume": "no data",
+  "title": "Embroidery Quality Standards | Decoded Ops",
+  "meta": "Embroidery quality standards in production cover stitch density, thread selection and durability testing, and how to enforce all three consistently at scale.",
+  "h1": "Embroidery Quality Standards: Stitch Density, Thread Selection, and Durability Testing",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped the itemised 'Stitch Density, Thread Selection, and Durability Testing') to fit under 70 characters; kept in the meta."
+ },
+ {
+  "path": "/blog/ai-isnt-your-problem-your-processes-are",
+  "primary": "ai readiness for small business",
+  "secondary": [
+   "ai readiness assessment",
+   "process documentation for small business"
+  ],
+  "volume": "no data",
+  "title": "AI Readiness for Small Business | Decoded Ops",
+  "meta": "AI readiness for small business starts before the AI tool. Why most decorated goods businesses aren't ready for it yet, and the process work to do first.",
+  "h1": "AI Isn't Your Problem. Your Processes Are.",
+  "h1_changed": false,
+  "note": "H1 kept as is per the exception for a period-based contrast rather than the banned 'isn't X, it's Y' construction."
+ },
+ {
+  "path": "/blog/what-happens-when-your-systems-go-down",
+  "primary": "backup and disaster recovery for small business",
+  "secondary": [
+   "business continuity disaster recovery plan",
+   "rto calculator"
+  ],
+  "volume": "no data",
+  "title": "Backup and Disaster Recovery, Small Business | Decoded Ops",
+  "meta": "Backup and disaster recovery for a small business costs less than the downtime it prevents. Here's how to calculate the real cost and build in resilience.",
+  "h1": "What Happens to Your Business When Your Systems Go Down",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'to Your Business') to fit under 70 characters. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/ecommerce-integration-trap",
+  "primary": "ecommerce integration for decorated goods",
+  "secondary": [
+   "ecommerce not connected to inventory",
+   "b2b ecommerce for wholesale"
+  ],
+  "volume": "no data",
+  "title": "The Ecommerce Integration Trap | Decoded Ops",
+  "meta": "Ecommerce integration for decorated goods sounds simple until the ERP and the website disagree. Why it goes wrong, and how to avoid the pitfalls.",
+  "h1": "The Ecommerce Integration Trap",
+  "h1_changed": false,
+  "note": "H1 kept as is; meta rewritten to remove the rhetorical framing ('Here's why it goes wrong'). (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/5-questions-vendors-wont-like",
+  "primary": "software vendor questions to ask",
+  "secondary": [
+   "erp evaluation checklist",
+   "how to choose an erp system"
+  ],
+  "volume": "no data",
+  "title": "Software Vendor Questions to Ask | Decoded Ops",
+  "meta": "Five software vendor questions to ask before you sign a contract. They separate the suppliers who understand your business from the ones who don't.",
+  "h1": "5 Questions Your Software Vendor Doesn't Want You to Ask",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/blog/the-real-cost-of-a-failed-erp-project",
+  "primary": "cost of failed erp project",
+  "secondary": [
+   "erp implementation",
+   "erp implementation consultant"
+  ],
+  "volume": "no data",
+  "title": "The Real Cost of a Failed ERP Project | Decoded Ops",
+  "meta": "The cost of a failed ERP project goes well beyond wasted licences: implementation fees, internal time and lost productivity stack up fast.",
+  "h1": "The Real Cost of a Failed ERP Project",
+  "h1_changed": false,
+  "note": "H1 kept as is. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/blog/why-systems-dont-talk",
+  "primary": "erp integration for small business",
+  "secondary": [
+   "systems dont talk to each other",
+   "b2b order management"
+  ],
+  "volume": "no data",
+  "title": "Why Your Systems Don't Talk to Each Other | Decoded Ops",
+  "meta": "ERP integration for a small business is the number one operations problem in decorated goods. Why systems stop talking, and how to fix it.",
+  "h1": "Why Your Systems Don't Talk to Each Other (And How to Fix It)",
+  "h1_changed": false,
+  "note": "Trimmed the H1 (dropped 'And How to Fix It') to fit under 70 characters; kept in the meta. (title/meta length-adjusted in a validator pass.)"
+ },
+ {
+  "path": "/locations/fractional-cto",
+  "primary": "outsourced cto",
+  "secondary": [
+   "fractional cto uk",
+   "hire fractional cto",
+   "technology leadership"
+  ],
+  "volume": "10-100",
+  "title": "Fractional CTO: Areas Covered | Decoded Ops",
+  "meta": "An outsourced CTO covering print, embroidery and decorated goods businesses across the South East and beyond. Find your town below or book a call to start.",
+  "h1": "Hire a Fractional CTO, Print & Decoration Specialists",
+  "h1_changed": false,
+  "note": "H1 kept as is."
+ },
+ {
+  "path": "/locations/tech-audit",
+  "primary": "it audit for small business",
+  "secondary": [
+   "technology audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit: Areas Covered | Decoded Ops",
+  "meta": "An it audit for small business covering decorated goods operations across the South East and beyond. Find your town below or book a call.",
+  "h1": "Technology Audit for Sussex and Surrey SMEs",
+  "h1_changed": false,
+  "note": "H1 kept as is (ampersand replaced with 'and' for consistency)."
+ },
+ {
+  "path": "/locations/fractional-cto/bexhill-on-sea",
+  "primary": "fractional cto bexhill-on-sea",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Bexhill-on-Sea | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Bexhill-on-Sea. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Bexhill-on-Sea, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/bexhill-on-sea",
+  "primary": "technology audit for bexhill-on-sea",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Bexhill-on-Sea Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Bexhill-on-Sea. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Bexhill-on-Sea Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/bognor-regis",
+  "primary": "fractional cto bognor regis",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Bognor Regis | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Bognor Regis. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Bognor Regis, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/bognor-regis",
+  "primary": "technology audit for bognor regis",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Bognor Regis Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Bognor Regis. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Bognor Regis Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/brighton",
+  "primary": "fractional cto brighton",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Brighton | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Brighton. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Brighton, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/brighton",
+  "primary": "technology audit for brighton",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Brighton Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Brighton. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Brighton Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/burgess-hill",
+  "primary": "fractional cto burgess hill",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Burgess Hill | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Burgess Hill. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Burgess Hill, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/burgess-hill",
+  "primary": "technology audit for burgess hill",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Burgess Hill Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Burgess Hill. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Burgess Hill Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/camberley",
+  "primary": "fractional cto camberley",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Camberley | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Camberley. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Camberley, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/camberley",
+  "primary": "technology audit for camberley",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Camberley Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Camberley. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Camberley Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/chichester",
+  "primary": "fractional cto chichester",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Chichester | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Chichester. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Chichester, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/chichester",
+  "primary": "technology audit for chichester",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Chichester Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Chichester. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Chichester Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/crawley",
+  "primary": "fractional cto crawley",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Crawley | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Crawley. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Crawley, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/crawley",
+  "primary": "technology audit for crawley",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Crawley Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Crawley. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Crawley Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/crowborough",
+  "primary": "fractional cto crowborough",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Crowborough | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Crowborough. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Crowborough, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/crowborough",
+  "primary": "technology audit for crowborough",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Crowborough Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Crowborough. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Crowborough Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/dorking",
+  "primary": "fractional cto dorking",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Dorking | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Dorking. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Dorking, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/dorking",
+  "primary": "technology audit for dorking",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Dorking Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Dorking. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Dorking Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/eastbourne",
+  "primary": "fractional cto eastbourne",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Eastbourne | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Eastbourne. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Eastbourne, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/eastbourne",
+  "primary": "technology audit for eastbourne",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Eastbourne Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Eastbourne. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Eastbourne Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/epsom",
+  "primary": "fractional cto epsom",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Epsom | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Epsom. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Epsom, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/epsom",
+  "primary": "technology audit for epsom",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Epsom Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Epsom. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Epsom Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/farnham",
+  "primary": "fractional cto farnham",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Farnham | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Farnham. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Farnham, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/farnham",
+  "primary": "technology audit for farnham",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Farnham Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Farnham. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Farnham Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/guildford",
+  "primary": "fractional cto guildford",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Guildford | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Guildford. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Guildford, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/guildford",
+  "primary": "technology audit for guildford",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Guildford Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Guildford. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Guildford Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/hastings",
+  "primary": "fractional cto hastings",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Hastings | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Hastings. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Hastings, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/hastings",
+  "primary": "technology audit for hastings",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Hastings Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Hastings. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Hastings Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/haywards-heath",
+  "primary": "fractional cto haywards heath",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Haywards Heath | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Haywards Heath. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Haywards Heath, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/haywards-heath",
+  "primary": "technology audit for haywards heath",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Haywards Heath Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Haywards Heath. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Haywards Heath Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/horsham",
+  "primary": "fractional cto horsham",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Horsham | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Horsham. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Horsham, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/horsham",
+  "primary": "technology audit for horsham",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Horsham Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Horsham. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Horsham Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/hove",
+  "primary": "fractional cto hove",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Hove | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Hove. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Hove, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/hove",
+  "primary": "technology audit for hove",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Hove Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Hove. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Hove Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/leatherhead",
+  "primary": "fractional cto leatherhead",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Leatherhead | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Leatherhead. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Leatherhead, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/leatherhead",
+  "primary": "technology audit for leatherhead",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Leatherhead Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Leatherhead. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Leatherhead Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/lewes",
+  "primary": "fractional cto lewes",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Lewes | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Lewes. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Lewes, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/lewes",
+  "primary": "technology audit for lewes",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Lewes Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Lewes. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Lewes Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/littlehampton",
+  "primary": "fractional cto littlehampton",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Littlehampton | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Littlehampton. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Littlehampton, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/littlehampton",
+  "primary": "technology audit for littlehampton",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Littlehampton Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Littlehampton. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Littlehampton Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/london",
+  "primary": "fractional cto london",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in London | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in London. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in London, Greater London",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/london",
+  "primary": "technology audit for london",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for London Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in London. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for London Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/manchester",
+  "primary": "fractional cto manchester",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "10-100",
+  "title": "Fractional CTO in Manchester | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Manchester. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Manchester, Greater Manchester",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/manchester",
+  "primary": "technology audit for manchester",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Manchester Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Manchester. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Manchester Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/redhill",
+  "primary": "fractional cto redhill",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Redhill | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Redhill. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Redhill, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/redhill",
+  "primary": "technology audit for redhill",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Redhill Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Redhill. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Redhill Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/reigate",
+  "primary": "fractional cto reigate",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Reigate | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Reigate. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Reigate, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/reigate",
+  "primary": "technology audit for reigate",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Reigate Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Reigate. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Reigate Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/seaford",
+  "primary": "fractional cto seaford",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Seaford | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Seaford. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Seaford, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/seaford",
+  "primary": "technology audit for seaford",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Seaford Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Seaford. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Seaford Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/shoreham-by-sea",
+  "primary": "fractional cto shoreham-by-sea",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Shoreham-by-Sea | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Shoreham-by-Sea. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Shoreham-by-Sea, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/shoreham-by-sea",
+  "primary": "technology audit for shoreham-by-sea",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Shoreham-by-Sea Businesses",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Shoreham-by-Sea. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Shoreham-by-Sea Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/uckfield",
+  "primary": "fractional cto uckfield",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Uckfield | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Uckfield. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Uckfield, East Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/uckfield",
+  "primary": "technology audit for uckfield",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Uckfield Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Uckfield. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Uckfield Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/woking",
+  "primary": "fractional cto woking",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Woking | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Woking. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Woking, Surrey",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/woking",
+  "primary": "technology audit for woking",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Woking Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Woking. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Woking Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/fractional-cto/worthing",
+  "primary": "fractional cto worthing",
+  "secondary": [
+   "fractional cto",
+   "hire fractional cto",
+   "it manager small business"
+  ],
+  "volume": "no data",
+  "title": "Fractional CTO in Worthing | Decoded Ops",
+  "meta": "Fractional CTO support for print, embroidery and decorated goods businesses in Worthing. Book a free call to talk through your operations.",
+  "h1": "Fractional CTO in Worthing, West Sussex",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ },
+ {
+  "path": "/locations/tech-audit/worthing",
+  "primary": "technology audit for worthing",
+  "secondary": [
+   "technology audit for small business",
+   "it audit for small business",
+   "software audit small business"
+  ],
+  "volume": "no data",
+  "title": "Technology Audit for Worthing Businesses | Decoded Ops",
+  "meta": "Independent technology audits for print, embroidery and decorated goods businesses in Worthing. Book a free call to talk through your systems.",
+  "h1": "Technology Audit for Worthing Businesses",
+  "h1_changed": false,
+  "note": "Town page kept to the standing template pending the locations consolidation decision."
+ }
+]

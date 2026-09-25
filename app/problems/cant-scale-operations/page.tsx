@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
- description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.",
+ title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+ description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
  alternates: { canonical: '/problems/cant-scale-operations' },
  openGraph: {
-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
-  description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly. UK-wide.",
+  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
   url: 'https://decodedops.co.uk/problems/cant-scale-operations',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: "Your Business Is Growing. Your Operations Aren't Keeping Up.: Decoded Ops",
-  description: "Growth shouldn't feel harder than it did at half the size. I help print, embroidery, and decoration businesses build the operational foundations to scale properly.",
+  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
  },
 };
 
@@ -208,7 +208,7 @@ export default function CantScaleOperationsPage() {
       body: "It's easy to take on new contracts, products, or markets without asking whether the operation is ready. The revenue looks good on paper. The margin doesn't, because the cost of a stretched operation hides in rework, mistakes, and overtime.",
      },
      {
-      title: 'No one owns the whole flow from order to invoice',
+      title: 'Business Growing, Operations Not Scaling | Decoded Ops',
       body: "People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
      },
     ]}

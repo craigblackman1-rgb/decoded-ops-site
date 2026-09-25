@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
-  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+  title: 'B2B Portal Case Study | Decoded Ops',
+  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
   alternates: { canonical: '/case-studies/case-study-03' },
   openGraph: {
     type: 'article',
-    title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+    title: 'B2B Portal Case Study | Decoded Ops',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
     url: 'https://decodedops.co.uk/case-studies/case-study-03',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Case study 03: B2B Portal & ERP Evaluation | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s B2B ordering portal.',
+    title: 'B2B Portal Case Study | Decoded Ops',
+    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
     images: [OG_IMAGE_PATH],
   },
 };

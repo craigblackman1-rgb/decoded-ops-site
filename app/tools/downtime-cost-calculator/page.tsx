@@ -13,27 +13,26 @@ const jsonLd = {
   name: 'Downtime Cost Calculator',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
+  description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
   url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
 };
 
 export const metadata: Metadata = {
-  title: 'Downtime Cost Calculator: Decoded Ops',
-  description:
-    'Calculate the annual cost of system downtime across labour and lost revenue. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+  title: 'Downtime Cost Calculator | Decoded Ops',
+  description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
   alternates: { canonical: '/tools/downtime-cost-calculator' },
   openGraph: {
     type: 'website',
-    title: 'Downtime Cost Calculator: Decoded Ops',
-    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
+    title: 'Downtime Cost Calculator | Decoded Ops',
+    description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
     url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downtime Cost Calculator: Decoded Ops',
-    description: 'Calculate the annual cost of system downtime across labour and lost revenue.',
+    title: 'Downtime Cost Calculator | Decoded Ops',
+    description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
     images: [OG_IMAGE_PATH],
   },
 };

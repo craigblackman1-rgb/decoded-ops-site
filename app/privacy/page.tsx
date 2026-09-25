@@ -5,20 +5,20 @@ import '@/app/d17-locations.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy: Decoded Ops',
-  description: 'How Decoded Ops collects, uses, and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
+  title: 'Privacy Policy | decodedops.co.uk',
+  description: 'How Decoded Ops collects, uses and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
   alternates: { canonical: '/privacy' },
   openGraph: {
     type: 'website',
-    title: 'Privacy Policy: Decoded Ops',
-    description: 'How Decoded Ops collects, uses, and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
+    title: 'Privacy Policy | decodedops.co.uk',
+    description: 'How Decoded Ops collects, uses and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
     url: 'https://decodedops.co.uk/privacy',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Privacy Policy: Decoded Ops',
-    description: 'How Decoded Ops collects, uses, and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
+    title: 'Privacy Policy | decodedops.co.uk',
+    description: 'How Decoded Ops collects, uses and protects your personal data. Read the full privacy policy for details of your rights and how to get in touch.',
     images: [OG_IMAGE_PATH],
   },
 };

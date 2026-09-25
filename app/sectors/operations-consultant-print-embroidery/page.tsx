@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Operations Consultant for Print & Embroidery Businesses UK: Decoded Ops',
-  description: 'Independent operations and technology consultant for UK print and embroidery businesses. ERP, production scheduling, artwork management, and systems that connect how you actually work.',
+  title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
+  description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
   alternates: { canonical: '/sectors/operations-consultant-print-embroidery' },
   openGraph: {
-    title: 'Operations Consultant for Print & Embroidery Businesses UK: Decoded Ops',
-    description: 'Independent operations and technology consultant for UK print and embroidery businesses. ERP, production scheduling, artwork management, and systems that connect how you actually work.',
+    title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
+    description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
     url: 'https://decodedops.co.uk/sectors/operations-consultant-print-embroidery',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations Consultant for Print & Embroidery Businesses UK: Decoded Ops',
-    description: 'Independent operations and technology consultant for UK print and embroidery businesses. ERP, production scheduling, artwork management, and systems that connect how you actually work.',
+    title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
+    description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
   },
 };
 

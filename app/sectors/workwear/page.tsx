@@ -8,19 +8,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import '@/app/d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Workwear: Decoded Ops',
-  description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+  title: 'Workwear ERP Software | Decoded Ops',
+  description: "Workwear ERP that solves supplier feed chaos, puts decoration and stock in the same picture, and handles replenishment automatically, from Decoded Ops.",
   alternates: { canonical: '/sectors/workwear' },
   openGraph: {
-    title: 'Workwear: Decoded Ops',
-    description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+    title: 'Workwear ERP Software | Decoded Ops',
+    description: "Workwear ERP that solves supplier feed chaos, puts decoration and stock in the same picture, and handles replenishment automatically, from Decoded Ops.",
     url: 'https://decodedops.co.uk/sectors/workwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Workwear: Decoded Ops',
-    description: "Supplier feed chaos solved, decoration and stock in the same picture, and replenishment that doesn't wait on you.",
+    title: 'Workwear ERP Software | Decoded Ops',
+    description: "Workwear ERP that solves supplier feed chaos, puts decoration and stock in the same picture, and handles replenishment automatically, from Decoded Ops.",
   },
 };
 

@@ -11,19 +11,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'AI paralysis: Decoded Ops',
- description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
+ title: 'AI Readiness Assessment | Decoded Ops',
+ description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
  alternates: { canonical: '/problems/ai-paralysis' },
  openGraph: {
-  title: 'AI paralysis: Decoded Ops',
-  description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
+  title: 'AI Readiness Assessment | Decoded Ops',
+  description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
   url: 'https://decodedops.co.uk/problems/ai-paralysis',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'AI paralysis: Decoded Ops',
-  description: 'AI readiness for small business, answered honestly. What needs to be in place before AI can deliver value in a print, embroidery or decoration operation, and what is noise you can safely ignore.',
+  title: 'AI Readiness Assessment | Decoded Ops',
+  description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
  },
 };
 

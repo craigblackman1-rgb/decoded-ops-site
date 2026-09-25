@@ -6,20 +6,20 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { PhotoPiece } from '@/components/PhotoPiece';
 
 export const metadata: Metadata = {
-  title: 'Small Business Operations Consultant: Decoded Ops',
-  description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+  title: 'Small Business Technology Consultant | Decoded Ops',
+  description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
-    title: 'Small Business Operations Consultant: Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+    title: 'Small Business Technology Consultant | Decoded Ops',
+    description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Small Business Operations Consultant: Decoded Ops',
-    description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+    title: 'Small Business Technology Consultant | Decoded Ops',
+    description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
   },
 };
 

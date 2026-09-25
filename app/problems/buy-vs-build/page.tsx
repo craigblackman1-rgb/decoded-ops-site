@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Buy vs build: Decoded Ops',
- description: "The question isn't buy or build. It's how much of what you need the platform actually covers, what the rest costs to close, and whether that changes how you work. Sometimes the answer is buy, and the test has to be able to say so.",
+ title: 'Buy vs Build ERP | Decoded Ops',
+ description: "A buy vs build ERP decision starts with one question: how much of what you need does the platform actually cover, and what does closing the rest really cost.",
  alternates: { canonical: '/problems/buy-vs-build' },
  openGraph: {
-  title: 'Buy vs build: Decoded Ops',
-  description: "The question isn't buy or build. It's how much of what you need the platform actually covers, what the rest costs to close, and whether that changes how you work.",
+  title: 'Buy vs Build ERP | Decoded Ops',
+  description: "A buy vs build ERP decision starts with one question: how much of what you need does the platform actually cover, and what does closing the rest really cost.",
   url: 'https://decodedops.co.uk/problems/buy-vs-build',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Buy vs build: Decoded Ops',
-  description: "The question isn't buy or build. It's how much of what you need the platform actually covers, and what the rest costs to close.",
+  title: 'Buy vs Build ERP | Decoded Ops',
+  description: "A buy vs build ERP decision starts with one question: how much of what you need does the platform actually cover, and what does closing the rest really cost.",
  },
 };
 

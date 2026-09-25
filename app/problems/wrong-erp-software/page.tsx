@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Wrong ERP software: Decoded Ops',
-  description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+ title: 'ERP for Small Business, Chosen Right | Decoded Ops',
+  description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
   alternates: { canonical: '/problems/wrong-erp-software' },
   openGraph: {
-   title: 'Wrong ERP software: Decoded Ops',
-   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+   title: 'ERP for Small Business, Chosen Right | Decoded Ops',
+   description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
    url: 'https://decodedops.co.uk/problems/wrong-erp-software',
    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
    card: 'summary_large_image',
-   title: 'Wrong ERP software: Decoded Ops',
-   description: "Chose an ERP that doesn't fit your operation? You're not alone. Here's how to evaluate ERP for print, embroidery, and decoration businesses, scored against a written brief.",
+   title: 'ERP for Small Business, Chosen Right | Decoded Ops',
+   description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
   },
 };
 

@@ -10,18 +10,18 @@ import './homepage.css';
 import './d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-  description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
+  title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+  description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers. A Clarity Audit gets you a full day on site and a written plan.',
+    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
     url: 'https://decodedops.co.uk',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Ops: operations and technology consultancy for decorated goods',
-    description: 'Independent operations and technology consultancy for UK print shops, embroiderers, workwear and promo merch suppliers.',
+    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
   },
 };
 

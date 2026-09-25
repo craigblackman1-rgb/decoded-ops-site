@@ -9,22 +9,22 @@ import '@/app/d17-global.css';
 import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
-  title: 'Technology Audit for Sussex & Surrey SMEs: Decoded Ops',
+  title: 'Technology Audit: Areas Covered | Decoded Ops',
   description:
-    'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
+    'An it audit for small business covering decorated goods operations across the South East and beyond. Find your town below or book a call.',
   alternates: { canonical: '/locations/tech-audit' },
   openGraph: {
-    title: 'Technology Audit for Sussex & Surrey SMEs: Decoded Ops',
+    title: 'Technology Audit: Areas Covered | Decoded Ops',
     description:
-      'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
+      'An it audit for small business covering decorated goods operations across the South East and beyond. Find your town below or book a call.',
     url: 'https://decodedops.co.uk/locations/tech-audit',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology Audit for Sussex & Surrey SMEs: Decoded Ops',
+    title: 'Technology Audit: Areas Covered | Decoded Ops',
     description:
-      'Independent technology audits for SMEs across Sussex and Surrey. From £1,500. 3× Clarity Guarantee. Find your nearest location.',
+      'An it audit for small business covering decorated goods operations across the South East and beyond. Find your town below or book a call.',
   },
 };
 

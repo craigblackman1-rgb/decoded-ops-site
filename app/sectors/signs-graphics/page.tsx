@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Software & Systems for Sign Makers: Decoded Ops',
-  description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+  title: 'Sign Shop Management Software | Decoded Ops',
+  description: 'Sign shop management software for job tracking from site survey to installation, quoting complex jobs without a margin leak, fitting how a sign shop runs.',
   alternates: { canonical: '/sectors/signs-graphics' },
   openGraph: {
-    title: 'Software & Systems for Sign Makers: Decoded Ops',
-    description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+    title: 'Sign Shop Management Software | Decoded Ops',
+    description: 'Sign shop management software for job tracking from site survey to installation, quoting complex jobs without a margin leak, fitting how a sign shop runs.',
     url: 'https://decodedops.co.uk/sectors/signs-graphics',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software & Systems for Sign Makers: Decoded Ops',
-    description: 'Job tracking from site survey to installation, quoting complex jobs without the margin leak, and software that fits how a sign shop actually runs.',
+    title: 'Sign Shop Management Software | Decoded Ops',
+    description: 'Sign shop management software for job tracking from site survey to installation, quoting complex jobs without a margin leak, fitting how a sign shop runs.',
   },
 };
 

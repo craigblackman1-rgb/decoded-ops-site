@@ -9,6 +9,7 @@ import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
+
 const questions = [
   { id: 1, text: 'Is your current system unable to handle your core business processes without significant workarounds?', weight: 2 },
   { id: 2, text: 'Have you had to build extensive customisations or manual processes to make the system work?', weight: 2 },

@@ -9,20 +9,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Client Work: Decoded Ops',
-  description: 'Live engagements. What I\'m actually building right now for clients in decorated goods, workwear, heating spares, and fitness. Real work, not hypotheticals.',
+  title: 'Decorated Goods Case Studies | Decoded Ops',
+  description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
   alternates: { canonical: '/case-studies' },
   openGraph: {
     type: 'website',
-    title: 'Client Work: Decoded Ops',
-    description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
+    title: 'Decorated Goods Case Studies | Decoded Ops',
+    description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
     url: 'https://decodedops.co.uk/case-studies',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Client Work: Decoded Ops',
-    description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
+    title: 'Decorated Goods Case Studies | Decoded Ops',
+    description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
     images: [OG_IMAGE_PATH],
   },
 };

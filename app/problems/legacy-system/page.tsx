@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Legacy system, decoration workflows: Decoded Ops',
- description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
+ title: 'Legacy System Replacement for Small Business | Decoded Ops',
+ description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
  alternates: { canonical: '/problems/legacy-system' },
  openGraph: {
-  title: 'Legacy system, decoration workflows: Decoded Ops',
-  description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
+  title: 'Legacy System Replacement for Small Business | Decoded Ops',
+  description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
   url: 'https://decodedops.co.uk/problems/legacy-system',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Legacy system, decoration workflows: Decoded Ops',
-  description: "The platform you bought ten years ago wasn't built for decoration. Why generic ERP misses decoration BOMs, blank-vs-finished stock and supplier artwork, and how a Decoded layer sits beside the platform you already own instead of replacing it.",
+  title: 'Legacy System Replacement for Small Business | Decoded Ops',
+  description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
  },
 };
 

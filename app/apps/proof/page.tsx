@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decoded Proof: Decoded Ops',
-  description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+  title: 'Decoded Proof: Artwork Approval Software | Decoded Ops',
+  description: 'Decoded Proof is artwork approval software for embroidery and print: every version, one audit trail. Customers approve their own proofs online.',
   alternates: { canonical: '/apps/proof' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Proof: Decoded Ops',
-    description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
+    title: 'Decoded Proof: Artwork Approval Software | Decoded Ops',
+    description: 'Decoded Proof is artwork approval software for embroidery and print: every version, one audit trail. Customers approve their own proofs online.',
     url: 'https://decodedops.co.uk/apps/proof',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Proof: Decoded Ops',
-    description: 'Artwork revision control for embroidery and print, with customer proofing and machine-ready delivery built in.',
+    title: 'Decoded Proof: Artwork Approval Software | Decoded Ops',
+    description: 'Decoded Proof is artwork approval software for embroidery and print: every version, one audit trail. Customers approve their own proofs online.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -12,27 +12,26 @@ const jsonLd = {
   name: 'Automation ROI Calculator',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+  description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
   url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
 };
 
 export const metadata: Metadata = {
-  title: 'Automation ROI Calculator: Decoded Ops',
-  description:
-    'Calculate when automating a manual process pays for itself and what the 3-year return looks like. Free tool for operations leaders in UK print, workwear, and decorated goods.',
+  title: 'Automation ROI Calculator | Decoded Ops',
+  description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
   alternates: { canonical: '/tools/automation-roi-calculator' },
   openGraph: {
     type: 'website',
-    title: 'Automation ROI Calculator: Decoded Ops',
-    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+    title: 'Automation ROI Calculator | Decoded Ops',
+    description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
     url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation ROI Calculator: Decoded Ops',
-    description: 'Calculate when automating a manual process pays for itself and what the 3-year return looks like.',
+    title: 'Automation ROI Calculator | Decoded Ops',
+    description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
     images: [OG_IMAGE_PATH],
   },
 };

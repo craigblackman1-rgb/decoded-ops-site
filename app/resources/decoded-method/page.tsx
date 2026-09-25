@@ -24,20 +24,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
-  description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+  title: 'The Decoded Method | Decoded Ops',
+  description: 'The Decoded Method is a three-layer process system: a Process Register, one-page SOPs and an Improvement Log, in plain English, one page per process.',
   alternates: { canonical: '/resources/decoded-method' },
   openGraph: {
     type: 'website',
-    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
-    description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+    title: 'The Decoded Method | Decoded Ops',
+    description: 'The Decoded Method is a three-layer process system: a Process Register, one-page SOPs and an Improvement Log, in plain English, one page per process.',
     url: 'https://decodedops.co.uk/resources/decoded-method',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
-    description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+    title: 'The Decoded Method | Decoded Ops',
+    description: 'The Decoded Method is a three-layer process system: a Process Register, one-page SOPs and an Improvement Log, in plain English, one page per process.',
     images: [OG_IMAGE_PATH],
   },
 };

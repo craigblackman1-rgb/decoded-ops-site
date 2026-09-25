@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Spreadsheet addiction: Decoded Ops',
- description: "The spreadsheet that runs your business is one corrupted file away from disaster. Why decorated-goods businesses depend on spreadsheets they've outgrown, and how documented process replaces a single point of failure with something everyone can trust.",
+ title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
+ description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
  alternates: { canonical: '/problems/spreadsheet-addiction' },
  openGraph: {
-  title: 'Spreadsheet addiction: Decoded Ops',
-  description: "The spreadsheet that runs your business is one corrupted file away from disaster. Why decorated-goods businesses depend on spreadsheets they've outgrown.",
+  title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
+  description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
   url: 'https://decodedops.co.uk/problems/spreadsheet-addiction',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Spreadsheet addiction: Decoded Ops',
-  description: "The spreadsheet that runs your business is one corrupted file away from disaster.",
+  title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
+  description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
  },
 };
 

@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: "Ops in the owner's head: Decoded Ops",
- description: "If you got hit by a bus tomorrow, nobody would know how to run your business. Why every decorated-goods operation needs documented process, and how the Decoded Method builds one that lives outside the owner's head.",
+ title: "Process Documentation for Small Business | Decoded Ops",
+ description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
  alternates: { canonical: '/problems/ops-in-owners-head' },
  openGraph: {
-  title: "Ops in the owner's head: Decoded Ops",
-  description: "If you got hit by a bus tomorrow, nobody would know how to run your business. Why every decorated-goods operation needs documented process.",
+  title: "Process Documentation for Small Business | Decoded Ops",
+  description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
   url: 'https://decodedops.co.uk/problems/ops-in-owners-head',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: "Ops in the owner's head: Decoded Ops",
-  description: "If you got hit by a bus tomorrow, nobody would know how to run your business.",
+  title: "Process Documentation for Small Business | Decoded Ops",
+  description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
  },
 };
 

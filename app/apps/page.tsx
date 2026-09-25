@@ -6,20 +6,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'The systems: Decoded Ops',
-  description: 'Not a product catalogue. Software built for jobs the platforms in this sector were never going to do: Decoded Works, the ERP for decorated goods; Decoded Proof, artwork revision control; Decoded Commerce, the trade storefront. Proven at real clients.',
+  title: 'Software for Decorated Goods Businesses | Decoded Ops',
+  description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
   alternates: { canonical: '/apps' },
   openGraph: {
     type: 'website',
-    title: 'The systems: Decoded Ops',
-    description: 'Not a product catalogue. Software built for jobs the platforms in this sector were never going to do: Decoded Works, the ERP for decorated goods; Decoded Proof, artwork revision control; Decoded Commerce, the trade storefront. Proven at real clients.',
+    title: 'Software for Decorated Goods Businesses | Decoded Ops',
+    description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
     url: 'https://decodedops.co.uk/apps',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The systems: Decoded Ops',
-    description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients.',
+    title: 'Software for Decorated Goods Businesses | Decoded Ops',
+    description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
     images: [OG_IMAGE_PATH],
   },
 };

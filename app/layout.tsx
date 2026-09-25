@@ -36,8 +36,8 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://decodedops.co.uk'),
-  title: 'Print & Embroidery Technology Consultant: Decoded Ops',
-  description: 'Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.',
+  title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+  description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     siteName: 'Decoded Ops',
     locale: 'en_GB',
     url: 'https://decodedops.co.uk',
-    title: 'Print & Embroidery Technology Consultant: Decoded Ops',
-    description: 'Operations and technology consultancy for businesses that print, embroider, decorate and make. Plain English. Real answers. 25 years in the sector.',
+    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Decoded Ops' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Print & Embroidery Technology Consultant: Decoded Ops',
-    description: 'Operations and technology consultancy for print and embroidery businesses. Plain English. Real answers.',
+    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
+    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
     images: ['/opengraph-image'],
   },
 };

@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decoded Commerce: Decoded Ops',
-  description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on an open-source B2B commerce foundation: company accounts, spend limits, approval workflows and quote negotiation.',
+  title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
+  description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
   alternates: { canonical: '/apps/commerce' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Commerce: Decoded Ops',
-    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on an open-source B2B commerce foundation.',
+    title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
+    description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
     url: 'https://decodedops.co.uk/apps/commerce',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Commerce: Decoded Ops',
-    description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality.',
+    title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
+    description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
     images: [OG_IMAGE_PATH],
   },
 };

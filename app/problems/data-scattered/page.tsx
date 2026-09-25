@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Your data is scattered: Decoded Ops',
- description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
+ title: 'Product Data Management for Decorated Goods | Decoded Ops',
+ description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
  alternates: { canonical: '/problems/data-scattered' },
  openGraph: {
-  title: 'Your data is scattered: Decoded Ops',
-  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
+  title: 'Product Data Management for Decorated Goods | Decoded Ops',
+  description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
   url: 'https://decodedops.co.uk/problems/data-scattered',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Your data is scattered: Decoded Ops',
-  description: "Supplier feeds, spreadsheets, the ERP, the website and the warehouse floor, all disagreeing about the same product. Why scattered data happens, and how Decoded Works becomes the one source everyone reads from.",
+  title: 'Product Data Management for Decorated Goods | Decoded Ops',
+  description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
  },
 };
 

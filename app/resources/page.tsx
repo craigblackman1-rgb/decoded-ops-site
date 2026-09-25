@@ -9,20 +9,20 @@ import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 export const metadata: Metadata = {
-  title: 'Free Resources for Print & Embroidery Businesses: Decoded Ops',
-  description: 'Free operational resources for print, embroidery, and decoration businesses. Audit checklist, warning signs, SOP templates, and process guides.',
+  title: 'Free Resources for Print and Embroidery | Decoded Ops',
+  description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
   alternates: { canonical: '/resources' },
   openGraph: {
     type: 'website',
-    title: 'Free Resources: Decoded Ops',
-    description: 'Free operational resources for print and decoration businesses. Audit checklists, warning signs, SOP templates, and process guides.',
+    title: 'Free Resources for Print and Embroidery | Decoded Ops',
+    description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
     url: 'https://decodedops.co.uk/resources',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Resources: Decoded Ops',
-    description: 'Free operational resources for print and decoration businesses.',
+    title: 'Free Resources for Print and Embroidery | Decoded Ops',
+    description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
   },
 };
 

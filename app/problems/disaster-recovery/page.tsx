@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Business Continuity & Disaster Recovery for Print Operations: Decoded Ops',
- description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
+ title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
+ description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
  alternates: { canonical: '/problems/disaster-recovery' },
  openGraph: {
-  title: 'Business Continuity & Disaster Recovery for Print Operations: Decoded Ops',
-  description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
+  title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
+  description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
   url: 'https://decodedops.co.uk/problems/disaster-recovery',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Business Continuity & Disaster Recovery for Print Operations: Decoded Ops',
-  description: 'What happens when your systems go down and you have orders to ship? A simple business continuity and disaster recovery plan for print, decoration, and workwear businesses.',
+  title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
+  description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
  },
 };
 

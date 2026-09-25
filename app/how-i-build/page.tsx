@@ -6,20 +6,20 @@ import { JsonLd } from '@/components/JsonLd';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'How I build: Decoded Ops',
-    description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus a custom layer, or full custom.",
+  title: 'Buy vs Build Software Decision | Decoded Ops',
+    description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
   alternates: { canonical: '/how-i-build' },
   openGraph: {
     type: 'website',
-    title: 'How I build: Decoded Ops',
-  description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus a custom layer, or full custom.",
+    title: 'Buy vs Build Software Decision | Decoded Ops',
+  description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
     url: 'https://decodedops.co.uk/how-i-build',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How I build: Decoded Ops',
-    description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short.",
+    title: 'Buy vs Build Software Decision | Decoded Ops',
+    description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
     images: [OG_IMAGE_PATH],
   },
 };
