@@ -8,6 +8,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Free Operational Tools: Decoded Ops',
@@ -20,12 +21,14 @@ export const metadata: Metadata = {
     description:
       'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
     url: 'https://decodedops.co.uk/tools',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Operational Tools: Decoded Ops',
     description:
       'Calculate the real cost of downtime, poor recovery times, and manual processes. Free tools for operations leaders in UK decorated goods, print, and workwear.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

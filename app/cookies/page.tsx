@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-locations.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy: Decoded Ops',
@@ -12,11 +13,13 @@ export const metadata: Metadata = {
     title: 'Cookie Policy: Decoded Ops',
     description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
     url: 'https://decodedops.co.uk/cookies',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cookie Policy: Decoded Ops',
     description: 'How Decoded Ops uses cookies: what I set, why I set it, and how to manage your preferences. Cookie policy and consent options for decodedops.co.uk.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

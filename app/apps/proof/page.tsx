@@ -4,6 +4,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Decoded Proof: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Decoded Proof: Decoded Ops',
     description: 'Revision control for embroidery and print artwork: every version, every colourway, one audit trail. Customers approve their own proofs. Machine-ready files go straight to the floor.',
     url: 'https://decodedops.co.uk/apps/proof',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Proof: Decoded Ops',
     description: 'Artwork revision control for embroidery and print, with customer proofing and machine-ready delivery built in.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

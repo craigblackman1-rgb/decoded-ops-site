@@ -4,6 +4,7 @@ import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { JsonLd } from '@/components/JsonLd';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Fractional CTO: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Fractional CTO: Decoded Ops',
     description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950/mo.',
     url: 'https://decodedops.co.uk/retained',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional CTO: Decoded Ops',
     description: 'Ongoing technology leadership for UK decorated-goods businesses, without the cost of a full-time hire. From £950/mo.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

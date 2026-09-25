@@ -5,6 +5,7 @@ import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
   title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
@@ -15,11 +16,13 @@ export const metadata = {
     title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Eternal Fitness: Full Site Build & AI Training Tool | Decoded Ops',
     description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

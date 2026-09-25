@@ -4,6 +4,7 @@ import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import { JsonLd } from '@/components/JsonLd';
 import s from '@/app/deco-page.module.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Clarity Audit: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Clarity Audit: Decoded Ops',
     description: 'One day on site, a written report within five, and the 3× Clarity Guarantee. A Clarity Audit is £1,500.',
     url: 'https://decodedops.co.uk/clarity',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Clarity Audit: Decoded Ops',
     description: 'One day on site, a written report within five, and the 3× Clarity Guarantee.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

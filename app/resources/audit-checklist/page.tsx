@@ -7,6 +7,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 // Target keyword: "operational audit checklist" (secondary: "technology audit checklist small business")
 const schema = {
@@ -32,11 +33,13 @@ export const metadata = {
     title: 'Free Technology & Operations Audit Checklist: Decoded Ops',
     description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
     url: 'https://decodedops.co.uk/resources/audit-checklist',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Technology & Operations Audit Checklist: Decoded Ops',
     description: 'A practical checklist covering the six areas of a technology and operations audit for print, embroidery, and decoration businesses. Free to download.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

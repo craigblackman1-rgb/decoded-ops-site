@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Decoded Works: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Decoded Works: Decoded Ops',
     description: 'Sales, stock, purchasing, production and channels, in one system, built for decorated goods. Live at Hanicks: 317,812 products, 154,518 matched to a supplier automatically. Runs alongside your platform or replaces it.',
     url: 'https://decodedops.co.uk/apps/works',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Works: Decoded Ops',
     description: 'The ERP built for decorated goods. Live today, running catalogue, orders, purchasing, stock, production and despatch.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

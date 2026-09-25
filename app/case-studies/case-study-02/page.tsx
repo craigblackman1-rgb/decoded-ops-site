@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
   title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata = {
     title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement for a branded apparel and decoration retailer.',
     url: 'https://decodedops.co.uk/case-studies/case-study-02',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Case study 02: Clarity Audit to Stock Control Build | Decoded Ops',
     description: 'A Clarity Audit into a Deliver engagement for branded apparel.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

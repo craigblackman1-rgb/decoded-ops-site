@@ -8,6 +8,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -31,11 +32,13 @@ export const metadata = {
     title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
     description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
     url: 'https://decodedops.co.uk/resources/decoded-method',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Decoded Method: A Simple Way to Document How Your Business Runs | Decoded Ops',
     description: 'A three-layer process system for print and decoration businesses: a Process Register, one-page SOPs, and an Improvement Log. Plain English. One page per process. Built to be handed over.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Client Work: Decoded Ops',
@@ -16,11 +17,13 @@ export const metadata: Metadata = {
     title: 'Client Work: Decoded Ops',
     description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
     url: 'https://decodedops.co.uk/case-studies',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Client Work: Decoded Ops',
     description: 'Live engagements. What I\'m actually building right now, not hypotheticals.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

@@ -4,6 +4,7 @@ import { D17Motion } from '@/components/D17Motion';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Decoded Commerce: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Decoded Commerce: Decoded Ops',
     description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality, built on an open-source B2B commerce foundation.',
     url: 'https://decodedops.co.uk/apps/commerce',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Decoded Commerce: Decoded Ops',
     description: 'A B2B storefront that fits how you actually sell. Three tiers priced on functionality.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

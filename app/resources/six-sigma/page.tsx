@@ -6,6 +6,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,11 +30,13 @@ export const metadata = {
     title: 'What 5 & 6 Sigma Mean for Your Print & Embroidery Operation: Decoded Ops',
     description: 'Sigma measures process quality. The higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
     url: 'https://decodedops.co.uk/resources/six-sigma',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What 5 & 6 Sigma Mean for Your Print & Embroidery Operation: Decoded Ops',
     description: 'Sigma measures process quality. The higher the level, the fewer defects per million. Here\'s what 3, 4, 5 and 6 Sigma actually mean for a garment decoration business, and why the gap is process, not machinery.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

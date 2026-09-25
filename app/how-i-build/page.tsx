@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import { JsonLd } from '@/components/JsonLd';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'How I build: Decoded Ops',
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
     title: 'How I build: Decoded Ops',
   description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short. So whatever you decide, you decide on the merits. Buy, buy plus a custom layer, or full custom.",
     url: 'https://decodedops.co.uk/how-i-build',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How I build: Decoded Ops',
     description: "I don't tell you what to buy. I show you what's on the market, what it costs, and where it falls short.",
+    images: [OG_IMAGE_PATH],
   },
 };
 

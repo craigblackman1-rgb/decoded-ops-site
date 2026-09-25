@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import s from '@/app/deco-page.module.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Deliver: Decoded Ops',
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
     title: 'Deliver: Decoded Ops',
   description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table, and a Process & Quality System you own once the engagement ends.',
     url: 'https://decodedops.co.uk/deliver',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Deliver: Decoded Ops',
     description: 'Deliver is the implementation phase after a Clarity Audit: someone technical on your side of the table.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

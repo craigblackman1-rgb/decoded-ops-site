@@ -6,6 +6,7 @@ import BlogList from '@/components/BlogList';
 import type { Metadata } from 'next';
 import localBlogPosts from '@/data/blog-index.json';
 import { hubFetch } from '@/lib/hub-fetch';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
@@ -18,11 +19,13 @@ export const metadata: Metadata = {
     title: 'Insights: Decoded Ops',
     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
     url: 'https://decodedops.co.uk/blog',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Insights: Decoded Ops',
     description: 'Plain-English insights on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

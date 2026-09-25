@@ -6,6 +6,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,11 +30,13 @@ export const metadata = {
     title: 'Free SOP Template for Decorated Goods: Decoded Ops',
     description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
     url: 'https://decodedops.co.uk/resources/sop-template',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free SOP Template for Decorated Goods: Decoded Ops',
     description: 'A free SOP template for garment decoration, print, and embroidery businesses. Includes a 7-step writing method, Process Register, and Improvement Log.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

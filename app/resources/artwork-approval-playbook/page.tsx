@@ -6,6 +6,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,11 +30,13 @@ export const metadata = {
     title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
     description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
     url: 'https://decodedops.co.uk/resources/artwork-approval-playbook',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Artwork Approval Playbook: Brief to Sign-Off | Decoded Ops',
     description: 'A 5-step artwork approval workflow for decoration businesses. Cut approval time to 24 hours with a structured brief, proof standard, and chase process.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import s from '@/app/deco-page.module.css';
 import { D17Motion } from '@/components/D17Motion';
 import d17 from '@/app/d17-art.module.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'About Craig: Decoded Ops',
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
     title: 'About Craig: Decoded Ops',
     description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
     url: 'https://decodedops.co.uk/about',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Craig: Decoded Ops',
     description: 'I started on the warehouse floor. Twenty-five years later, I\'m still solving the same problems.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

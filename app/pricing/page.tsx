@@ -5,6 +5,7 @@ import { PhotoPiece } from '@/components/PhotoPiece';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { JsonLd } from '@/components/JsonLd';
 import pricingData from '@/data/pricing-v11.json';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const { consultancy, small_business } = pricingData;
 
@@ -17,11 +18,13 @@ export const metadata: Metadata = {
     title: 'Pricing: Decoded Ops',
     description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation.',
     url: 'https://decodedops.co.uk/pricing',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing: Decoded Ops',
     description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

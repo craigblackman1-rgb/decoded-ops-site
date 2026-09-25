@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'The systems: Decoded Ops',
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
     title: 'The systems: Decoded Ops',
     description: 'Not a product catalogue. Software built for jobs the platforms in this sector were never going to do: Decoded Works, the ERP for decorated goods; Decoded Proof, artwork revision control; Decoded Commerce, the trade storefront. Proven at real clients.',
     url: 'https://decodedops.co.uk/apps',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The systems: Decoded Ops',
     description: 'Software built for jobs the platforms in this sector were never going to do, proven at real clients.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

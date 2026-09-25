@@ -4,6 +4,7 @@ import { Artwork } from '@/components/Artwork';
 import { PhotoPiece } from '@/components/PhotoPiece';
 import { JsonLd } from '@/components/JsonLd';
 import s from '@/app/deco-page.module.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Transform: Decoded Ops',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     title: 'Transform: Decoded Ops',
     description: 'Transform is the programme that follows a Clarity Audit: the plan, executed. Measured results across two deployments.',
     url: 'https://decodedops.co.uk/transform',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Transform: Decoded Ops',
     description: 'Transform is the programme that follows a Clarity Audit: the plan, executed.',
+    images: [OG_IMAGE_PATH],
   },
 };
 

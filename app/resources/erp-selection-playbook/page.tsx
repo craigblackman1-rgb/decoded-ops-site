@@ -6,6 +6,7 @@ import { D17Motion } from '@/components/D17Motion';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
+import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -29,11 +30,13 @@ export const metadata = {
     title: 'ERP Selection Guide for Decorated Goods: Decoded Ops',
     description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
     url: 'https://decodedops.co.uk/resources/erp-selection-playbook',
+    images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ERP Selection Guide for Decorated Goods: Decoded Ops',
     description: 'A plain-English ERP guide for decorated goods: what it is, when you need it, how to choose, and the pitfalls specific to garment decoration.',
+    images: [OG_IMAGE_PATH],
   },
 };
 
