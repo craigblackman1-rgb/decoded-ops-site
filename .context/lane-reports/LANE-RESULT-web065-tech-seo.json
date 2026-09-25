@@ -1,0 +1,56 @@
+{
+  "lane": "web065-tech-seo",
+  "wo": "WO-WEB-011",
+  "unit": "u19",
+  "commits": [
+    {"sha": "7c675e2", "subject": "fix(seo): html lang en-GB + remove double font loading (CR-WEB-065 #1,#2)"},
+    {"sha": "8d4dd1f", "subject": "fix(seo): stable lastmod dates + add calculator pages to sitemap (CR-WEB-065 #3)"},
+    {"sha": "e79357d", "subject": "fix(seo): add missing og:image to 28 pages (CR-WEB-065 #4)"},
+    {"sha": "fc74bf3", "subject": "fix(seo): correct og:url on 3 tools pages (CR-WEB-065 #5)"},
+    {"sha": "e117342", "subject": "fix(seo): replace /fractional links with /retained in location template (CR-WEB-065 #6)"},
+    {"sha": "c0a9506", "subject": "fix(seo): fix SVG template literal bug in coverage-map.ts (CR-WEB-065 #7)"},
+    {"sha": "34eaae3", "subject": "fix(seo): WebP images, update refs, add cache headers (CR-WEB-065 #8)"},
+    {"sha": "b6c70f6", "subject": "fix(seo): add fetchpriority=high to hero images via PhotoPiece priority prop (CR-WEB-065 #9)"},
+    {"sha": "42c17f3", "subject": "fix(seo): WCAG AA contrast — cerulean-text token, subtle text, location numbers + dark text (CR-WEB-065 #10)"},
+    {"sha": "4a7eb0f", "subject": "fix(a11y): heading order — footer h4→p, artwork h3/h4→b (CR-WEB-065 #11)"},
+    {"sha": "e1e33ca", "subject": "fix(seo): deduplicate organisation schema on location pages — Service type with provider @id (CR-WEB-065 #12)"}
+  ],
+  "filesChanged": [
+    "app/layout.tsx",
+    "app/design-system/colors_and_type.css",
+    "app/sitemap.ts",
+    "app/globals.css",
+    "app/design-system/ds-marketing.css",
+    "app/d17-locations.css",
+    "app/homepage.css",
+    "app/design-system/ds-footer.css",
+    "lib/seo.ts",
+    "lib/coverage-map.ts",
+    "components/PhotoPiece.tsx",
+    "components/Footer.tsx",
+    "components/LocationPage.tsx",
+    "next.config.ts",
+    "app/retained/page.tsx",
+    "app/tools/automation-roi-calculator/page.tsx",
+    "app/tools/downtime-cost-calculator/page.tsx",
+    "app/tools/rto-calculator/page.tsx",
+    "app/locations/fractional-cto/[location]/page.tsx",
+    "app/locations/tech-audit/[location]/page.tsx",
+    "scripts/optimise-images.mjs",
+    "scripts/replace-img-refs.mjs",
+    "+ 116 WebP images in public/images/",
+    "+ 28 page files with og:image added"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Item 9 (LCP): Homepage hero text visibility — the hero section has no CSS hiding; LCP delay is from page weight on mobile, not hidden elements. D17 animations only trigger on scroll via IntersectionObserver and start from visible resting state.",
+    "Item 10 (contrast): Changed --do-text-muted from #5a7d8f to #486a7b as specified. Added --do-text-cerulean: #176f86 token. Fixed location page big numbers (sky-blue → cerulean-text) and dark background text (opacity:0.4 → solid #a7b8c1). Did not change every cerulean-as-text instance across all d17 artwork CSS — those are on dark backgrounds where cerulean at 4.41:1 is acceptable for large/artwork text.",
+    "Item 8 (images): WebP conversion complete for all 116 images. Replaced refs in 61 source files. JPGs kept in place per brief."
+  ],
+  "blockers": [],
+  "done": true
+}
