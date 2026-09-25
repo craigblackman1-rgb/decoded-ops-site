@@ -34,10 +34,7 @@ export default function AboutPage() {
             <div className={s.heroBody}>
               <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
                 side of the table.</p>
-              <p>I&apos;ve worked at every level in these businesses. Not as a consultant brought in to
-                observe. As the person on the warehouse floor picking, packing, and despatching. As
-                the IT engineer. As the operations manager. As the one who implemented the systems,
-                lived with the consequences, and fixed what went wrong.</p>
+              <p>I&apos;ve worked at every level in these businesses, not as a consultant brought in to observe. I picked, packed and despatched on the warehouse floor, kept things running as the IT engineer, and ran the operation as the ops manager. I implemented the systems, worked with them every day, and fixed what needed fixing.</p>
               <p>That&apos;s why I know what a system needs to do for the person using it, not just the
                 person commissioning it.</p>
             </div>
@@ -73,7 +70,7 @@ export default function AboutPage() {
           <h2>Three vantage points, one problem that never changed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. The vantage point changed. The gap between the process on paper and the workaround on the floor did not.
+            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job I do now.
           </p>
 
           {/* DO-ART-831 r01 · journey poster, website cut (D16/D17). Same drawing
@@ -153,13 +150,13 @@ export default function AboutPage() {
                 <span className={d17.fm} aria-hidden="true">DO-ART-919b</span>
                 <span className={d17.factNo}>Fact 02</span>
                 <p className={`${d17.factFig} ${d17.num}`}>4&frac12; years</p>
-                <p className={d17.factFigSub}>of a business of my own, then I closed it</p>
+                <p className={d17.factFigSub}>running my own eCommerce agency, Demystify Digital</p>
               </div>
               <div className={d17.factBody}>
-                <h3>A large customer did not pay.</h3>
-                <p>In that time I built a full print and embroidery ecommerce ecosystem on Magento 2. So
-                  I know what a bad commercial decision costs from the inside rather than from a
-                  slide.</p>
+                <h3>Building it taught me where the real problem was.</h3>
+                <p>I built a full print and embroidery ecommerce ecosystem on Magento 2 for clients across
+                  the sector. Most of the enquiries that came in as a website problem turned out to be an
+                  operations problem underneath, and that&apos;s what pulled me into consultancy.</p>
               </div>
             </article>
           </div>
@@ -183,8 +180,7 @@ export default function AboutPage() {
               </div>
               <p className="lede">I kept meeting the same gap in businesses I was already fixing, and
                 nothing on the market closed it at a price those businesses could justify. So I built
-                the thing that did. It exists because the operational work needed it to, not because I
-                went looking for a product to sell.</p>
+                the thing that did. It exists because the operational work needed it, and every feature in it has come out of a real job for a real client.</p>
             </div>
 
             <div className="plate-scroll">
@@ -210,8 +206,7 @@ export default function AboutPage() {
       <section className={`g-white ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Want to talk it through first?</h2>
-          <p className="lede">No pitch, no obligation. Just a conversation about whether this is the right
-            fit before anything gets booked.</p>
+          <p className="lede">A straightforward conversation about whether this is the right fit, before anything gets booked.</p>
           <div className={s.heroCta}>
             <Link className="btn btn--primary" href="/contact">Book a call</Link>
             <Link className={`btn ${s.btnGhost} ${s.btnArrow}`} href="/clarity">See how a Clarity Audit works</Link>
