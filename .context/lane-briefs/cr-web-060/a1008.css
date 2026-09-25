@@ -1,0 +1,72 @@
+/* ─── DO-ART-1008 · Home how-I-help · route poster with pinned exhibits (D17, the 831 recipe) ─── */
+.a1008{ --u:calc(100cqw / 1600); aspect-ratio:1600 / 900; margin-top:44px;
+  background:
+    radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
+      color-mix(in srgb, var(--do-prussian-blue) 78%, #000) 100%) }
+.a1008 .gridl{ position:absolute; inset:0; pointer-events:none; opacity:.55;
+  background-image:linear-gradient(color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--do-sky-blue) 6%, transparent) 1px, transparent 1px);
+  background-size:calc(40 * var(--u)) calc(40 * var(--u)) }
+.a1008 .eb{ position:absolute; left:calc(96 * var(--u)); top:calc(78 * var(--u)); margin:0;
+  font-size:max(10px, calc(20 * var(--u))); color:var(--do-sky-blue) }
+.a1008 .stand{ position:absolute; left:calc(96 * var(--u)); top:calc(122 * var(--u)); width:calc(560 * var(--u)); margin:0;
+  font-family:var(--do-font-heading); font-weight:700; font-size:max(15px, calc(26 * var(--u))); line-height:1.2;
+  letter-spacing:-.015em; color:var(--do-white) }
+.a1008 svg.route{ position:absolute; inset:0; width:100%; height:100% }
+.a1008 .fan{ position:absolute; inset:0 }
+.a1008 .docmini{ position:absolute; background:var(--do-white); color:var(--do-prussian-blue);
+  border-radius:calc(6 * var(--u)); padding:calc(16 * var(--u)) calc(18 * var(--u));
+  box-shadow:0 calc(22 * var(--u)) calc(44 * var(--u)) color-mix(in srgb, #000 45%, transparent);
+  font-family:var(--do-font-body) }
+.a1008 .docmini .tag{ display:block; font-family:var(--do-font-mono); font-size:max(7px, calc(10 * var(--u)));
+  letter-spacing:.14em; text-transform:uppercase; color:color-mix(in srgb, var(--do-prussian-blue) 60%, transparent) }
+.a1008 .docmini .row{ display:flex; align-items:baseline; gap:calc(8 * var(--u)); margin-top:calc(9 * var(--u));
+  padding-top:calc(9 * var(--u)); border-top:1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  font-size:max(10px, calc(14 * var(--u))); font-weight:700 }
+.a1008 .docmini .row:first-of-type{ border-top:0; padding-top:0; margin-top:calc(10 * var(--u)) }
+.a1008 .docmini .row b{ font-family:var(--do-font-mono); font-weight:700; font-size:max(8px, calc(11 * var(--u)));
+  color:var(--do-cerulean) }
+.a1008 .photopin{ position:absolute; padding:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+  background:var(--do-off-white); box-shadow:0 calc(20 * var(--u)) calc(40 * var(--u)) color-mix(in srgb, #000 45%, transparent) }
+.a1008 .photopin img{ display:block; width:100%; height:100%; object-fit:cover;
+  filter:grayscale(.3) saturate(.75) contrast(1.08) brightness(.92) }
+.a1008 .photopin .tint{ position:absolute; inset:calc(9 * var(--u)) calc(9 * var(--u)) calc(34 * var(--u));
+  background:var(--do-prussian-blue); mix-blend-mode:multiply; opacity:.32 }
+.a1008 .photopin span{ position:absolute; left:calc(11 * var(--u)); right:calc(9 * var(--u)); bottom:calc(8 * var(--u));
+  font-family:var(--do-font-mono); font-size:calc(11 * var(--u)); line-height:1.3; letter-spacing:.06em; text-transform:uppercase;
+  color:color-mix(in srgb, var(--do-prussian-blue) 85%, transparent) }
+.a1008 .st{ position:absolute; margin:0 }
+.a1008 .st .n{ display:block; font-family:var(--do-font-mono); font-size:max(9px, calc(14 * var(--u))); letter-spacing:.16em;
+  text-transform:uppercase; color:var(--do-sky-blue) }
+.a1008 .st h3{ margin:calc(6 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; font-size:max(17px, calc(28 * var(--u)));
+  line-height:1.05; letter-spacing:-.02em; color:var(--do-white) }
+.a1008 .st p{ margin:calc(8 * var(--u)) 0 0; font-size:max(12px, calc(15 * var(--u))); line-height:1.4;
+  color:color-mix(in srgb, var(--do-off-white) 82%, transparent) }
+.a1008 .st a{ display:inline-block; margin-top:calc(10 * var(--u)); font-family:var(--do-font-mono); font-weight:700;
+  font-size:max(10px, calc(12 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-amber);
+  text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--do-amber) 55%, transparent) }
+.a1008 .st--end h3{ color:var(--do-amber); font-size:max(19px, calc(34 * var(--u))) }
+.a1008 .st--end .n{ color:var(--do-amber) }
+.a1008 .d17-mark--abs{ left:calc(26 * var(--u)); bottom:calc(24 * var(--u)); font-size:max(9px, calc(13 * var(--u))) }
+@media (max-width: 760px){
+  .a1008{ aspect-ratio:auto; padding:26px 20px 30px }
+  .a1008 .eb, .a1008 .stand{ position:static; width:auto }
+  .a1008 .stand{ font-size:16px; margin-top:8px }
+  .a1008 svg.route{ display:none }
+  .a1008 .fan{ position:relative; display:flex; align-items:flex-start; gap:14px; margin:22px 0 6px }
+  .a1008 .docmini, .a1008 .photopin{ position:relative !important; left:auto !important; top:auto !important; width:48% !important;
+    transform:none !important }
+  .a1008 .photopin{ height:150px !important; padding:6px 6px 32px }
+  .a1008 .photopin .tint{ inset:6px 6px 32px } .a1008 .photopin span{ font-size:8.5px; left:7px; right:6px; bottom:5px }
+  .a1008 .stations{ position:relative; margin-top:20px; padding-left:34px }
+  .a1008 .stations::before{ content:''; position:absolute; left:8px; top:8px; bottom:36px; width:8px; border-radius:6px;
+    background:linear-gradient(180deg, var(--do-sky-blue), var(--do-sky-blue) 80%, var(--do-amber)) }
+  .a1008 .st{ position:relative !important; left:auto !important; top:auto !important; width:auto !important; padding:10px 0 14px }
+  .a1008 .st::before{ content:''; position:absolute; left:-33px; top:14px; width:18px; height:18px; border-radius:50%;
+    background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-sizing:border-box }
+  .a1008 .st--end::before{ background:var(--do-amber); left:-35px; width:22px; height:22px }
+  .a1008 .st .n{ font-size:11px } .a1008 .st h3{ font-size:20px } .a1008 .st--end h3{ font-size:24px } .a1008 .st p{ font-size:14px }
+  .a1008 .d17-mark--abs{ position:static; display:inline-block; margin-top:16px; left:auto; bottom:auto }
+}
+
