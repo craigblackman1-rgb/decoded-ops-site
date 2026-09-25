@@ -189,11 +189,10 @@ export default async function FractionalCTOLocationPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'ProfessionalService',
-            name: 'Decoded Ops',
+            '@type': 'Service',
+            name: 'Fractional CTO',
             description: `Fractional CTO services for businesses in ${loc.name}, ${loc.county}`,
-            address: { '@type': 'PostalAddress', addressLocality: 'Worthing', addressRegion: 'West Sussex', addressCountry: 'GB' },
-            telephone: '07735 620 603',
+            provider: { '@id': 'https://decodedops.co.uk/#organisation' },
             areaServed: [
               {
                 '@type': 'City',
@@ -209,22 +208,7 @@ export default async function FractionalCTOLocationPage({
                 geoRadius: '160000',
               },
             ],
-            geo: { '@type': 'GeoCoordinates', latitude: 50.8179, longitude: -0.3729 },
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Fractional CTO',
-              itemListElement: [
-                {
-                  '@type': 'Offer',
-                  itemOffered: {
-                    '@type': 'Service',
-                    name: 'Fractional CTO',
-                    url: 'https://decodedops.co.uk/retained',
-                  },
-                },
-              ],
-            },
-            parentOrganization: { '@id': 'https://decodedops.co.uk/#organisation' },
+            serviceType: 'Fractional CTO',
             url: `https://decodedops.co.uk/locations/fractional-cto/${loc.slug}`,
           }),
         }}
