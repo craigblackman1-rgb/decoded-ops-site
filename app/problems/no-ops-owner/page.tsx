@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Head of Operations for Small Business | Decoded Ops',
- description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
+ title: "Interim Operations Director, Decoration | Decoded Ops",
+ description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
  alternates: { canonical: '/problems/no-ops-owner' },
  openGraph: {
-  title: 'Head of Operations for Small Business | Decoded Ops',
-  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
+  title: "Interim Operations Director, Decoration | Decoded Ops",
+  description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
   url: 'https://decodedops.co.uk/problems/no-ops-owner',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Head of Operations for Small Business | Decoded Ops',
-  description: 'A head of operations for a small business stops the same problems repeating on the owner\'s desk. What the role does, and how to get one without a full hire.',
+  title: "Interim Operations Director, Decoration | Decoded Ops",
+  description: "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire.",
  },
 };
 

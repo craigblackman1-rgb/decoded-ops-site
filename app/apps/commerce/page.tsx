@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
-  description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
+  title: 'B2B Ecommerce Platform for Wholesale | Decoded Ops',
+  description: 'Decoded Commerce is a B2B ecommerce platform built around how you actually sell: company accounts, spend limits and three tiers priced on what you need.',
   alternates: { canonical: '/apps/commerce' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
-    description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
+    title: 'B2B Ecommerce Platform for Wholesale | Decoded Ops',
+    description: 'Decoded Commerce is a B2B ecommerce platform built around how you actually sell: company accounts, spend limits and three tiers priced on what you need.',
     url: 'https://decodedops.co.uk/apps/commerce',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Commerce: B2B Ecommerce for Wholesale | Decoded Ops',
-    description: 'Decoded Commerce is a B2B ecommerce storefront that fits how you actually sell: company accounts and spend limits, three tiers priced on functionality.',
+    title: 'B2B Ecommerce Platform for Wholesale | Decoded Ops',
+    description: 'Decoded Commerce is a B2B ecommerce platform built around how you actually sell: company accounts, spend limits and three tiers priced on what you need.',
     images: [OG_IMAGE_PATH],
   },
 };

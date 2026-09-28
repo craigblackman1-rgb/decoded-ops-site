@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Legacy System Replacement for Small Business | Decoded Ops',
- description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
+ title: 'Inventory Management Software, Small Firms | Decoded Ops',
+ description: 'Inventory management software bought ten years ago was rarely built for decoration BOMs or supplier artwork. I show you what a proper replacement covers.',
  alternates: { canonical: '/problems/legacy-system' },
  openGraph: {
-  title: 'Legacy System Replacement for Small Business | Decoded Ops',
-  description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
+  title: 'Inventory Management Software, Small Firms | Decoded Ops',
+  description: 'Inventory management software bought ten years ago was rarely built for decoration BOMs or supplier artwork. I show you what a proper replacement covers.',
   url: 'https://decodedops.co.uk/problems/legacy-system',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Legacy System Replacement for Small Business | Decoded Ops',
-  description: "Legacy system replacement for a small business often means the platform bought ten years ago was never built for decoration BOMs or supplier artwork.",
+  title: 'Inventory Management Software, Small Firms | Decoded Ops',
+  description: 'Inventory management software bought ten years ago was rarely built for decoration BOMs or supplier artwork. I show you what a proper replacement covers.',
  },
 };
 

@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Hanicks ERP Case Study | Decoded Ops',
-  description: 'Hanicks sells heating spares from a large catalogue arriving from many suppliers in different formats. This case study covers keeping it clean and current.',
+  title: 'ERP Implementation Case Study, Hanicks | Decoded Ops',
+  description: 'This ERP implementation case study covers Hanicks, who sell heating spares from a large catalogue arriving from many suppliers, and how I keep it clean.',
   alternates: { canonical: '/case-studies/case-study-01' },
   openGraph: {
     type: 'article',
-    title: 'Hanicks ERP Case Study | Decoded Ops',
-    description: 'Hanicks sells heating spares from a large catalogue arriving from many suppliers in different formats. This case study covers keeping it clean and current.',
+    title: 'ERP Implementation Case Study, Hanicks | Decoded Ops',
+    description: 'This ERP implementation case study covers Hanicks, who sell heating spares from a large catalogue arriving from many suppliers, and how I keep it clean.',
     url: 'https://decodedops.co.uk/case-studies/case-study-01',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hanicks ERP Case Study | Decoded Ops',
-    description: 'Hanicks sells heating spares from a large catalogue arriving from many suppliers in different formats. This case study covers keeping it clean and current.',
+    title: 'ERP Implementation Case Study, Hanicks | Decoded Ops',
+    description: 'This ERP implementation case study covers Hanicks, who sell heating spares from a large catalogue arriving from many suppliers, and how I keep it clean.',
     images: [OG_IMAGE_PATH],
   },
 };

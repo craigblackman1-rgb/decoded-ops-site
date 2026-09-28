@@ -21,21 +21,21 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: { absolute: 'Capacity Planning Calculator for Print | Decoded Ops' },
+  title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
   description:
-    'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
+    'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
   alternates: { canonical: '/resources/capacity-planner' },
   openGraph: {
     type: 'website',
-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
-    description: 'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
+    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+    description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
     url: 'https://decodedops.co.uk/resources/capacity-planner',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Capacity Planning Calculator for Print | Decoded Ops',
-    description: 'A free capacity planning calculator for print and embroidery businesses. Work out how many jobs your machines and team can take on each week.',
+    title: 'Capacity Planning Calculator, Free Tool | Decoded Ops',
+    description: 'A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week.',
     images: [OG_IMAGE_PATH],
   },
 };

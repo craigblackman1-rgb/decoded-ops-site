@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Print Shop Management Software | Decoded Ops',
-  description: 'Print shop management software covering production scheduling, order management and artwork approval for print and promotional merchandise businesses.',
+  title: 'Print Shop Management Software for Promo | Decoded Ops',
+  description: 'Print shop management software covering production scheduling, order management and artwork approval, built for print and promotional merchandise firms.',
   alternates: { canonical: '/sectors/print-promotional' },
   openGraph: {
-    title: 'Print Shop Management Software | Decoded Ops',
-    description: 'Print shop management software covering production scheduling, order management and artwork approval for print and promotional merchandise businesses.',
+    title: 'Print Shop Management Software for Promo | Decoded Ops',
+    description: 'Print shop management software covering production scheduling, order management and artwork approval, built for print and promotional merchandise firms.',
     url: 'https://decodedops.co.uk/sectors/print-promotional',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Print Shop Management Software | Decoded Ops',
-    description: 'Print shop management software covering production scheduling, order management and artwork approval for print and promotional merchandise businesses.',
+    title: 'Print Shop Management Software for Promo | Decoded Ops',
+    description: 'Print shop management software covering production scheduling, order management and artwork approval, built for print and promotional merchandise firms.',
   },
 };
 

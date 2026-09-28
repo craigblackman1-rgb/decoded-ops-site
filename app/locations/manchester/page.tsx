@@ -9,19 +9,19 @@ import '@/app/d17-global.css';
 import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
-  title: 'Operations Consultant in Manchester | Decoded Ops',
-  description: 'Operations and technology consultant for print, embroidery and workwear businesses in Manchester and the North West.',
+  title: 'Business Consultant in Manchester, UK | Decoded Ops',
+  description: 'I work as a business consultant for print, embroidery and workwear companies in Manchester and the North West. Book a free call to see if I can help.',
   alternates: { canonical: '/locations/manchester' },
   openGraph: {
-    title: 'Operations Consultant in Manchester | Decoded Ops',
-    description: 'Operations and technology consultant for print, embroidery and workwear businesses in Manchester and the North West.',
+    title: 'Business Consultant in Manchester, UK | Decoded Ops',
+    description: 'I work as a business consultant for print, embroidery and workwear companies in Manchester and the North West. Book a free call to see if I can help.',
     url: 'https://decodedops.co.uk/locations/manchester',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations Consultant in Manchester | Decoded Ops',
-    description: 'Operations and technology consultant for print, embroidery and workwear businesses in Manchester and the North West.',
+    title: 'Business Consultant in Manchester, UK | Decoded Ops',
+    description: 'I work as a business consultant for print, embroidery and workwear companies in Manchester and the North West. Book a free call to see if I can help.',
   },
 };
 

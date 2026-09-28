@@ -22,20 +22,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Artwork Approval Workflow Playbook | Decoded Ops',
-  description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
+  title: 'Artwork Management Software Playbook | Decoded Ops',
+  description: 'A five-step playbook for artwork management software and process, built to cut approval time to 24 hours with a structured brief and chase routine.',
   alternates: { canonical: '/resources/artwork-approval-playbook' },
   openGraph: {
     type: 'website',
-    title: 'Artwork Approval Workflow Playbook | Decoded Ops',
-    description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
+    title: 'Artwork Management Software Playbook | Decoded Ops',
+    description: 'A five-step playbook for artwork management software and process, built to cut approval time to 24 hours with a structured brief and chase routine.',
     url: 'https://decodedops.co.uk/resources/artwork-approval-playbook',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Artwork Approval Workflow Playbook | Decoded Ops',
-    description: 'A five-step artwork approval workflow playbook for decoration businesses. Cut approval time to 24 hours with a structured brief and chase process.',
+    title: 'Artwork Management Software Playbook | Decoded Ops',
+    description: 'A five-step playbook for artwork management software and process, built to cut approval time to 24 hours with a structured brief and chase routine.',
     images: [OG_IMAGE_PATH],
   },
 };

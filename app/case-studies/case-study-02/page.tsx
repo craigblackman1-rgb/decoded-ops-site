@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Clarity Audit Case Study | Decoded Ops',
-  description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+  title: 'Small Business Technology Consultant Case | Decoded Ops',
+  description: 'As a small business technology consultant, I ran a Clarity Audit into a Deliver engagement for a branded apparel retailer. The diagnostic came first.',
   alternates: { canonical: '/case-studies/case-study-02' },
   openGraph: {
     type: 'article',
-    title: 'Clarity Audit Case Study | Decoded Ops',
-    description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+    title: 'Small Business Technology Consultant Case | Decoded Ops',
+    description: 'As a small business technology consultant, I ran a Clarity Audit into a Deliver engagement for a branded apparel retailer. The diagnostic came first.',
     url: 'https://decodedops.co.uk/case-studies/case-study-02',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clarity Audit Case Study | Decoded Ops',
-    description: 'A Clarity Audit case study into a Deliver engagement for a branded apparel and decoration retailer, where the diagnostic came before the decision.',
+    title: 'Small Business Technology Consultant Case | Decoded Ops',
+    description: 'As a small business technology consultant, I ran a Clarity Audit into a Deliver engagement for a branded apparel retailer. The diagnostic came first.',
     images: [OG_IMAGE_PATH],
   },
 };

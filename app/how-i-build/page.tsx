@@ -6,20 +6,20 @@ import { JsonLd } from '@/components/JsonLd';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Buy vs Build Software Decision | Decoded Ops',
-    description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
+  title: 'ERP Implementation Consultant, Buy or Build | Decoded Ops',
+    description: "As an ERP implementation consultant, I set out what's on the market, what it costs and where it falls short, so the buy-or-build decision stays yours.",
   alternates: { canonical: '/how-i-build' },
   openGraph: {
     type: 'website',
-    title: 'Buy vs Build Software Decision | Decoded Ops',
-  description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
+    title: 'ERP Implementation Consultant, Buy or Build | Decoded Ops',
+  description: "As an ERP implementation consultant, I set out what's on the market, what it costs and where it falls short, so the buy-or-build decision stays yours.",
     url: 'https://decodedops.co.uk/how-i-build',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Buy vs Build Software Decision | Decoded Ops',
-    description: "Making a buy vs build software decision. I show you what's on the market, what it costs and where it falls short, so you choose on the facts.",
+    title: 'ERP Implementation Consultant, Buy or Build | Decoded Ops',
+    description: "As an ERP implementation consultant, I set out what's on the market, what it costs and where it falls short, so the buy-or-build decision stays yours.",
     images: [OG_IMAGE_PATH],
   },
 };

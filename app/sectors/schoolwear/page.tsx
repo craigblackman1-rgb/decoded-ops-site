@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import '@/app/d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Schoolwear Software | Decoded Ops',
-  description: 'Schoolwear software that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
+  title: 'Uniform Ordering System for Schoolwear | Decoded Ops',
+  description: 'A uniform ordering system that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
   alternates: { canonical: '/sectors/schoolwear' },
   openGraph: {
-    title: 'Schoolwear Software | Decoded Ops',
-    description: 'Schoolwear software that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
+    title: 'Uniform Ordering System for Schoolwear | Decoded Ops',
+    description: 'A uniform ordering system that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
     url: 'https://decodedops.co.uk/sectors/schoolwear',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schoolwear Software | Decoded Ops',
-    description: 'Schoolwear software that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
+    title: 'Uniform Ordering System for Schoolwear | Decoded Ops',
+    description: 'A uniform ordering system that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September.',
   },
 };
 

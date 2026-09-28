@@ -10,20 +10,20 @@ import '@/app/d17-resources.css';
 
 // Target keyword: "warning signs your business systems are failing" (secondary: "signs you need a technology audit")
 export const metadata = {
-  title: '5 Warning Signs You Need a New ERP | Decoded Ops',
-  description: 'Five signs you need a new ERP, drawn from 25-plus years running operations in this sector, not vendor theory. See where systems are costing you more.',
+  title: 'Manufacturing ERP Software, 5 Warning Signs | Decoded Ops',
+  description: 'Five signs your manufacturing ERP software needs replacing, drawn from 25-plus years running operations in this sector, not vendor theory. Check yours now.',
   alternates: { canonical: '/resources/5-warning-signs' },
   openGraph: {
     type: 'website',
-    title: '5 Warning Signs You Need a New ERP | Decoded Ops',
-    description: 'Five signs you need a new ERP, drawn from 25-plus years running operations in this sector, not vendor theory. See where systems are costing you more.',
+    title: 'Manufacturing ERP Software, 5 Warning Signs | Decoded Ops',
+    description: 'Five signs your manufacturing ERP software needs replacing, drawn from 25-plus years running operations in this sector, not vendor theory. Check yours now.',
     url: 'https://decodedops.co.uk/resources/5-warning-signs',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5 Warning Signs You Need a New ERP | Decoded Ops',
-    description: 'Five signs you need a new ERP, drawn from 25-plus years running operations in this sector, not vendor theory. See where systems are costing you more.',
+    title: 'Manufacturing ERP Software, 5 Warning Signs | Decoded Ops',
+    description: 'Five signs your manufacturing ERP software needs replacing, drawn from 25-plus years running operations in this sector, not vendor theory. Check yours now.',
   },
 };
 

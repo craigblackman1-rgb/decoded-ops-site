@@ -7,20 +7,20 @@ import s from '@/app/deco-page.module.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Technology Audit for Small Business | Decoded Ops',
-  description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £750.',
+  title: 'Process Audit for Print & Embroidery | Decoded Ops',
+  description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
-    title: 'Technology Audit for Small Business | Decoded Ops',
-    description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £750.',
+    title: 'Process Audit for Print & Embroidery | Decoded Ops',
+    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
     url: 'https://decodedops.co.uk/clarity',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Technology Audit for Small Business | Decoded Ops',
-    description: 'A technology audit for small business: one day on site, a written report within five days and the Clarity Guarantee. From £750.',
+    title: 'Process Audit for Print & Embroidery | Decoded Ops',
+    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
     images: [OG_IMAGE_PATH],
   },
 };

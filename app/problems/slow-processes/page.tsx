@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Process Improvement Consultant | Decoded Ops',
- description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
+ title: 'Process Improvement Consultant, Decoration | Decoded Ops',
+ description: 'As a process improvement consultant, I watch how work actually moves through your business before touching any software. UK-wide, remote or on site.',
  alternates: { canonical: '/problems/slow-processes' },
  openGraph: {
-  title: 'Process Improvement Consultant | Decoded Ops',
-  description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
+  title: 'Process Improvement Consultant, Decoration | Decoded Ops',
+  description: 'As a process improvement consultant, I watch how work actually moves through your business before touching any software. UK-wide, remote or on site.',
   url: 'https://decodedops.co.uk/problems/slow-processes',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Process Improvement Consultant | Decoded Ops',
-  description: "A process improvement consultant observes how work actually moves through your business before touching any software. UK-wide, remote or on site.",
+  title: 'Process Improvement Consultant, Decoration | Decoded Ops',
+  description: 'As a process improvement consultant, I watch how work actually moves through your business before touching any software. UK-wide, remote or on site.',
  },
 };
 

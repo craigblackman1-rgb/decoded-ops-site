@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Product Data Management for Decorated Goods | Decoded Ops',
- description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
+ title: 'Product Data Management for Decoration | Decoded Ops',
+ description: 'Product data management for a decoration business means one clean record, not six that disagree. I bring supplier feeds and the ERP into line.',
  alternates: { canonical: '/problems/data-scattered' },
  openGraph: {
-  title: 'Product Data Management for Decorated Goods | Decoded Ops',
-  description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
+  title: 'Product Data Management for Decoration | Decoded Ops',
+  description: 'Product data management for a decoration business means one clean record, not six that disagree. I bring supplier feeds and the ERP into line.',
   url: 'https://decodedops.co.uk/problems/data-scattered',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Product Data Management for Decorated Goods | Decoded Ops',
-  description: "Product data management for decorated goods means one clean record, not six that disagree. Supplier feeds, spreadsheets, the ERP and the website, all in sync.",
+  title: 'Product Data Management for Decoration | Decoded Ops',
+  description: 'Product data management for a decoration business means one clean record, not six that disagree. I bring supplier feeds and the ERP into line.',
  },
 };
 

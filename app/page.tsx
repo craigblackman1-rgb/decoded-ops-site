@@ -10,18 +10,18 @@ import './homepage.css';
 import './d17-global.css';
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
-  description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
+  title: 'Operations Consultant for Print & Embroidery | Decoded Ops',
+  description: "I'm an operations consultant for UK print, embroidery and workwear businesses. Book a Clarity Audit and get a written plan within five days.",
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
-    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
+    title: 'Operations Consultant for Print & Embroidery | Decoded Ops',
+    description: "I'm an operations consultant for UK print, embroidery and workwear businesses. Book a Clarity Audit and get a written plan within five days.",
     url: 'https://decodedops.co.uk',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional CTO for Print & Decorated Goods | Decoded Ops',
-    description: 'Independent fractional CTO for UK print, embroidery and workwear businesses. A Clarity Audit gets you a full day on site and a written plan within five days.',
+    title: 'Operations Consultant for Print & Embroidery | Decoded Ops',
+    description: "I'm an operations consultant for UK print, embroidery and workwear businesses. Book a Clarity Audit and get a written plan within five days.",
   },
 };
 

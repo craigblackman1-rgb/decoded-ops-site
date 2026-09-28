@@ -8,20 +8,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Eternal Fitness Case Study | Decoded Ops',
-  description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
+  title: 'AI Training Tool Case Study, Eternal Fitness | Decoded Ops',
+  description: 'I was technical lead on a full site rebuild and an AI training tool for Eternal Fitness, a training studio working with clinical populations. See it here.',
   alternates: { canonical: '/case-studies/eternal-fitness' },
   openGraph: {
     type: 'article',
-    title: 'Eternal Fitness Case Study | Decoded Ops',
-    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
+    title: 'AI Training Tool Case Study, Eternal Fitness | Decoded Ops',
+    description: 'I was technical lead on a full site rebuild and an AI training tool for Eternal Fitness, a training studio working with clinical populations. See it here.',
     url: 'https://decodedops.co.uk/case-studies/eternal-fitness',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eternal Fitness Case Study | Decoded Ops',
-    description: 'Technical lead on a full site rebuild and an AI-assisted training plan tool for Eternal Fitness, a training studio for clinical populations.',
+    title: 'AI Training Tool Case Study, Eternal Fitness | Decoded Ops',
+    description: 'I was technical lead on a full site rebuild and an AI training tool for Eternal Fitness, a training studio working with clinical populations. See it here.',
     images: [OG_IMAGE_PATH],
   },
 };

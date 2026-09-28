@@ -1,0 +1,342 @@
+[
+ {
+  "page": "/",
+  "title": "Operations Consultant for Print & Embroidery | Decoded Ops",
+  "description": "I'm an operations consultant for UK print, embroidery and workwear businesses. Book a Clarity Audit and get a written plan within five days."
+ },
+ {
+  "page": "/about",
+  "title": "About Craig, Business Operations Consultant | Decoded Ops",
+  "description": "I'm Craig Blackman, a business operations consultant who started on the warehouse floor and still works from that view. Read my story before you call."
+ },
+ {
+  "page": "/contact",
+  "title": "Book a Free Discovery Call with Craig | Decoded Ops",
+  "description": "Book a free 60-minute discovery call with me. I work with print, embroidery and decoration businesses on operations and technology. Pick a time now."
+ },
+ {
+  "page": "/how-i-build",
+  "title": "ERP Implementation Consultant, Buy or Build | Decoded Ops",
+  "description": "As an ERP implementation consultant, I set out what's on the market, what it costs and where it falls short, so the buy-or-build decision stays yours."
+ },
+ {
+  "page": "/pricing",
+  "title": "Operations Consultancy Pricing for Decoration | Decoded Ops",
+  "description": "My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits."
+ },
+ {
+  "page": "/process-quality-system",
+  "title": "How to Write a Standard Operating Procedure | Decoded Ops",
+  "description": "How to write a standard operating procedure that your team actually uses: a Process Register, one-page SOPs and an Improvement Log you keep once I leave."
+ },
+ {
+  "page": "/small-business",
+  "title": "Small Business Consultant, Print & Embroidery | Decoded Ops",
+  "description": "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice."
+ },
+ {
+  "page": "/clarity",
+  "title": "Process Audit for Print & Embroidery | Decoded Ops",
+  "description": "My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750."
+ },
+ {
+  "page": "/deliver",
+  "title": "Business Process Improvement, ERP Delivery | Decoded Ops",
+  "description": "Business process improvement with someone technical on your side of the table who gets the ERP built, plus a Quality System you own once the work is done."
+ },
+ {
+  "page": "/retained",
+  "title": "Fractional COO for Print & Embroidery | Decoded Ops",
+  "description": "I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. From £900 a month."
+ },
+ {
+  "page": "/transform",
+  "title": "Digital Transformation Consultancy for Print | Decoded Ops",
+  "description": "My digital transformation consultancy is the programme that follows a Clarity Audit: systems, process and people changed together, run to milestones."
+ },
+ {
+  "page": "/apps",
+  "title": "Print Management Software for Decoration | Decoded Ops",
+  "description": "Print management software and embroidery business software built for jobs the usual platforms never covered: an ERP, an artwork tool and a B2B storefront."
+ },
+ {
+  "page": "/apps/commerce",
+  "title": "B2B Ecommerce Platform for Wholesale | Decoded Ops",
+  "description": "Decoded Commerce is a B2B ecommerce platform built around how you actually sell: company accounts, spend limits and three tiers priced on what you need."
+ },
+ {
+  "page": "/apps/proof",
+  "title": "Artwork Approval Software for Decoration | Decoded Ops",
+  "description": "Decoded Proof is artwork approval software for embroidery and print: every version kept, one audit trail, and customers approving their own proofs online."
+ },
+ {
+  "page": "/apps/works",
+  "title": "ERP for Printing Companies & Stock Control | Decoded Ops",
+  "description": "Decoded Works is ERP for a printing company that also needs real stock control: sales, purchasing, production and channels in one system, live at Hanicks."
+ },
+ {
+  "page": "/problems",
+  "title": "Growing Pains in Business, Eighteen Problems | Decoded Ops",
+  "description": "Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build."
+ },
+ {
+  "page": "/problems/ai-paralysis",
+  "title": "AI Readiness Assessment for Decoration | Decoded Ops",
+  "description": "My AI readiness assessment is honest about what needs to be in place before AI can deliver value for a print or embroidery business, and what to fix first."
+ },
+ {
+  "page": "/problems/bottleneck-growth",
+  "title": "Bottleneck in Production, Growth Stalling | Decoded Ops",
+  "description": "A bottleneck in production usually means every decision, from purchase orders to artwork approvals, still runs through the owner. Here's how I open it up."
+ },
+ {
+  "page": "/problems/buy-vs-build",
+  "title": "ERP Evaluation Checklist, Buy vs Build | Decoded Ops",
+  "description": "My ERP evaluation checklist starts with one question: how much of what you need does the platform actually cover, and what does closing the rest cost."
+ },
+ {
+  "page": "/problems/cant-scale-operations",
+  "title": "Scaling a Business When Operations Won't | Decoded Ops",
+  "description": "Scaling a business gets harder, not easier, once operations stop keeping pace with growth. Here's what I look at first, and the fix that usually works."
+ },
+ {
+  "page": "/problems/data-scattered",
+  "title": "Product Data Management for Decoration | Decoded Ops",
+  "description": "Product data management for a decoration business means one clean record, not six that disagree. I bring supplier feeds and the ERP into line."
+ },
+ {
+  "page": "/problems/disaster-recovery",
+  "title": "Business Continuity Disaster Recovery Plan | Decoded Ops",
+  "description": "A business continuity disaster recovery plan for print and decoration businesses covers what happens when systems go down and orders still need to ship."
+ },
+ {
+  "page": "/problems/ecommerce-not-connected",
+  "title": "How to Fix Ecommerce Integration Issues | Decoded Ops",
+  "description": "I fix ecommerce integration issues where online orders come in but stock and invoicing stay manual. See how I connect the store to production properly."
+ },
+ {
+  "page": "/problems/erp-implementation-failure",
+  "title": "ERP Implementation Failure, Prevented | Decoded Ops",
+  "description": "Most ERP implementation failure in print and embroidery businesses traces back to one thing: the audit that should have come before the decision was made."
+ },
+ {
+  "page": "/problems/inventory-blind",
+  "title": "Stock Control System for Decoration Firms | Decoded Ops",
+  "description": "Without a proper stock control system you order stock you already have and run out of stock you didn't know you needed. Here's how Decoded Works fixes it."
+ },
+ {
+  "page": "/problems/legacy-system",
+  "title": "Inventory Management Software, Small Firms | Decoded Ops",
+  "description": "Inventory management software bought ten years ago was rarely built for decoration BOMs or supplier artwork. I show you what a proper replacement covers."
+ },
+ {
+  "page": "/problems/manual-workarounds",
+  "title": "Manual Workarounds in Print & Embroidery | Decoded Ops",
+  "description": "Manual workarounds mean your team has built a second system, and it lives in spreadsheets. I find it, remove the re-entry, and put the data in one place."
+ },
+ {
+  "page": "/problems/no-ops-owner",
+  "title": "Interim Operations Director, Decoration | Decoded Ops",
+  "description": "An interim operations director stops the same problems landing back on your desk. Here's what the role does, and how to get one without a full-time hire."
+ },
+ {
+  "page": "/problems/ops-in-owners-head",
+  "title": "Standard Operating Procedure Template | Decoded Ops",
+  "description": "A standard operating procedure template protects your business if you're ever unavailable. Why every decoration operation needs one, and how I build it."
+ },
+ {
+  "page": "/problems/seasonal-peaks",
+  "title": "Production Capacity Planning for Peaks | Decoded Ops",
+  "description": "Production capacity planning matters when your busiest month runs four times your quietest and the systems can't flex. Here's how I get them ready for it."
+ },
+ {
+  "page": "/problems/slow-processes",
+  "title": "Process Improvement Consultant, Decoration | Decoded Ops",
+  "description": "As a process improvement consultant, I watch how work actually moves through your business before touching any software. UK-wide, remote or on site."
+ },
+ {
+  "page": "/problems/spreadsheet-addiction",
+  "title": "Manual Processes, Spreadsheet Dependency | Decoded Ops",
+  "description": "Manual processes built up in spreadsheets leave the file that runs your operation one corrupted save from disaster. Here's how decoration firms outgrow it."
+ },
+ {
+  "page": "/problems/systems-dont-talk",
+  "title": "Systems That Don't Talk to Each Other | Decoded Ops",
+  "description": "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business."
+ },
+ {
+  "page": "/problems/wrong-erp-software",
+  "title": "ERP for Small Business, Chosen Right | Decoded Ops",
+  "description": "Choosing ERP for a small business means picking one that fits how it works, not how the demo looked. I show print and decoration firms how to evaluate it."
+ },
+ {
+  "page": "/sectors/awards-engraving",
+  "title": "Print Shop Software for Awards & Engraving | Decoded Ops",
+  "description": "Print shop software that gets names, dates and titles from customer to engraver without errors, proofs approved at volume, and jobs scheduled on time."
+ },
+ {
+  "page": "/sectors/garment-decoration",
+  "title": "ERP for Garment Decoration Businesses | Decoded Ops",
+  "description": "Garment decoration needs an ERP that handles embroidery, screen print, DTF and DTG scheduling, plus artwork that doesn't get approved over email."
+ },
+ {
+  "page": "/sectors/labels-packaging",
+  "title": "Print MIS Software for Labels & Packaging | Decoded Ops",
+  "description": "A print MIS that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI your bigger customers ask for."
+ },
+ {
+  "page": "/sectors/operations-consultant-print-embroidery",
+  "title": "Operations Management Consultant, Print | Decoded Ops",
+  "description": "As an operations management consultant for print and embroidery, I start with what your current process actually costs, then fix the parts that matter."
+ },
+ {
+  "page": "/sectors/print-promotional",
+  "title": "Print Shop Management Software for Promo | Decoded Ops",
+  "description": "Print shop management software covering production scheduling, order management and artwork approval, built for print and promotional merchandise firms."
+ },
+ {
+  "page": "/sectors/promotional-merchandise",
+  "title": "Promotional Products Software for Suppliers | Decoded Ops",
+  "description": "Promotional products software that puts every supplier in one clean catalogue, keeps artwork out of email threads, and protects margin at the order level."
+ },
+ {
+  "page": "/sectors/schoolwear",
+  "title": "Uniform Ordering System for Schoolwear | Decoded Ops",
+  "description": "A uniform ordering system that keeps supplier feeds current before the back-to-school peak, handles badge data as pupil numbers grow, and hits September."
+ },
+ {
+  "page": "/sectors/signs-graphics",
+  "title": "Sign Shop Management Software for Graphics | Decoded Ops",
+  "description": "Sign shop management software for job tracking from site survey to installation, quoting complex jobs without a margin leak, built to fit how you work."
+ },
+ {
+  "page": "/sectors/teamwear-clubwear",
+  "title": "B2B Ordering Portal for Teamwear & Clubwear | Decoded Ops",
+  "description": "A B2B ordering portal for squad numbers, sponsor logos and a hard deadline before the first match, with the proof loop sorted before the season starts."
+ },
+ {
+  "page": "/sectors/workwear",
+  "title": "Workwear Software for Supply & Decoration | Decoded Ops",
+  "description": "Workwear software that solves supplier feed chaos, puts decoration and stock in one picture, and automates replenishment. From someone who's run the floor."
+ },
+ {
+  "page": "/resources",
+  "title": "Process Improvement for Small Business | Decoded Ops",
+  "description": "Free resources for process improvement in a small print or embroidery business: an audit checklist, warning signs, SOP templates and plain-English guides."
+ },
+ {
+  "page": "/resources/5-warning-signs",
+  "title": "Manufacturing ERP Software, 5 Warning Signs | Decoded Ops",
+  "description": "Five signs your manufacturing ERP software needs replacing, drawn from 25-plus years running operations in this sector, not vendor theory. Check yours now."
+ },
+ {
+  "page": "/resources/artwork-approval-playbook",
+  "title": "Artwork Management Software Playbook | Decoded Ops",
+  "description": "A five-step playbook for artwork management software and process, built to cut approval time to 24 hours with a structured brief and chase routine."
+ },
+ {
+  "page": "/resources/audit-checklist",
+  "title": "Operations Audit Checklist, Free Download | Decoded Ops",
+  "description": "My operations audit checklist covers the six areas I review on every technology audit for print and embroidery businesses. Free to download today."
+ },
+ {
+  "page": "/resources/capacity-planner",
+  "title": "Capacity Planning Calculator, Free Tool | Decoded Ops",
+  "description": "A free capacity planning tool for print and embroidery businesses. Work out how many jobs your machines and team can actually take on each week."
+ },
+ {
+  "page": "/resources/decoded-method",
+  "title": "Business Process Review, The Decoded Method | Decoded Ops",
+  "description": "The Decoded Method is my business process review system: a Process Register, one-page SOPs and an Improvement Log, in plain English, one page per process."
+ },
+ {
+  "page": "/resources/erp-selection-playbook",
+  "title": "ERP Selection Guide for Decoration Firms | Decoded Ops",
+  "description": "My plain-English ERP selection guide covers what it is, when you need one, how to choose, and the pitfalls specific to garment decoration businesses."
+ },
+ {
+  "page": "/resources/six-sigma",
+  "title": "Six Sigma for Small Business Explained | Decoded Ops",
+  "description": "Six Sigma for small business, explained without the jargon. What 3 to 6 Sigma actually mean for a print and embroidery operation, and where you start."
+ },
+ {
+  "page": "/resources/sop-template",
+  "title": "Free SOP Template for Print & Embroidery | Decoded Ops",
+  "description": "A free SOP template for garment decoration, print and embroidery businesses, with a seven-step writing method and a Process Register. Download now."
+ },
+ {
+  "page": "/tools",
+  "title": "Capacity Planning Calculator & Free Tools | Decoded Ops",
+  "description": "A capacity planning calculator and other free tools that work out the real cost of downtime, poor recovery and manual processes for decoration leaders."
+ },
+ {
+  "page": "/tools/automation-roi-calculator",
+  "title": "Automation ROI Calculator, Free Tool | Decoded Ops",
+  "description": "My free automation ROI calculator shows when automating a manual process pays for itself, plus what the three-year return looks like for your business."
+ },
+ {
+  "page": "/tools/downtime-cost-calculator",
+  "title": "Downtime Cost Calculator, Free Tool Online | Decoded Ops",
+  "description": "My free downtime cost calculator adds up the annual cost of system outages across labour and lost revenue, built for operations leaders in decoration."
+ },
+ {
+  "page": "/tools/ops-health-score",
+  "title": "Operations Audit, Free Ops Health Score | Decoded Ops",
+  "description": "This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now."
+ },
+ {
+  "page": "/tools/rto-calculator",
+  "title": "Disaster Recovery Plan Template & RTO Tool | Decoded Ops",
+  "description": "This disaster recovery plan template calculates your recovery time objective and shows what proper recovery is worth against your current downtime cost."
+ },
+ {
+  "page": "/tools/should-i-replace-erp",
+  "title": "ERP for Manufacturing, Should You Replace It | Decoded Ops",
+  "description": "Not sure if your ERP for manufacturing needs replacing, upgrading or extending. Answer eight questions and get a clear recommendation, free, no signup."
+ },
+ {
+  "page": "/case-studies",
+  "title": "Manufacturing Operations Consultant Work | Decoded Ops",
+  "description": "As a manufacturing operations consultant, here's what I'm actually building right now, across decorated goods, workwear, heating spares and fitness."
+ },
+ {
+  "page": "/case-studies/case-study-01",
+  "title": "ERP Implementation Case Study, Hanicks | Decoded Ops",
+  "description": "This ERP implementation case study covers Hanicks, who sell heating spares from a large catalogue arriving from many suppliers, and how I keep it clean."
+ },
+ {
+  "page": "/case-studies/case-study-02",
+  "title": "Small Business Technology Consultant Case | Decoded Ops",
+  "description": "As a small business technology consultant, I ran a Clarity Audit into a Deliver engagement for a branded apparel retailer. The diagnostic came first."
+ },
+ {
+  "page": "/case-studies/case-study-03",
+  "title": "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
+  "description": "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder."
+ },
+ {
+  "page": "/case-studies/eternal-fitness",
+  "title": "AI Training Tool Case Study, Eternal Fitness | Decoded Ops",
+  "description": "I was technical lead on a full site rebuild and an AI training tool for Eternal Fitness, a training studio working with clinical populations. See it here."
+ },
+ {
+  "page": "/locations/manchester",
+  "title": "Business Consultant in Manchester, UK | Decoded Ops",
+  "description": "I work as a business consultant for print, embroidery and workwear companies in Manchester and the North West. Book a free call to see if I can help."
+ },
+ {
+  "page": "/locations/sussex-surrey",
+  "title": "Business Consultant in Sussex & Surrey | Decoded Ops",
+  "description": "I'm a business consultant for print, embroidery and workwear companies across Sussex and Surrey, based in Worthing. Book a free call to talk it through."
+ },
+ {
+  "page": "/locations/tech-audit",
+  "title": "Technology Audit, Independent & UK-Wide | Decoded Ops",
+  "description": "My technology audit is independent, with no vendor agenda, for print, embroidery and workwear businesses anywhere in the UK. See what a day on site covers."
+ },
+ {
+  "page": "/blog",
+  "title": "Embroidery Business Insights & Operations | Decoded Ops",
+  "description": "Plain-English insights for an embroidery business or print operation, on technology and systems, written from 25 years working in the sector. Read more."
+ }
+]

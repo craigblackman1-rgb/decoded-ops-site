@@ -11,23 +11,23 @@ import '@/app/d17-resources.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Free Operational Tools | Decoded Ops',
+  title: 'Capacity Planning Calculator & Free Tools | Decoded Ops',
   description:
-    'Free operational tools that calculate the real cost of downtime, poor recovery times and manual processes, built for leaders in decorated goods.',
+    'A capacity planning calculator and other free tools that work out the real cost of downtime, poor recovery and manual processes for decoration leaders.',
   alternates: { canonical: '/tools' },
   openGraph: {
     type: 'website',
-    title: 'Free Operational Tools | Decoded Ops',
+    title: 'Capacity Planning Calculator & Free Tools | Decoded Ops',
     description:
-      'Free operational tools that calculate the real cost of downtime, poor recovery times and manual processes, built for leaders in decorated goods.',
+      'A capacity planning calculator and other free tools that work out the real cost of downtime, poor recovery and manual processes for decoration leaders.',
     url: 'https://decodedops.co.uk/tools',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Operational Tools | Decoded Ops',
+    title: 'Capacity Planning Calculator & Free Tools | Decoded Ops',
     description:
-      'Free operational tools that calculate the real cost of downtime, poor recovery times and manual processes, built for leaders in decorated goods.',
+      'A capacity planning calculator and other free tools that work out the real cost of downtime, poor recovery and manual processes for decoration leaders.',
     images: [OG_IMAGE_PATH],
   },
 };

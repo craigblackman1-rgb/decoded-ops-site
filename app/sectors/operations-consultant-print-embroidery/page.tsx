@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
-  description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
+  title: 'Operations Management Consultant, Print | Decoded Ops',
+  description: 'As an operations management consultant for print and embroidery, I start with what your current process actually costs, then fix the parts that matter.',
   alternates: { canonical: '/sectors/operations-consultant-print-embroidery' },
   openGraph: {
-    title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
-    description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
+    title: 'Operations Management Consultant, Print | Decoded Ops',
+    description: 'As an operations management consultant for print and embroidery, I start with what your current process actually costs, then fix the parts that matter.',
     url: 'https://decodedops.co.uk/sectors/operations-consultant-print-embroidery',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations Consultant, Print & Embroidery | Decoded Ops',
-    description: 'An operations consultant for print and embroidery businesses, starting with what your current process actually costs. ERP and artwork management included.',
+    title: 'Operations Management Consultant, Print | Decoded Ops',
+    description: 'As an operations management consultant for print and embroidery, I start with what your current process actually costs, then fix the parts that matter.',
   },
 };
 

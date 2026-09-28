@@ -8,19 +8,19 @@ import '@/app/d17-global.css';
 import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
-  title: 'Independent Technology Audit, UK-wide | Decoded Ops',
-  description: 'An independent technology audit for print, embroidery and workwear businesses anywhere in the UK. No vendor agenda.',
+  title: 'Technology Audit, Independent & UK-Wide | Decoded Ops',
+  description: 'My technology audit is independent, with no vendor agenda, for print, embroidery and workwear businesses anywhere in the UK. See what a day on site covers.',
   alternates: { canonical: '/locations/tech-audit' },
   openGraph: {
-    title: 'Independent Technology Audit, UK-wide | Decoded Ops',
-    description: 'An independent technology audit for print, embroidery and workwear businesses anywhere in the UK. No vendor agenda.',
+    title: 'Technology Audit, Independent & UK-Wide | Decoded Ops',
+    description: 'My technology audit is independent, with no vendor agenda, for print, embroidery and workwear businesses anywhere in the UK. See what a day on site covers.',
     url: 'https://decodedops.co.uk/locations/tech-audit',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Independent Technology Audit, UK-wide | Decoded Ops',
-    description: 'An independent technology audit for print, embroidery and workwear businesses anywhere in the UK. No vendor agenda.',
+    title: 'Technology Audit, Independent & UK-Wide | Decoded Ops',
+    description: 'My technology audit is independent, with no vendor agenda, for print, embroidery and workwear businesses anywhere in the UK. See what a day on site covers.',
   },
 };
 

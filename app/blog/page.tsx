@@ -11,20 +11,20 @@ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 const HUB_API = process.env.HUB_API_URL || 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  title: 'Insights for Decorated Goods Businesses | Decoded Ops',
-  description: 'Plain-English insights on operations, technology and systems for print, embroidery and decoration businesses, written from 25 years in the sector.',
+  title: 'Embroidery Business Insights & Operations | Decoded Ops',
+  description: 'Plain-English insights for an embroidery business or print operation, on technology and systems, written from 25 years working in the sector. Read more.',
   alternates: { canonical: '/blog' },
   openGraph: {
     type: 'website',
-    title: 'Insights for Decorated Goods Businesses | Decoded Ops',
-    description: 'Plain-English insights on operations, technology and systems for print, embroidery and decoration businesses, written from 25 years in the sector.',
+    title: 'Embroidery Business Insights & Operations | Decoded Ops',
+    description: 'Plain-English insights for an embroidery business or print operation, on technology and systems, written from 25 years working in the sector. Read more.',
     url: 'https://decodedops.co.uk/blog',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Insights for Decorated Goods Businesses | Decoded Ops',
-    description: 'Plain-English insights on operations, technology and systems for print, embroidery and decoration businesses, written from 25 years in the sector.',
+    title: 'Embroidery Business Insights & Operations | Decoded Ops',
+    description: 'Plain-English insights for an embroidery business or print operation, on technology and systems, written from 25 years working in the sector. Read more.',
     images: [OG_IMAGE_PATH],
   },
 };

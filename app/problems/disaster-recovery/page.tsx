@@ -10,18 +10,18 @@ import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
- description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
+ description: 'A business continuity disaster recovery plan for print and decoration businesses covers what happens when systems go down and orders still need to ship.',
  alternates: { canonical: '/problems/disaster-recovery' },
  openGraph: {
   title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
-  description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
+  description: 'A business continuity disaster recovery plan for print and decoration businesses covers what happens when systems go down and orders still need to ship.',
   url: 'https://decodedops.co.uk/problems/disaster-recovery',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
   title: 'Business Continuity Disaster Recovery Plan | Decoded Ops',
-  description: 'A business continuity disaster recovery plan for print, decoration and workwear businesses: what happens when systems go down and orders still ship.',
+  description: 'A business continuity disaster recovery plan for print and decoration businesses covers what happens when systems go down and orders still need to ship.',
  },
 };
 

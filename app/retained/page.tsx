@@ -7,20 +7,20 @@ import { JsonLd } from '@/components/JsonLd';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Hire a Fractional CTO | Decoded Ops',
-  description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
+  title: 'Fractional COO for Print & Embroidery | Decoded Ops',
+  description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. From £900 a month.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
-    title: 'Hire a Fractional CTO | Decoded Ops',
-    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
+    title: 'Fractional COO for Print & Embroidery | Decoded Ops',
+    description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. From £900 a month.',
     url: 'https://decodedops.co.uk/retained',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hire a Fractional CTO | Decoded Ops',
-    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
+    title: 'Fractional COO for Print & Embroidery | Decoded Ops',
+    description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. From £900 a month.',
     images: [OG_IMAGE_PATH],
   },
 };

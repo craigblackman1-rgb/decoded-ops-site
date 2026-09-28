@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'ERP Implementation Failure | Decoded Ops',
- description: 'Most ERP implementation failure in print, embroidery and decoration businesses traces back to one thing: the audit that should have come before the decision.',
+ title: 'ERP Implementation Failure, Prevented | Decoded Ops',
+ description: 'Most ERP implementation failure in print and embroidery businesses traces back to one thing: the audit that should have come before the decision was made.',
  alternates: { canonical: '/problems/erp-implementation-failure' },
  openGraph: {
-  title: 'ERP Implementation Failure | Decoded Ops',
-  description: 'Most ERP implementation failure in print, embroidery and decoration businesses traces back to one thing: the audit that should have come before the decision.',
+  title: 'ERP Implementation Failure, Prevented | Decoded Ops',
+  description: 'Most ERP implementation failure in print and embroidery businesses traces back to one thing: the audit that should have come before the decision was made.',
   url: 'https://decodedops.co.uk/problems/erp-implementation-failure',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'ERP Implementation Failure | Decoded Ops',
-  description: 'Most ERP implementation failure in print, embroidery and decoration businesses traces back to one thing: the audit that should have come before the decision.',
+  title: 'ERP Implementation Failure, Prevented | Decoded Ops',
+  description: 'Most ERP implementation failure in print and embroidery businesses traces back to one thing: the audit that should have come before the decision was made.',
  },
 };
 

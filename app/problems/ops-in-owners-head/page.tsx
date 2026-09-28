@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: "Process Documentation for Small Business | Decoded Ops",
- description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
+ title: 'Standard Operating Procedure Template | Decoded Ops',
+ description: "A standard operating procedure template protects your business if you're ever unavailable. Why every decoration operation needs one, and how I build it.",
  alternates: { canonical: '/problems/ops-in-owners-head' },
  openGraph: {
-  title: "Process Documentation for Small Business | Decoded Ops",
-  description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
+  title: 'Standard Operating Procedure Template | Decoded Ops',
+  description: "A standard operating procedure template protects your business if you're ever unavailable. Why every decoration operation needs one, and how I build it.",
   url: 'https://decodedops.co.uk/problems/ops-in-owners-head',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: "Process Documentation for Small Business | Decoded Ops",
-  description: "Process documentation for a small business protects it if the owner is ever unavailable. Why every decoration operation needs it, and how it gets built.",
+  title: 'Standard Operating Procedure Template | Decoded Ops',
+  description: "A standard operating procedure template protects your business if you're ever unavailable. Why every decoration operation needs one, and how I build it.",
  },
 };
 

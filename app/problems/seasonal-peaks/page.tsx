@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Seasonal Peak Operations Planning | Decoded Ops',
- description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
+ title: 'Production Capacity Planning for Peaks | Decoded Ops',
+ description: "Production capacity planning matters when your busiest month runs four times your quietest and the systems can't flex. Here's how I get them ready for it.",
  alternates: { canonical: '/problems/seasonal-peaks' },
  openGraph: {
-  title: 'Seasonal Peak Operations Planning | Decoded Ops',
-  description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
+  title: 'Production Capacity Planning for Peaks | Decoded Ops',
+  description: "Production capacity planning matters when your busiest month runs four times your quietest and the systems can't flex. Here's how I get them ready for it.",
   url: 'https://decodedops.co.uk/problems/seasonal-peaks',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Seasonal Peak Operations Planning | Decoded Ops',
-  description: "Seasonal peak operations planning matters when your busiest month runs four times your quietest and your systems can't flex. Here's the fix.",
+  title: 'Production Capacity Planning for Peaks | Decoded Ops',
+  description: "Production capacity planning matters when your busiest month runs four times your quietest and the systems can't flex. Here's how I get them ready for it.",
  },
 };
 

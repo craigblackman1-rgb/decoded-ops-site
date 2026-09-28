@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata = {
-  title: 'B2B Portal Case Study | Decoded Ops',
-  description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
+  title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
+  description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
   alternates: { canonical: '/case-studies/case-study-03' },
   openGraph: {
     type: 'article',
-    title: 'B2B Portal Case Study | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
+    title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
+    description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
     url: 'https://decodedops.co.uk/case-studies/case-study-03',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'B2B Portal Case Study | Decoded Ops',
-    description: 'A Clarity Audit into Deliver Consultancy: vendor requirements, procurement and integration architecture for a workwear B2B distributor\'s ordering portal.',
+    title: "B2B Portal Case Study, Workwear Distributor | Decoded Ops",
+    description: "This B2B portal case study covers vendor requirements, procurement and integration for a workwear distributor. I was the architect, not the builder.",
     images: [OG_IMAGE_PATH],
   },
 };

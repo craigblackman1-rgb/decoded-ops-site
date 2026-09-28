@@ -9,20 +9,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decorated Goods Case Studies | Decoded Ops',
-  description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
+  title: 'Manufacturing Operations Consultant Work | Decoded Ops',
+  description: "As a manufacturing operations consultant, here's what I'm actually building right now, across decorated goods, workwear, heating spares and fitness.",
   alternates: { canonical: '/case-studies' },
   openGraph: {
     type: 'website',
-    title: 'Decorated Goods Case Studies | Decoded Ops',
-    description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
+    title: 'Manufacturing Operations Consultant Work | Decoded Ops',
+    description: "As a manufacturing operations consultant, here's what I'm actually building right now, across decorated goods, workwear, heating spares and fitness.",
     url: 'https://decodedops.co.uk/case-studies',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decorated Goods Case Studies | Decoded Ops',
-    description: 'Live engagements across decorated goods, workwear, heating spares and fitness. Real work in progress, not case studies written after the fact.',
+    title: 'Manufacturing Operations Consultant Work | Decoded Ops',
+    description: "As a manufacturing operations consultant, here's what I'm actually building right now, across decorated goods, workwear, heating spares and fitness.",
     images: [OG_IMAGE_PATH],
   },
 };

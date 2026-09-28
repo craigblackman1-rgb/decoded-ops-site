@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Inventory Blind Spots | Decoded Ops',
- description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
+ title: 'Stock Control System for Decoration Firms | Decoded Ops',
+ description: "Without a proper stock control system you order stock you already have and run out of stock you didn't know you needed. Here's how Decoded Works fixes it.",
  alternates: { canonical: '/problems/inventory-blind' },
  openGraph: {
-  title: 'Inventory Blind Spots | Decoded Ops',
-  description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
+  title: 'Stock Control System for Decoration Firms | Decoded Ops',
+  description: "Without a proper stock control system you order stock you already have and run out of stock you didn't know you needed. Here's how Decoded Works fixes it.",
   url: 'https://decodedops.co.uk/problems/inventory-blind',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Inventory Blind Spots | Decoded Ops',
-  description: "Inventory blind spots mean ordering stock you already have, and running out of stock you didn't know you needed. How Decoded Works fixes it.",
+  title: 'Stock Control System for Decoration Firms | Decoded Ops',
+  description: "Without a proper stock control system you order stock you already have and run out of stock you didn't know you needed. Here's how Decoded Works fixes it.",
  },
 };
 

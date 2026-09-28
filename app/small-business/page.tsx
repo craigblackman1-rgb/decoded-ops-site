@@ -6,20 +6,20 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { PhotoPiece } from '@/components/PhotoPiece';
 
 export const metadata: Metadata = {
-  title: 'Small Business Technology Consultant | Decoded Ops',
-  description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
+  title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
+  description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
-    title: 'Small Business Technology Consultant | Decoded Ops',
-    description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
+    title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
+    description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Small Business Technology Consultant | Decoded Ops',
-    description: 'A small business technology consultant for companies under £1m turnover. Fixed prices and structured sessions, with the same independent advice.',
+    title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
+    description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
   },
 };
 

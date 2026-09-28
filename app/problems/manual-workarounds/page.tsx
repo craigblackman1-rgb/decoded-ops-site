@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Business Process Automation for Small Business | Decoded Ops',
- description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
+ title: 'Manual Workarounds in Print & Embroidery | Decoded Ops',
+ description: 'Manual workarounds mean your team has built a second system, and it lives in spreadsheets. I find it, remove the re-entry, and put the data in one place.',
  alternates: { canonical: '/problems/manual-workarounds' },
  openGraph: {
-  title: 'Business Process Automation for Small Business | Decoded Ops',
-  description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
+  title: 'Manual Workarounds in Print & Embroidery | Decoded Ops',
+  description: 'Manual workarounds mean your team has built a second system, and it lives in spreadsheets. I find it, remove the re-entry, and put the data in one place.',
   url: 'https://decodedops.co.uk/problems/manual-workarounds',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Business Process Automation for Small Business | Decoded Ops',
-  description: 'Business process automation for small business starts by finding the second system your team has built in spreadsheets, then removing the re-entry.',
+  title: 'Manual Workarounds in Print & Embroidery | Decoded Ops',
+  description: 'Manual workarounds mean your team has built a second system, and it lives in spreadsheets. I find it, remove the re-entry, and put the data in one place.',
  },
 };
 

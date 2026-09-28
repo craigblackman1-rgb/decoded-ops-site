@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Business Growing, Operations Not Scaling | Decoded Ops',
- description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+ title: "Scaling a Business When Operations Won't | Decoded Ops",
+ description: "Scaling a business gets harder, not easier, once operations stop keeping pace with growth. Here's what I look at first, and the fix that usually works.",
  alternates: { canonical: '/problems/cant-scale-operations' },
  openGraph: {
-  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
-  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  title: "Scaling a Business When Operations Won't | Decoded Ops",
+  description: "Scaling a business gets harder, not easier, once operations stop keeping pace with growth. Here's what I look at first, and the fix that usually works.",
   url: 'https://decodedops.co.uk/problems/cant-scale-operations',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Business Growing, Operations Not Scaling | Decoded Ops',
-  description: "When your business is growing and operations are not scaling with it, growth starts to feel harder than it did at half the size. Here's the fix.",
+  title: "Scaling a Business When Operations Won't | Decoded Ops",
+  description: "Scaling a business gets harder, not easier, once operations stop keeping pace with growth. Here's what I look at first, and the fix that usually works.",
  },
 };
 

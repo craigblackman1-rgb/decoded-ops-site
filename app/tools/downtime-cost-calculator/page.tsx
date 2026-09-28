@@ -19,20 +19,20 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Downtime Cost Calculator | Decoded Ops',
-  description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
+  title: 'Downtime Cost Calculator, Free Tool Online | Decoded Ops',
+  description: 'My free downtime cost calculator adds up the annual cost of system outages across labour and lost revenue, built for operations leaders in decoration.',
   alternates: { canonical: '/tools/downtime-cost-calculator' },
   openGraph: {
     type: 'website',
-    title: 'Downtime Cost Calculator | Decoded Ops',
-    description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
+    title: 'Downtime Cost Calculator, Free Tool Online | Decoded Ops',
+    description: 'My free downtime cost calculator adds up the annual cost of system outages across labour and lost revenue, built for operations leaders in decoration.',
     url: 'https://decodedops.co.uk/tools/downtime-cost-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downtime Cost Calculator | Decoded Ops',
-    description: 'A free downtime cost calculator that adds up the annual cost of system outages across labour and lost revenue, for operations leaders in decorated goods.',
+    title: 'Downtime Cost Calculator, Free Tool Online | Decoded Ops',
+    description: 'My free downtime cost calculator adds up the annual cost of system outages across labour and lost revenue, built for operations leaders in decoration.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -1,24 +1,23 @@
 import type { Metadata } from 'next';
-import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Ops Health Score | Decoded Ops',
-  description: 'Rate your business across five operational dimensions with the free Ops Health Score: systems integration, process, data quality and team capability.',
+  title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+  description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
   alternates: { canonical: '/tools/ops-health-score' },
   openGraph: {
-    title: 'Ops Health Score | Decoded Ops',
-    description: 'Rate your business across five operational dimensions with the free Ops Health Score: systems integration, process, data quality and team capability.',
+    type: 'website',
+    title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+    description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
     url: 'https://decodedops.co.uk/tools/ops-health-score',
-    images: OG_IMAGE,
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ops Health Score | Decoded Ops',
-    description: 'Rate your business across five operational dimensions with the free Ops Health Score: systems integration, process, data quality and team capability.',
-    images: [OG_IMAGE_PATH],
+    title: 'Operations Audit, Free Ops Health Score | Decoded Ops',
+    description: 'This free operations audit rates your business across five dimensions: systems integration, process, data quality and team capability. Get your score now.',
   },
 };
 
 export default function OpsHealthScoreLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <>{children}</>;
 }

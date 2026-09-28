@@ -10,19 +10,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
- description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
+ title: 'Manual Processes, Spreadsheet Dependency | Decoded Ops',
+ description: "Manual processes built up in spreadsheets leave the file that runs your operation one corrupted save from disaster. Here's how decoration firms outgrow it.",
  alternates: { canonical: '/problems/spreadsheet-addiction' },
  openGraph: {
-  title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
-  description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
+  title: 'Manual Processes, Spreadsheet Dependency | Decoded Ops',
+  description: "Manual processes built up in spreadsheets leave the file that runs your operation one corrupted save from disaster. Here's how decoration firms outgrow it.",
   url: 'https://decodedops.co.uk/problems/spreadsheet-addiction',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Spreadsheet Dependency Risk in Business | Decoded Ops',
-  description: "Spreadsheet dependency risk in business means the file that runs your operation is one corrupt save away from disaster, and how firms outgrow it.",
+  title: 'Manual Processes, Spreadsheet Dependency | Decoded Ops',
+  description: "Manual processes built up in spreadsheets leave the file that runs your operation one corrupted save from disaster. Here's how decoration firms outgrow it.",
  },
 };
 

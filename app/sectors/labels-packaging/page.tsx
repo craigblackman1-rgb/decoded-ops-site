@@ -9,19 +9,19 @@ import { sectorRouting } from '@/data/sector-routing';
 import styles from '@/components/SectorPageDS.module.css';
 
 export const metadata: Metadata = {
-  title: 'Label Printing ERP | Decoded Ops',
-  description: 'Label printing ERP that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI bigger customers ask for.',
+  title: 'Print MIS Software for Labels & Packaging | Decoded Ops',
+  description: 'A print MIS that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI your bigger customers ask for.',
   alternates: { canonical: '/sectors/labels-packaging' },
   openGraph: {
-    title: 'Label Printing ERP | Decoded Ops',
-    description: 'Label printing ERP that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI bigger customers ask for.',
+    title: 'Print MIS Software for Labels & Packaging | Decoded Ops',
+    description: 'A print MIS that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI your bigger customers ask for.',
     url: 'https://decodedops.co.uk/sectors/labels-packaging',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Label Printing ERP | Decoded Ops',
-    description: 'Label printing ERP that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI bigger customers ask for.',
+    title: 'Print MIS Software for Labels & Packaging | Decoded Ops',
+    description: 'A print MIS that puts the right version on press every time, handles variable data without workarounds, and delivers the EDI your bigger customers ask for.',
   },
 };
 

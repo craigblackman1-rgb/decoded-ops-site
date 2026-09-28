@@ -6,20 +6,20 @@ import s from '@/app/deco-page.module.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'ERP Implementation Consultant | Decoded Ops',
-    description: 'An ERP implementation consultant on your side of the table: someone technical who gets the system built, and a Quality System you own once the work is done.',
+  title: 'Business Process Improvement, ERP Delivery | Decoded Ops',
+    description: 'Business process improvement with someone technical on your side of the table who gets the ERP built, plus a Quality System you own once the work is done.',
   alternates: { canonical: '/deliver' },
   openGraph: {
     type: 'website',
-    title: 'ERP Implementation Consultant | Decoded Ops',
-  description: 'An ERP implementation consultant on your side of the table: someone technical who gets the system built, and a Quality System you own once the work is done.',
+    title: 'Business Process Improvement, ERP Delivery | Decoded Ops',
+  description: 'Business process improvement with someone technical on your side of the table who gets the ERP built, plus a Quality System you own once the work is done.',
     url: 'https://decodedops.co.uk/deliver',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERP Implementation Consultant | Decoded Ops',
-    description: 'An ERP implementation consultant on your side of the table: someone technical who gets the system built, and a Quality System you own once the work is done.',
+    title: 'Business Process Improvement, ERP Delivery | Decoded Ops',
+    description: 'Business process improvement with someone technical on your side of the table who gets the ERP built, plus a Quality System you own once the work is done.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -6,20 +6,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Software for Decorated Goods Businesses | Decoded Ops',
-  description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
+  title: 'Print Management Software for Decoration | Decoded Ops',
+  description: 'Print management software and embroidery business software built for jobs the usual platforms never covered: an ERP, an artwork tool and a B2B storefront.',
   alternates: { canonical: '/apps' },
   openGraph: {
     type: 'website',
-    title: 'Software for Decorated Goods Businesses | Decoded Ops',
-    description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
+    title: 'Print Management Software for Decoration | Decoded Ops',
+    description: 'Print management software and embroidery business software built for jobs the usual platforms never covered: an ERP, an artwork tool and a B2B storefront.',
     url: 'https://decodedops.co.uk/apps',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Software for Decorated Goods Businesses | Decoded Ops',
-    description: 'Three systems built for jobs the usual platforms never covered: an ERP, an artwork approval tool and a B2B storefront for print and workwear businesses.',
+    title: 'Print Management Software for Decoration | Decoded Ops',
+    description: 'Print management software and embroidery business software built for jobs the usual platforms never covered: an ERP, an artwork tool and a B2B storefront.',
     images: [OG_IMAGE_PATH],
   },
 };

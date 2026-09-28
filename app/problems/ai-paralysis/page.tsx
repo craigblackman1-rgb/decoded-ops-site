@@ -11,19 +11,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'AI Readiness Assessment | Decoded Ops',
- description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
+ title: 'AI Readiness Assessment for Decoration | Decoded Ops',
+ description: 'My AI readiness assessment is honest about what needs to be in place before AI can deliver value for a print or embroidery business, and what to fix first.',
  alternates: { canonical: '/problems/ai-paralysis' },
  openGraph: {
-  title: 'AI Readiness Assessment | Decoded Ops',
-  description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
+  title: 'AI Readiness Assessment for Decoration | Decoded Ops',
+  description: 'My AI readiness assessment is honest about what needs to be in place before AI can deliver value for a print or embroidery business, and what to fix first.',
   url: 'https://decodedops.co.uk/problems/ai-paralysis',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'AI Readiness Assessment | Decoded Ops',
-  description: 'An honest AI readiness assessment for print, embroidery and decoration businesses. What needs to be in place before AI can deliver value, and what to fix.',
+  title: 'AI Readiness Assessment for Decoration | Decoded Ops',
+  description: 'My AI readiness assessment is honest about what needs to be in place before AI can deliver value for a print or embroidery business, and what to fix first.',
  },
 };
 

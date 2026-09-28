@@ -7,20 +7,20 @@ import '@/app/d17-apps-cases.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
-  description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
+  title: 'ERP for Printing Companies & Stock Control | Decoded Ops',
+  description: 'Decoded Works is ERP for a printing company that also needs real stock control: sales, purchasing, production and channels in one system, live at Hanicks.',
   alternates: { canonical: '/apps/works' },
   openGraph: {
     type: 'website',
-    title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
-    description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
+    title: 'ERP for Printing Companies & Stock Control | Decoded Ops',
+    description: 'Decoded Works is ERP for a printing company that also needs real stock control: sales, purchasing, production and channels in one system, live at Hanicks.',
     url: 'https://decodedops.co.uk/apps/works',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Decoded Works: ERP for Decorated Goods | Decoded Ops',
-    description: 'Decoded Works is the ERP for decorated goods: sales, stock, purchasing, production and channels in one system, live at Hanicks with 317,812 products.',
+    title: 'ERP for Printing Companies & Stock Control | Decoded Ops',
+    description: 'Decoded Works is ERP for a printing company that also needs real stock control: sales, purchasing, production and channels in one system, live at Hanicks.',
     images: [OG_IMAGE_PATH],
   },
 };

@@ -9,20 +9,20 @@ import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
 
 export const metadata: Metadata = {
-  title: 'Free Resources for Print and Embroidery | Decoded Ops',
-  description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
+  title: 'Process Improvement for Small Business | Decoded Ops',
+  description: 'Free resources for process improvement in a small print or embroidery business: an audit checklist, warning signs, SOP templates and plain-English guides.',
   alternates: { canonical: '/resources' },
   openGraph: {
     type: 'website',
-    title: 'Free Resources for Print and Embroidery | Decoded Ops',
-    description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
+    title: 'Process Improvement for Small Business | Decoded Ops',
+    description: 'Free resources for process improvement in a small print or embroidery business: an audit checklist, warning signs, SOP templates and plain-English guides.',
     url: 'https://decodedops.co.uk/resources',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Resources for Print and Embroidery | Decoded Ops',
-    description: 'Free resources for print and embroidery businesses: an audit checklist, warning signs, SOP templates and plain-English process guides you can use today.',
+    title: 'Process Improvement for Small Business | Decoded Ops',
+    description: 'Free resources for process improvement in a small print or embroidery business: an audit checklist, warning signs, SOP templates and plain-English guides.',
   },
 };
 

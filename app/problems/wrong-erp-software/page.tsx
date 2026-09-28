@@ -11,18 +11,18 @@ import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
  title: 'ERP for Small Business, Chosen Right | Decoded Ops',
-  description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
+  description: 'Choosing ERP for a small business means picking one that fits how it works, not how the demo looked. I show print and decoration firms how to evaluate it.',
   alternates: { canonical: '/problems/wrong-erp-software' },
   openGraph: {
    title: 'ERP for Small Business, Chosen Right | Decoded Ops',
-   description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
+   description: 'Choosing ERP for a small business means picking one that fits how it works, not how the demo looked. I show print and decoration firms how to evaluate it.',
    url: 'https://decodedops.co.uk/problems/wrong-erp-software',
    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
    card: 'summary_large_image',
    title: 'ERP for Small Business, Chosen Right | Decoded Ops',
-   description: "Choosing ERP for a small business that fits how it actually works, not how the demo looked. How to evaluate print and decoration systems properly.",
+   description: 'Choosing ERP for a small business means picking one that fits how it works, not how the demo looked. I show print and decoration firms how to evaluate it.',
   },
 };
 

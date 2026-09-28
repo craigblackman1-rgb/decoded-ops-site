@@ -18,20 +18,20 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Automation ROI Calculator | Decoded Ops',
-  description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
+  title: 'Automation ROI Calculator, Free Tool | Decoded Ops',
+  description: 'My free automation ROI calculator shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
   alternates: { canonical: '/tools/automation-roi-calculator' },
   openGraph: {
     type: 'website',
-    title: 'Automation ROI Calculator | Decoded Ops',
-    description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
+    title: 'Automation ROI Calculator, Free Tool | Decoded Ops',
+    description: 'My free automation ROI calculator shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
     url: 'https://decodedops.co.uk/tools/automation-roi-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation ROI Calculator | Decoded Ops',
-    description: 'A free automation ROI calculator that shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
+    title: 'Automation ROI Calculator, Free Tool | Decoded Ops',
+    description: 'My free automation ROI calculator shows when automating a manual process pays for itself, plus what the three-year return looks like for your business.',
     images: [OG_IMAGE_PATH],
   },
 };

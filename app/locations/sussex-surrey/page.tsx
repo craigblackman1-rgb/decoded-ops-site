@@ -11,19 +11,19 @@ import '@/app/d17-global.css';
 import '@/app/d17-locations.css';
 
 export const metadata: Metadata = {
-  title: 'Operations Consultant in Sussex & Surrey | Decoded Ops',
-  description: 'Operations and technology consultant for print, embroidery and workwear businesses across Sussex and Surrey. Based in Worthing.',
+  title: 'Business Consultant in Sussex & Surrey | Decoded Ops',
+  description: "I'm a business consultant for print, embroidery and workwear companies across Sussex and Surrey, based in Worthing. Book a free call to talk it through.",
   alternates: { canonical: '/locations/sussex-surrey' },
   openGraph: {
-    title: 'Operations Consultant in Sussex & Surrey | Decoded Ops',
-    description: 'Operations and technology consultant for print, embroidery and workwear businesses across Sussex and Surrey. Based in Worthing.',
+    title: 'Business Consultant in Sussex & Surrey | Decoded Ops',
+    description: "I'm a business consultant for print, embroidery and workwear companies across Sussex and Surrey, based in Worthing. Book a free call to talk it through.",
     url: 'https://decodedops.co.uk/locations/sussex-surrey',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Operations Consultant in Sussex & Surrey | Decoded Ops',
-    description: 'Operations and technology consultant for print, embroidery and workwear businesses across Sussex and Surrey. Based in Worthing.',
+    title: 'Business Consultant in Sussex & Surrey | Decoded Ops',
+    description: "I'm a business consultant for print, embroidery and workwear companies across Sussex and Surrey, based in Worthing. Book a free call to talk it through.",
   },
 };
 

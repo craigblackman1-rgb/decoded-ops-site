@@ -9,19 +9,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
- description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
+ title: "Systems That Don't Talk to Each Other | Decoded Ops",
+ description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
   alternates: { canonical: '/problems/systems-dont-talk' },
   openGraph: {
-   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
-   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
+   title: "Systems That Don't Talk to Each Other | Decoded Ops",
+   description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
    url: 'https://decodedops.co.uk/problems/systems-dont-talk',
    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
    card: 'summary_large_image',
-   title: 'Systems Don\'t Talk to Each Other | Decoded Ops',
-   description: 'When systems don\'t talk to each other, orders get rekeyed by hand and errors follow. Find out what that\'s costing your decorated goods business.',
+   title: "Systems That Don't Talk to Each Other | Decoded Ops",
+   description: "When systems that don't talk to each other force orders to be rekeyed by hand, errors follow. Find out what that's costing your decoration business.",
   },
 };
 

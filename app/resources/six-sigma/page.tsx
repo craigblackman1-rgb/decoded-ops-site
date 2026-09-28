@@ -22,20 +22,20 @@ const schema = {
 };
 
 export const metadata = {
-  title: 'Six Sigma for Small Business | Decoded Ops',
-  description: 'Six Sigma for small business explained without the jargon. What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery operation, and where to start.',
+  title: 'Six Sigma for Small Business Explained | Decoded Ops',
+  description: 'Six Sigma for small business, explained without the jargon. What 3 to 6 Sigma actually mean for a print and embroidery operation, and where you start.',
   alternates: { canonical: '/resources/six-sigma' },
   openGraph: {
     type: 'website',
-    title: 'Six Sigma for Small Business | Decoded Ops',
-    description: 'Six Sigma for small business explained without the jargon. What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery operation, and where to start.',
+    title: 'Six Sigma for Small Business Explained | Decoded Ops',
+    description: 'Six Sigma for small business, explained without the jargon. What 3 to 6 Sigma actually mean for a print and embroidery operation, and where you start.',
     url: 'https://decodedops.co.uk/resources/six-sigma',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Six Sigma for Small Business | Decoded Ops',
-    description: 'Six Sigma for small business explained without the jargon. What 3, 4, 5 and 6 Sigma actually mean for a print and embroidery operation, and where to start.',
+    title: 'Six Sigma for Small Business Explained | Decoded Ops',
+    description: 'Six Sigma for small business, explained without the jargon. What 3 to 6 Sigma actually mean for a print and embroidery operation, and where you start.',
     images: [OG_IMAGE_PATH],
   },
 };

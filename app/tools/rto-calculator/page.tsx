@@ -18,20 +18,20 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
-  description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
+  title: 'Disaster Recovery Plan Template & RTO Tool | Decoded Ops',
+  description: 'This disaster recovery plan template calculates your recovery time objective and shows what proper recovery is worth against your current downtime cost.',
   alternates: { canonical: '/tools/rto-calculator' },
   openGraph: {
     type: 'website',
-    title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
-    description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
+    title: 'Disaster Recovery Plan Template & RTO Tool | Decoded Ops',
+    description: 'This disaster recovery plan template calculates your recovery time objective and shows what proper recovery is worth against your current downtime cost.',
     url: 'https://decodedops.co.uk/tools/rto-calculator',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RTO Calculator & Disaster Recovery Plan | Decoded Ops',
-    description: 'Calculate your recovery time objective and see what a proper disaster recovery plan is worth against your current downtime cost. Free tool, no signup.',
+    title: 'Disaster Recovery Plan Template & RTO Tool | Decoded Ops',
+    description: 'This disaster recovery plan template calculates your recovery time objective and shows what proper recovery is worth against your current downtime cost.',
     images: [OG_IMAGE_PATH],
   },
 };

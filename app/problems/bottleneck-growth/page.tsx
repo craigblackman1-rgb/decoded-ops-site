@@ -11,19 +11,19 @@ import '@/app/d17-problems.css';
 import { D17Motion } from '@/components/D17Motion';
 
 export const metadata: Metadata = {
- title: 'Growth Bottleneck Operations | Decoded Ops',
- description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
+ title: 'Bottleneck in Production, Growth Stalling | Decoded Ops',
+ description: "A bottleneck in production usually means every decision, from purchase orders to artwork approvals, still runs through the owner. Here's how I open it up.",
  alternates: { canonical: '/problems/bottleneck-growth' },
  openGraph: {
-  title: 'Growth Bottleneck Operations | Decoded Ops',
-  description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
+  title: 'Bottleneck in Production, Growth Stalling | Decoded Ops',
+  description: "A bottleneck in production usually means every decision, from purchase orders to artwork approvals, still runs through the owner. Here's how I open it up.",
   url: 'https://decodedops.co.uk/problems/bottleneck-growth',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Growth Bottleneck Operations | Decoded Ops',
-  description: "A growth bottleneck in operations usually means every decision still goes through the owner, purchase orders and artwork approvals included.",
+  title: 'Bottleneck in Production, Growth Stalling | Decoded Ops',
+  description: "A bottleneck in production usually means every decision, from purchase orders to artwork approvals, still runs through the owner. Here's how I open it up.",
  },
 };
 

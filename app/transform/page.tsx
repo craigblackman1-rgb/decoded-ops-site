@@ -7,20 +7,20 @@ import s from '@/app/deco-page.module.css';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'ERP Implementation, the Plan Executed | Decoded Ops',
-  description: 'Transform is the ERP implementation programme after a Clarity Audit. Results include 154,518 products matched automatically and 17 supplier feeds live.',
+  title: 'Digital Transformation Consultancy for Print | Decoded Ops',
+  description: 'My digital transformation consultancy is the programme that follows a Clarity Audit: systems, process and people changed together, run to milestones.',
   alternates: { canonical: '/transform' },
   openGraph: {
     type: 'website',
-    title: 'ERP Implementation, the Plan Executed | Decoded Ops',
-    description: 'Transform is the ERP implementation programme after a Clarity Audit. Results include 154,518 products matched automatically and 17 supplier feeds live.',
+    title: 'Digital Transformation Consultancy for Print | Decoded Ops',
+    description: 'My digital transformation consultancy is the programme that follows a Clarity Audit: systems, process and people changed together, run to milestones.',
     url: 'https://decodedops.co.uk/transform',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ERP Implementation, the Plan Executed | Decoded Ops',
-    description: 'Transform is the ERP implementation programme after a Clarity Audit. Results include 154,518 products matched automatically and 17 supplier feeds live.',
+    title: 'Digital Transformation Consultancy for Print | Decoded Ops',
+    description: 'My digital transformation consultancy is the programme that follows a Clarity Audit: systems, process and people changed together, run to milestones.',
     images: [OG_IMAGE_PATH],
   },
 };

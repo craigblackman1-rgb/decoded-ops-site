@@ -10,20 +10,20 @@ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 const { consultancy, small_business } = pricingData;
 
 export const metadata: Metadata = {
-  title: 'Fractional CTO Pricing | Decoded Ops',
-  description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
+  title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
+  description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
-    title: 'Fractional CTO Pricing | Decoded Ops',
-    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
+    title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
+    description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
     url: 'https://decodedops.co.uk/pricing',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional CTO Pricing | Decoded Ops',
-    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
+    title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
+    description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
     images: [OG_IMAGE_PATH],
   },
 };

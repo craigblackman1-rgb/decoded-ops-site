@@ -1,24 +1,23 @@
 import type { Metadata } from 'next';
-import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Should I Replace My ERP | Decoded Ops',
-  description: 'Not sure whether to replace your ERP, upgrade it or extend it. Answer eight questions and get a clear recommendation, plus what an honest assessment costs.',
+  title: 'ERP for Manufacturing, Should You Replace It | Decoded Ops',
+  description: 'Not sure if your ERP for manufacturing needs replacing, upgrading or extending. Answer eight questions and get a clear recommendation, free, no signup.',
   alternates: { canonical: '/tools/should-i-replace-erp' },
   openGraph: {
-    title: 'Should I Replace My ERP | Decoded Ops',
-    description: 'Not sure whether to replace your ERP, upgrade it or extend it. Answer eight questions and get a clear recommendation, plus what an honest assessment costs.',
+    type: 'website',
+    title: 'ERP for Manufacturing, Should You Replace It | Decoded Ops',
+    description: 'Not sure if your ERP for manufacturing needs replacing, upgrading or extending. Answer eight questions and get a clear recommendation, free, no signup.',
     url: 'https://decodedops.co.uk/tools/should-i-replace-erp',
-    images: OG_IMAGE,
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Should I Replace My ERP | Decoded Ops',
-    description: 'Not sure whether to replace your ERP, upgrade it or extend it. Answer eight questions and get a clear recommendation, plus what an honest assessment costs.',
-    images: [OG_IMAGE_PATH],
+    title: 'ERP for Manufacturing, Should You Replace It | Decoded Ops',
+    description: 'Not sure if your ERP for manufacturing needs replacing, upgrading or extending. Answer eight questions and get a clear recommendation, free, no signup.',
   },
 };
 
-export default function ShouldIReplaceERPLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function ShouldIReplaceErpLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

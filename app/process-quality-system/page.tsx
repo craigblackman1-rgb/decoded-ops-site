@@ -7,19 +7,19 @@ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'How to Write a Standard Operating Procedure | Decoded Ops',
-  description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
+  description: 'How to write a standard operating procedure that your team actually uses: a Process Register, one-page SOPs and an Improvement Log you keep once I leave.',
   alternates: { canonical: '/process-quality-system' },
   openGraph: {
     type: 'website',
     title: 'How to Write a Standard Operating Procedure | Decoded Ops',
-    description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
+    description: 'How to write a standard operating procedure that your team actually uses: a Process Register, one-page SOPs and an Improvement Log you keep once I leave.',
     url: 'https://decodedops.co.uk/process-quality-system',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How to Write a Standard Operating Procedure | Decoded Ops',
-    description: 'How to write a standard operating procedure that actually gets used: a Process Register, one-page SOPs and an Improvement Log, owned by your business.',
+    description: 'How to write a standard operating procedure that your team actually uses: a Process Register, one-page SOPs and an Improvement Log you keep once I leave.',
     images: [OG_IMAGE_PATH],
   },
 };
