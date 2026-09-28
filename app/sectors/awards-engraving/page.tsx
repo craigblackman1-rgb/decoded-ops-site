@@ -102,7 +102,7 @@ export default function AwardsEngravingPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector.</p>
+              <p>Every award carries different names, titles, and dates, and every order is for a specific event with a hard deadline. That makes awards and engraving one of the most demanding corners of the decorated products sector. Most print shop software treats a personalised award like any other order line, and that is where the rework starts.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -183,7 +183,7 @@ export default function AwardsEngravingPage() {
           <span className="eyebrow">Common challenges</span>
           <h2>Where the problems tend to live</h2>
           <div className="hair" />
-          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most, and the ones general print shop software handles worst.</p>
           <div className="grid grid--2">
             {challenges.map((c, i) => (
               <article key={i} className="card">

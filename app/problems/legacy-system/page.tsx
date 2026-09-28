@@ -87,8 +87,8 @@ export default function LegacySystemPage() {
      <div>
       <span className="eyebrow">The problem</span>
       <h1>The platform you bought ten years ago wasn&apos;t built for decoration.</h1>
-      <p className="lede">Generic ERP and stock systems are built for businesses that buy and sell the
-       same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
+      <p className="lede">Generic ERP systems and most inventory management software for small businesses are built
+       for businesses that buy and sell the same thing they hold in the warehouse. Decoration doesn&apos;t work like that. A blank
        garment becomes a different, finished product the moment it&apos;s printed or embroidered, and
        most platforms have no clean way to model that.</p>
       <div className="hero-cta">
@@ -130,9 +130,7 @@ export default function LegacySystemPage() {
     <div className="wrap">
      <span className="eyebrow">The signs</span>
      <h2>Seven signs the platform wasn&apos;t built for this.</h2>
-     <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the problem
-      isn&apos;t your team working around the system. It&apos;s the system never having been designed for
-      decoration in the first place.</p>
+      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the system is the cause. The inventory software was never designed for decoration, so your team works around it every day.</p>
 
      <ul className="symptoms">
       <li>Decoration BOMs are tracked in a spreadsheet because the platform can&apos;t model them</li>
