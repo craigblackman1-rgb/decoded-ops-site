@@ -107,6 +107,8 @@ export default function HomePage() {
               <figure className={`${d17.d17} ${d17.a916}`} data-od-id="hero-question" data-motion
                       data-no="DO-ART-916" data-rev="01" data-tx="photo">
                 <div className={d17.d17Ph}><img src="/images/d17/hero-workshop.webp"
+                  srcSet="/images/d17/hero-workshop-800.webp 800w, /images/d17/hero-workshop-1200.webp 1200w, /images/d17/hero-workshop.webp 1600w"
+                  sizes="(max-width: 1200px) 100vw, 1100px"
                   alt="" width={1100} height={1224} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <div className={`${d17.top} ${d17.d17Mono}`} aria-hidden="true"><span>Clarity Audit</span><span>One day on site</span></div>
@@ -288,7 +290,10 @@ export default function HomePage() {
               <figure className={`${d17.d17} ${d17.a917}`} data-od-id="plate-measure" data-motion
                       data-no="DO-ART-917" data-rev="01" data-tx="photo"
                       aria-label="Product screen DO-ART-917. Decoded Works catalogue overview at Hanicks, live in September 2026: 317,812 products brought in from supplier feeds, 154,518 matched to a supplier automatically, 40 active suppliers feeding in, and 77 per cent of stock records carrying a bin location.">
-                <div className={d17.d17Ph}><img src="/images/d17/thread-spools.webp" alt="" width={1300} height={867} /></div>
+                <div className={d17.d17Ph}><img src="/images/d17/thread-spools.webp"
+                  srcSet="/images/d17/thread-spools-800.webp 800w, /images/d17/thread-spools-1200.webp 1200w, /images/d17/thread-spools.webp 1600w"
+                  sizes="(max-width: 1200px) 100vw, 1300px"
+                  alt="" width={1300} height={867} /></div>
                 <div className={d17.d17Scan} aria-hidden="true" />
                 <figcaption className={d17.cap}>
                   <div className={`${d17.k} ${d17.d17Mono}`}>Works <span>&middot; at Hanicks</span></div>
