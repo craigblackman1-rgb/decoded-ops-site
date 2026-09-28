@@ -1,0 +1,22 @@
+{
+  "lane": "web061-u42-footer-fix",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "u42",
+  "commits": [
+    {
+      "sha": "666ad00",
+      "subject": "fix(BUG-WEB-031): footer CTA button visibility and column wrapping"
+    }
+  ],
+  "filesChanged": [
+    "app/design-system/ds-footer.css"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
