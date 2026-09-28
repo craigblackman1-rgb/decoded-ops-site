@@ -1,0 +1,22 @@
+{
+  "lane": "web061-u45-seasonal-capacity-overflow",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "u45",
+  "commits": [
+    {
+      "sha": "927fe22",
+      "subject": "fix: prevent seasonal capacity month rows overflowing viewport on mobile"
+    }
+  ],
+  "filesChanged": [
+    "components/calculators/SeasonalCapacityCalculator.tsx"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors",
+    "tests": "n/a | no test suite",
+    "escapeGrep": "0 hits | 0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
