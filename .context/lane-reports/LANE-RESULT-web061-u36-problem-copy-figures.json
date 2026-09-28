@@ -1,0 +1,24 @@
+{
+  "lane": "web061-u36-problem-copy-figures",
+  "wo": "wo-website-artwork-refresh-2026-09-16",
+  "unit": "CR-WEB-052",
+  "commits": [
+    {
+      "sha": "f34fdb0db96a79f6db508240f3311ec1f3cb0872",
+      "subject": "fix: redirect /problems/systems-dont-talk-video to /problems/systems-dont-talk (CR-WEB-052)"
+    }
+  ],
+  "filesChanged": [
+    "next.config.ts"
+  ],
+  "verify": {
+    "tsc": "clean, 0 errors",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Items 1-5 (invented figures, Excel/Google Sheets, 9→17 supplier feeds) were already applied by the d17 lane (commit 027f13a). This lane only added the 404 redirect."
+  ],
+  "blockers": [],
+  "done": true
+}
