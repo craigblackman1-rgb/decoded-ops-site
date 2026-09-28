@@ -48,6 +48,7 @@
   .rail a,
   .rail .lbl { transition:none }
 }
+@media(max-width:480px){ .rail{ display:none } }
 
 /* ── region A · the stage ─────────────────────────────────────────────
    Dark front matter. Hero and ledger are one continuous dark run split
