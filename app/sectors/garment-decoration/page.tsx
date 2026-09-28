@@ -143,7 +143,7 @@ export default function GarmentDecorationPage() {
         aria-label="Journey poster DO-ART-924. One order's route through a garment decoration business: order intake, the artwork loop, blanks checked against committed orders, then production split by method, each scheduled by its own logic, and despatch on the date promised. Two pinned prints: an embroidery head and a screen-print press.">
   <div class="q-grid" aria-hidden="true"></div>
   <p class="eb d17-mono">One order's route</p>
-  <h3 class="hd">In, artwork, blanks, three methods, out.</h3>
+  <h2 class="hd">In, artwork, blanks, three methods, out.</h2>
   <svg class="route" viewBox="0 0 1600 820" preserveAspectRatio="none" aria-hidden="true">
     <path class="m-draw" pathLength="1" d="M110 520 H330 C400 520 400 440 470 440 H640 C710 440 710 520 780 520 H960" fill="none" stroke="var(--do-sky-blue)" stroke-width="7" stroke-linecap="round"/>
     <path class="m-draw" pathLength="1" style="animation-delay:.9s" d="M960 520 C1020 520 1020 420 1080 420 H1180 C1240 420 1240 520 1300 520 M960 520 H1300 M960 520 C1020 520 1020 620 1080 620 H1180 C1240 620 1240 520 1300 520" fill="none" stroke="var(--do-sky-blue)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
@@ -162,10 +162,10 @@ export default function GarmentDecorationPage() {
     <div class="print" style="left:73%;top:8%;width:14%;height:31%;transform:rotate(2.5deg)"><img src="/images/d17/sectors/gen-press-hall-40f9e1.webp" alt="" width="520" height="327"><div class="tint"></div><span>Screen print · by set-up</span></div>
   </div>
   <div class="stations">
-    <div class="st" style="left:5%;top:68%"><span class="n">01 · In</span><h4>Order intake</h4><p>Online, trade and repeat orders in one place.</p></div>
-    <div class="st" style="left:28%;top:59%"><span class="n">02 · Artwork</span><h4>The artwork loop</h4><p>Proof and sign-off travel with the order, not in email.</p></div>
-    <div class="st" style="left:51%;top:70%;width:calc(200 * var(--u))"><span class="n">03 · Blanks</span><h4>Blanks in</h4><p>Checked against committed orders.</p></div>
-    <div class="st st--end" style="left:84%;top:68%;width:calc(230 * var(--u))"><span class="n">04 · Out</span><h4>Despatch</h4><p>Each method on its own clock, out on the date promised.</p></div>
+    <div class="st" style="left:5%;top:68%"><span class="n">01 · In</span><h3>Order intake</h3><p>Online, trade and repeat orders in one place.</p></div>
+    <div class="st" style="left:28%;top:59%"><span class="n">02 · Artwork</span><h3>The artwork loop</h3><p>Proof and sign-off travel with the order, not in email.</p></div>
+    <div class="st" style="left:51%;top:70%;width:calc(200 * var(--u))"><span class="n">03 · Blanks</span><h3>Blanks in</h3><p>Checked against committed orders.</p></div>
+    <div class="st st--end" style="left:84%;top:68%;width:calc(230 * var(--u))"><span class="n">04 · Out</span><h3>Despatch</h3><p>Each method on its own clock, out on the date promised.</p></div>
   </div>
   <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-924 · Rev 01</span>
 </figure>` }} />
