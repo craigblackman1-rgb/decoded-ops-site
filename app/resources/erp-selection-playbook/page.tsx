@@ -366,7 +366,7 @@ export default function ErpSelectionPlaybookPage() {
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
             <h3>Not sure whether you need an ERP?</h3>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 24 }}>
-              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From £1,500.
+              A Clarity Audit maps your current operation, identifies where the real problems are, and tells you whether the answer is a new system, a better implementation of what you have, or fixing the processes underneath. From £750.
             </p>
             <div className="btn-row" style={{ margin: 0, marginBottom: 12 }}>
               <Link href="/contact" className="btn btn--primary">

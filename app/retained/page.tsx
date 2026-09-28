@@ -8,19 +8,19 @@ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Hire a Fractional CTO | Decoded Ops',
-  description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950 a month.',
+  description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
     title: 'Hire a Fractional CTO | Decoded Ops',
-    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950 a month.',
+    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
     url: 'https://decodedops.co.uk/retained',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hire a Fractional CTO | Decoded Ops',
-    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £950 a month.',
+    description: 'Hire a fractional CTO for ongoing technology leadership without the cost of a full-time hire. Essential, Recommended and Complete tiers, from £900 a month.',
     images: [OG_IMAGE_PATH],
   },
 };
@@ -31,7 +31,7 @@ const retainedSchema = {
     {
       '@type': 'Service',
       name: 'Retained: Fractional CTO',
-      description: 'Ongoing technology leadership for decorated-goods businesses. Essential, Recommended and Complete tiers, from £950/mo.',
+      description: 'Ongoing technology leadership for decorated-goods businesses. Essential, Recommended and Complete tiers, from £900/mo.',
       provider: {
         '@type': 'Organization',
         name: 'Decoded Ops',
@@ -112,7 +112,7 @@ export default function RetainedPage() {
             <p className="eyebrow">Three tiers</p>
             <h2>Essential, Recommended and Complete.</h2>
             <p className="lead" style={{ marginTop: 16 }}>Each tier covers a different level of involvement.
-              Which one fits is set at the audit, from £950/mo.</p>
+              Which one fits is set at the audit, from £900/mo.</p>
           </div>
 
           <div className="grid-3">
@@ -155,7 +155,7 @@ export default function RetainedPage() {
 
           <div className="inset" style={{ maxWidth: 'none' }}>
             <b>Rolling monthly, no minimum term.</b> The scope is agreed at the start, and which tier fits
-            is set at the audit by the size and shape of your operation. From £950/mo.
+            is set at the audit by the size and shape of your operation. From £900/mo.
           </div>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function RetainedPage() {
           <p className="eyebrow">Scale &middot; DO-ART-204</p>
           <h2>Essential to Complete: the scale.</h2>
           <p className="lead" style={{ marginTop: 16 }}>Each tier covers a wider scope and a deeper level
-            of involvement. From £950/mo, set at the audit by the size and shape of your operation.</p>
+            of involvement. From £900/mo, set at the audit by the size and shape of your operation.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
@@ -211,7 +211,7 @@ export default function RetainedPage() {
                         strokeOpacity=".22"/>
                   <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="600" fontSize="24" opacity=".9">Each tier covers a wider scope.
-                    Set at the audit, from £950/mo.</text>
+                    Set at the audit, from £900/mo.</text>
                   <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Rolling
                     monthly, no minimum term.</text>
                 </g>

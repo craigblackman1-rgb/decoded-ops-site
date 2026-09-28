@@ -68,7 +68,7 @@ export default function TechAuditPage() {
             <span className="eyebrow" style={{ marginBottom: 22 }}>Technology Audit</span>
             <h1 className="h1">Independent technology audit, <em>anywhere in the UK</em></h1>
             <p className="lede">
-              An independent audit that tells you exactly what your systems are costing you, and what to do about it. From £1,500.
+              An independent audit that tells you exactly what your systems are costing you, and what to do about it. From £750.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 'var(--do-radius-full)', background: 'color-mix(in srgb, var(--do-prussian-blue) 5%, transparent)', border: '1px solid color-mix(in srgb, var(--do-prussian-blue) 10%, transparent)', marginBottom: 32 }}>
               <span style={{ fontSize: 'var(--do-text-sm)', fontWeight: 'var(--do-weight-semibold)', color: 'var(--do-text-primary)' }}>3× Clarity Guarantee</span>
@@ -133,7 +133,7 @@ export default function TechAuditPage() {
             {/* STICKY CTA CARD */}
             <div style={{ position: 'sticky', top: 112 }}>
               <div className="card" style={{ padding: 32 }}>
-                <div style={{ fontSize: 'var(--do-text-2xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-on-dark)', marginBottom: 8 }}>Book a Clarity Audit, from £1,500</div>
+                <div style={{ fontSize: 'var(--do-text-2xl)', fontWeight: 'var(--do-weight-bold)', color: 'var(--do-text-on-dark)', marginBottom: 8 }}>Book a Clarity Audit, from £750</div>
                 <p style={{ fontSize: 'var(--do-text-sm)', color: '#dfe6ea', lineHeight: 1.75, marginBottom: 24 }}>
                   The first conversation is free and there&apos;s no obligation. Just a call about what&apos;s happening in your business and whether I can help.
                 </p>

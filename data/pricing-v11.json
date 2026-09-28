@@ -1,30 +1,41 @@
 {
   "version": "v11",
-  "revision": "2026-09-19",
+  "revision": "2026-09-28",
   "canonical": true,
   "sources": [
     "DO_Pricing_Strategy_v11_Recommendations_2026-09-08.md (rev 14 Sep + 19 Sep small-business block)",
     "DO_Software_Tier_Matrix_2026-09-10.md",
     "DO_Pricing_Model_2026-09-10.xlsx",
-    "DO_Pricing_v11_SmallBusiness_2026-09-19.md (Craig ruling 19 Sep)"
+    "DO_Pricing_v11_SmallBusiness_2026-09-19.md (Craig ruling 19 Sep)",
+    "Craig rulings 25 Sep 2026 (TackleBag / apps options session): Commerce pricing, consultancy minimum terms, upgrade rule, 36-month presentation, accounts + API standard",
+    "Craig rulings 28 Sep 2026: four turnover segments (new under-£500k band), every service offered in every segment, all figures rounded to clean steps, Clarity Audit ladder 750/1,000/1,500/2,500, Clarity Check £600 for both under-£1m segments. Draft sheet: 'DO Price sheet - four segments, rounded - 28 Sept 2026.xlsx'.",
+    "Craig 28 Sep 2026 (later): Retained sits between Deliver and Transform in every segment: S1 £900, S2 £1,300, S3 £1,800, S4 £2,500."
   ],
   "rules": {
     "multipliers": "cumulative: Recommended = Essential x1.4; Complete = Recommended x1.75 (x2.45 on Essential). Craig 14 Sep, confirmed 19 Sep.",
     "public_policy": "Website may show 'from' prices for consultancy services and Clarity Check. No tier tables, no segment bands, no software figures, no add-on prices, no implementation figures, no day rate or day counts on any public surface. Full figures live in the How-I-price pack sent after a raised hand (DO-SOP-015).",
     "software_presentation": "Every software price is shown two ways in proposals/packs: buy outright, or finance lease at the rate card. Never monthly alone.",
-    "day_rate": "Internal only. Never publish 720 or any multiple (1440, 2880, 5760, 360, 1080) as a price."
+    "day_rate": "Internal only. Never publish 720 or any multiple (1440, 2880, 5760, 360, 1080) as a price.",
+    "upgrades": "Moving up any ladder (Works, Proof, Commerce; Proof -> Works Connected; Proof+CRM+Floor -> Works Scaled) costs only the outright price difference (or that difference on finance) plus any extra implementation/labour. Nothing already paid is lost. Craig 25 Sep 2026.",
+    "finance_presentation": "Client documents show software outright plus ONE monthly figure over 36 months (3 years). 48/60 kept for reference only. All prices indicative; fixed at the audit. Craig 25 Sep 2026.",
+    "standard_features": "Accounts connection (Xero/QuickBooks/Sage) and open API + webhooks are standard in every Works edition (Proof: API in all, accounts from Proof+CRM). Value absorbed, no base lift. Trade/B2B portal belongs to Decoded Commerce, not Works. Extras are named and POA. Craig 25 Sep 2026.",
+    "rounding": "Craig 28 Sep 2026: every level is Essential x1, x1.4, then x1.75 on that, rounded to clean steps: under £1,000 to nearest £50; £1,000–£10,000 to nearest £100; above £10,000 to nearest £500; software monthlies to nearest £10."
   },
   "segments": {
     "S1": {
-      "label": "Under £1m turnover",
-      "band": "<£1m"
+      "label": "Under £500k turnover",
+      "band": "<£500k"
     },
     "S2": {
-      "label": "£1m–£7.5m",
-      "band": "£1m–£7.5m"
+      "label": "£500k–£1m turnover",
+      "band": "£500k–£1m"
     },
     "S3": {
-      "label": "£7.5m+",
+      "label": "£1m–£7.5m turnover",
+      "band": "£1m–£7.5m"
+    },
+    "S4": {
+      "label": "Over £7.5m turnover",
       "band": "£7.5m+"
     }
   },
@@ -34,22 +45,27 @@
       "name": "Clarity Audit",
       "unit": "one-off",
       "minimum": null,
-      "public_from": 1500,
+      "public_from": 750,
       "tiers": {
         "S1": {
-          "essential": 1500,
-          "recommended": 2100,
-          "complete": 3675
+          "essential": 750,
+          "recommended": 1100,
+          "complete": 1800
         },
         "S2": {
-          "essential": 2500,
-          "recommended": 3500,
-          "complete": 6125
+          "essential": 1000,
+          "recommended": 1400,
+          "complete": 2500
         },
         "S3": {
-          "essential": 4000,
-          "recommended": 5600,
-          "complete": 9800
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3700
+        },
+        "S4": {
+          "essential": 2500,
+          "recommended": 3500,
+          "complete": 6100
         }
       }
     },
@@ -57,20 +73,25 @@
       "key": "deliver",
       "name": "Deliver",
       "unit": "per month",
-      "minimum": "6 months",
-      "public_from": 1200,
+      "minimum": "3 months",
+      "public_from": 750,
       "tiers": {
         "S1": {
-          "essential": 1200,
-          "recommended": 1680,
-          "complete": 2940
+          "essential": 750,
+          "recommended": 1100,
+          "complete": 1800
         },
         "S2": {
-          "essential": 1500,
-          "recommended": 2100,
-          "complete": 3675
+          "essential": 1200,
+          "recommended": 1700,
+          "complete": 2900
         },
         "S3": {
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3700
+        },
+        "S4": {
           "essential": 2000,
           "recommended": 2800,
           "complete": 4900
@@ -81,23 +102,28 @@
       "key": "transform",
       "name": "Transform",
       "unit": "per month",
-      "minimum": "12 months",
-      "public_from": 1500,
+      "minimum": "6 months",
+      "public_from": 1000,
       "tiers": {
         "S1": {
-          "essential": 1500,
-          "recommended": 2100,
-          "complete": 3675
+          "essential": 1000,
+          "recommended": 1400,
+          "complete": 2500
         },
         "S2": {
+          "essential": 1500,
+          "recommended": 2100,
+          "complete": 3700
+        },
+        "S3": {
           "essential": 2000,
           "recommended": 2800,
           "complete": 4900
         },
-        "S3": {
+        "S4": {
           "essential": 3000,
           "recommended": 4200,
-          "complete": 7350
+          "complete": 7400
         }
       }
     },
@@ -105,38 +131,47 @@
       "key": "retained",
       "name": "Retained (fractional)",
       "unit": "per month",
-      "minimum": "rolling",
-      "public_from": 950,
+      "minimum": "12 months",
+      "public_from": 900,
       "tiers": {
         "S1": {
-          "essential": 950,
-          "recommended": 1330,
-          "complete": 2328
+          "essential": 900,
+          "recommended": 1300,
+          "complete": 2200
         },
         "S2": {
-          "essential": 1800,
-          "recommended": 2520,
-          "complete": 4410
+          "essential": 1300,
+          "recommended": 1800,
+          "complete": 3200
         },
         "S3": {
-          "essential": 3000,
-          "recommended": 4200,
-          "complete": 7350
+          "essential": 1800,
+          "recommended": 2500,
+          "complete": 4400
+        },
+        "S4": {
+          "essential": 2500,
+          "recommended": 3500,
+          "complete": 6100
         }
       }
     }
   ],
   "small_business": {
-    "ruling": "Craig 19 Sep 2026 (qmu821g9o03): Clarity Check survives as the sole fixed-price small-business product. AI Readiness Check and Quarterly Sprint retired. Small-business Deliver/Transform/Retained ladders retired; sub-£1m buyers use the S1 figures above.",
+    "ruling": "Craig 19 Sep 2026 (qmu821g9o03): Clarity Check survives as the sole fixed-price small-business product. AI Readiness Check and Quarterly Sprint retired. Small-business Deliver/Transform/Retained ladders retired; sub-£1m buyers use the S1 figures above. 28 Sep 2026: Clarity Check £600 (rounded), offered to both under-£1m segments (S1 and S2); small businesses now have their own segment (S1, under £500k) with every service priced for it.",
     "products": [
       {
         "key": "clarity_check",
         "name": "Clarity Check",
         "format": "3-hour remote diagnostic",
-        "price": 595,
+        "price": 600,
         "unit": "fixed",
         "public": true,
-        "next_step": "clarity_audit"
+        "next_step": "clarity_audit",
+        "segments": [
+          "S1",
+          "S2"
+        ]
       }
     ],
     "retired": [
@@ -186,21 +221,21 @@
       "editions": {
         "core": {
           "outright": 18000,
-          "finance_36": 589,
-          "finance_48": 462,
-          "finance_60": 386
+          "finance_36": 590,
+          "finance_48": 460,
+          "finance_60": 390
         },
         "connected": {
-          "outright": 25200,
-          "finance_36": 825,
-          "finance_48": 647,
-          "finance_60": 541
+          "outright": 25000,
+          "finance_36": 820,
+          "finance_48": 640,
+          "finance_60": 540
         },
         "scaled": {
-          "outright": 44100,
-          "finance_36": 1443,
-          "finance_48": 1132,
-          "finance_60": 946
+          "outright": 44000,
+          "finance_36": 1440,
+          "finance_48": 1130,
+          "finance_60": 940
         }
       },
       "public": false
@@ -210,28 +245,71 @@
       "editions": {
         "proof": {
           "outright": 8500,
-          "finance_36": 278,
-          "finance_48": 218,
-          "finance_60": 182
+          "finance_36": 280,
+          "finance_48": 220,
+          "finance_60": 180
         },
         "proof_crm": {
-          "outright": 11900,
-          "finance_36": 389,
-          "finance_48": 305,
-          "finance_60": 255
+          "outright": 12000,
+          "finance_36": 390,
+          "finance_48": 310,
+          "finance_60": 260
         },
         "proof_crm_floor": {
-          "outright": 20825,
-          "finance_36": 682,
-          "finance_48": 535,
-          "finance_60": 447
+          "outright": 21000,
+          "finance_36": 690,
+          "finance_48": 540,
+          "finance_60": 450
         }
       },
       "public": false
     },
     "commerce": {
       "name": "Decoded Commerce",
-      "note": "demo only — no pricing published or quoted (Craig 16 Sep)",
+      "note": "Approved Craig 25 Sep 2026: base £12,500, compounding x1.4 / x1.75 (rounded to £10); with Decoded Works = 70% of standalone (storefront layer only - catalogue, stock, customers and orders live in Works)",
+      "editions": {
+        "shop": {
+          "outright": 12500,
+          "finance_36": 410,
+          "finance_48": 320,
+          "finance_60": 270
+        },
+        "shop_trade": {
+          "outright": 17500,
+          "finance_36": 570,
+          "finance_48": 450,
+          "finance_60": 380
+        },
+        "shop_trade_configurator": {
+          "outright": 30500,
+          "finance_36": 1000,
+          "finance_48": 780,
+          "finance_60": 650
+        }
+      },
+      "with_works": {
+        "factor": 0.7,
+        "editions": {
+          "shop": {
+            "outright": 8800,
+            "finance_36": 290,
+            "finance_48": 230,
+            "finance_60": 190
+          },
+          "shop_trade": {
+            "outright": 12500,
+            "finance_36": 410,
+            "finance_48": 320,
+            "finance_60": 270
+          },
+          "shop_trade_configurator": {
+            "outright": 21500,
+            "finance_36": 700,
+            "finance_48": 550,
+            "finance_60": 460
+          }
+        }
+      },
       "public": false
     },
     "addons": {
@@ -242,28 +320,43 @@
   "implementation": {
     "basis": "fixed price set at the audit",
     "indicative_from": {
-      "S1": 7200
+      "S1": null,
+      "S2": 7200,
+      "S3": null,
+      "S4": null
     },
-    "public": false
+    "tiers_from": {
+      "S2": {
+        "essential": 7200,
+        "recommended": 10000,
+        "complete": 17500
+      }
+    },
+    "tier_rule": "cumulative x1.4 then x1.75 on the S1 indicative, rounded to £10",
+    "public": false,
+    "note": "28 Sep: the old S1 figure now sits with S2 (£500k–£1m). S1, S3 and S4 open; documents say 'fixed at the audit'."
   },
   "support": {
     "unit": "per month",
     "from": {
       "S1": 300,
-      "S2": 550,
-      "S3": 1500
+      "S2": 300,
+      "S3": 550,
+      "S4": 1500
     },
-    "tiers": "quoted at the audit — bands in the strategy doc are not yet reconciled (flagged 19 Sep)",
+    "tiers": "quoted at the audit; support levels above 'from' still to be set (open 28 Sep)",
     "public": false
   },
   "public_figures": [
-    595,
-    1500,
-    1200,
-    1500,
-    950
+    600,
+    750,
+    750,
+    1000,
+    900
   ],
   "forbidden_public": [
+    10080,
+    17640,
     720,
     1440,
     2880,

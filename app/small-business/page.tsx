@@ -35,7 +35,7 @@ const smallBizSchema = {
       areaServed: 'GB',
       url: 'https://decodedops.co.uk/small-business',
       offers: [
-        { '@type': 'Offer', name: 'Clarity Check', price: '595', priceCurrency: 'GBP' },
+        { '@type': 'Offer', name: 'Clarity Check', price: '600', priceCurrency: 'GBP' },
       ],
     },
     {
@@ -71,7 +71,7 @@ const services = [
     icon: Sparkles,
     name: 'Clarity Check',
     tagline: 'The starting point. A remote operational review: honest, specific, actionable.',
-    price: '£595',
+    price: '£600',
     priceNote: 'fixed',
     features: [
       '3-hour structured remote session',

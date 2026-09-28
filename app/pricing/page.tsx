@@ -11,19 +11,19 @@ const { consultancy, small_business } = pricingData;
 
 export const metadata: Metadata = {
   title: 'Fractional CTO Pricing | Decoded Ops',
-  description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £1,500, retained support from £950 a month, and project work is quoted after a call.',
+  description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
     title: 'Fractional CTO Pricing | Decoded Ops',
-    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £1,500, retained support from £950 a month, and project work is quoted after a call.',
+    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
     url: 'https://decodedops.co.uk/pricing',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional CTO Pricing | Decoded Ops',
-    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £1,500, retained support from £950 a month, and project work is quoted after a call.',
+    description: 'Fractional CTO pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month, and project work is quoted after a call.',
     images: [OG_IMAGE_PATH],
   },
 };
@@ -35,7 +35,7 @@ const pricingSchema = {
       '@type': 'WebPage',
       name: 'Pricing',
       url: 'https://decodedops.co.uk/pricing',
-      description: 'Plain pricing for the consultancy. The Clarity Audit is from £1,500. Everything else is quoted after a conversation about your operation.',
+      description: 'Plain pricing for the consultancy. The Clarity Audit is from £750. Everything else is quoted after a conversation about your operation.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
     },
     {
@@ -156,13 +156,13 @@ export default function PricingPage() {
         <div className="container">
           <p className="eyebrow">Guarantee &middot; DO-ART-203</p>
           <h2>The 3x Clarity Guarantee.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Clarity Audit, £1,500 fixed. If it doesn&rsquo;t find three
+          <p className="lead" style={{ marginTop: 16 }}>Clarity Audit, from £750. If it doesn&rsquo;t find three
             times the fee, it&rsquo;s refunded.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Artwork mode="measure" tone="dark" p="gt" title="The 3x Clarity Guarantee"
-                     sub="Clarity Audit, £1,500 fixed"
+                     sub="Clarity Audit, from £750"
                      no="DO-ART-203" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
@@ -178,7 +178,7 @@ export default function PricingPage() {
                   <rect x="430" y="228" width="240" height="62" rx="6" fill="url(#gt-bar)"
                         className="p-node" strokeWidth="1"/>
                   <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
-                        fontWeight="700" fontSize="30">£1,500</text>
+                        fontWeight="700" fontSize="30">from £750</text>
                 </g>
 
                 <g className="sk-fade sk-s4" filter="url(#gt-shadow)">
@@ -189,7 +189,7 @@ export default function PricingPage() {
                   <rect x="430" y="368" width="720" height="62" rx="6" fill="url(#gt-amber-b)"
                         className="p-node-a" strokeWidth="1.4"/>
                   <text x="458" y="410" className="p-accent-ink" fontFamily="Outfit,sans-serif"
-                        fontWeight="700" fontSize="30">£4,500+</text>
+                        fontWeight="700" fontSize="30">3× the fee</text>
                 </g>
 
                 <g className="sk-fade sk-s6">
@@ -225,14 +225,13 @@ export default function PricingPage() {
               A 3-hour remote diagnostic. Written priorities within five working days.
               Feeds directly into the Clarity Audit if you decide to go further.
             </p>
-            <span className="price" style={{ marginTop: 16, display: 'inline-block' }}>£595 fixed</span>
+            <span className="price" style={{ marginTop: 16, display: 'inline-block' }}>£600 fixed</span>
             <div style={{ marginTop: 20 }}>
               <Link className="btn btn-primary" href="/contact">Book your Clarity Check</Link>
             </div>
           </div>
 
-          <p className="table-foot" style={{ marginTop: 28 }}>Sub-£1m businesses use the same services at the &ldquo;from&rdquo; prices above.
-            There is no separate small-business pricing ladder. See <Link href="/small-business"
+          <p className="table-foot" style={{ marginTop: 28 }}>Prices are set by the size of the business, and businesses under £500k have their own, lower starting prices. Anyone under £1m can start with the Clarity Check. See <Link href="/small-business"
               style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
         </div>
       </section>

@@ -88,7 +88,7 @@ const sectors: NavLink[] = [
 
 // ── "Small business", new top-level slot, Craig's decision (2026-08-06) ──
 const smallBusinessProducts: (NavLink & { sub: string })[] = [
-  { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £595', href: '/small-business' },
+  { label: 'Clarity Check', sub: 'Fixed-price, done remotely · £600', href: '/small-business' },
   { label: 'Everything else', sub: 'Same services, same from-prices as everyone else', href: '/pricing' },
 ];
 const smallBusinessStart: NavGroup = {
