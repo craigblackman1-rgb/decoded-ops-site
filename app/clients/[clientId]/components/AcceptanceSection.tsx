@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { PartyPopper } from 'lucide-react';
 
 interface AppModule {
   id: string;
@@ -97,7 +98,7 @@ export default function AcceptanceSection({ data }: { data: AcceptanceData }) {
 
         {submitted ? (
           <div className="text-center py-10 px-8 bg-[rgba(27,94,32,0.15)] border border-[rgba(27,94,32,0.3)] rounded-xl">
-            <div className="text-5xl mb-4">🎉</div>
+            <div className="mb-4 text-[#4ade80]"><PartyPopper size={48} /></div>
             <h3 className="text-2xl font-black text-[#4ade80] mb-2">Excellent — let's get started.</h3>
             <p className="text-base text-[rgba(255,255,255,0.6)]">
               Craig will receive your acceptance and be in touch within one working day with next steps. Looking forward to it.

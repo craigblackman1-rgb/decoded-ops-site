@@ -1,12 +1,34 @@
 'use client';
 
+import { ShoppingCart, Network, Link, Building2, Wrench, Package, ClipboardList, CalendarDays, Keyboard, Mail, Search, Palette, Monitor, Tag, BarChart3, RefreshCw } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import SystemsDiagram, { SystemsDiagramData } from './SystemsDiagram';
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  ShoppingCart,
+  Network,
+  Link,
+  Building2,
+  Wrench,
+  Package,
+  ClipboardList,
+  CalendarDays,
+  Keyboard,
+  Mail,
+  Search,
+  Palette,
+  Monitor,
+  Tag,
+  BarChart3,
+  RefreshCw,
+};
 
 interface PainPoint {
   title: string;
   description: string;
   stat: string;
   icon?: string;
+  iconName?: string;
   borderColor?: string;
   bgColor?: string;
 }
@@ -62,8 +84,11 @@ export default function ChallengeSection({ data, systems }: { data: ChallengeDat
                 key={i}
                 className={`p-7 bg-white rounded-2xl border-l-4 ${borderClass} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
               >
-                <div className={`w-12 h-12 rounded-2xl ${bgClass} flex items-center justify-center mb-4 text-2xl`}>
-                  {point.icon}
+                <div className={`w-12 h-12 rounded-2xl ${bgClass} flex items-center justify-center mb-4`}>
+                  {point.iconName && ICON_MAP[point.iconName] ? (() => {
+                    const Icon = ICON_MAP[point.iconName];
+                    return <Icon size={22} className={statTextClass} />;
+                  })() : <span className="text-2xl">{point.icon}</span>}
                 </div>
                 <h3 className="text-lg font-bold text-[#023047] mb-2">
                   {point.title}

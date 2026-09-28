@@ -82,7 +82,7 @@ const TACKLEBAG_TIMELINE_CELLS: boolean[][] = [
   [false,false,false,false,false,false,false,false,false,true],
 ];
 
-const TACKLEBAG_FOOTNOTE = '⚡ Phase 1 completes before August peak — no new implementations during your busiest months';
+const TACKLEBAG_FOOTNOTE = 'Phase 1 completes before August peak — no new implementations during your busiest months';
 
 // Matches the HTML stack-layer styling exactly — bottom to top order
 const LAYER_STYLES = [

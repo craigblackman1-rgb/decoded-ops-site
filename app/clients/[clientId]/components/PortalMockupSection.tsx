@@ -1,5 +1,17 @@
 'use client';
 
+import { LayoutDashboard, Shirt, FileText, FileCheck, User, Package } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  LayoutDashboard,
+  Shirt,
+  FileText,
+  FileCheck,
+  User,
+  Package,
+};
+
 interface PortalMockupData {
   tag: string;
   title: string;
@@ -15,8 +27,8 @@ interface PortalMockupData {
   creditUsed: string;
   creditTotal: string;
   creditPercent: number;
-  navItems: Array<{ label: string; active?: boolean }>;
-  products: Array<{ icon: string; name: string; sku: string; price: string }>;
+  navItems: Array<{ label: string; active?: boolean; iconName?: string }>;
+  products: Array<{ icon: string; name: string; sku: string; price: string; iconName?: string }>;
   disclaimer: string;
 }
 
@@ -165,6 +177,10 @@ export default function PortalMockupSection({ data }: { data: PortalMockupData }
                           : 'text-[rgba(0,0,0,0.5)]'
                       }`}
                     >
+                  {item.iconName && ICON_MAP[item.iconName] && (() => {
+                    const Icon = ICON_MAP[item.iconName];
+                    return <Icon size={12} />;
+                  })()}
                       {item.label}
                     </li>
                   ))}
@@ -174,8 +190,11 @@ export default function PortalMockupSection({ data }: { data: PortalMockupData }
                 <div className="font-bold text-xs text-[#023047] mb-2">Quick order</div>
                 {data.products.map((prod, i) => (
                   <div key={i} className="flex gap-2.5 p-2.5 mb-1.5 rounded-xl bg-[#F8F9FA] border border-[rgba(0,0,0,0.06)] last:mb-0">
-                    <div className="w-11 h-11 rounded-md bg-[rgba(0,0,0,0.04)] flex items-center justify-center text-lg flex-shrink-0">
-                      {prod.icon}
+                    <div className="w-11 h-11 rounded-md bg-[rgba(0,0,0,0.04)] flex items-center justify-center text-[#219EBC] flex-shrink-0">
+                      {prod.iconName && ICON_MAP[prod.iconName] ? (() => {
+                        const Icon = ICON_MAP[prod.iconName];
+                        return <Icon size={18} />;
+                      })() : <Package size={18} />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-xs font-semibold text-[#023047]">{prod.name}</div>

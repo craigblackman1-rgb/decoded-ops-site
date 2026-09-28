@@ -1,5 +1,13 @@
 'use client';
 
+import { Star, Calendar, Package, Palette } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+const ADDON_ICON_MAP: Record<string, LucideIcon> = {
+  Package,
+  Palette,
+};
+
 interface PricingOption {
   id: string;
   name: string;
@@ -26,6 +34,7 @@ interface ValueComparison {
 interface AddOnModule {
   id: string;
   icon: string;
+  iconName?: string;
   name: string;
   description: string;
   features: string[];
@@ -91,8 +100,8 @@ export default function PricingSection({ data }: { data: PricingData }) {
                 }`}
               >
                 {isRecommended && (
-                  <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#219EBC] text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-wide">
-                    ⭐ Recommended
+                  <div className="absolute -top-px left-1/2 -translate-x-1/2 bg-[#219EBC] text-white px-4 py-1 rounded-b-xl text-xs font-bold tracking-wide flex items-center gap-1.5">
+                    <Star size={12} fill="currentColor" /> Recommended
                   </div>
                 )}
 
@@ -112,8 +121,8 @@ export default function PricingSection({ data }: { data: PricingData }) {
                     {option.amount}
                     <span className="text-sm font-normal opacity-60">{option.period}</span>
                   </div>
-                  <div className={`text-xs font-bold mt-2.5 mb-1 ${isB ? 'text-[#FFB703]' : 'opacity-60'}`}>
-                    📅 {option.days}
+                  <div className={`text-xs font-bold mt-2.5 mb-1 flex items-center gap-1.5 ${isB ? 'text-[#FFB703]' : 'opacity-60'}`}>
+                    <Calendar size={12} /> {option.days}
                   </div>
                   <div className="text-xs opacity-40 mb-3">{option.minimum}</div>
                   <p className="text-xs leading-relaxed opacity-70 italic">{option.bestFor}</p>
@@ -163,7 +172,12 @@ export default function PricingSection({ data }: { data: PricingData }) {
                 <div key={mod.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[rgba(2,48,71,0.07)]">
                   {/* Module head */}
                   <div className="bg-[#023047] px-7 pt-7 pb-6">
-                    <div className="text-3xl mb-3">{mod.icon}</div>
+                    <div className="text-[#8ECAE6] mb-3">
+                      {mod.iconName && ADDON_ICON_MAP[mod.iconName] ? (() => {
+                        const Icon = ADDON_ICON_MAP[mod.iconName];
+                        return <Icon size={28} />;
+                      })() : <span className="text-3xl">{mod.icon}</span>}
+                    </div>
                     <h4 className="text-lg font-black text-white mb-2">{mod.name}</h4>
                     <p className="text-xs text-[rgba(255,255,255,0.6)] leading-relaxed">{mod.description}</p>
                   </div>

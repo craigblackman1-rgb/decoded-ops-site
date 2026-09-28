@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Line } from 'react-chartjs-2';
+import { Zap, TrendingUp, Lightbulb } from 'lucide-react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -180,7 +181,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
     });
     setTimeout(() => {
       updateAlerts(stocksRef.current);
-      addLog(`📦 Reorder placed for ${stocksRef.current[i].product.split(' (')[0]}`);
+      addLog(`Reorder placed for ${stocksRef.current[i].product.split(' (')[0]}`);
     }, 0);
   }
 
@@ -330,7 +331,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
                   className="px-4 py-2 bg-[#023047] text-white rounded-lg text-sm font-bold hover:bg-[#035670] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   id="sim-btn"
                 >
-                  ⚡ Simulate Weekend Orders
+                  <span className="inline-flex items-center gap-1.5"><Zap size={14} /> Simulate Weekend Orders</span>
                 </button>
               </div>
             </div>
@@ -446,7 +447,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
 
             {/* Forecast Panel */}
             <div className="mt-6 bg-white rounded-xl p-5 shadow-sm">
-              <div className="font-bold text-[#023047] mb-4 text-sm">{data.forecastTitle || '📈 Demand Forecast — Jul–Sep 2026 (Canterbury teamwear)'}</div>
+              <div className="font-bold text-[#023047] mb-4 text-sm flex items-center gap-2"><TrendingUp size={16} /> {data.forecastTitle || 'Demand Forecast — Jul–Sep 2026 (Canterbury teamwear)'}</div>
               <div className="w-full h-36 md:h-48">
                 <Line
                   ref={chartRef}
@@ -504,7 +505,7 @@ export default function DemoSection({ data }: { data: DemoData }) {
 
         {/* Note */}
         <div className="mt-8 p-6 bg-[rgba(33,158,188,0.1)] border border-[#219EBC] rounded-lg flex gap-4">
-          <div className="text-2xl flex-shrink-0">💡</div>
+          <div className="flex-shrink-0 text-[#219EBC]"><Lightbulb size={24} /></div>
           <div>
             <strong className="text-[#023047]">{data.noteTitle || 'This is a working prototype.'}</strong>
             <p className="text-sm text-[#023047] mt-1">

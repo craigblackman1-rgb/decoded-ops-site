@@ -27,6 +27,7 @@ export const tacklebagProposalV2 = {
         description: 'Pickers walk the entire floor for every single order. At peak volume that compounds into hours of unnecessary travel every day. One mis-pick means a re-print or re-embroider at the worst possible time.',
         stat: 'Batch picking cuts floor time 2–3× on priority school lines',
         icon: '📦',
+        iconName: 'Package',
         borderColor: 'border-[#FB8500]',
         bgColor: 'bg-[rgba(251,133,0,0.1)]',
       },
@@ -35,6 +36,7 @@ export const tacklebagProposalV2 = {
         description: 'Key team members know where things are. If they\'re off, the team slows down or mis-picks. Priority school lines are not labelled — every pick depends on who is on the floor.',
         stat: 'Labelled bins mean any team member can pick accurately on any day',
         icon: '🏷️',
+        iconName: 'Tag',
         borderColor: 'border-[#C62828]',
         bgColor: 'bg-[rgba(198,40,40,0.1)]',
       },
@@ -43,6 +45,7 @@ export const tacklebagProposalV2 = {
         description: 'Without a week-by-week forecast from Symphony data, peak orders are reactive. Stockouts on the accounts that matter most, cash tied up in slow movers, emergency purchasing at premium prices.',
         stat: 'Week-by-week Jul–Oct forecast — right stock at the right time',
         icon: '📊',
+        iconName: 'BarChart3',
         borderColor: 'border-[#219EBC]',
         bgColor: 'bg-[rgba(33,158,188,0.1)]',
       },
@@ -51,6 +54,7 @@ export const tacklebagProposalV2 = {
         description: 'your ERP system is planned for November. Without warehouse specs, clean SKU data, and a requirements brief, the first 4–6 weeks of that engagement is just gathering what should already be written down.',
         stat: 'ERP starts in week one, not week six — saving £2,500–£5,000',
         icon: '🔄',
+        iconName: 'RefreshCw',
         borderColor: 'border-[#FFB703]',
         bgColor: 'bg-[rgba(255,183,3,0.1)]',
       },
@@ -347,6 +351,7 @@ export const tacklebagProposalV2 = {
         {
           id: 'stock',
           icon: '📦',
+          iconName: 'Package',
           name: 'Stock Control Module',
           description: 'Real-time stock visibility across all school and club lines. Bin tracking mapped to your physical locations. Handheld picking — any team member can process any order accurately without asking.',
           features: [
@@ -362,6 +367,7 @@ export const tacklebagProposalV2 = {
         {
           id: 'artwork',
           icon: '🎨',
+          iconName: 'Palette',
           name: 'Artwork & Job Sheet Module',
           description: 'Artwork files, production specs, and job sheets — consolidated against a clean part number. Job sheets generated automatically. Eliminates email threads, WhatsApp messages, and memory as your production management system.',
           features: [
