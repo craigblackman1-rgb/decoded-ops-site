@@ -111,7 +111,7 @@ export function SeasonalCapacityCalculator() {
                     max={200}
                     value={demandPct[i]}
                     onChange={(e) => handleDemandChange(i, Number(e.target.value))}
-                    style={{ flex: 1, accentColor: 'var(--do-cerulean)' }}
+                    style={{ flex: 1, minWidth: 0, accentColor: 'var(--do-cerulean)' }}
                   />
                   <span style={{ fontSize: 'var(--do-text-xs)', fontWeight: 600, color: 'var(--do-text-primary)', minWidth: 36, textAlign: 'right' }}>
                     {demandPct[i]}%
