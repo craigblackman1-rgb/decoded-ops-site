@@ -220,7 +220,7 @@ export function Header() {
 
       <header ref={headerRef} className="site-head site-head--mega">
         <div className="container head-inner">
-          <Link className="logo" href="/">Decoded<span>Ops</span></Link>
+          <Link className="logo" href="/" prefetch={false}>Decoded<span>Ops</span></Link>
 
           <button
             className="nav-toggle"
