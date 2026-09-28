@@ -71,8 +71,9 @@ const guideChips: FooterLink[] = [
 ];
 
 const locationChips: FooterLink[] = [
-  { label: 'Fractional CTO near you', href: '/locations/fractional-cto' },
-  { label: 'Technology audit near you', href: '/locations/tech-audit' },
+  { label: 'Sussex & Surrey', href: '/locations/sussex-surrey' },
+  { label: 'Manchester', href: '/locations/manchester' },
+  { label: 'Technology audit, UK-wide', href: '/locations/tech-audit' },
 ];
 
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {

@@ -2,7 +2,6 @@ import { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
 import localBlogPosts from '@/data/blog-index.json'
 import routeSlugs from '@/data/route-slugs.json'
-import { locations } from '@/data/locations'
 import { hubFetch } from '@/lib/hub-fetch'
 
 const BASE_URL = 'https://decodedops.co.uk'
@@ -121,32 +120,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Location hub pages
-  const locationHubs = [
-    { url: `${BASE_URL}/locations/fractional-cto`, priority: 0.75 },
-    { url: `${BASE_URL}/locations/tech-audit`, priority: 0.75 },
-  ].map(hub => ({
-    url: hub.url,
-    lastModified: new Date(SITE_CONTENT_UPDATED),
-    changeFrequency: 'monthly' as const,
-    priority: hub.priority,
-  }))
-
-  // Location pages
-  const locationPages = locations.flatMap(loc => [
-    {
-      url: `${BASE_URL}/locations/fractional-cto/${loc.slug}`,
-      lastModified: new Date(SITE_CONTENT_UPDATED),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/locations/tech-audit/${loc.slug}`,
-      lastModified: new Date(SITE_CONTENT_UPDATED),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-  ])
+  // Location pages (3 consolidated pages)
+  const locationPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/locations/sussex-surrey`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/locations/manchester`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/locations/tech-audit`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.75 },
+  ]
 
   return [
     ...staticPages,
@@ -154,7 +133,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...problemPages,
     ...sectorPages,
     ...toolPages,
-    ...locationHubs,
     ...locationPages,
   ]
 }

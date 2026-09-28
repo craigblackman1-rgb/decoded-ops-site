@@ -1,4 +1,30 @@
 import type { NextConfig } from "next";
+import { locations } from "./data/locations";
+
+const SUSSEX_SURREY_COUNTIES = new Set(['West Sussex', 'East Sussex', 'Surrey']);
+
+function buildLocationRedirects() {
+  const redirects: { source: string; destination: string; permanent: boolean }[] = [];
+
+  // /locations/fractional-cto -> /locations/sussex-surrey
+  redirects.push({ source: '/locations/fractional-cto', destination: '/locations/sussex-surrey', permanent: true });
+
+  for (const loc of locations) {
+    const isSussexSurrey = SUSSEX_SURREY_COUNTIES.has(loc.county);
+    const dest = loc.slug === 'manchester'
+      ? '/locations/manchester'
+      : loc.slug === 'london'
+        ? '/locations/tech-audit'
+        : isSussexSurrey
+          ? '/locations/sussex-surrey'
+          : '/locations/tech-audit';
+
+    redirects.push({ source: `/locations/fractional-cto/${loc.slug}`, destination: dest, permanent: true });
+    redirects.push({ source: `/locations/tech-audit/${loc.slug}`, destination: dest, permanent: true });
+  }
+
+  return redirects;
+}
 
 const nextConfig: NextConfig = {
   output: 'standalone',
@@ -7,6 +33,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...buildLocationRedirects(),
       { source: '/audit', destination: '/clarity', permanent: true },
       { source: '/fractional', destination: '/retained', permanent: true },
       { source: '/:path*', destination: 'https://decodedops.co.uk/:path*', permanent: true, has: [{ type: 'host', value: 'www.decodedops.co.uk' }] },
