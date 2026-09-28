@@ -108,7 +108,7 @@ export function Footer() {
 
         <div className="f-top">
           <div className="f-brand">
-            <Link className="logo" href="/">Decoded<span>Ops</span></Link>
+            <Link className="logo" href="/" prefetch={false}>Decoded<span>Ops</span></Link>
             <p className="f-blurb">Independent technology and operations consultancy for the
               decorated-goods sector. No vendor agenda.</p>
             <div className="f-reach">
