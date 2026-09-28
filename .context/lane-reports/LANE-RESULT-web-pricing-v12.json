@@ -1,0 +1,30 @@
+{
+  "lane": "web-pricing-v12",
+  "wo": "wo-pricing-strategy-rebuild-2026-09-08",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "989bd91",
+      "subject": "feat: update public prices to Craig-approved 28 Sep 2026 figures"
+    }
+  ],
+  "filesChanged": [
+    "data/pricing-v11.json",
+    "app/pricing/page.tsx",
+    "app/clarity/page.tsx",
+    "app/locations/tech-audit/page.tsx",
+    "app/opengraph-image.tsx",
+    "app/retained/page.tsx",
+    "app/small-business/page.tsx",
+    "components/Header.tsx",
+    "app/resources/erp-selection-playbook/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors (0 pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits | 1 hit (app/clients/[clientId]/data/hanicks-proposal.ts:389 — £950 in client proposal, off-limits per brief)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
