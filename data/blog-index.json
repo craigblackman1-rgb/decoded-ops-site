@@ -9,7 +9,8 @@
       "seo": {
         "title": "Four ERP Gaps for a Decorated Goods Business | Decoded Ops",
         "description": "Of twelve ERP platforms reviewed, one lists a UK supplier catalogue. These are the four ERP gaps every decorated goods business hits, in one place."
-      }
+      },
+      "featuredImage": "/images/blog/erp-gaps-decorated-goods-business-thumb.webp"
     },
     {
       "slug": "decoded-method-operations-framework",
@@ -20,7 +21,8 @@
       "seo": {
         "title": "Decoded Method Operations Framework | Decoded Ops",
         "description": "The Decoded Method operations framework has three layers: a Process Register, one-page SOPs and an Improvement Log, used in every Decoded Ops engagement."
-      }
+      },
+      "featuredImage": "/images/blog/decoded-method-operations-framework-thumb.webp"
     },
     {
       "slug": "iso-9001-small-business",
@@ -31,7 +33,8 @@
       "seo": {
         "title": "ISO 9001 for Small Business | Decoded Ops",
         "description": "Is ISO 9001 for a small business worth it, or just a logo. An honest look at what certification actually requires and what it does not fix."
-      }
+      },
+      "featuredImage": "/images/blog/iso-9001-small-business-thumb.webp"
     },
     {
       "slug": "sop-template-decorated-goods",
@@ -42,7 +45,8 @@
       "seo": {
         "title": "SOP Template for Decorated Goods Businesses | Decoded Ops",
         "description": "A free SOP template for decorated goods, print and workwear businesses. A step-by-step guide to document your processes and stop relying on key individuals."
-      }
+      },
+      "featuredImage": "/images/blog/sop-template-decorated-goods-thumb.webp"
     },
     {
       "slug": "operations-planning-print-decoration-business",
@@ -52,7 +56,8 @@
       "seo": {
         "title": "Operations Planning Template | Decoded Ops",
         "description": "An operations planning template for print and decoration businesses covers what actually needs planning, and why most plans fail at the handoff between teams."
-      }
+      },
+      "featuredImage": "/images/blog/operations-planning-print-decoration-business-thumb.webp"
     },
     {
       "slug": "local-seo-print-shop",
@@ -63,7 +68,8 @@
       "seo": {
         "title": "Local SEO for Print Shops | Decoded Ops",
         "description": "Local SEO for print shops and decorated goods businesses: practical steps to rank in local search, optimise your Google Business Profile, and win customers."
-      }
+      },
+      "featuredImage": "/images/blog/local-seo-print-shop-thumb.webp"
     },
     {
       "slug": "cloud-erp-print-business",
@@ -74,7 +80,8 @@
       "seo": {
         "title": "Cloud ERP for a Print Business | Decoded Ops",
         "description": "Cloud ERP for a print business changes how you work day to day. What to look for, and the hidden traps that on-premise systems simply don't have."
-      }
+      },
+      "featuredImage": "/images/blog/cloud-erp-print-business-thumb.webp"
     },
     {
       "slug": "what-is-erp-decorated-goods",
@@ -85,7 +92,8 @@
       "seo": {
         "title": "What Is ERP for a Print Business | Decoded Ops",
         "description": "ERP for a print business, explained without the jargon: what it actually does, whether your operation is ready for one, and how to spot being oversold."
-      }
+      },
+      "featuredImage": "/images/blog/what-is-erp-decorated-goods-thumb.webp"
     },
     {
       "slug": "erp-selection-decorated-goods",
@@ -96,7 +104,8 @@
       "seo": {
         "title": "How to Choose an ERP System | Decoded Ops",
         "description": "How to choose an ERP system for a print, embroidery or decoration business: an independent guide to selection criteria, vendor evaluation and common pitfalls."
-      }
+      },
+      "featuredImage": "/images/blog/erp-selection-decorated-goods-thumb.webp"
     },
     {
       "slug": "hire-fractional-cto",
@@ -107,7 +116,8 @@
       "seo": {
         "title": "Fractional CTO UK: Costs and Fit | Decoded Ops",
         "description": "A fractional CTO in the UK costs less than most people expect. What it costs, what you actually get, and the situations where fractional leadership fits best."
-      }
+      },
+      "featuredImage": "/images/blog/hire-fractional-cto-thumb.webp"
     },
     {
       "slug": "lean-six-sigma-small-business",
@@ -118,7 +128,8 @@
       "seo": {
         "title": "Lean Six Sigma for Small Business | Decoded Ops",
         "description": "Lean Six Sigma sounds like an enterprise programme. Here's what it means for a print, embroidery or decoration business under 5 million turnover."
-      }
+      },
+      "featuredImage": "/images/blog/lean-six-sigma-small-business-thumb.webp"
     },
     {
       "slug": "how-to-evaluate-an-ai-tool-without-getting-sold-to",
@@ -129,7 +140,8 @@
       "seo": {
         "title": "How to Evaluate an AI Tool | Decoded Ops",
         "description": "How to evaluate an AI tool without getting sold to: the practical questions to ask a vendor before an AI product goes anywhere near your production data."
-      }
+      },
+      "featuredImage": "/images/blog/how-to-evaluate-an-ai-tool-without-getting-sold-to-thumb.webp"
     },
     {
       "slug": "the-artwork-file-that-broke-the-erp-cartoon",
@@ -140,7 +152,8 @@
       "seo": {
         "title": "The Artwork File That Broke the ERP | Decoded Ops",
         "description": "A cartoon look at ERP artwork file management gone wrong, and the real production floor habits that cause it in print, embroidery and decoration businesses."
-      }
+      },
+      "featuredImage": "/images/blog/the-artwork-file-that-broke-the-erp-cartoon-thumb.webp"
     },
     {
       "slug": "b2b-portal-down-on-christmas-jumper-day-cartoon",
@@ -151,7 +164,8 @@
       "seo": {
         "title": "B2B Portal Down on Christmas Jumper Day | Decoded Ops",
         "description": "A cartoon look at b2b trade portal software failing on the worst possible day, and the fixes that keep a wholesale order system online during a peak."
-      }
+      },
+      "featuredImage": "/images/blog/b2b-portal-down-on-christmas-jumper-day-cartoon-thumb.webp"
     },
     {
       "slug": "crm-adoption-failure-why-it-happens-and-how-to-fix-it",
@@ -162,7 +176,8 @@
       "seo": {
         "title": "CRM Adoption Failure: Why and How to Fix It | Decoded Ops",
         "description": "CRM adoption failure usually traces back to process, not the software. Why it happens in decorated goods businesses, and the fix that actually sticks."
-      }
+      },
+      "featuredImage": "/images/blog/crm-adoption-failure-why-it-happens-and-how-to-fix-it-thumb.webp"
     },
     {
       "slug": "what-good-operations-actually-looks-like",
@@ -173,7 +188,8 @@
       "seo": {
         "title": "What Good Operations Actually Looks Like | Decoded Ops",
         "description": "What good operations actually looks like in a decorated goods business, described plainly: what to watch for on the floor, and what it changes for the owner."
-      }
+      },
+      "featuredImage": "/images/blog/what-good-operations-actually-looks-like-thumb.webp"
     },
     {
       "slug": "when-it-support-is-the-problem",
@@ -184,7 +200,8 @@
       "seo": {
         "title": "When IT Support Is the Problem | Decoded Ops",
         "description": "Managed IT support for a small business should fix problems, not just tickets. Here's how to tell when your IT support has become part of the problem itself."
-      }
+      },
+      "featuredImage": "/images/blog/when-it-support-is-the-problem-thumb.webp"
     },
     {
       "slug": "the-hidden-cost-of-running-legacy-systems",
@@ -195,7 +212,8 @@
       "seo": {
         "title": "The Hidden Cost of Manual Processes | Decoded Ops",
         "description": "The hidden cost of manual processes shows up in a legacy system long before anyone notices it in the accounts. A practical look at where it sits."
-      }
+      },
+      "featuredImage": "/images/blog/the-hidden-cost-of-running-legacy-systems-thumb.webp"
     },
     {
       "slug": "process-before-platform",
@@ -206,7 +224,8 @@
       "seo": {
         "title": "Process Before Platform | Decoded Ops",
         "description": "Process before platform is the rule behind every Decoded Ops engagement: document how the work actually happens first, then choose software that fits it."
-      }
+      },
+      "featuredImage": "/images/blog/process-before-platform-thumb.webp"
     },
     {
       "slug": "embroidery-stitch-density-quality-speed-cost",
@@ -217,7 +236,8 @@
       "seo": {
         "title": "Embroidery Stitch Density Guide | Decoded Ops",
         "description": "This embroidery stitch density guide covers how density decisions affect quality, production speed and job cost for garment decoration businesses of any size."
-      }
+      },
+      "featuredImage": "/images/blog/embroidery-stitch-density-quality-speed-cost-thumb.webp"
     },
     {
       "slug": "heat-press-temperature-dwell-time-operations-guide",
@@ -228,7 +248,8 @@
       "seo": {
         "title": "Heat Press Temperature Guide | Decoded Ops",
         "description": "A complete heat press temperature and dwell time guide for reducing errors, improving consistency across jobs, and cutting waste on the production floor."
-      }
+      },
+      "featuredImage": "/images/blog/heat-press-temperature-dwell-time-operations-guide-thumb.webp"
     },
     {
       "slug": "ralawise-integration-bulk-orders-stock-management",
@@ -239,7 +260,8 @@
       "seo": {
         "title": "Ralawise Integration | Decoded Ops",
         "description": "Ralawise integration that automates bulk order processing and stock management for decorated goods businesses, instead of rekeying data by hand."
-      }
+      },
+      "featuredImage": "/images/blog/ralawise-integration-bulk-orders-stock-management-thumb.webp"
     },
     {
       "slug": "screen-printing-vs-heat-transfer-scale-your-business",
@@ -250,7 +272,8 @@
       "seo": {
         "title": "Screen Printing vs Heat Transfer | Decoded Ops",
         "description": "Screen printing vs heat transfer: a straight comparison of costs, capacity and scalability for garment decoration businesses picking their next machine."
-      }
+      },
+      "featuredImage": "/images/blog/screen-printing-vs-heat-transfer-scale-your-business-thumb.webp"
     },
     {
       "slug": "artwork-approval-workflow-brief-to-sign-off-24-hours",
@@ -261,7 +284,8 @@
       "seo": {
         "title": "Artwork Approval Workflow: Brief to Sign-Off | Decoded Ops",
         "description": "Artwork management software for print businesses that gets from brief to client sign-off within 24 hours, without a single email chased along the way."
-      }
+      },
+      "featuredImage": "/images/blog/artwork-approval-workflow-brief-to-sign-off-24-hours-thumb.webp"
     },
     {
       "slug": "bulk-order-management-wholesale-decorated-goods",
@@ -272,7 +296,8 @@
       "seo": {
         "title": "Bulk Order Management for Wholesale Goods | Decoded Ops",
         "description": "Bulk order management for wholesale decorated goods covers the systems and workflows, and the common failure points once volume passes a spreadsheet."
-      }
+      },
+      "featuredImage": "/images/blog/bulk-order-management-wholesale-decorated-goods-thumb.webp"
     },
     {
       "slug": "production-scheduling-print-embroidery-capacity-quality-rush",
@@ -283,7 +308,8 @@
       "seo": {
         "title": "Print Production Scheduling Software | Decoded Ops",
         "description": "Print production scheduling software that handles capacity, quality control and rush orders for embroidery and print businesses, without firefighting."
-      }
+      },
+      "featuredImage": "/images/blog/production-scheduling-print-embroidery-capacity-quality-rush-thumb.webp"
     },
     {
       "slug": "embroidery-quality-standards-stitch-density-thread-durability",
@@ -294,18 +320,20 @@
       "seo": {
         "title": "Embroidery Quality Standards | Decoded Ops",
         "description": "Embroidery quality standards in production cover stitch density, thread selection and durability testing, and how to enforce all three consistently at scale."
-      }
+      },
+      "featuredImage": "/images/blog/embroidery-quality-standards-stitch-density-thread-durability-thumb.webp"
     },
     {
       "slug": "ai-isnt-your-problem-your-processes-are",
       "title": "AI Isn't Your Problem. Your Processes Are.",
-      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI â€” and what to do first.",
+      "excerpt": "Before you invest in AI, fix your processes. Here's why most decorated goods businesses aren't ready for AI — and what to do first.",
       "date": "2026-05-25",
       "category": "Technology",
       "seo": {
         "title": "AI Readiness for Small Business | Decoded Ops",
         "description": "AI readiness for small business starts before the AI tool. Why most decorated goods businesses aren't ready for it yet, and the process work to do first."
-      }
+      },
+      "featuredImage": "/images/blog/ai-isnt-your-problem-your-processes-are-thumb.webp"
     },
     {
       "slug": "what-happens-when-your-systems-go-down",
@@ -316,18 +344,20 @@
       "seo": {
         "title": "Backup and Disaster Recovery, Small Business | Decoded Ops",
         "description": "Backup and disaster recovery for a small business costs less than the downtime it prevents. Here's how to calculate the real cost and build in resilience."
-      }
+      },
+      "featuredImage": "/images/blog/what-happens-when-your-systems-go-down-thumb.webp"
     },
     {
       "slug": "ecommerce-integration-trap",
       "title": "The eCommerce Integration Trap",
-      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong â€” and how to avoid the common pitfalls.",
+      "excerpt": "Connecting your website to your ERP sounds simple. Here's why it goes wrong — and how to avoid the common pitfalls.",
       "date": "2026-05-10",
       "category": "Integration",
       "seo": {
         "title": "The Ecommerce Integration Trap | Decoded Ops",
         "description": "Ecommerce integration for decorated goods sounds simple until the ERP and the website disagree. Why it goes wrong, and how to avoid the pitfalls."
-      }
+      },
+      "featuredImage": "/images/blog/ecommerce-integration-trap-thumb.webp"
     },
     {
       "slug": "5-questions-vendors-wont-like",
@@ -338,18 +368,20 @@
       "seo": {
         "title": "Software Vendor Questions to Ask | Decoded Ops",
         "description": "Five software vendor questions to ask before you sign a contract. They separate the suppliers who understand your business from the ones who don't."
-      }
+      },
+      "featuredImage": "/images/blog/5-questions-vendors-wont-like-thumb.webp"
     },
     {
       "slug": "the-real-cost-of-a-failed-erp-project",
       "title": "The Real Cost of a Failed ERP Project",
-      "excerpt": "How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project â€” and how an upfront audit would have prevented it.",
+      "excerpt": "How much does a failed ERP implementation actually cost? More than the software. Here are the real numbers from a real project — and how an upfront audit would have prevented it.",
       "date": "2026-05-01",
       "category": "ERP",
       "seo": {
         "title": "The Real Cost of a Failed ERP Project | Decoded Ops",
         "description": "The cost of a failed ERP project goes well beyond wasted licences: implementation fees, internal time and lost productivity stack up fast."
-      }
+      },
+      "featuredImage": "/images/blog/the-real-cost-of-a-failed-erp-project-thumb.webp"
     },
     {
       "slug": "why-systems-dont-talk",
@@ -360,7 +392,8 @@
       "seo": {
         "title": "Why Your Systems Don't Talk to Each Other | Decoded Ops",
         "description": "ERP integration for a small business is the number one operations problem in decorated goods. Why systems stop talking, and how to fix it."
-      }
+      },
+      "featuredImage": "/images/blog/why-systems-dont-talk-thumb.webp"
     }
   ]
 }
