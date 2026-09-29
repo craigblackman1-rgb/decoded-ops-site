@@ -3,19 +3,19 @@ import Link from 'next/link';
 import { Plate } from '@/components/Plate';
 
 export const metadata: Metadata = {
- title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
- description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+ title: 'Growing Pains in Business | Decoded Ops',
+ description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
  alternates: { canonical: '/problems' },
  openGraph: {
-  title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
-  description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  title: 'Growing Pains in Business | Decoded Ops',
+  description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
   url: 'https://decodedops.co.uk/problems',
   images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
  },
  twitter: {
   card: 'summary_large_image',
-  title: 'Growing Pains in Business, Eighteen Problems | Decoded Ops',
-  description: 'Eighteen kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
+  title: 'Growing Pains in Business | Decoded Ops',
+  description: 'The kinds of growing pains in business that print and embroidery owners recognise, and how I approach fixing each one, from audit through to build.',
  },
 };
 
@@ -33,6 +33,7 @@ const problems = [
  { title: 'Manual workarounds', href: '/problems/manual-workarounds', desc: 'Staff spend more time working around the system than the system saves them.' },
  { title: 'No ops owner', href: '/problems/no-ops-owner', desc: 'Nobody in the business is responsible for operations, so nothing gets fixed until it breaks.' },
  { title: "Ops in the owner's head", href: '/problems/ops-in-owners-head', desc: 'If you got hit by a bus tomorrow, nobody would know how to run your business.' },
+ { title: 'Quoting takes too long', href: '/problems/quoting-takes-too-long', desc: 'Every quote is rebuilt from scratch, setup charges get forgotten and margin leaks out of the price.' },
  { title: 'Seasonal peaks', href: '/problems/seasonal-peaks', desc: 'Your busiest month is four times your quietest, and your systems cannot flex.' },
  { title: 'Slow processes', href: '/problems/slow-processes', desc: 'A quote that should take ten minutes takes three days because the data is not where it needs to be.' },
  { title: 'Spreadsheet addiction', href: '/problems/spreadsheet-addiction', desc: 'The spreadsheet that runs your business is one corrupted file away from disaster.' },
@@ -46,7 +47,7 @@ export default function ProblemsIndexPage() {
    <section className="g-off">
     <div className="wrap" style={{ maxWidth: 860 }}>
      <span className="eyebrow">Problems</span>
-     <h1>Eighteen problems every decorated-goods business recognises.</h1>
+     <h1>The problems every decorated-goods business recognises.</h1>
      <p className="lede">Most of these growing pains in business are not technology problems. They are process problems that
       technology was supposed to solve but did not. Each one has a page that explains what it
       looks like, why it happens, and how to fix it.</p>
@@ -57,10 +58,10 @@ export default function ProblemsIndexPage() {
    <section className="g-navy">
     <div className="wrap">
       <span className="eyebrow">Problem map &middot; DO-ART-118</span>
-     <h2>Eighteen problems, four places they start.</h2>
+     <h2>The problems, and the four places they start.</h2>
      <div className="hair"></div>
      <p className="lede" style={{ marginTop: 16 }}>
-        Every problem page on the site, grouped by where these growing pains in business actually begin. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
+        Every problem page on the site, grouped by where these growing pains in business actually begin. Most of them are not technology problems, they are process problems technology was supposed to solve.
      </p>
 
      <div className="plate-scroll">
@@ -132,7 +133,7 @@ export default function ProblemsIndexPage() {
         {/* footer */}
         <g className="sk-fade sk-s6">
           <rect x="60" y="676" width="1480" height="90" rx="10" fill="url(#pix-amber)" className="p-samber" strokeWidth="1.1" strokeOpacity=".45"/>
-          <text x="86" y="714" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Thirteen of eighteen are not technology problems.</text>
+          <text x="86" y="714" className="p-ink" fontFamily="var(--do-font-heading)" fontWeight="700" fontSize="25">Most of them are not technology problems.</text>
           <text x="86" y="746" className="p-mono" fontSize="17" opacity=".65">They are process problems technology was supposed to solve, and did not. Which is why the audit comes first.</text>
         </g>
        </Plate>

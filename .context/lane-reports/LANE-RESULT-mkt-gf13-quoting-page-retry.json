@@ -1,0 +1,26 @@
+{
+  "lane": "mkt-gf13-quoting-page-retry",
+  "wo": "wo-marketing-sales-consolidated-2026-08-20",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "934d4b1",
+      "subject": "feat(web): quoting costs problem page with trade pricing vocabulary (GF13)"
+    }
+  ],
+  "filesChanged": [
+    "app/problems/quoting-takes-too-long/page.tsx",
+    "app/problems/page.tsx",
+    "components/Footer.tsx",
+    "data/problem-routing.ts",
+    "data/route-slugs.json"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

@@ -145,7 +145,7 @@ export function Footer() {
           </summary>
           <div className="f-more-body">
             <ChipRow label="Sectors" chips={sectorChips} />
-            <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All 18 problems', href: '/problems' }} />
+            <ChipRow label="Problems" chips={problemChips} allLink={{ label: 'All problems', href: '/problems' }} />
             <ChipRow label="Guides" chips={guideChips} allLink={{ label: 'All resources', href: '/resources' }} />
             <ChipRow label="Locations" chips={locationChips} />
           </div>

@@ -200,6 +200,30 @@ export const problemRouting: Record<string, ProblemRoute> = {
     ],
   },
 
+  'quoting-takes-too-long': {
+    targetService: {
+      href: '/clarity',
+      label: 'Operational audit',
+      anchor: 'A structured one-day audit that watches how quotes really get built, finds where setup charges and margin leak, and separates quick fixes from bigger projects.',
+    },
+    relatedProblems: [
+      { href: '/problems/spreadsheet-addiction', label: 'Running the business on spreadsheets' },
+      { href: '/problems/manual-workarounds', label: 'Your team is buried in manual workarounds' },
+      { href: '/problems/slow-processes', label: 'Your processes are too slow' },
+    ],
+    relatedReading: [
+      { href: '/blog/ai-isnt-your-problem-your-processes-are', label: 'AI isn\'t your problem. Your processes are.' },
+    ],
+    relatedSectors: [
+      { href: '/sectors/print-promotional', label: 'Print & promotional' },
+      { href: '/sectors/garment-decoration', label: 'Garment decoration' },
+    ],
+    relatedResources: [
+      { href: '/tools/automation-roi-calculator', label: 'Automation ROI calculator' },
+      { href: '/clarity', label: 'The Clarity Audit' },
+    ],
+  },
+
   'slow-processes': {
     targetService: {
       href: '/clarity',

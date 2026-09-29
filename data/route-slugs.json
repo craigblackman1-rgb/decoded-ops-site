@@ -14,6 +14,7 @@
     "manual-workarounds",
     "no-ops-owner",
     "ops-in-owners-head",
+    "quoting-takes-too-long",
     "seasonal-peaks",
     "slow-processes",
     "spreadsheet-addiction",
