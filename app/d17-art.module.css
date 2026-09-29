@@ -331,9 +331,15 @@
 @keyframes d17Pop { from { opacity: 0; transform: scale(.4) } }
 
 /* ─── contact page mobile overflow fix ─── */
-.contactHero { display: grid; grid-template-columns: 1fr 1fr }
-.contactFormCard { background: var(--do-white); border-radius: var(--do-radius-2xl); border: 1px solid var(--do-border-subtle); box-shadow: var(--do-shadow-sm); padding: 32px; min-width: 0; overflow: hidden }
-.contactFormRow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
+/* Mobile-first: single column by default; two columns above 640px. */
+.contactHero { display: grid; grid-template-columns: 1fr }
+.contactFormCard { background: var(--do-white); border-radius: var(--do-radius-2xl); border: 1px solid var(--do-border-subtle); box-shadow: var(--do-shadow-sm); padding: 20px; min-width: 0; overflow: hidden }
+.contactFormRow { display: grid; grid-template-columns: 1fr; gap: 16px }
+@media (min-width: 641px) {
+  .contactHero { grid-template-columns: 1fr 1fr }
+  .contactFormCard { padding: 32px }
+  .contactFormRow { grid-template-columns: 1fr 1fr }
+}
 
 /* ─── responsive ─── */
 @media (max-width: 760px) {
@@ -381,8 +387,4 @@
   .a920 .copy { padding: 230px 20px 76px }
   .a920 .d17MarkAbs { left: 20px; right: auto }
 }
-@media (max-width: 640px) {
-  .contactHero { grid-template-columns: 1fr }
-  .contactFormRow { grid-template-columns: 1fr }
-  .contactFormCard { padding: 20px }
-}
+/* contactHero/contactFormRow/contactFormCard responsive — mobile-first above, base is 1-col */
