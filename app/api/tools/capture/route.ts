@@ -17,7 +17,10 @@ const VALID_TOOLS = [
   'should-i-replace-erp',
 ] as const;
 
+const VALID_RESOURCES = ['sop-template'] as const;
+
 type ToolSlug = (typeof VALID_TOOLS)[number];
+type ResourceSlug = (typeof VALID_RESOURCES)[number];
 
 export async function POST(req: NextRequest) {
   try {
@@ -51,11 +54,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    if (!tool || !name || !email || !resultSummary || !answers) {
+    if (!tool || !name || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    if (typeof tool !== 'string' || typeof name !== 'string' || typeof email !== 'string' || typeof resultSummary !== 'string') {
+    if (typeof tool !== 'string' || typeof name !== 'string' || typeof email !== 'string') {
       return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
     }
 
@@ -63,16 +66,32 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
     }
 
-    if (typeof answers !== 'object' || answers === null || Array.isArray(answers)) {
-      return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
-    }
+    const isResource = (VALID_RESOURCES as readonly string[]).includes(tool);
+    const isTool = (VALID_TOOLS as readonly string[]).includes(tool);
 
-    if (!(VALID_TOOLS as readonly string[]).includes(tool)) {
+    if (!isResource && !isTool) {
       return NextResponse.json({ error: 'Invalid tool.' }, { status: 400 });
     }
 
-    if (name.length > 200 || email.length > 320 || resultSummary.length > 500) {
-      return NextResponse.json({ error: 'Input too long.' }, { status: 400 });
+    if (isResource) {
+      // Resources: resultSummary and answers are optional
+      if (resultSummary !== undefined && typeof resultSummary !== 'string') {
+        return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
+      }
+      if (answers !== undefined && (typeof answers !== 'object' || answers === null || Array.isArray(answers))) {
+        return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
+      }
+    } else {
+      // Tools: resultSummary and answers are required
+      if (!resultSummary || !answers) {
+        return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      }
+      if (typeof resultSummary !== 'string') {
+        return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
+      }
+      if (typeof answers !== 'object' || answers === null || Array.isArray(answers)) {
+        return NextResponse.json({ error: 'Invalid input format.' }, { status: 400 });
+      }
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -83,7 +102,11 @@ export async function POST(req: NextRequest) {
     const sanitizedName = name.replace(/<[^>]*>/g, '').slice(0, 200);
     const sanitizedEmail = email.replace(/<[^>]*>/g, '').slice(0, 320);
     const sanitizedCompany = company ? company.replace(/<[^>]*>/g, '').slice(0, 200) : undefined;
-    const sanitizedSummary = resultSummary.replace(/<[^>]*>/g, '').slice(0, 500);
+
+    const sanitizedSummary = isResource
+      ? `Requested resource: ${tool}`
+      : (resultSummary as string).replace(/<[^>]*>/g, '').slice(0, 500);
+    const safeAnswers = isResource ? {} : (answers as Record<string, unknown>);
 
     const hubUrl = process.env.HUB_API_URL;
     const hubKey = process.env.HUB_PUBLIC_API_KEY;
@@ -92,14 +115,17 @@ export async function POST(req: NextRequest) {
     }
 
     const payload: Record<string, unknown> = {
-      tool: tool as ToolSlug,
+      tool: tool as ToolSlug | ResourceSlug,
       name: sanitizedName,
       email: sanitizedEmail,
       resultSummary: sanitizedSummary,
-      answers,
+      answers: safeAnswers,
     };
     if (sanitizedCompany) {
       payload.company = sanitizedCompany;
+    }
+    if (isResource) {
+      payload.optin = 'ops-briefing';
     }
 
     const hubResponse = await hubFetch(`${hubUrl}/api/public/leads`, {
@@ -116,6 +142,49 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (isResource) {
+      // Resource download email to the requester
+      const firstName = sanitizedName.split(' ')[0] || sanitizedName;
+      const resourceSubject = 'Your SOP template from Decoded Ops';
+      const resourceText = [
+        `Hi ${firstName},`,
+        ``,
+        `Here is the SOP template: https://decodedops.co.uk/downloads/decoded-ops-sop-template.docx`,
+        ``,
+        `Start with the process that would hurt most if the person who does it was off.`,
+        ``,
+        `Craig`,
+        ``,
+        `---`,
+        `You are receiving this because you requested the SOP template from decodedops.co.uk.`,
+        `Reply to this email if you have questions, or unsubscribe at any time.`,
+      ].join('\n');
+      const resourceHtml = [
+        `<p>Hi ${firstName},</p>`,
+        `<p>Here is the SOP template: <a href="https://decodedops.co.uk/downloads/decoded-ops-sop-template.docx">download the .docx</a>.</p>`,
+        `<p>Start with the process that would hurt most if the person who does it was off.</p>`,
+        `<p>Craig</p>`,
+        `<p style="margin-top:24px;font-size:13px;color:#666">You are receiving this because you requested the SOP template from decodedops.co.uk.<br>Reply to this email if you have questions, or unsubscribe at any time.</p>`,
+      ].join('\n');
+
+      try {
+        const emailStatus = getEmailStatus();
+        if (emailStatus.configured) {
+          await sendEmail({
+            to: sanitizedEmail,
+            subject: resourceSubject,
+            html: resourceHtml,
+            text: resourceText,
+          });
+        }
+      } catch (emailError) {
+        console.error('[tools/capture] resource email failed', emailError);
+      }
+
+      return NextResponse.json({ ok: true });
+    }
+
+    // Tool lead alert email to Craig
     const toolNames: Record<string, string> = {
       'ops-health-score': 'Ops Health Score',
       'downtime-cost-calculator': 'Downtime Cost Calculator',
@@ -125,7 +194,7 @@ export async function POST(req: NextRequest) {
     };
     const readableTool = toolNames[tool] || tool;
 
-    const answerLines = Object.entries(answers)
+    const answerLines = Object.entries(safeAnswers)
       .map(([key, value]) => {
         const label = key
           .replace(/([A-Z])/g, ' $1')
@@ -163,7 +232,7 @@ export async function POST(req: NextRequest) {
       `<p style="white-space:pre-wrap">${sanitizedSummary}</p>`,
       `<h3>Answers</h3>`,
       `<ul style="list-style:none;padding:0;margin:0">`,
-      ...Object.entries(answers).map(([key, value]) => {
+      ...Object.entries(safeAnswers).map(([key, value]) => {
         const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase());
         return `<li style="padding:2px 0"><strong>${label}:</strong> ${String(value)}</li>`;
       }),

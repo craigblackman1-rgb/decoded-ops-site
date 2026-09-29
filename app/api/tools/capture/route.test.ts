@@ -118,4 +118,49 @@ describe('tool lead capture', () => {
     expect(warnSpy).toHaveBeenCalledWith('[tools/capture] no email backend configured — lead alert skipped');
     warnSpy.mockRestore();
   });
+
+  it('accepts sop-template resource without resultSummary or answers', async () => {
+    (sendEmail as ReturnType<typeof vi.fn>).mockResolvedValue({ success: true });
+    (getEmailStatus as ReturnType<typeof vi.fn>).mockReturnValue({ configured: true, backend: 'resend', from: 'test@example.com' });
+
+    const req = makeRequest({
+      tool: 'sop-template',
+      name: 'Alice Brown',
+      email: 'alice@example.com',
+    });
+    const res = await POST(req);
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+
+    // Hub payload should carry the resource source
+    const hubCall = (hubFetch as ReturnType<typeof vi.fn>).mock.calls[0][1];
+    const payload = JSON.parse(hubCall.body);
+    expect(payload.tool).toBe('sop-template');
+    expect(payload.resultSummary).toBe('Requested resource: sop-template');
+    expect(payload.answers).toEqual({});
+    expect(payload.optin).toBe('ops-briefing');
+
+    // Email to the requester, not a lead alert to Craig
+    expect(sendEmail).toHaveBeenCalledTimes(1);
+    const emailCall = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0][0];
+    expect(emailCall.to).toBe('alice@example.com');
+    expect(emailCall.subject).toBe('Your SOP template from Decoded Ops');
+    expect(emailCall.text).toContain('Hi Alice');
+    expect(emailCall.text).toContain('decodedops.co.uk/downloads/decoded-ops-sop-template.docx');
+  });
+
+  it('rejects an unknown resource slug', async () => {
+    const req = makeRequest({
+      tool: 'fake-resource',
+      name: 'Bob',
+      email: 'bob@example.com',
+    });
+    const res = await POST(req);
+
+    expect(res.status).toBe(400);
+    const body = await res.json();
+    expect(body.error).toBe('Invalid tool.');
+  });
 });

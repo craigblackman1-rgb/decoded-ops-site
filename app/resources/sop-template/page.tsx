@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Check } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { D17Motion } from '@/components/D17Motion';
+import { DownloadOptIn } from '@/components/DownloadOptIn';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
@@ -132,6 +133,13 @@ export default function SopTemplatePage() {
         </div>
       </section>
 
+      <DownloadOptIn
+        resource="sop-template"
+        title="The SOP template"
+        meta="Word document · 11 pages · Process Register, one-page SOP form, 6 worked examples, Improvement Log"
+        fileHref="/downloads/decoded-ops-sop-template.docx"
+      />
+
       <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
 
@@ -216,6 +224,14 @@ export default function SopTemplatePage() {
               ))}
             </div>
           </div>
+
+          <DownloadOptIn
+            resource="sop-template"
+            title="The SOP template"
+            meta="Word document · 11 pages · Process Register, one-page SOP form, 6 worked examples, Improvement Log"
+            fileHref="/downloads/decoded-ops-sop-template.docx"
+            compact
+          />
 
           <div style={{ marginBottom: 64 }}>
             <h2>Why this matters more than ever</h2>
