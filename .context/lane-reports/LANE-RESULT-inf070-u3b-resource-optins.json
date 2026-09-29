@@ -1,0 +1,29 @@
+{
+  "lane": "inf070-u3b-resource-optins",
+  "wo": "wo-marketing-funnel-2026-09-25",
+  "unit": "inf070-u3",
+  "commits": [
+    {
+      "sha": "880923c",
+      "subject": "feat(web): free download + optional opt-in on audit checklist and ERP playbook (WO-INF-070 u3)"
+    }
+  ],
+  "filesChanged": [
+    "app/api/tools/capture/route.ts",
+    "app/api/tools/capture/route.test.ts",
+    "components/DownloadOptIn.tsx",
+    "app/resources/audit-checklist/page.tsx",
+    "app/resources/erp-selection-playbook/page.tsx",
+    "app/blog/page.tsx",
+    "public/downloads/decoded-ops-audit-checklist.docx",
+    "public/downloads/decoded-ops-erp-selection-playbook.docx"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "pass: 9 passed (3 new for audit-checklist + erp-selection-playbook)",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
