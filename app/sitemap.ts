@@ -81,6 +81,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/resources/seasonal-capacity`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.6 },
 
     { url: `${BASE_URL}/retained`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/fractional-coo`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/small-business`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/transform`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/tools`, lastModified: new Date(SITE_CONTENT_UPDATED), changeFrequency: 'monthly', priority: 0.8 },

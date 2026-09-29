@@ -7,20 +7,20 @@ import { JsonLd } from '@/components/JsonLd';
 import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Fractional COO for Print & Embroidery | Decoded Ops',
-  description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. Priced to your scope.',
+  title: 'Fractional CTO for Print & Embroidery | Decoded Ops',
+  description: 'I work as a fractional CTO for print, embroidery and workwear firms, taking standing technology decisions off your plate. Priced to your scope.',
   alternates: { canonical: '/retained' },
   openGraph: {
     type: 'website',
-    title: 'Fractional COO for Print & Embroidery | Decoded Ops',
-    description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. Priced to your scope.',
+    title: 'Fractional CTO for Print & Embroidery | Decoded Ops',
+    description: 'I work as a fractional CTO for print, embroidery and workwear firms, taking standing technology decisions off your plate. Priced to your scope.',
     url: 'https://decodedops.co.uk/retained',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional COO for Print & Embroidery | Decoded Ops',
-    description: 'I work as a fractional COO for print, embroidery and workwear firms, taking standing technology and operations decisions off your plate. Priced to your scope.',
+    title: 'Fractional CTO for Print & Embroidery | Decoded Ops',
+    description: 'I work as a fractional CTO for print, embroidery and workwear firms, taking standing technology decisions off your plate. Priced to your scope.',
     images: [OG_IMAGE_PATH],
   },
 };
@@ -79,7 +79,7 @@ export default function RetainedPage() {
         <div className="container hero-center">
           <p className="eyebrow">Fractional CTO</p>
           <h1>Fractional CTO. Not a project. A standing decision-maker.</h1>
-          <p className="lead">Ongoing technology and operations leadership, as a fractional CTO or fractional COO, without the cost of a full-time hire.
+          <p className="lead">Ongoing technology and operations leadership, as a fractional CTO or <Link href="/fractional-coo">fractional COO</Link>, without the cost of a full-time hire.
             The scope and cadence are agreed at the start.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
