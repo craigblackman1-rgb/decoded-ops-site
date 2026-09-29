@@ -75,7 +75,7 @@
 .meta { margin: 12px 0 22px; font-size: 15px; line-height: 1.55; color: var(--do-text-secondary); }
 .meta b { color: var(--do-text-primary); font-weight: 700; }
 
-.dlBtn { gap: 10px; }
+.dlBtn { gap: 10px; max-width: 100%; box-sizing: border-box; }
 .dlBtn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
 .note { margin: 12px 0 0; font-size: 13px; color: var(--do-text-muted); }
@@ -158,5 +158,5 @@
   .formPage { left: auto; right: 22px }
   .dlBtn { width: 100%; white-space: normal; text-align: center; padding-inline: 14px; font-size: 15px; gap: 8px }
   .miniRow { padding: 20px 18px }
-  .mini .dlBtn { width: 100% }
+  .mini .dlBtn { width: 100%; max-width: 100%; white-space: normal; text-align: center }
 }
