@@ -35,7 +35,7 @@ export default function AboutPage() {
             <span className="eyebrow">About Craig</span>
             <h1>I started on the warehouse floor.</h1>
             <div className={s.heroBody}>
-              <p>Twenty-five years later, I&apos;m still solving the same problems, just from the other
+              <p>Twenty-five years later, I&apos;m a business operations consultant still solving the same problems, just from the other
                 side of the table.</p>
               <p>I&apos;ve worked at every level in these businesses, not as a consultant brought in to observe. I picked, packed and despatched on the warehouse floor, kept things running as the IT engineer, and ran the operation as the ops manager. I implemented the systems, worked with them every day, and fixed what needed fixing.</p>
               <p>That&apos;s why I know what a system needs to do for the person using it, not just the
@@ -73,7 +73,7 @@ export default function AboutPage() {
           <h2>Three vantage points, one problem that never changed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job I do now.
+            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is what I do now as a business operations consultant.
           </p>
 
           {/* DO-ART-831 r01 · journey poster, website cut (D16/D17). Same drawing

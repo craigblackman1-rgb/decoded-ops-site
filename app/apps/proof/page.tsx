@@ -62,7 +62,7 @@ export default function ArtworkManagerPage() {
             <p className="eyebrow">Decoded Proof &middot; artwork revision control</p>
             <h1>Every version. The one they actually approved.</h1>
             <div className="hero-body">
-              <p>An artwork vault across embroidery and print formats, with full revision control and an
+              <p>Artwork approval software with an artwork vault across embroidery and print formats, full revision control and an
                 audit trail. Colourways and thread libraries are held against the job, not scattered
                 across folders and someone&rsquo;s memory. Customers approve their own proofs instead of an
                 email chain, and the approved file goes straight to the floor in the format the machine
@@ -125,7 +125,7 @@ export default function ArtworkManagerPage() {
           <p className="lede" style={{ marginTop: 16 }}>Artwork is the thing that goes wrong quietly. Wrong
             version stitched, a colourway approved for one job and used on the next, a proof approved in
             an email nobody can find. All three of those are the same problem: no record of which
-            version was the real one.</p>
+            version was the real one. Artwork approval software has to fix that first.</p>
 
           <div className="grid grid--3">
             <div className="feature">

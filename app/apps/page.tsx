@@ -32,7 +32,7 @@ export default function AppsPage() {
         <div className="wrap centred">
           <span className="eyebrow">The systems</span>
           <h1>Run the operation. Approve the artwork. Sell the goods.</h1>
-          <p className="lede">Not a product catalogue. Software built for jobs the platforms in this sector
+          <p className="lede">Not a product catalogue. Print management software built for jobs the platforms in this sector
             were never going to do, proven at real clients.</p>
         </div>
         <div className="wrap hero-art">
@@ -242,7 +242,7 @@ export default function AppsPage() {
           <p className="lede" style={{ marginTop: 16, maxWidth: '62ch' }}>The audit comes first and it decides
             what&rsquo;s needed, not the other way round. If a platform already on the market does the job,
             that&rsquo;s what goes on the table: named, no commission in it for me. Works, Proof and Commerce
-            exist because for a specific set of jobs in this sector, nothing on the market did the job
+            exist because for a specific set of jobs in this sector, no print management software on the market did the job
             properly.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
             <Link className="btn btn--outline btn-arrow" href="/how-i-build">How I decide what to build</Link>

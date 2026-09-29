@@ -32,7 +32,7 @@ export default function DeliverPage() {
         <div className="wrap">
           <span className="eyebrow">Deliver</span>
           <h1>I get it built. And you keep the system that runs it.</h1>
-          <p className="lede">Deliver is the implementation phase after a Clarity Audit. I sit on your side
+          <p className="lede">Deliver is the business process improvement and implementation phase after a Clarity Audit. I sit on your side
             of the table for the whole build, from brief through to handover, and I leave behind a
             documented Process &amp; Quality System, so the business can run what&apos;s built long after
             I&apos;ve gone.</p>
@@ -115,7 +115,7 @@ export default function DeliverPage() {
         <div className="wrap">
           <span className="eyebrow">How Deliver runs &middot; DO-ART-305</span>
           <h2>Map, document, check, log. Then round again.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. A loop that keeps running after
+          <p className="lede" style={{ marginTop: 16 }}>Not a one-off audit. Business process improvement as a loop that keeps running after
             the engagement ends, because the last step feeds the first one.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>

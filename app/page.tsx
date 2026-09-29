@@ -86,7 +86,7 @@ export default function HomePage() {
               <div className="stage-copy">
                 <span className="eyebrow">Operations &amp; technology consultancy</span>
                 <h1>I find what&rsquo;s quietly costing you money.</h1>
-                <p>I help owners of print, embroidery, workwear and promotional merchandise businesses
+                <p>I&rsquo;m an operations consultant. I help owners of print, embroidery, workwear and promotional merchandise businesses
                   fix the systems that are holding them back. Start with a Clarity Audit: a day inside your
                   business, six areas followed from start to finish, and within five working days a written
                   plan that tells you what&rsquo;s broken, what it&rsquo;s costing you, which software actually
@@ -348,7 +348,7 @@ export default function HomePage() {
             <div className="origin-lead" data-od-id="origin-lead">
               <span className="eyebrow">Where the software came from</span>
               <h2>I didn&rsquo;t set out to build software.</h2>
-              <p>I kept meeting the same gap in businesses I was already fixing. The platform was
+              <p>I kept meeting the same gap in businesses I was already fixing as an operations consultant. The platform was
                 usually right. It just would not do one particular job, and nothing on the market closed
                 that gap at a price a business this size could justify. So I built the thing that
                 did.</p>

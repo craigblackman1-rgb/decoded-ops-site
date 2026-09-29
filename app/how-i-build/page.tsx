@@ -59,7 +59,7 @@ export default function HowIBuildPage() {
         <div className="wrap hero-center">
           <p className="eyebrow">How I build</p>
           <h1>The facts, the options, and the decision stays yours.</h1>
-          <p className="lede">I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
+          <p className="lede">As an ERP implementation consultant, I don&rsquo;t tell you what to buy. I show you what&rsquo;s on the market, what it costs,
             and where it falls short, so whatever you decide, you decide on the merits, not on my
             say-so.</p>
           <div className="btn-row" style={{ marginTop: 32 }}>
@@ -178,7 +178,7 @@ export default function HowIBuildPage() {
             <article className="rung rung--default">
               <p className="kicker">Rung 2 <span className="flag">The normal answer</span></p>
               <h3>Buy plus a custom layer</h3>
-              <p>Usually the platform is right but leaves gaps: supplier feeds, artwork, reporting across
+              <p>On an ERP implementation the platform is usually right but leaves gaps: supplier feeds, artwork, reporting across
                 more than one business. I&rsquo;ll show you what the gap costs to leave alone versus what it
                 costs to close with a custom layer, and let you weigh it up.</p>
             </article>

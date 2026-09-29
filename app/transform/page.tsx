@@ -60,7 +60,7 @@ export default function TransformPage() {
         <div className="wrap">
           <span className="eyebrow">Transform</span>
           <h1>The plan, executed.</h1>
-          <p className="lede">Transform is what happens after a Clarity Audit finds something that needs
+          <p className="lede">Transform is my digital transformation consultancy, and it is what happens after a Clarity Audit finds something that needs
             proper change, not a quick fix. I take that plan and run it: ERP, eCommerce and process
             redesign, run as one programme over weeks rather than a day.</p>
           <div className={s.heroCta}>
@@ -189,7 +189,7 @@ export default function TransformPage() {
           <span className="eyebrow">What a Transform engagement covers</span>
           <h2>Three dimensions, run together.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Transform is the Clarity Audit plan, turned into a
-            programme. The same discipline as Deliver, applied across several systems or departments
+            programme. The same discipline as Deliver, applied to ERP implementation across several systems or departments
             at once.</p>
 
           <div className="grid grid--3">
@@ -236,7 +236,7 @@ export default function TransformPage() {
       <section className={`g-navy ${s.ctaStrip}`} data-od-id="cta-strip">
         <div className="wrap" style={{ maxWidth: 760 }}>
           <h2>Book a Clarity Audit.</h2>
-          <p className="lede">Transform is scoped per engagement. There&apos;s no published price for a
+          <p className="lede">My digital transformation consultancy is scoped per engagement. There&apos;s no published price for a
             programme this size, and there won&apos;t be. It starts the same way everything does: a full
             day on site and a written plan.</p>
           <div className={s.heroCta}>

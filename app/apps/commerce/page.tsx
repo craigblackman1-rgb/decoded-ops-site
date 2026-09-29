@@ -64,7 +64,7 @@ export default function CommercePage() {
             <div className="hero-body">
               <p>Three tiers, priced on what you need rather than how many days it takes. Where a client
                 wants more than a tier covers, that&rsquo;s scoped and costed separately.</p>
-              <p>It&rsquo;s built on an open-source B2B commerce starter: company accounts, spend limits,
+              <p>It&rsquo;s a B2B ecommerce platform, built on an open-source commerce starter: company accounts, spend limits,
                 approval workflows, quote negotiation, order editing, and a full storefront and
                 checkout. Real foundations, not a from-scratch build, which keeps the cost well under a
                 bespoke quote for the same thing.</p>
@@ -152,7 +152,7 @@ export default function CommercePage() {
               <p className="feature-meta">The B2B trade portal shape</p>
               <p>Adds company accounts with multi-user roles, per-employee spending limits, approval
                 workflows, and quote negotiation. This is what most trade businesses in this sector
-                actually mean when they say they want a trade portal.</p>
+                actually mean when they say they want a trade portal or a B2B ecommerce platform.</p>
             </div>
 
             <div className="feature" data-od-id="tier-extended">

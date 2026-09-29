@@ -99,7 +99,7 @@ export default function SmallBusinessPage() {
           <span className="eyebrow" style={{ marginBottom: 22 }}>For small businesses</span>
           <h1 className="h1">Small business operations consultant. <em>Technology and systems support without the big-business price tag.</em></h1>
           <p className="lede">
-            The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
+            As a small business consultant, I bring the same operational thinking I use with larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
             A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, and process improvement, on a flexible, affordable basis built for owner-led businesses.
@@ -135,7 +135,7 @@ export default function SmallBusinessPage() {
         <div className="wrap">
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
             <h2 className="h2">Start with a Clarity Check</h2>
-            <p className="lede">A fixed-price remote diagnostic, delivered by me, not a junior team.</p>
+            <p className="lede">A fixed-price remote diagnostic, delivered by me as your small business consultant, not a junior team.</p>
           </div>
           <div className="grid grid--2">
             {services.map((service) => {

@@ -67,7 +67,7 @@ export default function PricingPage() {
         <div className="container hero-center">
           <p className="eyebrow">Pricing</p>
           <h1>Start with the audit.</h1>
-          <p className="lead">One fixed price to begin. Everything after that is scoped once
+          <p className="lead">One fixed price to begin. Everything else in my operations consultancy is scoped once
             I understand your operation.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Book a free discovery call</Link>
@@ -98,7 +98,7 @@ export default function PricingPage() {
         <div className="container">
           <p className="eyebrow">Consultancy</p>
           <h2>Diagnosis, then delivery.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Priced to the scope of your operation, not your turnover. Clarity Audit is the
+          <p className="lead" style={{ marginTop: 16 }}>Operations consultancy priced to the scope of your business, not your turnover. Clarity Audit is the
             entry point into everything below it.</p>
 
           <div className="table-wrap" style={{ marginTop: 28 }}>

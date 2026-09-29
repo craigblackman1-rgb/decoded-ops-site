@@ -65,7 +65,7 @@ export default function DataAppPage() {
               <p>Every Clarity Audit ends in a written brief. For years the same jobs kept coming back
                 with nothing on the market built for decorated goods: supplier feeds, decoration data,
                 blank-to-finished mapping, artwork held against the job. So I built the missing piece.
-                Engagement by engagement it grew, and today it runs the whole operation: catalogue,
+                Engagement by engagement it grew into an ERP for a printing company or embroiderer, and today it runs the whole operation: catalogue,
                 orders, purchasing, stock, production and despatch. It still plays both ways. Alongside
                 the platform you already own, or as the system itself.</p>
             </div>
@@ -121,7 +121,7 @@ export default function DataAppPage() {
           <span className="eyebrow">Architecture &middot; DO-ART-942</span>
           <h2>Keep your platform, or let this become it.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Works started as the missing layer: supplier
-            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP.
+            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP for a printing company, stock control software and order management system included.
             You can run it alongside the platform you already own, or let it replace it.</p>
 
           <div dangerouslySetInnerHTML={{ __html: `

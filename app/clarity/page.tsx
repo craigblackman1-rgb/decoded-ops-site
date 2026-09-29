@@ -60,7 +60,7 @@ export default function ClarityPage() {
         <div className="wrap">
           <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
-          <p className="lede">A free 60-minute call, then one full day inside your business. I follow six
+          <p className="lede">A free 60-minute call, then a one-day process audit inside your business. I follow six
             areas from start to finish, rather than just discussing them. Priced to your scope, confirmed before you commit, and covered by the
             3&times; guarantee below: if the report doesn&apos;t find at least three times the fee, it&apos;s
             refunded in full. A written report within five working days, walked through with you in person.</p>
@@ -199,7 +199,7 @@ export default function ClarityPage() {
         <div className="wrap">
           <span className="eyebrow">What gets covered</span>
           <h2>Six areas, followed from start to finish.</h2>
-          <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. I follow the
+          <p className="lede" style={{ marginTop: 16 }}>Not a checklist ticked off from a desk. In a process audit I follow the
             actual process, in the actual place it happens.</p>
 
           <div className="grid grid--3">

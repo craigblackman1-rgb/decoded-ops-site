@@ -79,7 +79,7 @@ export default function RetainedPage() {
         <div className="container hero-center">
           <p className="eyebrow">Fractional CTO</p>
           <h1>Fractional CTO. Not a project. A standing decision-maker.</h1>
-          <p className="lead">Ongoing technology leadership, without the cost of a full-time hire.
+          <p className="lead">Ongoing technology and operations leadership, as a fractional CTO or fractional COO, without the cost of a full-time hire.
             The scope and cadence are agreed at the start.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary" href="/contact">Let&rsquo;s talk about whether this suits you</Link>
@@ -148,7 +148,7 @@ export default function RetainedPage() {
                 </svg>
               </div>
               <h3>Complete</h3>
-              <p className="feature-meta">Near full-time strategic and operational leadership</p>
+              <p className="feature-meta">Near full-time fractional COO: strategic and operational leadership</p>
               <p>For a business mid-way through something big enough that it needs one person holding it.</p>
             </div>
           </div>
