@@ -76,7 +76,7 @@ export default function TeamwearClubwearPage() {
             <span className="eyebrow">Sector · teamwear & clubwear</span>
             <h1>Teamwear and clubwear, sized to the squad.</h1>
             <div style={{ marginTop: '20px' }}>
-              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Squad numbers, sponsor logos, and a hard deadline before the first match of the season.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Squad numbers, sponsor logos, and a hard deadline before the first match of the season: a B2B ordering portal for a club has to carry all three.</p>
               <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>Get the data wrong and it&apos;s not a quiet admin cost, it&apos;s kit that doesn&apos;t arrive in time.</p>
             </div>
             <div className="btn-row" style={{ marginTop: '24px' }}>

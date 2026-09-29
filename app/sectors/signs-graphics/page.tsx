@@ -75,7 +75,7 @@ const whatIdo = [
   'Review how you cost jobs, and where margin leaks on complex work',
   'Look at installation scheduling and how it connects to production',
   'Audit your artwork and proof approval process',
-  'Recommend systems that fit the way a signs and graphics business actually runs',
+  'Recommend sign shop management software that fits the way a signs and graphics business actually runs',
 ];
 
 const route = sectorRouting['signs-graphics'];
@@ -102,7 +102,7 @@ export default function SignsGraphicsPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
+              <p>Signs and graphics jobs don&apos;t fit generic ERP systems. So without sign shop management software that fits, most businesses run on spreadsheets, whiteboards, and information carried in people&apos;s heads.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

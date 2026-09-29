@@ -75,7 +75,7 @@ const whatIdo = [
   'Map substrate and press matching for accuracy',
   'Assess your customer integration and EDI readiness',
   'Find where compliance risk sits in your current processes',
-  'Recommend systems built for short-run, variable-data label production',
+  'Recommend a print MIS built for short-run, variable-data label production',
 ];
 
 const route = sectorRouting['labels-packaging'];
@@ -102,7 +102,7 @@ export default function LabelsPackagingPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet. There&apos;s no tolerance for error, and turnaround is always tight.</p>
+              <p>Labels and packaging businesses sit where print, compliance, and the supply chain meet, which is a lot to ask of a print MIS. There&apos;s no tolerance for error, and turnaround is always tight.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

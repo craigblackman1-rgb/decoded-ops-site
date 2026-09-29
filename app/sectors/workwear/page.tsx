@@ -77,7 +77,7 @@ export default function WorkwearPage() {
             <h1>Workwear, from someone who&apos;s run the floor.</h1>
             <div style={{ marginTop: '20px' }}>
               <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Personalised orders, decoration methods that vary by garment, and stock that has to match sizes, colours, and branding all at once.</p>
-              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>Generic tech advice gets this sector wrong from the start, because the production step sits between order and despatch, not after it.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>Generic tech advice and generic workwear software get this sector wrong from the start, because the production step sits between order and despatch, not after it.</p>
             </div>
             <div className="btn-row" style={{ marginTop: '24px' }}>
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -178,7 +178,7 @@ export default function WorkwearPage() {
               { title: 'Decoration and stock, in the same picture', body: "A plain garment isn\u2019t the same SKU as the decorated one. Systems that don\u2019t understand that force workarounds that mean data outside the system, errors, and extra admin on every order." },
               { title: 'Blank stock dependency', body: 'Your production schedule is hostage to blank availability. Most businesses have no real visibility of incoming stock versus committed orders until the problem is already in the queue.' },
               { title: 'eCommerce disconnected from production', body: "Online orders that don\u2019t automatically flow into the production schedule. Personalisation requiring manual re-entry. Artwork files arriving separately from the order. All of this is solvable." },
-              { title: 'Replenishment that waits on you', body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. A system that tracks reorder points and sizing history means fewer calls chasing stockouts of the sizes everyone actually needs.' },
+              { title: 'Replenishment that waits on you', body: 'Staff uniform orders repeat on their own schedule, not a seasonal one. Workwear software that tracks reorder points and sizing history means fewer calls chasing stockouts of the sizes everyone actually needs.' },
             ].map((c, i) => (
               <article key={i} className="card">
                 <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>

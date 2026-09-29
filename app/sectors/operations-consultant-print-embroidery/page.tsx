@@ -104,7 +104,7 @@ export default function OperationsConsultantPrintEmbroideryPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Embroidery and screen print under one roof means two production processes, two lead times, and two cost structures. The ERP and MIS systems sold to decoration businesses rarely account for that. I help UK print and embroidery businesses fix the systems that do not match how they actually work.</p>
+              <p>Embroidery and screen print under one roof means two production processes, two lead times, and two cost structures. The ERP and MIS systems sold to decoration businesses rarely account for that. As an operations management consultant, I help UK print and embroidery businesses fix the systems that do not match how they actually work.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -189,7 +189,7 @@ export default function OperationsConsultantPrintEmbroideryPage() {
           <span className="eyebrow">How I help</span>
           <h2>What the work actually looks like</h2>
           <div className="hair" />
-          <p className="lede">A structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
+          <p className="lede">As an operations management consultant, I run a structured audit followed by specific, costed recommendations. No vague frameworks, no generic advice.</p>
           <div className="grid grid--2" style={{ marginTop: '32px' }}>
             {whatIdo.map((item, i) => (
               <div key={i} className="card" style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>

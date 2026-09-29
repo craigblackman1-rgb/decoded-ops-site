@@ -77,7 +77,7 @@ export default function SchoolwearPage() {
             <h1>Schoolwear, and the back-to-school peak that decides your year.</h1>
             <div style={{ marginTop: '20px' }}>
               <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Blazers, PE kit, and growing pupils, all needing to be right before the first week of September.</p>
-              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that get this right have their supplier data and sizing sorted well before the rush starts.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that get this right have their supplier data and sizing sorted well before the rush starts, whatever uniform ordering system sits on top.</p>
             </div>
             <div className="btn-row" style={{ marginTop: '24px' }}>
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -226,7 +226,7 @@ export default function SchoolwearPage() {
               { title: 'Supplier feeds before the peak', body: "Schoolwear ranges don't change often, but when a supplier does update sizing or stock, you need to know before the August rush, not during it. Stale supplier data at peak season creates orders you can't fulfil." },
               { title: 'Sizing that scales with growing pupils', body: "A school's sizing spread is wider and shifts every year. Stock management that understands that means fewer stockouts of the sizes everyone actually needs in the first week of term." },
               { title: 'Badge and embroidery management', body: "Every school badge is a thread file before it's a garment. Managing badge specifications, embroidery requirements, and version control at scale, across dozens of school accounts, is a dedicated workflow that spreadsheets were never built for." },
-              { title: 'The parent portal gap', body: "Orders coming through parent portals that don't connect to production systems mean manual re-entry of every order. For the largest schools, that's hundreds of orders requiring individual handling." },
+              { title: 'The parent portal gap', body: "Orders coming through a parent portal or uniform ordering system that doesn't connect to production mean manual re-entry of every order. For the largest schools, that's hundreds of orders requiring individual handling." },
             ].map((c, i) => (
               <article key={i} className="card">
                 <span className="kicker">{String(i + 1).padStart(2, '0')} &middot; {c.title}</span>

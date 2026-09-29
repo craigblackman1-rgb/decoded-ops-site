@@ -63,7 +63,7 @@ const challenges = [
   { title: 'The sample and approval cycle', body: "Pre-production samples, client approvals, artwork sign-off. Every step that happens outside your system is a step you can't measure or improve." },
   { title: 'What quoting actually costs you', body: "How much does it cost you to produce a quote? How much of that time converts to an order? Most businesses in this sector have never measured it. And the answer is usually uncomfortable." },
   { title: 'Artwork approval workflow', body: "Artwork approval is where most print shop schedules break down. Every unapproved job stuck in an email thread is a press slot you can't plan. Automating approval, from brief to proof to sign-off, cuts production delays with no change to the print process." },
-  { title: 'Print production scheduling and capacity planning', body: "Scheduling software that ignores substrate, print method, drying time, and finishing can't produce a realistic schedule. Most print shops schedule by eye and experience. That works until volume outgrows what one person can hold in their head." },
+  { title: 'Print production scheduling and capacity planning', body: "Print shop management software that ignores substrate, print method, drying time, and finishing can't produce a realistic schedule. Most print shops schedule by eye and experience. That works until volume outgrows what one person can hold in their head." },
 ];
 
 const whatIdo = [
@@ -99,7 +99,7 @@ export default function PrintPromotionalPage() {
               )}
             </h1>
             <div className={styles.heroBody}>
-              <p>Print and promotional businesses run short jobs on tight deadlines, with artwork approvals that eat time and scheduling software built for longer runs. The result is missed deadlines, rework, and complaints, even when the team is working hard.</p>
+              <p>Print and promotional businesses run short jobs on tight deadlines, with artwork approvals that eat time and print shop management software whose scheduling is built for longer runs. The result is missed deadlines, rework, and complaints, even when the team is working hard.</p>
             </div>
             <div className="btn-row">
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>

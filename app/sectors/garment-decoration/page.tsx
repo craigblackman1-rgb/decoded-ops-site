@@ -178,7 +178,7 @@ export default function GarmentDecorationPage() {
           <span className="eyebrow">Common challenges</span>
           <h2>Where the problems tend to live</h2>
           <div className="hair" />
-          <p className="lede">In this sector, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
+          <p className="lede">In garment decoration, the same operational problems appear in different shapes across different businesses. These are the ones that cost the most.</p>
           <div className="grid grid--2">
             {challenges.map((c, i) => (
               <article key={i} className="card">

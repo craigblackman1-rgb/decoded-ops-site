@@ -77,7 +77,7 @@ export default function PromotionalMerchandisePage() {
             <h1>Promotional merchandise, without the spreadsheet chaos.</h1>
             <div style={{ marginTop: '20px' }}>
               <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6, marginBottom: '12px' }}>Every client wants something slightly different, on a deadline, at a price point that leaves no room for error.</p>
-              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that do this well have their product data and their production process under control. Most don&apos;t, and it&apos;s costing them.</p>
+              <p style={{ fontSize: 'var(--do-text-lg)', lineHeight: 1.6 }}>The businesses that do this well have their product data and their production process under control, whatever promotional products software they run. Most don&apos;t, and it&apos;s costing them.</p>
             </div>
             <div className="btn-row" style={{ marginTop: '24px' }}>
               <Link className="btn btn--primary" href="/contact">Book a free call <ArrowRight size={16} aria-hidden="true" /></Link>
@@ -287,7 +287,7 @@ export default function PromotionalMerchandisePage() {
           <span className="eyebrow">Case study</span>
           <h2>Custom tooling for a service business</h2>
           <div className="hair" />
-          <p className="lede">Full site rebuild and a custom tool: the kind of bespoke build that promotional merchandise businesses need when off-the-shelf doesn&apos;t fit.</p>
+          <p className="lede">Full site rebuild and a custom tool: the kind of bespoke build that promotional merchandise businesses need when off-the-shelf promotional products software doesn&apos;t fit.</p>
           <div className="btn-row" style={{ marginTop: '24px' }}>
             <Link className="btn btn--outline" href="/case-studies/eternal-fitness">Read the case study <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
