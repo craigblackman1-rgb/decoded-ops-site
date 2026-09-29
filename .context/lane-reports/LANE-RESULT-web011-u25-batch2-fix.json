@@ -1,0 +1,23 @@
+{
+  "lane": "web011-u25-batch2-fix",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "29e54490937b8e6368b6bd41e03e6116f752fd2a",
+      "subject": "content(seo): tidy two stuffed keyword sentences (WO-WEB-011 u25 batch 2)"
+    }
+  ],
+  "filesChanged": [
+    "app/apps/works/page.tsx",
+    "app/about/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean (pre-existing)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
