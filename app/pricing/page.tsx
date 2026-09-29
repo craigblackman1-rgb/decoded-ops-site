@@ -11,19 +11,19 @@ const { consultancy, small_business } = pricingData;
 
 export const metadata: Metadata = {
   title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
-  description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
+  description: 'How Decoded Ops prices consultancy and software. Start with a £600 Clarity Check; everything else is scoped to your operation.',
   alternates: { canonical: '/pricing' },
   openGraph: {
     type: 'website',
     title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
-    description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
+    description: 'How Decoded Ops prices consultancy and software. Start with a £600 Clarity Check; everything else is scoped to your operation.',
     url: 'https://decodedops.co.uk/pricing',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Operations Consultancy Pricing for Decoration | Decoded Ops',
-    description: 'My operations consultancy pricing in plain numbers. The Clarity Audit starts at £750, retained support from £900 a month. See where your business fits.',
+    description: 'How Decoded Ops prices consultancy and software. Start with a £600 Clarity Check; everything else is scoped to your operation.',
     images: [OG_IMAGE_PATH],
   },
 };
@@ -35,7 +35,7 @@ const pricingSchema = {
       '@type': 'WebPage',
       name: 'Pricing',
       url: 'https://decodedops.co.uk/pricing',
-      description: 'Plain pricing for the consultancy. The Clarity Audit is from £750. Everything else is quoted after a conversation about your operation.',
+      description: 'How Decoded Ops prices consultancy and software. Start with a £600 Clarity Check; everything else is scoped to your operation.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
     },
     {
@@ -48,9 +48,7 @@ const pricingSchema = {
     {
       '@type': 'Offer',
       name: 'Clarity Audit',
-      price: String(consultancy[0].public_from),
-      priceCurrency: 'GBP',
-      description: 'One day on site, a written plan within five working days.',
+      description: 'One day on site, a written plan within five working days. Priced to your scope, confirmed before you commit.',
     },
   ],
 };
@@ -100,8 +98,8 @@ export default function PricingPage() {
         <div className="container">
           <p className="eyebrow">Consultancy</p>
           <h2>Diagnosis, then delivery.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Priced by the size of the business, because the work
-            scales with it. Clarity Audit is the entry point into everything below it.</p>
+          <p className="lead" style={{ marginTop: 16 }}>Diagnosed, then delivered. Clarity Audit is the
+            entry point into everything below it.</p>
 
           <div className="table-wrap" style={{ marginTop: 28 }}>
             <table className="ds-table ds-table--fixed">
@@ -116,7 +114,7 @@ export default function PricingPage() {
                 <tr>
                   <th scope="col">Service</th>
                   <th scope="col">What it is</th>
-                  <th scope="col">From</th>
+                  <th scope="col">Price</th>
                   <th scope="col">Minimum</th>
                 </tr>
               </thead>
@@ -131,8 +129,7 @@ export default function PricingPage() {
                       {s.key === 'retained' && 'A technology director, part time. Direct line to Craig.'}
                     </td>
                     <td>
-                      <span className="price">From £{s.public_from.toLocaleString()}</span>
-                      {s.unit === 'per month' && <span className="num">/mo</span>}
+                      <span className="price">Set at the audit, to your scope</span>
                     </td>
                     <td className="scope">{s.minimum ?? 'One-off'}</td>
                   </tr>
@@ -156,14 +153,14 @@ export default function PricingPage() {
         <div className="container">
           <p className="eyebrow">Guarantee &middot; DO-ART-203</p>
           <h2>The 3x Clarity Guarantee.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Clarity Audit, from £750. If it doesn&rsquo;t find three
+           <p className="lead" style={{ marginTop: 16 }}>Clarity Audit. If it doesn&rsquo;t find three
             times the fee, it&rsquo;s refunded.</p>
 
           <div className="plate-scroll" style={{ marginTop: 34 }}>
             <div className="plate-frame">
               <Artwork mode="measure" tone="dark" p="gt" title="The 3x Clarity Guarantee"
-                     sub="Clarity Audit, from £750"
-                     no="DO-ART-203" rev="02" cls="DECODED OPS · ISSUED">
+                      sub="Clarity Audit, priced to your scope"
+                      no="DO-ART-203" rev="02" cls="DECODED OPS · ISSUED">
 
                 <g className="sk-fade sk-s1" opacity=".5">
                   <line x1="430" y1="212" x2="430" y2="560" className="p-scyan" strokeWidth=".8"
@@ -178,7 +175,7 @@ export default function PricingPage() {
                   <rect x="430" y="228" width="240" height="62" rx="6" fill="url(#gt-bar)"
                         className="p-node" strokeWidth="1"/>
                   <text x="458" y="270" className="p-ink" fontFamily="Outfit,sans-serif"
-                        fontWeight="700" fontSize="30">from £750</text>
+                        fontWeight="700" fontSize="30">scoped to your operation</text>
                 </g>
 
                 <g className="sk-fade sk-s4" filter="url(#gt-shadow)">
@@ -231,7 +228,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <p className="table-foot" style={{ marginTop: 28 }}>Prices are set by the size of the business, and businesses under £500k have their own, lower starting prices. Anyone under £1m can start with the Clarity Check. See <Link href="/small-business"
+          <p className="table-foot" style={{ marginTop: 28 }}>Every price depends on the scope of your operation: how many sites, how many systems, and who signs off. Not on your turnover. You&apos;ll see all three options, in writing, after the audit conversation. See <Link href="/small-business"
               style={{ color: 'var(--do-text-cerulean)', fontWeight: 600 }}>small business services</Link> for details.</p>
         </div>
       </section>

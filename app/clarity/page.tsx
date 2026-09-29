@@ -8,19 +8,19 @@ import { OG_IMAGE, OG_IMAGE_PATH } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Process Audit for Print & Embroidery | Decoded Ops',
-  description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
+  description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. Priced to your scope, confirmed before you commit.',
   alternates: { canonical: '/clarity' },
   openGraph: {
     type: 'website',
     title: 'Process Audit for Print & Embroidery | Decoded Ops',
-    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
+    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. Priced to your scope, confirmed before you commit.',
     url: 'https://decodedops.co.uk/clarity',
     images: OG_IMAGE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Process Audit for Print & Embroidery | Decoded Ops',
-    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. From £750.',
+    description: 'My process audit looks at six areas of your business and gives you a written report within five days, backed by the Clarity Guarantee. Priced to your scope, confirmed before you commit.',
     images: [OG_IMAGE_PATH],
   },
 };
@@ -61,7 +61,7 @@ export default function ClarityPage() {
           <span className="eyebrow">Clarity Audit</span>
           <h1>One day on site. One written plan.</h1>
           <p className="lede">A free 60-minute call, then one full day inside your business. I follow six
-            areas from start to finish, rather than just discussing them. From £750, covered by the
+            areas from start to finish, rather than just discussing them. Priced to your scope, confirmed before you commit, and covered by the
             3&times; guarantee below: if the report doesn&apos;t find at least three times the fee, it&apos;s
             refunded in full. A written report within five working days, walked through with you in person.</p>
           <div className={s.heroCta}>

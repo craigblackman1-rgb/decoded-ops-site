@@ -38,28 +38,16 @@ const CLIENT_COST = /150,000|10,000 |£150|£10,000/;
 /**
  * --check mode. Craig's rule (8 Aug 2026): prices live on /pricing and nowhere else.
  *
- * v11 exceptions (Craig 19 Sep 2026): the following files may carry public prices:
- *   - app/pricing/page.tsx          (the canonical pricing page)
- *   - app/small-business/page.tsx   (Clarity Check £595, service "from" prices)
- *   - components/Header.tsx         (small-business mega menu sub-copy)
- *   - public/llms.txt               (machine-readable pricing lines)
+ * v11 exceptions (Craig 29 Sep 2026): no consultancy prices on any public surface.
+ * The only public figure is the Clarity Check at £600 (from public_figures in pricing-v11.json).
+ * Turnover bands, client cost stories, and salary comparisons remain in ALLOWED.
  *
- * Public figures (from data/pricing-v11.json): 595, 1500, 1200, 950.
- * Forbidden figures (from data/pricing-v11.json): 720, 1440, 2880, 5760, 360,
- *   1080, 395, 995, 795, 1095, 2100, 3675, etc.
+ * Public figures (from data/pricing-v11.json public_figures): [600].
+ * Forbidden figures (from data/pricing-v11.json forbidden_public): the full internal price set.
  */
-const ALLOWED = new Set([
-  '£1,500', '£750',                                       // confirmed price exceptions
-  '£500k', '£1m', '£1.5m', '£2M', '£5m', '£7.5m',        // turnover bands, not prices
-  '£150,000', '£10,000',                                  // a client's failed ERP
-  '£80k',                                                 // salary comparison
-  '£8,000', '£20,000',                                    // competitors' market range
-  '£20k', '£40k', '£50k', '£80k',                        // industry cost ranges (infographics)
-]);
 const ALLOWED_FILES = new Set([
   'app/pricing/page.tsx',
   'app/small-business/page.tsx',
-  'components/Header.tsx',
   'public/llms.txt',
 ]);
 
@@ -68,6 +56,17 @@ let pricingData = null;
 try {
   pricingData = JSON.parse(readFileSync(join(ROOT, 'data/pricing-v11.json'), 'utf8'));
 } catch {}
+
+// Build ALLOWED from public_figures in the JSON + non-price exceptions
+const publicFigures = (pricingData?.public_figures || []).map(n => `£${n.toLocaleString()}`);
+const nonPriceExceptions = [
+  '£500k', '£1m', '£1.5m', '£2M', '£5m', '£7.5m',        // turnover bands, not prices
+  '£150,000', '£10,000',                                  // a client's failed ERP
+  '£80k',                                                 // salary comparison
+  '£8,000', '£20,000',                                    // competitors' market range
+  '£20k', '£40k', '£50k', '£80k',                        // industry cost ranges (infographics)
+];
+const ALLOWED = new Set([...publicFigures, ...nonPriceExceptions]);
 
 // Forbidden words: phrase-level matches only (not substrings like "invest" → "vest")
 const FORBIDDEN_WORDS_PATTERNS = [

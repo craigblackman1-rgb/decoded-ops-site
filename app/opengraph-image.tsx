@@ -96,8 +96,8 @@ export default function Image() {
             </div>
             <div style={{ display: 'flex', width: 1, height: 50, backgroundColor: '#023047', opacity: 0.15 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: '#023047' }}>From £750</div>
-              <div style={{ display: 'flex', fontSize: 13, color: '#023047', opacity: 0.5 }}>Clarity Audit</div>
+              <div style={{ display: 'flex', fontSize: 30, fontWeight: 800, color: '#023047' }}>£600 Clarity Check</div>
+              <div style={{ display: 'flex', fontSize: 13, color: '#023047', opacity: 0.5 }}>Start here</div>
             </div>
             <div style={{ display: 'flex', width: 1, height: 50, backgroundColor: '#023047', opacity: 0.15 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>

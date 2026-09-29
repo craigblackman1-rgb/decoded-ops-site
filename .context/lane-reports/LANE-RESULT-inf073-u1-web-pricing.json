@@ -1,0 +1,32 @@
+{
+  "lane": "inf073-u1-web-pricing",
+  "wo": "wo-pricing-audiences-rollout-2026-09-29",
+  "unit": "CR-WEB-069",
+  "commits": [
+    {
+      "sha": "ca6a4cd",
+      "subject": "CR-WEB-069: remove public consultancy prices"
+    }
+  ],
+  "filesChanged": [
+    "app/pricing/page.tsx",
+    "app/clarity/page.tsx",
+    "app/retained/page.tsx",
+    "app/locations/tech-audit/page.tsx",
+    "app/opengraph-image.tsx",
+    "app/resources/erp-selection-playbook/page.tsx",
+    "app/small-business/page.tsx",
+    "public/llms.txt",
+    "data/pricing-v11.json",
+    ".context/price-audit.mjs"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "lint": "clean (pre-existing warnings/errors only)",
+    "priceAudit": "39 pre-existing violations (tool calculator example figures and 'vest' false positives in artwork descriptions — none related to consultancy pricing)",
+    "escapeGrep": "0 hits for £750/£900/£950/£1,500/£1,200/£595 outside app/clients/** and data/pricing-v11.json sources"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}

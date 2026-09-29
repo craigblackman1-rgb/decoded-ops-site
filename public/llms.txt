@@ -2,12 +2,13 @@
 > Independent operations and technology consultancy for print, embroidery, workwear, and promotional merchandise businesses. Plain English. No jargon. Every recommendation scored against a written brief, including my own software.
 
 ## Consultancy
-- [Clarity Check](https://decodedops.co.uk/small-business): Fixed-price remote diagnostic. £595.
-- [Clarity Audit](https://decodedops.co.uk/clarity): Operational and technology audit. From £1,500. One day on site, a written plan within five working days. 3x Clarity Guarantee.
-- [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. From £1,200/mo; six-month minimum.
-- [Transform](https://decodedops.co.uk/transform): Multi-workstream digital transformation. From £1,500/mo; 12-month minimum.
-- [Retained](https://decodedops.co.uk/retained): Fractional CTO / Head of Operations. From £950/mo; rolling monthly.
-- [Pricing](https://decodedops.co.uk/pricing): The Clarity Audit has a fixed price. Everything else is quoted after a conversation.
+- [Clarity Check](https://decodedops.co.uk/small-business): Fixed-price remote diagnostic. £600.
+- [Clarity Audit](https://decodedops.co.uk/clarity): Operational and technology audit. Priced to your scope. One day on site, a written plan within five working days. 3x Clarity Guarantee.
+- [Deliver](https://decodedops.co.uk/deliver): Project delivery and vendor management. Priced to your scope; three-month minimum.
+- [Transform](https://decodedops.co.uk/transform): Multi-workstream digital transformation. Priced to your scope; six-month minimum.
+- [Retained](https://decodedops.co.uk/retained): Fractional CTO / Head of Operations. Priced to your scope; rolling monthly.
+- Consultancy (Clarity Audit, Deliver, Transform, Retained) is priced to the scope of the operation and quoted after a conversation; the Clarity Check (£600, fixed) is the only published price.
+- [Pricing](https://decodedops.co.uk/pricing): The Clarity Check is the only fixed price. Everything else is quoted after a conversation.
 
 ## Software as evidence of capability
 Decoded Ops builds production-grade software for the decorated-goods sector: artwork managers, B2B commerce platforms, and the Data App, a full operations system covering catalogue, orders, purchasing, stock, production and despatch. It started as a tool to clean supplier feeds that nothing off the shelf handled, and grew from there into a system that can run alongside your existing platform or replace it. Every build starts with a Clarity Audit; the software serves the operational need the audit identifies, never the other way round. Software is priced at the audit — buy outright or lease to own over 36–60 months; you own it at the end.
@@ -31,7 +32,7 @@ Decoded Ops builds production-grade software for the decorated-goods sector: art
 - [Should I Replace My ERP?](https://decodedops.co.uk/tools/should-i-replace-erp)
 
 ## Small Business
-- [Small Business Services](https://decodedops.co.uk/small-business): Remote ops support for businesses under £1m. Clarity Check (£595 fixed), plus Deliver, Transform, and Retained at "from" prices.
+- [Small Business Services](https://decodedops.co.uk/small-business): Remote ops support for owner-led businesses. Clarity Check (£600 fixed), plus Deliver, Transform, and Retained priced to your scope.
 
 ## Key Pages
 - [About](https://decodedops.co.uk/about): 25+ years in product-based businesses.

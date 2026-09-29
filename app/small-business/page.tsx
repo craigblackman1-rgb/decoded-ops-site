@@ -7,19 +7,19 @@ import { PhotoPiece } from '@/components/PhotoPiece';
 
 export const metadata: Metadata = {
   title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
-  description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
+  description: "I'm a small business consultant for print, embroidery and workwear firms. Fixed prices, structured sessions, independent advice.",
   alternates: { canonical: '/small-business' },
   openGraph: {
     type: 'website',
     title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
-    description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
+    description: "I'm a small business consultant for print, embroidery and workwear firms. Fixed prices, structured sessions, independent advice.",
     url: 'https://decodedops.co.uk/small-business',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Small Business Consultant, Print & Embroidery | Decoded Ops',
-    description: "I'm a small business consultant for print, embroidery and workwear firms under £1m turnover. Fixed prices, structured sessions, independent advice.",
+    description: "I'm a small business consultant for print, embroidery and workwear firms. Fixed prices, structured sessions, independent advice.",
   },
 };
 
@@ -29,7 +29,7 @@ const smallBizSchema = {
     {
       '@type': 'Service',
       name: 'Small Business Operational Support',
-      description: 'Remote operations and technology consultancy for businesses under £1m. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
+      description: 'Remote operations and technology consultancy for owner-led businesses. Fixed prices, structured sessions, and the same independent advice, without the big-business price tag.',
       provider: { '@type': 'Organization', name: 'Decoded Ops', url: 'https://decodedops.co.uk' },
       serviceType: 'Small Business Operational Support',
       areaServed: 'GB',
@@ -43,8 +43,8 @@ const smallBizSchema = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'Is this right for businesses under £1m turnover?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every product on this page is specifically designed for smaller businesses. Remote delivery. Fixed prices. No minimum commitment on the Clarity Check.' },
+          name: 'Is this right for owner-led businesses?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every product on this page is designed for smaller, owner-led businesses. Remote delivery. Fixed prices. No minimum commitment on the Clarity Check.' },
         },
         {
           '@type': 'Question',
@@ -102,7 +102,7 @@ export default function SmallBusinessPage() {
             The same operational thinking I bring to larger businesses, adapted for smaller ones. Remote delivery. Fixed prices. No jargon. No vendor agenda.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-muted)', maxWidth: '48ch', margin: '0 auto 16px' }}>
-            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, and process improvement, on a flexible, affordable basis built for businesses under £1m.
+            A small business operations consultant covers what a full-time operations director would: technology decisions, vendor oversight, and process improvement, on a flexible, affordable basis built for owner-led businesses.
           </p>
           <p style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-subtle)', marginBottom: 32 }}>By Craig Blackman, 25 years in print &amp; embroidery operations</p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
