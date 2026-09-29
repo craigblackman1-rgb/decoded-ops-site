@@ -13,7 +13,8 @@
     "Craig 29 Sep 2026 (qmumd4lurbb, full restructure D1-D6 of DO_Segment_Pricing_Review_Peacock_2026-09-29.md): four turnover bands replaced by three scope-profile audiences (owner_led / managed_team / group); turnover is a cross-check only. Managed team Audit restored to 2,000; Group Audit 3,500; quoted Group programme anchor tier (5x Essential, never published); Owner-led Retained existing clients only; consultancy 'from' prices removed from the website; cards show all three tiers highest first, middle labelled 'Recommended'.",
     "Craig 29 Sep 2026 (later): Owner-led prices reset from revealed willingness to pay (Business/_working/revealed-wtp-quote-history-2026-09-29.md), not multipliers. Audit 1,000/1,500/2,000 (1,500 = Cobra paid); Deliver 500/750/1,250 a month (Cobra's own menu, middle bought); Transform and Retained not offered cold to Owner-led, priced at the Deliver level for existing clients.",
     "Craig 29 Sep 2026 (later): price sheets are an indicative guide sent after qualifying the segment; same deliverables in every segment, smaller segments need less time. Managed team reset from revealed WTP (Hanicks retainer 1,850 chosen from 750/1,850/3,250; Hanicks programme 2,500/mo paid; TackleBag 2,250/mo paid; U&L audit 2,000 paid, 2,000/mo verbal): Audit 1,500/2,000/3,000; Deliver 1,500/2,000/3,000; Transform 2,000/2,500/4,000; Retained 1,250/1,850/3,000.",
-    "Craig 29 Sep 2026 (later): Group reset from revealed WTP (U&L audit 2,000 paid, ~2,000/mo limit; Totally Branded 2,500 audit in budget approval; David Sharp retainer menu 1,250/2,750/4,500 and '3,000 wouldn't baulk'): Audit 2,000/2,500/4,000; Deliver 2,000/2,500/4,000; Transform 2,500/3,500/5,000; Retained 1,850/2,750/4,500. Quoted Group programme figures dropped; cards say 'Multi-company programmes: quoted'."
+    "Craig 29 Sep 2026 (later): Group reset from revealed WTP (U&L audit 2,000 paid, ~2,000/mo limit; Totally Branded 2,500 audit in budget approval; David Sharp retainer menu 1,250/2,750/4,500 and '3,000 wouldn't baulk'): Audit 2,000/2,500/4,000; Deliver 2,000/2,500/4,000; Transform 2,500/3,500/5,000; Retained 1,850/2,750/4,500. Quoted Group programme figures dropped; cards say 'Multi-company programmes: quoted'.",
+    "Craig 29 Sep 2026: Works Scaled 36-month monthly rounded 1,440 -> 1,450 so no client-facing figure equals a day-rate multiple."
   ],
   "rules": {
     "multipliers": "29 Sep 2026: all three audiences' tiers are low/middle/high price points inside the evidenced willingness-to-pay range (Peacock p.177; Business/_working/revealed-wtp-quote-history-2026-09-29.md). The middle is a price buyers have actually paid or agreed. The x1.4 / x1.75 multipliers no longer apply to consultancy; software editions keep them.",
@@ -393,7 +394,7 @@
         },
         "scaled": {
           "outright": 44000,
-          "finance_36": 1440,
+          "finance_36": 1450,
           "finance_48": 1130,
           "finance_60": 940
         }
