@@ -336,7 +336,7 @@ export function Header() {
                   <MegaGroup group={smallBusinessStart} onNavigate={() => { closePanel(); setMobileOpen(false); }} />
                   <div className="smallbiz-cta-band">
                     <div className="band-text">
-                      <h3>Bigger than £1m?</h3>
+                      <h3>More than one site or system?</h3>
                       <p>Then the on-site work is a better fit, same steps, done in person.</p>
                     </div>
                     <div className="band-actions">

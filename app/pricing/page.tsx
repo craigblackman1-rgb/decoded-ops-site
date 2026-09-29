@@ -98,7 +98,7 @@ export default function PricingPage() {
         <div className="container">
           <p className="eyebrow">Consultancy</p>
           <h2>Diagnosis, then delivery.</h2>
-          <p className="lead" style={{ marginTop: 16 }}>Diagnosed, then delivered. Clarity Audit is the
+          <p className="lead" style={{ marginTop: 16 }}>Priced to the scope of your operation, not your turnover. Clarity Audit is the
             entry point into everything below it.</p>
 
           <div className="table-wrap" style={{ marginTop: 28 }}>

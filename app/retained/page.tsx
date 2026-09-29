@@ -53,7 +53,7 @@ const retainedSchema = {
         {
           '@type': 'Question',
           name: 'What are the three tiers?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs rolling monthly, with no minimum term.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Essential, Recommended and Complete. Each covers a wider scope of involvement, and which one fits is set at the audit by the size and shape of your operation. Retained runs on a 12-month minimum, then rolling monthly.' },
         },
         {
           '@type': 'Question',
@@ -154,7 +154,7 @@ export default function RetainedPage() {
           </div>
 
           <div className="inset" style={{ maxWidth: 'none' }}>
-            <b>Rolling monthly, no minimum term.</b> The scope is agreed at the start, and which tier fits
+            <b>12-month minimum, then rolling monthly.</b> The scope is agreed at the start, and which tier fits
             is set at the audit by the size and shape of your operation.
           </div>
         </div>
@@ -212,8 +212,8 @@ export default function RetainedPage() {
                   <text x="60" y="700" className="p-ink" fontFamily="Outfit,sans-serif"
                         fontWeight="600" fontSize="24" opacity=".9">Each tier covers a wider scope.
                     Set at the audit.</text>
-                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">Rolling
-                    monthly, no minimum term.</text>
+                  <text x="60" y="732" className="p-mono" fontSize="16" opacity=".5">12-month minimum,
+                    then rolling monthly.</text>
                 </g>
               </Artwork>
             </div>
