@@ -79,7 +79,7 @@ export function DownloadOptIn({
           <div className={s.miniRow}>
             <p><b>{title}</b> <span>&middot; Word document, 11 pages, free, no email needed</span></p>
             <a
-              className="btn btn--outline dlBtn"
+              className={`btn btn--outline ${s.dlBtn}`}
               href={fileHref}
               download
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--do-font-body)' }}
@@ -118,7 +118,7 @@ export function DownloadOptIn({
               <h2>{title}</h2>
               <p className={s.meta}><b>{meta}</b></p>
               <a
-                className="btn btn--primary dlBtn"
+                className={`btn btn--primary ${s.dlBtn}`}
                 href={fileHref}
                 download
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: 'var(--do-font-body)' }}
