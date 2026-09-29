@@ -1,0 +1,24 @@
+{
+  "lane": "inf070-u4-fractional-coo",
+  "wo": "wo-marketing-funnel-2026-09-25",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "4e93b95",
+      "subject": "feat(web): fractional COO service page (CR-WEB-062)"
+    }
+  ],
+  "filesChanged": [
+    "app/fractional-coo/page.tsx",
+    "app/retained/page.tsx",
+    "app/sitemap.ts"
+  ],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a (no test suite)",
+    "escapeGrep": "0 hits (no £, day rate, TackleBag, Cobra, or em dash in fractional-coo/page.tsx)"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
