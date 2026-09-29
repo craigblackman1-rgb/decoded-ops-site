@@ -1,0 +1,22 @@
+{
+  "lane": "web012-u67-blog-index",
+  "wo": "wo-website-design-pass-2026-09-29",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "50048961d0239659339ccc8225ba9d5ecb57db15",
+      "subject": "fix(BUG): blog index mojibake + missing card thumbnails (WO-WEB-012 u6/u7)"
+    }
+  ],
+  "filesChanged": [
+    "data/blog-index.json"
+  ],
+  "verify": {
+    "tsc": "clean | 0 errors (pre-existing not checked — no TS changes)",
+    "tests": "n/a | no test runner",
+    "escapeGrep": "0 hits | no mojibake in content/ or app/blog/"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
