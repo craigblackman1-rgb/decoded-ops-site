@@ -32,6 +32,8 @@ interface ProblemPageDSProps {
   heroArt?: string;
   /** D17 inline artwork HTML, injected via dangerouslySetInnerHTML */
   inlineArt?: string;
+  /** Extra sections rendered just before the "Get this fixed" related-links band */
+  beforeRelated?: React.ReactNode;
 }
 
 /**
@@ -49,7 +51,7 @@ interface ProblemPageDSProps {
  * ProblemPage.tsx, which has since been removed. /problems/wrong-erp-software
  * now uses its own inline JSX.
  */
-export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video, heroArt, inlineArt }: ProblemPageDSProps) {
+export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms, causes, howIHelp, slug, targetService, relatedProblems, relatedReading, relatedSectors, relatedResources, video, heroArt, inlineArt, beforeRelated }: ProblemPageDSProps) {
   const parts = headline.split('||');
 
   return (
@@ -178,6 +180,8 @@ export function ProblemPageDS({ problem, headline, intro, heroGraphic, symptoms,
           </div>
         </div>
       </section>
+
+      {beforeRelated}
 
       {/* GET THIS FIXED, service routing + related problems + further reading + sectors + resources */}
       {(targetService || (relatedProblems && relatedProblems.length > 0) || (relatedReading && relatedReading.length > 0) || (relatedSectors && relatedSectors.length > 0) || (relatedResources && relatedResources.length > 0)) && (

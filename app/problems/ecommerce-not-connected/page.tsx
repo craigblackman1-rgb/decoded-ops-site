@@ -61,6 +61,21 @@ const ecommerceNotConnectedSchema = {
      name: 'Can an online store integrate with a decoration business ERP?',
      acceptedAnswer: { '@type': 'Answer', text: 'Most online store platforms can integrate with many ERPs, but the integration quality depends heavily on whether the ERP has a maintained API and whether the online store can capture your personalisation data in a format the ERP can process. Online store ERP integration for print businesses is a common engagement, and the answer is rarely "yes, it integrates" and more often "it depends on what data you need to move and how fast."' },
     },
+    {
+     '@type': 'Question',
+     name: 'Can you connect Shopify to our ERP?',
+     acceptedAnswer: { '@type': 'Answer', text: "Often, yes, but it depends on what your ERP exposes and what data has to move. Decoded Works publishes a product feed to Shopify. Orders going the other way is the part I'd map first, because that's where the re-keying usually is. From there I'll lay out whether to connect, merge or replace." },
+    },
+    {
+     '@type': 'Question',
+     name: 'Why do our WooCommerce orders need re-keying?',
+     acceptedAnswer: { '@type': 'Answer', text: "Usually because the order doesn't carry the decoration detail in a form your production system can read, or because nothing has been built to pass orders across. Someone ends up typing them in. Tracing one order from checkout to the schedule shows exactly where." },
+    },
+    {
+     '@type': 'Question',
+     name: 'Do we need to replace our ecommerce platform?',
+     acceptedAnswer: { '@type': 'Answer', text: "Not necessarily. Sometimes what you have can be connected, sometimes it needs a layer on top, and occasionally the platform is the wrong fit. I'll set out those options for your business and you decide." },
+    },
    ],
   },
  ],
@@ -230,6 +245,90 @@ export default function EcommerceNotConnectedPage() {
    video={problemVideos['ecommerce-not-connected']}
    heroArt={heroArt966}
    inlineArt={inlineArt719}
+   beforeRelated={<>
+    <section className="g-tint">
+     <div className="wrap">
+      <span className="eyebrow">Shopify</span>
+      <h2>Shopify to ERP: where it usually breaks</h2>
+      <div className="hair" />
+      <p className="lede">Shopify ERP integration in a decoration business tends to go wrong in the same four places. These are the ones I see most.</p>
+      <div className="grid grid--2">
+       <article className="card">
+        <span className="kicker">01</span>
+        <h3>Orders re-keyed into the ERP</h3>
+        <p>The order lands in Shopify, someone reads it and types it into the ERP. That works until you get busy, and then a mistyped quantity or a missed line turns into a reprint.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">02</span>
+        <h3>Personalisation fields lost in transit</h3>
+        <p>Names, numbers and logo position sit in line item properties or a free text note. Most connections pass the product and the quantity and drop the rest.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">03</span>
+        <h3>Artwork arriving separately from the order</h3>
+        <p>The customer uploads a logo at checkout or emails it afterwards. The order and the artwork end up in two places, and someone has to match them up before the job can start.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">04</span>
+        <h3>Stock not reflecting what&apos;s committed to production</h3>
+        <p>Shopify shows what&apos;s on the shelf. It doesn&apos;t know the blanks are already allocated to jobs on the floor, so you end up selling what you&apos;ve promised to someone else.</p>
+       </article>
+      </div>
+      <p className="lede">Decoded Works publishes a product feed to Shopify, and Magento feeds too. Hanicks has its catalogue flowing into its own storefront and channels. The order side is where the re-keying sits, so that&apos;s what I map first, and then you get your options: connect the two, merge them, or replace one.</p>
+     </div>
+    </section>
+
+    <section className="g-off">
+     <div className="wrap">
+      <span className="eyebrow">WooCommerce</span>
+      <h2>WooCommerce order sync</h2>
+      <div className="hair" />
+      <p className="lede">Getting WooCommerce order sync right matters more in a decoration business than in a shop selling finished stock, because the order carries the instructions for the job.</p>
+      <div className="grid grid--2">
+       <article className="card">
+        <span className="kicker">01</span>
+        <h3>Order status back to the customer</h3>
+        <p>When production marks an order as printed, embroidered or shipped, does the customer see it in WooCommerce? If someone updates it by hand, customers chase, and that&apos;s the email volume you can see.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">02</span>
+        <h3>Decoration data carried on the order</h3>
+        <p>Check where the names, numbers, logo position and artwork reference actually sit on the WooCommerce order, and whether they reach whoever produces the job intact.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">03</span>
+        <h3>Where the re-keying happens today</h3>
+        <p>Trace one order from checkout to the production schedule and note every point someone types it in again. That list is your scope.</p>
+       </article>
+       <article className="card">
+        <span className="kicker">04</span>
+        <h3>What Decoded Works already does</h3>
+        <p>Decoded Works keeps WooCommerce product and category data in sync on a schedule, with a log you can read. Orders aren&apos;t part of that. The order side is what an audit maps and fixes.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+
+    <section className="g-tint">
+     <div className="wrap">
+      <span className="eyebrow">Questions</span>
+      <h2>Shopify, WooCommerce and your ERP</h2>
+      <div className="hair" />
+      <details style={{ marginTop: 12 }}>
+       <summary>Can you connect Shopify to our ERP?</summary>
+       <p>Often, yes, but it depends on what your ERP exposes and what data has to move. Decoded Works publishes a product feed to Shopify. Orders going the other way is the part I&apos;d map first, because that&apos;s where the re-keying usually is. From there I&apos;ll lay out whether to connect, merge or replace.</p>
+      </details>
+      <details style={{ marginTop: 12 }}>
+       <summary>Why do our WooCommerce orders need re-keying?</summary>
+       <p>Usually because the order doesn&apos;t carry the decoration detail in a form your production system can read, or because nothing has been built to pass orders across. Someone ends up typing them in. Tracing one order from checkout to the schedule shows exactly where.</p>
+      </details>
+      <details style={{ marginTop: 12 }}>
+       <summary>Do we need to replace our ecommerce platform?</summary>
+       <p>Not necessarily. Sometimes what you have can be connected, sometimes it needs a layer on top, and occasionally the platform is the wrong fit. I&apos;ll set out those options for your business and you decide.</p>
+      </details>
+     </div>
+    </section>
+   </>}
   />
    <D17Motion />
   </>
