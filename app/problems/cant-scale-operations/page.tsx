@@ -208,7 +208,7 @@ export default function CantScaleOperationsPage() {
       body: "It's easy to take on new contracts, products, or markets without asking whether the operation is ready. The revenue looks good on paper. The margin doesn't, because the cost of a stretched operation hides in rework, mistakes, and overtime.",
      },
      {
-      title: 'Business Growing, Operations Not Scaling | Decoded Ops',
+      title: 'Nobody owns the end-to-end process',
       body: "People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
      },
     ]}
