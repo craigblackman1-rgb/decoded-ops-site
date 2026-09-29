@@ -85,7 +85,7 @@ export default function OpsInOwnersHeadPage() {
       <p className="lede">It&apos;s the conversation every owner dreads, and avoids. How the artwork gets
        proofed, which supplier gets the rush order, what the embroidery digitising workflow looks
        like, all of it lives in your head and nowhere else. Your business isn&apos;t a system. It&apos;s
-       a dependency on one person being available every day.</p>
+       a dependency on one person being available every day. A standard operating procedure template is no use until what&apos;s in your head has been written into it.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
@@ -276,7 +276,7 @@ export default function OpsInOwnersHeadPage() {
      <div className="answer">
       <p>A Clarity Audit maps every process that currently lives in your head, and the written plan
        tells you which ones to document first, in what order, at what level of detail. <b>Not a
-       generic template. Your actual business, captured while you&apos;re still in the room to
+       generic standard operating procedure template. Your actual business, captured while you&apos;re still in the room to
        explain it.</b></p>
       <p>From there, the Decoded Method builds a living system (Process Register, SOPs,
        Improvement Log) that keeps the documentation current without you having to do it all

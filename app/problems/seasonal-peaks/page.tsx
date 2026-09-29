@@ -85,7 +85,7 @@ export default function SeasonalPeaksPage() {
       <p className="lede">In decorated goods, demand isn&apos;t flat. Schoolwear peaks in July and August.
        Promotional merchandise spikes in November and December. Teamwear surges in spring. If your
        systems can&apos;t stretch and shrink with those rhythms, you&apos;re either burning staff out in
-       the peak or paying idle staff in the quiet months. Neither is sustainable.</p>
+       the peak or paying idle staff in the quiet months. Neither is sustainable, and production capacity planning has to start well before the peak.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
@@ -251,7 +251,7 @@ export default function SeasonalPeaksPage() {
      <h2>Systems that scale, so your staffing doesn&apos;t have to.</h2>
 
      <div className="answer">
-      <p>A Clarity Audit maps your actual seasonal demand curves against your current capacity,
+      <p>A Clarity Audit starts your production capacity planning by mapping your actual seasonal demand curves against your current capacity,
        and the written plan tells you which processes to automate first so the business can handle
        the peak without burning out the people. <b>Ten times the orders shouldn&apos;t mean ten times
        the staff.</b></p>

@@ -89,7 +89,7 @@ export default function DataScatteredPage() {
       <h1>Your supplier data is in six places, and none of them agree.</h1>
       <p className="lede">Ask what stock you actually hold of a specific SKU and you&apos;ll get six
        different answers, depending who you ask and which spreadsheet, feed, or screen they&apos;re
-       looking at. None of them are lying. They&apos;re just all out of date in a different way.</p>
+       looking at. None of them are lying. They&apos;re just all out of date in a different way, which is a product data management problem.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
@@ -269,7 +269,7 @@ export default function DataScatteredPage() {
      <h2>One matched catalogue, and every channel reads the same data.</h2>
 
      <div className="answer">
-      <p>Works takes every supplier feed in, matches it against your existing
+      <p>For product data management, Works takes every supplier feed in, matches it against your existing
        catalogue, and becomes <b>the single source every other system reads from</b>: the website,
        the warehouse.</p>
        <p>In one deployment, 317,812 products came in from supplier feeds and 154,518 were matched to a supplier automatically, before anyone had to touch them. Same principle,

@@ -169,7 +169,7 @@ export default function DisasterRecoveryPage() {
    <ProblemPageDS
    problem="No disaster recovery plan"
    headline="Your systems go down on a Tuesday morning. ||When do you get back up?||"
-    intro="Most print, embroidery, and decoration businesses have no plan for what happens when their systems go down. They care. It just feels like something for big IT departments. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a plan becomes very visible, very quickly."
+    intro="Most print, embroidery, and decoration businesses have no plan for what happens when their systems go down. They care. It just feels like something for big IT departments. Until the server fails, the hosting goes down, or ransomware locks every screen. Then the cost of not having a business continuity disaster recovery plan becomes very visible, very quickly."
    heroGraphic={<DisasterRecoverySchematic />}
    symptoms={[
     "You have no written plan for what to do when your critical systems go down",
@@ -186,7 +186,7 @@ export default function DisasterRecoveryPage() {
     { title: 'No one is accountable for recovery', body: "In businesses without a dedicated IT person, 'who gets us back online?' has no clear answer. On outage day, everyone assumes someone else is handling it." },
     { title: 'The cost of downtime is invisible until it happens', body: "Lost orders, halted production, missed deadlines, overtime to catch up, damaged reputation. None of it shows on a balance sheet until the outage is over, by which point the cost has already been paid. Most small businesses have never worked out how long they can afford to be down." },
    ]}
-   howIHelp="I look at your current systems, your backups, and how you'd actually recover, then give you a practical recovery plan built around your business. Not a 50-page IT document. A clear, prioritised list covering what to protect first, how fast each system can realistically be recovered, and what it would cost to recover faster. Plus a simple test schedule so you know the plan works before you need it."
+   howIHelp="I look at your current systems, your backups, and how you'd actually recover, then give you a practical business continuity disaster recovery plan built around your business. Not a 50-page IT document. A clear, prioritised list covering what to protect first, how fast each system can realistically be recovered, and what it would cost to recover faster. Plus a simple test schedule so you know the plan works before you need it."
   
    slug="disaster-recovery"
    targetService={problemRouting['disaster-recovery'].targetService}

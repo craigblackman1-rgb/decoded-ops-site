@@ -84,7 +84,7 @@ export default function BottleneckGrowthPage() {
      <div>
       <span className="eyebrow">The problem</span>
       <h1>The business stops where you stop.</h1>
-      <p className="lede">Every purchase order, artwork approval, and production decision still goes
+      <p className="lede">The bottleneck in production is you. Every purchase order, artwork approval, and production decision still goes
        through you. You don&rsquo;t want it to. Nobody else knows the process well
        enough to make the call. The business has grown past the point where one person can carry
        every decision, but the operation was never documented for anyone else to run it.</p>
@@ -119,7 +119,7 @@ export default function BottleneckGrowthPage() {
    <section className="g-tint">
     <div className="wrap">
      <span className="eyebrow">The signs</span>
-     <h2>Seven signs the owner is the bottleneck.</h2>
+     <h2>Seven signs the owner is the bottleneck in production.</h2>
      <p className="lede" style={{ marginTop: 16 }}>If you recognise three or more of these, the fix
       isn&apos;t working harder. It&apos;s documenting what you do so someone else can do it too.</p>
 

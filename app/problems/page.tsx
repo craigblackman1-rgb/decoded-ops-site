@@ -47,7 +47,7 @@ export default function ProblemsIndexPage() {
     <div className="wrap" style={{ maxWidth: 860 }}>
      <span className="eyebrow">Problems</span>
      <h1>Eighteen problems every decorated-goods business recognises.</h1>
-     <p className="lede">Most of these are not technology problems. They are process problems that
+     <p className="lede">Most of these growing pains in business are not technology problems. They are process problems that
       technology was supposed to solve but did not. Each one has a page that explains what it
       looks like, why it happens, and how to fix it.</p>
     </div>
@@ -60,7 +60,7 @@ export default function ProblemsIndexPage() {
      <h2>Eighteen problems, four places they start.</h2>
      <div className="hair"></div>
      <p className="lede" style={{ marginTop: 16 }}>
-        Every problem page on the site, grouped by where the failure actually begins. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
+        Every problem page on the site, grouped by where these growing pains in business actually begin. Thirteen of eighteen are not technology problems, they are process problems technology was supposed to solve.
      </p>
 
      <div className="plate-scroll">

@@ -90,7 +90,7 @@ export default function BuyVsBuildPage() {
       <p className="lede">This gets asked in different words most weeks, usually framed as buy
        or build. It isn&apos;t really that question. If something covers a quarter of the job, the
        decision isn&apos;t about the quarter. It&apos;s about the other three quarters, and what
-       closing them costs.</p>
+       closing them costs. The three questions below work as an ERP evaluation checklist.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
@@ -198,7 +198,7 @@ export default function BuyVsBuildPage() {
      <span className="eyebrow">The arithmetic</span>
      <h2>Three numbers, and you can work them out yourself.</h2>
      <p className="lede" style={{ marginTop: 16 }}>Nobody needs to sell you this. Follow your own
-      processes and the numbers are already there.</p>
+      processes and the numbers for your ERP evaluation checklist are already there.</p>
 
      <div className="steps">
       <article className="step">

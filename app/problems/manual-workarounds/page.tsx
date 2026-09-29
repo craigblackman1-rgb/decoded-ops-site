@@ -118,7 +118,7 @@ export default function ManualWorkaroundsPage() {
    <ProblemPageDS
    problem="Manual workarounds and shadow systems"
    headline="Your team has built a second system. ||It lives in spreadsheets.||"
-   intro="Almost every business in this sector has a second system running quietly alongside the official one. Spreadsheets, manual logs, sticky notes, workarounds. They keep the business moving, but they hide the real cost. This isn't about replacing people. It's about removing the double-typing, duplicate data, and shadow spreadsheets that slow every team down."
+   intro="Almost every business in this sector has a second system of manual workarounds running quietly alongside the official one. Spreadsheets, manual logs, sticky notes, workarounds. They keep the business moving, but they hide the real cost. This isn't about replacing people. It's about removing the double-typing, duplicate data, and shadow spreadsheets that slow every team down."
    heroGraphic={<ManualWorkaroundsSchematic />}
    symptoms={[
     "Spreadsheets are acting as the real database for your core data",
@@ -130,7 +130,7 @@ export default function ManualWorkaroundsPage() {
     "Every month-end needs a manual data pull and a lot of fiddling",
    ]}
    causes={[
-    { title: 'The system was set up to a template, not your workflow', body: "Most software is set up following the vendor's standard process. When that doesn't match how your business actually works, your team builds workarounds. Those workarounds become the real way things get done." },
+    { title: 'The system was set up to a template, not your workflow', body: "Most software is set up following the vendor's standard process. When that doesn't match how your business actually works, your team builds workarounds. Those manual workarounds become the real way things get done." },
     { title: 'The gaps between systems were never closed', body: "When two systems can't talk to each other, the bridge is a person with a spreadsheet. That person becomes essential, and the business doesn't realise until they're away." },
     { title: 'Nobody has measured the hidden labour cost', body: "The cost of workarounds never appears on an invoice. It's buried in staff time labelled 'order processing' or 'admin'. Until it's measured, there's no case for fixing it. If nobody has written down how things should work, the workaround is the process." },
     { title: 'The workaround becomes the official way', body: "After a while, the workaround stops looking like a workaround. It's just how things are done. New starters are trained on it as if it were official, and nobody wants to admit the original software didn't deliver." },

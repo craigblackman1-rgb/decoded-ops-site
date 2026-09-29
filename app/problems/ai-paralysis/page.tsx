@@ -107,7 +107,7 @@ export default function AiParalysisPage() {
        AI. But when you ask what AI actually means for a print, embroidery or decoration
        business, the answers are vague, generic, or non-existent. The real barrier to AI adoption
        in this sector isn&apos;t the technology. It&apos;s that nobody&apos;s supplier data is clean enough to
-       feed into anything.</p>
+       feed into anything, which is what an AI readiness assessment checks first.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Get an honest assessment</Link>
       </div>

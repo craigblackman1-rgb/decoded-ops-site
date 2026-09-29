@@ -90,7 +90,7 @@ export default function InventoryBlindPage() {
        needed.</h1>
       <p className="lede">Inventory blindness isn&apos;t a stocktaking problem. It&apos;s a data problem:
        supplier feeds, the ERP, and the warehouse floor all showing a different number for the
-       same SKU, so nobody&apos;s confident enough in any of them to order against it.</p>
+       same SKU, so nobody&apos;s confident enough in any of them, or in the stock control system around them, to order against it.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a free 60 minute call</Link>
       </div>
@@ -168,7 +168,7 @@ export default function InventoryBlindPage() {
     <div className="wrap">
      <span className="eyebrow">The fix</span>
      <h2>One real-time stock picture, not a guess reconciled weekly.</h2>
-     <p className="lede" style={{ marginTop: 16 }}>Decoded Works combines what your suppliers say
+     <p className="lede" style={{ marginTop: 16 }}>Decoded Works, as a stock control system, combines what your suppliers say
       they&apos;ve got with what&apos;s actually moved through your own warehouse, so the number on screen
       is the number on the shelf.</p>
 

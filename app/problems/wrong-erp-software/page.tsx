@@ -219,7 +219,7 @@ export default function WrongERPSoftwarePage() {
      <div>
       <span className="eyebrow">The problem</span>
       <h1>The ERP looked right in the demo. It doesn&apos;t fit how your business works.</h1>
-      <p className="lede">Buying the wrong ERP is one of the most expensive mistakes you can make in
+      <p className="lede">Buying the wrong ERP for a small business is one of the most expensive mistakes you can make in
        this sector. The cost isn&apos;t just the software. It&apos;s the setup, the disruption, the
        workarounds that pile up, and the productivity you never get back. Most of the time it
        was avoidable, if someone independent had checked the fit before the contracts were
@@ -283,7 +283,7 @@ export default function WrongERPSoftwarePage() {
       <article className="card cause">
        <span className="n">04</span>
        <h3>The total cost wasn&apos;t modelled</h3>
-       <p>Setup, training, customisation, integration, ongoing support. The full cost of an ERP is
+       <p>Setup, training, customisation, integration, ongoing support. The full cost of an ERP for a small business is
         often two to three times the licence fee. That comparison rarely happens before you
         sign.</p>
       </article>

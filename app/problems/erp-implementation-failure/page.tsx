@@ -96,7 +96,7 @@ export default function ERPImplementationFailurePage() {
       <span className="eyebrow">The problem</span>
      <h1>What happens when the audit doesn&apos;t come first.</h1>
      <div className="hair mx-auto" />
-      <p className="lede mx-auto">ERP projects that skip an independent audit routinely run over budget and
+      <p className="lede mx-auto">ERP implementation failure is common when projects skip an independent audit. They routinely run over budget and
        late, because nobody looked at the business before picking the software. The fix isn&apos;t a
        bigger budget. It&apos;s doing the checking first, before any platform gets chosen. And where
        the answer turns out to be software I build, the same rule applies: scope in writing
@@ -281,7 +281,7 @@ export default function ERPImplementationFailurePage() {
      </div>
 
      <p className="lede" style={{ marginTop: 28 }}>Same pattern, different business: the diagnostic work came ahead of
-      their own ERP decision, rather than after a failed one. That&apos;s the whole difference, and it&apos;s
+      their own ERP decision, rather than after an ERP implementation failure. That&apos;s the whole difference, and it&apos;s
       the cheapest part of the project.</p>
     </div>
    </section>

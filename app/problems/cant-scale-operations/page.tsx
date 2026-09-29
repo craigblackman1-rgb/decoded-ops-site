@@ -182,7 +182,7 @@ export default function CantScaleOperationsPage() {
    <ProblemPageDS
     problem="Operations that can't keep up with growth"
     headline="Your business is growing. ||Your operations aren't scaling with it.||"
-    intro="More orders. More staff. More pressure. But not more profit, and not more confidence that tomorrow will be better than today. That's an operations problem. Your systems and processes were built for half your current size, and now they're becoming the ceiling on your growth. I help businesses like yours build the operational foundations that let you grow without the chaos."
+    intro="More orders. More staff. More pressure. But not more profit, and not more confidence that tomorrow will be better than today. That's an operations problem. Your systems and processes were built for half your current size, and now they're becoming the ceiling on your growth. I help businesses like yours build the operational foundations for scaling a business without the chaos."
     heroGraphic={<CantScaleSchematic />}
     symptoms={[
      "You're taking on more work but making less profit per order",
@@ -212,7 +212,7 @@ export default function CantScaleOperationsPage() {
       body: "People own their own department, but nobody owns the full run from order in to invoice out. Problems at the handoffs between teams are nobody's job to fix, so they stay and get worse.",
      },
     ]}
-    howIHelp="I come on site and follow how work moves through your business, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, spot what's missing, and put a cost on it in time, margin, and risk. Within five days you get a written report with every finding and every fix prioritised. Quick wins are separated from bigger changes, so you know what to do this week and what to plan for. If you need help making the changes, I run a structured Deliver engagement to do the work with you. And if you're at a growth point and need ongoing operational leadership, there's a retained option: monthly support without the cost of a full-time hire."
+    howIHelp="I come on site and follow how work moves through your business, from the moment an order arrives to the moment it's invoiced and out the door. I map what's there, spot what's missing, and put a cost on it in time, margin, and risk. Within five days you get a written report with every finding and every fix prioritised. Quick wins are separated from bigger changes, so you know what to do this week and what to plan for. If you need help making the changes, I run a structured Deliver engagement to do the work with you. And if you're scaling a business and need ongoing operational leadership, there's a retained option: monthly support without the cost of a full-time hire."
    
    slug="cant-scale-operations"
    targetService={problemRouting['cant-scale-operations'].targetService}

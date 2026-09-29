@@ -148,7 +148,7 @@ export default function SpreadsheetAddictionPage() {
       <p className="lede">It started as a tidy little order log. Now it&apos;s got five tabs, three people
        editing it, macros that only work on one person&apos;s machine, and a version history nobody
        fully trusts. Every decorated-goods business has one, and every one of them is one
-       accidental keystroke away from taking a day&apos;s orders with it.</p>
+       accidental keystroke away from taking a day&apos;s orders with it. Manual processes like this rarely get looked at until something breaks.</p>
       <div className="hero-cta">
        <Link className="btn btn--primary" href="/contact">Book a Clarity Audit</Link>
       </div>
@@ -248,7 +248,7 @@ export default function SpreadsheetAddictionPage() {
      <h2>Documented process, not a single file nobody else can read.</h2>
 
      <div className="answer">
-      <p>The Process &amp; Quality System replaces the dependency on one spreadsheet with
+      <p>The Process &amp; Quality System replaces the dependency on one spreadsheet, and the manual processes around it, with
        documented processes that live outside anyone&apos;s laptop. <b>The order log becomes a named
        process with a documented workflow, not a file that only opens on one version of
        a spreadsheet.</b></p>

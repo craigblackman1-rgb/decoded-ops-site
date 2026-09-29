@@ -202,7 +202,7 @@ export default function EcommerceNotConnectedPage() {
    <ProblemPageDS
    problem="eCommerce not connected to production"
    headline="Your online store is live. ||Your production system doesn't know it exists.||"
-   intro="Every order taken online has to be typed into your production system by hand. Every day. The cost in time, mistakes, and missed deadlines adds up fast, and most businesses have stopped noticing it."
+   intro="Every order taken online has to be typed into your production system by hand. Every day. The cost in time, mistakes, and missed deadlines adds up fast, and most businesses have stopped noticing it. I fix eCommerce integration issues like this for print and embroidery businesses."
    heroGraphic={<EcommerceNotConnectedSchematic />}
    symptoms={[
     "Online orders are typed into your production system by hand",
@@ -219,7 +219,7 @@ export default function EcommerceNotConnectedPage() {
     { title: 'Personalisation data does not line up', body: "The way the website captures names and logos rarely matches the way production needs them. Bridging that gap needs both systems to bend. Usually one of them won't." },
     { title: 'The platform does not fit the business model', body: "Most websites are built for businesses that sell finished stock, not ones that decorate and personalise to order. If the platform can't describe your products properly, no connection will fix it." },
    ]}
-   howIHelp="I look at both systems, both sets of data, and the gap between them. Then I tell you what your options really are: a proper connection using what's already there, a middle layer to translate between the two, or accepting that the website platform is wrong for your business and finding a better fit. You get a clear view of cost, time, and risk for each option. Not a sales pitch."
+   howIHelp="To fix eCommerce integration issues, I look at both systems, both sets of data, and the gap between them. Then I tell you what your options really are: a proper connection using what's already there, a middle layer to translate between the two, or accepting that the website platform is wrong for your business and finding a better fit. You get a clear view of cost, time, and risk for each option. Not a sales pitch."
   
    slug="ecommerce-not-connected"
    targetService={problemRouting['ecommerce-not-connected'].targetService}

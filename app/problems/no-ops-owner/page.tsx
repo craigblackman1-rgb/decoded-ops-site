@@ -169,7 +169,7 @@ export default function NoOpsOwnerPage() {
    <ProblemPageDS
    problem="No operations owner"
    headline="Every ops decision ends up on your desk. ||Who is running the business day to day?||"
-   intro="In many growing businesses, nobody owns operations. The MD handles the big decisions, department heads handle their own areas, and everything in between falls through the cracks: the processes that cross teams, the systems that connect departments, the improvements nobody's responsible for. You don't need a full-time hire to fix that. A part-time operations lead gives you the accountability and the thinking without the overhead."
+   intro="In many growing businesses, nobody owns operations. The MD handles the big decisions, department heads handle their own areas, and everything in between falls through the cracks: the processes that cross teams, the systems that connect departments, the improvements nobody's responsible for. You don't need a full-time hire to fix that. A part-time operations lead, in effect an interim operations director, gives you the accountability and the thinking without the overhead."
    heroGraphic={<NoOpsOwnerSchematic />}
    symptoms={[
     "Decisions that affect several departments get made by committee, or not at all",
@@ -186,7 +186,7 @@ export default function NoOpsOwnerPage() {
     { title: 'Operations is seen as admin, not leadership', body: "Operations sounds like paperwork and process, so it gets passed down, shared around, or left to whoever shouts loudest. In reality, it's where growth is either enabled or blocked." },
     { title: 'No clear step from doing the work to leading it', body: "The person who knows the operations best is usually the one doing the work. Promoting them means losing their hands-on contribution, and many businesses can't afford that trade-off without a plan." },
    ]}
-   howIHelp="I help you work out whether you need a dedicated operations person, a part-time operations lead, or a different structure altogether. I look at where your time goes, where the bottlenecks are, and what level of ownership your business can support right now. Then I give you a practical route forward, whether that's hiring, restructuring, or me stepping into a retained part-time role that gives you operational leadership without a full-time salary. If a fractional head of operations is the answer, the Retained service provides exactly that."
+   howIHelp="I help you work out whether you need a dedicated operations person, a part-time operations lead, or a different structure altogether. I look at where your time goes, where the bottlenecks are, and what level of ownership your business can support right now. Then I give you a practical route forward, whether that's hiring, restructuring, or me stepping into a retained part-time role that gives you operational leadership without a full-time salary. If an interim operations director is the answer, the Retained service provides exactly that."
   
    slug="no-ops-owner"
    targetService={problemRouting['no-ops-owner'].targetService}

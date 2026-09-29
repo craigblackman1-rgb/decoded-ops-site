@@ -196,7 +196,7 @@ export default function SlowProcessesPage() {
    <ProblemPageDS
     problem="Slow, inefficient processes"
     headline="The bottleneck isn't always ||a software problem.||"
-    intro="Most businesses I meet assume they have a software problem. Buy better software, they think, and the friction disappears. Sometimes they're right. Often they're not. Slow turnaround, jobs taking twice as long as they should, the team always firefighting: that's usually a process problem. And new software won't fix a process that was broken to begin with."
+    intro="As a process improvement consultant, I find most businesses assume they have a software problem. Buy better software, they think, and the friction disappears. Sometimes they're right. Often they're not. Slow turnaround, jobs taking twice as long as they should, the team always firefighting: that's usually a process problem. And new software won't fix a process that was broken to begin with."
     heroGraphic={<SlowProcessesSchematic />}
     symptoms={[
      "Jobs move smoothly to a point, then sit waiting for the next person or step",
@@ -226,7 +226,7 @@ export default function SlowProcessesPage() {
       body: "Without a simple shared view of the queue, people work on whatever's in front of them, not what's urgent. Work piles up in some places and races through others. The bottleneck is invisible until it becomes a crisis.",
      },
     ]}
-    howIHelp="I don't run workshops or send you a questionnaire. I come to your site and follow your work, watching an order move from start to despatch. I time each step, note where things stall, and talk to the people doing the work, because they already know where the problems are. By the end of the day I have a map of every step, the exact points where time is being lost, and which problems are habit, which are design, and which you can fix this week. Within five working days you get a written report: every finding set out, every issue counted in hours per week and pounds per year, every fix prioritised by impact."
+    howIHelp="I'm a process improvement consultant who doesn't run workshops or send you a questionnaire. I come to your site and follow your work, watching an order move from start to despatch. I time each step, note where things stall, and talk to the people doing the work, because they already know where the problems are. By the end of the day I have a map of every step, the exact points where time is being lost, and which problems are habit, which are design, and which you can fix this week. Within five working days you get a written report: every finding set out, every issue counted in hours per week and pounds per year, every fix prioritised by impact."
    
    slug="slow-processes"
    targetService={problemRouting['slow-processes'].targetService}
