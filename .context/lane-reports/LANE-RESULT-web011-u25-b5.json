@@ -1,0 +1,42 @@
+{
+  "lane": "web011-u25-b5",
+  "wo": "wo-seo-authority-2026-09-22",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "4e60d79fb4642b936ab914ee799cffc71acebd25",
+      "subject": "content(seo): phase 2 keyword body copy, resources, tools, case studies (WO-WEB-011 u25)"
+    }
+  ],
+  "filesChanged": [
+    "app/blog/page.tsx",
+    "app/case-studies/case-study-01/page.tsx",
+    "app/case-studies/case-study-02/page.tsx",
+    "app/case-studies/case-study-03/page.tsx",
+    "app/case-studies/eternal-fitness/page.tsx",
+    "app/case-studies/page.tsx",
+    "app/contact/ContactClient.tsx",
+    "app/process-quality-system/page.tsx",
+    "app/resources/5-warning-signs/page.tsx",
+    "app/resources/audit-checklist/page.tsx",
+    "app/resources/capacity-planner/page.tsx",
+    "app/resources/decoded-method/page.tsx",
+    "app/resources/erp-selection-playbook/page.tsx",
+    "app/resources/page.tsx",
+    "app/resources/six-sigma/page.tsx",
+    "app/resources/sop-template/page.tsx",
+    "app/tools/downtime-cost-calculator/page.tsx",
+    "app/tools/ops-health-score/page.tsx",
+    "app/tools/should-i-replace-erp/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean | not run (copy-only lane)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Edit 2 for /case-studies had identical FIND and REPLACE strings — skipped per brief instructions"
+  ],
+  "blockers": [],
+  "done": true
+}
