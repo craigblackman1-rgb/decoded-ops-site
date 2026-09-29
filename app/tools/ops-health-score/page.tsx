@@ -35,7 +35,7 @@ function getScoreColor(score: number): string {
 }
 
 function getHealthLabel(total: number): { label: string; color: string; description: string } {
-  if (total <= 10) return { label: 'Critical: Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit will give you a prioritised roadmap to address the biggest gaps first.' };
+  if (total <= 10) return { label: 'Critical: Needs Immediate Attention', color: '#FB8500', description: 'Your operations are under significant strain. Disconnected systems, undocumented processes, and low team capability are creating hidden costs every day. A Clarity Audit, the full operations audit, will give you a prioritised roadmap to address the biggest gaps first.' };
   if (total <= 15) return { label: 'Fragile: Some Areas Need Work', color: '#FFB703', description: 'You have some strengths, but there are clear gaps that will become more expensive as you grow. The weakest dimensions are your biggest risk: fixing them now is cheaper than waiting.' };
   if (total <= 20) return { label: 'Stable: Room to Improve', color: '#219EBC', description: 'Your operations are in reasonable shape. Targeted improvements in your weaker areas will reduce cost and increase resilience. You are well positioned to evaluate new technology investments.' };
   return { label: 'Strong: Well Run Operation', color: '#023047', description: 'Your operations are well managed across all dimensions. You are in a strong position to scale, adopt new technology, and focus on strategic growth rather than firefighting.' };
@@ -71,7 +71,7 @@ export default function OpsHealthScorePage() {
           <div>
             <span className="eyebrow">Free tool</span>
             <h1>Ops health score</h1>
-            <p className="lede">Rate your business across five areas to see where you stand, and where to focus first.</p>
+            <p className="lede">A quick operations audit you can do yourself. Rate your business across five areas to see where you stand, and where to focus first.</p>
           </div>
 
           {/* D17 hero art · DO-ART-997 */}

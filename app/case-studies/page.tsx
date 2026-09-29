@@ -40,7 +40,7 @@ export default function CaseStudiesPage() {
         <div className="wrap hero-center">
           <span className="eyebrow">Client work</span>
           <h1>What I&apos;m actually building right now.</h1>
-          <p className="lede">Live engagements across four sectors. Same approach every time: fix the
+          <p className="lede">Live engagements across four sectors. As a manufacturing operations consultant, my approach is the same every time: fix the
             process and the data before you automate anything.</p>
         </div>
         <div className="wrap hero-art">

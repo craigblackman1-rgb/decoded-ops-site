@@ -130,7 +130,7 @@ export default function ErpSelectionPlaybookPage() {
             <span className="eyebrow">Free resource</span>
             <h1>ERP selection playbook for decorated goods</h1>
             <p className="lede">
-              A plain-English guide to ERP for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
+              A plain-English ERP selection guide for garment decoration, print, and embroidery businesses. What it is, when you need it, how to choose, and the pitfalls specific to your sector.
             </p>
           </div>
 
@@ -299,7 +299,7 @@ export default function ErpSelectionPlaybookPage() {
           <div style={{ marginBottom: 64 }}>
             <h2>Where I stand</h2>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
-              One thing this playbook should say plainly: I build one of the systems in this market. Works grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
+              One thing this ERP selection guide should say plainly: I build one of the systems in this market. Works grew out of Clarity Audits where the brief came back and nothing off the shelf covered it. That does not change a word of the process above. Write the brief, score every candidate against it, and treat mine with the same suspicion you would treat any vendor demo. If another system covers your brief, buy that one. The playbook only works if it works against me too.
             </p>
           </div>
 

@@ -60,7 +60,7 @@ const resources = [
   {
     icon: FileText,
     title: 'The Decoded Method',
-    desc: 'A three-layer system for documenting how your business runs: Process Register, one-page SOPs, and an Improvement Log.',
+    desc: 'A three-layer system for documenting how your business runs, with process improvement for small business built in: Process Register, one-page SOPs, and an Improvement Log.',
     href: '/resources/decoded-method',
   },
   {
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
             <span className="eyebrow">Resources</span>
             <h1>Tools and guides <em>you can use today</em></h1>
             <p className="lede">
-              Free resources built from real experience in print, embroidery, and decoration businesses. No fluff. No sign-up tricks. Just useful stuff.
+              Free resources on process improvement for small business, built from real experience in print, embroidery, and decoration businesses. No fluff. No sign-up tricks. Just useful stuff.
             </p>
           </div>
 

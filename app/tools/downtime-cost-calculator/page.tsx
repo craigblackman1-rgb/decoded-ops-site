@@ -94,7 +94,7 @@ export default function DowntimeCostCalculatorPage() {
               left at zero and the answer comes out meaninglessly low.
             </p>
             <p>
-              This one builds it up instead. First it works out what an hour of your operation costs
+              This downtime cost calculator builds it up instead. First it works out what an hour of your operation costs
               to have available at all, which is a number worth knowing on its own. Then it works
               out what you lose when that hour produces nothing.
             </p>

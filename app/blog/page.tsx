@@ -76,7 +76,7 @@ export default async function BlogPage() {
             Things I&apos;ve learned the hard way
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: 'var(--do-text-muted)' }}>
-            Plain-English writing on operations, technology, and systems integration for print, embroidery, and decoration businesses. No jargon. No vendor agenda.
+            Plain-English writing on operations, technology, and systems integration for print, decoration, and embroidery business owners. No jargon. No vendor agenda.
           </p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default async function BlogPage() {
           <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: 'var(--do-surface-dark)' }}>
             <h3 className="text-lg font-bold mb-3" style={{ fontFamily: 'var(--font-outfit), sans-serif', color: 'var(--do-text-on-dark)' }}>Ready to dive deeper?</h3>
             <p className="leading-relaxed mb-6" style={{ color: 'var(--do-sky-blue)' }}>
-              These resources are free. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
+              These resources are free, whether you run an embroidery business or another kind of decoration shop. An audit is where things get specific. I quantify every finding, cost every recommendation, and map your next steps.
             </p>
             <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors" style={{ backgroundColor: 'var(--do-action-primary)', color: 'var(--do-action-primary-text)' }}>
               Book a free discovery call

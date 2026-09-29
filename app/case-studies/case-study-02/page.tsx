@@ -81,7 +81,7 @@ export default function CaseStudy02Page() {
             <span className="eyebrow">Client work · branded apparel &amp; decoration</span>
             <h1>The diagnostic came before the decision.</h1>
             <p className="lede">
-              A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately.
+              A teamwear and schoolwear business selling decorated and plain stock across a lot of suppliers, on an eCommerce platform that needed to show live stock accurately. This is what I did as their small business technology consultant.
             </p>
           </div>
           <div className="wrap" style={{ marginTop: 'clamp(24px, 3vw, 48px)' }}>
@@ -231,7 +231,7 @@ export default function CaseStudy02Page() {
           <div className="wrap" style={{ maxWidth: 760 }}>
             <h2>See how Works does this.</h2>
             <p className="lede">
-              This is a Systems (rung 2) example. To find out what your own operation needs, book a Clarity Audit.
+              This is a Systems (rung 2) example. If you want a small business technology consultant to find out what your own operation needs, book a Clarity Audit.
             </p>
             <div className="hero-cta">
               <Link href="/contact" className="btn btn--primary">

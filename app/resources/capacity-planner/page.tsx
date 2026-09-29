@@ -181,7 +181,7 @@ export default function CapacityPlannerPage() {
               That matters because quoting is based on capacity. If your quoted capacity is higher than your real capacity, you will either over-quote (and lose work) or under-quote (and be buried).
             </p>
             <p style={{ marginBottom: 0 }}>
-              This calculator gives you the honest number. Use it before you commit to a deadline or price a volume job.
+              This calculator gives you the honest number for capacity planning. Use it before you commit to a deadline or price a volume job.
             </p>
           </div>
         </div>

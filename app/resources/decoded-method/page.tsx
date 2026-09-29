@@ -117,7 +117,7 @@ export default function DecodedMethodPage() {
             <span className="eyebrow">Free playbook</span>
             <h1>The Decoded Method</h1>
             <p className="lede">
-              A three-layer system for documenting how your business actually runs. Plain English, one page per process, built to be handed over instead of held in one person&apos;s head.
+              A three-layer system for documenting how your business actually runs, and the business process review that keeps it current. Plain English, one page per process, built to be handed over instead of held in one person&apos;s head.
             </p>
             <div style={{ display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap' }}>
               <a href="/downloads/decoded-method.pdf" download className="btn btn--primary">
@@ -307,7 +307,7 @@ export default function DecodedMethodPage() {
             </div>
             <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--do-text-sm)', color: 'var(--do-text-cerulean)', fontWeight: 'var(--do-weight-medium)', display: 'inline-flex', alignItems: 'center', gap: 4 }}>Or book a call directly <ArrowRight size={14} /></a>
             <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginTop: 20, marginBottom: 0 }}>
-              Want it run across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
+              Want a business process review across your own operation? A Clarity engagement builds your Process Register with you, mapping what you do, who owns it, and where the gaps are. Retained clients get the Method as a living hub I host and keep current, not a document that goes stale.
             </p>
           </div>
         </div>

@@ -128,7 +128,7 @@ export default function ChecklistPage() {
             <span className="eyebrow">Free resource</span>
             <h1>Operational audit checklist</h1>
             <p className="lede">
-              36 questions to evaluate your operations, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
+              This operations audit checklist is 36 questions to evaluate your business, technology, and processes. Use this before you hire a consultant, or to understand what an audit actually covers.
             </p>
           </div>
           <div dangerouslySetInnerHTML={{ __html: `
@@ -236,7 +236,7 @@ export default function ChecklistPage() {
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-cerulean) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-cerulean) 25%, transparent)', marginBottom: 64 }}>
             <h2>How to use this checklist</h2>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)' }}>
-              Go through each section and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
+              Go through each section of the operations audit checklist and answer the questions honestly. You don't need to score yourself or mark items as "good" or "bad." The goal is to identify where you have gaps or uncertainties.
             </p>
             <p style={{ color: 'color-mix(in srgb, var(--do-prussian-blue) 80%, transparent)', marginBottom: 0 }}>
               The items you can't answer are the most valuable. They're where the hidden costs usually are.

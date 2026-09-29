@@ -80,7 +80,7 @@ export default function EternalFitnessCaseStudyPage() {
             <span className="eyebrow">In Build · Health &amp; Fitness</span>
             <h1>Eternal Fitness: technical lead for a clinical-population training studio</h1>
             <p className="lede">
-              Eternal Fitness is a private, 1-to-1 personal training studio. Most of its clients manage health conditions, rather than general weight loss. I&apos;m technical lead on the website rebuild and the tooling behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
+              Eternal Fitness is a private, 1-to-1 personal training studio. Most of its clients manage health conditions, rather than general weight loss. I&apos;m technical lead on the website rebuild and the AI training tool behind it, working alongside Esther Fair, the studio&apos;s Level 4 PT and clinical lead.
             </p>
             <p style={{ fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', fontStyle: 'italic', marginTop: '12px' }}>
               Esther is my wife, named plainly. This is paid client work, not a favour or free build. She pays for it the same as anyone else. Which meant there was nowhere to hide if it did not work.
@@ -212,7 +212,7 @@ export default function EternalFitnessCaseStudyPage() {
             <div className="callout">
               <h3>Why the AI tool doesn&apos;t replace the trainer</h3>
               <p>
-                The training plan tool speeds up building a first draft against real constraints. It doesn&apos;t decide what&apos;s safe for a client managing a health condition. Esther does. That&apos;s the same principle behind every AI-adjacent piece of work I do: the tool handles the groundwork, the person with the actual expertise makes the call.
+                The AI training tool speeds up building a first draft against real constraints. It doesn&apos;t decide what&apos;s safe for a client managing a health condition. Esther does. That&apos;s the same principle behind every AI-adjacent piece of work I do: the tool handles the groundwork, the person with the actual expertise makes the call.
               </p>
             </div>
 

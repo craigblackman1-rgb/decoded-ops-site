@@ -39,7 +39,7 @@ export default function ProcessQualitySystemPage() {
           <h1>How your business keeps improving after I leave.</h1>
           <p className="lead">Not a report that sits in a drawer. A working system for how the business
             documents, checks, and improves its own processes, built during the engagement and owned by
-            you after it.</p>
+            you after it. It covers how to write a standard operating procedure your team will actually follow.</p>
           <div className="hero-cta">
             <Link className="btn btn-primary btn-arrow" href="/deliver">See how this fits into Deliver</Link>
           </div>
@@ -137,7 +137,7 @@ export default function ProcessQualitySystemPage() {
             <article className="step">
               <p className="step-n">STEP 3</p>
               <h3>Check it&rsquo;s followed</h3>
-              <p>An SOP nobody follows is a document, not a system. This is the step most businesses skip
+              <p>Knowing how to write a standard operating procedure is only the start. An SOP nobody follows is a document, not a system. This is the step most businesses skip
                 and the reason their documentation goes stale.</p>
             </article>
             <article className="step step--last">

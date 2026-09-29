@@ -148,7 +148,7 @@ export default function SopTemplatePage() {
               ))}
             </div>
             <p style={{ marginTop: 16, fontSize: 'var(--do-text-sm)', color: 'color-mix(in srgb, var(--do-prussian-blue) 72%, transparent)', marginBottom: 0 }}>
-              The template takes about 30 minutes to fill in for your first process. Subsequent processes take less time because you are reusing the structure.
+              The SOP template takes about 30 minutes to fill in for your first process. Subsequent processes take less time because you are reusing the structure.
             </p>
           </div>
 

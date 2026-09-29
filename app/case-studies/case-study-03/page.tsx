@@ -77,7 +77,7 @@ export default function CaseStudy03Page() {
               <span className="eyebrow">Client work · workwear</span>
               <h1>Architect and advisor, not the builder.</h1>
               <p className="lede">
-                A workwear B2B distributor needed a B2B trade portal, an ERP evaluation, and a storefront replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
+                A workwear B2B distributor needed a B2B portal, an ERP evaluation, and a storefront replacement. I ran a Clarity Audit, then Deliver Consultancy: vendor requirements, procurement, and integration architecture.
               </p>
               <div className="hero-cta">
                 <Link href="/contact" className="btn btn--primary">
@@ -196,7 +196,7 @@ export default function CaseStudy03Page() {
               <article className="card">
                 <span className="kicker">02 · Process design</span>
                 <h3>Vendor requirements and procurement</h3>
-                <p>I write the requirements the trade portal and ERP evaluation actually need to answer, then run procurement against them, rather than accepting the first plausible platform.</p>
+                <p>I write the requirements the B2B portal and ERP evaluation actually need to answer, then run procurement against them, rather than accepting the first plausible platform.</p>
               </article>
               <article className="card">
                 <span className="kicker">03 · Implementation oversight</span>

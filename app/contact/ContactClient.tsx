@@ -76,7 +76,7 @@ export function ContactClient() {
               <span className="eyebrow" style={{ marginBottom: 22 }}>Get in touch</span>
               <h1 className="h1">Start with a free <em>60-minute call.</em></h1>
               <p className="lede">
-                No sales pitch. No obligation. A direct conversation about your business, what&apos;s frustrating you, and whether there&apos;s something I can help with.
+                No sales pitch. No obligation. Book a free discovery call for a direct conversation about your business, what&apos;s frustrating you, and whether there&apos;s something I can help with.
               </p>
               <div style={{ marginTop: 24, marginBottom: 24 }}>
                 <a
@@ -231,7 +231,7 @@ export function ContactClient() {
           <div style={{ maxWidth: '42ch', marginBottom: 64 }}>
             <span className="eyebrow" style={{ marginBottom: 22 }}>What to expect</span>
             <h2 className="h2">How the first call works</h2>
-            <p className="lede">No preparation needed. Just turn up and tell me what&apos;s happening.</p>
+            <p className="lede">Once you book a free discovery call there&apos;s no preparation needed. Just turn up and tell me what&apos;s happening.</p>
           </div>
           <div className="grid grid--3">
             {[

@@ -63,7 +63,7 @@ export default function SixSigmaPage() {
             <h1>What 5 &amp; 6 Sigma mean for your print &amp; embroidery operation</h1>
             <div className="hair" />
             <p className="lede">
-              Sigma measures process quality. The higher the level, the fewer defects escape into finished goods. Here is what each level actually means on the shop floor, and why the gap is process, not machinery.
+              Six sigma for small business is a measure of process quality. The higher the level, the fewer defects escape into finished goods. Here is what each level actually means on the shop floor, and why the gap is process, not machinery.
             </p>
             <div className="btn-row">
               <a href="/downloads/six-sigma.pdf" download className="btn btn--primary">
@@ -170,7 +170,7 @@ export default function SixSigmaPage() {
             Moving from <strong style={{ color: 'var(--do-amber)' }}>3 Sigma to 5 Sigma</strong> cuts your defect rate by <strong style={{ color: 'var(--do-amber)' }}>99.6%</strong>. That is not a machine upgrade. It is a process redesign: standardised settings, documented procedures, and measured checkpoints are what separate the two. Not a newer heat press.
           </p>
           <p className="lede">
-            If your defect rate feels stuck, the fix usually is not new equipment. It is documenting and standardising what your best operator already does. That is exactly what a Clarity engagement maps.
+            If your defect rate feels stuck, the fix usually is not new equipment. It is documenting and standardising what your best operator already does, which is six sigma for small business in practice. That is exactly what a Clarity engagement maps.
           </p>
         </div>
       </section>

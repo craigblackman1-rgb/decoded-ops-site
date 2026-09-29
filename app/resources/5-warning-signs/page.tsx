@@ -60,7 +60,7 @@ const signs = [
   },
   {
     title: '5. You bought your last system off the back of a demo',
-    body: "This is the one I see most often, and it's the most expensive. A demo shows you software working perfectly, on the vendor's data, in the vendor's example business. It tells you very little about whether it fits yours. What happens next is consistent enough that I can usually call it in advance: the system gets chosen without the people who have to use it, they get trained on how the software works rather than how it fits their job, most of them are back to the old way by week three, and by month three the software is getting the blame. Usually the software was fine. Nobody scoped the business before they scoped the system. Writing your requirements down before anyone books a demo is near-certain cost avoidance.",
+    body: "This is the one I see most often, and it's the most expensive. A demo of manufacturing ERP software shows you it working perfectly, on the vendor's data, in the vendor's example business. It tells you very little about whether it fits yours. What happens next is consistent enough that I can usually call it in advance: the system gets chosen without the people who have to use it, they get trained on how the software works rather than how it fits their job, most of them are back to the old way by week three, and by month three the software is getting the blame. Usually the software was fine. Nobody scoped the business before they scoped the system. Writing your requirements down before anyone books a demo is near-certain cost avoidance.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function FiveWarningSignsPage() {
             <span className="eyebrow">Free resource</span>
             <h1>5 warning signs your systems are holding you back</h1>
             <p className="lede">
-              Real warning signs from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it&apos;s worth a closer look.
+              Real warning signs that your manufacturing ERP software or other systems are holding you back, from 25+ years running operations in print, embroidery, decoration, and similar product-based businesses, not vendor theory. If two or more of these sound familiar, it&apos;s worth a closer look.
             </p>
           </div>
 

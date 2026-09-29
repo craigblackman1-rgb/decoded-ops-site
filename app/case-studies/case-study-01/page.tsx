@@ -82,7 +82,7 @@ export default function CaseStudy01Page() {
               <h1>The ERP changed. The data work carried on.</h1>
               <p className="lede">Hanicks sells heating spares. It isn&apos;t decorated goods, but it&apos;s the same
                 problem underneath: a big catalogue arriving from lots of suppliers in different formats,
-                which has to be clean and current on every channel it sells through.</p>
+                which has to be clean and current on every channel it sells through. This is an ERP implementation that took a different route.</p>
               <div className="hero-cta" style={{ justifyContent: 'flex-start' }}>
                 <Link className="btn btn--primary" href="/contact">Book a free discovery call <ArrowRight size={16} aria-hidden="true" /></Link>
               </div>
@@ -246,7 +246,7 @@ export default function CaseStudy01Page() {
           <div className="wrap prose">
             <h2>The situation before</h2>
             <p>
-              Product data was spread across supplier feeds with no consistent SKU, and no reliable way of knowing what was actually in stock or where it was. The business needed a proper ERP, but going into one with messy data would have meant paying to migrate the mess.
+              Product data was spread across supplier feeds with no consistent SKU, and no reliable way of knowing what was actually in stock or where it was. The business needed a proper ERP, but going into an ERP implementation with messy data would have meant paying to migrate the mess.
             </p>
 
             <h2>What was done</h2>
