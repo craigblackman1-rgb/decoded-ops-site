@@ -73,7 +73,7 @@ export default function AboutPage() {
           <h2>Three vantage points, one problem that never changed.</h2>
           <div className="hair"></div>
           <p className="lede" style={{ marginTop: 16 }}>
-            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is what I do now as a business operations consultant.
+            Twenty-five years in print, embroidery, and decoration, from warehouse floor to IT to operations. Every level taught me the same thing: the paperwork says one thing, the floor does another, and closing that gap is the job now.
           </p>
 
           {/* DO-ART-831 r01 · journey poster, website cut (D16/D17). Same drawing

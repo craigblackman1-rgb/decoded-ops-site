@@ -121,7 +121,7 @@ export default function DataAppPage() {
           <span className="eyebrow">Architecture &middot; DO-ART-942</span>
           <h2>Keep your platform, or let this become it.</h2>
           <p className="lede" style={{ marginTop: 16 }}>Works started as the missing layer: supplier
-            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP for a printing company, stock control software and order management system included.
+            feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP, with stock control and order management built in.
             You can run it alongside the platform you already own, or let it replace it.</p>
 
           <div dangerouslySetInnerHTML={{ __html: `
