@@ -185,18 +185,18 @@
 .a918 .k span{ color:var(--do-sky-blue) }
 .a918 h3{ margin:calc(16 * var(--u)) 0 0; font-family:var(--do-font-heading); font-weight:800; color:var(--do-white);
   font-size:max(24px, calc(40 * var(--u))); line-height:1.05; letter-spacing:-.03em; max-width:15ch }
-.ledger{ position:relative; list-style:none; margin:calc(28 * var(--u)) 0 calc(26 * var(--u)); padding:0 0 0 calc(40 * var(--u)) }
-.ledger::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:14px; bottom:22px; width:4px; border-radius:3px;
+.d17 .ledger{ position:relative; list-style:none; margin:calc(28 * var(--u)) 0 calc(26 * var(--u)); padding:0 0 0 calc(40 * var(--u)) }
+.d17 .ledger::before{ content:''; position:absolute; left:calc(9 * var(--u)); top:14px; bottom:22px; width:4px; border-radius:3px;
   background:linear-gradient(180deg, var(--do-sky-blue), var(--do-cerulean) 70%, var(--do-amber)); transform-origin:top }
-.ledger li{ position:relative; display:flex; align-items:baseline; gap:calc(14 * var(--u)); padding:calc(7 * var(--u)) 0 }
-.ledger li::before{ content:''; position:absolute; left:calc(-40 * var(--u) + 3px); top:calc(50% - 8px);
+.d17 .ledger li{ position:relative; display:flex; align-items:baseline; gap:calc(14 * var(--u)); padding:calc(7 * var(--u)) 0 }
+.d17 .ledger li::before{ content:''; position:absolute; left:calc(-40 * var(--u) + 3px); top:calc(50% - 8px);
   width:16px; height:16px; border-radius:50%; box-sizing:border-box;
   background:var(--do-off-white); border:4px solid var(--do-prussian-blue); box-shadow:0 0 0 2px var(--do-sky-blue) }
-.ledger .n{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u)));
+.d17 .ledger .n{ font-family:var(--do-font-heading); font-weight:800; font-size:max(22px, calc(34 * var(--u)));
   line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--do-white); min-width:5.1ch }
-.ledger .t{ font-size:max(13px, calc(16 * var(--u))); line-height:1.3; color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
-.ledger li.end .n{ color:var(--do-amber) }
-.ledger li.end::before{ background:var(--do-amber); box-shadow:0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
+.d17 .ledger .t{ font-size:max(13px, calc(16 * var(--u))); line-height:1.3; color:color-mix(in srgb, var(--do-off-white) 80%, transparent) }
+.d17 .ledger li.end .n{ color:var(--do-amber) }
+.d17 .ledger li.end::before{ background:var(--do-amber); box-shadow:0 0 0 2px var(--do-amber), 0 0 0 9px color-mix(in srgb, var(--do-amber) 20%, transparent) }
 .a918 .print{ position:absolute; right:calc(46 * var(--u)); bottom:calc(46 * var(--u)); width:calc(230 * var(--u));
   background:var(--do-white); color:var(--do-prussian-blue); padding:calc(14 * var(--u)) calc(16 * var(--u));
   border-radius:calc(4 * var(--u)); transform:rotate(-2.5deg);
@@ -212,9 +212,9 @@
   .a918::before{ background:linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
   .a918 .copy{ padding:200px 20px 24px }
   .a918 .print{ right:16px; top:24px; bottom:auto; width:150px }
-  .ledger{ padding-left:34px } .ledger li::before{ left:-31px }
-  .ledger li{ gap:10px } .ledger .n{ min-width:5.3ch; font-size:21px } .ledger .t{ font-size:13.5px }
-  .ledger::before{ left:7px }
+  .d17 .ledger{ padding-left:34px } .d17 .ledger li::before{ left:-31px }
+  .d17 .ledger li{ gap:10px } .d17 .ledger .n{ min-width:5.3ch; font-size:21px } .d17 .ledger .t{ font-size:13.5px }
+  .d17 .ledger::before{ left:7px }
 }
 
 /* ─── DO-ART-831 · About · the route, website cut + in-page draw ─── */
