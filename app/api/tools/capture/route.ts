@@ -17,10 +17,31 @@ const VALID_TOOLS = [
   'should-i-replace-erp',
 ] as const;
 
-const VALID_RESOURCES = ['sop-template'] as const;
+const VALID_RESOURCES = ['sop-template', 'audit-checklist', 'erp-selection-playbook'] as const;
 
 type ToolSlug = (typeof VALID_TOOLS)[number];
 type ResourceSlug = (typeof VALID_RESOURCES)[number];
+
+const RESOURCE_INFO: Record<ResourceSlug, { subject: string; link: string; tip: string; name: string }> = {
+  'sop-template': {
+    subject: 'Your SOP template from Decoded Ops',
+    link: '/downloads/decoded-ops-sop-template.docx',
+    tip: 'Start with the process that would hurt most if the person who does it was off.',
+    name: 'the SOP template',
+  },
+  'audit-checklist': {
+    subject: 'Your operations audit checklist from Decoded Ops',
+    link: '/downloads/decoded-ops-audit-checklist.docx',
+    tip: 'Go through it with whoever runs production, not on your own. The gaps show up in the answers you disagree on.',
+    name: 'the checklist',
+  },
+  'erp-selection-playbook': {
+    subject: 'Your ERP selection playbook from Decoded Ops',
+    link: '/downloads/decoded-ops-erp-selection-playbook.docx',
+    tip: 'Write the brief before you book a single demo. The scoring sheet at the back only works if every vendor answers the same questions.',
+    name: 'the playbook',
+  },
+};
 
 export async function POST(req: NextRequest) {
   try {
@@ -145,26 +166,27 @@ export async function POST(req: NextRequest) {
     if (isResource) {
       // Resource download email to the requester
       const firstName = sanitizedName.split(' ')[0] || sanitizedName;
-      const resourceSubject = 'Your SOP template from Decoded Ops';
+      const info = RESOURCE_INFO[tool as ResourceSlug];
+      const downloadUrl = `https://decodedops.co.uk${info.link}`;
       const resourceText = [
         `Hi ${firstName},`,
         ``,
-        `Here is the SOP template: https://decodedops.co.uk/downloads/decoded-ops-sop-template.docx`,
+        `Here is ${info.name}: ${downloadUrl}`,
         ``,
-        `Start with the process that would hurt most if the person who does it was off.`,
+        `${info.tip}`,
         ``,
         `Craig`,
         ``,
         `---`,
-        `You are receiving this because you requested the SOP template from decodedops.co.uk.`,
+        `You are receiving this because you requested ${info.name} from decodedops.co.uk.`,
         `Reply to this email if you have questions, or unsubscribe at any time.`,
       ].join('\n');
       const resourceHtml = [
         `<p>Hi ${firstName},</p>`,
-        `<p>Here is the SOP template: <a href="https://decodedops.co.uk/downloads/decoded-ops-sop-template.docx">download the .docx</a>.</p>`,
-        `<p>Start with the process that would hurt most if the person who does it was off.</p>`,
+        `<p>Here is ${info.name}: <a href="${downloadUrl}">download the .docx</a>.</p>`,
+        `<p>${info.tip}</p>`,
         `<p>Craig</p>`,
-        `<p style="margin-top:24px;font-size:13px;color:#666">You are receiving this because you requested the SOP template from decodedops.co.uk.<br>Reply to this email if you have questions, or unsubscribe at any time.</p>`,
+        `<p style="margin-top:24px;font-size:13px;color:#666">You are receiving this because you requested ${info.name} from decodedops.co.uk.<br>Reply to this email if you have questions, or unsubscribe at any time.</p>`,
       ].join('\n');
 
       try {
@@ -172,7 +194,7 @@ export async function POST(req: NextRequest) {
         if (emailStatus.configured) {
           await sendEmail({
             to: sanitizedEmail,
-            subject: resourceSubject,
+            subject: info.subject,
             html: resourceHtml,
             text: resourceText,
           });

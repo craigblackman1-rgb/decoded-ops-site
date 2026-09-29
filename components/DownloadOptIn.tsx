@@ -11,6 +11,8 @@ interface DownloadOptInProps {
   fileHref: string;
   fileLabel?: string;
   coverTitle?: string;
+  buttonLabel?: string;
+  thing?: string;
   compact?: boolean;
 }
 
@@ -21,6 +23,8 @@ export function DownloadOptIn({
   fileHref,
   fileLabel = '.docx',
   coverTitle = 'SOP template for decorated goods businesses',
+  buttonLabel = 'Download the template',
+  thing = 'the template',
   compact = false,
 }: DownloadOptInProps) {
   const [name, setName] = useState('');
@@ -73,7 +77,7 @@ export function DownloadOptIn({
       <section className={`${s.mini} g-off`}>
         <div className="wrap">
           <div className={s.miniRow}>
-            <p><b>The SOP template</b> <span>&middot; Word document, 11 pages, free, no email needed</span></p>
+            <p><b>{title}</b> <span>&middot; Word document, 11 pages, free, no email needed</span></p>
             <a
               className="btn btn--outline dlBtn"
               href={fileHref}
@@ -81,7 +85,7 @@ export function DownloadOptIn({
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--do-font-body)' }}
             >
               <Download size={18} />
-              Download the template ({fileLabel})
+              {buttonLabel} ({fileLabel})
             </a>
           </div>
         </div>
@@ -120,7 +124,7 @@ export function DownloadOptIn({
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: 'var(--do-font-body)' }}
               >
                 <Download size={18} />
-                Download the template ({fileLabel})
+                {buttonLabel} ({fileLabel})
               </a>
               <p className={s.note}>No email needed.</p>
             </div>
@@ -136,7 +140,7 @@ export function DownloadOptIn({
             ) : (
               <>
                 <h3>Prefer it in your inbox?</h3>
-                <p>I&apos;ll send the template and the occasional Ops Briefing: practical notes on running a decoration business. Unsubscribe any time.</p>
+                <p>I&apos;ll send {thing} and the occasional Ops Briefing: practical notes on running a decoration business. Unsubscribe any time.</p>
                 <form onSubmit={handleSubmit} noValidate>
                   <label className={s.field2}>
                     <span className={s.field2Label}>Name</span>

@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Check, AlertTriangle } from 'lucide-react';
 import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { D17Motion } from '@/components/D17Motion';
+import { DownloadOptIn } from '@/components/DownloadOptIn';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
@@ -174,6 +175,16 @@ export default function ErpSelectionPlaybookPage() {
         ` }} />
         </div>
       </section>
+
+      <DownloadOptIn
+        resource="erp-selection-playbook"
+        title="The ERP selection playbook"
+        meta="Word document · 6 pages · the process, the vendor brief, and a scoring sheet"
+        fileHref="/downloads/decoded-ops-erp-selection-playbook.docx"
+        buttonLabel="Download the playbook"
+        coverTitle="ERP selection playbook"
+        thing="the playbook"
+      />
 
       <section className="g-off section--tight">
         <div className="wrap" style={{ maxWidth: 720 }}>
@@ -362,6 +373,17 @@ export default function ErpSelectionPlaybookPage() {
               </div>
             </div>
           </div>
+
+          <DownloadOptIn
+            resource="erp-selection-playbook"
+            title="The ERP selection playbook"
+            meta="Word document · 6 pages · the process, the vendor brief, and a scoring sheet"
+            fileHref="/downloads/decoded-ops-erp-selection-playbook.docx"
+            buttonLabel="Download the playbook"
+            coverTitle="ERP selection playbook"
+            thing="the playbook"
+            compact
+          />
 
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)' }}>
             <h3>Not sure whether you need an ERP?</h3>

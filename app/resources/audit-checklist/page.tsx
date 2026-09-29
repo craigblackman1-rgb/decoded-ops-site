@@ -4,6 +4,7 @@ import { BOOKING_URL } from '@/lib/constants';
 import { JsonLd } from '@/components/JsonLd';
 import { Plate } from '@/components/Plate';
 import { D17Motion } from '@/components/D17Motion';
+import { DownloadOptIn } from '@/components/DownloadOptIn';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
 import '@/app/d17-resources.css';
@@ -51,8 +52,8 @@ const checklist = [
       'Are backups automated, and do you test them quarterly?',
       'Do you have a password policy (not all passwords are the same across systems)?',
       'Who has access to your financial systems, and is it reviewed annually?',
-      'Are you paying for software licenses you no longer use?',
-      'Do you know what IT costs you annually (licenses, hardware, support)?',
+      'Are you paying for software licences you no longer use?',
+      'Do you know what IT costs you annually (licences, hardware, support)?',
     ]
   },
   {
@@ -99,9 +100,9 @@ const checklist = [
   {
     section: 'Costs & Financial',
     items: [
-      'What are your total technology costs (software, licenses, hosting, support, IT staff)?',
+      'What are your total technology costs (software, licences, hosting, support, IT staff)?',
       'Are you billing your customers accurately and capturing all billable work?',
-      'Do you know your actual cost-per-order (including labor, materials, overhead)?',
+      'Do you know your actual cost-per-order (including labour, materials, overhead)?',
       'Are there revenue leaks (jobs underpriced, orders not invoiced, discounts not tracked)?',
       'How long does it take from invoice to cash (days sales outstanding)?',
     ]
@@ -170,6 +171,16 @@ export default function ChecklistPage() {
 </figure>` }} />
         </div>
       </section>
+
+      <DownloadOptIn
+        resource="audit-checklist"
+        title="The operations audit checklist"
+        meta="Word document · 5 pages · 36 questions across 7 areas, with space for notes"
+        fileHref="/downloads/decoded-ops-audit-checklist.docx"
+        buttonLabel="Download the checklist"
+        coverTitle="Operations audit checklist"
+        thing="the checklist"
+      />
 
       {/* D17 inline artwork DO-ART-984 */}
       <section className="g-navy">
@@ -275,7 +286,7 @@ export default function ChecklistPage() {
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                 <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 4, color: 'var(--do-text-cerulean)' }} />
                 <p style={{ marginBottom: 0 }}>
-                  If you can't answer 5+ questions, you probably have a bigger operational problem than you realize.
+                  If you can't answer 5+ questions, you probably have a bigger operational problem than you realise.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -298,6 +309,17 @@ export default function ChecklistPage() {
               </div>
             </div>
           </div>
+
+          <DownloadOptIn
+            resource="audit-checklist"
+            title="The operations audit checklist"
+            meta="Word document · 5 pages · 36 questions across 7 areas, with space for notes"
+            fileHref="/downloads/decoded-ops-audit-checklist.docx"
+            buttonLabel="Download the checklist"
+            coverTitle="Operations audit checklist"
+            thing="the checklist"
+            compact
+          />
 
           {/* CTA */}
           <div className="card" style={{ background: 'color-mix(in srgb, var(--do-amber) 10%, transparent)', borderColor: 'color-mix(in srgb, var(--do-amber) 30%, transparent)', marginTop: 64 }}>

@@ -163,4 +163,58 @@ describe('tool lead capture', () => {
     const body = await res.json();
     expect(body.error).toBe('Invalid tool.');
   });
+
+  it('accepts audit-checklist resource and sends correct email', async () => {
+    (sendEmail as ReturnType<typeof vi.fn>).mockResolvedValue({ success: true });
+    (getEmailStatus as ReturnType<typeof vi.fn>).mockReturnValue({ configured: true, backend: 'resend', from: 'test@example.com' });
+
+    const req = makeRequest({
+      tool: 'audit-checklist',
+      name: 'Carol Davis',
+      email: 'carol@example.com',
+    });
+    const res = await POST(req);
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+
+    const hubCall = (hubFetch as ReturnType<typeof vi.fn>).mock.calls[0][1];
+    const payload = JSON.parse(hubCall.body);
+    expect(payload.tool).toBe('audit-checklist');
+    expect(payload.optin).toBe('ops-briefing');
+
+    expect(sendEmail).toHaveBeenCalledTimes(1);
+    const emailCall = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0][0];
+    expect(emailCall.to).toBe('carol@example.com');
+    expect(emailCall.subject).toBe('Your operations audit checklist from Decoded Ops');
+    expect(emailCall.text).toContain('decodedops.co.uk/downloads/decoded-ops-audit-checklist.docx');
+  });
+
+  it('accepts erp-selection-playbook resource and sends correct email', async () => {
+    (sendEmail as ReturnType<typeof vi.fn>).mockResolvedValue({ success: true });
+    (getEmailStatus as ReturnType<typeof vi.fn>).mockReturnValue({ configured: true, backend: 'resend', from: 'test@example.com' });
+
+    const req = makeRequest({
+      tool: 'erp-selection-playbook',
+      name: 'Dave Wilson',
+      email: 'dave@example.com',
+    });
+    const res = await POST(req);
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.ok).toBe(true);
+
+    const hubCall = (hubFetch as ReturnType<typeof vi.fn>).mock.calls[0][1];
+    const payload = JSON.parse(hubCall.body);
+    expect(payload.tool).toBe('erp-selection-playbook');
+    expect(payload.optin).toBe('ops-briefing');
+
+    expect(sendEmail).toHaveBeenCalledTimes(1);
+    const emailCall = (sendEmail as ReturnType<typeof vi.fn>).mock.calls[0][0];
+    expect(emailCall.to).toBe('dave@example.com');
+    expect(emailCall.subject).toBe('Your ERP selection playbook from Decoded Ops');
+    expect(emailCall.text).toContain('decodedops.co.uk/downloads/decoded-ops-erp-selection-playbook.docx');
+  });
 });

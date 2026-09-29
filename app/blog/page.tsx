@@ -101,7 +101,7 @@ export default async function BlogPage() {
                     Operational Audit Checklist
                   </h3>
                   <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--do-text-muted)' }}>
-                    20 questions to check your operations, technology, and processes. Use it before you hire a consultant, or to see what an audit actually covers.
+                    36 questions to check your operations, technology, and processes. Use it before you hire a consultant, or to see what an audit actually covers.
                   </p>
                 </div>
                 <div className="flex-shrink-0 mt-2">
