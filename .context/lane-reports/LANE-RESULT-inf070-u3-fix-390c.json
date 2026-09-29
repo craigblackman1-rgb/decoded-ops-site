@@ -1,0 +1,20 @@
+{
+  "lane": "inf070-u3-fix-390c",
+  "wo": "wo-marketing-funnel-2026-09-25",
+  "unit": "",
+  "commits": [
+    {
+      "sha": "ed5919ac5ddbd0a4e1e09a915be7d67789819048",
+      "subject": "fix(web): DownloadOptIn uses module class for dlBtn; stop 390px overflow (CR-WEB-061)"
+    }
+  ],
+  "filesChanged": ["components/DownloadOptIn.tsx"],
+  "verify": {
+    "tsc": "clean (0 errors)",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": ["CSS module (DownloadOptIn.module.css) already had correct .miniRow flex-wrap and 480px responsive .dlBtn rules — no CSS edit needed."],
+  "blockers": [],
+  "done": true
+}
