@@ -19,10 +19,20 @@
  * browser (no NEXT_PUBLIC_ prefix), so hubFetch must only be called from
  * server components, route handlers, or server actions — never client code.
  *
- * Hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
+ * GET hub calls time out after 10s so a slow or redeploying hub can't stall `next build` (WO-INF-075 u8).
+ * Writes (POST/PUT/PATCH/DELETE) are not given a default timeout — client file uploads
+ * (e.g. app/api/clients/uploads/route.ts) can take longer than 10s. A caller-supplied
+ * `init.signal` always wins.
  */
 export function hubFetch(input: string, init: RequestInit = {}): Promise<Response> {
   const key = process.env.HUB_PUBLIC_API_KEY;
+  const method = (init.method ?? 'GET').toUpperCase();
+  const signal =
+    init.signal !== undefined
+      ? init.signal
+      : method === 'GET'
+        ? AbortSignal.timeout(10_000)
+        : undefined;
   return fetch(input, {
     ...init,
     headers: {
@@ -30,6 +40,6 @@ export function hubFetch(input: string, init: RequestInit = {}): Promise<Respons
       ...(key ? { 'x-hub-key': key } : {}),
       ...init.headers,
     },
-    signal: init.signal === undefined ? AbortSignal.timeout(10_000) : init.signal,
+    ...(signal !== undefined ? { signal } : {}),
   });
 }
