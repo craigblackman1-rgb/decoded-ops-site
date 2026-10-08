@@ -383,6 +383,12 @@
   .a831 .st .n { font-size: 11px } .a831 .st h3 { font-size: 21px } .a831 .stEnd h3 { font-size: 26px } .a831 .st p { font-size: 14px }
   .a831 .d17Mark { left: 20px; bottom: 20px; font-size: 10px }
 }
+/* BUG-WEB-046 · phone ceiling (≤640px): drop the secondary print row so the stacked
+   route stops short of 1000px; the station text keeps the argument. After the 700px
+   block so it wins at ≤640. */
+@media (max-width: 640px) {
+  .a831 .prints { display: none }
+}
 @media (max-width: 760px) {
   .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
   .a920 .d17Ph { left: 0; bottom: auto; height: 250px }

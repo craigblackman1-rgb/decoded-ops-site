@@ -603,3 +603,14 @@
   .chd--e .d17-doc{ top:30px } .chd--e .d17-doc .ref{ display:none } .chd--e .d17-doc .approved{ margin-top:6px }
   .chd--e .d17-doc li:nth-child(2){ display:none }
 }
+
+/* ── BUG-WEB-046 · phone ceiling (≤640px): trim secondary layers on stacked pieces ── */
+@media (max-width: 640px){
+  .a945 .pin{ display:none }
+  .a949 .stage .d17-doc.f3, .a949 .stage .d17-doc.f4{ display:none }
+  .a953 .sx-tag{ display:none }
+  .a953 .phone2{ width:200px; --u:.8px }
+  .a954 .stage .d17-doc{ --u:.58px }
+  .a957 .win-main .col:first-child{ display:none }
+  .a957 .win-main{ --u:.85px }
+}

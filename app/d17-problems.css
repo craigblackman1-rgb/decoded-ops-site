@@ -469,3 +469,9 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
   .a967 .st .n{ font-size:10px } .a967 .st p{ font-size:13px } .a967 .st h4{ font-size:17px }
   .a967 .st--start h4{ font-size:24px }
 }
+/* ── BUG-WEB-046 · phone ceiling (≤640px): trim secondary layers on stacked pieces ── */
+@media (max-width: 640px){
+  .a718 .stage .d17-doc:nth-child(3){ display:none }
+  .a967{ padding:22px 18px 44px }
+  .a967 .lane{ margin-top:12px }
+}

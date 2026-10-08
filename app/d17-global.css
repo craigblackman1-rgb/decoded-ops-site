@@ -911,3 +911,11 @@ svg.q .strike{ stroke:color-mix(in srgb, var(--do-sky-blue) 60%, transparent); s
   .a1008 .st .n{ font-size:11px } .a1008 .st h3{ font-size:20px } .a1008 .st--end h3{ font-size:24px } .a1008 .st p{ font-size:14px }
   .a1008 .d17-mark--abs{ position:static; display:inline-block; margin-top:16px; left:auto; bottom:auto }
 }
+/* ── BUG-WEB-046 · phone ceiling (≤640px): reduce internal stacking on embedded
+   artwork so stages stop reaching 1000px+. Hide secondary decorative layers only;
+   the caption/station text that carries each argument stays. ── */
+@media (max-width: 640px){
+  .a831 .prints{ display:none }
+  .a930 .match{ display:none }
+  .a1008 .photopin{ display:none }
+}
