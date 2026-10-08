@@ -101,63 +101,60 @@ const heroArt971 = `<figure class="d17 sx px a971" data-od-id="hero-evidence" da
   </div>
 </figure>`;
 
-const inlineArt718 = `<figure class="d17 sw sw-doc a718" data-od-id="plate-method" data-motion data-no="DO-ART-718" data-rev="03" data-tx="photo"
-        aria-label="Artwork DO-ART-718, the Decoded Method in three layers. Three documents over a photograph of an embroidery floor. A process register lists every process with a named owner role: enquiry to quote, sales lead; artwork approval, studio manager; goods in, warehouse lead; production planning, production manager; embroidery run, production supervisor; despatch, despatch lead; invoicing, accounts. A one-page SOP for despatch in five sections. An improvement log of three-line entries: what happened, why, and what changed.">
-  <div class="d17-ph"><img src="/images/d17/problems/hero-workshop-8bff06.webp" alt="" width="1100" height="1224"></div>
+const inlineArt1011 = `<figure class="d17 sw sw-doc a718 a1011" data-od-id="plate-ownership" data-motion data-no="DO-ART-1011" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-1011, who owns operations. Three documents over a photograph of warehouse racking: a register of work nobody owns today, an options sheet for a hire, a part-time operations lead or a different structure, and a three-line decision log.">
+  <div class="d17-ph"><img src="/images/d17/problems/plate-racking-bays-626a9b.webp" alt="" width="1600" height="900" style="object-position:50% 40%"></div>
   <div class="d17-scan" aria-hidden="true"></div>
   <figcaption class="sw-cap">
-    <div class="k d17-mono">The Decoded Method <span>· in plain English</span></div>
+    <div class="k d17-mono">Operations ownership <span>· the options, written down</span></div>
     <div class="bar" aria-hidden="true"></div>
-    <h3>Three layers.</h3>
-    <p>How a business runs, written down so it can be handed over instead of living in one person's head.</p>
+    <h3>Who owns operations?</h3>
+    <p>A part-time operations lead gives you the accountability and the thinking without the overhead.</p>
     <ul class="keys">
-      <li><b>01</b><span>Process register</span><small>one page</small></li>
-      <li><b>02</b><span>One-page SOPs</span><small>five sections</small></li>
-      <li><b>03</b><span>Improvement log</span><small>three lines</small></li>
+      <li><b>01</b><span>Dedicated hire</span><small>one person, full time</small></li>
+      <li><b>02</b><span>Part-time lead</span><small>accountability, no overhead</small></li>
+      <li><b>03</b><span>Different structure</span><small>restructure what exists</small></li>
     </ul>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-718 · Rev 03</span>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1011 · Rev 01</span>
   </figcaption>
   <div class="stage" aria-hidden="true">
     <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
       <span class="tab">01</span>
-      <span class="ref">PR-01 · Process register</span>
-      <h4>Every process, one page</h4>
-      <p class="sub">each process has a named owner · reviewed quarterly</p>
+      <span class="ref">OO-01 · Ownership gaps</span>
+      <h4>Who owns it today?</h4>
+      <p class="sub">the work that falls between departments</p>
       <table class="reg">
-        <tr><th>Process</th><th>Owner</th><th>SOP</th></tr>
-        <tr><td>Enquiry to quote</td><td>Sales lead</td><td class="s">SOP-01</td></tr>
-        <tr><td>Artwork approval</td><td>Studio manager</td><td class="s">SOP-02</td></tr>
-        <tr><td>Goods in</td><td>Warehouse lead</td><td class="s">SOP-03</td></tr>
-        <tr><td>Production planning</td><td>Production manager</td><td class="s">SOP-04</td></tr>
-        <tr><td>Embroidery run</td><td>Production supervisor</td><td class="s">SOP-05</td></tr>
-        <tr><td>Despatch</td><td>Despatch lead</td><td class="s">SOP-06</td></tr>
-        <tr><td>Invoicing</td><td>Accounts</td><td class="s">SOP-07</td></tr>
+        <tr><th>Area</th><th>Owner today</th><th>Status</th></tr>
+        <tr><td>Processes that cross teams</td><td>Nobody</td><td class="s">Unowned</td></tr>
+        <tr><td>Systems that connect departments</td><td>Nobody</td><td class="s">Unowned</td></tr>
+        <tr><td>Improvements</td><td>Nobody</td><td class="s">Unowned</td></tr>
+        <tr><td>Operations decisions</td><td>Your desk</td><td class="s">Overloaded</td></tr>
       </table>
     </div>
     <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
       <span class="tab">02</span>
-      <span class="ref">SOP-06 · Despatch</span>
-      <h4>Despatch: pack and ship</h4>
-      <p class="sub">Owner: Despatch lead · one page</p>
-      <p class="h"><i>1</i>Purpose</p>
-      <p class="p">Every order leaves complete, checked and booked the same way.</p>
-      <p class="h"><i>2</i>When it applies</p>
-      <p class="p">Any order marked ready to ship.</p>
-      <p class="h"><i>3</i>Steps</p>
-      <div class="line" style="width:92%"></div><div class="line" style="width:84%"></div><div class="line" style="width:70%"></div>
-      <p class="h"><i>4</i>Checks</p>
-      <div class="line" style="width:80%"></div>
-      <p class="h"><i>5</i>If it goes wrong</p>
-      <p class="p">Log it in the improvement log, three lines.</p>
+      <span class="ref">OO-02 · Options</span>
+      <h4>What can your business support right now?</h4>
+      <p class="sub">level of ownership · one page</p>
+      <p class="h"><i>1</i>Dedicated</p>
+      <p class="p">A dedicated operations person.</p>
+      <p class="h"><i>2</i>Part-time</p>
+      <p class="p">A part-time operations lead.</p>
+      <p class="h"><i>3</i>Different structure</p>
+      <p class="p">A different structure altogether.</p>
+      <p class="h"><i>4</i>Where time goes</p>
+      <p class="p">Where your time goes, where the bottlenecks are.</p>
+      <p class="h"><i>5</i>Route forward</p>
+      <p class="p">Hiring, restructuring, or a retained part-time role.</p>
     </div>
     <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
       <span class="tab">03</span>
-      <span class="ref">IL · Improvement log</span>
+      <span class="ref">DL · Decision log</span>
       <h4>Three lines, every time</h4>
-      <div class="e"><div class="d"><b>Despatch</b>SOP-06</div>
-        <div class="t"><span><em>What</em>Second box of a two-box order left behind.</span><span><em>Why</em>No box count on the packing check.</span><span><em>Change</em>Box count added to SOP-06, step 4.</span></div></div>
-      <div class="e"><div class="d"><b>Artwork</b>SOP-02</div>
-        <div class="t"><span><em>What</em>Proof approved on an old version.</span><span><em>Why</em>Versions sent by email.</span><span><em>Change</em>Approval recorded against the version.</span></div></div>
+      <div class="e"><div class="d"><b>Option 2</b>Chosen</div>
+        <div class="t"><span><em>What</em>Operational leadership.</span><span><em>Why</em>Without a full-time salary.</span><span><em>Change</em>A retained part-time role.</span></div></div>
+      <div class="e"><div class="d"><b>Today</b>As-is</div>
+        <div class="t"><span><em>What</em>Cross-team work has no owner.</span><span><em>Why</em>Departments own only their own area.</span><span><em>Change</em>Named ownership, written down.</span></div></div>
     </div>
   </div>
 </figure>`;
@@ -196,7 +193,7 @@ export default function NoOpsOwnerPage() {
    relatedResources={problemRouting['no-ops-owner'].relatedResources}
    video={problemVideos['no-ops-owner']}
    heroArt={heroArt971}
-   inlineArt={inlineArt718}
+   inlineArt={inlineArt1011}
   />
    <D17Motion />
   </>
