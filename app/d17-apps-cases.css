@@ -171,7 +171,11 @@
 .a943::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(90deg, color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 60%,
     var(--do-prussian-blue) 100%) }
-.a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u)) }
+/* The resets here (display/background/transform/etc) neutralise the generic .desk pill
+   rule from d17-problems.css, which leaks into this div on /problems/inventory-blind. */
+.a943 .desk{ position:absolute; left:calc(44 * var(--u)); top:calc(64 * var(--u)); width:calc(590 * var(--u));
+  transform:none; display:block; background:none; border-radius:0; padding:0; white-space:normal; gap:0; z-index:auto;
+  box-shadow:none; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:normal; text-transform:none; color:inherit }
 .a943 .phone{ position:absolute; left:calc(596 * var(--u)); top:calc(150 * var(--u)); width:calc(214 * var(--u)); z-index:3;
   border-radius:calc(30 * var(--u)); padding:calc(10 * var(--u)); background:#0b1116;
   box-shadow:0 calc(30 * var(--u)) calc(60 * var(--u)) color-mix(in srgb, #000 60%, transparent), 0 0 0 2px color-mix(in srgb, var(--do-sky-blue) 25%, transparent);
@@ -222,6 +226,17 @@
   .a943 .cap3{ --u:1px }
   .a943 .d17-mark--abs{ left:14px; bottom:18px }
   .pv{ grid-template-columns:90px 1fr }
+}
+/* CR-WEB-074 fix1 · ≤640px ceiling for DO-ART-943: the catalogue card must sit fully
+   inside the figure (no left crop), the secondary phone mock-up drops out, and the
+   stack tightens so the whole piece is ≤800px at 342px wide. */
+@media (max-width: 640px){
+  .a943{ padding:14px 12px 56px; gap:14px }
+  .a943 .desk{ position:relative; left:auto; right:auto; top:auto; bottom:auto; width:100%; transform:none }
+  .a943 .desk .mw{ --u:.55px }
+  .a943 .phone{ display:none }
+  .a943 .cap3{ --u:.9px }
+  .a943 .cap3 li{ padding:10px 0 }
 }
 
 /* ─── DO-ART-944 · artwork manager hero · the approval history screen ─── */

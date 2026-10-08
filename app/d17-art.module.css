@@ -401,6 +401,26 @@
   .feeds { margin-top: 8px; padding: 6px 12px }
   .feeds .r { padding: 4px 0 }
 }
+/* CR-WEB-074 fix1 · ≤640px ceiling, second pass: drop the mock-up subline (not the
+   headline, the KPIs or the mark line) and tighten again to bring the stacked
+   piece under 800px on an 844px phone. */
+@media (max-width: 640px) {
+  .a917 { padding: 16px 14px 14px; gap: 14px }
+  .winBar { height: 28px }
+  .winMain { padding: 10px 12px }
+  .winMain .s { display: none }
+  .kpis { gap: 6px }
+  .kpi { padding: 8px 12px }
+  .meter { margin-top: 6px; padding: 6px 10px }
+  .meter .track { margin-top: 6px }
+  .feeds { margin-top: 6px; padding: 4px 10px }
+  .feeds .r { padding: 3px 0 }
+  .feeds .more { padding-top: 4px }
+  .a917 .cap .bar { margin: 12px 0 }
+  .a917 .cap p { margin-top: 10px }
+  .a917 .live { margin-top: 14px }
+  .a917 .d17Mark { margin-top: 18px }
+}
 @media (max-width: 760px) {
   .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
   .a920 .d17Ph { left: 0; bottom: auto; height: 250px }
