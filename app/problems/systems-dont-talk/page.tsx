@@ -91,8 +91,8 @@ const heroArt976 = `<figure class="d17 sx px a976" data-od-id="hero-evidence" da
   </div>
 </figure>`;
 
-const inlineArt918 = `<figure class="d17 sw sw-doc a918" data-od-id="plate-ledger" data-motion data-no="DO-ART-918" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-918, an evidence ledger. A table showing six systems, when they were bought, what they connect to, and what they don't. Most rows show no integration. The cost column adds up to a number nobody has ever added up before.">
+const inlineArt1012 = `<figure class="d17 sw sw-doc a1012" data-od-id="plate-ledger" data-motion data-no="DO-ART-1012" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-1012, an evidence ledger. A table showing six systems, when they were bought, what they connect to, and what they don't. Most rows show no integration. The cost column adds up to a number nobody has ever added up before.">
   <div class="q-grid" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Systems don't talk</span><span>The evidence ledger</span></div>
   <svg class="q" viewBox="0 0 560 420" aria-hidden="true">
@@ -128,7 +128,7 @@ const inlineArt918 = `<figure class="d17 sw sw-doc a918" data-od-id="plate-ledge
   <div class="sx-foot">
     <div class="sx-bar" aria-hidden="true"></div>
     <p class="sx-say">The cost was always there. <em>Nobody had added it up.</em></p>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1012 · Rev 01</span>
   </div>
 </figure>`;
 
@@ -142,7 +142,7 @@ export default function SystemsDontTalkPage() {
    intro="Most decoration and print businesses run four to seven separate systems. Order management, accounts, artwork, the website, despatch. Each one is an island. The only bridges between them are people typing the same data in again, spreadsheets, and emails."
    heroGraphic={<SystemsDontTalkSchematic />}
    heroArt={heroArt976}
-   inlineArt={inlineArt918}
+   inlineArt={inlineArt1012}
    symptoms={[
     "You type the same data into more than one system",
     "You can't see the whole order without checking three different places",

@@ -82,8 +82,8 @@ const heroArt975 = `<figure class="d17 sx px a975" data-od-id="hero-evidence" da
   </div>
 </figure>`;
 
-const inlineArt917 = `<figure class="d17 sw sw-doc a917" data-od-id="plate-product" data-motion data-no="DO-ART-917" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-917, a product screen replacing the spreadsheet. An order log that was a spreadsheet is now a named process with a documented workflow. Automated supplier price feeds replace stale manual entries. Standard tools anyone can use replace macros only one person understands. A full audit trail tracks every change.">
+const inlineArt1013 = `<figure class="d17 sw sw-doc a1013" data-od-id="plate-product" data-motion data-no="DO-ART-1013" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-1013, a product screen replacing the spreadsheet. An order log that was a spreadsheet is now a named process with a documented workflow. Automated supplier price feeds replace stale manual entries. Standard tools anyone can use replace macros only one person understands. A full audit trail tracks every change.">
   <div class="q-grid" aria-hidden="true"></div>
   <div class="sx-top d17-mono" aria-hidden="true"><span>Spreadsheet addiction</span><span>Documented system</span></div>
   <svg class="q" viewBox="0 0 560 420" aria-hidden="true">
@@ -116,7 +116,7 @@ const inlineArt917 = `<figure class="d17 sw sw-doc a917" data-od-id="plate-produ
   <div class="sx-foot">
     <div class="sx-bar" aria-hidden="true"></div>
     <p class="sx-say">Documented process. <em>Not a single file nobody else can read.</em></p>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-917 · Rev 01</span>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1013 · Rev 01</span>
   </div>
 </figure>`;
 
@@ -234,10 +234,10 @@ export default function SpreadsheetAddictionPage() {
     </div>
    </section>
 
-   {/* ── INLINE ARTWORK · DO-ART-917 ──────────────────────────────────── */}
+   {/* ── INLINE ARTWORK · DO-ART-1013 ─────────────────────────────────── */}
    <section className="g-navy">
     <div className="wrap">
-     <div dangerouslySetInnerHTML={{ __html: inlineArt917 }} />
+     <div dangerouslySetInnerHTML={{ __html: inlineArt1013 }} />
     </div>
    </section>
 
