@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { D17Motion } from '@/components/D17Motion';
+import { a942 } from '@/lib/d17-figures/a942';
+import { a943 } from '@/lib/d17-figures/a943';
 import { JsonLd } from '@/components/JsonLd';
 import '@/app/d17-global.css';
 import '@/app/d17-apps-cases.css';
@@ -124,80 +126,7 @@ export default function DataAppPage() {
             feeds, data enrichment, catalogue maintenance across channels. It has grown into the ERP, with stock control and order management built in.
             You can run it alongside the platform you already own, or let it replace it.</p>
 
-          <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 sw a942" data-od-id="layer-stack-diagram" data-motion data-no="DO-ART-942" data-rev="01" data-tx="schematic"
-        aria-label="Drawn plate DO-ART-942. Two ways to run Decoded Works, drawn side by side. Way A: the platform you already own stays at the bottom, Works sits alongside it, taking supplier feeds in, matching and enriching them, and pushing clean data back; the website, marketplaces and trade portal all read from one catalogue. Way B: Works is the system itself, running catalogue, orders, purchasing, stock, production and despatch, and the old platform is retired. Either way, every channel reads from one catalogue.">
-  <div class="q-grid" aria-hidden="true"></div>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-    <marker id="q-ah942" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ECAE6"/></marker>
-    <marker id="q-ah942a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FFB703"/></marker>
-  </defs></svg>
-  <svg class="q v-wide" viewBox="0 0 1600 700" aria-hidden="true">
-    <!-- A -->
-    <text class="t-m" x="20" y="30" style="font-size:17px">A · Alongside the platform you own</text>
-    <g class="m-rise" style="animation-delay:.05s"><rect class="bx" x="20" y="540" width="700" height="130" rx="14"/>
-      <text class="t-m" x="46" y="578" style="font-size:15px">Layer 1 · stays as it is</text>
-      <text class="t-h" x="46" y="620" style="font-size:30px">The platform you already own</text>
-      <text class="t-d" x="46" y="650" style="font-size:18px">your team knows it, it keeps doing what it does well</text></g>
-    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.4s" d="M370 538 V486" marker-end="url(#q-ah942a)"/>
-    <path class="ln-a m-draw" pathLength="1" style="animation-delay:.4s" d="M300 480 V528" marker-end="url(#q-ah942a)"/>
-    <g class="m-pop" style="animation-delay:.3s"><rect class="bx-a" x="20" y="306" width="700" height="170" rx="14"/>
-      <text class="t-m t-a" x="46" y="344" style="font-size:15px">Layer 2 · alongside</text>
-      <text class="t-h" x="46" y="388" style="font-size:32px">Decoded Works</text>
-      <text class="t" x="46" y="424" style="font-size:19px">feeds land · matched · enriched · pushed back clean</text>
-      <text class="t-d" x="46" y="454" style="font-size:17px">no re-keying, no second version of the truth</text></g>
-    <path class="ln m-draw" pathLength="1" style="animation-delay:.7s" d="M140 304 V250 M370 304 V250 M600 304 V250" marker-end="url(#q-ah942)"/>
-    <g class="m-rise" style="animation-delay:.8s">
-      <rect class="bx" x="20" y="150" width="220" height="92" rx="12"/><text class="t" x="46" y="204" style="font-size:22px;font-weight:700">Website</text>
-      <rect class="bx" x="260" y="150" width="220" height="92" rx="12"/><text class="t" x="286" y="204" style="font-size:22px;font-weight:700">Marketplaces</text>
-      <rect class="bx" x="500" y="150" width="220" height="92" rx="12"/><text class="t" x="526" y="204" style="font-size:22px;font-weight:700">Trade portal</text></g>
-    <text class="t-m" x="20" y="120" style="font-size:15px">Layer 3 · every channel, one catalogue</text>
-    <!-- or -->
-    <line x1="800" y1="70" x2="800" y2="670" stroke="#8ECAE6" stroke-opacity=".3" stroke-width="1.4" stroke-dasharray="6 6"/>
-    <circle cx="800" cy="400" r="34" fill="#023047" stroke="#8ECAE6" stroke-opacity=".6" stroke-width="1.4"/>
-    <text class="t-h" x="800" y="409" text-anchor="middle" style="font-size:24px">or</text>
-    <!-- B -->
-    <text class="t-m t-a" x="880" y="30" style="font-size:17px">B · As the system itself</text>
-    <g class="m-fade" style="animation-delay:.2s"><rect x="880" y="580" width="700" height="90" rx="14" fill="none" stroke="#8ECAE6" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="7 6"/>
-      <text class="t-d" x="906" y="634" style="font-size:22px">The old platform</text>
-      <line class="strike" x1="900" y1="626" x2="1086" y2="626"/>
-      <text class="t-m" x="1556" y="632" text-anchor="end" style="font-size:14px">retired</text></g>
-    <g class="m-pop" style="animation-delay:.45s"><rect class="bx-a" x="880" y="290" width="700" height="270" rx="14"/>
-      <text class="t-m t-a" x="906" y="328" style="font-size:15px">The system</text>
-      <text class="t-h" x="906" y="372" style="font-size:32px">Decoded Works</text>
-      <rect x="906" y="394" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="926" y="428" style="font-size:20px">Catalogue</text>
-      <rect x="1124" y="394" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1144" y="428" style="font-size:20px">Orders</text>
-      <rect x="1342" y="394" width="212" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1362" y="428" style="font-size:20px">Purchasing</text>
-      <rect x="906" y="460" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="926" y="494" style="font-size:20px">Stock + bins</text>
-      <rect x="1124" y="460" width="206" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1144" y="494" style="font-size:20px">Production</text>
-      <rect x="1342" y="460" width="212" height="54" rx="9" fill="#FFB703" fill-opacity=".13" stroke="#FFB703" stroke-opacity=".55"/><text class="t" x="1362" y="494" style="font-size:20px">Despatch</text></g>
-    <path class="ln m-draw" pathLength="1" style="animation-delay:.9s" d="M1000 288 V250 M1230 288 V250 M1460 288 V250" marker-end="url(#q-ah942)"/>
-    <g class="m-rise" style="animation-delay:1s">
-      <rect class="bx" x="880" y="150" width="220" height="92" rx="12"/><text class="t" x="906" y="204" style="font-size:22px;font-weight:700">Website</text>
-      <rect class="bx" x="1120" y="150" width="220" height="92" rx="12"/><text class="t" x="1146" y="204" style="font-size:22px;font-weight:700">Marketplaces</text>
-      <rect class="bx" x="1360" y="150" width="220" height="92" rx="12"/><text class="t" x="1386" y="204" style="font-size:22px;font-weight:700">Trade portal</text></g>
-    <text class="t-m" x="880" y="120" style="font-size:15px">Every channel, one catalogue</text>
-  </svg>
-  <svg class="q v-tall" viewBox="0 0 700 1210" aria-hidden="true">
-    <text class="t-m" x="10" y="32" style="font-size:22px">A · Alongside the platform</text>
-    <rect class="bx" x="10" y="56" width="680" height="80" rx="12"/><text class="t" x="34" y="106" style="font-size:26px;font-weight:700">Website · marketplaces · trade</text>
-    <path class="ln" d="M350 138 V172" marker-end="url(#q-ah942)"/>
-    <rect class="bx-a" x="10" y="180" width="680" height="120" rx="14"/><text class="t-m t-a" x="34" y="220" style="font-size:20px">Layer 2 · alongside</text><text class="t-h" x="34" y="270" style="font-size:36px">Decoded Works</text>
-    <rect class="bx" x="10" y="318" width="680" height="96" rx="12"/><text class="t-m" x="34" y="354" style="font-size:19px">Layer 1 · stays</text><text class="t" x="34" y="394" style="font-size:26px;font-weight:700">The platform you already own</text>
-    <line x1="10" y1="478" x2="690" y2="478" stroke="#8ECAE6" stroke-opacity=".3" stroke-dasharray="6 6"/>
-    <circle cx="350" cy="478" r="32" fill="#023047" stroke="#8ECAE6" stroke-opacity=".6"/><text class="t-h" x="350" y="488" text-anchor="middle" style="font-size:26px">or</text>
-    <text class="t-m t-a" x="10" y="566" style="font-size:22px">B · As the system itself</text>
-    <rect class="bx" x="10" y="590" width="680" height="80" rx="12"/><text class="t" x="34" y="640" style="font-size:26px;font-weight:700">Website · marketplaces · trade</text>
-    <path class="ln" d="M350 672 V706" marker-end="url(#q-ah942)"/>
-    <rect class="bx-a" x="10" y="714" width="680" height="330" rx="14"/><text class="t-m t-a" x="34" y="756" style="font-size:20px">The system</text><text class="t-h" x="34" y="806" style="font-size:36px">Decoded Works</text>
-    <text class="t" x="34" y="866" style="font-size:26px">Catalogue · Orders · Purchasing</text>
-    <text class="t" x="34" y="910" style="font-size:26px">Stock + bins · Production</text>
-    <text class="t" x="34" y="954" style="font-size:26px">Despatch</text>
-    <rect x="10" y="1064" width="680" height="80" rx="12" fill="none" stroke="#8ECAE6" stroke-opacity=".45" stroke-dasharray="7 6"/><text class="t-d" x="34" y="1114" style="font-size:26px">The old platform · retired</text>
-    <line class="strike" x1="30" y1="1105" x2="250" y2="1105"/>
-  </svg>
-  <div class="foot"><span class="k d17-mono">Two ways to run it · one catalogue either way</span><span class="d17-mark">decodedops.co.uk · DO-ART-942 · Rev 01</span></div>
-</figure>` }} />
+          <div dangerouslySetInnerHTML={{ __html: a942 }} />
 
           <div className="steps">
             <article className="step">
@@ -228,52 +157,7 @@ export default function DataAppPage() {
           <span className="eyebrow">The screens</span>
           <h2>What it looks like running the operation.</h2>
 
-          <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 sw a943" data-od-id="screens-visual" data-motion data-no="DO-ART-943" data-rev="01" data-tx="photo"
-        aria-label="Artwork DO-ART-943. A graded workbench photograph with two Decoded Works screens over it. On the desk, the catalogue view: one parent product, a work polo, with its supplier, decoration and size and colour variants, each linked to stock and a bin. On the warehouse phone, a bin label being scanned and the stock put away to its bin. Captions: the dashboard shows what needs a decision; the catalogue view holds one product and every variant; supplier imports land and are matched.">
-  <div class="d17-ph"><img src="/images/d17/apps-cases/gen-bench-flatlay-dea11a.webp" alt="" width="1024" height="1024"></div>
-  <div class="d17-scan" aria-hidden="true"></div>
-  <div class="desk m-rise" style="animation-delay:.1s" aria-hidden="true">
-    <div class="mw">
-      <div class="mw-bar"><span class="dots"><i></i><i></i><i></i></span><span class="crumb"><span>Catalogue › Parent products ›</span> PRD-20118</span><span class="pill">CATALOGUE</span></div>
-      <div class="mw-main">
-        <h5>Work polo, piqué</h5>
-        <p class="s">One parent product · every variant linked to stock and a bin</p>
-        <div class="pv">
-          <div class="img"><img src="/images/d17/apps-cases/prod-polo-80aad7.webp" alt=""></div>
-          <dl>
-            <dt>Supplier</dt><dd>Supplier A · matched automatically</dd>
-            <dt>Decoration</dt><dd>Embroidery · left chest</dd>
-            <dt>Channels</dt><dd>Website · trade portal</dd>
-            <dt>Status</dt><dd>Live, kept current from the feed</dd>
-          </dl>
-        </div>
-        <table class="vg">
-          <tr><th>SKU</th><th>Colour</th><th>Size</th><th>Bin</th><th>Status</th></tr>
-          <tr><td>PRD-20118-NVY-M</td><td>Navy</td><td>M</td><td>A-04-2</td><td><span class="st">LIVE</span></td></tr>
-          <tr><td>PRD-20118-NVY-L</td><td>Navy</td><td>L</td><td>A-04-3</td><td><span class="st">LIVE</span></td></tr>
-          <tr><td>PRD-20118-BLK-M</td><td>Black</td><td>M</td><td>A-05-1</td><td><span class="st">LIVE</span></td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="phone m-drop" style="animation-delay:.6s" aria-hidden="true">
-    <div class="scr">
-      <div class="ph-bar"><small>WAREHOUSE · PUT AWAY</small>Scan a bin</div>
-      <div class="cam"><div class="lbl">BIN A-04-3<i></i></div><div class="aim"></div></div>
-      <div class="ph-row"><span class="l">Scanned</span><b>PRD-20118-NVY-L</b>12 units</div>
-      <div class="ph-row ph-row--ok m-pop" style="animation-delay:1.2s"><span class="l">Put away</span><b>Bin A-04-3</b>stock record updated</div>
-    </div>
-  </div>
-  <figcaption class="cap3">
-    <ol>
-      <li><b>Dashboard</b>What needs a decision today, and what is already running.</li>
-      <li class="hit"><b>Catalogue view</b>One parent product, every variant, every bin.</li>
-      <li><b>Supplier import</b>Feeds land, get matched, and stay current.</li>
-    </ol>
-  </figcaption>
-  <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-943 · Rev 01</span>
-</figure>` }} />
+          <div dangerouslySetInnerHTML={{ __html: a943 }} />
         </div>
       </section>
 

@@ -90,24 +90,62 @@ const heroArt970 = `<figure class="d17 sx px a970" data-od-id="hero-evidence" da
   </div>
 </figure>`;
 
-const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
-        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
+const inlineArt1009 = `<figure class="d17 sw sw-doc a718 a1009" data-od-id="plate-workarounds" data-motion data-no="DO-ART-1009" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-1009, the second system written down. Three documents over a photograph of printed job sheets: a register of five workarounds, each with where it lives and a cost that reads not measured; a workaround card for the master spreadsheet; and a cost log of time, mistakes and risk.">
+  <div class="d17-ph"><img src="/images/d17/problems/plate-job-sheets-63dd9c.webp" alt="" width="1600" height="900" style="object-position:50% 50%"></div>
   <div class="d17-scan" aria-hidden="true"></div>
-  <figcaption class="copy">
-    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
-    <h3>Seventeen feeds in. Every item binned.</h3>
-    <ol class="ledger">
-      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
-      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
-      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
-      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
-      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
-    </ol>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Manual workarounds <span>· the second system</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Every workaround, listed.</h3>
+    <p>The cost of workarounds never appears on an invoice. Until it's measured, there's no case for fixing it.</p>
+    <ul class="keys">
+      <li><b>01</b><span>Find every one</span><small>on site</small></li>
+      <li><b>02</b><span>Cost it</span><small>time, mistakes, risk</small></li>
+      <li><b>03</b><span>Remove them</span><small>quick wins first</small></li>
+    </ul>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1009 · Rev 01</span>
   </figcaption>
-  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
-    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
+      <span class="tab">01</span>
+      <span class="ref">WR-01 · Workaround register</span>
+      <h4>Every workaround, one page</h4>
+      <p class="sub">what it is · where it lives · what it costs</p>
+      <table class="reg">
+        <tr><th>Workaround</th><th>Where it lives</th><th>Cost</th></tr>
+        <tr><td>Master spreadsheet, updated by hand daily</td><td>Spreadsheet</td><td><span class="chip chip--a">Not measured</span></td></tr>
+        <tr><td>The same data typed in more than once</td><td>Official system and sheet</td><td><span class="chip chip--a">Not measured</span></td></tr>
+        <tr><td>One system checked against another</td><td>By hand, every week</td><td><span class="chip chip--a">Not measured</span></td></tr>
+        <tr><td>Month-end data pull</td><td>Manual</td><td><span class="chip chip--a">Not measured</span></td></tr>
+        <tr><td>Custom spreadsheet or database, now critical</td><td>One person</td><td><span class="chip chip--a">Not measured</span></td></tr>
+      </table>
+    </div>
+    <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
+      <span class="tab">02</span>
+      <span class="ref">WC-01 · Workaround card</span>
+      <h4>Master spreadsheet</h4>
+      <p class="sub">found on site · one card each</p>
+      <p class="h"><i>1</i>What it does</p>
+      <p class="p">Does the job the official system doesn't.</p>
+      <p class="h"><i>2</i>Who keeps it</p>
+      <p class="p">One person. When they're on holiday, nobody knows how it works.</p>
+      <p class="h"><i>3</i>What it costs</p>
+      <div class="line" style="width:88%"></div><div class="line" style="width:76%"></div><div class="line" style="width:82%"></div>
+      <p class="h"><i>4</i>Fix</p>
+      <p class="p">Quick win, or a connection fix that closes the gap.</p>
+      <p class="h"><i>5</i>Status</p>
+      <p class="p">Cost not yet measured.</p>
+    </div>
+    <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
+      <span class="tab">03</span>
+      <span class="ref">CL · Cost log</span>
+      <h4>Time, mistakes, risk</h4>
+      <div class="e"><div class="d"><b>Master sheet</b>Daily</div>
+        <div class="t"><span><em>What</em>Updated by hand every day.</span><span><em>Why</em>The system doesn't do the job.</span><span><em>Change</em>Quick win: close the gap, retire the sheet.</span></div></div>
+      <div class="e"><div class="d"><b>Month-end</b>Monthly</div>
+        <div class="t"><span><em>What</em>A manual data pull every month.</span><span><em>Why</em>Two systems can't talk to each other.</span><span><em>Change</em>Connection fix.</span></div></div>
+    </div>
   </div>
 </figure>`;
 
@@ -145,7 +183,7 @@ export default function ManualWorkaroundsPage() {
    relatedResources={problemRouting['manual-workarounds'].relatedResources}
    video={problemVideos['manual-workarounds']}
    heroArt={heroArt970}
-   inlineArt={inlineArt918}
+   inlineArt={inlineArt1009}
   />
    <D17Motion />
   </>

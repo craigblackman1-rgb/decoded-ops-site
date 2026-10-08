@@ -1,0 +1,33 @@
+// Shared D17 figure 998 (CR-WEB-074): extracted verbatim from tools/rto-calculator.
+export const a998 = `<figure class="d17 sx px a998" data-od-id="hero-art" data-motion data-no="DO-ART-998" data-rev="01" data-tx="schematic"
+        aria-label="Drawn plate DO-ART-998, recovery time to scale, labelled Example and worked from the calculator's defaults: one thousand pounds of revenue an hour, four major incidents a year, current recovery eight hours, target one hour. Four incident bars run to eight hours each; inside each, the one-hour target in amber. Current annual recovery cost £32,000; target £4,000; annual saving £28,000; over three years, £84,000. Seven hours back, four times a year.">
+  <div class="q-grid" aria-hidden="true"></div>
+  <div class="sx-top d17-mono" aria-hidden="true"><span>Recovery time</span><span>Example · to scale</span></div>
+  <div class="body">
+    <p class="rt-k d17-mono">£1,000 an hour · 4 incidents a year</p>
+    <div class="inc">
+      <div class="sc"><span>0h</span><span>2h</span><span>4h</span><span>6h</span><span>8h</span></div>
+      <div class="r"><span class="l d17-mono">Incident 1</span><span class="b"><i class="now m-fill" style="animation-delay:.1s"></i><i class="tg m-pop" style="animation-delay:1.2s"></i></span></div>
+      <div class="r"><span class="l d17-mono">Incident 2</span><span class="b"><i class="now m-fill" style="animation-delay:.25s"></i><i class="tg m-pop" style="animation-delay:1.3s"></i></span></div>
+      <div class="r"><span class="l d17-mono">Incident 3</span><span class="b"><i class="now m-fill" style="animation-delay:.4s"></i><i class="tg m-pop" style="animation-delay:1.4s"></i></span></div>
+      <div class="r"><span class="l d17-mono">Incident 4</span><span class="b"><i class="now m-fill" style="animation-delay:.55s"></i><i class="tg m-pop" style="animation-delay:1.5s"></i></span></div>
+      <div class="key"><span class="k-now">Now: 8 hours</span><span class="k-tg">Target: 1 hour</span></div>
+    </div>
+    <div class="rt-sum">
+      <div><span>Now, a year</span><b>£32,000</b></div>
+      <div><span>Target, a year</span><b>£4,000</b></div>
+      <div class="hot"><span>Saving, a year</span><b>£28,000</b></div>
+    </div>
+  </div>
+  <div class="sx-foot">
+    <div class="sx-bar" aria-hidden="true"></div>
+    <p class="sx-say">Seven hours back, <em>four times a year.</em></p>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-998 · Rev 01</span>
+  </div>
+</figure>`;
+
+// Inline-slot cut: capped at 560px centred (BUG-WEB-046 / swap map §2).
+export const a998Solo = a998.replace(
+  'class="d17 sx px a998"',
+  'class="d17 sx sx--solo px a998"'
+);

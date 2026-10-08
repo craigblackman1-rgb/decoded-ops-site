@@ -475,3 +475,14 @@ svg.q .vac{ fill:url(#q-hatch-o); stroke:var(--do-amber); stroke-width:2.2; stro
   .a967{ padding:22px 18px 44px }
   .a967 .lane{ margin-top:12px }
 }
+
+/* ─── DO-ART-1009/1010/1011 · new sw-doc variants (CR-WEB-074) ───
+   Same recipe as a718, tightened so the plate stays ≤ ~610px at 1152 wide
+   (≤70svh at 1440x900); long register cells wrap instead of overflowing. */
+.a1009 .stage, .a1010 .stage, .a1011 .stage{ min-height:calc(520 * var(--u)) }
+.a1009 .doc-l, .a1010 .doc-l, .a1011 .doc-l{ top:calc(340 * var(--u)) }
+.a1009, .a1010, .a1011{ padding:calc(44 * var(--pu)) calc(46 * var(--pu)) calc(48 * var(--pu)) calc(52 * var(--pu)) }
+.a1009 .reg td, .a1010 .reg td, .a1011 .reg td{ white-space:normal; font-weight:500 }
+@media (max-width: 640px){
+  .a1009 .stage .d17-doc, .a1010 .stage .d17-doc, .a1011 .stage .d17-doc{ --u:.74px }
+}

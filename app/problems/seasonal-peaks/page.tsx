@@ -216,29 +216,65 @@ export default function SeasonalPeaksPage() {
     </section>
    )}
 
-   {/* ── INLINE ARTWORK · DO-ART-918 ──────────────────────────────────── */}
+   {/* ── INLINE ARTWORK · DO-ART-1010 ──────────────────────────────────── */}
    <section className="g-navy">
     <div className="wrap">
-     <span className="eyebrow">Evidence · DO-ART-918</span>
+     <span className="eyebrow">Written down · DO-ART-1010</span>
      <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
-        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
+<figure class="d17 sw sw-doc a718 a1010" data-od-id="plate-peaks" data-motion data-no="DO-ART-1010" data-rev="01" data-tx="photo"
+        aria-label="Artwork DO-ART-1010, written down before the peak. Three documents over a photograph of stacked pallets: a peak calendar of schoolwear, teamwear and promotional rhythms; a one-page SOP for checking names and numbers that a seasonal worker can follow; and a three-line peak log.">
+  <div class="d17-ph"><img src="/images/d17/problems/plate-pallets-12eebd.webp" alt="" width="1600" height="900" style="object-position:30% 50%"></div>
   <div class="d17-scan" aria-hidden="true"></div>
-  <figcaption class="copy">
-    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
-    <h3>Seventeen feeds in. Every item binned.</h3>
-    <ol class="ledger">
-      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
-      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
-      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
-      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
-      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
-    </ol>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
+  <figcaption class="sw-cap">
+    <div class="k d17-mono">Seasonal peaks <span>· before the peak lands</span></div>
+    <div class="bar" aria-hidden="true"></div>
+    <h3>Written down before the peak.</h3>
+    <p>Seasonal staff only help if there's a documented process to follow. Without one, every temp needs hand-holding from the people who are already overloaded.</p>
+    <ul class="keys">
+      <li><b>01</b><span>One-page SOP</span><small>a temp can follow</small></li>
+      <li><b>02</b><span>Demand against capacity</span><small>mapped before the peak</small></li>
+      <li><b>03</b><span>Automate first</span><small>ranked in the plan</small></li>
+    </ul>
+    <span class="d17-mark">decodedops.co.uk · DO-ART-1010 · Rev 01</span>
   </figcaption>
-  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
-    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
+  <div class="stage" aria-hidden="true">
+    <div class="d17-doc doc-r m-drop" style="animation-delay:.1s">
+      <span class="tab">01</span>
+      <span class="ref">PC-01 · Peak calendar</span>
+      <h4>Three rhythms, one year</h4>
+      <p class="sub">what lands, and when</p>
+      <table class="reg">
+        <tr><th>Rhythm</th><th>Peak</th><th>What lands</th></tr>
+        <tr><td>Schoolwear</td><td>July to September</td><td>Embroidery runs, printed logos, size-specific orders</td></tr>
+        <tr><td>Teamwear</td><td>March to June</td><td>Names, numbers, sponsor logos</td></tr>
+        <tr><td>Promotional</td><td>November to January</td><td>Quoting, artworking, producing at ten times the usual volume</td></tr>
+      </table>
+    </div>
+    <div class="d17-doc sop doc-s m-drop" style="animation-delay:.4s">
+      <span class="tab">02</span>
+      <span class="ref">SOP-09 · Teamwear names and numbers</span>
+      <h4>Check names and numbers before the run</h4>
+      <p class="sub">Owner: Production supervisor · one page · for seasonal staff</p>
+      <p class="h"><i>1</i>Purpose</p>
+      <p class="p">Every personalised kit goes out with the right names and numbers.</p>
+      <p class="h"><i>2</i>When it applies</p>
+      <p class="p">Before any teamwear run starts.</p>
+      <p class="h"><i>3</i>Steps</p>
+      <div class="line" style="width:90%"></div><div class="line" style="width:80%"></div><div class="line" style="width:72%"></div>
+      <p class="h"><i>4</i>Checks</p>
+      <div class="line" style="width:78%"></div>
+      <p class="h"><i>5</i>If it goes wrong</p>
+      <p class="p">Stop the run. Tell the production supervisor.</p>
+    </div>
+    <div class="d17-doc il doc-l m-drop" style="animation-delay:.7s">
+      <span class="tab">03</span>
+      <span class="ref">IL · Peak log</span>
+      <h4>Three lines, every time</h4>
+      <div class="e"><div class="d"><b>Peak</b>Seasonal</div>
+        <div class="t"><span><em>What</em>Seasonal staff needed hand-holding.</span><span><em>Why</em>No documented process to follow.</span><span><em>Change</em>One-page SOP written before the peak.</span></div></div>
+      <div class="e"><div class="d"><b>Routing</b>Orders</div>
+        <div class="t"><span><em>What</em>Orders landed faster than the team could process.</span><span><em>Why</em>Manual steps have a hard ceiling.</span><span><em>Change</em>Order-to-production routing moved into the system.</span></div></div>
+    </div>
   </div>
 </figure>` }} />
     </div>

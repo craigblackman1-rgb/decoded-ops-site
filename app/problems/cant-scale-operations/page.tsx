@@ -6,7 +6,9 @@ import { problemRouting } from '@/data/problem-routing';
 import { problemVideos } from '@/data/problem-videos';
 import '@/app/d17-global.css';
 import '@/app/d17-problems.css';
+import '@/app/d17-resources.css';
 import { D17Motion } from '@/components/D17Motion';
+import { a993 } from '@/lib/d17-figures/a993';
 
 export const metadata: Metadata = {
  title: "Scaling a Business When Operations Won't | Decoded Ops",
@@ -154,26 +156,7 @@ const heroArt963 = `<figure class="d17 sx px a963" data-od-id="hero-evidence" da
   </div>
 </figure>`;
 
-const inlineArt918 = `<figure class="d17 a918" data-od-id="plate-evidence" data-motion data-no="DO-ART-918" data-rev="01" data-tx="photo"
-        aria-label="Evidence piece DO-ART-918. A sports and teamwear client on Works, live in September 2026: 17 supplier feeds, 27,778 supplier products, 236,056 variants, 952 products live on their website, and 100 per cent of stock with a bin location.">
-  <div class="d17-ph"><img src="/images/d17/problems/cat-workwear-401e08.webp" alt="" width="900" height="596"></div>
-  <div class="d17-scan" aria-hidden="true"></div>
-  <figcaption class="copy">
-    <div class="k d17-mono">A sports and teamwear client <span>· live system, Sept 2026</span></div>
-    <h3>Seventeen feeds in. Every item binned.</h3>
-    <ol class="ledger">
-      <li class="m-fade" style="animation-delay:.2s"><span class="n">17</span><span class="t">supplier feeds, automated</span></li>
-      <li class="m-fade" style="animation-delay:.55s"><span class="n">27,778</span><span class="t">supplier products in one catalogue</span></li>
-      <li class="m-fade" style="animation-delay:.9s"><span class="n">236,056</span><span class="t">variants, split by colour and size</span></li>
-      <li class="m-fade" style="animation-delay:1.25s"><span class="n">952</span><span class="t">products live on their website</span></li>
-      <li class="end m-fade" style="animation-delay:1.6s"><span class="n">100%</span><span class="t">of stock with a bin location</span></li>
-    </ol>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-918 · Rev 01</span>
-  </figcaption>
-  <div class="print m-drop" style="animation-delay:1.9s" aria-hidden="true">
-    <span class="ref">BIN · PICK FACE</span><b>A-04-2</b><div class="bc"></div><div class="s">Polo · navy · M</div>
-  </div>
-</figure>`;
+
 
 export default function CantScaleOperationsPage() {
  return (
@@ -222,7 +205,7 @@ export default function CantScaleOperationsPage() {
    relatedResources={problemRouting['cant-scale-operations'].relatedResources}
    video={problemVideos['cant-scale-operations']}
    heroArt={heroArt963}
-   inlineArt={inlineArt918}
+   inlineArt={a993}
   />
    <D17Motion />
   </>
