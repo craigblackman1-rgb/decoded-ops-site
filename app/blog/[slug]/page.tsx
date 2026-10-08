@@ -228,8 +228,17 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
             <img
               src={item.images[0]}
               alt=""
-              className="rounded-2xl shadow-sm w-full"
-              style={{ border: '1px solid var(--do-border-subtle)' }}
+              width={1200}
+              height={675}
+              className="rounded-2xl shadow-sm"
+              style={{
+                border: '1px solid var(--do-border-subtle)',
+                maxWidth: 960,
+                marginInline: 'auto',
+                aspectRatio: '16 / 9',
+                objectFit: 'cover',
+                height: 'auto',
+              }}
               loading="lazy"
             />
           </div>
