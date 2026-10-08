@@ -92,7 +92,7 @@
    containing block (= the figure's own width); the % gap resolves against the grid content
    box (W − 100/1152 W), so 40/1052 = 40u of full width. */
 .a917 { --u: calc(100cqw / 1152); --pu: calc(100% / 1152); display: grid; grid-template-columns: 31% 1fr; gap: calc(40 / 1052 * 100%);
-  padding: calc(56 * var(--pu)) calc(48 * var(--pu)) calc(64 * var(--pu)) calc(52 * var(--pu)); margin-top: 38px }
+  padding: calc(40 * var(--pu)) calc(44 * var(--pu)) calc(40 * var(--pu)) calc(48 * var(--pu)); margin-top: 38px }
 .a917 .d17Ph img { object-position: 80% 50%; opacity: .75 }
 .a917::before { content: ''; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 30%,
@@ -115,7 +115,7 @@
   color: var(--do-prussian-blue); box-shadow: 0 calc(30 * var(--u)) calc(60 * var(--u)) color-mix(in srgb, #000 50%, transparent),
     0 0 0 1px color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
 .winBar { display: flex; align-items: center; gap: calc(14 * var(--u)); padding: 0 calc(18 * var(--u));
-  height: max(34px, calc(48 * var(--u))); background: color-mix(in srgb, var(--do-prussian-blue) 92%, #000);
+  height: max(32px, calc(40 * var(--u))); background: color-mix(in srgb, var(--do-prussian-blue) 92%, #000);
   color: var(--do-off-white); font-size: max(11px, calc(15 * var(--u))) }
 .winBar .dots { display: flex; gap: 6px }
 .winBar .dots i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--do-sky-blue) 45%, transparent) }
@@ -130,42 +130,42 @@
 .winNav span svg { width: max(14px, calc(20 * var(--u))); height: max(14px, calc(20 * var(--u))) }
 .winNav span.on { color: var(--do-white); background: color-mix(in srgb, var(--do-cerulean) 24%, transparent);
   box-shadow: inset 3px 0 0 var(--do-sky-blue) }
-.winMain { padding: calc(26 * var(--u)) calc(28 * var(--u)) calc(28 * var(--u)) }
-.winMain h5 { margin: 0; font-family: var(--do-font-heading); font-weight: 800; font-size: max(17px, calc(28 * var(--u)));
+.winMain { padding: calc(20 * var(--u)) calc(24 * var(--u)) calc(20 * var(--u)) }
+.winMain h5 { margin: 0; font-family: var(--do-font-heading); font-weight: 800; font-size: max(16px, calc(24 * var(--u)));
   letter-spacing: -.025em; color: var(--do-prussian-blue) }
 .winMain .s { margin: 4px 0 0; font-size: max(11px, calc(14 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) }
-.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(14 * var(--u)); margin-top: calc(20 * var(--u)) }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(12 * var(--u)); margin-top: calc(14 * var(--u)) }
 .kpi { background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
-  border-radius: calc(9 * var(--u)); padding: calc(16 * var(--u)) calc(18 * var(--u)) }
+  border-radius: calc(9 * var(--u)); padding: calc(12 * var(--u)) calc(14 * var(--u)) }
 .kpi .l { font-family: var(--do-font-mono); font-size: max(8px, calc(10.5 * var(--u))); letter-spacing: .16em;
   text-transform: uppercase; color: color-mix(in srgb, var(--do-prussian-blue) 62%, transparent) }
-.kpi .n { margin: calc(8 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800;
-  font-size: max(24px, calc(42 * var(--u))); line-height: 1; letter-spacing: -.035em; font-variant-numeric: tabular-nums; color: var(--do-prussian-blue) }
-.kpi .d { margin: calc(8 * var(--u)) 0 0; font-size: max(11px, calc(13 * var(--u))); line-height: 1.35;
+.kpi .n { margin: calc(6 * var(--u)) 0 0; font-family: var(--do-font-heading); font-weight: 800;
+  font-size: max(22px, calc(34 * var(--u))); line-height: 1; letter-spacing: -.035em; font-variant-numeric: tabular-nums; color: var(--do-prussian-blue) }
+.kpi .d { margin: calc(6 * var(--u)) 0 0; font-size: max(11px, calc(13 * var(--u))); line-height: 1.35;
   color: color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .kpiHit { border: 2px solid var(--do-amber); box-shadow: 0 0 0 4px color-mix(in srgb, var(--do-amber) 18%, transparent) }
-.meter { margin-top: calc(14 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
-  border-radius: calc(9 * var(--u)); padding: calc(14 * var(--u)) calc(18 * var(--u)) }
+.meter { margin-top: calc(10 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  border-radius: calc(9 * var(--u)); padding: calc(10 * var(--u)) calc(14 * var(--u)) }
 .meter .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
   font-size: max(11px, calc(14 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .meter .row b { font-family: var(--do-font-heading); font-size: max(13px, calc(16 * var(--u))); color: var(--do-prussian-blue) }
-.meter .track { margin-top: calc(10 * var(--u)); height: max(7px, calc(10 * var(--u))); border-radius: 9px;
+.meter .track { margin-top: calc(8 * var(--u)); height: max(6px, calc(8 * var(--u))); border-radius: 9px;
   background: color-mix(in srgb, var(--do-prussian-blue) 9%, transparent); overflow: hidden }
 .meter .fill { height: 100%; border-radius: 9px; transform-origin: left center;
   background: linear-gradient(90deg, var(--do-cerulean), var(--do-sky-blue)) }
-.feeds { margin-top: calc(14 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
-  border-radius: calc(9 * var(--u)); padding: calc(12 * var(--u)) calc(18 * var(--u)) calc(10 * var(--u)) }
+.feeds { margin-top: calc(10 * var(--u)); background: var(--do-white); border: 1px solid color-mix(in srgb, var(--do-prussian-blue) 12%, transparent);
+  border-radius: calc(9 * var(--u)); padding: calc(8 * var(--u)) calc(14 * var(--u)) calc(8 * var(--u)) }
 .feeds .hd { display: flex; justify-content: space-between; font-size: max(11px, calc(14 * var(--u))) }
 .feeds .hd b { font-family: var(--do-font-heading); font-size: max(13px, calc(16 * var(--u))) }
 .feeds .r { display: grid; grid-template-columns: 1.1fr 1.4fr auto; gap: 10px; align-items: center;
-  padding: calc(8 * var(--u)) 0; border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
+  padding: calc(5 * var(--u)) 0; border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
   font-size: max(11px, calc(13.5 * var(--u))) }
-.feeds .r:first-of-type { margin-top: calc(8 * var(--u)) }
+.feeds .r:first-of-type { margin-top: calc(6 * var(--u)) }
 .feeds .r b { font-weight: 700 }
 .feeds .ok { font-family: var(--do-font-mono); font-size: max(8px, calc(10 * var(--u))); letter-spacing: .12em;
   padding: 3px 9px; border-radius: 99px; color: var(--do-prussian-blue);
   background: color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
-.feeds .more { padding-top: calc(8 * var(--u)); border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
+.feeds .more { padding-top: calc(6 * var(--u)); border-top: 1px solid color-mix(in srgb, var(--do-prussian-blue) 9%, transparent);
   font-size: max(11px, calc(13 * var(--u))); color: color-mix(in srgb, var(--do-prussian-blue) 65%, transparent) }
 
 /* ─── DO-ART-918 · home evidence · teamwear figures on a graded stock photo ─── */
@@ -388,6 +388,18 @@
    block so it wins at ≤640. */
 @media (max-width: 640px) {
   .a831 .prints { display: none }
+}
+/* CR-WEB-046/074 · phone ceiling for DO-ART-917: tighten the mock-up internals
+   (spacing only — every figure, meter and feed row stays) to bring the stacked
+   piece under ~820px on an 844px phone. */
+@media (max-width: 640px) {
+  .a917 { padding: 22px 16px 20px; gap: 18px }
+  .winMain { padding: 14px 14px }
+  .kpis { gap: 8px }
+  .kpi { padding: 10px 12px }
+  .meter { margin-top: 8px; padding: 8px 12px }
+  .feeds { margin-top: 8px; padding: 6px 12px }
+  .feeds .r { padding: 4px 0 }
 }
 @media (max-width: 760px) {
   .a920 { grid-template-columns: 1fr; min-height: 0; aspect-ratio: auto }
