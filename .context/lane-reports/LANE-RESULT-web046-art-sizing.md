@@ -96,3 +96,17 @@ unchanged, as the brief scoped the cap to the hero.
   five files this lane did not touch.
 - No dev server / browser measurement was run (lane contract); fix-3 height reductions
   are CSS-reasoned, not re-measured.
+
+## fix1 (lane web046-fix1) — blog hero mobile overflow, follow-up
+
+Fix 5 capped the hero with `maxWidth:960` but omitted `width:'100%'` and
+`display:'block'`. The `<img>` is a replaced element sized by its width/height
+attributes, so on a 390px phone it still rendered 960px wide and overflowed the
+page; `marginInline:auto` also had no effect because an inline image is not a
+block box.
+
+`app/blog/[slug]/page.tsx` (style object on the hero `<img>`) gained exactly two
+declarations: `width: '100%'` and `display: 'block'`. `maxWidth:960`,
+`marginInline:auto`, `aspectRatio:'16 / 9'`, `objectFit:cover` and `height:auto`
+are unchanged. The image now fills its container up to the 960px cap and centres
+as a block. `npx tsc --noEmit` clean. No other lines touched.

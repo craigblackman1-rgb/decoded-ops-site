@@ -1,0 +1,23 @@
+{
+  "lane": "web046-fix1",
+  "wo": "wo-brand-consistency-cleanup-2026-10",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "0c01482",
+      "subject": "fix(art): blog hero full-width up to 960px, block display (BUG-WEB-046)"
+    }
+  ],
+  "filesChanged": [
+    "app/blog/[slug]/page.tsx",
+    ".context/lane-reports/LANE-RESULT-web046-art-sizing.md"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [],
+  "blockers": [],
+  "done": true
+}
