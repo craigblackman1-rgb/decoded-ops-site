@@ -1,0 +1,40 @@
+{
+  "lane": "web046-art-sizing",
+  "wo": "wo-brand-consistency-cleanup-2026-10",
+  "unit": "BUG-WEB-046",
+  "commits": [
+    { "sha": "de21eb3", "subject": "fix(art): replace cqw self-sizing on .d17 figures with aspect-ratio/percent equivalents (BUG-WEB-046)" },
+    { "sha": "8d58901", "subject": "fix(art): cap full-width .sx hero pieces at 560px, delete duplicate DO-ART-927 (BUG-WEB-046)" },
+    { "sha": "fe3d26c", "subject": "fix(art): cap mobile artwork stacking by hiding secondary layers at <=640px (BUG-WEB-046)" },
+    { "sha": "f8cff48", "subject": "fix(art): clamp grid children and chart tracks causing mobile horizontal overflow (BUG-WEB-046)" },
+    { "sha": "5ee13c2", "subject": "fix(art): cap blog post hero image at 960px centred with explicit dimensions (BUG-WEB-046)" }
+  ],
+  "filesChanged": [
+    "app/d17-art.module.css",
+    "app/d17-global.css",
+    "app/d17-apps-cases.css",
+    "app/d17-locations.css",
+    "app/d17-problems.css",
+    "app/d17-resources.css",
+    "app/resources/decoded-method/page.tsx",
+    "app/resources/six-sigma/page.tsx",
+    "app/sectors/print-promotional/page.tsx",
+    "app/case-studies/eternal-fitness/page.tsx",
+    "app/blog/[slug]/page.tsx",
+    "components/calculators/calculators.css"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Fix 1 used the brief's second sanctioned option (convert cqw self-sizing to aspect-ratio / percentage equivalents) rather than adding .d17-wrap wrappers — the conversion is CSS-only and touches every affected selector without editing ~50 page files.",
+    "Fix 3 targets were reduced at <=640px by hiding secondary decorative layers (718 third doc, 831 print row, 945 pin row, 949 unmeasured file cards, 953 tags, 957 constraint column, 930 match list, 1008 photo pins) and tightening stacks (954, 967, 986); heights are content-driven, not browser-verified per target (no dev server allowed in lane).",
+    "Fix 4: .d17 figures already have overflow:hidden, so page-level overflow on the two named pages came from surrounding layout — clamped grid children (rt-split, grid--3, calc-months-grid) and the a994 yp/ym 12-col tracks via minmax(0,1fr) instead of touching artwork content.",
+    "next lint is not a valid command in this Next version; ran npx eslint on changed tsx files instead — 3 errors, all pre-existing no-explicit-any on origin/main in app/blog/[slug]/page.tsx (untouched lines).",
+    "price-audit --check exits 1 with pre-existing 'vest' word hits in five files not touched by this lane."
+  ],
+  "blockers": [],
+  "done": true
+}
