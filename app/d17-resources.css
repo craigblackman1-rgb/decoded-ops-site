@@ -10,6 +10,9 @@
 
 /* hero layout: copy left, the piece right */
 .rt-split{ display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center }
+/* BUG-WEB-046: grid children default to min-width:auto — let both columns shrink so
+   wide artwork/copy can't stretch a track past the wrap at small viewports */
+.rt-split > *{ min-width:0 }
 @media(max-width:980px){ .rt-split{ grid-template-columns:1fr; gap:34px } }
 .rt-split .lede{ margin:18px 0 0; max-width:56ch }
 .rt-split .hero-cta{ justify-content:flex-start; margin-top:26px }
@@ -311,7 +314,7 @@
 .a994 .stage{ aspect-ratio:560 / 540 }
 .a994 .d17-ph img{ object-position:50% 50%; --d17-grade:saturate(.5) contrast(1.05) brightness(.7) }
 .a994 .doc-yp{ left:calc(24 * var(--u)); top:calc(62 * var(--u)); width:calc(512 * var(--u)); transform:rotate(-1.5deg) }
-.yp{ position:relative; display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); align-items:end; height:calc(190 * var(--u));
+.yp{ position:relative; display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:calc(7 * var(--u)); align-items:end; height:calc(190 * var(--u));
   margin-top:calc(12 * var(--u)); padding:0 2px; border-bottom:1.5px solid color-mix(in srgb, var(--do-prussian-blue) 45%, transparent);
   background:repeating-linear-gradient(0deg, color-mix(in srgb, var(--do-prussian-blue) 7%, transparent) 0 1px, transparent 1px calc(19 * var(--u))) }
 .yp i{ position:relative; height:var(--h); border-radius:2px 2px 0 0; transform-origin:bottom;
@@ -322,7 +325,7 @@
 .yp .capl{ position:absolute; left:0; right:0; bottom:var(--c); border-top:2px dashed var(--do-prussian-blue) }
 .yp .capl span{ position:absolute; left:0; top:3px; font-family:var(--do-font-mono); font-weight:700; font-size:max(6px, calc(9 * var(--u))); letter-spacing:.12em;
   text-transform:uppercase; background:var(--do-white); padding:0 4px }
-.ym{ display:grid; grid-template-columns:repeat(12, 1fr); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
+.ym{ display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:calc(7 * var(--u)); margin-top:4px; text-align:center;
   font-family:var(--do-font-mono); font-size:max(6.5px, calc(10 * var(--u))); color:color-mix(in srgb, var(--do-prussian-blue) 72%, transparent) }
 .a994 .nt-a{ right:calc(22 * var(--u)); top:calc(412 * var(--u)); width:calc(190 * var(--u)) }
 .a994 .nt-b{ left:calc(40 * var(--u)); top:calc(420 * var(--u)); width:calc(170 * var(--u)); transform:rotate(-3deg) }

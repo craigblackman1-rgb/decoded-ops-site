@@ -5,6 +5,9 @@
 
 .calc-grid { display: grid; gap: 32px; }
 .calc-grid > * { min-width: 0; }
+/* BUG-WEB-046: grid items default to min-width:auto — clamp the month cells so
+   the range input's intrinsic width can't stretch a track past the column. */
+.calc-months-grid > * { min-width: 0; }
 @media (min-width: 1024px) {
   .calc-grid { grid-template-columns: 1fr 1fr; }
 }

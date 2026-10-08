@@ -58,6 +58,10 @@ export default function EternalFitnessCaseStudyPage() {
         .prose h2{ font-size:var(--do-text-xl); margin:36px 0 14px }
         .prose h2:first-child{ margin-top:0 }
         .prose p{ color:var(--do-text-secondary); line-height:var(--do-leading-relaxed); margin-bottom:14px }
+        /* BUG-WEB-046: grid items default to min-width:auto, so the nowrap .btn
+           inside each related card stretched the 1fr track past the column at 390px. */
+        .grid--3 > *{ min-width:0 }
+        .grid .card .btn{ white-space:normal; text-align:center }
         .progress-note{ background:color-mix(in srgb, var(--do-amber) 10%, transparent);
           border:1px solid color-mix(in srgb, var(--do-amber) 30%, transparent);
           border-radius:var(--do-radius-2xl); padding:24px 28px; margin-top:36px }
