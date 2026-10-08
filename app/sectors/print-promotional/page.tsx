@@ -131,33 +131,6 @@ export default function PrintPromotionalPage() {
         </div>
       </section>
 
-      <section className="g-navy">
-        <div className="wrap">
-          <div dangerouslySetInnerHTML={{ __html: `
-<figure class="d17 sx a927" data-od-id="hero-evidence" data-motion data-no="DO-ART-927" data-rev="01" data-tx="photo"
-        aria-label="Artwork DO-ART-927. A graded photograph of a screen-print press hall with a run sheet pinned over it. The press slot was planned as one long run; what arrived was several short runs and one gap waiting on artwork sign-off. Short runs, a schedule built for long ones.">
-  <div class="d17-ph"><img src="/images/d17/sectors/gen-press-hall-7c2764.webp" alt="" width="1000" height="1000"></div>
-  <div class="d17-scan" aria-hidden="true"></div>
-  <div class="sx-top d17-mono" aria-hidden="true"><span>Print &amp; promotional</span><span>Press 2 · today</span></div>
-  <div class="stage" aria-hidden="true">
-    <div class="sheet m-drop" style="animation-delay:.1s">
-      <span class="ref">RS-02 · Run sheet</span>
-      <h4>One slot, as planned and as run</h4>
-      <div class="slot"><span class="lab">Planned · one long run</span><div class="long"></div></div>
-      <div class="slot"><span class="lab">Run · short jobs</span>
-        <div class="short m-fill" style="animation-delay:.6s"><i style="--g:1.4"></i><i style="--g:.8"></i><i style="--g:1.1"></i><i class="gap" style="--g:1.6"></i><i style="--g:.7"></i><i style="--g:1"></i></div></div>
-      <p class="note">Every change of job is a set-up. The dashed slot is a job waiting on artwork sign-off: time on the press nobody could plan.</p>
-    </div>
-  </div>
-  <div class="sx-foot">
-    <div class="sx-bar" aria-hidden="true"></div>
-    <p class="sx-say">Short runs, <em>a schedule built for long ones.</em></p>
-    <span class="d17-mark">decodedops.co.uk · DO-ART-927 · Rev 01</span>
-  </div>
-</figure>` }} />
-        </div>
-      </section>
-
       {/* D17 INLINE ARTWORK · DO-ART-928 */}
       <section className="g-navy">
         <div className="wrap">
