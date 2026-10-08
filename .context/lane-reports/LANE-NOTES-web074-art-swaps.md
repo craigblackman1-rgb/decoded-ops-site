@@ -114,3 +114,33 @@ Not deleted (brief: list only). Safe to delete in a follow-up once Claude's visu
   `DO-ART-718` exactly two pages (bottleneck-growth, ops-in-owners-head).
 - No `\uXXXX`/`\xXX` escapes in any new JSX/string figure.
 - No reference to proof-approval.jpg anywhere.
+
+## fix1 (commit 3a6795d)
+
+CR-WEB-074 fix1 lane — phone fit for DO-ART-943/917 + drop duplicate swap exports.
+
+- **DO-ART-943 ≤640px** (`app/d17-apps-cases.css`): new `@media (max-width:640px)` block after
+  the existing 760px stack — figure padding 14/12/56px, gap 14px; `.desk` becomes
+  relative/`width:100%` with `transform:none` (no left crop); `.mw` scale `.62px → .55px`; the
+  secondary phone mock-up hides (`display:none`); `.cap3` scales `.9px` with 10px li padding.
+  Caption list (Dashboard / Catalogue view / Supplier import) and the mark line kept. Figure
+  estimate ~700–750px at 342px wide (was 1152–1174). No `calc(N*var(--u))` used on the figure's
+  own min-height/padding.
+- **Root cause of the left crop found and fixed at source**: the generic `.desk` pill rule in
+  `d17-problems.css` (`.desk{ position:absolute; left:50%; transform:translateX(-50%); … }`)
+  leaks into a943's catalogue-card div on `/problems/inventory-blind` (which loads problems.css
+  before apps-cases.css), shifting it left by half its width under `.d17`'s overflow:hidden.
+  The base `.a943 .desk` rule now carries resets (transform, display, background, radius,
+  padding, white-space, gap, z-index, font, letter-spacing, text-transform, color) so the card
+  renders correctly at every width on that page, not just ≤640px.
+- **DO-ART-917 ≤640px** (`app/d17-art.module.css`): second-pass block after the existing
+  ≤640 tightening — figure padding 16/14/14, gap 14; winBar 28px; winMain padding 10/12;
+  the mock-up subline `.s` hides (decorative — headline, three KPI numbers and mark line kept);
+  kpi/meter/feeds paddings and gaps tightened again; caption bar/p/live/mark margins reduced.
+  Figure estimate ~740–780px at 342px wide (was 859).
+- **Hygiene**: `git rm -r --cached .context/cr-web-074/swap-exports` + folder deleted from the
+  worktree. All 15 shipped webp exports verified present under `public/images/` before removal;
+  `_contact-sheet.jpg` and `manifest.json` existed only in the duplicate copy (working
+  artefacts, not shipped). `artwork-swap-map.md` and the helper .mjs scripts kept.
+- **Honest limits**: heights are CSS arithmetic estimates — no dev server / Playwright was
+  allowed, so the ≤800px claims need a render pass to confirm. `npx tsc --noEmit` clean.

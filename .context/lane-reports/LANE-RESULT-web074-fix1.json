@@ -1,0 +1,25 @@
+{
+  "lane": "web074-fix1",
+  "wo": "wo-brand-consistency-cleanup-2026-10",
+  "unit": "CR-WEB-074",
+  "commits": [
+    { "sha": "3a6795d", "subject": "fix(art): phone fit for DO-ART-943/917, drop duplicate swap exports (CR-WEB-074)" }
+  ],
+  "filesChanged": [
+    "app/d17-apps-cases.css",
+    "app/d17-art.module.css",
+    ".context/cr-web-074/swap-exports/ (17 files deleted: 15 webp + contact sheet + manifest)"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "Fixed the DO-ART-943 left-crop at its root: the generic .desk pill rule in d17-problems.css (translateX(-50%) etc.) leaks into a943's catalogue card on /problems/inventory-blind at all widths, so the base .a943 .desk rule also carries the resets — not only the ≤640px block as the brief scoped it.",
+    "For DO-ART-917 the brief allowed hiding one decorative element; hid the mock-up subline (.winMain .s). Headline, three KPI numbers and mark line kept.",
+    "swap-exports/_contact-sheet.jpg and manifest.json existed only in the duplicate copy (working artefacts, never shipped); all 15 webp exports were verified present under public/images/ before deletion."
+  ],
+  "blockers": [],
+  "done": true
+}
