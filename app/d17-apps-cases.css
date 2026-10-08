@@ -77,8 +77,11 @@
 .tile .act span+span{ background:var(--do-amber); border-color:var(--do-amber) }
 .tile .stock{ font-family:var(--do-font-mono); font-size:max(7.5px, calc(8.5 * var(--u))); letter-spacing:.1em; text-transform:uppercase; color:var(--do-text-cerulean) }
 
-/* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ─── */
-.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(640 * var(--u)); display:flex; flex-direction:column }
+/* ─── DO-ART-939 · apps hero · the three apps, three real screens over the floor ───
+   BUG-WEB-046: no self min-height — the in-flow content (top + 560u screens + under + base)
+   already exceeds 640u at every width, so a correctly-resolved min-height never bound; the
+   cqw copy only inflated the piece against viewport width. Content defines the height. */
+.a939{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:flex; flex-direction:column }
 .a939 .d17-ph img{ object-position:50% 58%; --d17-grade:saturate(.6) contrast(1.06) brightness(.78) }
 .a939::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 70%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 35%, transparent) 30%,
@@ -163,7 +166,7 @@
 @media (max-width: 760px){ .a942{ padding:22px 14px 20px } .a942 .v-wide{ display:none } .a942 .v-tall{ display:block } }
 
 /* ─── DO-ART-943 · data app screens · catalogue on the desk, bins on the phone (photo-led) ─── */
-.a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(600 * var(--u)) }
+.a943{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 600 }
 .a943 .d17-ph img{ object-position:50% 40%; --d17-grade:saturate(.62) contrast(1.08) brightness(.72) }
 .a943::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(90deg, color-mix(in srgb, var(--do-prussian-blue) 20%, transparent) 0%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 60%,
@@ -211,7 +214,7 @@
 .vg .st{ font-family:var(--do-font-mono); font-size:max(8px, calc(9 * var(--u))); letter-spacing:.1em; padding:2px 8px; border-radius:99px;
   background:color-mix(in srgb, var(--do-sky-blue) 30%, transparent) }
 @media (max-width: 760px){
-  .a943{ min-height:0; padding:18px 14px 70px; display:flex; flex-direction:column; gap:22px }
+  .a943{ aspect-ratio:auto; min-height:0; padding:18px 14px 70px; display:flex; flex-direction:column; gap:22px }
   .a943::before{ background:linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 55%, transparent), var(--do-prussian-blue) 70%) }
   .a943 .desk, .a943 .phone, .a943 .cap3{ position:relative; left:auto; top:auto; right:auto; width:auto }
   .a943 .desk .mw{ --u:.62px }
@@ -246,7 +249,7 @@
 }
 
 /* ─── DO-ART-945 · artwork manager inline · vault to floor, one tracked path (route poster) ─── */
-.a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u));
+.a945{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(40 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu));
   background:
     radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--do-cerulean) 20%, transparent), transparent 70%),
     linear-gradient(180deg, color-mix(in srgb, var(--do-prussian-blue) 80%, var(--do-cerulean)) 0%, var(--do-prussian-blue) 55%,
@@ -465,7 +468,7 @@
 [data-od-id="related"] .card .readmore::after{ content:' →' }
 
 /* ─── DO-ART-953 · case study 02 hero · the warehouse floor on a phone (photo-led) ─── */
-.a953{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); min-height:calc(520 * var(--u)) }
+.a953{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); aspect-ratio:1152 / 520 }
 .a953 .d17-ph img{ object-position:30% 50%; --d17-grade:saturate(.78) contrast(1.06) brightness(.8) }
 .a953::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 26%, color-mix(in srgb, var(--do-prussian-blue) 45%, transparent) 46%,
@@ -497,7 +500,7 @@
 .a953 .t2{ left:calc(520 * var(--u)); top:calc(330 * var(--u)) }
 .a953 .t3{ left:calc(930 * var(--u)); top:calc(456 * var(--u)) }
 @media (max-width: 760px){
-  .a953{ min-height:0; padding:22px 18px 26px; display:flex; flex-direction:column; gap:18px }
+  .a953{ aspect-ratio:auto; min-height:0; padding:22px 18px 26px; display:flex; flex-direction:column; gap:18px }
   .a953::before{ background:linear-gradient(180deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 40%, color-mix(in srgb, var(--do-prussian-blue) 40%, transparent) 70%, var(--do-prussian-blue) 100%) }
   .a953 .cap{ position:relative; left:auto; top:auto; width:auto }
   .a953 .phone2{ position:relative; left:auto; top:auto; width:230px; align-self:center; --u:1px; transform:rotate(-2deg) }
@@ -550,7 +553,7 @@
 @media (max-width: 760px){ .a956{ padding:22px 14px 20px } .a956 .v-wide{ display:none } .a956 .v-tall{ display:block } }
 
 /* ─── DO-ART-957 · Eternal Fitness exhibit · the draft plan and the one person who signs it off (product screen) ─── */
-.a957{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(44 * var(--u)) calc(44 * var(--u)) calc(30 * var(--u)) }
+.a957{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); padding:calc(44 * var(--pu)) calc(44 * var(--pu)) calc(30 * var(--pu)) }
 .a957 .d17-dots{ opacity:.8 }
 .a957 .hd{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:calc(22 * var(--u)) }
 .a957 .hd .k{ font-size:max(10px, calc(13 * var(--u))); color:var(--do-sky-blue) }

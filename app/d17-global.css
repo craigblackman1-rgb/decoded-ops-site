@@ -87,8 +87,12 @@
 .a916 .d17-mark{ align-self:flex-start }
 
 /* ─── DO-ART-917 · home figures · product screen with the live Hanicks figures ─── */
-.a917{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:31% 1fr; gap:calc(40 * var(--u));
-  padding:calc(56 * var(--u)) calc(48 * var(--u)) calc(64 * var(--u)) calc(52 * var(--u)); margin-top:38px }
+/* BUG-WEB-046: self-sizing on the .d17 figure itself must not use cqw — the figure IS the
+   container, so cqw on it falls back to viewport width. % padding resolves against the
+   containing block (= the figure's own width); the % gap resolves against the grid content
+   box (W − 100/1152 W), so 40/1052 = 40u of full width. */
+.a917{ --u:calc(100cqw / 1152); --pu:calc(100% / 1152); display:grid; grid-template-columns:31% 1fr; gap:calc(40 / 1052 * 100%);
+  padding:calc(56 * var(--pu)) calc(48 * var(--pu)) calc(64 * var(--pu)) calc(52 * var(--pu)); margin-top:38px }
 .a917 .d17-ph img{ object-position:80% 50%; opacity:.75 }
 .a917::before{ content:''; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(90deg, var(--do-prussian-blue) 0%, var(--do-prussian-blue) 30%,
@@ -174,7 +178,7 @@
 }
 
 /* ─── DO-ART-918 · home evidence · teamwear figures on a graded stock photo ─── */
-.a918{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:50% 1fr; min-height:calc(600 * var(--u)); margin-top:38px }
+.a918{ --u:calc(100cqw / 1152); display:grid; grid-template-columns:50% 1fr; aspect-ratio:1152 / 600; margin-top:38px }
 .a918 .d17-ph{ left:36% }
 .a918 .d17-ph img{ object-position:55% 50%; --d17-grade:saturate(.7) contrast(1.05) brightness(.84) }
 .a918::before{ content:''; position:absolute; inset:0; z-index:-1;
@@ -207,7 +211,7 @@
   background:repeating-linear-gradient(90deg, var(--do-prussian-blue) 0 2px, transparent 2px 4px, var(--do-prussian-blue) 4px 5px, transparent 5px 8px, var(--do-prussian-blue) 8px 11px, transparent 11px 12px) }
 .a918 .print .s{ margin-top:calc(6 * var(--u)); font-family:var(--do-font-mono); font-size:max(7px, calc(9.5 * var(--u))); letter-spacing:.12em; text-transform:uppercase }
 @media (max-width: 760px){
-  .a918{ grid-template-columns:1fr; min-height:0 }
+  .a918{ grid-template-columns:1fr; min-height:0; aspect-ratio:auto }
   .a918 .d17-ph{ left:0; bottom:auto; height:230px }
   .a918::before{ background:linear-gradient(180deg, transparent 0, transparent 120px, var(--do-prussian-blue) 230px) }
   .a918 .copy{ padding:200px 20px 24px }
@@ -299,7 +303,7 @@
   letter-spacing:.16em; color:var(--do-amber); background:var(--do-prussian-blue); padding:5px 8px; border-radius:var(--do-radius-sm) }
 
 /* ─── DO-ART-920 · Contact · warm photo-led panel ─── */
-.a920{ --u:calc(100cqw / 1100); display:grid; grid-template-columns:54% 1fr; min-height:calc(460 * var(--u)); text-align:left }
+.a920{ --u:calc(100cqw / 1100); display:grid; grid-template-columns:54% 1fr; aspect-ratio:1100 / 460; text-align:left }
 .a920 .d17-ph{ left:38% }
 .a920 .d17-ph img{ object-position:50% 40%; --d17-grade:sepia(.22) saturate(1.08) contrast(1.04) brightness(1.02) }
 .a920::before{ content:''; position:absolute; inset:0; z-index:-1;
@@ -330,7 +334,7 @@
 .a920 .note li::before{ content:'0' counter(c); font-family:var(--do-font-mono); font-size:10px; color:var(--do-text-cerulean); padding-top:3px }
 .a920 .d17-mark--abs{ left:calc(56 * var(--u)); bottom:calc(28 * var(--u)) }
 @media (max-width: 760px){
-  .a920{ grid-template-columns:1fr; min-height:0 }
+  .a920{ grid-template-columns:1fr; min-height:0; aspect-ratio:auto }
   .a920 .d17-ph{ left:0; bottom:auto; height:250px }
   .a920::before{ background:linear-gradient(180deg, transparent 0, transparent 130px, var(--do-prussian-blue) 250px) }
   .a920 .note{ right:16px; top:18px; width:190px }

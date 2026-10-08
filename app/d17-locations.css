@@ -307,7 +307,7 @@ svg.cov-map .cov-spoke{ stroke-dasharray:3 6; opacity:.7 }
 
 /* ─── DO-ART-1006 · privacy header · what I keep, and for how long (drawn) ─── */
 .legal-art{ max-width:880px; margin:34px auto 0 }
-.a1006, .a1007{ --u:calc(100cqw / 880); text-align:left; padding:calc(30 * var(--u)) calc(32 * var(--u)) calc(26 * var(--u)) }
+.a1006, .a1007{ --u:calc(100cqw / 880); --pu:calc(100% / 880); text-align:left; padding:calc(30 * var(--pu)) calc(32 * var(--pu)) calc(26 * var(--pu)) }
 .lg-k{ display:flex; justify-content:space-between; gap:10px; font-size:max(10px, calc(12 * var(--u))); color:var(--do-off-white) }
 .lg-k span+span{ color:var(--do-sky-blue) }
 .keep{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:calc(34 * var(--u)); margin-top:calc(20 * var(--u)); position:relative }
