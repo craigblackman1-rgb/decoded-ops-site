@@ -15,6 +15,7 @@ interface PhotoPieceProps {
   focus?: string;
   cls?: string;
   priority?: boolean;
+  maxWidth?: number;
 }
 
 declare global {
@@ -35,6 +36,7 @@ export function PhotoPiece({
   focus = '50% 50%',
   cls = '',
   priority = false,
+  maxWidth,
 }: PhotoPieceProps) {
   useEffect(() => {
     const register = (window.DO_ARTWORK = window.DO_ARTWORK || []);
@@ -51,7 +53,7 @@ export function PhotoPiece({
   }, [no, rev, caption]);
 
   return (
-    <figure className={`${styles.evPiece} ${cls}`}>
+    <figure className={`${styles.evPiece} ${cls}`} style={maxWidth ? { maxWidth, marginInline: 'auto' } : undefined}>
       <div
         className="art tx-photo"
         data-tx="photo"

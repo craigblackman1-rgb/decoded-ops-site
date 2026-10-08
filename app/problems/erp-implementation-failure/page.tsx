@@ -142,9 +142,9 @@ export default function ERPImplementationFailurePage() {
         </div>
         <div class="prints" aria-hidden="true">
           <div class="print" style="left:calc(50 * var(--u));top:calc(478 * var(--u));width:calc(165 * var(--u));height:calc(170 * var(--u));transform:rotate(-4deg)">
-            <img src="/images/d17/problems/hero-workshop-783ec1.webp" alt=""><div class="tint"></div><span>The floor it has to serve</span></div>
+            <img src="/images/d17/problems/card-warehouse-floor-f1d62c.webp" alt="" style="object-position:50% 50%"><div class="tint"></div><span>The floor it has to serve</span></div>
           <div class="print" style="left:calc(226 * var(--u));top:calc(505 * var(--u));width:calc(150 * var(--u));height:calc(160 * var(--u));transform:rotate(3deg)">
-            <img src="/images/d17/problems/thread-spools-2195b5.webp" alt=""><div class="tint"></div><span>Decoration, the part demos skip</span></div>
+            <img src="/images/d17/problems/card-embroidery-heads-50b561.webp" alt="" style="object-position:60% 50%"><div class="tint"></div><span>Decoration, the part demos skip</span></div>
         </div>
         <span class="d17-mark d17-mark--abs">decodedops.co.uk · DO-ART-967 · Rev 01</span>
       </figure>` }} />

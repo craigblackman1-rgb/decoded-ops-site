@@ -114,7 +114,7 @@ export default function InventoryBlindPage() {
         <tr class="m-fade" style="animation-delay:.8s"><td>XL</td><td class="num">0</td><td class="num">6</td><td class="num">2</td><td><span class="chip chip--o">Oversold</span></td></tr>
       </table>
       <div class="shelf m-rise" style="animation-delay:1.2s">
-        <img src="/images/d17/problems/cat-workwear-401e08.webp" alt="">
+        <img src="/images/d17/problems/card-garment-shelf-724253.webp" alt="" style="object-position:50% 50%">
         <p><span>Bin A-03 · on the shelf</span>24 in the bin. The system says none, so 48 more are already on order.</p>
       </div>
     </div>

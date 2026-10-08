@@ -81,6 +81,7 @@ export default function HowIBuildPage() {
             eyebrow="Evidence · How I build"
             caption="Built to the detail"
             focus="50% 60%"
+            maxWidth={900}
           />
         </div>
       </section>

@@ -118,14 +118,15 @@ export default function SmallBusinessPage() {
         <div className="wrap">
           <PhotoPiece
             src="/images/money/cat-promo-2026-09.webp"
-            width={1600}
-            height={1067}
+            width={900}
+            height={600}
             alt="Two plain white ceramic mugs, handles outward, side by side on a white surface."
             no="DO-ART-915"
             rev="01"
             eyebrow="Evidence · Small business"
             caption="Small shop, same standards"
             focus="50% 50%"
+            maxWidth={900}
           />
         </div>
       </section>

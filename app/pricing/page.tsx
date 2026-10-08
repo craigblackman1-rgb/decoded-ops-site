@@ -80,10 +80,10 @@ export default function PricingPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="container">
           <PhotoPiece
-            src="/images/money/prod-mailer-2026-09.webp"
-            width={900}
-            height={600}
-            alt="A single plain kraft mailer box with its lid on, photographed on a white surface."
+            src="/images/money/band-packing-station-7c4f80.webp"
+            width={1600}
+            height={900}
+            alt="A packing station with a worktop, stacked boxes, packing materials and a shutter door behind."
             no="DO-ART-912"
             rev="01"
             eyebrow="Evidence · Pricing"

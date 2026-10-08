@@ -47,14 +47,15 @@ export default function DeliverPage() {
         <div className="wrap">
           <PhotoPiece
             src="/images/money/prod-polo-2026-09.webp"
-            width={1600}
-            height={1067}
+            width={900}
+            height={1125}
             alt="A finished cream and stone colour-block zip-neck polo shirt, folded and pressed, laid on a grey studio surface."
             no="DO-ART-909"
             rev="01"
             eyebrow="Evidence · Deliver"
             caption="Finished, checked, out the door"
             focus="50% 55%"
+            maxWidth={900}
           />
         </div>
       </section>

@@ -154,10 +154,10 @@ export default function ProcessQualitySystemPage() {
       <section className="g-white ev-band" data-od-id="evidence">
         <div className="container">
           <PhotoPiece
-            src="/images/money/cat-workwear-2026-09.webp"
+            src="/images/money/band-screenprint-carousel-f0dce0.webp"
             width={1600}
-            height={1067}
-            alt="A fanned stack of workwear shirts in white, navy, blue, olive, rust, mauve and red, collars aligned, laid on a pale blue shirt."
+            height={900}
+            alt="A screenprint carousel and press on a workshop floor, print tables alongside."
             no="DO-ART-914"
             rev="01"
             eyebrow="Evidence · Process & Quality System"
