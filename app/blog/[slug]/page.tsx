@@ -233,7 +233,9 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
               className="rounded-2xl shadow-sm"
               style={{
                 border: '1px solid var(--do-border-subtle)',
+                width: '100%',
                 maxWidth: 960,
+                display: 'block',
                 marginInline: 'auto',
                 aspectRatio: '16 / 9',
                 objectFit: 'cover',
