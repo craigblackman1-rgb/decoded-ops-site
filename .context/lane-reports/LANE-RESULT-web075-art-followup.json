@@ -1,0 +1,38 @@
+{
+  "lane": "web075-art-followup",
+  "wo": "wo-brand-consistency-cleanup-2026-10",
+  "unit": "WO-INF-084",
+  "commits": [
+    { "sha": "c15fe1a", "subject": "feat(art): install E16/E17 photo exports + CR-WEB-075 swap map (CR-WEB-075)" },
+    { "sha": "a939a88", "subject": "feat(art): swap DO-ART-719 on ecommerce/wrong-erp pages to 948/999 (CR-WEB-075)" },
+    { "sha": "3c4db31", "subject": "feat(art): add DO-ART-1014 rate-card hero to quoting-takes-too-long (CR-WEB-075)" },
+    { "sha": "ac180ab", "subject": "feat(art): height polish for 11 D17 pieces to <=630px at 1440x900 (CR-WEB-075)" }
+  ],
+  "filesChanged": [
+    ".context/cr-web-075/artwork-swap-map-2.md",
+    ".context/lane-briefs/web075-art-followup.md",
+    "public/images/d17/problems/hero-garment-racking-219356.webp",
+    "public/images/d17/problems/plate-cartons-packed-2fb0ae.webp",
+    "lib/d17-figures/a948.ts",
+    "lib/d17-figures/a999.ts",
+    "app/problems/ecommerce-not-connected/page.tsx",
+    "app/problems/wrong-erp-software/page.tsx",
+    "app/problems/quoting-takes-too-long/page.tsx",
+    "app/d17-global.css",
+    "app/d17-problems.css",
+    "app/d17-resources.css",
+    "app/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "legacy-system keeps DO-ART-719 (Claude's decision per brief): 940's 'grew into the full system' line contradicts that page's keep-the-platform message, so the spec's 940 swap was not applied; 719 remains on buy-vs-build, about and legacy-system.",
+    "948 problem-page cut placed in beforeRelated (spec's preferred placement) rather than the zero-layout-change inlineArt slot.",
+    "Visual/Playwright verification forbidden by the lane brief; <=630px heights rest on the spec's harness measurements, not on renders this lane performed. price-audit --check exits non-zero on 31 pre-existing origin/main 'vest' word hits, none on lines this lane touched."
+  ],
+  "blockers": [],
+  "done": true
+}
