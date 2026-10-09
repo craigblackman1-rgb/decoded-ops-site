@@ -60,3 +60,25 @@ All edits per the spec's §4 table, applied to the existing final overrides wher
 - `\uXXXX` escape grep across every changed file — 0 hits.
 - Grep-verified: DO-ART-719 on buy-vs-build/about/legacy-system only; 948 and 999 on exactly two pages each; 1014 unique; 1015-1019 free; no `inlineArt719` references remain; no repeated `/images/d17/problems/` photo across two problem-page figures.
 - `node .context/price-audit.mjs --check` exits non-zero, but the 31 FAIL lines are all pre-existing on origin/main (forbidden-word hits on "vest" etc. on lines this lane did not touch); none reference the new 948/999/1014 copy.
+
+## fix1 — last pieces over the height limit (commit 3ef441e)
+
+Files: `app/d17-apps-cases.css`, `app/d17-problems.css`, `app/d17-art.module.css`, `app/about/page.tsx`.
+
+Playwright measurements after step 4 found four pieces still over the ceiling; this section tightens each without clipping or hiding argument text. Heights below are static estimates from the CSS arithmetic (no render — see "Not verified"), with the before figures taken from the measured values in the brief.
+
+| Piece | Page | Before | After (est.) | What changed |
+|---|---|---|---|---|
+| DO-ART-939 | /apps | 1152×816 @1440 · 342×1246 phone | ~595–630 @1152 · ~735 phone | Desktop: screens band + under labels now run on a tighter scale (`--v: calc(100cqw / 1400)` on `.screens`/`.under`, trio re-centred at lefts 168/522/876u-v), screens height 560→490v, tile images crop 2:1, top/base padding and base p 30→26u trimmed. Phone ≤640: `--u` .9→.72px, stack gap 26→12px, and `.s3 .tiles` (storefront product mock — decorative; the `data-cap` line under each window keeps the three-apps argument) drops out. |
+| DO-ART-966 | /problems/ecommerce-not-connected | 552×660 @1440 | ~596–620 | Scoped flow-stack trims: `.pair` padding-top 16→8u, `.win-flat` padding 18/20→12/14u (both windows), `.gapr` padding 10→6u, `.cols` margin-top 10→6u, plus the shared-foot treatment (`.sx-foot`/`.sx-bar`/.sx-say) now scoped to `.a966`. Every order figure, job card and label stays. |
+| DO-ART-904 | /about | 625×670 @1440 | 625×625 | Module aspect-ratio 14/15 → 1/1. Absolute-positioned note/mark reflow against the new bottom edge; nothing overlaps (note sits ~78–182px above bottom, top labels ~27px). |
+| DO-ART-831 | /about | 1152×648 @1440 | 1152×619 | Module aspect-ratio 1600/900 → 1600/860, and the route svg viewBox in `about/page.tsx` 1600×900 → 1600×860 so the drawing keeps a uniform w/1600 scale against the u-positioned stations (no letterbox drift). Bottom-most station ends ~554px, inside the 619. Existing ≤700/≤640 phone blocks untouched. |
+
+Notes:
+- The `d17-global.css` copies of `.a831`/`.a904` were left alone — /about consumes the hashed CSS-module classes (`d17.a831`/`d17.a904` from `d17-art.module.css`); the global copies match no element on any page.
+- No `calc(N*var(--u))` min-height/padding on any `.d17` figure; figure-level values stay in `--pu`/aspect-ratio.
+- `.a939 .screens { --u }` is re-pinned to the phone scale in both phone blocks (≤760 and ≤640) so the new desktop scale does not collapse stacked internals to px floors.
+
+## Not verified (fix1)
+
+- No render was produced (dev servers / Playwright / curl hard-forbidden). The "after" heights are arithmetic estimates; the ≤630/≤800 claims need a Playwright re-measure before release sign-off.

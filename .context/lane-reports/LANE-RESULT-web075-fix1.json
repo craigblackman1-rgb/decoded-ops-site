@@ -1,0 +1,30 @@
+{
+  "lane": "web075-fix1",
+  "wo": "wo-brand-consistency-cleanup-2026-10",
+  "unit": null,
+  "commits": [
+    {
+      "sha": "3ef441e",
+      "subject": "fix(art): bring 939/966/904/831 under 70svh at 1440, 939 phone fit (CR-WEB-075)"
+    }
+  ],
+  "filesChanged": [
+    "app/d17-apps-cases.css",
+    "app/d17-problems.css",
+    "app/d17-art.module.css",
+    "app/about/page.tsx"
+  ],
+  "verify": {
+    "tsc": "clean",
+    "tests": "n/a",
+    "escapeGrep": "0 hits"
+  },
+  "deviations": [
+    "unit id: the prompt names no unit id, so JSON unit is null",
+    "DO-ART-939 phone: the storefront tile grid (s3 .tiles) is hidden at ≤640px — decorative mock UI; the data-cap caption under each window keeps the three-apps argument, no claim text hidden",
+    "DO-ART-831: route svg viewBox changed 1600x900 -> 1600x860 in about/page.tsx alongside the module aspect-ratio, to keep uniform scale against u-positioned stations (letterboxing would have drifted the route off the station markers)",
+    "d17-global.css duplicate .a831/.a904 copies left untouched — /about uses hashed CSS-module classes; the global copies match no element"
+  ],
+  "blockers": [],
+  "done": true
+}
